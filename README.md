@@ -46,54 +46,74 @@ bare scalar:
 
 - `ctgov_api` — pulled directly from a structured field in the live
   CT.gov API v2 JSON response. `source_excerpt` is the JSON path read.
-- `needs_extraction` — not available as a structured API field. Requires
-  a future LLM-assisted extraction pass over free-text
-  `eligibilityCriteria`/`outcomesModule` blobs, or protocol/SAP/FDA-review
-  PDFs, followed by human QA (captain + Garvita). `value` is `null` and
-  stays `null` until that follow-up work fills it — v1 never guesses a
-  plausible-sounding clinical number here.
+- `ctgov_text_extraction` — parsed from a CT.gov API *free-text* field
+  (`eligibilityCriteria`, an `intervention.description`) by regex + review,
+  not a clean structured field. `source_excerpt` is the matched text.
+- `protocol_pdf_extraction` — parsed from a trial's Study Protocol or
+  Statistical Analysis Plan PDF (linked from CT.gov's `documentSection`).
+  `source_url` is the exact CDN PDF link; `source_excerpt` names the
+  section the excerpt came from.
+- `openfda_label` — pulled from the openFDA structured drug-label API
+  (`api.fda.gov/drug/label.json`). Drug-level, not trial-level: the same
+  value is reused across every trial of that drug.
+- `needs_extraction` — not available in any of the sources above (still
+  only in full protocol tables/appendices, or not published at all).
+  `value` is `null` and stays `null` until human QA can fill it — v1 never
+  guesses a plausible-sounding clinical number.
+
+**Every non-`ctgov_api` value here is machine/LLM-extracted, not
+hand-verified.** `reviewed_by` is `null` and `confidence` is `< 1.0` on all
+of them — they still need the human clinical QA pass (captain + Garvita)
+called for in the project brief before being treated as authoritative for
+publication. `visit_schedule` is deliberately left `needs_extraction` for
+every trial: the full schedule lives in large multi-page PDF tables that
+plain-text PDF conversion cannot flatten into a trustworthy value, and a
+garbled table is worse than a null.
 
 ### Field groups and v1 fill status
 
-| Group | Field | v1 status | Why |
+| Group | Field | v1 status | Source |
 |---|---|---|---|
-| identity | `nct_id` | ✅ filled | CT.gov API |
-| identity | `trial_name` (acronym) | ✅ filled | CT.gov API |
-| identity | `official_title` | ✅ filled | CT.gov API |
-| identity | `sponsor` | ✅ filled | CT.gov API |
-| identity | `phase` | ✅ filled | CT.gov API |
-| molecule | `drug` | ✅ filled | CT.gov API (intervention name, curated to canonical drug) |
-| molecule | `intervention_names` | ✅ filled | CT.gov API |
-| molecule | `intervention_type` | ✅ filled | CT.gov API |
-| molecule | `mechanism_of_action` | ⏳ needs_extraction | Not a structured API field |
-| molecule | `dosing_regimen` | ⏳ needs_extraction | Lives in free-text arm descriptions |
-| population | `condition` | ✅ filled | CT.gov API |
-| population | `min_age` | ✅ filled | CT.gov API |
-| population | `max_age` | ✅ filled | CT.gov API |
-| population | `sex` | ✅ filled | CT.gov API |
-| population | `enrollment_count` | ✅ filled | CT.gov API |
-| population | `severity_definition` (EASI/IGA/BSA screening thresholds) | ⏳ needs_extraction | In free-text `eligibilityCriteria` |
-| design | `study_type` | ✅ filled | CT.gov API |
-| design | `allocation` | ✅ filled | CT.gov API |
-| design | `intervention_model` | ✅ filled | CT.gov API |
-| design | `masking` | ✅ filled | CT.gov API |
-| design | `number_of_arms` | ✅ filled | CT.gov API |
-| design | `background_therapy_rule` | ⏳ needs_extraction | In free-text `eligibilityCriteria` |
-| endpoints | `primary_endpoint_measure` | ✅ filled | CT.gov API |
-| endpoints | `secondary_endpoint_measures` | ✅ filled | CT.gov API |
-| endpoints | `endpoint_hierarchy_multiplicity` | ⏳ needs_extraction | Statistical testing order lives in protocol/SAP, not the API |
-| timing_ops | `start_date` | ✅ filled | CT.gov API |
-| timing_ops | `primary_completion_date` | ✅ filled | CT.gov API |
-| timing_ops | `completion_date` | ✅ filled | CT.gov API |
-| timing_ops | `visit_schedule` | ⏳ needs_extraction | Full visit schedule lives in protocol PDFs |
-| timing_ops | `rescue_therapy_rules` | ⏳ needs_extraction | In free-text `eligibilityCriteria`/protocol |
+| identity | `nct_id` | ✅ filled | `ctgov_api` |
+| identity | `trial_name` (acronym) | ✅ filled | `ctgov_api` |
+| identity | `official_title` | ✅ filled | `ctgov_api` |
+| identity | `sponsor` | ✅ filled | `ctgov_api` |
+| identity | `phase` | ✅ filled | `ctgov_api` |
+| molecule | `drug` | ✅ filled | `ctgov_api` (intervention name, curated to canonical drug) |
+| molecule | `intervention_names` | ✅ filled | `ctgov_api` |
+| molecule | `intervention_type` | ✅ filled | `ctgov_api` |
+| molecule | `mechanism_of_action` | ✅ filled (17/17) | `openfda_label` — drug-level FDA label text |
+| molecule | `dosing_regimen` | ✅ filled (16/17) | `ctgov_text_extraction` — intervention description; null only where CT.gov has no description text on file (Dupilumab CAFE) |
+| population | `condition` | ✅ filled | `ctgov_api` |
+| population | `min_age` | ✅ filled | `ctgov_api` |
+| population | `max_age` | ✅ filled | `ctgov_api` |
+| population | `sex` | ✅ filled | `ctgov_api` |
+| population | `enrollment_count` | ✅ filled | `ctgov_api` |
+| population | `severity_definition` (EASI/IGA/BSA screening thresholds) | ✅ filled (16/17) | `ctgov_text_extraction` — matched `eligibilityCriteria` lines; null where CT.gov's own criteria text is abbreviated (Dupilumab CHRONOS) |
+| design | `study_type` | ✅ filled | `ctgov_api` |
+| design | `allocation` | ✅ filled | `ctgov_api` |
+| design | `intervention_model` | ✅ filled | `ctgov_api` |
+| design | `masking` | ✅ filled | `ctgov_api` |
+| design | `number_of_arms` | ✅ filled | `ctgov_api` |
+| design | `background_therapy_rule` | ⚠️ partial (5/17) | `ctgov_text_extraction`/`protocol_pdf_extraction` — only trials with a background/combination TCS regimen have one; monotherapy trials correctly have none |
+| endpoints | `primary_endpoint_measure` | ✅ filled | `ctgov_api` |
+| endpoints | `secondary_endpoint_measures` | ✅ filled | `ctgov_api` |
+| endpoints | `endpoint_hierarchy_multiplicity` | ✅ filled (13/17) | `protocol_pdf_extraction` — SAP/protocol multiplicity-control section; needs_extraction for the 4 trials with no Study Documents posted on CT.gov (Dupilumab SOLO 1/2, CHRONOS, CAFE) |
+| timing_ops | `start_date` | ✅ filled | `ctgov_api` |
+| timing_ops | `primary_completion_date` | ✅ filled | `ctgov_api` |
+| timing_ops | `completion_date` | ✅ filled | `ctgov_api` |
+| timing_ops | `visit_schedule` | ⏳ needs_extraction (0/17) | Full schedule lives in multi-page PDF tables; not reliably machine-extractable, deliberately left null (see note above) |
+| timing_ops | `rescue_therapy_rules` | ✅ filled (10/17) | `protocol_pdf_extraction` — protocol Rescue Treatment/Therapy section; needs_extraction where the term isn't used this way in the posted documents (Pfizer JADE MONO-1/2, JADE COMPARE) or no documents are posted (the 4 older Dupilumab trials) |
 
-**23 of 30 fields filled with real, sourced data in v1. 7 fields are
-`needs_extraction` placeholders**, all clustered around clinical
-thresholds and protocol detail that only exist as free text or in PDFs
-CT.gov's structured API does not expose. Filling those 7 is planned
-follow-up work (LLM-assisted extraction + human review), out of scope for
-this pass.
+**510 sourced values total (17 trials × 30 fields). 468 are filled with
+real data (391 `ctgov_api`, 36 `ctgov_text_extraction`, 24
+`protocol_pdf_extraction`, 17 `openfda_label`); 42 remain
+`needs_extraction`.** Every non-`ctgov_api` fill was produced by LLM-assisted
+reading of a real, cited source (CT.gov free text, a downloaded protocol/SAP
+PDF, or the openFDA label) — see `scripts/enrich_needs_extraction.py` for
+exactly which excerpt backs which field — and every one is
+`reviewed_by: null` pending the human clinical QA pass (captain + Garvita)
+before it's treated as authoritative for publication.
 
 ## Running the pipeline
 
@@ -104,9 +124,21 @@ Requires Python 3.9+, standard library only (no dependencies to install).
 #    data/trials/<NCT_ID>.json for each of the 17 trials above.
 python3 scripts/fetch_trials.py
 
-# 2. Flatten data/trials/*.json into repo-root trials.csv and sources.csv
+# 2. LLM-assisted second pass: fill severity_definition, background_therapy_rule,
+#    dosing_regimen, mechanism_of_action, rescue_therapy_rules, and
+#    endpoint_hierarchy_multiplicity from CT.gov free text, protocol/SAP PDFs,
+#    and the openFDA label API (see source_type table above).
+python3 scripts/enrich_needs_extraction.py
+
+# 3. Flatten data/trials/*.json into repo-root trials.csv and sources.csv
 python3 scripts/build_csv.py
 ```
+
+Optional: `python3 scripts/fetch_protocol_docs.py` re-downloads every
+trial's Study Protocol/SAP PDF and converts it to text under
+`data/_raw_cache/` (gitignored) — use it to re-verify or refresh a
+`protocol_pdf_extraction` excerpt against the source PDF. Requires
+`pdftotext` (poppler).
 
 - `trials.csv` — one row per trial, one column per field (the field's
   `value`; `needs_extraction` fields are blank).
@@ -115,8 +147,9 @@ python3 scripts/build_csv.py
   `reviewed_by`, `confidence`. 17 trials × 30 fields = 510 rows.
 
 Re-running `fetch_trials.py` re-pulls fresh data from the live API and
-overwrites the JSON files; re-run `build_csv.py` after to regenerate the
-CSVs.
+resets every field to its baseline `ctgov_api`/`needs_extraction` state
+(so re-run `enrich_needs_extraction.py` after it); re-run `build_csv.py`
+last to regenerate the CSVs.
 
 ## Out of scope for v1
 

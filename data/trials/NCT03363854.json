@@ -82,22 +82,22 @@
       "confidence": 1.0
     },
     "mechanism_of_action": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": "12.1 Mechanism of Action Tralokinumab-ldrm is a human IgG4 monoclonal antibody that specifically binds to human interleukin-13 (IL-13) and inhibits its interaction with the IL-13 receptor \u03b11 and \u03b12 subunits (IL-13R\u03b11 and IL-13R\u03b12). IL-13 is a naturally occurring cytokine of the Type 2 immune response. Tralokinumab-ldrm inhibits the bioactivity of IL-13 by blocking IL-13 interaction with IL-13R\u03b11/IL-4R\u03b1 receptor complex. Tralokinumab-ldrm inhibits IL-13-induced responses including the release of proinflammatory cytokines, chemokines and IgE.",
+      "source_type": "openfda_label",
+      "source_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=8abedac8-f75e-42a0-8591-10fabcf41fb5",
+      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1)",
+      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.9
     },
     "dosing_regimen": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": "Tralokinumab: Tralokinumab is a human recombinant monoclonal antibody of the IgG4 subclass that specifically binds to human IL-13 and blocks interaction with the IL-13 receptors. It is presented as a liquid formulation for subcutaneous (SC) administration. || Placebo: Placebo contains the same excipients in the same concentration only lacking tralokinumab.",
+      "source_type": "ctgov_text_extraction",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03363854",
+      "source_excerpt": "Tralokinumab: Tralokinumab is a human recombinant monoclonal antibody of the IgG4 subclass that specifically binds to human IL-13 and blocks interaction with the IL-13 receptors. It is presented as a liquid formulation for subcutaneous (SC) administration. || Placebo: Placebo contains the same excipients in the same concentration only lacking tralokinumab.",
+      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.8
     }
   },
   "population": {
@@ -149,13 +149,13 @@
       "confidence": 1.0
     },
     "severity_definition": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": "AD involvement of \u226510% body surface area at screening and baseline.",
+      "source_type": "ctgov_text_extraction",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03363854",
+      "source_excerpt": "AD involvement of \u226510% body surface area at screening and baseline.",
+      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.75
     }
   },
   "design": {
@@ -205,13 +205,13 @@
       "confidence": 1.0
     },
     "background_therapy_rule": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": "Tralokinumab (or placebo) is given in combination with a background topical corticosteroid (TCS) regimen throughout the study; all subjects, including those re-randomized into the maintenance continuation period, stay on the TCS regimen.",
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/54/NCT03363854/Prot_000.pdf",
+      "source_excerpt": "Continuation treatment period narrative (\"All subjects will stay on the TCS regimen\")",
+      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.7
     }
   },
   "endpoints": {
@@ -252,13 +252,13 @@
       "confidence": 1.0
     },
     "endpoint_hierarchy_multiplicity": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": "US submission: a dedicated modified confirmatory testing hierarchy analogous to ECZTRA 1/2 -- primary and secondary endpoints for tralokinumab + TCS vs. placebo + TCS tested in a prespecified sequential order (IGA 0/1, then EASI-75, then Pruritus) at Week 16, with maintenance-period endpoints tested in a separate branch.",
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/54/NCT03363854/SAP_001.pdf",
+      "source_excerpt": "Section 6.6.1 Multiple testing procedure",
+      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.75
     }
   },
   "timing_ops": {
@@ -299,13 +299,13 @@
       "confidence": null
     },
     "rescue_therapy_rules": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": "If medically necessary (i.e., to control intolerable AD symptoms), rescue treatment for AD may be provided at investigator discretion. Investigators should limit the first step of rescue to topical medications (higher-potency TCS: EU Class >3 / US Class <4), escalating to systemic medications only after at least 14 days without adequate response; subjects on topical rescue continue IMP. Systemic corticosteroid/immunosuppressive rescue requires immediate IMP discontinuation; IMP may resume no sooner than 5 half-lives after the last dose of systemic rescue medication.",
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/54/NCT03363854/Prot_000.pdf",
+      "source_excerpt": "Section 9.6 Rescue treatment",
+      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.75
     }
   }
 }

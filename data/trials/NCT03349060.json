@@ -83,22 +83,22 @@
       "confidence": 1.0
     },
     "mechanism_of_action": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": "12.1 Mechanism of Action CIBINQO is a Janus kinase (JAK) inhibitor. Abrocitinib reversibly inhibits JAK1 by blocking the adenosine triphosphate (ATP) binding site. In a cell-free isolated enzyme assay, abrocitinib was selective for JAK1 over JAK2 (28-fold), JAK3 (>340-fold), and tyrosine kinase (TYK) 2 (43-fold), as well as the broader kinome. The relevance of inhibition of specific JAK enzymes to therapeutic effectiveness is not currently known. Both the parent compound and the active metabolites inhibit JAK1 activity in vitro with similar levels of selectivity.",
+      "source_type": "openfda_label",
+      "source_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=90d59085-1778-447d-b10a-cede44616558",
+      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1)",
+      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.9
     },
     "dosing_regimen": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": "PF-04965842 100 mg: PF-04965842 100 mg, administered as two tablets to be taken orally once daily for 12 weeks || PF-04965842 200 mg: PF-04965842 200 mg, administered as two tablets to be taken orally once daily for 12 weeks",
+      "source_type": "ctgov_text_extraction",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03349060",
+      "source_excerpt": "PF-04965842 100 mg: PF-04965842 100 mg, administered as two tablets to be taken orally once daily for 12 weeks || PF-04965842 200 mg: PF-04965842 200 mg, administered as two tablets to be taken orally once daily for 12 weeks",
+      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.8
     }
   },
   "population": {
@@ -150,13 +150,13 @@
       "confidence": 1.0
     },
     "severity_definition": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": "Diagnosis of atopic dermatitis (AD) for at least 1 year and current status of moderate to severe disease (\\>= the following scores: BSA 10%, IGA 3, EASI 16, Pruritus NRS 4)",
+      "source_type": "ctgov_text_extraction",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03349060",
+      "source_excerpt": "Diagnosis of atopic dermatitis (AD) for at least 1 year and current status of moderate to severe disease (\\>= the following scores: BSA 10%, IGA 3, EASI 16, Pruritus NRS 4)",
+      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.75
     }
   },
   "design": {
@@ -279,13 +279,13 @@
       "confidence": 1.0
     },
     "endpoint_hierarchy_multiplicity": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": "A sequential Bonferroni-based iterative multiple testing procedure strongly controls familywise Type I error at 5% across the two abrocitinib doses (100/200 mg QD) vs. placebo on primary and key secondary endpoints. Testing starts with the Week 12 co-primary endpoints (IGA, EASI-75) for 200 mg vs. placebo at 5%; if rejected, testing proceeds down one of two alpha-dependent paths keyed on the Week 2 Pruritus NRS-4 result for 200 mg vs. placebo (tested at 2.5%), each path carrying its own significance level into a further sequence of endpoint tests.",
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/60/NCT03349060/SAP_000.pdf",
+      "source_excerpt": "Multiple Testing Procedure (Figure 2 schematic)",
+      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.75
     }
   },
   "timing_ops": {

@@ -82,22 +82,22 @@
       "confidence": 1.0
     },
     "mechanism_of_action": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": "12.1 Mechanism of Action Upadacitinib is a Janus kinase (JAK) inhibitor. JAKs are intracellular enzymes which transmit signals arising from cytokine or growth factor-receptor interactions on the cellular membrane to influence cellular processes of hematopoiesis and immune cell function. Within the signaling pathway, JAKs phosphorylate and activate signal transducers and activators of transcription (STATs) which modulate intracellular activity including gene expression. Upadacitinib modulates the signaling pathway at the point of JAKs, preventing the phosphorylation and activation of STATs. JAK enzymes transmit cytokine signaling through their pairing (e.g., JAK1/JAK2, JAK1/JAK3, JAK1/TYK2, JAK2/JAK2, JAK2/TYK2). In a cell-free isolated enzyme assay, upadacitinib had greater inhibitory potency at JAK1 and JAK2 relative to JAK3 and TYK2. In human leukocyte cellular assays, upadacitinib inhibited cytokine-induced STAT phosphorylation mediated by JAK1 and JAK1/JAK3 more potently than JAK2/JAK2 mediated STAT phosphorylation. The relevance of inhibition of specific JAK enzymes to therapeutic effectiveness is not currently known.",
+      "source_type": "openfda_label",
+      "source_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=e17266e5-c861-46bf-9756-6447566101be",
+      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1)",
+      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.9
     },
     "dosing_regimen": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": "Placebo for Upadacitinib: Tablets taken orally once a day || Upadacitinib: Tablets taken orally once a day",
+      "source_type": "ctgov_text_extraction",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03607422",
+      "source_excerpt": "Placebo for Upadacitinib: Tablets taken orally once a day || Upadacitinib: Tablets taken orally once a day",
+      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.8
     }
   },
   "population": {
@@ -149,13 +149,13 @@
       "confidence": 1.0
     },
     "severity_definition": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": "Active moderate to severe AD defined by Eczema Area and Severity Index (EASI) \u2265 16, validated Investigator's Global Assessment (vIGA) \u2265 3, body surface area (BSA) affected by AD \u2265 10%, and weekly average of daily Worst Pruritus numerical rating scale (NRS) score \u2265 4.",
+      "source_type": "ctgov_text_extraction",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03607422",
+      "source_excerpt": "Active moderate to severe AD defined by Eczema Area and Severity Index (EASI) \u2265 16, validated Investigator's Global Assessment (vIGA) \u2265 3, body surface area (BSA) affected by AD \u2265 10%, and weekly average of daily Worst Pruritus numerical rating scale (NRS) score \u2265 4.",
+      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.75
     }
   },
   "design": {
@@ -279,13 +279,13 @@
       "confidence": 1.0
     },
     "endpoint_hierarchy_multiplicity": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": "Same design as Measure Up 1: overall Type-I error for the primary and secondary endpoints (upadacitinib 15 mg and 30 mg vs. placebo) is strongly controlled via a graphical multiple testing procedure (2-sided alpha 0.05) with a pre-specified alpha transfer path including downstream and cross-dose transfer. Separate graphs for EU/EMA and US/FDA.",
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/22/NCT03607422/SAP_003.pdf",
+      "source_excerpt": "Section 13.0 Overall Type-I Error Control",
+      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.75
     }
   },
   "timing_ops": {
@@ -326,13 +326,13 @@
       "confidence": null
     },
     "rescue_therapy_rules": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": "Starting at the Week 4 visit, rescue treatment for AD may be provided if medically necessary and prespecified EASI-response thresholds are not met (Week 4-24: <EASI-50 at any 2 consecutive scheduled visits vs. Baseline; after Week 24: <EASI-50 at any visit vs. Baseline). First step is topical medication for >=7 days before escalating to systemic treatment. From Week 16, topical AD medication is no longer counted as rescue for efficacy analysis purposes; only systemic AD treatments count as rescue thereafter.",
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/22/NCT03607422/Prot_002.pdf",
+      "source_excerpt": "Section 5.4 Rescue Therapy",
+      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.75
     }
   }
 }
