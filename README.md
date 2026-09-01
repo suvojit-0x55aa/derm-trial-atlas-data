@@ -1,16 +1,18 @@
-# Open Derm Trial Atlas — Data Pipeline (v1)
+# Open Derm Trial Atlas — Data
 
-Data-backend pipeline for the Open Derm Trial Atlas: structured, sourced
-trial-design data for atopic dermatitis (AD) drug trials. This repo is the
-data backend only. The portal UI (`superderma.ai/atlas`) lives in a
-separate repo and is not part of this pipeline.
+Structured, sourced trial-design data for atopic dermatitis (AD) drug
+trials. **This repo is a pure dataset — no extraction or build scripts
+live here.** The pipeline that produced this data (ClinicalTrials.gov API
+pulls, LLM-assisted free-text/PDF extraction, CSV flattening) now lives in
+the `kolai-website` repo, under `scripts/atlas/`. The portal UI
+(`superderma.ai/atlas`) also lives in `kolai-website`, separate from this
+repo.
 
-## What v1 covers
+## What's in v1
 
-Real, live-pulled pivotal Phase III trials (adult / adult+adolescent,
-systemic therapy) for 5 drugs, from the [ClinicalTrials.gov API
-v2](https://clinicaltrials.gov/data-api/api) (`/api/v2/studies`, no API
-key required):
+Real pivotal Phase III trials (adult / adult+adolescent, systemic therapy)
+for 5 drugs, pulled live from the [ClinicalTrials.gov API
+v2](https://clinicaltrials.gov/data-api/api):
 
 | Drug | Pivotal Phase III trials |
 |---|---|
@@ -20,15 +22,28 @@ key required):
 | Abrocitinib | JADE MONO-1 (NCT03349060), JADE MONO-2 (NCT03575871), JADE COMPARE (NCT03720470), JADE REGIMEN (NCT03627767) |
 | Upadacitinib | Measure Up 1 (NCT03569293), Measure Up 2 (NCT03607422), AD Up (NCT03568318) |
 
-17 trials total. Every NCT ID above was pulled live from the API during
-this pass — none were guessed or reused from memory (see
-`data/trials/*.json` → `source_url` on every field for the exact API call).
+17 trials total. Every NCT ID was pulled live from the API — none were
+guessed or reused from memory (see `data/trials/*.json` → `source_url` on
+every field for the exact source it came from).
+
+## Files
+
+- `data/trials/<NCT_ID>.json` — one file per trial, the canonical dataset.
+- `trials.csv` — all 17 trials flattened to one row per trial, one column
+  per field (the field's `value`; `needs_extraction` fields are blank).
+- `sources.csv` — one row per sourced value (510 = 17 trials × 30 fields):
+  `nct_id`, `field`, `source_type`, `source_url`, `source_excerpt`,
+  `extracted_by`, `reviewed_by`, `confidence`.
+
+`trials.csv` and `sources.csv` are generated from `data/trials/*.json` —
+if you edit the dataset, regenerate them from `kolai-website`'s
+`scripts/atlas/build_csv.py` rather than hand-editing the CSVs.
 
 ## Data model
 
-One JSON file per trial at `data/trials/<NCT_ID>.json`, organized into 6
-field groups (30 fields total). Every field value is an object, never a
-bare scalar:
+Each trial JSON is organized into 6 field groups (30 fields total):
+identity, molecule, population, design, endpoints, timing_ops. Every field
+value is an object, never a bare scalar:
 
 ```json
 {
@@ -58,21 +73,20 @@ bare scalar:
   value is reused across every trial of that drug.
 - `needs_extraction` — not available in any of the sources above (still
   only in full protocol tables/appendices, or not published at all).
-  `value` is `null` and stays `null` until human QA can fill it — v1 never
-  guesses a plausible-sounding clinical number.
+  `value` is `null` and stays `null` until human QA can fill it — this
+  dataset never guesses a plausible-sounding clinical number.
 
 **Every non-`ctgov_api` value here is machine/LLM-extracted, not
 hand-verified.** `reviewed_by` is `null` and `confidence` is `< 1.0` on all
-of them — they still need the human clinical QA pass (captain + Garvita)
-called for in the project brief before being treated as authoritative for
-publication. `visit_schedule` is deliberately left `needs_extraction` for
-every trial: the full schedule lives in large multi-page PDF tables that
-plain-text PDF conversion cannot flatten into a trustworthy value, and a
-garbled table is worse than a null.
+of them — they still need a human clinical QA pass (captain + Garvita)
+before being treated as authoritative for publication. `visit_schedule` is
+deliberately left `needs_extraction` for every trial: the full schedule
+lives in large multi-page PDF tables that plain-text PDF conversion cannot
+flatten into a trustworthy value, and a garbled table is worse than a null.
 
-### Field groups and v1 fill status
+## Field groups and fill status
 
-| Group | Field | v1 status | Source |
+| Group | Field | Status | Source |
 |---|---|---|---|
 | identity | `nct_id` | ✅ filled | `ctgov_api` |
 | identity | `trial_name` (acronym) | ✅ filled | `ctgov_api` |
@@ -108,53 +122,15 @@ garbled table is worse than a null.
 **510 sourced values total (17 trials × 30 fields). 468 are filled with
 real data (391 `ctgov_api`, 36 `ctgov_text_extraction`, 24
 `protocol_pdf_extraction`, 17 `openfda_label`); 42 remain
-`needs_extraction`.** Every non-`ctgov_api` fill was produced by LLM-assisted
-reading of a real, cited source (CT.gov free text, a downloaded protocol/SAP
-PDF, or the openFDA label) — see `scripts/enrich_needs_extraction.py` for
-exactly which excerpt backs which field — and every one is
-`reviewed_by: null` pending the human clinical QA pass (captain + Garvita)
-before it's treated as authoritative for publication.
+`needs_extraction`.** Every non-`ctgov_api` fill traces to a real, cited
+source (CT.gov free text, a downloaded protocol/SAP PDF, or the openFDA
+label) and is `reviewed_by: null` pending the human clinical QA pass
+(captain + Garvita) before being treated as authoritative for publication.
 
-## Running the pipeline
+## Out of scope for this dataset
 
-Requires Python 3.9+, standard library only (no dependencies to install).
-
-```bash
-# 1. Fetch trial data live from ClinicalTrials.gov API v2 and write
-#    data/trials/<NCT_ID>.json for each of the 17 trials above.
-python3 scripts/fetch_trials.py
-
-# 2. LLM-assisted second pass: fill severity_definition, background_therapy_rule,
-#    dosing_regimen, mechanism_of_action, rescue_therapy_rules, and
-#    endpoint_hierarchy_multiplicity from CT.gov free text, protocol/SAP PDFs,
-#    and the openFDA label API (see source_type table above).
-python3 scripts/enrich_needs_extraction.py
-
-# 3. Flatten data/trials/*.json into repo-root trials.csv and sources.csv
-python3 scripts/build_csv.py
-```
-
-Optional: `python3 scripts/fetch_protocol_docs.py` re-downloads every
-trial's Study Protocol/SAP PDF and converts it to text under
-`data/_raw_cache/` (gitignored) — use it to re-verify or refresh a
-`protocol_pdf_extraction` excerpt against the source PDF. Requires
-`pdftotext` (poppler).
-
-- `trials.csv` — one row per trial, one column per field (the field's
-  `value`; `needs_extraction` fields are blank).
-- `sources.csv` — one row per sourced value: `nct_id`, `field`,
-  `source_type`, `source_url`, `source_excerpt`, `extracted_by`,
-  `reviewed_by`, `confidence`. 17 trials × 30 fields = 510 rows.
-
-Re-running `fetch_trials.py` re-pulls fresh data from the live API and
-resets every field to its baseline `ctgov_api`/`needs_extraction` state
-(so re-run `enrich_needs_extraction.py` after it); re-run `build_csv.py`
-last to regenerate the CSVs.
-
-## Out of scope for v1
-
-- LLM-assisted extraction of the 7 `needs_extraction` fields from
-  free-text eligibility criteria / outcomes blobs / protocol / SAP / FDA
-  review PDFs, and the human QA pass on top of it.
+- Extraction/build tooling — moved to `kolai-website`'s `scripts/atlas/`.
+- Human clinical QA on the extracted (non-`ctgov_api`) values.
+- Filling `visit_schedule` and the remaining `needs_extraction` cells.
 - AACT bulk-seeding (a possible future bulk source, not integrated here).
-- Any change to the atlas portal UI or the `kolai-website` repo.
+- Any change to the atlas portal UI.
