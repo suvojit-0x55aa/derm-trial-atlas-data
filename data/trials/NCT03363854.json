@@ -290,13 +290,13 @@
       "confidence": 1.0
     },
     "visit_schedule": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": "16-week initial treatment period (Week 0-16), 16-week continuation treatment period (Week 16-32), 14-week off-treatment follow-up (Week 32-46). Trial design text also states \"clinic visits at baseline, screening, and every other week thereafter until Week 52. A follow-up visit was conducted at Week 66\" -- this appears to reuse ECZTRA-1/2 boilerplate inconsistent with ECZTRA-3's own stated Week 46 endpoint; quoted as written, not reconciled. Not a full per-visit assessment table.",
+      "source_type": "publication_extraction",
+      "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/nda/2022/761180Orig1s000IntegratedR.pdf",
+      "source_excerpt": "Section 6.2.1 \"Trial Design\" (ECZTRA-3)",
+      "extracted_by": "manual publication_extraction pass (FDA approval-package review, v1 addendum follow-up; pending human QA)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.6
     },
     "rescue_therapy_rules": {
       "value": "If medically necessary (i.e., to control intolerable AD symptoms), rescue treatment for AD may be provided at investigator discretion. Investigators should limit the first step of rescue to topical medications (higher-potency TCS: EU Class >3 / US Class <4), escalating to systemic medications only after at least 14 days without adequate response; subjects on topical rescue continue IMP. Systemic corticosteroid/immunosuppressive rescue requires immediate IMP discontinuation; IMP may resume no sooner than 5 half-lives after the last dose of systemic rescue medication.",
@@ -868,13 +868,26 @@
       "confidence": 1.0
     },
     "discontinuation_due_to_ae_rate": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": [
+        {
+          "arm": "Placebo Q2W + TCS",
+          "n_discontinued": 1,
+          "n_started": 126,
+          "pct": 0.8
+        },
+        {
+          "arm": "Tralokinumab Q2W + TCS",
+          "n_discontinued": 6,
+          "n_started": 252,
+          "pct": 2.4
+        }
+      ],
+      "source_type": "publication_extraction",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7986183/",
+      "source_excerpt": "Table 3, \"16-week initial treatment period, safety analysis set\": \"Leading to discontinuation of IMP\" row (Placebo Q2W+TCS N=126; Tralokinumab Q2W+TCS N=252)",
+      "extracted_by": "manual publication_extraction pass (PMC full-text, v1 addendum follow-up; pending human QA)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.75
     },
     "boxed_warning": {
       "value": null,

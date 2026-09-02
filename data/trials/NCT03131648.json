@@ -205,13 +205,13 @@
       "confidence": 1.0
     },
     "background_therapy_rule": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": "None -- monotherapy design: \"two identically designed... Phase 3 trials (ECZTRA-1 and ECZTRA-2) to evaluate the efficacy and safety of tralokinumab monotherapy in adult subjects with moderate-to-severe atopic dermatitis whose disease is not adequately controlled with topical prescription therapies or when those therapies are not advisable.\"",
+      "source_type": "publication_extraction",
+      "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/nda/2022/761180Orig1s000IntegratedR.pdf",
+      "source_excerpt": "Section 6.2.1 \"Trial Design\" (ECZTRA-1)",
+      "extracted_by": "manual publication_extraction pass (FDA approval-package review, v1 addendum follow-up; pending human QA)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.75
     }
   },
   "endpoints": {
@@ -288,13 +288,13 @@
       "confidence": 1.0
     },
     "visit_schedule": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": "16-week initial treatment period (Week 0-16), 36-week maintenance treatment period (Week 16-52), 16-week off-treatment safety follow-up (Week 52-66). \"Subjects had clinic visits at baseline, screening, and every other week thereafter until Week 52. A follow-up visit was conducted at Week 66.\" Not a full per-visit assessment table.",
+      "source_type": "publication_extraction",
+      "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/nda/2022/761180Orig1s000IntegratedR.pdf",
+      "source_excerpt": "Section 6.2.1 \"Trial Design\" (ECZTRA-1)",
+      "extracted_by": "manual publication_extraction pass (FDA approval-package review, v1 addendum follow-up; pending human QA)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.7
     },
     "rescue_therapy_rules": {
       "value": "If medically necessary (i.e., to control intolerable AD symptoms), rescue treatment for AD may be provided to trial subjects at the discretion of the investigator. Subjects who receive rescue treatment during the initial treatment period will be considered non-responders, but continue IMP if rescue was topical. Investigators should limit the first step of rescue to topical medications and escalate to systemic medications only if no adequate response after at least 14 days of topical treatment. Systemic corticosteroid/immunosuppressive rescue requires immediate IMP discontinuation; IMP may resume no sooner than 5 half-lives after the last dose of systemic rescue medication.",
@@ -866,13 +866,26 @@
       "confidence": 1.0
     },
     "discontinuation_due_to_ae_rate": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": [
+        {
+          "arm": "Placebo",
+          "n_discontinued": 8,
+          "n_started": 196,
+          "pct": 4.1
+        },
+        {
+          "arm": "Tralokinumab Q2W",
+          "n_discontinued": 20,
+          "n_started": 602,
+          "pct": 3.3
+        }
+      ],
+      "source_type": "publication_extraction",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7986411/",
+      "source_excerpt": "Table 6, \"16-week initial treatment period, safety analysis set\": \"Leading to permanent discontinuation of IMP\" row (ECZTRA 1 columns)",
+      "extracted_by": "manual publication_extraction pass (PMC full-text, v1 addendum follow-up; pending human QA)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.75
     },
     "boxed_warning": {
       "value": null,
