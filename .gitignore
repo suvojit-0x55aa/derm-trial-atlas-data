@@ -2,3 +2,9 @@ __pycache__/
 *.pyc
 .venv/
 .env
+
+# Working cache for scripts/enrich_needs_extraction.py and
+# scripts/fetch_protocol_docs.py: raw CT.gov API responses and downloaded
+# protocol/SAP PDFs + their pdftotext output. Reproducible on demand; not
+# checked in (large binary PDFs).
+data/_raw_cache/
