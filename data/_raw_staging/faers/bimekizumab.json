@@ -1,73 +1,227 @@
 {
-  "drug": "Bimekizumab",
-  "total_report_count": 4062,
-  "top_reactions": [
-    {
-      "term": "PSORIATIC ARTHROPATHY",
-      "count": 971
+  "value": {
+    "query": {
+      "search_field": "patient.drug.medicinalproduct",
+      "search_term": "BIMEKIZUMAB",
+      "receivedate_from": "2016-04-19",
+      "receivedate_to": "2026-06-30",
+      "api_urls": [
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"BIMEKIZUMAB\"&limit=1",
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"BIMEKIZUMAB\"+AND+serious:1&limit=1",
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"BIMEKIZUMAB\"+AND+seriousnessdeath:1&limit=1",
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"BIMEKIZUMAB\"+AND+seriousnesshospitalization:1&limit=1",
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"BIMEKIZUMAB\"+AND+seriousnesslifethreatening:1&limit=1",
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"BIMEKIZUMAB\"+AND+seriousnessdisabling:1&limit=1",
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"BIMEKIZUMAB\"&count=patient.reaction.reactionmeddrapt.exact&limit=15",
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"BIMEKIZUMAB\"+AND+serious:1&count=patient.reaction.reactionmeddrapt.exact&limit=15",
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"BIMEKIZUMAB\"&count=receivedate"
+      ],
+      "data_last_updated": "2026-07-30"
     },
-    {
-      "term": "PSORIASIS",
-      "count": 618
-    },
-    {
-      "term": "DRUG INEFFECTIVE",
-      "count": 487
-    },
-    {
-      "term": "INJECTION SITE PAIN",
-      "count": 398
-    },
-    {
-      "term": "INAPPROPRIATE SCHEDULE OF PRODUCT ADMINISTRATION",
-      "count": 362
-    },
-    {
-      "term": "OFF LABEL USE",
-      "count": 288
-    },
-    {
-      "term": "PRODUCT DOSE OMISSION ISSUE",
-      "count": 285
-    },
-    {
-      "term": "THERAPY INTERRUPTED",
-      "count": 282
-    },
-    {
-      "term": "HIDRADENITIS",
-      "count": 245
-    },
-    {
-      "term": "FATIGUE",
-      "count": 221
-    },
-    {
-      "term": "ORAL CANDIDIASIS",
-      "count": 220
-    },
-    {
-      "term": "CONDITION AGGRAVATED",
-      "count": 208
-    },
-    {
-      "term": "PNEUMONIA",
-      "count": 198
-    },
-    {
-      "term": "INCORRECT DOSE ADMINISTERED",
-      "count": 188
-    },
-    {
-      "term": "THERAPEUTIC RESPONSE SHORTENED",
-      "count": 177
-    }
-  ],
-  "query_urls": {
-    "total_report_count": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct%3A%22BIMEKIZUMAB%22&limit=1",
-    "top_reactions": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct%3A%22BIMEKIZUMAB%22&count=patient.reaction.reactionmeddrapt.exact&limit=15"
+    "total_reports": 4062,
+    "serious_reports": 3865,
+    "death_reports": 57,
+    "hospitalization_reports": 1018,
+    "life_threatening_reports": 53,
+    "disability_reports": 35,
+    "top_reactions": [
+      {
+        "meddra_pt": "PSORIATIC ARTHROPATHY",
+        "report_count": 971,
+        "pct_of_reports": 23.9
+      },
+      {
+        "meddra_pt": "PSORIASIS",
+        "report_count": 618,
+        "pct_of_reports": 15.21
+      },
+      {
+        "meddra_pt": "DRUG INEFFECTIVE",
+        "report_count": 487,
+        "pct_of_reports": 11.99
+      },
+      {
+        "meddra_pt": "INJECTION SITE PAIN",
+        "report_count": 398,
+        "pct_of_reports": 9.8
+      },
+      {
+        "meddra_pt": "INAPPROPRIATE SCHEDULE OF PRODUCT ADMINISTRATION",
+        "report_count": 362,
+        "pct_of_reports": 8.91
+      },
+      {
+        "meddra_pt": "OFF LABEL USE",
+        "report_count": 288,
+        "pct_of_reports": 7.09
+      },
+      {
+        "meddra_pt": "PRODUCT DOSE OMISSION ISSUE",
+        "report_count": 285,
+        "pct_of_reports": 7.02
+      },
+      {
+        "meddra_pt": "THERAPY INTERRUPTED",
+        "report_count": 282,
+        "pct_of_reports": 6.94
+      },
+      {
+        "meddra_pt": "HIDRADENITIS",
+        "report_count": 245,
+        "pct_of_reports": 6.03
+      },
+      {
+        "meddra_pt": "FATIGUE",
+        "report_count": 221,
+        "pct_of_reports": 5.44
+      },
+      {
+        "meddra_pt": "ORAL CANDIDIASIS",
+        "report_count": 220,
+        "pct_of_reports": 5.42
+      },
+      {
+        "meddra_pt": "CONDITION AGGRAVATED",
+        "report_count": 208,
+        "pct_of_reports": 5.12
+      },
+      {
+        "meddra_pt": "PNEUMONIA",
+        "report_count": 198,
+        "pct_of_reports": 4.87
+      },
+      {
+        "meddra_pt": "INCORRECT DOSE ADMINISTERED",
+        "report_count": 188,
+        "pct_of_reports": 4.63
+      },
+      {
+        "meddra_pt": "THERAPEUTIC RESPONSE SHORTENED",
+        "report_count": 177,
+        "pct_of_reports": 4.36
+      }
+    ],
+    "top_serious_reactions": [
+      {
+        "meddra_pt": "PSORIATIC ARTHROPATHY",
+        "report_count": 971,
+        "pct_of_reports": 25.12
+      },
+      {
+        "meddra_pt": "PSORIASIS",
+        "report_count": 598,
+        "pct_of_reports": 15.47
+      },
+      {
+        "meddra_pt": "DRUG INEFFECTIVE",
+        "report_count": 467,
+        "pct_of_reports": 12.08
+      },
+      {
+        "meddra_pt": "INJECTION SITE PAIN",
+        "report_count": 383,
+        "pct_of_reports": 9.91
+      },
+      {
+        "meddra_pt": "INAPPROPRIATE SCHEDULE OF PRODUCT ADMINISTRATION",
+        "report_count": 349,
+        "pct_of_reports": 9.03
+      },
+      {
+        "meddra_pt": "THERAPY INTERRUPTED",
+        "report_count": 276,
+        "pct_of_reports": 7.14
+      },
+      {
+        "meddra_pt": "OFF LABEL USE",
+        "report_count": 271,
+        "pct_of_reports": 7.01
+      },
+      {
+        "meddra_pt": "PRODUCT DOSE OMISSION ISSUE",
+        "report_count": 269,
+        "pct_of_reports": 6.96
+      },
+      {
+        "meddra_pt": "HIDRADENITIS",
+        "report_count": 234,
+        "pct_of_reports": 6.05
+      },
+      {
+        "meddra_pt": "FATIGUE",
+        "report_count": 212,
+        "pct_of_reports": 5.49
+      },
+      {
+        "meddra_pt": "ORAL CANDIDIASIS",
+        "report_count": 205,
+        "pct_of_reports": 5.3
+      },
+      {
+        "meddra_pt": "CONDITION AGGRAVATED",
+        "report_count": 199,
+        "pct_of_reports": 5.15
+      },
+      {
+        "meddra_pt": "PNEUMONIA",
+        "report_count": 198,
+        "pct_of_reports": 5.12
+      },
+      {
+        "meddra_pt": "INCORRECT DOSE ADMINISTERED",
+        "report_count": 181,
+        "pct_of_reports": 4.68
+      },
+      {
+        "meddra_pt": "THERAPEUTIC RESPONSE SHORTENED",
+        "report_count": 175,
+        "pct_of_reports": 4.53
+      }
+    ],
+    "reports_by_year": [
+      {
+        "year": 2016,
+        "report_count": 4
+      },
+      {
+        "year": 2019,
+        "report_count": 1
+      },
+      {
+        "year": 2020,
+        "report_count": 3
+      },
+      {
+        "year": 2021,
+        "report_count": 2
+      },
+      {
+        "year": 2022,
+        "report_count": 10
+      },
+      {
+        "year": 2023,
+        "report_count": 89
+      },
+      {
+        "year": 2024,
+        "report_count": 881
+      },
+      {
+        "year": 2025,
+        "report_count": 2123
+      },
+      {
+        "year": 2026,
+        "report_count": 949
+      }
+    ],
+    "meddra_version": null
   },
-  "fetched_at": "2026-09-04T20:41:33Z",
-  "source": "openFDA drug/event.json (FAERS)",
-  "extracted_by": "fetch_faers.py (openfda drug/event.json, raw staging pass)"
+  "source_type": "openfda_faers",
+  "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"BIMEKIZUMAB\"&limit=1",
+  "source_excerpt": "openFDA drug/event.json aggregate: total_reports=4062, serious=3865, deaths=57",
+  "extracted_by": "fetch_faers.py (openfda drug/event.json, v2 pass)",
+  "reviewed_by": null,
+  "confidence": 1.0
 }

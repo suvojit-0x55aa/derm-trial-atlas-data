@@ -1,73 +1,239 @@
 {
-  "drug": "Baricitinib",
-  "total_report_count": 2981,
-  "top_reactions": [
-    {
-      "term": "OFF LABEL USE",
-      "count": 401
+  "value": {
+    "query": {
+      "search_field": "patient.drug.medicinalproduct",
+      "search_term": "BARICITINIB",
+      "receivedate_from": "2014-08-08",
+      "receivedate_to": "2026-06-30",
+      "api_urls": [
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"BARICITINIB\"&limit=1",
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"BARICITINIB\"+AND+serious:1&limit=1",
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"BARICITINIB\"+AND+seriousnessdeath:1&limit=1",
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"BARICITINIB\"+AND+seriousnesshospitalization:1&limit=1",
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"BARICITINIB\"+AND+seriousnesslifethreatening:1&limit=1",
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"BARICITINIB\"+AND+seriousnessdisabling:1&limit=1",
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"BARICITINIB\"&count=patient.reaction.reactionmeddrapt.exact&limit=15",
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"BARICITINIB\"+AND+serious:1&count=patient.reaction.reactionmeddrapt.exact&limit=15",
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"BARICITINIB\"&count=receivedate"
+      ],
+      "data_last_updated": "2026-07-30"
     },
-    {
-      "term": "DRUG INEFFECTIVE",
-      "count": 325
-    },
-    {
-      "term": "COVID-19",
-      "count": 174
-    },
-    {
-      "term": "PULMONARY EMBOLISM",
-      "count": 173
-    },
-    {
-      "term": "PNEUMONIA",
-      "count": 140
-    },
-    {
-      "term": "RHEUMATOID ARTHRITIS",
-      "count": 123
-    },
-    {
-      "term": "DEEP VEIN THROMBOSIS",
-      "count": 122
-    },
-    {
-      "term": "CONDITION AGGRAVATED",
-      "count": 108
-    },
-    {
-      "term": "DEATH",
-      "count": 105
-    },
-    {
-      "term": "DRUG INEFFECTIVE FOR UNAPPROVED INDICATION",
-      "count": 86
-    },
-    {
-      "term": "COVID-19 PNEUMONIA",
-      "count": 70
-    },
-    {
-      "term": "ACUTE KIDNEY INJURY",
-      "count": 69
-    },
-    {
-      "term": "HERPES ZOSTER",
-      "count": 69
-    },
-    {
-      "term": "NAUSEA",
-      "count": 69
-    },
-    {
-      "term": "HEADACHE",
-      "count": 68
-    }
-  ],
-  "query_urls": {
-    "total_report_count": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct%3A%22BARICITINIB%22&limit=1",
-    "top_reactions": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct%3A%22BARICITINIB%22&count=patient.reaction.reactionmeddrapt.exact&limit=15"
+    "total_reports": 2981,
+    "serious_reports": 2763,
+    "death_reports": 473,
+    "hospitalization_reports": 1232,
+    "life_threatening_reports": 386,
+    "disability_reports": 89,
+    "top_reactions": [
+      {
+        "meddra_pt": "OFF LABEL USE",
+        "report_count": 401,
+        "pct_of_reports": 13.45
+      },
+      {
+        "meddra_pt": "DRUG INEFFECTIVE",
+        "report_count": 325,
+        "pct_of_reports": 10.9
+      },
+      {
+        "meddra_pt": "COVID-19",
+        "report_count": 174,
+        "pct_of_reports": 5.84
+      },
+      {
+        "meddra_pt": "PULMONARY EMBOLISM",
+        "report_count": 173,
+        "pct_of_reports": 5.8
+      },
+      {
+        "meddra_pt": "PNEUMONIA",
+        "report_count": 140,
+        "pct_of_reports": 4.7
+      },
+      {
+        "meddra_pt": "RHEUMATOID ARTHRITIS",
+        "report_count": 123,
+        "pct_of_reports": 4.13
+      },
+      {
+        "meddra_pt": "DEEP VEIN THROMBOSIS",
+        "report_count": 122,
+        "pct_of_reports": 4.09
+      },
+      {
+        "meddra_pt": "CONDITION AGGRAVATED",
+        "report_count": 108,
+        "pct_of_reports": 3.62
+      },
+      {
+        "meddra_pt": "DEATH",
+        "report_count": 105,
+        "pct_of_reports": 3.52
+      },
+      {
+        "meddra_pt": "DRUG INEFFECTIVE FOR UNAPPROVED INDICATION",
+        "report_count": 86,
+        "pct_of_reports": 2.88
+      },
+      {
+        "meddra_pt": "COVID-19 PNEUMONIA",
+        "report_count": 70,
+        "pct_of_reports": 2.35
+      },
+      {
+        "meddra_pt": "ACUTE KIDNEY INJURY",
+        "report_count": 69,
+        "pct_of_reports": 2.31
+      },
+      {
+        "meddra_pt": "HERPES ZOSTER",
+        "report_count": 69,
+        "pct_of_reports": 2.31
+      },
+      {
+        "meddra_pt": "NAUSEA",
+        "report_count": 69,
+        "pct_of_reports": 2.31
+      },
+      {
+        "meddra_pt": "HEADACHE",
+        "report_count": 68,
+        "pct_of_reports": 2.28
+      }
+    ],
+    "top_serious_reactions": [
+      {
+        "meddra_pt": "OFF LABEL USE",
+        "report_count": 375,
+        "pct_of_reports": 13.57
+      },
+      {
+        "meddra_pt": "DRUG INEFFECTIVE",
+        "report_count": 314,
+        "pct_of_reports": 11.36
+      },
+      {
+        "meddra_pt": "COVID-19",
+        "report_count": 172,
+        "pct_of_reports": 6.23
+      },
+      {
+        "meddra_pt": "PULMONARY EMBOLISM",
+        "report_count": 166,
+        "pct_of_reports": 6.01
+      },
+      {
+        "meddra_pt": "PNEUMONIA",
+        "report_count": 137,
+        "pct_of_reports": 4.96
+      },
+      {
+        "meddra_pt": "RHEUMATOID ARTHRITIS",
+        "report_count": 122,
+        "pct_of_reports": 4.42
+      },
+      {
+        "meddra_pt": "DEEP VEIN THROMBOSIS",
+        "report_count": 116,
+        "pct_of_reports": 4.2
+      },
+      {
+        "meddra_pt": "CONDITION AGGRAVATED",
+        "report_count": 107,
+        "pct_of_reports": 3.87
+      },
+      {
+        "meddra_pt": "DEATH",
+        "report_count": 105,
+        "pct_of_reports": 3.8
+      },
+      {
+        "meddra_pt": "DRUG INEFFECTIVE FOR UNAPPROVED INDICATION",
+        "report_count": 84,
+        "pct_of_reports": 3.04
+      },
+      {
+        "meddra_pt": "ACUTE KIDNEY INJURY",
+        "report_count": 69,
+        "pct_of_reports": 2.5
+      },
+      {
+        "meddra_pt": "COVID-19 PNEUMONIA",
+        "report_count": 68,
+        "pct_of_reports": 2.46
+      },
+      {
+        "meddra_pt": "HERPES ZOSTER",
+        "report_count": 67,
+        "pct_of_reports": 2.42
+      },
+      {
+        "meddra_pt": "RESPIRATORY FAILURE",
+        "report_count": 67,
+        "pct_of_reports": 2.42
+      },
+      {
+        "meddra_pt": "HEADACHE",
+        "report_count": 66,
+        "pct_of_reports": 2.39
+      }
+    ],
+    "reports_by_year": [
+      {
+        "year": 2014,
+        "report_count": 1
+      },
+      {
+        "year": 2015,
+        "report_count": 1
+      },
+      {
+        "year": 2017,
+        "report_count": 2
+      },
+      {
+        "year": 2018,
+        "report_count": 66
+      },
+      {
+        "year": 2019,
+        "report_count": 143
+      },
+      {
+        "year": 2020,
+        "report_count": 164
+      },
+      {
+        "year": 2021,
+        "report_count": 816
+      },
+      {
+        "year": 2022,
+        "report_count": 600
+      },
+      {
+        "year": 2023,
+        "report_count": 392
+      },
+      {
+        "year": 2024,
+        "report_count": 373
+      },
+      {
+        "year": 2025,
+        "report_count": 292
+      },
+      {
+        "year": 2026,
+        "report_count": 131
+      }
+    ],
+    "meddra_version": null
   },
-  "fetched_at": "2026-09-04T20:41:47Z",
-  "source": "openFDA drug/event.json (FAERS)",
-  "extracted_by": "fetch_faers.py (openfda drug/event.json, raw staging pass)"
+  "source_type": "openfda_faers",
+  "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"BARICITINIB\"&limit=1",
+  "source_excerpt": "openFDA drug/event.json aggregate: total_reports=2981, serious=2763, deaths=473",
+  "extracted_by": "fetch_faers.py (openfda drug/event.json, v2 pass)",
+  "reviewed_by": null,
+  "confidence": 1.0
 }

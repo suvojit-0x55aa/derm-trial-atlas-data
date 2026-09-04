@@ -1,73 +1,219 @@
 {
-  "drug": "Tralokinumab",
-  "total_report_count": 150,
-  "top_reactions": [
-    {
-      "term": "DRUG INEFFECTIVE",
-      "count": 13
+  "value": {
+    "query": {
+      "search_field": "patient.drug.medicinalproduct",
+      "search_term": "TRALOKINUMAB",
+      "receivedate_from": "2018-02-13",
+      "receivedate_to": "2026-06-26",
+      "api_urls": [
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"TRALOKINUMAB\"&limit=1",
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"TRALOKINUMAB\"+AND+serious:1&limit=1",
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"TRALOKINUMAB\"+AND+seriousnessdeath:1&limit=1",
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"TRALOKINUMAB\"+AND+seriousnesshospitalization:1&limit=1",
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"TRALOKINUMAB\"+AND+seriousnesslifethreatening:1&limit=1",
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"TRALOKINUMAB\"+AND+seriousnessdisabling:1&limit=1",
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"TRALOKINUMAB\"&count=patient.reaction.reactionmeddrapt.exact&limit=15",
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"TRALOKINUMAB\"+AND+serious:1&count=patient.reaction.reactionmeddrapt.exact&limit=15",
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"TRALOKINUMAB\"&count=receivedate"
+      ],
+      "data_last_updated": "2026-07-30"
     },
-    {
-      "term": "PRURITUS",
-      "count": 12
-    },
-    {
-      "term": "OFF LABEL USE",
-      "count": 10
-    },
-    {
-      "term": "CONDITION AGGRAVATED",
-      "count": 9
-    },
-    {
-      "term": "CONJUNCTIVITIS",
-      "count": 7
-    },
-    {
-      "term": "ERYTHEMA",
-      "count": 7
-    },
-    {
-      "term": "ARTHRALGIA",
-      "count": 6
-    },
-    {
-      "term": "CUTANEOUS T-CELL LYMPHOMA",
-      "count": 6
-    },
-    {
-      "term": "DERMATITIS ATOPIC",
-      "count": 6
-    },
-    {
-      "term": "DIZZINESS",
-      "count": 6
-    },
-    {
-      "term": "ECZEMA",
-      "count": 6
-    },
-    {
-      "term": "ECZEMA HERPETICUM",
-      "count": 6
-    },
-    {
-      "term": "RASH",
-      "count": 6
-    },
-    {
-      "term": "WEIGHT INCREASED",
-      "count": 6
-    },
-    {
-      "term": "EYE PRURITUS",
-      "count": 5
-    }
-  ],
-  "query_urls": {
-    "total_report_count": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct%3A%22TRALOKINUMAB%22&limit=1",
-    "top_reactions": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct%3A%22TRALOKINUMAB%22&count=patient.reaction.reactionmeddrapt.exact&limit=15"
+    "total_reports": 150,
+    "serious_reports": 134,
+    "death_reports": 3,
+    "hospitalization_reports": 44,
+    "life_threatening_reports": 5,
+    "disability_reports": 2,
+    "top_reactions": [
+      {
+        "meddra_pt": "DRUG INEFFECTIVE",
+        "report_count": 13,
+        "pct_of_reports": 8.67
+      },
+      {
+        "meddra_pt": "PRURITUS",
+        "report_count": 12,
+        "pct_of_reports": 8.0
+      },
+      {
+        "meddra_pt": "OFF LABEL USE",
+        "report_count": 10,
+        "pct_of_reports": 6.67
+      },
+      {
+        "meddra_pt": "CONDITION AGGRAVATED",
+        "report_count": 9,
+        "pct_of_reports": 6.0
+      },
+      {
+        "meddra_pt": "CONJUNCTIVITIS",
+        "report_count": 7,
+        "pct_of_reports": 4.67
+      },
+      {
+        "meddra_pt": "ERYTHEMA",
+        "report_count": 7,
+        "pct_of_reports": 4.67
+      },
+      {
+        "meddra_pt": "ARTHRALGIA",
+        "report_count": 6,
+        "pct_of_reports": 4.0
+      },
+      {
+        "meddra_pt": "CUTANEOUS T-CELL LYMPHOMA",
+        "report_count": 6,
+        "pct_of_reports": 4.0
+      },
+      {
+        "meddra_pt": "DERMATITIS ATOPIC",
+        "report_count": 6,
+        "pct_of_reports": 4.0
+      },
+      {
+        "meddra_pt": "DIZZINESS",
+        "report_count": 6,
+        "pct_of_reports": 4.0
+      },
+      {
+        "meddra_pt": "ECZEMA",
+        "report_count": 6,
+        "pct_of_reports": 4.0
+      },
+      {
+        "meddra_pt": "ECZEMA HERPETICUM",
+        "report_count": 6,
+        "pct_of_reports": 4.0
+      },
+      {
+        "meddra_pt": "RASH",
+        "report_count": 6,
+        "pct_of_reports": 4.0
+      },
+      {
+        "meddra_pt": "WEIGHT INCREASED",
+        "report_count": 6,
+        "pct_of_reports": 4.0
+      },
+      {
+        "meddra_pt": "EYE PRURITUS",
+        "report_count": 5,
+        "pct_of_reports": 3.33
+      }
+    ],
+    "top_serious_reactions": [
+      {
+        "meddra_pt": "PRURITUS",
+        "report_count": 10,
+        "pct_of_reports": 7.46
+      },
+      {
+        "meddra_pt": "OFF LABEL USE",
+        "report_count": 9,
+        "pct_of_reports": 6.72
+      },
+      {
+        "meddra_pt": "CONDITION AGGRAVATED",
+        "report_count": 7,
+        "pct_of_reports": 5.22
+      },
+      {
+        "meddra_pt": "CONJUNCTIVITIS",
+        "report_count": 7,
+        "pct_of_reports": 5.22
+      },
+      {
+        "meddra_pt": "DRUG INEFFECTIVE",
+        "report_count": 7,
+        "pct_of_reports": 5.22
+      },
+      {
+        "meddra_pt": "CUTANEOUS T-CELL LYMPHOMA",
+        "report_count": 6,
+        "pct_of_reports": 4.48
+      },
+      {
+        "meddra_pt": "DIZZINESS",
+        "report_count": 6,
+        "pct_of_reports": 4.48
+      },
+      {
+        "meddra_pt": "ECZEMA HERPETICUM",
+        "report_count": 6,
+        "pct_of_reports": 4.48
+      },
+      {
+        "meddra_pt": "ARTHRALGIA",
+        "report_count": 5,
+        "pct_of_reports": 3.73
+      },
+      {
+        "meddra_pt": "DERMATITIS ATOPIC",
+        "report_count": 5,
+        "pct_of_reports": 3.73
+      },
+      {
+        "meddra_pt": "ECZEMA",
+        "report_count": 5,
+        "pct_of_reports": 3.73
+      },
+      {
+        "meddra_pt": "FATIGUE",
+        "report_count": 5,
+        "pct_of_reports": 3.73
+      },
+      {
+        "meddra_pt": "LOWER RESPIRATORY TRACT INFECTION",
+        "report_count": 5,
+        "pct_of_reports": 3.73
+      },
+      {
+        "meddra_pt": "RASH",
+        "report_count": 5,
+        "pct_of_reports": 3.73
+      },
+      {
+        "meddra_pt": "THERAPEUTIC PRODUCT EFFECT INCOMPLETE",
+        "report_count": 5,
+        "pct_of_reports": 3.73
+      }
+    ],
+    "reports_by_year": [
+      {
+        "year": 2018,
+        "report_count": 1
+      },
+      {
+        "year": 2019,
+        "report_count": 1
+      },
+      {
+        "year": 2022,
+        "report_count": 27
+      },
+      {
+        "year": 2023,
+        "report_count": 21
+      },
+      {
+        "year": 2024,
+        "report_count": 15
+      },
+      {
+        "year": 2025,
+        "report_count": 26
+      },
+      {
+        "year": 2026,
+        "report_count": 59
+      }
+    ],
+    "meddra_version": null
   },
-  "fetched_at": "2026-09-04T20:41:12Z",
-  "source": "openFDA drug/event.json (FAERS)",
-  "extracted_by": "fetch_faers.py (openfda drug/event.json, raw staging pass)"
+  "source_type": "openfda_faers",
+  "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"TRALOKINUMAB\"&limit=1",
+  "source_excerpt": "openFDA drug/event.json aggregate: total_reports=150, serious=134, deaths=3",
+  "extracted_by": "fetch_faers.py (openfda drug/event.json, v2 pass)",
+  "reviewed_by": null,
+  "confidence": 1.0
 }

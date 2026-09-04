@@ -1,73 +1,283 @@
 {
-  "drug": "Adalimumab",
-  "total_report_count": 46072,
-  "top_reactions": [
-    {
-      "term": "DRUG INEFFECTIVE",
-      "count": 10464
+  "value": {
+    "query": {
+      "search_field": "patient.drug.medicinalproduct",
+      "search_term": "ADALIMUMAB",
+      "receivedate_from": "2004-03-24",
+      "receivedate_to": "2026-06-30",
+      "api_urls": [
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ADALIMUMAB\"&limit=1",
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ADALIMUMAB\"+AND+serious:1&limit=1",
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ADALIMUMAB\"+AND+seriousnessdeath:1&limit=1",
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ADALIMUMAB\"+AND+seriousnesshospitalization:1&limit=1",
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ADALIMUMAB\"+AND+seriousnesslifethreatening:1&limit=1",
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ADALIMUMAB\"+AND+seriousnessdisabling:1&limit=1",
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ADALIMUMAB\"&count=patient.reaction.reactionmeddrapt.exact&limit=15",
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ADALIMUMAB\"+AND+serious:1&count=patient.reaction.reactionmeddrapt.exact&limit=15",
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ADALIMUMAB\"&count=receivedate"
+      ],
+      "data_last_updated": "2026-07-30"
     },
-    {
-      "term": "OFF LABEL USE",
-      "count": 8283
-    },
-    {
-      "term": "RHEUMATOID ARTHRITIS",
-      "count": 5673
-    },
-    {
-      "term": "FATIGUE",
-      "count": 5486
-    },
-    {
-      "term": "PAIN",
-      "count": 5437
-    },
-    {
-      "term": "ARTHRALGIA",
-      "count": 5184
-    },
-    {
-      "term": "RASH",
-      "count": 4648
-    },
-    {
-      "term": "CONDITION AGGRAVATED",
-      "count": 4492
-    },
-    {
-      "term": "DRUG INTOLERANCE",
-      "count": 4258
-    },
-    {
-      "term": "SYSTEMIC LUPUS ERYTHEMATOSUS",
-      "count": 4114
-    },
-    {
-      "term": "NAUSEA",
-      "count": 4070
-    },
-    {
-      "term": "HEADACHE",
-      "count": 4059
-    },
-    {
-      "term": "DIARRHOEA",
-      "count": 4055
-    },
-    {
-      "term": "JOINT SWELLING",
-      "count": 4051
-    },
-    {
-      "term": "ALOPECIA",
-      "count": 3893
-    }
-  ],
-  "query_urls": {
-    "total_report_count": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct%3A%22ADALIMUMAB%22&limit=1",
-    "top_reactions": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct%3A%22ADALIMUMAB%22&count=patient.reaction.reactionmeddrapt.exact&limit=15"
+    "total_reports": 46072,
+    "serious_reports": 43369,
+    "death_reports": 6821,
+    "hospitalization_reports": 16069,
+    "life_threatening_reports": 5941,
+    "disability_reports": 5904,
+    "top_reactions": [
+      {
+        "meddra_pt": "DRUG INEFFECTIVE",
+        "report_count": 10464,
+        "pct_of_reports": 22.71
+      },
+      {
+        "meddra_pt": "OFF LABEL USE",
+        "report_count": 8283,
+        "pct_of_reports": 17.98
+      },
+      {
+        "meddra_pt": "RHEUMATOID ARTHRITIS",
+        "report_count": 5673,
+        "pct_of_reports": 12.31
+      },
+      {
+        "meddra_pt": "FATIGUE",
+        "report_count": 5486,
+        "pct_of_reports": 11.91
+      },
+      {
+        "meddra_pt": "PAIN",
+        "report_count": 5437,
+        "pct_of_reports": 11.8
+      },
+      {
+        "meddra_pt": "ARTHRALGIA",
+        "report_count": 5184,
+        "pct_of_reports": 11.25
+      },
+      {
+        "meddra_pt": "RASH",
+        "report_count": 4648,
+        "pct_of_reports": 10.09
+      },
+      {
+        "meddra_pt": "CONDITION AGGRAVATED",
+        "report_count": 4492,
+        "pct_of_reports": 9.75
+      },
+      {
+        "meddra_pt": "DRUG INTOLERANCE",
+        "report_count": 4258,
+        "pct_of_reports": 9.24
+      },
+      {
+        "meddra_pt": "SYSTEMIC LUPUS ERYTHEMATOSUS",
+        "report_count": 4114,
+        "pct_of_reports": 8.93
+      },
+      {
+        "meddra_pt": "NAUSEA",
+        "report_count": 4070,
+        "pct_of_reports": 8.83
+      },
+      {
+        "meddra_pt": "HEADACHE",
+        "report_count": 4059,
+        "pct_of_reports": 8.81
+      },
+      {
+        "meddra_pt": "DIARRHOEA",
+        "report_count": 4055,
+        "pct_of_reports": 8.8
+      },
+      {
+        "meddra_pt": "JOINT SWELLING",
+        "report_count": 4051,
+        "pct_of_reports": 8.79
+      },
+      {
+        "meddra_pt": "ALOPECIA",
+        "report_count": 3893,
+        "pct_of_reports": 8.45
+      }
+    ],
+    "top_serious_reactions": [
+      {
+        "meddra_pt": "DRUG INEFFECTIVE",
+        "report_count": 10125,
+        "pct_of_reports": 23.35
+      },
+      {
+        "meddra_pt": "OFF LABEL USE",
+        "report_count": 8040,
+        "pct_of_reports": 18.54
+      },
+      {
+        "meddra_pt": "RHEUMATOID ARTHRITIS",
+        "report_count": 5645,
+        "pct_of_reports": 13.02
+      },
+      {
+        "meddra_pt": "FATIGUE",
+        "report_count": 5431,
+        "pct_of_reports": 12.52
+      },
+      {
+        "meddra_pt": "PAIN",
+        "report_count": 5342,
+        "pct_of_reports": 12.32
+      },
+      {
+        "meddra_pt": "ARTHRALGIA",
+        "report_count": 5105,
+        "pct_of_reports": 11.77
+      },
+      {
+        "meddra_pt": "RASH",
+        "report_count": 4578,
+        "pct_of_reports": 10.56
+      },
+      {
+        "meddra_pt": "CONDITION AGGRAVATED",
+        "report_count": 4440,
+        "pct_of_reports": 10.24
+      },
+      {
+        "meddra_pt": "DRUG INTOLERANCE",
+        "report_count": 4229,
+        "pct_of_reports": 9.75
+      },
+      {
+        "meddra_pt": "SYSTEMIC LUPUS ERYTHEMATOSUS",
+        "report_count": 4113,
+        "pct_of_reports": 9.48
+      },
+      {
+        "meddra_pt": "NAUSEA",
+        "report_count": 4022,
+        "pct_of_reports": 9.27
+      },
+      {
+        "meddra_pt": "DIARRHOEA",
+        "report_count": 4018,
+        "pct_of_reports": 9.26
+      },
+      {
+        "meddra_pt": "JOINT SWELLING",
+        "report_count": 4018,
+        "pct_of_reports": 9.26
+      },
+      {
+        "meddra_pt": "HEADACHE",
+        "report_count": 3992,
+        "pct_of_reports": 9.2
+      },
+      {
+        "meddra_pt": "ALOPECIA",
+        "report_count": 3874,
+        "pct_of_reports": 8.93
+      }
+    ],
+    "reports_by_year": [
+      {
+        "year": 2004,
+        "report_count": 39
+      },
+      {
+        "year": 2005,
+        "report_count": 65
+      },
+      {
+        "year": 2006,
+        "report_count": 20
+      },
+      {
+        "year": 2007,
+        "report_count": 51
+      },
+      {
+        "year": 2008,
+        "report_count": 142
+      },
+      {
+        "year": 2009,
+        "report_count": 156
+      },
+      {
+        "year": 2010,
+        "report_count": 281
+      },
+      {
+        "year": 2011,
+        "report_count": 224
+      },
+      {
+        "year": 2012,
+        "report_count": 272
+      },
+      {
+        "year": 2013,
+        "report_count": 316
+      },
+      {
+        "year": 2014,
+        "report_count": 305
+      },
+      {
+        "year": 2015,
+        "report_count": 326
+      },
+      {
+        "year": 2016,
+        "report_count": 507
+      },
+      {
+        "year": 2017,
+        "report_count": 733
+      },
+      {
+        "year": 2018,
+        "report_count": 1257
+      },
+      {
+        "year": 2019,
+        "report_count": 2039
+      },
+      {
+        "year": 2020,
+        "report_count": 2729
+      },
+      {
+        "year": 2021,
+        "report_count": 3251
+      },
+      {
+        "year": 2022,
+        "report_count": 4583
+      },
+      {
+        "year": 2023,
+        "report_count": 6776
+      },
+      {
+        "year": 2024,
+        "report_count": 8593
+      },
+      {
+        "year": 2025,
+        "report_count": 8819
+      },
+      {
+        "year": 2026,
+        "report_count": 4588
+      }
+    ],
+    "meddra_version": null
   },
-  "fetched_at": "2026-09-04T20:41:40Z",
-  "source": "openFDA drug/event.json (FAERS)",
-  "extracted_by": "fetch_faers.py (openfda drug/event.json, raw staging pass)"
+  "source_type": "openfda_faers",
+  "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ADALIMUMAB\"&limit=1",
+  "source_excerpt": "openFDA drug/event.json aggregate: total_reports=46072, serious=43369, deaths=6821",
+  "extracted_by": "fetch_faers.py (openfda drug/event.json, v2 pass)",
+  "reviewed_by": null,
+  "confidence": 1.0
 }

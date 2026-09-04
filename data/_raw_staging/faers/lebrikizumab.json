@@ -1,73 +1,231 @@
 {
-  "drug": "Lebrikizumab",
-  "total_report_count": 217,
-  "top_reactions": [
-    {
-      "term": "DERMATITIS ATOPIC",
-      "count": 23
+  "value": {
+    "query": {
+      "search_field": "patient.drug.medicinalproduct",
+      "search_term": "LEBRIKIZUMAB",
+      "receivedate_from": "2015-05-21",
+      "receivedate_to": "2026-06-30",
+      "api_urls": [
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"LEBRIKIZUMAB\"&limit=1",
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"LEBRIKIZUMAB\"+AND+serious:1&limit=1",
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"LEBRIKIZUMAB\"+AND+seriousnessdeath:1&limit=1",
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"LEBRIKIZUMAB\"+AND+seriousnesshospitalization:1&limit=1",
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"LEBRIKIZUMAB\"+AND+seriousnesslifethreatening:1&limit=1",
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"LEBRIKIZUMAB\"+AND+seriousnessdisabling:1&limit=1",
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"LEBRIKIZUMAB\"&count=patient.reaction.reactionmeddrapt.exact&limit=15",
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"LEBRIKIZUMAB\"+AND+serious:1&count=patient.reaction.reactionmeddrapt.exact&limit=15",
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"LEBRIKIZUMAB\"&count=receivedate"
+      ],
+      "data_last_updated": "2026-07-30"
     },
-    {
-      "term": "PRURITUS",
-      "count": 19
-    },
-    {
-      "term": "CONJUNCTIVITIS",
-      "count": 16
-    },
-    {
-      "term": "DRUG INEFFECTIVE",
-      "count": 16
-    },
-    {
-      "term": "ERYTHEMA",
-      "count": 15
-    },
-    {
-      "term": "RASH",
-      "count": 13
-    },
-    {
-      "term": "DRY SKIN",
-      "count": 12
-    },
-    {
-      "term": "ECZEMA",
-      "count": 11
-    },
-    {
-      "term": "SKIN EXFOLIATION",
-      "count": 11
-    },
-    {
-      "term": "INJECTION SITE PAIN",
-      "count": 10
-    },
-    {
-      "term": "TREATMENT FAILURE",
-      "count": 10
-    },
-    {
-      "term": "ARTHRALGIA",
-      "count": 9
-    },
-    {
-      "term": "EYE PRURITUS",
-      "count": 9
-    },
-    {
-      "term": "ASTHMA",
-      "count": 8
-    },
-    {
-      "term": "OCULAR HYPERAEMIA",
-      "count": 8
-    }
-  ],
-  "query_urls": {
-    "total_report_count": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct%3A%22LEBRIKIZUMAB%22&limit=1",
-    "top_reactions": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct%3A%22LEBRIKIZUMAB%22&count=patient.reaction.reactionmeddrapt.exact&limit=15"
+    "total_reports": 217,
+    "serious_reports": 116,
+    "death_reports": 2,
+    "hospitalization_reports": 46,
+    "life_threatening_reports": 3,
+    "disability_reports": 4,
+    "top_reactions": [
+      {
+        "meddra_pt": "DERMATITIS ATOPIC",
+        "report_count": 23,
+        "pct_of_reports": 10.6
+      },
+      {
+        "meddra_pt": "PRURITUS",
+        "report_count": 19,
+        "pct_of_reports": 8.76
+      },
+      {
+        "meddra_pt": "CONJUNCTIVITIS",
+        "report_count": 16,
+        "pct_of_reports": 7.37
+      },
+      {
+        "meddra_pt": "DRUG INEFFECTIVE",
+        "report_count": 16,
+        "pct_of_reports": 7.37
+      },
+      {
+        "meddra_pt": "ERYTHEMA",
+        "report_count": 15,
+        "pct_of_reports": 6.91
+      },
+      {
+        "meddra_pt": "RASH",
+        "report_count": 13,
+        "pct_of_reports": 5.99
+      },
+      {
+        "meddra_pt": "DRY SKIN",
+        "report_count": 12,
+        "pct_of_reports": 5.53
+      },
+      {
+        "meddra_pt": "ECZEMA",
+        "report_count": 11,
+        "pct_of_reports": 5.07
+      },
+      {
+        "meddra_pt": "SKIN EXFOLIATION",
+        "report_count": 11,
+        "pct_of_reports": 5.07
+      },
+      {
+        "meddra_pt": "INJECTION SITE PAIN",
+        "report_count": 10,
+        "pct_of_reports": 4.61
+      },
+      {
+        "meddra_pt": "TREATMENT FAILURE",
+        "report_count": 10,
+        "pct_of_reports": 4.61
+      },
+      {
+        "meddra_pt": "ARTHRALGIA",
+        "report_count": 9,
+        "pct_of_reports": 4.15
+      },
+      {
+        "meddra_pt": "EYE PRURITUS",
+        "report_count": 9,
+        "pct_of_reports": 4.15
+      },
+      {
+        "meddra_pt": "ASTHMA",
+        "report_count": 8,
+        "pct_of_reports": 3.69
+      },
+      {
+        "meddra_pt": "OCULAR HYPERAEMIA",
+        "report_count": 8,
+        "pct_of_reports": 3.69
+      }
+    ],
+    "top_serious_reactions": [
+      {
+        "meddra_pt": "CONJUNCTIVITIS",
+        "report_count": 11,
+        "pct_of_reports": 9.48
+      },
+      {
+        "meddra_pt": "TREATMENT FAILURE",
+        "report_count": 9,
+        "pct_of_reports": 7.76
+      },
+      {
+        "meddra_pt": "ASTHMA",
+        "report_count": 7,
+        "pct_of_reports": 6.03
+      },
+      {
+        "meddra_pt": "EOSINOPHILIA",
+        "report_count": 7,
+        "pct_of_reports": 6.03
+      },
+      {
+        "meddra_pt": "ERYTHEMA",
+        "report_count": 7,
+        "pct_of_reports": 6.03
+      },
+      {
+        "meddra_pt": "DERMATITIS ATOPIC",
+        "report_count": 6,
+        "pct_of_reports": 5.17
+      },
+      {
+        "meddra_pt": "ARTHRALGIA",
+        "report_count": 5,
+        "pct_of_reports": 4.31
+      },
+      {
+        "meddra_pt": "DERMATITIS EXFOLIATIVE GENERALISED",
+        "report_count": 5,
+        "pct_of_reports": 4.31
+      },
+      {
+        "meddra_pt": "DRUG INEFFECTIVE",
+        "report_count": 5,
+        "pct_of_reports": 4.31
+      },
+      {
+        "meddra_pt": "OFF LABEL USE",
+        "report_count": 5,
+        "pct_of_reports": 4.31
+      },
+      {
+        "meddra_pt": "RASH",
+        "report_count": 5,
+        "pct_of_reports": 4.31
+      },
+      {
+        "meddra_pt": "ECZEMA",
+        "report_count": 4,
+        "pct_of_reports": 3.45
+      },
+      {
+        "meddra_pt": "OCULAR HYPERAEMIA",
+        "report_count": 4,
+        "pct_of_reports": 3.45
+      },
+      {
+        "meddra_pt": "PULMONARY EMBOLISM",
+        "report_count": 4,
+        "pct_of_reports": 3.45
+      },
+      {
+        "meddra_pt": "SKIN EXFOLIATION",
+        "report_count": 4,
+        "pct_of_reports": 3.45
+      }
+    ],
+    "reports_by_year": [
+      {
+        "year": 2015,
+        "report_count": 2
+      },
+      {
+        "year": 2016,
+        "report_count": 3
+      },
+      {
+        "year": 2018,
+        "report_count": 1
+      },
+      {
+        "year": 2019,
+        "report_count": 6
+      },
+      {
+        "year": 2021,
+        "report_count": 2
+      },
+      {
+        "year": 2022,
+        "report_count": 1
+      },
+      {
+        "year": 2023,
+        "report_count": 2
+      },
+      {
+        "year": 2024,
+        "report_count": 22
+      },
+      {
+        "year": 2025,
+        "report_count": 114
+      },
+      {
+        "year": 2026,
+        "report_count": 64
+      }
+    ],
+    "meddra_version": null
   },
-  "fetched_at": "2026-09-04T20:41:09Z",
-  "source": "openFDA drug/event.json (FAERS)",
-  "extracted_by": "fetch_faers.py (openfda drug/event.json, raw staging pass)"
+  "source_type": "openfda_faers",
+  "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"LEBRIKIZUMAB\"&limit=1",
+  "source_excerpt": "openFDA drug/event.json aggregate: total_reports=217, serious=116, deaths=2",
+  "extracted_by": "fetch_faers.py (openfda drug/event.json, v2 pass)",
+  "reviewed_by": null,
+  "confidence": 1.0
 }

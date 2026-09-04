@@ -1,73 +1,227 @@
 {
-  "drug": "Upadacitinib",
-  "total_report_count": 4699,
-  "top_reactions": [
-    {
-      "term": "DRUG INEFFECTIVE",
-      "count": 496
+  "value": {
+    "query": {
+      "search_field": "patient.drug.medicinalproduct",
+      "search_term": "UPADACITINIB",
+      "receivedate_from": "2018-09-18",
+      "receivedate_to": "2026-06-30",
+      "api_urls": [
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"UPADACITINIB\"&limit=1",
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"UPADACITINIB\"+AND+serious:1&limit=1",
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"UPADACITINIB\"+AND+seriousnessdeath:1&limit=1",
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"UPADACITINIB\"+AND+seriousnesshospitalization:1&limit=1",
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"UPADACITINIB\"+AND+seriousnesslifethreatening:1&limit=1",
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"UPADACITINIB\"+AND+seriousnessdisabling:1&limit=1",
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"UPADACITINIB\"&count=patient.reaction.reactionmeddrapt.exact&limit=15",
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"UPADACITINIB\"+AND+serious:1&count=patient.reaction.reactionmeddrapt.exact&limit=15",
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"UPADACITINIB\"&count=receivedate"
+      ],
+      "data_last_updated": "2026-07-30"
     },
-    {
-      "term": "OFF LABEL USE",
-      "count": 435
-    },
-    {
-      "term": "CROHN^S DISEASE",
-      "count": 143
-    },
-    {
-      "term": "ARTHRALGIA",
-      "count": 136
-    },
-    {
-      "term": "PNEUMONIA",
-      "count": 121
-    },
-    {
-      "term": "DIARRHOEA",
-      "count": 115
-    },
-    {
-      "term": "PAIN",
-      "count": 114
-    },
-    {
-      "term": "COLITIS ULCERATIVE",
-      "count": 112
-    },
-    {
-      "term": "RASH",
-      "count": 112
-    },
-    {
-      "term": "THERAPEUTIC PRODUCT EFFECT DECREASED",
-      "count": 110
-    },
-    {
-      "term": "FATIGUE",
-      "count": 106
-    },
-    {
-      "term": "HERPES ZOSTER",
-      "count": 104
-    },
-    {
-      "term": "CONDITION AGGRAVATED",
-      "count": 103
-    },
-    {
-      "term": "ACNE",
-      "count": 100
-    },
-    {
-      "term": "COVID-19",
-      "count": 100
-    }
-  ],
-  "query_urls": {
-    "total_report_count": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct%3A%22UPADACITINIB%22&limit=1",
-    "top_reactions": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct%3A%22UPADACITINIB%22&count=patient.reaction.reactionmeddrapt.exact&limit=15"
+    "total_reports": 4699,
+    "serious_reports": 3336,
+    "death_reports": 155,
+    "hospitalization_reports": 1515,
+    "life_threatening_reports": 170,
+    "disability_reports": 101,
+    "top_reactions": [
+      {
+        "meddra_pt": "DRUG INEFFECTIVE",
+        "report_count": 496,
+        "pct_of_reports": 10.56
+      },
+      {
+        "meddra_pt": "OFF LABEL USE",
+        "report_count": 435,
+        "pct_of_reports": 9.26
+      },
+      {
+        "meddra_pt": "CROHN^S DISEASE",
+        "report_count": 143,
+        "pct_of_reports": 3.04
+      },
+      {
+        "meddra_pt": "ARTHRALGIA",
+        "report_count": 136,
+        "pct_of_reports": 2.89
+      },
+      {
+        "meddra_pt": "PNEUMONIA",
+        "report_count": 121,
+        "pct_of_reports": 2.58
+      },
+      {
+        "meddra_pt": "DIARRHOEA",
+        "report_count": 115,
+        "pct_of_reports": 2.45
+      },
+      {
+        "meddra_pt": "PAIN",
+        "report_count": 114,
+        "pct_of_reports": 2.43
+      },
+      {
+        "meddra_pt": "COLITIS ULCERATIVE",
+        "report_count": 112,
+        "pct_of_reports": 2.38
+      },
+      {
+        "meddra_pt": "RASH",
+        "report_count": 112,
+        "pct_of_reports": 2.38
+      },
+      {
+        "meddra_pt": "THERAPEUTIC PRODUCT EFFECT DECREASED",
+        "report_count": 110,
+        "pct_of_reports": 2.34
+      },
+      {
+        "meddra_pt": "FATIGUE",
+        "report_count": 106,
+        "pct_of_reports": 2.26
+      },
+      {
+        "meddra_pt": "HERPES ZOSTER",
+        "report_count": 104,
+        "pct_of_reports": 2.21
+      },
+      {
+        "meddra_pt": "CONDITION AGGRAVATED",
+        "report_count": 103,
+        "pct_of_reports": 2.19
+      },
+      {
+        "meddra_pt": "ACNE",
+        "report_count": 100,
+        "pct_of_reports": 2.13
+      },
+      {
+        "meddra_pt": "COVID-19",
+        "report_count": 100,
+        "pct_of_reports": 2.13
+      }
+    ],
+    "top_serious_reactions": [
+      {
+        "meddra_pt": "DRUG INEFFECTIVE",
+        "report_count": 428,
+        "pct_of_reports": 12.83
+      },
+      {
+        "meddra_pt": "OFF LABEL USE",
+        "report_count": 275,
+        "pct_of_reports": 8.24
+      },
+      {
+        "meddra_pt": "ARTHRALGIA",
+        "report_count": 118,
+        "pct_of_reports": 3.54
+      },
+      {
+        "meddra_pt": "PNEUMONIA",
+        "report_count": 117,
+        "pct_of_reports": 3.51
+      },
+      {
+        "meddra_pt": "CROHN^S DISEASE",
+        "report_count": 112,
+        "pct_of_reports": 3.36
+      },
+      {
+        "meddra_pt": "CONDITION AGGRAVATED",
+        "report_count": 99,
+        "pct_of_reports": 2.97
+      },
+      {
+        "meddra_pt": "DIARRHOEA",
+        "report_count": 97,
+        "pct_of_reports": 2.91
+      },
+      {
+        "meddra_pt": "PAIN",
+        "report_count": 94,
+        "pct_of_reports": 2.82
+      },
+      {
+        "meddra_pt": "COVID-19",
+        "report_count": 86,
+        "pct_of_reports": 2.58
+      },
+      {
+        "meddra_pt": "ABDOMINAL PAIN",
+        "report_count": 83,
+        "pct_of_reports": 2.49
+      },
+      {
+        "meddra_pt": "RHEUMATOID ARTHRITIS",
+        "report_count": 83,
+        "pct_of_reports": 2.49
+      },
+      {
+        "meddra_pt": "FATIGUE",
+        "report_count": 82,
+        "pct_of_reports": 2.46
+      },
+      {
+        "meddra_pt": "COLITIS ULCERATIVE",
+        "report_count": 80,
+        "pct_of_reports": 2.4
+      },
+      {
+        "meddra_pt": "RASH",
+        "report_count": 78,
+        "pct_of_reports": 2.34
+      },
+      {
+        "meddra_pt": "THERAPEUTIC PRODUCT EFFECT DECREASED",
+        "report_count": 78,
+        "pct_of_reports": 2.34
+      }
+    ],
+    "reports_by_year": [
+      {
+        "year": 2018,
+        "report_count": 1
+      },
+      {
+        "year": 2019,
+        "report_count": 55
+      },
+      {
+        "year": 2020,
+        "report_count": 85
+      },
+      {
+        "year": 2021,
+        "report_count": 194
+      },
+      {
+        "year": 2022,
+        "report_count": 409
+      },
+      {
+        "year": 2023,
+        "report_count": 656
+      },
+      {
+        "year": 2024,
+        "report_count": 1134
+      },
+      {
+        "year": 2025,
+        "report_count": 1458
+      },
+      {
+        "year": 2026,
+        "report_count": 707
+      }
+    ],
+    "meddra_version": null
   },
-  "fetched_at": "2026-09-04T20:41:20Z",
-  "source": "openFDA drug/event.json (FAERS)",
-  "extracted_by": "fetch_faers.py (openfda drug/event.json, raw staging pass)"
+  "source_type": "openfda_faers",
+  "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"UPADACITINIB\"&limit=1",
+  "source_excerpt": "openFDA drug/event.json aggregate: total_reports=4699, serious=3336, deaths=155",
+  "extracted_by": "fetch_faers.py (openfda drug/event.json, v2 pass)",
+  "reviewed_by": null,
+  "confidence": 1.0
 }

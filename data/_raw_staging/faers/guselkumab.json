@@ -1,73 +1,235 @@
 {
-  "drug": "Guselkumab",
-  "total_report_count": 2320,
-  "top_reactions": [
-    {
-      "term": "PRODUCT DOSE OMISSION ISSUE",
-      "count": 917
+  "value": {
+    "query": {
+      "search_field": "patient.drug.medicinalproduct",
+      "search_term": "GUSELKUMAB",
+      "receivedate_from": "2016-03-04",
+      "receivedate_to": "2026-06-30",
+      "api_urls": [
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"GUSELKUMAB\"&limit=1",
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"GUSELKUMAB\"+AND+serious:1&limit=1",
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"GUSELKUMAB\"+AND+seriousnessdeath:1&limit=1",
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"GUSELKUMAB\"+AND+seriousnesshospitalization:1&limit=1",
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"GUSELKUMAB\"+AND+seriousnesslifethreatening:1&limit=1",
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"GUSELKUMAB\"+AND+seriousnessdisabling:1&limit=1",
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"GUSELKUMAB\"&count=patient.reaction.reactionmeddrapt.exact&limit=15",
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"GUSELKUMAB\"+AND+serious:1&count=patient.reaction.reactionmeddrapt.exact&limit=15",
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"GUSELKUMAB\"&count=receivedate"
+      ],
+      "data_last_updated": "2026-07-30"
     },
-    {
-      "term": "DEVICE DEPLOYMENT ISSUE",
-      "count": 750
-    },
-    {
-      "term": "ACCIDENTAL EXPOSURE TO PRODUCT",
-      "count": 312
-    },
-    {
-      "term": "NEEDLE ISSUE",
-      "count": 294
-    },
-    {
-      "term": "DEVICE ISSUE",
-      "count": 199
-    },
-    {
-      "term": "DEVICE DEFECTIVE",
-      "count": 190
-    },
-    {
-      "term": "DRUG INEFFECTIVE",
-      "count": 164
-    },
-    {
-      "term": "DEVICE LEAKAGE",
-      "count": 122
-    },
-    {
-      "term": "OFF LABEL USE",
-      "count": 119
-    },
-    {
-      "term": "PSORIASIS",
-      "count": 116
-    },
-    {
-      "term": "INCORRECT DOSE ADMINISTERED",
-      "count": 90
-    },
-    {
-      "term": "INJECTION SITE HAEMORRHAGE",
-      "count": 67
-    },
-    {
-      "term": "INJECTION SITE PAIN",
-      "count": 65
-    },
-    {
-      "term": "INAPPROPRIATE SCHEDULE OF PRODUCT ADMINISTRATION",
-      "count": 62
-    },
-    {
-      "term": "PSORIATIC ARTHROPATHY",
-      "count": 62
-    }
-  ],
-  "query_urls": {
-    "total_report_count": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct%3A%22GUSELKUMAB%22&limit=1",
-    "top_reactions": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct%3A%22GUSELKUMAB%22&count=patient.reaction.reactionmeddrapt.exact&limit=15"
+    "total_reports": 2320,
+    "serious_reports": 679,
+    "death_reports": 31,
+    "hospitalization_reports": 254,
+    "life_threatening_reports": 34,
+    "disability_reports": 8,
+    "top_reactions": [
+      {
+        "meddra_pt": "PRODUCT DOSE OMISSION ISSUE",
+        "report_count": 917,
+        "pct_of_reports": 39.53
+      },
+      {
+        "meddra_pt": "DEVICE DEPLOYMENT ISSUE",
+        "report_count": 750,
+        "pct_of_reports": 32.33
+      },
+      {
+        "meddra_pt": "ACCIDENTAL EXPOSURE TO PRODUCT",
+        "report_count": 312,
+        "pct_of_reports": 13.45
+      },
+      {
+        "meddra_pt": "NEEDLE ISSUE",
+        "report_count": 294,
+        "pct_of_reports": 12.67
+      },
+      {
+        "meddra_pt": "DEVICE ISSUE",
+        "report_count": 199,
+        "pct_of_reports": 8.58
+      },
+      {
+        "meddra_pt": "DEVICE DEFECTIVE",
+        "report_count": 190,
+        "pct_of_reports": 8.19
+      },
+      {
+        "meddra_pt": "DRUG INEFFECTIVE",
+        "report_count": 164,
+        "pct_of_reports": 7.07
+      },
+      {
+        "meddra_pt": "DEVICE LEAKAGE",
+        "report_count": 122,
+        "pct_of_reports": 5.26
+      },
+      {
+        "meddra_pt": "OFF LABEL USE",
+        "report_count": 119,
+        "pct_of_reports": 5.13
+      },
+      {
+        "meddra_pt": "PSORIASIS",
+        "report_count": 116,
+        "pct_of_reports": 5.0
+      },
+      {
+        "meddra_pt": "INCORRECT DOSE ADMINISTERED",
+        "report_count": 90,
+        "pct_of_reports": 3.88
+      },
+      {
+        "meddra_pt": "INJECTION SITE HAEMORRHAGE",
+        "report_count": 67,
+        "pct_of_reports": 2.89
+      },
+      {
+        "meddra_pt": "INJECTION SITE PAIN",
+        "report_count": 65,
+        "pct_of_reports": 2.8
+      },
+      {
+        "meddra_pt": "INAPPROPRIATE SCHEDULE OF PRODUCT ADMINISTRATION",
+        "report_count": 62,
+        "pct_of_reports": 2.67
+      },
+      {
+        "meddra_pt": "PSORIATIC ARTHROPATHY",
+        "report_count": 62,
+        "pct_of_reports": 2.67
+      }
+    ],
+    "top_serious_reactions": [
+      {
+        "meddra_pt": "DRUG INEFFECTIVE",
+        "report_count": 139,
+        "pct_of_reports": 20.47
+      },
+      {
+        "meddra_pt": "PSORIASIS",
+        "report_count": 76,
+        "pct_of_reports": 11.19
+      },
+      {
+        "meddra_pt": "OFF LABEL USE",
+        "report_count": 72,
+        "pct_of_reports": 10.6
+      },
+      {
+        "meddra_pt": "PSORIATIC ARTHROPATHY",
+        "report_count": 62,
+        "pct_of_reports": 9.13
+      },
+      {
+        "meddra_pt": "PNEUMONIA",
+        "report_count": 44,
+        "pct_of_reports": 6.48
+      },
+      {
+        "meddra_pt": "TREATMENT FAILURE",
+        "report_count": 39,
+        "pct_of_reports": 5.74
+      },
+      {
+        "meddra_pt": "ARTHRALGIA",
+        "report_count": 34,
+        "pct_of_reports": 5.01
+      },
+      {
+        "meddra_pt": "COVID-19",
+        "report_count": 33,
+        "pct_of_reports": 4.86
+      },
+      {
+        "meddra_pt": "DIARRHOEA",
+        "report_count": 30,
+        "pct_of_reports": 4.42
+      },
+      {
+        "meddra_pt": "PRODUCT DOSE OMISSION ISSUE",
+        "report_count": 28,
+        "pct_of_reports": 4.12
+      },
+      {
+        "meddra_pt": "PYREXIA",
+        "report_count": 27,
+        "pct_of_reports": 3.98
+      },
+      {
+        "meddra_pt": "THERAPEUTIC PRODUCT EFFECT INCOMPLETE",
+        "report_count": 27,
+        "pct_of_reports": 3.98
+      },
+      {
+        "meddra_pt": "ARTHRITIS",
+        "report_count": 24,
+        "pct_of_reports": 3.53
+      },
+      {
+        "meddra_pt": "NAUSEA",
+        "report_count": 24,
+        "pct_of_reports": 3.53
+      },
+      {
+        "meddra_pt": "FATIGUE",
+        "report_count": 23,
+        "pct_of_reports": 3.39
+      }
+    ],
+    "reports_by_year": [
+      {
+        "year": 2016,
+        "report_count": 2
+      },
+      {
+        "year": 2017,
+        "report_count": 11
+      },
+      {
+        "year": 2018,
+        "report_count": 28
+      },
+      {
+        "year": 2019,
+        "report_count": 61
+      },
+      {
+        "year": 2020,
+        "report_count": 48
+      },
+      {
+        "year": 2021,
+        "report_count": 71
+      },
+      {
+        "year": 2022,
+        "report_count": 106
+      },
+      {
+        "year": 2023,
+        "report_count": 106
+      },
+      {
+        "year": 2024,
+        "report_count": 140
+      },
+      {
+        "year": 2025,
+        "report_count": 1115
+      },
+      {
+        "year": 2026,
+        "report_count": 632
+      }
+    ],
+    "meddra_version": null
   },
-  "fetched_at": "2026-09-04T20:41:22Z",
-  "source": "openFDA drug/event.json (FAERS)",
-  "extracted_by": "fetch_faers.py (openfda drug/event.json, raw staging pass)"
+  "source_type": "openfda_faers",
+  "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"GUSELKUMAB\"&limit=1",
+  "source_excerpt": "openFDA drug/event.json aggregate: total_reports=2320, serious=679, deaths=31",
+  "extracted_by": "fetch_faers.py (openfda drug/event.json, v2 pass)",
+  "reviewed_by": null,
+  "confidence": 1.0
 }

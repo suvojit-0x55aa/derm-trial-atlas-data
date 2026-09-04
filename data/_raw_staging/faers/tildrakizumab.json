@@ -1,73 +1,227 @@
 {
-  "drug": "Tildrakizumab",
-  "total_report_count": 1020,
-  "top_reactions": [
-    {
-      "term": "DRUG INEFFECTIVE",
-      "count": 67
+  "value": {
+    "query": {
+      "search_field": "patient.drug.medicinalproduct",
+      "search_term": "TILDRAKIZUMAB",
+      "receivedate_from": "2018-04-02",
+      "receivedate_to": "2026-06-26",
+      "api_urls": [
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"TILDRAKIZUMAB\"&limit=1",
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"TILDRAKIZUMAB\"+AND+serious:1&limit=1",
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"TILDRAKIZUMAB\"+AND+seriousnessdeath:1&limit=1",
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"TILDRAKIZUMAB\"+AND+seriousnesshospitalization:1&limit=1",
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"TILDRAKIZUMAB\"+AND+seriousnesslifethreatening:1&limit=1",
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"TILDRAKIZUMAB\"+AND+seriousnessdisabling:1&limit=1",
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"TILDRAKIZUMAB\"&count=patient.reaction.reactionmeddrapt.exact&limit=15",
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"TILDRAKIZUMAB\"+AND+serious:1&count=patient.reaction.reactionmeddrapt.exact&limit=15",
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"TILDRAKIZUMAB\"&count=receivedate"
+      ],
+      "data_last_updated": "2026-07-30"
     },
-    {
-      "term": "DEATH",
-      "count": 62
-    },
-    {
-      "term": "PSORIASIS",
-      "count": 50
-    },
-    {
-      "term": "URINARY TRACT INFECTION",
-      "count": 40
-    },
-    {
-      "term": "PNEUMONIA",
-      "count": 39
-    },
-    {
-      "term": "OFF LABEL USE",
-      "count": 37
-    },
-    {
-      "term": "PRODUCT DOSE OMISSION ISSUE",
-      "count": 36
-    },
-    {
-      "term": "CONDITION AGGRAVATED",
-      "count": 30
-    },
-    {
-      "term": "COVID-19",
-      "count": 30
-    },
-    {
-      "term": "INTENTIONAL DOSE OMISSION",
-      "count": 30
-    },
-    {
-      "term": "FATIGUE",
-      "count": 24
-    },
-    {
-      "term": "TREATMENT FAILURE",
-      "count": 23
-    },
-    {
-      "term": "FALL",
-      "count": 21
-    },
-    {
-      "term": "MALAISE",
-      "count": 21
-    },
-    {
-      "term": "MYOCARDIAL INFARCTION",
-      "count": 21
-    }
-  ],
-  "query_urls": {
-    "total_report_count": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct%3A%22TILDRAKIZUMAB%22&limit=1",
-    "top_reactions": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct%3A%22TILDRAKIZUMAB%22&count=patient.reaction.reactionmeddrapt.exact&limit=15"
+    "total_reports": 1020,
+    "serious_reports": 936,
+    "death_reports": 109,
+    "hospitalization_reports": 445,
+    "life_threatening_reports": 39,
+    "disability_reports": 12,
+    "top_reactions": [
+      {
+        "meddra_pt": "DRUG INEFFECTIVE",
+        "report_count": 67,
+        "pct_of_reports": 6.57
+      },
+      {
+        "meddra_pt": "DEATH",
+        "report_count": 62,
+        "pct_of_reports": 6.08
+      },
+      {
+        "meddra_pt": "PSORIASIS",
+        "report_count": 50,
+        "pct_of_reports": 4.9
+      },
+      {
+        "meddra_pt": "URINARY TRACT INFECTION",
+        "report_count": 40,
+        "pct_of_reports": 3.92
+      },
+      {
+        "meddra_pt": "PNEUMONIA",
+        "report_count": 39,
+        "pct_of_reports": 3.82
+      },
+      {
+        "meddra_pt": "OFF LABEL USE",
+        "report_count": 37,
+        "pct_of_reports": 3.63
+      },
+      {
+        "meddra_pt": "PRODUCT DOSE OMISSION ISSUE",
+        "report_count": 36,
+        "pct_of_reports": 3.53
+      },
+      {
+        "meddra_pt": "CONDITION AGGRAVATED",
+        "report_count": 30,
+        "pct_of_reports": 2.94
+      },
+      {
+        "meddra_pt": "COVID-19",
+        "report_count": 30,
+        "pct_of_reports": 2.94
+      },
+      {
+        "meddra_pt": "INTENTIONAL DOSE OMISSION",
+        "report_count": 30,
+        "pct_of_reports": 2.94
+      },
+      {
+        "meddra_pt": "FATIGUE",
+        "report_count": 24,
+        "pct_of_reports": 2.35
+      },
+      {
+        "meddra_pt": "TREATMENT FAILURE",
+        "report_count": 23,
+        "pct_of_reports": 2.25
+      },
+      {
+        "meddra_pt": "FALL",
+        "report_count": 21,
+        "pct_of_reports": 2.06
+      },
+      {
+        "meddra_pt": "MALAISE",
+        "report_count": 21,
+        "pct_of_reports": 2.06
+      },
+      {
+        "meddra_pt": "MYOCARDIAL INFARCTION",
+        "report_count": 21,
+        "pct_of_reports": 2.06
+      }
+    ],
+    "top_serious_reactions": [
+      {
+        "meddra_pt": "DEATH",
+        "report_count": 62,
+        "pct_of_reports": 6.62
+      },
+      {
+        "meddra_pt": "DRUG INEFFECTIVE",
+        "report_count": 56,
+        "pct_of_reports": 5.98
+      },
+      {
+        "meddra_pt": "PSORIASIS",
+        "report_count": 47,
+        "pct_of_reports": 5.02
+      },
+      {
+        "meddra_pt": "PNEUMONIA",
+        "report_count": 39,
+        "pct_of_reports": 4.17
+      },
+      {
+        "meddra_pt": "URINARY TRACT INFECTION",
+        "report_count": 39,
+        "pct_of_reports": 4.17
+      },
+      {
+        "meddra_pt": "INTENTIONAL DOSE OMISSION",
+        "report_count": 30,
+        "pct_of_reports": 3.21
+      },
+      {
+        "meddra_pt": "CONDITION AGGRAVATED",
+        "report_count": 28,
+        "pct_of_reports": 2.99
+      },
+      {
+        "meddra_pt": "COVID-19",
+        "report_count": 28,
+        "pct_of_reports": 2.99
+      },
+      {
+        "meddra_pt": "PRODUCT DOSE OMISSION ISSUE",
+        "report_count": 28,
+        "pct_of_reports": 2.99
+      },
+      {
+        "meddra_pt": "OFF LABEL USE",
+        "report_count": 26,
+        "pct_of_reports": 2.78
+      },
+      {
+        "meddra_pt": "FATIGUE",
+        "report_count": 22,
+        "pct_of_reports": 2.35
+      },
+      {
+        "meddra_pt": "FALL",
+        "report_count": 21,
+        "pct_of_reports": 2.24
+      },
+      {
+        "meddra_pt": "MYOCARDIAL INFARCTION",
+        "report_count": 21,
+        "pct_of_reports": 2.24
+      },
+      {
+        "meddra_pt": "CEREBROVASCULAR ACCIDENT",
+        "report_count": 20,
+        "pct_of_reports": 2.14
+      },
+      {
+        "meddra_pt": "MALAISE",
+        "report_count": 20,
+        "pct_of_reports": 2.14
+      }
+    ],
+    "reports_by_year": [
+      {
+        "year": 2018,
+        "report_count": 3
+      },
+      {
+        "year": 2019,
+        "report_count": 12
+      },
+      {
+        "year": 2020,
+        "report_count": 43
+      },
+      {
+        "year": 2021,
+        "report_count": 71
+      },
+      {
+        "year": 2022,
+        "report_count": 105
+      },
+      {
+        "year": 2023,
+        "report_count": 195
+      },
+      {
+        "year": 2024,
+        "report_count": 240
+      },
+      {
+        "year": 2025,
+        "report_count": 240
+      },
+      {
+        "year": 2026,
+        "report_count": 111
+      }
+    ],
+    "meddra_version": null
   },
-  "fetched_at": "2026-09-04T20:41:29Z",
-  "source": "openFDA drug/event.json (FAERS)",
-  "extracted_by": "fetch_faers.py (openfda drug/event.json, raw staging pass)"
+  "source_type": "openfda_faers",
+  "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"TILDRAKIZUMAB\"&limit=1",
+  "source_excerpt": "openFDA drug/event.json aggregate: total_reports=1020, serious=936, deaths=109",
+  "extracted_by": "fetch_faers.py (openfda drug/event.json, v2 pass)",
+  "reviewed_by": null,
+  "confidence": 1.0
 }

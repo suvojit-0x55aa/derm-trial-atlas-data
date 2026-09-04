@@ -1,29 +1,64 @@
 {
-  "drug": "Deuruxolitinib",
-  "total_report_count": 1,
-  "top_reactions": [
-    {
-      "term": "ACNE",
-      "count": 1
+  "value": {
+    "query": {
+      "search_field": "patient.drug.medicinalproduct",
+      "search_term": "DEURUXOLITINIB",
+      "receivedate_from": "2024-11-20",
+      "receivedate_to": "2024-11-20",
+      "api_urls": [
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"DEURUXOLITINIB\"&limit=1",
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"DEURUXOLITINIB\"+AND+serious:1&limit=1",
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"DEURUXOLITINIB\"+AND+seriousnessdeath:1&limit=1",
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"DEURUXOLITINIB\"+AND+seriousnesshospitalization:1&limit=1",
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"DEURUXOLITINIB\"+AND+seriousnesslifethreatening:1&limit=1",
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"DEURUXOLITINIB\"+AND+seriousnessdisabling:1&limit=1",
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"DEURUXOLITINIB\"&count=patient.reaction.reactionmeddrapt.exact&limit=15",
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"DEURUXOLITINIB\"+AND+serious:1&count=patient.reaction.reactionmeddrapt.exact&limit=15",
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"DEURUXOLITINIB\"&count=receivedate"
+      ],
+      "data_last_updated": "2026-07-30"
     },
-    {
-      "term": "ALOPECIA",
-      "count": 1
-    },
-    {
-      "term": "BLOOD CHOLESTEROL INCREASED",
-      "count": 1
-    },
-    {
-      "term": "WEIGHT INCREASED",
-      "count": 1
-    }
-  ],
-  "query_urls": {
-    "total_report_count": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct%3A%22DEURUXOLITINIB%22&limit=1",
-    "top_reactions": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct%3A%22DEURUXOLITINIB%22&count=patient.reaction.reactionmeddrapt.exact&limit=15"
+    "total_reports": 1,
+    "serious_reports": 0,
+    "death_reports": 0,
+    "hospitalization_reports": 0,
+    "life_threatening_reports": 0,
+    "disability_reports": 0,
+    "top_reactions": [
+      {
+        "meddra_pt": "ACNE",
+        "report_count": 1,
+        "pct_of_reports": 100.0
+      },
+      {
+        "meddra_pt": "ALOPECIA",
+        "report_count": 1,
+        "pct_of_reports": 100.0
+      },
+      {
+        "meddra_pt": "BLOOD CHOLESTEROL INCREASED",
+        "report_count": 1,
+        "pct_of_reports": 100.0
+      },
+      {
+        "meddra_pt": "WEIGHT INCREASED",
+        "report_count": 1,
+        "pct_of_reports": 100.0
+      }
+    ],
+    "top_serious_reactions": [],
+    "reports_by_year": [
+      {
+        "year": 2024,
+        "report_count": 1
+      }
+    ],
+    "meddra_version": null
   },
-  "fetched_at": "2026-09-04T20:41:53Z",
-  "source": "openFDA drug/event.json (FAERS)",
-  "extracted_by": "fetch_faers.py (openfda drug/event.json, raw staging pass)"
+  "source_type": "openfda_faers",
+  "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"DEURUXOLITINIB\"&limit=1",
+  "source_excerpt": "openFDA drug/event.json aggregate: total_reports=1, serious=0, deaths=0",
+  "extracted_by": "fetch_faers.py (openfda drug/event.json, v2 pass)",
+  "reviewed_by": null,
+  "confidence": 1.0
 }

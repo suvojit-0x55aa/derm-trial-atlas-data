@@ -1,73 +1,247 @@
 {
-  "drug": "Secukinumab",
-  "total_report_count": 4923,
-  "top_reactions": [
-    {
-      "term": "DRUG INEFFECTIVE",
-      "count": 1329
+  "value": {
+    "query": {
+      "search_field": "patient.drug.medicinalproduct",
+      "search_term": "SECUKINUMAB",
+      "receivedate_from": "2013-09-04",
+      "receivedate_to": "2026-06-30",
+      "api_urls": [
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"SECUKINUMAB\"&limit=1",
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"SECUKINUMAB\"+AND+serious:1&limit=1",
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"SECUKINUMAB\"+AND+seriousnessdeath:1&limit=1",
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"SECUKINUMAB\"+AND+seriousnesshospitalization:1&limit=1",
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"SECUKINUMAB\"+AND+seriousnesslifethreatening:1&limit=1",
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"SECUKINUMAB\"+AND+seriousnessdisabling:1&limit=1",
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"SECUKINUMAB\"&count=patient.reaction.reactionmeddrapt.exact&limit=15",
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"SECUKINUMAB\"+AND+serious:1&count=patient.reaction.reactionmeddrapt.exact&limit=15",
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"SECUKINUMAB\"&count=receivedate"
+      ],
+      "data_last_updated": "2026-07-30"
     },
-    {
-      "term": "PAIN",
-      "count": 791
-    },
-    {
-      "term": "OFF LABEL USE",
-      "count": 767
-    },
-    {
-      "term": "PSORIATIC ARTHROPATHY",
-      "count": 751
-    },
-    {
-      "term": "ARTHRALGIA",
-      "count": 736
-    },
-    {
-      "term": "PSORIASIS",
-      "count": 654
-    },
-    {
-      "term": "FATIGUE",
-      "count": 649
-    },
-    {
-      "term": "CONDITION AGGRAVATED",
-      "count": 617
-    },
-    {
-      "term": "HEADACHE",
-      "count": 600
-    },
-    {
-      "term": "DRUG INTOLERANCE",
-      "count": 582
-    },
-    {
-      "term": "RASH",
-      "count": 581
-    },
-    {
-      "term": "TREATMENT FAILURE",
-      "count": 581
-    },
-    {
-      "term": "JOINT SWELLING",
-      "count": 576
-    },
-    {
-      "term": "MUSCULOSKELETAL STIFFNESS",
-      "count": 547
-    },
-    {
-      "term": "SYNOVITIS",
-      "count": 531
-    }
-  ],
-  "query_urls": {
-    "total_report_count": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct%3A%22SECUKINUMAB%22&limit=1",
-    "top_reactions": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct%3A%22SECUKINUMAB%22&count=patient.reaction.reactionmeddrapt.exact&limit=15"
+    "total_reports": 4923,
+    "serious_reports": 4731,
+    "death_reports": 690,
+    "hospitalization_reports": 1614,
+    "life_threatening_reports": 738,
+    "disability_reports": 670,
+    "top_reactions": [
+      {
+        "meddra_pt": "DRUG INEFFECTIVE",
+        "report_count": 1329,
+        "pct_of_reports": 27.0
+      },
+      {
+        "meddra_pt": "PAIN",
+        "report_count": 791,
+        "pct_of_reports": 16.07
+      },
+      {
+        "meddra_pt": "OFF LABEL USE",
+        "report_count": 767,
+        "pct_of_reports": 15.58
+      },
+      {
+        "meddra_pt": "PSORIATIC ARTHROPATHY",
+        "report_count": 751,
+        "pct_of_reports": 15.25
+      },
+      {
+        "meddra_pt": "ARTHRALGIA",
+        "report_count": 736,
+        "pct_of_reports": 14.95
+      },
+      {
+        "meddra_pt": "PSORIASIS",
+        "report_count": 654,
+        "pct_of_reports": 13.28
+      },
+      {
+        "meddra_pt": "FATIGUE",
+        "report_count": 649,
+        "pct_of_reports": 13.18
+      },
+      {
+        "meddra_pt": "CONDITION AGGRAVATED",
+        "report_count": 617,
+        "pct_of_reports": 12.53
+      },
+      {
+        "meddra_pt": "HEADACHE",
+        "report_count": 600,
+        "pct_of_reports": 12.19
+      },
+      {
+        "meddra_pt": "DRUG INTOLERANCE",
+        "report_count": 582,
+        "pct_of_reports": 11.82
+      },
+      {
+        "meddra_pt": "RASH",
+        "report_count": 581,
+        "pct_of_reports": 11.8
+      },
+      {
+        "meddra_pt": "TREATMENT FAILURE",
+        "report_count": 581,
+        "pct_of_reports": 11.8
+      },
+      {
+        "meddra_pt": "JOINT SWELLING",
+        "report_count": 576,
+        "pct_of_reports": 11.7
+      },
+      {
+        "meddra_pt": "MUSCULOSKELETAL STIFFNESS",
+        "report_count": 547,
+        "pct_of_reports": 11.11
+      },
+      {
+        "meddra_pt": "SYNOVITIS",
+        "report_count": 531,
+        "pct_of_reports": 10.79
+      }
+    ],
+    "top_serious_reactions": [
+      {
+        "meddra_pt": "DRUG INEFFECTIVE",
+        "report_count": 1286,
+        "pct_of_reports": 27.18
+      },
+      {
+        "meddra_pt": "PAIN",
+        "report_count": 774,
+        "pct_of_reports": 16.36
+      },
+      {
+        "meddra_pt": "OFF LABEL USE",
+        "report_count": 755,
+        "pct_of_reports": 15.96
+      },
+      {
+        "meddra_pt": "PSORIATIC ARTHROPATHY",
+        "report_count": 751,
+        "pct_of_reports": 15.87
+      },
+      {
+        "meddra_pt": "ARTHRALGIA",
+        "report_count": 723,
+        "pct_of_reports": 15.28
+      },
+      {
+        "meddra_pt": "PSORIASIS",
+        "report_count": 643,
+        "pct_of_reports": 13.59
+      },
+      {
+        "meddra_pt": "FATIGUE",
+        "report_count": 642,
+        "pct_of_reports": 13.57
+      },
+      {
+        "meddra_pt": "CONDITION AGGRAVATED",
+        "report_count": 608,
+        "pct_of_reports": 12.85
+      },
+      {
+        "meddra_pt": "HEADACHE",
+        "report_count": 596,
+        "pct_of_reports": 12.6
+      },
+      {
+        "meddra_pt": "DRUG INTOLERANCE",
+        "report_count": 578,
+        "pct_of_reports": 12.22
+      },
+      {
+        "meddra_pt": "RASH",
+        "report_count": 575,
+        "pct_of_reports": 12.15
+      },
+      {
+        "meddra_pt": "JOINT SWELLING",
+        "report_count": 573,
+        "pct_of_reports": 12.11
+      },
+      {
+        "meddra_pt": "TREATMENT FAILURE",
+        "report_count": 567,
+        "pct_of_reports": 11.98
+      },
+      {
+        "meddra_pt": "MUSCULOSKELETAL STIFFNESS",
+        "report_count": 542,
+        "pct_of_reports": 11.46
+      },
+      {
+        "meddra_pt": "SYNOVITIS",
+        "report_count": 530,
+        "pct_of_reports": 11.2
+      }
+    ],
+    "reports_by_year": [
+      {
+        "year": 2013,
+        "report_count": 2
+      },
+      {
+        "year": 2014,
+        "report_count": 8
+      },
+      {
+        "year": 2015,
+        "report_count": 15
+      },
+      {
+        "year": 2016,
+        "report_count": 69
+      },
+      {
+        "year": 2017,
+        "report_count": 139
+      },
+      {
+        "year": 2018,
+        "report_count": 231
+      },
+      {
+        "year": 2019,
+        "report_count": 341
+      },
+      {
+        "year": 2020,
+        "report_count": 547
+      },
+      {
+        "year": 2021,
+        "report_count": 505
+      },
+      {
+        "year": 2022,
+        "report_count": 688
+      },
+      {
+        "year": 2023,
+        "report_count": 675
+      },
+      {
+        "year": 2024,
+        "report_count": 666
+      },
+      {
+        "year": 2025,
+        "report_count": 816
+      },
+      {
+        "year": 2026,
+        "report_count": 221
+      }
+    ],
+    "meddra_version": null
   },
-  "fetched_at": "2026-09-04T20:41:44Z",
-  "source": "openFDA drug/event.json (FAERS)",
-  "extracted_by": "fetch_faers.py (openfda drug/event.json, raw staging pass)"
+  "source_type": "openfda_faers",
+  "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"SECUKINUMAB\"&limit=1",
+  "source_excerpt": "openFDA drug/event.json aggregate: total_reports=4923, serious=4731, deaths=690",
+  "extracted_by": "fetch_faers.py (openfda drug/event.json, v2 pass)",
+  "reviewed_by": null,
+  "confidence": 1.0
 }

@@ -1,73 +1,211 @@
 {
-  "drug": "Ritlecitinib",
-  "total_report_count": 124,
-  "top_reactions": [
-    {
-      "term": "DRUG INEFFECTIVE",
-      "count": 20
+  "value": {
+    "query": {
+      "search_field": "patient.drug.medicinalproduct",
+      "search_term": "RITLECITINIB",
+      "receivedate_from": "2022-09-19",
+      "receivedate_to": "2026-05-27",
+      "api_urls": [
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"RITLECITINIB\"&limit=1",
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"RITLECITINIB\"+AND+serious:1&limit=1",
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"RITLECITINIB\"+AND+seriousnessdeath:1&limit=1",
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"RITLECITINIB\"+AND+seriousnesshospitalization:1&limit=1",
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"RITLECITINIB\"+AND+seriousnesslifethreatening:1&limit=1",
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"RITLECITINIB\"+AND+seriousnessdisabling:1&limit=1",
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"RITLECITINIB\"&count=patient.reaction.reactionmeddrapt.exact&limit=15",
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"RITLECITINIB\"+AND+serious:1&count=patient.reaction.reactionmeddrapt.exact&limit=15",
+        "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"RITLECITINIB\"&count=receivedate"
+      ],
+      "data_last_updated": "2026-07-30"
     },
-    {
-      "term": "OFF LABEL USE",
-      "count": 18
-    },
-    {
-      "term": "THERAPEUTIC PRODUCT EFFECT INCOMPLETE",
-      "count": 8
-    },
-    {
-      "term": "COLECTOMY",
-      "count": 7
-    },
-    {
-      "term": "CONDITION AGGRAVATED",
-      "count": 7
-    },
-    {
-      "term": "JEJUNECTOMY",
-      "count": 7
-    },
-    {
-      "term": "ALOPECIA",
-      "count": 6
-    },
-    {
-      "term": "THERAPEUTIC RESPONSE UNEXPECTED",
-      "count": 5
-    },
-    {
-      "term": "HEADACHE",
-      "count": 4
-    },
-    {
-      "term": "URTICARIA",
-      "count": 4
-    },
-    {
-      "term": "CHEST DISCOMFORT",
-      "count": 3
-    },
-    {
-      "term": "DIARRHOEA",
-      "count": 3
-    },
-    {
-      "term": "DRUG INEFFECTIVE FOR UNAPPROVED INDICATION",
-      "count": 3
-    },
-    {
-      "term": "SYNCOPE",
-      "count": 3
-    },
-    {
-      "term": "URINARY TRACT INFECTION",
-      "count": 3
-    }
-  ],
-  "query_urls": {
-    "total_report_count": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct%3A%22RITLECITINIB%22&limit=1",
-    "top_reactions": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct%3A%22RITLECITINIB%22&count=patient.reaction.reactionmeddrapt.exact&limit=15"
+    "total_reports": 124,
+    "serious_reports": 48,
+    "death_reports": 1,
+    "hospitalization_reports": 26,
+    "life_threatening_reports": 1,
+    "disability_reports": 0,
+    "top_reactions": [
+      {
+        "meddra_pt": "DRUG INEFFECTIVE",
+        "report_count": 20,
+        "pct_of_reports": 16.13
+      },
+      {
+        "meddra_pt": "OFF LABEL USE",
+        "report_count": 18,
+        "pct_of_reports": 14.52
+      },
+      {
+        "meddra_pt": "THERAPEUTIC PRODUCT EFFECT INCOMPLETE",
+        "report_count": 8,
+        "pct_of_reports": 6.45
+      },
+      {
+        "meddra_pt": "COLECTOMY",
+        "report_count": 7,
+        "pct_of_reports": 5.65
+      },
+      {
+        "meddra_pt": "CONDITION AGGRAVATED",
+        "report_count": 7,
+        "pct_of_reports": 5.65
+      },
+      {
+        "meddra_pt": "JEJUNECTOMY",
+        "report_count": 7,
+        "pct_of_reports": 5.65
+      },
+      {
+        "meddra_pt": "ALOPECIA",
+        "report_count": 6,
+        "pct_of_reports": 4.84
+      },
+      {
+        "meddra_pt": "THERAPEUTIC RESPONSE UNEXPECTED",
+        "report_count": 5,
+        "pct_of_reports": 4.03
+      },
+      {
+        "meddra_pt": "HEADACHE",
+        "report_count": 4,
+        "pct_of_reports": 3.23
+      },
+      {
+        "meddra_pt": "URTICARIA",
+        "report_count": 4,
+        "pct_of_reports": 3.23
+      },
+      {
+        "meddra_pt": "CHEST DISCOMFORT",
+        "report_count": 3,
+        "pct_of_reports": 2.42
+      },
+      {
+        "meddra_pt": "DIARRHOEA",
+        "report_count": 3,
+        "pct_of_reports": 2.42
+      },
+      {
+        "meddra_pt": "DRUG INEFFECTIVE FOR UNAPPROVED INDICATION",
+        "report_count": 3,
+        "pct_of_reports": 2.42
+      },
+      {
+        "meddra_pt": "SYNCOPE",
+        "report_count": 3,
+        "pct_of_reports": 2.42
+      },
+      {
+        "meddra_pt": "URINARY TRACT INFECTION",
+        "report_count": 3,
+        "pct_of_reports": 2.42
+      }
+    ],
+    "top_serious_reactions": [
+      {
+        "meddra_pt": "COLECTOMY",
+        "report_count": 7,
+        "pct_of_reports": 14.58
+      },
+      {
+        "meddra_pt": "DRUG INEFFECTIVE",
+        "report_count": 7,
+        "pct_of_reports": 14.58
+      },
+      {
+        "meddra_pt": "JEJUNECTOMY",
+        "report_count": 7,
+        "pct_of_reports": 14.58
+      },
+      {
+        "meddra_pt": "OFF LABEL USE",
+        "report_count": 3,
+        "pct_of_reports": 6.25
+      },
+      {
+        "meddra_pt": "SYNCOPE",
+        "report_count": 3,
+        "pct_of_reports": 6.25
+      },
+      {
+        "meddra_pt": "ABDOMINAL PAIN",
+        "report_count": 2,
+        "pct_of_reports": 4.17
+      },
+      {
+        "meddra_pt": "ABORTION SPONTANEOUS",
+        "report_count": 2,
+        "pct_of_reports": 4.17
+      },
+      {
+        "meddra_pt": "CHEST DISCOMFORT",
+        "report_count": 2,
+        "pct_of_reports": 4.17
+      },
+      {
+        "meddra_pt": "CONDITION AGGRAVATED",
+        "report_count": 2,
+        "pct_of_reports": 4.17
+      },
+      {
+        "meddra_pt": "DIARRHOEA",
+        "report_count": 2,
+        "pct_of_reports": 4.17
+      },
+      {
+        "meddra_pt": "INFECTION",
+        "report_count": 2,
+        "pct_of_reports": 4.17
+      },
+      {
+        "meddra_pt": "MATERNAL EXPOSURE DURING PREGNANCY",
+        "report_count": 2,
+        "pct_of_reports": 4.17
+      },
+      {
+        "meddra_pt": "PREGNANCY ON ORAL CONTRACEPTIVE",
+        "report_count": 2,
+        "pct_of_reports": 4.17
+      },
+      {
+        "meddra_pt": "ABDOMINAL PAIN UPPER",
+        "report_count": 1,
+        "pct_of_reports": 2.08
+      },
+      {
+        "meddra_pt": "ACNE FULMINANS",
+        "report_count": 1,
+        "pct_of_reports": 2.08
+      }
+    ],
+    "reports_by_year": [
+      {
+        "year": 2022,
+        "report_count": 1
+      },
+      {
+        "year": 2023,
+        "report_count": 11
+      },
+      {
+        "year": 2024,
+        "report_count": 50
+      },
+      {
+        "year": 2025,
+        "report_count": 47
+      },
+      {
+        "year": 2026,
+        "report_count": 15
+      }
+    ],
+    "meddra_version": null
   },
-  "fetched_at": "2026-09-04T20:41:50Z",
-  "source": "openFDA drug/event.json (FAERS)",
-  "extracted_by": "fetch_faers.py (openfda drug/event.json, raw staging pass)"
+  "source_type": "openfda_faers",
+  "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"RITLECITINIB\"&limit=1",
+  "source_excerpt": "openFDA drug/event.json aggregate: total_reports=124, serious=48, deaths=1",
+  "extracted_by": "fetch_faers.py (openfda drug/event.json, v2 pass)",
+  "reviewed_by": null,
+  "confidence": 1.0
 }
