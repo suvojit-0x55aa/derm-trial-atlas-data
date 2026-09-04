@@ -1,22 +1,706 @@
 {
-  "drug": "Upadacitinib",
-  "ingredient_matched": "UPADACITINIB",
-  "products": null,
-  "patents": null,
-  "exclusivity": null,
-  "status": "source_unreachable",
-  "attempted_sources": [
-    {
-      "url": "https://www.fda.gov/media/76860/download",
-      "method": "GET",
-      "result": "Akamai bot-detection redirect (302 -> /apology_objects/abuse-detection-apology.html) or a bare 404 from the AkamaiNetStorage origin -- observed both, inconsistently, across attempts in this session, with a realistic browser User-Agent and (separately) a primed cookie jar + Referer."
-    },
-    {
-      "url": "https://www.accessdata.fda.gov/scripts/cder/ob/search_product.cfm",
-      "method": "POST",
-      "result": "Returns an Akamai 'Challenge Validation' interstitial requiring a JS proof-of-work solve -- not executable by a stdlib HTTP client. A same-URL GET with identical query params returns HTTP 200 but byte-identical content regardless of the drugname parameter, meaning the actual search only runs via the protected POST path."
-    }
-  ],
-  "fetched_at": "2026-09-04T20:42:05Z",
-  "extracted_by": "fetch_orange_book.py (FDA Orange Book Data Files ZIP, raw staging pass)"
+  "value": {
+    "application_type": "N",
+    "application_number": "211675",
+    "ingredient": "UPADACITINIB",
+    "trade_name": "RINVOQ",
+    "applicant": "ABBVIE",
+    "applicant_full_name": "ABBVIE INC",
+    "products": [
+      {
+        "product_number": "001",
+        "strength": "15MG",
+        "dosage_form": "TABLET, EXTENDED RELEASE",
+        "route": "ORAL",
+        "approval_date": "2019-08-16",
+        "rld": true,
+        "rs": false,
+        "te_code": null,
+        "marketing_type": "HUMAN PRESCRIPTION DRUG"
+      },
+      {
+        "product_number": "002",
+        "strength": "30MG",
+        "dosage_form": "TABLET, EXTENDED RELEASE",
+        "route": "ORAL",
+        "approval_date": "2022-01-14",
+        "rld": true,
+        "rs": false,
+        "te_code": null,
+        "marketing_type": "HUMAN PRESCRIPTION DRUG"
+      },
+      {
+        "product_number": "003",
+        "strength": "45MG",
+        "dosage_form": "TABLET, EXTENDED RELEASE",
+        "route": "ORAL",
+        "approval_date": "2022-03-16",
+        "rld": true,
+        "rs": true,
+        "te_code": null,
+        "marketing_type": "HUMAN PRESCRIPTION DRUG"
+      }
+    ],
+    "patents": [
+      {
+        "patent_number": "8962629",
+        "expiration_date": "2031-01-15",
+        "drug_substance_claim": true,
+        "drug_product_claim": false,
+        "patent_use_code": "U-3624",
+        "delisted": false,
+        "submission_date": "2022-04-14",
+        "product_numbers": [
+          "003",
+          "002"
+        ]
+      },
+      {
+        "patent_number": "8962629",
+        "expiration_date": "2031-01-15",
+        "drug_substance_claim": true,
+        "drug_product_claim": false,
+        "patent_use_code": "U-3945",
+        "delisted": false,
+        "submission_date": "2019-09-13",
+        "product_numbers": [
+          "001"
+        ]
+      },
+      {
+        "patent_number": "RE47221",
+        "expiration_date": "2033-08-16",
+        "drug_substance_claim": true,
+        "drug_product_claim": false,
+        "patent_use_code": null,
+        "delisted": false,
+        "submission_date": "2022-04-14",
+        "product_numbers": [
+          "003",
+          "001",
+          "002"
+        ]
+      },
+      {
+        "patent_number": "10202393",
+        "expiration_date": "2036-10-17",
+        "drug_substance_claim": false,
+        "drug_product_claim": true,
+        "patent_use_code": null,
+        "delisted": false,
+        "submission_date": "2022-04-14",
+        "product_numbers": [
+          "003"
+        ]
+      },
+      {
+        "patent_number": "10344036",
+        "expiration_date": "2036-10-17",
+        "drug_substance_claim": false,
+        "drug_product_claim": true,
+        "patent_use_code": null,
+        "delisted": false,
+        "submission_date": "2022-02-10",
+        "product_numbers": [
+          "002"
+        ]
+      },
+      {
+        "patent_number": "10519164",
+        "expiration_date": "2036-10-17",
+        "drug_substance_claim": false,
+        "drug_product_claim": true,
+        "patent_use_code": null,
+        "delisted": false,
+        "submission_date": "2020-01-29",
+        "product_numbers": [
+          "001"
+        ]
+      },
+      {
+        "patent_number": "10550126",
+        "expiration_date": "2036-10-17",
+        "drug_substance_claim": false,
+        "drug_product_claim": false,
+        "patent_use_code": "U-3298",
+        "delisted": false,
+        "submission_date": "2022-02-10",
+        "product_numbers": [
+          "002"
+        ]
+      },
+      {
+        "patent_number": "10597400",
+        "expiration_date": "2036-10-17",
+        "drug_substance_claim": false,
+        "drug_product_claim": false,
+        "patent_use_code": "U-3255",
+        "delisted": false,
+        "submission_date": "2020-04-17",
+        "product_numbers": [
+          "001"
+        ]
+      },
+      {
+        "patent_number": "10730883",
+        "expiration_date": "2036-10-17",
+        "drug_substance_claim": false,
+        "drug_product_claim": true,
+        "patent_use_code": null,
+        "delisted": false,
+        "submission_date": "2022-02-10",
+        "product_numbers": [
+          "002"
+        ]
+      },
+      {
+        "patent_number": "10981923",
+        "expiration_date": "2036-10-17",
+        "drug_substance_claim": true,
+        "drug_product_claim": false,
+        "patent_use_code": null,
+        "delisted": false,
+        "submission_date": "2022-04-14",
+        "product_numbers": [
+          "003",
+          "001",
+          "002"
+        ]
+      },
+      {
+        "patent_number": "10981924",
+        "expiration_date": "2036-10-17",
+        "drug_substance_claim": false,
+        "drug_product_claim": true,
+        "patent_use_code": null,
+        "delisted": false,
+        "submission_date": "2021-05-18",
+        "product_numbers": [
+          "001",
+          "002"
+        ]
+      },
+      {
+        "patent_number": "10995095",
+        "expiration_date": "2036-10-17",
+        "drug_substance_claim": false,
+        "drug_product_claim": false,
+        "patent_use_code": "U-3298",
+        "delisted": false,
+        "submission_date": "2022-02-10",
+        "product_numbers": [
+          "001"
+        ]
+      },
+      {
+        "patent_number": "11186584",
+        "expiration_date": "2036-10-17",
+        "drug_substance_claim": true,
+        "drug_product_claim": false,
+        "patent_use_code": null,
+        "delisted": false,
+        "submission_date": "2022-04-14",
+        "product_numbers": [
+          "003",
+          "001",
+          "002"
+        ]
+      },
+      {
+        "patent_number": "11198697",
+        "expiration_date": "2036-10-17",
+        "drug_substance_claim": false,
+        "drug_product_claim": true,
+        "patent_use_code": null,
+        "delisted": false,
+        "submission_date": "2022-04-14",
+        "product_numbers": [
+          "003",
+          "001",
+          "002"
+        ]
+      },
+      {
+        "patent_number": "11365198",
+        "expiration_date": "2036-10-17",
+        "drug_substance_claim": false,
+        "drug_product_claim": false,
+        "patent_use_code": "U-3275",
+        "delisted": false,
+        "submission_date": "2022-07-20",
+        "product_numbers": [
+          "001"
+        ]
+      },
+      {
+        "patent_number": "11512092",
+        "expiration_date": "2036-10-17",
+        "drug_substance_claim": false,
+        "drug_product_claim": false,
+        "patent_use_code": "U-3371",
+        "delisted": false,
+        "submission_date": "2022-12-16",
+        "product_numbers": [
+          "001"
+        ]
+      },
+      {
+        "patent_number": "11524964",
+        "expiration_date": "2036-10-17",
+        "drug_substance_claim": false,
+        "drug_product_claim": false,
+        "patent_use_code": "U-3371",
+        "delisted": false,
+        "submission_date": "2023-01-12",
+        "product_numbers": [
+          "001"
+        ]
+      },
+      {
+        "patent_number": "11535624",
+        "expiration_date": "2036-10-17",
+        "drug_substance_claim": false,
+        "drug_product_claim": false,
+        "patent_use_code": "U-3255",
+        "delisted": false,
+        "submission_date": "2023-01-26",
+        "product_numbers": [
+          "001"
+        ]
+      },
+      {
+        "patent_number": "11535625",
+        "expiration_date": "2036-10-17",
+        "drug_substance_claim": false,
+        "drug_product_claim": false,
+        "patent_use_code": "U-3298",
+        "delisted": false,
+        "submission_date": "2023-01-26",
+        "product_numbers": [
+          "001"
+        ]
+      },
+      {
+        "patent_number": "11535626",
+        "expiration_date": "2036-10-17",
+        "drug_substance_claim": false,
+        "drug_product_claim": false,
+        "patent_use_code": "U-3298",
+        "delisted": false,
+        "submission_date": "2023-01-26",
+        "product_numbers": [
+          "002"
+        ]
+      },
+      {
+        "patent_number": "11661425",
+        "expiration_date": "2036-10-17",
+        "drug_substance_claim": true,
+        "drug_product_claim": true,
+        "patent_use_code": null,
+        "delisted": false,
+        "submission_date": "2023-06-29",
+        "product_numbers": [
+          "003",
+          "001",
+          "002"
+        ]
+      },
+      {
+        "patent_number": "11680069",
+        "expiration_date": "2036-10-17",
+        "drug_substance_claim": true,
+        "drug_product_claim": true,
+        "patent_use_code": null,
+        "delisted": false,
+        "submission_date": "2023-07-20",
+        "product_numbers": [
+          "003",
+          "001",
+          "002"
+        ]
+      },
+      {
+        "patent_number": "11718627",
+        "expiration_date": "2036-10-17",
+        "drug_substance_claim": true,
+        "drug_product_claim": true,
+        "patent_use_code": null,
+        "delisted": false,
+        "submission_date": "2023-08-11",
+        "product_numbers": [
+          "003",
+          "001",
+          "002"
+        ]
+      },
+      {
+        "patent_number": "11767326",
+        "expiration_date": "2036-10-17",
+        "drug_substance_claim": false,
+        "drug_product_claim": false,
+        "patent_use_code": "U-3298",
+        "delisted": false,
+        "submission_date": "2023-10-23",
+        "product_numbers": [
+          "001",
+          "002"
+        ]
+      },
+      {
+        "patent_number": "11773105",
+        "expiration_date": "2036-10-17",
+        "drug_substance_claim": true,
+        "drug_product_claim": true,
+        "patent_use_code": null,
+        "delisted": false,
+        "submission_date": "2023-11-02",
+        "product_numbers": [
+          "003",
+          "001",
+          "002"
+        ]
+      },
+      {
+        "patent_number": "11773106",
+        "expiration_date": "2036-10-17",
+        "drug_substance_claim": false,
+        "drug_product_claim": false,
+        "patent_use_code": "U-3371",
+        "delisted": false,
+        "submission_date": "2023-11-02",
+        "product_numbers": [
+          "001"
+        ]
+      },
+      {
+        "patent_number": "11780847",
+        "expiration_date": "2036-10-17",
+        "drug_substance_claim": false,
+        "drug_product_claim": true,
+        "patent_use_code": null,
+        "delisted": false,
+        "submission_date": "2023-11-08",
+        "product_numbers": [
+          "001"
+        ]
+      },
+      {
+        "patent_number": "11780848",
+        "expiration_date": "2036-10-17",
+        "drug_substance_claim": false,
+        "drug_product_claim": false,
+        "patent_use_code": "U-3371",
+        "delisted": false,
+        "submission_date": "2023-11-08",
+        "product_numbers": [
+          "001"
+        ]
+      },
+      {
+        "patent_number": "11787815",
+        "expiration_date": "2036-10-17",
+        "drug_substance_claim": false,
+        "drug_product_claim": true,
+        "patent_use_code": null,
+        "delisted": false,
+        "submission_date": "2023-11-08",
+        "product_numbers": [
+          "001"
+        ]
+      },
+      {
+        "patent_number": "11795175",
+        "expiration_date": "2036-10-17",
+        "drug_substance_claim": false,
+        "drug_product_claim": false,
+        "patent_use_code": "U-3255",
+        "delisted": false,
+        "submission_date": "2023-11-22",
+        "product_numbers": [
+          "001"
+        ]
+      },
+      {
+        "patent_number": "11976077",
+        "expiration_date": "2036-10-17",
+        "drug_substance_claim": false,
+        "drug_product_claim": false,
+        "patent_use_code": "U-3298",
+        "delisted": false,
+        "submission_date": "2024-06-05",
+        "product_numbers": [
+          "001"
+        ]
+      },
+      {
+        "patent_number": "11993605",
+        "expiration_date": "2036-10-17",
+        "drug_substance_claim": false,
+        "drug_product_claim": false,
+        "patent_use_code": "U-3946",
+        "delisted": false,
+        "submission_date": "2024-06-26",
+        "product_numbers": [
+          "001"
+        ]
+      },
+      {
+        "patent_number": "11993606",
+        "expiration_date": "2036-10-17",
+        "drug_substance_claim": false,
+        "drug_product_claim": false,
+        "patent_use_code": "U-3487",
+        "delisted": false,
+        "submission_date": "2024-06-26",
+        "product_numbers": [
+          "001"
+        ]
+      },
+      {
+        "patent_number": "12077545",
+        "expiration_date": "2036-10-17",
+        "drug_substance_claim": false,
+        "drug_product_claim": true,
+        "patent_use_code": null,
+        "delisted": false,
+        "submission_date": "2024-09-27",
+        "product_numbers": [
+          "003",
+          "001",
+          "002"
+        ]
+      },
+      {
+        "patent_number": "12091415",
+        "expiration_date": "2036-10-17",
+        "drug_substance_claim": false,
+        "drug_product_claim": true,
+        "patent_use_code": null,
+        "delisted": false,
+        "submission_date": "2024-10-16",
+        "product_numbers": [
+          "002"
+        ]
+      },
+      {
+        "patent_number": "12103933",
+        "expiration_date": "2036-10-17",
+        "drug_substance_claim": false,
+        "drug_product_claim": true,
+        "patent_use_code": null,
+        "delisted": false,
+        "submission_date": "2024-10-31",
+        "product_numbers": [
+          "001"
+        ]
+      },
+      {
+        "patent_number": "12110297",
+        "expiration_date": "2036-10-17",
+        "drug_substance_claim": false,
+        "drug_product_claim": true,
+        "patent_use_code": null,
+        "delisted": false,
+        "submission_date": "2024-11-05",
+        "product_numbers": [
+          "001"
+        ]
+      },
+      {
+        "patent_number": "12110298",
+        "expiration_date": "2036-10-17",
+        "drug_substance_claim": true,
+        "drug_product_claim": true,
+        "patent_use_code": null,
+        "delisted": false,
+        "submission_date": "2024-11-05",
+        "product_numbers": [
+          "003",
+          "001",
+          "002"
+        ]
+      },
+      {
+        "patent_number": "12116373",
+        "expiration_date": "2036-10-17",
+        "drug_substance_claim": false,
+        "drug_product_claim": true,
+        "patent_use_code": null,
+        "delisted": false,
+        "submission_date": "2024-11-05",
+        "product_numbers": [
+          "002"
+        ]
+      },
+      {
+        "patent_number": "12134621",
+        "expiration_date": "2036-10-17",
+        "drug_substance_claim": false,
+        "drug_product_claim": true,
+        "patent_use_code": null,
+        "delisted": false,
+        "submission_date": "2024-12-04",
+        "product_numbers": [
+          "003"
+        ]
+      },
+      {
+        "patent_number": "12365689",
+        "expiration_date": "2036-10-17",
+        "drug_substance_claim": false,
+        "drug_product_claim": false,
+        "patent_use_code": "U-3945",
+        "delisted": false,
+        "submission_date": "2025-08-20",
+        "product_numbers": [
+          "001"
+        ]
+      },
+      {
+        "patent_number": "12570664",
+        "expiration_date": "2036-10-17",
+        "drug_substance_claim": false,
+        "drug_product_claim": false,
+        "patent_use_code": "U-4454",
+        "delisted": false,
+        "submission_date": "2026-04-08",
+        "product_numbers": [
+          "001"
+        ]
+      },
+      {
+        "patent_number": "9951080",
+        "expiration_date": "2036-10-17",
+        "drug_substance_claim": true,
+        "drug_product_claim": true,
+        "patent_use_code": null,
+        "delisted": false,
+        "submission_date": "2022-04-14",
+        "product_numbers": [
+          "003",
+          "001",
+          "002"
+        ]
+      },
+      {
+        "patent_number": "9963459",
+        "expiration_date": "2036-10-17",
+        "drug_substance_claim": false,
+        "drug_product_claim": true,
+        "patent_use_code": null,
+        "delisted": false,
+        "submission_date": "2019-09-13",
+        "product_numbers": [
+          "001"
+        ]
+      },
+      {
+        "patent_number": "11564922",
+        "expiration_date": "2038-03-09",
+        "drug_substance_claim": false,
+        "drug_product_claim": false,
+        "patent_use_code": "U-4303",
+        "delisted": false,
+        "submission_date": "2023-06-15",
+        "product_numbers": [
+          "003",
+          "001"
+        ]
+      },
+      {
+        "patent_number": "11564922",
+        "expiration_date": "2038-03-09",
+        "drug_substance_claim": false,
+        "drug_product_claim": false,
+        "patent_use_code": "U-3624",
+        "delisted": false,
+        "submission_date": "2023-08-11",
+        "product_numbers": [
+          "002"
+        ]
+      },
+      {
+        "patent_number": "11607411",
+        "expiration_date": "2038-03-09",
+        "drug_substance_claim": false,
+        "drug_product_claim": false,
+        "patent_use_code": "U-3341",
+        "delisted": false,
+        "submission_date": "2023-04-18",
+        "product_numbers": [
+          "003",
+          "001",
+          "002"
+        ]
+      }
+    ],
+    "exclusivities": [
+      {
+        "code": "I-919",
+        "expiration_date": "2026-05-18",
+        "product_numbers": [
+          "003",
+          "001",
+          "002"
+        ]
+      },
+      {
+        "code": "I-946",
+        "expiration_date": "2027-04-26",
+        "product_numbers": [
+          "003",
+          "001",
+          "002"
+        ]
+      },
+      {
+        "code": "NP",
+        "expiration_date": "2027-04-26",
+        "product_numbers": [
+          "001"
+        ]
+      },
+      {
+        "code": "NPP",
+        "expiration_date": "2027-04-26",
+        "product_numbers": [
+          "003",
+          "001",
+          "002"
+        ]
+      },
+      {
+        "code": "I-966",
+        "expiration_date": "2028-04-28",
+        "product_numbers": [
+          "001"
+        ]
+      },
+      {
+        "code": "ODE-481",
+        "expiration_date": "2031-04-26",
+        "product_numbers": [
+          "003",
+          "001",
+          "002"
+        ]
+      },
+      {
+        "code": "ODE-538",
+        "expiration_date": "2032-04-28",
+        "product_numbers": [
+          "001"
+        ]
+      }
+    ],
+    "latest_patent_expiration": "2038-03-09",
+    "latest_exclusivity_expiration": "2032-04-28",
+    "data_file_date": null
+  },
+  "source_type": "orange_book",
+  "source_url": "https://api.fda.gov/drug/orangebook.json?search=products.active_ingredients.name%3A%22UPADACITINIB%22&limit=100",
+  "source_excerpt": "openFDA drug/orangebook.json, 4 product row(s) matched on products.active_ingredients.name='UPADACITINIB'",
+  "extracted_by": "fetch_orange_book.py (openfda drug/orangebook.json, v2 pass)",
+  "fetched_at": "2026-09-04T21:10:41Z"
 }

@@ -24,25 +24,42 @@ page containing every product row in one <table>, confirmed by grepping it
 for "Dupilumab"/"Ebglyss"/"Adbry" and finding real matches) -- so this
 script downloads and parses that page's table instead of a CSV.
 
-For the 3 biologic drugs in this atlas -- Dupilumab (Dupixent), Lebrikizumab
-(Ebglyss), Tralokinumab (Adbry) -- matches every product row whose
-Proprietary Name or Proper Name contains the drug/brand name, and stages the
-full row (BLA number, exclusivity expiration dates, biosimilar-interchangeable
-status columns, etc. -- whatever real columns the table has) rather than
-picking out fields in advance, since the final trial-JSON schema for this
-data is being redesigned in a sibling task.
+For the 10 biologics in this atlas, matches every product row whose
+Proprietary Name or Proper Name contains the drug/brand name (originator
+AND every biosimilar/interchangeable sharing that INN -- e.g. adalimumab
+alone has 10 biosimilar BLAs on file), then builds the schema v2
+`exclusivity.purple_book` value directly (atlas/schema.py::PURPLE_BOOK):
+the 351(a) reference-product row is the primary record, every 351(k) row
+sharing its INN becomes one entry in its `biosimilars` list -- picking
+`rows[0]` blindly (an earlier version of this script's ad-hoc inspection
+did) would have surfaced e.g. "Abrilada" (a Pfizer adalimumab biosimilar)
+as if it were Humira; confirmed by listing every matched adalimumab row's
+License Type and cross-checking against the real Humira BLA (125057).
+
+This script's column names come from purplebooksearch.fda.gov's live
+search-results table specifically, NOT its monthly CSV download -- the two
+use different header spellings for the same concepts (this table:
+"First Inter. Excl. Exp. Date", "Ref. Product Excl. Exp. Date"; the CSV:
+the fully-spelled-out versions) and the live table spells out month names
+in dates ("March 28, 2017") where the CSV abbreviates them ("28-Mar-17") --
+confirmed on real rows for Humira/Cosentyx. `atlas.scalars.parse_us_date`
+was extended to accept both forms rather than writing a second date parser.
 
 Run:
     python3 scripts/fetch_purple_book.py
 """
 import json
 import re
+import sys
 import time
 import urllib.request
 from html import unescape
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(ROOT))
+from atlas.scalars import parse_us_date  # noqa: E402
+
 CACHE_DIR = ROOT / "data" / "_raw_cache" / "purple_book"  # gitignored working cache
 STAGING_DIR = ROOT / "data" / "_raw_staging" / "purple_book"
 CACHE_DIR.mkdir(parents=True, exist_ok=True)
@@ -112,35 +129,132 @@ def matches_drug(row: dict, proper_fragment: str, brand: str) -> bool:
     return proper_fragment.lower() in proper or brand.lower() == proprietary
 
 
+def _blank(v):
+    v = (v or "").strip()
+    return None if v in ("", "-") else v
+
+
+def build_purple_book_value(matched: list) -> dict:
+    """matched: every row (reference product + every biosimilar sharing its
+    INN) already filtered to one drug by matches_drug(). Splits reference
+    (351(a)) from biosimilars (351(k)) and builds the schema PURPLE_BOOK shape."""
+    reference_rows = [r for r in matched if r.get("License Type", "").startswith("351(a)")]
+    if not reference_rows:
+        raise ValueError("no 351(a) reference-product row among matched rows -- only biosimilars found")
+    bla_number = reference_rows[0]["BLA Number"]
+    ref_rows = [r for r in reference_rows if r["BLA Number"] == bla_number]
+    first = ref_rows[0]
+
+    products = []
+    for r in sorted(ref_rows, key=lambda x: x.get("Product Number", "")):
+        products.append({
+            "product_number": _blank(r.get("Product Number")),
+            "strength": _blank(r.get("Strength")),
+            "dosage_form": _blank(r.get("Dosage Form")),
+            "route": _blank(r.get("Route of Administration")),
+            "presentation": _blank(r.get("Product Presentation")),
+            "marketing_status": _blank(r.get("Marketing Status")),
+            "licensure": _blank(r.get("Licensure")),
+            "approval_date": parse_us_date(_blank(r.get("Approval Date"))),
+            "submission_type": _blank(r.get("Submission Type")),
+            "supplement_number": _blank(r.get("Supplement Number")),
+        })
+    dates = [p["approval_date"] for p in products if p["approval_date"]]
+
+    def first_nonblank(col):
+        for r in ref_rows:
+            v = _blank(r.get(col))
+            if v:
+                return v
+        return None
+
+    biosimilars = []
+    for r in matched:
+        if r.get("License Type", "").startswith("351(k)"):
+            key = r["BLA Number"]
+            if not any(b["bla_number"] == key for b in biosimilars):
+                biosimilars.append({
+                    "proper_name": r["Proper Name"],
+                    "proprietary_name": _blank(r.get("Proprietary Name")),
+                    "bla_number": key,
+                    "applicant": _blank(r.get("Applicant")),
+                    "approval_date": parse_us_date(_blank(r.get("Approval Date"))),
+                    "license_type": "351(k)",
+                    "interchangeable_approval_date": parse_us_date(_blank(r.get("Inter. Approval Date"))),
+                })
+
+    patent_flag = first_nonblank("Patent List Provided")
+    return {
+        "bla_number": bla_number,
+        "proprietary_name": _blank(first.get("Proprietary Name")),
+        "proper_name": first["Proper Name"],
+        "applicant": _blank(first.get("Applicant")),
+        "license_type": "351(a)",
+        "license_number": _blank(first.get("License Number")),
+        "center": _blank(first.get("Center")),
+        "products": products,
+        "first_approval_date": min(dates) if dates else None,
+        "date_of_first_licensure": parse_us_date(first_nonblank("Date of First Licensure")),
+        "reference_product_exclusivity_expiration": parse_us_date(first_nonblank("Ref. Product Excl. Exp. Date")),
+        "exclusivity_expiration_date": parse_us_date(first_nonblank("Exclusivity Expiration Date")),
+        "first_interchangeable_exclusivity_expiration": parse_us_date(first_nonblank("First Inter. Excl. Exp. Date")),
+        "orphan_exclusivity_expiration": parse_us_date(first_nonblank("Orphan Exclusivity Expiration Date")),
+        "patent_list_provided": patent_flag.upper().startswith("Y") if patent_flag else None,
+        "biosimilars": sorted(biosimilars, key=lambda b: b["bla_number"]),
+        "data_file_month": None,  # the live search table doesn't expose a release-month field
+    }
+
+
 def main():
     html = fetch_search_page()
     all_rows = parse_table(html)
     print(f"Parsed {len(all_rows)} total rows from the Purple Book search table")
 
+    staged = 0
     for drug, (proper_fragment, brand) in DRUGS.items():
         print(f"Purple Book: {drug} ({brand})...")
         matched = [r for r in all_rows if matches_drug(r, proper_fragment, brand)]
-
-        record = {
-            "drug": drug,
-            "brand_name": brand,
-            "matched_row_count": len(matched),
-            "rows": matched,
-            "query_url": SEARCH_URL,
-            "fetched_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
-            "source": "purplebooksearch.fda.gov live search table (full current database, server-rendered)",
-            "extracted_by": EXTRACTED_BY,
-        }
+        fetched_at = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
 
         if not matched:
+            record = {
+                "value": None, "source_type": "needs_extraction",
+                "source_url": SEARCH_URL,
+                "source_excerpt": f"no rows matched proper/proprietary name for {drug} ({brand})",
+                "extracted_by": EXTRACTED_BY, "reviewed_by": None, "confidence": None,
+            }
             print(f"  no rows matched for {drug} (real finding, not an error)")
         else:
-            print(f"  matched {len(matched)} row(s)")
+            try:
+                value = build_purple_book_value(matched)
+            except ValueError as e:
+                record = {
+                    "value": None, "source_type": "needs_extraction",
+                    "source_url": SEARCH_URL,
+                    "source_excerpt": f"{drug}: {e}",
+                    "extracted_by": EXTRACTED_BY, "reviewed_by": None, "confidence": None,
+                }
+                print(f"  FAILED to build record: {e}")
+            else:
+                record = {
+                    "value": value,
+                    "source_type": "purple_book",
+                    "source_url": SEARCH_URL,
+                    "source_excerpt": (
+                        f"purplebooksearch.fda.gov live search table, BLA {value['bla_number']} "
+                        f"({value['proprietary_name']}), {len(value['biosimilars'])} biosimilar(s) on file"
+                    ),
+                    "extracted_by": EXTRACTED_BY,
+                    "fetched_at": fetched_at,
+                }
+                print(f"  BLA {value['bla_number']} ({value['proprietary_name']}): "
+                      f"{len(value['products'])} product(s), {len(value['biosimilars'])} biosimilar(s)")
 
         out_path = STAGING_DIR / f"{drug.lower()}.json"
         out_path.write_text(json.dumps(record, indent=2) + "\n")
+        staged += 1
 
-    print(f"Staged {len(DRUGS)} Purple Book files to {STAGING_DIR}")
+    print(f"Staged {staged} Purple Book files to {STAGING_DIR}")
 
 
 if __name__ == "__main__":

@@ -1,52 +1,29 @@
 #!/usr/bin/env python3
 """
-Raw-data staging pass: FDA Orange Book (small-molecule NDA patent/exclusivity
-data) for Abrocitinib (Cibinqo) and Upadacitinib (Rinvoq).
+FDA Orange Book (small-molecule NDA patent/exclusivity data) via openFDA's
+`drug/orangebook.json` endpoint -- a real, script-friendly mirror of the
+Orange Book dataset (confirmed live, 48664+ total records) that sits on
+`api.fda.gov`, not on `fda.gov`/`accessdata.fda.gov` -- and is NOT behind
+the Akamai bot-detection that blocks both of those directly (see git log
+for the prior version of this script, which documents that block in
+detail; it was real and reproducible, this endpoint is a different host
+entirely).
 
-*** STATUS: both real FDA routes to this data are blocked for an automated
-*** stdlib script. See "What was tried" below. This script makes the real
-*** attempt every run, and stages an honest source_unreachable finding
-*** (never fabricated data) when it fails, so a future run automatically
-*** picks up real data the moment either route reopens.
+Output is staged directly in the schema v2 `exclusivity.orange_book` value
+shape (atlas/schema.py::ORANGE_BOOK on the fm/derm-trial-atlas-schema-
+ontology branch) so a later integration pass is a straight copy into the
+sourced-value envelope, not a second transformation.
 
-What the data is and where it should come from: the Orange Book Data Files
-page (https://www.fda.gov/drugs/drug-approvals-and-databases/orange-book-data-files)
-links a ZIP ("Orange Book Data Files (compressed .zip file)") containing
-products.txt / patent.txt / exclusivity.txt, tilde-delimited, joined on
-Appl_No. As of this run that link resolves to
-https://www.fda.gov/media/76860/download (confirmed live via a fetch of the
-Data Files page's current HTML, and independently via FDA's own
-"Orange Book Data File Download Instructions" PDF at
-https://www.accessdata.fda.gov/drugsatfda_docs/ob/OrangeBookDataFileDownloadInstructions.pdf,
-which shows the same product/patent/exclusivity file layout).
-
-What was tried (this session, all with a realistic browser User-Agent):
-  1. GET https://www.fda.gov/media/76860/download -- Akamai's edge
-     (server: AkamaiGHost) returns a 302 to /apology_objects/abuse-detection-apology.html
-     ("bot detection"); following it (or hitting the AkamaiNetStorage origin
-     directly) returns a bare 404. Same result with a fresh cookie jar primed
-     by first loading the referring Data Files page (that GET itself
-     sometimes gets the same bot-detection redirect, sometimes a 404 --
-     consistent with adaptive/behavioral bot mitigation, not a one-off).
-  2. GET https://www.fda.gov/drugs/drug-approvals-and-databases/orange-book-data-files
-     directly -- same Akamai bot-detection redirect.
-  3. The live Orange Book *query* tool at accessdata.fda.gov (a different,
-     non-Akamai-blocked host -- reachable for GET requests to static pages)
-     turned out to still be gated: POST to
-     https://www.accessdata.fda.gov/scripts/cder/ob/search_product.cfm
-     (the tool's real search form) returns an Akamai "Challenge Validation"
-     page requiring a JS proof-of-work solve, not executable by a plain HTTP
-     client. A same-URL GET with the same query params returns HTTP 200 but
-     with byte-identical content regardless of the drugname param, meaning
-     the search is only executed client-side / via the POST path, not GET.
-
-Net result: there is no route to real Orange Book product/patent/exclusivity
-rows for Abrocitinib or Upadacitinib available to an unattended, dependency-
-free script right now. This is a genuine, reproducible block (Akamai bot/
-challenge protection), not a missed detail -- re-verify by re-running this
-script, which repeats attempt #1 for real every time and will pick up real
-data automatically once/if that link becomes reachable to non-browser
-clients again.
+openFDA quirk worth documenting: each "result" is one PRODUCT row (one
+per strength/dosage form under the application), each carrying the FULL
+patents[]/exclusivity[] list for its application (i.e. the same set
+repeated on every product row of that application) -- there is no
+separate per-product patent/exclusivity join in this API shape the way
+there is in the raw products.txt/patent.txt/exclusivity.txt files. This
+script dedupes the repeated patent/exclusivity rows down to one entry per
+(patent_number, patent_use_code) / (exclusivity_code, expiration_date),
+collecting every product_number they were seen attached to -- reproducing
+the same shape the raw tilde-files would give, from a different real API.
 
 Run:
     python3 scripts/fetch_orange_book.py
@@ -54,22 +31,16 @@ Run:
 import json
 import time
 import urllib.error
+import urllib.parse
 import urllib.request
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-CACHE_DIR = ROOT / "data" / "_raw_cache" / "orange_book"  # gitignored working cache
 STAGING_DIR = ROOT / "data" / "_raw_staging" / "orange_book"
-CACHE_DIR.mkdir(parents=True, exist_ok=True)
 STAGING_DIR.mkdir(parents=True, exist_ok=True)
 
-# Verified current as of this run by fetching the live Orange Book Data
-# Files page and reading its "Orange Book Data Files (compressed .zip file)"
-# link -- see module docstring. FDA has changed this media ID before, so if
-# this 404s cleanly (not the Akamai bot-detection redirect) that's the first
-# thing to re-check.
-ZIP_URL = "https://www.fda.gov/media/76860/download"
-EXTRACTED_BY = "fetch_orange_book.py (FDA Orange Book Data Files ZIP, raw staging pass)"
+OPENFDA_ORANGEBOOK = "https://api.fda.gov/drug/orangebook.json"
+EXTRACTED_BY = "fetch_orange_book.py (openfda drug/orangebook.json, v2 pass)"
 
 DRUGS = {
     # Atopic Dermatitis (small-molecule NDAs)
@@ -84,136 +55,124 @@ DRUGS = {
 }
 
 
-def download_zip() -> Path | None:
-    """Try the real download. Returns the cached zip path on success, None
-    on failure (after printing the exact error, per the task's instruction
-    not to fabricate a substitute)."""
-    cache = CACHE_DIR / "orange_book_data_files.zip"
-    if cache.exists() and cache.stat().st_size > 0:
-        return cache
-
-    req = urllib.request.Request(
-        ZIP_URL,
-        headers={
-            "User-Agent": (
-                "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
-                "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
-            ),
-            "Accept": "application/zip,*/*",
-        },
-    )
+def _get_json(url: str) -> dict | None:
     try:
-        with urllib.request.urlopen(req, timeout=60) as resp:
-            data = resp.read()
+        with urllib.request.urlopen(url, timeout=30) as resp:
+            return json.load(resp)
     except urllib.error.HTTPError as e:
-        print(f"  FAILED: HTTP {e.code} {e.reason} fetching {ZIP_URL}")
-        try:
-            print(f"  response body: {e.read()[:200]!r}")
-        except Exception:
-            pass
+        if e.code == 404:
+            return None  # openFDA's genuine "no matches" response
+        raise
+
+
+def _iso_date(yyyymmdd):
+    if not yyyymmdd or len(yyyymmdd) != 8:
         return None
-    except urllib.error.URLError as e:
-        print(f"  FAILED: {e.reason} fetching {ZIP_URL}")
-        return None
-
-    cache.write_bytes(data)
-    return cache
+    return f"{yyyymmdd[0:4]}-{yyyymmdd[4:6]}-{yyyymmdd[6:8]}"
 
 
-def parse_and_stage(zip_path: Path):
-    import io
-    import zipfile
+def build_record(ingredient: str, results: list) -> dict:
+    products = []
+    seen_products = set()
+    patents = {}
+    exclusivities = {}
+    for r in results:
+        p = r["products"][0]
+        pn = r.get("product_number") or p.get("product_number")
+        if pn not in seen_products:
+            seen_products.add(pn)
+            products.append({
+                "product_number": pn,
+                "strength": p["active_ingredients"][0].get("strength"),
+                "dosage_form": p.get("dosage_form"),
+                "route": p.get("route"),
+                "approval_date": _iso_date(r.get("approval_date")),
+                "rld": bool(p.get("reference_listed_drug")),
+                "rs": bool(p.get("reference_standard")),
+                "te_code": p.get("te_code"),
+                "marketing_type": p.get("marketing_status"),
+            })
+        for pat in r.get("patents", []):
+            key = (pat.get("patent_number"), pat.get("patent_use_code"))
+            entry = patents.setdefault(key, {
+                "patent_number": pat.get("patent_number"),
+                "expiration_date": _iso_date(pat.get("expiration_date")),
+                "drug_substance_claim": bool(pat.get("drug_substance_flag")),
+                "drug_product_claim": bool(pat.get("drug_product_flag")),
+                "patent_use_code": pat.get("patent_use_code"),
+                "delisted": bool(pat.get("delisted_flag", False)),
+                "submission_date": _iso_date(pat.get("patent_submission_date")),
+                "product_numbers": [],
+            })
+            if pn not in entry["product_numbers"]:
+                entry["product_numbers"].append(pn)
+        for exc in r.get("exclusivity", []):
+            key = (exc.get("exclusivity_code"), exc.get("exclusivity_expiration_date"))
+            entry = exclusivities.setdefault(key, {
+                "code": exc.get("exclusivity_code"),
+                "expiration_date": _iso_date(exc.get("exclusivity_expiration_date")),
+                "product_numbers": [],
+            })
+            if pn not in entry["product_numbers"]:
+                entry["product_numbers"].append(pn)
 
-    with zipfile.ZipFile(zip_path) as zf:
-        products = zf.read("products.txt").decode("latin-1").splitlines()
-        patents = zf.read("patent.txt").decode("latin-1").splitlines()
-        exclusivity = zf.read("exclusivity.txt").decode("latin-1").splitlines()
-
-    def parse_tilde(lines):
-        header = lines[0].split("~")
-        return [dict(zip(header, line.split("~"))) for line in lines[1:] if line.strip()]
-
-    product_rows = parse_tilde(products)
-    patent_rows = parse_tilde(patents)
-    exclusivity_rows = parse_tilde(exclusivity)
-
-    for drug, ingredient in DRUGS.items():
-        print(f"Orange Book: {drug}...")
-        matched_products = [r for r in product_rows if r.get("Ingredient", "").upper() == ingredient]
-        appl_nos = {r.get("Appl_No") for r in matched_products}
-        matched_patents = [r for r in patent_rows if r.get("Appl_No") in appl_nos]
-        matched_exclusivity = [r for r in exclusivity_rows if r.get("Appl_No") in appl_nos]
-
-        record = {
-            "drug": drug,
-            "ingredient_matched": ingredient,
-            "products": matched_products,
-            "patents": matched_patents,
-            "exclusivity": matched_exclusivity,
-            "query_source": ZIP_URL,
-            "fetched_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
-            "source": "FDA Orange Book Data Files ZIP (products.txt/patent.txt/exclusivity.txt)",
-            "extracted_by": EXTRACTED_BY,
-        }
-        (STAGING_DIR / f"{drug.lower()}.json").write_text(json.dumps(record, indent=2) + "\n")
-        print(f"  matched {len(matched_products)} product row(s), {len(matched_patents)} patent row(s), "
-              f"{len(matched_exclusivity)} exclusivity row(s)")
-
-
-def stage_unreachable():
-    """No fabricated substitute -- record the real, reproducible block so
-    the sibling schema task (and any human reviewing this) sees exactly
-    what was tried and why it failed, per source, with no invented data."""
-    for drug, ingredient in DRUGS.items():
-        record = {
-            "drug": drug,
-            "ingredient_matched": ingredient,
-            "products": None,
-            "patents": None,
-            "exclusivity": None,
-            "status": "source_unreachable",
-            "attempted_sources": [
-                {
-                    "url": ZIP_URL,
-                    "method": "GET",
-                    "result": (
-                        "Akamai bot-detection redirect (302 -> "
-                        "/apology_objects/abuse-detection-apology.html) or a bare 404 "
-                        "from the AkamaiNetStorage origin -- observed both, inconsistently, "
-                        "across attempts in this session, with a realistic browser "
-                        "User-Agent and (separately) a primed cookie jar + Referer."
-                    ),
-                },
-                {
-                    "url": "https://www.accessdata.fda.gov/scripts/cder/ob/search_product.cfm",
-                    "method": "POST",
-                    "result": (
-                        "Returns an Akamai 'Challenge Validation' interstitial requiring a "
-                        "JS proof-of-work solve -- not executable by a stdlib HTTP client. "
-                        "A same-URL GET with identical query params returns HTTP 200 but "
-                        "byte-identical content regardless of the drugname parameter, "
-                        "meaning the actual search only runs via the protected POST path."
-                    ),
-                },
-            ],
-            "fetched_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
-            "extracted_by": EXTRACTED_BY,
-        }
-        (STAGING_DIR / f"{drug.lower()}.json").write_text(json.dumps(record, indent=2) + "\n")
-    print(f"Staged {len(DRUGS)} Orange Book 'source_unreachable' findings to {STAGING_DIR}")
+    first_product = results[0]["products"][0]
+    out_patents = sorted(patents.values(), key=lambda p: (p["expiration_date"] or "", p["patent_number"]))
+    out_excl = sorted(exclusivities.values(), key=lambda e: (e["expiration_date"] or "", e["code"]))
+    return {
+        "application_type": first_product.get("application_type"),
+        "application_number": first_product.get("application_number"),
+        "ingredient": ingredient,
+        "trade_name": first_product.get("brand_name"),
+        "applicant": first_product.get("application_name"),
+        "applicant_full_name": first_product.get("application_full_name"),
+        "products": sorted(products, key=lambda p: p["product_number"] or ""),
+        "patents": out_patents,
+        "exclusivities": out_excl,
+        "latest_patent_expiration": max((p["expiration_date"] for p in out_patents if p["expiration_date"]), default=None),
+        "latest_exclusivity_expiration": max((e["expiration_date"] for e in out_excl if e["expiration_date"]), default=None),
+        "data_file_date": None,  # openFDA's orangebook.json doesn't expose the source file's release month
+    }
 
 
 def main():
-    print(f"Attempting real download: {ZIP_URL}")
-    zip_path = download_zip()
-    if zip_path is None:
-        print("Real Orange Book ZIP download failed (see error above). "
-              "Also tried the accessdata.fda.gov query tool -- also blocked "
-              "(see module docstring). Staging an honest unreachable finding, "
-              "not fabricated data.")
-        stage_unreachable()
-        return
-    parse_and_stage(zip_path)
+    staged = 0
+    for drug, ingredient in DRUGS.items():
+        print(f"Orange Book (openFDA): {drug}...")
+        q = urllib.parse.quote(f'products.active_ingredients.name:"{ingredient}"')
+        url = f"{OPENFDA_ORANGEBOOK}?search={q}&limit=100"
+        data = _get_json(url)
+        if not data or not data.get("results"):
+            print(f"  NOT FOUND for {ingredient} -- staging genuine unreachable finding")
+            record = {
+                "status": "source_unreachable",
+                "ingredient_matched": ingredient,
+                "attempted_sources": [{
+                    "url": url, "method": "GET",
+                    "result": "openFDA drug/orangebook.json returned no matches for this ingredient name.",
+                }],
+                "fetched_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+                "extracted_by": EXTRACTED_BY,
+            }
+        else:
+            value = build_record(ingredient, data["results"])
+            record = {
+                "value": value,
+                "source_type": "orange_book",
+                "source_url": url,
+                "source_excerpt": (
+                    f"openFDA drug/orangebook.json, {len(data['results'])} product row(s) "
+                    f"matched on products.active_ingredients.name={ingredient!r}"
+                ),
+                "extracted_by": EXTRACTED_BY,
+                "fetched_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+            }
+            print(f"  application {value['application_type']}{value['application_number']} "
+                  f"({value['trade_name']}): {len(value['products'])} product(s), "
+                  f"{len(value['patents'])} patent(s), {len(value['exclusivities'])} exclusivit(y/ies)")
+        (STAGING_DIR / f"{drug.lower()}.json").write_text(json.dumps(record, indent=2) + "\n")
+        staged += 1
+    print(f"Staged {staged} Orange Book files to {STAGING_DIR}")
 
 
 if __name__ == "__main__":

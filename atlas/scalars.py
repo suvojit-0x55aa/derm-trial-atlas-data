@@ -38,13 +38,17 @@ def parse_ctgov_date(text):
 
 
 def parse_us_date(text):
-    """Orange Book 'Jan 14, 2027' / Purple Book '28-Mar-17' or '3/28/2017' -> 'YYYY-MM-DD'."""
+    """Orange Book 'Jan 14, 2027' / Purple Book '28-Mar-17' or '3/28/2017' -> 'YYYY-MM-DD'.
+    Also accepts the full-month-name form ('March 28, 2017', 'November 23, 2015') --
+    purplebooksearch.fda.gov's live search-results table (as opposed to its monthly
+    CSV download) spells out the month, confirmed on real rows for Humira/Cosentyx
+    during the v2 cross-source integration pass."""
     if text is None or not str(text).strip():
         return None
     from datetime import datetime
 
     t = str(text).strip()
-    for fmt in ("%b %d, %Y", "%d-%b-%y", "%m/%d/%Y", "%Y-%m-%d"):
+    for fmt in ("%b %d, %Y", "%B %d, %Y", "%d-%b-%y", "%m/%d/%Y", "%Y-%m-%d"):
         try:
             return datetime.strptime(t, fmt).date().isoformat()
         except ValueError:

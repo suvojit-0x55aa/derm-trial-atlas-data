@@ -1,22 +1,117 @@
 {
-  "drug": "Abrocitinib",
-  "ingredient_matched": "ABROCITINIB",
-  "products": null,
-  "patents": null,
-  "exclusivity": null,
-  "status": "source_unreachable",
-  "attempted_sources": [
-    {
-      "url": "https://www.fda.gov/media/76860/download",
-      "method": "GET",
-      "result": "Akamai bot-detection redirect (302 -> /apology_objects/abuse-detection-apology.html) or a bare 404 from the AkamaiNetStorage origin -- observed both, inconsistently, across attempts in this session, with a realistic browser User-Agent and (separately) a primed cookie jar + Referer."
-    },
-    {
-      "url": "https://www.accessdata.fda.gov/scripts/cder/ob/search_product.cfm",
-      "method": "POST",
-      "result": "Returns an Akamai 'Challenge Validation' interstitial requiring a JS proof-of-work solve -- not executable by a stdlib HTTP client. A same-URL GET with identical query params returns HTTP 200 but byte-identical content regardless of the drugname parameter, meaning the actual search only runs via the protected POST path."
-    }
-  ],
-  "fetched_at": "2026-09-04T20:42:05Z",
-  "extracted_by": "fetch_orange_book.py (FDA Orange Book Data Files ZIP, raw staging pass)"
+  "value": {
+    "application_type": "N",
+    "application_number": "213871",
+    "ingredient": "ABROCITINIB",
+    "trade_name": "CIBINQO",
+    "applicant": "PFIZER",
+    "applicant_full_name": "PFIZER INC",
+    "products": [
+      {
+        "product_number": "001",
+        "strength": "50MG",
+        "dosage_form": "TABLET",
+        "route": "ORAL",
+        "approval_date": "2022-01-14",
+        "rld": true,
+        "rs": false,
+        "te_code": null,
+        "marketing_type": "HUMAN PRESCRIPTION DRUG"
+      },
+      {
+        "product_number": "002",
+        "strength": "100MG",
+        "dosage_form": "TABLET",
+        "route": "ORAL",
+        "approval_date": "2022-01-14",
+        "rld": true,
+        "rs": false,
+        "te_code": null,
+        "marketing_type": "HUMAN PRESCRIPTION DRUG"
+      },
+      {
+        "product_number": "003",
+        "strength": "200MG",
+        "dosage_form": "TABLET",
+        "route": "ORAL",
+        "approval_date": "2022-01-14",
+        "rld": true,
+        "rs": true,
+        "te_code": null,
+        "marketing_type": "HUMAN PRESCRIPTION DRUG"
+      }
+    ],
+    "patents": [
+      {
+        "patent_number": "9545405",
+        "expiration_date": "2034-02-19",
+        "drug_substance_claim": true,
+        "drug_product_claim": true,
+        "patent_use_code": null,
+        "delisted": false,
+        "submission_date": "2022-02-11",
+        "product_numbers": [
+          "001",
+          "002",
+          "003"
+        ]
+      },
+      {
+        "patent_number": "9549929",
+        "expiration_date": "2034-02-19",
+        "drug_substance_claim": false,
+        "drug_product_claim": false,
+        "patent_use_code": "U-3195",
+        "delisted": false,
+        "submission_date": "2022-02-11",
+        "product_numbers": [
+          "001",
+          "002",
+          "003"
+        ]
+      },
+      {
+        "patent_number": "9035074",
+        "expiration_date": "2036-01-14",
+        "drug_substance_claim": true,
+        "drug_product_claim": true,
+        "patent_use_code": null,
+        "delisted": false,
+        "submission_date": "2022-02-11",
+        "product_numbers": [
+          "001",
+          "002",
+          "003"
+        ]
+      }
+    ],
+    "exclusivities": [
+      {
+        "code": "NPP",
+        "expiration_date": "2026-02-09",
+        "product_numbers": [
+          "001",
+          "002",
+          "003"
+        ]
+      },
+      {
+        "code": "NCE",
+        "expiration_date": "2027-01-14",
+        "product_numbers": [
+          "001",
+          "002",
+          "003"
+        ]
+      }
+    ],
+    "latest_patent_expiration": "2036-01-14",
+    "latest_exclusivity_expiration": "2027-01-14",
+    "data_file_date": null
+  },
+  "source_type": "orange_book",
+  "source_url": "https://api.fda.gov/drug/orangebook.json?search=products.active_ingredients.name%3A%22ABROCITINIB%22&limit=100",
+  "source_excerpt": "openFDA drug/orangebook.json, 3 product row(s) matched on products.active_ingredients.name='ABROCITINIB'",
+  "extracted_by": "fetch_orange_book.py (openfda drug/orangebook.json, v2 pass)",
+  "fetched_at": "2026-09-04T21:10:40Z"
 }

@@ -1,22 +1,114 @@
 {
-  "drug": "Deuruxolitinib",
-  "ingredient_matched": "DEURUXOLITINIB",
-  "products": null,
-  "patents": null,
-  "exclusivity": null,
-  "status": "source_unreachable",
-  "attempted_sources": [
-    {
-      "url": "https://www.fda.gov/media/76860/download",
-      "method": "GET",
-      "result": "Akamai bot-detection redirect (302 -> /apology_objects/abuse-detection-apology.html) or a bare 404 from the AkamaiNetStorage origin -- observed both, inconsistently, across attempts in this session, with a realistic browser User-Agent and (separately) a primed cookie jar + Referer."
-    },
-    {
-      "url": "https://www.accessdata.fda.gov/scripts/cder/ob/search_product.cfm",
-      "method": "POST",
-      "result": "Returns an Akamai 'Challenge Validation' interstitial requiring a JS proof-of-work solve -- not executable by a stdlib HTTP client. A same-URL GET with identical query params returns HTTP 200 but byte-identical content regardless of the drugname parameter, meaning the actual search only runs via the protected POST path."
-    }
-  ],
-  "fetched_at": "2026-09-04T20:42:05Z",
-  "extracted_by": "fetch_orange_book.py (FDA Orange Book Data Files ZIP, raw staging pass)"
+  "value": {
+    "application_type": "N",
+    "application_number": "217900",
+    "ingredient": "DEURUXOLITINIB",
+    "trade_name": "LEQSELVI",
+    "applicant": "SUN PHARM INDS INC",
+    "applicant_full_name": "SUN PHARMACEUTICAL INDUSTRIES INC",
+    "products": [
+      {
+        "product_number": "001",
+        "strength": "EQ 8MG BASE",
+        "dosage_form": "TABLET",
+        "route": "ORAL",
+        "approval_date": "2024-07-25",
+        "rld": true,
+        "rs": true,
+        "te_code": null,
+        "marketing_type": "HUMAN PRESCRIPTION DRUG"
+      }
+    ],
+    "patents": [
+      {
+        "patent_number": "10561659",
+        "expiration_date": "2037-05-04",
+        "drug_substance_claim": false,
+        "drug_product_claim": false,
+        "patent_use_code": "U-3976",
+        "delisted": false,
+        "submission_date": "2024-08-23",
+        "product_numbers": [
+          "001"
+        ]
+      },
+      {
+        "patent_number": "12076323",
+        "expiration_date": "2037-05-04",
+        "drug_substance_claim": false,
+        "drug_product_claim": false,
+        "patent_use_code": "U-3976",
+        "delisted": false,
+        "submission_date": "2024-10-01",
+        "product_numbers": [
+          "001"
+        ]
+      },
+      {
+        "patent_number": "11919907",
+        "expiration_date": "2041-05-21",
+        "drug_substance_claim": false,
+        "drug_product_claim": true,
+        "patent_use_code": "U-3976",
+        "delisted": false,
+        "submission_date": "2024-08-23",
+        "product_numbers": [
+          "001"
+        ]
+      },
+      {
+        "patent_number": "12285432",
+        "expiration_date": "2042-08-11",
+        "drug_substance_claim": false,
+        "drug_product_claim": false,
+        "patent_use_code": "U-3976",
+        "delisted": false,
+        "submission_date": "2025-05-29",
+        "product_numbers": [
+          "001"
+        ]
+      },
+      {
+        "patent_number": "12247034",
+        "expiration_date": "2044-05-10",
+        "drug_substance_claim": true,
+        "drug_product_claim": true,
+        "patent_use_code": null,
+        "delisted": false,
+        "submission_date": "2025-04-08",
+        "product_numbers": [
+          "001"
+        ]
+      },
+      {
+        "patent_number": "12364699",
+        "expiration_date": "2044-10-10",
+        "drug_substance_claim": false,
+        "drug_product_claim": false,
+        "patent_use_code": "U-3976",
+        "delisted": false,
+        "submission_date": "2025-08-21",
+        "product_numbers": [
+          "001"
+        ]
+      }
+    ],
+    "exclusivities": [
+      {
+        "code": "NCE",
+        "expiration_date": "2029-07-25",
+        "product_numbers": [
+          "001"
+        ]
+      }
+    ],
+    "latest_patent_expiration": "2044-10-10",
+    "latest_exclusivity_expiration": "2029-07-25",
+    "data_file_date": null
+  },
+  "source_type": "orange_book",
+  "source_url": "https://api.fda.gov/drug/orangebook.json?search=products.active_ingredients.name%3A%22DEURUXOLITINIB%22&limit=100",
+  "source_excerpt": "openFDA drug/orangebook.json, 1 product row(s) matched on products.active_ingredients.name='DEURUXOLITINIB'",
+  "extracted_by": "fetch_orange_book.py (openfda drug/orangebook.json, v2 pass)",
+  "fetched_at": "2026-09-04T21:10:45Z"
 }
