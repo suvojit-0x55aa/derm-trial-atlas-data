@@ -1,4 +1,5 @@
 {
+  "schema_version": 2,
   "nct_id": {
     "value": "NCT02277743",
     "source_type": "ctgov_api",
@@ -82,20 +83,86 @@
       "confidence": 1.0
     },
     "mechanism_of_action": {
-      "value": "12.1 Mechanism of Action Dupilumab is a human monoclonal IgG4 antibody that inhibits interleukin-4 (IL-4) and interleukin-13 (IL-13) signaling by specifically binding to the IL-4R\u03b1 subunit shared by the IL-4 and IL-13 receptor complexes. Dupilumab inhibits IL-4 signaling via the Type I receptor and both IL-4 and IL-13 signaling through the Type II receptor. Inflammation driven by IL-4 and IL-13 is an important component in the pathogenesis of asthma, AD, CRSwNP, EoE, PN, COPD, CSU, BP, and AFRS. Multiple cell types that express IL-4R\u03b1 (e.g., mast cells, basophils, eosinophils, macrophages, lymphocytes, epithelial cells, goblet cells) and inflammatory mediators (e.g., histamine, eicosanoids, leukotrienes, cytokines, chemokines) are involved in inflammation. Blocking IL-4R\u03b1 with dupilumab inhibits IL-4 and IL-13 cytokine-induced inflammatory responses, including the release of proinflammatory cytokines, chemokines, nitric oxide, and IgE. The mechanism of dupilumab action has not been definitively established.",
+      "value": {
+        "modality": "monoclonal_antibody",
+        "drug_class": "IL-4Rα antagonist",
+        "antibody_isotype": "IgG4",
+        "binding_targets": [
+          "IL-4Rα"
+        ],
+        "pathway_cytokines": [
+          "IL-13",
+          "IL-4",
+          "IgE"
+        ],
+        "receptor_subunits": [
+          "IL-4Rα"
+        ],
+        "kinases_inhibited": [],
+        "lower_potency_kinases": [],
+        "selectivity": [],
+        "reversible": null,
+        "mechanism_established": false,
+        "label_section": "12.1"
+      },
       "source_type": "openfda_label",
       "source_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=06b9c64b-52b1-490b-b118-bd079e69264e",
-      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1)",
-      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA)",
+      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1) -- v1 extracted text: 12.1 Mechanism of Action Dupilumab is a human monoclonal IgG4 antibody that inhibits interleukin-4 (IL-4) and interleukin-13 (IL-13) signaling by specifically binding to the IL-4Rα subunit shared by the IL-4 and IL-13 receptor complexes. Dupilumab inhibits IL-4 signaling via the Type I receptor and both IL-4 and IL-13 signaling through the Type II receptor. Inflammation driven by IL-4 and IL-13 is an important component in the pathogenesis of asthma, AD, CRSwNP, EoE, PN, COPD, CSU, BP, and AFRS. Multiple cell types that express IL-4Rα (e.g., mast cells, basophils, eosinophils, macrophages, lymphocytes, epithelial cells, goblet cells) and inflammatory mediators (e.g., histamine, eicosanoids, leukotrienes, cytokines, chemokines) are involved in inflammation. Blocking IL-4Rα with dupilumab inhibits IL-4 and IL-13 cytokine-induced inflammatory responses, including the release of proinflammatory cytokines, chemokines, nitric oxide, and IgE. The mechanism of dupilumab action has not been definitively established.",
+      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 0.9
     },
     "dosing_regimen": {
-      "value": "Dupilumab: Subcutaneous injection alternated among the different quadrants of the abdomen, upper thighs and upper arms || Placebo (for Dupilumab): Subcutaneous injection alternated among the different quadrants of the abdomen, upper thighs and upper arms",
+      "value": [
+        {
+          "intervention_name": "Dupilumab",
+          "description": "Subcutaneous injection alternated among the different quadrants of the abdomen, upper thighs and upper arms",
+          "is_placebo": false,
+          "route": "subcutaneous",
+          "dose_form": "injection",
+          "dose_value": null,
+          "dose_unit": null,
+          "units_per_dose": null,
+          "frequency": null,
+          "duration_weeks": null,
+          "dosing_periods": [],
+          "administration_sites": [
+            "abdomen",
+            "upper thighs",
+            "upper arms"
+          ],
+          "antibody_isotype": null,
+          "molecular_target": null,
+          "arm_names": [],
+          "co_administered_with": []
+        },
+        {
+          "intervention_name": "Placebo (for Dupilumab)",
+          "description": "Subcutaneous injection alternated among the different quadrants of the abdomen, upper thighs and upper arms",
+          "is_placebo": true,
+          "route": "subcutaneous",
+          "dose_form": "injection",
+          "dose_value": null,
+          "dose_unit": null,
+          "units_per_dose": null,
+          "frequency": null,
+          "duration_weeks": null,
+          "dosing_periods": [],
+          "administration_sites": [
+            "abdomen",
+            "upper thighs",
+            "upper arms"
+          ],
+          "antibody_isotype": null,
+          "molecular_target": null,
+          "arm_names": [],
+          "co_administered_with": []
+        }
+      ],
       "source_type": "ctgov_text_extraction",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02277743",
       "source_excerpt": "Dupilumab: Subcutaneous injection alternated among the different quadrants of the abdomen, upper thighs and upper arms || Placebo (for Dupilumab): Subcutaneous injection alternated among the different quadrants of the abdomen, upper thighs and upper arms",
-      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA)",
+      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 0.8
     }
@@ -112,21 +179,21 @@
       "reviewed_by": null,
       "confidence": 1.0
     },
-    "min_age": {
-      "value": "18 Years",
+    "min_age_years": {
+      "value": 18,
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02277743",
       "source_excerpt": "protocolSection.eligibilityModule.minimumAge",
-      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
     },
-    "max_age": {
+    "max_age_years": {
       "value": null,
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02277743",
       "source_excerpt": "protocolSection.eligibilityModule.maximumAge",
-      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 0.0
     },
@@ -148,12 +215,81 @@
       "reviewed_by": null,
       "confidence": 1.0
     },
-    "severity_definition": {
-      "value": "3. Eczema Area and Severity Index (EASI) Score \u226516 at the screening and baseline visits; | 4. Investigator's Global Assessment (IGA) Score \u22653 (on the 0 to 4 IGA scale, in which 3 is moderate and 4 is severe) at the screening and baseline visits; | 5. \u226510% body surface area (BSA) of AD involvement at the screening and baseline visits;",
+    "severity_criteria": {
+      "value": {
+        "severity_label": null,
+        "basis": "eligibility_text",
+        "cross_reference": null,
+        "source_criterion_numbers": [
+          3,
+          4,
+          5
+        ],
+        "baseline_visit_number": null,
+        "criteria": [
+          {
+            "scale": "EASI",
+            "scale_component": null,
+            "scale_variant": null,
+            "metric": "absolute_score",
+            "comparator": ">=",
+            "value": 16,
+            "unit": "score",
+            "scale_min": null,
+            "scale_max": null,
+            "assessed_at": [
+              "screening",
+              "baseline"
+            ],
+            "scale_anchors": null
+          },
+          {
+            "scale": "IGA",
+            "scale_component": null,
+            "scale_variant": null,
+            "metric": "absolute_score",
+            "comparator": ">=",
+            "value": 3,
+            "unit": "score",
+            "scale_min": 0,
+            "scale_max": 4,
+            "assessed_at": [
+              "screening",
+              "baseline"
+            ],
+            "scale_anchors": [
+              {
+                "score": 3,
+                "label": "moderate"
+              },
+              {
+                "score": 4,
+                "label": "severe"
+              }
+            ]
+          },
+          {
+            "scale": "BSA",
+            "scale_component": null,
+            "scale_variant": null,
+            "metric": "percent_bsa",
+            "comparator": ">=",
+            "value": 10,
+            "unit": "percent",
+            "scale_min": null,
+            "scale_max": null,
+            "assessed_at": [
+              "screening",
+              "baseline"
+            ],
+            "scale_anchors": null
+          }
+        ]
+      },
       "source_type": "ctgov_text_extraction",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02277743",
-      "source_excerpt": "3. Eczema Area and Severity Index (EASI) Score \u226516 at the screening and baseline visits; | 4. Investigator's Global Assessment (IGA) Score \u22653 (on the 0 to 4 IGA scale, in which 3 is moderate and 4 is severe) at the screening and baseline visits; | 5. \u226510% body surface area (BSA) of AD involvement at the screening and baseline visits;",
-      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA)",
+      "source_excerpt": "3. Eczema Area and Severity Index (EASI) Score ≥16 at the screening and baseline visits; | 4. Investigator's Global Assessment (IGA) Score ≥3 (on the 0 to 4 IGA scale, in which 3 is moderate and 4 is severe) at the screening and baseline visits; | 5. ≥10% body surface area (BSA) of AD involvement at the screening and baseline visits;",
+      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 0.75
     }
@@ -204,109 +340,951 @@
       "reviewed_by": null,
       "confidence": 1.0
     },
-    "background_therapy_rule": {
-      "value": "Monotherapy design. Prohibited concomitant medications/procedures during the study: live (attenuated) vaccines, immunomodulating biologics, other investigational drugs, TCS or TCI, and systemic corticosteroids or non-steroidal systemic immunosuppressive drugs. Subjects were required to apply moisturizers/emollients twice daily throughout the study.",
+    "background_therapy": {
+      "value": {
+        "regimen_type": "monotherapy",
+        "background_agent_class": null,
+        "tcs_regimen": null,
+        "step_down_rule": null,
+        "recommended_agents": [],
+        "emollient_required": true,
+        "emollient_frequency": "twice_daily",
+        "prohibited_concomitant": [
+          "live attenuated vaccines",
+          "immunomodulating biologics",
+          "investigational drugs",
+          "TCS",
+          "TCI",
+          "systemic corticosteroids",
+          "non-steroidal systemic immunosuppressants"
+        ],
+        "permitted_concomitant": [
+          "moisturizers/emollients"
+        ],
+        "applies_to_rerandomized_maintenance": null,
+        "sponsor_trial_ids": [],
+        "study_drug_doses_mg": [],
+        "population_note": null
+      },
       "source_type": "publication_extraction",
       "source_url": "http://www.accessdata.fda.gov/drugsatfda_docs/nda/2017/761055Orig1s000MedR.pdf",
-      "source_excerpt": "Section 6.1 \"R668-AD-1334 (1334); SOLO 1\", \"Prohibited Medications and Procedures\"",
-      "extracted_by": "manual publication_extraction pass (FDA Medical Review BLA 761055, v1 addendum follow-up; pending human QA)",
+      "source_excerpt": "Section 6.1 \"R668-AD-1334 (1334); SOLO 1\", \"Prohibited Medications and Procedures\" -- v1 extracted text: Monotherapy design. Prohibited concomitant medications/procedures during the study: live (attenuated) vaccines, immunomodulating biologics, other investigational drugs, TCS or TCI, and systemic corticosteroids or non-steroidal systemic immunosuppressive drugs. Subjects were required to apply moisturizers/emollients twice daily throughout the study.",
+      "extracted_by": "manual publication_extraction pass (FDA Medical Review BLA 761055, v1 addendum follow-up; pending human QA); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 0.75
     }
   },
   "endpoints": {
-    "primary_endpoint_measure": {
-      "value": "Percentage of Participants With Investigator's Global Assessment (IGA) Score of \"0\" or \"1\" and Reduction From Baseline of \u22652 Points at Week 16 (Time frame: Week 16)",
+    "primary_endpoints": {
+      "value": [
+        {
+          "verbatim": "Percentage of Participants With Investigator's Global Assessment (IGA) Score of \"0\" or \"1\" and Reduction From Baseline of ≥2 Points at Week 16 (Time frame: Week 16)",
+          "rank": "primary",
+          "position": 1,
+          "measure_type": "responder_rate",
+          "scale": "IGA",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [
+            {
+              "scale": "IGA",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "absolute_score",
+              "comparator": "in",
+              "value": [
+                0,
+                1
+              ],
+              "unit": "score",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            },
+            {
+              "scale": "IGA",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "point_reduction_from_baseline",
+              "comparator": ">=",
+              "value": 2,
+              "unit": "points",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": "Week 16"
+        }
+      ],
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02277743",
       "source_excerpt": "protocolSection.outcomesModule.primaryOutcomes[0].measure/timeFrame",
-      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
     },
-    "secondary_endpoint_measures": {
+    "secondary_endpoints": {
       "value": [
-        "Percentage of Participants With Eczema Area and Severity Index-75 (EASI-75) (\u226575% Improvement From Baseline) at Week 16",
-        "Percentage of Participants With Improvement (Reduction \u22654 Points) of Pruritus Numerical Rating Scale (NRS) Score From Baseline to Week 16",
-        "Percentage of Participants With Improvement (Reduction \u22653 Points) of Pruritus Numerical Rating Scale (NRS) Score From Baseline to Week 16",
-        "Percent Change From Baseline in Peak Daily Pruritus Numerical Rating Scale (NRS) Score to Week 16",
-        "Percentage of Participants With Improvement (Reduction \u22654 Points) of Pruritus Numerical Rating Scale (NRS) Score From Baseline to Week 4",
-        "Percentage of Participants With Improvement (Reduction \u22654 Points) of Pruritus Numerical Rating Scale (NRS) Score From Baseline to Week 2",
-        "Change From Baseline in Peak Daily Pruritus Numerical Rating Scale (NRS) Score to Week 16",
-        "Percent Change From Baseline in Eczema Area and Severity Index (EASI) Score to Week 16",
-        "Percentage of Participants With Eczema Area and Severity Index-50 (EASI-50) (\u226550% Improvement From Baseline) at Week 16",
-        "Percentage of Participants With Eczema Area and Severity Index-90 (EASI-90) (\u226590% Improvement From Baseline) at Week 16",
-        "Change From Baseline in Percent Body Surface Area (BSA) to Week 16",
-        "Percent Change From Baseline in the SCORing Atopic Dermatitis (SCORAD) Score to Week 16",
-        "Change From Baseline in Dermatology Life Quality Index (DLQI) to Week 16",
-        "Change From Baseline in Patient Oriented Eczema Measure (POEM) to Week 16",
-        "Change From Baseline in Hospital Anxiety Depression Scale (HADS) to Week 16",
-        "Percent Change From Baseline in Global Individual Signs Score (GISS) to Week 16",
-        "Percent Change From Baseline in Peak Daily Pruritus NRS Score to Week 2",
-        "Percentage of Participants With Skin Infection Treatment Emergent Adverse Events (TEAEs) Requiring Systemic Treatment",
-        "Percentage of Participants With Treatment Emergent Serious Adverse Events (TESAEs) From Baseline Through Week 16",
-        "Percentage of Participants With Treatment Emergent Adverse Events (TEAEs) Leading to Treatment Discontinuation From Baseline Through Week 16"
+        {
+          "verbatim": "Percentage of Participants With Eczema Area and Severity Index-75 (EASI-75) (≥75% Improvement From Baseline) at Week 16",
+          "rank": "secondary",
+          "position": 1,
+          "measure_type": "responder_rate",
+          "scale": "EASI",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [
+            {
+              "scale": "EASI",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "percent_improvement_from_baseline",
+              "comparator": ">=",
+              "value": 75,
+              "unit": "percent",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants With Improvement (Reduction ≥4 Points) of Pruritus Numerical Rating Scale (NRS) Score From Baseline to Week 16",
+          "rank": "secondary",
+          "position": 2,
+          "measure_type": "responder_rate",
+          "scale": "Pruritus NRS",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [
+            {
+              "scale": "Pruritus NRS",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "point_reduction_from_baseline",
+              "comparator": ">=",
+              "value": 4,
+              "unit": "points",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants With Improvement (Reduction ≥3 Points) of Pruritus Numerical Rating Scale (NRS) Score From Baseline to Week 16",
+          "rank": "secondary",
+          "position": 3,
+          "measure_type": "responder_rate",
+          "scale": "Pruritus NRS",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [
+            {
+              "scale": "Pruritus NRS",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "point_reduction_from_baseline",
+              "comparator": ">=",
+              "value": 3,
+              "unit": "points",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percent Change From Baseline in Peak Daily Pruritus Numerical Rating Scale (NRS) Score to Week 16",
+          "rank": "secondary",
+          "position": 4,
+          "measure_type": "percent_change_from_baseline",
+          "scale": "Pruritus NRS",
+          "scale_component": null,
+          "scale_variant": "peak_daily",
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants With Improvement (Reduction ≥4 Points) of Pruritus Numerical Rating Scale (NRS) Score From Baseline to Week 4",
+          "rank": "secondary",
+          "position": 5,
+          "measure_type": "responder_rate",
+          "scale": "Pruritus NRS",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [
+            {
+              "scale": "Pruritus NRS",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "point_reduction_from_baseline",
+              "comparator": ">=",
+              "value": 4,
+              "unit": "points",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 4,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants With Improvement (Reduction ≥4 Points) of Pruritus Numerical Rating Scale (NRS) Score From Baseline to Week 2",
+          "rank": "secondary",
+          "position": 6,
+          "measure_type": "responder_rate",
+          "scale": "Pruritus NRS",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [
+            {
+              "scale": "Pruritus NRS",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "point_reduction_from_baseline",
+              "comparator": ">=",
+              "value": 4,
+              "unit": "points",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 2,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Change From Baseline in Peak Daily Pruritus Numerical Rating Scale (NRS) Score to Week 16",
+          "rank": "secondary",
+          "position": 7,
+          "measure_type": "change_from_baseline",
+          "scale": "Pruritus NRS",
+          "scale_component": null,
+          "scale_variant": "peak_daily",
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percent Change From Baseline in Eczema Area and Severity Index (EASI) Score to Week 16",
+          "rank": "secondary",
+          "position": 8,
+          "measure_type": "percent_change_from_baseline",
+          "scale": "EASI",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants With Eczema Area and Severity Index-50 (EASI-50) (≥50% Improvement From Baseline) at Week 16",
+          "rank": "secondary",
+          "position": 9,
+          "measure_type": "responder_rate",
+          "scale": "EASI",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [
+            {
+              "scale": "EASI",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "percent_improvement_from_baseline",
+              "comparator": ">=",
+              "value": 50,
+              "unit": "percent",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants With Eczema Area and Severity Index-90 (EASI-90) (≥90% Improvement From Baseline) at Week 16",
+          "rank": "secondary",
+          "position": 10,
+          "measure_type": "responder_rate",
+          "scale": "EASI",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [
+            {
+              "scale": "EASI",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "percent_improvement_from_baseline",
+              "comparator": ">=",
+              "value": 90,
+              "unit": "percent",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Change From Baseline in Percent Body Surface Area (BSA) to Week 16",
+          "rank": "secondary",
+          "position": 11,
+          "measure_type": "change_from_baseline",
+          "scale": "BSA",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percent Change From Baseline in the SCORing Atopic Dermatitis (SCORAD) Score to Week 16",
+          "rank": "secondary",
+          "position": 12,
+          "measure_type": "percent_change_from_baseline",
+          "scale": "SCORAD",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Change From Baseline in Dermatology Life Quality Index (DLQI) to Week 16",
+          "rank": "secondary",
+          "position": 13,
+          "measure_type": "change_from_baseline",
+          "scale": "DLQI",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Change From Baseline in Patient Oriented Eczema Measure (POEM) to Week 16",
+          "rank": "secondary",
+          "position": 14,
+          "measure_type": "change_from_baseline",
+          "scale": "POEM",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Change From Baseline in Hospital Anxiety Depression Scale (HADS) to Week 16",
+          "rank": "secondary",
+          "position": 15,
+          "measure_type": "change_from_baseline",
+          "scale": "HADS",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percent Change From Baseline in Global Individual Signs Score (GISS) to Week 16",
+          "rank": "secondary",
+          "position": 16,
+          "measure_type": "percent_change_from_baseline",
+          "scale": "GISS",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percent Change From Baseline in Peak Daily Pruritus NRS Score to Week 2",
+          "rank": "secondary",
+          "position": 17,
+          "measure_type": "percent_change_from_baseline",
+          "scale": "Pruritus NRS",
+          "scale_component": null,
+          "scale_variant": "peak_daily",
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 2,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants With Skin Infection Treatment Emergent Adverse Events (TEAEs) Requiring Systemic Treatment",
+          "rank": "secondary",
+          "position": 18,
+          "measure_type": "safety_incidence",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": "skin_infection_TEAE_requiring_systemic_treatment",
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants With Treatment Emergent Serious Adverse Events (TESAEs) From Baseline Through Week 16",
+          "rank": "secondary",
+          "position": 19,
+          "measure_type": "safety_incidence",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [],
+          "through": {
+            "value": 16,
+            "unit": "week"
+          },
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": "serious_TEAE",
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants With Treatment Emergent Adverse Events (TEAEs) Leading to Treatment Discontinuation From Baseline Through Week 16",
+          "rank": "secondary",
+          "position": 20,
+          "measure_type": "safety_incidence",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [],
+          "through": {
+            "value": 16,
+            "unit": "week"
+          },
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": "TEAE_leading_to_discontinuation",
+          "time_frame": null
+        }
       ],
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02277743",
       "source_excerpt": "protocolSection.outcomesModule.secondaryOutcomes[].measure",
-      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
     },
-    "endpoint_hierarchy_multiplicity": {
-      "value": "Hierarchical (serial gatekeeping) testing procedure at the 2-sided alpha=0.025 level per dose regimen: co-primary endpoints (IGA 0/1 with >=2-point reduction from baseline, and EASI-75) at Week 16 tested first; if both were statistically significant, a pre-specified ordered sequence of secondary endpoints was tested with multiplicity controlled via the gatekeeping procedure. A patient who received rescue medication was counted as a non-responder from the time rescue was used.",
+    "multiplicity_control": {
+      "value": {
+        "procedure": "serial_gatekeeping",
+        "familywise_error_controlled": true,
+        "alpha": 0.05,
+        "alpha_sided": 2,
+        "alpha_per_dose": 0.025,
+        "co_primary_endpoints": [
+          {
+            "label": "IGA 0/1 + >=2-point reduction",
+            "scale": "IGA",
+            "responder_criteria": [
+              {
+                "scale": "IGA",
+                "scale_component": null,
+                "scale_variant": null,
+                "metric": "absolute_score",
+                "comparator": "in",
+                "value": [
+                  0,
+                  1
+                ],
+                "unit": "score",
+                "scale_min": null,
+                "scale_max": null,
+                "assessed_at": null,
+                "scale_anchors": null
+              },
+              {
+                "scale": "IGA",
+                "scale_component": null,
+                "scale_variant": null,
+                "metric": "point_reduction_from_baseline",
+                "comparator": ">=",
+                "value": 2,
+                "unit": "points",
+                "scale_min": null,
+                "scale_max": null,
+                "assessed_at": null,
+                "scale_anchors": null
+              }
+            ],
+            "timepoint_week": 16,
+            "alpha": null,
+            "step": null
+          },
+          {
+            "label": "EASI-75",
+            "scale": "EASI",
+            "responder_criteria": [
+              {
+                "scale": "EASI",
+                "scale_component": null,
+                "scale_variant": null,
+                "metric": "percent_improvement_from_baseline",
+                "comparator": ">=",
+                "value": 75,
+                "unit": "percent",
+                "scale_min": null,
+                "scale_max": null,
+                "assessed_at": null,
+                "scale_anchors": null
+              }
+            ],
+            "timepoint_week": 16,
+            "alpha": null,
+            "step": null
+          }
+        ],
+        "testing_sequence": [],
+        "alpha_split": [],
+        "alpha_recycling": null,
+        "doses_compared": [],
+        "dose_comparison_order": [],
+        "branching_on": null,
+        "regulatory_variants": [],
+        "rescue_counted_as_nonresponder": true,
+        "active_comparator_excluded_from_hierarchy": null,
+        "background_tcs": null,
+        "method_citations": [],
+        "finalized_in_sap": null,
+        "same_design_as": [],
+        "gatekeeping_structure": null,
+        "further_endpoints_through_week": null
+      },
       "source_type": "publication_extraction",
       "source_url": "http://www.accessdata.fda.gov/drugsatfda_docs/nda/2017/761055Orig1s000MedR.pdf",
-      "source_excerpt": "Section 6.1 \"R668-AD-1334 (1334); SOLO 1\" (Statistical Analysis Plan discussion, applies to \"both trials\" 1334 and 1416)",
-      "extracted_by": "manual publication_extraction pass (FDA Medical Review BLA 761055, v1 addendum follow-up; pending human QA)",
+      "source_excerpt": "Section 6.1 \"R668-AD-1334 (1334); SOLO 1\" (Statistical Analysis Plan discussion, applies to \"both trials\" 1334 and 1416) -- v1 extracted text: Hierarchical (serial gatekeeping) testing procedure at the 2-sided alpha=0.025 level per dose regimen: co-primary endpoints (IGA 0/1 with >=2-point reduction from baseline, and EASI-75) at Week 16 tested first; if both were statistically significant, a pre-specified ordered sequence of secondary endpoints was tested with multiplicity controlled via the gatekeeping procedure. A patient who received rescue medication was counted as a non-responder from the time rescue was used.",
+      "extracted_by": "manual publication_extraction pass (FDA Medical Review BLA 761055, v1 addendum follow-up; pending human QA); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 0.75
     }
   },
   "timing_ops": {
     "start_date": {
-      "value": "2014-10",
+      "value": {
+        "date": "2014-10-01",
+        "precision": "month"
+      },
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02277743",
       "source_excerpt": "protocolSection.statusModule.startDateStruct.date",
-      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
     },
     "primary_completion_date": {
-      "value": "2015-11",
+      "value": {
+        "date": "2015-11-01",
+        "precision": "month"
+      },
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02277743",
       "source_excerpt": "protocolSection.statusModule.primaryCompletionDateStruct.date",
-      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
     },
     "completion_date": {
-      "value": "2016-02",
+      "value": {
+        "date": "2016-02-01",
+        "precision": "month"
+      },
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02277743",
       "source_excerpt": "protocolSection.statusModule.completionDateStruct.date",
-      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
     },
-    "visit_schedule": {
-      "value": "16-week randomized treatment period (35-day screening washout beforehand) with weekly study drug administration; study visits were weekly during the 16-week treatment period. End-of-treatment visit at Week 16 (primary endpoint assessed at Week 16). Subjects meeting response criteria who did not use rescue treatment could continue into a maintenance study; others underwent >=4 weeks of follow-up through Week 20, then either entered an open-label extension or were followed every 4 weeks from Week 20 through Week 28 (a 28-week total trial duration for non-continuers). Not a full per-visit assessment table -- visit-level lab/assessment detail is not itemized in this source.",
+    "study_schedule": {
+      "value": {
+        "screening_days": 35,
+        "screening_washout": true,
+        "periods": [
+          {
+            "name": "randomized_treatment",
+            "start_week": 0,
+            "end_week": 16,
+            "duration_weeks": 16,
+            "blinding": null,
+            "background_tcs": null
+          },
+          {
+            "name": "follow_up",
+            "start_week": 16,
+            "end_week": 20,
+            "duration_weeks": 4,
+            "blinding": null,
+            "background_tcs": null
+          },
+          {
+            "name": "follow_up",
+            "start_week": 20,
+            "end_week": 28,
+            "duration_weeks": 8,
+            "blinding": null,
+            "background_tcs": null
+          }
+        ],
+        "dosing_interval": "weekly",
+        "visit_cadence": "weekly",
+        "visit_cadence_until_week": 16,
+        "visit_weeks": null,
+        "visit_days": null,
+        "phone_contact_weeks": null,
+        "primary_endpoint_week": 16,
+        "end_of_treatment_week": 16,
+        "end_of_study_week": 28,
+        "total_duration_weeks": 28,
+        "follow_up_weeks": 4,
+        "follow_up_days": null,
+        "follow_up_visit_week": null,
+        "long_term_extension": true,
+        "extension_end_week": null,
+        "extension_visit_interval_weeks": null,
+        "extension_study_id": null,
+        "rerandomization_week": null,
+        "maintenance_arms": null,
+        "maintenance_response_check_weeks": null,
+        "last_injection_week": null,
+        "key_secondary_weeks": null,
+        "follow_up_visit_interval_weeks": 4,
+        "end_of_treatment_weeks_after_last_dose": null,
+        "background_tcs_from_day": null,
+        "primary_endpoint_refs": [],
+        "double_dummy_arms": [],
+        "active_comparator": null,
+        "boilerplate_reused_from": [],
+        "conflicts_with_trial": null,
+        "full_visit_table_available": false,
+        "source_inconsistency": null
+      },
       "source_type": "publication_extraction",
       "source_url": "http://www.accessdata.fda.gov/drugsatfda_docs/nda/2017/761055Orig1s000MedR.pdf",
-      "source_excerpt": "Section 6.1 \"R668-AD-1334 (1334); SOLO 1\", \"Trial Design\" / \"Rescue Treatment\"",
-      "extracted_by": "manual publication_extraction pass (FDA Medical Review BLA 761055, v1 addendum follow-up; pending human QA)",
+      "source_excerpt": "Section 6.1 \"R668-AD-1334 (1334); SOLO 1\", \"Trial Design\" / \"Rescue Treatment\" -- v1 extracted text: 16-week randomized treatment period (35-day screening washout beforehand) with weekly study drug administration; study visits were weekly during the 16-week treatment period. End-of-treatment visit at Week 16 (primary endpoint assessed at Week 16). Subjects meeting response criteria who did not use rescue treatment could continue into a maintenance study; others underwent >=4 weeks of follow-up through Week 20, then either entered an open-label extension or were followed every 4 weeks from Week 20 through Week 28 (a 28-week total trial duration for non-continuers). Not a full per-visit assessment table -- visit-level lab/assessment detail is not itemized in this source.",
+      "extracted_by": "manual publication_extraction pass (FDA Medical Review BLA 761055, v1 addendum follow-up; pending human QA); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 0.7
     },
-    "rescue_therapy_rules": {
-      "value": "Rescue treatment for AD could be given at investigator discretion if needed to control intolerable symptoms. Topical rescue medications did not require study drug discontinuation; TCI could be used for rescue but were reserved for problem areas (face, neck, intertriginous, genital areas). Investigators were to limit the first step of rescue to topical medications, escalating to systemic medications only after >=7 days of inadequate response to topical treatment. Rescue with systemic corticosteroids or non-steroidal systemic immunosuppressants (cyclosporine, methotrexate, mycophenolate mofetil, azathioprine, etc.) required immediate discontinuation of study drug, which could resume no sooner than 5 half-lives after the last dose of rescue medication.",
+    "rescue_therapy": {
+      "value": {
+        "permitted": true,
+        "trigger": "investigator_discretion",
+        "earliest_week": null,
+        "prohibited_through_week": null,
+        "trigger_rules": [],
+        "flare_definition": [],
+        "first_step": "topical",
+        "topical_min_days_before_systemic": 7,
+        "topical_rescue_requires_study_drug_discontinuation": false,
+        "systemic_rescue_requires_study_drug_discontinuation": true,
+        "resume_after_systemic_rescue_half_lives": 5,
+        "resume_after_phototherapy_months": null,
+        "rescued_counted_as_nonresponder": null,
+        "rescued_counted_as_treatment_failure": null,
+        "continue_visits_after_discontinuation": null,
+        "continue_visits_through_week": null,
+        "topical_rescue_not_counted_after_week": null,
+        "topical_agents": [],
+        "topical_potency_classes": [],
+        "tci_reserved_areas": [
+          "face",
+          "neck",
+          "intertriginous",
+          "genital"
+        ],
+        "systemic_agents": [
+          "systemic corticosteroids",
+          "cyclosporine",
+          "methotrexate",
+          "mycophenolate mofetil",
+          "azathioprine"
+        ],
+        "oral_corticosteroid_limit": null,
+        "rescue_period": null,
+        "escape_arm_washout_half_lives": null,
+        "maintenance_period_rule": null,
+        "permitted_concomitant": [],
+        "recorded_in_ecrf": null,
+        "applies_to_period": null,
+        "long_term_extension_eligible_after_rescue": null,
+        "topical_agent_class": null,
+        "rationale": null
+      },
       "source_type": "publication_extraction",
       "source_url": "http://www.accessdata.fda.gov/drugsatfda_docs/nda/2017/761055Orig1s000MedR.pdf",
-      "source_excerpt": "Section 6.1 \"R668-AD-1334 (1334); SOLO 1\", \"Rescue Treatment\"",
-      "extracted_by": "manual publication_extraction pass (FDA Medical Review BLA 761055, v1 addendum follow-up; pending human QA)",
+      "source_excerpt": "Section 6.1 \"R668-AD-1334 (1334); SOLO 1\", \"Rescue Treatment\" -- v1 extracted text: Rescue treatment for AD could be given at investigator discretion if needed to control intolerable symptoms. Topical rescue medications did not require study drug discontinuation; TCI could be used for rescue but were reserved for problem areas (face, neck, intertriginous, genital areas). Investigators were to limit the first step of rescue to topical medications, escalating to systemic medications only after >=7 days of inadequate response to topical treatment. Rescue with systemic corticosteroids or non-steroidal systemic immunosuppressants (cyclosporine, methotrexate, mycophenolate mofetil, azathioprine, etc.) required immediate discontinuation of study drug, which could resume no sooner than 5 half-lives after the last dose of rescue medication.",
+      "extracted_by": "manual publication_extraction pass (FDA Medical Review BLA 761055, v1 addendum follow-up; pending human QA); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 0.75
     }
@@ -371,8 +1349,8 @@
     "most_common_adverse_events": {
       "value": [
         {
-          "term": "Dermatitis atopic",
-          "organ_system": "Skin and subcutaneous tissue disorders",
+          "meddra_pt": "Dermatitis atopic",
+          "meddra_soc": "Skin and subcutaneous tissue disorders",
           "per_arm": [
             {
               "arm": "Placebo",
@@ -395,8 +1373,8 @@
           ]
         },
         {
-          "term": "Injection site reaction",
-          "organ_system": "General disorders",
+          "meddra_pt": "Injection site reaction",
+          "meddra_soc": "General disorders",
           "per_arm": [
             {
               "arm": "Placebo",
@@ -419,8 +1397,8 @@
           ]
         },
         {
-          "term": "Nasopharyngitis",
-          "organ_system": "Infections and infestations",
+          "meddra_pt": "Nasopharyngitis",
+          "meddra_soc": "Infections and infestations",
           "per_arm": [
             {
               "arm": "Placebo",
@@ -443,8 +1421,8 @@
           ]
         },
         {
-          "term": "Headache",
-          "organ_system": "Nervous system disorders",
+          "meddra_pt": "Headache",
+          "meddra_soc": "Nervous system disorders",
           "per_arm": [
             {
               "arm": "Placebo",
@@ -467,8 +1445,8 @@
           ]
         },
         {
-          "term": "Upper respiratory tract infection",
-          "organ_system": "Infections and infestations",
+          "meddra_pt": "Upper respiratory tract infection",
+          "meddra_soc": "Infections and infestations",
           "per_arm": [
             {
               "arm": "Placebo",
@@ -491,8 +1469,8 @@
           ]
         },
         {
-          "term": "Conjunctivitis allergic",
-          "organ_system": "Eye disorders",
+          "meddra_pt": "Conjunctivitis allergic",
+          "meddra_soc": "Eye disorders",
           "per_arm": [
             {
               "arm": "Placebo",
@@ -518,7 +1496,7 @@
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02277743",
       "source_excerpt": "resultsSection.adverseEventsModule.otherEvents[] (top 8 of 6 by highest single-arm incidence; CT.gov's own >=5% frequency-threshold table)",
-      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass)",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
     },
@@ -551,13 +1529,67 @@
       "confidence": 1.0
     },
     "boxed_warning": {
-      "value": null,
+      "value": {
+        "present": false,
+        "title": null,
+        "warning_categories": [],
+        "referenced_label_sections": [],
+        "product_names": []
+      },
       "source_type": "openfda_label",
       "source_url": "https://api.fda.gov/drug/label.json?search=openfda.substance_name:DUPILUMAB&limit=1",
       "source_excerpt": "results[0] has no boxed_warning key (checked, none present)",
-      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass)",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
+    }
+  },
+  "real_world_safety": {
+    "faers_summary": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    }
+  },
+  "exclusivity": {
+    "regulatory_application": {
+      "value": {
+        "application_type": "BLA",
+        "application_number": "761055",
+        "registry": "purple_book",
+        "center": "CDER",
+        "proprietary_name": "Dupixent",
+        "applicant": "Regeneron Pharmaceuticals, Inc.",
+        "first_approval_date": "2017-03-28"
+      },
+      "source_type": "purple_book",
+      "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2026/purplebook-search-August-data-download.csv",
+      "source_excerpt": "row: Regeneron Pharmaceuticals, Inc. | BLA 761055 | Dupixent | dupilumab | 351(a) | 300MG/2ML Injection Subcutaneous Pre-Filled Syringe | Rx | Licensed | 28-Mar-17 | Original | License 1760 | Product 001 | CDER | Orphan Exclusivity Exp. Date 25-Jan-31",
+      "extracted_by": "atlas.regulatory_applications (registry file fetched 2026-09-05)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "orange_book": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    },
+    "purple_book": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
     }
   }
 }
