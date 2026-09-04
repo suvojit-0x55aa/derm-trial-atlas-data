@@ -1060,33 +1060,344 @@
   },
   "real_world_safety": {
     "faers_summary": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "query": {
+          "search_field": "patient.drug.medicinalproduct",
+          "search_term": "DEUCRAVACITINIB",
+          "receivedate_from": "2019-08-19",
+          "receivedate_to": "2026-06-30",
+          "api_urls": [
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"DEUCRAVACITINIB\"&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"DEUCRAVACITINIB\"+AND+serious:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"DEUCRAVACITINIB\"+AND+seriousnessdeath:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"DEUCRAVACITINIB\"+AND+seriousnesshospitalization:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"DEUCRAVACITINIB\"+AND+seriousnesslifethreatening:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"DEUCRAVACITINIB\"+AND+seriousnessdisabling:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"DEUCRAVACITINIB\"&count=patient.reaction.reactionmeddrapt.exact&limit=15",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"DEUCRAVACITINIB\"+AND+serious:1&count=patient.reaction.reactionmeddrapt.exact&limit=15",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"DEUCRAVACITINIB\"&count=receivedate"
+          ],
+          "data_last_updated": "2026-07-30"
+        },
+        "total_reports": 98,
+        "serious_reports": 56,
+        "death_reports": 2,
+        "hospitalization_reports": 23,
+        "life_threatening_reports": 2,
+        "disability_reports": 0,
+        "top_reactions": [
+          {
+            "meddra_pt": "DRUG INEFFECTIVE",
+            "report_count": 17,
+            "pct_of_reports": 17.35
+          },
+          {
+            "meddra_pt": "OFF LABEL USE",
+            "report_count": 15,
+            "pct_of_reports": 15.31
+          },
+          {
+            "meddra_pt": "NAUSEA",
+            "report_count": 10,
+            "pct_of_reports": 10.2
+          },
+          {
+            "meddra_pt": "PSORIATIC ARTHROPATHY",
+            "report_count": 9,
+            "pct_of_reports": 9.18
+          },
+          {
+            "meddra_pt": "ACNE",
+            "report_count": 8,
+            "pct_of_reports": 8.16
+          },
+          {
+            "meddra_pt": "PUSTULAR PSORIASIS",
+            "report_count": 8,
+            "pct_of_reports": 8.16
+          },
+          {
+            "meddra_pt": "PYREXIA",
+            "report_count": 8,
+            "pct_of_reports": 8.16
+          },
+          {
+            "meddra_pt": "THERAPEUTIC PRODUCT EFFECT INCOMPLETE",
+            "report_count": 8,
+            "pct_of_reports": 8.16
+          },
+          {
+            "meddra_pt": "ARTHRITIS",
+            "report_count": 7,
+            "pct_of_reports": 7.14
+          },
+          {
+            "meddra_pt": "BREAST SWELLING",
+            "report_count": 7,
+            "pct_of_reports": 7.14
+          },
+          {
+            "meddra_pt": "DERMATITIS EXFOLIATIVE GENERALISED",
+            "report_count": 7,
+            "pct_of_reports": 7.14
+          },
+          {
+            "meddra_pt": "HEADACHE",
+            "report_count": 7,
+            "pct_of_reports": 7.14
+          },
+          {
+            "meddra_pt": "INFLAMMATORY PAIN",
+            "report_count": 7,
+            "pct_of_reports": 7.14
+          },
+          {
+            "meddra_pt": "LIVER DISORDER",
+            "report_count": 7,
+            "pct_of_reports": 7.14
+          },
+          {
+            "meddra_pt": "PSORIASIS AREA SEVERITY INDEX INCREASED",
+            "report_count": 7,
+            "pct_of_reports": 7.14
+          }
+        ],
+        "top_serious_reactions": [
+          {
+            "meddra_pt": "DRUG INEFFECTIVE",
+            "report_count": 9,
+            "pct_of_reports": 16.07
+          },
+          {
+            "meddra_pt": "NAUSEA",
+            "report_count": 9,
+            "pct_of_reports": 16.07
+          },
+          {
+            "meddra_pt": "PSORIATIC ARTHROPATHY",
+            "report_count": 9,
+            "pct_of_reports": 16.07
+          },
+          {
+            "meddra_pt": "PUSTULAR PSORIASIS",
+            "report_count": 8,
+            "pct_of_reports": 14.29
+          },
+          {
+            "meddra_pt": "PYREXIA",
+            "report_count": 8,
+            "pct_of_reports": 14.29
+          },
+          {
+            "meddra_pt": "THERAPEUTIC PRODUCT EFFECT INCOMPLETE",
+            "report_count": 8,
+            "pct_of_reports": 14.29
+          },
+          {
+            "meddra_pt": "ARTHRITIS",
+            "report_count": 7,
+            "pct_of_reports": 12.5
+          },
+          {
+            "meddra_pt": "BREAST SWELLING",
+            "report_count": 7,
+            "pct_of_reports": 12.5
+          },
+          {
+            "meddra_pt": "DERMATITIS EXFOLIATIVE GENERALISED",
+            "report_count": 7,
+            "pct_of_reports": 12.5
+          },
+          {
+            "meddra_pt": "HEADACHE",
+            "report_count": 7,
+            "pct_of_reports": 12.5
+          },
+          {
+            "meddra_pt": "INFLAMMATORY PAIN",
+            "report_count": 7,
+            "pct_of_reports": 12.5
+          },
+          {
+            "meddra_pt": "LIVER DISORDER",
+            "report_count": 7,
+            "pct_of_reports": 12.5
+          },
+          {
+            "meddra_pt": "PSORIASIS AREA SEVERITY INDEX INCREASED",
+            "report_count": 7,
+            "pct_of_reports": 12.5
+          },
+          {
+            "meddra_pt": "SACROILIITIS",
+            "report_count": 7,
+            "pct_of_reports": 12.5
+          },
+          {
+            "meddra_pt": "SKIN STRIAE",
+            "report_count": 7,
+            "pct_of_reports": 12.5
+          }
+        ],
+        "reports_by_year": [
+          {
+            "year": 2019,
+            "report_count": 3
+          },
+          {
+            "year": 2020,
+            "report_count": 1
+          },
+          {
+            "year": 2021,
+            "report_count": 1
+          },
+          {
+            "year": 2022,
+            "report_count": 4
+          },
+          {
+            "year": 2023,
+            "report_count": 22
+          },
+          {
+            "year": 2024,
+            "report_count": 22
+          },
+          {
+            "year": 2025,
+            "report_count": 29
+          },
+          {
+            "year": 2026,
+            "report_count": 16
+          }
+        ],
+        "meddra_version": null
+      },
+      "source_type": "openfda_faers",
+      "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"DEUCRAVACITINIB\"&limit=1",
+      "source_excerpt": "openFDA drug/event.json aggregate: total_reports=98, serious=56, deaths=2",
+      "extracted_by": "fetch_faers.py (openfda drug/event.json, v2 pass)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 1.0
     }
   },
   "exclusivity": {
     "regulatory_application": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "application_type": "NDA",
+        "application_number": "214958",
+        "registry": "orange_book",
+        "center": "CDER",
+        "proprietary_name": "SOTYKTU",
+        "applicant": "BRISTOL MYERS SQUIBB CO",
+        "first_approval_date": "2022-09-09"
+      },
+      "source_type": "orange_book",
+      "source_url": "https://api.fda.gov/drug/orangebook.json",
+      "source_excerpt": "openFDA drug/orangebook.json: DEUCRAVACITINIB application N214958, brand SOTYKTU, applicant BRISTOL, approved 2022-09-09",
+      "extracted_by": "atlas.regulatory_applications (registry file fetched 2026-09-05)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 1.0
     },
     "orange_book": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "application_type": "N",
+        "application_number": "214958",
+        "ingredient": "DEUCRAVACITINIB",
+        "trade_name": "SOTYKTU",
+        "applicant": "BRISTOL",
+        "applicant_full_name": "BRISTOL MYERS SQUIBB CO",
+        "products": [
+          {
+            "product_number": "001",
+            "strength": "6MG",
+            "dosage_form": "TABLET",
+            "route": "ORAL",
+            "approval_date": "2022-09-09",
+            "rld": true,
+            "rs": true,
+            "te_code": null,
+            "marketing_type": "HUMAN PRESCRIPTION DRUG"
+          }
+        ],
+        "patents": [
+          {
+            "patent_number": "10000480",
+            "expiration_date": "2033-11-07",
+            "drug_substance_claim": true,
+            "drug_product_claim": true,
+            "patent_use_code": null,
+            "delisted": false,
+            "submission_date": "2022-10-04",
+            "product_numbers": [
+              "001"
+            ]
+          },
+          {
+            "patent_number": "11021475",
+            "expiration_date": "2033-11-07",
+            "drug_substance_claim": false,
+            "drug_product_claim": false,
+            "patent_use_code": "U-3434",
+            "delisted": false,
+            "submission_date": "2022-10-04",
+            "product_numbers": [
+              "001"
+            ]
+          },
+          {
+            "patent_number": "RE47929",
+            "expiration_date": "2033-11-07",
+            "drug_substance_claim": true,
+            "drug_product_claim": true,
+            "patent_use_code": "U-3434",
+            "delisted": false,
+            "submission_date": "2022-10-04",
+            "product_numbers": [
+              "001"
+            ]
+          },
+          {
+            "patent_number": "12521390",
+            "expiration_date": "2043-02-11",
+            "drug_substance_claim": false,
+            "drug_product_claim": true,
+            "patent_use_code": "U-4451",
+            "delisted": false,
+            "submission_date": "2026-02-09",
+            "product_numbers": [
+              "001"
+            ]
+          }
+        ],
+        "exclusivities": [
+          {
+            "code": "NCE",
+            "expiration_date": "2027-09-09",
+            "product_numbers": [
+              "001"
+            ]
+          },
+          {
+            "code": "I-986",
+            "expiration_date": "2029-03-06",
+            "product_numbers": [
+              "001"
+            ]
+          }
+        ],
+        "latest_patent_expiration": "2043-02-11",
+        "latest_exclusivity_expiration": "2029-03-06",
+        "data_file_date": null
+      },
+      "source_type": "orange_book",
+      "source_url": "https://api.fda.gov/drug/orangebook.json?search=products.active_ingredients.name%3A%22DEUCRAVACITINIB%22&limit=100",
+      "source_excerpt": "openFDA drug/orangebook.json, 1 product row(s) matched on products.active_ingredients.name='DEUCRAVACITINIB'",
+      "extracted_by": "fetch_orange_book.py (openfda drug/orangebook.json, v2 pass)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 1.0
     },
     "purple_book": {
       "value": null,

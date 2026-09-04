@@ -916,24 +916,306 @@
   },
   "real_world_safety": {
     "faers_summary": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "query": {
+          "search_field": "patient.drug.medicinalproduct",
+          "search_term": "OMALIZUMAB",
+          "receivedate_from": "2004-04-30",
+          "receivedate_to": "2026-06-30",
+          "api_urls": [
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"OMALIZUMAB\"&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"OMALIZUMAB\"+AND+serious:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"OMALIZUMAB\"+AND+seriousnessdeath:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"OMALIZUMAB\"+AND+seriousnesshospitalization:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"OMALIZUMAB\"+AND+seriousnesslifethreatening:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"OMALIZUMAB\"+AND+seriousnessdisabling:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"OMALIZUMAB\"&count=patient.reaction.reactionmeddrapt.exact&limit=15",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"OMALIZUMAB\"+AND+serious:1&count=patient.reaction.reactionmeddrapt.exact&limit=15",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"OMALIZUMAB\"&count=receivedate"
+          ],
+          "data_last_updated": "2026-07-30"
+        },
+        "total_reports": 11310,
+        "serious_reports": 10869,
+        "death_reports": 239,
+        "hospitalization_reports": 3995,
+        "life_threatening_reports": 533,
+        "disability_reports": 166,
+        "top_reactions": [
+          {
+            "meddra_pt": "ASTHMA",
+            "report_count": 4314,
+            "pct_of_reports": 38.14
+          },
+          {
+            "meddra_pt": "DYSPNOEA",
+            "report_count": 3917,
+            "pct_of_reports": 34.63
+          },
+          {
+            "meddra_pt": "COUGH",
+            "report_count": 2934,
+            "pct_of_reports": 25.94
+          },
+          {
+            "meddra_pt": "WHEEZING",
+            "report_count": 2613,
+            "pct_of_reports": 23.1
+          },
+          {
+            "meddra_pt": "URTICARIA",
+            "report_count": 2595,
+            "pct_of_reports": 22.94
+          },
+          {
+            "meddra_pt": "PNEUMONIA",
+            "report_count": 2437,
+            "pct_of_reports": 21.55
+          },
+          {
+            "meddra_pt": "DRUG INEFFECTIVE",
+            "report_count": 2304,
+            "pct_of_reports": 20.37
+          },
+          {
+            "meddra_pt": "MALAISE",
+            "report_count": 1939,
+            "pct_of_reports": 17.14
+          },
+          {
+            "meddra_pt": "DRUG HYPERSENSITIVITY",
+            "report_count": 1792,
+            "pct_of_reports": 15.84
+          },
+          {
+            "meddra_pt": "PRURITUS",
+            "report_count": 1780,
+            "pct_of_reports": 15.74
+          },
+          {
+            "meddra_pt": "FATIGUE",
+            "report_count": 1723,
+            "pct_of_reports": 15.23
+          },
+          {
+            "meddra_pt": "PAIN",
+            "report_count": 1547,
+            "pct_of_reports": 13.68
+          },
+          {
+            "meddra_pt": "HEADACHE",
+            "report_count": 1484,
+            "pct_of_reports": 13.12
+          },
+          {
+            "meddra_pt": "NASOPHARYNGITIS",
+            "report_count": 1407,
+            "pct_of_reports": 12.44
+          },
+          {
+            "meddra_pt": "VOMITING",
+            "report_count": 1370,
+            "pct_of_reports": 12.11
+          }
+        ],
+        "top_serious_reactions": [
+          {
+            "meddra_pt": "ASTHMA",
+            "report_count": 4301,
+            "pct_of_reports": 39.57
+          },
+          {
+            "meddra_pt": "DYSPNOEA",
+            "report_count": 3903,
+            "pct_of_reports": 35.91
+          },
+          {
+            "meddra_pt": "COUGH",
+            "report_count": 2931,
+            "pct_of_reports": 26.97
+          },
+          {
+            "meddra_pt": "WHEEZING",
+            "report_count": 2608,
+            "pct_of_reports": 23.99
+          },
+          {
+            "meddra_pt": "URTICARIA",
+            "report_count": 2572,
+            "pct_of_reports": 23.66
+          },
+          {
+            "meddra_pt": "PNEUMONIA",
+            "report_count": 2437,
+            "pct_of_reports": 22.42
+          },
+          {
+            "meddra_pt": "DRUG INEFFECTIVE",
+            "report_count": 2191,
+            "pct_of_reports": 20.16
+          },
+          {
+            "meddra_pt": "MALAISE",
+            "report_count": 1935,
+            "pct_of_reports": 17.8
+          },
+          {
+            "meddra_pt": "DRUG HYPERSENSITIVITY",
+            "report_count": 1786,
+            "pct_of_reports": 16.43
+          },
+          {
+            "meddra_pt": "PRURITUS",
+            "report_count": 1763,
+            "pct_of_reports": 16.22
+          },
+          {
+            "meddra_pt": "FATIGUE",
+            "report_count": 1714,
+            "pct_of_reports": 15.77
+          },
+          {
+            "meddra_pt": "PAIN",
+            "report_count": 1537,
+            "pct_of_reports": 14.14
+          },
+          {
+            "meddra_pt": "HEADACHE",
+            "report_count": 1478,
+            "pct_of_reports": 13.6
+          },
+          {
+            "meddra_pt": "NASOPHARYNGITIS",
+            "report_count": 1403,
+            "pct_of_reports": 12.91
+          },
+          {
+            "meddra_pt": "VOMITING",
+            "report_count": 1366,
+            "pct_of_reports": 12.57
+          }
+        ],
+        "reports_by_year": [
+          {
+            "year": 2004,
+            "report_count": 9
+          },
+          {
+            "year": 2005,
+            "report_count": 13
+          },
+          {
+            "year": 2006,
+            "report_count": 14
+          },
+          {
+            "year": 2007,
+            "report_count": 47
+          },
+          {
+            "year": 2008,
+            "report_count": 74
+          },
+          {
+            "year": 2009,
+            "report_count": 88
+          },
+          {
+            "year": 2010,
+            "report_count": 100
+          },
+          {
+            "year": 2011,
+            "report_count": 152
+          },
+          {
+            "year": 2012,
+            "report_count": 473
+          },
+          {
+            "year": 2013,
+            "report_count": 166
+          },
+          {
+            "year": 2014,
+            "report_count": 124
+          },
+          {
+            "year": 2015,
+            "report_count": 153
+          },
+          {
+            "year": 2016,
+            "report_count": 129
+          },
+          {
+            "year": 2017,
+            "report_count": 186
+          },
+          {
+            "year": 2018,
+            "report_count": 288
+          },
+          {
+            "year": 2019,
+            "report_count": 1038
+          },
+          {
+            "year": 2020,
+            "report_count": 979
+          },
+          {
+            "year": 2021,
+            "report_count": 994
+          },
+          {
+            "year": 2022,
+            "report_count": 1031
+          },
+          {
+            "year": 2023,
+            "report_count": 1014
+          },
+          {
+            "year": 2024,
+            "report_count": 1148
+          },
+          {
+            "year": 2025,
+            "report_count": 2082
+          },
+          {
+            "year": 2026,
+            "report_count": 1008
+          }
+        ],
+        "meddra_version": null
+      },
+      "source_type": "openfda_faers",
+      "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"OMALIZUMAB\"&limit=1",
+      "source_excerpt": "openFDA drug/event.json aggregate: total_reports=11310, serious=10869, deaths=239",
+      "extracted_by": "fetch_faers.py (openfda drug/event.json, v2 pass)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 1.0
     }
   },
   "exclusivity": {
     "regulatory_application": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "application_type": "BLA",
+        "application_number": "103976",
+        "registry": "purple_book",
+        "center": "CDER",
+        "proprietary_name": "Xolair",
+        "applicant": "Genentech, Inc.",
+        "first_approval_date": "2003-06-20"
+      },
+      "source_type": "purple_book",
+      "source_url": "https://purplebooksearch.fda.gov/index.cfm?event=advancedsearch",
+      "source_excerpt": "purplebooksearch.fda.gov live search table: BLA 103976 | Xolair | omalizumab | 351(a) | Genentech, Inc. | first approved 2003-06-20",
+      "extracted_by": "atlas.regulatory_applications (registry file fetched 2026-09-05)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 1.0
     },
     "orange_book": {
       "value": null,
@@ -945,13 +1227,126 @@
       "confidence": null
     },
     "purple_book": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "bla_number": "103976",
+        "proprietary_name": "Xolair",
+        "proper_name": "omalizumab",
+        "applicant": "Genentech, Inc.",
+        "license_type": "351(a)",
+        "license_number": "1048",
+        "center": "CDER",
+        "products": [
+          {
+            "product_number": "001",
+            "strength": "150MG",
+            "dosage_form": "For Injection",
+            "route": "Subcutaneous",
+            "presentation": "Single-Dose Vial",
+            "marketing_status": "Rx",
+            "licensure": "Licensed",
+            "approval_date": "2003-06-20",
+            "submission_type": "Original",
+            "supplement_number": null
+          },
+          {
+            "product_number": "002",
+            "strength": "75MG/0.5ML",
+            "dosage_form": "Injection",
+            "route": "Subcutaneous",
+            "presentation": "Pre-Filled Syringe",
+            "marketing_status": "Rx",
+            "licensure": "Licensed",
+            "approval_date": "2018-09-28",
+            "submission_type": "Supplement",
+            "supplement_number": "5231"
+          },
+          {
+            "product_number": "003",
+            "strength": "150MG/ML",
+            "dosage_form": "Injection",
+            "route": "Subcutaneous",
+            "presentation": "Pre-Filled Syringe",
+            "marketing_status": "Rx",
+            "licensure": "Licensed",
+            "approval_date": "2018-09-28",
+            "submission_type": "Supplement",
+            "supplement_number": "5231"
+          },
+          {
+            "product_number": "004",
+            "strength": "300MG/2ML",
+            "dosage_form": "Injection",
+            "route": "Subcutaneous",
+            "presentation": "Pre-Filled Syringe",
+            "marketing_status": "Rx",
+            "licensure": "Licensed",
+            "approval_date": "2023-08-17",
+            "submission_type": "Supplement",
+            "supplement_number": "5242"
+          },
+          {
+            "product_number": "005",
+            "strength": "75MG/0.5ML",
+            "dosage_form": "Injection",
+            "route": "Subcutaneous",
+            "presentation": "Autoinjector",
+            "marketing_status": "Rx",
+            "licensure": "Licensed",
+            "approval_date": "2023-08-17",
+            "submission_type": "Supplement",
+            "supplement_number": "5242"
+          },
+          {
+            "product_number": "006",
+            "strength": "150MG/ML",
+            "dosage_form": "Injection",
+            "route": "Subcutaneous",
+            "presentation": "Autoinjector",
+            "marketing_status": "Rx",
+            "licensure": "Licensed",
+            "approval_date": "2023-08-17",
+            "submission_type": "Supplement",
+            "supplement_number": "5242"
+          },
+          {
+            "product_number": "007",
+            "strength": "300MG/2ML",
+            "dosage_form": "Injection",
+            "route": "Subcutaneous",
+            "presentation": "Autoinjector",
+            "marketing_status": "Rx",
+            "licensure": "Licensed",
+            "approval_date": "2023-08-17",
+            "submission_type": "Supplement",
+            "supplement_number": "5242"
+          }
+        ],
+        "first_approval_date": "2003-06-20",
+        "date_of_first_licensure": null,
+        "reference_product_exclusivity_expiration": null,
+        "exclusivity_expiration_date": null,
+        "first_interchangeable_exclusivity_expiration": null,
+        "orphan_exclusivity_expiration": null,
+        "patent_list_provided": true,
+        "biosimilars": [
+          {
+            "proper_name": "omalizumab-igec",
+            "proprietary_name": "Omlyclo",
+            "bla_number": "761399",
+            "applicant": "CELLTRION, Inc.",
+            "approval_date": "2025-12-01",
+            "license_type": "351(k)",
+            "interchangeable_approval_date": "2025-12-01"
+          }
+        ],
+        "data_file_month": null
+      },
+      "source_type": "purple_book",
+      "source_url": "https://purplebooksearch.fda.gov/index.cfm?event=advancedsearch",
+      "source_excerpt": "purplebooksearch.fda.gov live search table, BLA 103976 (Xolair), 1 biosimilar(s) on file",
+      "extracted_by": "fetch_purple_book.py (purplebooksearch.fda.gov live search table, raw staging pass)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 1.0
     }
   }
 }

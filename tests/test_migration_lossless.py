@@ -110,9 +110,23 @@ class LosslessMigrationTest(unittest.TestCase):
         assert len(cls.pairs) == 17, "expected the 17 committed v1 trials"
 
     def test_determinism(self):
+        # migrate_trial() itself only ever stages real_world_safety.faers_summary
+        # and exclusivity.{orange_book,purple_book} as needs_extraction
+        # placeholders (see atlas/migrate.py) -- the real FAERS/Orange Book/
+        # Purple Book values in the committed v2 files come from a later,
+        # separate pipeline stage (scripts/apply_source_data.py). Compare
+        # everything migrate_trial *is* responsible for byte-for-byte, and
+        # exclusivity.regulatory_application (which it does set, via
+        # atlas.regulatory_applications) separately from those three.
+        source_integrated = {("real_world_safety", "faers_summary"),
+                             ("exclusivity", "orange_book"), ("exclusivity", "purple_book")}
         for nct, v1, v2 in self.pairs:
             with self.subTest(nct=nct):
-                self.assertEqual(migrate_trial(v1), v2)
+                migrated = migrate_trial(v1)
+                v2_before_integration = json.loads(json.dumps(v2))
+                for group, key in source_integrated:
+                    v2_before_integration[group][key] = migrated[group][key]
+                self.assertEqual(migrated, v2_before_integration)
 
     def test_untouched_fields_identical(self):
         for nct, v1, v2 in self.pairs:
@@ -207,12 +221,24 @@ class LosslessMigrationTest(unittest.TestCase):
                     self.assertNotEqual(e["measure_type"], "other", "unclassified endpoint")
 
     def test_gaps_preserved_not_invented(self):
+        # As of the cross-source integration pass (scripts/apply_source_data.py),
+        # every AD drug has real FAERS data and a real regulatory_application
+        # join key -- exactly one of exclusivity.{orange_book,purple_book} is
+        # real (whichever registry the drug's own application belongs to);
+        # the other is a genuine not-applicable gap, not a placeholder
+        # awaiting a future pass (a biologic BLA has no Orange Book NDA entry,
+        # and vice versa) -- so it's still expected here, just drug-dependent
+        # rather than the same fixed set for every trial.
         for nct, v1, v2 in self.pairs:
             old_gaps = {v2_path(g, k) for (g, k), sv in sourced_fields(v1) if sv["source_type"] == "needs_extraction"}
             new_gaps = {(g, k) for (g, k), sv in sourced_fields(v2) if sv["source_type"] == "needs_extraction"}
-            placeholders = {("real_world_safety", "faers_summary"), ("exclusivity", "orange_book"), ("exclusivity", "purple_book")}
+            registry = v2["exclusivity"]["regulatory_application"]["value"]["registry"]
+            not_applicable_registry = "purple_book" if registry == "orange_book" else "orange_book"
+            placeholders = {("exclusivity", not_applicable_registry)}
             self.assertEqual(new_gaps, old_gaps | placeholders, nct)
             self.assertEqual(v2["exclusivity"]["regulatory_application"]["source_type"] in ("orange_book", "purple_book"), True, nct)
+            self.assertEqual(v2["exclusivity"][registry]["source_type"], registry, nct)
+            self.assertEqual(v2["real_world_safety"]["faers_summary"]["source_type"], "openfda_faers", nct)
 
     def test_field_count(self):
         # 17 trials x 35 v1 fields = 595 sourced values, all still present (renamed) plus 4 new ones per trial

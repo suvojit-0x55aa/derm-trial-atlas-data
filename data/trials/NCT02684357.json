@@ -1225,24 +1225,254 @@
   },
   "real_world_safety": {
     "faers_summary": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "query": {
+          "search_field": "patient.drug.medicinalproduct",
+          "search_term": "RISANKIZUMAB",
+          "receivedate_from": "2017-05-18",
+          "receivedate_to": "2026-06-30",
+          "api_urls": [
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"RISANKIZUMAB\"&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"RISANKIZUMAB\"+AND+serious:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"RISANKIZUMAB\"+AND+seriousnessdeath:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"RISANKIZUMAB\"+AND+seriousnesshospitalization:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"RISANKIZUMAB\"+AND+seriousnesslifethreatening:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"RISANKIZUMAB\"+AND+seriousnessdisabling:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"RISANKIZUMAB\"&count=patient.reaction.reactionmeddrapt.exact&limit=15",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"RISANKIZUMAB\"+AND+serious:1&count=patient.reaction.reactionmeddrapt.exact&limit=15",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"RISANKIZUMAB\"&count=receivedate"
+          ],
+          "data_last_updated": "2026-07-30"
+        },
+        "total_reports": 4185,
+        "serious_reports": 1588,
+        "death_reports": 64,
+        "hospitalization_reports": 656,
+        "life_threatening_reports": 35,
+        "disability_reports": 31,
+        "top_reactions": [
+          {
+            "meddra_pt": "PRODUCT STORAGE ERROR",
+            "report_count": 907,
+            "pct_of_reports": 21.67
+          },
+          {
+            "meddra_pt": "DRUG INEFFECTIVE",
+            "report_count": 283,
+            "pct_of_reports": 6.76
+          },
+          {
+            "meddra_pt": "OFF LABEL USE",
+            "report_count": 187,
+            "pct_of_reports": 4.47
+          },
+          {
+            "meddra_pt": "PSORIASIS",
+            "report_count": 183,
+            "pct_of_reports": 4.37
+          },
+          {
+            "meddra_pt": "PRODUCT TEMPERATURE EXCURSION ISSUE",
+            "report_count": 178,
+            "pct_of_reports": 4.25
+          },
+          {
+            "meddra_pt": "CROHN^S DISEASE",
+            "report_count": 147,
+            "pct_of_reports": 3.51
+          },
+          {
+            "meddra_pt": "ARTHRALGIA",
+            "report_count": 134,
+            "pct_of_reports": 3.2
+          },
+          {
+            "meddra_pt": "DIARRHOEA",
+            "report_count": 100,
+            "pct_of_reports": 2.39
+          },
+          {
+            "meddra_pt": "FATIGUE",
+            "report_count": 97,
+            "pct_of_reports": 2.32
+          },
+          {
+            "meddra_pt": "HEADACHE",
+            "report_count": 88,
+            "pct_of_reports": 2.1
+          },
+          {
+            "meddra_pt": "PRURITUS",
+            "report_count": 81,
+            "pct_of_reports": 1.94
+          },
+          {
+            "meddra_pt": "ABDOMINAL PAIN",
+            "report_count": 80,
+            "pct_of_reports": 1.91
+          },
+          {
+            "meddra_pt": "RASH",
+            "report_count": 80,
+            "pct_of_reports": 1.91
+          },
+          {
+            "meddra_pt": "THERAPEUTIC PRODUCT EFFECT INCOMPLETE",
+            "report_count": 74,
+            "pct_of_reports": 1.77
+          },
+          {
+            "meddra_pt": "PRODUCT QUALITY ISSUE",
+            "report_count": 71,
+            "pct_of_reports": 1.7
+          }
+        ],
+        "top_serious_reactions": [
+          {
+            "meddra_pt": "DRUG INEFFECTIVE",
+            "report_count": 203,
+            "pct_of_reports": 12.78
+          },
+          {
+            "meddra_pt": "CROHN^S DISEASE",
+            "report_count": 84,
+            "pct_of_reports": 5.29
+          },
+          {
+            "meddra_pt": "OFF LABEL USE",
+            "report_count": 81,
+            "pct_of_reports": 5.1
+          },
+          {
+            "meddra_pt": "PSORIASIS",
+            "report_count": 80,
+            "pct_of_reports": 5.04
+          },
+          {
+            "meddra_pt": "ARTHRALGIA",
+            "report_count": 73,
+            "pct_of_reports": 4.6
+          },
+          {
+            "meddra_pt": "DIARRHOEA",
+            "report_count": 66,
+            "pct_of_reports": 4.16
+          },
+          {
+            "meddra_pt": "ABDOMINAL PAIN",
+            "report_count": 65,
+            "pct_of_reports": 4.09
+          },
+          {
+            "meddra_pt": "HEADACHE",
+            "report_count": 58,
+            "pct_of_reports": 3.65
+          },
+          {
+            "meddra_pt": "THERAPEUTIC PRODUCT EFFECT INCOMPLETE",
+            "report_count": 54,
+            "pct_of_reports": 3.4
+          },
+          {
+            "meddra_pt": "FATIGUE",
+            "report_count": 53,
+            "pct_of_reports": 3.34
+          },
+          {
+            "meddra_pt": "WEIGHT DECREASED",
+            "report_count": 47,
+            "pct_of_reports": 2.96
+          },
+          {
+            "meddra_pt": "PRURITUS",
+            "report_count": 46,
+            "pct_of_reports": 2.9
+          },
+          {
+            "meddra_pt": "ASTHENIA",
+            "report_count": 40,
+            "pct_of_reports": 2.52
+          },
+          {
+            "meddra_pt": "MYALGIA",
+            "report_count": 39,
+            "pct_of_reports": 2.46
+          },
+          {
+            "meddra_pt": "ERYTHEMA",
+            "report_count": 38,
+            "pct_of_reports": 2.39
+          }
+        ],
+        "reports_by_year": [
+          {
+            "year": 2017,
+            "report_count": 1
+          },
+          {
+            "year": 2018,
+            "report_count": 4
+          },
+          {
+            "year": 2019,
+            "report_count": 26
+          },
+          {
+            "year": 2020,
+            "report_count": 54
+          },
+          {
+            "year": 2021,
+            "report_count": 103
+          },
+          {
+            "year": 2022,
+            "report_count": 125
+          },
+          {
+            "year": 2023,
+            "report_count": 191
+          },
+          {
+            "year": 2024,
+            "report_count": 794
+          },
+          {
+            "year": 2025,
+            "report_count": 1965
+          },
+          {
+            "year": 2026,
+            "report_count": 922
+          }
+        ],
+        "meddra_version": null
+      },
+      "source_type": "openfda_faers",
+      "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"RISANKIZUMAB\"&limit=1",
+      "source_excerpt": "openFDA drug/event.json aggregate: total_reports=4185, serious=1588, deaths=64",
+      "extracted_by": "fetch_faers.py (openfda drug/event.json, v2 pass)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 1.0
     }
   },
   "exclusivity": {
     "regulatory_application": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "application_type": "BLA",
+        "application_number": "761105",
+        "registry": "purple_book",
+        "center": "CDER",
+        "proprietary_name": "Skyrizi",
+        "applicant": "AbbVie Inc.",
+        "first_approval_date": "2019-04-23"
+      },
+      "source_type": "purple_book",
+      "source_url": "https://purplebooksearch.fda.gov/index.cfm?event=advancedsearch",
+      "source_excerpt": "purplebooksearch.fda.gov live search table: BLA 761105 | Skyrizi | risankizumab-rzaa | 351(a) | AbbVie Inc. | first approved 2019-04-23",
+      "extracted_by": "atlas.regulatory_applications (registry file fetched 2026-09-05)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 1.0
     },
     "orange_book": {
       "value": null,
@@ -1254,13 +1484,128 @@
       "confidence": null
     },
     "purple_book": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "bla_number": "761105",
+        "proprietary_name": "Skyrizi",
+        "proper_name": "risankizumab-rzaa",
+        "applicant": "AbbVie Inc.",
+        "license_type": "351(a)",
+        "license_number": "1889",
+        "center": "CDER",
+        "products": [
+          {
+            "product_number": "001",
+            "strength": "75MG/0.83ML",
+            "dosage_form": "Injection",
+            "route": "Subcutaneous",
+            "presentation": "Pre-Filled Syringe",
+            "marketing_status": "Disc",
+            "licensure": "Licensed",
+            "approval_date": "2019-04-23",
+            "submission_type": "Original",
+            "supplement_number": null
+          },
+          {
+            "product_number": "002",
+            "strength": "150MG/ML",
+            "dosage_form": "Injection",
+            "route": "Subcutaneous",
+            "presentation": "Pre-Filled Syringe",
+            "marketing_status": "Rx",
+            "licensure": "Licensed",
+            "approval_date": "2021-04-26",
+            "submission_type": "Supplement",
+            "supplement_number": "9"
+          },
+          {
+            "product_number": "003",
+            "strength": "150MG/ML",
+            "dosage_form": "Injection",
+            "route": "Subcutaneous",
+            "presentation": "Autoinjector",
+            "marketing_status": "Rx",
+            "licensure": "Licensed",
+            "approval_date": "2021-04-26",
+            "submission_type": "Supplement",
+            "supplement_number": "10"
+          },
+          {
+            "product_number": "004",
+            "strength": "180MG/1.2ML (150MG/ML)",
+            "dosage_form": "Injection",
+            "route": "Subcutaneous",
+            "presentation": "Single-Dose Cartridge",
+            "marketing_status": "Rx",
+            "licensure": "Licensed",
+            "approval_date": "2022-09-23",
+            "submission_type": "Supplement",
+            "supplement_number": "18"
+          },
+          {
+            "product_number": "005",
+            "strength": "360MG/2.4ML (150MG/ML)",
+            "dosage_form": "Injection",
+            "route": "Subcutaneous",
+            "presentation": "Single-Dose Cartridge",
+            "marketing_status": "Rx",
+            "licensure": "Licensed",
+            "approval_date": "2022-06-16",
+            "submission_type": "Supplement",
+            "supplement_number": "16"
+          },
+          {
+            "product_number": "006",
+            "strength": "90MG/ML",
+            "dosage_form": "Injection",
+            "route": "Subcutaneous",
+            "presentation": "Pre-Filled Syringe",
+            "marketing_status": "Rx",
+            "licensure": "Licensed",
+            "approval_date": "2023-03-22",
+            "submission_type": "Supplement",
+            "supplement_number": "24"
+          },
+          {
+            "product_number": "007",
+            "strength": "180MG/1.2ML (150MG/ML)",
+            "dosage_form": "Injection",
+            "route": "Subcutaneous",
+            "presentation": "Pre-Filled Syringe",
+            "marketing_status": "Rx",
+            "licensure": "Licensed",
+            "approval_date": "2025-09-03",
+            "submission_type": "Supplement",
+            "supplement_number": "39"
+          },
+          {
+            "product_number": "008",
+            "strength": "55MG/0.37ML",
+            "dosage_form": "Injection",
+            "route": "Subcutaneous",
+            "presentation": "Pre-Filled Syringe",
+            "marketing_status": "Rx",
+            "licensure": "Licensed",
+            "approval_date": "2026-06-12",
+            "submission_type": "Supplement",
+            "supplement_number": "44"
+          }
+        ],
+        "first_approval_date": "2019-04-23",
+        "date_of_first_licensure": null,
+        "reference_product_exclusivity_expiration": null,
+        "exclusivity_expiration_date": null,
+        "first_interchangeable_exclusivity_expiration": null,
+        "orphan_exclusivity_expiration": null,
+        "patent_list_provided": null,
+        "biosimilars": [],
+        "data_file_month": null
+      },
+      "source_type": "purple_book",
+      "source_url": "https://purplebooksearch.fda.gov/index.cfm?event=advancedsearch",
+      "source_excerpt": "purplebooksearch.fda.gov live search table, BLA 761105 (Skyrizi), 0 biosimilar(s) on file",
+      "extracted_by": "fetch_purple_book.py (purplebooksearch.fda.gov live search table, raw staging pass)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 1.0
     }
   }
 }

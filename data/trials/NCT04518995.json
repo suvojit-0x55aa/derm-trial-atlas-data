@@ -1231,33 +1231,202 @@
   },
   "real_world_safety": {
     "faers_summary": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "query": {
+          "search_field": "patient.drug.medicinalproduct",
+          "search_term": "DEURUXOLITINIB",
+          "receivedate_from": "2024-11-20",
+          "receivedate_to": "2024-11-20",
+          "api_urls": [
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"DEURUXOLITINIB\"&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"DEURUXOLITINIB\"+AND+serious:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"DEURUXOLITINIB\"+AND+seriousnessdeath:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"DEURUXOLITINIB\"+AND+seriousnesshospitalization:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"DEURUXOLITINIB\"+AND+seriousnesslifethreatening:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"DEURUXOLITINIB\"+AND+seriousnessdisabling:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"DEURUXOLITINIB\"&count=patient.reaction.reactionmeddrapt.exact&limit=15",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"DEURUXOLITINIB\"+AND+serious:1&count=patient.reaction.reactionmeddrapt.exact&limit=15",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"DEURUXOLITINIB\"&count=receivedate"
+          ],
+          "data_last_updated": "2026-07-30"
+        },
+        "total_reports": 1,
+        "serious_reports": 0,
+        "death_reports": 0,
+        "hospitalization_reports": 0,
+        "life_threatening_reports": 0,
+        "disability_reports": 0,
+        "top_reactions": [
+          {
+            "meddra_pt": "ACNE",
+            "report_count": 1,
+            "pct_of_reports": 100.0
+          },
+          {
+            "meddra_pt": "ALOPECIA",
+            "report_count": 1,
+            "pct_of_reports": 100.0
+          },
+          {
+            "meddra_pt": "BLOOD CHOLESTEROL INCREASED",
+            "report_count": 1,
+            "pct_of_reports": 100.0
+          },
+          {
+            "meddra_pt": "WEIGHT INCREASED",
+            "report_count": 1,
+            "pct_of_reports": 100.0
+          }
+        ],
+        "top_serious_reactions": [],
+        "reports_by_year": [
+          {
+            "year": 2024,
+            "report_count": 1
+          }
+        ],
+        "meddra_version": null
+      },
+      "source_type": "openfda_faers",
+      "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"DEURUXOLITINIB\"&limit=1",
+      "source_excerpt": "openFDA drug/event.json aggregate: total_reports=1, serious=0, deaths=0",
+      "extracted_by": "fetch_faers.py (openfda drug/event.json, v2 pass)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 1.0
     }
   },
   "exclusivity": {
     "regulatory_application": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "application_type": "NDA",
+        "application_number": "217900",
+        "registry": "orange_book",
+        "center": "CDER",
+        "proprietary_name": "LEQSELVI",
+        "applicant": "SUN PHARMACEUTICAL INDUSTRIES INC",
+        "first_approval_date": "2024-07-25"
+      },
+      "source_type": "orange_book",
+      "source_url": "https://api.fda.gov/drug/orangebook.json",
+      "source_excerpt": "openFDA drug/orangebook.json: DEURUXOLITINIB application N217900, brand LEQSELVI, applicant SUN PHARM INDS INC, approved 2024-07-25",
+      "extracted_by": "atlas.regulatory_applications (registry file fetched 2026-09-05)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 1.0
     },
     "orange_book": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "application_type": "N",
+        "application_number": "217900",
+        "ingredient": "DEURUXOLITINIB",
+        "trade_name": "LEQSELVI",
+        "applicant": "SUN PHARM INDS INC",
+        "applicant_full_name": "SUN PHARMACEUTICAL INDUSTRIES INC",
+        "products": [
+          {
+            "product_number": "001",
+            "strength": "EQ 8MG BASE",
+            "dosage_form": "TABLET",
+            "route": "ORAL",
+            "approval_date": "2024-07-25",
+            "rld": true,
+            "rs": true,
+            "te_code": null,
+            "marketing_type": "HUMAN PRESCRIPTION DRUG"
+          }
+        ],
+        "patents": [
+          {
+            "patent_number": "10561659",
+            "expiration_date": "2037-05-04",
+            "drug_substance_claim": false,
+            "drug_product_claim": false,
+            "patent_use_code": "U-3976",
+            "delisted": false,
+            "submission_date": "2024-08-23",
+            "product_numbers": [
+              "001"
+            ]
+          },
+          {
+            "patent_number": "12076323",
+            "expiration_date": "2037-05-04",
+            "drug_substance_claim": false,
+            "drug_product_claim": false,
+            "patent_use_code": "U-3976",
+            "delisted": false,
+            "submission_date": "2024-10-01",
+            "product_numbers": [
+              "001"
+            ]
+          },
+          {
+            "patent_number": "11919907",
+            "expiration_date": "2041-05-21",
+            "drug_substance_claim": false,
+            "drug_product_claim": true,
+            "patent_use_code": "U-3976",
+            "delisted": false,
+            "submission_date": "2024-08-23",
+            "product_numbers": [
+              "001"
+            ]
+          },
+          {
+            "patent_number": "12285432",
+            "expiration_date": "2042-08-11",
+            "drug_substance_claim": false,
+            "drug_product_claim": false,
+            "patent_use_code": "U-3976",
+            "delisted": false,
+            "submission_date": "2025-05-29",
+            "product_numbers": [
+              "001"
+            ]
+          },
+          {
+            "patent_number": "12247034",
+            "expiration_date": "2044-05-10",
+            "drug_substance_claim": true,
+            "drug_product_claim": true,
+            "patent_use_code": null,
+            "delisted": false,
+            "submission_date": "2025-04-08",
+            "product_numbers": [
+              "001"
+            ]
+          },
+          {
+            "patent_number": "12364699",
+            "expiration_date": "2044-10-10",
+            "drug_substance_claim": false,
+            "drug_product_claim": false,
+            "patent_use_code": "U-3976",
+            "delisted": false,
+            "submission_date": "2025-08-21",
+            "product_numbers": [
+              "001"
+            ]
+          }
+        ],
+        "exclusivities": [
+          {
+            "code": "NCE",
+            "expiration_date": "2029-07-25",
+            "product_numbers": [
+              "001"
+            ]
+          }
+        ],
+        "latest_patent_expiration": "2044-10-10",
+        "latest_exclusivity_expiration": "2029-07-25",
+        "data_file_date": null
+      },
+      "source_type": "orange_book",
+      "source_url": "https://api.fda.gov/drug/orangebook.json?search=products.active_ingredients.name%3A%22DEURUXOLITINIB%22&limit=100",
+      "source_excerpt": "openFDA drug/orangebook.json, 1 product row(s) matched on products.active_ingredients.name='DEURUXOLITINIB'",
+      "extracted_by": "fetch_orange_book.py (openfda drug/orangebook.json, v2 pass)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 1.0
     },
     "purple_book": {
       "value": null,

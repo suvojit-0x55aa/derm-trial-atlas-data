@@ -1851,13 +1851,223 @@
   },
   "real_world_safety": {
     "faers_summary": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "query": {
+          "search_field": "patient.drug.medicinalproduct",
+          "search_term": "TRALOKINUMAB",
+          "receivedate_from": "2018-02-13",
+          "receivedate_to": "2026-06-26",
+          "api_urls": [
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"TRALOKINUMAB\"&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"TRALOKINUMAB\"+AND+serious:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"TRALOKINUMAB\"+AND+seriousnessdeath:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"TRALOKINUMAB\"+AND+seriousnesshospitalization:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"TRALOKINUMAB\"+AND+seriousnesslifethreatening:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"TRALOKINUMAB\"+AND+seriousnessdisabling:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"TRALOKINUMAB\"&count=patient.reaction.reactionmeddrapt.exact&limit=15",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"TRALOKINUMAB\"+AND+serious:1&count=patient.reaction.reactionmeddrapt.exact&limit=15",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"TRALOKINUMAB\"&count=receivedate"
+          ],
+          "data_last_updated": "2026-07-30"
+        },
+        "total_reports": 150,
+        "serious_reports": 134,
+        "death_reports": 3,
+        "hospitalization_reports": 44,
+        "life_threatening_reports": 5,
+        "disability_reports": 2,
+        "top_reactions": [
+          {
+            "meddra_pt": "DRUG INEFFECTIVE",
+            "report_count": 13,
+            "pct_of_reports": 8.67
+          },
+          {
+            "meddra_pt": "PRURITUS",
+            "report_count": 12,
+            "pct_of_reports": 8.0
+          },
+          {
+            "meddra_pt": "OFF LABEL USE",
+            "report_count": 10,
+            "pct_of_reports": 6.67
+          },
+          {
+            "meddra_pt": "CONDITION AGGRAVATED",
+            "report_count": 9,
+            "pct_of_reports": 6.0
+          },
+          {
+            "meddra_pt": "CONJUNCTIVITIS",
+            "report_count": 7,
+            "pct_of_reports": 4.67
+          },
+          {
+            "meddra_pt": "ERYTHEMA",
+            "report_count": 7,
+            "pct_of_reports": 4.67
+          },
+          {
+            "meddra_pt": "ARTHRALGIA",
+            "report_count": 6,
+            "pct_of_reports": 4.0
+          },
+          {
+            "meddra_pt": "CUTANEOUS T-CELL LYMPHOMA",
+            "report_count": 6,
+            "pct_of_reports": 4.0
+          },
+          {
+            "meddra_pt": "DERMATITIS ATOPIC",
+            "report_count": 6,
+            "pct_of_reports": 4.0
+          },
+          {
+            "meddra_pt": "DIZZINESS",
+            "report_count": 6,
+            "pct_of_reports": 4.0
+          },
+          {
+            "meddra_pt": "ECZEMA",
+            "report_count": 6,
+            "pct_of_reports": 4.0
+          },
+          {
+            "meddra_pt": "ECZEMA HERPETICUM",
+            "report_count": 6,
+            "pct_of_reports": 4.0
+          },
+          {
+            "meddra_pt": "RASH",
+            "report_count": 6,
+            "pct_of_reports": 4.0
+          },
+          {
+            "meddra_pt": "WEIGHT INCREASED",
+            "report_count": 6,
+            "pct_of_reports": 4.0
+          },
+          {
+            "meddra_pt": "EYE PRURITUS",
+            "report_count": 5,
+            "pct_of_reports": 3.33
+          }
+        ],
+        "top_serious_reactions": [
+          {
+            "meddra_pt": "PRURITUS",
+            "report_count": 10,
+            "pct_of_reports": 7.46
+          },
+          {
+            "meddra_pt": "OFF LABEL USE",
+            "report_count": 9,
+            "pct_of_reports": 6.72
+          },
+          {
+            "meddra_pt": "CONDITION AGGRAVATED",
+            "report_count": 7,
+            "pct_of_reports": 5.22
+          },
+          {
+            "meddra_pt": "CONJUNCTIVITIS",
+            "report_count": 7,
+            "pct_of_reports": 5.22
+          },
+          {
+            "meddra_pt": "DRUG INEFFECTIVE",
+            "report_count": 7,
+            "pct_of_reports": 5.22
+          },
+          {
+            "meddra_pt": "CUTANEOUS T-CELL LYMPHOMA",
+            "report_count": 6,
+            "pct_of_reports": 4.48
+          },
+          {
+            "meddra_pt": "DIZZINESS",
+            "report_count": 6,
+            "pct_of_reports": 4.48
+          },
+          {
+            "meddra_pt": "ECZEMA HERPETICUM",
+            "report_count": 6,
+            "pct_of_reports": 4.48
+          },
+          {
+            "meddra_pt": "ARTHRALGIA",
+            "report_count": 5,
+            "pct_of_reports": 3.73
+          },
+          {
+            "meddra_pt": "DERMATITIS ATOPIC",
+            "report_count": 5,
+            "pct_of_reports": 3.73
+          },
+          {
+            "meddra_pt": "ECZEMA",
+            "report_count": 5,
+            "pct_of_reports": 3.73
+          },
+          {
+            "meddra_pt": "FATIGUE",
+            "report_count": 5,
+            "pct_of_reports": 3.73
+          },
+          {
+            "meddra_pt": "LOWER RESPIRATORY TRACT INFECTION",
+            "report_count": 5,
+            "pct_of_reports": 3.73
+          },
+          {
+            "meddra_pt": "RASH",
+            "report_count": 5,
+            "pct_of_reports": 3.73
+          },
+          {
+            "meddra_pt": "THERAPEUTIC PRODUCT EFFECT INCOMPLETE",
+            "report_count": 5,
+            "pct_of_reports": 3.73
+          }
+        ],
+        "reports_by_year": [
+          {
+            "year": 2018,
+            "report_count": 1
+          },
+          {
+            "year": 2019,
+            "report_count": 1
+          },
+          {
+            "year": 2022,
+            "report_count": 27
+          },
+          {
+            "year": 2023,
+            "report_count": 21
+          },
+          {
+            "year": 2024,
+            "report_count": 15
+          },
+          {
+            "year": 2025,
+            "report_count": 26
+          },
+          {
+            "year": 2026,
+            "report_count": 59
+          }
+        ],
+        "meddra_version": null
+      },
+      "source_type": "openfda_faers",
+      "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"TRALOKINUMAB\"&limit=1",
+      "source_excerpt": "openFDA drug/event.json aggregate: total_reports=150, serious=134, deaths=3",
+      "extracted_by": "fetch_faers.py (openfda drug/event.json, v2 pass)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 1.0
     }
   },
   "exclusivity": {
@@ -1888,13 +2098,56 @@
       "confidence": null
     },
     "purple_book": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "bla_number": "761180",
+        "proprietary_name": "Adbry",
+        "proper_name": "tralokinumab-ldrm",
+        "applicant": "LEO Pharma A/S",
+        "license_type": "351(a)",
+        "license_number": "2169",
+        "center": "CDER",
+        "products": [
+          {
+            "product_number": "001",
+            "strength": "150MG/ML",
+            "dosage_form": "Injection",
+            "route": "Subcutaneous",
+            "presentation": "Pre-Filled Syringe",
+            "marketing_status": "Rx",
+            "licensure": "Licensed",
+            "approval_date": "2021-12-27",
+            "submission_type": "Original",
+            "supplement_number": null
+          },
+          {
+            "product_number": "002",
+            "strength": "300MG/2ML",
+            "dosage_form": "Injection",
+            "route": "Subcutaneous",
+            "presentation": "Autoinjector",
+            "marketing_status": "Rx",
+            "licensure": "Licensed",
+            "approval_date": "2024-06-12",
+            "submission_type": "Supplement",
+            "supplement_number": "5"
+          }
+        ],
+        "first_approval_date": "2021-12-27",
+        "date_of_first_licensure": null,
+        "reference_product_exclusivity_expiration": null,
+        "exclusivity_expiration_date": null,
+        "first_interchangeable_exclusivity_expiration": null,
+        "orphan_exclusivity_expiration": null,
+        "patent_list_provided": null,
+        "biosimilars": [],
+        "data_file_month": null
+      },
+      "source_type": "purple_book",
+      "source_url": "https://purplebooksearch.fda.gov/index.cfm?event=advancedsearch",
+      "source_excerpt": "purplebooksearch.fda.gov live search table, BLA 761180 (Adbry), 0 biosimilar(s) on file",
+      "extracted_by": "fetch_purple_book.py (purplebooksearch.fda.gov live search table, raw staging pass)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 1.0
     }
   }
 }

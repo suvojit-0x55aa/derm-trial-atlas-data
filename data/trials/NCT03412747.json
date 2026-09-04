@@ -1065,24 +1065,250 @@
   },
   "real_world_safety": {
     "faers_summary": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "query": {
+          "search_field": "patient.drug.medicinalproduct",
+          "search_term": "BIMEKIZUMAB",
+          "receivedate_from": "2016-04-19",
+          "receivedate_to": "2026-06-30",
+          "api_urls": [
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"BIMEKIZUMAB\"&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"BIMEKIZUMAB\"+AND+serious:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"BIMEKIZUMAB\"+AND+seriousnessdeath:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"BIMEKIZUMAB\"+AND+seriousnesshospitalization:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"BIMEKIZUMAB\"+AND+seriousnesslifethreatening:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"BIMEKIZUMAB\"+AND+seriousnessdisabling:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"BIMEKIZUMAB\"&count=patient.reaction.reactionmeddrapt.exact&limit=15",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"BIMEKIZUMAB\"+AND+serious:1&count=patient.reaction.reactionmeddrapt.exact&limit=15",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"BIMEKIZUMAB\"&count=receivedate"
+          ],
+          "data_last_updated": "2026-07-30"
+        },
+        "total_reports": 4062,
+        "serious_reports": 3865,
+        "death_reports": 57,
+        "hospitalization_reports": 1018,
+        "life_threatening_reports": 53,
+        "disability_reports": 35,
+        "top_reactions": [
+          {
+            "meddra_pt": "PSORIATIC ARTHROPATHY",
+            "report_count": 971,
+            "pct_of_reports": 23.9
+          },
+          {
+            "meddra_pt": "PSORIASIS",
+            "report_count": 618,
+            "pct_of_reports": 15.21
+          },
+          {
+            "meddra_pt": "DRUG INEFFECTIVE",
+            "report_count": 487,
+            "pct_of_reports": 11.99
+          },
+          {
+            "meddra_pt": "INJECTION SITE PAIN",
+            "report_count": 398,
+            "pct_of_reports": 9.8
+          },
+          {
+            "meddra_pt": "INAPPROPRIATE SCHEDULE OF PRODUCT ADMINISTRATION",
+            "report_count": 362,
+            "pct_of_reports": 8.91
+          },
+          {
+            "meddra_pt": "OFF LABEL USE",
+            "report_count": 288,
+            "pct_of_reports": 7.09
+          },
+          {
+            "meddra_pt": "PRODUCT DOSE OMISSION ISSUE",
+            "report_count": 285,
+            "pct_of_reports": 7.02
+          },
+          {
+            "meddra_pt": "THERAPY INTERRUPTED",
+            "report_count": 282,
+            "pct_of_reports": 6.94
+          },
+          {
+            "meddra_pt": "HIDRADENITIS",
+            "report_count": 245,
+            "pct_of_reports": 6.03
+          },
+          {
+            "meddra_pt": "FATIGUE",
+            "report_count": 221,
+            "pct_of_reports": 5.44
+          },
+          {
+            "meddra_pt": "ORAL CANDIDIASIS",
+            "report_count": 220,
+            "pct_of_reports": 5.42
+          },
+          {
+            "meddra_pt": "CONDITION AGGRAVATED",
+            "report_count": 208,
+            "pct_of_reports": 5.12
+          },
+          {
+            "meddra_pt": "PNEUMONIA",
+            "report_count": 198,
+            "pct_of_reports": 4.87
+          },
+          {
+            "meddra_pt": "INCORRECT DOSE ADMINISTERED",
+            "report_count": 188,
+            "pct_of_reports": 4.63
+          },
+          {
+            "meddra_pt": "THERAPEUTIC RESPONSE SHORTENED",
+            "report_count": 177,
+            "pct_of_reports": 4.36
+          }
+        ],
+        "top_serious_reactions": [
+          {
+            "meddra_pt": "PSORIATIC ARTHROPATHY",
+            "report_count": 971,
+            "pct_of_reports": 25.12
+          },
+          {
+            "meddra_pt": "PSORIASIS",
+            "report_count": 598,
+            "pct_of_reports": 15.47
+          },
+          {
+            "meddra_pt": "DRUG INEFFECTIVE",
+            "report_count": 467,
+            "pct_of_reports": 12.08
+          },
+          {
+            "meddra_pt": "INJECTION SITE PAIN",
+            "report_count": 383,
+            "pct_of_reports": 9.91
+          },
+          {
+            "meddra_pt": "INAPPROPRIATE SCHEDULE OF PRODUCT ADMINISTRATION",
+            "report_count": 349,
+            "pct_of_reports": 9.03
+          },
+          {
+            "meddra_pt": "THERAPY INTERRUPTED",
+            "report_count": 276,
+            "pct_of_reports": 7.14
+          },
+          {
+            "meddra_pt": "OFF LABEL USE",
+            "report_count": 271,
+            "pct_of_reports": 7.01
+          },
+          {
+            "meddra_pt": "PRODUCT DOSE OMISSION ISSUE",
+            "report_count": 269,
+            "pct_of_reports": 6.96
+          },
+          {
+            "meddra_pt": "HIDRADENITIS",
+            "report_count": 234,
+            "pct_of_reports": 6.05
+          },
+          {
+            "meddra_pt": "FATIGUE",
+            "report_count": 212,
+            "pct_of_reports": 5.49
+          },
+          {
+            "meddra_pt": "ORAL CANDIDIASIS",
+            "report_count": 205,
+            "pct_of_reports": 5.3
+          },
+          {
+            "meddra_pt": "CONDITION AGGRAVATED",
+            "report_count": 199,
+            "pct_of_reports": 5.15
+          },
+          {
+            "meddra_pt": "PNEUMONIA",
+            "report_count": 198,
+            "pct_of_reports": 5.12
+          },
+          {
+            "meddra_pt": "INCORRECT DOSE ADMINISTERED",
+            "report_count": 181,
+            "pct_of_reports": 4.68
+          },
+          {
+            "meddra_pt": "THERAPEUTIC RESPONSE SHORTENED",
+            "report_count": 175,
+            "pct_of_reports": 4.53
+          }
+        ],
+        "reports_by_year": [
+          {
+            "year": 2016,
+            "report_count": 4
+          },
+          {
+            "year": 2019,
+            "report_count": 1
+          },
+          {
+            "year": 2020,
+            "report_count": 3
+          },
+          {
+            "year": 2021,
+            "report_count": 2
+          },
+          {
+            "year": 2022,
+            "report_count": 10
+          },
+          {
+            "year": 2023,
+            "report_count": 89
+          },
+          {
+            "year": 2024,
+            "report_count": 881
+          },
+          {
+            "year": 2025,
+            "report_count": 2123
+          },
+          {
+            "year": 2026,
+            "report_count": 949
+          }
+        ],
+        "meddra_version": null
+      },
+      "source_type": "openfda_faers",
+      "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"BIMEKIZUMAB\"&limit=1",
+      "source_excerpt": "openFDA drug/event.json aggregate: total_reports=4062, serious=3865, deaths=57",
+      "extracted_by": "fetch_faers.py (openfda drug/event.json, v2 pass)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 1.0
     }
   },
   "exclusivity": {
     "regulatory_application": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "application_type": "BLA",
+        "application_number": "761151",
+        "registry": "purple_book",
+        "center": "CDER",
+        "proprietary_name": "Bimzelx",
+        "applicant": "UCB, Inc.",
+        "first_approval_date": "2023-10-17"
+      },
+      "source_type": "purple_book",
+      "source_url": "https://purplebooksearch.fda.gov/index.cfm?event=advancedsearch",
+      "source_excerpt": "purplebooksearch.fda.gov live search table: BLA 761151 | Bimzelx | bimekizumab-bkzx | 351(a) | UCB, Inc. | first approved 2023-10-17",
+      "extracted_by": "atlas.regulatory_applications (registry file fetched 2026-09-05)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 1.0
     },
     "orange_book": {
       "value": null,
@@ -1094,13 +1320,80 @@
       "confidence": null
     },
     "purple_book": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "bla_number": "761151",
+        "proprietary_name": "Bimzelx",
+        "proper_name": "bimekizumab-bkzx",
+        "applicant": "UCB, Inc.",
+        "license_type": "351(a)",
+        "license_number": "1736",
+        "center": "CDER",
+        "products": [
+          {
+            "product_number": "001",
+            "strength": "160MG/ML",
+            "dosage_form": "Injection",
+            "route": "Subcutaneous",
+            "presentation": "Pre-Filled Syringe",
+            "marketing_status": "Rx",
+            "licensure": "Licensed",
+            "approval_date": "2023-10-17",
+            "submission_type": "Original",
+            "supplement_number": null
+          },
+          {
+            "product_number": "002",
+            "strength": "160MG/ML",
+            "dosage_form": "Injection",
+            "route": "Subcutaneous",
+            "presentation": "Autoinjector",
+            "marketing_status": "Rx",
+            "licensure": "Licensed",
+            "approval_date": "2023-10-17",
+            "submission_type": "Original",
+            "supplement_number": null
+          },
+          {
+            "product_number": "003",
+            "strength": "320MG/2ML (160MG/2ML)",
+            "dosage_form": "Injection",
+            "route": "Subcutaneous",
+            "presentation": "Pre-Filled Syringe",
+            "marketing_status": "Rx",
+            "licensure": "Licensed",
+            "approval_date": "2024-10-11",
+            "submission_type": "Supplement",
+            "supplement_number": "9"
+          },
+          {
+            "product_number": "004",
+            "strength": "320MG/2ML (160MG/2ML)",
+            "dosage_form": "Injection",
+            "route": "Subcutaneous",
+            "presentation": "Autoinjector",
+            "marketing_status": "Rx",
+            "licensure": "Licensed",
+            "approval_date": "2024-10-11",
+            "submission_type": "Supplement",
+            "supplement_number": "9"
+          }
+        ],
+        "first_approval_date": "2023-10-17",
+        "date_of_first_licensure": null,
+        "reference_product_exclusivity_expiration": null,
+        "exclusivity_expiration_date": null,
+        "first_interchangeable_exclusivity_expiration": null,
+        "orphan_exclusivity_expiration": null,
+        "patent_list_provided": null,
+        "biosimilars": [],
+        "data_file_month": null
+      },
+      "source_type": "purple_book",
+      "source_url": "https://purplebooksearch.fda.gov/index.cfm?event=advancedsearch",
+      "source_excerpt": "purplebooksearch.fda.gov live search table, BLA 761151 (Bimzelx), 0 biosimilar(s) on file",
+      "extracted_by": "fetch_purple_book.py (purplebooksearch.fda.gov live search table, raw staging pass)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 1.0
     }
   }
 }

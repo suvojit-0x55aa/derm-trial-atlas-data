@@ -925,24 +925,306 @@
   },
   "real_world_safety": {
     "faers_summary": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "query": {
+          "search_field": "patient.drug.medicinalproduct",
+          "search_term": "ADALIMUMAB",
+          "receivedate_from": "2004-03-24",
+          "receivedate_to": "2026-06-30",
+          "api_urls": [
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ADALIMUMAB\"&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ADALIMUMAB\"+AND+serious:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ADALIMUMAB\"+AND+seriousnessdeath:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ADALIMUMAB\"+AND+seriousnesshospitalization:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ADALIMUMAB\"+AND+seriousnesslifethreatening:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ADALIMUMAB\"+AND+seriousnessdisabling:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ADALIMUMAB\"&count=patient.reaction.reactionmeddrapt.exact&limit=15",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ADALIMUMAB\"+AND+serious:1&count=patient.reaction.reactionmeddrapt.exact&limit=15",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ADALIMUMAB\"&count=receivedate"
+          ],
+          "data_last_updated": "2026-07-30"
+        },
+        "total_reports": 46072,
+        "serious_reports": 43369,
+        "death_reports": 6821,
+        "hospitalization_reports": 16069,
+        "life_threatening_reports": 5941,
+        "disability_reports": 5904,
+        "top_reactions": [
+          {
+            "meddra_pt": "DRUG INEFFECTIVE",
+            "report_count": 10464,
+            "pct_of_reports": 22.71
+          },
+          {
+            "meddra_pt": "OFF LABEL USE",
+            "report_count": 8283,
+            "pct_of_reports": 17.98
+          },
+          {
+            "meddra_pt": "RHEUMATOID ARTHRITIS",
+            "report_count": 5673,
+            "pct_of_reports": 12.31
+          },
+          {
+            "meddra_pt": "FATIGUE",
+            "report_count": 5486,
+            "pct_of_reports": 11.91
+          },
+          {
+            "meddra_pt": "PAIN",
+            "report_count": 5437,
+            "pct_of_reports": 11.8
+          },
+          {
+            "meddra_pt": "ARTHRALGIA",
+            "report_count": 5184,
+            "pct_of_reports": 11.25
+          },
+          {
+            "meddra_pt": "RASH",
+            "report_count": 4648,
+            "pct_of_reports": 10.09
+          },
+          {
+            "meddra_pt": "CONDITION AGGRAVATED",
+            "report_count": 4492,
+            "pct_of_reports": 9.75
+          },
+          {
+            "meddra_pt": "DRUG INTOLERANCE",
+            "report_count": 4258,
+            "pct_of_reports": 9.24
+          },
+          {
+            "meddra_pt": "SYSTEMIC LUPUS ERYTHEMATOSUS",
+            "report_count": 4114,
+            "pct_of_reports": 8.93
+          },
+          {
+            "meddra_pt": "NAUSEA",
+            "report_count": 4070,
+            "pct_of_reports": 8.83
+          },
+          {
+            "meddra_pt": "HEADACHE",
+            "report_count": 4059,
+            "pct_of_reports": 8.81
+          },
+          {
+            "meddra_pt": "DIARRHOEA",
+            "report_count": 4055,
+            "pct_of_reports": 8.8
+          },
+          {
+            "meddra_pt": "JOINT SWELLING",
+            "report_count": 4051,
+            "pct_of_reports": 8.79
+          },
+          {
+            "meddra_pt": "ALOPECIA",
+            "report_count": 3893,
+            "pct_of_reports": 8.45
+          }
+        ],
+        "top_serious_reactions": [
+          {
+            "meddra_pt": "DRUG INEFFECTIVE",
+            "report_count": 10125,
+            "pct_of_reports": 23.35
+          },
+          {
+            "meddra_pt": "OFF LABEL USE",
+            "report_count": 8040,
+            "pct_of_reports": 18.54
+          },
+          {
+            "meddra_pt": "RHEUMATOID ARTHRITIS",
+            "report_count": 5645,
+            "pct_of_reports": 13.02
+          },
+          {
+            "meddra_pt": "FATIGUE",
+            "report_count": 5431,
+            "pct_of_reports": 12.52
+          },
+          {
+            "meddra_pt": "PAIN",
+            "report_count": 5342,
+            "pct_of_reports": 12.32
+          },
+          {
+            "meddra_pt": "ARTHRALGIA",
+            "report_count": 5105,
+            "pct_of_reports": 11.77
+          },
+          {
+            "meddra_pt": "RASH",
+            "report_count": 4578,
+            "pct_of_reports": 10.56
+          },
+          {
+            "meddra_pt": "CONDITION AGGRAVATED",
+            "report_count": 4440,
+            "pct_of_reports": 10.24
+          },
+          {
+            "meddra_pt": "DRUG INTOLERANCE",
+            "report_count": 4229,
+            "pct_of_reports": 9.75
+          },
+          {
+            "meddra_pt": "SYSTEMIC LUPUS ERYTHEMATOSUS",
+            "report_count": 4113,
+            "pct_of_reports": 9.48
+          },
+          {
+            "meddra_pt": "NAUSEA",
+            "report_count": 4022,
+            "pct_of_reports": 9.27
+          },
+          {
+            "meddra_pt": "DIARRHOEA",
+            "report_count": 4018,
+            "pct_of_reports": 9.26
+          },
+          {
+            "meddra_pt": "JOINT SWELLING",
+            "report_count": 4018,
+            "pct_of_reports": 9.26
+          },
+          {
+            "meddra_pt": "HEADACHE",
+            "report_count": 3992,
+            "pct_of_reports": 9.2
+          },
+          {
+            "meddra_pt": "ALOPECIA",
+            "report_count": 3874,
+            "pct_of_reports": 8.93
+          }
+        ],
+        "reports_by_year": [
+          {
+            "year": 2004,
+            "report_count": 39
+          },
+          {
+            "year": 2005,
+            "report_count": 65
+          },
+          {
+            "year": 2006,
+            "report_count": 20
+          },
+          {
+            "year": 2007,
+            "report_count": 51
+          },
+          {
+            "year": 2008,
+            "report_count": 142
+          },
+          {
+            "year": 2009,
+            "report_count": 156
+          },
+          {
+            "year": 2010,
+            "report_count": 281
+          },
+          {
+            "year": 2011,
+            "report_count": 224
+          },
+          {
+            "year": 2012,
+            "report_count": 272
+          },
+          {
+            "year": 2013,
+            "report_count": 316
+          },
+          {
+            "year": 2014,
+            "report_count": 305
+          },
+          {
+            "year": 2015,
+            "report_count": 326
+          },
+          {
+            "year": 2016,
+            "report_count": 507
+          },
+          {
+            "year": 2017,
+            "report_count": 733
+          },
+          {
+            "year": 2018,
+            "report_count": 1257
+          },
+          {
+            "year": 2019,
+            "report_count": 2039
+          },
+          {
+            "year": 2020,
+            "report_count": 2729
+          },
+          {
+            "year": 2021,
+            "report_count": 3251
+          },
+          {
+            "year": 2022,
+            "report_count": 4583
+          },
+          {
+            "year": 2023,
+            "report_count": 6776
+          },
+          {
+            "year": 2024,
+            "report_count": 8593
+          },
+          {
+            "year": 2025,
+            "report_count": 8819
+          },
+          {
+            "year": 2026,
+            "report_count": 4588
+          }
+        ],
+        "meddra_version": null
+      },
+      "source_type": "openfda_faers",
+      "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ADALIMUMAB\"&limit=1",
+      "source_excerpt": "openFDA drug/event.json aggregate: total_reports=46072, serious=43369, deaths=6821",
+      "extracted_by": "fetch_faers.py (openfda drug/event.json, v2 pass)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 1.0
     }
   },
   "exclusivity": {
     "regulatory_application": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "application_type": "BLA",
+        "application_number": "125057",
+        "registry": "purple_book",
+        "center": "CDER",
+        "proprietary_name": "Humira",
+        "applicant": "AbbVie Inc.",
+        "first_approval_date": "2002-12-31"
+      },
+      "source_type": "purple_book",
+      "source_url": "https://purplebooksearch.fda.gov/index.cfm?event=advancedsearch",
+      "source_excerpt": "purplebooksearch.fda.gov live search table: BLA 125057 | Humira | adalimumab | 351(a) | AbbVie Inc. | first approved 2002-12-31",
+      "extracted_by": "atlas.regulatory_applications (registry file fetched 2026-09-05)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 1.0
     },
     "orange_book": {
       "value": null,
@@ -954,13 +1236,255 @@
       "confidence": null
     },
     "purple_book": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "bla_number": "125057",
+        "proprietary_name": "Humira",
+        "proper_name": "adalimumab",
+        "applicant": "AbbVie Inc.",
+        "license_type": "351(a)",
+        "license_number": "1889",
+        "center": "CDER",
+        "products": [
+          {
+            "product_number": "001",
+            "strength": "40MG/0.8ML",
+            "dosage_form": "Injection",
+            "route": "Subcutaneous",
+            "presentation": "Autoinjector",
+            "marketing_status": "Rx",
+            "licensure": "Licensed",
+            "approval_date": "2002-12-31",
+            "submission_type": "Original",
+            "supplement_number": null
+          },
+          {
+            "product_number": "002",
+            "strength": "40MG/0.8ML",
+            "dosage_form": "Injection",
+            "route": "Subcutaneous",
+            "presentation": "Pre-Filled Syringe",
+            "marketing_status": "Rx",
+            "licensure": "Licensed",
+            "approval_date": "2002-12-31",
+            "submission_type": "Original",
+            "supplement_number": null
+          },
+          {
+            "product_number": "003",
+            "strength": "20MG/0.4ML",
+            "dosage_form": "Injection",
+            "route": "Subcutaneous",
+            "presentation": "Pre-Filled Syringe",
+            "marketing_status": "Disc*",
+            "licensure": "Licensed",
+            "approval_date": "2008-02-21",
+            "submission_type": "Supplement",
+            "supplement_number": "114"
+          },
+          {
+            "product_number": "004",
+            "strength": "40MG/0.8ML",
+            "dosage_form": "Injection",
+            "route": "Subcutaneous",
+            "presentation": "Single-Dose Vial",
+            "marketing_status": "Disc*",
+            "licensure": "Licensed",
+            "approval_date": "2013-04-24",
+            "submission_type": "Supplement",
+            "supplement_number": "322"
+          },
+          {
+            "product_number": "005",
+            "strength": "10MG/0.2ML",
+            "dosage_form": "Injection",
+            "route": "Subcutaneous",
+            "presentation": "Pre-Filled Syringe",
+            "marketing_status": "Disc*",
+            "licensure": "Licensed",
+            "approval_date": "2014-09-23",
+            "submission_type": "Supplement",
+            "supplement_number": "356"
+          },
+          {
+            "product_number": "006",
+            "strength": "40MG/0.4ML",
+            "dosage_form": "Injection",
+            "route": "Subcutaneous",
+            "presentation": "Pre-Filled Syringe",
+            "marketing_status": "Rx",
+            "licensure": "Licensed",
+            "approval_date": "2015-11-23",
+            "submission_type": "Supplement",
+            "supplement_number": "394"
+          },
+          {
+            "product_number": "007",
+            "strength": "40MG/0.4ML",
+            "dosage_form": "Injection",
+            "route": "Subcutaneous",
+            "presentation": "Autoinjector",
+            "marketing_status": "Rx",
+            "licensure": "Licensed",
+            "approval_date": "2016-03-09",
+            "submission_type": "Supplement",
+            "supplement_number": "398"
+          },
+          {
+            "product_number": "008",
+            "strength": "80MG/0.8ML",
+            "dosage_form": "Injection",
+            "route": "Subcutaneous",
+            "presentation": "Pre-Filled Syringe",
+            "marketing_status": "Rx",
+            "licensure": "Licensed",
+            "approval_date": "2016-10-17",
+            "submission_type": "Supplement",
+            "supplement_number": "400"
+          },
+          {
+            "product_number": "009",
+            "strength": "80MG/0.8ML",
+            "dosage_form": "Injection",
+            "route": "Subcutaneous",
+            "presentation": "Autoinjector",
+            "marketing_status": "Rx",
+            "licensure": "Licensed",
+            "approval_date": "2017-04-21",
+            "submission_type": "Supplement",
+            "supplement_number": "401"
+          },
+          {
+            "product_number": "010",
+            "strength": "20MG/0.2ML",
+            "dosage_form": "Injection",
+            "route": "Subcutaneous",
+            "presentation": "Pre-Filled Syringe",
+            "marketing_status": "Rx",
+            "licensure": "Licensed",
+            "approval_date": "2017-04-28",
+            "submission_type": "Supplement",
+            "supplement_number": "402"
+          },
+          {
+            "product_number": "011",
+            "strength": "10MG/0.1ML",
+            "dosage_form": "Injection",
+            "route": "Subcutaneous",
+            "presentation": "Pre-Filled Syringe",
+            "marketing_status": "Rx",
+            "licensure": "Licensed",
+            "approval_date": "2017-04-28",
+            "submission_type": "Supplement",
+            "supplement_number": "402"
+          }
+        ],
+        "first_approval_date": "2002-12-31",
+        "date_of_first_licensure": null,
+        "reference_product_exclusivity_expiration": null,
+        "exclusivity_expiration_date": null,
+        "first_interchangeable_exclusivity_expiration": null,
+        "orphan_exclusivity_expiration": "2028-02-24",
+        "patent_list_provided": true,
+        "biosimilars": [
+          {
+            "proper_name": "adalimumab-atto",
+            "proprietary_name": "Amjevita",
+            "bla_number": "761024",
+            "applicant": "Amgen Inc.",
+            "approval_date": "2016-09-23",
+            "license_type": "351(k)",
+            "interchangeable_approval_date": "2024-08-20"
+          },
+          {
+            "proper_name": "adalimumab-adbm",
+            "proprietary_name": "Cyltezo",
+            "bla_number": "761058",
+            "applicant": "Boehringer Ingelheim Pharmaceuticals, Inc.",
+            "approval_date": "2024-04-30",
+            "license_type": "351(k)",
+            "interchangeable_approval_date": "2025-05-20"
+          },
+          {
+            "proper_name": "adalimumab-bwwd",
+            "proprietary_name": "Hadlima",
+            "bla_number": "761059",
+            "applicant": "Samsung Bioepis Co., Ltd.",
+            "approval_date": "2022-08-15",
+            "license_type": "351(k)",
+            "interchangeable_approval_date": "2025-05-20"
+          },
+          {
+            "proper_name": "adalimumab-adaz",
+            "proprietary_name": "Hyrimoz",
+            "bla_number": "761071",
+            "applicant": "Sandoz Inc.",
+            "approval_date": "2023-03-20",
+            "license_type": "351(k)",
+            "interchangeable_approval_date": "2024-04-05"
+          },
+          {
+            "proper_name": "adalimumab-afzb",
+            "proprietary_name": "Abrilada",
+            "bla_number": "761118",
+            "applicant": "Pfizer Inc.",
+            "approval_date": "2019-11-15",
+            "license_type": "351(k)",
+            "interchangeable_approval_date": "2023-10-04"
+          },
+          {
+            "proper_name": "adalimumab-fkjp",
+            "proprietary_name": "Hulio",
+            "bla_number": "761154",
+            "applicant": "Biocon Biologics Inc.",
+            "approval_date": "2020-07-06",
+            "license_type": "351(k)",
+            "interchangeable_approval_date": "2025-02-05"
+          },
+          {
+            "proper_name": "adalimumab-aqvh",
+            "proprietary_name": "Yusimry",
+            "bla_number": "761216",
+            "applicant": "Emerge Bioscience Pte. Ltd.",
+            "approval_date": "2023-02-27",
+            "license_type": "351(k)",
+            "interchangeable_approval_date": null
+          },
+          {
+            "proper_name": "adalimumab-aaty",
+            "proprietary_name": "Yuflyma",
+            "bla_number": "761219",
+            "applicant": "CELLTRION, Inc.",
+            "approval_date": "2023-05-23",
+            "license_type": "351(k)",
+            "interchangeable_approval_date": "2025-05-20"
+          },
+          {
+            "proper_name": "adalimumab-aacf",
+            "proprietary_name": "Idacio",
+            "bla_number": "761255",
+            "applicant": "Fresenius Kabi USA, LLC",
+            "approval_date": "2022-12-13",
+            "license_type": "351(k)",
+            "interchangeable_approval_date": null
+          },
+          {
+            "proper_name": "adalimumab-ryvk",
+            "proprietary_name": "Simlandi",
+            "bla_number": "761299",
+            "applicant": "Alvotech USA Inc.",
+            "approval_date": "2024-06-26",
+            "license_type": "351(k)",
+            "interchangeable_approval_date": "2024-06-26"
+          }
+        ],
+        "data_file_month": null
+      },
+      "source_type": "purple_book",
+      "source_url": "https://purplebooksearch.fda.gov/index.cfm?event=advancedsearch",
+      "source_excerpt": "purplebooksearch.fda.gov live search table, BLA 125057 (Humira), 10 biosimilar(s) on file",
+      "extracted_by": "fetch_purple_book.py (purplebooksearch.fda.gov live search table, raw staging pass)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 1.0
     }
   }
 }

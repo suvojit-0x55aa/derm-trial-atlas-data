@@ -863,24 +863,250 @@
   },
   "real_world_safety": {
     "faers_summary": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "query": {
+          "search_field": "patient.drug.medicinalproduct",
+          "search_term": "TILDRAKIZUMAB",
+          "receivedate_from": "2018-04-02",
+          "receivedate_to": "2026-06-26",
+          "api_urls": [
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"TILDRAKIZUMAB\"&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"TILDRAKIZUMAB\"+AND+serious:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"TILDRAKIZUMAB\"+AND+seriousnessdeath:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"TILDRAKIZUMAB\"+AND+seriousnesshospitalization:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"TILDRAKIZUMAB\"+AND+seriousnesslifethreatening:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"TILDRAKIZUMAB\"+AND+seriousnessdisabling:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"TILDRAKIZUMAB\"&count=patient.reaction.reactionmeddrapt.exact&limit=15",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"TILDRAKIZUMAB\"+AND+serious:1&count=patient.reaction.reactionmeddrapt.exact&limit=15",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"TILDRAKIZUMAB\"&count=receivedate"
+          ],
+          "data_last_updated": "2026-07-30"
+        },
+        "total_reports": 1020,
+        "serious_reports": 936,
+        "death_reports": 109,
+        "hospitalization_reports": 445,
+        "life_threatening_reports": 39,
+        "disability_reports": 12,
+        "top_reactions": [
+          {
+            "meddra_pt": "DRUG INEFFECTIVE",
+            "report_count": 67,
+            "pct_of_reports": 6.57
+          },
+          {
+            "meddra_pt": "DEATH",
+            "report_count": 62,
+            "pct_of_reports": 6.08
+          },
+          {
+            "meddra_pt": "PSORIASIS",
+            "report_count": 50,
+            "pct_of_reports": 4.9
+          },
+          {
+            "meddra_pt": "URINARY TRACT INFECTION",
+            "report_count": 40,
+            "pct_of_reports": 3.92
+          },
+          {
+            "meddra_pt": "PNEUMONIA",
+            "report_count": 39,
+            "pct_of_reports": 3.82
+          },
+          {
+            "meddra_pt": "OFF LABEL USE",
+            "report_count": 37,
+            "pct_of_reports": 3.63
+          },
+          {
+            "meddra_pt": "PRODUCT DOSE OMISSION ISSUE",
+            "report_count": 36,
+            "pct_of_reports": 3.53
+          },
+          {
+            "meddra_pt": "CONDITION AGGRAVATED",
+            "report_count": 30,
+            "pct_of_reports": 2.94
+          },
+          {
+            "meddra_pt": "COVID-19",
+            "report_count": 30,
+            "pct_of_reports": 2.94
+          },
+          {
+            "meddra_pt": "INTENTIONAL DOSE OMISSION",
+            "report_count": 30,
+            "pct_of_reports": 2.94
+          },
+          {
+            "meddra_pt": "FATIGUE",
+            "report_count": 24,
+            "pct_of_reports": 2.35
+          },
+          {
+            "meddra_pt": "TREATMENT FAILURE",
+            "report_count": 23,
+            "pct_of_reports": 2.25
+          },
+          {
+            "meddra_pt": "FALL",
+            "report_count": 21,
+            "pct_of_reports": 2.06
+          },
+          {
+            "meddra_pt": "MALAISE",
+            "report_count": 21,
+            "pct_of_reports": 2.06
+          },
+          {
+            "meddra_pt": "MYOCARDIAL INFARCTION",
+            "report_count": 21,
+            "pct_of_reports": 2.06
+          }
+        ],
+        "top_serious_reactions": [
+          {
+            "meddra_pt": "DEATH",
+            "report_count": 62,
+            "pct_of_reports": 6.62
+          },
+          {
+            "meddra_pt": "DRUG INEFFECTIVE",
+            "report_count": 56,
+            "pct_of_reports": 5.98
+          },
+          {
+            "meddra_pt": "PSORIASIS",
+            "report_count": 47,
+            "pct_of_reports": 5.02
+          },
+          {
+            "meddra_pt": "PNEUMONIA",
+            "report_count": 39,
+            "pct_of_reports": 4.17
+          },
+          {
+            "meddra_pt": "URINARY TRACT INFECTION",
+            "report_count": 39,
+            "pct_of_reports": 4.17
+          },
+          {
+            "meddra_pt": "INTENTIONAL DOSE OMISSION",
+            "report_count": 30,
+            "pct_of_reports": 3.21
+          },
+          {
+            "meddra_pt": "CONDITION AGGRAVATED",
+            "report_count": 28,
+            "pct_of_reports": 2.99
+          },
+          {
+            "meddra_pt": "COVID-19",
+            "report_count": 28,
+            "pct_of_reports": 2.99
+          },
+          {
+            "meddra_pt": "PRODUCT DOSE OMISSION ISSUE",
+            "report_count": 28,
+            "pct_of_reports": 2.99
+          },
+          {
+            "meddra_pt": "OFF LABEL USE",
+            "report_count": 26,
+            "pct_of_reports": 2.78
+          },
+          {
+            "meddra_pt": "FATIGUE",
+            "report_count": 22,
+            "pct_of_reports": 2.35
+          },
+          {
+            "meddra_pt": "FALL",
+            "report_count": 21,
+            "pct_of_reports": 2.24
+          },
+          {
+            "meddra_pt": "MYOCARDIAL INFARCTION",
+            "report_count": 21,
+            "pct_of_reports": 2.24
+          },
+          {
+            "meddra_pt": "CEREBROVASCULAR ACCIDENT",
+            "report_count": 20,
+            "pct_of_reports": 2.14
+          },
+          {
+            "meddra_pt": "MALAISE",
+            "report_count": 20,
+            "pct_of_reports": 2.14
+          }
+        ],
+        "reports_by_year": [
+          {
+            "year": 2018,
+            "report_count": 3
+          },
+          {
+            "year": 2019,
+            "report_count": 12
+          },
+          {
+            "year": 2020,
+            "report_count": 43
+          },
+          {
+            "year": 2021,
+            "report_count": 71
+          },
+          {
+            "year": 2022,
+            "report_count": 105
+          },
+          {
+            "year": 2023,
+            "report_count": 195
+          },
+          {
+            "year": 2024,
+            "report_count": 240
+          },
+          {
+            "year": 2025,
+            "report_count": 240
+          },
+          {
+            "year": 2026,
+            "report_count": 111
+          }
+        ],
+        "meddra_version": null
+      },
+      "source_type": "openfda_faers",
+      "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"TILDRAKIZUMAB\"&limit=1",
+      "source_excerpt": "openFDA drug/event.json aggregate: total_reports=1020, serious=936, deaths=109",
+      "extracted_by": "fetch_faers.py (openfda drug/event.json, v2 pass)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 1.0
     }
   },
   "exclusivity": {
     "regulatory_application": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "application_type": "BLA",
+        "application_number": "761067",
+        "registry": "purple_book",
+        "center": "CDER",
+        "proprietary_name": "Ilumya",
+        "applicant": "Sun Pharmaceutical Industries Limited",
+        "first_approval_date": "2018-03-20"
+      },
+      "source_type": "purple_book",
+      "source_url": "https://purplebooksearch.fda.gov/index.cfm?event=advancedsearch",
+      "source_excerpt": "purplebooksearch.fda.gov live search table: BLA 761067 | Ilumya | tildrakizumab-asmn | 351(a) | Sun Pharmaceutical Industries Limited | first approved 2018-03-20",
+      "extracted_by": "atlas.regulatory_applications (registry file fetched 2026-09-05)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 1.0
     },
     "orange_book": {
       "value": null,
@@ -892,13 +1118,44 @@
       "confidence": null
     },
     "purple_book": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "bla_number": "761067",
+        "proprietary_name": "Ilumya",
+        "proper_name": "tildrakizumab-asmn",
+        "applicant": "Sun Pharmaceutical Industries Limited",
+        "license_type": "351(a)",
+        "license_number": "2092",
+        "center": "CDER",
+        "products": [
+          {
+            "product_number": "001",
+            "strength": "100MG/ML",
+            "dosage_form": "Injection",
+            "route": "Subcutaneous",
+            "presentation": "Pre-Filled Syringe",
+            "marketing_status": "Rx",
+            "licensure": "Licensed",
+            "approval_date": "2018-03-20",
+            "submission_type": "Original",
+            "supplement_number": null
+          }
+        ],
+        "first_approval_date": "2018-03-20",
+        "date_of_first_licensure": null,
+        "reference_product_exclusivity_expiration": null,
+        "exclusivity_expiration_date": null,
+        "first_interchangeable_exclusivity_expiration": null,
+        "orphan_exclusivity_expiration": null,
+        "patent_list_provided": null,
+        "biosimilars": [],
+        "data_file_month": null
+      },
+      "source_type": "purple_book",
+      "source_url": "https://purplebooksearch.fda.gov/index.cfm?event=advancedsearch",
+      "source_excerpt": "purplebooksearch.fda.gov live search table, BLA 761067 (Ilumya), 0 biosimilar(s) on file",
+      "extracted_by": "fetch_purple_book.py (purplebooksearch.fda.gov live search table, raw staging pass)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 1.0
     }
   }
 }

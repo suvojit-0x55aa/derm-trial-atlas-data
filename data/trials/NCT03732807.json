@@ -1652,33 +1652,313 @@
   },
   "real_world_safety": {
     "faers_summary": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "query": {
+          "search_field": "patient.drug.medicinalproduct",
+          "search_term": "RITLECITINIB",
+          "receivedate_from": "2022-09-19",
+          "receivedate_to": "2026-05-27",
+          "api_urls": [
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"RITLECITINIB\"&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"RITLECITINIB\"+AND+serious:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"RITLECITINIB\"+AND+seriousnessdeath:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"RITLECITINIB\"+AND+seriousnesshospitalization:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"RITLECITINIB\"+AND+seriousnesslifethreatening:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"RITLECITINIB\"+AND+seriousnessdisabling:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"RITLECITINIB\"&count=patient.reaction.reactionmeddrapt.exact&limit=15",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"RITLECITINIB\"+AND+serious:1&count=patient.reaction.reactionmeddrapt.exact&limit=15",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"RITLECITINIB\"&count=receivedate"
+          ],
+          "data_last_updated": "2026-07-30"
+        },
+        "total_reports": 124,
+        "serious_reports": 48,
+        "death_reports": 1,
+        "hospitalization_reports": 26,
+        "life_threatening_reports": 1,
+        "disability_reports": 0,
+        "top_reactions": [
+          {
+            "meddra_pt": "DRUG INEFFECTIVE",
+            "report_count": 20,
+            "pct_of_reports": 16.13
+          },
+          {
+            "meddra_pt": "OFF LABEL USE",
+            "report_count": 18,
+            "pct_of_reports": 14.52
+          },
+          {
+            "meddra_pt": "THERAPEUTIC PRODUCT EFFECT INCOMPLETE",
+            "report_count": 8,
+            "pct_of_reports": 6.45
+          },
+          {
+            "meddra_pt": "COLECTOMY",
+            "report_count": 7,
+            "pct_of_reports": 5.65
+          },
+          {
+            "meddra_pt": "CONDITION AGGRAVATED",
+            "report_count": 7,
+            "pct_of_reports": 5.65
+          },
+          {
+            "meddra_pt": "JEJUNECTOMY",
+            "report_count": 7,
+            "pct_of_reports": 5.65
+          },
+          {
+            "meddra_pt": "ALOPECIA",
+            "report_count": 6,
+            "pct_of_reports": 4.84
+          },
+          {
+            "meddra_pt": "THERAPEUTIC RESPONSE UNEXPECTED",
+            "report_count": 5,
+            "pct_of_reports": 4.03
+          },
+          {
+            "meddra_pt": "HEADACHE",
+            "report_count": 4,
+            "pct_of_reports": 3.23
+          },
+          {
+            "meddra_pt": "URTICARIA",
+            "report_count": 4,
+            "pct_of_reports": 3.23
+          },
+          {
+            "meddra_pt": "CHEST DISCOMFORT",
+            "report_count": 3,
+            "pct_of_reports": 2.42
+          },
+          {
+            "meddra_pt": "DIARRHOEA",
+            "report_count": 3,
+            "pct_of_reports": 2.42
+          },
+          {
+            "meddra_pt": "DRUG INEFFECTIVE FOR UNAPPROVED INDICATION",
+            "report_count": 3,
+            "pct_of_reports": 2.42
+          },
+          {
+            "meddra_pt": "SYNCOPE",
+            "report_count": 3,
+            "pct_of_reports": 2.42
+          },
+          {
+            "meddra_pt": "URINARY TRACT INFECTION",
+            "report_count": 3,
+            "pct_of_reports": 2.42
+          }
+        ],
+        "top_serious_reactions": [
+          {
+            "meddra_pt": "COLECTOMY",
+            "report_count": 7,
+            "pct_of_reports": 14.58
+          },
+          {
+            "meddra_pt": "DRUG INEFFECTIVE",
+            "report_count": 7,
+            "pct_of_reports": 14.58
+          },
+          {
+            "meddra_pt": "JEJUNECTOMY",
+            "report_count": 7,
+            "pct_of_reports": 14.58
+          },
+          {
+            "meddra_pt": "OFF LABEL USE",
+            "report_count": 3,
+            "pct_of_reports": 6.25
+          },
+          {
+            "meddra_pt": "SYNCOPE",
+            "report_count": 3,
+            "pct_of_reports": 6.25
+          },
+          {
+            "meddra_pt": "ABDOMINAL PAIN",
+            "report_count": 2,
+            "pct_of_reports": 4.17
+          },
+          {
+            "meddra_pt": "ABORTION SPONTANEOUS",
+            "report_count": 2,
+            "pct_of_reports": 4.17
+          },
+          {
+            "meddra_pt": "CHEST DISCOMFORT",
+            "report_count": 2,
+            "pct_of_reports": 4.17
+          },
+          {
+            "meddra_pt": "CONDITION AGGRAVATED",
+            "report_count": 2,
+            "pct_of_reports": 4.17
+          },
+          {
+            "meddra_pt": "DIARRHOEA",
+            "report_count": 2,
+            "pct_of_reports": 4.17
+          },
+          {
+            "meddra_pt": "INFECTION",
+            "report_count": 2,
+            "pct_of_reports": 4.17
+          },
+          {
+            "meddra_pt": "MATERNAL EXPOSURE DURING PREGNANCY",
+            "report_count": 2,
+            "pct_of_reports": 4.17
+          },
+          {
+            "meddra_pt": "PREGNANCY ON ORAL CONTRACEPTIVE",
+            "report_count": 2,
+            "pct_of_reports": 4.17
+          },
+          {
+            "meddra_pt": "ABDOMINAL PAIN UPPER",
+            "report_count": 1,
+            "pct_of_reports": 2.08
+          },
+          {
+            "meddra_pt": "ACNE FULMINANS",
+            "report_count": 1,
+            "pct_of_reports": 2.08
+          }
+        ],
+        "reports_by_year": [
+          {
+            "year": 2022,
+            "report_count": 1
+          },
+          {
+            "year": 2023,
+            "report_count": 11
+          },
+          {
+            "year": 2024,
+            "report_count": 50
+          },
+          {
+            "year": 2025,
+            "report_count": 47
+          },
+          {
+            "year": 2026,
+            "report_count": 15
+          }
+        ],
+        "meddra_version": null
+      },
+      "source_type": "openfda_faers",
+      "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"RITLECITINIB\"&limit=1",
+      "source_excerpt": "openFDA drug/event.json aggregate: total_reports=124, serious=48, deaths=1",
+      "extracted_by": "fetch_faers.py (openfda drug/event.json, v2 pass)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 1.0
     }
   },
   "exclusivity": {
     "regulatory_application": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "application_type": "NDA",
+        "application_number": "215830",
+        "registry": "orange_book",
+        "center": "CDER",
+        "proprietary_name": "LITFULO",
+        "applicant": "PFIZER INC",
+        "first_approval_date": "2023-06-23"
+      },
+      "source_type": "orange_book",
+      "source_url": "https://api.fda.gov/drug/orangebook.json",
+      "source_excerpt": "openFDA drug/orangebook.json: RITLECITINIB application N215830, brand LITFULO, applicant PFIZER, approved 2023-06-23",
+      "extracted_by": "atlas.regulatory_applications (registry file fetched 2026-09-05)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 1.0
     },
     "orange_book": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "application_type": "N",
+        "application_number": "215830",
+        "ingredient": "RITLECITINIB",
+        "trade_name": "LITFULO",
+        "applicant": "PFIZER",
+        "applicant_full_name": "PFIZER INC",
+        "products": [
+          {
+            "product_number": "001",
+            "strength": "EQ 50MG BASE",
+            "dosage_form": "CAPSULE",
+            "route": "ORAL",
+            "approval_date": "2023-06-23",
+            "rld": true,
+            "rs": true,
+            "te_code": null,
+            "marketing_type": "HUMAN PRESCRIPTION DRUG"
+          }
+        ],
+        "patents": [
+          {
+            "patent_number": "12077533",
+            "expiration_date": "2034-12-03",
+            "drug_substance_claim": false,
+            "drug_product_claim": false,
+            "patent_use_code": "U-3994",
+            "delisted": false,
+            "submission_date": "2024-10-02",
+            "product_numbers": [
+              "001"
+            ]
+          },
+          {
+            "patent_number": "9617258",
+            "expiration_date": "2034-12-03",
+            "drug_substance_claim": true,
+            "drug_product_claim": true,
+            "patent_use_code": null,
+            "delisted": false,
+            "submission_date": "2023-07-21",
+            "product_numbers": [
+              "001"
+            ]
+          },
+          {
+            "patent_number": "12116368",
+            "expiration_date": "2041-10-17",
+            "drug_substance_claim": true,
+            "drug_product_claim": false,
+            "patent_use_code": null,
+            "delisted": false,
+            "submission_date": "2024-10-17",
+            "product_numbers": [
+              "001"
+            ]
+          }
+        ],
+        "exclusivities": [
+          {
+            "code": "NCE",
+            "expiration_date": "2028-06-23",
+            "product_numbers": [
+              "001"
+            ]
+          }
+        ],
+        "latest_patent_expiration": "2041-10-17",
+        "latest_exclusivity_expiration": "2028-06-23",
+        "data_file_date": null
+      },
+      "source_type": "orange_book",
+      "source_url": "https://api.fda.gov/drug/orangebook.json?search=products.active_ingredients.name%3A%22RITLECITINIB%22&limit=100",
+      "source_excerpt": "openFDA drug/orangebook.json, 1 product row(s) matched on products.active_ingredients.name='RITLECITINIB'",
+      "extracted_by": "fetch_orange_book.py (openfda drug/orangebook.json, v2 pass)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 1.0
     },
     "purple_book": {
       "value": null,
