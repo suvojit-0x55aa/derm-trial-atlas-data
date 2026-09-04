@@ -1,10 +1,11 @@
-# Open Derm Trial Atlas — Data Pipeline (v1)
+# Open Derm Trial Atlas — Data (v1)
 
-Data-backend pipeline for the Open Derm Trial Atlas: structured, sourced
-trial-design and safety data for atopic dermatitis (AD) drug trials. This
-repo is the data backend only — fetch, extraction, and build scripts all
-live here in `scripts/`. The portal UI (`superderma.ai/atlas`) lives in a
-separate repo (`kolai-website`) and is not part of this pipeline.
+Structured, sourced trial-design and safety data for atopic dermatitis (AD)
+drug trials. **This repo holds data only** — every JSON/CSV file below and
+nothing else. The fetch/extraction/build pipeline that produces this data,
+the portal UI (`superderma.ai/atlas`), and their tests all live in the
+separate `kolai-website` repo; this repo is regenerated from there, not the
+other way around.
 
 ## What v1 covers
 
@@ -103,8 +104,8 @@ out of bounds regardless of the paywall). Two other routes did work:
    schedules, rescue-therapy algorithms, background-therapy regimens, and
    endpoint testing hierarchies, organized in clearly labeled per-trial
    sections. This filled the majority of the remaining gaps across all 5
-   drugs (see `scripts/enrich_publications.py` for the full per-trial
-   breakdown and exact citations).
+   drugs (the full per-trial breakdown and exact citations live in the
+   pipeline's `enrich_publications.py`, in `kolai-website`).
 
 **Unpaywall** (checked for all 13 PMIDs via DOI) reported a legal
 open-access location for 10 of them — but "legal OA" doesn't mean
@@ -187,63 +188,27 @@ above for exactly why each one is unreachable.** Every non-`ctgov_api`
 fill was produced by LLM-assisted reading of a real, cited source (CT.gov
 free text, a downloaded protocol/SAP PDF, CT.gov's structured results
 tables, a PMC full-text paper, an FDA approval-package review, or the
-openFDA label) — see `scripts/enrich_needs_extraction.py`,
-`scripts/fetch_adverse_events.py`, and `scripts/enrich_publications.py`
-for exactly which excerpt backs which field — and every one is
+openFDA label) — the pipeline's `enrich_needs_extraction.py`,
+`fetch_adverse_events.py`, and `enrich_publications.py` (in `kolai-website`)
+record exactly which excerpt backs which field — and every one is
 `reviewed_by: null` pending the human clinical QA pass (captain +
 Garvita) before it's treated as authoritative for publication.
 
-## Running the pipeline
+## The files in this repo
 
-Requires Python 3.9+, standard library only (no dependencies to install).
+This repo holds only the pipeline's output — no code, no tests:
 
-```bash
-# 1. Fetch trial data live from ClinicalTrials.gov API v2 and write
-#    data/trials/<NCT_ID>.json for each of the 17 trials above.
-python3 scripts/fetch_trials.py
-
-# 2. LLM-assisted second pass: fill severity_definition, background_therapy_rule,
-#    dosing_regimen, mechanism_of_action, rescue_therapy_rules, and
-#    endpoint_hierarchy_multiplicity from CT.gov free text, protocol/SAP PDFs,
-#    and the openFDA label API (see source_type table above).
-python3 scripts/enrich_needs_extraction.py
-
-# 3. Adverse events / safety pass: adds the adverse_events group from CT.gov's
-#    structured resultsSection (adverse-event tables, participant-flow dropout
-#    reasons) and the openFDA boxed_warning field.
-python3 scripts/fetch_adverse_events.py
-
-# 4. Publication pass: fills remaining gaps from PMC full-text papers and
-#    FDA Drugs@FDA approval-package reviews (hand-curated excerpts, see
-#    scripts/enrich_publications.py's docstring for what was and wasn't
-#    reachable and why).
-python3 scripts/enrich_publications.py
-
-# 5. Flatten data/trials/*.json into repo-root trials.csv and sources.csv
-python3 scripts/build_csv.py
-```
-
-Optional: `python3 scripts/fetch_protocol_docs.py` re-downloads every
-trial's Study Protocol/SAP PDF and converts it to text under
-`data/_raw_cache/` (gitignored) — use it to re-verify or refresh a
-`protocol_pdf_extraction` excerpt against the source PDF. Requires
-`pdftotext` (poppler). The PMC papers and FDA review PDFs behind
-`publication_extraction` excerpts aren't re-fetched by any script (they
-were downloaded by hand during this pass); their cached copies would live
-under `data/_raw_cache/papers/` if you re-created that directory, and the
-exact URL to re-fetch each one from is in the corresponding field's
-`source_url`.
-
+- `data/trials/<NCT_ID>.json` — one file per trial, the sourced-value
+  format described above.
 - `trials.csv` — one row per trial, one column per field (the field's
   `value`; `needs_extraction` fields are blank).
 - `sources.csv` — one row per sourced value: `nct_id`, `field`,
   `source_type`, `source_url`, `source_excerpt`, `extracted_by`,
   `reviewed_by`, `confidence`. 17 trials × 35 fields = 595 rows.
 
-Re-running `fetch_trials.py` re-pulls fresh data from the live API and
-resets every field to its baseline `ctgov_api`/`needs_extraction` state
-(so re-run steps 2-4 after it); re-run `build_csv.py` last to regenerate
-the CSVs.
+To regenerate or extend this data (fetch, extraction, and build scripts,
+plus their test suite) see `kolai-website`, which owns the pipeline this
+data is exported from.
 
 ## Out of scope for v1
 
