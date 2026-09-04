@@ -1,4 +1,5 @@
 {
+  "schema_version": 2,
   "nct_id": {
     "value": "NCT03575871",
     "source_type": "ctgov_api",
@@ -83,20 +84,83 @@
       "confidence": 1.0
     },
     "mechanism_of_action": {
-      "value": "12.1 Mechanism of Action CIBINQO is a Janus kinase (JAK) inhibitor. Abrocitinib reversibly inhibits JAK1 by blocking the adenosine triphosphate (ATP) binding site. In a cell-free isolated enzyme assay, abrocitinib was selective for JAK1 over JAK2 (28-fold), JAK3 (>340-fold), and tyrosine kinase (TYK) 2 (43-fold), as well as the broader kinome. The relevance of inhibition of specific JAK enzymes to therapeutic effectiveness is not currently known. Both the parent compound and the active metabolites inhibit JAK1 activity in vitro with similar levels of selectivity.",
+      "value": {
+        "modality": "small_molecule",
+        "drug_class": "JAK inhibitor",
+        "antibody_isotype": null,
+        "binding_targets": [],
+        "pathway_cytokines": [],
+        "receptor_subunits": [],
+        "kinases_inhibited": [
+          "JAK1"
+        ],
+        "selectivity": [
+          {
+            "over": "JAK2",
+            "fold": 28,
+            "comparator": "=="
+          },
+          {
+            "over": "JAK3",
+            "fold": 340,
+            "comparator": ">"
+          },
+          {
+            "over": "TYK2",
+            "fold": 43,
+            "comparator": "=="
+          }
+        ],
+        "reversible": true,
+        "mechanism_established": false,
+        "label_section": "12.1"
+      },
       "source_type": "openfda_label",
       "source_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=90d59085-1778-447d-b10a-cede44616558",
-      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1)",
-      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA)",
+      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1) -- v1 extracted text: 12.1 Mechanism of Action CIBINQO is a Janus kinase (JAK) inhibitor. Abrocitinib reversibly inhibits JAK1 by blocking the adenosine triphosphate (ATP) binding site. In a cell-free isolated enzyme assay, abrocitinib was selective for JAK1 over JAK2 (28-fold), JAK3 (>340-fold), and tyrosine kinase (TYK) 2 (43-fold), as well as the broader kinome. The relevance of inhibition of specific JAK enzymes to therapeutic effectiveness is not currently known. Both the parent compound and the active metabolites inhibit JAK1 activity in vitro with similar levels of selectivity.",
+      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 0.9
     },
     "dosing_regimen": {
-      "value": "PF-04965842 100 mg: PF-04965842 100 mg, administered as two tablets to be taken orally once daily for 12 weeks || PF-04965842 200 mg: PF-04965842 200 mg, administered as two tablets to be taken orally once daily for 12 weeks",
+      "value": [
+        {
+          "intervention_name": "PF-04965842 100 mg",
+          "description": "PF-04965842 100 mg, administered as two tablets to be taken orally once daily for 12 weeks",
+          "is_placebo": false,
+          "route": "oral",
+          "dose_form": "tablet",
+          "dose_value": 100,
+          "dose_unit": "mg",
+          "units_per_dose": 2,
+          "frequency": "once_daily",
+          "duration_weeks": 12,
+          "dosing_periods": [],
+          "administration_sites": [],
+          "antibody_isotype": null,
+          "molecular_target": null
+        },
+        {
+          "intervention_name": "PF-04965842 200 mg",
+          "description": "PF-04965842 200 mg, administered as two tablets to be taken orally once daily for 12 weeks",
+          "is_placebo": false,
+          "route": "oral",
+          "dose_form": "tablet",
+          "dose_value": 200,
+          "dose_unit": "mg",
+          "units_per_dose": 2,
+          "frequency": "once_daily",
+          "duration_weeks": 12,
+          "dosing_periods": [],
+          "administration_sites": [],
+          "antibody_isotype": null,
+          "molecular_target": null
+        }
+      ],
       "source_type": "ctgov_text_extraction",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03575871",
       "source_excerpt": "PF-04965842 100 mg: PF-04965842 100 mg, administered as two tablets to be taken orally once daily for 12 weeks || PF-04965842 200 mg: PF-04965842 200 mg, administered as two tablets to be taken orally once daily for 12 weeks",
-      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA)",
+      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 0.8
     }
@@ -113,21 +177,21 @@
       "reviewed_by": null,
       "confidence": 1.0
     },
-    "min_age": {
-      "value": "12 Years",
+    "min_age_years": {
+      "value": 12,
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03575871",
       "source_excerpt": "protocolSection.eligibilityModule.minimumAge",
-      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
     },
-    "max_age": {
+    "max_age_years": {
       "value": null,
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03575871",
       "source_excerpt": "protocolSection.eligibilityModule.maximumAge",
-      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 0.0
     },
@@ -149,12 +213,85 @@
       "reviewed_by": null,
       "confidence": 1.0
     },
-    "severity_definition": {
-      "value": "Diagnosis of atopic dermatitis (AD) for at least 1 year and current status of moderate to severe disease (\\>= the following scores: BSA 10%, IGA 3, EASI 16, Pruritus NRS severity 4)",
+    "severity_criteria": {
+      "value": {
+        "severity_label": "moderate_to_severe",
+        "basis": "eligibility_text",
+        "cross_reference": null,
+        "source_criterion_numbers": [],
+        "baseline_visit_number": null,
+        "criteria": [
+          {
+            "scale": null,
+            "scale_component": null,
+            "scale_variant": null,
+            "metric": "disease_duration_years",
+            "comparator": ">=",
+            "value": 1,
+            "unit": "years",
+            "scale_min": null,
+            "scale_max": null,
+            "assessed_at": null,
+            "scale_anchors": null
+          },
+          {
+            "scale": "BSA",
+            "scale_component": null,
+            "scale_variant": null,
+            "metric": "percent_bsa",
+            "comparator": ">=",
+            "value": 10,
+            "unit": "percent",
+            "scale_min": null,
+            "scale_max": null,
+            "assessed_at": null,
+            "scale_anchors": null
+          },
+          {
+            "scale": "IGA",
+            "scale_component": null,
+            "scale_variant": null,
+            "metric": "absolute_score",
+            "comparator": ">=",
+            "value": 3,
+            "unit": "score",
+            "scale_min": null,
+            "scale_max": null,
+            "assessed_at": null,
+            "scale_anchors": null
+          },
+          {
+            "scale": "EASI",
+            "scale_component": null,
+            "scale_variant": null,
+            "metric": "absolute_score",
+            "comparator": ">=",
+            "value": 16,
+            "unit": "score",
+            "scale_min": null,
+            "scale_max": null,
+            "assessed_at": null,
+            "scale_anchors": null
+          },
+          {
+            "scale": "Pruritus NRS",
+            "scale_component": null,
+            "scale_variant": "severity",
+            "metric": "absolute_score",
+            "comparator": ">=",
+            "value": 4,
+            "unit": "score",
+            "scale_min": null,
+            "scale_max": null,
+            "assessed_at": null,
+            "scale_anchors": null
+          }
+        ]
+      },
       "source_type": "ctgov_text_extraction",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03575871",
       "source_excerpt": "Diagnosis of atopic dermatitis (AD) for at least 1 year and current status of moderate to severe disease (\\>= the following scores: BSA 10%, IGA 3, EASI 16, Pruritus NRS severity 4)",
-      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA)",
+      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 0.75
     }
@@ -205,106 +342,1165 @@
       "reviewed_by": null,
       "confidence": 1.0
     },
-    "background_therapy_rule": {
-      "value": "None -- monotherapy design; concomitant topical (corticosteroids, calcineurin inhibitors, tars, antibiotic creams, topical antihistamines) and systemic AD therapies were prohibited.",
+    "background_therapy": {
+      "value": {
+        "regimen_type": "monotherapy",
+        "background_agent_class": null,
+        "tcs_regimen": null,
+        "step_down_rule": null,
+        "recommended_agents": [],
+        "emollient_required": null,
+        "emollient_frequency": null,
+        "prohibited_concomitant": [
+          "topical corticosteroids",
+          "topical calcineurin inhibitors",
+          "tars",
+          "antibiotic creams",
+          "topical antihistamines",
+          "systemic AD therapies"
+        ],
+        "permitted_concomitant": [],
+        "applies_to_rerandomized_maintenance": null,
+        "sponsor_trial_ids": [],
+        "population_note": null
+      },
       "source_type": "publication_extraction",
       "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7271424/",
-      "source_excerpt": "Methods, Study Design and Treatment: \"Concomitant use of topical (corticosteroids, calcineurin inhibitors, tars, antibiotic creams, or topical antihistamines) or systemic therapies for AD or rescue medication was prohibited. Patients were permitted to use oral antihistamines and topical nonmedicated emollients.\"",
-      "extracted_by": "manual publication_extraction pass (PMC full-text, v1 addendum follow-up; pending human QA)",
+      "source_excerpt": "Methods, Study Design and Treatment: \"Concomitant use of topical (corticosteroids, calcineurin inhibitors, tars, antibiotic creams, or topical antihistamines) or systemic therapies for AD or rescue medication was prohibited. Patients were permitted to use oral antihistamines and topical nonmedicated emollients.\" -- v1 extracted text: None -- monotherapy design; concomitant topical (corticosteroids, calcineurin inhibitors, tars, antibiotic creams, topical antihistamines) and systemic AD therapies were prohibited.",
+      "extracted_by": "manual publication_extraction pass (PMC full-text, v1 addendum follow-up; pending human QA); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 0.75
     }
   },
   "endpoints": {
-    "primary_endpoint_measure": {
-      "value": "Percentage of Participants Achieving Investigator's Global Assessment (IGA) Response of Clear (0) or Almost Clear (1) and Greater Than or Equal to (>=) 2 Points Improvement From Baseline at Week 12 (Time frame: Baseline, Week 12)",
+    "primary_endpoints": {
+      "value": [
+        {
+          "verbatim": "Percentage of Participants Achieving Investigator's Global Assessment (IGA) Response of Clear (0) or Almost Clear (1) and Greater Than or Equal to (>=) 2 Points Improvement From Baseline at Week 12 (Time frame: Baseline, Week 12)",
+          "rank": "primary",
+          "position": 1,
+          "measure_type": "responder_rate",
+          "scale": "IGA",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [
+            {
+              "scale": "IGA",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "absolute_score",
+              "comparator": "in",
+              "value": [
+                0,
+                1
+              ],
+              "unit": "score",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            },
+            {
+              "scale": "IGA",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "point_reduction_from_baseline",
+              "comparator": ">=",
+              "value": 2,
+              "unit": "points",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": "Baseline, Week 12"
+        }
+      ],
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03575871",
       "source_excerpt": "protocolSection.outcomesModule.primaryOutcomes[0].measure/timeFrame",
-      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
     },
-    "secondary_endpoint_measures": {
+    "secondary_endpoints": {
       "value": [
-        "Percentage of Participants Who Achieved at Least 4-Points Improvement From Baseline in the Numerical Rating Scale (NRS) for Severity of Pruritus at Weeks 2, 4, 8 and 12",
-        "Change From Baseline in Pruritus and Symptoms Assessment for Atopic Dermatitis (PSAAD) Total Score at Week 12",
-        "Time to Achieve >=4 Points Improvement From Baseline in Numerical Rating Scale (NRS) for Severity of Pruritus",
-        "Percentage of Participants Achieving Eczema Area and Severity Index Response of >=75% Improvement (EASI-75) From Baseline at Weeks 2, 4 and 8",
-        "Percentage of Participants Achieving IGA Response of Clear (0) or Almost Clear (1) and >=2 Points Improvement From Baseline at Weeks 2, 4 and 8",
-        "Percentage of Participants Achieving Investigator's Global Assessment (IGA) Response of Clear (0) at Week 2, 4, 8 and 12",
-        "Percentage of Participants Achieving Eczema Area and Severity Index Response of >=50% Improvement (EASI-50) From Baseline at Weeks 2, 4, 8 and 12",
-        "Percentage of Participants Achieving Eczema Area and Severity Index Response of >=90% Improvement (EASI-90) From Baseline at Weeks 2, 4, 8 and 12",
-        "Percentage of Participants Achieving Eczema Area and Severity Index Response of 100% Improvement (EASI-100) From Baseline at Weeks 2, 4, 8 and 12",
-        "Percent Change From Baseline in Eczema Area and Severity Index (EASI) Total Score at Week 2, 4, 8 and 12",
-        "Change From Baseline in the Percentage Body Surface Area (%BSA) Affected at Week 2, 4, 8, and 12",
-        "Percentage of Participants With Percentage Body Surface Area (%BSA) (From EASI) < 5% at Weeks 2, 4, 8 and 12",
-        "Percentage of Participants Achieving Scoring Atopic Dermatitis (SCORAD) Response >=50% Improvement From Baseline at Week 2, 4, 8 and 12",
-        "Percentage of Participants Achieving Scoring Atopic Dermatitis (SCORAD) Response >=75% Improvement From Baseline at Week 2, 4, 8 and 12",
-        "Change From Baseline in Scoring Atopic Dermatitis (SCORAD) Visual Analogue Scale (VAS) of Itch at Weeks 2, 4, 8 and 12",
-        "Change From Baseline in Scoring Atopic Dermatitis (SCORAD) Visual Analogue Scale (VAS) Sleep Loss at Weeks 2, 4, 8 and 12",
-        "Percent Change From Baseline in Scoring Atopic Dermatitis (SCORAD) Total Score at Week 2, 4, 8 and 12"
+        {
+          "verbatim": "Percentage of Participants Who Achieved at Least 4-Points Improvement From Baseline in the Numerical Rating Scale (NRS) for Severity of Pruritus at Weeks 2, 4, 8 and 12",
+          "rank": "secondary",
+          "position": 1,
+          "measure_type": "responder_rate",
+          "scale": "Pruritus NRS",
+          "scale_component": null,
+          "scale_variant": "severity",
+          "responder_criteria": [
+            {
+              "scale": "Pruritus NRS",
+              "scale_component": null,
+              "scale_variant": "severity",
+              "metric": "point_reduction_from_baseline",
+              "comparator": ">=",
+              "value": 4,
+              "unit": "points",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 2,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 4,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 8,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Change From Baseline in Pruritus and Symptoms Assessment for Atopic Dermatitis (PSAAD) Total Score at Week 12",
+          "rank": "secondary",
+          "position": 2,
+          "measure_type": "change_from_baseline",
+          "scale": "PSAAD",
+          "scale_component": "Total",
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Time to Achieve >=4 Points Improvement From Baseline in Numerical Rating Scale (NRS) for Severity of Pruritus",
+          "rank": "secondary",
+          "position": 3,
+          "measure_type": "time_to_event",
+          "scale": "Pruritus NRS",
+          "scale_component": null,
+          "scale_variant": "severity",
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants Achieving Eczema Area and Severity Index Response of >=75% Improvement (EASI-75) From Baseline at Weeks 2, 4 and 8",
+          "rank": "secondary",
+          "position": 4,
+          "measure_type": "responder_rate",
+          "scale": "EASI",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [
+            {
+              "scale": "EASI",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "percent_improvement_from_baseline",
+              "comparator": ">=",
+              "value": 75,
+              "unit": "percent",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 2,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 4,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 8,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants Achieving IGA Response of Clear (0) or Almost Clear (1) and >=2 Points Improvement From Baseline at Weeks 2, 4 and 8",
+          "rank": "secondary",
+          "position": 5,
+          "measure_type": "responder_rate",
+          "scale": "IGA",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [
+            {
+              "scale": "IGA",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "absolute_score",
+              "comparator": "in",
+              "value": [
+                0,
+                1
+              ],
+              "unit": "score",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            },
+            {
+              "scale": "IGA",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "point_reduction_from_baseline",
+              "comparator": ">=",
+              "value": 2,
+              "unit": "points",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 2,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 4,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 8,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants Achieving Investigator's Global Assessment (IGA) Response of Clear (0) at Week 2, 4, 8 and 12",
+          "rank": "secondary",
+          "position": 6,
+          "measure_type": "responder_rate",
+          "scale": "IGA",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [
+            {
+              "scale": "IGA",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "absolute_score",
+              "comparator": "in",
+              "value": [
+                0
+              ],
+              "unit": "score",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 2,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 4,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 8,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants Achieving Eczema Area and Severity Index Response of >=50% Improvement (EASI-50) From Baseline at Weeks 2, 4, 8 and 12",
+          "rank": "secondary",
+          "position": 7,
+          "measure_type": "responder_rate",
+          "scale": "EASI",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [
+            {
+              "scale": "EASI",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "percent_improvement_from_baseline",
+              "comparator": ">=",
+              "value": 50,
+              "unit": "percent",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 2,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 4,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 8,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants Achieving Eczema Area and Severity Index Response of >=90% Improvement (EASI-90) From Baseline at Weeks 2, 4, 8 and 12",
+          "rank": "secondary",
+          "position": 8,
+          "measure_type": "responder_rate",
+          "scale": "EASI",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [
+            {
+              "scale": "EASI",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "percent_improvement_from_baseline",
+              "comparator": ">=",
+              "value": 90,
+              "unit": "percent",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 2,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 4,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 8,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants Achieving Eczema Area and Severity Index Response of 100% Improvement (EASI-100) From Baseline at Weeks 2, 4, 8 and 12",
+          "rank": "secondary",
+          "position": 9,
+          "measure_type": "responder_rate",
+          "scale": "EASI",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [
+            {
+              "scale": "EASI",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "percent_improvement_from_baseline",
+              "comparator": ">=",
+              "value": 100,
+              "unit": "percent",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 2,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 4,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 8,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percent Change From Baseline in Eczema Area and Severity Index (EASI) Total Score at Week 2, 4, 8 and 12",
+          "rank": "secondary",
+          "position": 10,
+          "measure_type": "percent_change_from_baseline",
+          "scale": "EASI",
+          "scale_component": "Total",
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 2,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 4,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 8,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Change From Baseline in the Percentage Body Surface Area (%BSA) Affected at Week 2, 4, 8, and 12",
+          "rank": "secondary",
+          "position": 11,
+          "measure_type": "change_from_baseline",
+          "scale": "BSA",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 2,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 4,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 8,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants With Percentage Body Surface Area (%BSA) (From EASI) < 5% at Weeks 2, 4, 8 and 12",
+          "rank": "secondary",
+          "position": 12,
+          "measure_type": "responder_rate",
+          "scale": "BSA",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [
+            {
+              "scale": "BSA",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "percent_bsa",
+              "comparator": "<",
+              "value": 5,
+              "unit": "percent",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 2,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 4,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 8,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants Achieving Scoring Atopic Dermatitis (SCORAD) Response >=50% Improvement From Baseline at Week 2, 4, 8 and 12",
+          "rank": "secondary",
+          "position": 13,
+          "measure_type": "responder_rate",
+          "scale": "SCORAD",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [
+            {
+              "scale": "SCORAD",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "percent_improvement_from_baseline",
+              "comparator": ">=",
+              "value": 50,
+              "unit": "percent",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 2,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 4,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 8,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants Achieving Scoring Atopic Dermatitis (SCORAD) Response >=75% Improvement From Baseline at Week 2, 4, 8 and 12",
+          "rank": "secondary",
+          "position": 14,
+          "measure_type": "responder_rate",
+          "scale": "SCORAD",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [
+            {
+              "scale": "SCORAD",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "percent_improvement_from_baseline",
+              "comparator": ">=",
+              "value": 75,
+              "unit": "percent",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 2,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 4,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 8,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Change From Baseline in Scoring Atopic Dermatitis (SCORAD) Visual Analogue Scale (VAS) of Itch at Weeks 2, 4, 8 and 12",
+          "rank": "secondary",
+          "position": 15,
+          "measure_type": "change_from_baseline",
+          "scale": "SCORAD",
+          "scale_component": "VAS Itch",
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 2,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 4,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 8,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Change From Baseline in Scoring Atopic Dermatitis (SCORAD) Visual Analogue Scale (VAS) Sleep Loss at Weeks 2, 4, 8 and 12",
+          "rank": "secondary",
+          "position": 16,
+          "measure_type": "change_from_baseline",
+          "scale": "SCORAD",
+          "scale_component": "VAS Sleep Loss",
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 2,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 4,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 8,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percent Change From Baseline in Scoring Atopic Dermatitis (SCORAD) Total Score at Week 2, 4, 8 and 12",
+          "rank": "secondary",
+          "position": 17,
+          "measure_type": "percent_change_from_baseline",
+          "scale": "SCORAD",
+          "scale_component": "Total",
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 2,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 4,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 8,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        }
       ],
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03575871",
       "source_excerpt": "protocolSection.outcomesModule.secondaryOutcomes[].measure",
-      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
     },
-    "endpoint_hierarchy_multiplicity": {
-      "value": "Same design as JADE MONO-1: a sequential Bonferroni-based iterative multiple testing procedure strongly controls familywise Type I error at 5% across the two abrocitinib doses vs. placebo on primary and key secondary endpoints, starting with the Week 12 co-primary endpoints (IGA, EASI-75) for 200 mg vs. placebo, then branching on the Week 2 Pruritus NRS-4 result.",
+    "multiplicity_control": {
+      "value": {
+        "procedure": "sequential_bonferroni",
+        "familywise_error_controlled": true,
+        "alpha": 0.05,
+        "alpha_sided": 2,
+        "alpha_per_dose": null,
+        "co_primary_endpoints": [
+          {
+            "label": "IGA 0/1 + >=2-point reduction",
+            "scale": "IGA",
+            "responder_criteria": [
+              {
+                "scale": "IGA",
+                "scale_component": null,
+                "scale_variant": null,
+                "metric": "absolute_score",
+                "comparator": "in",
+                "value": [
+                  0,
+                  1
+                ],
+                "unit": "score",
+                "scale_min": null,
+                "scale_max": null,
+                "assessed_at": null,
+                "scale_anchors": null
+              },
+              {
+                "scale": "IGA",
+                "scale_component": null,
+                "scale_variant": null,
+                "metric": "point_reduction_from_baseline",
+                "comparator": ">=",
+                "value": 2,
+                "unit": "points",
+                "scale_min": null,
+                "scale_max": null,
+                "assessed_at": null,
+                "scale_anchors": null
+              }
+            ],
+            "timepoint_week": 12,
+            "alpha": 0.05,
+            "step": null
+          },
+          {
+            "label": "EASI-75",
+            "scale": "EASI",
+            "responder_criteria": [
+              {
+                "scale": "EASI",
+                "scale_component": null,
+                "scale_variant": null,
+                "metric": "percent_improvement_from_baseline",
+                "comparator": ">=",
+                "value": 75,
+                "unit": "percent",
+                "scale_min": null,
+                "scale_max": null,
+                "assessed_at": null,
+                "scale_anchors": null
+              }
+            ],
+            "timepoint_week": 12,
+            "alpha": 0.05,
+            "step": null
+          }
+        ],
+        "testing_sequence": [],
+        "alpha_split": [],
+        "alpha_recycling": null,
+        "doses_compared": [
+          "100 mg",
+          "200 mg"
+        ],
+        "dose_comparison_order": [
+          "200 mg vs placebo"
+        ],
+        "branching_on": {
+          "label": "Pruritus NRS >=4-point improvement",
+          "scale": "Pruritus NRS",
+          "responder_criteria": [
+            {
+              "scale": "Pruritus NRS",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "point_reduction_from_baseline",
+              "comparator": ">=",
+              "value": 4,
+              "unit": "points",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "timepoint_week": 2,
+          "alpha": 0.025,
+          "step": null
+        },
+        "regulatory_variants": [],
+        "rescue_counted_as_nonresponder": null,
+        "active_comparator_excluded_from_hierarchy": null,
+        "background_tcs": null,
+        "method_citations": [],
+        "finalized_in_sap": null,
+        "same_design_as": [
+          "NCT03349060"
+        ],
+        "further_endpoints_through_week": null
+      },
       "source_type": "protocol_pdf_extraction",
       "source_url": "https://cdn.clinicaltrials.gov/large-docs/71/NCT03575871/SAP_001.pdf",
-      "source_excerpt": "Multiple Testing Procedure (Figure 2 schematic)",
-      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA)",
+      "source_excerpt": "Multiple Testing Procedure (Figure 2 schematic) -- v1 extracted text: Same design as JADE MONO-1: a sequential Bonferroni-based iterative multiple testing procedure strongly controls familywise Type I error at 5% across the two abrocitinib doses vs. placebo on primary and key secondary endpoints, starting with the Week 12 co-primary endpoints (IGA, EASI-75) for 200 mg vs. placebo, then branching on the Week 2 Pruritus NRS-4 result.",
+      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 0.75
     }
   },
   "timing_ops": {
     "start_date": {
-      "value": "2018-06-29",
+      "value": {
+        "date": "2018-06-29",
+        "precision": "day"
+      },
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03575871",
       "source_excerpt": "protocolSection.statusModule.startDateStruct.date",
-      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
     },
     "primary_completion_date": {
-      "value": "2019-08-13",
+      "value": {
+        "date": "2019-08-13",
+        "precision": "day"
+      },
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03575871",
       "source_excerpt": "protocolSection.statusModule.primaryCompletionDateStruct.date",
-      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
     },
     "completion_date": {
-      "value": "2019-08-13",
+      "value": {
+        "date": "2019-08-13",
+        "precision": "day"
+      },
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03575871",
       "source_excerpt": "protocolSection.statusModule.completionDateStruct.date",
-      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
     },
-    "visit_schedule": {
-      "value": "Screening period (28 days), 12-week placebo-controlled double-blind treatment period, 4-week follow-up period (for subjects not entering the long-term extension). \"Subjects had on-site visits at screening, baseline (Week 0) and Weeks 2, 4, 8, 12 and 16 (follow-up visit). Subjects were also contacted via phone calls at Weeks 1 and 6.\"",
+    "study_schedule": {
+      "value": {
+        "screening_days": 28,
+        "screening_washout": null,
+        "periods": [
+          {
+            "name": "double_blind_treatment",
+            "start_week": 0,
+            "end_week": 12,
+            "duration_weeks": 12,
+            "blinding": "double_blind",
+            "background_tcs": null
+          },
+          {
+            "name": "follow_up",
+            "start_week": 12,
+            "end_week": 16,
+            "duration_weeks": 4,
+            "blinding": null,
+            "background_tcs": null
+          }
+        ],
+        "dosing_interval": null,
+        "visit_cadence": null,
+        "visit_cadence_until_week": null,
+        "visit_weeks": [
+          0,
+          2,
+          4,
+          8,
+          12,
+          16
+        ],
+        "visit_days": null,
+        "phone_contact_weeks": [
+          1,
+          6
+        ],
+        "primary_endpoint_week": 12,
+        "end_of_treatment_week": 12,
+        "end_of_study_week": 16,
+        "total_duration_weeks": 16,
+        "follow_up_weeks": 4,
+        "follow_up_days": null,
+        "follow_up_visit_week": 16,
+        "long_term_extension": true,
+        "extension_end_week": null,
+        "extension_visit_interval_weeks": null,
+        "extension_study_id": null,
+        "rerandomization_week": null,
+        "maintenance_arms": null,
+        "maintenance_response_check_weeks": null,
+        "last_injection_week": null,
+        "key_secondary_weeks": null,
+        "follow_up_visit_interval_weeks": null,
+        "full_visit_table_available": false,
+        "source_inconsistency": null
+      },
       "source_type": "publication_extraction",
       "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/nda/2022/213871Orig1s000MultidisciplineR.pdf",
-      "source_excerpt": "Section 8.1.1 \"Trial Design\" (Trial B7451013 / JADE MONO-2, identically designed to B7451012)",
-      "extracted_by": "manual publication_extraction pass (FDA approval-package review, v1 addendum follow-up; pending human QA)",
+      "source_excerpt": "Section 8.1.1 \"Trial Design\" (Trial B7451013 / JADE MONO-2, identically designed to B7451012) -- v1 extracted text: Screening period (28 days), 12-week placebo-controlled double-blind treatment period, 4-week follow-up period (for subjects not entering the long-term extension). \"Subjects had on-site visits at screening, baseline (Week 0) and Weeks 2, 4, 8, 12 and 16 (follow-up visit). Subjects were also contacted via phone calls at Weeks 1 and 6.\"",
+      "extracted_by": "manual publication_extraction pass (FDA approval-package review, v1 addendum follow-up; pending human QA); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 0.75
     },
-    "rescue_therapy_rules": {
-      "value": "No rescue medication provision: concomitant topical or systemic AD therapy and rescue medication were prohibited under the protocol (monotherapy design). Only oral antihistamines and topical nonmedicated emollients were permitted.",
+    "rescue_therapy": {
+      "value": {
+        "permitted": false,
+        "trigger": "prohibited",
+        "earliest_week": null,
+        "prohibited_through_week": null,
+        "trigger_rules": [],
+        "flare_definition": [],
+        "first_step": null,
+        "topical_min_days_before_systemic": null,
+        "topical_rescue_requires_study_drug_discontinuation": null,
+        "systemic_rescue_requires_study_drug_discontinuation": null,
+        "resume_after_systemic_rescue_half_lives": null,
+        "resume_after_phototherapy_months": null,
+        "rescued_counted_as_nonresponder": null,
+        "rescued_counted_as_treatment_failure": null,
+        "continue_visits_after_discontinuation": null,
+        "continue_visits_through_week": null,
+        "topical_rescue_not_counted_after_week": null,
+        "topical_agents": [],
+        "topical_potency_classes": [],
+        "tci_reserved_areas": [],
+        "systemic_agents": [],
+        "oral_corticosteroid_limit": null,
+        "rescue_period": null,
+        "escape_arm_washout_half_lives": null,
+        "maintenance_period_rule": null,
+        "permitted_concomitant": [
+          "oral antihistamines",
+          "topical non-medicated emollients"
+        ],
+        "recorded_in_ecrf": null,
+        "applies_to_period": null,
+        "long_term_extension_eligible_after_rescue": null
+      },
       "source_type": "publication_extraction",
       "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7271424/",
-      "source_excerpt": "Methods, Study Design and Treatment: \"Concomitant use of topical (corticosteroids, calcineurin inhibitors, tars, antibiotic creams, or topical antihistamines) or systemic therapies for AD or rescue medication was prohibited. Patients were permitted to use oral antihistamines and topical nonmedicated emollients.\"",
-      "extracted_by": "manual publication_extraction pass (PMC full-text, v1 addendum follow-up; pending human QA)",
+      "source_excerpt": "Methods, Study Design and Treatment: \"Concomitant use of topical (corticosteroids, calcineurin inhibitors, tars, antibiotic creams, or topical antihistamines) or systemic therapies for AD or rescue medication was prohibited. Patients were permitted to use oral antihistamines and topical nonmedicated emollients.\" -- v1 extracted text: No rescue medication provision: concomitant topical or systemic AD therapy and rescue medication were prohibited under the protocol (monotherapy design). Only oral antihistamines and topical nonmedicated emollients were permitted.",
+      "extracted_by": "manual publication_extraction pass (PMC full-text, v1 addendum follow-up; pending human QA); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 0.75
     }
@@ -369,8 +1565,8 @@
     "most_common_adverse_events": {
       "value": [
         {
-          "term": "Dermatitis atopic",
-          "organ_system": "Skin and subcutaneous tissue disorders",
+          "meddra_pt": "Dermatitis atopic",
+          "meddra_soc": "Skin and subcutaneous tissue disorders",
           "per_arm": [
             {
               "arm": "PF-04965842 100 mg",
@@ -393,8 +1589,8 @@
           ]
         },
         {
-          "term": "Nausea",
-          "organ_system": "Gastrointestinal disorders",
+          "meddra_pt": "Nausea",
+          "meddra_soc": "Gastrointestinal disorders",
           "per_arm": [
             {
               "arm": "PF-04965842 100 mg",
@@ -417,8 +1613,8 @@
           ]
         },
         {
-          "term": "Nasopharyngitis",
-          "organ_system": "Infections and infestations",
+          "meddra_pt": "Nasopharyngitis",
+          "meddra_soc": "Infections and infestations",
           "per_arm": [
             {
               "arm": "PF-04965842 100 mg",
@@ -441,8 +1637,8 @@
           ]
         },
         {
-          "term": "Upper respiratory tract infection",
-          "organ_system": "Infections and infestations",
+          "meddra_pt": "Upper respiratory tract infection",
+          "meddra_soc": "Infections and infestations",
           "per_arm": [
             {
               "arm": "PF-04965842 100 mg",
@@ -465,8 +1661,8 @@
           ]
         },
         {
-          "term": "Headache",
-          "organ_system": "Nervous system disorders",
+          "meddra_pt": "Headache",
+          "meddra_soc": "Nervous system disorders",
           "per_arm": [
             {
               "arm": "PF-04965842 100 mg",
@@ -489,8 +1685,8 @@
           ]
         },
         {
-          "term": "Acne",
-          "organ_system": "Skin and subcutaneous tissue disorders",
+          "meddra_pt": "Acne",
+          "meddra_soc": "Skin and subcutaneous tissue disorders",
           "per_arm": [
             {
               "arm": "PF-04965842 100 mg",
@@ -513,8 +1709,8 @@
           ]
         },
         {
-          "term": "Vomiting",
-          "organ_system": "Gastrointestinal disorders",
+          "meddra_pt": "Vomiting",
+          "meddra_soc": "Gastrointestinal disorders",
           "per_arm": [
             {
               "arm": "PF-04965842 100 mg",
@@ -540,7 +1736,7 @@
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03575871",
       "source_excerpt": "resultsSection.adverseEventsModule.otherEvents[] (top 8 of 7 by highest single-arm incidence; CT.gov's own >=5% frequency-threshold table)",
-      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass)",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
     },
@@ -573,13 +1769,81 @@
       "confidence": 1.0
     },
     "boxed_warning": {
-      "value": "WARNING: SERIOUS INFECTIONS, MORTALITY, MALIGNANCY, MAJOR ADVERSE CARDIOVASCULAR EVENTS, and THROMBOSIS WARNING: SERIOUS INFECTIONS, MORTALITY, MALIGNANCY, MAJOR ADVERSE CARDIOVASCULAR EVENTS (MACE), and THROMBOSIS See full prescribing information for complete boxed warning. \u2022 Increased risk of serious bacterial, fungal, viral and opportunistic infections leading to hospitalization or death, including tuberculosis (TB). Discontinue treatment with CIBINQO if serious or opportunistic infection occurs. Test for latent TB before and during therapy; treat latent TB prior to use. Monitor all patients for active TB during treatment, even patients with initial negative latent TB test. ( 5.1 ) \u2022 Higher rate of all-cause mortality, including sudden cardiovascular death, with another JAK inhibitor vs. TNF blockers in rheumatoid arthritis (RA) patients. CIBINQO is not approved for use in RA patients. ( 5.2 ) \u2022 Malignancies have occurred with CIBINQO. Higher rate of lymphomas and lung cancers with another JAK inhibitor vs. TNF blockers in RA patients. ( 5.3 ) \u2022 MACE has occurred with CIBINQO. Higher rate of MACE (defined as cardiovascular death, myocardial infarction, and stroke) with another JAK inhibitor vs. TNF blockers in RA patients. ( 5.4 ) \u2022 Thrombosis has occurred with CIBINQO. Increased incidence of pulmonary embolism, venous and arterial thrombosis with another JAK inhibitor vs. TNF blockers. ( 5.5 ) Serious Infections Patients treated with CIBINQO may be at increased risk for developing serious infections that may lead to hospitalization or death. The most frequent serious infections reported with CIBINQO were herpes simplex, herpes zoster, and pneumonia [see Warnings and Precautions (5.1) and Adverse Reactions (6.1) ] . If a serious or opportunistic infection develops, discontinue CIBINQO and control the infection. Reported infections from Janus kinase (JAK) inhibitors used to treat inflammatory conditions: \u2022 Active tuberculosis, which may present with pulmonary or extrapulmonary disease. Test for latent TB before and during therapy; treat latent TB prior to use. Monitor all patients for active TB during treatment, even patients with initial negative latent TB test. \u2022 Invasive fungal infections, including cryptococcosis and pneumocystosis. Patients with invasive fungal infections may present with disseminated, rather than localized, disease. \u2022 Bacterial, viral, including herpes zoster, and other infections due to opportunistic pathogens. Avoid use of CIBINQO in patients with an active, serious infection including localized infections. The risks and benefits of treatment with CIBINQO should be carefully considered prior to initiating therapy in patients with chronic or recurrent infections. Patients should be closely monitored for the development of signs and symptoms of infection during and after treatment with CIBINQO, including the possible development of tuberculosis in patients who tested negative for latent tuberculosis infection prior to initiating therapy [see Warnings and Precautions (5.1) ] . Mortality In a large, randomized, postmarketing safety study in rheumatoid arthritis (RA) patients 50 years of age and older with at least one cardiovascular risk factor comparing another JAK inhibitor to TNF blocker treatment, a higher rate of all-cause mortality, including sudden cardiovascular death, was observed with the JAK inhibitor. CIBINQO is not approved for use in RA patients [see Warnings and Precautions (5.2) ] . Malignancies Malignancies were reported in patients treated with CIBINQO. Lymphoma and other malignancies have been observed in patients receiving JAK inhibitors used to treat inflammatory conditions. In RA patients treated with another JAK inhibitor, a higher rate of malignancies (excluding non-melanoma skin cancer (NMSC)) was observed when compared with TNF blockers. Patients who are current or past smokers are at additional increased risk [see Warnings and Precautions (5.3) ] . Major Adverse Cardiovascular Events Major adverse cardiovascular events were reported in patients treated with CIBINQO. In RA patients 50 years of age and older with at least one cardiovascular risk factor treated with another JAK inhibitor, a higher rate of major adverse cardiovascular events (MACE) (defined as cardiovascular death, myocardial infarction, and stroke), was observed when compared with TNF blockers. Patients who are current or past smokers are at additional increased risk. Discontinue CIBINQO in patients that have experienced a myocardial infarction or stroke [see Warnings and Precautions (5.4) ] . Thrombosis Deep venous thrombosis (DVT) and pulmonary embolism (PE) have been reported in patients treated with CIBINQO. Thrombosis, including PE, DVT, and arterial thrombosis have been reported in patients receiving JAK inhibitors used to treat inflammatory conditions. Many of these adverse reactions were serious and some resulted in death. In RA patients 50 years of age and older with at least one cardiovascular risk factor treated with another JAK inhibitor, a higher rate of thrombosis was observed when compared with TNF blockers. Avoid CIBINQO in patients at risk. If symptoms of thrombosis occur, discontinue CIBINQO and treat appropriately [see Warnings and Precautions (5.5) ] .",
+      "value": {
+        "present": true,
+        "title": "SERIOUS INFECTIONS, MORTALITY, MALIGNANCY, MAJOR ADVERSE CARDIOVASCULAR EVENTS, and THROMBOSIS",
+        "warning_categories": [
+          "serious_infections",
+          "mortality",
+          "malignancy",
+          "mace",
+          "thrombosis"
+        ],
+        "referenced_label_sections": [
+          "5.1",
+          "5.2",
+          "5.3",
+          "5.4",
+          "5.5"
+        ],
+        "product_names": [
+          "CIBINQO"
+        ]
+      },
       "source_type": "openfda_label",
       "source_url": "https://api.fda.gov/drug/label.json?search=openfda.substance_name:ABROCITINIB&limit=1",
-      "source_excerpt": "results[0].boxed_warning",
-      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass)",
+      "source_excerpt": "results[0].boxed_warning -- v1 extracted text: WARNING: SERIOUS INFECTIONS, MORTALITY, MALIGNANCY, MAJOR ADVERSE CARDIOVASCULAR EVENTS, and THROMBOSIS WARNING: SERIOUS INFECTIONS, MORTALITY, MALIGNANCY, MAJOR ADVERSE CARDIOVASCULAR EVENTS (MACE), and THROMBOSIS See full prescribing information for complete boxed warning. • Increased risk of serious bacterial, fungal, viral and opportunistic infections leading to hospitalization or death, including tuberculosis (TB). Discontinue treatment with CIBINQO if serious or opportunistic infection occurs. Test for latent TB before and during therapy; treat latent TB prior to use. Monitor all patients for active TB during treatment, even patients with initial negative latent TB test. ( 5.1 ) • Higher rate of all-cause mortality, including sudden cardiovascular death, with another JAK inhibitor vs. TNF blockers in rheumatoid arthritis (RA) patients. CIBINQO is not approved for use in RA patients. ( 5.2 ) • Malignancies have occurred with CIBINQO. Higher rate of lymphomas and lung cancers with another JAK inhibitor vs. TNF blockers in RA patients. ( 5.3 ) • MACE has occurred with CIBINQO. Higher rate of MACE (defined as cardiovascular death, myocardial infarction, and stroke) with another JAK inhibitor vs. TNF blockers in RA patients. ( 5.4 ) • Thrombosis has occurred with CIBINQO. Increased incidence of pulmonary embolism, venous and arterial thrombosis with another JAK inhibitor vs. TNF blockers. ( 5.5 ) Serious Infections Patients treated with CIBINQO may be at increased risk for developing serious infections that may lead to hospitalization or death. The most frequent serious infections reported with CIBINQO were herpes simplex, herpes zoster, and pneumonia [see Warnings and Precautions (5.1) and Adverse Reactions (6.1) ] . If a serious or opportunistic infection develops, discontinue CIBINQO and control the infection. Reported infections from Janus kinase (JAK) inhibitors used to treat inflammatory conditions: • Active tuberculosis, which may present with pulmonary or extrapulmonary disease. Test for latent TB before and during therapy; treat latent TB prior to use. Monitor all patients for active TB during treatment, even patients with initial negative latent TB test. • Invasive fungal infections, including cryptococcosis and pneumocystosis. Patients with invasive fungal infections may present with disseminated, rather than localized, disease. • Bacterial, viral, including herpes zoster, and other infections due to opportunistic pathogens. Avoid use of CIBINQO in patients with an active, serious infection including localized infections. The risks and benefits of treatment with CIBINQO should be carefully considered prior to initiating therapy in patients with chronic or recurrent infections. Patients should be closely monitored for the development of signs and symptoms of infection during and after treatment with CIBINQO, including the possible development of tuberculosis in patients who tested negative for latent tuberculosis infection prior to initiating therapy [see Warnings and Precautions (5.1) ] . Mortality In a large, randomized, postmarketing safety study in rheumatoid arthritis (RA) patients 50 years of age and older with at least one cardiovascular risk factor comparing another JAK inhibitor to TNF blocker treatment, a higher rate of all-cause mortality, including sudden cardiovascular death, was observed with the JAK inhibitor. CIBINQO is not approved for use in RA patients [see Warnings and Precautions (5.2) ] . Malignancies Malignancies were reported in patients treated with CIBINQO. Lymphoma and other malignancies have been observed in patients receiving JAK inhibitors used to treat inflammatory conditions. In RA patients treated with another JAK inhibitor, a higher rate of malignancies (excluding non-melanoma skin cancer (NMSC)) was observed when compared with TNF blockers. Patients who are current or past smokers are at additional increased risk [see Warnings and Precautions (5.3) ] . Major Adverse Cardiovascular Events Major adverse cardiovascular events were reported in patients treated with CIBINQO. In RA patients 50 years of age and older with at least one cardiovascular risk factor treated with another JAK inhibitor, a higher rate of major adverse cardiovascular events (MACE) (defined as cardiovascular death, myocardial infarction, and stroke), was observed when compared with TNF blockers. Patients who are current or past smokers are at additional increased risk. Discontinue CIBINQO in patients that have experienced a myocardial infarction or stroke [see Warnings and Precautions (5.4) ] . Thrombosis Deep venous thrombosis (DVT) and pulmonary embolism (PE) have been reported in patients treated with CIBINQO. Thrombosis, including PE, DVT, and arterial thrombosis have been reported in patients receiving JAK inhibitors used to treat inflammatory conditions. Many of these adverse reactions were serious and some resulted in death. In RA patients 50 years of age and older with at least one cardiovascular risk factor treated with another JAK inhibitor, a higher rate of thrombosis was observed when compared with TNF blockers. Avoid CIBINQO in patients at risk. If symptoms of thrombosis occur, discontinue CIBINQO and treat appropriately [see Warnings and Precautions (5.5) ] .",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
+    }
+  },
+  "real_world_safety": {
+    "faers_summary": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    }
+  },
+  "exclusivity": {
+    "regulatory_application": {
+      "value": {
+        "application_type": "NDA",
+        "application_number": "213871",
+        "registry": "orange_book",
+        "center": "CDER",
+        "proprietary_name": "CIBINQO",
+        "applicant": "PFIZER INC",
+        "first_approval_date": "2022-01-14"
+      },
+      "source_type": "orange_book",
+      "source_url": "https://www.fda.gov/media/76860/download",
+      "source_excerpt": "products.txt: ABROCITINIB~TABLET;ORAL~CIBINQO~PFIZER~50MG~N~213871~001~~Jan 14, 2022~Yes~No~RX~PFIZER INC",
+      "extracted_by": "atlas.regulatory_applications (registry file fetched 2026-09-05)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "orange_book": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    },
+    "purple_book": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
     }
   }
 }

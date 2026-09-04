@@ -1,4 +1,5 @@
 {
+  "schema_version": 2,
   "nct_id": {
     "value": "NCT03607422",
     "source_type": "ctgov_api",
@@ -82,20 +83,68 @@
       "confidence": 1.0
     },
     "mechanism_of_action": {
-      "value": "12.1 Mechanism of Action Upadacitinib is a Janus kinase (JAK) inhibitor. JAKs are intracellular enzymes which transmit signals arising from cytokine or growth factor-receptor interactions on the cellular membrane to influence cellular processes of hematopoiesis and immune cell function. Within the signaling pathway, JAKs phosphorylate and activate signal transducers and activators of transcription (STATs) which modulate intracellular activity including gene expression. Upadacitinib modulates the signaling pathway at the point of JAKs, preventing the phosphorylation and activation of STATs. JAK enzymes transmit cytokine signaling through their pairing (e.g., JAK1/JAK2, JAK1/JAK3, JAK1/TYK2, JAK2/JAK2, JAK2/TYK2). In a cell-free isolated enzyme assay, upadacitinib had greater inhibitory potency at JAK1 and JAK2 relative to JAK3 and TYK2. In human leukocyte cellular assays, upadacitinib inhibited cytokine-induced STAT phosphorylation mediated by JAK1 and JAK1/JAK3 more potently than JAK2/JAK2 mediated STAT phosphorylation. The relevance of inhibition of specific JAK enzymes to therapeutic effectiveness is not currently known.",
+      "value": {
+        "modality": "small_molecule",
+        "drug_class": "JAK inhibitor",
+        "antibody_isotype": null,
+        "binding_targets": [],
+        "pathway_cytokines": [],
+        "receptor_subunits": [],
+        "kinases_inhibited": [
+          "JAK1",
+          "JAK2"
+        ],
+        "selectivity": [],
+        "reversible": null,
+        "mechanism_established": false,
+        "label_section": "12.1"
+      },
       "source_type": "openfda_label",
       "source_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=e17266e5-c861-46bf-9756-6447566101be",
-      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1)",
-      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA)",
+      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1) -- v1 extracted text: 12.1 Mechanism of Action Upadacitinib is a Janus kinase (JAK) inhibitor. JAKs are intracellular enzymes which transmit signals arising from cytokine or growth factor-receptor interactions on the cellular membrane to influence cellular processes of hematopoiesis and immune cell function. Within the signaling pathway, JAKs phosphorylate and activate signal transducers and activators of transcription (STATs) which modulate intracellular activity including gene expression. Upadacitinib modulates the signaling pathway at the point of JAKs, preventing the phosphorylation and activation of STATs. JAK enzymes transmit cytokine signaling through their pairing (e.g., JAK1/JAK2, JAK1/JAK3, JAK1/TYK2, JAK2/JAK2, JAK2/TYK2). In a cell-free isolated enzyme assay, upadacitinib had greater inhibitory potency at JAK1 and JAK2 relative to JAK3 and TYK2. In human leukocyte cellular assays, upadacitinib inhibited cytokine-induced STAT phosphorylation mediated by JAK1 and JAK1/JAK3 more potently than JAK2/JAK2 mediated STAT phosphorylation. The relevance of inhibition of specific JAK enzymes to therapeutic effectiveness is not currently known.",
+      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 0.9
     },
     "dosing_regimen": {
-      "value": "Placebo for Upadacitinib: Tablets taken orally once a day || Upadacitinib: Tablets taken orally once a day",
+      "value": [
+        {
+          "intervention_name": "Placebo for Upadacitinib",
+          "description": "Tablets taken orally once a day",
+          "is_placebo": true,
+          "route": "oral",
+          "dose_form": "tablet",
+          "dose_value": null,
+          "dose_unit": null,
+          "units_per_dose": null,
+          "frequency": "once_daily",
+          "duration_weeks": null,
+          "dosing_periods": [],
+          "administration_sites": [],
+          "antibody_isotype": null,
+          "molecular_target": null
+        },
+        {
+          "intervention_name": "Upadacitinib",
+          "description": "Tablets taken orally once a day",
+          "is_placebo": false,
+          "route": "oral",
+          "dose_form": "tablet",
+          "dose_value": null,
+          "dose_unit": null,
+          "units_per_dose": null,
+          "frequency": "once_daily",
+          "duration_weeks": null,
+          "dosing_periods": [],
+          "administration_sites": [],
+          "antibody_isotype": null,
+          "molecular_target": null
+        }
+      ],
       "source_type": "ctgov_text_extraction",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03607422",
       "source_excerpt": "Placebo for Upadacitinib: Tablets taken orally once a day || Upadacitinib: Tablets taken orally once a day",
-      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA)",
+      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 0.8
     }
@@ -112,21 +161,21 @@
       "reviewed_by": null,
       "confidence": 1.0
     },
-    "min_age": {
-      "value": "12 Years",
+    "min_age_years": {
+      "value": 12,
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03607422",
       "source_excerpt": "protocolSection.eligibilityModule.minimumAge",
-      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
     },
-    "max_age": {
-      "value": "75 Years",
+    "max_age_years": {
+      "value": 75,
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03607422",
       "source_excerpt": "protocolSection.eligibilityModule.maximumAge",
-      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
     },
@@ -148,12 +197,72 @@
       "reviewed_by": null,
       "confidence": 1.0
     },
-    "severity_definition": {
-      "value": "Active moderate to severe AD defined by Eczema Area and Severity Index (EASI) \u2265 16, validated Investigator's Global Assessment (vIGA) \u2265 3, body surface area (BSA) affected by AD \u2265 10%, and weekly average of daily Worst Pruritus numerical rating scale (NRS) score \u2265 4.",
+    "severity_criteria": {
+      "value": {
+        "severity_label": "moderate_to_severe",
+        "basis": "eligibility_text",
+        "cross_reference": null,
+        "source_criterion_numbers": [],
+        "baseline_visit_number": null,
+        "criteria": [
+          {
+            "scale": "BSA",
+            "scale_component": null,
+            "scale_variant": null,
+            "metric": "percent_bsa",
+            "comparator": ">=",
+            "value": 10,
+            "unit": "percent",
+            "scale_min": null,
+            "scale_max": null,
+            "assessed_at": null,
+            "scale_anchors": null
+          },
+          {
+            "scale": "EASI",
+            "scale_component": null,
+            "scale_variant": null,
+            "metric": "absolute_score",
+            "comparator": ">=",
+            "value": 16,
+            "unit": "score",
+            "scale_min": null,
+            "scale_max": null,
+            "assessed_at": null,
+            "scale_anchors": null
+          },
+          {
+            "scale": "vIGA-AD",
+            "scale_component": null,
+            "scale_variant": null,
+            "metric": "absolute_score",
+            "comparator": ">=",
+            "value": 3,
+            "unit": "score",
+            "scale_min": null,
+            "scale_max": null,
+            "assessed_at": null,
+            "scale_anchors": null
+          },
+          {
+            "scale": "Pruritus NRS",
+            "scale_component": null,
+            "scale_variant": "worst_daily_weekly_average",
+            "metric": "absolute_score",
+            "comparator": ">=",
+            "value": 4,
+            "unit": "score",
+            "scale_min": null,
+            "scale_max": null,
+            "assessed_at": null,
+            "scale_anchors": null
+          }
+        ]
+      },
       "source_type": "ctgov_text_extraction",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03607422",
-      "source_excerpt": "Active moderate to severe AD defined by Eczema Area and Severity Index (EASI) \u2265 16, validated Investigator's Global Assessment (vIGA) \u2265 3, body surface area (BSA) affected by AD \u2265 10%, and weekly average of daily Worst Pruritus numerical rating scale (NRS) score \u2265 4.",
-      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA)",
+      "source_excerpt": "Active moderate to severe AD defined by Eczema Area and Severity Index (EASI) ≥ 16, validated Investigator's Global Assessment (vIGA) ≥ 3, body surface area (BSA) affected by AD ≥ 10%, and weekly average of daily Worst Pruritus numerical rating scale (NRS) score ≥ 4.",
+      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 0.75
     }
@@ -204,133 +313,1950 @@
       "reviewed_by": null,
       "confidence": 1.0
     },
-    "background_therapy_rule": {
-      "value": "None -- monotherapy design: \"Trials M16-045 and M18-891 were identically designed monotherapy trials\", randomized double-blind placebo-controlled evaluating upadacitinib 15/30 mg monotherapy.",
+    "background_therapy": {
+      "value": {
+        "regimen_type": "monotherapy",
+        "background_agent_class": null,
+        "tcs_regimen": null,
+        "step_down_rule": null,
+        "recommended_agents": [],
+        "emollient_required": null,
+        "emollient_frequency": null,
+        "prohibited_concomitant": [],
+        "permitted_concomitant": [],
+        "applies_to_rerandomized_maintenance": null,
+        "sponsor_trial_ids": [
+          "M16-045",
+          "M18-891"
+        ],
+        "population_note": "upadacitinib 15/30 mg monotherapy"
+      },
       "source_type": "publication_extraction",
       "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/nda/2024/211675Orig1s004.pdf",
-      "source_excerpt": "Section 8.1.1 \"Trial Design\" (Trial M18-891 / Measure Up 2, identically designed to M16-045)",
-      "extracted_by": "manual publication_extraction pass (FDA approval-package review, v1 addendum follow-up; pending human QA)",
+      "source_excerpt": "Section 8.1.1 \"Trial Design\" (Trial M18-891 / Measure Up 2, identically designed to M16-045) -- v1 extracted text: None -- monotherapy design: \"Trials M16-045 and M18-891 were identically designed monotherapy trials\", randomized double-blind placebo-controlled evaluating upadacitinib 15/30 mg monotherapy.",
+      "extracted_by": "manual publication_extraction pass (FDA approval-package review, v1 addendum follow-up; pending human QA); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 0.75
     }
   },
   "endpoints": {
-    "primary_endpoint_measure": {
-      "value": "Main Study: Percentage of Participants Achieving at Least a 75% Reduction in Eczema Area and Severity Index Score (EASI 75) From Baseline at Week 16 (Time frame: Baseline and Week 16)",
+    "primary_endpoints": {
+      "value": [
+        {
+          "verbatim": "Main Study: Percentage of Participants Achieving at Least a 75% Reduction in Eczema Area and Severity Index Score (EASI 75) From Baseline at Week 16 (Time frame: Baseline and Week 16)",
+          "rank": "primary",
+          "position": 1,
+          "measure_type": "responder_rate",
+          "scale": "EASI",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [
+            {
+              "scale": "EASI",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "percent_improvement_from_baseline",
+              "comparator": ">=",
+              "value": 75,
+              "unit": "percent",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": "main_study",
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": "Baseline and Week 16"
+        }
+      ],
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03607422",
       "source_excerpt": "protocolSection.outcomesModule.primaryOutcomes[0].measure/timeFrame",
-      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
     },
-    "secondary_endpoint_measures": {
+    "secondary_endpoints": {
       "value": [
-        "Main Study: Percentage of Participants Achieving a Reduction of \u2265 4 Points From Baseline in Worst Pruritus Numerical Rating Scale (NRS) at Week 16",
-        "Main Study: Percentage of Participants Achieving a 90% Reduction From Baseline in EASI Score (EASI 90) at Week 16",
-        "Main Study: Percentage of Participants Achieving a Reduction of \u2265 4 Points From Baseline in Worst Pruritus NRS at Week 4",
-        "Main Study: Percentage of Participants Achieving an EASI 75 Response at Week 2",
-        "Main Study: Percentage of Participants Achieving a Reduction of \u2265 4 Points From Baseline in Worst Pruritus NRS at Week 1",
-        "Main Study: Percentage of Participants Achieving a Reduction of \u2265 4 Points From Baseline in Worst Pruritus NRS at Day 2",
-        "Main Study: Percentage of Participants Achieving a Reduction of \u2265 4 Points From Baseline in Worst Pruritus NRS at Day 3",
-        "Main Study: Percentage of Participants Experiencing a Flare During the Double-blind Treatment Period",
-        "Main Study: Percentage of Participants Achieving a Reduction of \u2265 12 Points From Baseline in Atopic Dermatitis Impact Scale (ADerm-IS) Sleep Domain Score at Week 16",
-        "Main Study: Percentage of Participants Achieving a Reduction of \u2265 4 Points From Baseline in Atopic Dermatitis Symptom Scale (ADerm-SS) Skin Pain Score at Week 16",
-        "Main Study: Percentage of Participants Achieving a Reduction of \u2265 28 Points From Baseline in ADerm-SS 7-Item Total Symptom Score (TSS-7) at Week 16",
-        "Main Study: Percentage of Participants Achieving a Reduction of \u2265 11 Points From Baseline in ADerm-IS Emotional State Domain Score at Week 16",
-        "Main Study: Percentage of Participants Achieving a Reduction of \u2265 14 Points From Baseline in ADerm-IS Daily Activities Domain Score at Week 16",
-        "Main Study: Percentage of Participants Achieving a 100% Reduction From Baseline in EASI Score (EASI 100) at Week 16",
-        "Main Study: Percent Change From Baseline in Worst Pruritus NRS at Week 16",
-        "Main Study: Percent Change From Baseline in EASI Score at Week 16",
-        "Main Study: Percentage of Participants Achieving a Reduction of \u2265 4 Points From Baseline in Patient Oriented Eczema Measure (POEM) Total Score at Week 16",
-        "Main Study: Percentage of Participants Achieving a Reduction of \u2265 4 Points From Baseline in Dermatology Life Quality Index (DLQI) at Week 16",
-        "Main Study: Percent Change From Baseline in Scoring Atopic Dermatitis (SCORAD) Score at Week 16",
-        "Main Study: Percentage of Participants Achieving a Hospital Anxiety and Depression Scale-Anxiety (HADS-A) Score and Hospital Anxiety and Depression Scale-Depression (HADS-D) Score of < 8 at Week 16",
-        "Main Study: Percentage of Participants Achieving a DLQI Score of 0 or 1 at Week 16",
-        "Adolescents: Percentage of Participants Achieving an EASI 75 Response at Week 16",
-        "Adolescents: Percentage of Participants Achieving a vIGA-AD of 0 or 1 With a Reduction From Baseline of \u2265 2 Points at Week 16",
-        "Adolescents: Percentage of Participants Achieving a Reduction of \u2265 4 Points From Baseline in Worst Pruritus NRS at Week 16",
-        "Adolescents: Percentage of Participants Achieving an EASI 90 Response at Week 16",
-        "Adolescents: Percentage of Participants Achieving a Reduction of \u2265 4 Points From Baseline in Worst Pruritus NRS at Week 4",
-        "Adolescents: Percentage of Participants Achieving an EASI 75 Response at Week 2",
-        "Adolescents: Percentage of Participants Achieving a Reduction of \u2265 4 Points From Baseline in Worst Pruritus NRS at Week 1",
-        "Adolescents: Percentage of Participants Achieving a Reduction of \u2265 4 Points From Baseline in Worst Pruritus NRS at Day 2",
-        "Adolescents: Percentage of Participants Achieving a Reduction of \u2265 4 Points From Baseline in Worst Pruritus NRS at Day 3",
-        "Adolescents: Percentage of Participants Experiencing a Flare During the Double-blind Treatment Period",
-        "Adolescents: Percentage of Participants Achieving a Reduction of \u2265 12 Points From Baseline in ADerm-IS Sleep Domain Score at Week 16",
-        "Adolescents: Percentage of Participants Achieving a Reduction of \u2265 4 Points From Baseline in ADerm-SS Skin Pain Score at Week 16",
-        "Adolescents: Percentage of Participants Achieving a Reduction of \u2265 28 Points From Baseline in ADerm-SS TSS-7 at Week 16",
-        "Adolescents: Percentage of Participants Achieving a Reduction of \u2265 11 Points From Baseline in ADerm-IS Emotional State Domain Score at Week 16",
-        "Adolescents: Percentage of Participants Achieving a Reduction of \u2265 14 Points From Baseline in ADerm-IS Daily Activities Domain Score at Week 16",
-        "Adolescents: Percentage of Participants Achieving an EASI 100 Response at Week 16",
-        "Adolescents: Percent Change From Baseline in Worst Pruritus NRS at Week 16",
-        "Adolescents: Percent Change From Baseline in EASI Score at Week 16",
-        "Adolescents: Percentage of Participants Achieving a Reduction of \u2265 4 Points From Baseline in POEM Total Score at Week 16",
-        "Adolescents: Percentage of Participants Achieving a Reduction of \u2265 4 Points From Baseline in DLQI Score at Week 16",
-        "Adolescents: Percent Change From Baseline in SCORAD Score at Week 16",
-        "Adolescents: Percentage of Participants Achieving HADS-A Score and HADS-D Score of < 8 at Week 16",
-        "Adolescents: Percentage of Participants Achieving a DLQI Score of 0 or 1 at Week 16"
+        {
+          "verbatim": "Main Study: Percentage of Participants Achieving a Reduction of ≥ 4 Points From Baseline in Worst Pruritus Numerical Rating Scale (NRS) at Week 16",
+          "rank": "secondary",
+          "position": 1,
+          "measure_type": "responder_rate",
+          "scale": "Pruritus NRS",
+          "scale_component": null,
+          "scale_variant": "worst_daily",
+          "responder_criteria": [
+            {
+              "scale": "Pruritus NRS",
+              "scale_component": null,
+              "scale_variant": "worst_daily",
+              "metric": "point_reduction_from_baseline",
+              "comparator": ">=",
+              "value": 4,
+              "unit": "points",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": "main_study",
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Main Study: Percentage of Participants Achieving a 90% Reduction From Baseline in EASI Score (EASI 90) at Week 16",
+          "rank": "secondary",
+          "position": 2,
+          "measure_type": "responder_rate",
+          "scale": "EASI",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [
+            {
+              "scale": "EASI",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "percent_improvement_from_baseline",
+              "comparator": ">=",
+              "value": 90,
+              "unit": "percent",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": "main_study",
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Main Study: Percentage of Participants Achieving a Reduction of ≥ 4 Points From Baseline in Worst Pruritus NRS at Week 4",
+          "rank": "secondary",
+          "position": 3,
+          "measure_type": "responder_rate",
+          "scale": "Pruritus NRS",
+          "scale_component": null,
+          "scale_variant": "worst_daily",
+          "responder_criteria": [
+            {
+              "scale": "Pruritus NRS",
+              "scale_component": null,
+              "scale_variant": "worst_daily",
+              "metric": "point_reduction_from_baseline",
+              "comparator": ">=",
+              "value": 4,
+              "unit": "points",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 4,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": "main_study",
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Main Study: Percentage of Participants Achieving an EASI 75 Response at Week 2",
+          "rank": "secondary",
+          "position": 4,
+          "measure_type": "responder_rate",
+          "scale": "EASI",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [
+            {
+              "scale": "EASI",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "percent_improvement_from_baseline",
+              "comparator": ">=",
+              "value": 75,
+              "unit": "percent",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 2,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": "main_study",
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Main Study: Percentage of Participants Achieving a Reduction of ≥ 4 Points From Baseline in Worst Pruritus NRS at Week 1",
+          "rank": "secondary",
+          "position": 5,
+          "measure_type": "responder_rate",
+          "scale": "Pruritus NRS",
+          "scale_component": null,
+          "scale_variant": "worst_daily",
+          "responder_criteria": [
+            {
+              "scale": "Pruritus NRS",
+              "scale_component": null,
+              "scale_variant": "worst_daily",
+              "metric": "point_reduction_from_baseline",
+              "comparator": ">=",
+              "value": 4,
+              "unit": "points",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 1,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": "main_study",
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Main Study: Percentage of Participants Achieving a Reduction of ≥ 4 Points From Baseline in Worst Pruritus NRS at Day 2",
+          "rank": "secondary",
+          "position": 6,
+          "measure_type": "responder_rate",
+          "scale": "Pruritus NRS",
+          "scale_component": null,
+          "scale_variant": "worst_daily",
+          "responder_criteria": [
+            {
+              "scale": "Pruritus NRS",
+              "scale_component": null,
+              "scale_variant": "worst_daily",
+              "metric": "point_reduction_from_baseline",
+              "comparator": ">=",
+              "value": 4,
+              "unit": "points",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 2,
+              "unit": "day",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": "main_study",
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Main Study: Percentage of Participants Achieving a Reduction of ≥ 4 Points From Baseline in Worst Pruritus NRS at Day 3",
+          "rank": "secondary",
+          "position": 7,
+          "measure_type": "responder_rate",
+          "scale": "Pruritus NRS",
+          "scale_component": null,
+          "scale_variant": "worst_daily",
+          "responder_criteria": [
+            {
+              "scale": "Pruritus NRS",
+              "scale_component": null,
+              "scale_variant": "worst_daily",
+              "metric": "point_reduction_from_baseline",
+              "comparator": ">=",
+              "value": 4,
+              "unit": "points",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 3,
+              "unit": "day",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": "main_study",
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Main Study: Percentage of Participants Experiencing a Flare During the Double-blind Treatment Period",
+          "rank": "secondary",
+          "position": 8,
+          "measure_type": "flare_incidence",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [],
+          "through": null,
+          "analysis_population": "main_study",
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": "double_blind",
+          "event_type": "flare",
+          "time_frame": null
+        },
+        {
+          "verbatim": "Main Study: Percentage of Participants Achieving a Reduction of ≥ 12 Points From Baseline in Atopic Dermatitis Impact Scale (ADerm-IS) Sleep Domain Score at Week 16",
+          "rank": "secondary",
+          "position": 9,
+          "measure_type": "responder_rate",
+          "scale": "ADerm-IS",
+          "scale_component": "Sleep domain",
+          "scale_variant": null,
+          "responder_criteria": [
+            {
+              "scale": "ADerm-IS",
+              "scale_component": "Sleep domain",
+              "scale_variant": null,
+              "metric": "point_reduction_from_baseline",
+              "comparator": ">=",
+              "value": 12,
+              "unit": "points",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": "main_study",
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Main Study: Percentage of Participants Achieving a Reduction of ≥ 4 Points From Baseline in Atopic Dermatitis Symptom Scale (ADerm-SS) Skin Pain Score at Week 16",
+          "rank": "secondary",
+          "position": 10,
+          "measure_type": "responder_rate",
+          "scale": "ADerm-SS",
+          "scale_component": "Skin Pain",
+          "scale_variant": null,
+          "responder_criteria": [
+            {
+              "scale": "ADerm-SS",
+              "scale_component": "Skin Pain",
+              "scale_variant": null,
+              "metric": "point_reduction_from_baseline",
+              "comparator": ">=",
+              "value": 4,
+              "unit": "points",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": "main_study",
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Main Study: Percentage of Participants Achieving a Reduction of ≥ 28 Points From Baseline in ADerm-SS 7-Item Total Symptom Score (TSS-7) at Week 16",
+          "rank": "secondary",
+          "position": 11,
+          "measure_type": "responder_rate",
+          "scale": "ADerm-SS",
+          "scale_component": "TSS-7",
+          "scale_variant": null,
+          "responder_criteria": [
+            {
+              "scale": "ADerm-SS",
+              "scale_component": "TSS-7",
+              "scale_variant": null,
+              "metric": "point_reduction_from_baseline",
+              "comparator": ">=",
+              "value": 28,
+              "unit": "points",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": "main_study",
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Main Study: Percentage of Participants Achieving a Reduction of ≥ 11 Points From Baseline in ADerm-IS Emotional State Domain Score at Week 16",
+          "rank": "secondary",
+          "position": 12,
+          "measure_type": "responder_rate",
+          "scale": "ADerm-IS",
+          "scale_component": "Emotional State domain",
+          "scale_variant": null,
+          "responder_criteria": [
+            {
+              "scale": "ADerm-IS",
+              "scale_component": "Emotional State domain",
+              "scale_variant": null,
+              "metric": "point_reduction_from_baseline",
+              "comparator": ">=",
+              "value": 11,
+              "unit": "points",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": "main_study",
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Main Study: Percentage of Participants Achieving a Reduction of ≥ 14 Points From Baseline in ADerm-IS Daily Activities Domain Score at Week 16",
+          "rank": "secondary",
+          "position": 13,
+          "measure_type": "responder_rate",
+          "scale": "ADerm-IS",
+          "scale_component": "Daily Activities domain",
+          "scale_variant": null,
+          "responder_criteria": [
+            {
+              "scale": "ADerm-IS",
+              "scale_component": "Daily Activities domain",
+              "scale_variant": null,
+              "metric": "point_reduction_from_baseline",
+              "comparator": ">=",
+              "value": 14,
+              "unit": "points",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": "main_study",
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Main Study: Percentage of Participants Achieving a 100% Reduction From Baseline in EASI Score (EASI 100) at Week 16",
+          "rank": "secondary",
+          "position": 14,
+          "measure_type": "responder_rate",
+          "scale": "EASI",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [
+            {
+              "scale": "EASI",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "percent_improvement_from_baseline",
+              "comparator": ">=",
+              "value": 100,
+              "unit": "percent",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": "main_study",
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Main Study: Percent Change From Baseline in Worst Pruritus NRS at Week 16",
+          "rank": "secondary",
+          "position": 15,
+          "measure_type": "percent_change_from_baseline",
+          "scale": "Pruritus NRS",
+          "scale_component": null,
+          "scale_variant": "worst_daily",
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": "main_study",
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Main Study: Percent Change From Baseline in EASI Score at Week 16",
+          "rank": "secondary",
+          "position": 16,
+          "measure_type": "percent_change_from_baseline",
+          "scale": "EASI",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": "main_study",
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Main Study: Percentage of Participants Achieving a Reduction of ≥ 4 Points From Baseline in Patient Oriented Eczema Measure (POEM) Total Score at Week 16",
+          "rank": "secondary",
+          "position": 17,
+          "measure_type": "responder_rate",
+          "scale": "POEM",
+          "scale_component": "Total",
+          "scale_variant": null,
+          "responder_criteria": [
+            {
+              "scale": "POEM",
+              "scale_component": "Total",
+              "scale_variant": null,
+              "metric": "point_reduction_from_baseline",
+              "comparator": ">=",
+              "value": 4,
+              "unit": "points",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": "main_study",
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Main Study: Percentage of Participants Achieving a Reduction of ≥ 4 Points From Baseline in Dermatology Life Quality Index (DLQI) at Week 16",
+          "rank": "secondary",
+          "position": 18,
+          "measure_type": "responder_rate",
+          "scale": "DLQI",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [
+            {
+              "scale": "DLQI",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "point_reduction_from_baseline",
+              "comparator": ">=",
+              "value": 4,
+              "unit": "points",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": "main_study",
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Main Study: Percent Change From Baseline in Scoring Atopic Dermatitis (SCORAD) Score at Week 16",
+          "rank": "secondary",
+          "position": 19,
+          "measure_type": "percent_change_from_baseline",
+          "scale": "SCORAD",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": "main_study",
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Main Study: Percentage of Participants Achieving a Hospital Anxiety and Depression Scale-Anxiety (HADS-A) Score and Hospital Anxiety and Depression Scale-Depression (HADS-D) Score of < 8 at Week 16",
+          "rank": "secondary",
+          "position": 20,
+          "measure_type": "responder_rate",
+          "scale": "HADS",
+          "scale_component": "Anxiety",
+          "scale_variant": null,
+          "responder_criteria": [
+            {
+              "scale": "HADS",
+              "scale_component": "Anxiety",
+              "scale_variant": null,
+              "metric": "absolute_score",
+              "comparator": "<",
+              "value": 8,
+              "unit": "score",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            },
+            {
+              "scale": "HADS",
+              "scale_component": "Depression",
+              "scale_variant": null,
+              "metric": "absolute_score",
+              "comparator": "<",
+              "value": 8,
+              "unit": "score",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": "main_study",
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Main Study: Percentage of Participants Achieving a DLQI Score of 0 or 1 at Week 16",
+          "rank": "secondary",
+          "position": 21,
+          "measure_type": "responder_rate",
+          "scale": "DLQI",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [
+            {
+              "scale": "DLQI",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "absolute_score",
+              "comparator": "in",
+              "value": [
+                0,
+                1
+              ],
+              "unit": "score",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": "main_study",
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Adolescents: Percentage of Participants Achieving an EASI 75 Response at Week 16",
+          "rank": "secondary",
+          "position": 22,
+          "measure_type": "responder_rate",
+          "scale": "EASI",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [
+            {
+              "scale": "EASI",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "percent_improvement_from_baseline",
+              "comparator": ">=",
+              "value": 75,
+              "unit": "percent",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": "adolescents",
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Adolescents: Percentage of Participants Achieving a vIGA-AD of 0 or 1 With a Reduction From Baseline of ≥ 2 Points at Week 16",
+          "rank": "secondary",
+          "position": 23,
+          "measure_type": "responder_rate",
+          "scale": "vIGA-AD",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [
+            {
+              "scale": "vIGA-AD",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "absolute_score",
+              "comparator": "in",
+              "value": [
+                0,
+                1
+              ],
+              "unit": "score",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            },
+            {
+              "scale": "vIGA-AD",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "point_reduction_from_baseline",
+              "comparator": ">=",
+              "value": 2,
+              "unit": "points",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": "adolescents",
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Adolescents: Percentage of Participants Achieving a Reduction of ≥ 4 Points From Baseline in Worst Pruritus NRS at Week 16",
+          "rank": "secondary",
+          "position": 24,
+          "measure_type": "responder_rate",
+          "scale": "Pruritus NRS",
+          "scale_component": null,
+          "scale_variant": "worst_daily",
+          "responder_criteria": [
+            {
+              "scale": "Pruritus NRS",
+              "scale_component": null,
+              "scale_variant": "worst_daily",
+              "metric": "point_reduction_from_baseline",
+              "comparator": ">=",
+              "value": 4,
+              "unit": "points",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": "adolescents",
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Adolescents: Percentage of Participants Achieving an EASI 90 Response at Week 16",
+          "rank": "secondary",
+          "position": 25,
+          "measure_type": "responder_rate",
+          "scale": "EASI",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [
+            {
+              "scale": "EASI",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "percent_improvement_from_baseline",
+              "comparator": ">=",
+              "value": 90,
+              "unit": "percent",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": "adolescents",
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Adolescents: Percentage of Participants Achieving a Reduction of ≥ 4 Points From Baseline in Worst Pruritus NRS at Week 4",
+          "rank": "secondary",
+          "position": 26,
+          "measure_type": "responder_rate",
+          "scale": "Pruritus NRS",
+          "scale_component": null,
+          "scale_variant": "worst_daily",
+          "responder_criteria": [
+            {
+              "scale": "Pruritus NRS",
+              "scale_component": null,
+              "scale_variant": "worst_daily",
+              "metric": "point_reduction_from_baseline",
+              "comparator": ">=",
+              "value": 4,
+              "unit": "points",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 4,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": "adolescents",
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Adolescents: Percentage of Participants Achieving an EASI 75 Response at Week 2",
+          "rank": "secondary",
+          "position": 27,
+          "measure_type": "responder_rate",
+          "scale": "EASI",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [
+            {
+              "scale": "EASI",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "percent_improvement_from_baseline",
+              "comparator": ">=",
+              "value": 75,
+              "unit": "percent",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 2,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": "adolescents",
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Adolescents: Percentage of Participants Achieving a Reduction of ≥ 4 Points From Baseline in Worst Pruritus NRS at Week 1",
+          "rank": "secondary",
+          "position": 28,
+          "measure_type": "responder_rate",
+          "scale": "Pruritus NRS",
+          "scale_component": null,
+          "scale_variant": "worst_daily",
+          "responder_criteria": [
+            {
+              "scale": "Pruritus NRS",
+              "scale_component": null,
+              "scale_variant": "worst_daily",
+              "metric": "point_reduction_from_baseline",
+              "comparator": ">=",
+              "value": 4,
+              "unit": "points",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 1,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": "adolescents",
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Adolescents: Percentage of Participants Achieving a Reduction of ≥ 4 Points From Baseline in Worst Pruritus NRS at Day 2",
+          "rank": "secondary",
+          "position": 29,
+          "measure_type": "responder_rate",
+          "scale": "Pruritus NRS",
+          "scale_component": null,
+          "scale_variant": "worst_daily",
+          "responder_criteria": [
+            {
+              "scale": "Pruritus NRS",
+              "scale_component": null,
+              "scale_variant": "worst_daily",
+              "metric": "point_reduction_from_baseline",
+              "comparator": ">=",
+              "value": 4,
+              "unit": "points",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 2,
+              "unit": "day",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": "adolescents",
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Adolescents: Percentage of Participants Achieving a Reduction of ≥ 4 Points From Baseline in Worst Pruritus NRS at Day 3",
+          "rank": "secondary",
+          "position": 30,
+          "measure_type": "responder_rate",
+          "scale": "Pruritus NRS",
+          "scale_component": null,
+          "scale_variant": "worst_daily",
+          "responder_criteria": [
+            {
+              "scale": "Pruritus NRS",
+              "scale_component": null,
+              "scale_variant": "worst_daily",
+              "metric": "point_reduction_from_baseline",
+              "comparator": ">=",
+              "value": 4,
+              "unit": "points",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 3,
+              "unit": "day",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": "adolescents",
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Adolescents: Percentage of Participants Experiencing a Flare During the Double-blind Treatment Period",
+          "rank": "secondary",
+          "position": 31,
+          "measure_type": "flare_incidence",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [],
+          "through": null,
+          "analysis_population": "adolescents",
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": "double_blind",
+          "event_type": "flare",
+          "time_frame": null
+        },
+        {
+          "verbatim": "Adolescents: Percentage of Participants Achieving a Reduction of ≥ 12 Points From Baseline in ADerm-IS Sleep Domain Score at Week 16",
+          "rank": "secondary",
+          "position": 32,
+          "measure_type": "responder_rate",
+          "scale": "ADerm-IS",
+          "scale_component": "Sleep domain",
+          "scale_variant": null,
+          "responder_criteria": [
+            {
+              "scale": "ADerm-IS",
+              "scale_component": "Sleep domain",
+              "scale_variant": null,
+              "metric": "point_reduction_from_baseline",
+              "comparator": ">=",
+              "value": 12,
+              "unit": "points",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": "adolescents",
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Adolescents: Percentage of Participants Achieving a Reduction of ≥ 4 Points From Baseline in ADerm-SS Skin Pain Score at Week 16",
+          "rank": "secondary",
+          "position": 33,
+          "measure_type": "responder_rate",
+          "scale": "ADerm-SS",
+          "scale_component": "Skin Pain",
+          "scale_variant": null,
+          "responder_criteria": [
+            {
+              "scale": "ADerm-SS",
+              "scale_component": "Skin Pain",
+              "scale_variant": null,
+              "metric": "point_reduction_from_baseline",
+              "comparator": ">=",
+              "value": 4,
+              "unit": "points",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": "adolescents",
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Adolescents: Percentage of Participants Achieving a Reduction of ≥ 28 Points From Baseline in ADerm-SS TSS-7 at Week 16",
+          "rank": "secondary",
+          "position": 34,
+          "measure_type": "responder_rate",
+          "scale": "ADerm-SS",
+          "scale_component": "TSS-7",
+          "scale_variant": null,
+          "responder_criteria": [
+            {
+              "scale": "ADerm-SS",
+              "scale_component": "TSS-7",
+              "scale_variant": null,
+              "metric": "point_reduction_from_baseline",
+              "comparator": ">=",
+              "value": 28,
+              "unit": "points",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": "adolescents",
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Adolescents: Percentage of Participants Achieving a Reduction of ≥ 11 Points From Baseline in ADerm-IS Emotional State Domain Score at Week 16",
+          "rank": "secondary",
+          "position": 35,
+          "measure_type": "responder_rate",
+          "scale": "ADerm-IS",
+          "scale_component": "Emotional State domain",
+          "scale_variant": null,
+          "responder_criteria": [
+            {
+              "scale": "ADerm-IS",
+              "scale_component": "Emotional State domain",
+              "scale_variant": null,
+              "metric": "point_reduction_from_baseline",
+              "comparator": ">=",
+              "value": 11,
+              "unit": "points",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": "adolescents",
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Adolescents: Percentage of Participants Achieving a Reduction of ≥ 14 Points From Baseline in ADerm-IS Daily Activities Domain Score at Week 16",
+          "rank": "secondary",
+          "position": 36,
+          "measure_type": "responder_rate",
+          "scale": "ADerm-IS",
+          "scale_component": "Daily Activities domain",
+          "scale_variant": null,
+          "responder_criteria": [
+            {
+              "scale": "ADerm-IS",
+              "scale_component": "Daily Activities domain",
+              "scale_variant": null,
+              "metric": "point_reduction_from_baseline",
+              "comparator": ">=",
+              "value": 14,
+              "unit": "points",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": "adolescents",
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Adolescents: Percentage of Participants Achieving an EASI 100 Response at Week 16",
+          "rank": "secondary",
+          "position": 37,
+          "measure_type": "responder_rate",
+          "scale": "EASI",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [
+            {
+              "scale": "EASI",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "percent_improvement_from_baseline",
+              "comparator": ">=",
+              "value": 100,
+              "unit": "percent",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": "adolescents",
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Adolescents: Percent Change From Baseline in Worst Pruritus NRS at Week 16",
+          "rank": "secondary",
+          "position": 38,
+          "measure_type": "percent_change_from_baseline",
+          "scale": "Pruritus NRS",
+          "scale_component": null,
+          "scale_variant": "worst_daily",
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": "adolescents",
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Adolescents: Percent Change From Baseline in EASI Score at Week 16",
+          "rank": "secondary",
+          "position": 39,
+          "measure_type": "percent_change_from_baseline",
+          "scale": "EASI",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": "adolescents",
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Adolescents: Percentage of Participants Achieving a Reduction of ≥ 4 Points From Baseline in POEM Total Score at Week 16",
+          "rank": "secondary",
+          "position": 40,
+          "measure_type": "responder_rate",
+          "scale": "POEM",
+          "scale_component": "Total",
+          "scale_variant": null,
+          "responder_criteria": [
+            {
+              "scale": "POEM",
+              "scale_component": "Total",
+              "scale_variant": null,
+              "metric": "point_reduction_from_baseline",
+              "comparator": ">=",
+              "value": 4,
+              "unit": "points",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": "adolescents",
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Adolescents: Percentage of Participants Achieving a Reduction of ≥ 4 Points From Baseline in DLQI Score at Week 16",
+          "rank": "secondary",
+          "position": 41,
+          "measure_type": "responder_rate",
+          "scale": "DLQI",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [
+            {
+              "scale": "DLQI",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "point_reduction_from_baseline",
+              "comparator": ">=",
+              "value": 4,
+              "unit": "points",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": "adolescents",
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Adolescents: Percent Change From Baseline in SCORAD Score at Week 16",
+          "rank": "secondary",
+          "position": 42,
+          "measure_type": "percent_change_from_baseline",
+          "scale": "SCORAD",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": "adolescents",
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Adolescents: Percentage of Participants Achieving HADS-A Score and HADS-D Score of < 8 at Week 16",
+          "rank": "secondary",
+          "position": 43,
+          "measure_type": "responder_rate",
+          "scale": "HADS",
+          "scale_component": "Anxiety",
+          "scale_variant": null,
+          "responder_criteria": [
+            {
+              "scale": "HADS",
+              "scale_component": "Anxiety",
+              "scale_variant": null,
+              "metric": "absolute_score",
+              "comparator": "<",
+              "value": 8,
+              "unit": "score",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            },
+            {
+              "scale": "HADS",
+              "scale_component": "Depression",
+              "scale_variant": null,
+              "metric": "absolute_score",
+              "comparator": "<",
+              "value": 8,
+              "unit": "score",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": "adolescents",
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Adolescents: Percentage of Participants Achieving a DLQI Score of 0 or 1 at Week 16",
+          "rank": "secondary",
+          "position": 44,
+          "measure_type": "responder_rate",
+          "scale": "DLQI",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [
+            {
+              "scale": "DLQI",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "absolute_score",
+              "comparator": "in",
+              "value": [
+                0,
+                1
+              ],
+              "unit": "score",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": "adolescents",
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        }
       ],
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03607422",
       "source_excerpt": "protocolSection.outcomesModule.secondaryOutcomes[].measure",
-      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
     },
-    "endpoint_hierarchy_multiplicity": {
-      "value": "Same design as Measure Up 1: overall Type-I error for the primary and secondary endpoints (upadacitinib 15 mg and 30 mg vs. placebo) is strongly controlled via a graphical multiple testing procedure (2-sided alpha 0.05) with a pre-specified alpha transfer path including downstream and cross-dose transfer. Separate graphs for EU/EMA and US/FDA.",
+    "multiplicity_control": {
+      "value": {
+        "procedure": "graphical",
+        "familywise_error_controlled": true,
+        "alpha": 0.05,
+        "alpha_sided": 2,
+        "alpha_per_dose": null,
+        "co_primary_endpoints": [],
+        "testing_sequence": [],
+        "alpha_split": [],
+        "alpha_recycling": true,
+        "doses_compared": [
+          "15 mg",
+          "30 mg"
+        ],
+        "dose_comparison_order": [],
+        "branching_on": null,
+        "regulatory_variants": [
+          "EU",
+          "US"
+        ],
+        "rescue_counted_as_nonresponder": null,
+        "active_comparator_excluded_from_hierarchy": null,
+        "background_tcs": null,
+        "method_citations": [],
+        "finalized_in_sap": null,
+        "same_design_as": [
+          "NCT03569293"
+        ],
+        "further_endpoints_through_week": null
+      },
       "source_type": "protocol_pdf_extraction",
       "source_url": "https://cdn.clinicaltrials.gov/large-docs/22/NCT03607422/SAP_003.pdf",
-      "source_excerpt": "Section 13.0 Overall Type-I Error Control",
-      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA)",
+      "source_excerpt": "Section 13.0 Overall Type-I Error Control -- v1 extracted text: Same design as Measure Up 1: overall Type-I error for the primary and secondary endpoints (upadacitinib 15 mg and 30 mg vs. placebo) is strongly controlled via a graphical multiple testing procedure (2-sided alpha 0.05) with a pre-specified alpha transfer path including downstream and cross-dose transfer. Separate graphs for EU/EMA and US/FDA.",
+      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 0.75
     }
   },
   "timing_ops": {
     "start_date": {
-      "value": "2018-07-27",
+      "value": {
+        "date": "2018-07-27",
+        "precision": "day"
+      },
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03607422",
       "source_excerpt": "protocolSection.statusModule.startDateStruct.date",
-      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
     },
     "primary_completion_date": {
-      "value": "2021-03-11",
+      "value": {
+        "date": "2021-03-11",
+        "precision": "day"
+      },
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03607422",
       "source_excerpt": "protocolSection.statusModule.primaryCompletionDateStruct.date",
-      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
     },
     "completion_date": {
-      "value": "2025-11-11",
+      "value": {
+        "date": "2025-11-11",
+        "precision": "day"
+      },
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03607422",
       "source_excerpt": "protocolSection.statusModule.completionDateStruct.date",
-      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
     },
-    "visit_schedule": {
-      "value": "35-day screening period, 16-week double-blind treatment period, long-term blinded extension to Week 136, 30-day follow-up visit. \"Subjects were scheduled to have the following study visits: screening, baseline (Day 1), and Weeks 1, 2, 4, 8, 12, 16, 20, 24, 32, 40, 52, and every 12 weeks until Week 136.\"",
+    "study_schedule": {
+      "value": {
+        "screening_days": 35,
+        "screening_washout": null,
+        "periods": [
+          {
+            "name": "double_blind_treatment",
+            "start_week": 0,
+            "end_week": 16,
+            "duration_weeks": 16,
+            "blinding": "double_blind",
+            "background_tcs": null
+          },
+          {
+            "name": "long_term_extension",
+            "start_week": 16,
+            "end_week": 136,
+            "duration_weeks": 120,
+            "blinding": "double_blind",
+            "background_tcs": null
+          }
+        ],
+        "dosing_interval": null,
+        "visit_cadence": null,
+        "visit_cadence_until_week": null,
+        "visit_weeks": [
+          1,
+          2,
+          4,
+          8,
+          12,
+          16,
+          20,
+          24,
+          32,
+          40,
+          52
+        ],
+        "visit_days": [
+          1
+        ],
+        "phone_contact_weeks": null,
+        "primary_endpoint_week": 16,
+        "end_of_treatment_week": 136,
+        "end_of_study_week": null,
+        "total_duration_weeks": null,
+        "follow_up_weeks": null,
+        "follow_up_days": 30,
+        "follow_up_visit_week": null,
+        "long_term_extension": true,
+        "extension_end_week": 136,
+        "extension_visit_interval_weeks": 12,
+        "extension_study_id": null,
+        "rerandomization_week": null,
+        "maintenance_arms": null,
+        "maintenance_response_check_weeks": null,
+        "last_injection_week": null,
+        "key_secondary_weeks": null,
+        "follow_up_visit_interval_weeks": null,
+        "full_visit_table_available": false,
+        "source_inconsistency": null
+      },
       "source_type": "publication_extraction",
       "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/nda/2024/211675Orig1s004.pdf",
-      "source_excerpt": "Section 8.1.1 \"Trial Design\" (Trial M18-891 / Measure Up 2, identically designed to M16-045)",
-      "extracted_by": "manual publication_extraction pass (FDA approval-package review, v1 addendum follow-up; pending human QA)",
+      "source_excerpt": "Section 8.1.1 \"Trial Design\" (Trial M18-891 / Measure Up 2, identically designed to M16-045) -- v1 extracted text: 35-day screening period, 16-week double-blind treatment period, long-term blinded extension to Week 136, 30-day follow-up visit. \"Subjects were scheduled to have the following study visits: screening, baseline (Day 1), and Weeks 1, 2, 4, 8, 12, 16, 20, 24, 32, 40, 52, and every 12 weeks until Week 136.\"",
+      "extracted_by": "manual publication_extraction pass (FDA approval-package review, v1 addendum follow-up; pending human QA); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 0.75
     },
-    "rescue_therapy_rules": {
-      "value": "Starting at the Week 4 visit, rescue treatment for AD may be provided if medically necessary and prespecified EASI-response thresholds are not met (Week 4-24: <EASI-50 at any 2 consecutive scheduled visits vs. Baseline; after Week 24: <EASI-50 at any visit vs. Baseline). First step is topical medication for >=7 days before escalating to systemic treatment. From Week 16, topical AD medication is no longer counted as rescue for efficacy analysis purposes; only systemic AD treatments count as rescue thereafter.",
+    "rescue_therapy": {
+      "value": {
+        "permitted": true,
+        "trigger": "protocol_response_threshold",
+        "earliest_week": 4,
+        "prohibited_through_week": null,
+        "trigger_rules": [
+          {
+            "from_week": 4,
+            "to_week": 24,
+            "criterion": {
+              "scale": "EASI",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "percent_improvement_from_baseline",
+              "comparator": "<",
+              "value": 50,
+              "unit": "percent",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            },
+            "consecutive_visits": 2
+          },
+          {
+            "from_week": 24,
+            "to_week": null,
+            "criterion": {
+              "scale": "EASI",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "percent_improvement_from_baseline",
+              "comparator": "<",
+              "value": 50,
+              "unit": "percent",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            },
+            "consecutive_visits": 1
+          }
+        ],
+        "flare_definition": [],
+        "first_step": "topical",
+        "topical_min_days_before_systemic": 7,
+        "topical_rescue_requires_study_drug_discontinuation": null,
+        "systemic_rescue_requires_study_drug_discontinuation": null,
+        "resume_after_systemic_rescue_half_lives": null,
+        "resume_after_phototherapy_months": null,
+        "rescued_counted_as_nonresponder": null,
+        "rescued_counted_as_treatment_failure": null,
+        "continue_visits_after_discontinuation": null,
+        "continue_visits_through_week": null,
+        "topical_rescue_not_counted_after_week": 16,
+        "topical_agents": [],
+        "topical_potency_classes": [],
+        "tci_reserved_areas": [],
+        "systemic_agents": [],
+        "oral_corticosteroid_limit": null,
+        "rescue_period": null,
+        "escape_arm_washout_half_lives": null,
+        "maintenance_period_rule": null,
+        "permitted_concomitant": [],
+        "recorded_in_ecrf": null,
+        "applies_to_period": null,
+        "long_term_extension_eligible_after_rescue": null
+      },
       "source_type": "protocol_pdf_extraction",
       "source_url": "https://cdn.clinicaltrials.gov/large-docs/22/NCT03607422/Prot_002.pdf",
-      "source_excerpt": "Section 5.4 Rescue Therapy",
-      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA)",
+      "source_excerpt": "Section 5.4 Rescue Therapy -- v1 extracted text: Starting at the Week 4 visit, rescue treatment for AD may be provided if medically necessary and prespecified EASI-response thresholds are not met (Week 4-24: <EASI-50 at any 2 consecutive scheduled visits vs. Baseline; after Week 24: <EASI-50 at any visit vs. Baseline). First step is topical medication for >=7 days before escalating to systemic treatment. From Week 16, topical AD medication is no longer counted as rescue for efficacy analysis purposes; only systemic AD treatments count as rescue thereafter.",
+      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 0.75
     }
@@ -527,8 +2453,8 @@
     "most_common_adverse_events": {
       "value": [
         {
-          "term": "COVID-19",
-          "organ_system": "Infections and infestations",
+          "meddra_pt": "COVID-19",
+          "meddra_soc": "Infections and infestations",
           "per_arm": [
             {
               "arm": "Adults: Double-blind Period - Placebo",
@@ -617,8 +2543,8 @@
           ]
         },
         {
-          "term": "ACNE",
-          "organ_system": "Skin and subcutaneous tissue disorders",
+          "meddra_pt": "ACNE",
+          "meddra_soc": "Skin and subcutaneous tissue disorders",
           "per_arm": [
             {
               "arm": "Adults: Double-blind Period - Placebo",
@@ -707,8 +2633,8 @@
           ]
         },
         {
-          "term": "DERMATITIS ATOPIC",
-          "organ_system": "Skin and subcutaneous tissue disorders",
+          "meddra_pt": "DERMATITIS ATOPIC",
+          "meddra_soc": "Skin and subcutaneous tissue disorders",
           "per_arm": [
             {
               "arm": "Adults: Double-blind Period - Placebo",
@@ -797,8 +2723,8 @@
           ]
         },
         {
-          "term": "UPPER RESPIRATORY TRACT INFECTION",
-          "organ_system": "Infections and infestations",
+          "meddra_pt": "UPPER RESPIRATORY TRACT INFECTION",
+          "meddra_soc": "Infections and infestations",
           "per_arm": [
             {
               "arm": "Adults: Double-blind Period - Placebo",
@@ -887,8 +2813,8 @@
           ]
         },
         {
-          "term": "BLOOD CREATINE PHOSPHOKINASE INCREASED",
-          "organ_system": "Investigations",
+          "meddra_pt": "BLOOD CREATINE PHOSPHOKINASE INCREASED",
+          "meddra_soc": "Investigations",
           "per_arm": [
             {
               "arm": "Adults: Double-blind Period - Placebo",
@@ -977,8 +2903,8 @@
           ]
         },
         {
-          "term": "PYREXIA",
-          "organ_system": "General disorders",
+          "meddra_pt": "PYREXIA",
+          "meddra_soc": "General disorders",
           "per_arm": [
             {
               "arm": "Adults: Double-blind Period - Placebo",
@@ -1067,8 +2993,8 @@
           ]
         },
         {
-          "term": "HEADACHE",
-          "organ_system": "Nervous system disorders",
+          "meddra_pt": "HEADACHE",
+          "meddra_soc": "Nervous system disorders",
           "per_arm": [
             {
               "arm": "Adults: Double-blind Period - Placebo",
@@ -1157,8 +3083,8 @@
           ]
         },
         {
-          "term": "HERPES ZOSTER",
-          "organ_system": "Infections and infestations",
+          "meddra_pt": "HERPES ZOSTER",
+          "meddra_soc": "Infections and infestations",
           "per_arm": [
             {
               "arm": "Adults: Double-blind Period - Placebo",
@@ -1250,7 +3176,7 @@
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03607422",
       "source_excerpt": "resultsSection.adverseEventsModule.otherEvents[] (top 8 of 51 by highest single-arm incidence; CT.gov's own >=5% frequency-threshold table)",
-      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass)",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
     },
@@ -1349,13 +3275,82 @@
       "confidence": 1.0
     },
     "boxed_warning": {
-      "value": "WARNING: SERIOUS INFECTIONS, MORTALITY, MALIGNANCY, MAJOR ADVERSE CARDIOVASCULAR EVENTS, and THROMBOSIS SERIOUS INFECTIONS Patients treated with RINVOQ /RINVOQ LQ are at increased risk for developing serious infections that may lead to hospitalization or death [see Warnings and Precautions ( 5.1 ), Adverse Reactions ( 6.1 )]. Most patients who developed these infections were taking concomitant immunosuppressants such as methotrexate or corticosteroids. If a serious infection develops, interrupt RINVOQ /RINVOQ LQ until the infection is controlled. Reported infections include: Active tuberculosis, which may present with pulmonary or extrapulmonary disease. Patients should be tested for latent tuberculosis before RINVOQ /RINVOQ LQ use and during therapy. Treatment for latent infection should be considered prior to RINVOQ /RINVOQ LQ use. Invasive fungal infections, including cryptococcosis and pneumocystosis. Bacterial, viral, including herpes zoster, and other infections due to opportunistic pathogens. The risks and benefits of treatment with RINVOQ /RINVOQ LQ should be carefully considered prior to initiating therapy in patients with chronic or recurrent infection. Patients should be closely monitored for the development of signs and symptoms of infection during and after treatment with RINVOQ /RINVOQ LQ , including the possible development of tuberculosis in patients who tested negative for latent tuberculosis infection prior to initiating therapy [see Warnings and Precautions ( 5.1 )]. MORTALITY In a large, randomized, postmarketing safety study in rheumatoid arthritis (RA) patients 50 years of age and older with at least one cardiovascular risk factor comparing another Janus kinase (JAK) inhibitor to tumor necrosis factor (TNF) blockers, a higher rate of all-cause mortality, including sudden cardiovascular death, was observed with the JAK inhibitor [see Warnings and Precautions ( 5.2 )] . MALIGNANCIES Lymphoma and other malignancies have been observed in patients treated with RINVOQ . In RA patients treated with another JAK inhibitor, a higher rate of malignancies (excluding non-melanoma skin cancer (NMSC)) was observed when compared with TNF blockers. Patients who are current or past smokers are at additional increased risk [see Warnings and Precautions ( 5.3 )] . MAJOR ADVERSE CARDIOVASCULAR EVENTS In RA patients 50 years of age and older with at least one cardiovascular risk factor treated with another JAK inhibitor, a higher rate of major adverse cardiovascular events (MACE) (defined as cardiovascular death, myocardial infarction, and stroke), was observed when compared with TNF blockers. Patients who are current or past smokers are at additional increased risk. Discontinue RINVOQ /RINVOQ LQ in patients that have experienced a myocardial infarction or stroke [see Warnings and Precautions ( 5.4 )] . THROMBOSIS Thrombos e s, including deep venous thrombosis, pulmonary embolism, and arterial thrombosis , have occurred in patients treated for inflammatory conditions with J AK inhibitors , including RINVOQ . Many of these adverse events were serious and some resulted in death. In RA patients 50 years of age and older with at least one cardiovascular risk factor treated with another JAK inhibitor, a higher rate of thrombosis was observed when compared with TNF blockers. Avoid RINVOQ /RINVOQ LQ in patients at risk. Patients with symptoms of thrombosis should discontinue RINVOQ /RINVOQ LQ and be promptly evaluated [see Warnings and Precautions ( 5.5 )]. WARNING: SERIOUS INFECTIONS, MORTALITY, MALIGNANCY, MAJOR ADVERSE CARDIOVASCULAR EVENTS (MACE), and THROMBOSIS See full prescribing information for complete boxed warning. Increased risk of serious bacterial, fungal, viral, and opportunistic infections leading to hospitalization or death, including tuberculosis (TB). Interrupt treatment with RINVOQ / RINVOQ LQ if serious infection occurs until the infection is controlled. Test for latent TB before and during therapy; treat latent TB prior to use. Monitor all patients for active TB during treatment, even patients with initial negative , latent TB test. ( 5.1 ) Higher rate of all-cause mortality, including sudden cardiovascular death with another Janus kinase (JAK) inhibitor vs. tumor necrosis factor (TNF) blockers in rheumatoid arthritis (RA) patients. ( 5.2 ) Malignancies have occurred in patients treated with RINVOQ. Higher rate of lymphomas and lung cancers with another JAK inhibitor vs. TNF blockers in RA patients. ( 5.3 ) Higher rate of MACE (defined as cardiovascular death, myocardial infarction, and stroke) with another JAK inhibitor vs. TNF blockers in RA patients. ( 5.4 ) Thrombosis has occurred in patients treated with RINVOQ. Increased incidence of pulmonary embolism, venous and arterial thrombosis with another JAK inhibitor vs. TNF blockers. ( 5.5 )",
+      "value": {
+        "present": true,
+        "title": "SERIOUS INFECTIONS, MORTALITY, MALIGNANCY, MAJOR ADVERSE CARDIOVASCULAR EVENTS, and THROMBOSIS",
+        "warning_categories": [
+          "serious_infections",
+          "mortality",
+          "malignancy",
+          "mace",
+          "thrombosis"
+        ],
+        "referenced_label_sections": [
+          "5.1",
+          "5.2",
+          "5.3",
+          "5.4",
+          "5.5"
+        ],
+        "product_names": [
+          "RINVOQ",
+          "RINVOQ LQ"
+        ]
+      },
       "source_type": "openfda_label",
       "source_url": "https://api.fda.gov/drug/label.json?search=openfda.substance_name:UPADACITINIB&limit=1",
-      "source_excerpt": "results[0].boxed_warning",
-      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass)",
+      "source_excerpt": "results[0].boxed_warning -- v1 extracted text: WARNING: SERIOUS INFECTIONS, MORTALITY, MALIGNANCY, MAJOR ADVERSE CARDIOVASCULAR EVENTS, and THROMBOSIS SERIOUS INFECTIONS Patients treated with RINVOQ /RINVOQ LQ are at increased risk for developing serious infections that may lead to hospitalization or death [see Warnings and Precautions ( 5.1 ), Adverse Reactions ( 6.1 )]. Most patients who developed these infections were taking concomitant immunosuppressants such as methotrexate or corticosteroids. If a serious infection develops, interrupt RINVOQ /RINVOQ LQ until the infection is controlled. Reported infections include: Active tuberculosis, which may present with pulmonary or extrapulmonary disease. Patients should be tested for latent tuberculosis before RINVOQ /RINVOQ LQ use and during therapy. Treatment for latent infection should be considered prior to RINVOQ /RINVOQ LQ use. Invasive fungal infections, including cryptococcosis and pneumocystosis. Bacterial, viral, including herpes zoster, and other infections due to opportunistic pathogens. The risks and benefits of treatment with RINVOQ /RINVOQ LQ should be carefully considered prior to initiating therapy in patients with chronic or recurrent infection. Patients should be closely monitored for the development of signs and symptoms of infection during and after treatment with RINVOQ /RINVOQ LQ , including the possible development of tuberculosis in patients who tested negative for latent tuberculosis infection prior to initiating therapy [see Warnings and Precautions ( 5.1 )]. MORTALITY In a large, randomized, postmarketing safety study in rheumatoid arthritis (RA) patients 50 years of age and older with at least one cardiovascular risk factor comparing another Janus kinase (JAK) inhibitor to tumor necrosis factor (TNF) blockers, a higher rate of all-cause mortality, including sudden cardiovascular death, was observed with the JAK inhibitor [see Warnings and Precautions ( 5.2 )] . MALIGNANCIES Lymphoma and other malignancies have been observed in patients treated with RINVOQ . In RA patients treated with another JAK inhibitor, a higher rate of malignancies (excluding non-melanoma skin cancer (NMSC)) was observed when compared with TNF blockers. Patients who are current or past smokers are at additional increased risk [see Warnings and Precautions ( 5.3 )] . MAJOR ADVERSE CARDIOVASCULAR EVENTS In RA patients 50 years of age and older with at least one cardiovascular risk factor treated with another JAK inhibitor, a higher rate of major adverse cardiovascular events (MACE) (defined as cardiovascular death, myocardial infarction, and stroke), was observed when compared with TNF blockers. Patients who are current or past smokers are at additional increased risk. Discontinue RINVOQ /RINVOQ LQ in patients that have experienced a myocardial infarction or stroke [see Warnings and Precautions ( 5.4 )] . THROMBOSIS Thrombos e s, including deep venous thrombosis, pulmonary embolism, and arterial thrombosis , have occurred in patients treated for inflammatory conditions with J AK inhibitors , including RINVOQ . Many of these adverse events were serious and some resulted in death. In RA patients 50 years of age and older with at least one cardiovascular risk factor treated with another JAK inhibitor, a higher rate of thrombosis was observed when compared with TNF blockers. Avoid RINVOQ /RINVOQ LQ in patients at risk. Patients with symptoms of thrombosis should discontinue RINVOQ /RINVOQ LQ and be promptly evaluated [see Warnings and Precautions ( 5.5 )]. WARNING: SERIOUS INFECTIONS, MORTALITY, MALIGNANCY, MAJOR ADVERSE CARDIOVASCULAR EVENTS (MACE), and THROMBOSIS See full prescribing information for complete boxed warning. Increased risk of serious bacterial, fungal, viral, and opportunistic infections leading to hospitalization or death, including tuberculosis (TB). Interrupt treatment with RINVOQ / RINVOQ LQ if serious infection occurs until the infection is controlled. Test for latent TB before and during therapy; treat latent TB prior to use. Monitor all patients for active TB during treatment, even patients with initial negative , latent TB test. ( 5.1 ) Higher rate of all-cause mortality, including sudden cardiovascular death with another Janus kinase (JAK) inhibitor vs. tumor necrosis factor (TNF) blockers in rheumatoid arthritis (RA) patients. ( 5.2 ) Malignancies have occurred in patients treated with RINVOQ. Higher rate of lymphomas and lung cancers with another JAK inhibitor vs. TNF blockers in RA patients. ( 5.3 ) Higher rate of MACE (defined as cardiovascular death, myocardial infarction, and stroke) with another JAK inhibitor vs. TNF blockers in RA patients. ( 5.4 ) Thrombosis has occurred in patients treated with RINVOQ. Increased incidence of pulmonary embolism, venous and arterial thrombosis with another JAK inhibitor vs. TNF blockers. ( 5.5 )",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
+    }
+  },
+  "real_world_safety": {
+    "faers_summary": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    }
+  },
+  "exclusivity": {
+    "regulatory_application": {
+      "value": {
+        "application_type": "NDA",
+        "application_number": "211675",
+        "registry": "orange_book",
+        "center": "CDER",
+        "proprietary_name": "RINVOQ",
+        "applicant": "ABBVIE INC",
+        "first_approval_date": "2019-08-16"
+      },
+      "source_type": "orange_book",
+      "source_url": "https://www.fda.gov/media/76860/download",
+      "source_excerpt": "products.txt: UPADACITINIB~TABLET, EXTENDED RELEASE;ORAL~RINVOQ~ABBVIE~15MG~N~211675~001~~Aug 16, 2019~Yes~No~RX~ABBVIE INC",
+      "extracted_by": "atlas.regulatory_applications (registry file fetched 2026-09-05)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "orange_book": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    },
+    "purple_book": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
     }
   }
 }
