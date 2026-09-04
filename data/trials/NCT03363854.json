@@ -1,4 +1,5 @@
 {
+  "schema_version": 2,
   "nct_id": {
     "value": "NCT03363854",
     "source_type": "ctgov_api",
@@ -82,20 +83,79 @@
       "confidence": 1.0
     },
     "mechanism_of_action": {
-      "value": "12.1 Mechanism of Action Tralokinumab-ldrm is a human IgG4 monoclonal antibody that specifically binds to human interleukin-13 (IL-13) and inhibits its interaction with the IL-13 receptor \u03b11 and \u03b12 subunits (IL-13R\u03b11 and IL-13R\u03b12). IL-13 is a naturally occurring cytokine of the Type 2 immune response. Tralokinumab-ldrm inhibits the bioactivity of IL-13 by blocking IL-13 interaction with IL-13R\u03b11/IL-4R\u03b1 receptor complex. Tralokinumab-ldrm inhibits IL-13-induced responses including the release of proinflammatory cytokines, chemokines and IgE.",
+      "value": {
+        "modality": "monoclonal_antibody",
+        "drug_class": "IL-13 antagonist",
+        "antibody_isotype": "IgG4",
+        "binding_targets": [
+          "IL-13"
+        ],
+        "pathway_cytokines": [
+          "IL-13",
+          "IgE"
+        ],
+        "receptor_subunits": [
+          "IL-4Rα",
+          "IL-13Rα1",
+          "IL-13Rα2"
+        ],
+        "kinases_inhibited": [],
+        "lower_potency_kinases": [],
+        "selectivity": [],
+        "reversible": null,
+        "mechanism_established": null,
+        "label_section": "12.1"
+      },
       "source_type": "openfda_label",
       "source_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=8abedac8-f75e-42a0-8591-10fabcf41fb5",
-      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1)",
-      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA)",
+      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1) -- v1 extracted text: 12.1 Mechanism of Action Tralokinumab-ldrm is a human IgG4 monoclonal antibody that specifically binds to human interleukin-13 (IL-13) and inhibits its interaction with the IL-13 receptor α1 and α2 subunits (IL-13Rα1 and IL-13Rα2). IL-13 is a naturally occurring cytokine of the Type 2 immune response. Tralokinumab-ldrm inhibits the bioactivity of IL-13 by blocking IL-13 interaction with IL-13Rα1/IL-4Rα receptor complex. Tralokinumab-ldrm inhibits IL-13-induced responses including the release of proinflammatory cytokines, chemokines and IgE.",
+      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 0.9
     },
     "dosing_regimen": {
-      "value": "Tralokinumab: Tralokinumab is a human recombinant monoclonal antibody of the IgG4 subclass that specifically binds to human IL-13 and blocks interaction with the IL-13 receptors. It is presented as a liquid formulation for subcutaneous (SC) administration. || Placebo: Placebo contains the same excipients in the same concentration only lacking tralokinumab.",
+      "value": [
+        {
+          "intervention_name": "Tralokinumab",
+          "description": "Tralokinumab is a human recombinant monoclonal antibody of the IgG4 subclass that specifically binds to human IL-13 and blocks interaction with the IL-13 receptors. It is presented as a liquid formulation for subcutaneous (SC) administration.",
+          "is_placebo": false,
+          "route": "subcutaneous",
+          "dose_form": "solution",
+          "dose_value": null,
+          "dose_unit": null,
+          "units_per_dose": null,
+          "frequency": null,
+          "duration_weeks": null,
+          "dosing_periods": [],
+          "administration_sites": [],
+          "antibody_isotype": "IgG4",
+          "molecular_target": "IL-13",
+          "arm_names": [],
+          "co_administered_with": []
+        },
+        {
+          "intervention_name": "Placebo",
+          "description": "Placebo contains the same excipients in the same concentration only lacking tralokinumab.",
+          "is_placebo": true,
+          "route": null,
+          "dose_form": null,
+          "dose_value": null,
+          "dose_unit": null,
+          "units_per_dose": null,
+          "frequency": null,
+          "duration_weeks": null,
+          "dosing_periods": [],
+          "administration_sites": [],
+          "antibody_isotype": null,
+          "molecular_target": null,
+          "arm_names": [],
+          "co_administered_with": []
+        }
+      ],
       "source_type": "ctgov_text_extraction",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03363854",
       "source_excerpt": "Tralokinumab: Tralokinumab is a human recombinant monoclonal antibody of the IgG4 subclass that specifically binds to human IL-13 and blocks interaction with the IL-13 receptors. It is presented as a liquid formulation for subcutaneous (SC) administration. || Placebo: Placebo contains the same excipients in the same concentration only lacking tralokinumab.",
-      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA)",
+      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 0.8
     }
@@ -112,21 +172,21 @@
       "reviewed_by": null,
       "confidence": 1.0
     },
-    "min_age": {
-      "value": "18 Years",
+    "min_age_years": {
+      "value": 18,
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03363854",
       "source_excerpt": "protocolSection.eligibilityModule.minimumAge",
-      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
     },
-    "max_age": {
+    "max_age_years": {
       "value": null,
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03363854",
       "source_excerpt": "protocolSection.eligibilityModule.maximumAge",
-      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 0.0
     },
@@ -148,12 +208,36 @@
       "reviewed_by": null,
       "confidence": 1.0
     },
-    "severity_definition": {
-      "value": "AD involvement of \u226510% body surface area at screening and baseline.",
+    "severity_criteria": {
+      "value": {
+        "severity_label": null,
+        "basis": "eligibility_text",
+        "cross_reference": null,
+        "source_criterion_numbers": [],
+        "baseline_visit_number": null,
+        "criteria": [
+          {
+            "scale": "BSA",
+            "scale_component": null,
+            "scale_variant": null,
+            "metric": "percent_bsa",
+            "comparator": ">=",
+            "value": 10,
+            "unit": "percent",
+            "scale_min": null,
+            "scale_max": null,
+            "assessed_at": [
+              "screening",
+              "baseline"
+            ],
+            "scale_anchors": null
+          }
+        ]
+      },
       "source_type": "ctgov_text_extraction",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03363854",
-      "source_excerpt": "AD involvement of \u226510% body surface area at screening and baseline.",
-      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA)",
+      "source_excerpt": "AD involvement of ≥10% body surface area at screening and baseline.",
+      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 0.75
     }
@@ -204,106 +288,966 @@
       "reviewed_by": null,
       "confidence": 1.0
     },
-    "background_therapy_rule": {
-      "value": "Tralokinumab (or placebo) is given in combination with a background topical corticosteroid (TCS) regimen throughout the study; all subjects, including those re-randomized into the maintenance continuation period, stay on the TCS regimen.",
+    "background_therapy": {
+      "value": {
+        "regimen_type": "combination_tcs",
+        "background_agent_class": "TCS",
+        "tcs_regimen": "standardized",
+        "step_down_rule": null,
+        "recommended_agents": [],
+        "emollient_required": null,
+        "emollient_frequency": null,
+        "prohibited_concomitant": [],
+        "permitted_concomitant": [],
+        "applies_to_rerandomized_maintenance": true,
+        "sponsor_trial_ids": [],
+        "study_drug_doses_mg": [],
+        "population_note": null
+      },
       "source_type": "protocol_pdf_extraction",
       "source_url": "https://cdn.clinicaltrials.gov/large-docs/54/NCT03363854/Prot_000.pdf",
-      "source_excerpt": "Continuation treatment period narrative (\"All subjects will stay on the TCS regimen\")",
-      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA)",
+      "source_excerpt": "Continuation treatment period narrative (\"All subjects will stay on the TCS regimen\") -- v1 extracted text: Tralokinumab (or placebo) is given in combination with a background topical corticosteroid (TCS) regimen throughout the study; all subjects, including those re-randomized into the maintenance continuation period, stay on the TCS regimen.",
+      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 0.7
     }
   },
   "endpoints": {
-    "primary_endpoint_measure": {
-      "value": "Participants With Investigator's Global Assessment (IGA) Score of 0 (Clear) or 1 (Almost Clear) at Week 16 (Time frame: Week 16)",
+    "primary_endpoints": {
+      "value": [
+        {
+          "verbatim": "Participants With Investigator's Global Assessment (IGA) Score of 0 (Clear) or 1 (Almost Clear) at Week 16 (Time frame: Week 16)",
+          "rank": "primary",
+          "position": 1,
+          "measure_type": "responder_rate",
+          "scale": "IGA",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [
+            {
+              "scale": "IGA",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "absolute_score",
+              "comparator": "in",
+              "value": [
+                0,
+                1
+              ],
+              "unit": "score",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": "Week 16"
+        }
+      ],
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03363854",
       "source_excerpt": "protocolSection.outcomesModule.primaryOutcomes[0].measure/timeFrame",
-      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
     },
-    "secondary_endpoint_measures": {
+    "secondary_endpoints": {
       "value": [
-        "Reduction of Worst Daily Pruritus Numeric Rating Scale (NRS) (Weekly Average) of at Least 4 From Baseline to Week 16",
-        "Change in Scoring Atopic Dermatitis (SCORAD) From Baseline to Week 16",
-        "Change in Dermatology Life Quality Index (DLQI) Score From Baseline to Week 16",
-        "Frequency of Anti-drug Antibodies (ADA)",
-        "Amount of Topical Corticosteroid (TCS) Used Through Week 16 Assuming no TCS Used From the Non-returned Tubes",
-        "Amount of Topical Corticosteroid (TCS) Used Through Week 16 Assuming All TCS Used From the Non-returned Tubes",
-        "Number of Atopic Dermatitis Flares Through Week 16",
-        "Number of Days Without Topical Treatment Use From Baseline to Week 16",
-        "Participants Achieving at Least 50% Reduction in Eczema Area and Severity Index (EASI) at Week 16",
-        "Participants Achieving at Least 90% Reduction in Eczema Area and Severity Index (EASI) at Week 16",
-        "Change From Baseline to Week 16 in Eczema Area and Severity Index (EASI) Score",
-        "Participants Achieving at Least 50% Reduction in Scoring Atopic Dermatitis (SCORAD) at Week 16",
-        "Participants Achieving at Least 75% Reduction in Scoring Atopic Dermatitis (SCORAD) at Week 16",
-        "Change From Baseline to Week 16 in Worst Daily Pruritus Numeric Rating Scale (NRS) (Weekly Average)",
-        "Reduction From Baseline to Week 16 of Dermatology Life Quality Index (DLQI) of at Least 4 Points Among Participants With Baseline DLQI \u22654",
-        "Participants With Investigator's Global Assessment (IGA) Score of 0 (Clear) or 1 (Almost Clear) at Week 32 Among Participants With IGA Score of 0 or 1 at Week 16 After Initial Randomisation to Tralokinumab",
-        "Participants Achieving at Least 75% Reduction in Eczema Area and Severity Index (EASI) at Week 32 Among Participants Who Had Achieved at Least 75% Reduction in EASI at Week 16 After Initial Randomisation to Tralokinumab"
+        {
+          "verbatim": "Reduction of Worst Daily Pruritus Numeric Rating Scale (NRS) (Weekly Average) of at Least 4 From Baseline to Week 16",
+          "rank": "secondary",
+          "position": 1,
+          "measure_type": "responder_rate",
+          "scale": "Pruritus NRS",
+          "scale_component": null,
+          "scale_variant": "worst_daily_weekly_average",
+          "responder_criteria": [
+            {
+              "scale": "Pruritus NRS",
+              "scale_component": null,
+              "scale_variant": "worst_daily_weekly_average",
+              "metric": "point_reduction_from_baseline",
+              "comparator": ">=",
+              "value": 4,
+              "unit": "points",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Change in Scoring Atopic Dermatitis (SCORAD) From Baseline to Week 16",
+          "rank": "secondary",
+          "position": 2,
+          "measure_type": "change_from_baseline",
+          "scale": "SCORAD",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Change in Dermatology Life Quality Index (DLQI) Score From Baseline to Week 16",
+          "rank": "secondary",
+          "position": 3,
+          "measure_type": "change_from_baseline",
+          "scale": "DLQI",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Frequency of Anti-drug Antibodies (ADA)",
+          "rank": "secondary",
+          "position": 4,
+          "measure_type": "immunogenicity",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": "anti_drug_antibodies",
+          "time_frame": null
+        },
+        {
+          "verbatim": "Amount of Topical Corticosteroid (TCS) Used Through Week 16 Assuming no TCS Used From the Non-returned Tubes",
+          "rank": "secondary",
+          "position": 5,
+          "measure_type": "drug_usage",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [],
+          "through": {
+            "value": 16,
+            "unit": "week"
+          },
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": "TCS_use",
+          "time_frame": null
+        },
+        {
+          "verbatim": "Amount of Topical Corticosteroid (TCS) Used Through Week 16 Assuming All TCS Used From the Non-returned Tubes",
+          "rank": "secondary",
+          "position": 6,
+          "measure_type": "drug_usage",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [],
+          "through": {
+            "value": 16,
+            "unit": "week"
+          },
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": "TCS_use",
+          "time_frame": null
+        },
+        {
+          "verbatim": "Number of Atopic Dermatitis Flares Through Week 16",
+          "rank": "secondary",
+          "position": 7,
+          "measure_type": "count",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [],
+          "through": {
+            "value": 16,
+            "unit": "week"
+          },
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": "flare",
+          "time_frame": null
+        },
+        {
+          "verbatim": "Number of Days Without Topical Treatment Use From Baseline to Week 16",
+          "rank": "secondary",
+          "position": 8,
+          "measure_type": "count",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": "topical_medication_free_days",
+          "time_frame": null
+        },
+        {
+          "verbatim": "Participants Achieving at Least 50% Reduction in Eczema Area and Severity Index (EASI) at Week 16",
+          "rank": "secondary",
+          "position": 9,
+          "measure_type": "responder_rate",
+          "scale": "EASI",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [
+            {
+              "scale": "EASI",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "percent_improvement_from_baseline",
+              "comparator": ">=",
+              "value": 50,
+              "unit": "percent",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Participants Achieving at Least 90% Reduction in Eczema Area and Severity Index (EASI) at Week 16",
+          "rank": "secondary",
+          "position": 10,
+          "measure_type": "responder_rate",
+          "scale": "EASI",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [
+            {
+              "scale": "EASI",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "percent_improvement_from_baseline",
+              "comparator": ">=",
+              "value": 90,
+              "unit": "percent",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Change From Baseline to Week 16 in Eczema Area and Severity Index (EASI) Score",
+          "rank": "secondary",
+          "position": 11,
+          "measure_type": "change_from_baseline",
+          "scale": "EASI",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Participants Achieving at Least 50% Reduction in Scoring Atopic Dermatitis (SCORAD) at Week 16",
+          "rank": "secondary",
+          "position": 12,
+          "measure_type": "responder_rate",
+          "scale": "SCORAD",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [
+            {
+              "scale": "SCORAD",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "percent_improvement_from_baseline",
+              "comparator": ">=",
+              "value": 50,
+              "unit": "percent",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Participants Achieving at Least 75% Reduction in Scoring Atopic Dermatitis (SCORAD) at Week 16",
+          "rank": "secondary",
+          "position": 13,
+          "measure_type": "responder_rate",
+          "scale": "SCORAD",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [
+            {
+              "scale": "SCORAD",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "percent_improvement_from_baseline",
+              "comparator": ">=",
+              "value": 75,
+              "unit": "percent",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Change From Baseline to Week 16 in Worst Daily Pruritus Numeric Rating Scale (NRS) (Weekly Average)",
+          "rank": "secondary",
+          "position": 14,
+          "measure_type": "change_from_baseline",
+          "scale": "Pruritus NRS",
+          "scale_component": null,
+          "scale_variant": "worst_daily_weekly_average",
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Reduction From Baseline to Week 16 of Dermatology Life Quality Index (DLQI) of at Least 4 Points Among Participants With Baseline DLQI ≥4",
+          "rank": "secondary",
+          "position": 15,
+          "measure_type": "responder_rate",
+          "scale": "DLQI",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [
+            {
+              "scale": "DLQI",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "point_reduction_from_baseline",
+              "comparator": ">=",
+              "value": 4,
+              "unit": "points",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [
+            {
+              "scale": "DLQI",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "absolute_score",
+              "comparator": ">=",
+              "value": 4,
+              "unit": "score",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": [
+                "baseline"
+              ],
+              "scale_anchors": null
+            }
+          ],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Participants With Investigator's Global Assessment (IGA) Score of 0 (Clear) or 1 (Almost Clear) at Week 32 Among Participants With IGA Score of 0 or 1 at Week 16 After Initial Randomisation to Tralokinumab",
+          "rank": "secondary",
+          "position": 16,
+          "measure_type": "responder_rate",
+          "scale": "IGA",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [
+            {
+              "scale": "IGA",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "absolute_score",
+              "comparator": "in",
+              "value": [
+                0,
+                1
+              ],
+              "unit": "score",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 32,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [
+            {
+              "scale": "IGA",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "absolute_score",
+              "comparator": "in",
+              "value": [
+                0,
+                1
+              ],
+              "unit": "score",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": [
+                "week_16"
+              ],
+              "scale_anchors": null
+            }
+          ],
+          "subgroup_labels": [
+            "initially_randomized_to_active"
+          ],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Participants Achieving at Least 75% Reduction in Eczema Area and Severity Index (EASI) at Week 32 Among Participants Who Had Achieved at Least 75% Reduction in EASI at Week 16 After Initial Randomisation to Tralokinumab",
+          "rank": "secondary",
+          "position": 17,
+          "measure_type": "responder_rate",
+          "scale": "EASI",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [
+            {
+              "scale": "EASI",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "percent_improvement_from_baseline",
+              "comparator": ">=",
+              "value": 75,
+              "unit": "percent",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 32,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [
+            {
+              "scale": "EASI",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "percent_improvement_from_baseline",
+              "comparator": ">=",
+              "value": 75,
+              "unit": "percent",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": [
+                "week_16"
+              ],
+              "scale_anchors": null
+            }
+          ],
+          "subgroup_labels": [
+            "initially_randomized_to_active"
+          ],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        }
       ],
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03363854",
       "source_excerpt": "protocolSection.outcomesModule.secondaryOutcomes[].measure",
-      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
     },
-    "endpoint_hierarchy_multiplicity": {
-      "value": "US submission: a dedicated modified confirmatory testing hierarchy analogous to ECZTRA 1/2 -- primary and secondary endpoints for tralokinumab + TCS vs. placebo + TCS tested in a prespecified sequential order (IGA 0/1, then EASI-75, then Pruritus) at Week 16, with maintenance-period endpoints tested in a separate branch.",
+    "multiplicity_control": {
+      "value": {
+        "procedure": "gatekeeping_with_holm",
+        "familywise_error_controlled": true,
+        "alpha": null,
+        "alpha_sided": 2,
+        "alpha_per_dose": null,
+        "co_primary_endpoints": [],
+        "testing_sequence": [
+          {
+            "label": "IGA 0/1",
+            "scale": "IGA",
+            "responder_criteria": [
+              {
+                "scale": "IGA",
+                "scale_component": null,
+                "scale_variant": null,
+                "metric": "absolute_score",
+                "comparator": "in",
+                "value": [
+                  0,
+                  1
+                ],
+                "unit": "score",
+                "scale_min": null,
+                "scale_max": null,
+                "assessed_at": null,
+                "scale_anchors": null
+              }
+            ],
+            "timepoint_week": 16,
+            "alpha": null,
+            "step": 1
+          },
+          {
+            "label": "EASI-75",
+            "scale": "EASI",
+            "responder_criteria": [
+              {
+                "scale": "EASI",
+                "scale_component": null,
+                "scale_variant": null,
+                "metric": "percent_improvement_from_baseline",
+                "comparator": ">=",
+                "value": 75,
+                "unit": "percent",
+                "scale_min": null,
+                "scale_max": null,
+                "assessed_at": null,
+                "scale_anchors": null
+              }
+            ],
+            "timepoint_week": 16,
+            "alpha": null,
+            "step": 2
+          },
+          {
+            "label": "Pruritus NRS >=4-point improvement",
+            "scale": "Pruritus NRS",
+            "responder_criteria": [
+              {
+                "scale": "Pruritus NRS",
+                "scale_component": null,
+                "scale_variant": null,
+                "metric": "point_reduction_from_baseline",
+                "comparator": ">=",
+                "value": 4,
+                "unit": "points",
+                "scale_min": null,
+                "scale_max": null,
+                "assessed_at": null,
+                "scale_anchors": null
+              }
+            ],
+            "timepoint_week": 16,
+            "alpha": null,
+            "step": 3
+          }
+        ],
+        "alpha_split": [
+          {
+            "group": "maintenance",
+            "n_endpoints": null,
+            "alpha": null,
+            "method": "separate_branch",
+            "timepoint_week": null
+          }
+        ],
+        "alpha_recycling": null,
+        "doses_compared": [],
+        "dose_comparison_order": [],
+        "branching_on": null,
+        "regulatory_variants": [
+          "US"
+        ],
+        "rescue_counted_as_nonresponder": null,
+        "active_comparator_excluded_from_hierarchy": null,
+        "background_tcs": true,
+        "method_citations": [],
+        "finalized_in_sap": null,
+        "same_design_as": [
+          {
+            "nct_id": "NCT03131648",
+            "trial_name": "ECZTRA 1"
+          },
+          {
+            "nct_id": "NCT03160885",
+            "trial_name": "ECZTRA 2"
+          }
+        ],
+        "gatekeeping_structure": null,
+        "further_endpoints_through_week": null
+      },
       "source_type": "protocol_pdf_extraction",
       "source_url": "https://cdn.clinicaltrials.gov/large-docs/54/NCT03363854/SAP_001.pdf",
-      "source_excerpt": "Section 6.6.1 Multiple testing procedure",
-      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA)",
+      "source_excerpt": "Section 6.6.1 Multiple testing procedure -- v1 extracted text: US submission: a dedicated modified confirmatory testing hierarchy analogous to ECZTRA 1/2 -- primary and secondary endpoints for tralokinumab + TCS vs. placebo + TCS tested in a prespecified sequential order (IGA 0/1, then EASI-75, then Pruritus) at Week 16, with maintenance-period endpoints tested in a separate branch.",
+      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 0.75
     }
   },
   "timing_ops": {
     "start_date": {
-      "value": "2018-02-22",
+      "value": {
+        "date": "2018-02-22",
+        "precision": "day"
+      },
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03363854",
       "source_excerpt": "protocolSection.statusModule.startDateStruct.date",
-      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
     },
     "primary_completion_date": {
-      "value": "2019-03-08",
+      "value": {
+        "date": "2019-03-08",
+        "precision": "day"
+      },
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03363854",
       "source_excerpt": "protocolSection.statusModule.primaryCompletionDateStruct.date",
-      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
     },
     "completion_date": {
-      "value": "2019-09-26",
+      "value": {
+        "date": "2019-09-26",
+        "precision": "day"
+      },
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03363854",
       "source_excerpt": "protocolSection.statusModule.completionDateStruct.date",
-      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
     },
-    "visit_schedule": {
-      "value": "16-week initial treatment period (Week 0-16), 16-week continuation treatment period (Week 16-32), 14-week off-treatment follow-up (Week 32-46). Trial design text also states \"clinic visits at baseline, screening, and every other week thereafter until Week 52. A follow-up visit was conducted at Week 66\" -- this appears to reuse ECZTRA-1/2 boilerplate inconsistent with ECZTRA-3's own stated Week 46 endpoint; quoted as written, not reconciled. Not a full per-visit assessment table.",
+    "study_schedule": {
+      "value": {
+        "screening_days": null,
+        "screening_washout": null,
+        "periods": [
+          {
+            "name": "initial_treatment",
+            "start_week": 0,
+            "end_week": 16,
+            "duration_weeks": 16,
+            "blinding": null,
+            "background_tcs": null
+          },
+          {
+            "name": "continuation_treatment",
+            "start_week": 16,
+            "end_week": 32,
+            "duration_weeks": 16,
+            "blinding": null,
+            "background_tcs": null
+          },
+          {
+            "name": "off_treatment_follow_up",
+            "start_week": 32,
+            "end_week": 46,
+            "duration_weeks": 14,
+            "blinding": null,
+            "background_tcs": null
+          }
+        ],
+        "dosing_interval": null,
+        "visit_cadence": "every_2_weeks",
+        "visit_cadence_until_week": 52,
+        "visit_weeks": null,
+        "visit_days": null,
+        "phone_contact_weeks": null,
+        "primary_endpoint_week": 16,
+        "end_of_treatment_week": 32,
+        "end_of_study_week": 46,
+        "total_duration_weeks": 46,
+        "follow_up_weeks": 14,
+        "follow_up_days": null,
+        "follow_up_visit_week": 66,
+        "long_term_extension": null,
+        "extension_end_week": null,
+        "extension_visit_interval_weeks": null,
+        "extension_study_id": null,
+        "rerandomization_week": null,
+        "maintenance_arms": null,
+        "maintenance_response_check_weeks": null,
+        "last_injection_week": null,
+        "key_secondary_weeks": null,
+        "follow_up_visit_interval_weeks": null,
+        "end_of_treatment_weeks_after_last_dose": null,
+        "background_tcs_from_day": null,
+        "primary_endpoint_refs": [],
+        "double_dummy_arms": [],
+        "active_comparator": null,
+        "boilerplate_reused_from": [
+          "ECZTRA-1",
+          "ECZTRA-2"
+        ],
+        "conflicts_with_trial": "ECZTRA-3",
+        "full_visit_table_available": false,
+        "source_inconsistency": "Source trial-design text reuses ECZTRA-1/2 boilerplate (visits every other week until Week 52, follow-up at Week 66) that conflicts with ECZTRA-3's own Week 46 end; quoted as written, not reconciled."
+      },
       "source_type": "publication_extraction",
       "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/nda/2022/761180Orig1s000IntegratedR.pdf",
-      "source_excerpt": "Section 6.2.1 \"Trial Design\" (ECZTRA-3)",
-      "extracted_by": "manual publication_extraction pass (FDA approval-package review, v1 addendum follow-up; pending human QA)",
+      "source_excerpt": "Section 6.2.1 \"Trial Design\" (ECZTRA-3) -- v1 extracted text: 16-week initial treatment period (Week 0-16), 16-week continuation treatment period (Week 16-32), 14-week off-treatment follow-up (Week 32-46). Trial design text also states \"clinic visits at baseline, screening, and every other week thereafter until Week 52. A follow-up visit was conducted at Week 66\" -- this appears to reuse ECZTRA-1/2 boilerplate inconsistent with ECZTRA-3's own stated Week 46 endpoint; quoted as written, not reconciled. Not a full per-visit assessment table.",
+      "extracted_by": "manual publication_extraction pass (FDA approval-package review, v1 addendum follow-up; pending human QA); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 0.6
     },
-    "rescue_therapy_rules": {
-      "value": "If medically necessary (i.e., to control intolerable AD symptoms), rescue treatment for AD may be provided at investigator discretion. Investigators should limit the first step of rescue to topical medications (higher-potency TCS: EU Class >3 / US Class <4), escalating to systemic medications only after at least 14 days without adequate response; subjects on topical rescue continue IMP. Systemic corticosteroid/immunosuppressive rescue requires immediate IMP discontinuation; IMP may resume no sooner than 5 half-lives after the last dose of systemic rescue medication.",
+    "rescue_therapy": {
+      "value": {
+        "permitted": true,
+        "trigger": "investigator_discretion",
+        "earliest_week": null,
+        "prohibited_through_week": null,
+        "trigger_rules": [],
+        "flare_definition": [],
+        "first_step": "topical",
+        "topical_min_days_before_systemic": 14,
+        "topical_rescue_requires_study_drug_discontinuation": false,
+        "systemic_rescue_requires_study_drug_discontinuation": true,
+        "resume_after_systemic_rescue_half_lives": 5,
+        "resume_after_phototherapy_months": null,
+        "rescued_counted_as_nonresponder": null,
+        "rescued_counted_as_treatment_failure": null,
+        "continue_visits_after_discontinuation": null,
+        "continue_visits_through_week": null,
+        "topical_rescue_not_counted_after_week": null,
+        "topical_agents": [],
+        "topical_potency_classes": [
+          {
+            "system": "EU",
+            "comparator": ">",
+            "class": 3
+          },
+          {
+            "system": "US",
+            "comparator": "<",
+            "class": 4
+          }
+        ],
+        "tci_reserved_areas": [],
+        "systemic_agents": [
+          "systemic corticosteroids",
+          "systemic immunosuppressants"
+        ],
+        "oral_corticosteroid_limit": null,
+        "rescue_period": null,
+        "escape_arm_washout_half_lives": null,
+        "maintenance_period_rule": null,
+        "permitted_concomitant": [],
+        "recorded_in_ecrf": null,
+        "applies_to_period": null,
+        "long_term_extension_eligible_after_rescue": null,
+        "topical_agent_class": "TCS",
+        "rationale": null
+      },
       "source_type": "protocol_pdf_extraction",
       "source_url": "https://cdn.clinicaltrials.gov/large-docs/54/NCT03363854/Prot_000.pdf",
-      "source_excerpt": "Section 9.6 Rescue treatment",
-      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA)",
+      "source_excerpt": "Section 9.6 Rescue treatment -- v1 extracted text: If medically necessary (i.e., to control intolerable AD symptoms), rescue treatment for AD may be provided at investigator discretion. Investigators should limit the first step of rescue to topical medications (higher-potency TCS: EU Class >3 / US Class <4), escalating to systemic medications only after at least 14 days without adequate response; subjects on topical rescue continue IMP. Systemic corticosteroid/immunosuppressive rescue requires immediate IMP discontinuation; IMP may resume no sooner than 5 half-lives after the last dose of systemic rescue medication.",
+      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 0.75
     }
@@ -428,8 +1372,8 @@
     "most_common_adverse_events": {
       "value": [
         {
-          "term": "Viral upper respiratory tract infection",
-          "organ_system": "Infections and infestations",
+          "meddra_pt": "Viral upper respiratory tract infection",
+          "meddra_soc": "Infections and infestations",
           "per_arm": [
             {
               "arm": "Initial Treatment Period: Tralokinumab Q2W+TCS",
@@ -482,8 +1426,8 @@
           ]
         },
         {
-          "term": "Conjunctivitis",
-          "organ_system": "Infections and infestations",
+          "meddra_pt": "Conjunctivitis",
+          "meddra_soc": "Infections and infestations",
           "per_arm": [
             {
               "arm": "Initial Treatment Period: Tralokinumab Q2W+TCS",
@@ -536,8 +1480,8 @@
           ]
         },
         {
-          "term": "Upper respiratory tract infection",
-          "organ_system": "Infections and infestations",
+          "meddra_pt": "Upper respiratory tract infection",
+          "meddra_soc": "Infections and infestations",
           "per_arm": [
             {
               "arm": "Initial Treatment Period: Tralokinumab Q2W+TCS",
@@ -590,8 +1534,8 @@
           ]
         },
         {
-          "term": "Headache",
-          "organ_system": "Nervous system disorders",
+          "meddra_pt": "Headache",
+          "meddra_soc": "Nervous system disorders",
           "per_arm": [
             {
               "arm": "Initial Treatment Period: Tralokinumab Q2W+TCS",
@@ -644,8 +1588,8 @@
           ]
         },
         {
-          "term": "Dermatitis atopic",
-          "organ_system": "Skin and subcutaneous tissue disorders",
+          "meddra_pt": "Dermatitis atopic",
+          "meddra_soc": "Skin and subcutaneous tissue disorders",
           "per_arm": [
             {
               "arm": "Initial Treatment Period: Tralokinumab Q2W+TCS",
@@ -698,8 +1642,8 @@
           ]
         },
         {
-          "term": "Injection site reaction",
-          "organ_system": "General disorders",
+          "meddra_pt": "Injection site reaction",
+          "meddra_soc": "General disorders",
           "per_arm": [
             {
               "arm": "Initial Treatment Period: Tralokinumab Q2W+TCS",
@@ -752,8 +1696,8 @@
           ]
         },
         {
-          "term": "Diarrhoea",
-          "organ_system": "Gastrointestinal disorders",
+          "meddra_pt": "Diarrhoea",
+          "meddra_soc": "Gastrointestinal disorders",
           "per_arm": [
             {
               "arm": "Initial Treatment Period: Tralokinumab Q2W+TCS",
@@ -806,8 +1750,8 @@
           ]
         },
         {
-          "term": "Nausea",
-          "organ_system": "Gastrointestinal disorders",
+          "meddra_pt": "Nausea",
+          "meddra_soc": "Gastrointestinal disorders",
           "per_arm": [
             {
               "arm": "Initial Treatment Period: Tralokinumab Q2W+TCS",
@@ -863,7 +1807,7 @@
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03363854",
       "source_excerpt": "resultsSection.adverseEventsModule.otherEvents[] (top 8 of 9 by highest single-arm incidence; CT.gov's own >=5% frequency-threshold table)",
-      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass)",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
     },
@@ -890,13 +1834,67 @@
       "confidence": 0.75
     },
     "boxed_warning": {
-      "value": null,
+      "value": {
+        "present": false,
+        "title": null,
+        "warning_categories": [],
+        "referenced_label_sections": [],
+        "product_names": []
+      },
       "source_type": "openfda_label",
       "source_url": "https://api.fda.gov/drug/label.json?search=openfda.substance_name:TRALOKINUMAB&limit=1",
       "source_excerpt": "results[0] has no boxed_warning key (checked, none present)",
-      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass)",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
+    }
+  },
+  "real_world_safety": {
+    "faers_summary": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    }
+  },
+  "exclusivity": {
+    "regulatory_application": {
+      "value": {
+        "application_type": "BLA",
+        "application_number": "761180",
+        "registry": "purple_book",
+        "center": "CDER",
+        "proprietary_name": "Adbry",
+        "applicant": "LEO Pharma A/S",
+        "first_approval_date": "2021-12-27"
+      },
+      "source_type": "purple_book",
+      "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2026/purplebook-search-August-data-download.csv",
+      "source_excerpt": "row: LEO Pharma A/S | BLA 761180 | Adbry | tralokinumab-ldrm | 351(a) | 150MG/ML Injection Subcutaneous Pre-Filled Syringe | Rx | Licensed | 27-Dec-21 | Original | License 2169 | Product 001 | CDER",
+      "extracted_by": "atlas.regulatory_applications (registry file fetched 2026-09-05)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "orange_book": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    },
+    "purple_book": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
     }
   }
 }

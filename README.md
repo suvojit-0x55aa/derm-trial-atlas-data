@@ -1,11 +1,12 @@
-# Open Derm Trial Atlas — Data (v1)
+# Open Derm Trial Atlas — Data (schema v2)
 
 Structured, sourced trial-design and safety data for atopic dermatitis (AD)
 drug trials. **This repo holds data only** — every JSON/CSV file below and
-nothing else. The fetch/extraction/build pipeline that produces this data,
-the portal UI (`superderma.ai/atlas`), and their tests all live in the
-separate `kolai-website` repo; this repo is regenerated from there, not the
-other way around.
+nothing else. The fetch/extraction/build/migration pipeline that produces
+this data, the schema spec (`atlas/schema.py`), the portal UI
+(`superderma.ai/atlas`), and their tests all live in the separate
+`kolai-website` repo; this repo is regenerated from there, not the other
+way around.
 
 ## What v1 covers
 
@@ -28,9 +29,9 @@ this pass — none were guessed or reused from memory (see
 
 ## Data model
 
-One JSON file per trial at `data/trials/<NCT_ID>.json`, organized into 7
-field groups (35 fields total). Every field value is an object, never a
-bare scalar:
+One JSON file per trial at `data/trials/<NCT_ID>.json` (**schema v2**),
+organized into 9 field groups (39 fields). Every field value is an object,
+never a bare scalar:
 
 ```json
 {
@@ -75,6 +76,46 @@ bare scalar:
   paper genuinely unreachable, or not published at all). `value` is
   `null` and stays `null` until human QA can fill it — v1 never guesses a
   plausible-sounding clinical number.
+- `openfda_faers` — openFDA adverse-event API, drug-level real-world
+  report summary (`real_world_safety.faers_summary`).
+- `orange_book` — FDA Orange Book data files, small-molecule NDAs only
+  (`exclusivity.orange_book`, and the `exclusivity.regulatory_application`
+  join key).
+- `purple_book` — FDA Purple Book monthly CSV, biologic BLAs only
+  (`exclusivity.purple_book`, and the join key for biologics).
+
+### Schema v2: typed, atomic values
+
+Every `value` is a typed structure that can be filtered and compared
+directly — no re-parsing prose at read time. The full field-by-field
+reference is `docs/SCHEMA.md` (human-readable) / `schema/trial.schema.json`
+(JSON Schema draft-07) — both are static snapshots generated from
+`atlas/schema.py` in `kolai-website`, which owns the spec now.
+
+The one atomic building block is **`ScoreCriterion`** — a threshold on a
+named clinical scale (`{scale, metric, comparator, value, unit,
+assessed_at, …}`) — reused by eligibility severity thresholds, endpoint
+responder definitions, endpoint subgroups, rescue triggers, and flare
+definitions. So "EASI-75 at week 16" is the same row shape wherever it
+occurs. What was free text in v1 is typed in v2 (full list in
+`docs/SCHEMA.md`); the v1 prose survives as provenance in `source_excerpt`
+(or an endpoint's `verbatim` / an intervention's `description`) — it is
+never the queryable value. `kolai-website`'s test suite proves the v1→v2
+migration is lossless (deterministic, byte-identical on re-run, every v1
+fact traceable in the v2 value, every gap preserved, nothing invented).
+
+New field groups, designed against the real source shapes so incoming data
+lands in typed fields:
+
+- `real_world_safety.faers_summary` — openFDA FAERS report counts,
+  seriousness breakdown, top MedDRA reaction terms, reports by year.
+- `exclusivity.regulatory_application` — the NDA/BLA number, the join key
+  the other two need.
+- `exclusivity.orange_book` — products, patents (number, expiry, use code,
+  claims), exclusivity codes with dates; NDAs only.
+- `exclusivity.purple_book` — licensure, BPCIA reference-product /
+  interchangeable / orphan exclusivity dates, biosimilars; BLAs only
+  (separate shape from Orange Book because BLA exclusivity rules differ).
 
 **Every non-`ctgov_api` value here is machine/LLM-extracted, not
 hand-verified.** `reviewed_by` is `null` and `confidence` is `< 1.0` on all
@@ -139,7 +180,7 @@ remaining). What's still genuinely unreachable, and why:
   source gave one) — not a full per-visit lab/assessment table, which
   still isn't reliably machine-extractable from these sources.
 
-### Field groups and v1 fill status
+### Field groups (schema v2 names; see `docs/SCHEMA.md` for the full reference)
 
 | Group | Field | v1 status | Source |
 |---|---|---|---|
@@ -151,64 +192,75 @@ remaining). What's still genuinely unreachable, and why:
 | molecule | `drug` | ✅ filled | `ctgov_api` (intervention name, curated to canonical drug) |
 | molecule | `intervention_names` | ✅ filled | `ctgov_api` |
 | molecule | `intervention_type` | ✅ filled | `ctgov_api` |
-| molecule | `mechanism_of_action` | ✅ filled (17/17) | `openfda_label` — drug-level FDA label text |
+| molecule | `mechanism_of_action` | ✅ filled (17/17) | `openfda_label` — typed from the drug-level FDA label text (kept in `source_excerpt`) |
 | molecule | `dosing_regimen` | ✅ filled (16/17) | `ctgov_text_extraction` — intervention description; null only where CT.gov has no description text on file (Dupilumab CAFE) |
 | population | `condition` | ✅ filled | `ctgov_api` |
-| population | `min_age` | ✅ filled | `ctgov_api` |
-| population | `max_age` | ✅ filled | `ctgov_api` |
+| population | `min_age_years` | ✅ filled | `ctgov_api` |
+| population | `max_age_years` | ✅ filled | `ctgov_api` |
 | population | `sex` | ✅ filled | `ctgov_api` |
 | population | `enrollment_count` | ✅ filled | `ctgov_api` |
-| population | `severity_definition` (EASI/IGA/BSA screening thresholds) | ✅ filled (17/17) | `ctgov_text_extraction` (16) direct; `publication_extraction` (1) — CHRONOS, by an FDA-review cross-reference to SOLO 1/2's identical criteria |
+| population | `severity_criteria` (EASI/IGA/BSA thresholds as `ScoreCriterion` rows) | ✅ filled (17/17) | `ctgov_text_extraction` (16) direct; `publication_extraction` (1) — CHRONOS, by an FDA-review cross-reference to SOLO 1/2's identical criteria |
 | design | `study_type` | ✅ filled | `ctgov_api` |
 | design | `allocation` | ✅ filled | `ctgov_api` |
 | design | `intervention_model` | ✅ filled | `ctgov_api` |
 | design | `masking` | ✅ filled | `ctgov_api` |
 | design | `number_of_arms` | ✅ filled | `ctgov_api` |
-| design | `background_therapy_rule` | ✅ filled (15/17) | `ctgov_text_extraction`/`protocol_pdf_extraction`/`publication_extraction` — combination-TCS trials have a regimen, monotherapy trials confirmed "none" from FDA-review/paper text; needs_extraction only for CAFE and JADE REGIMEN |
-| endpoints | `primary_endpoint_measure` | ✅ filled | `ctgov_api` |
-| endpoints | `secondary_endpoint_measures` | ✅ filled | `ctgov_api` |
-| endpoints | `endpoint_hierarchy_multiplicity` | ✅ filled (16/17) | `protocol_pdf_extraction` (13) / `publication_extraction` (3, SOLO 1/2/CHRONOS via FDA review); needs_extraction only for CAFE |
+| design | `background_therapy` | ✅ filled (15/17) | `ctgov_text_extraction`/`protocol_pdf_extraction`/`publication_extraction` — combination-TCS trials have a regimen, monotherapy trials confirmed "none" from FDA-review/paper text; needs_extraction only for CAFE and JADE REGIMEN |
+| endpoints | `primary_endpoints` | ✅ filled | `ctgov_api` |
+| endpoints | `secondary_endpoints` | ✅ filled | `ctgov_api` |
+| endpoints | `multiplicity_control` | ✅ filled (16/17) | `protocol_pdf_extraction` (13) / `publication_extraction` (3, SOLO 1/2/CHRONOS via FDA review); needs_extraction only for CAFE |
 | timing_ops | `start_date` | ✅ filled | `ctgov_api` |
 | timing_ops | `primary_completion_date` | ✅ filled | `ctgov_api` |
 | timing_ops | `completion_date` | ✅ filled | `ctgov_api` |
-| timing_ops | `visit_schedule` | ✅ filled (15/17) | `publication_extraction` — visit cadence/key timepoints from FDA reviews or PMC papers (see note above on granularity); needs_extraction only for CAFE and JADE REGIMEN |
-| timing_ops | `rescue_therapy_rules` | ✅ filled (14/17) | `protocol_pdf_extraction` (10) / `publication_extraction` (4); needs_extraction for CAFE, JADE MONO-1, JADE COMPARE |
+| timing_ops | `study_schedule` | ✅ filled (15/17) | `publication_extraction` — visit cadence/key timepoints from FDA reviews or PMC papers (see note above on granularity); needs_extraction only for CAFE and JADE REGIMEN |
+| timing_ops | `rescue_therapy` | ✅ filled (14/17) | `protocol_pdf_extraction` (10) / `publication_extraction` (4); needs_extraction for CAFE, JADE MONO-1, JADE COMPARE |
 | adverse_events | `serious_adverse_event_rate` | ✅ filled (17/17) | `ctgov_api` — per-arm % from `resultsSection.adverseEventsModule.eventGroups[]` |
 | adverse_events | `death_rate` | ✅ filled (17/17) | `ctgov_api` — per-arm % from the same `eventGroups[]` |
 | adverse_events | `most_common_adverse_events` | ✅ filled (17/17) | `ctgov_api` — top non-serious AEs by incidence from `adverseEventsModule.otherEvents[]` (CT.gov's own ≥5% frequency-threshold table) |
 | adverse_events | `discontinuation_due_to_ae_rate` | ✅ filled (16/17) | `ctgov_api` (13) direct; `publication_extraction` (3, the 3 Tralokinumab ECZTRA trials, from their PMC papers' AE tables); needs_extraction only for CAFE |
-| adverse_events | `boxed_warning` | ✅ filled (17/17) | `openfda_label` — drug-level; `null` for Dupilumab/Tralokinumab/Lebrikizumab means confirmed no boxed warning, not a gap |
+| adverse_events | `boxed_warning` | ✅ filled (17/17) | `openfda_label` — drug-level; `present: false` for Dupilumab/Tralokinumab/Lebrikizumab means confirmed no boxed warning, not a gap |
+| real_world_safety | `faers_summary` | ⬜ needs_extraction (17/17) | `openfda_faers` — structured home ready; populated by the scale-out pass |
+| exclusivity | `regulatory_application` | ✅ filled (17/17) | `orange_book` (Abrocitinib, Upadacitinib NDAs) / `purple_book` (Dupilumab, Lebrikizumab, Tralokinumab BLAs) — the NDA/BLA join key |
+| exclusivity | `orange_book` | ⬜ needs_extraction (17/17) | `orange_book` — structured home ready; populated by the scale-out pass |
+| exclusivity | `purple_book` | ⬜ needs_extraction (17/17) | `purple_book` — structured home ready; populated by the scale-out pass |
 
-**595 sourced values total (17 trials × 35 fields). 585 are filled with
-real data (455 `ctgov_api`, 36 `ctgov_text_extraction`, 24
-`protocol_pdf_extraction`, 36 `publication_extraction`, 34
-`openfda_label`); 10 remain `needs_extraction`, all on CAFE (6),
-JADE MONO-1 (1), JADE COMPARE (1), and JADE REGIMEN (2) — see the list
-above for exactly why each one is unreachable.** Every non-`ctgov_api`
-fill was produced by LLM-assisted reading of a real, cited source (CT.gov
-free text, a downloaded protocol/SAP PDF, CT.gov's structured results
-tables, a PMC full-text paper, an FDA approval-package review, or the
-openFDA label) — the pipeline's `enrich_needs_extraction.py`,
-`fetch_adverse_events.py`, and `enrich_publications.py` (in `kolai-website`)
-record exactly which excerpt backs which field — and every one is
-`reviewed_by: null` pending the human clinical QA pass (captain +
-Garvita) before it's treated as authoritative for publication.
+**595 v1 sourced values (17 trials × 35 fields), all carried into v2 (663 =
+17 × 39 with the 4 new fields). 585 are filled with real data (455
+`ctgov_api`, 36 `ctgov_text_extraction`, 24 `protocol_pdf_extraction`, 36
+`publication_extraction`, 34 `openfda_label`); 10 remain `needs_extraction`,
+all on CAFE (6), JADE MONO-1 (1), JADE COMPARE (1), and JADE REGIMEN (2) —
+see the list above for exactly why each one is unreachable.** Every
+non-`ctgov_api` fill was produced by LLM-assisted reading of a real, cited
+source (CT.gov free text, a downloaded protocol/SAP PDF, CT.gov's
+structured results tables, a PMC full-text paper, an FDA approval-package
+review, or the openFDA label) — `kolai-website`'s pipeline records exactly
+which excerpt backs which field — and every one is `reviewed_by: null`
+pending the human clinical QA pass (captain + Garvita) before it's treated
+as authoritative for publication.
 
 ## The files in this repo
 
 This repo holds only the pipeline's output — no code, no tests:
 
 - `data/trials/<NCT_ID>.json` — one file per trial, the sourced-value
-  format described above.
+  format described above (schema v2).
 - `trials.csv` — one row per trial, one column per field (the field's
-  `value`; `needs_extraction` fields are blank).
+  `value`, JSON-encoded when structured; `needs_extraction` fields blank).
 - `sources.csv` — one row per sourced value: `nct_id`, `field`,
   `source_type`, `source_url`, `source_excerpt`, `extracted_by`,
-  `reviewed_by`, `confidence`. 17 trials × 35 fields = 595 rows.
+  `reviewed_by`, `confidence`. 17 trials × 39 fields = 663 rows.
+- `endpoints.csv` — one row per outcome measure × criterion: `measure_type`,
+  `scale`, `timepoints`, `analysis_population`, and the `ScoreCriterion`
+  columns, so "EASI-75 responders at week 16" is a column filter.
+- `severity_criteria.csv` — one row per baseline-severity `ScoreCriterion`.
+- `adverse_event_rates.csv` — one row per (trial, arm, measure[, MedDRA
+  term]).
+- `docs/SCHEMA.md` / `schema/trial.schema.json` — static snapshots of the
+  schema v2 field reference (see the note at the top of each file).
 
-To regenerate or extend this data (fetch, extraction, and build scripts,
-plus their test suite) see `kolai-website`, which owns the pipeline this
-data is exported from.
+To regenerate or extend this data (fetch, extraction, migration, and build
+scripts, the schema spec, and their test suite) see `kolai-website`, which
+owns the pipeline this data is exported from.
 
 ## Out of scope for v1
 
