@@ -1,0 +1,792 @@
+{
+  "nct_id": {
+    "value": "NCT01468233",
+    "source_type": "ctgov_api",
+    "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01468233",
+    "source_excerpt": "protocolSection.identificationModule.nctId",
+    "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+    "reviewed_by": null,
+    "confidence": 1.0
+  },
+  "identity": {
+    "trial_name": {
+      "value": "PIONEER II",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01468233",
+      "source_excerpt": "protocolSection.identificationModule.acronym",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "official_title": {
+      "value": "A Phase 3 Multicenter Study of the Safety and Efficacy of Adalimumab in Subjects With Moderate to Severe Hidradenitis Suppurativa - PIONEER II",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01468233",
+      "source_excerpt": "protocolSection.identificationModule.officialTitle",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "sponsor": {
+      "value": "AbbVie (prior sponsor, Abbott)",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01468233",
+      "source_excerpt": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "phase": {
+      "value": [
+        "PHASE3"
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01468233",
+      "source_excerpt": "protocolSection.designModule.phases",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    }
+  },
+  "molecule": {
+    "drug": {
+      "value": "Adalimumab",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01468233",
+      "source_excerpt": "protocolSection.armsInterventionsModule.interventions[].name (curated)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "intervention_names": {
+      "value": [
+        "adalimumab",
+        "placebo"
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01468233",
+      "source_excerpt": "protocolSection.armsInterventionsModule.interventions[].name",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "intervention_type": {
+      "value": [
+        "BIOLOGICAL"
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01468233",
+      "source_excerpt": "protocolSection.armsInterventionsModule.interventions[].type",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "mechanism_of_action": {
+      "value": "12.1 Mechanism of Action Adalimumab products bind specifically to TNF-alpha and block its interaction with the p55 and p75 cell surface TNF receptors. Adalimumab products also lyse surface TNF expressing cells in vitro in the presence of complement. Adalimumab products do not bind or inactivate lymphotoxin (TNF-beta). TNF is a naturally occurring cytokine that is involved in normal inflammatory and immune responses. Elevated concentrations of TNF are found in the synovial fluid of patients with RA, JIA, PsA, and AS and play an important role in both the pathologic inflammation and the joint destruction that are hallmarks of these diseases. Increased concentrations of TNF are also found in psoriasis plaques. In Ps, treatment with HYRIMOZ may reduce the epidermal thickness and infiltration of inflammatory cells. The relationship between these pharmacodynamic activities and the mechanism(s) by which adalimumab products exert their clinical effects is unknown. Adalimumab products also modulate biological responses that are induced or regulated by TNF, including changes in the concentrations of adhesion molecules responsible for leukocyte migration (ELAM-1, VCAM-1, and ICAM-1 with an IC 50 of 1-2 X 10 -10 M).",
+      "source_type": "openfda_label",
+      "source_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=48b7e44a-945f-487d-b2fd-3da13d6d6fdb",
+      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1)",
+      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA)",
+      "reviewed_by": null,
+      "confidence": 0.9
+    },
+    "dosing_regimen": {
+      "value": "adalimumab: Adalimumab pre-filled syringe, administered by subcutaneous injection",
+      "source_type": "ctgov_text_extraction",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01468233",
+      "source_excerpt": "adalimumab: Adalimumab pre-filled syringe, administered by subcutaneous injection",
+      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA)",
+      "reviewed_by": null,
+      "confidence": 0.8
+    }
+  },
+  "population": {
+    "condition": {
+      "value": [
+        "Hidradenitis Suppurativa (HS)"
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01468233",
+      "source_excerpt": "protocolSection.conditionsModule.conditions",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "min_age": {
+      "value": "18 Years",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01468233",
+      "source_excerpt": "protocolSection.eligibilityModule.minimumAge",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "max_age": {
+      "value": "99 Years",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01468233",
+      "source_excerpt": "protocolSection.eligibilityModule.maximumAge",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "sex": {
+      "value": "ALL",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01468233",
+      "source_excerpt": "protocolSection.eligibilityModule.sex",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "enrollment_count": {
+      "value": 326,
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01468233",
+      "source_excerpt": "protocolSection.designModule.enrollmentInfo.count",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "severity_definition": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    }
+  },
+  "design": {
+    "study_type": {
+      "value": "INTERVENTIONAL",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01468233",
+      "source_excerpt": "protocolSection.designModule.studyType",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "allocation": {
+      "value": "RANDOMIZED",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01468233",
+      "source_excerpt": "protocolSection.designModule.designInfo.allocation",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "intervention_model": {
+      "value": "PARALLEL",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01468233",
+      "source_excerpt": "protocolSection.designModule.designInfo.interventionModel",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "masking": {
+      "value": "DOUBLE",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01468233",
+      "source_excerpt": "protocolSection.designModule.designInfo.maskingInfo.masking",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "number_of_arms": {
+      "value": 6,
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01468233",
+      "source_excerpt": "len(protocolSection.armsInterventionsModule.armGroups)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "background_therapy_rule": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    }
+  },
+  "endpoints": {
+    "primary_endpoint_measure": {
+      "value": "Percentage of Participants Achieving Hidradenitis Suppurativa Clinical Response (HiSCR) at Week 12 (Time frame: Baseline (Week 0) up to Week 12)",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01468233",
+      "source_excerpt": "protocolSection.outcomesModule.primaryOutcomes[0].measure/timeFrame",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "secondary_endpoint_measures": {
+      "value": [
+        "Percentage of Participants With Baseline Hurley Stage II Who Achieved Abscess and Inflammatory Nodule (AN) Count of 0, 1, or 2 at Week 12",
+        "Percentage of Participants Achieving At Least 30% Reduction and At Least 1 Unit Reduction From Baseline in Patient's Global Assessment of Skin Pain (NRS30) - At Worst at Week 12 Among Participants With Baseline Skin Pain NRS \u2265 3",
+        "Change From Baseline to Week 12 in Modified Sartorius Score"
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01468233",
+      "source_excerpt": "protocolSection.outcomesModule.secondaryOutcomes[].measure",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "endpoint_hierarchy_multiplicity": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    }
+  },
+  "timing_ops": {
+    "start_date": {
+      "value": "2011-11",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01468233",
+      "source_excerpt": "protocolSection.statusModule.startDateStruct.date",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "primary_completion_date": {
+      "value": "2014-04",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01468233",
+      "source_excerpt": "protocolSection.statusModule.primaryCompletionDateStruct.date",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "completion_date": {
+      "value": "2014-04",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01468233",
+      "source_excerpt": "protocolSection.statusModule.completionDateStruct.date",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "visit_schedule": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    },
+    "rescue_therapy_rules": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    }
+  },
+  "adverse_events": {
+    "serious_adverse_event_rate": {
+      "value": [
+        {
+          "arm": "Placebo (Period 1)",
+          "n_affected": 6,
+          "n_at_risk": 163,
+          "pct": 3.7
+        },
+        {
+          "arm": "Adalimumab EW (Period 1)",
+          "n_affected": 3,
+          "n_at_risk": 163,
+          "pct": 1.8
+        },
+        {
+          "arm": "Placebo/Placebo (Period 2)",
+          "n_affected": 7,
+          "n_at_risk": 151,
+          "pct": 4.6
+        },
+        {
+          "arm": "Adalimumab EW/Placebo (Period 2)",
+          "n_affected": 0,
+          "n_at_risk": 51,
+          "pct": 0.0
+        },
+        {
+          "arm": "Adalimumab EW/Adalimumab EOW (Period 2)",
+          "n_affected": 2,
+          "n_at_risk": 53,
+          "pct": 3.8
+        },
+        {
+          "arm": "Adalimumab EW/Adalimumab EW (Period 2)",
+          "n_affected": 2,
+          "n_at_risk": 51,
+          "pct": 3.9
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01468233",
+      "source_excerpt": "resultsSection.adverseEventsModule.eventGroups[].seriousNumAffected/seriousNumAtRisk",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "death_rate": {
+      "value": [
+        {
+          "arm": "Placebo (Period 1)",
+          "n_affected": null,
+          "n_at_risk": null,
+          "pct": null
+        },
+        {
+          "arm": "Adalimumab EW (Period 1)",
+          "n_affected": null,
+          "n_at_risk": null,
+          "pct": null
+        },
+        {
+          "arm": "Placebo/Placebo (Period 2)",
+          "n_affected": null,
+          "n_at_risk": null,
+          "pct": null
+        },
+        {
+          "arm": "Adalimumab EW/Placebo (Period 2)",
+          "n_affected": null,
+          "n_at_risk": null,
+          "pct": null
+        },
+        {
+          "arm": "Adalimumab EW/Adalimumab EOW (Period 2)",
+          "n_affected": null,
+          "n_at_risk": null,
+          "pct": null
+        },
+        {
+          "arm": "Adalimumab EW/Adalimumab EW (Period 2)",
+          "n_affected": null,
+          "n_at_risk": null,
+          "pct": null
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01468233",
+      "source_excerpt": "resultsSection.adverseEventsModule.eventGroups[].deathsNumAffected/deathsNumAtRisk",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "most_common_adverse_events": {
+      "value": [
+        {
+          "term": "HIDRADENITIS",
+          "organ_system": "Skin and subcutaneous tissue disorders",
+          "per_arm": [
+            {
+              "arm": "Placebo (Period 1)",
+              "n_affected": 19,
+              "n_at_risk": 163,
+              "pct": 11.7
+            },
+            {
+              "arm": "Adalimumab EW (Period 1)",
+              "n_affected": 7,
+              "n_at_risk": 163,
+              "pct": 4.3
+            },
+            {
+              "arm": "Placebo/Placebo (Period 2)",
+              "n_affected": 13,
+              "n_at_risk": 151,
+              "pct": 8.6
+            },
+            {
+              "arm": "Adalimumab EW/Placebo (Period 2)",
+              "n_affected": 10,
+              "n_at_risk": 51,
+              "pct": 19.6
+            },
+            {
+              "arm": "Adalimumab EW/Adalimumab EOW (Period 2)",
+              "n_affected": 8,
+              "n_at_risk": 53,
+              "pct": 15.1
+            },
+            {
+              "arm": "Adalimumab EW/Adalimumab EW (Period 2)",
+              "n_affected": 3,
+              "n_at_risk": 51,
+              "pct": 5.9
+            }
+          ]
+        },
+        {
+          "term": "HEADACHE",
+          "organ_system": "Nervous system disorders",
+          "per_arm": [
+            {
+              "arm": "Placebo (Period 1)",
+              "n_affected": 21,
+              "n_at_risk": 163,
+              "pct": 12.9
+            },
+            {
+              "arm": "Adalimumab EW (Period 1)",
+              "n_affected": 21,
+              "n_at_risk": 163,
+              "pct": 12.9
+            },
+            {
+              "arm": "Placebo/Placebo (Period 2)",
+              "n_affected": 4,
+              "n_at_risk": 151,
+              "pct": 2.6
+            },
+            {
+              "arm": "Adalimumab EW/Placebo (Period 2)",
+              "n_affected": 4,
+              "n_at_risk": 51,
+              "pct": 7.8
+            },
+            {
+              "arm": "Adalimumab EW/Adalimumab EOW (Period 2)",
+              "n_affected": 3,
+              "n_at_risk": 53,
+              "pct": 5.7
+            },
+            {
+              "arm": "Adalimumab EW/Adalimumab EW (Period 2)",
+              "n_affected": 5,
+              "n_at_risk": 51,
+              "pct": 9.8
+            }
+          ]
+        },
+        {
+          "term": "UPPER RESPIRATORY TRACT INFECTION",
+          "organ_system": "Infections and infestations",
+          "per_arm": [
+            {
+              "arm": "Placebo (Period 1)",
+              "n_affected": 9,
+              "n_at_risk": 163,
+              "pct": 5.5
+            },
+            {
+              "arm": "Adalimumab EW (Period 1)",
+              "n_affected": 8,
+              "n_at_risk": 163,
+              "pct": 4.9
+            },
+            {
+              "arm": "Placebo/Placebo (Period 2)",
+              "n_affected": 13,
+              "n_at_risk": 151,
+              "pct": 8.6
+            },
+            {
+              "arm": "Adalimumab EW/Placebo (Period 2)",
+              "n_affected": 5,
+              "n_at_risk": 51,
+              "pct": 9.8
+            },
+            {
+              "arm": "Adalimumab EW/Adalimumab EOW (Period 2)",
+              "n_affected": 4,
+              "n_at_risk": 53,
+              "pct": 7.5
+            },
+            {
+              "arm": "Adalimumab EW/Adalimumab EW (Period 2)",
+              "n_affected": 1,
+              "n_at_risk": 51,
+              "pct": 2.0
+            }
+          ]
+        },
+        {
+          "term": "DIARRHOEA",
+          "organ_system": "Gastrointestinal disorders",
+          "per_arm": [
+            {
+              "arm": "Placebo (Period 1)",
+              "n_affected": 4,
+              "n_at_risk": 163,
+              "pct": 2.5
+            },
+            {
+              "arm": "Adalimumab EW (Period 1)",
+              "n_affected": 9,
+              "n_at_risk": 163,
+              "pct": 5.5
+            },
+            {
+              "arm": "Placebo/Placebo (Period 2)",
+              "n_affected": 2,
+              "n_at_risk": 151,
+              "pct": 1.3
+            },
+            {
+              "arm": "Adalimumab EW/Placebo (Period 2)",
+              "n_affected": 1,
+              "n_at_risk": 51,
+              "pct": 2.0
+            },
+            {
+              "arm": "Adalimumab EW/Adalimumab EOW (Period 2)",
+              "n_affected": 4,
+              "n_at_risk": 53,
+              "pct": 7.5
+            },
+            {
+              "arm": "Adalimumab EW/Adalimumab EW (Period 2)",
+              "n_affected": 1,
+              "n_at_risk": 51,
+              "pct": 2.0
+            }
+          ]
+        },
+        {
+          "term": "NASOPHARYNGITIS",
+          "organ_system": "Infections and infestations",
+          "per_arm": [
+            {
+              "arm": "Placebo (Period 1)",
+              "n_affected": 10,
+              "n_at_risk": 163,
+              "pct": 6.1
+            },
+            {
+              "arm": "Adalimumab EW (Period 1)",
+              "n_affected": 9,
+              "n_at_risk": 163,
+              "pct": 5.5
+            },
+            {
+              "arm": "Placebo/Placebo (Period 2)",
+              "n_affected": 5,
+              "n_at_risk": 151,
+              "pct": 3.3
+            },
+            {
+              "arm": "Adalimumab EW/Placebo (Period 2)",
+              "n_affected": 1,
+              "n_at_risk": 51,
+              "pct": 2.0
+            },
+            {
+              "arm": "Adalimumab EW/Adalimumab EOW (Period 2)",
+              "n_affected": 3,
+              "n_at_risk": 53,
+              "pct": 5.7
+            },
+            {
+              "arm": "Adalimumab EW/Adalimumab EW (Period 2)",
+              "n_affected": 3,
+              "n_at_risk": 51,
+              "pct": 5.9
+            }
+          ]
+        },
+        {
+          "term": "TOOTHACHE",
+          "organ_system": "Gastrointestinal disorders",
+          "per_arm": [
+            {
+              "arm": "Placebo (Period 1)",
+              "n_affected": 1,
+              "n_at_risk": 163,
+              "pct": 0.6
+            },
+            {
+              "arm": "Adalimumab EW (Period 1)",
+              "n_affected": 2,
+              "n_at_risk": 163,
+              "pct": 1.2
+            },
+            {
+              "arm": "Placebo/Placebo (Period 2)",
+              "n_affected": 3,
+              "n_at_risk": 151,
+              "pct": 2.0
+            },
+            {
+              "arm": "Adalimumab EW/Placebo (Period 2)",
+              "n_affected": 3,
+              "n_at_risk": 51,
+              "pct": 5.9
+            },
+            {
+              "arm": "Adalimumab EW/Adalimumab EOW (Period 2)",
+              "n_affected": 0,
+              "n_at_risk": 53,
+              "pct": 0.0
+            },
+            {
+              "arm": "Adalimumab EW/Adalimumab EW (Period 2)",
+              "n_affected": 1,
+              "n_at_risk": 51,
+              "pct": 2.0
+            }
+          ]
+        },
+        {
+          "term": "BRONCHITIS",
+          "organ_system": "Infections and infestations",
+          "per_arm": [
+            {
+              "arm": "Placebo (Period 1)",
+              "n_affected": 4,
+              "n_at_risk": 163,
+              "pct": 2.5
+            },
+            {
+              "arm": "Adalimumab EW (Period 1)",
+              "n_affected": 2,
+              "n_at_risk": 163,
+              "pct": 1.2
+            },
+            {
+              "arm": "Placebo/Placebo (Period 2)",
+              "n_affected": 2,
+              "n_at_risk": 151,
+              "pct": 1.3
+            },
+            {
+              "arm": "Adalimumab EW/Placebo (Period 2)",
+              "n_affected": 3,
+              "n_at_risk": 51,
+              "pct": 5.9
+            },
+            {
+              "arm": "Adalimumab EW/Adalimumab EOW (Period 2)",
+              "n_affected": 0,
+              "n_at_risk": 53,
+              "pct": 0.0
+            },
+            {
+              "arm": "Adalimumab EW/Adalimumab EW (Period 2)",
+              "n_affected": 1,
+              "n_at_risk": 51,
+              "pct": 2.0
+            }
+          ]
+        },
+        {
+          "term": "GASTROENTERITIS VIRAL",
+          "organ_system": "Infections and infestations",
+          "per_arm": [
+            {
+              "arm": "Placebo (Period 1)",
+              "n_affected": 1,
+              "n_at_risk": 163,
+              "pct": 0.6
+            },
+            {
+              "arm": "Adalimumab EW (Period 1)",
+              "n_affected": 0,
+              "n_at_risk": 163,
+              "pct": 0.0
+            },
+            {
+              "arm": "Placebo/Placebo (Period 2)",
+              "n_affected": 0,
+              "n_at_risk": 151,
+              "pct": 0.0
+            },
+            {
+              "arm": "Adalimumab EW/Placebo (Period 2)",
+              "n_affected": 0,
+              "n_at_risk": 51,
+              "pct": 0.0
+            },
+            {
+              "arm": "Adalimumab EW/Adalimumab EOW (Period 2)",
+              "n_affected": 2,
+              "n_at_risk": 53,
+              "pct": 3.8
+            },
+            {
+              "arm": "Adalimumab EW/Adalimumab EW (Period 2)",
+              "n_affected": 3,
+              "n_at_risk": 51,
+              "pct": 5.9
+            }
+          ]
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01468233",
+      "source_excerpt": "resultsSection.adverseEventsModule.otherEvents[] (top 8 of 29 by highest single-arm incidence; CT.gov's own >=5% frequency-threshold table)",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "discontinuation_due_to_ae_rate": {
+      "value": [
+        {
+          "arm": "Placebo",
+          "n_discontinued": 5,
+          "n_started": 163,
+          "pct": 3.1
+        },
+        {
+          "arm": "Adalimumab Every Week (EW)",
+          "n_discontinued": 3,
+          "n_started": 163,
+          "pct": 1.8
+        },
+        {
+          "arm": "Placebo/Placebo",
+          "n_discontinued": 0,
+          "n_started": 0,
+          "pct": null
+        },
+        {
+          "arm": "Adalimumab Every Week (EW)/Placebo",
+          "n_discontinued": 0,
+          "n_started": 0,
+          "pct": null
+        },
+        {
+          "arm": "Adalimumab Every Week (EW)/ Adalimumab Every Other Week (EOW)",
+          "n_discontinued": 0,
+          "n_started": 0,
+          "pct": null
+        },
+        {
+          "arm": "Adalimumab Every Week (EW)/Adalimumab Every Week (EW)",
+          "n_discontinued": 0,
+          "n_started": 0,
+          "pct": null
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01468233",
+      "source_excerpt": "resultsSection.participantFlowModule.periods[0].dropWithdraws[type=\"Adverse Event\"].reasons[] vs periods[0].milestones[type=STARTED].achievements[]",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "boxed_warning": {
+      "value": "WARNING: SERIOUS INFECTIONS and MALIGNANCY SERIOUS INFECTIONS Patients treated with adalimumab products, including HYRIMOZ, are at increased risk for developing serious infections that may lead to hospitalization or death [see Warnings and Precautions ( 5.1 )] . Most patients who developed these infections were taking concomitant immunosuppressants such as methotrexate or corticosteroids. Discontinue HYRIMOZ if a patient develops a serious infection or sepsis. Reported infections include: \u2022 Active tuberculosis (TB), including reactivation of latent TB. Patients with TB have frequently presented with disseminated or extrapulmonary disease. Test patients for latent TB before HYRIMOZ use and during therapy. Initiate treatment for latent TB prior to HYRIMOZ use. \u2022 Invasive fungal infections, including histoplasmosis, coccidioidomycosis, candidiasis, aspergillosis, blastomycosis, and pneumocystosis. Patients with histoplasmosis or other invasive fungal infections may present with disseminated, rather than localized, disease. Antigen and antibody testing for histoplasmosis may be negative in some patients with active infection. Consider empiric anti-fungal therapy in patients at risk for invasive fungal infections who develop severe systemic illness. \u2022 Bacterial, viral and other infections due to opportunistic pathogens, including Legionella and Listeria. Carefully consider the risks and benefits of treatment with HYRIMOZ prior to initiating therapy in patients with chronic or recurrent infection. Monitor patients closely for the development of signs and symptoms of infection during and after treatment with HYRIMOZ, including the possible development of TB in patients who tested negative for latent TB infection prior to initiating therapy [see Warnings and Precautions ( 5.1 ) and Adverse Reactions ( 6.1 )]. MALIGNANCY Lymphoma and other malignancies, some fatal, have been reported in children and adolescent patients treated with TNF blockers including adalimumab products [ see Warnings and Precautions ( 5.2 ) ]. Post-marketing cases of hepatosplenic T-cell lymphoma (HSTCL), a rare type of T-cell lymphoma, have been reported in patients treated with TNF blockers including adalimumab products. These cases have had a very aggressive disease course and have been fatal. The majority of reported TNF blocker cases have occurred in patients with Crohn's disease or ulcerative colitis and the majority were in adolescent and young adult males. Almost all these patients had received treatment with azathioprine or 6-mercaptopurine (6\u2013MP) concomitantly with a TNF blocker at or prior to diagnosis. It is uncertain whether the occurrence of HSTCL is related to use of a TNF blocker or a TNF blocker in combination with these other immunosuppressants [see Warnings and Precautions ( 5.2 )]. WARNING: SERIOUS INFECTIONS and MALIGNANCY See full prescribing information for complete boxed warning. SERIOUS INFECTIONS ( 5.1 , 6.1 ): \u2022 Increased risk of serious infections leading to hospitalization or death, including tuberculosis (TB), bacterial sepsis, invasive fungal infections (such as histoplasmosis), and infections due to other opportunistic pathogens. \u2022 Discontinue HYRIMOZ if a patient develops a serious infection or sepsis during treatment. \u2022 Perform test for latent TB; if positive, start treatment for TB prior to starting HYRIMOZ. \u2022 Monitor all patients for active TB during treatment, even if initial latent TB test is negative. MALIGNANCY ( 5.2 ): \u2022 Lymphoma and other malignancies, some fatal, have been reported in children and adolescent patients treated with TNF blockers including adalimumab products. \u2022 Post-marketing cases of hepatosplenic T-cell lymphoma (HSTCL), a rare type of T-cell lymphoma, have occurred in adolescent and young adults with inflammatory bowel disease treated with TNF blockers including adalimumab products.",
+      "source_type": "openfda_label",
+      "source_url": "https://api.fda.gov/drug/label.json?search=openfda.substance_name:ADALIMUMAB&limit=1",
+      "source_excerpt": "results[0].boxed_warning",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    }
+  }
+}

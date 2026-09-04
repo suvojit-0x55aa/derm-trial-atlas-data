@@ -98,7 +98,34 @@ This file is the project's committed home for project-intrinsic agent memory: bu
   curated by hand against the live API, not derived by a query filter — if a drug's pivotal
   program changes or a new trial needs adding, update that dict directly rather than
   re-deriving it from a single API query (comparator-arm trials from other drugs' programs can
-  otherwise get miscategorized).
+  otherwise get miscategorized). `TRIALS` is now assembled from 5 per-indication dicts
+  (`AD_TRIALS`, `PSORIASIS_TRIALS`, `HS_TRIALS`, `AA_TRIALS`, `CSU_TRIALS`) — add a 6th
+  indication as its own dict and merge it in, don't grow one flat dict.
+- **The schema (7 field groups, 35 fields, indication-agnostic) needs no changes to add a new
+  indication.** Confirmed for Psoriasis/HS/AA/CSU: `severity_definition` and
+  `primary_endpoint_measure`/`secondary_endpoint_measures` are free text, not AD-specific typed
+  fields — a new indication's own severity/endpoint vocabulary (PASI/sPGA for psoriasis,
+  HiSCR/IHS4 for HS, SALT for AA, UAS7 for CSU) just goes in the same two fields. The
+  `extract_severity_and_bg` regex in `enrich_needs_extraction.py` was extended to also recognize
+  these terms; it still won't catch every trial's exact eligibility-criteria phrasing (a real
+  per-trial-curation gap, not a code bug) — see README's fill-status note for the 26 new trials.
+- **Re-running `fetch_trials.py` against the full `TRIALS` dict resets every trial to baseline,
+  including previously hand-curated trials** — always diff `data/trials/*.json` against the
+  committed version afterward and restore any file whose only diff is content that used to be
+  hand-curated (rescue_therapy_rules, endpoint_hierarchy_multiplicity, etc., populated by
+  `enrich_needs_extraction.py`'s/`enrich_publications.py`'s hardcoded per-NCT-ID dicts) before
+  those enrichment scripts re-run — re-running the full stage 1-4 pipeline in order does
+  correctly reproduce hand-curated content (the excerpts are hardcoded by NCT ID, not re-derived
+  from live external state), but the `extracted_by` attribution string for early trials has
+  drifted from an earlier pass in ways unrelated to any single agent's edits — check for that
+  specific (harmless, cosmetic) diff before assuming a real regression.
+- **Cross-source data (FAERS, Orange Book, Purple Book)** is fetched by `scripts/fetch_faers.py`,
+  `scripts/fetch_purple_book.py`, and `scripts/fetch_orange_book.py`, staged under
+  `data/_raw_staging/<source>/<drug>.json` — NOT yet integrated into `data/trials/*.json`'s field
+  structure (a sibling schema-redesign task owns that; see README's "Cross-source data" section
+  for status per source and why Orange Book is currently unreachable). Orange Book and Purple
+  Book are separate parsers by design — different file shapes and exclusivity rules (NDA patent
+  law vs. BLA/BPCIA biologic exclusivity) — never merge them into one parser.
 
 ## Maintaining this file
 

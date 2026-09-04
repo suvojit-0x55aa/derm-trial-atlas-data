@@ -1,0 +1,73 @@
+{
+  "drug": "Tralokinumab",
+  "total_report_count": 150,
+  "top_reactions": [
+    {
+      "term": "DRUG INEFFECTIVE",
+      "count": 13
+    },
+    {
+      "term": "PRURITUS",
+      "count": 12
+    },
+    {
+      "term": "OFF LABEL USE",
+      "count": 10
+    },
+    {
+      "term": "CONDITION AGGRAVATED",
+      "count": 9
+    },
+    {
+      "term": "CONJUNCTIVITIS",
+      "count": 7
+    },
+    {
+      "term": "ERYTHEMA",
+      "count": 7
+    },
+    {
+      "term": "ARTHRALGIA",
+      "count": 6
+    },
+    {
+      "term": "CUTANEOUS T-CELL LYMPHOMA",
+      "count": 6
+    },
+    {
+      "term": "DERMATITIS ATOPIC",
+      "count": 6
+    },
+    {
+      "term": "DIZZINESS",
+      "count": 6
+    },
+    {
+      "term": "ECZEMA",
+      "count": 6
+    },
+    {
+      "term": "ECZEMA HERPETICUM",
+      "count": 6
+    },
+    {
+      "term": "RASH",
+      "count": 6
+    },
+    {
+      "term": "WEIGHT INCREASED",
+      "count": 6
+    },
+    {
+      "term": "EYE PRURITUS",
+      "count": 5
+    }
+  ],
+  "query_urls": {
+    "total_report_count": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct%3A%22TRALOKINUMAB%22&limit=1",
+    "top_reactions": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct%3A%22TRALOKINUMAB%22&count=patient.reaction.reactionmeddrapt.exact&limit=15"
+  },
+  "fetched_at": "2026-09-04T20:41:12Z",
+  "source": "openFDA drug/event.json (FAERS)",
+  "extracted_by": "fetch_faers.py (openfda drug/event.json, raw staging pass)"
+}

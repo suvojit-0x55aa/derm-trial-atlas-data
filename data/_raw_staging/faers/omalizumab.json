@@ -1,0 +1,73 @@
+{
+  "drug": "Omalizumab",
+  "total_report_count": 11310,
+  "top_reactions": [
+    {
+      "term": "ASTHMA",
+      "count": 4314
+    },
+    {
+      "term": "DYSPNOEA",
+      "count": 3917
+    },
+    {
+      "term": "COUGH",
+      "count": 2934
+    },
+    {
+      "term": "WHEEZING",
+      "count": 2613
+    },
+    {
+      "term": "URTICARIA",
+      "count": 2595
+    },
+    {
+      "term": "PNEUMONIA",
+      "count": 2437
+    },
+    {
+      "term": "DRUG INEFFECTIVE",
+      "count": 2304
+    },
+    {
+      "term": "MALAISE",
+      "count": 1939
+    },
+    {
+      "term": "DRUG HYPERSENSITIVITY",
+      "count": 1792
+    },
+    {
+      "term": "PRURITUS",
+      "count": 1780
+    },
+    {
+      "term": "FATIGUE",
+      "count": 1723
+    },
+    {
+      "term": "PAIN",
+      "count": 1547
+    },
+    {
+      "term": "HEADACHE",
+      "count": 1484
+    },
+    {
+      "term": "NASOPHARYNGITIS",
+      "count": 1407
+    },
+    {
+      "term": "VOMITING",
+      "count": 1370
+    }
+  ],
+  "query_urls": {
+    "total_report_count": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct%3A%22OMALIZUMAB%22&limit=1",
+    "top_reactions": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct%3A%22OMALIZUMAB%22&count=patient.reaction.reactionmeddrapt.exact&limit=15"
+  },
+  "fetched_at": "2026-09-04T20:41:56Z",
+  "source": "openFDA drug/event.json (FAERS)",
+  "extracted_by": "fetch_faers.py (openfda drug/event.json, raw staging pass)"
+}

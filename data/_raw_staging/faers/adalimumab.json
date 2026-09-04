@@ -1,0 +1,73 @@
+{
+  "drug": "Adalimumab",
+  "total_report_count": 46072,
+  "top_reactions": [
+    {
+      "term": "DRUG INEFFECTIVE",
+      "count": 10464
+    },
+    {
+      "term": "OFF LABEL USE",
+      "count": 8283
+    },
+    {
+      "term": "RHEUMATOID ARTHRITIS",
+      "count": 5673
+    },
+    {
+      "term": "FATIGUE",
+      "count": 5486
+    },
+    {
+      "term": "PAIN",
+      "count": 5437
+    },
+    {
+      "term": "ARTHRALGIA",
+      "count": 5184
+    },
+    {
+      "term": "RASH",
+      "count": 4648
+    },
+    {
+      "term": "CONDITION AGGRAVATED",
+      "count": 4492
+    },
+    {
+      "term": "DRUG INTOLERANCE",
+      "count": 4258
+    },
+    {
+      "term": "SYSTEMIC LUPUS ERYTHEMATOSUS",
+      "count": 4114
+    },
+    {
+      "term": "NAUSEA",
+      "count": 4070
+    },
+    {
+      "term": "HEADACHE",
+      "count": 4059
+    },
+    {
+      "term": "DIARRHOEA",
+      "count": 4055
+    },
+    {
+      "term": "JOINT SWELLING",
+      "count": 4051
+    },
+    {
+      "term": "ALOPECIA",
+      "count": 3893
+    }
+  ],
+  "query_urls": {
+    "total_report_count": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct%3A%22ADALIMUMAB%22&limit=1",
+    "top_reactions": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct%3A%22ADALIMUMAB%22&count=patient.reaction.reactionmeddrapt.exact&limit=15"
+  },
+  "fetched_at": "2026-09-04T20:41:40Z",
+  "source": "openFDA drug/event.json (FAERS)",
+  "extracted_by": "fetch_faers.py (openfda drug/event.json, raw staging pass)"
+}

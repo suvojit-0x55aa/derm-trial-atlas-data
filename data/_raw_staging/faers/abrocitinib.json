@@ -1,0 +1,73 @@
+{
+  "drug": "Abrocitinib",
+  "total_report_count": 422,
+  "top_reactions": [
+    {
+      "term": "DRUG INEFFECTIVE",
+      "count": 31
+    },
+    {
+      "term": "OFF LABEL USE",
+      "count": 29
+    },
+    {
+      "term": "NAUSEA",
+      "count": 23
+    },
+    {
+      "term": "ECZEMA HERPETICUM",
+      "count": 14
+    },
+    {
+      "term": "CONDITION AGGRAVATED",
+      "count": 13
+    },
+    {
+      "term": "PRURITUS",
+      "count": 12
+    },
+    {
+      "term": "DERMATITIS ATOPIC",
+      "count": 11
+    },
+    {
+      "term": "HERPES ZOSTER",
+      "count": 10
+    },
+    {
+      "term": "ACNE",
+      "count": 9
+    },
+    {
+      "term": "HEADACHE",
+      "count": 9
+    },
+    {
+      "term": "PNEUMONIA",
+      "count": 8
+    },
+    {
+      "term": "RASH",
+      "count": 8
+    },
+    {
+      "term": "THERAPEUTIC PRODUCT EFFECT INCOMPLETE",
+      "count": 8
+    },
+    {
+      "term": "THERAPEUTIC RESPONSE UNEXPECTED",
+      "count": 8
+    },
+    {
+      "term": "VOMITING",
+      "count": 8
+    }
+  ],
+  "query_urls": {
+    "total_report_count": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct%3A%22ABROCITINIB%22&limit=1",
+    "top_reactions": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct%3A%22ABROCITINIB%22&count=patient.reaction.reactionmeddrapt.exact&limit=15"
+  },
+  "fetched_at": "2026-09-04T20:41:15Z",
+  "source": "openFDA drug/event.json (FAERS)",
+  "extracted_by": "fetch_faers.py (openfda drug/event.json, raw staging pass)"
+}

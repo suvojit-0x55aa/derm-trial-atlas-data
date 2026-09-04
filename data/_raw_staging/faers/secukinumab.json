@@ -1,0 +1,73 @@
+{
+  "drug": "Secukinumab",
+  "total_report_count": 4923,
+  "top_reactions": [
+    {
+      "term": "DRUG INEFFECTIVE",
+      "count": 1329
+    },
+    {
+      "term": "PAIN",
+      "count": 791
+    },
+    {
+      "term": "OFF LABEL USE",
+      "count": 767
+    },
+    {
+      "term": "PSORIATIC ARTHROPATHY",
+      "count": 751
+    },
+    {
+      "term": "ARTHRALGIA",
+      "count": 736
+    },
+    {
+      "term": "PSORIASIS",
+      "count": 654
+    },
+    {
+      "term": "FATIGUE",
+      "count": 649
+    },
+    {
+      "term": "CONDITION AGGRAVATED",
+      "count": 617
+    },
+    {
+      "term": "HEADACHE",
+      "count": 600
+    },
+    {
+      "term": "DRUG INTOLERANCE",
+      "count": 582
+    },
+    {
+      "term": "RASH",
+      "count": 581
+    },
+    {
+      "term": "TREATMENT FAILURE",
+      "count": 581
+    },
+    {
+      "term": "JOINT SWELLING",
+      "count": 576
+    },
+    {
+      "term": "MUSCULOSKELETAL STIFFNESS",
+      "count": 547
+    },
+    {
+      "term": "SYNOVITIS",
+      "count": 531
+    }
+  ],
+  "query_urls": {
+    "total_report_count": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct%3A%22SECUKINUMAB%22&limit=1",
+    "top_reactions": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct%3A%22SECUKINUMAB%22&count=patient.reaction.reactionmeddrapt.exact&limit=15"
+  },
+  "fetched_at": "2026-09-04T20:41:44Z",
+  "source": "openFDA drug/event.json (FAERS)",
+  "extracted_by": "fetch_faers.py (openfda drug/event.json, raw staging pass)"
+}

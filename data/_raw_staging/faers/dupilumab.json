@@ -1,0 +1,73 @@
+{
+  "drug": "Dupilumab",
+  "total_report_count": 13441,
+  "top_reactions": [
+    {
+      "term": "PRURITUS",
+      "count": 1522
+    },
+    {
+      "term": "RASH",
+      "count": 1236
+    },
+    {
+      "term": "INJECTION SITE PAIN",
+      "count": 1167
+    },
+    {
+      "term": "OFF LABEL USE",
+      "count": 1087
+    },
+    {
+      "term": "DRUG INEFFECTIVE",
+      "count": 1044
+    },
+    {
+      "term": "DERMATITIS ATOPIC",
+      "count": 894
+    },
+    {
+      "term": "CONDITION AGGRAVATED",
+      "count": 749
+    },
+    {
+      "term": "DYSPNOEA",
+      "count": 718
+    },
+    {
+      "term": "PRODUCT USE IN UNAPPROVED INDICATION",
+      "count": 711
+    },
+    {
+      "term": "ARTHRALGIA",
+      "count": 687
+    },
+    {
+      "term": "PRODUCT USE ISSUE",
+      "count": 658
+    },
+    {
+      "term": "ECZEMA",
+      "count": 632
+    },
+    {
+      "term": "ERYTHEMA",
+      "count": 596
+    },
+    {
+      "term": "COUGH",
+      "count": 589
+    },
+    {
+      "term": "PRODUCT DOSE OMISSION ISSUE",
+      "count": 559
+    }
+  ],
+  "query_urls": {
+    "total_report_count": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct%3A%22DUPILUMAB%22&limit=1",
+    "top_reactions": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct%3A%22DUPILUMAB%22&count=patient.reaction.reactionmeddrapt.exact&limit=15"
+  },
+  "fetched_at": "2026-09-04T20:41:06Z",
+  "source": "openFDA drug/event.json (FAERS)",
+  "extracted_by": "fetch_faers.py (openfda drug/event.json, raw staging pass)"
+}

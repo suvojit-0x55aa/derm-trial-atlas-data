@@ -1,0 +1,73 @@
+{
+  "drug": "Guselkumab",
+  "total_report_count": 2320,
+  "top_reactions": [
+    {
+      "term": "PRODUCT DOSE OMISSION ISSUE",
+      "count": 917
+    },
+    {
+      "term": "DEVICE DEPLOYMENT ISSUE",
+      "count": 750
+    },
+    {
+      "term": "ACCIDENTAL EXPOSURE TO PRODUCT",
+      "count": 312
+    },
+    {
+      "term": "NEEDLE ISSUE",
+      "count": 294
+    },
+    {
+      "term": "DEVICE ISSUE",
+      "count": 199
+    },
+    {
+      "term": "DEVICE DEFECTIVE",
+      "count": 190
+    },
+    {
+      "term": "DRUG INEFFECTIVE",
+      "count": 164
+    },
+    {
+      "term": "DEVICE LEAKAGE",
+      "count": 122
+    },
+    {
+      "term": "OFF LABEL USE",
+      "count": 119
+    },
+    {
+      "term": "PSORIASIS",
+      "count": 116
+    },
+    {
+      "term": "INCORRECT DOSE ADMINISTERED",
+      "count": 90
+    },
+    {
+      "term": "INJECTION SITE HAEMORRHAGE",
+      "count": 67
+    },
+    {
+      "term": "INJECTION SITE PAIN",
+      "count": 65
+    },
+    {
+      "term": "INAPPROPRIATE SCHEDULE OF PRODUCT ADMINISTRATION",
+      "count": 62
+    },
+    {
+      "term": "PSORIATIC ARTHROPATHY",
+      "count": 62
+    }
+  ],
+  "query_urls": {
+    "total_report_count": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct%3A%22GUSELKUMAB%22&limit=1",
+    "top_reactions": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct%3A%22GUSELKUMAB%22&count=patient.reaction.reactionmeddrapt.exact&limit=15"
+  },
+  "fetched_at": "2026-09-04T20:41:22Z",
+  "source": "openFDA drug/event.json (FAERS)",
+  "extracted_by": "fetch_faers.py (openfda drug/event.json, raw staging pass)"
+}

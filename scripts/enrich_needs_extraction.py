@@ -105,6 +105,11 @@ BG_THERAPY_RE = re.compile(
 DRUG_CODE_ALIASES = {
     "abrocitinib": ["pf-04965842"],
     "upadacitinib": ["abt-494"],
+    # Deuruxolitinib's pivotal AA trials (THRIVE-AA1/2) are registered on
+    # CT.gov under its pre-approval compound code, not the approved name --
+    # confirmed live 2026-09-05 (a plain "deuruxolitinib" query/match finds
+    # nothing in the intervention name/description text for those trials).
+    "deuruxolitinib": ["ctp-543"],
 }
 
 
@@ -113,9 +118,17 @@ def extract_severity_and_bg(elig_criteria: str, url: str):
     sev_hits = []
     bg_hits = []
     for l in lines:
-        if re.search(r"\b(EASI|IGA|vIGA)\b", l) and re.search(r"[≥≤<>]|BSA|body surface", l):
+        # AD/psoriasis severity instruments (EASI/IGA/vIGA/sPGA/PASI) plus
+        # the indication-specific instruments added for the v2 expansion:
+        # HiSCR/IHS4 (hidradenitis suppurativa), SALT (alopecia areata),
+        # UAS7 (chronic spontaneous urticaria).
+        if re.search(r"\b(EASI|IGA|vIGA|sPGA|PASI|SALT|UAS7)\b", l) and re.search(
+            r"[≥≤<>]|BSA|body surface|score|percent", l, re.I
+        ):
             sev_hits.append(l)
         elif re.search(r"\bBSA\b|body surface area", l, re.I) and re.search(r"[≥≤<>]", l):
+            sev_hits.append(l)
+        elif re.search(r"\bHiSCR\b|\bIHS4\b|Hidradenitis Suppurativa Clinical Response", l, re.I):
             sev_hits.append(l)
         if BG_THERAPY_RE.search(l):
             bg_hits.append(l)

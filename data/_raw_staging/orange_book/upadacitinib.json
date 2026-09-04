@@ -1,0 +1,22 @@
+{
+  "drug": "Upadacitinib",
+  "ingredient_matched": "UPADACITINIB",
+  "products": null,
+  "patents": null,
+  "exclusivity": null,
+  "status": "source_unreachable",
+  "attempted_sources": [
+    {
+      "url": "https://www.fda.gov/media/76860/download",
+      "method": "GET",
+      "result": "Akamai bot-detection redirect (302 -> /apology_objects/abuse-detection-apology.html) or a bare 404 from the AkamaiNetStorage origin -- observed both, inconsistently, across attempts in this session, with a realistic browser User-Agent and (separately) a primed cookie jar + Referer."
+    },
+    {
+      "url": "https://www.accessdata.fda.gov/scripts/cder/ob/search_product.cfm",
+      "method": "POST",
+      "result": "Returns an Akamai 'Challenge Validation' interstitial requiring a JS proof-of-work solve -- not executable by a stdlib HTTP client. A same-URL GET with identical query params returns HTTP 200 but byte-identical content regardless of the drugname parameter, meaning the actual search only runs via the protected POST path."
+    }
+  ],
+  "fetched_at": "2026-09-04T20:42:05Z",
+  "extracted_by": "fetch_orange_book.py (FDA Orange Book Data Files ZIP, raw staging pass)"
+}

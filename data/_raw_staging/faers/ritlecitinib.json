@@ -1,0 +1,73 @@
+{
+  "drug": "Ritlecitinib",
+  "total_report_count": 124,
+  "top_reactions": [
+    {
+      "term": "DRUG INEFFECTIVE",
+      "count": 20
+    },
+    {
+      "term": "OFF LABEL USE",
+      "count": 18
+    },
+    {
+      "term": "THERAPEUTIC PRODUCT EFFECT INCOMPLETE",
+      "count": 8
+    },
+    {
+      "term": "COLECTOMY",
+      "count": 7
+    },
+    {
+      "term": "CONDITION AGGRAVATED",
+      "count": 7
+    },
+    {
+      "term": "JEJUNECTOMY",
+      "count": 7
+    },
+    {
+      "term": "ALOPECIA",
+      "count": 6
+    },
+    {
+      "term": "THERAPEUTIC RESPONSE UNEXPECTED",
+      "count": 5
+    },
+    {
+      "term": "HEADACHE",
+      "count": 4
+    },
+    {
+      "term": "URTICARIA",
+      "count": 4
+    },
+    {
+      "term": "CHEST DISCOMFORT",
+      "count": 3
+    },
+    {
+      "term": "DIARRHOEA",
+      "count": 3
+    },
+    {
+      "term": "DRUG INEFFECTIVE FOR UNAPPROVED INDICATION",
+      "count": 3
+    },
+    {
+      "term": "SYNCOPE",
+      "count": 3
+    },
+    {
+      "term": "URINARY TRACT INFECTION",
+      "count": 3
+    }
+  ],
+  "query_urls": {
+    "total_report_count": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct%3A%22RITLECITINIB%22&limit=1",
+    "top_reactions": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct%3A%22RITLECITINIB%22&count=patient.reaction.reactionmeddrapt.exact&limit=15"
+  },
+  "fetched_at": "2026-09-04T20:41:50Z",
+  "source": "openFDA drug/event.json (FAERS)",
+  "extracted_by": "fetch_faers.py (openfda drug/event.json, raw staging pass)"
+}

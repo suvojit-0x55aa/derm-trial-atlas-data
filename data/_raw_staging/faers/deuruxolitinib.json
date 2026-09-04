@@ -1,0 +1,29 @@
+{
+  "drug": "Deuruxolitinib",
+  "total_report_count": 1,
+  "top_reactions": [
+    {
+      "term": "ACNE",
+      "count": 1
+    },
+    {
+      "term": "ALOPECIA",
+      "count": 1
+    },
+    {
+      "term": "BLOOD CHOLESTEROL INCREASED",
+      "count": 1
+    },
+    {
+      "term": "WEIGHT INCREASED",
+      "count": 1
+    }
+  ],
+  "query_urls": {
+    "total_report_count": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct%3A%22DEURUXOLITINIB%22&limit=1",
+    "top_reactions": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct%3A%22DEURUXOLITINIB%22&count=patient.reaction.reactionmeddrapt.exact&limit=15"
+  },
+  "fetched_at": "2026-09-04T20:41:53Z",
+  "source": "openFDA drug/event.json (FAERS)",
+  "extracted_by": "fetch_faers.py (openfda drug/event.json, raw staging pass)"
+}

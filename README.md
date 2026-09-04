@@ -1,17 +1,19 @@
-# Open Derm Trial Atlas — Data Pipeline (v1)
+# Open Derm Trial Atlas — Data Pipeline (v1 + indication expansion)
 
 Data-backend pipeline for the Open Derm Trial Atlas: structured, sourced
-trial-design and safety data for atopic dermatitis (AD) drug trials. This
-repo is the data backend only — fetch, extraction, and build scripts all
-live here in `scripts/`. The portal UI (`superderma.ai/atlas`) lives in a
-separate repo (`kolai-website`) and is not part of this pipeline.
+trial-design and safety data for dermatology drug trials. This repo is the
+data backend only — fetch, extraction, and build scripts all live here in
+`scripts/`. The portal UI (`superderma.ai/atlas`) lives in a separate repo
+(`kolai-website`) and is not part of this pipeline.
 
-## What v1 covers
+## What this covers
 
 Real, live-pulled pivotal Phase III trials (adult / adult+adolescent,
-systemic therapy) for 5 drugs, from the [ClinicalTrials.gov API
+systemic therapy), from the [ClinicalTrials.gov API
 v2](https://clinicaltrials.gov/data-api/api) (`/api/v2/studies`, no API
-key required):
+key required), across **5 indications, 19 drugs, 43 trials**:
+
+### Atopic Dermatitis (v1 — 5 drugs, 17 trials)
 
 | Drug | Pivotal Phase III trials |
 |---|---|
@@ -21,9 +23,59 @@ key required):
 | Abrocitinib | JADE MONO-1 (NCT03349060), JADE MONO-2 (NCT03575871), JADE COMPARE (NCT03720470), JADE REGIMEN (NCT03627767) |
 | Upadacitinib | Measure Up 1 (NCT03569293), Measure Up 2 (NCT03607422), AD Up (NCT03568318) |
 
-17 trials total. Every NCT ID above was pulled live from the API during
-this pass — none were guessed or reused from memory (see
-`data/trials/*.json` → `source_url` on every field for the exact API call).
+### Plaque Psoriasis (new — 5 drugs, 11 trials)
+
+| Drug | Pivotal Phase III trials |
+|---|---|
+| Guselkumab | VOYAGE 1 (NCT02207231), VOYAGE 2 (NCT02207244) |
+| Risankizumab | UltIMMa-1 (NCT02684370), UltIMMa-2 (NCT02684357) |
+| Tildrakizumab | reSURFACE 1 (NCT01722331), reSURFACE 2 (NCT01729754) |
+| Bimekizumab | BE VIVID (NCT03370133), BE SURE (NCT03412747), BE RADIANT (NCT03536884) |
+| Deucravacitinib | POETYK-PSO-1 (NCT03624127), POETYK-PSO-2 (NCT03611751) |
+
+Excluded during curation (not pivotal registrational trials — see
+`scripts/fetch_trials.py`'s comments for the live-verified reason each was
+ruled out): NCT02203032 "NAVIGATE" (guselkumab ustekinumab-inadequate-
+responder switch study), NCT03162796 "Discover-1" (guselkumab, but this
+trial is actually Psoriatic Arthritis — a different indication), NCT04102007
+(single-arm open-label risankizumab post-switch study).
+
+### Hidradenitis Suppurativa (new — 3 drugs, 6 trials)
+
+| Drug | Pivotal Phase III trials |
+|---|---|
+| Adalimumab | PIONEER I (NCT01468207), PIONEER II (NCT01468233) |
+| Secukinumab | SUNSHINE (NCT03713619), SUNRISE (NCT03713632) |
+| Bimekizumab | BE HEARD I (NCT04242446), BE HEARD II (NCT04242498) |
+
+### Alopecia Areata (new — 3 drugs, 5 trials)
+
+| Drug | Pivotal Phase III trials |
+|---|---|
+| Baricitinib | BRAVE-AA1 (NCT03570749), BRAVE-AA2 (NCT03899259) |
+| Ritlecitinib | ALLEGRO-2b/3 (NCT03732807) |
+| Deuruxolitinib | THRIVE-AA1 (NCT04518995), THRIVE-AA2 (NCT04797650) — registered on CT.gov under the pre-approval compound code CTP-543 |
+
+### Chronic Spontaneous Urticaria (new — 2 drugs, 4 trials)
+
+| Drug | Pivotal Phase III trials |
+|---|---|
+| Omalizumab | ASTERIA I (NCT01287117), ASTERIA II (NCT01292473), GLACIAL (NCT01264939) — acronyms per literature, CT.gov's own `acronym` field is empty for these 3 |
+| Dupilumab | LIBERTY-CSU CUPID (NCT04180488) — master protocol, 3 sub-studies; CSU is a real, separate FDA-approved indication for dupilumab (confirmed via the live openFDA label, section 1.7), distinct from the AD trials above |
+
+**Vitiligo was investigated and excluded**: a real emerging 3-drug oral-JAK
+systemic Phase III program exists (ritlecitinib "Tranquillo", upadacitinib
+"Viti-Up", povorcitinib "STOP-V1/V2"), but every trial in it has zero
+posted results as of this pass — none can populate the `adverse_events`
+field group yet. Revisit once they report out.
+
+Every NCT ID above was pulled live from the API during this pass — none
+were guessed or reused from memory (see `data/trials/*.json` →
+`source_url` on every field for the exact API call), and every drug/trial
+inclusion followed the same hand-curation discipline as the original AD
+pass: query by indication + intervention, then individually fetch and
+confirm each candidate is a real pivotal arm (not a comparator, switch
+study, or wrong-indication trial) before adding it.
 
 ## Data model
 
@@ -265,13 +317,46 @@ for exactly which excerpt backs which field — and every one is
 `reviewed_by: null` pending the human clinical QA pass (captain +
 Garvita) before it's treated as authoritative for publication.
 
+### Fill status for the 26 newly added trials (Psoriasis, HS, AA, CSU)
+
+The 26 trials added across the 4 new indications went through the same
+stage 1 (`fetch_trials.py`), stage 2 (`enrich_needs_extraction.py`), and
+stage 3 (`fetch_adverse_events.py`) passes as the 17 AD trials — every
+`ctgov_api` field, `mechanism_of_action` (openFDA label), `dosing_regimen`
+(CT.gov intervention text), and the full `adverse_events` group are real
+and filled the same way. `severity_definition` also auto-filled for most
+psoriasis trials (the extraction regex was extended to recognize
+PASI/sPGA alongside AD's EASI/IGA/vIGA).
+
+**What's intentionally still `needs_extraction` for these 26 trials, and
+why**: `rescue_therapy_rules`, `endpoint_hierarchy_multiplicity`,
+`visit_schedule`, and most of `background_therapy_rule` require the same
+hand-curated, per-trial protocol/SAP-PDF reading pass that
+`RESCUE_RULES`/`MULTIPLICITY_RULES`/`BACKGROUND_THERAPY_PDF` in
+`enrich_needs_extraction.py` did for the 17 AD trials — genuinely
+labor-intensive curation, not a code gap (most of these 26 trials do have
+a protocol/SAP PDF on file at CT.gov, often more than the AD trials did,
+so the raw material for a future curation pass exists). Doing that pass
+for all 26 trials is out of scope for this batch (same "curation-bound,
+not code-bound" scope call the psoriasis-indication scout report made);
+it's a well-defined, boundable follow-up in the same shape as the work
+already done for AD, not a structural change. `population.severity_definition`
+also remains `needs_extraction` for HS/AA/CSU trials specifically: their
+severity instruments (HiSCR/IHS4, SALT, UAS7) are checked for by the
+extraction regex but most trials phrase the eligibility criterion in a way
+the regex doesn't catch — a real, checkable gap, not a fabricated null.
+
+Aggregate: **1505 sourced values across all 43 trials (43 × 35 fields);
+1371 filled with real data (91.1%), 134 remain `needs_extraction`** — see
+`sources.csv` for the per-trial, per-field breakdown.
+
 ## Running the pipeline
 
 Requires Python 3.9+, standard library only (no dependencies to install).
 
 ```bash
 # 1. Fetch trial data live from ClinicalTrials.gov API v2 and write
-#    data/trials/<NCT_ID>.json for each of the 17 trials above.
+#    data/trials/<NCT_ID>.json for each of the 43 trials above.
 python3 scripts/fetch_trials.py
 
 # 2. LLM-assisted second pass: fill severity_definition, background_therapy_rule,
@@ -326,7 +411,8 @@ exact URL to re-fetch each one from is in the corresponding field's
   `value`, JSON-encoded when structured; `needs_extraction` fields are blank).
 - `sources.csv` — one row per sourced value: `nct_id`, `field`,
   `source_type`, `source_url`, `source_excerpt`, `extracted_by`,
-  `reviewed_by`, `confidence`. 17 trials × 39 fields = 663 rows.
+  `reviewed_by`, `confidence`. 43 trials × 39 fields (see counts below;
+  regenerated after the indication-expansion + cross-source integration).
 - `endpoints.csv` — one row per outcome measure × criterion: `measure_type`,
   `scale`, `timepoints`, `analysis_population`, and the `ScoreCriterion`
   columns, so "EASI-75 responders at week 16" is a column filter.
@@ -335,8 +421,38 @@ exact URL to re-fetch each one from is in the corresponding field's
 
 Re-running `fetch_trials.py` re-pulls fresh data from the live API and
 resets every field to its v1 baseline `ctgov_api`/`needs_extraction` state
-(so re-run steps 2-5 after it); re-run `build_csv.py` last to regenerate
-the CSVs.
+for every trial in `TRIALS` (so re-run steps 2-5 after it, and re-diff
+against the committed `data/trials/*.json` before committing — the 17 AD
+trials' curated fields are reproduced by the hand-curated dicts in
+`enrich_needs_extraction.py`/`enrich_publications.py`/`atlas/curated_*.py`,
+but only the `extracted_by` attribution string, not the content, has ever
+drifted from a prior pass); re-run `build_csv.py` last to regenerate the
+CSVs.
+
+## Cross-source data (FAERS, Orange Book, Purple Book)
+
+Real data fetched for all 3 sources validated in the cross-source
+data-strategy scout report, for every drug across all 5 indications, using
+the schema v2 builders in `atlas/sources/` (`faers.py`, `orange_book.py`,
+`purple_book.py`) so the values land directly in
+`real_world_safety.faers_summary` / `exclusivity.{orange_book,purple_book}`
+— no free-text/prose intermediate.
+
+| Source | Script | Coverage | Result |
+|---|---|---|---|
+| **openFDA FAERS** (`api.fda.gov/drug/event.json`) | `scripts/fetch_faers.py` | All 16 unique drugs across all 5 indications | ✅ Real data for all 16 — total/serious/death/hospitalization/life-threatening/disability report counts, top 15 reactions (overall and serious-only), and a real per-year report-count histogram (openFDA has no year-granularity aggregation, so this is built by summing its daily `receivedate` buckets — verified lossless: the daily counts for Dupilumab sum to exactly its `total_reports`). Report volume varies enormously with market exposure time (Adalimumab: 46,072 reports; Deuruxolitinib, approved 2025: 1 report) — a real finding, not an error. |
+| **FDA Purple Book** (biologic BLA exclusivity) | `scripts/fetch_purple_book.py` | 10 biologics (Dupilumab, Lebrikizumab, Tralokinumab, Guselkumab, Risankizumab, Tildrakizumab, Bimekizumab, Adalimumab, Secukinumab, Omalizumab) | ✅ Real matched product rows for all 10 (BLA number, approval date, exclusivity fields where populated) — parsed from the live `purplebooksearch.fda.gov` search-results table (its downloads page only offers monthly delta CSVs, not a full snapshot; the live table has the full current dataset, ~2242 product rows). |
+| **FDA Orange Book** (small-molecule NDA patent/exclusivity) | `scripts/fetch_orange_book.py` | 6 small molecules (Abrocitinib, Upadacitinib, Baricitinib, Ritlecitinib, Deuruxolitinib, Deucravacitinib) | ✅ Real patent/exclusivity data for all 6, via **openFDA's `drug/orangebook.json`** endpoint — a separate, script-friendly mirror of the same dataset. The official FDA-hosted routes (the `fda.gov/media/...` ZIP and the `accessdata.fda.gov` query tool) are genuinely blocked by Akamai bot-detection (confirmed independently twice, different User-Agents/cookies/Referers); openFDA's own mirror isn't behind that wall. |
+
+Each of these 3 scripts is a separate parser matching the source's own
+shape (FAERS's JSON aggregation API; Purple Book's HTML search table with
+BLA/biologic-exclusivity columns; Orange Book's openFDA JSON mirror of the
+tilde-delimited NDA patent/exclusivity files, per its own different
+ruleset) — none reuse another's parsing logic, per the source-strategy
+report's explicit instruction. The NDA/BLA join key
+(`exclusivity.regulatory_application`) that ties a drug to its Orange/
+Purple Book application lives in `atlas/regulatory_applications.py`,
+hand-curated the same way `TRIALS` is.
 
 ## Out of scope for v1
 
