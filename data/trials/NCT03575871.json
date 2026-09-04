@@ -94,6 +94,11 @@
         "kinases_inhibited": [
           "JAK1"
         ],
+        "lower_potency_kinases": [
+          "JAK2",
+          "JAK3",
+          "TYK2"
+        ],
         "selectivity": [
           {
             "over": "JAK2",
@@ -138,7 +143,9 @@
           "dosing_periods": [],
           "administration_sites": [],
           "antibody_isotype": null,
-          "molecular_target": null
+          "molecular_target": null,
+          "arm_names": [],
+          "co_administered_with": []
         },
         {
           "intervention_name": "PF-04965842 200 mg",
@@ -154,7 +161,9 @@
           "dosing_periods": [],
           "administration_sites": [],
           "antibody_isotype": null,
-          "molecular_target": null
+          "molecular_target": null,
+          "arm_names": [],
+          "co_administered_with": []
         }
       ],
       "source_type": "ctgov_text_extraction",
@@ -362,6 +371,7 @@
         "permitted_concomitant": [],
         "applies_to_rerandomized_maintenance": null,
         "sponsor_trial_ids": [],
+        "study_drug_doses_mg": [],
         "population_note": null
       },
       "source_type": "publication_extraction",
@@ -527,7 +537,21 @@
           "scale": "Pruritus NRS",
           "scale_component": null,
           "scale_variant": "severity",
-          "responder_criteria": [],
+          "responder_criteria": [
+            {
+              "scale": "Pruritus NRS",
+              "scale_component": null,
+              "scale_variant": "severity",
+              "metric": "point_reduction_from_baseline",
+              "comparator": ">=",
+              "value": 4,
+              "unit": "points",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
           "baseline_reference": "baseline",
           "timepoints": [],
           "through": null,
@@ -1348,8 +1372,12 @@
         "method_citations": [],
         "finalized_in_sap": null,
         "same_design_as": [
-          "NCT03349060"
+          {
+            "nct_id": "NCT03349060",
+            "trial_name": "JADE MONO-1"
+          }
         ],
+        "gatekeeping_structure": null,
         "further_endpoints_through_week": null
       },
       "source_type": "protocol_pdf_extraction",
@@ -1452,6 +1480,13 @@
         "last_injection_week": null,
         "key_secondary_weeks": null,
         "follow_up_visit_interval_weeks": null,
+        "end_of_treatment_weeks_after_last_dose": null,
+        "background_tcs_from_day": null,
+        "primary_endpoint_refs": [],
+        "double_dummy_arms": [],
+        "active_comparator": null,
+        "boilerplate_reused_from": [],
+        "conflicts_with_trial": null,
         "full_visit_table_available": false,
         "source_inconsistency": null
       },
@@ -1495,7 +1530,9 @@
         ],
         "recorded_in_ecrf": null,
         "applies_to_period": null,
-        "long_term_extension_eligible_after_rescue": null
+        "long_term_extension_eligible_after_rescue": null,
+        "topical_agent_class": null,
+        "rationale": "monotherapy_design"
       },
       "source_type": "publication_extraction",
       "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7271424/",

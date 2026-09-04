@@ -274,6 +274,14 @@ def build_boxed_warning(drug: str):
     )
 
 
+
+def _refuse_v2(record, path):
+    if record.get("schema_version") == 2:
+        raise SystemExit(
+            f"{path.name} is already schema v2 (structured values); this v1-stage script only edits v1 "
+            "records. Re-run scripts/fetch_trials.py to rebuild the v1 baseline, then stages 2-4, then "
+            "scripts/migrate_v1_to_v2.py -- see README 'Running the pipeline'.")
+
 def main():
     trial_files = sorted(TRIALS_DIR.glob("*.json"))
     if not trial_files:
@@ -281,6 +289,7 @@ def main():
 
     for f in trial_files:
         record = json.loads(f.read_text())
+        _refuse_v2(record, f)
         nct_id = record["nct_id"]["value"]
         drug = record["molecule"]["drug"]["value"]
         print(f"Adverse events: {nct_id} ({drug})...")

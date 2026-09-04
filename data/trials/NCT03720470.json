@@ -96,6 +96,11 @@
         "kinases_inhibited": [
           "JAK1"
         ],
+        "lower_potency_kinases": [
+          "JAK2",
+          "JAK3",
+          "TYK2"
+        ],
         "selectivity": [
           {
             "over": "JAK2",
@@ -153,7 +158,14 @@
           ],
           "administration_sites": [],
           "antibody_isotype": null,
-          "molecular_target": null
+          "molecular_target": null,
+          "arm_names": [
+            "PF-04965842 100 mg + Injectable Placebo followed by PF-04965842 100 mg,",
+            "Oral Placebo + Injectable Placebo followed by 100 mg PF-04965842"
+          ],
+          "co_administered_with": [
+            "Injectable Placebo"
+          ]
         },
         {
           "intervention_name": "PF-04965842 200 mg",
@@ -182,7 +194,14 @@
           ],
           "administration_sites": [],
           "antibody_isotype": null,
-          "molecular_target": null
+          "molecular_target": null,
+          "arm_names": [
+            "PF-04965842 200 mg + Injectable Placebo followed by PF-04965842 100 mg,",
+            "Oral Placebo + Injectable Placebo followed by 200 mg PF-04965842"
+          ],
+          "co_administered_with": [
+            "Injectable Placebo"
+          ]
         },
         {
           "intervention_name": "Oral Placebo",
@@ -205,7 +224,14 @@
           ],
           "administration_sites": [],
           "antibody_isotype": null,
-          "molecular_target": null
+          "molecular_target": null,
+          "arm_names": [
+            "Dupilumab Injection + Oral Placebo followed by Oral Placebo,",
+            "Oral Placebo + Injectable Placebo followed by 100 mg PF-04965842"
+          ],
+          "co_administered_with": [
+            "Dupilumab"
+          ]
         }
       ],
       "source_type": "ctgov_text_extraction",
@@ -415,6 +441,7 @@
         "permitted_concomitant": [],
         "applies_to_rerandomized_maintenance": null,
         "sponsor_trial_ids": [],
+        "study_drug_doses_mg": [],
         "population_note": null
       },
       "source_type": "ctgov_text_extraction",
@@ -866,7 +893,21 @@
           "scale": "Pruritus NRS",
           "scale_component": null,
           "scale_variant": "severity",
-          "responder_criteria": [],
+          "responder_criteria": [
+            {
+              "scale": "Pruritus NRS",
+              "scale_component": null,
+              "scale_variant": "severity",
+              "metric": "point_reduction_from_baseline",
+              "comparator": ">=",
+              "value": 4,
+              "unit": "points",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
           "baseline_reference": "baseline",
           "timepoints": [],
           "through": null,
@@ -1614,6 +1655,7 @@
         "method_citations": [],
         "finalized_in_sap": null,
         "same_design_as": [],
+        "gatekeeping_structure": null,
         "further_endpoints_through_week": null
       },
       "source_type": "protocol_pdf_extraction",
@@ -1717,6 +1759,17 @@
           16
         ],
         "follow_up_visit_interval_weeks": null,
+        "end_of_treatment_weeks_after_last_dose": null,
+        "background_tcs_from_day": null,
+        "primary_endpoint_refs": [],
+        "double_dummy_arms": [
+          "abrocitinib + dupilumab-matching placebo",
+          "dupilumab + abrocitinib-matching placebo",
+          "double placebo"
+        ],
+        "active_comparator": "dupilumab",
+        "boilerplate_reused_from": [],
+        "conflicts_with_trial": null,
         "full_visit_table_available": false,
         "source_inconsistency": null
       },

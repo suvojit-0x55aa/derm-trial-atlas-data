@@ -22,6 +22,9 @@ Value shape:
       "maintenance_response_check_weeks": [24, 32, 40, 48] | null,
       "last_injection_week": 14 | null, "key_secondary_weeks": [2, 16] | null,
       "follow_up_visit_interval_weeks": 4 | null,
+      "end_of_treatment_weeks_after_last_dose": 1 | null, "background_tcs_from_day": 1 | null,
+      "primary_endpoint_refs": [EndpointRef], "double_dummy_arms": [...], "active_comparator": "dupilumab" | null,
+      "boilerplate_reused_from": ["ECZTRA-1"], "conflicts_with_trial": "ECZTRA-3" | null,
       "full_visit_table_available": false,
       "source_inconsistency": str | null     # kept only for ECZTRA-3's boilerplate conflict
     }
@@ -31,6 +34,11 @@ PERIOD_NAMES = ("screening", "randomized_treatment", "double_blind_treatment", "
                 "maintenance_treatment", "continuation_treatment", "induction_treatment",
                 "long_term_maintenance", "long_term_extension", "follow_up", "double_dummy_treatment",
                 "oral_only_treatment", "off_treatment_follow_up")
+
+
+from .curated_multiplicity import EASI75, IGA01_2PT, ref
+
+PRIMARY_IGA_EASI = [ref("IGA 0/1 + >=2-point reduction", "IGA", IGA01_2PT, 16), ref("EASI-75", "EASI", EASI75, 16)]
 
 
 def period(name, start, end, blinding=None, background_tcs=None):
@@ -51,6 +59,9 @@ def _base(**kw):
         "rerandomization_week": None, "maintenance_arms": None,
         "maintenance_response_check_weeks": None, "last_injection_week": None,
         "key_secondary_weeks": None, "follow_up_visit_interval_weeks": None,
+        "end_of_treatment_weeks_after_last_dose": None, "background_tcs_from_day": None,
+        "primary_endpoint_refs": [], "double_dummy_arms": [], "active_comparator": None,
+        "boilerplate_reused_from": [], "conflicts_with_trial": None,
         "full_visit_table_available": False, "source_inconsistency": None,
     }
     v.update(kw)
@@ -60,7 +71,8 @@ def _base(**kw):
 CHRONOS = _base(
     periods=[period("randomized_treatment", 0, 52, background_tcs=True), period("follow_up", 52, 64)],
     end_of_treatment_week=52, end_of_study_week=64, total_duration_weeks=64, follow_up_weeks=12,
-    long_term_extension=True, extension_study_id="1225",
+    long_term_extension=True, extension_study_id="1225", end_of_treatment_weeks_after_last_dose=1,
+    background_tcs_from_day=1,
 )
 SOLO = _base(
     screening_days=35, screening_washout=True,
@@ -81,7 +93,7 @@ ECZTRA3 = _base(
              period("off_treatment_follow_up", 32, 46)],
     visit_cadence="every_2_weeks", visit_cadence_until_week=52, follow_up_visit_week=66,
     primary_endpoint_week=16, end_of_treatment_week=32, end_of_study_week=46, total_duration_weeks=46,
-    follow_up_weeks=14,
+    follow_up_weeks=14, boilerplate_reused_from=["ECZTRA-1", "ECZTRA-2"], conflicts_with_trial="ECZTRA-3",
     source_inconsistency="Source trial-design text reuses ECZTRA-1/2 boilerplate (visits every other week until Week 52, follow-up at Week 66) that conflicts with ECZTRA-3's own Week 46 end; quoted as written, not reconciled.",
 )
 JADE_MONO = _base(
@@ -97,6 +109,8 @@ JADE_COMPARE = _base(
              period("oral_only_treatment", 16, 20, blinding="double_blind"), period("follow_up", 20, 24)],
     primary_endpoint_week=12, end_of_treatment_week=20, end_of_study_week=24, total_duration_weeks=24,
     follow_up_weeks=4, last_injection_week=14, key_secondary_weeks=[2, 16],
+    double_dummy_arms=["abrocitinib + dupilumab-matching placebo", "dupilumab + abrocitinib-matching placebo", "double placebo"],
+    active_comparator="dupilumab",
 )
 MEASURE_UP = _base(
     screening_days=35,
@@ -114,11 +128,12 @@ ADVOCATE = _base(
     periods=[period("induction_treatment", 0, 16), period("long_term_maintenance", 16, 52)],
     primary_endpoint_week=16, end_of_treatment_week=52, total_duration_weeks=52,
     rerandomization_week=16, maintenance_arms=["lebrikizumab Q2W", "lebrikizumab Q4W", "placebo"],
-    maintenance_response_check_weeks=[24, 32, 40, 48],
+    maintenance_response_check_weeks=[24, 32, 40, 48], primary_endpoint_refs=PRIMARY_IGA_EASI,
 )
 ADHERE = _base(
     periods=[period("randomized_treatment", 0, 16, blinding="double_blind", background_tcs=True)],
     primary_endpoint_week=16, end_of_treatment_week=16, total_duration_weeks=16,
+    primary_endpoint_refs=PRIMARY_IGA_EASI, active_comparator=None,
 )
 
 STUDY_SCHEDULE = {

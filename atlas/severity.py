@@ -120,7 +120,7 @@ def parse_severity(text: str) -> dict:
             out["criteria"].append(_scale_criterion(im.group(1), ">=", num(im.group(2)), bool(im.group(3)), item, whole, rng))
         return out
 
-    clauses = [c.strip() for c in re.split(r"\s\|\s|;\s", whole) if c.strip()]
+    clauses = [c.strip(" |") for c in re.split(r"\s*\|\s*|;\s*", whole) if c.strip(" |")]
     for clause in clauses:
         nm = re.match(r"(\d+)\.\s*", clause)
         if nm:

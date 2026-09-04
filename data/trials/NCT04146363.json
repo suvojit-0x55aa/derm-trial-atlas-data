@@ -101,6 +101,7 @@
           "IL-13Rα2"
         ],
         "kinases_inhibited": [],
+        "lower_potency_kinases": [],
         "selectivity": [],
         "reversible": null,
         "mechanism_established": null,
@@ -129,7 +130,9 @@
           "dosing_periods": [],
           "administration_sites": [],
           "antibody_isotype": null,
-          "molecular_target": null
+          "molecular_target": null,
+          "arm_names": [],
+          "co_administered_with": []
         }
       ],
       "source_type": "ctgov_text_extraction",
@@ -313,6 +316,7 @@
           "KGAB",
           "KGAC"
         ],
+        "study_drug_doses_mg": [],
         "population_note": null
       },
       "source_type": "publication_extraction",
@@ -1634,6 +1638,21 @@
                 "week_16"
               ],
               "scale_anchors": null
+            },
+            {
+              "scale": "Pruritus NRS",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "absolute_score",
+              "comparator": ">=",
+              "value": 4,
+              "unit": "score",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": [
+                "baseline"
+              ],
+              "scale_anchors": null
             }
           ],
           "subgroup_labels": [
@@ -1694,6 +1713,21 @@
               "scale_max": null,
               "assessed_at": [
                 "week_16"
+              ],
+              "scale_anchors": null
+            },
+            {
+              "scale": "Pruritus NRS",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "absolute_score",
+              "comparator": ">=",
+              "value": 5,
+              "unit": "score",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": [
+                "baseline"
               ],
               "scale_anchors": null
             }
@@ -2084,6 +2118,7 @@
         ],
         "finalized_in_sap": true,
         "same_design_as": [],
+        "gatekeeping_structure": null,
         "further_endpoints_through_week": null
       },
       "source_type": "protocol_pdf_extraction",
@@ -2185,6 +2220,74 @@
         "last_injection_week": null,
         "key_secondary_weeks": null,
         "follow_up_visit_interval_weeks": null,
+        "end_of_treatment_weeks_after_last_dose": null,
+        "background_tcs_from_day": null,
+        "primary_endpoint_refs": [
+          {
+            "label": "IGA 0/1 + >=2-point reduction",
+            "scale": "IGA",
+            "responder_criteria": [
+              {
+                "scale": "IGA",
+                "scale_component": null,
+                "scale_variant": null,
+                "metric": "absolute_score",
+                "comparator": "in",
+                "value": [
+                  0,
+                  1
+                ],
+                "unit": "score",
+                "scale_min": null,
+                "scale_max": null,
+                "assessed_at": null,
+                "scale_anchors": null
+              },
+              {
+                "scale": "IGA",
+                "scale_component": null,
+                "scale_variant": null,
+                "metric": "point_reduction_from_baseline",
+                "comparator": ">=",
+                "value": 2,
+                "unit": "points",
+                "scale_min": null,
+                "scale_max": null,
+                "assessed_at": null,
+                "scale_anchors": null
+              }
+            ],
+            "timepoint_week": 16,
+            "alpha": null,
+            "step": null
+          },
+          {
+            "label": "EASI-75",
+            "scale": "EASI",
+            "responder_criteria": [
+              {
+                "scale": "EASI",
+                "scale_component": null,
+                "scale_variant": null,
+                "metric": "percent_improvement_from_baseline",
+                "comparator": ">=",
+                "value": 75,
+                "unit": "percent",
+                "scale_min": null,
+                "scale_max": null,
+                "assessed_at": null,
+                "scale_anchors": null
+              }
+            ],
+            "timepoint_week": 16,
+            "alpha": null,
+            "step": null
+          }
+        ],
+        "double_dummy_arms": [],
+        "active_comparator": null,
+        "boilerplate_reused_from": [],
+        "conflicts_with_trial": null,
         "full_visit_table_available": false,
         "source_inconsistency": null
       },
@@ -2232,7 +2335,9 @@
         "permitted_concomitant": [],
         "recorded_in_ecrf": null,
         "applies_to_period": "induction",
-        "long_term_extension_eligible_after_rescue": null
+        "long_term_extension_eligible_after_rescue": null,
+        "topical_agent_class": null,
+        "rationale": null
       },
       "source_type": "protocol_pdf_extraction",
       "source_url": "https://cdn.clinicaltrials.gov/large-docs/63/NCT04146363/Prot_000.pdf",

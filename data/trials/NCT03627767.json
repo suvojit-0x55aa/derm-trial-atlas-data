@@ -94,6 +94,11 @@
         "kinases_inhibited": [
           "JAK1"
         ],
+        "lower_potency_kinases": [
+          "JAK2",
+          "JAK3",
+          "TYK2"
+        ],
         "selectivity": [
           {
             "over": "JAK2",
@@ -138,7 +143,9 @@
           "dosing_periods": [],
           "administration_sites": [],
           "antibody_isotype": null,
-          "molecular_target": null
+          "molecular_target": null,
+          "arm_names": [],
+          "co_administered_with": []
         },
         {
           "intervention_name": "PF-04965842 200 mg",
@@ -154,7 +161,9 @@
           "dosing_periods": [],
           "administration_sites": [],
           "antibody_isotype": null,
-          "molecular_target": null
+          "molecular_target": null,
+          "arm_names": [],
+          "co_administered_with": []
         }
       ],
       "source_type": "ctgov_text_extraction",
@@ -410,7 +419,21 @@
           "scale": "IGA",
           "scale_component": null,
           "scale_variant": null,
-          "responder_criteria": [],
+          "responder_criteria": [
+            {
+              "scale": "IGA",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "absolute_score",
+              "comparator": ">=",
+              "value": 2,
+              "unit": "score",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
           "baseline_reference": null,
           "timepoints": [],
           "through": null,
@@ -1826,6 +1849,7 @@
         "method_citations": [],
         "finalized_in_sap": null,
         "same_design_as": [],
+        "gatekeeping_structure": null,
         "further_endpoints_through_week": null
       },
       "source_type": "protocol_pdf_extraction",
@@ -1947,7 +1971,9 @@
         "permitted_concomitant": [],
         "recorded_in_ecrf": null,
         "applies_to_period": null,
-        "long_term_extension_eligible_after_rescue": null
+        "long_term_extension_eligible_after_rescue": null,
+        "topical_agent_class": null,
+        "rationale": null
       },
       "source_type": "protocol_pdf_extraction",
       "source_url": "https://cdn.clinicaltrials.gov/large-docs/67/NCT03627767/SAP_001.pdf",

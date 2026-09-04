@@ -10,9 +10,32 @@ This file is the project's committed home for project-intrinsic agent memory: bu
 - Every field value everywhere in `data/trials/*.json` is a sourced-value object (`value`,
   `source_type`, `source_url`, `source_excerpt`, `extracted_by`, `reviewed_by`, `confidence`) —
   never a bare scalar. `source_type` is one of `ctgov_api`, `ctgov_text_extraction`,
-  `protocol_pdf_extraction`, `publication_extraction`, `openfda_label`, or `needs_extraction` —
-  see README for what each means and how much to trust it.
-- Pipeline runs in 5 stages, in order:
+  `protocol_pdf_extraction`, `publication_extraction`, `openfda_label`, `openfda_faers`,
+  `orange_book`, `purple_book`, or `needs_extraction` — see README for what each means and how
+  much to trust it.
+- **Schema v2 (typed values) — `atlas/schema.py` is the single source of truth.** `value` is never
+  free prose: each concept is decomposed into atomic typed sub-fields (the shared
+  `ScoreCriterion` row is the building block), and prose survives only as provenance in
+  `source_excerpt` / an endpoint's `verbatim` / an intervention's `description`. Don't add a
+  free-text `notes`-style catch-all; add typed fields to the spec instead, then run
+  `scripts/export_schema.py` (regenerates `docs/SCHEMA.md` + `schema/trial.schema.json`; tests
+  fail if they drift) and `python3 -m unittest discover -s tests -t .`.
+- `tests/fixtures/v1_trials/` is the frozen v1 snapshot that `tests/test_migration_lossless.py`
+  migrates and compares against `data/trials/` (determinism, fact coverage, gaps preserved).
+  If a parser or curated table changes, regenerate the data by copying the fixtures back over
+  `data/trials/` and re-running `scripts/migrate_v1_to_v2.py` — never hand-edit v2 files.
+- The four LLM-summarised prose fields (background therapy, multiplicity, schedule, rescue) are
+  structured by hand-curated per-trial tables in `atlas/curated_*.py` (same pattern as the
+  curated excerpts in the enrich scripts); the regular text (severity criteria, the 358 CT.gov
+  endpoint titles, dosing descriptions, FDA label MoA/boxed warning, ages, dates) is parsed by
+  deterministic code in `atlas/*.py`. A new trial's prose needs a curated entry or the migration
+  raises `KeyError` naming the trial.
+- New-source builders (`atlas/sources/faers.py`, `orange_book.py`, `purple_book.py`) turn raw
+  API/file rows into schema-valid values; the exact shapes they expect are the real captured
+  rows in `tests/fixtures/sources/`. The NDA/BLA join key lives in
+  `atlas/regulatory_applications.py` (hand-curated, like `TRIALS`).
+- Pipeline runs in 6 stages, in order (stages 2-4 refuse to run on a v2 record; re-run stage 1
+  to reset to v1 first):
   1. `fetch_trials.py` — clean structured CT.gov fields (identity/molecule/population/design/
      endpoints/timing_ops skeleton).
   2. `enrich_needs_extraction.py` — LLM-assisted second pass over CT.gov free text, protocol/
@@ -22,18 +45,22 @@ This file is the project's committed home for project-intrinsic agent memory: bu
      `boxed_warning`.
   4. `enrich_publications.py` — hand-curated excerpts from PMC full-text papers and FDA
      Drugs@FDA approval-package reviews, for the fields nothing else reached.
-  5. `build_csv.py` — flatten every trial JSON to `trials.csv`/`sources.csv`.
+  5. `migrate_v1_to_v2.py` — typed schema v2, validated (idempotent).
+  6. `build_csv.py` — flatten every trial JSON to `trials.csv`, `sources.csv`, `endpoints.csv`,
+     `severity_criteria.csv`, `adverse_event_rates.csv`.
   Re-running `fetch_trials.py` resets a trial file to its stage-1 baseline, so re-run stages
-  2-4 after it before rebuilding the CSVs.
+  2-5 after it before rebuilding the CSVs.
 - Every value with a non-`ctgov_api` source_type is machine/LLM-extracted, not hand-verified —
   `reviewed_by` stays `null` and `confidence < 1.0` until a human (captain + Garvita) signs off.
   Do not treat these as clinically authoritative without that review, and do not upgrade a
   `needs_extraction` field by inference or general knowledge — every fill must trace to an
   actual quoted source (CT.gov text, a downloaded protocol/SAP PDF, openFDA, or a CT.gov
   `resultsSection` table).
-- `visit_schedule` is deliberately left `needs_extraction` for all 17 trials: the schedule
-  lives in multi-page PDF tables that plain-text conversion can't reliably flatten. Don't try
-  to force-fill it from a garbled `pdftotext` table — a wrong schedule is worse than a null.
+- `timing_ops.study_schedule` (v1 `visit_schedule`) holds the trial's period structure and visit
+  *cadence*/key weeks, never a per-visit assessment table (`full_visit_table_available` is
+  `false` everywhere): that table lives in multi-page PDF tables that plain-text conversion
+  can't reliably flatten. Don't try to force-fill it from a garbled `pdftotext` table — a wrong
+  schedule is worse than a null (CAFE and JADE REGIMEN stay `needs_extraction`).
 - **Paywalled full-text journal papers**: every publisher/repository host tried (NEJM, Wiley,
   JAMA Network, JAAD/Elsevier, a university repository mirror) sits behind a Cloudflare
   bot-challenge, one of which escalates to an interactive CAPTCHA that this pipeline will not
@@ -56,8 +83,9 @@ This file is the project's committed home for project-intrinsic agent memory: bu
   (`adverseEventsModule`, `participantFlowModule`) — arithmetic over API counts, not free-text
   parsing — so they're `ctgov_api`, not `ctgov_text_extraction`, even though
   `scripts/fetch_adverse_events.py` does the compute. `boxed_warning` distinguishes a confirmed
-  absence (`value: null`, `source_excerpt` says "checked, none present") from `needs_extraction`
-  (never checked) — don't collapse that distinction when editing.
+  absence (v2 `value.present: false` with `source_type: openfda_label`, `source_excerpt` says
+  "checked, none present") from `needs_extraction` (never checked) — don't collapse that
+  distinction when editing.
 - `enrich_publications.py`'s excerpts are hand-curated (like `enrich_needs_extraction.py`'s),
   not live-parsed: the source PDFs/XML were downloaded and read by hand, and only the final
   excerpt text is committed. To re-verify or extend one, re-download from the field's

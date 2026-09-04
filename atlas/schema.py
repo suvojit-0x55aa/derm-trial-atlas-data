@@ -124,12 +124,13 @@ INTERVENTION = OBJ({
     "dosing_periods": LIST(OBJ({"start_value": INT(), "start_unit": ENUM(["day", "week"]), "end_value": INT(), "end_unit": ENUM(["day", "week"])})),
     "administration_sites": LIST(STR()),
     "antibody_isotype": STR(True), "molecular_target": STR(True),
+    "arm_names": LIST(STR()), "co_administered_with": LIST(STR()),
 })
 
 MECHANISM = OBJ({
     "modality": ENUM(MODALITIES), "drug_class": STR(True), "antibody_isotype": STR(True),
     "binding_targets": LIST(STR()), "pathway_cytokines": LIST(STR()), "receptor_subunits": LIST(STR()),
-    "kinases_inhibited": LIST(STR()),
+    "kinases_inhibited": LIST(STR()), "lower_potency_kinases": LIST(STR()),
     "selectivity": LIST(OBJ({"over": STR(), "fold": INT(), "comparator": ENUM(["==", ">"])})),
     "reversible": BOOL(True), "mechanism_established": BOOL(True), "label_section": STR(True),
 })
@@ -146,7 +147,7 @@ BACKGROUND = OBJ({
     "emollient_required": BOOL(True), "emollient_frequency": STR(True),
     "prohibited_concomitant": LIST(STR()), "permitted_concomitant": LIST(STR()),
     "applies_to_rerandomized_maintenance": BOOL(True),
-    "sponsor_trial_ids": LIST(STR()), "population_note": STR(True),
+    "sponsor_trial_ids": LIST(STR()), "study_drug_doses_mg": LIST(NUM()), "population_note": STR(True),
 })
 
 MULTIPLICITY = OBJ({
@@ -158,7 +159,8 @@ MULTIPLICITY = OBJ({
     "branching_on": {**ENDPOINT_REF, "nullable": True}, "regulatory_variants": LIST(ENUM(["US", "EU"])),
     "rescue_counted_as_nonresponder": BOOL(True), "active_comparator_excluded_from_hierarchy": STR(True),
     "background_tcs": BOOL(True), "method_citations": LIST(STR()), "finalized_in_sap": BOOL(True),
-    "same_design_as": LIST(STR()), "further_endpoints_through_week": INT(True),
+    "same_design_as": LIST(OBJ({"nct_id": STR(), "trial_name": STR()})), "gatekeeping_structure": BOOL(True),
+    "further_endpoints_through_week": INT(True),
 })
 
 SCHEDULE = OBJ({
@@ -174,6 +176,9 @@ SCHEDULE = OBJ({
     "extension_study_id": STR(True), "rerandomization_week": INT(True), "maintenance_arms": LIST(STR(), True),
     "maintenance_response_check_weeks": LIST(INT(), True), "last_injection_week": INT(True),
     "key_secondary_weeks": LIST(INT(), True), "follow_up_visit_interval_weeks": INT(True),
+    "end_of_treatment_weeks_after_last_dose": INT(True), "background_tcs_from_day": INT(True),
+    "primary_endpoint_refs": LIST(ENDPOINT_REF), "double_dummy_arms": LIST(STR()), "active_comparator": STR(True),
+    "boilerplate_reused_from": LIST(STR()), "conflicts_with_trial": STR(True),
     "full_visit_table_available": BOOL(), "source_inconsistency": STR(True),
 })
 
@@ -197,6 +202,7 @@ RESCUE = OBJ({
     "maintenance_period_rule": OBJ({"topical_rescue": STR(), "systemic_rescue": STR()}, True),
     "permitted_concomitant": LIST(STR()), "recorded_in_ecrf": BOOL(True), "applies_to_period": STR(True),
     "long_term_extension_eligible_after_rescue": BOOL(True),
+    "topical_agent_class": STR(True), "rationale": STR(True),
 })
 
 ARM_RATE = OBJ({"arm": STR(), "n_affected": INT(), "n_at_risk": INT(), "pct": NUM(True)})

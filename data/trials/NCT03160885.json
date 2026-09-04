@@ -100,6 +100,7 @@
           "IL-13Rα2"
         ],
         "kinases_inhibited": [],
+        "lower_potency_kinases": [],
         "selectivity": [],
         "reversible": null,
         "mechanism_established": null,
@@ -128,7 +129,9 @@
           "dosing_periods": [],
           "administration_sites": [],
           "antibody_isotype": "IgG4",
-          "molecular_target": "IL-13"
+          "molecular_target": "IL-13",
+          "arm_names": [],
+          "co_administered_with": []
         },
         {
           "intervention_name": "Placebo",
@@ -144,7 +147,9 @@
           "dosing_periods": [],
           "administration_sites": [],
           "antibody_isotype": null,
-          "molecular_target": null
+          "molecular_target": null,
+          "arm_names": [],
+          "co_administered_with": []
         }
       ],
       "source_type": "ctgov_text_extraction",
@@ -349,6 +354,7 @@
           "ECZTRA-1",
           "ECZTRA-2"
         ],
+        "study_drug_doses_mg": [],
         "population_note": "adult subjects with moderate-to-severe AD not adequately controlled with topical prescription therapies or when those therapies are not advisable"
       },
       "source_type": "publication_extraction",
@@ -1083,8 +1089,12 @@
         "method_citations": [],
         "finalized_in_sap": null,
         "same_design_as": [
-          "NCT03131648"
+          {
+            "nct_id": "NCT03131648",
+            "trial_name": "ECZTRA 1"
+          }
         ],
+        "gatekeeping_structure": null,
         "further_endpoints_through_week": null
       },
       "source_type": "protocol_pdf_extraction",
@@ -1185,6 +1195,13 @@
         "last_injection_week": null,
         "key_secondary_weeks": null,
         "follow_up_visit_interval_weeks": null,
+        "end_of_treatment_weeks_after_last_dose": null,
+        "background_tcs_from_day": null,
+        "primary_endpoint_refs": [],
+        "double_dummy_arms": [],
+        "active_comparator": null,
+        "boilerplate_reused_from": [],
+        "conflicts_with_trial": null,
         "full_visit_table_available": false,
         "source_inconsistency": null
       },
@@ -1228,7 +1245,9 @@
         "permitted_concomitant": [],
         "recorded_in_ecrf": null,
         "applies_to_period": "initial_treatment",
-        "long_term_extension_eligible_after_rescue": null
+        "long_term_extension_eligible_after_rescue": null,
+        "topical_agent_class": null,
+        "rationale": null
       },
       "source_type": "protocol_pdf_extraction",
       "source_url": "https://cdn.clinicaltrials.gov/large-docs/85/NCT03160885/Prot_001.pdf",

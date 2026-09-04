@@ -15,6 +15,7 @@ Value shape:
       "prohibited_concomitant": [...], "permitted_concomitant": [...],
       "applies_to_rerandomized_maintenance": bool | null,
       "sponsor_trial_ids": ["B7451012", "B7451013"],   # internal study ids quoted by the source
+      "study_drug_doses_mg": [15, 30],                 # doses named in the source's design statement
       "population_note": str | null                    # e.g. "adolescents and adults"
     }
 
@@ -48,6 +49,7 @@ def _base(**kw):
         "permitted_concomitant": [],
         "applies_to_rerandomized_maintenance": None,
         "sponsor_trial_ids": [],
+        "study_drug_doses_mg": [],
         "population_note": None,
     }
     v.update(kw)
@@ -75,7 +77,7 @@ JADE_MONO2 = _base(
                             "topical antihistamines", "systemic AD therapies"],
 )
 MEASURE_UP_MONO = _base(
-    regimen_type="monotherapy", sponsor_trial_ids=["M16-045", "M18-891"],
+    regimen_type="monotherapy", sponsor_trial_ids=["M16-045", "M18-891"], study_drug_doses_mg=[15, 30],
     population_note="upadacitinib 15/30 mg monotherapy",
 )
 ADVOCATE_MONO = _base(regimen_type="monotherapy", sponsor_trial_ids=["KGAB", "KGAC"])

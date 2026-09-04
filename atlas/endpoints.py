@@ -292,8 +292,9 @@ def _subgroup_criteria(seg, whole):
         pm = re.search(r"Achieved >=\s*(\d)-point Reduction", seg)
         wk = re.search(r"at Week (\d+)", seg)
         crit.append(criterion("Pruritus NRS", "point_reduction_from_baseline", ">=", int(pm.group(1)), "points", assessed_at=[f"week_{wk.group(1)}"] if wk else None))
-    bm = re.search(r"(?:With (?:an? )?|Baseline )?([A-Za-z' ()-]*?)(?:Score|Total Score|Index Score|Subscale)?\s*(?:of )?(>=|<|>)\s*(\d+(?:\.\d+)?)(?:[ -][Pp]oints?)? at Baseline|Baseline ([A-Za-z' ()-]*?) Score (>=|<)\s*(\d+(?:\.\d+)?)|Baseline (\w+) (>=)\s*(\d+)", seg)
-    if bm and not re.search(r"Achieved", seg):
+    pre = re.split(r"Re-randomized|Having Achieved", seg)[0]
+    bm = re.search(r"(?:With (?:an? )?|Baseline )?([A-Za-z' ()-]*?)(?:Score|Total Score|Index Score|Subscale)?\s*(?:of )?(>=|<|>)\s*(\d+(?:\.\d+)?)(?:[ -][Pp]oints?)? at Baseline|Baseline ([A-Za-z' ()-]*?) Score (>=|<)\s*(\d+(?:\.\d+)?)|Baseline (\w+) (>=)\s*(\d+)", pre)
+    if bm:
         g = bm.groups()
         if g[0] is not None or g[1] is not None:
             label, comp, val = g[0], g[1], g[2]
@@ -334,7 +335,7 @@ def parse_endpoint(title: str, rank: str, position: int, time_frame=None) -> dic
     baseline_ref = "rescue_baseline" if "Rescue Baseline" in t else ("baseline" if "Baseline" in t else None)
     event_type = _event_type(t)
     responder = []
-    if mtype in ("responder_rate", "loss_of_response"):
+    if mtype in ("responder_rate", "loss_of_response", "time_to_event"):
         if re.search(r"HADS-A\)? Score and .*?HADS-D\)? Score of < 8", main):
             responder = [criterion("HADS", "absolute_score", "<", 8, "score", component="Anxiety"),
                          criterion("HADS", "absolute_score", "<", 8, "score", component="Depression")]

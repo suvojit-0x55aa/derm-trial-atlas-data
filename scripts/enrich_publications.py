@@ -77,7 +77,13 @@ def field(value, url, source_excerpt, confidence=0.75):
 
 def load(nct):
     p = TRIALS_DIR / f"{nct}.json"
-    return p, json.loads(p.read_text())
+    record = json.loads(p.read_text())
+    if record.get("schema_version") == 2:
+        raise SystemExit(
+            f"{p.name} is already schema v2 (structured values); this v1-stage script only edits v1 "
+            "records. Re-run scripts/fetch_trials.py to rebuild the v1 baseline, then stages 2-4, then "
+            "scripts/migrate_v1_to_v2.py -- see README 'Running the pipeline'.")
+    return p, record
 
 
 def save(p, d):

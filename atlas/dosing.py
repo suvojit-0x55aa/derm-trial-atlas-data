@@ -15,7 +15,9 @@ replacing the v1 "Name: description || Name: description" string.
       "dosing_periods": [{"start_value": 1, "start_unit": "day", "end_value": 16, "end_unit": "week"}],
       "administration_sites": ["abdomen", "upper thighs", "upper arms"],
       "antibody_isotype": "IgG4" | null,
-      "molecular_target": "IL-13" | null
+      "molecular_target": "IL-13" | null,
+      "arm_names": ["PF-04965842 100 mg + Injectable Placebo followed by PF-04965842 100 mg"],  # quoted in the description
+      "co_administered_with": ["Injectable Placebo"]      # "taken together with X"
     }
 """
 import re
@@ -99,6 +101,8 @@ def parse_intervention(name: str, description: str) -> dict:
         "administration_sites": sites,
         "antibody_isotype": iso.group(1) if iso else None,
         "molecular_target": target.group(1) if target else None,
+        "arm_names": re.findall(r'arms? "([^"]+),?"', description),
+        "co_administered_with": sorted({m.group(1) for m in re.finditer(r"taken together with ([A-Z][A-Za-z ]+?)(?: from|,|\.)", description)}),
     }
 
 

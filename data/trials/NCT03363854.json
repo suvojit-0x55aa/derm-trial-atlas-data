@@ -100,6 +100,7 @@
           "IL-13Rα2"
         ],
         "kinases_inhibited": [],
+        "lower_potency_kinases": [],
         "selectivity": [],
         "reversible": null,
         "mechanism_established": null,
@@ -128,7 +129,9 @@
           "dosing_periods": [],
           "administration_sites": [],
           "antibody_isotype": "IgG4",
-          "molecular_target": "IL-13"
+          "molecular_target": "IL-13",
+          "arm_names": [],
+          "co_administered_with": []
         },
         {
           "intervention_name": "Placebo",
@@ -144,7 +147,9 @@
           "dosing_periods": [],
           "administration_sites": [],
           "antibody_isotype": null,
-          "molecular_target": null
+          "molecular_target": null,
+          "arm_names": [],
+          "co_administered_with": []
         }
       ],
       "source_type": "ctgov_text_extraction",
@@ -296,6 +301,7 @@
         "permitted_concomitant": [],
         "applies_to_rerandomized_maintenance": true,
         "sponsor_trial_ids": [],
+        "study_drug_doses_mg": [],
         "population_note": null
       },
       "source_type": "protocol_pdf_extraction",
@@ -1060,9 +1066,16 @@
         "method_citations": [],
         "finalized_in_sap": null,
         "same_design_as": [
-          "NCT03131648",
-          "NCT03160885"
+          {
+            "nct_id": "NCT03131648",
+            "trial_name": "ECZTRA 1"
+          },
+          {
+            "nct_id": "NCT03160885",
+            "trial_name": "ECZTRA 2"
+          }
         ],
+        "gatekeeping_structure": null,
         "further_endpoints_through_week": null
       },
       "source_type": "protocol_pdf_extraction",
@@ -1163,6 +1176,16 @@
         "last_injection_week": null,
         "key_secondary_weeks": null,
         "follow_up_visit_interval_weeks": null,
+        "end_of_treatment_weeks_after_last_dose": null,
+        "background_tcs_from_day": null,
+        "primary_endpoint_refs": [],
+        "double_dummy_arms": [],
+        "active_comparator": null,
+        "boilerplate_reused_from": [
+          "ECZTRA-1",
+          "ECZTRA-2"
+        ],
+        "conflicts_with_trial": "ECZTRA-3",
         "full_visit_table_available": false,
         "source_inconsistency": "Source trial-design text reuses ECZTRA-1/2 boilerplate (visits every other week until Week 52, follow-up at Week 66) that conflicts with ECZTRA-3's own Week 46 end; quoted as written, not reconciled."
       },
@@ -1217,7 +1240,9 @@
         "permitted_concomitant": [],
         "recorded_in_ecrf": null,
         "applies_to_period": null,
-        "long_term_extension_eligible_after_rescue": null
+        "long_term_extension_eligible_after_rescue": null,
+        "topical_agent_class": "TCS",
+        "rationale": null
       },
       "source_type": "protocol_pdf_extraction",
       "source_url": "https://cdn.clinicaltrials.gov/large-docs/54/NCT03363854/Prot_000.pdf",

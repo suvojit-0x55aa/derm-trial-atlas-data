@@ -94,6 +94,10 @@
           "JAK1",
           "JAK2"
         ],
+        "lower_potency_kinases": [
+          "JAK3",
+          "TYK2"
+        ],
         "selectivity": [],
         "reversible": null,
         "mechanism_established": false,
@@ -122,7 +126,9 @@
           "dosing_periods": [],
           "administration_sites": [],
           "antibody_isotype": null,
-          "molecular_target": null
+          "molecular_target": null,
+          "arm_names": [],
+          "co_administered_with": []
         },
         {
           "intervention_name": "Upadacitinib",
@@ -138,7 +144,9 @@
           "dosing_periods": [],
           "administration_sites": [],
           "antibody_isotype": null,
-          "molecular_target": null
+          "molecular_target": null,
+          "arm_names": [],
+          "co_administered_with": []
         }
       ],
       "source_type": "ctgov_text_extraction",
@@ -328,6 +336,10 @@
         "sponsor_trial_ids": [
           "M16-045",
           "M18-891"
+        ],
+        "study_drug_doses_mg": [
+          15,
+          30
         ],
         "population_note": "upadacitinib 15/30 mg monotherapy"
       },
@@ -2066,8 +2078,12 @@
         "method_citations": [],
         "finalized_in_sap": null,
         "same_design_as": [
-          "NCT03569293"
+          {
+            "nct_id": "NCT03569293",
+            "trial_name": "Measure Up 1"
+          }
         ],
+        "gatekeeping_structure": null,
         "further_endpoints_through_week": null
       },
       "source_type": "protocol_pdf_extraction",
@@ -2174,6 +2190,13 @@
         "last_injection_week": null,
         "key_secondary_weeks": null,
         "follow_up_visit_interval_weeks": null,
+        "end_of_treatment_weeks_after_last_dose": null,
+        "background_tcs_from_day": null,
+        "primary_endpoint_refs": [],
+        "double_dummy_arms": [],
+        "active_comparator": null,
+        "boilerplate_reused_from": [],
+        "conflicts_with_trial": null,
         "full_visit_table_available": false,
         "source_inconsistency": null
       },
@@ -2251,7 +2274,9 @@
         "permitted_concomitant": [],
         "recorded_in_ecrf": null,
         "applies_to_period": null,
-        "long_term_extension_eligible_after_rescue": null
+        "long_term_extension_eligible_after_rescue": null,
+        "topical_agent_class": null,
+        "rationale": null
       },
       "source_type": "protocol_pdf_extraction",
       "source_url": "https://cdn.clinicaltrials.gov/large-docs/22/NCT03607422/Prot_002.pdf",

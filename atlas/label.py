@@ -10,6 +10,7 @@ molecule.mechanism_of_action
       "pathway_cytokines": ["IL-4", "IL-13"],  # cytokines named in the label's mechanism text
       "receptor_subunits": ["IL-4Rα"],         # receptor subunits named
       "kinases_inhibited": ["JAK1"],           # for kinase inhibitors: the kinase(s) it inhibits
+      "lower_potency_kinases": ["JAK2", "JAK3", "TYK2"],   # kinases the label says it is less potent at
       "selectivity": [{"over": "JAK2", "fold": 28}],   # only when the label states fold-selectivity
       "reversible": true | null,
       "mechanism_established": false | null,   # label says "not definitively established"
@@ -74,6 +75,8 @@ def parse_mechanism(text: str) -> dict:
     receptors = [e for e in _entities(body) if "R" in e and e.startswith(("IL-", "OX40", "PDE", "AhR"))]
     kin = re.search(r"(?:inhibits|inhibitory potency at|selective for) ((?:JAK\d|TYK2)(?:(?:,| and) (?:JAK\d|TYK2))*)", body)
     kinases = _entities(kin.group(1)) if kin else []
+    rel = re.search(r"relative to ((?:JAK\d|TYK2)(?:(?:,| and) (?:JAK\d|TYK2))*)", body)
+    lower = _entities(rel.group(1)) if rel else [s["over"] for s in []]
     selectivity = [
         {"over": (m.group(1)).replace("tyrosine kinase (TYK) 2", "TYK2"),
          "fold": int(m.group(2).lstrip("><")),
@@ -95,6 +98,7 @@ def parse_mechanism(text: str) -> dict:
         "pathway_cytokines": cytokines,
         "receptor_subunits": receptors,
         "kinases_inhibited": kinases,
+        "lower_potency_kinases": lower or [s["over"] for s in selectivity],
         "selectivity": selectivity,
         "reversible": True if re.search(r"reversibly inhibits", body) else None,
         "mechanism_established": False if re.search(r"not (?:been )?definitively established|not currently known", body) else None,

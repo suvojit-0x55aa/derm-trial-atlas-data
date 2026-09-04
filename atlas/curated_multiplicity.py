@@ -21,7 +21,8 @@ Value shape:
       "background_tcs": bool | null,
       "method_citations": ["Bretz 2009", "Bretz 2011"],
       "finalized_in_sap": bool | null,
-      "same_design_as": ["NCT03349060"] | [],
+      "same_design_as": [{"nct_id": "NCT03349060", "trial_name": "JADE MONO-1"}],
+      "gatekeeping_structure": bool | null,
       "further_endpoints_through_week": 56 | null
     }
 
@@ -57,7 +58,7 @@ def _base(**kw):
         "rescue_counted_as_nonresponder": None,
         "active_comparator_excluded_from_hierarchy": None,
         "background_tcs": None, "method_citations": [],
-        "finalized_in_sap": None, "same_design_as": [],
+        "finalized_in_sap": None, "same_design_as": [], "gatekeeping_structure": None,
         "further_endpoints_through_week": None,
     }
     v.update(kw)
@@ -99,7 +100,8 @@ ECZTRA1 = _base(
     alpha_recycling=True,
 )
 ECZTRA2 = _base(
-    procedure="gatekeeping_with_holm", alpha=0.05, regulatory_variants=["US"], same_design_as=["NCT03131648"],
+    procedure="gatekeeping_with_holm", alpha=0.05, regulatory_variants=["US"],
+    same_design_as=[{"nct_id": "NCT03131648", "trial_name": "ECZTRA 1"}],
     testing_sequence=ECZTRA1["testing_sequence"],
     alpha_split=[
         {"group": "week16_secondary", "n_endpoints": 2, "alpha": 0.01, "method": "holm", "timepoint_week": 16},
@@ -108,7 +110,8 @@ ECZTRA2 = _base(
     alpha_recycling=True,
 )
 ECZTRA3 = _base(
-    procedure="gatekeeping_with_holm", regulatory_variants=["US"], same_design_as=["NCT03131648", "NCT03160885"],
+    procedure="gatekeeping_with_holm", regulatory_variants=["US"],
+    same_design_as=[{"nct_id": "NCT03131648", "trial_name": "ECZTRA 1"}, {"nct_id": "NCT03160885", "trial_name": "ECZTRA 2"}],
     background_tcs=True,
     testing_sequence=[
         ref("IGA 0/1", "IGA", IGA01, 16, step=1),
@@ -124,7 +127,7 @@ JADE_MONO1 = _base(
                           ref("EASI-75", "EASI", EASI75, 12, alpha=0.05)],
     branching_on=ref("Pruritus NRS >=4-point improvement", "Pruritus NRS", NRS4, 2, alpha=0.025),
 )
-JADE_MONO2 = _base(**{**JADE_MONO1, "same_design_as": ["NCT03349060"]})
+JADE_MONO2 = _base(**{**JADE_MONO1, "same_design_as": [{"nct_id": "NCT03349060", "trial_name": "JADE MONO-1"}]})
 JADE_REGIMEN = _base(
     procedure="serial_gatekeeping", alpha=0.05, doses_compared=["100 mg", "200 mg"],
     dose_comparison_order=["200 mg vs placebo", "100 mg vs placebo", "200 mg vs 100 mg"],
@@ -145,7 +148,7 @@ MEASURE_UP1 = _base(
     procedure="graphical", alpha=0.05, doses_compared=["15 mg", "30 mg"],
     regulatory_variants=["EU", "US"], alpha_recycling=True,
 )
-MEASURE_UP2 = _base(**{**MEASURE_UP1, "same_design_as": ["NCT03569293"]})
+MEASURE_UP2 = _base(**{**MEASURE_UP1, "same_design_as": [{"nct_id": "NCT03569293", "trial_name": "Measure Up 1"}]})
 ADUP = _base(**{**MEASURE_UP1, "background_tcs": True})
 ADVOCATE1 = _base(
     procedure="graphical", alpha=0.05, regulatory_variants=["US", "EU"],
@@ -169,6 +172,7 @@ ADVOCATE2 = _base(
 )
 ADHERE = _base(
     procedure="graphical", alpha=0.05, regulatory_variants=["US"], method_citations=["Bretz 2009", "Bretz 2011"],
+    gatekeeping_structure=True,
     testing_sequence=[
         ref("IGA 0/1", "IGA", IGA01, 16, step=1),
         ref("EASI-75", "EASI", EASI75, 16, step=2),

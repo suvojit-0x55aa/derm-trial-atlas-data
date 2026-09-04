@@ -31,7 +31,8 @@ Value shape:
       "permitted_concomitant": [...],
       "recorded_in_ecrf": bool | null,
       "applies_to_period": "initial_treatment" | "induction" | null,
-      "long_term_extension_eligible_after_rescue": bool | null
+      "long_term_extension_eligible_after_rescue": bool | null,
+      "topical_agent_class": "TCS" | null, "rationale": "monotherapy_design" | null
     }
 """
 from .criteria import criterion
@@ -59,6 +60,7 @@ def _base(**kw):
         "escape_arm_washout_half_lives": None, "maintenance_period_rule": None,
         "permitted_concomitant": [], "recorded_in_ecrf": None, "applies_to_period": None,
         "long_term_extension_eligible_after_rescue": None,
+        "topical_agent_class": None, "rationale": None,
     }
     v.update(kw)
     return v
@@ -72,6 +74,7 @@ CHRONOS = _base(
     systemic_rescue_requires_study_drug_discontinuation=True,
     resume_after_systemic_rescue_half_lives=5, resume_after_phototherapy_months=1,
     rescued_counted_as_treatment_failure=True, continue_visits_after_discontinuation=True,
+    topical_agent_class="TCS",
     topical_agents=[_agent("mometasone", 0.1, "ointment", "high"),
                     _agent("betamethasone dipropionate", 0.05, None, "super-high"),
                     _agent("clobetasol propionate", 0.05, None, "super-high")],
@@ -95,14 +98,14 @@ ECZTRA1 = _base(
     systemic_agents=["systemic corticosteroids", "systemic immunosuppressants"],
 )
 ECZTRA2 = ECZTRA1
-ECZTRA3 = _base(**{**ECZTRA1, "applies_to_period": None, "rescued_counted_as_nonresponder": None,
+ECZTRA3 = _base(**{**ECZTRA1, "applies_to_period": None, "rescued_counted_as_nonresponder": None, "topical_agent_class": "TCS",
                    "topical_potency_classes": [{"system": "EU", "comparator": ">", "class": 3},
                                                {"system": "US", "comparator": "<", "class": 4}]})
 ADUP = _base(
     permitted=True, trigger="protocol_response_threshold", earliest_week=4, first_step="topical",
     trigger_rules=[{"from_week": 4, "to_week": 24, "criterion": EASI50_LOSS, "consecutive_visits": 2},
                    {"from_week": 24, "to_week": None, "criterion": EASI50_LOSS, "consecutive_visits": 1}],
-    topical_min_days_before_systemic=7, topical_rescue_not_counted_after_week=52,
+    topical_min_days_before_systemic=7, topical_rescue_not_counted_after_week=52, topical_agent_class="TCS",
     topical_potency_classes=[{"system": "US", "comparator": ">=", "class": "high/super-high"}],
     oral_corticosteroid_limit={"agents": ["prednisone", "prednisolone"], "max_mg_per_kg": 1, "max_consecutive_weeks": 2},
 )
@@ -112,7 +115,7 @@ MEASURE_UP = _base(
     topical_rescue_not_counted_after_week=16,
 )
 JADE_MONO2 = _base(
-    permitted=False, trigger="prohibited",
+    permitted=False, trigger="prohibited", rationale="monotherapy_design",
     permitted_concomitant=["oral antihistamines", "topical non-medicated emollients"],
 )
 JADE_REGIMEN = _base(
@@ -132,7 +135,7 @@ ADVOCATE = _base(
     maintenance_period_rule={"topical_rescue": "intermittent_permitted", "systemic_rescue": "case_by_case_with_medical_monitor"},
 )
 ADHERE = _base(
-    permitted=True, trigger="investigator_discretion",
+    permitted=True, trigger="investigator_discretion", topical_agent_class="TCS",
     topical_potency_classes=[{"system": None, "comparator": ">=", "class": "high"}],
     systemic_rescue_requires_study_drug_discontinuation=True,
     continue_visits_after_discontinuation=True, continue_visits_through_week=16,
