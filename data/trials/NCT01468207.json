@@ -1,4 +1,5 @@
 {
+  "schema_version": 2,
   "nct_id": {
     "value": "NCT01468207",
     "source_type": "ctgov_api",
@@ -82,20 +83,54 @@
       "confidence": 1.0
     },
     "mechanism_of_action": {
-      "value": "12.1 Mechanism of Action Adalimumab products bind specifically to TNF-alpha and block its interaction with the p55 and p75 cell surface TNF receptors. Adalimumab products also lyse surface TNF expressing cells in vitro in the presence of complement. Adalimumab products do not bind or inactivate lymphotoxin (TNF-beta). TNF is a naturally occurring cytokine that is involved in normal inflammatory and immune responses. Elevated concentrations of TNF are found in the synovial fluid of patients with RA, JIA, PsA, and AS and play an important role in both the pathologic inflammation and the joint destruction that are hallmarks of these diseases. Increased concentrations of TNF are also found in psoriasis plaques. In Ps, treatment with HYRIMOZ may reduce the epidermal thickness and infiltration of inflammatory cells. The relationship between these pharmacodynamic activities and the mechanism(s) by which adalimumab products exert their clinical effects is unknown. Adalimumab products also modulate biological responses that are induced or regulated by TNF, including changes in the concentrations of adhesion molecules responsible for leukocyte migration (ELAM-1, VCAM-1, and ICAM-1 with an IC 50 of 1-2 X 10 -10 M).",
+      "value": {
+        "modality": "other",
+        "drug_class": null,
+        "antibody_isotype": null,
+        "binding_targets": [],
+        "pathway_cytokines": [
+          "TNF"
+        ],
+        "receptor_subunits": [],
+        "kinases_inhibited": [],
+        "lower_potency_kinases": [],
+        "selectivity": [],
+        "reversible": null,
+        "mechanism_established": null,
+        "label_section": "12.1"
+      },
       "source_type": "openfda_label",
       "source_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=48b7e44a-945f-487d-b2fd-3da13d6d6fdb",
-      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1)",
-      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA)",
+      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1) -- v1 extracted text: 12.1 Mechanism of Action Adalimumab products bind specifically to TNF-alpha and block its interaction with the p55 and p75 cell surface TNF receptors. Adalimumab products also lyse surface TNF expressing cells in vitro in the presence of complement. Adalimumab products do not bind or inactivate lymphotoxin (TNF-beta). TNF is a naturally occurring cytokine that is involved in normal inflammatory and immune responses. Elevated concentrations of TNF are found in the synovial fluid of patients with RA, JIA, PsA, and AS and play an important role in both the pathologic inflammation and the joint destruction that are hallmarks of these diseases. Increased concentrations of TNF are also found in psoriasis plaques. In Ps, treatment with HYRIMOZ may reduce the epidermal thickness and infiltration of inflammatory cells. The relationship between these pharmacodynamic activities and the mechanism(s) by which adalimumab products exert their clinical effects is unknown. Adalimumab products also modulate biological responses that are induced or regulated by TNF, including changes in the concentrations of adhesion molecules responsible for leukocyte migration (ELAM-1, VCAM-1, and ICAM-1 with an IC 50 of 1-2 X 10 -10 M).",
+      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 0.9
     },
     "dosing_regimen": {
-      "value": "adalimumab: Adalimumab pre-filled syringe, administered by subcutaneous injection",
+      "value": [
+        {
+          "intervention_name": "adalimumab",
+          "description": "Adalimumab pre-filled syringe, administered by subcutaneous injection",
+          "is_placebo": false,
+          "route": "subcutaneous",
+          "dose_form": "injection",
+          "dose_value": null,
+          "dose_unit": null,
+          "units_per_dose": null,
+          "frequency": null,
+          "duration_weeks": null,
+          "dosing_periods": [],
+          "administration_sites": [],
+          "antibody_isotype": null,
+          "molecular_target": null,
+          "arm_names": [],
+          "co_administered_with": []
+        }
+      ],
       "source_type": "ctgov_text_extraction",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01468207",
       "source_excerpt": "adalimumab: Adalimumab pre-filled syringe, administered by subcutaneous injection",
-      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA)",
+      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 0.8
     }
@@ -112,21 +147,21 @@
       "reviewed_by": null,
       "confidence": 1.0
     },
-    "min_age": {
-      "value": "18 Years",
+    "min_age_years": {
+      "value": 18,
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01468207",
       "source_excerpt": "protocolSection.eligibilityModule.minimumAge",
-      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
     },
-    "max_age": {
-      "value": "99 Years",
+    "max_age_years": {
+      "value": 99,
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01468207",
       "source_excerpt": "protocolSection.eligibilityModule.maximumAge",
-      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
     },
@@ -148,7 +183,7 @@
       "reviewed_by": null,
       "confidence": 1.0
     },
-    "severity_definition": {
+    "severity_criteria": {
       "value": null,
       "source_type": "needs_extraction",
       "source_url": null,
@@ -204,7 +239,7 @@
       "reviewed_by": null,
       "confidence": 1.0
     },
-    "background_therapy_rule": {
+    "background_therapy": {
       "value": null,
       "source_type": "needs_extraction",
       "source_url": null,
@@ -215,29 +250,141 @@
     }
   },
   "endpoints": {
-    "primary_endpoint_measure": {
-      "value": "Percentage of Participants Achieving Hidradenitis Suppurativa Clinical Response (HiSCR) at Week 12 (Time frame: Baseline (Week 0) up to Week 12)",
+    "primary_endpoints": {
+      "value": [
+        {
+          "verbatim": "Percentage of Participants Achieving Hidradenitis Suppurativa Clinical Response (HiSCR) at Week 12 (Time frame: Baseline (Week 0) up to Week 12)",
+          "rank": "primary",
+          "position": 1,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": "Baseline (Week 0) up to Week 12"
+        }
+      ],
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01468207",
       "source_excerpt": "protocolSection.outcomesModule.primaryOutcomes[0].measure/timeFrame",
-      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
     },
-    "secondary_endpoint_measures": {
+    "secondary_endpoints": {
       "value": [
-        "Percentage of Participants With Baseline Hurley Stage II Who Achieved Abscess and Inflammatory Nodule (AN) Count of 0, 1, or 2 at Week 12",
-        "Percentage of Participants Achieving At Least 30% Reduction and At Least 1 Unit Reduction From Baseline in Patient's Global Assessment of Skin Pain (NRS30) - At Worst at Week 12 Among Participants With Baseline Skin Pain NRS \u2265 3",
-        "Change From Baseline to Week 12 in Modified Sartorius Score"
+        {
+          "verbatim": "Percentage of Participants With Baseline Hurley Stage II Who Achieved Abscess and Inflammatory Nodule (AN) Count of 0, 1, or 2 at Week 12",
+          "rank": "secondary",
+          "position": 1,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants Achieving At Least 30% Reduction and At Least 1 Unit Reduction From Baseline in Patient's Global Assessment of Skin Pain (NRS30) - At Worst at Week 12 Among Participants With Baseline Skin Pain NRS ≥ 3",
+          "rank": "secondary",
+          "position": 2,
+          "measure_type": "responder_rate",
+          "scale": "Pruritus NRS",
+          "scale_component": "Skin Pain",
+          "scale_variant": "worst_daily",
+          "responder_criteria": [
+            {
+              "scale": "Pruritus NRS",
+              "scale_component": "Skin Pain",
+              "scale_variant": "worst_daily",
+              "metric": "percent_improvement_from_baseline",
+              "comparator": ">=",
+              "value": 30,
+              "unit": "percent",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Change From Baseline to Week 12 in Modified Sartorius Score",
+          "rank": "secondary",
+          "position": 3,
+          "measure_type": "change_from_baseline",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        }
       ],
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01468207",
       "source_excerpt": "protocolSection.outcomesModule.secondaryOutcomes[].measure",
-      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
     },
-    "endpoint_hierarchy_multiplicity": {
+    "multiplicity_control": {
       "value": null,
       "source_type": "needs_extraction",
       "source_url": null,
@@ -249,33 +396,42 @@
   },
   "timing_ops": {
     "start_date": {
-      "value": "2011-11",
+      "value": {
+        "date": "2011-11-01",
+        "precision": "month"
+      },
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01468207",
       "source_excerpt": "protocolSection.statusModule.startDateStruct.date",
-      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
     },
     "primary_completion_date": {
-      "value": "2014-01",
+      "value": {
+        "date": "2014-01-01",
+        "precision": "month"
+      },
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01468207",
       "source_excerpt": "protocolSection.statusModule.primaryCompletionDateStruct.date",
-      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
     },
     "completion_date": {
-      "value": "2014-01",
+      "value": {
+        "date": "2014-01-01",
+        "precision": "month"
+      },
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01468207",
       "source_excerpt": "protocolSection.statusModule.completionDateStruct.date",
-      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
     },
-    "visit_schedule": {
+    "study_schedule": {
       "value": null,
       "source_type": "needs_extraction",
       "source_url": null,
@@ -284,7 +440,7 @@
       "reviewed_by": null,
       "confidence": null
     },
-    "rescue_therapy_rules": {
+    "rescue_therapy": {
       "value": null,
       "source_type": "needs_extraction",
       "source_url": null,
@@ -342,56 +498,19 @@
       "confidence": 1.0
     },
     "death_rate": {
-      "value": [
-        {
-          "arm": "Placebo (Period 1)",
-          "n_affected": null,
-          "n_at_risk": null,
-          "pct": null
-        },
-        {
-          "arm": "Adalimumab EW (Period 1)",
-          "n_affected": null,
-          "n_at_risk": null,
-          "pct": null
-        },
-        {
-          "arm": "Placebo/Adalimumab EW (Period 2)",
-          "n_affected": null,
-          "n_at_risk": null,
-          "pct": null
-        },
-        {
-          "arm": "Adalimumab EW/Placebo (Period 2)",
-          "n_affected": null,
-          "n_at_risk": null,
-          "pct": null
-        },
-        {
-          "arm": "Adalimumab EW/Adalimumab EOW (Period 2)",
-          "n_affected": null,
-          "n_at_risk": null,
-          "pct": null
-        },
-        {
-          "arm": "Adalimumab EW/Adalimumab EW (Period 2)",
-          "n_affected": null,
-          "n_at_risk": null,
-          "pct": null
-        }
-      ],
-      "source_type": "ctgov_api",
-      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01468207",
-      "source_excerpt": "resultsSection.adverseEventsModule.eventGroups[].deathsNumAffected/deathsNumAtRisk",
-      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass)",
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     },
     "most_common_adverse_events": {
       "value": [
         {
-          "term": "NASOPHARYNGITIS",
-          "organ_system": "Infections and infestations",
+          "meddra_pt": "NASOPHARYNGITIS",
+          "meddra_soc": "Infections and infestations",
           "per_arm": [
             {
               "arm": "Placebo (Period 1)",
@@ -432,8 +551,8 @@
           ]
         },
         {
-          "term": "HIDRADENITIS",
-          "organ_system": "Skin and subcutaneous tissue disorders",
+          "meddra_pt": "HIDRADENITIS",
+          "meddra_soc": "Skin and subcutaneous tissue disorders",
           "per_arm": [
             {
               "arm": "Placebo (Period 1)",
@@ -474,8 +593,8 @@
           ]
         },
         {
-          "term": "HEADACHE",
-          "organ_system": "Nervous system disorders",
+          "meddra_pt": "HEADACHE",
+          "meddra_soc": "Nervous system disorders",
           "per_arm": [
             {
               "arm": "Placebo (Period 1)",
@@ -516,8 +635,8 @@
           ]
         },
         {
-          "term": "UPPER RESPIRATORY TRACT INFECTION",
-          "organ_system": "Infections and infestations",
+          "meddra_pt": "UPPER RESPIRATORY TRACT INFECTION",
+          "meddra_soc": "Infections and infestations",
           "per_arm": [
             {
               "arm": "Placebo (Period 1)",
@@ -558,8 +677,8 @@
           ]
         },
         {
-          "term": "PYREXIA",
-          "organ_system": "General disorders",
+          "meddra_pt": "PYREXIA",
+          "meddra_soc": "General disorders",
           "per_arm": [
             {
               "arm": "Placebo (Period 1)",
@@ -600,8 +719,8 @@
           ]
         },
         {
-          "term": "DERMATITIS CONTACT",
-          "organ_system": "Skin and subcutaneous tissue disorders",
+          "meddra_pt": "DERMATITIS CONTACT",
+          "meddra_soc": "Skin and subcutaneous tissue disorders",
           "per_arm": [
             {
               "arm": "Placebo (Period 1)",
@@ -642,8 +761,8 @@
           ]
         },
         {
-          "term": "ARTHRALGIA",
-          "organ_system": "Musculoskeletal and connective tissue disorders",
+          "meddra_pt": "ARTHRALGIA",
+          "meddra_soc": "Musculoskeletal and connective tissue disorders",
           "per_arm": [
             {
               "arm": "Placebo (Period 1)",
@@ -684,8 +803,8 @@
           ]
         },
         {
-          "term": "ANAEMIA",
-          "organ_system": "Blood and lymphatic system disorders",
+          "meddra_pt": "ANAEMIA",
+          "meddra_soc": "Blood and lymphatic system disorders",
           "per_arm": [
             {
               "arm": "Placebo (Period 1)",
@@ -729,7 +848,7 @@
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01468207",
       "source_excerpt": "resultsSection.adverseEventsModule.otherEvents[] (top 8 of 112 by highest single-arm incidence; CT.gov's own >=5% frequency-threshold table)",
-      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass)",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
     },
@@ -780,13 +899,68 @@
       "confidence": 1.0
     },
     "boxed_warning": {
-      "value": "WARNING: SERIOUS INFECTIONS and MALIGNANCY SERIOUS INFECTIONS Patients treated with adalimumab products, including HYRIMOZ, are at increased risk for developing serious infections that may lead to hospitalization or death [see Warnings and Precautions ( 5.1 )] . Most patients who developed these infections were taking concomitant immunosuppressants such as methotrexate or corticosteroids. Discontinue HYRIMOZ if a patient develops a serious infection or sepsis. Reported infections include: \u2022 Active tuberculosis (TB), including reactivation of latent TB. Patients with TB have frequently presented with disseminated or extrapulmonary disease. Test patients for latent TB before HYRIMOZ use and during therapy. Initiate treatment for latent TB prior to HYRIMOZ use. \u2022 Invasive fungal infections, including histoplasmosis, coccidioidomycosis, candidiasis, aspergillosis, blastomycosis, and pneumocystosis. Patients with histoplasmosis or other invasive fungal infections may present with disseminated, rather than localized, disease. Antigen and antibody testing for histoplasmosis may be negative in some patients with active infection. Consider empiric anti-fungal therapy in patients at risk for invasive fungal infections who develop severe systemic illness. \u2022 Bacterial, viral and other infections due to opportunistic pathogens, including Legionella and Listeria. Carefully consider the risks and benefits of treatment with HYRIMOZ prior to initiating therapy in patients with chronic or recurrent infection. Monitor patients closely for the development of signs and symptoms of infection during and after treatment with HYRIMOZ, including the possible development of TB in patients who tested negative for latent TB infection prior to initiating therapy [see Warnings and Precautions ( 5.1 ) and Adverse Reactions ( 6.1 )]. MALIGNANCY Lymphoma and other malignancies, some fatal, have been reported in children and adolescent patients treated with TNF blockers including adalimumab products [ see Warnings and Precautions ( 5.2 ) ]. Post-marketing cases of hepatosplenic T-cell lymphoma (HSTCL), a rare type of T-cell lymphoma, have been reported in patients treated with TNF blockers including adalimumab products. These cases have had a very aggressive disease course and have been fatal. The majority of reported TNF blocker cases have occurred in patients with Crohn's disease or ulcerative colitis and the majority were in adolescent and young adult males. Almost all these patients had received treatment with azathioprine or 6-mercaptopurine (6\u2013MP) concomitantly with a TNF blocker at or prior to diagnosis. It is uncertain whether the occurrence of HSTCL is related to use of a TNF blocker or a TNF blocker in combination with these other immunosuppressants [see Warnings and Precautions ( 5.2 )]. WARNING: SERIOUS INFECTIONS and MALIGNANCY See full prescribing information for complete boxed warning. SERIOUS INFECTIONS ( 5.1 , 6.1 ): \u2022 Increased risk of serious infections leading to hospitalization or death, including tuberculosis (TB), bacterial sepsis, invasive fungal infections (such as histoplasmosis), and infections due to other opportunistic pathogens. \u2022 Discontinue HYRIMOZ if a patient develops a serious infection or sepsis during treatment. \u2022 Perform test for latent TB; if positive, start treatment for TB prior to starting HYRIMOZ. \u2022 Monitor all patients for active TB during treatment, even if initial latent TB test is negative. MALIGNANCY ( 5.2 ): \u2022 Lymphoma and other malignancies, some fatal, have been reported in children and adolescent patients treated with TNF blockers including adalimumab products. \u2022 Post-marketing cases of hepatosplenic T-cell lymphoma (HSTCL), a rare type of T-cell lymphoma, have occurred in adolescent and young adults with inflammatory bowel disease treated with TNF blockers including adalimumab products.",
+      "value": {
+        "present": true,
+        "title": "SERIOUS INFECTIONS and MALIGNANCY",
+        "warning_categories": [
+          "serious_infections",
+          "malignancy"
+        ],
+        "referenced_label_sections": [
+          "5.1",
+          "5.2"
+        ],
+        "product_names": [
+          "HYRIMOZ",
+          "HSTCL"
+        ]
+      },
       "source_type": "openfda_label",
       "source_url": "https://api.fda.gov/drug/label.json?search=openfda.substance_name:ADALIMUMAB&limit=1",
-      "source_excerpt": "results[0].boxed_warning",
-      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass)",
+      "source_excerpt": "results[0].boxed_warning -- v1 extracted text: WARNING: SERIOUS INFECTIONS and MALIGNANCY SERIOUS INFECTIONS Patients treated with adalimumab products, including HYRIMOZ, are at increased risk for developing serious infections that may lead to hospitalization or death [see Warnings and Precautions ( 5.1 )] . Most patients who developed these infections were taking concomitant immunosuppressants such as methotrexate or corticosteroids. Discontinue HYRIMOZ if a patient develops a serious infection or sepsis. Reported infections include: • Active tuberculosis (TB), including reactivation of latent TB. Patients with TB have frequently presented with disseminated or extrapulmonary disease. Test patients for latent TB before HYRIMOZ use and during therapy. Initiate treatment for latent TB prior to HYRIMOZ use. • Invasive fungal infections, including histoplasmosis, coccidioidomycosis, candidiasis, aspergillosis, blastomycosis, and pneumocystosis. Patients with histoplasmosis or other invasive fungal infections may present with disseminated, rather than localized, disease. Antigen and antibody testing for histoplasmosis may be negative in some patients with active infection. Consider empiric anti-fungal therapy in patients at risk for invasive fungal infections who develop severe systemic illness. • Bacterial, viral and other infections due to opportunistic pathogens, including Legionella and Listeria. Carefully consider the risks and benefits of treatment with HYRIMOZ prior to initiating therapy in patients with chronic or recurrent infection. Monitor patients closely for the development of signs and symptoms of infection during and after treatment with HYRIMOZ, including the possible development of TB in patients who tested negative for latent TB infection prior to initiating therapy [see Warnings and Precautions ( 5.1 ) and Adverse Reactions ( 6.1 )]. MALIGNANCY Lymphoma and other malignancies, some fatal, have been reported in children and adolescent patients treated with TNF blockers including adalimumab products [ see Warnings and Precautions ( 5.2 ) ]. Post-marketing cases of hepatosplenic T-cell lymphoma (HSTCL), a rare type of T-cell lymphoma, have been reported in patients treated with TNF blockers including adalimumab products. These cases have had a very aggressive disease course and have been fatal. The majority of reported TNF blocker cases have occurred in patients with Crohn's disease or ulcerative colitis and the majority were in adolescent and young adult males. Almost all these patients had received treatment with azathioprine or 6-mercaptopurine (6–MP) concomitantly with a TNF blocker at or prior to diagnosis. It is uncertain whether the occurrence of HSTCL is related to use of a TNF blocker or a TNF blocker in combination with these other immunosuppressants [see Warnings and Precautions ( 5.2 )]. WARNING: SERIOUS INFECTIONS and MALIGNANCY See full prescribing information for complete boxed warning. SERIOUS INFECTIONS ( 5.1 , 6.1 ): • Increased risk of serious infections leading to hospitalization or death, including tuberculosis (TB), bacterial sepsis, invasive fungal infections (such as histoplasmosis), and infections due to other opportunistic pathogens. • Discontinue HYRIMOZ if a patient develops a serious infection or sepsis during treatment. • Perform test for latent TB; if positive, start treatment for TB prior to starting HYRIMOZ. • Monitor all patients for active TB during treatment, even if initial latent TB test is negative. MALIGNANCY ( 5.2 ): • Lymphoma and other malignancies, some fatal, have been reported in children and adolescent patients treated with TNF blockers including adalimumab products. • Post-marketing cases of hepatosplenic T-cell lymphoma (HSTCL), a rare type of T-cell lymphoma, have occurred in adolescent and young adults with inflammatory bowel disease treated with TNF blockers including adalimumab products.",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
+    }
+  },
+  "real_world_safety": {
+    "faers_summary": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    }
+  },
+  "exclusivity": {
+    "regulatory_application": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    },
+    "orange_book": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    },
+    "purple_book": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
     }
   }
 }

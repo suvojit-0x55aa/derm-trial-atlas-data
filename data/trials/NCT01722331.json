@@ -1,4 +1,5 @@
 {
+  "schema_version": 2,
   "nct_id": {
     "value": "NCT01722331",
     "source_type": "ctgov_api",
@@ -83,20 +84,90 @@
       "confidence": 1.0
     },
     "mechanism_of_action": {
-      "value": "12.1 Mechanism of Action Tildrakizumab is a humanized IgG1/k monoclonal antibody that selectively binds to the p19 subunit of IL-23 and inhibits its interaction with the IL-23 receptor. IL-23 is a naturally occurring cytokine that is involved in inflammatory and immune responses. Tildrakizumab inhibits the release of proinflammatory cytokines and chemokines.",
+      "value": {
+        "modality": "monoclonal_antibody",
+        "drug_class": "monoclonal antibody",
+        "antibody_isotype": "IgG1",
+        "binding_targets": [],
+        "pathway_cytokines": [
+          "IL-23"
+        ],
+        "receptor_subunits": [],
+        "kinases_inhibited": [],
+        "lower_potency_kinases": [],
+        "selectivity": [],
+        "reversible": null,
+        "mechanism_established": null,
+        "label_section": "12.1"
+      },
       "source_type": "openfda_label",
       "source_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=edc3f29f-1b74-4e56-ad3e-b6f213ce56d2",
-      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1)",
-      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA)",
+      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1) -- v1 extracted text: 12.1 Mechanism of Action Tildrakizumab is a humanized IgG1/k monoclonal antibody that selectively binds to the p19 subunit of IL-23 and inhibits its interaction with the IL-23 receptor. IL-23 is a naturally occurring cytokine that is involved in inflammatory and immune responses. Tildrakizumab inhibits the release of proinflammatory cytokines and chemokines.",
+      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 0.9
     },
     "dosing_regimen": {
-      "value": "Tildrakizumab 200 mg: Two tildrakizumab 100 mg/mL pre-filled syringes (PFS) || Tildrakizumab 100 mg: Tildrakizumab 100 mg/mL PFS || Matching Placebo: Matching placebo to tildrakizumab PFS",
+      "value": [
+        {
+          "intervention_name": "Tildrakizumab 200 mg",
+          "description": "Two tildrakizumab 100 mg/mL pre-filled syringes (PFS)",
+          "is_placebo": false,
+          "route": null,
+          "dose_form": null,
+          "dose_value": 200,
+          "dose_unit": "mg",
+          "units_per_dose": null,
+          "frequency": null,
+          "duration_weeks": null,
+          "dosing_periods": [],
+          "administration_sites": [],
+          "antibody_isotype": null,
+          "molecular_target": null,
+          "arm_names": [],
+          "co_administered_with": []
+        },
+        {
+          "intervention_name": "Tildrakizumab 100 mg",
+          "description": "Tildrakizumab 100 mg/mL PFS",
+          "is_placebo": false,
+          "route": null,
+          "dose_form": null,
+          "dose_value": 100,
+          "dose_unit": "mg",
+          "units_per_dose": null,
+          "frequency": null,
+          "duration_weeks": null,
+          "dosing_periods": [],
+          "administration_sites": [],
+          "antibody_isotype": null,
+          "molecular_target": null,
+          "arm_names": [],
+          "co_administered_with": []
+        },
+        {
+          "intervention_name": "Matching Placebo",
+          "description": "Matching placebo to tildrakizumab PFS",
+          "is_placebo": true,
+          "route": null,
+          "dose_form": null,
+          "dose_value": null,
+          "dose_unit": null,
+          "units_per_dose": null,
+          "frequency": null,
+          "duration_weeks": null,
+          "dosing_periods": [],
+          "administration_sites": [],
+          "antibody_isotype": null,
+          "molecular_target": null,
+          "arm_names": [],
+          "co_administered_with": []
+        }
+      ],
       "source_type": "ctgov_text_extraction",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01722331",
       "source_excerpt": "Tildrakizumab 200 mg: Two tildrakizumab 100 mg/mL pre-filled syringes (PFS) || Tildrakizumab 100 mg: Tildrakizumab 100 mg/mL PFS || Matching Placebo: Matching placebo to tildrakizumab PFS",
-      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA)",
+      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 0.8
     }
@@ -113,21 +184,21 @@
       "reviewed_by": null,
       "confidence": 1.0
     },
-    "min_age": {
-      "value": "18 Years",
+    "min_age_years": {
+      "value": 18,
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01722331",
       "source_excerpt": "protocolSection.eligibilityModule.minimumAge",
-      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
     },
-    "max_age": {
+    "max_age_years": {
       "value": null,
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01722331",
       "source_excerpt": "protocolSection.eligibilityModule.maximumAge",
-      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 0.0
     },
@@ -149,7 +220,7 @@
       "reviewed_by": null,
       "confidence": 1.0
     },
-    "severity_definition": {
+    "severity_criteria": {
       "value": null,
       "source_type": "needs_extraction",
       "source_url": null,
@@ -205,7 +276,7 @@
       "reviewed_by": null,
       "confidence": 1.0
     },
-    "background_therapy_rule": {
+    "background_therapy": {
       "value": null,
       "source_type": "needs_extraction",
       "source_url": null,
@@ -216,31 +287,188 @@
     }
   },
   "endpoints": {
-    "primary_endpoint_measure": {
-      "value": "Percentage of Participants With Psoriasis Area Sensitivity Index 75 (PASI-75) Response at Week 12 (Base Study) (Time frame: Week 12 (or end of trial if prior to Week 12))",
+    "primary_endpoints": {
+      "value": [
+        {
+          "verbatim": "Percentage of Participants With Psoriasis Area Sensitivity Index 75 (PASI-75) Response at Week 12 (Base Study) (Time frame: Week 12 (or end of trial if prior to Week 12))",
+          "rank": "primary",
+          "position": 1,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": "Week 12 (or end of trial if prior to Week 12)"
+        }
+      ],
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01722331",
       "source_excerpt": "protocolSection.outcomesModule.primaryOutcomes[0].measure/timeFrame",
-      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
     },
-    "secondary_endpoint_measures": {
+    "secondary_endpoints": {
       "value": [
-        "Percentage of Participants With PASI-90 Response At Week 12",
-        "Percentage of Participants With PASI-100 Response at Week 12",
-        "Baseline Dermatology Life Quality Index (DLQI) Score",
-        "Change From Baseline in the Participant DLQI Score at Week 12",
-        "Percentage of Participants With DLQI Score of 0 or 1 at Week 12"
+        {
+          "verbatim": "Percentage of Participants With PASI-90 Response At Week 12",
+          "rank": "secondary",
+          "position": 1,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants With PASI-100 Response at Week 12",
+          "rank": "secondary",
+          "position": 2,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Baseline Dermatology Life Quality Index (DLQI) Score",
+          "rank": "secondary",
+          "position": 3,
+          "measure_type": "other",
+          "scale": "DLQI",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Change From Baseline in the Participant DLQI Score at Week 12",
+          "rank": "secondary",
+          "position": 4,
+          "measure_type": "change_from_baseline",
+          "scale": "DLQI",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants With DLQI Score of 0 or 1 at Week 12",
+          "rank": "secondary",
+          "position": 5,
+          "measure_type": "responder_rate",
+          "scale": "DLQI",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [
+            {
+              "scale": "DLQI",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "absolute_score",
+              "comparator": "in",
+              "value": [
+                0,
+                1
+              ],
+              "unit": "score",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        }
       ],
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01722331",
       "source_excerpt": "protocolSection.outcomesModule.secondaryOutcomes[].measure",
-      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
     },
-    "endpoint_hierarchy_multiplicity": {
+    "multiplicity_control": {
       "value": null,
       "source_type": "needs_extraction",
       "source_url": null,
@@ -252,33 +480,42 @@
   },
   "timing_ops": {
     "start_date": {
-      "value": "2012-12-06",
+      "value": {
+        "date": "2012-12-06",
+        "precision": "day"
+      },
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01722331",
       "source_excerpt": "protocolSection.statusModule.startDateStruct.date",
-      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
     },
     "primary_completion_date": {
-      "value": "2015-10-28",
+      "value": {
+        "date": "2015-10-28",
+        "precision": "day"
+      },
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01722331",
       "source_excerpt": "protocolSection.statusModule.primaryCompletionDateStruct.date",
-      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
     },
     "completion_date": {
-      "value": "2021-11-10",
+      "value": {
+        "date": "2021-11-10",
+        "precision": "day"
+      },
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01722331",
       "source_excerpt": "protocolSection.statusModule.completionDateStruct.date",
-      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
     },
-    "visit_schedule": {
+    "study_schedule": {
       "value": null,
       "source_type": "needs_extraction",
       "source_url": null,
@@ -287,7 +524,7 @@
       "reviewed_by": null,
       "confidence": null
     },
-    "rescue_therapy_rules": {
+    "rescue_therapy": {
       "value": null,
       "source_type": "needs_extraction",
       "source_url": null,
@@ -405,8 +642,8 @@
     "most_common_adverse_events": {
       "value": [
         {
-          "term": "Nasopharyngitis",
-          "organ_system": "Infections and infestations",
+          "meddra_pt": "Nasopharyngitis",
+          "meddra_soc": "Infections and infestations",
           "per_arm": [
             {
               "arm": "Tildrakizumab 200 mg (Part 1)",
@@ -453,8 +690,8 @@
           ]
         },
         {
-          "term": "Upper respiratory tract infection",
-          "organ_system": "Infections and infestations",
+          "meddra_pt": "Upper respiratory tract infection",
+          "meddra_soc": "Infections and infestations",
           "per_arm": [
             {
               "arm": "Tildrakizumab 200 mg (Part 1)",
@@ -501,8 +738,8 @@
           ]
         },
         {
-          "term": "Psoriasis",
-          "organ_system": "Skin and subcutaneous tissue disorders",
+          "meddra_pt": "Psoriasis",
+          "meddra_soc": "Skin and subcutaneous tissue disorders",
           "per_arm": [
             {
               "arm": "Tildrakizumab 200 mg (Part 1)",
@@ -552,7 +789,7 @@
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01722331",
       "source_excerpt": "resultsSection.adverseEventsModule.otherEvents[] (top 8 of 3 by highest single-arm incidence; CT.gov's own >=5% frequency-threshold table)",
-      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass)",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
     },
@@ -609,13 +846,59 @@
       "confidence": 1.0
     },
     "boxed_warning": {
-      "value": null,
+      "value": {
+        "present": false,
+        "title": null,
+        "warning_categories": [],
+        "referenced_label_sections": [],
+        "product_names": []
+      },
       "source_type": "openfda_label",
       "source_url": "https://api.fda.gov/drug/label.json?search=openfda.substance_name:TILDRAKIZUMAB&limit=1",
       "source_excerpt": "results[0] has no boxed_warning key (checked, none present)",
-      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass)",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
+    }
+  },
+  "real_world_safety": {
+    "faers_summary": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    }
+  },
+  "exclusivity": {
+    "regulatory_application": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    },
+    "orange_book": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    },
+    "purple_book": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
     }
   }
 }

@@ -1,4 +1,5 @@
 {
+  "schema_version": 2,
   "nct_id": {
     "value": "NCT03611751",
     "source_type": "ctgov_api",
@@ -84,11 +85,24 @@
       "confidence": 1.0
     },
     "mechanism_of_action": {
-      "value": "12.1 Mechanism of Action Deucravacitinib is an inhibitor of tyrosine kinase 2 (TYK2). TYK2 is a member of the Janus kinase (JAK) family. Deucravacitinib binds to the regulatory domain of TYK2, stabilizing an inhibitory interaction between the regulatory and the catalytic domains of the enzyme. This results in allosteric inhibition of receptor-mediated activation of TYK2 and its downstream activation of Signal Transducers and Activators of Transcription (STATs) as shown in cell-based assays. JAK kinases, including TYK2, function as pairs of homo- or heterodimers in the JAK-STAT pathways. TYK2 pairs with JAK1 to mediate multiple cytokine pathways and also pairs with JAK2 to transmit signals as shown in cell-based assays. The precise mechanism linking inhibition of TYK2 enzyme to treatment of moderate-to-severe plaque psoriasis or active psoriatric arthritis is not currently known.",
+      "value": {
+        "modality": "other",
+        "drug_class": null,
+        "antibody_isotype": null,
+        "binding_targets": [],
+        "pathway_cytokines": [],
+        "receptor_subunits": [],
+        "kinases_inhibited": [],
+        "lower_potency_kinases": [],
+        "selectivity": [],
+        "reversible": null,
+        "mechanism_established": false,
+        "label_section": "12.1"
+      },
       "source_type": "openfda_label",
       "source_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=73204bef-9921-40ed-9230-ba35953c99c4",
-      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1)",
-      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA)",
+      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1) -- v1 extracted text: 12.1 Mechanism of Action Deucravacitinib is an inhibitor of tyrosine kinase 2 (TYK2). TYK2 is a member of the Janus kinase (JAK) family. Deucravacitinib binds to the regulatory domain of TYK2, stabilizing an inhibitory interaction between the regulatory and the catalytic domains of the enzyme. This results in allosteric inhibition of receptor-mediated activation of TYK2 and its downstream activation of Signal Transducers and Activators of Transcription (STATs) as shown in cell-based assays. JAK kinases, including TYK2, function as pairs of homo- or heterodimers in the JAK-STAT pathways. TYK2 pairs with JAK1 to mediate multiple cytokine pathways and also pairs with JAK2 to transmit signals as shown in cell-based assays. The precise mechanism linking inhibition of TYK2 enzyme to treatment of moderate-to-severe plaque psoriasis or active psoriatric arthritis is not currently known.",
+      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 0.9
     },
@@ -114,21 +128,21 @@
       "reviewed_by": null,
       "confidence": 1.0
     },
-    "min_age": {
-      "value": "18 Years",
+    "min_age_years": {
+      "value": 18,
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03611751",
       "source_excerpt": "protocolSection.eligibilityModule.minimumAge",
-      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
     },
-    "max_age": {
+    "max_age_years": {
       "value": null,
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03611751",
       "source_excerpt": "protocolSection.eligibilityModule.maximumAge",
-      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 0.0
     },
@@ -150,7 +164,7 @@
       "reviewed_by": null,
       "confidence": 1.0
     },
-    "severity_definition": {
+    "severity_criteria": {
       "value": null,
       "source_type": "needs_extraction",
       "source_url": null,
@@ -206,7 +220,7 @@
       "reviewed_by": null,
       "confidence": 1.0
     },
-    "background_therapy_rule": {
+    "background_therapy": {
       "value": null,
       "source_type": "needs_extraction",
       "source_url": null,
@@ -217,41 +231,430 @@
     }
   },
   "endpoints": {
-    "primary_endpoint_measure": {
-      "value": "The Number of Participants With a Static Physician's Global Assessment (sPGA) Score of 0 or 1 in Participants Receiving BMS-986165 Compared to Placebo at Week 16 (sPGA 0/1) (Time frame: Week 16)",
+    "primary_endpoints": {
+      "value": [
+        {
+          "verbatim": "The Number of Participants With a Static Physician's Global Assessment (sPGA) Score of 0 or 1 in Participants Receiving BMS-986165 Compared to Placebo at Week 16 (sPGA 0/1) (Time frame: Week 16)",
+          "rank": "primary",
+          "position": 1,
+          "measure_type": "absolute_value",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": "Week 16"
+        }
+      ],
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03611751",
       "source_excerpt": "protocolSection.outcomesModule.primaryOutcomes[0].measure/timeFrame",
-      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
     },
-    "secondary_endpoint_measures": {
+    "secondary_endpoints": {
       "value": [
-        "The Number of Participants Who Achieve a 90% Improvement From Baseline in the Psoriasis Area and Severity Index Score at Week 16 (PASI 90)",
-        "The Number of Participants Who Achieve a 100% Improvement From Baseline in the Psoriasis Area and Severity Index Score at Week 16 (PASI 100)",
-        "The Number of Participants With a Static Physician Global Assessment Score of 0 at Week 16 (sPGA 0)",
-        "Change From Baseline in Psoriasis Symptoms and Signs Diary (PSSD) Symptom Score at Week 16",
-        "Psoriasis Symptoms and Signs Diary (PSSD) Symptom Score of 0 at Week 16",
-        "The Number of Participants With a Scalp Specific Physician's Global Assessment (Ss-PGA) Score 0 or 1 at Week 16 (Ss-PGA 0/1)",
-        "The Number of Participants With a Dermatology Life Quality Index (DLQI) Score of 0 or 1 in Participants Receiving BMS-986165 Compared to Placebo at Week 16 (DLQI 0/1)",
-        "The Number of Participants With a Physician Global Assessment- Fingernails (PGA-F) Score of 0 or 1 in Participants Receiving BMS-986165 Compared to Placebo at Week 16 (PGA-F 0/1)",
-        "The Number of Participants With a Palmoplantar Physician's Global Assessment (Pp-PGA) Score of 0 or 1 at Week 16 (Pp-PGA 0/1)",
-        "The Number of Participants Who Achieve a 75% Improvement From Baseline in the Psoriasis Area and Severity Index (PASI) Score in Participants Receiving BMS-986165 Compared to Apremilast at Week 16 (PASI 75)",
-        "The Number of Participants With a Static Physician Global Assessment (sPGA) Score of 0 or 1 in Participants Receiving BMS-986165 Compared to Apremilast at Week 16 (sPGA 0/1)",
-        "Time to Relapse Until Week 52 Among Week 24 PASI 75 Responders",
-        "The Number of Participants With a Static Physician Global Assessment (sPGA) Score of 0 or 1 in Participants Receiving BMS-986165 Compared to Apremalist at Week 24 (sPGA 0/1)",
-        "The Number of Participants Who Achieve a 75% Improvement From Baseline in the Psoriasis Area and Severity Index (PASI) Score in Participants Receiving BMS-986165 Compared to Apremalist at Week 24 (PASI 75)",
-        "The Number of Participants Who Achieve a 90% Improvement From Baseline in the Psoriasis Area and Severity Index Score in Participants Receiving BMS-986165 Compared to Apremilast at Week 24 (PASI 90)"
+        {
+          "verbatim": "The Number of Participants Who Achieve a 90% Improvement From Baseline in the Psoriasis Area and Severity Index Score at Week 16 (PASI 90)",
+          "rank": "secondary",
+          "position": 1,
+          "measure_type": "absolute_value",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "The Number of Participants Who Achieve a 100% Improvement From Baseline in the Psoriasis Area and Severity Index Score at Week 16 (PASI 100)",
+          "rank": "secondary",
+          "position": 2,
+          "measure_type": "absolute_value",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "The Number of Participants With a Static Physician Global Assessment Score of 0 at Week 16 (sPGA 0)",
+          "rank": "secondary",
+          "position": 3,
+          "measure_type": "absolute_value",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Change From Baseline in Psoriasis Symptoms and Signs Diary (PSSD) Symptom Score at Week 16",
+          "rank": "secondary",
+          "position": 4,
+          "measure_type": "change_from_baseline",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Psoriasis Symptoms and Signs Diary (PSSD) Symptom Score of 0 at Week 16",
+          "rank": "secondary",
+          "position": 5,
+          "measure_type": "absolute_value",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "The Number of Participants With a Scalp Specific Physician's Global Assessment (Ss-PGA) Score 0 or 1 at Week 16 (Ss-PGA 0/1)",
+          "rank": "secondary",
+          "position": 6,
+          "measure_type": "absolute_value",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "The Number of Participants With a Dermatology Life Quality Index (DLQI) Score of 0 or 1 in Participants Receiving BMS-986165 Compared to Placebo at Week 16 (DLQI 0/1)",
+          "rank": "secondary",
+          "position": 7,
+          "measure_type": "absolute_value",
+          "scale": "DLQI",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "The Number of Participants With a Physician Global Assessment- Fingernails (PGA-F) Score of 0 or 1 in Participants Receiving BMS-986165 Compared to Placebo at Week 16 (PGA-F 0/1)",
+          "rank": "secondary",
+          "position": 8,
+          "measure_type": "absolute_value",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "The Number of Participants With a Palmoplantar Physician's Global Assessment (Pp-PGA) Score of 0 or 1 at Week 16 (Pp-PGA 0/1)",
+          "rank": "secondary",
+          "position": 9,
+          "measure_type": "absolute_value",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "The Number of Participants Who Achieve a 75% Improvement From Baseline in the Psoriasis Area and Severity Index (PASI) Score in Participants Receiving BMS-986165 Compared to Apremilast at Week 16 (PASI 75)",
+          "rank": "secondary",
+          "position": 10,
+          "measure_type": "absolute_value",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "The Number of Participants With a Static Physician Global Assessment (sPGA) Score of 0 or 1 in Participants Receiving BMS-986165 Compared to Apremilast at Week 16 (sPGA 0/1)",
+          "rank": "secondary",
+          "position": 11,
+          "measure_type": "absolute_value",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Time to Relapse Until Week 52 Among Week 24 PASI 75 Responders",
+          "rank": "secondary",
+          "position": 12,
+          "measure_type": "time_to_event",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": {
+            "value": 52,
+            "unit": "week"
+          },
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "The Number of Participants With a Static Physician Global Assessment (sPGA) Score of 0 or 1 in Participants Receiving BMS-986165 Compared to Apremalist at Week 24 (sPGA 0/1)",
+          "rank": "secondary",
+          "position": 13,
+          "measure_type": "absolute_value",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "The Number of Participants Who Achieve a 75% Improvement From Baseline in the Psoriasis Area and Severity Index (PASI) Score in Participants Receiving BMS-986165 Compared to Apremalist at Week 24 (PASI 75)",
+          "rank": "secondary",
+          "position": 14,
+          "measure_type": "absolute_value",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "The Number of Participants Who Achieve a 90% Improvement From Baseline in the Psoriasis Area and Severity Index Score in Participants Receiving BMS-986165 Compared to Apremilast at Week 24 (PASI 90)",
+          "rank": "secondary",
+          "position": 15,
+          "measure_type": "absolute_value",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        }
       ],
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03611751",
       "source_excerpt": "protocolSection.outcomesModule.secondaryOutcomes[].measure",
-      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
     },
-    "endpoint_hierarchy_multiplicity": {
+    "multiplicity_control": {
       "value": null,
       "source_type": "needs_extraction",
       "source_url": null,
@@ -263,33 +666,42 @@
   },
   "timing_ops": {
     "start_date": {
-      "value": "2018-07-26",
+      "value": {
+        "date": "2018-07-26",
+        "precision": "day"
+      },
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03611751",
       "source_excerpt": "protocolSection.statusModule.startDateStruct.date",
-      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
     },
     "primary_completion_date": {
-      "value": "2020-11-29",
+      "value": {
+        "date": "2020-11-29",
+        "precision": "day"
+      },
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03611751",
       "source_excerpt": "protocolSection.statusModule.primaryCompletionDateStruct.date",
-      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
     },
     "completion_date": {
-      "value": "2020-11-30",
+      "value": {
+        "date": "2020-11-30",
+        "precision": "day"
+      },
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03611751",
       "source_excerpt": "protocolSection.statusModule.completionDateStruct.date",
-      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
     },
-    "visit_schedule": {
+    "study_schedule": {
       "value": null,
       "source_type": "needs_extraction",
       "source_url": null,
@@ -298,7 +710,7 @@
       "reviewed_by": null,
       "confidence": null
     },
-    "rescue_therapy_rules": {
+    "rescue_therapy": {
       "value": null,
       "source_type": "needs_extraction",
       "source_url": null,
@@ -404,8 +816,8 @@
     "most_common_adverse_events": {
       "value": [
         {
-          "term": "Nasopharyngitis",
-          "organ_system": "Infections and infestations",
+          "meddra_pt": "Nasopharyngitis",
+          "meddra_soc": "Infections and infestations",
           "per_arm": [
             {
               "arm": "BMS-986165 (Week 0 up to Week 16)",
@@ -446,8 +858,8 @@
           ]
         },
         {
-          "term": "Diarrhoea",
-          "organ_system": "Gastrointestinal disorders",
+          "meddra_pt": "Diarrhoea",
+          "meddra_soc": "Gastrointestinal disorders",
           "per_arm": [
             {
               "arm": "BMS-986165 (Week 0 up to Week 16)",
@@ -488,8 +900,8 @@
           ]
         },
         {
-          "term": "Headache",
-          "organ_system": "Nervous system disorders",
+          "meddra_pt": "Headache",
+          "meddra_soc": "Nervous system disorders",
           "per_arm": [
             {
               "arm": "BMS-986165 (Week 0 up to Week 16)",
@@ -530,8 +942,8 @@
           ]
         },
         {
-          "term": "Nausea",
-          "organ_system": "Gastrointestinal disorders",
+          "meddra_pt": "Nausea",
+          "meddra_soc": "Gastrointestinal disorders",
           "per_arm": [
             {
               "arm": "BMS-986165 (Week 0 up to Week 16)",
@@ -572,8 +984,8 @@
           ]
         },
         {
-          "term": "Upper respiratory tract infection",
-          "organ_system": "Infections and infestations",
+          "meddra_pt": "Upper respiratory tract infection",
+          "meddra_soc": "Infections and infestations",
           "per_arm": [
             {
               "arm": "BMS-986165 (Week 0 up to Week 16)",
@@ -617,7 +1029,7 @@
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03611751",
       "source_excerpt": "resultsSection.adverseEventsModule.otherEvents[] (top 8 of 5 by highest single-arm incidence; CT.gov's own >=5% frequency-threshold table)",
-      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass)",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
     },
@@ -631,13 +1043,59 @@
       "confidence": null
     },
     "boxed_warning": {
-      "value": null,
+      "value": {
+        "present": false,
+        "title": null,
+        "warning_categories": [],
+        "referenced_label_sections": [],
+        "product_names": []
+      },
       "source_type": "openfda_label",
       "source_url": "https://api.fda.gov/drug/label.json?search=openfda.substance_name:DEUCRAVACITINIB&limit=1",
       "source_excerpt": "results[0] has no boxed_warning key (checked, none present)",
-      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass)",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
+    }
+  },
+  "real_world_safety": {
+    "faers_summary": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    }
+  },
+  "exclusivity": {
+    "regulatory_application": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    },
+    "orange_book": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    },
+    "purple_book": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
     }
   }
 }

@@ -1,4 +1,5 @@
 {
+  "schema_version": 2,
   "nct_id": {
     "value": "NCT03899259",
     "source_type": "ctgov_api",
@@ -91,11 +92,30 @@
       "confidence": null
     },
     "dosing_regimen": {
-      "value": "Baricitinib: Administered orally",
+      "value": [
+        {
+          "intervention_name": "Baricitinib",
+          "description": "Administered orally",
+          "is_placebo": false,
+          "route": "oral",
+          "dose_form": null,
+          "dose_value": null,
+          "dose_unit": null,
+          "units_per_dose": null,
+          "frequency": null,
+          "duration_weeks": null,
+          "dosing_periods": [],
+          "administration_sites": [],
+          "antibody_isotype": null,
+          "molecular_target": null,
+          "arm_names": [],
+          "co_administered_with": []
+        }
+      ],
       "source_type": "ctgov_text_extraction",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03899259",
       "source_excerpt": "Baricitinib: Administered orally",
-      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA)",
+      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 0.8
     }
@@ -112,21 +132,21 @@
       "reviewed_by": null,
       "confidence": 1.0
     },
-    "min_age": {
-      "value": "18 Years",
+    "min_age_years": {
+      "value": 18,
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03899259",
       "source_excerpt": "protocolSection.eligibilityModule.minimumAge",
-      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
     },
-    "max_age": {
-      "value": "70 Years",
+    "max_age_years": {
+      "value": 70,
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03899259",
       "source_excerpt": "protocolSection.eligibilityModule.maximumAge",
-      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
     },
@@ -148,12 +168,19 @@
       "reviewed_by": null,
       "confidence": 1.0
     },
-    "severity_definition": {
-      "value": "Current AA episode of more than 6 months' duration and hair loss encompassing \u226550% of the scalp, as measured by SALT (AA-IGA of 3 or 4) at screening and baseline.",
+    "severity_criteria": {
+      "value": {
+        "severity_label": null,
+        "basis": "eligibility_text",
+        "cross_reference": null,
+        "source_criterion_numbers": [],
+        "baseline_visit_number": null,
+        "criteria": []
+      },
       "source_type": "ctgov_text_extraction",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03899259",
-      "source_excerpt": "Current AA episode of more than 6 months' duration and hair loss encompassing \u226550% of the scalp, as measured by SALT (AA-IGA of 3 or 4) at screening and baseline.",
-      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA)",
+      "source_excerpt": "Current AA episode of more than 6 months' duration and hair loss encompassing ≥50% of the scalp, as measured by SALT (AA-IGA of 3 or 4) at screening and baseline.",
+      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 0.75
     }
@@ -204,7 +231,7 @@
       "reviewed_by": null,
       "confidence": 1.0
     },
-    "background_therapy_rule": {
+    "background_therapy": {
       "value": null,
       "source_type": "needs_extraction",
       "source_url": null,
@@ -215,39 +242,351 @@
     }
   },
   "endpoints": {
-    "primary_endpoint_measure": {
-      "value": "Percentage of Participants Achieving Severity of Alopecia Tool (SALT) \u2264 20 (Time frame: Week 36)",
+    "primary_endpoints": {
+      "value": [
+        {
+          "verbatim": "Percentage of Participants Achieving Severity of Alopecia Tool (SALT) ≤ 20 (Time frame: Week 36)",
+          "rank": "primary",
+          "position": 1,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 36,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": "Week 36"
+        }
+      ],
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03899259",
       "source_excerpt": "protocolSection.outcomesModule.primaryOutcomes[0].measure/timeFrame",
-      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
     },
-    "secondary_endpoint_measures": {
+    "secondary_endpoints": {
       "value": [
-        "Percent Change From Baseline in SALT Score at Week 36",
-        "Percentage of Participants Achieving 50% Improvement of Severity of Alopecia Tool (SALT50)",
-        "Percentage of Participants With Patient-Reported Outcome (PRO) for Scalp Hair Assessment Score of 0 or 1 With a \u22652-point Improvement From Baseline Among Participants With a Score of \u22653 at Baseline",
-        "Time for Participants to Achieve SALT \u2264 20 at Week 36.",
-        "Percentage of Participants Achieving Clinician-Reported Outcome (ClinRO) Measure for Eyebrow (EB) Hair Loss 0 or 1 With \u22652-point Improvement From Baseline (Among Participants With ClinRO Measure for EB Hair Loss \u22652 at Baseline)",
-        "Percentage of Participants Achieving ClinRO Measure for Eyelash (EL) Hair Loss 0 or 1 With \u22652-point Improvement From Baseline (Among Participants With ClinRO Measure for EL Hair Loss \u22652 at Baseline)",
-        "Percentage of Participants Achieving Patient-Reported Outcome (PRO) Measure for EB 0 or 1 With \u22652-point Improvement From Baseline (Among Participants With PRO Measure for EB \u22652 at Baseline)",
-        "Percentage of Participants Achieving PRO Measure for EL 0 or 1 With \u22652-point Improvement From Baseline (Among Participants With PRO Measure EL \u22652 at Baseline)",
-        "Change From Baseline in Skindex-16 Alopecia Areata (AA) Symptoms Domain Score",
-        "Change From Baseline in Skindex-16 AA Emotions Domain Score at Week 36",
-        "Change From Baseline in Skindex-16 AA Functioning Domain Score at Week 36",
-        "Mean Change From Baseline in Hospital Anxiety Depression Scale (HADS) Anxiety Score at Week 36",
-        "Mean Change From Baseline in HADS Depression Score at Week 36"
+        {
+          "verbatim": "Percent Change From Baseline in SALT Score at Week 36",
+          "rank": "secondary",
+          "position": 1,
+          "measure_type": "percent_change_from_baseline",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 36,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants Achieving 50% Improvement of Severity of Alopecia Tool (SALT50)",
+          "rank": "secondary",
+          "position": 2,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants With Patient-Reported Outcome (PRO) for Scalp Hair Assessment Score of 0 or 1 With a ≥2-point Improvement From Baseline Among Participants With a Score of ≥3 at Baseline",
+          "rank": "secondary",
+          "position": 3,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [
+            {
+              "scale": null,
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "absolute_score",
+              "comparator": ">=",
+              "value": 3,
+              "unit": "score",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": [
+                "baseline"
+              ],
+              "scale_anchors": null
+            }
+          ],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Time for Participants to Achieve SALT ≤ 20 at Week 36.",
+          "rank": "secondary",
+          "position": 4,
+          "measure_type": "absolute_value",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 36,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants Achieving Clinician-Reported Outcome (ClinRO) Measure for Eyebrow (EB) Hair Loss 0 or 1 With ≥2-point Improvement From Baseline (Among Participants With ClinRO Measure for EB Hair Loss ≥2 at Baseline)",
+          "rank": "secondary",
+          "position": 5,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants Achieving ClinRO Measure for Eyelash (EL) Hair Loss 0 or 1 With ≥2-point Improvement From Baseline (Among Participants With ClinRO Measure for EL Hair Loss ≥2 at Baseline)",
+          "rank": "secondary",
+          "position": 6,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants Achieving Patient-Reported Outcome (PRO) Measure for EB 0 or 1 With ≥2-point Improvement From Baseline (Among Participants With PRO Measure for EB ≥2 at Baseline)",
+          "rank": "secondary",
+          "position": 7,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants Achieving PRO Measure for EL 0 or 1 With ≥2-point Improvement From Baseline (Among Participants With PRO Measure EL ≥2 at Baseline)",
+          "rank": "secondary",
+          "position": 8,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Change From Baseline in Skindex-16 Alopecia Areata (AA) Symptoms Domain Score",
+          "rank": "secondary",
+          "position": 9,
+          "measure_type": "change_from_baseline",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Change From Baseline in Skindex-16 AA Emotions Domain Score at Week 36",
+          "rank": "secondary",
+          "position": 10,
+          "measure_type": "change_from_baseline",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 36,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Change From Baseline in Skindex-16 AA Functioning Domain Score at Week 36",
+          "rank": "secondary",
+          "position": 11,
+          "measure_type": "change_from_baseline",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 36,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Mean Change From Baseline in Hospital Anxiety Depression Scale (HADS) Anxiety Score at Week 36",
+          "rank": "secondary",
+          "position": 12,
+          "measure_type": "absolute_value",
+          "scale": "HADS",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 36,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Mean Change From Baseline in HADS Depression Score at Week 36",
+          "rank": "secondary",
+          "position": 13,
+          "measure_type": "absolute_value",
+          "scale": "HADS",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 36,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        }
       ],
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03899259",
       "source_excerpt": "protocolSection.outcomesModule.secondaryOutcomes[].measure",
-      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
     },
-    "endpoint_hierarchy_multiplicity": {
+    "multiplicity_control": {
       "value": null,
       "source_type": "needs_extraction",
       "source_url": null,
@@ -259,33 +598,42 @@
   },
   "timing_ops": {
     "start_date": {
-      "value": "2019-07-08",
+      "value": {
+        "date": "2019-07-08",
+        "precision": "day"
+      },
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03899259",
       "source_excerpt": "protocolSection.statusModule.startDateStruct.date",
-      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
     },
     "primary_completion_date": {
-      "value": "2021-01-24",
+      "value": {
+        "date": "2021-01-24",
+        "precision": "day"
+      },
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03899259",
       "source_excerpt": "protocolSection.statusModule.primaryCompletionDateStruct.date",
-      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
     },
     "completion_date": {
-      "value": "2024-11-19",
+      "value": {
+        "date": "2024-11-19",
+        "precision": "day"
+      },
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03899259",
       "source_excerpt": "protocolSection.statusModule.completionDateStruct.date",
-      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
     },
-    "visit_schedule": {
+    "study_schedule": {
       "value": null,
       "source_type": "needs_extraction",
       "source_url": null,
@@ -294,7 +642,7 @@
       "reviewed_by": null,
       "confidence": null
     },
-    "rescue_therapy_rules": {
+    "rescue_therapy": {
       "value": null,
       "source_type": "needs_extraction",
       "source_url": null,
@@ -376,8 +724,8 @@
     "most_common_adverse_events": {
       "value": [
         {
-          "term": "Covid-19",
-          "organ_system": "Infections and infestations",
+          "meddra_pt": "Covid-19",
+          "meddra_soc": "Infections and infestations",
           "per_arm": [
             {
               "arm": "Placebo",
@@ -406,8 +754,8 @@
           ]
         },
         {
-          "term": "Upper respiratory tract infection",
-          "organ_system": "Infections and infestations",
+          "meddra_pt": "Upper respiratory tract infection",
+          "meddra_soc": "Infections and infestations",
           "per_arm": [
             {
               "arm": "Placebo",
@@ -436,8 +784,8 @@
           ]
         },
         {
-          "term": "Headache",
-          "organ_system": "Nervous system disorders",
+          "meddra_pt": "Headache",
+          "meddra_soc": "Nervous system disorders",
           "per_arm": [
             {
               "arm": "Placebo",
@@ -466,8 +814,8 @@
           ]
         },
         {
-          "term": "Nasopharyngitis",
-          "organ_system": "Infections and infestations",
+          "meddra_pt": "Nasopharyngitis",
+          "meddra_soc": "Infections and infestations",
           "per_arm": [
             {
               "arm": "Placebo",
@@ -496,8 +844,8 @@
           ]
         },
         {
-          "term": "Urinary tract infection",
-          "organ_system": "Infections and infestations",
+          "meddra_pt": "Urinary tract infection",
+          "meddra_soc": "Infections and infestations",
           "per_arm": [
             {
               "arm": "Placebo",
@@ -526,8 +874,8 @@
           ]
         },
         {
-          "term": "Acne",
-          "organ_system": "Skin and subcutaneous tissue disorders",
+          "meddra_pt": "Acne",
+          "meddra_soc": "Skin and subcutaneous tissue disorders",
           "per_arm": [
             {
               "arm": "Placebo",
@@ -556,8 +904,8 @@
           ]
         },
         {
-          "term": "Blood creatine phosphokinase increased",
-          "organ_system": "Investigations",
+          "meddra_pt": "Blood creatine phosphokinase increased",
+          "meddra_soc": "Investigations",
           "per_arm": [
             {
               "arm": "Placebo",
@@ -586,8 +934,8 @@
           ]
         },
         {
-          "term": "Hypercholesterolaemia",
-          "organ_system": "Metabolism and nutrition disorders",
+          "meddra_pt": "Hypercholesterolaemia",
+          "meddra_soc": "Metabolism and nutrition disorders",
           "per_arm": [
             {
               "arm": "Placebo",
@@ -619,7 +967,7 @@
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03899259",
       "source_excerpt": "resultsSection.adverseEventsModule.otherEvents[] (top 8 of 12 by highest single-arm incidence; CT.gov's own >=5% frequency-threshold table)",
-      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass)",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
     },
@@ -700,13 +1048,59 @@
       "confidence": 1.0
     },
     "boxed_warning": {
-      "value": null,
+      "value": {
+        "present": false,
+        "title": null,
+        "warning_categories": [],
+        "referenced_label_sections": [],
+        "product_names": []
+      },
       "source_type": "openfda_label",
       "source_url": "https://api.fda.gov/drug/label.json?search=openfda.substance_name:BARICITINIB&limit=1",
       "source_excerpt": "results[0] has no boxed_warning key (checked, none present)",
-      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass)",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
+    }
+  },
+  "real_world_safety": {
+    "faers_summary": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    }
+  },
+  "exclusivity": {
+    "regulatory_application": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    },
+    "orange_book": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    },
+    "purple_book": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
     }
   }
 }

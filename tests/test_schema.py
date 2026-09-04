@@ -19,7 +19,7 @@ TRIALS = sorted((ROOT / "data" / "trials").glob("*.json"))
 
 class CommittedDataTest(unittest.TestCase):
     def test_every_trial_validates(self):
-        self.assertEqual(len(TRIALS), 17)
+        self.assertEqual(len(TRIALS), 43)
         for f in TRIALS:
             rec = json.loads(f.read_text())
             with self.subTest(trial=f.name):
@@ -42,7 +42,11 @@ class CommittedDataTest(unittest.TestCase):
                     self.assertIsNotNone(sv["value"], f"{f.name} {path}")
 
     def test_validator_rejects_bad_records(self):
-        rec = json.loads(TRIALS[0].read_text())
+        # SOLO 1 (NCT02277743): a v1 AD trial with severity_criteria, primary_endpoints
+        # and dosing_regimen all filled -- unlike TRIALS[0] (alphabetically first, which
+        # since the indication-expansion pass can be a trial that's still needs_extraction
+        # on one of these fields, e.g. an HS trial with no auto-parsed severity criterion).
+        rec = json.loads((ROOT / "data" / "trials" / "NCT02277743.json").read_text())
         rec["population"]["severity_criteria"]["value"]["criteria"][0]["comparator"] = "≥"
         rec["endpoints"]["primary_endpoints"]["value"][0]["measure_type"] = "free text"
         rec["timing_ops"]["start_date"]["value"]["date"] = "2014-09"
@@ -95,11 +99,13 @@ class CsvTest(unittest.TestCase):
             rec = json.loads(f.read_text())
             e = rec["endpoints"]
             n_endpoints += len(e["primary_endpoints"]["value"]) + len(e["secondary_endpoints"]["value"])
-            n_crit += len(rec["population"]["severity_criteria"]["value"]["criteria"])
+            sev_val = rec["population"]["severity_criteria"]["value"]
+            if sev_val is not None:  # needs_extraction for some new-indication trials -- no criteria to count
+                n_crit += len(sev_val["criteria"])
         self.assertEqual(len({(r["nct_id"], r["rank"], r["position"]) for r in eps}), n_endpoints)
         self.assertEqual(len(sev), n_crit)
-        self.assertEqual(len(trials), 17)
-        self.assertEqual(len(sources), 17 * 39)
+        self.assertEqual(len(trials), 43)
+        self.assertEqual(len(sources), 43 * 39)
         # the atlas's headline query -- "which trials measure EASI-75 at week 16" -- is a plain filter
         easi75_wk16 = [r for r in eps if r["criterion_scale"] == "EASI" and r["criterion_value"] == "75"
                        and r["criterion_role"] == "responder" and "16w" in r["timepoints"].split(";")]

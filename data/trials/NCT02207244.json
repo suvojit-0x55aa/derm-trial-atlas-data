@@ -1,4 +1,5 @@
 {
+  "schema_version": 2,
   "nct_id": {
     "value": "NCT02207244",
     "source_type": "ctgov_api",
@@ -84,20 +85,72 @@
       "confidence": 1.0
     },
     "mechanism_of_action": {
-      "value": "12.1 Mechanism of Action Guselkumab is a human monoclonal IgG1\u03bb antibody that selectively binds to the p19 subunit of interleukin 23 (IL-23) and inhibits its interaction with the IL-23 receptor. IL-23 is a naturally occurring cytokine that is involved in normal inflammatory and immune responses. Guselkumab inhibits the release of proinflammatory cytokines and chemokines.",
+      "value": {
+        "modality": "monoclonal_antibody",
+        "drug_class": "monoclonal antibody",
+        "antibody_isotype": null,
+        "binding_targets": [],
+        "pathway_cytokines": [
+          "IL-23"
+        ],
+        "receptor_subunits": [],
+        "kinases_inhibited": [],
+        "lower_potency_kinases": [],
+        "selectivity": [],
+        "reversible": null,
+        "mechanism_established": null,
+        "label_section": "12.1"
+      },
       "source_type": "openfda_label",
       "source_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=01b4ab20-c027-482f-b358-b9beae545cb3",
-      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1)",
-      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA)",
+      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1) -- v1 extracted text: 12.1 Mechanism of Action Guselkumab is a human monoclonal IgG1λ antibody that selectively binds to the p19 subunit of interleukin 23 (IL-23) and inhibits its interaction with the IL-23 receptor. IL-23 is a naturally occurring cytokine that is involved in normal inflammatory and immune responses. Guselkumab inhibits the release of proinflammatory cytokines and chemokines.",
+      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 0.9
     },
     "dosing_regimen": {
-      "value": "Guselkumab 100 mg: 100 mg by subcutaneous injection at Weeks 0, 4, 12, and 20. Starting at Week 28, participants will continue to receive guselkumab 100 mg through Week 72 depending upon randomized treatment group and PASI response (Group I). 100 mg by subcutaneous injection at Weeks 16 and 20. Starting at Week 28, participants will continue to receive guselkumab 100 mg through Week 72 depending upon PASI response (Group II). Starting at Week 28, participants will receive guselkumab 100 mg through Week 72 depending upon PASI response (Group III). All participants will receive guselkumab q8w starting at Week 76 through Week 252. || Placebo for guselkumab: Placebo for guselkumab at Week 16, starting at Week 28, participants will continue to receive placebo for guselkumab through Week 72 depending on randomized treatment group and PASI response (Group I), at weeks 0, 4, 12 and starting at week 28 thereafter up to week 72 depending upon PASI response (Group II), at weeks 0, 4, 12, 16, and 20, starting at week 28 through week 72 depending upon PASI response (Group III).",
+      "value": [
+        {
+          "intervention_name": "Guselkumab 100 mg",
+          "description": "100 mg by subcutaneous injection at Weeks 0, 4, 12, and 20. Starting at Week 28, participants will continue to receive guselkumab 100 mg through Week 72 depending upon randomized treatment group and PASI response (Group I). 100 mg by subcutaneous injection at Weeks 16 and 20. Starting at Week 28, participants will continue to receive guselkumab 100 mg through Week 72 depending upon PASI response (Group II). Starting at Week 28, participants will receive guselkumab 100 mg through Week 72 depending upon PASI response (Group III). All participants will receive guselkumab q8w starting at Week 76 through Week 252.",
+          "is_placebo": false,
+          "route": "subcutaneous",
+          "dose_form": "injection",
+          "dose_value": 100,
+          "dose_unit": "mg",
+          "units_per_dose": null,
+          "frequency": null,
+          "duration_weeks": null,
+          "dosing_periods": [],
+          "administration_sites": [],
+          "antibody_isotype": null,
+          "molecular_target": null,
+          "arm_names": [],
+          "co_administered_with": []
+        },
+        {
+          "intervention_name": "Placebo for guselkumab",
+          "description": "Placebo for guselkumab at Week 16, starting at Week 28, participants will continue to receive placebo for guselkumab through Week 72 depending on randomized treatment group and PASI response (Group I), at weeks 0, 4, 12 and starting at week 28 thereafter up to week 72 depending upon PASI response (Group II), at weeks 0, 4, 12, 16, and 20, starting at week 28 through week 72 depending upon PASI response (Group III).",
+          "is_placebo": true,
+          "route": null,
+          "dose_form": null,
+          "dose_value": null,
+          "dose_unit": null,
+          "units_per_dose": null,
+          "frequency": null,
+          "duration_weeks": null,
+          "dosing_periods": [],
+          "administration_sites": [],
+          "antibody_isotype": null,
+          "molecular_target": null,
+          "arm_names": [],
+          "co_administered_with": []
+        }
+      ],
       "source_type": "ctgov_text_extraction",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02207244",
       "source_excerpt": "Guselkumab 100 mg: 100 mg by subcutaneous injection at Weeks 0, 4, 12, and 20. Starting at Week 28, participants will continue to receive guselkumab 100 mg through Week 72 depending upon randomized treatment group and PASI response (Group I). 100 mg by subcutaneous injection at Weeks 16 and 20. Starting at Week 28, participants will continue to receive guselkumab 100 mg through Week 72 depending upon PASI response (Group II). Starting at Week 28, participants will receive guselkumab 100 mg through Week 72 depending upon PASI response (Group III). All participants will receive guselkumab q8w starting at Week 76 through Week 252. || Placebo for guselkumab: Placebo for guselkumab at Week 16, starting at Week 28, participants will continue to receive placebo for guselkumab through Week 72 depending on randomized treatment group and PASI response (Group I), at weeks 0, 4, 12 and starting at week 28 thereafter up to week 72 depending upon PASI response (Group II), at weeks 0, 4, 12, 16, and 20, starting at week 28 through week 72 depending upon PASI response (Group III).",
-      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA)",
+      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 0.8
     }
@@ -114,21 +167,21 @@
       "reviewed_by": null,
       "confidence": 1.0
     },
-    "min_age": {
-      "value": "18 Years",
+    "min_age_years": {
+      "value": 18,
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02207244",
       "source_excerpt": "protocolSection.eligibilityModule.minimumAge",
-      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
     },
-    "max_age": {
-      "value": "99 Years",
+    "max_age_years": {
+      "value": 99,
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02207244",
       "source_excerpt": "protocolSection.eligibilityModule.maximumAge",
-      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
     },
@@ -150,12 +203,52 @@
       "reviewed_by": null,
       "confidence": 1.0
     },
-    "severity_definition": {
-      "value": "Have a Psoriasis Area and Severity Index (PASI) greater than or equal to (\\>=) 12 at Screening and at Baseline | Have an Investigator's Global Assessment (IGA) score \\>=3 at Screening and at Baseline | Have an involved body surface area (BSA) \\>=10 percent (%) at Screening and at Baseline",
+    "severity_criteria": {
+      "value": {
+        "severity_label": null,
+        "basis": "eligibility_text",
+        "cross_reference": null,
+        "source_criterion_numbers": [],
+        "baseline_visit_number": null,
+        "criteria": [
+          {
+            "scale": "IGA",
+            "scale_component": null,
+            "scale_variant": null,
+            "metric": "absolute_score",
+            "comparator": ">=",
+            "value": 3,
+            "unit": "score",
+            "scale_min": null,
+            "scale_max": null,
+            "assessed_at": [
+              "screening",
+              "baseline"
+            ],
+            "scale_anchors": null
+          },
+          {
+            "scale": "BSA",
+            "scale_component": null,
+            "scale_variant": null,
+            "metric": "percent_bsa",
+            "comparator": ">=",
+            "value": 10,
+            "unit": "percent",
+            "scale_min": null,
+            "scale_max": null,
+            "assessed_at": [
+              "screening",
+              "baseline"
+            ],
+            "scale_anchors": null
+          }
+        ]
+      },
       "source_type": "ctgov_text_extraction",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02207244",
       "source_excerpt": "Have a Psoriasis Area and Severity Index (PASI) greater than or equal to (\\>=) 12 at Screening and at Baseline | Have an Investigator's Global Assessment (IGA) score \\>=3 at Screening and at Baseline | Have an involved body surface area (BSA) \\>=10 percent (%) at Screening and at Baseline",
-      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA)",
+      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 0.75
     }
@@ -206,7 +299,7 @@
       "reviewed_by": null,
       "confidence": 1.0
     },
-    "background_therapy_rule": {
+    "background_therapy": {
       "value": null,
       "source_type": "needs_extraction",
       "source_url": null,
@@ -217,44 +310,530 @@
     }
   },
   "endpoints": {
-    "primary_endpoint_measure": {
-      "value": "Percentage of Participants Who Achieved an Investigator's Global Assessment (IGA) Score of Cleared (0) or Minimal (1) in the Guselkumab Group Compared to the Placebo Group at Week 16 (Time frame: Week 16)",
+    "primary_endpoints": {
+      "value": [
+        {
+          "verbatim": "Percentage of Participants Who Achieved an Investigator's Global Assessment (IGA) Score of Cleared (0) or Minimal (1) in the Guselkumab Group Compared to the Placebo Group at Week 16 (Time frame: Week 16)",
+          "rank": "primary",
+          "position": 1,
+          "measure_type": "responder_rate",
+          "scale": "IGA",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": "Week 16"
+        }
+      ],
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02207244",
       "source_excerpt": "protocolSection.outcomesModule.primaryOutcomes[0].measure/timeFrame",
-      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
     },
-    "secondary_endpoint_measures": {
+    "secondary_endpoints": {
       "value": [
-        "Percentage of Participants Who Achieved an Investigator's Global Assessment (IGA) Score of Cleared (0) in the Guselkumab Group Compared to the Adalimumab Group at Week 24",
-        "Percentage of Participants Who Achieved an Investigator's Global Assessment (IGA) Score of Cleared (0) or Minimal (1) in the Guselkumab Group Compared to the Adalimumab Group at Week 24",
-        "Percentage of Participants Who Achieved Psoriasis Area and Severity Index (PASI) 90 Response in the Guselkumab Group Compared to the Adalimumab Group at Week 24",
-        "Cumulative Maintenance Rate of Psoriasis Area and Severity Index (PASI) 90 Response in the Placebo Group Compared to the Guselkumab Group Through Week 48 to Evaluate Loss of a PASI 90 Response",
-        "Change From Baseline in Dermatology Life Quality Index (DLQI) Score at Week 16 in the Guselkumab Group Compared to the Placebo Group",
-        "Percentage of Participants Who Achieved an Investigator's Global Assessment (IGA) Score of Cleared (0) or Minimal (1) in the Guselkumab Group Compared to the Adalimumab Group at Week 16",
-        "Percentage of Participants Who Achieved Psoriasis Area and Severity Index (PASI) 90 Response, in the Guselkumab Group Compared to the Adalimumab Group at Week 16",
-        "Percentage of Participants Who Achieved Psoriasis Area and Severity Index (PASI) 75 Response in the Guselkumab Group Compared to the Adalimumab Group at Week 16",
-        "Percentage of Participants Who Achieved a Scalp-specific Investigator's Global Assessment (Ss-IGA) Score of 0 or 1 and at Least a 2-Grade Improvement From Baseline at Week 16 in the Guselkumab Group Compared to the Placebo Group",
-        "Change From Baseline in Psoriasis Symptom and Sign Diary (PSSD) Symptom Score at Week 16 in the Guselkumab Group Compared to the Placebo Group",
-        "Percentage of Participants Who Achieved a Psoriasis Symptom and Sign Diary (PSSD) Symptom Score of 0 in the Guselkumab Group Compared to the Adalimumab Group at Week 24",
-        "Cumulative Maintenance Rate of PASI 90 Response in the Guselkumab Withdrawal Group Compared to the Guselkumab Maintenance Group Through Week 72 to Evaluate Loss of a PASI 90 Response",
-        "Percentage of Participants Who Achieved PASI 90 Response at Week 252",
-        "Percentage of Participants Who Achieved PASI 75 Response at Week 252",
-        "Percentage of Participants Who Achieved an IGA Score of Cleared (0) or Minimal (1) at Week 252",
-        "Percentage of Participants With a DLQI Score of 0 or 1 at Week 252",
-        "Percentage of Participants Who Achieved a PSSD Symptom Score of 0 at Week 252",
-        "Percentage of Participants Who Achieved a PSSD Sign Score of 0 at Week 252"
+        {
+          "verbatim": "Percentage of Participants Who Achieved an Investigator's Global Assessment (IGA) Score of Cleared (0) in the Guselkumab Group Compared to the Adalimumab Group at Week 24",
+          "rank": "secondary",
+          "position": 1,
+          "measure_type": "responder_rate",
+          "scale": "IGA",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants Who Achieved an Investigator's Global Assessment (IGA) Score of Cleared (0) or Minimal (1) in the Guselkumab Group Compared to the Adalimumab Group at Week 24",
+          "rank": "secondary",
+          "position": 2,
+          "measure_type": "responder_rate",
+          "scale": "IGA",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants Who Achieved Psoriasis Area and Severity Index (PASI) 90 Response in the Guselkumab Group Compared to the Adalimumab Group at Week 24",
+          "rank": "secondary",
+          "position": 3,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Cumulative Maintenance Rate of Psoriasis Area and Severity Index (PASI) 90 Response in the Placebo Group Compared to the Guselkumab Group Through Week 48 to Evaluate Loss of a PASI 90 Response",
+          "rank": "secondary",
+          "position": 4,
+          "measure_type": "other",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [],
+          "through": {
+            "value": 48,
+            "unit": "week"
+          },
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Change From Baseline in Dermatology Life Quality Index (DLQI) Score at Week 16 in the Guselkumab Group Compared to the Placebo Group",
+          "rank": "secondary",
+          "position": 5,
+          "measure_type": "change_from_baseline",
+          "scale": "DLQI",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants Who Achieved an Investigator's Global Assessment (IGA) Score of Cleared (0) or Minimal (1) in the Guselkumab Group Compared to the Adalimumab Group at Week 16",
+          "rank": "secondary",
+          "position": 6,
+          "measure_type": "responder_rate",
+          "scale": "IGA",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants Who Achieved Psoriasis Area and Severity Index (PASI) 90 Response, in the Guselkumab Group Compared to the Adalimumab Group at Week 16",
+          "rank": "secondary",
+          "position": 7,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants Who Achieved Psoriasis Area and Severity Index (PASI) 75 Response in the Guselkumab Group Compared to the Adalimumab Group at Week 16",
+          "rank": "secondary",
+          "position": 8,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants Who Achieved a Scalp-specific Investigator's Global Assessment (Ss-IGA) Score of 0 or 1 and at Least a 2-Grade Improvement From Baseline at Week 16 in the Guselkumab Group Compared to the Placebo Group",
+          "rank": "secondary",
+          "position": 9,
+          "measure_type": "responder_rate",
+          "scale": "IGA",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [
+            {
+              "scale": "IGA",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "absolute_score",
+              "comparator": "in",
+              "value": [
+                0,
+                1
+              ],
+              "unit": "score",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Change From Baseline in Psoriasis Symptom and Sign Diary (PSSD) Symptom Score at Week 16 in the Guselkumab Group Compared to the Placebo Group",
+          "rank": "secondary",
+          "position": 10,
+          "measure_type": "change_from_baseline",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants Who Achieved a Psoriasis Symptom and Sign Diary (PSSD) Symptom Score of 0 in the Guselkumab Group Compared to the Adalimumab Group at Week 24",
+          "rank": "secondary",
+          "position": 11,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Cumulative Maintenance Rate of PASI 90 Response in the Guselkumab Withdrawal Group Compared to the Guselkumab Maintenance Group Through Week 72 to Evaluate Loss of a PASI 90 Response",
+          "rank": "secondary",
+          "position": 12,
+          "measure_type": "other",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [],
+          "through": {
+            "value": 72,
+            "unit": "week"
+          },
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants Who Achieved PASI 90 Response at Week 252",
+          "rank": "secondary",
+          "position": 13,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 252,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants Who Achieved PASI 75 Response at Week 252",
+          "rank": "secondary",
+          "position": 14,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 252,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants Who Achieved an IGA Score of Cleared (0) or Minimal (1) at Week 252",
+          "rank": "secondary",
+          "position": 15,
+          "measure_type": "responder_rate",
+          "scale": "IGA",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 252,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants With a DLQI Score of 0 or 1 at Week 252",
+          "rank": "secondary",
+          "position": 16,
+          "measure_type": "responder_rate",
+          "scale": "DLQI",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [
+            {
+              "scale": "DLQI",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "absolute_score",
+              "comparator": "in",
+              "value": [
+                0,
+                1
+              ],
+              "unit": "score",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 252,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants Who Achieved a PSSD Symptom Score of 0 at Week 252",
+          "rank": "secondary",
+          "position": 17,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 252,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants Who Achieved a PSSD Sign Score of 0 at Week 252",
+          "rank": "secondary",
+          "position": 18,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 252,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        }
       ],
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02207244",
       "source_excerpt": "protocolSection.outcomesModule.secondaryOutcomes[].measure",
-      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
     },
-    "endpoint_hierarchy_multiplicity": {
+    "multiplicity_control": {
       "value": null,
       "source_type": "needs_extraction",
       "source_url": null,
@@ -266,33 +845,42 @@
   },
   "timing_ops": {
     "start_date": {
-      "value": "2014-11-03",
+      "value": {
+        "date": "2014-11-03",
+        "precision": "day"
+      },
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02207244",
       "source_excerpt": "protocolSection.statusModule.startDateStruct.date",
-      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
     },
     "primary_completion_date": {
-      "value": "2015-10-01",
+      "value": {
+        "date": "2015-10-01",
+        "precision": "day"
+      },
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02207244",
       "source_excerpt": "protocolSection.statusModule.primaryCompletionDateStruct.date",
-      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
     },
     "completion_date": {
-      "value": "2020-07-01",
+      "value": {
+        "date": "2020-07-01",
+        "precision": "day"
+      },
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02207244",
       "source_excerpt": "protocolSection.statusModule.completionDateStruct.date",
-      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
     },
-    "visit_schedule": {
+    "study_schedule": {
       "value": null,
       "source_type": "needs_extraction",
       "source_url": null,
@@ -301,7 +889,7 @@
       "reviewed_by": null,
       "confidence": null
     },
-    "rescue_therapy_rules": {
+    "rescue_therapy": {
       "value": null,
       "source_type": "needs_extraction",
       "source_url": null,
@@ -383,80 +971,19 @@
       "confidence": 1.0
     },
     "death_rate": {
-      "value": [
-        {
-          "arm": "Placebo (Week 0 - 16)",
-          "n_affected": null,
-          "n_at_risk": null,
-          "pct": null
-        },
-        {
-          "arm": "Guselkumab 100 mg (Week 0 - 16)",
-          "n_affected": null,
-          "n_at_risk": null,
-          "pct": null
-        },
-        {
-          "arm": "Adalimumab (Week 0 - 16)",
-          "n_affected": null,
-          "n_at_risk": null,
-          "pct": null
-        },
-        {
-          "arm": "Placebo Then Guselkumab 100 mg (Week 16 - 28)",
-          "n_affected": null,
-          "n_at_risk": null,
-          "pct": null
-        },
-        {
-          "arm": "Guselkumab 100 mg (Week 16 - 28)",
-          "n_affected": null,
-          "n_at_risk": null,
-          "pct": null
-        },
-        {
-          "arm": "Adalimumab (Week 16 - 28)",
-          "n_affected": null,
-          "n_at_risk": null,
-          "pct": null
-        },
-        {
-          "arm": "Placebo Then Guselkumab 100 mg (Week 28 - 264)",
-          "n_affected": null,
-          "n_at_risk": null,
-          "pct": null
-        },
-        {
-          "arm": "Guselkumab 100 mg (Week 28 - 264)",
-          "n_affected": null,
-          "n_at_risk": null,
-          "pct": null
-        },
-        {
-          "arm": "Adalimumab Then Guselkumab 100 mg (Week 28 - 264)",
-          "n_affected": null,
-          "n_at_risk": null,
-          "pct": null
-        },
-        {
-          "arm": "Adalimumab (After ACP)",
-          "n_affected": null,
-          "n_at_risk": null,
-          "pct": null
-        }
-      ],
-      "source_type": "ctgov_api",
-      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02207244",
-      "source_excerpt": "resultsSection.adverseEventsModule.eventGroups[].deathsNumAffected/deathsNumAtRisk",
-      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass)",
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     },
     "most_common_adverse_events": {
       "value": [
         {
-          "term": "Nasopharyngitis",
-          "organ_system": "Infections and infestations",
+          "meddra_pt": "Nasopharyngitis",
+          "meddra_soc": "Infections and infestations",
           "per_arm": [
             {
               "arm": "Placebo (Week 0 - 16)",
@@ -521,8 +1048,8 @@
           ]
         },
         {
-          "term": "Upper Respiratory Tract Infection",
-          "organ_system": "Infections and infestations",
+          "meddra_pt": "Upper Respiratory Tract Infection",
+          "meddra_soc": "Infections and infestations",
           "per_arm": [
             {
               "arm": "Placebo (Week 0 - 16)",
@@ -587,8 +1114,8 @@
           ]
         },
         {
-          "term": "Hypertension",
-          "organ_system": "Vascular disorders",
+          "meddra_pt": "Hypertension",
+          "meddra_soc": "Vascular disorders",
           "per_arm": [
             {
               "arm": "Placebo (Week 0 - 16)",
@@ -653,8 +1180,8 @@
           ]
         },
         {
-          "term": "Arthralgia",
-          "organ_system": "Musculoskeletal and connective tissue disorders",
+          "meddra_pt": "Arthralgia",
+          "meddra_soc": "Musculoskeletal and connective tissue disorders",
           "per_arm": [
             {
               "arm": "Placebo (Week 0 - 16)",
@@ -719,8 +1246,8 @@
           ]
         },
         {
-          "term": "Bronchitis",
-          "organ_system": "Infections and infestations",
+          "meddra_pt": "Bronchitis",
+          "meddra_soc": "Infections and infestations",
           "per_arm": [
             {
               "arm": "Placebo (Week 0 - 16)",
@@ -785,8 +1312,8 @@
           ]
         },
         {
-          "term": "Cardiac Failure Congestive",
-          "organ_system": "Cardiac disorders",
+          "meddra_pt": "Cardiac Failure Congestive",
+          "meddra_soc": "Cardiac disorders",
           "per_arm": [
             {
               "arm": "Placebo (Week 0 - 16)",
@@ -851,8 +1378,8 @@
           ]
         },
         {
-          "term": "Gastrooesophageal Reflux Disease",
-          "organ_system": "Gastrointestinal disorders",
+          "meddra_pt": "Gastrooesophageal Reflux Disease",
+          "meddra_soc": "Gastrointestinal disorders",
           "per_arm": [
             {
               "arm": "Placebo (Week 0 - 16)",
@@ -917,8 +1444,8 @@
           ]
         },
         {
-          "term": "Hyperglycaemia",
-          "organ_system": "Metabolism and nutrition disorders",
+          "meddra_pt": "Hyperglycaemia",
+          "meddra_soc": "Metabolism and nutrition disorders",
           "per_arm": [
             {
               "arm": "Placebo (Week 0 - 16)",
@@ -986,7 +1513,7 @@
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02207244",
       "source_excerpt": "resultsSection.adverseEventsModule.otherEvents[] (top 8 of 18 by highest single-arm incidence; CT.gov's own >=5% frequency-threshold table)",
-      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass)",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
     },
@@ -1067,13 +1594,59 @@
       "confidence": 1.0
     },
     "boxed_warning": {
-      "value": null,
+      "value": {
+        "present": false,
+        "title": null,
+        "warning_categories": [],
+        "referenced_label_sections": [],
+        "product_names": []
+      },
       "source_type": "openfda_label",
       "source_url": "https://api.fda.gov/drug/label.json?search=openfda.substance_name:GUSELKUMAB&limit=1",
       "source_excerpt": "results[0] has no boxed_warning key (checked, none present)",
-      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass)",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
+    }
+  },
+  "real_world_safety": {
+    "faers_summary": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    }
+  },
+  "exclusivity": {
+    "regulatory_application": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    },
+    "orange_book": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    },
+    "purple_book": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
     }
   }
 }

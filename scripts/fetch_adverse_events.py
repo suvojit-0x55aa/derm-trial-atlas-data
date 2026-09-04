@@ -102,8 +102,20 @@ def pct(affected, at_risk):
     return round(100.0 * affected / at_risk, 1)
 
 
+def _has_complete_counts(event_groups, affected_key, at_risk_key):
+    """CT.gov's own eventGroups[] can carry the module (so `event_groups` is
+    non-empty) without actually populating a given count for every arm --
+    seen for deathsNumAffected/deathsNumAtRisk on several older/smaller
+    trials (e.g. the CSU omalizumab pivotals, PIONEER I/II, VOYAGE 1/2:
+    both fields are `null`, not `0`, for every arm). That is a genuine gap
+    in what CT.gov posted, not a computable zero -- staging a per-arm
+    `null` inside an otherwise "filled" ctgov_api array would be worse than
+    an honest needs_extraction, so callers check this before building rows."""
+    return all(g.get(affected_key) is not None and g.get(at_risk_key) is not None for g in event_groups)
+
+
 def build_sae_rate(event_groups, url):
-    if not event_groups:
+    if not event_groups or not _has_complete_counts(event_groups, "seriousNumAffected", "seriousNumAtRisk"):
         return needs_extraction()
     rows = [
         {
@@ -124,7 +136,7 @@ def build_sae_rate(event_groups, url):
 
 
 def build_death_rate(event_groups, url):
-    if not event_groups:
+    if not event_groups or not _has_complete_counts(event_groups, "deathsNumAffected", "deathsNumAtRisk"):
         return needs_extraction()
     rows = [
         {

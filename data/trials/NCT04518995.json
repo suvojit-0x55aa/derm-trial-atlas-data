@@ -1,4 +1,5 @@
 {
+  "schema_version": 2,
   "nct_id": {
     "value": "NCT04518995",
     "source_type": "ctgov_api",
@@ -83,20 +84,90 @@
       "confidence": 1.0
     },
     "mechanism_of_action": {
-      "value": "12.1 Mechanism of Action Deuruxolitinib is a Janus kinase (JAK) inhibitor. JAKs mediate the signaling of a number of cytokines and growth factors that are important for hematopoiesis and immune function. JAK signaling involves recruitment of STATs (signal transducers and activators of transcription) to cytokine receptors, activation and subsequent localization of STATs to the nucleus leading to modulation of gene expression. In an in vitro kinase activity assay, deuruxolitinib had greater inhibitory potency for JAK1, JAK2 and TYK2 relative to JAK3. The relevance of inhibition of JAK enzymes to therapeutic effectiveness is not currently known.",
+      "value": {
+        "modality": "small_molecule",
+        "drug_class": "JAK inhibitor",
+        "antibody_isotype": null,
+        "binding_targets": [],
+        "pathway_cytokines": [],
+        "receptor_subunits": [],
+        "kinases_inhibited": [],
+        "lower_potency_kinases": [
+          "JAK3"
+        ],
+        "selectivity": [],
+        "reversible": null,
+        "mechanism_established": false,
+        "label_section": "12.1"
+      },
       "source_type": "openfda_label",
       "source_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=606e15f1-063b-40c2-84a3-142272020d64",
-      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1)",
-      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA)",
+      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1) -- v1 extracted text: 12.1 Mechanism of Action Deuruxolitinib is a Janus kinase (JAK) inhibitor. JAKs mediate the signaling of a number of cytokines and growth factors that are important for hematopoiesis and immune function. JAK signaling involves recruitment of STATs (signal transducers and activators of transcription) to cytokine receptors, activation and subsequent localization of STATs to the nucleus leading to modulation of gene expression. In an in vitro kinase activity assay, deuruxolitinib had greater inhibitory potency for JAK1, JAK2 and TYK2 relative to JAK3. The relevance of inhibition of JAK enzymes to therapeutic effectiveness is not currently known.",
+      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 0.9
     },
     "dosing_regimen": {
-      "value": "CTP-543 matching placebo: Administered as tablets. || CTP-543: Administered as tablets. || CTP-543: Administered as tablets.",
+      "value": [
+        {
+          "intervention_name": "CTP-543 matching placebo",
+          "description": "Administered as tablets.",
+          "is_placebo": true,
+          "route": null,
+          "dose_form": "tablet",
+          "dose_value": null,
+          "dose_unit": null,
+          "units_per_dose": null,
+          "frequency": null,
+          "duration_weeks": null,
+          "dosing_periods": [],
+          "administration_sites": [],
+          "antibody_isotype": null,
+          "molecular_target": null,
+          "arm_names": [],
+          "co_administered_with": []
+        },
+        {
+          "intervention_name": "CTP-543",
+          "description": "Administered as tablets.",
+          "is_placebo": false,
+          "route": null,
+          "dose_form": "tablet",
+          "dose_value": null,
+          "dose_unit": null,
+          "units_per_dose": null,
+          "frequency": null,
+          "duration_weeks": null,
+          "dosing_periods": [],
+          "administration_sites": [],
+          "antibody_isotype": null,
+          "molecular_target": null,
+          "arm_names": [],
+          "co_administered_with": []
+        },
+        {
+          "intervention_name": "CTP-543",
+          "description": "Administered as tablets.",
+          "is_placebo": false,
+          "route": null,
+          "dose_form": "tablet",
+          "dose_value": null,
+          "dose_unit": null,
+          "units_per_dose": null,
+          "frequency": null,
+          "duration_weeks": null,
+          "dosing_periods": [],
+          "administration_sites": [],
+          "antibody_isotype": null,
+          "molecular_target": null,
+          "arm_names": [],
+          "co_administered_with": []
+        }
+      ],
       "source_type": "ctgov_text_extraction",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04518995",
       "source_excerpt": "CTP-543 matching placebo: Administered as tablets. || CTP-543: Administered as tablets. || CTP-543: Administered as tablets.",
-      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA)",
+      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 0.8
     }
@@ -113,21 +184,21 @@
       "reviewed_by": null,
       "confidence": 1.0
     },
-    "min_age": {
-      "value": "18 Years",
+    "min_age_years": {
+      "value": 18,
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04518995",
       "source_excerpt": "protocolSection.eligibilityModule.minimumAge",
-      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
     },
-    "max_age": {
-      "value": "65 Years",
+    "max_age_years": {
+      "value": 65,
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04518995",
       "source_excerpt": "protocolSection.eligibilityModule.maximumAge",
-      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
     },
@@ -149,12 +220,19 @@
       "reviewed_by": null,
       "confidence": 1.0
     },
-    "severity_definition": {
-      "value": "At least 50% scalp hair loss, as defined by a Severity of Alopecia Tool (SALT) score \u226550, at Screening and Baseline.",
+    "severity_criteria": {
+      "value": {
+        "severity_label": null,
+        "basis": "eligibility_text",
+        "cross_reference": null,
+        "source_criterion_numbers": [],
+        "baseline_visit_number": null,
+        "criteria": []
+      },
       "source_type": "ctgov_text_extraction",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04518995",
-      "source_excerpt": "At least 50% scalp hair loss, as defined by a Severity of Alopecia Tool (SALT) score \u226550, at Screening and Baseline.",
-      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA)",
+      "source_excerpt": "At least 50% scalp hair loss, as defined by a Severity of Alopecia Tool (SALT) score ≥50, at Screening and Baseline.",
+      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 0.75
     }
@@ -205,7 +283,7 @@
       "reviewed_by": null,
       "confidence": 1.0
     },
-    "background_therapy_rule": {
+    "background_therapy": {
       "value": null,
       "source_type": "needs_extraction",
       "source_url": null,
@@ -216,41 +294,607 @@
     }
   },
   "endpoints": {
-    "primary_endpoint_measure": {
-      "value": "Percentage of Participants Achieving an Absolute Severity of Alopecia Tool (SALT) Score of \u226420 at Week 24 (Time frame: Week 24)",
+    "primary_endpoints": {
+      "value": [
+        {
+          "verbatim": "Percentage of Participants Achieving an Absolute Severity of Alopecia Tool (SALT) Score of ≤20 at Week 24 (Time frame: Week 24)",
+          "rank": "primary",
+          "position": 1,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": "Week 24"
+        }
+      ],
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04518995",
       "source_excerpt": "protocolSection.outcomesModule.primaryOutcomes[0].measure/timeFrame",
-      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
     },
-    "secondary_endpoint_measures": {
+    "secondary_endpoints": {
       "value": [
-        "Percentage of Responders on the Hair Satisfaction Patient Reported Outcome (SPRO) Scale at Weeks 12, 16, 20, and 24",
-        "Percentage of Participants Achieving an Absolute SALT Score of \u226420 at Weeks 4, 8, 12, 16, and 20",
-        "Relative Change in SALT Scores From Baseline at Weeks 4, 8, 12, 16, 20, and 24",
-        "Percentage of Responders Assessed Using the Clinician Global Impression of Improvement (CGI-I) at Weeks 12, 16, 20, and 24",
-        "Percentage of Responders Assessed Using the Patient Global Impression of Improvement (PGI-I) at Weeks 12, 16, 20, and 24",
-        "Change in the Clinician Global Impression of Severity (CGI-S) Scores From Baseline at Weeks 12, 16, 20, and 24",
-        "Change in the Patient Global Impression of Severity (PGI-S) Scores From Baseline at Weeks 12, 16, 20, and 24",
-        "Percentage of Participants Achieving at Least a 75% and 90% Relative Reduction in SALT Score From Baseline at Weeks 12 and 24",
-        "Change in the Brigham Eyebrow Tool for Alopecia (BETA) Scores From Baseline at Weeks 12 and 24",
-        "Change in the Brigham Eyelash Tool for Alopecia (BELA) Scores From Baseline at Weeks 12 and 24",
-        "Change in the SPRO Scale From Baseline at Weeks 12, 16, 20, and 24",
-        "Percentage of Participants Achieving a \u22652-point Change From Baseline in the SPRO Scale at Weeks 12, 16, 20, and 24",
-        "Change in the Individual Items of the Hair Quality Patient Reported Outcome (QPRO) Scale From Baseline at Weeks 12, 16, 20, and 24",
-        "Change in the Anxiety and Depression Scale Scores of the Hospital Anxiety and Depression Scale (HADS) From Baseline at Week 24",
-        "Percentage of Participants Achieving an Absolute SALT Score of \u226410 at Week 24"
+        {
+          "verbatim": "Percentage of Responders on the Hair Satisfaction Patient Reported Outcome (SPRO) Scale at Weeks 12, 16, 20, and 24",
+          "rank": "secondary",
+          "position": 1,
+          "measure_type": "absolute_value",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 20,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants Achieving an Absolute SALT Score of ≤20 at Weeks 4, 8, 12, 16, and 20",
+          "rank": "secondary",
+          "position": 2,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 4,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 8,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 20,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Relative Change in SALT Scores From Baseline at Weeks 4, 8, 12, 16, 20, and 24",
+          "rank": "secondary",
+          "position": 3,
+          "measure_type": "absolute_value",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 4,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 8,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 20,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Responders Assessed Using the Clinician Global Impression of Improvement (CGI-I) at Weeks 12, 16, 20, and 24",
+          "rank": "secondary",
+          "position": 4,
+          "measure_type": "absolute_value",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 20,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Responders Assessed Using the Patient Global Impression of Improvement (PGI-I) at Weeks 12, 16, 20, and 24",
+          "rank": "secondary",
+          "position": 5,
+          "measure_type": "absolute_value",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 20,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Change in the Clinician Global Impression of Severity (CGI-S) Scores From Baseline at Weeks 12, 16, 20, and 24",
+          "rank": "secondary",
+          "position": 6,
+          "measure_type": "change_from_baseline",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 20,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Change in the Patient Global Impression of Severity (PGI-S) Scores From Baseline at Weeks 12, 16, 20, and 24",
+          "rank": "secondary",
+          "position": 7,
+          "measure_type": "change_from_baseline",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 20,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants Achieving at Least a 75% and 90% Relative Reduction in SALT Score From Baseline at Weeks 12 and 24",
+          "rank": "secondary",
+          "position": 8,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Change in the Brigham Eyebrow Tool for Alopecia (BETA) Scores From Baseline at Weeks 12 and 24",
+          "rank": "secondary",
+          "position": 9,
+          "measure_type": "change_from_baseline",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Change in the Brigham Eyelash Tool for Alopecia (BELA) Scores From Baseline at Weeks 12 and 24",
+          "rank": "secondary",
+          "position": 10,
+          "measure_type": "change_from_baseline",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Change in the SPRO Scale From Baseline at Weeks 12, 16, 20, and 24",
+          "rank": "secondary",
+          "position": 11,
+          "measure_type": "change_from_baseline",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 20,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants Achieving a ≥2-point Change From Baseline in the SPRO Scale at Weeks 12, 16, 20, and 24",
+          "rank": "secondary",
+          "position": 12,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 20,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Change in the Individual Items of the Hair Quality Patient Reported Outcome (QPRO) Scale From Baseline at Weeks 12, 16, 20, and 24",
+          "rank": "secondary",
+          "position": 13,
+          "measure_type": "change_from_baseline",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 20,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Change in the Anxiety and Depression Scale Scores of the Hospital Anxiety and Depression Scale (HADS) From Baseline at Week 24",
+          "rank": "secondary",
+          "position": 14,
+          "measure_type": "change_from_baseline",
+          "scale": "HADS",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants Achieving an Absolute SALT Score of ≤10 at Week 24",
+          "rank": "secondary",
+          "position": 15,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        }
       ],
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04518995",
       "source_excerpt": "protocolSection.outcomesModule.secondaryOutcomes[].measure",
-      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
     },
-    "endpoint_hierarchy_multiplicity": {
+    "multiplicity_control": {
       "value": null,
       "source_type": "needs_extraction",
       "source_url": null,
@@ -262,33 +906,42 @@
   },
   "timing_ops": {
     "start_date": {
-      "value": "2020-11-23",
+      "value": {
+        "date": "2020-11-23",
+        "precision": "day"
+      },
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04518995",
       "source_excerpt": "protocolSection.statusModule.startDateStruct.date",
-      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
     },
     "primary_completion_date": {
-      "value": "2022-04-19",
+      "value": {
+        "date": "2022-04-19",
+        "precision": "day"
+      },
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04518995",
       "source_excerpt": "protocolSection.statusModule.primaryCompletionDateStruct.date",
-      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
     },
     "completion_date": {
-      "value": "2022-04-19",
+      "value": {
+        "date": "2022-04-19",
+        "precision": "day"
+      },
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04518995",
       "source_excerpt": "protocolSection.statusModule.completionDateStruct.date",
-      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
     },
-    "visit_schedule": {
+    "study_schedule": {
       "value": null,
       "source_type": "needs_extraction",
       "source_url": null,
@@ -297,7 +950,7 @@
       "reviewed_by": null,
       "confidence": null
     },
-    "rescue_therapy_rules": {
+    "rescue_therapy": {
       "value": null,
       "source_type": "needs_extraction",
       "source_url": null,
@@ -367,8 +1020,8 @@
     "most_common_adverse_events": {
       "value": [
         {
-          "term": "Acne",
-          "organ_system": "Skin and subcutaneous tissue disorders",
+          "meddra_pt": "Acne",
+          "meddra_soc": "Skin and subcutaneous tissue disorders",
           "per_arm": [
             {
               "arm": "Placebo",
@@ -391,8 +1044,8 @@
           ]
         },
         {
-          "term": "Headache",
-          "organ_system": "Nervous system disorders",
+          "meddra_pt": "Headache",
+          "meddra_soc": "Nervous system disorders",
           "per_arm": [
             {
               "arm": "Placebo",
@@ -415,8 +1068,8 @@
           ]
         },
         {
-          "term": "COVID-19",
-          "organ_system": "Infections and infestations",
+          "meddra_pt": "COVID-19",
+          "meddra_soc": "Infections and infestations",
           "per_arm": [
             {
               "arm": "Placebo",
@@ -439,8 +1092,8 @@
           ]
         },
         {
-          "term": "Upper respiratory tract infection",
-          "organ_system": "Infections and infestations",
+          "meddra_pt": "Upper respiratory tract infection",
+          "meddra_soc": "Infections and infestations",
           "per_arm": [
             {
               "arm": "Placebo",
@@ -463,8 +1116,8 @@
           ]
         },
         {
-          "term": "Blood creatine phosphokinase (increased)",
-          "organ_system": "Investigations",
+          "meddra_pt": "Blood creatine phosphokinase (increased)",
+          "meddra_soc": "Investigations",
           "per_arm": [
             {
               "arm": "Placebo",
@@ -487,8 +1140,8 @@
           ]
         },
         {
-          "term": "Nasopharyngitis",
-          "organ_system": "Infections and infestations",
+          "meddra_pt": "Nasopharyngitis",
+          "meddra_soc": "Infections and infestations",
           "per_arm": [
             {
               "arm": "Placebo",
@@ -514,7 +1167,7 @@
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04518995",
       "source_excerpt": "resultsSection.adverseEventsModule.otherEvents[] (top 8 of 6 by highest single-arm incidence; CT.gov's own >=5% frequency-threshold table)",
-      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass)",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
     },
@@ -547,13 +1200,73 @@
       "confidence": 1.0
     },
     "boxed_warning": {
-      "value": "WARNING: SERIOUS INFECTIONS, MORTALITY, MALIGNANCY, MAJOR ADVERSE CARDIOVASCULAR EVENTS, AND THROMBOSIS Increased risk of serious bacterial, fungal, viral and opportunistic infections, including tuberculosis (TB), that may lead to hospitalization or death. Interrupt treatment with LEQSELVI if a serious infection occurs until the infection is controlled. LEQSELVI treatment is not recommended in patients with active tuberculosis. Test for latent TB before and during therapy; treat latent TB prior to use. Monitor all patients for active TB during treatment, even patients with initial negative, latent TB test. ( 5.1 ) Higher rate of all-cause mortality, including sudden cardiovascular death, was observed with another Janus kinase (JAK) inhibitor vs. TNF blockers in rheumatoid arthritis (RA) patients. LEQSELVI is not approved for use in RA patients. ( 5.2 ) Malignancies were reported in patients treated with LEQSELVI. Higher rate of lymphomas and lung cancers was observed with another JAK inhibitor vs. TNF blockers in RA patients. ( 5.3 ) Higher rate of major adverse cardiovascular events (MACE) (defined as cardiovascular death, myocardial infarction, and stroke) was observed with another JAK inhibitor vs. TNF blockers in RA patients. ( 5.4 ) Thrombosis, including cerebral venous sinus thrombosis (CVT), deep vein thrombosis (DVT) and pulmonary embolism (PE) have been reported in patients treated with LEQSELVI. Increased incidence of pulmonary embolism, venous and arterial thrombosis was observed with another JAK inhibitor vs. TNF blockers. ( 5.5 ) WARNING: SERIOUS INFECTIONS, MORTALITY, MALIGNANCY, MAJOR ADVERSE CARDIOVASCULAR EVENTS (MACE) and THROMBOSIS See full prescribing information for complete boxed warning. Increased risk of serious bacterial, fungal, viral and opportunistic infections including tuberculosis (TB), that may lead to hospitalization or death. Interrupt treatment with LEQSELVI if a serious infection occurs until the infection is controlled. Test for latent TB before and during therapy; treat latent TB prior to use. Monitor all patients for active TB during treatment, even patients with initial negative, latent TB test. ( 5.1 ) Higher rate of all-cause mortality, including sudden cardiovascular death with another Janus kinase inhibitor (JAK) vs. TNF blockers in rheumatoid arthritis (RA) patients. LEQSELVI is not approved for use in RA patients. ( 5.2 ) Malignancies have occurred in patients treated with LEQSELVI. Higher rate of lymphomas and lung cancers with another JAK inhibitor vs. TNF blockers in RA patients. ( 5.3 ) Higher rate of MACE (defined as cardiovascular death, myocardial infarction, and stroke) with another Janus kinase inhibitor (JAK) vs. TNF blockers in rheumatoid arthritis (RA) patients. ( 5.4 ) Thrombosis has occurred in patients treated with LEQSELVI. Increased incidence of pulmonary embolism, venous and arterial thrombosis with another JAK inhibitor vs. TNF blockers. ( 5.5 )",
+      "value": {
+        "present": true,
+        "title": "SERIOUS INFECTIONS, MORTALITY, MALIGNANCY, MAJOR ADVERSE CARDIOVASCULAR EVENTS, AND THROMBOSIS",
+        "warning_categories": [
+          "serious_infections",
+          "mortality",
+          "malignancy",
+          "mace",
+          "thrombosis"
+        ],
+        "referenced_label_sections": [
+          "5.1",
+          "5.2",
+          "5.3",
+          "5.4",
+          "5.5"
+        ],
+        "product_names": [
+          "LEQSELVI"
+        ]
+      },
       "source_type": "openfda_label",
       "source_url": "https://api.fda.gov/drug/label.json?search=openfda.substance_name:DEURUXOLITINIB&limit=1",
-      "source_excerpt": "results[0].boxed_warning",
-      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass)",
+      "source_excerpt": "results[0].boxed_warning -- v1 extracted text: WARNING: SERIOUS INFECTIONS, MORTALITY, MALIGNANCY, MAJOR ADVERSE CARDIOVASCULAR EVENTS, AND THROMBOSIS Increased risk of serious bacterial, fungal, viral and opportunistic infections, including tuberculosis (TB), that may lead to hospitalization or death. Interrupt treatment with LEQSELVI if a serious infection occurs until the infection is controlled. LEQSELVI treatment is not recommended in patients with active tuberculosis. Test for latent TB before and during therapy; treat latent TB prior to use. Monitor all patients for active TB during treatment, even patients with initial negative, latent TB test. ( 5.1 ) Higher rate of all-cause mortality, including sudden cardiovascular death, was observed with another Janus kinase (JAK) inhibitor vs. TNF blockers in rheumatoid arthritis (RA) patients. LEQSELVI is not approved for use in RA patients. ( 5.2 ) Malignancies were reported in patients treated with LEQSELVI. Higher rate of lymphomas and lung cancers was observed with another JAK inhibitor vs. TNF blockers in RA patients. ( 5.3 ) Higher rate of major adverse cardiovascular events (MACE) (defined as cardiovascular death, myocardial infarction, and stroke) was observed with another JAK inhibitor vs. TNF blockers in RA patients. ( 5.4 ) Thrombosis, including cerebral venous sinus thrombosis (CVT), deep vein thrombosis (DVT) and pulmonary embolism (PE) have been reported in patients treated with LEQSELVI. Increased incidence of pulmonary embolism, venous and arterial thrombosis was observed with another JAK inhibitor vs. TNF blockers. ( 5.5 ) WARNING: SERIOUS INFECTIONS, MORTALITY, MALIGNANCY, MAJOR ADVERSE CARDIOVASCULAR EVENTS (MACE) and THROMBOSIS See full prescribing information for complete boxed warning. Increased risk of serious bacterial, fungal, viral and opportunistic infections including tuberculosis (TB), that may lead to hospitalization or death. Interrupt treatment with LEQSELVI if a serious infection occurs until the infection is controlled. Test for latent TB before and during therapy; treat latent TB prior to use. Monitor all patients for active TB during treatment, even patients with initial negative, latent TB test. ( 5.1 ) Higher rate of all-cause mortality, including sudden cardiovascular death with another Janus kinase inhibitor (JAK) vs. TNF blockers in rheumatoid arthritis (RA) patients. LEQSELVI is not approved for use in RA patients. ( 5.2 ) Malignancies have occurred in patients treated with LEQSELVI. Higher rate of lymphomas and lung cancers with another JAK inhibitor vs. TNF blockers in RA patients. ( 5.3 ) Higher rate of MACE (defined as cardiovascular death, myocardial infarction, and stroke) with another Janus kinase inhibitor (JAK) vs. TNF blockers in rheumatoid arthritis (RA) patients. ( 5.4 ) Thrombosis has occurred in patients treated with LEQSELVI. Increased incidence of pulmonary embolism, venous and arterial thrombosis with another JAK inhibitor vs. TNF blockers. ( 5.5 )",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
+    }
+  },
+  "real_world_safety": {
+    "faers_summary": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    }
+  },
+  "exclusivity": {
+    "regulatory_application": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    },
+    "orange_book": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    },
+    "purple_book": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
     }
   }
 }

@@ -1,4 +1,5 @@
 {
+  "schema_version": 2,
   "nct_id": {
     "value": "NCT03732807",
     "source_type": "ctgov_api",
@@ -86,11 +87,24 @@
       "confidence": 1.0
     },
     "mechanism_of_action": {
-      "value": "12.1 Mechanism of Action LITFULO is a kinase inhibitor. Ritlecitinib irreversibly inhibits Janus kinase 3 (JAK3) and the tyrosine kinase expressed in hepatocellular carcinoma (TEC) kinase family by blocking the adenosine triphosphate (ATP) binding site. In cellular settings, ritlecitinib inhibits cytokine induced STAT phosphorylation mediated by JAK3-dependent receptors. Additionally, ritlecitinib inhibits signaling of immune receptors dependent on TEC kinase family members. The relevance of inhibition of specific JAK or TEC family enzymes to therapeutic effectiveness is not currently known.",
+      "value": {
+        "modality": "other",
+        "drug_class": null,
+        "antibody_isotype": null,
+        "binding_targets": [],
+        "pathway_cytokines": [],
+        "receptor_subunits": [],
+        "kinases_inhibited": [],
+        "lower_potency_kinases": [],
+        "selectivity": [],
+        "reversible": true,
+        "mechanism_established": false,
+        "label_section": "12.1"
+      },
       "source_type": "openfda_label",
       "source_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=6845750b-223c-45ae-bdf3-848d9cef0098",
-      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1)",
-      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA)",
+      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1) -- v1 extracted text: 12.1 Mechanism of Action LITFULO is a kinase inhibitor. Ritlecitinib irreversibly inhibits Janus kinase 3 (JAK3) and the tyrosine kinase expressed in hepatocellular carcinoma (TEC) kinase family by blocking the adenosine triphosphate (ATP) binding site. In cellular settings, ritlecitinib inhibits cytokine induced STAT phosphorylation mediated by JAK3-dependent receptors. Additionally, ritlecitinib inhibits signaling of immune receptors dependent on TEC kinase family members. The relevance of inhibition of specific JAK or TEC family enzymes to therapeutic effectiveness is not currently known.",
+      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 0.9
     },
@@ -116,21 +130,21 @@
       "reviewed_by": null,
       "confidence": 1.0
     },
-    "min_age": {
-      "value": "12 Years",
+    "min_age_years": {
+      "value": 12,
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03732807",
       "source_excerpt": "protocolSection.eligibilityModule.minimumAge",
-      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
     },
-    "max_age": {
+    "max_age_years": {
       "value": null,
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03732807",
       "source_excerpt": "protocolSection.eligibilityModule.maximumAge",
-      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 0.0
     },
@@ -152,7 +166,7 @@
       "reviewed_by": null,
       "confidence": 1.0
     },
-    "severity_definition": {
+    "severity_criteria": {
       "value": null,
       "source_type": "needs_extraction",
       "source_url": null,
@@ -208,7 +222,7 @@
       "reviewed_by": null,
       "confidence": 1.0
     },
-    "background_therapy_rule": {
+    "background_therapy": {
       "value": null,
       "source_type": "needs_extraction",
       "source_url": null,
@@ -219,42 +233,777 @@
     }
   },
   "endpoints": {
-    "primary_endpoint_measure": {
-      "value": "Percentage of Participants With an Absolute Severity of Alopecia Tool (SALT) Score of Less Than or Equal to 20 at Week 24 (Time frame: Week 24)",
+    "primary_endpoints": {
+      "value": [
+        {
+          "verbatim": "Percentage of Participants With an Absolute Severity of Alopecia Tool (SALT) Score of Less Than or Equal to 20 at Week 24 (Time frame: Week 24)",
+          "rank": "primary",
+          "position": 1,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": "Week 24"
+        }
+      ],
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03732807",
       "source_excerpt": "protocolSection.outcomesModule.primaryOutcomes[0].measure/timeFrame",
-      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
     },
-    "secondary_endpoint_measures": {
+    "secondary_endpoints": {
       "value": [
-        "Percentage of Participants With an Absolute SALT Score of Less Than or Equal to 10 at Week 24: Analysis 4",
-        "Percentage of Participants With an Absolute SALT Score of Less Than or Equal to 10 at Week 24: Analysis 1",
-        "Percentage of Participants With Patient Global Impression of Change (PGI-C) Score of Moderately Improved or Greatly Improved at Week 24",
-        "Exposure Response of PF-06651600 on Regrowth of Lost Hair Based on Absolute SALT Score of Less Than or Equal to 20 at Week 24: Maximum Effect (Emax) Model",
-        "Exposure Response of PF-06651600 on Regrowth of Lost Hair Based on Absolute SALT Score of Less Than or Equal to 10 at Week 24: Maximum Effect (Emax) Model",
-        "Percentage of Participants With an Absolute SALT Score of Less Than or Equal to 20 at Week 4, 8, 12, 18, 28, 34, 40, and 48",
-        "Percentage of Participants With an Absolute SALT Score of Less Than or Equal to 10 at Week 4, 8, 12, 18, 28, 34, 40, and 48",
-        "Percentage of Participants With at Least 75% Improvement in SALT Score (SALT75) From Baseline at Week 4, 8, 12, 18, 24, 28, 34, 40, and 48",
-        "Change From Baseline in SALT Score at Week 4, 8, 12, 18, and 24",
-        "Change From Baseline in SALT Score at Week 28, 34, 40, and 48",
-        "Percentage of Participants With at Least a 2 Grade Improvement From Baseline or a Score of 3 in Eyebrow Assessment (EBA) Score (Among Participants Without Normal EBA at Baseline) at Week 4, 8, 12, 18, 24, 28, 34, 40, and 48",
-        "Percentage of Participants With at Least a 2 Grade Improvement From Baseline or a Score of 3 in Eyelash Assessment (ELA) Score (Among Participants Without Normal ELA at Baseline) at Week 4, 8, 12, 18, 24, 28, 34, 40, and 48",
-        "Percentage of Participants With Patient Global Impression of Change (PGI-C) Score of Moderately Improved or Greatly Improved at Week 4, 8, 12, 18, 24, 34, 40, and 48",
-        "Change From Baseline in Alopecia Areata Patient Priority Outcomes (AAPPO) Domain Scores at Week 4, 8, 12, 18, and 24: Emotional Symptoms and Activity Limitations",
-        "Change From Baseline in Alopecia Areata Patient Priority Outcomes (AAPPO) Domain Scores at Week 34, 40, and 48: Emotional Symptoms and Activity Limitations",
-        "Percentage of Participants With Improvement From Baseline on Alopecia Areata Patient Priority Outcomes (AAPPO) Items 1-4 at Week 4, 8, 12, 18, 24, 34, 40, and 48"
+        {
+          "verbatim": "Percentage of Participants With an Absolute SALT Score of Less Than or Equal to 10 at Week 24: Analysis 4",
+          "rank": "secondary",
+          "position": 1,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants With an Absolute SALT Score of Less Than or Equal to 10 at Week 24: Analysis 1",
+          "rank": "secondary",
+          "position": 2,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants With Patient Global Impression of Change (PGI-C) Score of Moderately Improved or Greatly Improved at Week 24",
+          "rank": "secondary",
+          "position": 3,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Exposure Response of PF-06651600 on Regrowth of Lost Hair Based on Absolute SALT Score of Less Than or Equal to 20 at Week 24: Maximum Effect (Emax) Model",
+          "rank": "secondary",
+          "position": 4,
+          "measure_type": "absolute_value",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Exposure Response of PF-06651600 on Regrowth of Lost Hair Based on Absolute SALT Score of Less Than or Equal to 10 at Week 24: Maximum Effect (Emax) Model",
+          "rank": "secondary",
+          "position": 5,
+          "measure_type": "absolute_value",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants With an Absolute SALT Score of Less Than or Equal to 20 at Week 4, 8, 12, 18, 28, 34, 40, and 48",
+          "rank": "secondary",
+          "position": 6,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 4,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 8,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 18,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 28,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 34,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 40,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 48,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants With an Absolute SALT Score of Less Than or Equal to 10 at Week 4, 8, 12, 18, 28, 34, 40, and 48",
+          "rank": "secondary",
+          "position": 7,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 4,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 8,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 18,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 28,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 34,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 40,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 48,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants With at Least 75% Improvement in SALT Score (SALT75) From Baseline at Week 4, 8, 12, 18, 24, 28, 34, 40, and 48",
+          "rank": "secondary",
+          "position": 8,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 4,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 8,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 18,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 28,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 34,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 40,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 48,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Change From Baseline in SALT Score at Week 4, 8, 12, 18, and 24",
+          "rank": "secondary",
+          "position": 9,
+          "measure_type": "change_from_baseline",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 4,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 8,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 18,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Change From Baseline in SALT Score at Week 28, 34, 40, and 48",
+          "rank": "secondary",
+          "position": 10,
+          "measure_type": "change_from_baseline",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 28,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 34,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 40,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 48,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants With at Least a 2 Grade Improvement From Baseline or a Score of 3 in Eyebrow Assessment (EBA) Score (Among Participants Without Normal EBA at Baseline) at Week 4, 8, 12, 18, 24, 28, 34, 40, and 48",
+          "rank": "secondary",
+          "position": 11,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 4,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 8,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 18,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 28,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 34,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 40,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 48,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants With at Least a 2 Grade Improvement From Baseline or a Score of 3 in Eyelash Assessment (ELA) Score (Among Participants Without Normal ELA at Baseline) at Week 4, 8, 12, 18, 24, 28, 34, 40, and 48",
+          "rank": "secondary",
+          "position": 12,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 4,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 8,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 18,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 28,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 34,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 40,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 48,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants With Patient Global Impression of Change (PGI-C) Score of Moderately Improved or Greatly Improved at Week 4, 8, 12, 18, 24, 34, 40, and 48",
+          "rank": "secondary",
+          "position": 13,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 4,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 8,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 18,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 34,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 40,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 48,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Change From Baseline in Alopecia Areata Patient Priority Outcomes (AAPPO) Domain Scores at Week 4, 8, 12, 18, and 24: Emotional Symptoms and Activity Limitations",
+          "rank": "secondary",
+          "position": 14,
+          "measure_type": "change_from_baseline",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 4,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 8,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 18,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Change From Baseline in Alopecia Areata Patient Priority Outcomes (AAPPO) Domain Scores at Week 34, 40, and 48: Emotional Symptoms and Activity Limitations",
+          "rank": "secondary",
+          "position": 15,
+          "measure_type": "change_from_baseline",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 34,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 40,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 48,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants With Improvement From Baseline on Alopecia Areata Patient Priority Outcomes (AAPPO) Items 1-4 at Week 4, 8, 12, 18, 24, 34, 40, and 48",
+          "rank": "secondary",
+          "position": 16,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 4,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 8,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 18,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 34,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 40,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 48,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        }
       ],
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03732807",
       "source_excerpt": "protocolSection.outcomesModule.secondaryOutcomes[].measure",
-      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
     },
-    "endpoint_hierarchy_multiplicity": {
+    "multiplicity_control": {
       "value": null,
       "source_type": "needs_extraction",
       "source_url": null,
@@ -266,33 +1015,42 @@
   },
   "timing_ops": {
     "start_date": {
-      "value": "2018-12-03",
+      "value": {
+        "date": "2018-12-03",
+        "precision": "day"
+      },
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03732807",
       "source_excerpt": "protocolSection.statusModule.startDateStruct.date",
-      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
     },
     "primary_completion_date": {
-      "value": "2020-12-31",
+      "value": {
+        "date": "2020-12-31",
+        "precision": "day"
+      },
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03732807",
       "source_excerpt": "protocolSection.statusModule.primaryCompletionDateStruct.date",
-      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
     },
     "completion_date": {
-      "value": "2021-06-24",
+      "value": {
+        "date": "2021-06-24",
+        "precision": "day"
+      },
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03732807",
       "source_excerpt": "protocolSection.statusModule.completionDateStruct.date",
-      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
     },
-    "visit_schedule": {
+    "study_schedule": {
       "value": null,
       "source_type": "needs_extraction",
       "source_url": null,
@@ -301,7 +1059,7 @@
       "reviewed_by": null,
       "confidence": null
     },
-    "rescue_therapy_rules": {
+    "rescue_therapy": {
       "value": null,
       "source_type": "needs_extraction",
       "source_url": null,
@@ -419,8 +1177,8 @@
     "most_common_adverse_events": {
       "value": [
         {
-          "term": "Headache",
-          "organ_system": "Nervous system disorders",
+          "meddra_pt": "Headache",
+          "meddra_soc": "Nervous system disorders",
           "per_arm": [
             {
               "arm": "Ritlecitinib (PF-06651600) 200 mg Then 50 mg",
@@ -467,8 +1225,8 @@
           ]
         },
         {
-          "term": "Nasopharyngitis",
-          "organ_system": "Infections and infestations",
+          "meddra_pt": "Nasopharyngitis",
+          "meddra_soc": "Infections and infestations",
           "per_arm": [
             {
               "arm": "Ritlecitinib (PF-06651600) 200 mg Then 50 mg",
@@ -515,8 +1273,8 @@
           ]
         },
         {
-          "term": "Upper respiratory tract infection",
-          "organ_system": "Infections and infestations",
+          "meddra_pt": "Upper respiratory tract infection",
+          "meddra_soc": "Infections and infestations",
           "per_arm": [
             {
               "arm": "Ritlecitinib (PF-06651600) 200 mg Then 50 mg",
@@ -563,8 +1321,8 @@
           ]
         },
         {
-          "term": "Nausea",
-          "organ_system": "Gastrointestinal disorders",
+          "meddra_pt": "Nausea",
+          "meddra_soc": "Gastrointestinal disorders",
           "per_arm": [
             {
               "arm": "Ritlecitinib (PF-06651600) 200 mg Then 50 mg",
@@ -611,8 +1369,8 @@
           ]
         },
         {
-          "term": "Acne",
-          "organ_system": "Skin and subcutaneous tissue disorders",
+          "meddra_pt": "Acne",
+          "meddra_soc": "Skin and subcutaneous tissue disorders",
           "per_arm": [
             {
               "arm": "Ritlecitinib (PF-06651600) 200 mg Then 50 mg",
@@ -659,8 +1417,8 @@
           ]
         },
         {
-          "term": "Myalgia",
-          "organ_system": "Musculoskeletal and connective tissue disorders",
+          "meddra_pt": "Myalgia",
+          "meddra_soc": "Musculoskeletal and connective tissue disorders",
           "per_arm": [
             {
               "arm": "Ritlecitinib (PF-06651600) 200 mg Then 50 mg",
@@ -707,8 +1465,8 @@
           ]
         },
         {
-          "term": "Diarrhoea",
-          "organ_system": "Gastrointestinal disorders",
+          "meddra_pt": "Diarrhoea",
+          "meddra_soc": "Gastrointestinal disorders",
           "per_arm": [
             {
               "arm": "Ritlecitinib (PF-06651600) 200 mg Then 50 mg",
@@ -755,8 +1513,8 @@
           ]
         },
         {
-          "term": "Arthralgia",
-          "organ_system": "Musculoskeletal and connective tissue disorders",
+          "meddra_pt": "Arthralgia",
+          "meddra_soc": "Musculoskeletal and connective tissue disorders",
           "per_arm": [
             {
               "arm": "Ritlecitinib (PF-06651600) 200 mg Then 50 mg",
@@ -806,7 +1564,7 @@
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03732807",
       "source_excerpt": "resultsSection.adverseEventsModule.otherEvents[] (top 8 of 23 by highest single-arm incidence; CT.gov's own >=5% frequency-threshold table)",
-      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass)",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
     },
@@ -863,13 +1621,73 @@
       "confidence": 1.0
     },
     "boxed_warning": {
-      "value": "WARNING: SERIOUS INFECTIONS, MORTALITY, MALIGNANCY, MAJOR ADVERSE CARDIOVASCULAR EVENTS (MACE), and THROMBOSIS WARNING: SERIOUS INFECTIONS, MORTALITY, MALIGNANCY, MAJOR ADVERSE CARDIOVASCULAR EVENTS (MACE), and THROMBOSIS See full prescribing information for complete boxed warning. \u2022 Increased risk of serious bacterial, fungal, viral, and opportunistic infections that may lead to hospitalization or death, including tuberculosis (TB). Interrupt treatment if serious infection occurs until the infection is controlled. LITFULO should not be given to patients with active tuberculosis. Test for latent TB before and during therapy; start treating latent TB prior to use. Monitor all patients for active TB during treatment, even patients with initial negative, latent TB test. ( 5.1 ). Monitor all patients for signs and symptoms of infection during and after treatment with LITFULO. ( 5.1 ) \u2022 Higher rate of all-cause mortality, including sudden cardiovascular death with another Janus kinase inhibitor (JAK) vs. TNF blockers in rheumatoid arthritis (RA) patients. LITFULO is not approved for use in RA patients. ( 5.2 ) \u2022 Malignancies were reported in patients treated with LITFULO ( 5.3 ). Higher rate of lymphomas and lung cancers with another JAK inhibitor vs. TNF blockers in RA patients. \u2022 Higher rate of MACE (defined as cardiovascular death, myocardial infarction, and stroke) with another JAK inhibitor vs. TNF blockers in RA patients. ( 5.4 ). \u2022 Thrombosis has occurred in patients treated with LITFULO. Increased incidence of pulmonary embolism, venous and arterial thrombosis with another JAK inhibitor vs. TNF blockers. ( 5.5 ) \u2022 Increased risk of serious bacterial, fungal, viral and opportunistic infections leading to hospitalization or death, including tuberculosis (TB). Interrupt treatment if serious infection occurs until the infection is controlled. LITFULO should not be given to patients with active tuberculosis. Test for latent TB before and during therapy; treat latent TB prior to use. Monitor all patients for active TB during treatment, even patients with initial negative, latent TB test. ( 5.1 ) \u2022 Higher rate of all-cause mortality, including sudden cardiovascular death with another Janus kinase inhibitor (JAK) vs. TNF blockers in rheumatoid arthritis (RA) patients. LITFULO is not approved for use in RA patients. ( 5.2 ) \u2022 Malignancies have occurred in patients treated with LITFULO [see Warnings and Precautions (5.3) ] . Higher rate of lymphomas and lung cancers with another JAK inhibitor vs. TNF blockers in RA patients. ( 5.3 ) \u2022 Higher rate of MACE (defined as cardiovascular death, myocardial infarction, and stroke) with another JAK inhibitor vs. TNF blockers in RA patients. ( 5.4 ) \u2022 Thrombosis has occurred in patients treated with LITFULO. Increased incidence of pulmonary embolism, venous and arterial thrombosis with another JAK inhibitor vs. TNF blockers. ( 5.5 )",
+      "value": {
+        "present": true,
+        "title": "SERIOUS INFECTIONS, MORTALITY, MALIGNANCY, MAJOR ADVERSE CARDIOVASCULAR EVENTS (MACE), and THROMBOSIS",
+        "warning_categories": [
+          "serious_infections",
+          "mortality",
+          "malignancy",
+          "mace",
+          "thrombosis"
+        ],
+        "referenced_label_sections": [
+          "5.1",
+          "5.2",
+          "5.3",
+          "5.4",
+          "5.5"
+        ],
+        "product_names": [
+          "LITFULO"
+        ]
+      },
       "source_type": "openfda_label",
       "source_url": "https://api.fda.gov/drug/label.json?search=openfda.substance_name:RITLECITINIB&limit=1",
-      "source_excerpt": "results[0].boxed_warning",
-      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass)",
+      "source_excerpt": "results[0].boxed_warning -- v1 extracted text: WARNING: SERIOUS INFECTIONS, MORTALITY, MALIGNANCY, MAJOR ADVERSE CARDIOVASCULAR EVENTS (MACE), and THROMBOSIS WARNING: SERIOUS INFECTIONS, MORTALITY, MALIGNANCY, MAJOR ADVERSE CARDIOVASCULAR EVENTS (MACE), and THROMBOSIS See full prescribing information for complete boxed warning. • Increased risk of serious bacterial, fungal, viral, and opportunistic infections that may lead to hospitalization or death, including tuberculosis (TB). Interrupt treatment if serious infection occurs until the infection is controlled. LITFULO should not be given to patients with active tuberculosis. Test for latent TB before and during therapy; start treating latent TB prior to use. Monitor all patients for active TB during treatment, even patients with initial negative, latent TB test. ( 5.1 ). Monitor all patients for signs and symptoms of infection during and after treatment with LITFULO. ( 5.1 ) • Higher rate of all-cause mortality, including sudden cardiovascular death with another Janus kinase inhibitor (JAK) vs. TNF blockers in rheumatoid arthritis (RA) patients. LITFULO is not approved for use in RA patients. ( 5.2 ) • Malignancies were reported in patients treated with LITFULO ( 5.3 ). Higher rate of lymphomas and lung cancers with another JAK inhibitor vs. TNF blockers in RA patients. • Higher rate of MACE (defined as cardiovascular death, myocardial infarction, and stroke) with another JAK inhibitor vs. TNF blockers in RA patients. ( 5.4 ). • Thrombosis has occurred in patients treated with LITFULO. Increased incidence of pulmonary embolism, venous and arterial thrombosis with another JAK inhibitor vs. TNF blockers. ( 5.5 ) • Increased risk of serious bacterial, fungal, viral and opportunistic infections leading to hospitalization or death, including tuberculosis (TB). Interrupt treatment if serious infection occurs until the infection is controlled. LITFULO should not be given to patients with active tuberculosis. Test for latent TB before and during therapy; treat latent TB prior to use. Monitor all patients for active TB during treatment, even patients with initial negative, latent TB test. ( 5.1 ) • Higher rate of all-cause mortality, including sudden cardiovascular death with another Janus kinase inhibitor (JAK) vs. TNF blockers in rheumatoid arthritis (RA) patients. LITFULO is not approved for use in RA patients. ( 5.2 ) • Malignancies have occurred in patients treated with LITFULO [see Warnings and Precautions (5.3) ] . Higher rate of lymphomas and lung cancers with another JAK inhibitor vs. TNF blockers in RA patients. ( 5.3 ) • Higher rate of MACE (defined as cardiovascular death, myocardial infarction, and stroke) with another JAK inhibitor vs. TNF blockers in RA patients. ( 5.4 ) • Thrombosis has occurred in patients treated with LITFULO. Increased incidence of pulmonary embolism, venous and arterial thrombosis with another JAK inhibitor vs. TNF blockers. ( 5.5 )",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
+    }
+  },
+  "real_world_safety": {
+    "faers_summary": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    }
+  },
+  "exclusivity": {
+    "regulatory_application": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    },
+    "orange_book": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    },
+    "purple_book": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
     }
   }
 }

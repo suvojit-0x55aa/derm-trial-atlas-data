@@ -1,4 +1,5 @@
 {
+  "schema_version": 2,
   "nct_id": {
     "value": "NCT04242498",
     "source_type": "ctgov_api",
@@ -83,20 +84,52 @@
       "confidence": 1.0
     },
     "mechanism_of_action": {
-      "value": "12.1 Mechanism of Action Bimekizumab-bkzx is a humanized immunoglobulin IgG1/ \u03ba monoclonal antibody with two identical antigen binding regions that selectively bind to human interleukin 17A (IL-17A), interleukin 17F (IL-17F), and interleukin 17-AF cytokines, and inhibits their interaction with the IL-17 receptor complex. IL-17A and IL-17F are naturally occurring cytokines that are involved in normal inflammatory and immune responses. Bimekizumab-bkzx inhibits the release of proinflammatory cytokines and chemokines.",
+      "value": {
+        "modality": "monoclonal_antibody",
+        "drug_class": "monoclonal antibody",
+        "antibody_isotype": "IgG1",
+        "binding_targets": [],
+        "pathway_cytokines": [],
+        "receptor_subunits": [],
+        "kinases_inhibited": [],
+        "lower_potency_kinases": [],
+        "selectivity": [],
+        "reversible": null,
+        "mechanism_established": null,
+        "label_section": "12.1"
+      },
       "source_type": "openfda_label",
       "source_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=37b310bd-f6a0-9d4e-e063-6294a90a889d",
-      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1)",
-      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA)",
+      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1) -- v1 extracted text: 12.1 Mechanism of Action Bimekizumab-bkzx is a humanized immunoglobulin IgG1/ κ monoclonal antibody with two identical antigen binding regions that selectively bind to human interleukin 17A (IL-17A), interleukin 17F (IL-17F), and interleukin 17-AF cytokines, and inhibits their interaction with the IL-17 receptor complex. IL-17A and IL-17F are naturally occurring cytokines that are involved in normal inflammatory and immune responses. Bimekizumab-bkzx inhibits the release of proinflammatory cytokines and chemokines.",
+      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 0.9
     },
     "dosing_regimen": {
-      "value": "Bimekizumab: Subjects will receive bimekizumab at pre-specified time-points.",
+      "value": [
+        {
+          "intervention_name": "Bimekizumab",
+          "description": "Subjects will receive bimekizumab at pre-specified time-points.",
+          "is_placebo": false,
+          "route": null,
+          "dose_form": null,
+          "dose_value": null,
+          "dose_unit": null,
+          "units_per_dose": null,
+          "frequency": null,
+          "duration_weeks": null,
+          "dosing_periods": [],
+          "administration_sites": [],
+          "antibody_isotype": null,
+          "molecular_target": null,
+          "arm_names": [],
+          "co_administered_with": []
+        }
+      ],
       "source_type": "ctgov_text_extraction",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04242498",
       "source_excerpt": "Bimekizumab: Subjects will receive bimekizumab at pre-specified time-points.",
-      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA)",
+      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 0.8
     }
@@ -113,21 +146,21 @@
       "reviewed_by": null,
       "confidence": 1.0
     },
-    "min_age": {
-      "value": "18 Years",
+    "min_age_years": {
+      "value": 18,
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04242498",
       "source_excerpt": "protocolSection.eligibilityModule.minimumAge",
-      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
     },
-    "max_age": {
+    "max_age_years": {
       "value": null,
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04242498",
       "source_excerpt": "protocolSection.eligibilityModule.maximumAge",
-      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 0.0
     },
@@ -149,7 +182,7 @@
       "reviewed_by": null,
       "confidence": 1.0
     },
-    "severity_definition": {
+    "severity_criteria": {
       "value": null,
       "source_type": "needs_extraction",
       "source_url": null,
@@ -205,7 +238,7 @@
       "reviewed_by": null,
       "confidence": 1.0
     },
-    "background_therapy_rule": {
+    "background_therapy": {
       "value": null,
       "source_type": "needs_extraction",
       "source_url": null,
@@ -216,34 +249,234 @@
     }
   },
   "endpoints": {
-    "primary_endpoint_measure": {
-      "value": "Percentage of Participants Achieving Clinical Response as Measured by Hidradenitis Suppurativa Clinical Response 50 (HiSCR50) at Week 16 (Time frame: Week 16)",
+    "primary_endpoints": {
+      "value": [
+        {
+          "verbatim": "Percentage of Participants Achieving Clinical Response as Measured by Hidradenitis Suppurativa Clinical Response 50 (HiSCR50) at Week 16 (Time frame: Week 16)",
+          "rank": "primary",
+          "position": 1,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": "Week 16"
+        }
+      ],
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04242498",
       "source_excerpt": "protocolSection.outcomesModule.primaryOutcomes[0].measure/timeFrame",
-      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
     },
-    "secondary_endpoint_measures": {
+    "secondary_endpoints": {
       "value": [
-        "Percentage of Participants Achieving Clinical Response as Measured by Hidradenitis Suppurativa Clinical Response 75 (HiSCR75) at Week 16",
-        "Percentage of Participants With Flare by Week 16",
-        "Absolute Change From Baseline in Dermatology Life Quality Index (DLQI) Total Score at Week 16",
-        "Absolute Change From Baseline in Worst Skin Pain Score at Week 16",
-        "Percentage of Participants Achieving Skin Pain Response at Week 16",
-        "Percentage of Participants With Treatment-emergent Adverse Events (TEAEs) During the Study",
-        "Percentage of Participants With Serious Treatment-emergent Adverse Events During the Study",
-        "Percentage of Participants With Treatment-emergent Adverse Events (TEAEs) Leading to Withdrawal From the Study"
+        {
+          "verbatim": "Percentage of Participants Achieving Clinical Response as Measured by Hidradenitis Suppurativa Clinical Response 75 (HiSCR75) at Week 16",
+          "rank": "secondary",
+          "position": 1,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants With Flare by Week 16",
+          "rank": "secondary",
+          "position": 2,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": "flare",
+          "time_frame": null
+        },
+        {
+          "verbatim": "Absolute Change From Baseline in Dermatology Life Quality Index (DLQI) Total Score at Week 16",
+          "rank": "secondary",
+          "position": 3,
+          "measure_type": "absolute_value",
+          "scale": "DLQI",
+          "scale_component": "Total",
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Absolute Change From Baseline in Worst Skin Pain Score at Week 16",
+          "rank": "secondary",
+          "position": 4,
+          "measure_type": "absolute_value",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants Achieving Skin Pain Response at Week 16",
+          "rank": "secondary",
+          "position": 5,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants With Treatment-emergent Adverse Events (TEAEs) During the Study",
+          "rank": "secondary",
+          "position": 6,
+          "measure_type": "safety_incidence",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants With Serious Treatment-emergent Adverse Events During the Study",
+          "rank": "secondary",
+          "position": 7,
+          "measure_type": "safety_incidence",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants With Treatment-emergent Adverse Events (TEAEs) Leading to Withdrawal From the Study",
+          "rank": "secondary",
+          "position": 8,
+          "measure_type": "safety_incidence",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        }
       ],
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04242498",
       "source_excerpt": "protocolSection.outcomesModule.secondaryOutcomes[].measure",
-      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
     },
-    "endpoint_hierarchy_multiplicity": {
+    "multiplicity_control": {
       "value": null,
       "source_type": "needs_extraction",
       "source_url": null,
@@ -255,33 +488,42 @@
   },
   "timing_ops": {
     "start_date": {
-      "value": "2020-03-02",
+      "value": {
+        "date": "2020-03-02",
+        "precision": "day"
+      },
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04242498",
       "source_excerpt": "protocolSection.statusModule.startDateStruct.date",
-      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
     },
     "primary_completion_date": {
-      "value": "2021-11-09",
+      "value": {
+        "date": "2021-11-09",
+        "precision": "day"
+      },
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04242498",
       "source_excerpt": "protocolSection.statusModule.primaryCompletionDateStruct.date",
-      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
     },
     "completion_date": {
-      "value": "2022-09-28",
+      "value": {
+        "date": "2022-09-28",
+        "precision": "day"
+      },
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04242498",
       "source_excerpt": "protocolSection.statusModule.completionDateStruct.date",
-      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
     },
-    "visit_schedule": {
+    "study_schedule": {
       "value": null,
       "source_type": "needs_extraction",
       "source_url": null,
@@ -290,7 +532,7 @@
       "reviewed_by": null,
       "confidence": null
     },
-    "rescue_therapy_rules": {
+    "rescue_therapy": {
       "value": null,
       "source_type": "needs_extraction",
       "source_url": null,
@@ -408,8 +650,8 @@
     "most_common_adverse_events": {
       "value": [
         {
-          "term": "Hidradenitis",
-          "organ_system": "Skin and subcutaneous tissue disorders",
+          "meddra_pt": "Hidradenitis",
+          "meddra_soc": "Skin and subcutaneous tissue disorders",
           "per_arm": [
             {
               "arm": "Placebo",
@@ -456,8 +698,8 @@
           ]
         },
         {
-          "term": "Oral candidiasis",
-          "organ_system": "Infections and infestations",
+          "meddra_pt": "Oral candidiasis",
+          "meddra_soc": "Infections and infestations",
           "per_arm": [
             {
               "arm": "Placebo",
@@ -504,8 +746,8 @@
           ]
         },
         {
-          "term": "Headache",
-          "organ_system": "Nervous system disorders",
+          "meddra_pt": "Headache",
+          "meddra_soc": "Nervous system disorders",
           "per_arm": [
             {
               "arm": "Placebo",
@@ -552,8 +794,8 @@
           ]
         },
         {
-          "term": "Nasopharyngitis",
-          "organ_system": "Infections and infestations",
+          "meddra_pt": "Nasopharyngitis",
+          "meddra_soc": "Infections and infestations",
           "per_arm": [
             {
               "arm": "Placebo",
@@ -600,8 +842,8 @@
           ]
         },
         {
-          "term": "Diarrhoea",
-          "organ_system": "Gastrointestinal disorders",
+          "meddra_pt": "Diarrhoea",
+          "meddra_soc": "Gastrointestinal disorders",
           "per_arm": [
             {
               "arm": "Placebo",
@@ -648,8 +890,8 @@
           ]
         },
         {
-          "term": "Folliculitis",
-          "organ_system": "Infections and infestations",
+          "meddra_pt": "Folliculitis",
+          "meddra_soc": "Infections and infestations",
           "per_arm": [
             {
               "arm": "Placebo",
@@ -696,8 +938,8 @@
           ]
         },
         {
-          "term": "Corona virus infection",
-          "organ_system": "Infections and infestations",
+          "meddra_pt": "Corona virus infection",
+          "meddra_soc": "Infections and infestations",
           "per_arm": [
             {
               "arm": "Placebo",
@@ -744,8 +986,8 @@
           ]
         },
         {
-          "term": "Upper respiratory tract infection",
-          "organ_system": "Infections and infestations",
+          "meddra_pt": "Upper respiratory tract infection",
+          "meddra_soc": "Infections and infestations",
           "per_arm": [
             {
               "arm": "Placebo",
@@ -795,7 +1037,7 @@
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04242498",
       "source_excerpt": "resultsSection.adverseEventsModule.otherEvents[] (top 8 of 11 by highest single-arm incidence; CT.gov's own >=5% frequency-threshold table)",
-      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass)",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
     },
@@ -852,13 +1094,59 @@
       "confidence": 1.0
     },
     "boxed_warning": {
-      "value": null,
+      "value": {
+        "present": false,
+        "title": null,
+        "warning_categories": [],
+        "referenced_label_sections": [],
+        "product_names": []
+      },
       "source_type": "openfda_label",
       "source_url": "https://api.fda.gov/drug/label.json?search=openfda.substance_name:BIMEKIZUMAB&limit=1",
       "source_excerpt": "results[0] has no boxed_warning key (checked, none present)",
-      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass)",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
+    }
+  },
+  "real_world_safety": {
+    "faers_summary": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    }
+  },
+  "exclusivity": {
+    "regulatory_application": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    },
+    "orange_book": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    },
+    "purple_book": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
     }
   }
 }
