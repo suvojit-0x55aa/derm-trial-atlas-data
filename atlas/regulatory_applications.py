@@ -85,6 +85,19 @@ APPLICATIONS = {
         "source_type": "orange_book", "source_url": OPENFDA_ORANGEBOOK_URL,
         "source_excerpt": "openFDA drug/orangebook.json: RITLECITINIB application N215830, brand LITFULO, applicant PFIZER, approved 2023-06-23",
     },
+    # Ruxolitinib the ingredient also covers Jakafi/Jakafi XR (oral, NDA
+    # 202192/217180, oncology/GVHD) -- N215309 is specifically Opzelura,
+    # the topical cream this atlas's vitiligo trials are for. Approval
+    # date here is Opzelura's original NDA approval (Sept 2021, for
+    # atopic dermatitis); the vitiligo indication was added by supplement
+    # in July 2022 under the same NDA.
+    "Ruxolitinib": {
+        "value": {"application_type": "NDA", "application_number": "215309", "registry": "orange_book",
+                  "center": "CDER", "proprietary_name": "OPZELURA", "applicant": "INCYTE CORP",
+                  "first_approval_date": "2021-09-21"},
+        "source_type": "orange_book", "source_url": OPENFDA_ORANGEBOOK_URL,
+        "source_excerpt": "openFDA drug/orangebook.json: RUXOLITINIB application N215309, brand OPZELURA, applicant INCYTE CORP, approved 2021-09-21",
+    },
 
     # --- Plaque Psoriasis / HS / CSU: biologic BLAs, via purplebooksearch.fda.gov live search table ---
     "Adalimumab": {
@@ -135,6 +148,32 @@ APPLICATIONS = {
                   "first_approval_date": "2018-03-20"},
         "source_type": "purple_book", "source_url": PURPLE_BOOK_SEARCH_URL,
         "source_excerpt": "purplebooksearch.fda.gov live search table: BLA 761067 | Ilumya | tildrakizumab-asmn | 351(a) | Sun Pharmaceutical Industries Limited | first approved 2018-03-20",
+    },
+    "Nemolizumab": {
+        "value": {"application_type": "BLA", "application_number": "761390", "registry": "purple_book",
+                  "center": "CDER", "proprietary_name": "Nemluvio", "applicant": "Galderma Laboratories, L.P.",
+                  "first_approval_date": "2024-08-12"},
+        "source_type": "purple_book", "source_url": PURPLE_BOOK_SEARCH_URL,
+        "source_excerpt": "purplebooksearch.fda.gov live search table: BLA 761390 | Nemluvio | nemolizumab-ilto | 351(a) | Galderma Laboratories, L.P. | first approved 2024-08-12",
+    },
+    "Ixekizumab": {
+        "value": {"application_type": "BLA", "application_number": "125521", "registry": "purple_book",
+                  "center": "CDER", "proprietary_name": "Taltz", "applicant": "Eli Lilly and Company",
+                  "first_approval_date": "2016-03-22"},
+        "source_type": "purple_book", "source_url": PURPLE_BOOK_SEARCH_URL,
+        "source_excerpt": "purplebooksearch.fda.gov live search table: BLA 125521 | Taltz | ixekizumab | 351(a) | Eli Lilly and Company | first approved 2016-03-22",
+    },
+    # Certolizumab pegol is a PEGylated Fab' antibody fragment, licensed as
+    # a BLA -- a biologic despite "pegol" suggesting a chemical
+    # modification; Purple Book is correct here, not Orange Book. First
+    # approved 2008 for Crohn's disease; the plaque-psoriasis indication
+    # (this atlas's trials) followed in 2018 under the same BLA.
+    "Certolizumab": {
+        "value": {"application_type": "BLA", "application_number": "125160", "registry": "purple_book",
+                  "center": "CDER", "proprietary_name": "Cimzia", "applicant": "UCB, Inc.",
+                  "first_approval_date": "2008-04-22"},
+        "source_type": "purple_book", "source_url": PURPLE_BOOK_SEARCH_URL,
+        "source_excerpt": "purplebooksearch.fda.gov live search table: BLA 125160 | Cimzia | certolizumab pegol | 351(a) | UCB, Inc. | first approved 2008-04-22",
     },
 }
 

@@ -105,6 +105,21 @@ JADE_COMPARE_TOPICAL = _base(
     tcs_regimen="standardized",
 )
 ADHERE_TCS = _base(regimen_type="combination_tcs", background_agent_class="TCS")
+# PRIME/PRIME2 (prurigo nodularis): CT.gov's own arm data lists moisturizers,
+# low-to-medium potency TCS, and topical calcineurin inhibitors as permitted
+# concomitant interventions on BOTH the dupilumab and placebo arms (not an
+# investigational-arm-only combination regimen) -- a standardized background
+# regimen given to all patients regardless of assignment. The CT.gov API
+# text (source_excerpt) doesn't carry the protocol's specific potency/dosing
+# detail the way the AD trials' protocol PDFs do, so recommended_agents
+# stays empty rather than inventing concentrations not in the source.
+PRIME_TOPICAL = _base(
+    regimen_type="standardized_background_topical", background_agent_class="topical",
+    permitted_concomitant=[
+        "Moisturizers", "Low to medium potent topical corticosteroids",
+        "Topical calcineurin inhibitors",
+    ],
+)
 
 BACKGROUND_THERAPY = {
     "NCT02260986": CHRONOS_TCS,
@@ -122,4 +137,6 @@ BACKGROUND_THERAPY = {
     "NCT04146363": ADVOCATE_MONO,
     "NCT04178967": ADVOCATE_MONO,
     "NCT04250337": ADHERE_TCS,
+    "NCT04183335": PRIME_TOPICAL,
+    "NCT04202679": PRIME_TOPICAL,
 }

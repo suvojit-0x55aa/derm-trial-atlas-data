@@ -84,6 +84,15 @@ DRUGS = {
     "Secukinumab": ("secukinumab", "Cosentyx"),
     # Chronic Spontaneous Urticaria (Dupilumab already listed above)
     "Omalizumab": ("omalizumab", "Xolair"),
+    # Prurigo Nodularis / Atopic Dermatitis, added 2026-09-05
+    "Nemolizumab": ("nemolizumab", "Nemluvio"),
+    # Plaque Psoriasis, added 2026-09-05
+    "Ixekizumab": ("ixekizumab", "Taltz"),
+    # Certolizumab pegol (Cimzia) is a PEGylated Fab' antibody fragment,
+    # approved via BLA 125160 -- a biologic, not a small-molecule NDA,
+    # despite "pegol" suggesting a chemical modification; Purple Book is
+    # correct here, not Orange Book.
+    "Certolizumab": ("certolizumab pegol", "Cimzia"),
 }
 
 

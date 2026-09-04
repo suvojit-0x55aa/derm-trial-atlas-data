@@ -52,6 +52,15 @@ DRUGS = {
     "Deuruxolitinib": "DEURUXOLITINIB",
     # Plaque Psoriasis (oral TYK2 inhibitor, small-molecule NDA)
     "Deucravacitinib": "DEUCRAVACITINIB",
+    # Vitiligo (topical JAK inhibitor, small-molecule NDA). Ruxolitinib the
+    # ingredient also covers Jakafi/Jakafi XR (oral tablets, NDA 202192 /
+    # 217180, oncology/GVHD) -- an unfiltered ingredient search returns all
+    # three applications merged, misattributing Opzelura's (the actual
+    # vitiligo drug's) patent/exclusivity data with Jakafi's. The tuple form
+    # pins the query to application_number 215309 (Opzelura cream) only --
+    # confirmed live 2026-09-05: 215309=OPZELURA/CREAM/TOPICAL,
+    # 202192=JAKAFI/TABLET/ORAL, 217180=JAKAFI XR/TABLET,EXTENDED RELEASE/ORAL.
+    "Ruxolitinib": ("RUXOLITINIB", "215309"),
 }
 
 
@@ -137,11 +146,18 @@ def build_record(ingredient: str, results: list) -> dict:
 
 def main():
     staged = 0
-    for drug, ingredient in DRUGS.items():
+    for drug, spec in DRUGS.items():
+        ingredient, app_filter = spec if isinstance(spec, tuple) else (spec, None)
         print(f"Orange Book (openFDA): {drug}...")
         q = urllib.parse.quote(f'products.active_ingredients.name:"{ingredient}"')
         url = f"{OPENFDA_ORANGEBOOK}?search={q}&limit=100"
         data = _get_json(url)
+        if data and app_filter:
+            data = dict(data)
+            data["results"] = [
+                r for r in data["results"]
+                if r["products"][0].get("application_number") == app_filter
+            ]
         if not data or not data.get("results"):
             print(f"  NOT FOUND for {ingredient} -- staging genuine unreachable finding")
             record = {

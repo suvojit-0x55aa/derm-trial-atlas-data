@@ -39,6 +39,11 @@ EXTRACTED_BY = "fetch_trials.py (ctgov_api v2, v1 pass)"
 # interventional RCTs) and picking the trials that are that drug's actual
 # pivotal registrational studies (not just any trial mentioning the drug
 # as a comparator arm in someone else's program).
+# Nemolizumab (Nemluvio) added 2026-09-05: FDA-approved for AD Jan 2025.
+# ARCADIA 1/2 individually fetched and confirmed EXPERIMENTAL arm,
+# placebo-controlled, condition "Moderate-to-Severe Atopic Dermatitis",
+# resultsSection present. NCT03989206 (long-term extension, no results yet)
+# excluded as non-pivotal.
 AD_TRIALS = {
     "NCT02277743": "Dupilumab",
     "NCT02277769": "Dupilumab",
@@ -57,6 +62,8 @@ AD_TRIALS = {
     "NCT03569293": "Upadacitinib",
     "NCT03607422": "Upadacitinib",
     "NCT03568318": "Upadacitinib",
+    "NCT03985943": "Nemolizumab",  # ARCADIA 1, n=941, Galderma
+    "NCT03989349": "Nemolizumab",  # ARCADIA 2, n=787, Galderma
 }
 
 # Plaque Psoriasis, Phase III, 5 newer FDA-approved systemic drugs not
@@ -83,6 +90,18 @@ PSORIASIS_TRIALS = {
     "NCT03536884": "Bimekizumab",      # BE RADIANT, n=743, UCB
     "NCT03624127": "Deucravacitinib",  # POETYK-PSO-1, n=666, BMS
     "NCT03611751": "Deucravacitinib",  # POETYK-PSO-2, n=1020, BMS
+    # Ixekizumab (Taltz, approved 2016) and certolizumab pegol (Cimzia,
+    # approved 2018) added 2026-09-05 -- 2 older but still real,
+    # FDA-approved plaque psoriasis biologics not yet in the atlas.
+    # Each pivotal registrational program individually confirmed:
+    # drug as EXPERIMENTAL arm, placebo-controlled, condition
+    # includes Psoriasis/Plaque Psoriasis, resultsSection present.
+    "NCT01474512": "Ixekizumab",     # UNCOVER-1, n=1296, Eli Lilly
+    "NCT01597245": "Ixekizumab",     # UNCOVER-2, n=1224, Eli Lilly
+    "NCT01646177": "Ixekizumab",     # UNCOVER-3, n=1346, Eli Lilly
+    "NCT02326298": "Certolizumab",   # CIMPASI-1, n=234, UCB
+    "NCT02326272": "Certolizumab",   # CIMPASI-2, n=227, UCB
+    "NCT02346240": "Certolizumab",   # CIMPACT, n=559, UCB
 }
 
 # Hidradenitis Suppurativa, Phase III, 3 FDA-approved biologics. Curated
@@ -140,7 +159,48 @@ CSU_TRIALS = {
     "NCT04180488": "Dupilumab",   # LIBERTY-CSU CUPID (master protocol, studies A/B/C), n=397, Sanofi
 }
 
-TRIALS = {**AD_TRIALS, **PSORIASIS_TRIALS, **HS_TRIALS, **AA_TRIALS, **CSU_TRIALS}
+# Prurigo Nodularis, Phase III, 2 FDA-approved biologics -- 6th indication,
+# added 2026-09-05. Dupilumab (Dupixent) approved for PN Sept 2022;
+# nemolizumab (Nemluvio) approved for PN Aug 2024. CT.gov maps these
+# trials' condition to "Neurodermatitis" (the MeSH-adjacent synonym), not
+# the literal string "Prurigo Nodularis" -- confirmed correct indication
+# via each trial's title and Sanofi/Galderma's own trial registry pages.
+# Each pivotal program individually confirmed: drug as EXPERIMENTAL arm,
+# placebo-controlled, resultsSection present. Excluded as non-pivotal:
+# NCT05052983 (nemolizumab durability-of-response extension, n=34),
+# NCT04204616 (nemolizumab long-term extension, no results yet),
+# NCT06293053/NCT07276425 (dupilumab PK/mechanistic sub-studies, not
+# the registrational RCTs).
+PRURIGO_NODULARIS_TRIALS = {
+    "NCT04183335": "Dupilumab",     # PRIME, n=151, Sanofi/Regeneron
+    "NCT04202679": "Dupilumab",     # PRIME2, n=160, Sanofi/Regeneron
+    "NCT04501679": "Nemolizumab",   # OLYMPIA 1, n=274, Galderma
+    "NCT04501666": "Nemolizumab",   # OLYMPIA 2, n=286, Galderma
+}
+
+# Vitiligo (non-segmental), Phase III, 1 FDA-approved treatment -- 7th
+# indication, added 2026-09-05. Ruxolitinib cream (Opzelura) approved
+# July 2022, the only FDA-approved repigmentation therapy for vitiligo.
+# Thin (1 drug) but real and verified: both trials individually confirmed
+# EXPERIMENTAL arm, vehicle-controlled, condition "Non-segmental
+# Vitiligo", resultsSection present. Excluded as non-pivotal:
+# NCT04530344 (long-term open-label extension of the double-blind period,
+# not itself a placebo-controlled pivotal RCT), all Phase II dose-finding
+# studies (correctly excluded by the phase:3 filter).
+VITILIGO_TRIALS = {
+    "NCT04052425": "Ruxolitinib",  # TRuE-V1, n=330, Incyte
+    "NCT04057573": "Ruxolitinib",  # TRuE-V2, n=344, Incyte
+}
+
+TRIALS = {
+    **AD_TRIALS,
+    **PSORIASIS_TRIALS,
+    **HS_TRIALS,
+    **AA_TRIALS,
+    **CSU_TRIALS,
+    **PRURIGO_NODULARIS_TRIALS,
+    **VITILIGO_TRIALS,
+}
 
 NEEDS_EXTRACTION = {
     "value": None,

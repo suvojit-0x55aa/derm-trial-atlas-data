@@ -105,17 +105,70 @@ This file is the project's committed home for project-intrinsic agent memory: bu
   curated by hand against the live API, not derived by a query filter — if a drug's pivotal
   program changes or a new trial needs adding, update that dict directly rather than
   re-deriving it from a single API query (comparator-arm trials from other drugs' programs can
-  otherwise get miscategorized). `TRIALS` is now assembled from 5 per-indication dicts
-  (`AD_TRIALS`, `PSORIASIS_TRIALS`, `HS_TRIALS`, `AA_TRIALS`, `CSU_TRIALS`) — add a 6th
-  indication as its own dict and merge it in, don't grow one flat dict.
+  otherwise get miscategorized). `TRIALS` is now assembled from 7 per-indication dicts
+  (`AD_TRIALS`, `PSORIASIS_TRIALS`, `HS_TRIALS`, `AA_TRIALS`, `CSU_TRIALS`,
+  `PRURIGO_NODULARIS_TRIALS`, `VITILIGO_TRIALS`) — add the next indication as its own dict and
+  merge it in, don't grow one flat dict. An indication doesn't have to be a one-shot addition:
+  a drug already covered can also gain trials in a later pass (e.g. AD went from 5 to 6 drugs,
+  Psoriasis from 5 to 7, when Nemolizumab/Ixekizumab/Certolizumab were added on 2026-09-05) —
+  re-check `query.cond=<indication>&query.intr=<drug>` for a covered indication's other
+  FDA-approved drugs whenever scaling out further, not just brand-new indications.
 - **The schema (7 field groups, 35 fields, indication-agnostic) needs no changes to add a new
-  indication.** Confirmed for Psoriasis/HS/AA/CSU: `severity_definition` and
-  `primary_endpoint_measure`/`secondary_endpoint_measures` are free text, not AD-specific typed
+  indication.** Confirmed for Psoriasis/HS/AA/CSU/Prurigo Nodularis/Vitiligo: `severity_definition`
+  and `primary_endpoint_measure`/`secondary_endpoint_measures` are free text, not AD-specific typed
   fields — a new indication's own severity/endpoint vocabulary (PASI/sPGA for psoriasis,
-  HiSCR/IHS4 for HS, SALT for AA, UAS7 for CSU) just goes in the same two fields. The
-  `extract_severity_and_bg` regex in `enrich_needs_extraction.py` was extended to also recognize
-  these terms; it still won't catch every trial's exact eligibility-criteria phrasing (a real
-  per-trial-curation gap, not a code bug) — see README's fill-status note for the 26 new trials.
+  HiSCR/IHS4 for HS, SALT for AA, UAS7 for CSU, IGA PN-S/Worst Itch NRS for PN, VASI/F-VASI/T-VASI
+  for vitiligo) just goes in the same two fields. The `extract_severity_and_bg` regex in
+  `enrich_needs_extraction.py` was extended to also recognize these terms; it still won't catch
+  every trial's exact eligibility-criteria phrasing (a real per-trial-curation gap, not a code
+  bug) — see README's fill-status note for the running total of new trials.
+- When a trial's `design.background_therapy_rule` gets auto-filled by
+  `enrich_needs_extraction.py::extract_bg_from_tcs_arm` (not the `BACKGROUND_THERAPY_PDF`/
+  `RESCUE_RULES`/`MULTIPLICITY_RULES` curated dicts), `migrate_v1_to_v2.py` still requires a
+  matching entry in `atlas/curated_background.py`'s `BACKGROUND_THERAPY` table or it raises
+  `KeyError` — this path fires whenever CT.gov's own arm-intervention text is specific enough to
+  read as a real value (not `needs_extraction`), independent of whether a curated excerpt exists.
+  Check for this specifically after adding trials: run `migrate_v1_to_v2.py`, and if it raises,
+  add a `_base(...)` entry to the relevant `atlas/curated_*.py` table built from the same
+  `source_excerpt` text already on the trial record (never invent detail the source doesn't
+  carry — see `PRIME_TOPICAL` in `curated_background.py` for the pattern: a
+  `standardized_background_topical` entry with `recommended_agents` left empty because CT.gov's
+  API text alone didn't specify strengths/potencies).
+- **`scripts/fetch_faers.py` was silently reverted to a pre-schema-v2 version at some point**
+  (same rebase-loss pattern as Orange Book's `6e2674d` fix, but this one wasn't caught) — it
+  staged only `total_report_count`/`top_reactions` instead of the full schema-v2-shaped value
+  (`serious_reports`/`death_reports`/`hospitalization_reports`/`life_threatening_reports`/
+  `disability_reports`/`top_serious_reactions`/`reports_by_year`/`receivedate_from`/
+  `receivedate_to` that `data/trials/*.json` actually carries and `apply_source_data.py`'s
+  docstring assumes). Fixed 2026-09-05 by rewriting it to do the same 9-query-per-drug fetch
+  `atlas/sources/faers.py`'s docstring describes (`_quote_search` keeps `+`/`:`/`"` literal —
+  see the openFDA `+`-encoding sharp edge below). If a future diff of `data/trials/*.json`'s
+  `real_world_safety.faers_summary` shows plausible-but-wrong-shaped data after a re-run,
+  compare `fetch_faers.py` against a committed trial file's actual shape first — this class of
+  drift is real and has happened twice for this repo's cross-source scripts.
+  One more edge worth knowing: querying openFDA for a subset (e.g. `serious:1`) on a drug with
+  very few total reports can itself return a genuine "no matches" 404 — that means 0 for that
+  seriousness flag, not `None`/unknown; `fetch_faers.py` coerces the 404-as-None only for these
+  AND-filtered subset queries (never for the base unfiltered query, where no results really does
+  mean "no FAERS history for this drug at all").
+- **A drug's FAERS/Orange Book/Purple Book data doesn't attach until `atlas/regulatory_applications.py`
+  has an entry for it** — `apply_source_data.py` reads `exclusivity.regulatory_application.value.registry`
+  to pick orange_book vs purple_book, and that field is set by `atlas.migrate` from
+  `regulatory_applications.py`'s `APPLICATIONS` dict at v1→v2 migration time. Since
+  `migrate_v1_to_v2.py` is idempotent (skips already-v2 files), adding a NEW drug after trials
+  are already migrated means editing `regulatory_application` directly on those trial files (a
+  short one-off script, not a full re-migration) before re-running `apply_source_data.py` — see
+  git history around 2026-09-05 for the pattern.
+- **Ruxolitinib is two unrelated drugs sharing one ingredient name**: Opzelura (topical cream,
+  NDA 215309, this atlas's vitiligo/AD drug) and Jakafi/Jakafi XR (oral tablets, NDA
+  202192/217180, oncology/GVHD — not in this atlas at all). Orange Book: `fetch_orange_book.py`'s
+  `DRUGS` dict supports a `(ingredient, application_number)` tuple form specifically to pin the
+  query to 215309 and drop the other two applications' rows before they merge into one record.
+  FAERS: openFDA's `medicinalproduct` search field carries no formulation/route distinction, so
+  this filter trick doesn't exist there — Ruxolitinib's `real_world_safety.faers_summary` is a
+  real, documented, unavoidable mix of all three products' reports (see README's Vitiligo
+  section). Don't try to "fix" the FAERS numbers down to Opzelura-only; there is no query that
+  can do that with the data FAERS exposes.
 - **Re-running `fetch_trials.py` against the full `TRIALS` dict resets every trial to baseline,
   including previously hand-curated trials** — always diff `data/trials/*.json` against the
   committed version afterward and restore any file whose only diff is content that used to be
