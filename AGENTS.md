@@ -34,8 +34,9 @@ This file is the project's committed home for project-intrinsic agent memory: bu
   API/file rows into schema-valid values; the exact shapes they expect are the real captured
   rows in `tests/fixtures/sources/`. The NDA/BLA join key lives in
   `atlas/regulatory_applications.py` (hand-curated, like `TRIALS`).
-- Pipeline runs in 6 stages, in order (stages 2-4 refuse to run on a v2 record; re-run stage 1
-  to reset to v1 first):
+- Pipeline runs in 8 stages, in order (stages 2-4 refuse to run on a v2 record; re-run stage 1
+  to reset to v1 first; stages 6-7 only touch `real_world_safety`/`exclusivity` and don't
+  require 2-4 to have run):
   1. `fetch_trials.py` — clean structured CT.gov fields (identity/molecule/population/design/
      endpoints/timing_ops skeleton).
   2. `enrich_needs_extraction.py` — LLM-assisted second pass over CT.gov free text, protocol/
@@ -45,11 +46,17 @@ This file is the project's committed home for project-intrinsic agent memory: bu
      `boxed_warning`.
   4. `enrich_publications.py` — hand-curated excerpts from PMC full-text papers and FDA
      Drugs@FDA approval-package reviews, for the fields nothing else reached.
-  5. `migrate_v1_to_v2.py` — typed schema v2, validated (idempotent).
-  6. `build_csv.py` — flatten every trial JSON to `trials.csv`, `sources.csv`, `endpoints.csv`,
+  5. `migrate_v1_to_v2.py` — typed schema v2, validated (idempotent); also sets
+     `exclusivity.regulatory_application` from `atlas/regulatory_applications.py`, which stage 7
+     uses to pick the right registry.
+  6. `fetch_faers.py` / `fetch_orange_book.py` / `fetch_purple_book.py` — live-fetch and stage
+     one schema-shaped sourced value per drug under `data/_raw_staging/<source>/`.
+  7. `apply_source_data.py` — folds the staged values into every trial of that drug's
+     `real_world_safety.faers_summary` and `exclusivity.{orange_book,purple_book}`.
+  8. `build_csv.py` — flatten every trial JSON to `trials.csv`, `sources.csv`, `endpoints.csv`,
      `severity_criteria.csv`, `adverse_event_rates.csv`.
   Re-running `fetch_trials.py` resets a trial file to its stage-1 baseline, so re-run stages
-  2-5 after it before rebuilding the CSVs.
+  2-7 after it before rebuilding the CSVs.
 - Every value with a non-`ctgov_api` source_type is machine/LLM-extracted, not hand-verified —
   `reviewed_by` stays `null` and `confidence < 1.0` until a human (captain + Garvita) signs off.
   Do not treat these as clinically authoritative without that review, and do not upgrade a
@@ -120,12 +127,28 @@ This file is the project's committed home for project-intrinsic agent memory: bu
   drifted from an earlier pass in ways unrelated to any single agent's edits — check for that
   specific (harmless, cosmetic) diff before assuming a real regression.
 - **Cross-source data (FAERS, Orange Book, Purple Book)** is fetched by `scripts/fetch_faers.py`,
-  `scripts/fetch_purple_book.py`, and `scripts/fetch_orange_book.py`, staged under
-  `data/_raw_staging/<source>/<drug>.json` — NOT yet integrated into `data/trials/*.json`'s field
-  structure (a sibling schema-redesign task owns that; see README's "Cross-source data" section
-  for status per source and why Orange Book is currently unreachable). Orange Book and Purple
-  Book are separate parsers by design — different file shapes and exclusivity rules (NDA patent
-  law vs. BLA/BPCIA biologic exclusivity) — never merge them into one parser.
+  `scripts/fetch_purple_book.py`, and `scripts/fetch_orange_book.py` (staged under
+  `data/_raw_staging/<source>/<drug>.json`, already schema-shaped) and folded into every trial's
+  `real_world_safety.faers_summary` / `exclusivity.{orange_book,purple_book}` by
+  `scripts/apply_source_data.py` — see README's "Cross-source data" section for per-source
+  status. Orange Book and Purple Book are separate parsers by design — different file shapes and
+  exclusivity rules (NDA patent law vs. BLA/BPCIA biologic exclusivity) — never merge them into
+  one parser. Two sharp edges hit while building these, worth knowing before re-touching them:
+  - openFDA's query syntax needs a **literal** `+` as its AND/space operator — percent-encoding
+    it (`urllib.parse.quote()`'s default behavior) makes openFDA treat it as a literal plus-sign
+    search character instead, so a filtered query like `...+AND+serious:1` silently matches
+    *nothing* rather than erroring. `fetch_faers.py::_quote_search` keeps `+`, `:`, and `"`
+    unescaped for exactly this reason — don't "clean up" that safe-chars list.
+  - A drug with FDA-approved biosimilars (e.g. Adalimumab has 10) has *every* biosimilar's BLA
+    row in the Purple Book table alongside the reference product's — picking the first matched
+    row blindly surfaces a biosimilar (e.g. "Abrilada") instead of the actual reference product
+    (Humira). Always filter to `License Type == "351(a)"` for the primary record and route every
+    `"351(k)"` row into that record's own `biosimilars` list (see
+    `fetch_purple_book.py::build_purple_book_value`).
+  - `atlas/sources/orange_book.py` and `purple_book.py`'s builders are shaped for the *file-download*
+    (tilde/CSV) versions of these sources; the live API/page versions this repo actually fetches
+    from use different column names and date formats (confirmed on real rows) — the fetch scripts
+    build the schema shape directly rather than forcing a mismatch through those builders.
 
 ## Maintaining this file
 

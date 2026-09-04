@@ -380,7 +380,20 @@ python3 scripts/enrich_publications.py
 #    place and validate them against atlas/schema.py. Idempotent.
 python3 scripts/migrate_v1_to_v2.py
 
-# 6. Flatten data/trials/*.json into the repo-root CSVs (see below).
+# 6. Fetch openFDA FAERS / Orange Book / Purple Book live and stage one
+#    schema-shaped sourced value per drug under data/_raw_staging/<source>/.
+python3 scripts/fetch_faers.py
+python3 scripts/fetch_orange_book.py
+python3 scripts/fetch_purple_book.py
+
+# 7. Fold the staged FAERS/Orange Book/Purple Book values into every trial's
+#    real_world_safety.faers_summary / exclusivity.{orange_book,purple_book}
+#    (drug-level; requires stage 5 to have already set
+#    exclusivity.regulatory_application, which decides which registry field
+#    is real for that drug).
+python3 scripts/apply_source_data.py
+
+# 8. Flatten data/trials/*.json into the repo-root CSVs (see below).
 python3 scripts/build_csv.py
 
 # Regenerate docs/SCHEMA.md + schema/trial.schema.json after any change to
@@ -392,9 +405,10 @@ python3 -m unittest discover -s tests -t .
 ```
 
 Stages 2-4 edit **v1** records and refuse to run on a v2 file; to re-enrich,
-re-run stage 1 (which resets to the v1 baseline), then 2-5. Passes that write
-the new v2-only groups (FAERS, Orange/Purple Book) run *after* stage 5 and use
-the builders in `atlas/sources/` to produce values the schema accepts.
+re-run stage 1 (which resets to the v1 baseline), then 2-5. Stages 6-7 only
+touch `real_world_safety`/`exclusivity` and are safe to re-run any time
+after stage 5 (they don't require stages 2-4 to have run first, and won't
+disturb any other field group).
 
 Optional: `python3 scripts/fetch_protocol_docs.py` re-downloads every
 trial's Study Protocol/SAP PDF and converts it to text under
@@ -432,11 +446,27 @@ CSVs.
 ## Cross-source data (FAERS, Orange Book, Purple Book)
 
 Real data fetched for all 3 sources validated in the cross-source
-data-strategy scout report, for every drug across all 5 indications, using
-the schema v2 builders in `atlas/sources/` (`faers.py`, `orange_book.py`,
-`purple_book.py`) so the values land directly in
-`real_world_safety.faers_summary` / `exclusivity.{orange_book,purple_book}`
-— no free-text/prose intermediate.
+data-strategy scout report, for every drug across all 5 indications, and
+integrated into every trial's real `real_world_safety.faers_summary` /
+`exclusivity.{orange_book,purple_book}` schema v2 fields — no free-text/
+prose intermediate, no data left sitting in a staging directory.
+
+`scripts/fetch_faers.py`, `fetch_orange_book.py`, and `fetch_purple_book.py`
+each fetch live and stage one drug-level sourced value per drug under
+`data/_raw_staging/<source>/<drug>.json`, already shaped to match
+`atlas/schema.py`'s `FAERS_SUMMARY`/`ORANGE_BOOK`/`PURPLE_BOOK` types
+directly (each verified with `atlas.schema.validate()` before being
+folded in — not reusing `atlas/sources/*.py`'s builders, which are built
+for the *CSV/tilde-file* column-name spellings of these sources; two of
+these three live-fetched sources (openFDA's Orange Book mirror, Purple
+Book's live search-results table) turned out to use different column
+names/date formats than the file-download versions those builders target,
+confirmed on real rows — see each script's module docstring). Then
+`scripts/apply_source_data.py` copies each drug's staged value into every
+trial of that drug, and picks which of `orange_book`/`purple_book` is the
+real one per drug from `exclusivity.regulatory_application.value.registry`
+(the other stays an honest not-applicable `needs_extraction`, since a
+biologic BLA has no Orange Book NDA entry and vice versa).
 
 | Source | Script | Coverage | Result |
 |---|---|---|---|
