@@ -32,7 +32,7 @@ This file is the project's committed home for project-intrinsic agent memory: bu
   couldn't reliably extract. Don't force-fill it by inference — a wrong schedule is worse than a
   null.
 - **This atlas is an ongoing, multi-cycle scale-out effort, not a one-shot.** It started at 1
-  indication (AD, 5 drugs, 17 trials) and is now at 22 indications, 46 unique drugs, 123 trials
+  indication (AD, 5 drugs, 17 trials) and is now at 23 indications, 47 unique drugs, 124 trials
   (see README's "What this covers" for the full per-indication breakdown and exactly which
   candidate trials were checked and excluded as non-pivotal for each). Every drug/indication
   pairing was verified against real, live ClinicalTrials.gov and openFDA data before being
@@ -608,6 +608,56 @@ This file is the project's committed home for project-intrinsic agent memory: bu
   active-comparator-only exclusion as Pemphigus Vulgaris/Rituximab and the BCC hedgehog
   inhibitors — a reminder to check the actual arm types (not just "vehicle" appearing in a trial's
   brief title) before assuming a topical trial is placebo-controlled.
+
+- **Cycle 18 introduced a standing full-deep-extraction requirement for every NEW trial going
+  forward** (captain instruction): severity criteria, endpoint hierarchy/definitions, mechanism of
+  action, dosing regimen, visit schedule, and rescue therapy must all be pulled for real from
+  source text (CT.gov free text, protocol/publication full text), not left `needs_extraction` by
+  default the way cycles 6-17 generally did for new indications. A genuinely unfindable field after
+  real effort still correctly stays `needs_extraction` — that's a real outcome, not a shortcut, but
+  it can no longer be the default. A **sibling task (derm-trial-atlas-deep-extraction)** is
+  separately backfilling the ~90 pre-cycle-18 trials that lack this depth — not this cycle's job to
+  redo, just don't add to that backlog going forward.
+- **Cycle 18 added a 23rd indication, Dermatomyositis, via Octagam 10% (IVIG, BLA 125062,
+  ProDERM/NCT02728752)** — found via a fresh "FDA dermatology approvals 2026" web sweep (the
+  standing broad-sweep method, repeated per the cycle-16 steer) that surfaced Brepocitinib
+  (Lisraya), approved 2026-08-27. Brepocitinib's own pivotal VALOR trial (NCT05437263) is real
+  (randomized, double-blind, placebo-controlled Phase 3, n=241, published in NEJM/JAMA
+  Dermatology) but is `hasResults: false` on CT.gov — the same FDA-approved-but-not-yet-posted
+  pattern as Zevaskyn/VIITAL and Cemiplimab/C-POST, excluded as a re-check candidate, not a gap.
+  Checking the indication further (rather than stopping at the first candidate's exclusion, a
+  useful habit for any future "recently approved but unposted" hit) surfaced Octagam 10%, FDA
+  dermatomyositis-approved since 2021-07-15 via its own placebo-controlled Phase 3 trial ProDERM,
+  which does have `hasResults: true` — added instead. **Dermatomyositis is in scope for this atlas
+  despite being systemic (muscle + skin), the same precedent as CTCL and Mastocytosis** — its own
+  pivotal trial uses a dedicated dermatology severity instrument (CDASI) as a named endpoint, and
+  heliotrope rash/Gottron's papules are hallmark diagnostic features, a materially stronger
+  dermatology case than the Behçet's oral-ulcer trial excluded on scope in cycle 16.
+- **Octagam 10% surfaced 3 new pipeline-shape wrinkles worth generalizing.** (1) It is a
+  CBER-reviewed (not CDER) plasma-derived polyclonal immunoglobulin BLA — `label.json`/
+  `drugsfda.json` return genuine `NOT_FOUND` for brand, generic, AND substance-name searches (a
+  step further than Kerydin/Xepi/Eskata, where at least one search term worked), so `boxed_warning`
+  and `mechanism_of_action` needed the original label PDF read directly, and
+  `molecule.mechanism_of_action.modality` needed a new value: `"other"` (not `monoclonal_antibody`)
+  since IVIG is a polyclonal, not monoclonal, antibody product — the label itself states the
+  mechanism "has not been fully elucidated," same honest-null pattern as Dupilumab's mechanism
+  text. (2) FAERS on `OCTAGAM` (1969 reports) is a new, more extreme version of the
+  generic-term-contamination pattern (Qbrexza/Glycopyrronium, Ozenoxacin/Xepi): Octagam's much
+  broader original ITP/immunodeficiency uses so dominate its FAERS reports that dermatomyositis
+  does not appear in the top 15 `drugindication` terms at all, and unlike Qbrexza/Ozenoxacin there
+  is no brand-vs-generic split to retry (Octagam is one product name, not generic+brand) — recorded
+  as-is, the same unavoidable-mix situation as Ruxolitinib. (3) ProDERM's design is a **blinded
+  treatment-switch ("escape") design**, not the topical-then-systemic step-up shape the
+  `timing_ops.rescue_therapy` schema fields were built for: a subject with confirmed deterioration
+  (worsening on 2 consecutive visits by defined thresholds) is switched to the other blinded arm
+  rather than given an add-on rescue medication — recorded via `trigger_rules`/`flare_definition`
+  with the shape mismatch documented in `rationale` rather than forcing an inapplicable field.
+  Likewise `design.background_therapy.regimen_type`'s 3 enum values are all AD/psoriasis-specific
+  (monotherapy/combination_tcs/standardized_background_topical); none fit a systemic-disease
+  permitted-background design, so it was left `null` with the real rules recorded in
+  `background_agent_class`/`permitted_concomitant`/`population_note` instead — **a new trial whose
+  design doesn't fit an existing curated enum is a real "extend the schema later" signal, not a
+  reason to force a wrong-but-valid enum value.**
 
 ## Maintaining this file
 
