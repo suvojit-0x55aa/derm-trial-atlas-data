@@ -184,13 +184,47 @@
       "confidence": 1.0
     },
     "severity_criteria": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "severity_label": null,
+        "basis": "eligibility_text",
+        "cross_reference": null,
+        "source_criterion_numbers": [],
+        "baseline_visit_number": null,
+        "criteria": [
+          {
+            "scale": "Hurley Stage",
+            "scale_component": null,
+            "scale_variant": null,
+            "metric": "absolute_score",
+            "comparator": ">=",
+            "value": 2,
+            "unit": "score",
+            "scale_min": 1,
+            "scale_max": 3,
+            "assessed_at": null,
+            "scale_anchors": null
+          },
+          {
+            "scale": "AN Count",
+            "scale_component": null,
+            "scale_variant": null,
+            "metric": "absolute_score",
+            "comparator": ">=",
+            "value": 3,
+            "unit": "score",
+            "scale_min": null,
+            "scale_max": null,
+            "assessed_at": null,
+            "scale_anchors": null
+          }
+        ]
+      },
+      "source_type": "ctgov_text_extraction",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01468207",
+      "source_excerpt": "HS lesions must be present in at least two distinct anatomical areas, one of which must be at least Hurley Stage II or Hurley Stage III | Subject must have a total AN count of greater than or equal to 3 at baseline",
+      "extracted_by": "deep-extraction pass (LLM-assisted extraction, scale-out backfill; pending human QA)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.8
     }
   },
   "design": {
@@ -260,7 +294,21 @@
           "scale": null,
           "scale_component": null,
           "scale_variant": null,
-          "responder_criteria": [],
+          "responder_criteria": [
+            {
+              "scale": "AN Count",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "percent_improvement_from_baseline",
+              "comparator": ">=",
+              "value": 50,
+              "unit": "percent",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
           "baseline_reference": null,
           "timepoints": [
             {
@@ -281,9 +329,9 @@
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01468207",
       "source_excerpt": "protocolSection.outcomesModule.primaryOutcomes[0].measure/timeFrame",
-      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2; responder_criteria backfilled by deep-extraction pass (pattern-matched from CT.gov verbatim title; pending human QA)",
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": 0.85
     },
     "secondary_endpoints": {
       "value": [
@@ -313,7 +361,7 @@
           "time_frame": null
         },
         {
-          "verbatim": "Percentage of Participants Achieving At Least 30% Reduction and At Least 1 Unit Reduction From Baseline in Patient's Global Assessment of Skin Pain (NRS30) - At Worst at Week 12 Among Participants With Baseline Skin Pain NRS ≥ 3",
+          "verbatim": "Percentage of Participants Achieving At Least 30% Reduction and At Least 1 Unit Reduction From Baseline in Patient's Global Assessment of Skin Pain (NRS30) - At Worst at Week 12 Among Participants With Baseline Skin Pain NRS \u2265 3",
           "rank": "secondary",
           "position": 2,
           "measure_type": "responder_rate",
@@ -917,7 +965,7 @@
       },
       "source_type": "openfda_label",
       "source_url": "https://api.fda.gov/drug/label.json?search=openfda.substance_name:ADALIMUMAB&limit=1",
-      "source_excerpt": "results[0].boxed_warning -- v1 extracted text: WARNING: SERIOUS INFECTIONS and MALIGNANCY SERIOUS INFECTIONS Patients treated with adalimumab products, including HYRIMOZ, are at increased risk for developing serious infections that may lead to hospitalization or death [see Warnings and Precautions ( 5.1 )] . Most patients who developed these infections were taking concomitant immunosuppressants such as methotrexate or corticosteroids. Discontinue HYRIMOZ if a patient develops a serious infection or sepsis. Reported infections include: • Active tuberculosis (TB), including reactivation of latent TB. Patients with TB have frequently presented with disseminated or extrapulmonary disease. Test patients for latent TB before HYRIMOZ use and during therapy. Initiate treatment for latent TB prior to HYRIMOZ use. • Invasive fungal infections, including histoplasmosis, coccidioidomycosis, candidiasis, aspergillosis, blastomycosis, and pneumocystosis. Patients with histoplasmosis or other invasive fungal infections may present with disseminated, rather than localized, disease. Antigen and antibody testing for histoplasmosis may be negative in some patients with active infection. Consider empiric anti-fungal therapy in patients at risk for invasive fungal infections who develop severe systemic illness. • Bacterial, viral and other infections due to opportunistic pathogens, including Legionella and Listeria. Carefully consider the risks and benefits of treatment with HYRIMOZ prior to initiating therapy in patients with chronic or recurrent infection. Monitor patients closely for the development of signs and symptoms of infection during and after treatment with HYRIMOZ, including the possible development of TB in patients who tested negative for latent TB infection prior to initiating therapy [see Warnings and Precautions ( 5.1 ) and Adverse Reactions ( 6.1 )]. MALIGNANCY Lymphoma and other malignancies, some fatal, have been reported in children and adolescent patients treated with TNF blockers including adalimumab products [ see Warnings and Precautions ( 5.2 ) ]. Post-marketing cases of hepatosplenic T-cell lymphoma (HSTCL), a rare type of T-cell lymphoma, have been reported in patients treated with TNF blockers including adalimumab products. These cases have had a very aggressive disease course and have been fatal. The majority of reported TNF blocker cases have occurred in patients with Crohn's disease or ulcerative colitis and the majority were in adolescent and young adult males. Almost all these patients had received treatment with azathioprine or 6-mercaptopurine (6–MP) concomitantly with a TNF blocker at or prior to diagnosis. It is uncertain whether the occurrence of HSTCL is related to use of a TNF blocker or a TNF blocker in combination with these other immunosuppressants [see Warnings and Precautions ( 5.2 )]. WARNING: SERIOUS INFECTIONS and MALIGNANCY See full prescribing information for complete boxed warning. SERIOUS INFECTIONS ( 5.1 , 6.1 ): • Increased risk of serious infections leading to hospitalization or death, including tuberculosis (TB), bacterial sepsis, invasive fungal infections (such as histoplasmosis), and infections due to other opportunistic pathogens. • Discontinue HYRIMOZ if a patient develops a serious infection or sepsis during treatment. • Perform test for latent TB; if positive, start treatment for TB prior to starting HYRIMOZ. • Monitor all patients for active TB during treatment, even if initial latent TB test is negative. MALIGNANCY ( 5.2 ): • Lymphoma and other malignancies, some fatal, have been reported in children and adolescent patients treated with TNF blockers including adalimumab products. • Post-marketing cases of hepatosplenic T-cell lymphoma (HSTCL), a rare type of T-cell lymphoma, have occurred in adolescent and young adults with inflammatory bowel disease treated with TNF blockers including adalimumab products.",
+      "source_excerpt": "results[0].boxed_warning -- v1 extracted text: WARNING: SERIOUS INFECTIONS and MALIGNANCY SERIOUS INFECTIONS Patients treated with adalimumab products, including HYRIMOZ, are at increased risk for developing serious infections that may lead to hospitalization or death [see Warnings and Precautions ( 5.1 )] . Most patients who developed these infections were taking concomitant immunosuppressants such as methotrexate or corticosteroids. Discontinue HYRIMOZ if a patient develops a serious infection or sepsis. Reported infections include: \u2022 Active tuberculosis (TB), including reactivation of latent TB. Patients with TB have frequently presented with disseminated or extrapulmonary disease. Test patients for latent TB before HYRIMOZ use and during therapy. Initiate treatment for latent TB prior to HYRIMOZ use. \u2022 Invasive fungal infections, including histoplasmosis, coccidioidomycosis, candidiasis, aspergillosis, blastomycosis, and pneumocystosis. Patients with histoplasmosis or other invasive fungal infections may present with disseminated, rather than localized, disease. Antigen and antibody testing for histoplasmosis may be negative in some patients with active infection. Consider empiric anti-fungal therapy in patients at risk for invasive fungal infections who develop severe systemic illness. \u2022 Bacterial, viral and other infections due to opportunistic pathogens, including Legionella and Listeria. Carefully consider the risks and benefits of treatment with HYRIMOZ prior to initiating therapy in patients with chronic or recurrent infection. Monitor patients closely for the development of signs and symptoms of infection during and after treatment with HYRIMOZ, including the possible development of TB in patients who tested negative for latent TB infection prior to initiating therapy [see Warnings and Precautions ( 5.1 ) and Adverse Reactions ( 6.1 )]. MALIGNANCY Lymphoma and other malignancies, some fatal, have been reported in children and adolescent patients treated with TNF blockers including adalimumab products [ see Warnings and Precautions ( 5.2 ) ]. Post-marketing cases of hepatosplenic T-cell lymphoma (HSTCL), a rare type of T-cell lymphoma, have been reported in patients treated with TNF blockers including adalimumab products. These cases have had a very aggressive disease course and have been fatal. The majority of reported TNF blocker cases have occurred in patients with Crohn's disease or ulcerative colitis and the majority were in adolescent and young adult males. Almost all these patients had received treatment with azathioprine or 6-mercaptopurine (6\u2013MP) concomitantly with a TNF blocker at or prior to diagnosis. It is uncertain whether the occurrence of HSTCL is related to use of a TNF blocker or a TNF blocker in combination with these other immunosuppressants [see Warnings and Precautions ( 5.2 )]. WARNING: SERIOUS INFECTIONS and MALIGNANCY See full prescribing information for complete boxed warning. SERIOUS INFECTIONS ( 5.1 , 6.1 ): \u2022 Increased risk of serious infections leading to hospitalization or death, including tuberculosis (TB), bacterial sepsis, invasive fungal infections (such as histoplasmosis), and infections due to other opportunistic pathogens. \u2022 Discontinue HYRIMOZ if a patient develops a serious infection or sepsis during treatment. \u2022 Perform test for latent TB; if positive, start treatment for TB prior to starting HYRIMOZ. \u2022 Monitor all patients for active TB during treatment, even if initial latent TB test is negative. MALIGNANCY ( 5.2 ): \u2022 Lymphoma and other malignancies, some fatal, have been reported in children and adolescent patients treated with TNF blockers including adalimumab products. \u2022 Post-marketing cases of hepatosplenic T-cell lymphoma (HSTCL), a rare type of T-cell lymphoma, have occurred in adolescent and young adults with inflammatory bowel disease treated with TNF blockers including adalimumab products.",
       "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0

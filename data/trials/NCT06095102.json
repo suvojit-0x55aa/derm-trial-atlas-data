@@ -83,22 +83,60 @@
       "confidence": 1.0
     },
     "mechanism_of_action": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "modality": "other",
+        "drug_class": "IL-23 receptor antagonist peptide",
+        "antibody_isotype": null,
+        "binding_targets": [
+          "IL-23R"
+        ],
+        "pathway_cytokines": [
+          "IL-23"
+        ],
+        "receptor_subunits": [
+          "IL-23R"
+        ],
+        "kinases_inhibited": [],
+        "lower_potency_kinases": [],
+        "selectivity": [],
+        "reversible": null,
+        "mechanism_established": null,
+        "label_section": "12.1"
+      },
+      "source_type": "openfda_label",
+      "source_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=4d42efb1-d399-2a77-e063-6294a90af3cc",
+      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1) -- extracted text: 12.1 Mechanism of Action Icotrokinra is a peptide that selectively binds to the IL-23 receptor (IL-23R) with a dissociation constant of 7 pM and antagonizes the binding of IL-23. IL-23 is a naturally occurring cytokine that is involved in inflammatory and immune responses. Icotrokinra inhibits the IL-23/IL-23R-dependent release of proinflammatory cytokines.",
+      "extracted_by": "deep-extraction pass (LLM-assisted extraction, scale-out backfill; pending human QA)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.9
     },
     "dosing_regimen": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": [
+        {
+          "intervention_name": "JNJ-77242113",
+          "description": "JNJ-77242113 will be administered orally.",
+          "is_placebo": false,
+          "route": "oral",
+          "dose_form": null,
+          "dose_value": null,
+          "dose_unit": null,
+          "units_per_dose": null,
+          "frequency": null,
+          "duration_weeks": null,
+          "dosing_periods": [],
+          "administration_sites": [],
+          "antibody_isotype": null,
+          "molecular_target": null,
+          "arm_names": [],
+          "co_administered_with": []
+        }
+      ],
+      "source_type": "ctgov_text_extraction",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT06095102",
+      "source_excerpt": "JNJ-77242113: JNJ-77242113 will be administered orally.",
+      "extracted_by": "deep-extraction pass (LLM-assisted extraction, scale-out backfill; pending human QA)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.8
     }
   },
   "population": {
@@ -150,13 +188,47 @@
       "confidence": 1.0
     },
     "severity_criteria": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "severity_label": null,
+        "basis": "eligibility_text",
+        "cross_reference": null,
+        "source_criterion_numbers": [],
+        "baseline_visit_number": null,
+        "criteria": [
+          {
+            "scale": "BSA",
+            "scale_component": null,
+            "scale_variant": null,
+            "metric": "percent_bsa",
+            "comparator": ">=",
+            "value": 1,
+            "unit": "percent",
+            "scale_min": null,
+            "scale_max": null,
+            "assessed_at": null,
+            "scale_anchors": null
+          },
+          {
+            "scale": "IGA",
+            "scale_component": null,
+            "scale_variant": null,
+            "metric": "absolute_score",
+            "comparator": ">=",
+            "value": 2,
+            "unit": "score",
+            "scale_min": null,
+            "scale_max": null,
+            "assessed_at": null,
+            "scale_anchors": null
+          }
+        ]
+      },
+      "source_type": "ctgov_text_extraction",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT06095102",
+      "source_excerpt": "Total body surface area (BSA) >=1 percent (%) at screening and baseline, and investigator global assessment (IGA) (overall) >=2 at screening and baseline",
+      "extracted_by": "deep-extraction pass (LLM-assisted extraction, scale-out backfill; pending human QA)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.8
     }
   },
   "design": {
@@ -377,7 +449,24 @@
           "scale": null,
           "scale_component": null,
           "scale_variant": null,
-          "responder_criteria": [],
+          "responder_criteria": [
+            {
+              "scale": "sPGA",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "absolute_score",
+              "comparator": "in",
+              "value": [
+                0,
+                1
+              ],
+              "unit": "score",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
           "baseline_reference": "baseline",
           "timepoints": [
             {
@@ -418,7 +507,24 @@
           "scale": null,
           "scale_component": null,
           "scale_variant": null,
-          "responder_criteria": [],
+          "responder_criteria": [
+            {
+              "scale": "PGA",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "absolute_score",
+              "comparator": "in",
+              "value": [
+                0,
+                1
+              ],
+              "unit": "score",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
           "baseline_reference": "baseline",
           "timepoints": [
             {
@@ -459,7 +565,21 @@
           "scale": "IGA",
           "scale_component": null,
           "scale_variant": null,
-          "responder_criteria": [],
+          "responder_criteria": [
+            {
+              "scale": "IGA",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "absolute_score",
+              "comparator": "==",
+              "value": 0,
+              "unit": "score",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
           "baseline_reference": null,
           "timepoints": [
             {
@@ -484,7 +604,21 @@
           "scale": null,
           "scale_component": null,
           "scale_variant": null,
-          "responder_criteria": [],
+          "responder_criteria": [
+            {
+              "scale": "PSSD Symptom",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "absolute_score",
+              "comparator": "==",
+              "value": 0,
+              "unit": "score",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
           "baseline_reference": "baseline",
           "timepoints": [
             {
@@ -550,7 +684,24 @@
           "scale": null,
           "scale_component": null,
           "scale_variant": null,
-          "responder_criteria": [],
+          "responder_criteria": [
+            {
+              "scale": "sPGA",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "absolute_score",
+              "comparator": "in",
+              "value": [
+                0,
+                1
+              ],
+              "unit": "score",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
           "baseline_reference": "baseline",
           "timepoints": [
             {
@@ -701,7 +852,21 @@
           "scale": null,
           "scale_component": null,
           "scale_variant": null,
-          "responder_criteria": [],
+          "responder_criteria": [
+            {
+              "scale": "PASI",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "percent_improvement_from_baseline",
+              "comparator": ">=",
+              "value": 90,
+              "unit": "percent",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
           "baseline_reference": null,
           "timepoints": [
             {
@@ -726,7 +891,21 @@
           "scale": null,
           "scale_component": null,
           "scale_variant": null,
-          "responder_criteria": [],
+          "responder_criteria": [
+            {
+              "scale": "PASI",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "percent_improvement_from_baseline",
+              "comparator": ">=",
+              "value": 75,
+              "unit": "percent",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
           "baseline_reference": null,
           "timepoints": [
             {
@@ -851,7 +1030,24 @@
           "scale": null,
           "scale_component": null,
           "scale_variant": null,
-          "responder_criteria": [],
+          "responder_criteria": [
+            {
+              "scale": "PGA",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "absolute_score",
+              "comparator": "in",
+              "value": [
+                0,
+                1
+              ],
+              "unit": "score",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
           "baseline_reference": "baseline",
           "timepoints": [
             {
@@ -1008,7 +1204,21 @@
           "scale": null,
           "scale_component": null,
           "scale_variant": null,
-          "responder_criteria": [],
+          "responder_criteria": [
+            {
+              "scale": "PSSD Sign",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "absolute_score",
+              "comparator": "==",
+              "value": 0,
+              "unit": "score",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
           "baseline_reference": "baseline",
           "timepoints": [
             {
@@ -1337,9 +1547,9 @@
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT06095102",
       "source_excerpt": "protocolSection.outcomesModule.secondaryOutcomes[].measure",
-      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2; responder_criteria backfilled by deep-extraction pass (pattern-matched from CT.gov verbatim title; pending human QA)",
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": 0.85
     },
     "multiplicity_control": {
       "value": null,

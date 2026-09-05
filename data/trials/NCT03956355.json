@@ -83,22 +83,56 @@
       "confidence": 1.0
     },
     "mechanism_of_action": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "modality": "small_molecule",
+        "drug_class": "aryl hydrocarbon receptor (AhR) agonist",
+        "antibody_isotype": null,
+        "binding_targets": [],
+        "pathway_cytokines": [],
+        "receptor_subunits": [
+          "AhR"
+        ],
+        "kinases_inhibited": [],
+        "lower_potency_kinases": [],
+        "selectivity": [],
+        "reversible": null,
+        "mechanism_established": false,
+        "label_section": "12.1"
+      },
+      "source_type": "openfda_label",
+      "source_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=4615ce09-cf4d-4410-91ff-db3caea7a802",
+      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1) -- extracted text: 12.1 Mechanism of Action Tapinarof is an aryl hydrocarbon receptor (AhR) agonist. The specific mechanisms by which VTAMA cream exerts its therapeutic actions are unknown.",
+      "extracted_by": "deep-extraction pass (LLM-assisted extraction, scale-out backfill; pending human QA)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.9
     },
     "dosing_regimen": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": [
+        {
+          "intervention_name": "Tapinarof",
+          "description": "Tapinarof cream, 1%, applied once daily",
+          "is_placebo": false,
+          "route": "topical",
+          "dose_form": "cream",
+          "dose_value": 1,
+          "dose_unit": "%",
+          "units_per_dose": null,
+          "frequency": "once_daily",
+          "duration_weeks": null,
+          "dosing_periods": [],
+          "administration_sites": [],
+          "antibody_isotype": null,
+          "molecular_target": null,
+          "arm_names": [],
+          "co_administered_with": []
+        }
+      ],
+      "source_type": "ctgov_text_extraction",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03956355",
+      "source_excerpt": "Tapinarof: Tapinarof cream, 1%, applied once daily",
+      "extracted_by": "deep-extraction pass (LLM-assisted extraction, scale-out backfill; pending human QA)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.8
     }
   },
   "population": {
@@ -150,13 +184,77 @@
       "confidence": 1.0
     },
     "severity_criteria": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "severity_label": null,
+        "basis": "eligibility_text",
+        "cross_reference": null,
+        "source_criterion_numbers": [],
+        "baseline_visit_number": null,
+        "criteria": [
+          {
+            "scale": "BSA",
+            "scale_component": null,
+            "scale_variant": null,
+            "metric": "percent_bsa",
+            "comparator": ">=",
+            "value": 3,
+            "unit": "percent",
+            "scale_min": null,
+            "scale_max": null,
+            "assessed_at": null,
+            "scale_anchors": null
+          },
+          {
+            "scale": "BSA",
+            "scale_component": null,
+            "scale_variant": null,
+            "metric": "percent_bsa",
+            "comparator": "<=",
+            "value": 20,
+            "unit": "percent",
+            "scale_min": null,
+            "scale_max": null,
+            "assessed_at": null,
+            "scale_anchors": null
+          },
+          {
+            "scale": "PGA",
+            "scale_component": null,
+            "scale_variant": null,
+            "metric": "absolute_score",
+            "comparator": "in",
+            "value": [
+              2,
+              3,
+              4
+            ],
+            "unit": "score",
+            "scale_min": null,
+            "scale_max": null,
+            "assessed_at": null,
+            "scale_anchors": [
+              {
+                "score": 2,
+                "label": "mild"
+              },
+              {
+                "score": 3,
+                "label": "moderate"
+              },
+              {
+                "score": 4,
+                "label": "severe"
+              }
+            ]
+          }
+        ]
+      },
+      "source_type": "ctgov_text_extraction",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03956355",
+      "source_excerpt": "BSA involvement >= 3% and <= 20% | A PGA score of 2 (mild), 3 (moderate) or 4 (severe) at screening and baseline",
+      "extracted_by": "deep-extraction pass (LLM-assisted extraction, scale-out backfill; pending human QA)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.8
     }
   },
   "design": {
@@ -254,7 +352,7 @@
     "secondary_endpoints": {
       "value": [
         {
-          "verbatim": "Percent of Subjects With ≥ 75% Improvement in Psoriasis Area and Severity Index (PASI) From Baseline at Week 12. Analyses Were Done Using Multiple Imputation.",
+          "verbatim": "Percent of Subjects With \u2265 75% Improvement in Psoriasis Area and Severity Index (PASI) From Baseline at Week 12. Analyses Were Done Using Multiple Imputation.",
           "rank": "secondary",
           "position": 1,
           "measure_type": "absolute_value",
@@ -329,7 +427,7 @@
           "time_frame": null
         },
         {
-          "verbatim": "Percent of Subjects With ≥90% Improvement in PASI Score From Baseline to Week 12. Analyses Were Done Using Multiple Imputation.",
+          "verbatim": "Percent of Subjects With \u226590% Improvement in PASI Score From Baseline to Week 12. Analyses Were Done Using Multiple Imputation.",
           "rank": "secondary",
           "position": 4,
           "measure_type": "other",

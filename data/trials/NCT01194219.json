@@ -84,22 +84,54 @@
       "confidence": 1.0
     },
     "mechanism_of_action": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "modality": "small_molecule",
+        "drug_class": "PDE4 inhibitor",
+        "antibody_isotype": null,
+        "binding_targets": [],
+        "pathway_cytokines": [],
+        "receptor_subunits": [],
+        "kinases_inhibited": [],
+        "lower_potency_kinases": [],
+        "selectivity": [],
+        "reversible": null,
+        "mechanism_established": null,
+        "label_section": "12.1"
+      },
+      "source_type": "openfda_label",
+      "source_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=fa1e6b1d-2961-42d4-afee-7a9596bc2335",
+      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1) -- extracted text: 12.1 Mechanism of Action Apremilast is an oral small molecule inhibitor of phosphodiesterase 4 (PDE4) specific for cyclic adenosine monophosphate (cAMP). PDE4 inhibition results in increased intracellular cAMP levels. The specific mechanism(s) by which apremilast exerts its therapeutic action is not well defined.",
+      "extracted_by": "deep-extraction pass (LLM-assisted extraction, scale-out backfill; pending human QA)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.9
     },
     "dosing_regimen": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": [
+        {
+          "intervention_name": "Apremilast",
+          "description": "",
+          "is_placebo": false,
+          "route": null,
+          "dose_form": null,
+          "dose_value": null,
+          "dose_unit": null,
+          "units_per_dose": null,
+          "frequency": null,
+          "duration_weeks": null,
+          "dosing_periods": [],
+          "administration_sites": [],
+          "antibody_isotype": null,
+          "molecular_target": null,
+          "arm_names": [],
+          "co_administered_with": []
+        }
+      ],
+      "source_type": "ctgov_text_extraction",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01194219",
+      "source_excerpt": "Apremilast: ",
+      "extracted_by": "deep-extraction pass (LLM-assisted extraction, scale-out backfill; pending human QA)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.8
     }
   },
   "population": {
@@ -151,13 +183,20 @@
       "confidence": 1.0
     },
     "severity_criteria": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "severity_label": "moderate_to_severe",
+        "basis": "eligibility_text",
+        "cross_reference": null,
+        "source_criterion_numbers": [],
+        "baseline_visit_number": null,
+        "criteria": []
+      },
+      "source_type": "ctgov_text_extraction",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01194219",
+      "source_excerpt": "Have moderate to severe plaque psoriasis at Screening and Baseline",
+      "extracted_by": "deep-extraction pass (LLM-assisted extraction, scale-out backfill; pending human QA)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.8
     }
   },
   "design": {
@@ -227,7 +266,21 @@
           "scale": null,
           "scale_component": null,
           "scale_variant": null,
-          "responder_criteria": [],
+          "responder_criteria": [
+            {
+              "scale": "PASI",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "percent_improvement_from_baseline",
+              "comparator": ">=",
+              "value": 75,
+              "unit": "percent",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
           "baseline_reference": "baseline",
           "timepoints": [
             {
@@ -248,9 +301,9 @@
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01194219",
       "source_excerpt": "protocolSection.outcomesModule.primaryOutcomes[0].measure/timeFrame",
-      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2; responder_criteria backfilled by deep-extraction pass (pattern-matched from CT.gov verbatim title; pending human QA)",
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": 0.85
     },
     "secondary_endpoints": {
       "value": [
@@ -262,7 +315,24 @@
           "scale": null,
           "scale_component": null,
           "scale_variant": null,
-          "responder_criteria": [],
+          "responder_criteria": [
+            {
+              "scale": "sPGA",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "absolute_score",
+              "comparator": "in",
+              "value": [
+                0,
+                1
+              ],
+              "unit": "score",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
           "baseline_reference": "baseline",
           "timepoints": [],
           "through": null,
@@ -331,7 +401,21 @@
           "scale": null,
           "scale_component": null,
           "scale_variant": null,
-          "responder_criteria": [],
+          "responder_criteria": [
+            {
+              "scale": "PASI",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "percent_improvement_from_baseline",
+              "comparator": ">=",
+              "value": 50,
+              "unit": "percent",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
           "baseline_reference": "baseline",
           "timepoints": [
             {
@@ -431,7 +515,24 @@
           "scale": null,
           "scale_component": null,
           "scale_variant": null,
-          "responder_criteria": [],
+          "responder_criteria": [
+            {
+              "scale": "PASI",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "absolute_score",
+              "comparator": "in",
+              "value": [
+                0,
+                1
+              ],
+              "unit": "score",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
           "baseline_reference": "baseline",
           "timepoints": [
             {
@@ -559,9 +660,9 @@
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01194219",
       "source_excerpt": "protocolSection.outcomesModule.secondaryOutcomes[].measure",
-      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2; responder_criteria backfilled by deep-extraction pass (pattern-matched from CT.gov verbatim title; pending human QA)",
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": 0.85
     },
     "multiplicity_control": {
       "value": null,

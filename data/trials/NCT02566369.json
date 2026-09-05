@@ -20,7 +20,7 @@
       "confidence": 0.0
     },
     "official_title": {
-      "value": "A Multi-Center, Randomized, Double-Blind, Parallel-Group Vehicle Controlled Study To Compare The Efficacy And Safety Of CD5789 (Trifarotene) 50μg/g Cream Versus Vehicle Cream In Subjects With Acne Vulgaris",
+      "value": "A Multi-Center, Randomized, Double-Blind, Parallel-Group Vehicle Controlled Study To Compare The Efficacy And Safety Of CD5789 (Trifarotene) 50\u03bcg/g Cream Versus Vehicle Cream In Subjects With Acne Vulgaris",
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02566369",
       "source_excerpt": "protocolSection.identificationModule.officialTitle",
@@ -61,7 +61,7 @@
     },
     "intervention_names": {
       "value": [
-        "CD5789 (trifarotene) 50μg/g cream",
+        "CD5789 (trifarotene) 50\u03bcg/g cream",
         "Placebo cream"
       ],
       "source_type": "ctgov_api",
@@ -83,22 +83,56 @@
       "confidence": 1.0
     },
     "mechanism_of_action": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "modality": "small_molecule",
+        "drug_class": "retinoic acid receptor (RAR) gamma agonist",
+        "antibody_isotype": null,
+        "binding_targets": [],
+        "pathway_cytokines": [],
+        "receptor_subunits": [
+          "RAR\u03b3"
+        ],
+        "kinases_inhibited": [],
+        "lower_potency_kinases": [],
+        "selectivity": [],
+        "reversible": null,
+        "mechanism_established": false,
+        "label_section": "12.1"
+      },
+      "source_type": "openfda_label",
+      "source_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=21db90dd-c7e5-79d1-e063-6294a90ab57e",
+      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1) -- extracted text: 12.1 Mechanism of Action Trifarotene is an agonist of retinoic acid receptors (RAR), with particular activity at the gamma subtype of RAR. Stimulation of RAR results in modulation of target genes which are associated with various processes, including cell differentiation and mediation of inflammation. The exact process by which trifarotene ameliorates acne is unknown.",
+      "extracted_by": "deep-extraction pass (LLM-assisted extraction, scale-out backfill; pending human QA)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.9
     },
     "dosing_regimen": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": [
+        {
+          "intervention_name": "CD5789 (trifarotene) 50\u03bcg/g cream",
+          "description": "CD5789 (trifarotene) 50\u00b5g/g cream applied once daily for 12 weeks.",
+          "is_placebo": false,
+          "route": "topical",
+          "dose_form": "cream",
+          "dose_value": 50,
+          "dose_unit": "mcg",
+          "units_per_dose": null,
+          "frequency": "once_daily",
+          "duration_weeks": 12,
+          "dosing_periods": [],
+          "administration_sites": [],
+          "antibody_isotype": null,
+          "molecular_target": null,
+          "arm_names": [],
+          "co_administered_with": []
+        }
+      ],
+      "source_type": "ctgov_text_extraction",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02566369",
+      "source_excerpt": "CD5789 (trifarotene) 50\u03bcg/g cream: CD5789 (trifarotene) 50\u00b5g/g cream applied once daily for 12 weeks.",
+      "extracted_by": "deep-extraction pass (LLM-assisted extraction, scale-out backfill; pending human QA)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.8
     }
   },
   "population": {
@@ -330,7 +364,7 @@
     "serious_adverse_event_rate": {
       "value": [
         {
-          "arm": "CD5789 (Trifarotene) 50μg/g Cream",
+          "arm": "CD5789 (Trifarotene) 50\u03bcg/g Cream",
           "n_affected": 4,
           "n_at_risk": 612,
           "pct": 0.7
@@ -352,7 +386,7 @@
     "death_rate": {
       "value": [
         {
-          "arm": "CD5789 (Trifarotene) 50μg/g Cream",
+          "arm": "CD5789 (Trifarotene) 50\u03bcg/g Cream",
           "n_affected": 0,
           "n_at_risk": 612,
           "pct": 0.0
@@ -378,7 +412,7 @@
           "meddra_soc": "General disorders",
           "per_arm": [
             {
-              "arm": "CD5789 (Trifarotene) 50μg/g Cream",
+              "arm": "CD5789 (Trifarotene) 50\u03bcg/g Cream",
               "n_affected": 66,
               "n_at_risk": 612,
               "pct": 10.8
@@ -396,7 +430,7 @@
           "meddra_soc": "Infections and infestations",
           "per_arm": [
             {
-              "arm": "CD5789 (Trifarotene) 50μg/g Cream",
+              "arm": "CD5789 (Trifarotene) 50\u03bcg/g Cream",
               "n_affected": 24,
               "n_at_risk": 612,
               "pct": 3.9
@@ -414,7 +448,7 @@
           "meddra_soc": "Injury, poisoning and procedural complications",
           "per_arm": [
             {
-              "arm": "CD5789 (Trifarotene) 50μg/g Cream",
+              "arm": "CD5789 (Trifarotene) 50\u03bcg/g Cream",
               "n_affected": 27,
               "n_at_risk": 612,
               "pct": 4.4
@@ -432,7 +466,7 @@
           "meddra_soc": "General disorders",
           "per_arm": [
             {
-              "arm": "CD5789 (Trifarotene) 50μg/g Cream",
+              "arm": "CD5789 (Trifarotene) 50\u03bcg/g Cream",
               "n_affected": 24,
               "n_at_risk": 612,
               "pct": 3.9
@@ -450,7 +484,7 @@
           "meddra_soc": "Nervous system disorders",
           "per_arm": [
             {
-              "arm": "CD5789 (Trifarotene) 50μg/g Cream",
+              "arm": "CD5789 (Trifarotene) 50\u03bcg/g Cream",
               "n_affected": 6,
               "n_at_risk": 612,
               "pct": 1.0
@@ -468,7 +502,7 @@
           "meddra_soc": "Infections and infestations",
           "per_arm": [
             {
-              "arm": "CD5789 (Trifarotene) 50μg/g Cream",
+              "arm": "CD5789 (Trifarotene) 50\u03bcg/g Cream",
               "n_affected": 10,
               "n_at_risk": 612,
               "pct": 1.6
@@ -486,7 +520,7 @@
           "meddra_soc": "Infections and infestations",
           "per_arm": [
             {
-              "arm": "CD5789 (Trifarotene) 50μg/g Cream",
+              "arm": "CD5789 (Trifarotene) 50\u03bcg/g Cream",
               "n_affected": 6,
               "n_at_risk": 612,
               "pct": 1.0
@@ -504,7 +538,7 @@
           "meddra_soc": "Skin and subcutaneous tissue disorders",
           "per_arm": [
             {
-              "arm": "CD5789 (Trifarotene) 50μg/g Cream",
+              "arm": "CD5789 (Trifarotene) 50\u03bcg/g Cream",
               "n_affected": 8,
               "n_at_risk": 612,
               "pct": 1.3

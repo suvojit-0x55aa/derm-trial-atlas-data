@@ -83,13 +83,26 @@
       "confidence": 1.0
     },
     "mechanism_of_action": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "modality": "small_molecule",
+        "drug_class": "JAK inhibitor",
+        "antibody_isotype": null,
+        "binding_targets": [],
+        "pathway_cytokines": [],
+        "receptor_subunits": [],
+        "kinases_inhibited": [],
+        "lower_potency_kinases": [],
+        "selectivity": [],
+        "reversible": null,
+        "mechanism_established": null,
+        "label_section": "12.1"
+      },
+      "source_type": "openfda_label",
+      "source_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=bd867ca4-faaf-4920-af55-ee0db99ab1bf",
+      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1) -- extracted text: 12.1 Mechanism of Action Baricitinib is a Janus kinase (JAK) inhibitor. JAKs are intracellular enzymes which transmit signals arising from cytokine or growth factor-receptor interactions on the cellular membrane to influence cellular processes of hematopoiesis and immune cell function. Within the signaling pathway, JAKs phosphorylate and activate Signal Transducers and Activators of Transcription (STATs) which modulate intracellular activity including gene expression. Baricitinib modulates the signaling pathway at the point of JAKs, preventing the phosphorylation and activation of STATs. JAK enzymes transmit cytokine signaling through their pairing (e.g., JAK1/JAK2, JAK1/JAK3, JAK1/TYK2, JAK2/JAK2, JAK2/TYK2). In cell-free isolated enzyme assays, baricitinib had greater inhibitory potency at JAK1, JAK2 and TYK2 relative to JAK3. In human leukocytes, baricitinib inhibited cytokine induced STAT phosphorylation mediated by JAK1/JAK2, JAK1/JAK3, JAK1/TYK2, or JAK2/TYK2 with comparable potencies. However, the relevance of inhibition of specific JAK enzymes to therapeutic effectiveness is not currently known.",
+      "extracted_by": "deep-extraction pass (LLM-assisted extraction, scale-out backfill; pending human QA)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.9
     },
     "dosing_regimen": {
       "value": [
@@ -179,7 +192,7 @@
       },
       "source_type": "ctgov_text_extraction",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03899259",
-      "source_excerpt": "Current AA episode of more than 6 months' duration and hair loss encompassing ≥50% of the scalp, as measured by SALT (AA-IGA of 3 or 4) at screening and baseline.",
+      "source_excerpt": "Current AA episode of more than 6 months' duration and hair loss encompassing \u226550% of the scalp, as measured by SALT (AA-IGA of 3 or 4) at screening and baseline.",
       "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 0.75
@@ -245,7 +258,7 @@
     "primary_endpoints": {
       "value": [
         {
-          "verbatim": "Percentage of Participants Achieving Severity of Alopecia Tool (SALT) ≤ 20 (Time frame: Week 36)",
+          "verbatim": "Percentage of Participants Achieving Severity of Alopecia Tool (SALT) \u2264 20 (Time frame: Week 36)",
           "rank": "primary",
           "position": 1,
           "measure_type": "responder_rate",
@@ -324,7 +337,7 @@
           "time_frame": null
         },
         {
-          "verbatim": "Percentage of Participants With Patient-Reported Outcome (PRO) for Scalp Hair Assessment Score of 0 or 1 With a ≥2-point Improvement From Baseline Among Participants With a Score of ≥3 at Baseline",
+          "verbatim": "Percentage of Participants With Patient-Reported Outcome (PRO) for Scalp Hair Assessment Score of 0 or 1 With a \u22652-point Improvement From Baseline Among Participants With a Score of \u22653 at Baseline",
           "rank": "secondary",
           "position": 3,
           "measure_type": "responder_rate",
@@ -359,7 +372,7 @@
           "time_frame": null
         },
         {
-          "verbatim": "Time for Participants to Achieve SALT ≤ 20 at Week 36.",
+          "verbatim": "Time for Participants to Achieve SALT \u2264 20 at Week 36.",
           "rank": "secondary",
           "position": 4,
           "measure_type": "absolute_value",
@@ -384,7 +397,7 @@
           "time_frame": null
         },
         {
-          "verbatim": "Percentage of Participants Achieving Clinician-Reported Outcome (ClinRO) Measure for Eyebrow (EB) Hair Loss 0 or 1 With ≥2-point Improvement From Baseline (Among Participants With ClinRO Measure for EB Hair Loss ≥2 at Baseline)",
+          "verbatim": "Percentage of Participants Achieving Clinician-Reported Outcome (ClinRO) Measure for Eyebrow (EB) Hair Loss 0 or 1 With \u22652-point Improvement From Baseline (Among Participants With ClinRO Measure for EB Hair Loss \u22652 at Baseline)",
           "rank": "secondary",
           "position": 5,
           "measure_type": "responder_rate",
@@ -403,7 +416,7 @@
           "time_frame": null
         },
         {
-          "verbatim": "Percentage of Participants Achieving ClinRO Measure for Eyelash (EL) Hair Loss 0 or 1 With ≥2-point Improvement From Baseline (Among Participants With ClinRO Measure for EL Hair Loss ≥2 at Baseline)",
+          "verbatim": "Percentage of Participants Achieving ClinRO Measure for Eyelash (EL) Hair Loss 0 or 1 With \u22652-point Improvement From Baseline (Among Participants With ClinRO Measure for EL Hair Loss \u22652 at Baseline)",
           "rank": "secondary",
           "position": 6,
           "measure_type": "responder_rate",
@@ -422,7 +435,7 @@
           "time_frame": null
         },
         {
-          "verbatim": "Percentage of Participants Achieving Patient-Reported Outcome (PRO) Measure for EB 0 or 1 With ≥2-point Improvement From Baseline (Among Participants With PRO Measure for EB ≥2 at Baseline)",
+          "verbatim": "Percentage of Participants Achieving Patient-Reported Outcome (PRO) Measure for EB 0 or 1 With \u22652-point Improvement From Baseline (Among Participants With PRO Measure for EB \u22652 at Baseline)",
           "rank": "secondary",
           "position": 7,
           "measure_type": "responder_rate",
@@ -441,7 +454,7 @@
           "time_frame": null
         },
         {
-          "verbatim": "Percentage of Participants Achieving PRO Measure for EL 0 or 1 With ≥2-point Improvement From Baseline (Among Participants With PRO Measure EL ≥2 at Baseline)",
+          "verbatim": "Percentage of Participants Achieving PRO Measure for EL 0 or 1 With \u22652-point Improvement From Baseline (Among Participants With PRO Measure EL \u22652 at Baseline)",
           "rank": "secondary",
           "position": 8,
           "measure_type": "responder_rate",

@@ -85,22 +85,74 @@
       "confidence": 1.0
     },
     "mechanism_of_action": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "modality": "monoclonal_antibody",
+        "drug_class": "IL-17RA antagonist",
+        "antibody_isotype": "IgG2",
+        "binding_targets": [
+          "IL-17RA"
+        ],
+        "pathway_cytokines": [],
+        "receptor_subunits": [],
+        "kinases_inhibited": [],
+        "lower_potency_kinases": [],
+        "selectivity": [],
+        "reversible": null,
+        "mechanism_established": null,
+        "label_section": "12.1"
+      },
+      "source_type": "openfda_label",
+      "source_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=5fbd9beb-42b9-4360-8363-71f8f0c5a52e",
+      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1) -- extracted text: 12.1 Mechanism of Action Brodalumab is a human monoclonal IgG2 antibody that selectively binds to human IL-17RA and inhibits its interactions with cytokines IL-17A, IL-17F, IL-17C, IL-17A/F heterodimer, and IL-25. IL-17RA is a protein expressed on the cell surface and is a required component of receptor complexes utilized by multiple IL-17 family cytokines. Blocking IL-17RA inhibits IL-17 cytokine-induced responses including the release of pro-inflammatory cytokines and chemokines.",
+      "extracted_by": "deep-extraction pass (LLM-assisted extraction, scale-out backfill; pending human QA)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.9
     },
     "dosing_regimen": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": [
+        {
+          "intervention_name": "210 mg brodalumab",
+          "description": "210 mg brodalumab administered SC",
+          "is_placebo": false,
+          "route": null,
+          "dose_form": null,
+          "dose_value": 210,
+          "dose_unit": "mg",
+          "units_per_dose": null,
+          "frequency": null,
+          "duration_weeks": null,
+          "dosing_periods": [],
+          "administration_sites": [],
+          "antibody_isotype": null,
+          "molecular_target": null,
+          "arm_names": [],
+          "co_administered_with": []
+        },
+        {
+          "intervention_name": "140 mg brodalumab",
+          "description": "140 mg brodalumab administered SC",
+          "is_placebo": false,
+          "route": null,
+          "dose_form": null,
+          "dose_value": 140,
+          "dose_unit": "mg",
+          "units_per_dose": null,
+          "frequency": null,
+          "duration_weeks": null,
+          "dosing_periods": [],
+          "administration_sites": [],
+          "antibody_isotype": null,
+          "molecular_target": null,
+          "arm_names": [],
+          "co_administered_with": []
+        }
+      ],
+      "source_type": "ctgov_text_extraction",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01708603",
+      "source_excerpt": "210 mg brodalumab: 210 mg brodalumab administered SC || 140 mg brodalumab: 140 mg brodalumab administered SC",
+      "extracted_by": "deep-extraction pass (LLM-assisted extraction, scale-out backfill; pending human QA)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.8
     }
   },
   "population": {
@@ -152,13 +204,60 @@
       "confidence": 1.0
     },
     "severity_criteria": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "severity_label": "moderate_to_severe",
+        "basis": "eligibility_text",
+        "cross_reference": null,
+        "source_criterion_numbers": [],
+        "baseline_visit_number": null,
+        "criteria": [
+          {
+            "scale": "BSA",
+            "scale_component": null,
+            "scale_variant": null,
+            "metric": "percent_bsa",
+            "comparator": ">=",
+            "value": 10,
+            "unit": "percent",
+            "scale_min": null,
+            "scale_max": null,
+            "assessed_at": null,
+            "scale_anchors": null
+          },
+          {
+            "scale": "PASI",
+            "scale_component": null,
+            "scale_variant": null,
+            "metric": "absolute_score",
+            "comparator": ">=",
+            "value": 12,
+            "unit": "score",
+            "scale_min": null,
+            "scale_max": null,
+            "assessed_at": null,
+            "scale_anchors": null
+          },
+          {
+            "scale": "sPGA",
+            "scale_component": null,
+            "scale_variant": null,
+            "metric": "absolute_score",
+            "comparator": ">=",
+            "value": 3,
+            "unit": "score",
+            "scale_min": null,
+            "scale_max": null,
+            "assessed_at": null,
+            "scale_anchors": null
+          }
+        ]
+      },
+      "source_type": "ctgov_text_extraction",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01708603",
+      "source_excerpt": "Subject has had stable moderate to severe plaque psoriasis for at least 6 months | Subject has involved body surface area (BSA) >= 10%, PASI >= 12, and sPGA >= 3 at screening and at baseline",
+      "extracted_by": "deep-extraction pass (LLM-assisted extraction, scale-out backfill; pending human QA)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.8
     }
   },
   "design": {
@@ -228,7 +327,24 @@
           "scale": null,
           "scale_component": null,
           "scale_variant": null,
-          "responder_criteria": [],
+          "responder_criteria": [
+            {
+              "scale": "sPGA",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "absolute_score",
+              "comparator": "in",
+              "value": [
+                0,
+                1
+              ],
+              "unit": "score",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
           "baseline_reference": null,
           "timepoints": [
             {
@@ -249,9 +365,9 @@
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01708603",
       "source_excerpt": "protocolSection.outcomesModule.primaryOutcomes[0].measure/timeFrame",
-      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2; responder_criteria backfilled by deep-extraction pass (pattern-matched from CT.gov verbatim title; pending human QA)",
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": 0.85
     },
     "secondary_endpoints": {
       "value": [],
@@ -652,7 +768,7 @@
       },
       "source_type": "openfda_label",
       "source_url": "https://api.fda.gov/drug/label.json?search=openfda.substance_name:BRODALUMAB&limit=1",
-      "source_excerpt": "results[0].boxed_warning -- v1 extracted text: WARNING: SUICIDAL IDEATION AND BEHAVIOR Suicidal ideation and behavior, including completed suicides, have occurred in patients treated with SILIQ. Prior to prescribing SILIQ, weigh the potential risks and benefits in patients with a history of depression and/or suicidal ideation or behavior. Patients with new or worsening suicidal ideation and behavior should be referred to a mental health professional, as appropriate. Advise patients and caregivers to seek medical attention for manifestations of suicidal ideation or behavior, new onset or worsening depression, anxiety, or other mood changes [see Warnings and Precautions ( 5.1 )]. Because of the observed suicidal behavior in subjects treated with SILIQ, SILIQ is available only through a restricted program under a Risk Evaluation and Mitigation Strategy (REMS) called the SILIQ REMS Program [see Warnings and Precautions ( 5.2 )]. WARNING: SUICIDAL IDEATION AND BEHAVIOR See full prescribing information for complete boxed warning. • Suicidal ideation and behavior, including completed suicides, have occurred in patients treated with SILIQ. ( 5.1 , 6.1 ) • Prior to prescribing, weigh potential risks and benefits in patients with a history of depression and/or suicidal ideation or behavior. ( 5.1 ) • Patients with new or worsening suicidal thoughts and behavior should be referred to a mental health professional, as appropriate. ( 5.1 ) • Advise patients and caregivers to seek medical attention for manifestations of suicidal ideation or behavior, new onset or worsening depression, anxiety, or other mood changes. ( 5.1 ) • SILIQ is available only through a restricted program called the SILIQ REMS Program. ( 5.2 )",
+      "source_excerpt": "results[0].boxed_warning -- v1 extracted text: WARNING: SUICIDAL IDEATION AND BEHAVIOR Suicidal ideation and behavior, including completed suicides, have occurred in patients treated with SILIQ. Prior to prescribing SILIQ, weigh the potential risks and benefits in patients with a history of depression and/or suicidal ideation or behavior. Patients with new or worsening suicidal ideation and behavior should be referred to a mental health professional, as appropriate. Advise patients and caregivers to seek medical attention for manifestations of suicidal ideation or behavior, new onset or worsening depression, anxiety, or other mood changes [see Warnings and Precautions ( 5.1 )]. Because of the observed suicidal behavior in subjects treated with SILIQ, SILIQ is available only through a restricted program under a Risk Evaluation and Mitigation Strategy (REMS) called the SILIQ REMS Program [see Warnings and Precautions ( 5.2 )]. WARNING: SUICIDAL IDEATION AND BEHAVIOR See full prescribing information for complete boxed warning. \u2022 Suicidal ideation and behavior, including completed suicides, have occurred in patients treated with SILIQ. ( 5.1 , 6.1 ) \u2022 Prior to prescribing, weigh potential risks and benefits in patients with a history of depression and/or suicidal ideation or behavior. ( 5.1 ) \u2022 Patients with new or worsening suicidal thoughts and behavior should be referred to a mental health professional, as appropriate. ( 5.1 ) \u2022 Advise patients and caregivers to seek medical attention for manifestations of suicidal ideation or behavior, new onset or worsening depression, anxiety, or other mood changes. ( 5.1 ) \u2022 SILIQ is available only through a restricted program called the SILIQ REMS Program. ( 5.2 )",
       "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0

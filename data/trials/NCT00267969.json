@@ -83,22 +83,78 @@
       "confidence": 1.0
     },
     "mechanism_of_action": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "modality": "monoclonal_antibody",
+        "drug_class": "IL-12/IL-23 (p40) antagonist",
+        "antibody_isotype": "IgG1",
+        "binding_targets": [
+          "IL-12",
+          "IL-23"
+        ],
+        "pathway_cytokines": [
+          "IL-12",
+          "IL-23"
+        ],
+        "receptor_subunits": [],
+        "kinases_inhibited": [],
+        "lower_potency_kinases": [],
+        "selectivity": [],
+        "reversible": null,
+        "mechanism_established": null,
+        "label_section": "12.1"
+      },
+      "source_type": "openfda_label",
+      "source_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=da99991a-7663-44b5-80f2-e22ffe92c54b",
+      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1) -- extracted text: 12.1 Mechanism of Action Ustekinumab products are human IgG1\u03ba monoclonal antibodies that bind with specificity to the p40 protein subunit used by both the IL-12 and IL-23 cytokines. IL-12 and IL-23 are naturally occurring cytokines that are involved in inflammatory and immune responses, such as natural killer cell activation and CD4+ T-cell differentiation and activation. In in vitro models, ustekinumab products were shown to disrupt IL-12 and IL-23 mediated signaling and cytokine cascades by disrupting the interaction of these cytokines with a shared cell- surface receptor chain, IL-12R\u03b21. The cytokines IL-12 and IL-23 have been implicated as important contributors to the chronic inflammation that is a hallmark of Crohn\u2019s disease and ulcerative colitis. In animal models of colitis, genetic absence or antibody blockade of the p40 subunit of IL-12 and IL-23, the target of ustekinumab products, was shown to be protective.",
+      "extracted_by": "deep-extraction pass (LLM-assisted extraction, scale-out backfill; pending human QA)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.9
     },
     "dosing_regimen": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": [
+        {
+          "intervention_name": "ustekinumab",
+          "description": "Type = exact number, Form = solution for injection, Number = 45 and 90, Unit = mg, Route = subcutaneous (SC) administered at Weeks 0, 4 and 16. Both treatments (45 mg and 90 mg) administered every 12 weeks after Week 16 depending on clinical response.",
+          "is_placebo": false,
+          "route": "subcutaneous",
+          "dose_form": "injection",
+          "dose_value": 45,
+          "dose_unit": "mg",
+          "units_per_dose": null,
+          "frequency": null,
+          "duration_weeks": null,
+          "dosing_periods": [],
+          "administration_sites": [],
+          "antibody_isotype": null,
+          "molecular_target": null,
+          "arm_names": [],
+          "co_administered_with": []
+        },
+        {
+          "intervention_name": "placebo",
+          "description": "Form = solution for injection, route = SC administered at Weeks 0 and 4. At Weeks 12 and 16, placebo will be crossed over to receive ustekinumab 45 mg or 90 mg.",
+          "is_placebo": true,
+          "route": null,
+          "dose_form": "injection",
+          "dose_value": 45,
+          "dose_unit": "mg",
+          "units_per_dose": null,
+          "frequency": null,
+          "duration_weeks": null,
+          "dosing_periods": [],
+          "administration_sites": [],
+          "antibody_isotype": null,
+          "molecular_target": null,
+          "arm_names": [],
+          "co_administered_with": []
+        }
+      ],
+      "source_type": "ctgov_text_extraction",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT00267969",
+      "source_excerpt": "ustekinumab: Type = exact number, Form = solution for injection, Number = 45 and 90, Unit = mg, Route = subcutaneous (SC) administered at Weeks 0, 4 and 16. Both treatments (45 mg and 90 mg) administered every 12 weeks after Week 16 depending on clinical response. || placebo: Form = solution for injection, route = SC administered at Weeks 0 and 4. At Weeks 12 and 16, placebo will be crossed over to receive ustekinumab 45 mg or 90 mg.",
+      "extracted_by": "deep-extraction pass (LLM-assisted extraction, scale-out backfill; pending human QA)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.8
     }
   },
   "population": {
@@ -150,13 +206,47 @@
       "confidence": 1.0
     },
     "severity_criteria": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "severity_label": null,
+        "basis": "eligibility_text",
+        "cross_reference": null,
+        "source_criterion_numbers": [],
+        "baseline_visit_number": null,
+        "criteria": [
+          {
+            "scale": "PASI",
+            "scale_component": null,
+            "scale_variant": null,
+            "metric": "absolute_score",
+            "comparator": ">=",
+            "value": 12,
+            "unit": "score",
+            "scale_min": null,
+            "scale_max": null,
+            "assessed_at": null,
+            "scale_anchors": null
+          },
+          {
+            "scale": "BSA",
+            "scale_component": null,
+            "scale_variant": null,
+            "metric": "percent_bsa",
+            "comparator": ">=",
+            "value": 10,
+            "unit": "percent",
+            "scale_min": null,
+            "scale_max": null,
+            "assessed_at": null,
+            "scale_anchors": null
+          }
+        ]
+      },
+      "source_type": "ctgov_text_extraction",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT00267969",
+      "source_excerpt": "Have psoriasis area-and-severity index score of >=12 | covering at least 10% of total body surface areas",
+      "extracted_by": "deep-extraction pass (LLM-assisted extraction, scale-out backfill; pending human QA)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.8
     }
   },
   "design": {

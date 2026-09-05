@@ -102,7 +102,7 @@
       },
       "source_type": "openfda_label",
       "source_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=4b984e6f-72ac-4fdc-e063-6394a90af105",
-      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1) -- v1 extracted text: 12.1 Mechanism of Action Certolizumab pegol binds to human TNFα with a KD of 90pM. TNFα is a key pro-inflammatory cytokine with a central role in inflammatory processes. Certolizumab pegol selectively neutralizes TNFα (IC 90 of 4 ng/mL for inhibition of human TNFα in the in vitro L929 murine fibrosarcoma cytotoxicity assay) but does not neutralize lymphotoxin α (TNFβ). Certolizumab pegol cross-reacts poorly with TNF from rodents and rabbits, therefore in vivo efficacy was evaluated using animal models in which human TNFα was the physiologically active molecule. Certolizumab pegol was shown to neutralize membrane-associated and soluble human TNFα in a dose-dependent manner. Incubation of monocytes with certolizumab pegol resulted in a dose-dependent inhibition of LPS-induced TNFα and IL-1β production in human monocytes. Certolizumab pegol does not contain a fragment crystallizable (Fc) region, which is normally present in a complete antibody, and therefore does not fix complement or cause antibody-dependent cell-mediated cytotoxicity in vitro . It does not induce apoptosis in vitro in human peripheral blood-derived monocytes or lymphocytes, nor does certolizumab pegol induce neutrophil degranulation. A tissue reactivity study was carried out ex vivo to evaluate potential cross-reactivity of certolizumab pegol with cryosections of normal human tissues. Certolizumab pegol showed no reactivity with a designated standard panel of normal human tissues.",
+      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1) -- v1 extracted text: 12.1 Mechanism of Action Certolizumab pegol binds to human TNF\u03b1 with a KD of 90pM. TNF\u03b1 is a key pro-inflammatory cytokine with a central role in inflammatory processes. Certolizumab pegol selectively neutralizes TNF\u03b1 (IC 90 of 4 ng/mL for inhibition of human TNF\u03b1 in the in vitro L929 murine fibrosarcoma cytotoxicity assay) but does not neutralize lymphotoxin \u03b1 (TNF\u03b2). Certolizumab pegol cross-reacts poorly with TNF from rodents and rabbits, therefore in vivo efficacy was evaluated using animal models in which human TNF\u03b1 was the physiologically active molecule. Certolizumab pegol was shown to neutralize membrane-associated and soluble human TNF\u03b1 in a dose-dependent manner. Incubation of monocytes with certolizumab pegol resulted in a dose-dependent inhibition of LPS-induced TNF\u03b1 and IL-1\u03b2 production in human monocytes. Certolizumab pegol does not contain a fragment crystallizable (Fc) region, which is normally present in a complete antibody, and therefore does not fix complement or cause antibody-dependent cell-mediated cytotoxicity in vitro . It does not induce apoptosis in vitro in human peripheral blood-derived monocytes or lymphocytes, nor does certolizumab pegol induce neutrophil degranulation. A tissue reactivity study was carried out ex vivo to evaluate potential cross-reactivity of certolizumab pegol with cryosections of normal human tissues. Certolizumab pegol showed no reactivity with a designated standard panel of normal human tissues.",
       "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 0.9
@@ -269,7 +269,21 @@
           "scale": null,
           "scale_component": null,
           "scale_variant": null,
-          "responder_criteria": [],
+          "responder_criteria": [
+            {
+              "scale": "PASI",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "percent_improvement_from_baseline",
+              "comparator": ">=",
+              "value": 75,
+              "unit": "percent",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
           "baseline_reference": null,
           "timepoints": [
             {
@@ -290,9 +304,9 @@
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02326298",
       "source_excerpt": "protocolSection.outcomesModule.primaryOutcomes[0].measure/timeFrame",
-      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2; responder_criteria backfilled by deep-extraction pass (pattern-matched from CT.gov verbatim title; pending human QA)",
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": 0.85
     },
     "secondary_endpoints": {
       "value": [
@@ -304,7 +318,21 @@
           "scale": null,
           "scale_component": null,
           "scale_variant": null,
-          "responder_criteria": [],
+          "responder_criteria": [
+            {
+              "scale": "PASI",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "percent_improvement_from_baseline",
+              "comparator": ">=",
+              "value": 90,
+              "unit": "percent",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
           "baseline_reference": null,
           "timepoints": [
             {
@@ -379,7 +407,21 @@
           "scale": null,
           "scale_component": null,
           "scale_variant": null,
-          "responder_criteria": [],
+          "responder_criteria": [
+            {
+              "scale": "PASI",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "percent_improvement_from_baseline",
+              "comparator": ">=",
+              "value": 75,
+              "unit": "percent",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
           "baseline_reference": null,
           "timepoints": [
             {
@@ -400,9 +442,9 @@
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02326298",
       "source_excerpt": "protocolSection.outcomesModule.secondaryOutcomes[].measure",
-      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2; responder_criteria backfilled by deep-extraction pass (pattern-matched from CT.gov verbatim title; pending human QA)",
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": 0.85
     },
     "multiplicity_control": {
       "value": null,

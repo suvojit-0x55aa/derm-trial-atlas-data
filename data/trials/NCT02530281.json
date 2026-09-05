@@ -84,22 +84,54 @@
       "confidence": 1.0
     },
     "mechanism_of_action": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "modality": "small_molecule",
+        "drug_class": "anticholinergic (acetylcholine receptor antagonist)",
+        "antibody_isotype": null,
+        "binding_targets": [],
+        "pathway_cytokines": [],
+        "receptor_subunits": [],
+        "kinases_inhibited": [],
+        "lower_potency_kinases": [],
+        "selectivity": [],
+        "reversible": null,
+        "mechanism_established": null,
+        "label_section": "12.1"
+      },
+      "source_type": "openfda_label",
+      "source_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=52537ea0-9410-1691-e063-6394a90a9468",
+      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1) -- extracted text: 12.1 Mechanism of Action Glycopyrronium is a competitive inhibitor of acetylcholine receptors that are located on certain peripheral tissues, including sweat glands. In hyperhidrosis, glycopyrronium inhibits the action of acetylcholine on sweat glands, reducing sweating.",
+      "extracted_by": "deep-extraction pass (LLM-assisted extraction, scale-out backfill; pending human QA)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.9
     },
     "dosing_regimen": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": [
+        {
+          "intervention_name": "glycopyrronium Topical Wipes",
+          "description": "Topical wipes containing glycopyrronium",
+          "is_placebo": false,
+          "route": "topical",
+          "dose_form": null,
+          "dose_value": null,
+          "dose_unit": null,
+          "units_per_dose": null,
+          "frequency": null,
+          "duration_weeks": null,
+          "dosing_periods": [],
+          "administration_sites": [],
+          "antibody_isotype": null,
+          "molecular_target": null,
+          "arm_names": [],
+          "co_administered_with": []
+        }
+      ],
+      "source_type": "ctgov_text_extraction",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02530281",
+      "source_excerpt": "glycopyrronium Topical Wipes: Topical wipes containing glycopyrronium",
+      "extracted_by": "deep-extraction pass (LLM-assisted extraction, scale-out backfill; pending human QA)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.8
     }
   },
   "population": {
@@ -151,13 +183,50 @@
       "confidence": 1.0
     },
     "severity_criteria": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "severity_label": null,
+        "basis": "eligibility_text",
+        "cross_reference": null,
+        "source_criterion_numbers": [],
+        "baseline_visit_number": null,
+        "criteria": [
+          {
+            "scale": "HDSS",
+            "scale_component": null,
+            "scale_variant": null,
+            "metric": "absolute_score",
+            "comparator": "in",
+            "value": [
+              3,
+              4
+            ],
+            "unit": "score",
+            "scale_min": null,
+            "scale_max": null,
+            "assessed_at": null,
+            "scale_anchors": null
+          },
+          {
+            "scale": "ASDD",
+            "scale_component": null,
+            "scale_variant": null,
+            "metric": "absolute_score",
+            "comparator": ">=",
+            "value": 4,
+            "unit": "score",
+            "scale_min": null,
+            "scale_max": null,
+            "assessed_at": null,
+            "scale_anchors": null
+          }
+        ]
+      },
+      "source_type": "ctgov_text_extraction",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02530281",
+      "source_excerpt": "Hyperhidrosis Disease Severity Scale (HDSS) of 3 or 4 at Baseline | Axillary Sweating Daily Diary (ASDD) >= 4 at Baseline",
+      "extracted_by": "deep-extraction pass (LLM-assisted extraction, scale-out backfill; pending human QA)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.8
     }
   },
   "design": {
@@ -220,7 +289,7 @@
     "primary_endpoints": {
       "value": [
         {
-          "verbatim": "Percentage of Subjects Who Have a ≥4-point Improvement in the Weekly Mean Score of ASDD Item #2 From Baseline at Week 4 (Time frame: From Baseline to Week 4)",
+          "verbatim": "Percentage of Subjects Who Have a \u22654-point Improvement in the Weekly Mean Score of ASDD Item #2 From Baseline at Week 4 (Time frame: From Baseline to Week 4)",
           "rank": "primary",
           "position": 1,
           "measure_type": "responder_rate",
@@ -255,7 +324,7 @@
     "secondary_endpoints": {
       "value": [
         {
-          "verbatim": "Percentage of Subjects Who Have a ≥2 Grade Improvement in Hyperhidrosis Disease Severity Scale (HDSS) From Baseline at Week 4",
+          "verbatim": "Percentage of Subjects Who Have a \u22652 Grade Improvement in Hyperhidrosis Disease Severity Scale (HDSS) From Baseline at Week 4",
           "rank": "secondary",
           "position": 1,
           "measure_type": "responder_rate",
