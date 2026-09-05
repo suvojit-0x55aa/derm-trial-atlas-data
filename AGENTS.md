@@ -338,6 +338,27 @@ This file is the project's committed home for project-intrinsic agent memory: bu
   `sources.csv` (not hand-estimated), and updated every count reference. Recompute and grep for
   stale counts in README every cycle, not just AGENTS.md — the two files can drift independently
   since they're edited by hand, not generated.
+- **A newly FDA-approved drug's pivotal trial can be a real, randomized, placebo-controlled Phase
+  3 trial that the FDA's own label describes efficacy results for, and still fail this atlas's own
+  `resultsSection`-present bar** — a new, distinct failure mode from the pre-2007
+  Etanercept/Infliximab dead end (those trials predate CT.gov's reporting mandate and will *never*
+  post results; these are recent trials still short of the CT.gov posting timeline). Checked and
+  excluded in cycle 13: Prademagene Zamikeracel (Zevaskyn, BLA125807, approved 2025 for Recessive
+  Dystrophic Epidermolysis Bullosa — a real new drug for an indication already in this atlas) via
+  its VIITAL trial (NCT04227106, a within-patient paired-wound randomized design, n=11 patients /
+  86 wounds, `OverallStatus: COMPLETED`) — `hasResults: false` on CT.gov despite the label's own
+  `clinical_studies_table` field showing full paired-wound efficacy tables. Also excluded:
+  Cemiplimab (Libtayo, already FDA-approved since 2018 for CSCC/BCC/NSCLC) for its 2025 adjuvant
+  CSCC indication expansion via the C-POST trial (NCT03969004, randomized 1:1, double-blind,
+  placebo-controlled, n=415, genuinely meets this atlas's design bar) — `hasResults: false`,
+  `OverallStatus: ACTIVE_NOT_RECRUITING` (long-term overall-survival follow-up still ongoing after
+  the DFS primary readout FDA approved on). Unlike the permanent pre-2007 dead ends, both are
+  **re-check candidates for a future cycle** once their trials formally complete and post a
+  `resultsSection` — worth a periodic re-check, not a one-time write-off. Cemiplimab's original
+  mCSCC/laBCC/laBCC-post-hedgehog-inhibitor indications were not separately checked this cycle
+  (PD-1-for-oncology approvals typically use single-arm response-rate designs without a placebo
+  arm, the same bar that excluded the BCC hedgehog inhibitors) but are worth a look if revisiting
+  Cemiplimab.
 
 ## Maintaining this file
 
