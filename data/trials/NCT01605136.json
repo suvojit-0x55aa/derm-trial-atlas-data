@@ -1,5 +1,5 @@
 {
-  "schema_version": 2,
+  "schema_version": 3,
   "nct_id": {
     "value": "NCT01605136",
     "source_type": "ctgov_api",
@@ -101,7 +101,7 @@
       },
       "source_type": "openfda_label",
       "source_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=5192f26d-d5e7-ce03-e063-6294a90a3ea2",
-      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1) -- extracted text: 12.1 Mechanism of Action Afamelanotide is a synthetic tridecapeptide and a structural analog of \u03b1-melanocyte stimulating hormone (\u03b1-MSH). Afamelanotide is a melanocortin receptor agonist and binds predominantly to MC1-R.",
+      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1) -- extracted text: 12.1 Mechanism of Action Afamelanotide is a synthetic tridecapeptide and a structural analog of α-melanocyte stimulating hormone (α-MSH). Afamelanotide is a melanocortin receptor agonist and binds predominantly to MC1-R.",
       "extracted_by": "deep-extraction pass (LLM-assisted extraction, scale-out backfill; pending human QA)",
       "reviewed_by": null,
       "confidence": 0.85
@@ -835,6 +835,1318 @@
       "confidence": 1.0
     },
     "purple_book": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    }
+  },
+  "results": {
+    "arms": {
+      "value": [
+        {
+          "arm_id": "OG000",
+          "label": "Afamelanotide",
+          "role": "investigational",
+          "intervention_names": [
+            "Afamelanotide"
+          ],
+          "dose_value": null,
+          "dose_unit": null,
+          "frequency": null,
+          "randomized_n": 48
+        },
+        {
+          "arm_id": "OG001",
+          "label": "Placebo",
+          "role": "placebo",
+          "intervention_names": [
+            "Placebo"
+          ],
+          "dose_value": null,
+          "dose_unit": null,
+          "frequency": null,
+          "randomized_n": 45
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01605136",
+      "source_excerpt": "resultsSection.outcomeMeasuresModule.outcomeMeasures[].groups[]",
+      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3, 2026-09-06)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "arm_results": {
+      "value": [
+        {
+          "endpoint": {
+            "rank": "primary",
+            "position": 1,
+            "verbatim_sha1": "1a2f832e6e0abd935188a2bc93e1bc36adc06b59"
+          },
+          "arm_id": "OG000",
+          "timepoint": null,
+          "analysis_population": "full_analysis_set",
+          "study_period": null,
+          "denominator": 46,
+          "value_type": "median",
+          "reported_value": 69.4,
+          "reported_unit": "hours",
+          "responders": null,
+          "response_rate_pct": null,
+          "rate_is_derived": false,
+          "dispersion_type": "full_range",
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": null
+        },
+        {
+          "endpoint": {
+            "rank": "primary",
+            "position": 1,
+            "verbatim_sha1": "1a2f832e6e0abd935188a2bc93e1bc36adc06b59"
+          },
+          "arm_id": "OG001",
+          "timepoint": null,
+          "analysis_population": "full_analysis_set",
+          "study_period": null,
+          "denominator": 43,
+          "value_type": "median",
+          "reported_value": 40.8,
+          "reported_unit": "hours",
+          "responders": null,
+          "response_rate_pct": null,
+          "rate_is_derived": false,
+          "dispersion_type": "full_range",
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": null
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 1,
+            "verbatim_sha1": "0274aa833a0fad978dbc8d73828e2a6dc42dee21"
+          },
+          "arm_id": "OG000",
+          "timepoint": null,
+          "analysis_population": "full_analysis_set",
+          "study_period": null,
+          "denominator": 46,
+          "value_type": "median",
+          "reported_value": 80.0,
+          "reported_unit": "hours",
+          "responders": null,
+          "response_rate_pct": null,
+          "rate_is_derived": false,
+          "dispersion_type": "full_range",
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": null
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 1,
+            "verbatim_sha1": "0274aa833a0fad978dbc8d73828e2a6dc42dee21"
+          },
+          "arm_id": "OG001",
+          "timepoint": null,
+          "analysis_population": "full_analysis_set",
+          "study_period": null,
+          "denominator": 43,
+          "value_type": "median",
+          "reported_value": 51.0,
+          "reported_unit": "hours",
+          "responders": null,
+          "response_rate_pct": null,
+          "rate_is_derived": false,
+          "dispersion_type": "full_range",
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": null
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 2,
+            "verbatim_sha1": "0dfdd91781fd6d537bca50af6902525476eab7b1"
+          },
+          "arm_id": "OG000",
+          "timepoint": null,
+          "analysis_population": "full_analysis_set",
+          "study_period": null,
+          "denominator": 46,
+          "value_type": "median",
+          "reported_value": 83.5,
+          "reported_unit": "hours",
+          "responders": null,
+          "response_rate_pct": null,
+          "rate_is_derived": false,
+          "dispersion_type": "full_range",
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": null
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 2,
+            "verbatim_sha1": "0dfdd91781fd6d537bca50af6902525476eab7b1"
+          },
+          "arm_id": "OG001",
+          "timepoint": null,
+          "analysis_population": "full_analysis_set",
+          "study_period": null,
+          "denominator": 43,
+          "value_type": "median",
+          "reported_value": 65.25,
+          "reported_unit": "hours",
+          "responders": null,
+          "response_rate_pct": null,
+          "rate_is_derived": false,
+          "dispersion_type": "full_range",
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": null
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 3,
+            "verbatim_sha1": "3b4108de05575e27068030759ee37a11697f005e"
+          },
+          "arm_id": "OG000",
+          "timepoint": {
+            "value": 0,
+            "unit": "day",
+            "end_value": null
+          },
+          "analysis_population": null,
+          "study_period": null,
+          "denominator": 47,
+          "value_type": "median",
+          "reported_value": 10.0,
+          "reported_unit": "units on a scale",
+          "responders": null,
+          "response_rate_pct": null,
+          "rate_is_derived": false,
+          "dispersion_type": "full_range",
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": "DLQI - Day 0 (baseline)"
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 3,
+            "verbatim_sha1": "3b4108de05575e27068030759ee37a11697f005e"
+          },
+          "arm_id": "OG001",
+          "timepoint": {
+            "value": 0,
+            "unit": "day",
+            "end_value": null
+          },
+          "analysis_population": null,
+          "study_period": null,
+          "denominator": 43,
+          "value_type": "median",
+          "reported_value": 11.0,
+          "reported_unit": "units on a scale",
+          "responders": null,
+          "response_rate_pct": null,
+          "rate_is_derived": false,
+          "dispersion_type": "full_range",
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": "DLQI - Day 0 (baseline)"
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 3,
+            "verbatim_sha1": "3b4108de05575e27068030759ee37a11697f005e"
+          },
+          "arm_id": "OG000",
+          "timepoint": {
+            "value": 60,
+            "unit": "day",
+            "end_value": null
+          },
+          "analysis_population": null,
+          "study_period": null,
+          "denominator": 47,
+          "value_type": "median",
+          "reported_value": 2.0,
+          "reported_unit": "units on a scale",
+          "responders": null,
+          "response_rate_pct": null,
+          "rate_is_derived": false,
+          "dispersion_type": "full_range",
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": "DLQI - Day 60"
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 3,
+            "verbatim_sha1": "3b4108de05575e27068030759ee37a11697f005e"
+          },
+          "arm_id": "OG001",
+          "timepoint": {
+            "value": 60,
+            "unit": "day",
+            "end_value": null
+          },
+          "analysis_population": null,
+          "study_period": null,
+          "denominator": 43,
+          "value_type": "median",
+          "reported_value": 4.0,
+          "reported_unit": "units on a scale",
+          "responders": null,
+          "response_rate_pct": null,
+          "rate_is_derived": false,
+          "dispersion_type": "full_range",
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": "DLQI - Day 60"
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 3,
+            "verbatim_sha1": "3b4108de05575e27068030759ee37a11697f005e"
+          },
+          "arm_id": "OG000",
+          "timepoint": {
+            "value": 120,
+            "unit": "day",
+            "end_value": null
+          },
+          "analysis_population": null,
+          "study_period": null,
+          "denominator": 47,
+          "value_type": "median",
+          "reported_value": 0.5,
+          "reported_unit": "units on a scale",
+          "responders": null,
+          "response_rate_pct": null,
+          "rate_is_derived": false,
+          "dispersion_type": "full_range",
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": "DLQI - Day 120"
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 3,
+            "verbatim_sha1": "3b4108de05575e27068030759ee37a11697f005e"
+          },
+          "arm_id": "OG001",
+          "timepoint": {
+            "value": 120,
+            "unit": "day",
+            "end_value": null
+          },
+          "analysis_population": null,
+          "study_period": null,
+          "denominator": 43,
+          "value_type": "median",
+          "reported_value": 2.5,
+          "reported_unit": "units on a scale",
+          "responders": null,
+          "response_rate_pct": null,
+          "rate_is_derived": false,
+          "dispersion_type": "full_range",
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": "DLQI - Day 120"
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 3,
+            "verbatim_sha1": "3b4108de05575e27068030759ee37a11697f005e"
+          },
+          "arm_id": "OG000",
+          "timepoint": {
+            "value": 180,
+            "unit": "day",
+            "end_value": null
+          },
+          "analysis_population": null,
+          "study_period": null,
+          "denominator": 47,
+          "value_type": "median",
+          "reported_value": 1.0,
+          "reported_unit": "units on a scale",
+          "responders": null,
+          "response_rate_pct": null,
+          "rate_is_derived": false,
+          "dispersion_type": "full_range",
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": "DLQI - Day 180/Early Termination"
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 3,
+            "verbatim_sha1": "3b4108de05575e27068030759ee37a11697f005e"
+          },
+          "arm_id": "OG001",
+          "timepoint": {
+            "value": 180,
+            "unit": "day",
+            "end_value": null
+          },
+          "analysis_population": null,
+          "study_period": null,
+          "denominator": 43,
+          "value_type": "median",
+          "reported_value": 1.0,
+          "reported_unit": "units on a scale",
+          "responders": null,
+          "response_rate_pct": null,
+          "rate_is_derived": false,
+          "dispersion_type": "full_range",
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": "DLQI - Day 180/Early Termination"
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 3,
+            "verbatim_sha1": "3b4108de05575e27068030759ee37a11697f005e"
+          },
+          "arm_id": "OG000",
+          "timepoint": {
+            "value": 0,
+            "unit": "day",
+            "end_value": null
+          },
+          "analysis_population": null,
+          "study_period": null,
+          "denominator": 47,
+          "value_type": "median",
+          "reported_value": 19.4,
+          "reported_unit": "units on a scale",
+          "responders": null,
+          "response_rate_pct": null,
+          "rate_is_derived": false,
+          "dispersion_type": "full_range",
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": "EPP QOL - Day 0 (baseline)"
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 3,
+            "verbatim_sha1": "3b4108de05575e27068030759ee37a11697f005e"
+          },
+          "arm_id": "OG001",
+          "timepoint": {
+            "value": 0,
+            "unit": "day",
+            "end_value": null
+          },
+          "analysis_population": null,
+          "study_period": null,
+          "denominator": 43,
+          "value_type": "median",
+          "reported_value": 22.2,
+          "reported_unit": "units on a scale",
+          "responders": null,
+          "response_rate_pct": null,
+          "rate_is_derived": false,
+          "dispersion_type": "full_range",
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": "EPP QOL - Day 0 (baseline)"
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 3,
+            "verbatim_sha1": "3b4108de05575e27068030759ee37a11697f005e"
+          },
+          "arm_id": "OG000",
+          "timepoint": {
+            "value": 60,
+            "unit": "day",
+            "end_value": null
+          },
+          "analysis_population": null,
+          "study_period": null,
+          "denominator": 47,
+          "value_type": "median",
+          "reported_value": 77.8,
+          "reported_unit": "units on a scale",
+          "responders": null,
+          "response_rate_pct": null,
+          "rate_is_derived": false,
+          "dispersion_type": "full_range",
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": "EPP QOL - Day 60"
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 3,
+            "verbatim_sha1": "3b4108de05575e27068030759ee37a11697f005e"
+          },
+          "arm_id": "OG001",
+          "timepoint": {
+            "value": 60,
+            "unit": "day",
+            "end_value": null
+          },
+          "analysis_population": null,
+          "study_period": null,
+          "denominator": 43,
+          "value_type": "median",
+          "reported_value": 55.6,
+          "reported_unit": "units on a scale",
+          "responders": null,
+          "response_rate_pct": null,
+          "rate_is_derived": false,
+          "dispersion_type": "full_range",
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": "EPP QOL - Day 60"
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 3,
+            "verbatim_sha1": "3b4108de05575e27068030759ee37a11697f005e"
+          },
+          "arm_id": "OG000",
+          "timepoint": {
+            "value": 120,
+            "unit": "day",
+            "end_value": null
+          },
+          "analysis_population": null,
+          "study_period": null,
+          "denominator": 47,
+          "value_type": "median",
+          "reported_value": 81.9,
+          "reported_unit": "units on a scale",
+          "responders": null,
+          "response_rate_pct": null,
+          "rate_is_derived": false,
+          "dispersion_type": "full_range",
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": "EPP QOL - Day 120"
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 3,
+            "verbatim_sha1": "3b4108de05575e27068030759ee37a11697f005e"
+          },
+          "arm_id": "OG001",
+          "timepoint": {
+            "value": 120,
+            "unit": "day",
+            "end_value": null
+          },
+          "analysis_population": null,
+          "study_period": null,
+          "denominator": 43,
+          "value_type": "median",
+          "reported_value": 61.1,
+          "reported_unit": "units on a scale",
+          "responders": null,
+          "response_rate_pct": null,
+          "rate_is_derived": false,
+          "dispersion_type": "full_range",
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": "EPP QOL - Day 120"
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 3,
+            "verbatim_sha1": "3b4108de05575e27068030759ee37a11697f005e"
+          },
+          "arm_id": "OG000",
+          "timepoint": {
+            "value": 180,
+            "unit": "day",
+            "end_value": null
+          },
+          "analysis_population": null,
+          "study_period": null,
+          "denominator": 47,
+          "value_type": "median",
+          "reported_value": 86.1,
+          "reported_unit": "units on a scale",
+          "responders": null,
+          "response_rate_pct": null,
+          "rate_is_derived": false,
+          "dispersion_type": "full_range",
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": "EPP QOL - Day 180/Early Termination"
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 3,
+            "verbatim_sha1": "3b4108de05575e27068030759ee37a11697f005e"
+          },
+          "arm_id": "OG001",
+          "timepoint": {
+            "value": 180,
+            "unit": "day",
+            "end_value": null
+          },
+          "analysis_population": null,
+          "study_period": null,
+          "denominator": 43,
+          "value_type": "median",
+          "reported_value": 69.4,
+          "reported_unit": "units on a scale",
+          "responders": null,
+          "response_rate_pct": null,
+          "rate_is_derived": false,
+          "dispersion_type": "full_range",
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": "EPP QOL - Day 180/Early Termination"
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 4,
+            "verbatim_sha1": "559b98f3fc1b5c5f0ca91f399dc6e49d3fbf6ff6"
+          },
+          "arm_id": "OG000",
+          "timepoint": {
+            "value": 0,
+            "unit": "day",
+            "end_value": null
+          },
+          "analysis_population": null,
+          "study_period": null,
+          "denominator": 10,
+          "value_type": "median",
+          "reported_value": 48.9,
+          "reported_unit": "J/cm^2",
+          "responders": null,
+          "response_rate_pct": null,
+          "rate_is_derived": false,
+          "dispersion_type": "full_range",
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": "Day 0: dorsal surface of the hand"
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 4,
+            "verbatim_sha1": "559b98f3fc1b5c5f0ca91f399dc6e49d3fbf6ff6"
+          },
+          "arm_id": "OG001",
+          "timepoint": {
+            "value": 0,
+            "unit": "day",
+            "end_value": null
+          },
+          "analysis_population": null,
+          "study_period": null,
+          "denominator": 10,
+          "value_type": "median",
+          "reported_value": 21.0,
+          "reported_unit": "J/cm^2",
+          "responders": null,
+          "response_rate_pct": null,
+          "rate_is_derived": false,
+          "dispersion_type": "full_range",
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": "Day 0: dorsal surface of the hand"
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 4,
+            "verbatim_sha1": "559b98f3fc1b5c5f0ca91f399dc6e49d3fbf6ff6"
+          },
+          "arm_id": "OG000",
+          "timepoint": {
+            "value": 30,
+            "unit": "day",
+            "end_value": null
+          },
+          "analysis_population": null,
+          "study_period": null,
+          "denominator": 10,
+          "value_type": "median",
+          "reported_value": 197.5,
+          "reported_unit": "J/cm^2",
+          "responders": null,
+          "response_rate_pct": null,
+          "rate_is_derived": false,
+          "dispersion_type": "full_range",
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": "Change at Day 30: dorsal surface of the hand"
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 4,
+            "verbatim_sha1": "559b98f3fc1b5c5f0ca91f399dc6e49d3fbf6ff6"
+          },
+          "arm_id": "OG001",
+          "timepoint": {
+            "value": 30,
+            "unit": "day",
+            "end_value": null
+          },
+          "analysis_population": null,
+          "study_period": null,
+          "denominator": 10,
+          "value_type": "median",
+          "reported_value": 75.6,
+          "reported_unit": "J/cm^2",
+          "responders": null,
+          "response_rate_pct": null,
+          "rate_is_derived": false,
+          "dispersion_type": "full_range",
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": "Change at Day 30: dorsal surface of the hand"
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 4,
+            "verbatim_sha1": "559b98f3fc1b5c5f0ca91f399dc6e49d3fbf6ff6"
+          },
+          "arm_id": "OG000",
+          "timepoint": {
+            "value": 60,
+            "unit": "day",
+            "end_value": null
+          },
+          "analysis_population": null,
+          "study_period": null,
+          "denominator": 10,
+          "value_type": "median",
+          "reported_value": 128.3,
+          "reported_unit": "J/cm^2",
+          "responders": null,
+          "response_rate_pct": null,
+          "rate_is_derived": false,
+          "dispersion_type": "full_range",
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": "Change at Day 60: dorsal surface of the hand"
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 4,
+            "verbatim_sha1": "559b98f3fc1b5c5f0ca91f399dc6e49d3fbf6ff6"
+          },
+          "arm_id": "OG001",
+          "timepoint": {
+            "value": 60,
+            "unit": "day",
+            "end_value": null
+          },
+          "analysis_population": null,
+          "study_period": null,
+          "denominator": 10,
+          "value_type": "median",
+          "reported_value": 36.3,
+          "reported_unit": "J/cm^2",
+          "responders": null,
+          "response_rate_pct": null,
+          "rate_is_derived": false,
+          "dispersion_type": "full_range",
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": "Change at Day 60: dorsal surface of the hand"
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 4,
+            "verbatim_sha1": "559b98f3fc1b5c5f0ca91f399dc6e49d3fbf6ff6"
+          },
+          "arm_id": "OG000",
+          "timepoint": {
+            "value": 90,
+            "unit": "day",
+            "end_value": null
+          },
+          "analysis_population": null,
+          "study_period": null,
+          "denominator": 10,
+          "value_type": "median",
+          "reported_value": 208.3,
+          "reported_unit": "J/cm^2",
+          "responders": null,
+          "response_rate_pct": null,
+          "rate_is_derived": false,
+          "dispersion_type": "full_range",
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": "Change at Day 90: dorsal surface of the hand"
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 4,
+            "verbatim_sha1": "559b98f3fc1b5c5f0ca91f399dc6e49d3fbf6ff6"
+          },
+          "arm_id": "OG001",
+          "timepoint": {
+            "value": 90,
+            "unit": "day",
+            "end_value": null
+          },
+          "analysis_population": null,
+          "study_period": null,
+          "denominator": 10,
+          "value_type": "median",
+          "reported_value": 13.9,
+          "reported_unit": "J/cm^2",
+          "responders": null,
+          "response_rate_pct": null,
+          "rate_is_derived": false,
+          "dispersion_type": "full_range",
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": "Change at Day 90: dorsal surface of the hand"
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 4,
+            "verbatim_sha1": "559b98f3fc1b5c5f0ca91f399dc6e49d3fbf6ff6"
+          },
+          "arm_id": "OG000",
+          "timepoint": {
+            "value": 120,
+            "unit": "day",
+            "end_value": null
+          },
+          "analysis_population": null,
+          "study_period": null,
+          "denominator": 10,
+          "value_type": "median",
+          "reported_value": 162.1,
+          "reported_unit": "J/cm^2",
+          "responders": null,
+          "response_rate_pct": null,
+          "rate_is_derived": false,
+          "dispersion_type": "full_range",
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": "Change at Day 120: dorsal surface of the hand"
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 4,
+            "verbatim_sha1": "559b98f3fc1b5c5f0ca91f399dc6e49d3fbf6ff6"
+          },
+          "arm_id": "OG001",
+          "timepoint": {
+            "value": 120,
+            "unit": "day",
+            "end_value": null
+          },
+          "analysis_population": null,
+          "study_period": null,
+          "denominator": 10,
+          "value_type": "median",
+          "reported_value": 1.9,
+          "reported_unit": "J/cm^2",
+          "responders": null,
+          "response_rate_pct": null,
+          "rate_is_derived": false,
+          "dispersion_type": "full_range",
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": "Change at Day 120: dorsal surface of the hand"
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 4,
+            "verbatim_sha1": "559b98f3fc1b5c5f0ca91f399dc6e49d3fbf6ff6"
+          },
+          "arm_id": "OG000",
+          "timepoint": {
+            "value": 0,
+            "unit": "day",
+            "end_value": null
+          },
+          "analysis_population": null,
+          "study_period": null,
+          "denominator": 10,
+          "value_type": "median",
+          "reported_value": 32.0,
+          "reported_unit": "J/cm^2",
+          "responders": null,
+          "response_rate_pct": null,
+          "rate_is_derived": false,
+          "dispersion_type": "full_range",
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": "Day 0: lower back"
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 4,
+            "verbatim_sha1": "559b98f3fc1b5c5f0ca91f399dc6e49d3fbf6ff6"
+          },
+          "arm_id": "OG001",
+          "timepoint": {
+            "value": 0,
+            "unit": "day",
+            "end_value": null
+          },
+          "analysis_population": null,
+          "study_period": null,
+          "denominator": 10,
+          "value_type": "median",
+          "reported_value": 24.1,
+          "reported_unit": "J/cm^2",
+          "responders": null,
+          "response_rate_pct": null,
+          "rate_is_derived": false,
+          "dispersion_type": "full_range",
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": "Day 0: lower back"
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 4,
+            "verbatim_sha1": "559b98f3fc1b5c5f0ca91f399dc6e49d3fbf6ff6"
+          },
+          "arm_id": "OG000",
+          "timepoint": {
+            "value": 30,
+            "unit": "day",
+            "end_value": null
+          },
+          "analysis_population": null,
+          "study_period": null,
+          "denominator": 10,
+          "value_type": "median",
+          "reported_value": 237.1,
+          "reported_unit": "J/cm^2",
+          "responders": null,
+          "response_rate_pct": null,
+          "rate_is_derived": false,
+          "dispersion_type": "full_range",
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": "Change at Day 30: lower back"
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 4,
+            "verbatim_sha1": "559b98f3fc1b5c5f0ca91f399dc6e49d3fbf6ff6"
+          },
+          "arm_id": "OG001",
+          "timepoint": {
+            "value": 30,
+            "unit": "day",
+            "end_value": null
+          },
+          "analysis_population": null,
+          "study_period": null,
+          "denominator": 10,
+          "value_type": "median",
+          "reported_value": 44.8,
+          "reported_unit": "J/cm^2",
+          "responders": null,
+          "response_rate_pct": null,
+          "rate_is_derived": false,
+          "dispersion_type": "full_range",
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": "Change at Day 30: lower back"
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 4,
+            "verbatim_sha1": "559b98f3fc1b5c5f0ca91f399dc6e49d3fbf6ff6"
+          },
+          "arm_id": "OG000",
+          "timepoint": {
+            "value": 60,
+            "unit": "day",
+            "end_value": null
+          },
+          "analysis_population": null,
+          "study_period": null,
+          "denominator": 10,
+          "value_type": "median",
+          "reported_value": 50.7,
+          "reported_unit": "J/cm^2",
+          "responders": null,
+          "response_rate_pct": null,
+          "rate_is_derived": false,
+          "dispersion_type": "full_range",
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": "Change at Day 60: lower back"
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 4,
+            "verbatim_sha1": "559b98f3fc1b5c5f0ca91f399dc6e49d3fbf6ff6"
+          },
+          "arm_id": "OG001",
+          "timepoint": {
+            "value": 60,
+            "unit": "day",
+            "end_value": null
+          },
+          "analysis_population": null,
+          "study_period": null,
+          "denominator": 10,
+          "value_type": "median",
+          "reported_value": 4.3,
+          "reported_unit": "J/cm^2",
+          "responders": null,
+          "response_rate_pct": null,
+          "rate_is_derived": false,
+          "dispersion_type": "full_range",
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": "Change at Day 60: lower back"
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 4,
+            "verbatim_sha1": "559b98f3fc1b5c5f0ca91f399dc6e49d3fbf6ff6"
+          },
+          "arm_id": "OG000",
+          "timepoint": {
+            "value": 90,
+            "unit": "day",
+            "end_value": null
+          },
+          "analysis_population": null,
+          "study_period": null,
+          "denominator": 10,
+          "value_type": "median",
+          "reported_value": 227.5,
+          "reported_unit": "J/cm^2",
+          "responders": null,
+          "response_rate_pct": null,
+          "rate_is_derived": false,
+          "dispersion_type": "full_range",
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": "Change at Day 90: lower back"
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 4,
+            "verbatim_sha1": "559b98f3fc1b5c5f0ca91f399dc6e49d3fbf6ff6"
+          },
+          "arm_id": "OG001",
+          "timepoint": {
+            "value": 90,
+            "unit": "day",
+            "end_value": null
+          },
+          "analysis_population": null,
+          "study_period": null,
+          "denominator": 10,
+          "value_type": "median",
+          "reported_value": -2.4,
+          "reported_unit": "J/cm^2",
+          "responders": null,
+          "response_rate_pct": null,
+          "rate_is_derived": false,
+          "dispersion_type": "full_range",
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": "Change at Day 90: lower back"
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 4,
+            "verbatim_sha1": "559b98f3fc1b5c5f0ca91f399dc6e49d3fbf6ff6"
+          },
+          "arm_id": "OG000",
+          "timepoint": {
+            "value": 120,
+            "unit": "day",
+            "end_value": null
+          },
+          "analysis_population": null,
+          "study_period": null,
+          "denominator": 10,
+          "value_type": "median",
+          "reported_value": 82.5,
+          "reported_unit": "J/cm^2",
+          "responders": null,
+          "response_rate_pct": null,
+          "rate_is_derived": false,
+          "dispersion_type": "full_range",
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": "Change at Day 120: lower back"
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 4,
+            "verbatim_sha1": "559b98f3fc1b5c5f0ca91f399dc6e49d3fbf6ff6"
+          },
+          "arm_id": "OG001",
+          "timepoint": {
+            "value": 120,
+            "unit": "day",
+            "end_value": null
+          },
+          "analysis_population": null,
+          "study_period": null,
+          "denominator": 10,
+          "value_type": "median",
+          "reported_value": 12.1,
+          "reported_unit": "J/cm^2",
+          "responders": null,
+          "response_rate_pct": null,
+          "rate_is_derived": false,
+          "dispersion_type": "full_range",
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": "Change at Day 120: lower back"
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 5,
+            "verbatim_sha1": "1b2586342e59253ecf9539d1c83ba16ba7964ab5"
+          },
+          "arm_id": "OG000",
+          "timepoint": null,
+          "analysis_population": null,
+          "study_period": null,
+          "denominator": 46,
+          "value_type": "median",
+          "reported_value": 4.0,
+          "reported_unit": "score on a scale",
+          "responders": null,
+          "response_rate_pct": null,
+          "rate_is_derived": false,
+          "dispersion_type": "full_range",
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": null
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 5,
+            "verbatim_sha1": "1b2586342e59253ecf9539d1c83ba16ba7964ab5"
+          },
+          "arm_id": "OG001",
+          "timepoint": null,
+          "analysis_population": null,
+          "study_period": null,
+          "denominator": 43,
+          "value_type": "median",
+          "reported_value": 5.0,
+          "reported_unit": "score on a scale",
+          "responders": null,
+          "response_rate_pct": null,
+          "rate_is_derived": false,
+          "dispersion_type": "full_range",
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": null
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 6,
+            "verbatim_sha1": "fbaf03d969322f36bb11312261808037c08101f5"
+          },
+          "arm_id": "OG000",
+          "timepoint": null,
+          "analysis_population": null,
+          "study_period": null,
+          "denominator": 46,
+          "value_type": "median",
+          "reported_value": 4.0,
+          "reported_unit": "episodes",
+          "responders": null,
+          "response_rate_pct": null,
+          "rate_is_derived": false,
+          "dispersion_type": "full_range",
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": null
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 6,
+            "verbatim_sha1": "fbaf03d969322f36bb11312261808037c08101f5"
+          },
+          "arm_id": "OG001",
+          "timepoint": null,
+          "analysis_population": null,
+          "study_period": null,
+          "denominator": 43,
+          "value_type": "median",
+          "reported_value": 6.0,
+          "reported_unit": "episodes",
+          "responders": null,
+          "response_rate_pct": null,
+          "rate_is_derived": false,
+          "dispersion_type": "full_range",
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": null
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01605136",
+      "source_excerpt": "resultsSection.outcomeMeasuresModule.outcomeMeasures[].{denoms,classes[].categories[].measurements[]}",
+      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3, 2026-09-06)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "effect_estimates": {
+      "value": [],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01605136",
+      "source_excerpt": "resultsSection.outcomeMeasuresModule.outcomeMeasures[].analyses[]",
+      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3, 2026-09-06)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "published_results": {
       "value": null,
       "source_type": "needs_extraction",
       "source_url": null,

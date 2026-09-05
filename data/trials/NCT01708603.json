@@ -1,5 +1,5 @@
 {
-  "schema_version": 2,
+  "schema_version": 3,
   "nct_id": {
     "value": "NCT01708603",
     "source_type": "ctgov_api",
@@ -360,11 +360,61 @@
           "study_period": null,
           "event_type": null,
           "time_frame": "12 weeks"
+        },
+        {
+          "verbatim": "Percentage of Participants With Psoriasis Area Severity Index (PASI) 75 at Week 12 (Time frame: 12 weeks)",
+          "rank": "primary",
+          "position": 2,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": "12 weeks"
+        },
+        {
+          "verbatim": "Percentage of Participants With Psoriasis Area Severity Index (PASI) 100 at Week 12 (Time frame: 12 Weeks)",
+          "rank": "primary",
+          "position": 3,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": "12 Weeks"
         }
       ],
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01708603",
-      "source_excerpt": "protocolSection.outcomesModule.primaryOutcomes[0].measure/timeFrame",
+      "source_excerpt": "protocolSection.outcomesModule.primaryOutcomes[].measure/timeFrame",
       "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2; responder_criteria backfilled by deep-extraction pass (pattern-matched from CT.gov verbatim title; pending human QA)",
       "reviewed_by": null,
       "confidence": 0.85
@@ -768,7 +818,7 @@
       },
       "source_type": "openfda_label",
       "source_url": "https://api.fda.gov/drug/label.json?search=openfda.substance_name:BRODALUMAB&limit=1",
-      "source_excerpt": "results[0].boxed_warning -- v1 extracted text: WARNING: SUICIDAL IDEATION AND BEHAVIOR Suicidal ideation and behavior, including completed suicides, have occurred in patients treated with SILIQ. Prior to prescribing SILIQ, weigh the potential risks and benefits in patients with a history of depression and/or suicidal ideation or behavior. Patients with new or worsening suicidal ideation and behavior should be referred to a mental health professional, as appropriate. Advise patients and caregivers to seek medical attention for manifestations of suicidal ideation or behavior, new onset or worsening depression, anxiety, or other mood changes [see Warnings and Precautions ( 5.1 )]. Because of the observed suicidal behavior in subjects treated with SILIQ, SILIQ is available only through a restricted program under a Risk Evaluation and Mitigation Strategy (REMS) called the SILIQ REMS Program [see Warnings and Precautions ( 5.2 )]. WARNING: SUICIDAL IDEATION AND BEHAVIOR See full prescribing information for complete boxed warning. \u2022 Suicidal ideation and behavior, including completed suicides, have occurred in patients treated with SILIQ. ( 5.1 , 6.1 ) \u2022 Prior to prescribing, weigh potential risks and benefits in patients with a history of depression and/or suicidal ideation or behavior. ( 5.1 ) \u2022 Patients with new or worsening suicidal thoughts and behavior should be referred to a mental health professional, as appropriate. ( 5.1 ) \u2022 Advise patients and caregivers to seek medical attention for manifestations of suicidal ideation or behavior, new onset or worsening depression, anxiety, or other mood changes. ( 5.1 ) \u2022 SILIQ is available only through a restricted program called the SILIQ REMS Program. ( 5.2 )",
+      "source_excerpt": "results[0].boxed_warning -- v1 extracted text: WARNING: SUICIDAL IDEATION AND BEHAVIOR Suicidal ideation and behavior, including completed suicides, have occurred in patients treated with SILIQ. Prior to prescribing SILIQ, weigh the potential risks and benefits in patients with a history of depression and/or suicidal ideation or behavior. Patients with new or worsening suicidal ideation and behavior should be referred to a mental health professional, as appropriate. Advise patients and caregivers to seek medical attention for manifestations of suicidal ideation or behavior, new onset or worsening depression, anxiety, or other mood changes [see Warnings and Precautions ( 5.1 )]. Because of the observed suicidal behavior in subjects treated with SILIQ, SILIQ is available only through a restricted program under a Risk Evaluation and Mitigation Strategy (REMS) called the SILIQ REMS Program [see Warnings and Precautions ( 5.2 )]. WARNING: SUICIDAL IDEATION AND BEHAVIOR See full prescribing information for complete boxed warning. • Suicidal ideation and behavior, including completed suicides, have occurred in patients treated with SILIQ. ( 5.1 , 6.1 ) • Prior to prescribing, weigh potential risks and benefits in patients with a history of depression and/or suicidal ideation or behavior. ( 5.1 ) • Patients with new or worsening suicidal thoughts and behavior should be referred to a mental health professional, as appropriate. ( 5.1 ) • Advise patients and caregivers to seek medical attention for manifestations of suicidal ideation or behavior, new onset or worsening depression, anxiety, or other mood changes. ( 5.1 ) • SILIQ is available only through a restricted program called the SILIQ REMS Program. ( 5.2 )",
       "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
@@ -1085,6 +1135,450 @@
       "extracted_by": "purple_book_csv_helper.py (accessdata.fda.gov monthly CSV, cycle-8 pass)",
       "reviewed_by": null,
       "confidence": 1.0
+    }
+  },
+  "results": {
+    "arms": {
+      "value": [
+        {
+          "arm_id": "OG000",
+          "label": "210 mg Brodalumab",
+          "role": "investigational",
+          "intervention_names": [
+            "210 mg brodalumab"
+          ],
+          "dose_value": null,
+          "dose_unit": null,
+          "frequency": null,
+          "randomized_n": 612
+        },
+        {
+          "arm_id": "OG001",
+          "label": "140 mg Brodalumab",
+          "role": "investigational",
+          "intervention_names": [
+            "140 mg brodalumab"
+          ],
+          "dose_value": null,
+          "dose_unit": null,
+          "frequency": null,
+          "randomized_n": 610
+        },
+        {
+          "arm_id": "OG002",
+          "label": "Placebo",
+          "role": "placebo",
+          "intervention_names": [
+            "placebo"
+          ],
+          "dose_value": null,
+          "dose_unit": null,
+          "frequency": null,
+          "randomized_n": 309
+        },
+        {
+          "arm_id": "OG003",
+          "label": "Ustekinumab",
+          "role": "other",
+          "intervention_names": [
+            "ustekinumab"
+          ],
+          "dose_value": null,
+          "dose_unit": null,
+          "frequency": null,
+          "randomized_n": 300
+        },
+        {
+          "arm_id": "OG000",
+          "label": "Brodalumab 210mg",
+          "role": "investigational",
+          "intervention_names": [],
+          "dose_value": null,
+          "dose_unit": null,
+          "frequency": null,
+          "randomized_n": null
+        },
+        {
+          "arm_id": "OG001",
+          "label": "Brodalumab 140mg",
+          "role": "investigational",
+          "intervention_names": [],
+          "dose_value": null,
+          "dose_unit": null,
+          "frequency": null,
+          "randomized_n": null
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01708603",
+      "source_excerpt": "resultsSection.outcomeMeasuresModule.outcomeMeasures[].groups[]",
+      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3, 2026-09-06)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "arm_results": {
+      "value": [
+        {
+          "endpoint": {
+            "rank": "primary",
+            "position": 1,
+            "verbatim_sha1": "54dd692e3ce1158ec597babe7302983f87967b49"
+          },
+          "arm_id": "OG000",
+          "timepoint": {
+            "value": 12,
+            "unit": "week",
+            "end_value": null
+          },
+          "analysis_population": null,
+          "study_period": null,
+          "denominator": 612,
+          "value_type": "count_of_participants",
+          "reported_value": 481.0,
+          "reported_unit": "Participants",
+          "responders": 481,
+          "response_rate_pct": 78.6,
+          "rate_is_derived": true,
+          "dispersion_type": null,
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": null
+        },
+        {
+          "endpoint": {
+            "rank": "primary",
+            "position": 1,
+            "verbatim_sha1": "54dd692e3ce1158ec597babe7302983f87967b49"
+          },
+          "arm_id": "OG001",
+          "timepoint": {
+            "value": 12,
+            "unit": "week",
+            "end_value": null
+          },
+          "analysis_population": null,
+          "study_period": null,
+          "denominator": 610,
+          "value_type": "count_of_participants",
+          "reported_value": 354.0,
+          "reported_unit": "Participants",
+          "responders": 354,
+          "response_rate_pct": 58.0,
+          "rate_is_derived": true,
+          "dispersion_type": null,
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": null
+        },
+        {
+          "endpoint": {
+            "rank": "primary",
+            "position": 1,
+            "verbatim_sha1": "54dd692e3ce1158ec597babe7302983f87967b49"
+          },
+          "arm_id": "OG002",
+          "timepoint": {
+            "value": 12,
+            "unit": "week",
+            "end_value": null
+          },
+          "analysis_population": null,
+          "study_period": null,
+          "denominator": 309,
+          "value_type": "count_of_participants",
+          "reported_value": 12.0,
+          "reported_unit": "Participants",
+          "responders": 12,
+          "response_rate_pct": 3.9,
+          "rate_is_derived": true,
+          "dispersion_type": null,
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": null
+        },
+        {
+          "endpoint": {
+            "rank": "primary",
+            "position": 1,
+            "verbatim_sha1": "54dd692e3ce1158ec597babe7302983f87967b49"
+          },
+          "arm_id": "OG003",
+          "timepoint": {
+            "value": 12,
+            "unit": "week",
+            "end_value": null
+          },
+          "analysis_population": null,
+          "study_period": null,
+          "denominator": 300,
+          "value_type": "count_of_participants",
+          "reported_value": 183.0,
+          "reported_unit": "Participants",
+          "responders": 183,
+          "response_rate_pct": 61.0,
+          "rate_is_derived": true,
+          "dispersion_type": null,
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": null
+        },
+        {
+          "endpoint": {
+            "rank": "primary",
+            "position": 2,
+            "verbatim_sha1": "7eb6a85d5411c5bb5dc4fbb47d6518c359bde49c"
+          },
+          "arm_id": "OG000",
+          "timepoint": {
+            "value": 12,
+            "unit": "week",
+            "end_value": null
+          },
+          "analysis_population": null,
+          "study_period": null,
+          "denominator": 612,
+          "value_type": "count_of_participants",
+          "reported_value": 528.0,
+          "reported_unit": "Participants",
+          "responders": 528,
+          "response_rate_pct": 86.3,
+          "rate_is_derived": true,
+          "dispersion_type": null,
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": null
+        },
+        {
+          "endpoint": {
+            "rank": "primary",
+            "position": 2,
+            "verbatim_sha1": "7eb6a85d5411c5bb5dc4fbb47d6518c359bde49c"
+          },
+          "arm_id": "OG001",
+          "timepoint": {
+            "value": 12,
+            "unit": "week",
+            "end_value": null
+          },
+          "analysis_population": null,
+          "study_period": null,
+          "denominator": 610,
+          "value_type": "count_of_participants",
+          "reported_value": 406.0,
+          "reported_unit": "Participants",
+          "responders": 406,
+          "response_rate_pct": 66.6,
+          "rate_is_derived": true,
+          "dispersion_type": null,
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": null
+        },
+        {
+          "endpoint": {
+            "rank": "primary",
+            "position": 2,
+            "verbatim_sha1": "7eb6a85d5411c5bb5dc4fbb47d6518c359bde49c"
+          },
+          "arm_id": "OG002",
+          "timepoint": {
+            "value": 12,
+            "unit": "week",
+            "end_value": null
+          },
+          "analysis_population": null,
+          "study_period": null,
+          "denominator": 309,
+          "value_type": "count_of_participants",
+          "reported_value": 25.0,
+          "reported_unit": "Participants",
+          "responders": 25,
+          "response_rate_pct": 8.1,
+          "rate_is_derived": true,
+          "dispersion_type": null,
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": null
+        },
+        {
+          "endpoint": {
+            "rank": "primary",
+            "position": 2,
+            "verbatim_sha1": "7eb6a85d5411c5bb5dc4fbb47d6518c359bde49c"
+          },
+          "arm_id": "OG003",
+          "timepoint": {
+            "value": 12,
+            "unit": "week",
+            "end_value": null
+          },
+          "analysis_population": null,
+          "study_period": null,
+          "denominator": 300,
+          "value_type": "count_of_participants",
+          "reported_value": 210.0,
+          "reported_unit": "Participants",
+          "responders": 210,
+          "response_rate_pct": 70.0,
+          "rate_is_derived": true,
+          "dispersion_type": null,
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": null
+        },
+        {
+          "endpoint": {
+            "rank": "primary",
+            "position": 3,
+            "verbatim_sha1": "16c9c032ba137e4e51135347a14df24e964851b4"
+          },
+          "arm_id": "OG000",
+          "timepoint": {
+            "value": 12,
+            "unit": "week",
+            "end_value": null
+          },
+          "analysis_population": null,
+          "study_period": null,
+          "denominator": 612,
+          "value_type": "count_of_participants",
+          "reported_value": 272.0,
+          "reported_unit": "Participants",
+          "responders": 272,
+          "response_rate_pct": 44.4,
+          "rate_is_derived": true,
+          "dispersion_type": null,
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": null
+        },
+        {
+          "endpoint": {
+            "rank": "primary",
+            "position": 3,
+            "verbatim_sha1": "16c9c032ba137e4e51135347a14df24e964851b4"
+          },
+          "arm_id": "OG001",
+          "timepoint": {
+            "value": 12,
+            "unit": "week",
+            "end_value": null
+          },
+          "analysis_population": null,
+          "study_period": null,
+          "denominator": 610,
+          "value_type": "count_of_participants",
+          "reported_value": 157.0,
+          "reported_unit": "Participants",
+          "responders": 157,
+          "response_rate_pct": 25.7,
+          "rate_is_derived": true,
+          "dispersion_type": null,
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": null
+        },
+        {
+          "endpoint": {
+            "rank": "primary",
+            "position": 3,
+            "verbatim_sha1": "16c9c032ba137e4e51135347a14df24e964851b4"
+          },
+          "arm_id": "OG002",
+          "timepoint": {
+            "value": 12,
+            "unit": "week",
+            "end_value": null
+          },
+          "analysis_population": null,
+          "study_period": null,
+          "denominator": 309,
+          "value_type": "count_of_participants",
+          "reported_value": 2.0,
+          "reported_unit": "Participants",
+          "responders": 2,
+          "response_rate_pct": 0.6,
+          "rate_is_derived": true,
+          "dispersion_type": null,
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": null
+        },
+        {
+          "endpoint": {
+            "rank": "primary",
+            "position": 3,
+            "verbatim_sha1": "16c9c032ba137e4e51135347a14df24e964851b4"
+          },
+          "arm_id": "OG003",
+          "timepoint": {
+            "value": 12,
+            "unit": "week",
+            "end_value": null
+          },
+          "analysis_population": null,
+          "study_period": null,
+          "denominator": 300,
+          "value_type": "count_of_participants",
+          "reported_value": 65.0,
+          "reported_unit": "Participants",
+          "responders": 65,
+          "response_rate_pct": 21.7,
+          "rate_is_derived": true,
+          "dispersion_type": null,
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": null
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01708603",
+      "source_excerpt": "resultsSection.outcomeMeasuresModule.outcomeMeasures[].{denoms,classes[].categories[].measurements[]}",
+      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3, 2026-09-06)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "effect_estimates": {
+      "value": [],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01708603",
+      "source_excerpt": "resultsSection.outcomeMeasuresModule.outcomeMeasures[].analyses[]",
+      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3, 2026-09-06)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "published_results": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
     }
   }
 }

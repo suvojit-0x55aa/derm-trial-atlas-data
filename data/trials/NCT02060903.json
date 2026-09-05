@@ -1,5 +1,5 @@
 {
-  "schema_version": 2,
+  "schema_version": 3,
   "nct_id": {
     "value": "NCT02060903",
     "source_type": "ctgov_api",
@@ -647,6 +647,118 @@
       "confidence": 1.0
     },
     "purple_book": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    }
+  },
+  "results": {
+    "arms": {
+      "value": [
+        {
+          "arm_id": "OG000",
+          "label": "Abametapir Lotion 0.74% w/w",
+          "role": "investigational",
+          "intervention_names": [
+            "Abametapir Lotion 0.74% w/w"
+          ],
+          "dose_value": null,
+          "dose_unit": null,
+          "frequency": null,
+          "randomized_n": 187
+        },
+        {
+          "arm_id": "OG001",
+          "label": "Vehicle Lotion",
+          "role": "vehicle",
+          "intervention_names": [
+            "Vehicle Lotion"
+          ],
+          "dose_value": null,
+          "dose_unit": null,
+          "frequency": null,
+          "randomized_n": 192
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02060903",
+      "source_excerpt": "resultsSection.outcomeMeasuresModule.outcomeMeasures[].groups[]",
+      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3, 2026-09-06)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "arm_results": {
+      "value": [
+        {
+          "endpoint": {
+            "rank": "primary",
+            "position": 1,
+            "verbatim_sha1": "4fcd0ef2cfb51084aedc2bb0d519ffaae2ec2576"
+          },
+          "arm_id": "OG000",
+          "timepoint": null,
+          "analysis_population": "full_analysis_set",
+          "study_period": null,
+          "denominator": 53,
+          "value_type": "count_of_participants",
+          "reported_value": 43.0,
+          "reported_unit": "participants",
+          "responders": 43,
+          "response_rate_pct": 81.1,
+          "rate_is_derived": true,
+          "dispersion_type": null,
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": null
+        },
+        {
+          "endpoint": {
+            "rank": "primary",
+            "position": 1,
+            "verbatim_sha1": "4fcd0ef2cfb51084aedc2bb0d519ffaae2ec2576"
+          },
+          "arm_id": "OG001",
+          "timepoint": null,
+          "analysis_population": "full_analysis_set",
+          "study_period": null,
+          "denominator": 55,
+          "value_type": "count_of_participants",
+          "reported_value": 28.0,
+          "reported_unit": "participants",
+          "responders": 28,
+          "response_rate_pct": 50.9,
+          "rate_is_derived": true,
+          "dispersion_type": null,
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": null
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02060903",
+      "source_excerpt": "resultsSection.outcomeMeasuresModule.outcomeMeasures[].{denoms,classes[].categories[].measurements[]}",
+      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3, 2026-09-06)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "effect_estimates": {
+      "value": [],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02060903",
+      "source_excerpt": "resultsSection.outcomeMeasuresModule.outcomeMeasures[].analyses[]",
+      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3, 2026-09-06)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "published_results": {
       "value": null,
       "source_type": "needs_extraction",
       "source_url": null,

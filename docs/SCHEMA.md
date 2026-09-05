@@ -1,11 +1,7 @@
-# Open Derm Trial Atlas -- schema v2 (field reference)
+# Open Derm Trial Atlas -- schema v3 (field reference)
 
-**Static snapshot.** This repo holds data only -- `atlas/schema.py` and the
-`scripts/export_schema.py` generator that used to produce this file both
-live in `kolai-website` now. This file won't auto-update here; when the
-schema changes, kolai-website regenerates it and this copy is refreshed
-from there. The machine-readable form is `schema/trial.schema.json`
-(same caveat).
+Generated from `atlas/schema.py` by `scripts/export_schema.py`; do not edit by hand.
+The machine-readable form is `schema/trial.schema.json`.
 
 Every field below is a **sourced value**:
 
@@ -63,8 +59,12 @@ prose, that prose is now in `source_excerpt` (or the endpoint's `verbatim` / int
 | `exclusivity.regulatory_application` | RegulatoryApplication \| null | NDA/BLA join key for Orange/Purple Book (drug-level) |  |
 | `exclusivity.orange_book` | OrangeBookRecord \| null | Orange Book patents + exclusivities (small-molecule NDAs only) |  |
 | `exclusivity.purple_book` | PurpleBookRecord \| null | Purple Book licensure + BPCIA exclusivity (biologic BLAs only) |  |
+| `results.arms` | list[Arm] \| null | per-trial arm registry from CT.gov results groups, role-classified |  |
+| `results.arm_results` | list[ArmResult] \| null | one row per endpoint x timepoint x arm (CT.gov results) |  |
+| `results.effect_estimates` | list[EffectEstimate] \| null | one row per endpoint x timepoint x pairwise comparison |  |
+| `results.published_results` | list[ArmResult] \| null | same shape as arm_results, publication/label sourced; NEVER mixed with arm_results -- keeps registry-grade CT.gov numbers and literature-grade numbers separable at the field level |  |
 
-Plus the top-level literal `schema_version: 2`.
+Plus the top-level literal `schema_version: 3`.
 
 ## ScoreCriterion
 
@@ -428,3 +428,85 @@ ScoreCriterion: one threshold on one clinical scale
 | `proprietary_name` | string \| null |  |
 | `applicant` | string \| null |  |
 | `first_approval_date` | date \| null | ISO date YYYY-MM-DD |
+
+## EndpointKey
+
+Reference to endpoints.<rank>_endpoints[position-1]; never re-describes the endpoint
+
+| Key | Type | Notes |
+|---|---|---|
+| `rank` | enum(primary \| secondary) |  |
+| `position` | integer |  |
+| `verbatim_sha1` | string | sha1 hex digest of the referenced endpoint's verbatim; guards the join against a silent position shift |
+
+## PValue
+
+P-value as bound + value; reuses the ScoreCriterion comparator idiom
+
+| Key | Type | Notes |
+|---|---|---|
+| `comparator` | enum(< \| <= \| = \| > \| >=) |  |
+| `value` | number |  |
+| `verbatim` | string | CT.gov pValue string exactly as posted, e.g. '< 0.0001' |
+
+## Arm
+
+One CT.gov results group (arm), role-classified
+
+| Key | Type | Notes |
+|---|---|---|
+| `arm_id` | string | CT.gov results group id (OG000); unique within this trial |
+| `label` | string | CT.gov results group title, verbatim |
+| `role` | enum(investigational \| placebo \| vehicle \| active_comparator \| other) | curated; CT.gov armGroups[].type is unreliable -- a trial can label its own placebo arm EXPERIMENTAL |
+| `intervention_names` | list[string] | join to molecule.dosing_regimen[].intervention_name |
+| `dose_value` | number \| null |  |
+| `dose_unit` | string \| null |  |
+| `frequency` | enum(once_daily \| twice_daily \| weekly \| every_2_weeks \| every_4_weeks) \| null |  |
+| `randomized_n` | integer \| null |  |
+
+## ArmResult
+
+One row per endpoint x timepoint x arm (a CT.gov results measurement)
+
+| Key | Type | Notes |
+|---|---|---|
+| `endpoint` | EndpointKey | Reference to endpoints.<rank>_endpoints[position-1]; never re-describes the endpoint |
+| `arm_id` | string |  |
+| `timepoint` | Timepoint \| null |  |
+| `analysis_population` | enum(main_study \| adolescents \| adults \| pediatrics \| full_analysis_set \| per_protocol \| prior_cyclosporine_use \| comorbid_asthma \| re_randomized_responders \| initially_randomized_to_active) \| null |  |
+| `study_period` | enum(double_blind \| rescue \| maintenance \| treatment_period) \| null |  |
+| `denominator` | integer \| null | participants analyzed in this arm for this measure |
+| `value_type` | enum(number \| count_of_participants \| mean \| least_squares_mean \| median \| geometric_mean) |  |
+| `reported_value` | number | the number CT.gov posted, untouched |
+| `reported_unit` | string \| null | CT.gov unitOfMeasure verbatim (4 casings exist in the corpus -- do not parse it, use value_type to disambiguate count vs. rate) |
+| `responders` | integer \| null | count; null when the source posted only a rate, never back-computed |
+| `response_rate_pct` | number \| null | 0-100; null unless the measure is a responder rate |
+| `rate_is_derived` | boolean | true when response_rate_pct was computed as responders/denominator rather than posted directly |
+| `dispersion_type` | enum(standard_deviation \| standard_error \| confidence_interval \| inter_quartile_range \| full_range \| geometric_cv) \| null |  |
+| `dispersion_value` | number \| null |  |
+| `ci_pct` | number \| null |  |
+| `ci_lower` | number \| null |  |
+| `ci_upper` | number \| null |  |
+| `ctgov_class_title` | string \| null | the classes[].title the timepoint was parsed from, e.g. 'Week 16' -- provenance for the timepoint binding |
+
+## EffectEstimate
+
+One row per endpoint x timepoint x pairwise arm comparison (a CT.gov analysis)
+
+| Key | Type | Notes |
+|---|---|---|
+| `endpoint` | EndpointKey | Reference to endpoints.<rank>_endpoints[position-1]; never re-describes the endpoint |
+| `timepoint` | Timepoint \| null |  |
+| `test_arm_id` | string |  |
+| `reference_arm_id` | string |  |
+| `comparison_kind` | enum(superiority \| non_inferiority \| equivalence \| other) \| null |  |
+| `effect_type` | enum(response_rate_difference \| ls_mean_difference \| mean_difference \| median_difference \| odds_ratio \| risk_ratio \| risk_difference \| hazard_ratio) \| null | null when the raw label maps to none of the 8 canonical types |
+| `effect_type_verbatim` | string \| null | CT.gov analyses[].paramType, unchanged |
+| `effect_value` | number \| null |  |
+| `ci_pct` | number \| null |  |
+| `ci_lower` | number \| null |  |
+| `ci_upper` | number \| null |  |
+| `ci_sides` | integer \| null |  |
+| `p_value` | PValue \| null | P-value as bound + value; reuses the ScoreCriterion comparator idiom |
+| `statistical_method` | string \| null | CT.gov statisticalMethod, e.g. 'Cochran-Mantel-Haenszel' |
+| `adjusted_for` | list[string] | stratification factors parsed from groupDescription |

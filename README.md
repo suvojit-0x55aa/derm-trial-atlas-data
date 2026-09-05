@@ -1,12 +1,11 @@
-# Open Derm Trial Atlas — Data (schema v2)
+# Open Derm Trial Atlas — Data (schema v3)
 
-Structured, sourced trial-design and safety data for dermatology drug
-trials. **This repo holds data only** — every JSON/CSV file below and
-nothing else. The fetch/extraction/build/migration pipeline that produces
-this data, the schema spec (`atlas/schema.py`), the portal UI
-(`superderma.ai/atlas`), and their tests all live in the separate
-`kolai-website` repo; this repo is regenerated from there, not the other
-way around.
+Structured, sourced trial-design, safety, and results data for dermatology
+drug trials. This repo holds **both** the data (`data/trials/*.json`, the
+flattened CSVs) and the pipeline that produces it (`scripts/`, `atlas/`,
+`tests/`) — as of the 2026-09 repo consolidation, `kolai-website` is no
+longer part of this project. There are exactly two repos now:
+`open-derm-trial-atlas` (the portal UI) and this one.
 
 ## What this covers
 
@@ -619,8 +618,8 @@ wrong-indication trial) before adding it.
 
 ## Data model
 
-One JSON file per trial at `data/trials/<NCT_ID>.json` (**schema v2**),
-organized into 9 field groups (39 fields). Every field value is an object,
+One JSON file per trial at `data/trials/<NCT_ID>.json` (**schema v3**),
+organized into 10 field groups (43 fields). Every field value is an object,
 never a bare scalar:
 
 ```json
@@ -674,13 +673,18 @@ never a bare scalar:
 - `purple_book` — FDA Purple Book live search table, biologic BLAs only
   (`exclusivity.purple_book`, and the join key for biologics).
 
-### Schema v2: typed, atomic values
+### Schema v3: typed, atomic values
 
 Every `value` is a typed structure that can be filtered and compared
 directly — no re-parsing prose at read time. The full field-by-field
 reference is `docs/SCHEMA.md` (human-readable) / `schema/trial.schema.json`
-(JSON Schema draft-07) — both are static snapshots generated from
-`atlas/schema.py` in `kolai-website`, which owns the spec now. The schema
+(JSON Schema draft-07), both generated from `atlas/schema.py` — this repo's
+own spec, run `python3 scripts/export_schema.py` after any change to keep
+them in sync (checked by `tests/test_schema.py`). v3 adds one field group,
+`results` (`arms`/`arm_results`/`effect_estimates`/`published_results`):
+normalized per-arm CT.gov results and pairwise effect estimates, each
+referencing the existing `endpoints.*` objects by `(rank, position,
+verbatim_sha1)` rather than re-describing the endpoint. The schema
 is indication-agnostic: adding 18 more indications beyond the original AD
 set required zero schema changes — `severity_definition`/severity criteria
 and the endpoint-measure fields are free text sized for any indication's
@@ -693,12 +697,15 @@ named clinical scale (`{scale, metric, comparator, value, unit,
 assessed_at, …}`) — reused by eligibility severity thresholds, endpoint
 responder definitions, endpoint subgroups, rescue triggers, and flare
 definitions. So "EASI-75 at week 16" is the same row shape wherever it
-occurs. What was free text in v1 is typed in v2 (full list in
-`docs/SCHEMA.md`); the v1 prose survives as provenance in `source_excerpt`
-(or an endpoint's `verbatim` / an intervention's `description`) — it is
-never the queryable value. `kolai-website`'s test suite proves the v1→v2
-migration is lossless (deterministic, byte-identical on re-run, every v1
-fact traceable in the v2 value, every gap preserved, nothing invented).
+occurs, and a `results.arm_results`/`effect_estimates` row can point at it
+by reference instead of re-describing it. What was free text in v1 is
+typed in v2/v3 (full list in `docs/SCHEMA.md`); the v1 prose survives as
+provenance in `source_excerpt` (or an endpoint's `verbatim` / an
+intervention's `description`) — it is never the queryable value. This
+repo's own `tests/test_migration_lossless.py` proves the v1→v2 migration
+is lossless (deterministic, byte-identical on re-run, every v1 fact
+traceable in the v2 value, every gap preserved, nothing invented); v2→v3
+is a separate, pure no-op (new fields only, no existing value touched).
 
 Cross-source field groups, now populated for every one of the 26 drugs in
 the atlas:
@@ -797,56 +804,66 @@ every count below recomputed from `sources.csv` this cycle):
 | `adverse_events.boxed_warning` | 125/127 | openFDA label lookup miss for a few trials |
 | `exclusivity.orange_book` | 73/127 | only the NDA small-molecule drugs' trials get this field (BLA biologics use `purple_book` instead) |
 | `exclusivity.purple_book` | 54/127 | only the BLA biologic drugs' trials get this field (NDA small molecules use `orange_book` instead) |
+| `results.arms` / `results.arm_results` / `results.effect_estimates` | 125/127 each | schema v3, backfilled from live CT.gov `resultsSection` data for every `hasResults:true` trial; the other 2 (both Efinaconazole/Onychomycosis) genuinely have no posted results |
+| `results.published_results` | 0/127 | literature/label-sourced results are explicitly out of scope for this backfill (registry-grade CT.gov numbers and literature-grade numbers are kept separable at the field level, never mixed) |
 
-**4513 of 4953 sourced values are filled with real data (91.1%); 440
+**4888 of 5461 sourced values are filled with real data (89.5%); 573
 remain `needs_extraction`** — see `sources.csv` for the per-trial,
 per-field breakdown. Every non-`ctgov_api` fill was produced by
 LLM-assisted reading of a real, cited source (CT.gov free text, a
 downloaded protocol/SAP PDF, CT.gov's structured results tables, a PMC
 full-text paper, an FDA approval-package review, the openFDA label, or a
-live openFDA/FDA registry query) — `kolai-website`'s pipeline records
-exactly which excerpt backs which field — and every one is
-`reviewed_by: null` pending the human clinical QA pass (captain + Garvita)
-before it's treated as authoritative for publication.
+live openFDA/FDA registry query) — this repo's own pipeline (`scripts/`,
+`atlas/`) records exactly which excerpt backs which field — and every one
+is `reviewed_by: null` pending the human clinical QA pass (captain +
+Garvita) before it's treated as authoritative for publication.
 
 ## The files in this repo
 
-This repo holds only the pipeline's output — no code, no tests:
+Data and pipeline both live here now (post-consolidation):
 
 - `data/trials/<NCT_ID>.json` — one file per trial (127 files), the
-  sourced-value format described above (schema v2).
+  sourced-value format described above (schema v3).
 - `trials.csv` — one row per trial, one column per field (the field's
   `value`, JSON-encoded when structured; `needs_extraction` fields blank).
+  `results.arm_results`/`results.effect_estimates` are excluded from this
+  file's per-trial blob (they have their own dedicated CSVs below — a
+  trial's full list can run past Python's csv module field-size limit).
 - `sources.csv` — one row per sourced value: `nct_id`, `field`,
   `source_type`, `source_url`, `source_excerpt`, `extracted_by`,
-  `reviewed_by`, `confidence`. 127 trials × 39 fields = 4953 rows.
+  `reviewed_by`, `confidence`. 127 trials × 43 fields = 5461 rows.
 - `endpoints.csv` — one row per outcome measure × criterion: `measure_type`,
   `scale`, `timepoints`, `analysis_population`, and the `ScoreCriterion`
   columns, so "EASI-75 responders at week 16" is a column filter.
 - `severity_criteria.csv` — one row per baseline-severity `ScoreCriterion`.
 - `adverse_event_rates.csv` — one row per (trial, arm, measure[, MedDRA
   term]).
-- `docs/SCHEMA.md` / `schema/trial.schema.json` — static snapshots of the
-  schema v2 field reference (see the note at the top of each file).
-
-To regenerate or extend this data (fetch, extraction, migration, and build
-scripts, the schema spec, and their test suite) see `kolai-website`, which
-owns the pipeline this data is exported from.
+- `arm_results.csv` — one row per endpoint × timepoint × arm CT.gov results
+  measurement (9,201 rows); keyed on `nct_id` + `endpoint_rank` +
+  `endpoint_position` to join `endpoints.csv`'s `rank`/`position` columns.
+- `effect_estimates.csv` — one row per endpoint × timepoint × pairwise arm
+  comparison (2,765 rows); same join key as `arm_results.csv`.
+- `docs/SCHEMA.md` / `schema/trial.schema.json` — generated snapshots of
+  the schema v3 field reference (regenerate with
+  `python3 scripts/export_schema.py` after any `atlas/schema.py` change).
+- `scripts/` / `atlas/` / `tests/` — the fetch/extraction/migration/build
+  pipeline, the schema spec, and its test suite (`python3 -m pytest
+  tests/`, needs `pytest`).
 
 ## Out of scope for this pass
 
 - The human QA pass on top of the LLM-assisted extraction (captain +
   Garvita review of every non-`ctgov_api` value).
-- The 440 fields that remain `needs_extraction` (see the fill-status table
+- The 573 fields that remain `needs_extraction` (see the fill-status table
   above) — a mix of genuinely unreachable sources (paywalled papers behind
-  Cloudflare, PDF tables that don't extract reliably) and real, un-worked
-  backlog (the curated per-trial prose tables — background therapy,
-  multiplicity control, rescue therapy, visit schedule — built only for
-  the original AD program, not yet extended to the 21 indications added
-  since).
+  Cloudflare, PDF tables that don't extract reliably), real, un-worked
+  backlog (a subset of endpoints whose title states a responder threshold
+  but the parser hasn't classified as `responder_rate` yet — see
+  `AGENTS.md`), and `results.published_results` (deliberately, permanently
+  out of scope for the CT.gov results backfill — see `AGENTS.md`).
 - Further indication candidates not yet live-verified (this is explicitly
   an ongoing effort, not a one-shot; each addition to date was checked
   against real ClinicalTrials.gov and openFDA data before being added, not
   assumed).
 - AACT bulk-seeding (a possible future bulk source, not integrated here).
-- Any change to the atlas portal UI or the `kolai-website` repo.
+- Any change to the atlas portal UI (`open-derm-trial-atlas` repo).

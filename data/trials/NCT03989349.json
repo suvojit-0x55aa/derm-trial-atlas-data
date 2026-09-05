@@ -1,5 +1,5 @@
 {
-  "schema_version": 2,
+  "schema_version": 3,
   "nct_id": {
     "value": "NCT03989349",
     "source_type": "ctgov_api",
@@ -350,11 +350,114 @@
           "study_period": null,
           "event_type": null,
           "time_frame": "Week 16"
+        },
+        {
+          "verbatim": "Percentage of Participants With Investigator's Global Assessment (IGA) Success at Week 16: Severe Pruritus Population (Time frame: Week 16)",
+          "rank": "primary",
+          "position": 2,
+          "measure_type": "responder_rate",
+          "scale": "IGA",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": "Week 16"
+        },
+        {
+          "verbatim": "Percentage of Participants With >=75% Improvement in Eczema Area and Severity Index (EASI-75) at Week 16: ITT Population (Time frame: Week 16)",
+          "rank": "primary",
+          "position": 3,
+          "measure_type": "responder_rate",
+          "scale": "EASI",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [
+            {
+              "scale": "EASI",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "percent_improvement_from_baseline",
+              "comparator": ">=",
+              "value": 75,
+              "unit": "percent",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": "Week 16"
+        },
+        {
+          "verbatim": "Percentage of Participants With >=75% Improvement in Eczema Area and Severity Index (EASI-75) at Week 16: Severe Pruritus Population (Time frame: Week 16)",
+          "rank": "primary",
+          "position": 4,
+          "measure_type": "responder_rate",
+          "scale": "EASI",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [
+            {
+              "scale": "EASI",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "percent_improvement_from_baseline",
+              "comparator": ">=",
+              "value": 75,
+              "unit": "percent",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": "Week 16"
         }
       ],
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03989349",
-      "source_excerpt": "protocolSection.outcomesModule.primaryOutcomes[0].measure/timeFrame",
+      "source_excerpt": "protocolSection.outcomesModule.primaryOutcomes[].measure/timeFrame",
       "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
@@ -1782,6 +1885,1659 @@
       "extracted_by": "fetch_purple_book.py (purplebooksearch.fda.gov live search table, raw staging pass)",
       "reviewed_by": null,
       "confidence": 1.0
+    }
+  },
+  "results": {
+    "arms": {
+      "value": [
+        {
+          "arm_id": "OG000",
+          "label": "Initial Treatment Period (Baseline - Week 16 Predose): Nemolizumab 30 mg",
+          "role": "investigational",
+          "intervention_names": [
+            "Nemolizumab"
+          ],
+          "dose_value": null,
+          "dose_unit": null,
+          "frequency": null,
+          "randomized_n": 522
+        },
+        {
+          "arm_id": "OG001",
+          "label": "Initial Treatment Period (Baseline - Week 16 Predose): Placebo",
+          "role": "placebo",
+          "intervention_names": [
+            "Placebo"
+          ],
+          "dose_value": null,
+          "dose_unit": null,
+          "frequency": null,
+          "randomized_n": 265
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03989349",
+      "source_excerpt": "resultsSection.outcomeMeasuresModule.outcomeMeasures[].groups[]",
+      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3, 2026-09-06)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "arm_results": {
+      "value": [
+        {
+          "endpoint": {
+            "rank": "primary",
+            "position": 1,
+            "verbatim_sha1": "4a1c36243da1036f391eea21321ffba3582f23c9"
+          },
+          "arm_id": "OG000",
+          "timepoint": {
+            "value": 16,
+            "unit": "week",
+            "end_value": null
+          },
+          "analysis_population": "full_analysis_set",
+          "study_period": null,
+          "denominator": 522,
+          "value_type": "number",
+          "reported_value": 37.7,
+          "reported_unit": "percentage of participants",
+          "responders": null,
+          "response_rate_pct": 37.7,
+          "rate_is_derived": false,
+          "dispersion_type": null,
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": null
+        },
+        {
+          "endpoint": {
+            "rank": "primary",
+            "position": 1,
+            "verbatim_sha1": "4a1c36243da1036f391eea21321ffba3582f23c9"
+          },
+          "arm_id": "OG001",
+          "timepoint": {
+            "value": 16,
+            "unit": "week",
+            "end_value": null
+          },
+          "analysis_population": "full_analysis_set",
+          "study_period": null,
+          "denominator": 265,
+          "value_type": "number",
+          "reported_value": 26.0,
+          "reported_unit": "percentage of participants",
+          "responders": null,
+          "response_rate_pct": 26.0,
+          "rate_is_derived": false,
+          "dispersion_type": null,
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": null
+        },
+        {
+          "endpoint": {
+            "rank": "primary",
+            "position": 2,
+            "verbatim_sha1": "fb8be9896404415c28b5c163d589fabbf0598280"
+          },
+          "arm_id": "OG000",
+          "timepoint": {
+            "value": 16,
+            "unit": "week",
+            "end_value": null
+          },
+          "analysis_population": "full_analysis_set",
+          "study_period": null,
+          "denominator": 316,
+          "value_type": "number",
+          "reported_value": 36.7,
+          "reported_unit": "percentage of participants",
+          "responders": null,
+          "response_rate_pct": 36.7,
+          "rate_is_derived": false,
+          "dispersion_type": null,
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": null
+        },
+        {
+          "endpoint": {
+            "rank": "primary",
+            "position": 2,
+            "verbatim_sha1": "fb8be9896404415c28b5c163d589fabbf0598280"
+          },
+          "arm_id": "OG001",
+          "timepoint": {
+            "value": 16,
+            "unit": "week",
+            "end_value": null
+          },
+          "analysis_population": "full_analysis_set",
+          "study_period": null,
+          "denominator": 164,
+          "value_type": "number",
+          "reported_value": 22.0,
+          "reported_unit": "percentage of participants",
+          "responders": null,
+          "response_rate_pct": 22.0,
+          "rate_is_derived": false,
+          "dispersion_type": null,
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": null
+        },
+        {
+          "endpoint": {
+            "rank": "primary",
+            "position": 3,
+            "verbatim_sha1": "b36584468a035e513cd8f1c5292cfa4c5c520d70"
+          },
+          "arm_id": "OG000",
+          "timepoint": {
+            "value": 16,
+            "unit": "week",
+            "end_value": null
+          },
+          "analysis_population": "full_analysis_set",
+          "study_period": null,
+          "denominator": 522,
+          "value_type": "number",
+          "reported_value": 42.1,
+          "reported_unit": "percentage of participants",
+          "responders": null,
+          "response_rate_pct": 42.1,
+          "rate_is_derived": false,
+          "dispersion_type": null,
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": null
+        },
+        {
+          "endpoint": {
+            "rank": "primary",
+            "position": 3,
+            "verbatim_sha1": "b36584468a035e513cd8f1c5292cfa4c5c520d70"
+          },
+          "arm_id": "OG001",
+          "timepoint": {
+            "value": 16,
+            "unit": "week",
+            "end_value": null
+          },
+          "analysis_population": "full_analysis_set",
+          "study_period": null,
+          "denominator": 265,
+          "value_type": "number",
+          "reported_value": 30.2,
+          "reported_unit": "percentage of participants",
+          "responders": null,
+          "response_rate_pct": 30.2,
+          "rate_is_derived": false,
+          "dispersion_type": null,
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": null
+        },
+        {
+          "endpoint": {
+            "rank": "primary",
+            "position": 4,
+            "verbatim_sha1": "82e0f925b2c91cf23769914a3a9d0868fe882fbb"
+          },
+          "arm_id": "OG000",
+          "timepoint": {
+            "value": 16,
+            "unit": "week",
+            "end_value": null
+          },
+          "analysis_population": "full_analysis_set",
+          "study_period": null,
+          "denominator": 316,
+          "value_type": "number",
+          "reported_value": 41.1,
+          "reported_unit": "percentage of participants",
+          "responders": null,
+          "response_rate_pct": 41.1,
+          "rate_is_derived": false,
+          "dispersion_type": null,
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": null
+        },
+        {
+          "endpoint": {
+            "rank": "primary",
+            "position": 4,
+            "verbatim_sha1": "82e0f925b2c91cf23769914a3a9d0868fe882fbb"
+          },
+          "arm_id": "OG001",
+          "timepoint": {
+            "value": 16,
+            "unit": "week",
+            "end_value": null
+          },
+          "analysis_population": "full_analysis_set",
+          "study_period": null,
+          "denominator": 164,
+          "value_type": "number",
+          "reported_value": 25.0,
+          "reported_unit": "percentage of participants",
+          "responders": null,
+          "response_rate_pct": 25.0,
+          "rate_is_derived": false,
+          "dispersion_type": null,
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": null
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 1,
+            "verbatim_sha1": "4fb0ad007d6134a3d02995df55e3a2cdbd9599ba"
+          },
+          "arm_id": "OG000",
+          "timepoint": {
+            "value": 16,
+            "unit": "week",
+            "end_value": null
+          },
+          "analysis_population": "full_analysis_set",
+          "study_period": null,
+          "denominator": 522,
+          "value_type": "number",
+          "reported_value": 41.0,
+          "reported_unit": "percentage of participants",
+          "responders": null,
+          "response_rate_pct": 41.0,
+          "rate_is_derived": false,
+          "dispersion_type": null,
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": null
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 1,
+            "verbatim_sha1": "4fb0ad007d6134a3d02995df55e3a2cdbd9599ba"
+          },
+          "arm_id": "OG001",
+          "timepoint": {
+            "value": 16,
+            "unit": "week",
+            "end_value": null
+          },
+          "analysis_population": "full_analysis_set",
+          "study_period": null,
+          "denominator": 265,
+          "value_type": "number",
+          "reported_value": 18.1,
+          "reported_unit": "percentage of participants",
+          "responders": null,
+          "response_rate_pct": 18.1,
+          "rate_is_derived": false,
+          "dispersion_type": null,
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": null
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 2,
+            "verbatim_sha1": "c6292e5283de3b1914079c1963ff1bb3015ac5f9"
+          },
+          "arm_id": "OG000",
+          "timepoint": {
+            "value": 16,
+            "unit": "week",
+            "end_value": null
+          },
+          "analysis_population": "full_analysis_set",
+          "study_period": null,
+          "denominator": 316,
+          "value_type": "number",
+          "reported_value": 48.4,
+          "reported_unit": "percentage of participants",
+          "responders": null,
+          "response_rate_pct": 48.4,
+          "rate_is_derived": false,
+          "dispersion_type": null,
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": null
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 2,
+            "verbatim_sha1": "c6292e5283de3b1914079c1963ff1bb3015ac5f9"
+          },
+          "arm_id": "OG001",
+          "timepoint": {
+            "value": 16,
+            "unit": "week",
+            "end_value": null
+          },
+          "analysis_population": "full_analysis_set",
+          "study_period": null,
+          "denominator": 164,
+          "value_type": "number",
+          "reported_value": 21.3,
+          "reported_unit": "percentage of participants",
+          "responders": null,
+          "response_rate_pct": 21.3,
+          "rate_is_derived": false,
+          "dispersion_type": null,
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": null
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 3,
+            "verbatim_sha1": "83a14c88cbbd1fa847669431cc59a1087f7bdff3"
+          },
+          "arm_id": "OG000",
+          "timepoint": {
+            "value": 16,
+            "unit": "week",
+            "end_value": null
+          },
+          "analysis_population": "full_analysis_set",
+          "study_period": null,
+          "denominator": 522,
+          "value_type": "number",
+          "reported_value": 28.4,
+          "reported_unit": "percentage of participants",
+          "responders": null,
+          "response_rate_pct": 28.4,
+          "rate_is_derived": false,
+          "dispersion_type": null,
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": null
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 3,
+            "verbatim_sha1": "83a14c88cbbd1fa847669431cc59a1087f7bdff3"
+          },
+          "arm_id": "OG001",
+          "timepoint": {
+            "value": 16,
+            "unit": "week",
+            "end_value": null
+          },
+          "analysis_population": "full_analysis_set",
+          "study_period": null,
+          "denominator": 265,
+          "value_type": "number",
+          "reported_value": 11.3,
+          "reported_unit": "percentage of participants",
+          "responders": null,
+          "response_rate_pct": 11.3,
+          "rate_is_derived": false,
+          "dispersion_type": null,
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": null
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 4,
+            "verbatim_sha1": "74183ea6b58f7a8ea54f9a5becd84bf620d4d1e4"
+          },
+          "arm_id": "OG000",
+          "timepoint": {
+            "value": 16,
+            "unit": "week",
+            "end_value": null
+          },
+          "analysis_population": "full_analysis_set",
+          "study_period": null,
+          "denominator": 316,
+          "value_type": "number",
+          "reported_value": 26.9,
+          "reported_unit": "percentage of participants",
+          "responders": null,
+          "response_rate_pct": 26.9,
+          "rate_is_derived": false,
+          "dispersion_type": null,
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": null
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 4,
+            "verbatim_sha1": "74183ea6b58f7a8ea54f9a5becd84bf620d4d1e4"
+          },
+          "arm_id": "OG001",
+          "timepoint": {
+            "value": 16,
+            "unit": "week",
+            "end_value": null
+          },
+          "analysis_population": "full_analysis_set",
+          "study_period": null,
+          "denominator": 164,
+          "value_type": "number",
+          "reported_value": 8.5,
+          "reported_unit": "percentage of participants",
+          "responders": null,
+          "response_rate_pct": 8.5,
+          "rate_is_derived": false,
+          "dispersion_type": null,
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": null
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 5,
+            "verbatim_sha1": "a358221fc728e4e86dfea704fbf10d053e2ba963"
+          },
+          "arm_id": "OG000",
+          "timepoint": {
+            "value": 16,
+            "unit": "week",
+            "end_value": null
+          },
+          "analysis_population": "full_analysis_set",
+          "study_period": null,
+          "denominator": 522,
+          "value_type": "number",
+          "reported_value": 33.5,
+          "reported_unit": "percentage of participants",
+          "responders": null,
+          "response_rate_pct": 33.5,
+          "rate_is_derived": false,
+          "dispersion_type": null,
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": null
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 5,
+            "verbatim_sha1": "a358221fc728e4e86dfea704fbf10d053e2ba963"
+          },
+          "arm_id": "OG001",
+          "timepoint": {
+            "value": 16,
+            "unit": "week",
+            "end_value": null
+          },
+          "analysis_population": "full_analysis_set",
+          "study_period": null,
+          "denominator": 265,
+          "value_type": "number",
+          "reported_value": 16.2,
+          "reported_unit": "percentage of participants",
+          "responders": null,
+          "response_rate_pct": 16.2,
+          "rate_is_derived": false,
+          "dispersion_type": null,
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": null
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 6,
+            "verbatim_sha1": "2a74c839d1fae26651ea998404612ae3d3aa27ac"
+          },
+          "arm_id": "OG000",
+          "timepoint": {
+            "value": 16,
+            "unit": "week",
+            "end_value": null
+          },
+          "analysis_population": "full_analysis_set",
+          "study_period": null,
+          "denominator": 316,
+          "value_type": "number",
+          "reported_value": 42.7,
+          "reported_unit": "percentage of participants",
+          "responders": null,
+          "response_rate_pct": 42.7,
+          "rate_is_derived": false,
+          "dispersion_type": null,
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": null
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 6,
+            "verbatim_sha1": "2a74c839d1fae26651ea998404612ae3d3aa27ac"
+          },
+          "arm_id": "OG001",
+          "timepoint": {
+            "value": 16,
+            "unit": "week",
+            "end_value": null
+          },
+          "analysis_population": "full_analysis_set",
+          "study_period": null,
+          "denominator": 164,
+          "value_type": "number",
+          "reported_value": 20.7,
+          "reported_unit": "percentage of participants",
+          "responders": null,
+          "response_rate_pct": 20.7,
+          "rate_is_derived": false,
+          "dispersion_type": null,
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": null
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 7,
+            "verbatim_sha1": "ae9e39195ed7dced12889fd1f2840dab879a3ee7"
+          },
+          "arm_id": "OG000",
+          "timepoint": {
+            "value": 4,
+            "unit": "week",
+            "end_value": null
+          },
+          "analysis_population": "full_analysis_set",
+          "study_period": null,
+          "denominator": 522,
+          "value_type": "number",
+          "reported_value": 26.1,
+          "reported_unit": "percentage of participants",
+          "responders": null,
+          "response_rate_pct": 26.1,
+          "rate_is_derived": false,
+          "dispersion_type": null,
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": null
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 7,
+            "verbatim_sha1": "ae9e39195ed7dced12889fd1f2840dab879a3ee7"
+          },
+          "arm_id": "OG001",
+          "timepoint": {
+            "value": 4,
+            "unit": "week",
+            "end_value": null
+          },
+          "analysis_population": "full_analysis_set",
+          "study_period": null,
+          "denominator": 265,
+          "value_type": "number",
+          "reported_value": 5.3,
+          "reported_unit": "percentage of participants",
+          "responders": null,
+          "response_rate_pct": 5.3,
+          "rate_is_derived": false,
+          "dispersion_type": null,
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": null
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 8,
+            "verbatim_sha1": "5ec9eb5352e524deac43a1ee1e0ea69d8866384e"
+          },
+          "arm_id": "OG000",
+          "timepoint": {
+            "value": 4,
+            "unit": "week",
+            "end_value": null
+          },
+          "analysis_population": "full_analysis_set",
+          "study_period": null,
+          "denominator": 316,
+          "value_type": "number",
+          "reported_value": 30.4,
+          "reported_unit": "percentage of participants",
+          "responders": null,
+          "response_rate_pct": 30.4,
+          "rate_is_derived": false,
+          "dispersion_type": null,
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": null
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 8,
+            "verbatim_sha1": "5ec9eb5352e524deac43a1ee1e0ea69d8866384e"
+          },
+          "arm_id": "OG001",
+          "timepoint": {
+            "value": 4,
+            "unit": "week",
+            "end_value": null
+          },
+          "analysis_population": "full_analysis_set",
+          "study_period": null,
+          "denominator": 164,
+          "value_type": "number",
+          "reported_value": 7.9,
+          "reported_unit": "percentage of participants",
+          "responders": null,
+          "response_rate_pct": 7.9,
+          "rate_is_derived": false,
+          "dispersion_type": null,
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": null
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 9,
+            "verbatim_sha1": "6553214ba9956a1832f7f617eb194a72f23de3bb"
+          },
+          "arm_id": "OG000",
+          "timepoint": {
+            "value": 4,
+            "unit": "week",
+            "end_value": null
+          },
+          "analysis_population": "full_analysis_set",
+          "study_period": null,
+          "denominator": 522,
+          "value_type": "number",
+          "reported_value": 15.9,
+          "reported_unit": "percentage of participants",
+          "responders": null,
+          "response_rate_pct": 15.9,
+          "rate_is_derived": false,
+          "dispersion_type": null,
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": null
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 9,
+            "verbatim_sha1": "6553214ba9956a1832f7f617eb194a72f23de3bb"
+          },
+          "arm_id": "OG001",
+          "timepoint": {
+            "value": 4,
+            "unit": "week",
+            "end_value": null
+          },
+          "analysis_population": "full_analysis_set",
+          "study_period": null,
+          "denominator": 265,
+          "value_type": "number",
+          "reported_value": 2.6,
+          "reported_unit": "percentage of participants",
+          "responders": null,
+          "response_rate_pct": 2.6,
+          "rate_is_derived": false,
+          "dispersion_type": null,
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": null
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 10,
+            "verbatim_sha1": "0d2290e43ce46c1a850f934686e531d25abfdbd7"
+          },
+          "arm_id": "OG000",
+          "timepoint": {
+            "value": 4,
+            "unit": "week",
+            "end_value": null
+          },
+          "analysis_population": "full_analysis_set",
+          "study_period": null,
+          "denominator": 316,
+          "value_type": "number",
+          "reported_value": 11.1,
+          "reported_unit": "percentage of participants",
+          "responders": null,
+          "response_rate_pct": 11.1,
+          "rate_is_derived": false,
+          "dispersion_type": null,
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": null
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 10,
+            "verbatim_sha1": "0d2290e43ce46c1a850f934686e531d25abfdbd7"
+          },
+          "arm_id": "OG001",
+          "timepoint": {
+            "value": 4,
+            "unit": "week",
+            "end_value": null
+          },
+          "analysis_population": "full_analysis_set",
+          "study_period": null,
+          "denominator": 164,
+          "value_type": "number",
+          "reported_value": 1.2,
+          "reported_unit": "percentage of participants",
+          "responders": null,
+          "response_rate_pct": 1.2,
+          "rate_is_derived": false,
+          "dispersion_type": null,
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": null
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 11,
+            "verbatim_sha1": "87cf0ef1f42eae5b4292904159733f8ccd3f7084"
+          },
+          "arm_id": "OG000",
+          "timepoint": {
+            "value": 2,
+            "unit": "week",
+            "end_value": null
+          },
+          "analysis_population": "full_analysis_set",
+          "study_period": null,
+          "denominator": 522,
+          "value_type": "number",
+          "reported_value": 16.9,
+          "reported_unit": "percentage of participants",
+          "responders": null,
+          "response_rate_pct": 16.9,
+          "rate_is_derived": false,
+          "dispersion_type": null,
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": null
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 11,
+            "verbatim_sha1": "87cf0ef1f42eae5b4292904159733f8ccd3f7084"
+          },
+          "arm_id": "OG001",
+          "timepoint": {
+            "value": 2,
+            "unit": "week",
+            "end_value": null
+          },
+          "analysis_population": "full_analysis_set",
+          "study_period": null,
+          "denominator": 265,
+          "value_type": "number",
+          "reported_value": 1.9,
+          "reported_unit": "percentage of participants",
+          "responders": null,
+          "response_rate_pct": 1.9,
+          "rate_is_derived": false,
+          "dispersion_type": null,
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": null
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 12,
+            "verbatim_sha1": "cf868fa4a1d124199281c5bc826acd9ecb5df3fc"
+          },
+          "arm_id": "OG000",
+          "timepoint": {
+            "value": 2,
+            "unit": "week",
+            "end_value": null
+          },
+          "analysis_population": "full_analysis_set",
+          "study_period": null,
+          "denominator": 316,
+          "value_type": "number",
+          "reported_value": 19.3,
+          "reported_unit": "percentage of participants",
+          "responders": null,
+          "response_rate_pct": 19.3,
+          "rate_is_derived": false,
+          "dispersion_type": null,
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": null
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 12,
+            "verbatim_sha1": "cf868fa4a1d124199281c5bc826acd9ecb5df3fc"
+          },
+          "arm_id": "OG001",
+          "timepoint": {
+            "value": 2,
+            "unit": "week",
+            "end_value": null
+          },
+          "analysis_population": "full_analysis_set",
+          "study_period": null,
+          "denominator": 164,
+          "value_type": "number",
+          "reported_value": 3.0,
+          "reported_unit": "percentage of participants",
+          "responders": null,
+          "response_rate_pct": 3.0,
+          "rate_is_derived": false,
+          "dispersion_type": null,
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": null
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 13,
+            "verbatim_sha1": "c3fa66e7a840ab59c175bbdf51f6183a4ff22d02"
+          },
+          "arm_id": "OG000",
+          "timepoint": {
+            "value": 1,
+            "unit": "week",
+            "end_value": null
+          },
+          "analysis_population": "full_analysis_set",
+          "study_period": null,
+          "denominator": 522,
+          "value_type": "number",
+          "reported_value": 6.7,
+          "reported_unit": "percentage of participants",
+          "responders": null,
+          "response_rate_pct": 6.7,
+          "rate_is_derived": false,
+          "dispersion_type": null,
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": null
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 13,
+            "verbatim_sha1": "c3fa66e7a840ab59c175bbdf51f6183a4ff22d02"
+          },
+          "arm_id": "OG001",
+          "timepoint": {
+            "value": 1,
+            "unit": "week",
+            "end_value": null
+          },
+          "analysis_population": "full_analysis_set",
+          "study_period": null,
+          "denominator": 265,
+          "value_type": "number",
+          "reported_value": 0.4,
+          "reported_unit": "percentage of participants",
+          "responders": null,
+          "response_rate_pct": 0.4,
+          "rate_is_derived": false,
+          "dispersion_type": null,
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": null
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 14,
+            "verbatim_sha1": "1a127e933aa51866b7ba37ec6fee01bc73c31979"
+          },
+          "arm_id": "OG000",
+          "timepoint": {
+            "value": 1,
+            "unit": "week",
+            "end_value": null
+          },
+          "analysis_population": "full_analysis_set",
+          "study_period": null,
+          "denominator": 316,
+          "value_type": "number",
+          "reported_value": 8.5,
+          "reported_unit": "percentage of participants",
+          "responders": null,
+          "response_rate_pct": 8.5,
+          "rate_is_derived": false,
+          "dispersion_type": null,
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": null
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 14,
+            "verbatim_sha1": "1a127e933aa51866b7ba37ec6fee01bc73c31979"
+          },
+          "arm_id": "OG001",
+          "timepoint": {
+            "value": 1,
+            "unit": "week",
+            "end_value": null
+          },
+          "analysis_population": "full_analysis_set",
+          "study_period": null,
+          "denominator": 164,
+          "value_type": "number",
+          "reported_value": 0.6,
+          "reported_unit": "percentage of participants",
+          "responders": null,
+          "response_rate_pct": 0.6,
+          "rate_is_derived": false,
+          "dispersion_type": null,
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": null
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03989349",
+      "source_excerpt": "resultsSection.outcomeMeasuresModule.outcomeMeasures[].{denoms,classes[].categories[].measurements[]}",
+      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3, 2026-09-06)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "effect_estimates": {
+      "value": [
+        {
+          "endpoint": {
+            "rank": "primary",
+            "position": 1,
+            "verbatim_sha1": "4a1c36243da1036f391eea21321ffba3582f23c9"
+          },
+          "timepoint": {
+            "value": 16,
+            "unit": "week",
+            "end_value": null
+          },
+          "test_arm_id": "OG000",
+          "reference_arm_id": "OG001",
+          "comparison_kind": "other",
+          "effect_type": "response_rate_difference",
+          "effect_type_verbatim": "Strata-adjusted percentage difference",
+          "effect_value": 12.2,
+          "ci_pct": 97.5,
+          "ci_lower": 4.6,
+          "ci_upper": 19.8,
+          "ci_sides": 2,
+          "p_value": {
+            "comparator": "=",
+            "value": 0.0006,
+            "verbatim": "0.0006"
+          },
+          "statistical_method": "Cochran-Mantel-Haenszel",
+          "adjusted_for": []
+        },
+        {
+          "endpoint": {
+            "rank": "primary",
+            "position": 2,
+            "verbatim_sha1": "fb8be9896404415c28b5c163d589fabbf0598280"
+          },
+          "timepoint": {
+            "value": 16,
+            "unit": "week",
+            "end_value": null
+          },
+          "test_arm_id": "OG000",
+          "reference_arm_id": "OG001",
+          "comparison_kind": "other",
+          "effect_type": "response_rate_difference",
+          "effect_type_verbatim": "Strata-adjusted percentage difference",
+          "effect_value": 14.9,
+          "ci_pct": 97.5,
+          "ci_lower": 5.6,
+          "ci_upper": 24.3,
+          "ci_sides": 2,
+          "p_value": {
+            "comparator": "=",
+            "value": 0.0008,
+            "verbatim": "0.0008"
+          },
+          "statistical_method": "Cochran-Mantel-Haenszel",
+          "adjusted_for": []
+        },
+        {
+          "endpoint": {
+            "rank": "primary",
+            "position": 3,
+            "verbatim_sha1": "b36584468a035e513cd8f1c5292cfa4c5c520d70"
+          },
+          "timepoint": {
+            "value": 16,
+            "unit": "week",
+            "end_value": null
+          },
+          "test_arm_id": "OG000",
+          "reference_arm_id": "OG001",
+          "comparison_kind": "other",
+          "effect_type": "response_rate_difference",
+          "effect_type_verbatim": "Strata-adjusted percentage difference",
+          "effect_value": 12.5,
+          "ci_pct": 97.5,
+          "ci_lower": 4.6,
+          "ci_upper": 20.3,
+          "ci_sides": 2,
+          "p_value": {
+            "comparator": "=",
+            "value": 0.0006,
+            "verbatim": "0.0006"
+          },
+          "statistical_method": "Cochran-Mantel-Haenszel",
+          "adjusted_for": []
+        },
+        {
+          "endpoint": {
+            "rank": "primary",
+            "position": 4,
+            "verbatim_sha1": "82e0f925b2c91cf23769914a3a9d0868fe882fbb"
+          },
+          "timepoint": {
+            "value": 16,
+            "unit": "week",
+            "end_value": null
+          },
+          "test_arm_id": "OG000",
+          "reference_arm_id": "OG001",
+          "comparison_kind": "other",
+          "effect_type": "response_rate_difference",
+          "effect_type_verbatim": "Strata-adjusted percentage difference",
+          "effect_value": 16.3,
+          "ci_pct": 97.5,
+          "ci_lower": 6.6,
+          "ci_upper": 26.0,
+          "ci_sides": 2,
+          "p_value": {
+            "comparator": "=",
+            "value": 0.0004,
+            "verbatim": "0.0004"
+          },
+          "statistical_method": "Cochran-Mantel-Haenszel",
+          "adjusted_for": []
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 1,
+            "verbatim_sha1": "4fb0ad007d6134a3d02995df55e3a2cdbd9599ba"
+          },
+          "timepoint": {
+            "value": 16,
+            "unit": "week",
+            "end_value": null
+          },
+          "test_arm_id": "OG000",
+          "reference_arm_id": "OG001",
+          "comparison_kind": "other",
+          "effect_type": "response_rate_difference",
+          "effect_type_verbatim": "Strata-adjusted percentage difference",
+          "effect_value": 23.2,
+          "ci_pct": 97.5,
+          "ci_lower": 16.1,
+          "ci_upper": 30.3,
+          "ci_sides": 2,
+          "p_value": {
+            "comparator": "<",
+            "value": 0.0001,
+            "verbatim": "<0.0001"
+          },
+          "statistical_method": "Cochran-Mantel-Haenszel",
+          "adjusted_for": []
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 1,
+            "verbatim_sha1": "4fb0ad007d6134a3d02995df55e3a2cdbd9599ba"
+          },
+          "timepoint": {
+            "value": 16,
+            "unit": "week",
+            "end_value": null
+          },
+          "test_arm_id": "OG000",
+          "reference_arm_id": "OG001",
+          "comparison_kind": "other",
+          "effect_type": "response_rate_difference",
+          "effect_type_verbatim": "Strata-adjusted percentage difference",
+          "effect_value": 27.8,
+          "ci_pct": 97.5,
+          "ci_lower": 21.2,
+          "ci_upper": 34.5,
+          "ci_sides": 2,
+          "p_value": {
+            "comparator": "<",
+            "value": 0.0001,
+            "verbatim": "<0.0001"
+          },
+          "statistical_method": "Cochran-Mantel-Haenszel",
+          "adjusted_for": []
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 2,
+            "verbatim_sha1": "c6292e5283de3b1914079c1963ff1bb3015ac5f9"
+          },
+          "timepoint": {
+            "value": 16,
+            "unit": "week",
+            "end_value": null
+          },
+          "test_arm_id": "OG000",
+          "reference_arm_id": "OG001",
+          "comparison_kind": "other",
+          "effect_type": "response_rate_difference",
+          "effect_type_verbatim": "Strata-adjusted percentage difference",
+          "effect_value": 27.1,
+          "ci_pct": 97.5,
+          "ci_lower": 17.5,
+          "ci_upper": 36.6,
+          "ci_sides": 2,
+          "p_value": {
+            "comparator": "<",
+            "value": 0.0001,
+            "verbatim": "<0.0001"
+          },
+          "statistical_method": "Cochran-Mantel-Haenszel",
+          "adjusted_for": []
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 2,
+            "verbatim_sha1": "c6292e5283de3b1914079c1963ff1bb3015ac5f9"
+          },
+          "timepoint": {
+            "value": 16,
+            "unit": "week",
+            "end_value": null
+          },
+          "test_arm_id": "OG000",
+          "reference_arm_id": "OG001",
+          "comparison_kind": "other",
+          "effect_type": "response_rate_difference",
+          "effect_type_verbatim": "Strata-adjusted percentage difference",
+          "effect_value": 33.4,
+          "ci_pct": 97.5,
+          "ci_lower": 24.5,
+          "ci_upper": 42.3,
+          "ci_sides": 2,
+          "p_value": {
+            "comparator": "<",
+            "value": 0.0001,
+            "verbatim": "<0.0001"
+          },
+          "statistical_method": "Cochran-Mantel-Haenszel",
+          "adjusted_for": []
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 3,
+            "verbatim_sha1": "83a14c88cbbd1fa847669431cc59a1087f7bdff3"
+          },
+          "timepoint": {
+            "value": 16,
+            "unit": "week",
+            "end_value": null
+          },
+          "test_arm_id": "OG000",
+          "reference_arm_id": "OG001",
+          "comparison_kind": "other",
+          "effect_type": "response_rate_difference",
+          "effect_type_verbatim": "Strata-adjusted percentage difference",
+          "effect_value": 17.1,
+          "ci_pct": 97.5,
+          "ci_lower": 10.9,
+          "ci_upper": 23.3,
+          "ci_sides": 2,
+          "p_value": {
+            "comparator": "<",
+            "value": 0.0001,
+            "verbatim": "<0.0001"
+          },
+          "statistical_method": "Cochran-Mantel-Haenszel",
+          "adjusted_for": []
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 4,
+            "verbatim_sha1": "74183ea6b58f7a8ea54f9a5becd84bf620d4d1e4"
+          },
+          "timepoint": {
+            "value": 16,
+            "unit": "week",
+            "end_value": null
+          },
+          "test_arm_id": "OG000",
+          "reference_arm_id": "OG001",
+          "comparison_kind": "other",
+          "effect_type": "response_rate_difference",
+          "effect_type_verbatim": "Strata-adjusted percentage difference",
+          "effect_value": 18.4,
+          "ci_pct": 97.5,
+          "ci_lower": 11.0,
+          "ci_upper": 25.8,
+          "ci_sides": 2,
+          "p_value": {
+            "comparator": "<",
+            "value": 0.0001,
+            "verbatim": "<0.0001"
+          },
+          "statistical_method": "Cochran-Mantel-Haenszel",
+          "adjusted_for": []
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 5,
+            "verbatim_sha1": "a358221fc728e4e86dfea704fbf10d053e2ba963"
+          },
+          "timepoint": {
+            "value": 16,
+            "unit": "week",
+            "end_value": null
+          },
+          "test_arm_id": "OG000",
+          "reference_arm_id": "OG001",
+          "comparison_kind": "other",
+          "effect_type": "response_rate_difference",
+          "effect_type_verbatim": "Strata-adjusted percentage difference",
+          "effect_value": 17.5,
+          "ci_pct": 97.5,
+          "ci_lower": 10.8,
+          "ci_upper": 24.3,
+          "ci_sides": 2,
+          "p_value": {
+            "comparator": "<",
+            "value": 0.0001,
+            "verbatim": "< 0.0001"
+          },
+          "statistical_method": "Cochran-Mantel-Haenszel",
+          "adjusted_for": []
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 6,
+            "verbatim_sha1": "2a74c839d1fae26651ea998404612ae3d3aa27ac"
+          },
+          "timepoint": {
+            "value": 16,
+            "unit": "week",
+            "end_value": null
+          },
+          "test_arm_id": "OG000",
+          "reference_arm_id": "OG001",
+          "comparison_kind": "other",
+          "effect_type": "response_rate_difference",
+          "effect_type_verbatim": "Strata-adjusted percentage difference",
+          "effect_value": 21.9,
+          "ci_pct": 97.5,
+          "ci_lower": 12.5,
+          "ci_upper": 31.4,
+          "ci_sides": 2,
+          "p_value": {
+            "comparator": "<",
+            "value": 0.0001,
+            "verbatim": "<0.0001"
+          },
+          "statistical_method": "Cochran-Mantel-Haenszel",
+          "adjusted_for": []
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 7,
+            "verbatim_sha1": "ae9e39195ed7dced12889fd1f2840dab879a3ee7"
+          },
+          "timepoint": {
+            "value": 4,
+            "unit": "week",
+            "end_value": null
+          },
+          "test_arm_id": "OG000",
+          "reference_arm_id": "OG001",
+          "comparison_kind": "other",
+          "effect_type": "response_rate_difference",
+          "effect_type_verbatim": "Strata-adjusted percentage difference",
+          "effect_value": 20.9,
+          "ci_pct": 97.5,
+          "ci_lower": 15.6,
+          "ci_upper": 26.1,
+          "ci_sides": 2,
+          "p_value": {
+            "comparator": "<",
+            "value": 0.0001,
+            "verbatim": "< 0.0001"
+          },
+          "statistical_method": "Cochran-Mantel-Haenszel",
+          "adjusted_for": []
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 8,
+            "verbatim_sha1": "5ec9eb5352e524deac43a1ee1e0ea69d8866384e"
+          },
+          "timepoint": {
+            "value": 4,
+            "unit": "week",
+            "end_value": null
+          },
+          "test_arm_id": "OG000",
+          "reference_arm_id": "OG001",
+          "comparison_kind": "other",
+          "effect_type": "response_rate_difference",
+          "effect_type_verbatim": "Strata-adjusted percentage difference",
+          "effect_value": 22.5,
+          "ci_pct": 97.5,
+          "ci_lower": 15.0,
+          "ci_upper": 29.9,
+          "ci_sides": 2,
+          "p_value": {
+            "comparator": "<",
+            "value": 0.0001,
+            "verbatim": "<0.0001"
+          },
+          "statistical_method": "Cochran-Mantel-Haenszel",
+          "adjusted_for": []
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 9,
+            "verbatim_sha1": "6553214ba9956a1832f7f617eb194a72f23de3bb"
+          },
+          "timepoint": {
+            "value": 4,
+            "unit": "week",
+            "end_value": null
+          },
+          "test_arm_id": "OG000",
+          "reference_arm_id": "OG001",
+          "comparison_kind": "other",
+          "effect_type": "response_rate_difference",
+          "effect_type_verbatim": "Strata-adjusted percentage difference",
+          "effect_value": 13.2,
+          "ci_pct": 97.5,
+          "ci_lower": 9.0,
+          "ci_upper": 17.4,
+          "ci_sides": 2,
+          "p_value": {
+            "comparator": "<",
+            "value": 0.0001,
+            "verbatim": "< 0.0001"
+          },
+          "statistical_method": "Cochran-Mantel-Haenszel",
+          "adjusted_for": []
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 10,
+            "verbatim_sha1": "0d2290e43ce46c1a850f934686e531d25abfdbd7"
+          },
+          "timepoint": {
+            "value": 4,
+            "unit": "week",
+            "end_value": null
+          },
+          "test_arm_id": "OG000",
+          "reference_arm_id": "OG001",
+          "comparison_kind": "other",
+          "effect_type": "response_rate_difference",
+          "effect_type_verbatim": "Strata-adjusted percentage difference",
+          "effect_value": 9.9,
+          "ci_pct": 97.5,
+          "ci_lower": 5.5,
+          "ci_upper": 14.3,
+          "ci_sides": 2,
+          "p_value": {
+            "comparator": "=",
+            "value": 0.0001,
+            "verbatim": "0.0001"
+          },
+          "statistical_method": "Cochran-Mantel-Haenszel",
+          "adjusted_for": []
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 11,
+            "verbatim_sha1": "87cf0ef1f42eae5b4292904159733f8ccd3f7084"
+          },
+          "timepoint": {
+            "value": 2,
+            "unit": "week",
+            "end_value": null
+          },
+          "test_arm_id": "OG000",
+          "reference_arm_id": "OG001",
+          "comparison_kind": "other",
+          "effect_type": "response_rate_difference",
+          "effect_type_verbatim": "Strata-adjusted percentage difference",
+          "effect_value": 15.1,
+          "ci_pct": 97.5,
+          "ci_lower": 11.0,
+          "ci_upper": 19.2,
+          "ci_sides": 2,
+          "p_value": {
+            "comparator": "<",
+            "value": 0.0001,
+            "verbatim": "< 0.0001"
+          },
+          "statistical_method": "Cochran-Mantel-Haenszel",
+          "adjusted_for": []
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 12,
+            "verbatim_sha1": "cf868fa4a1d124199281c5bc826acd9ecb5df3fc"
+          },
+          "timepoint": {
+            "value": 2,
+            "unit": "week",
+            "end_value": null
+          },
+          "test_arm_id": "OG000",
+          "reference_arm_id": "OG001",
+          "comparison_kind": "other",
+          "effect_type": "response_rate_difference",
+          "effect_type_verbatim": "Strata-adjusted percentage difference",
+          "effect_value": 16.3,
+          "ci_pct": 97.5,
+          "ci_lower": 10.5,
+          "ci_upper": 22.1,
+          "ci_sides": 2,
+          "p_value": {
+            "comparator": "<",
+            "value": 0.0001,
+            "verbatim": "<0.0001"
+          },
+          "statistical_method": "Cochran-Mantel-Haenszel",
+          "adjusted_for": []
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 13,
+            "verbatim_sha1": "c3fa66e7a840ab59c175bbdf51f6183a4ff22d02"
+          },
+          "timepoint": {
+            "value": 1,
+            "unit": "week",
+            "end_value": null
+          },
+          "test_arm_id": "OG000",
+          "reference_arm_id": "OG001",
+          "comparison_kind": "other",
+          "effect_type": "response_rate_difference",
+          "effect_type_verbatim": "Strata-adjusted percentage difference",
+          "effect_value": 6.4,
+          "ci_pct": 97.5,
+          "ci_lower": 3.8,
+          "ci_upper": 9.1,
+          "ci_sides": 2,
+          "p_value": {
+            "comparator": "<",
+            "value": 0.0001,
+            "verbatim": "<0.0001"
+          },
+          "statistical_method": "Cochran-Mantel-Haenszel",
+          "adjusted_for": []
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 14,
+            "verbatim_sha1": "1a127e933aa51866b7ba37ec6fee01bc73c31979"
+          },
+          "timepoint": {
+            "value": 1,
+            "unit": "week",
+            "end_value": null
+          },
+          "test_arm_id": "OG000",
+          "reference_arm_id": "OG001",
+          "comparison_kind": "other",
+          "effect_type": "response_rate_difference",
+          "effect_type_verbatim": "Strata-adjusted percentage difference",
+          "effect_value": 8.0,
+          "ci_pct": 97.5,
+          "ci_lower": 4.2,
+          "ci_upper": 11.8,
+          "ci_sides": 2,
+          "p_value": {
+            "comparator": "=",
+            "value": 0.0004,
+            "verbatim": "0.0004"
+          },
+          "statistical_method": "Cochran-Mantel-Haenszel",
+          "adjusted_for": []
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03989349",
+      "source_excerpt": "resultsSection.outcomeMeasuresModule.outcomeMeasures[].analyses[]",
+      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3, 2026-09-06)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "published_results": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
     }
   }
 }
