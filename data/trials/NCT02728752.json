@@ -1,0 +1,1443 @@
+{
+  "schema_version": 2,
+  "nct_id": {
+    "value": "NCT02728752",
+    "source_type": "ctgov_api",
+    "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02728752",
+    "source_excerpt": "protocolSection.identificationModule.nctId",
+    "extracted_by": "cycle18 one-off build (ctgov_api v2 pass)",
+    "reviewed_by": null,
+    "confidence": 1.0
+  },
+  "identity": {
+    "trial_name": {
+      "value": "ProDERM",
+      "source_type": "ctgov_text_extraction",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02728752",
+      "source_excerpt": "protocolSection.identificationModule.officialTitle: '...(\"ProDERM Study\")' -- CT.gov's own acronym field holds \"IIM\" (Idiopathic Inflammatory Myopathies), but the trial is universally cited as \"ProDERM\" in its own official title, the FDA approval letter, and every publication (PMC7793357, NEJM); used the publication name over the registry acronym field for identifiability, matching how other atlas trials are keyed by their real public name.",
+      "extracted_by": "cycle18 one-off build (ctgov_text_extraction)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "official_title": {
+      "value": "Prospective, Double-blind, Randomized, Placebo-Controlled Phase III Study Evaluating Efficacy and Safety of Octagam 10% in Patients With Dermatomyositis (\"ProDERM Study\")",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02728752",
+      "source_excerpt": "protocolSection.identificationModule.officialTitle",
+      "extracted_by": "cycle18 one-off build (ctgov_api v2 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "sponsor": {
+      "value": "Octapharma",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02728752",
+      "source_excerpt": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name",
+      "extracted_by": "cycle18 one-off build (ctgov_api v2 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "phase": {
+      "value": [
+        "PHASE3"
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02728752",
+      "source_excerpt": "protocolSection.designModule.phases",
+      "extracted_by": "cycle18 one-off build (ctgov_api v2 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    }
+  },
+  "molecule": {
+    "drug": {
+      "value": "Immune Globulin Intravenous (Human) (Octagam 10%)",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02728752",
+      "source_excerpt": "protocolSection.armsInterventionsModule.interventions[].name (curated; generic name per FDA label, brand in parens per atlas convention for formulation-specific products)",
+      "extracted_by": "cycle18 one-off build (ctgov_api v2 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "intervention_names": {
+      "value": [
+        "Octagam 10%",
+        "Placebo"
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02728752",
+      "source_excerpt": "protocolSection.armsInterventionsModule.interventions[].name",
+      "extracted_by": "cycle18 one-off build (ctgov_api v2 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "intervention_type": {
+      "value": [
+        "DRUG",
+        "OTHER"
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02728752",
+      "source_excerpt": "protocolSection.armsInterventionsModule.interventions[].type",
+      "extracted_by": "cycle18 one-off build (ctgov_api v2 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "mechanism_of_action": {
+      "value": {
+        "modality": "other",
+        "drug_class": "polyvalent human immunoglobulin G (IVIG)",
+        "antibody_isotype": null,
+        "binding_targets": [],
+        "pathway_cytokines": [],
+        "receptor_subunits": [],
+        "kinases_inhibited": [],
+        "lower_potency_kinases": [],
+        "selectivity": [],
+        "reversible": null,
+        "mechanism_established": false,
+        "label_section": "12.1"
+      },
+      "source_type": "openfda_label",
+      "source_url": "https://octagamusa.com/dermatomyositis/wp-content/uploads/sites/4/2021/10/octagam10-full-prescribing-information.pdf",
+      "source_excerpt": "Section 12.1 Mechanism of Action -- full text: \"The mechanism of action of immunoglobulins in the treatment of chronic ITP or in Dermatomyositis has not been fully elucidated.\" Octagam 10% is a solvent/detergent-treated, chromatographically purified human immunoglobulin G (IgG) preparation manufactured from large pools of human plasma (Description, Section 11) -- a plasma-derived polyclonal antibody product, not a monoclonal antibody, fusion protein, or small molecule.",
+      "extracted_by": "manual openfda_label PDF extraction pass (Octagam 10% full prescribing information, June 2021 revision); cycle18",
+      "reviewed_by": null,
+      "confidence": 0.9
+    },
+    "dosing_regimen": {
+      "value": [
+        {
+          "intervention_name": "Octagam 10%",
+          "description": "Subjects randomized to Octagam will receive 4 infusions of 2.0 g/kg Octagam 10% every 4 weeks during the blinded First Period (16 weeks). If confirmed deterioration (deterioration at 2 consecutive visits) during the First Period, subjects will be switched to the alternate treatment. After response assessment at Week 16, all subjects with no confirmed deterioration during the First Period will continue receiving 2.0 g/kg of Octagam 10% every 4 weeks during the subsequent 6-months open-label Extension Period. At Week 28, subjects who are stable on 2.0 g/kg Octagam 10% can be switched to 1.0 g/kg Octagam 10%, at the discretion of the investigator.",
+          "is_placebo": false,
+          "route": "intravenous",
+          "dose_form": "solution",
+          "dose_value": 2.0,
+          "dose_unit": "g/kg",
+          "units_per_dose": null,
+          "frequency": "every_4_weeks",
+          "duration_weeks": null,
+          "dosing_periods": [
+            {
+              "start_value": 0,
+              "start_unit": "week",
+              "end_value": 16,
+              "end_unit": "week"
+            },
+            {
+              "start_value": 16,
+              "start_unit": "week",
+              "end_value": 40,
+              "end_unit": "week"
+            }
+          ],
+          "administration_sites": [],
+          "antibody_isotype": null,
+          "molecular_target": null,
+          "arm_names": [
+            "Octagam10%"
+          ],
+          "co_administered_with": []
+        },
+        {
+          "intervention_name": "Placebo",
+          "description": "Subjects randomized to placebo will receive 4 infusions of placebo every 4 weeks during the blinded First Period (16 weeks). If confirmed deterioration (deterioration at 2 consecutive visits) during the First Period, subjects will be switched to Octagam 10%.",
+          "is_placebo": true,
+          "route": "intravenous",
+          "dose_form": "solution",
+          "dose_value": null,
+          "dose_unit": null,
+          "units_per_dose": null,
+          "frequency": "every_4_weeks",
+          "duration_weeks": 16,
+          "dosing_periods": [
+            {
+              "start_value": 0,
+              "start_unit": "week",
+              "end_value": 16,
+              "end_unit": "week"
+            }
+          ],
+          "administration_sites": [],
+          "antibody_isotype": null,
+          "molecular_target": null,
+          "arm_names": [
+            "Placebo"
+          ],
+          "co_administered_with": []
+        }
+      ],
+      "source_type": "ctgov_text_extraction",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02728752",
+      "source_excerpt": "resultsSection.participantFlowModule.groups[].description (arm descriptions); infusion-duration/rate detail (2-5 consecutive days per cycle, initial rate 1.0 mg/kg/min up to max 4.0 mg/kg/min for DM given thromboembolic risk, versus up to 12.0 mg/kg/min for the ITP indication) from FDA label Section 2.1 Dosage table.",
+      "extracted_by": "cycle18 one-off build (ctgov_text_extraction + openfda_label cross-check)",
+      "reviewed_by": null,
+      "confidence": 0.9
+    }
+  },
+  "population": {
+    "condition": {
+      "value": [
+        "Dermatomyositis"
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02728752",
+      "source_excerpt": "protocolSection.conditionsModule.conditions",
+      "extracted_by": "cycle18 one-off build (ctgov_api v2 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "min_age_years": {
+      "value": 18,
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02728752",
+      "source_excerpt": "protocolSection.eligibilityModule.minimumAge",
+      "extracted_by": "cycle18 one-off build (ctgov_api v2 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "max_age_years": {
+      "value": 79,
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02728752",
+      "source_excerpt": "protocolSection.eligibilityModule.maximumAge",
+      "extracted_by": "cycle18 one-off build (ctgov_api v2 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "sex": {
+      "value": "ALL",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02728752",
+      "source_excerpt": "protocolSection.eligibilityModule.sex",
+      "extracted_by": "cycle18 one-off build (ctgov_api v2 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "enrollment_count": {
+      "value": 95,
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02728752",
+      "source_excerpt": "protocolSection.designModule.enrollmentInfo.count",
+      "extracted_by": "cycle18 one-off build (ctgov_api v2 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "severity_criteria": {
+      "value": {
+        "severity_label": null,
+        "basis": "eligibility_text",
+        "cross_reference": null,
+        "source_criterion_numbers": [
+          1,
+          3,
+          4
+        ],
+        "baseline_visit_number": null,
+        "criteria": [
+          {
+            "scale": "MMT-8",
+            "scale_component": null,
+            "scale_variant": null,
+            "metric": "absolute_score",
+            "comparator": "<",
+            "value": 142,
+            "unit": "score",
+            "scale_min": 0,
+            "scale_max": 150,
+            "assessed_at": [
+              "screening",
+              "baseline"
+            ],
+            "scale_anchors": null
+          },
+          {
+            "scale": "Physician Global Disease Activity VAS",
+            "scale_component": null,
+            "scale_variant": null,
+            "metric": "absolute_score",
+            "comparator": ">=",
+            "value": 2,
+            "unit": "score",
+            "scale_min": 0,
+            "scale_max": 10,
+            "assessed_at": [
+              "screening",
+              "baseline"
+            ],
+            "scale_anchors": null
+          },
+          {
+            "scale": "HAQ-DI",
+            "scale_component": null,
+            "scale_variant": null,
+            "metric": "absolute_score",
+            "comparator": ">=",
+            "value": 0.25,
+            "unit": "score",
+            "scale_min": 0,
+            "scale_max": 3,
+            "assessed_at": [
+              "screening",
+              "baseline"
+            ],
+            "scale_anchors": null
+          }
+        ]
+      },
+      "source_type": "ctgov_text_extraction",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02728752",
+      "source_excerpt": "Eligibility criteria (text) items 3-4: \"Manual Muscle Testing-8 (MMT-8) score <142, with at least 2 other abnormal Core Set Measures (CSM) (Visual Analogue Scale [VAS] of patient global activity >=2 cm, physician's global disease activity >=2 cm, extra-muscular activity >=2 cm; at least one muscle enzyme >1.5 times upper limit of normal, Health Assessment Questionnaire >=0.25).\" MMT-8 <142 was a required threshold; the remaining criteria (physician global VAS, HAQ-DI, patient global VAS, extra-muscular activity VAS, muscle enzyme elevation) formed an \"at least 2 of 5 abnormal\" requirement, not all independently mandatory -- this atlas's SCORE_CRITERION shape has no \"any N of M\" operator, so 2 representative CSM thresholds (physician global VAS, HAQ-DI) are recorded here as illustrative members of that 5-item set, not as independently-required criteria; the full 5-item CSM list and its 2016 ACR/EULAR Total Improvement Score composition is in molecule/endpoints source_excerpt fields. Diagnosis itself required the 2017 EULAR/ACR (VALOR-era language) / Bohan and Peter (ProDERM's own protocol language) classification criteria for definite or probable dermatomyositis -- a categorical diagnostic rule, not a numeric score, so not represented as a ScoreCriterion row.",
+      "extracted_by": "manual publication_extraction pass (PMC7793357 ProDERM protocol + CT.gov eligibilityModule); cycle18",
+      "reviewed_by": null,
+      "confidence": 0.75
+    }
+  },
+  "design": {
+    "study_type": {
+      "value": "INTERVENTIONAL",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02728752",
+      "source_excerpt": "protocolSection.designModule.studyType",
+      "extracted_by": "cycle18 one-off build (ctgov_api v2 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "allocation": {
+      "value": "RANDOMIZED",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02728752",
+      "source_excerpt": "protocolSection.designModule.designInfo.allocation",
+      "extracted_by": "cycle18 one-off build (ctgov_api v2 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "intervention_model": {
+      "value": "PARALLEL",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02728752",
+      "source_excerpt": "protocolSection.designModule.designInfo.interventionModel",
+      "extracted_by": "cycle18 one-off build (ctgov_api v2 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "masking": {
+      "value": "TRIPLE",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02728752",
+      "source_excerpt": "protocolSection.designModule.designInfo.maskingInfo.masking",
+      "extracted_by": "cycle18 one-off build (ctgov_api v2 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "number_of_arms": {
+      "value": 2,
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02728752",
+      "source_excerpt": "len(protocolSection.armsInterventionsModule.armGroups)",
+      "extracted_by": "cycle18 one-off build (ctgov_api v2 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "background_therapy": {
+      "value": {
+        "regimen_type": null,
+        "background_agent_class": "corticosteroids and/or non-steroid immunosuppressants (systemic disease background therapy, not a topical regimen -- none of this schema field's 3 enum values (monotherapy/combination_tcs/standardized_background_topical) describe a systemic-disease permitted-background design, so left null)",
+        "tcs_regimen": null,
+        "step_down_rule": null,
+        "recommended_agents": [],
+        "emollient_required": null,
+        "emollient_frequency": null,
+        "prohibited_concomitant": [
+          "IgG treatment within 6 months before enrollment",
+          "blood/plasma-derived products (other than IgG) or plasma exchange within 3 months before enrollment",
+          "rituximab within 12 months (plus normal CD19 count required)",
+          "cyclophosphamide or leflunomide within 3 months",
+          "starting/planning a physical-therapy-directed exercise regimen during the trial"
+        ],
+        "permitted_concomitant": [
+          "corticosteroids (prednisone-equivalent <=20 mg/day)",
+          "methotrexate (<=25 mg/week)",
+          "azathioprine (<=2 mg/kg)",
+          "cyclosporine (<=2 mg/kg)",
+          "tacrolimus",
+          "mycophenolate mofetil (<=3000 mg/day)",
+          "leflunomide",
+          "hydroxychloroquine (<=400 mg/day)"
+        ],
+        "applies_to_rerandomized_maintenance": null,
+        "sponsor_trial_ids": [
+          "GAM10-08"
+        ],
+        "study_drug_doses_mg": [],
+        "population_note": "Background corticosteroid/immunosuppressant therapy had to be initiated >=3 months before enrollment and held at a stable dose for >=4 weeks before enrollment; most agents required an 8-week washout if not already at a stable qualifying dose (12 weeks for rituximab, 3 months for cyclophosphamide/leflunomide, 6 months for prior IgG)."
+      },
+      "source_type": "publication_extraction",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7793357/",
+      "source_excerpt": "ProDERM protocol (PMC7793357), concomitant medication rules: permitted background therapies (corticosteroids, methotrexate, azathioprine, cyclosporine, tacrolimus, mycophenolate mofetil, leflunomide, hydroxychloroquine) if \"initiated at least 3 months before enrollment and...set at a stable dose...for at least 4 weeks before study enrollment,\" with per-agent dose caps and washout periods (8 weeks most agents, 12 weeks rituximab, 3 months cyclophosphamide/leflunomide, 6 months prior IgG); sponsor study ID GAM10-08 from protocolSection.identificationModule.orgStudyIdInfo.",
+      "extracted_by": "manual publication_extraction pass (PMC7793357 ProDERM protocol); cycle18",
+      "reviewed_by": null,
+      "confidence": 0.8
+    }
+  },
+  "endpoints": {
+    "primary_endpoints": {
+      "value": [
+        {
+          "verbatim": "Measure the Number of Patients Who Had an Increase of >=20 Points on the Total Improvement Score (TIS) (Time frame: At week 16)",
+          "rank": "primary",
+          "position": 1,
+          "measure_type": "responder_rate",
+          "scale": "TIS",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [
+            {
+              "scale": "TIS",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "point_improvement_from_baseline",
+              "comparator": ">=",
+              "value": 20,
+              "unit": "points",
+              "scale_min": 0,
+              "scale_max": 100,
+              "assessed_at": null,
+              "scale_anchors": [
+                {
+                  "score": 20,
+                  "label": "minimal improvement"
+                },
+                {
+                  "score": 40,
+                  "label": "moderate improvement"
+                },
+                {
+                  "score": 60,
+                  "label": "major improvement"
+                }
+              ]
+            }
+          ],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": "full_analysis_set",
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": "double_blind",
+          "event_type": null,
+          "time_frame": "At week 16"
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02728752",
+      "source_excerpt": "protocolSection.outcomesModule.primaryOutcomes[0].measure/timeFrame; TIS improvement-category anchors (20/40/60 = minimal/moderate/major) from FDA label Table 10 and PMC7793357. Responder definition per the label/publication also required absence of confirmed deterioration (worsening on 2 consecutive visits) through Week 16 -- a compound eligibility-style rule this schema's single-criterion ScoreCriterion shape cannot fully represent; recorded as a note here rather than fabricating an unsupported comparator.",
+      "extracted_by": "cycle18 one-off build (ctgov_api v2 pass + publication_extraction cross-check)",
+      "reviewed_by": null,
+      "confidence": 0.9
+    },
+    "secondary_endpoints": {
+      "value": [
+        {
+          "verbatim": "Proportion of TIS Responders by Improvement Category at Week 16",
+          "rank": "secondary",
+          "position": 1,
+          "measure_type": "responder_rate",
+          "scale": "TIS",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": "double_blind",
+          "event_type": null,
+          "time_frame": "16 weeks"
+        },
+        {
+          "verbatim": "Proportion of TIS Responders by Improvement Category at Week 40",
+          "rank": "secondary",
+          "position": 2,
+          "measure_type": "responder_rate",
+          "scale": "TIS",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 40,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": "maintenance",
+          "event_type": null,
+          "time_frame": "40 weeks"
+        },
+        {
+          "verbatim": "Mean Change From Baseline (Week 0) to End of First Period (Week 16) in the Modified Cutaneous Dermatomyositis Disease Area and Severity Index (CDASI)",
+          "rank": "secondary",
+          "position": 3,
+          "measure_type": "change_from_baseline",
+          "scale": "CDASI",
+          "scale_component": "activity",
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": "double_blind",
+          "event_type": null,
+          "time_frame": "First 16 weeks"
+        },
+        {
+          "verbatim": "Mean Change From End of First Period (Week 16) to End of Extension Period (Week 40) in the Modified Cutaneous Dermatomyositis Disease Area and Severity Index (CDASI)",
+          "rank": "secondary",
+          "position": 4,
+          "measure_type": "change_from_baseline",
+          "scale": "CDASI",
+          "scale_component": "activity",
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 40,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": "maintenance",
+          "event_type": null,
+          "time_frame": "From week 16 to Week 40"
+        },
+        {
+          "verbatim": "Mean Change From Baseline (Week 0) to End of Extension Period (Week 40) in the Modified Cutaneous Dermatomyositis Disease Area and Severity Index (CDASI)",
+          "rank": "secondary",
+          "position": 5,
+          "measure_type": "change_from_baseline",
+          "scale": "CDASI",
+          "scale_component": "activity",
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 40,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": "maintenance",
+          "event_type": null,
+          "time_frame": "40 weeks"
+        },
+        {
+          "verbatim": "Mean Change From Baseline (Week 0) to End of First Period (Week 16) and Extension Period (Week 40) in: SF-36v2 Health Survey",
+          "rank": "secondary",
+          "position": 6,
+          "measure_type": "change_from_baseline",
+          "scale": "SF-36v2",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 40,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": "From start of the trial till Week 40"
+        },
+        {
+          "verbatim": "Mean Change From Baseline (Week 0) to End of First Period (Week 16) and Extension Period (Week 40) in Physician's Global Disease Activity",
+          "rank": "secondary",
+          "position": 7,
+          "measure_type": "change_from_baseline",
+          "scale": "Physician Global Disease Activity VAS",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 40,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": "From start of the trial till Week 40"
+        },
+        {
+          "verbatim": "Mean Change From Baseline (Week 0) to End of First Period (Week 16) and Extension Period (Week 40) in: Patient Global Disease Activity",
+          "rank": "secondary",
+          "position": 8,
+          "measure_type": "change_from_baseline",
+          "scale": "Patient Global Disease Activity VAS",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 40,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": "From start of the trial till Week 40"
+        },
+        {
+          "verbatim": "Mean Change From Baseline (Week 0) to End of First Period (Week 16) and Extension Period (Week 40) in: MMT-8",
+          "rank": "secondary",
+          "position": 9,
+          "measure_type": "change_from_baseline",
+          "scale": "MMT-8",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 40,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": "From start of the trial till Week 40"
+        },
+        {
+          "verbatim": "Mean Change From Baseline (Week 0) to End of First Period (Week 16) and Extension Period (Week 40) in: Health Assessment Questionnaire",
+          "rank": "secondary",
+          "position": 10,
+          "measure_type": "change_from_baseline",
+          "scale": "HAQ-DI",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 40,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": "From start of the trial till Week 40"
+        },
+        {
+          "verbatim": "Time to Minimal, Moderate and Major Improvement in TIS",
+          "rank": "secondary",
+          "position": 11,
+          "measure_type": "time_to_event",
+          "scale": "TIS",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [],
+          "through": {
+            "value": 40,
+            "unit": "week"
+          },
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": "Up to 40 weeks"
+        },
+        {
+          "verbatim": "Time to Confirmed Deterioration in the First Period and Overall",
+          "rank": "secondary",
+          "position": 12,
+          "measure_type": "time_to_event",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [],
+          "through": {
+            "value": 40,
+            "unit": "week"
+          },
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": "flare",
+          "time_frame": "Up to 40 weeks"
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02728752",
+      "source_excerpt": "protocolSection.outcomesModule.secondaryOutcomes[].measure (12 of 19 CT.gov-registered secondary outcomes; the remaining 7 are per-enzyme change-from-baseline outcomes for the 5 individual muscle enzymes plus duplicate time-windowed variants, omitted here as repetitive)",
+      "extracted_by": "cycle18 one-off build (ctgov_api v2 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "multiplicity_control": {
+      "value": {
+        "procedure": null,
+        "familywise_error_controlled": false,
+        "alpha": 0.05,
+        "alpha_sided": 2,
+        "alpha_per_dose": null,
+        "co_primary_endpoints": [],
+        "testing_sequence": [],
+        "alpha_split": [],
+        "alpha_recycling": null,
+        "doses_compared": [],
+        "dose_comparison_order": [],
+        "branching_on": null,
+        "regulatory_variants": [],
+        "rescue_counted_as_nonresponder": null,
+        "active_comparator_excluded_from_hierarchy": null,
+        "background_tcs": null,
+        "method_citations": [
+          "Cochran-Mantel-Haenszel test (primary endpoint)",
+          "2016 ACR/EULAR Total Improvement Score response criteria"
+        ],
+        "finalized_in_sap": null,
+        "same_design_as": [],
+        "gatekeeping_structure": false,
+        "further_endpoints_through_week": 40
+      },
+      "source_type": "publication_extraction",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7793357/",
+      "source_excerpt": "ProDERM statistical methods (PMC7793357): single primary endpoint (TIS >=20 at Week 16) tested at a two-sided alpha=0.05 via Cochran-Mantel-Haenszel test comparing responder proportions (Octagam vs. placebo) -- no multiple-primary-endpoint gatekeeping procedure (unlike the AD trials' co-primary IGA+EASI-75 hierarchy); secondary endpoints were analyzed descriptively/via ANCOVA and Kaplan-Meier without formal Type-I-error allocation. Sample size: 94 evaluable patients planned for 80% power. Missing data: not imputed except last-observation-carried-forward for the Week-16 ANCOVA when values were missing due to early termination or treatment switch. Both intention-to-treat and per-protocol analysis sets were used.",
+      "extracted_by": "manual publication_extraction pass (PMC7793357 ProDERM statistical methods); cycle18",
+      "reviewed_by": null,
+      "confidence": 0.8
+    }
+  },
+  "timing_ops": {
+    "start_date": {
+      "value": {
+        "date": "2017-02-27",
+        "precision": "day"
+      },
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02728752",
+      "source_excerpt": "protocolSection.statusModule.startDateStruct.date",
+      "extracted_by": "cycle18 one-off build (ctgov_api v2 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "primary_completion_date": {
+      "value": {
+        "date": "2019-11-05",
+        "precision": "day"
+      },
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02728752",
+      "source_excerpt": "protocolSection.statusModule.primaryCompletionDateStruct.date (registry records this as identical to the overall completion date)",
+      "extracted_by": "cycle18 one-off build (ctgov_api v2 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "completion_date": {
+      "value": {
+        "date": "2019-11-05",
+        "precision": "day"
+      },
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02728752",
+      "source_excerpt": "protocolSection.statusModule.completionDateStruct.date",
+      "extracted_by": "cycle18 one-off build (ctgov_api v2 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "study_schedule": {
+      "value": {
+        "screening_days": null,
+        "screening_washout": true,
+        "periods": [
+          {
+            "name": "randomized_treatment",
+            "start_week": 0,
+            "end_week": 16,
+            "duration_weeks": 16,
+            "blinding": "double_blind",
+            "background_tcs": null
+          },
+          {
+            "name": "long_term_extension",
+            "start_week": 16,
+            "end_week": 40,
+            "duration_weeks": 24,
+            "blinding": "open_label",
+            "background_tcs": null
+          }
+        ],
+        "dosing_interval": "every_4_weeks",
+        "visit_cadence": "every_4_weeks",
+        "visit_cadence_until_week": 40,
+        "visit_weeks": [
+          0,
+          4,
+          8,
+          12,
+          16,
+          28,
+          40
+        ],
+        "visit_days": null,
+        "phone_contact_weeks": null,
+        "primary_endpoint_week": 16,
+        "end_of_treatment_week": 40,
+        "end_of_study_week": 40,
+        "total_duration_weeks": 40,
+        "follow_up_weeks": null,
+        "follow_up_days": null,
+        "follow_up_visit_week": null,
+        "long_term_extension": true,
+        "extension_end_week": 40,
+        "extension_visit_interval_weeks": 4,
+        "extension_study_id": null,
+        "rerandomization_week": null,
+        "maintenance_arms": null,
+        "maintenance_response_check_weeks": [
+          16
+        ],
+        "last_injection_week": 36,
+        "key_secondary_weeks": [
+          4,
+          16,
+          40
+        ],
+        "follow_up_visit_interval_weeks": null,
+        "end_of_treatment_weeks_after_last_dose": null,
+        "background_tcs_from_day": null,
+        "primary_endpoint_refs": [],
+        "double_dummy_arms": [],
+        "active_comparator": null,
+        "boilerplate_reused_from": [],
+        "conflicts_with_trial": null,
+        "full_visit_table_available": true,
+        "source_inconsistency": null
+      },
+      "source_type": "publication_extraction",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7793357/",
+      "source_excerpt": "ProDERM design (PMC7793357 + CT.gov resultsSection): First Period visits/infusions at Weeks 0, 4, 8, 12 with response assessment at Week 16 (primary endpoint); Core Set Measures and CDASI assessed at each visit plus Weeks 28 and 40; SF-36v2 at baseline, Week 16, and Week 40. Extension Period: 6-month open-label Octagam 10% with infusions every 4 weeks (last cycle starting Week 36) through a Week 40 final assessment, with an investigator-discretion dose reduction from 2.0 to 1.0 g/kg available from Week 28 onward for stable/improving subjects. Total trial duration 40 weeks; each infusion cycle comprised infusions given over 2-5 consecutive days.",
+      "extracted_by": "manual publication_extraction pass (PMC7793357 ProDERM protocol); cycle18",
+      "reviewed_by": null,
+      "confidence": 0.85
+    },
+    "rescue_therapy": {
+      "value": {
+        "permitted": true,
+        "trigger": "flare_definition",
+        "earliest_week": 8,
+        "prohibited_through_week": 8,
+        "trigger_rules": [
+          {
+            "from_week": 8,
+            "to_week": 16,
+            "criterion": {
+              "scale": "Physician Global Disease Activity VAS",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "point_improvement_from_baseline",
+              "comparator": ">=",
+              "value": -2,
+              "unit": "score",
+              "scale_min": 0,
+              "scale_max": 10,
+              "assessed_at": null,
+              "scale_anchors": null
+            },
+            "consecutive_visits": 2
+          }
+        ],
+        "flare_definition": [
+          {
+            "scale": "Physician Global Disease Activity VAS",
+            "scale_component": null,
+            "scale_variant": null,
+            "metric": "absolute_score",
+            "comparator": ">=",
+            "value": 2,
+            "unit": "score",
+            "scale_min": 0,
+            "scale_max": 10,
+            "assessed_at": null,
+            "scale_anchors": null
+          },
+          {
+            "scale": "MMT-8",
+            "scale_component": null,
+            "scale_variant": null,
+            "metric": "percent_improvement_from_baseline",
+            "comparator": ">=",
+            "value": -20,
+            "unit": "percent",
+            "scale_min": 0,
+            "scale_max": 150,
+            "assessed_at": null,
+            "scale_anchors": null
+          }
+        ],
+        "first_step": null,
+        "topical_min_days_before_systemic": null,
+        "topical_rescue_requires_study_drug_discontinuation": null,
+        "systemic_rescue_requires_study_drug_discontinuation": null,
+        "resume_after_systemic_rescue_half_lives": null,
+        "resume_after_phototherapy_months": null,
+        "rescued_counted_as_nonresponder": true,
+        "rescued_counted_as_treatment_failure": null,
+        "continue_visits_after_discontinuation": null,
+        "continue_visits_through_week": 16,
+        "topical_rescue_not_counted_after_week": null,
+        "topical_agents": [],
+        "topical_potency_classes": [],
+        "tci_reserved_areas": [],
+        "systemic_agents": [],
+        "oral_corticosteroid_limit": null,
+        "rescue_period": null,
+        "escape_arm_washout_half_lives": null,
+        "maintenance_period_rule": null,
+        "permitted_concomitant": [],
+        "recorded_in_ecrf": null,
+        "applies_to_period": "randomized_treatment",
+        "long_term_extension_eligible_after_rescue": false,
+        "topical_agent_class": null,
+        "rationale": "Not a topical/systemic step-up rescue design (unlike the AD trials) -- this is a blinded treatment-switch ('escape') design: a subject meeting the deterioration definition on 2 consecutive visits was switched to the other blinded arm (placebo->Octagam or Octagam->alternate) while maintaining the blind, rather than receiving an added rescue medication."
+      },
+      "source_type": "publication_extraction",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7793357/",
+      "source_excerpt": "ProDERM deterioration/escape rules (PMC7793357): \"Deterioration was considered confirmed if worsening was observed on 2 consecutive visits,\" defined as worsening of >=2 cm in Physician's Global Disease Activity (10 cm VAS) AND >=20% worsening in MMT-8; OR >=2 cm global extra-muscular activity worsening; OR >=30% worsening in any 3 of 5 Core Set Measures. At Week 8 or later, confirmed deterioration triggered a blinded switch to the other treatment arm; subjects on Octagam who confirmed deterioration between Week 8-16 were discontinued at the end of the First Period. Switched/rescued subjects were counted as non-responders on the primary Week-16 TIS analysis. This schema's RESCUE shape (topical-then-systemic step-up, as used for the AD trials) does not fit a blinded-crossover escape design; fields describing topical/systemic step-up are left null and the actual switch mechanism is recorded in `rationale` and `trigger_rules`/`flare_definition` as the closest structural fit.",
+      "extracted_by": "manual publication_extraction pass (PMC7793357 ProDERM protocol); cycle18",
+      "reviewed_by": null,
+      "confidence": 0.75
+    }
+  },
+  "adverse_events": {
+    "serious_adverse_event_rate": {
+      "value": [
+        {
+          "arm": "Placebo (First Period)",
+          "n_affected": 2,
+          "n_at_risk": 48,
+          "pct": 4.2
+        },
+        {
+          "arm": "Octagam 10% (Overall Period, incl. crossover/extension)",
+          "n_affected": 14,
+          "n_at_risk": 95,
+          "pct": 14.7
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02728752",
+      "source_excerpt": "resultsSection.adverseEventsModule.eventGroups[].seriousNumAffected/seriousNumAtRisk. CT.gov reports only 2 event groups for this trial ('First Period Placebo', n=48, and 'Overall Period Octagam', n=95) rather than a clean parallel-arm comparison, because of the blinded-crossover/escape design (subjects on placebo who confirmed deterioration switched to Octagam and are folded into the Octagam group; nearly all First Period placebo subjects (46/48) went on to receive open-label Octagam in the Extension Period too) -- the SAE rate is not a like-for-like placebo-vs-active comparison the way the AD trials' rates are.",
+      "extracted_by": "cycle18 one-off build (ctgov_api results pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "death_rate": {
+      "value": [
+        {
+          "arm": "Placebo (First Period)",
+          "n_affected": 0,
+          "n_at_risk": 48,
+          "pct": 0.0
+        },
+        {
+          "arm": "Octagam 10% (Overall Period, incl. crossover/extension)",
+          "n_affected": 0,
+          "n_at_risk": 95,
+          "pct": 0.0
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02728752",
+      "source_excerpt": "resultsSection.adverseEventsModule.eventGroups[].deathsNumAffected/deathsNumAtRisk",
+      "extracted_by": "cycle18 one-off build (ctgov_api results pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "most_common_adverse_events": {
+      "value": [
+        {
+          "meddra_pt": "Headache",
+          "meddra_soc": "Nervous system disorders",
+          "per_arm": [
+            {
+              "arm": "Placebo (First Period)",
+              "n_affected": 4,
+              "n_at_risk": 48,
+              "pct": 8.3
+            },
+            {
+              "arm": "Octagam 10% (Overall Period)",
+              "n_affected": 46,
+              "n_at_risk": 95,
+              "pct": 48.4
+            }
+          ]
+        },
+        {
+          "meddra_pt": "Nausea",
+          "meddra_soc": "Gastrointestinal disorders",
+          "per_arm": [
+            {
+              "arm": "Placebo (First Period)",
+              "n_affected": 2,
+              "n_at_risk": 48,
+              "pct": 4.2
+            },
+            {
+              "arm": "Octagam 10% (Overall Period)",
+              "n_affected": 18,
+              "n_at_risk": 95,
+              "pct": 18.9
+            }
+          ]
+        },
+        {
+          "meddra_pt": "Pyrexia",
+          "meddra_soc": "General disorders",
+          "per_arm": [
+            {
+              "arm": "Placebo (First Period)",
+              "n_affected": 3,
+              "n_at_risk": 48,
+              "pct": 6.3
+            },
+            {
+              "arm": "Octagam 10% (Overall Period)",
+              "n_affected": 17,
+              "n_at_risk": 95,
+              "pct": 17.9
+            }
+          ]
+        },
+        {
+          "meddra_pt": "Vomiting",
+          "meddra_soc": "Gastrointestinal disorders",
+          "per_arm": [
+            {
+              "arm": "Placebo (First Period)",
+              "n_affected": 0,
+              "n_at_risk": 48,
+              "pct": 0.0
+            },
+            {
+              "arm": "Octagam 10% (Overall Period)",
+              "n_affected": 9,
+              "n_at_risk": 95,
+              "pct": 9.5
+            }
+          ]
+        },
+        {
+          "meddra_pt": "Condition aggravated",
+          "meddra_soc": "General disorders",
+          "per_arm": [
+            {
+              "arm": "Placebo (First Period)",
+              "n_affected": 9,
+              "n_at_risk": 48,
+              "pct": 18.8
+            },
+            {
+              "arm": "Octagam 10% (Overall Period)",
+              "n_affected": 9,
+              "n_at_risk": 95,
+              "pct": 9.5
+            }
+          ]
+        },
+        {
+          "meddra_pt": "Myalgia",
+          "meddra_soc": "Musculoskeletal and connective tissue disorders",
+          "per_arm": [
+            {
+              "arm": "Placebo (First Period)",
+              "n_affected": 0,
+              "n_at_risk": 48,
+              "pct": 0.0
+            },
+            {
+              "arm": "Octagam 10% (Overall Period)",
+              "n_affected": 9,
+              "n_at_risk": 95,
+              "pct": 9.5
+            }
+          ]
+        },
+        {
+          "meddra_pt": "Chills",
+          "meddra_soc": "General disorders",
+          "per_arm": [
+            {
+              "arm": "Placebo (First Period)",
+              "n_affected": 1,
+              "n_at_risk": 48,
+              "pct": 2.1
+            },
+            {
+              "arm": "Octagam 10% (Overall Period)",
+              "n_affected": 7,
+              "n_at_risk": 95,
+              "pct": 7.4
+            }
+          ]
+        },
+        {
+          "meddra_pt": "Arthralgia",
+          "meddra_soc": "Musculoskeletal and connective tissue disorders",
+          "per_arm": [
+            {
+              "arm": "Placebo (First Period)",
+              "n_affected": 4,
+              "n_at_risk": 48,
+              "pct": 8.3
+            },
+            {
+              "arm": "Octagam 10% (Overall Period)",
+              "n_affected": 7,
+              "n_at_risk": 95,
+              "pct": 7.4
+            }
+          ]
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02728752",
+      "source_excerpt": "resultsSection.adverseEventsModule.otherEvents[] (top 8 by highest single-arm incidence; frequencyThreshold=0, i.e. CT.gov lists every reported term -- this is a curated top-8 subset, not the full table). Same 2-group caveat as serious_adverse_event_rate: 'Overall Period Octagam' (n=95) includes placebo subjects who crossed over.",
+      "extracted_by": "cycle18 one-off build (ctgov_api results pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "discontinuation_due_to_ae_rate": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    },
+    "boxed_warning": {
+      "value": {
+        "present": true,
+        "title": "THROMBOSIS, RENAL DYSFUNCTION, AND ACUTE RENAL FAILURE",
+        "warning_categories": [
+          "thrombosis"
+        ],
+        "referenced_label_sections": [
+          "5.2",
+          "5.5"
+        ],
+        "product_names": [
+          "Octagam 10%"
+        ]
+      },
+      "source_type": "openfda_label",
+      "source_url": "https://octagamusa.com/dermatomyositis/wp-content/uploads/sites/4/2021/10/octagam10-full-prescribing-information.pdf",
+      "source_excerpt": "Boxed warning full text: \"Thrombosis may occur with immune globulin intravenous (IGIV) products, including Octagam 10%. Risk factors may include: advanced age, prolonged immobilization, hypercoagulable conditions, history of venous or arterial thrombosis, use of estrogens, indwelling vascular catheters, hyperviscosity, and cardiovascular risk factors. Thrombosis may occur in the absence of known risk factors. (See WARNING AND PRECAUTIONS [5.5], PATIENT COUNSELING INFORMATION [17]) / Renal dysfunction, acute renal failure, osmotic nephropathy, and death may occur in predisposed patients who receive IGIV products, including Octagam 10%... For patients at risk of thrombosis, renal dysfunction or acute renal failure, administer Octagam 10% at the minimum dose and infusion rate practicable.\" Patients with dermatomyositis specifically are called out (Section 5.5) as being \"at increased risk for thromboembolic events\" requiring an infusion rate cap of 0.04 mL/kg/min, lower than the ITP indication's cap. Renal dysfunction/acute renal failure has no matching entry in this schema's WARNING_CATEGORIES enum (serious_infections/mortality/malignancy/mace/thrombosis/suicidal_ideation/hepatotoxicity/embryo_fetal_toxicity) -- recorded in the title and referenced_label_sections but not double-counted as a category.",
+      "extracted_by": "manual openfda_label PDF extraction pass (Octagam 10% full prescribing information, June 2021 revision); cycle18",
+      "reviewed_by": null,
+      "confidence": 1.0
+    }
+  },
+  "real_world_safety": {
+    "faers_summary": {
+      "value": {
+        "query": {
+          "search_field": "patient.drug.medicinalproduct",
+          "search_term": "OCTAGAM",
+          "receivedate_from": null,
+          "receivedate_to": null,
+          "api_urls": [
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"OCTAGAM\"&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"OCTAGAM\"+AND+serious:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"OCTAGAM\"+AND+seriousnessdeath:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"OCTAGAM\"+AND+seriousnesshospitalization:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"OCTAGAM\"&count=patient.drug.drugindication.exact&limit=15"
+          ],
+          "data_last_updated": "2026-07-30"
+        },
+        "total_reports": 1969,
+        "serious_reports": 1554,
+        "death_reports": 124,
+        "hospitalization_reports": 678,
+        "life_threatening_reports": null,
+        "disability_reports": null,
+        "top_reactions": [],
+        "top_serious_reactions": [],
+        "reports_by_year": [],
+        "meddra_version": null
+      },
+      "source_type": "openfda_faers",
+      "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:%22OCTAGAM%22&limit=1",
+      "source_excerpt": "openFDA drug/event.json aggregate for \"OCTAGAM\": total_reports=1969, serious=1554, deaths=124, hospitalizations=678. Ran the atlas's standard drugindication count check before accepting the term (per AGENTS.md's Qbrexza/Glycopyrronium and Xepi/Ozenoxacin precedent): OCTAGAM's FAERS reports are dominated by its original, much broader ITP/general-immunodeficiency off-label uses -- top drugindication terms are \"PRODUCT USED FOR UNKNOWN INDICATION\" (344+319), HYPOGAMMAGLOBULINAEMIA (116/39), IMMUNODEFICIENCY COMMON VARIABLE (99/43), CHRONIC INFLAMMATORY DEMYELINATING POLYRADICULONEUROPATHY (82/41), HEREDITARY ANGIOEDEMA (77), PLASMA CELL MYELOMA (56/45), MYASTHENIA GRAVIS (48) -- dermatomyositis does not appear in the top 15 terms at all. Unlike Qbrexza/Ozenoxacin, there is no separate brand-vs-generic split to retry (Octagam is a single product traded under one name, not generic+brand) and no alternate clean search term exists -- this is a real, unavoidable mix across every indication the product is used for, the same \"no clean term available\" situation as Ruxolitinib, recorded as-is rather than picking a term that looks cleaner.",
+      "extracted_by": "cycle18 one-off build (openfda_faers pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    }
+  },
+  "exclusivity": {
+    "regulatory_application": {
+      "value": {
+        "application_type": "BLA",
+        "application_number": "125062",
+        "registry": "purple_book",
+        "center": "CBER",
+        "proprietary_name": "Octagam 10%",
+        "applicant": "Octapharma Pharmazeutika Produktionsges.m.b.H.",
+        "first_approval_date": "2004-05-21"
+      },
+      "source_type": "purple_book",
+      "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2026/purplebook-search-August-data-download.csv",
+      "source_excerpt": "row: Octapharma Pharmazeutika Produktionsges.m.b.H. | BLA 125062 | Octagam | Immune Globulin Intravenous (Human) | 351(a) | multiple strengths (5% and 10%) | Injection Intravenous Single-Use Bottle | Rx | Licensed | 21-May-04 (original 5% approval; 10% concentration added by supplement 11-Jul-14) | License 1646 | CBER. Dermatomyositis-specific supplement (STN BL 125062/674) approved 2021-07-15 per FDA approval letter (fda.gov/media/150814/download), citing NCT02728752 as the basis trial and granting orphan drug exclusivity for the DM indication.",
+      "extracted_by": "atlas.regulatory_applications (registry file fetched 2026-09-05); cycle18",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "orange_book": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    },
+    "purple_book": {
+      "value": {
+        "bla_number": "125062",
+        "proprietary_name": "Octagam",
+        "proper_name": "Immune Globulin Intravenous (Human)",
+        "applicant": "Octapharma Pharmazeutika Produktionsges.m.b.H.",
+        "license_type": "351(a)",
+        "license_number": "1646",
+        "center": "CBER",
+        "products": [
+          {
+            "product_number": "001",
+            "strength": "5% 5.0G",
+            "dosage_form": "Injection",
+            "route": "Intravenous",
+            "presentation": "Single-Use Bottle",
+            "marketing_status": "Rx",
+            "licensure": "Licensed",
+            "approval_date": "2004-05-21",
+            "submission_type": "Original",
+            "supplement_number": "0"
+          },
+          {
+            "product_number": "002",
+            "strength": "5% 1.0G",
+            "dosage_form": "Injection",
+            "route": "Intravenous",
+            "presentation": "Single-Use Bottle",
+            "marketing_status": "Rx",
+            "licensure": "Licensed",
+            "approval_date": "2004-05-21",
+            "submission_type": "Original",
+            "supplement_number": "0"
+          },
+          {
+            "product_number": "003",
+            "strength": "5% 10G",
+            "dosage_form": "Injection",
+            "route": "Intravenous",
+            "presentation": "Single-Use Bottle",
+            "marketing_status": "Rx",
+            "licensure": "Licensed",
+            "approval_date": "2004-05-21",
+            "submission_type": "Original",
+            "supplement_number": "0"
+          },
+          {
+            "product_number": "004",
+            "strength": "5% 2.5G",
+            "dosage_form": "Injection",
+            "route": "Intravenous",
+            "presentation": "Single-Use Bottle",
+            "marketing_status": "Rx",
+            "licensure": "Licensed",
+            "approval_date": "2004-05-21",
+            "submission_type": "Original",
+            "supplement_number": "0"
+          },
+          {
+            "product_number": "005",
+            "strength": "5% 25G",
+            "dosage_form": "Injection",
+            "route": "Intravenous",
+            "presentation": "Single-Use Bottle",
+            "marketing_status": "Rx",
+            "licensure": "Licensed",
+            "approval_date": "2007-03-26",
+            "submission_type": "Supplement",
+            "supplement_number": "124"
+          },
+          {
+            "product_number": "006",
+            "strength": "10% 20G",
+            "dosage_form": "Injection",
+            "route": "Intravenous",
+            "presentation": "Single-Use Bottle",
+            "marketing_status": "Rx",
+            "licensure": "Licensed",
+            "approval_date": "2014-07-11",
+            "submission_type": "Supplement",
+            "supplement_number": "234"
+          },
+          {
+            "product_number": "007",
+            "strength": "10% 5G",
+            "dosage_form": "Injection",
+            "route": "Intravenous",
+            "presentation": "Single-Use Bottle",
+            "marketing_status": "Rx",
+            "licensure": "Licensed",
+            "approval_date": "2014-07-11",
+            "submission_type": "Supplement",
+            "supplement_number": "234"
+          },
+          {
+            "product_number": "008",
+            "strength": "10% 2G",
+            "dosage_form": "Injection",
+            "route": "Intravenous",
+            "presentation": "Single-Use Bottle",
+            "marketing_status": "Rx",
+            "licensure": "Licensed",
+            "approval_date": "2014-07-11",
+            "submission_type": "Supplement",
+            "supplement_number": "234"
+          },
+          {
+            "product_number": "009",
+            "strength": "10% 10G",
+            "dosage_form": "Injection",
+            "route": "Intravenous",
+            "presentation": "Single-Use Bottle",
+            "marketing_status": "Rx",
+            "licensure": "Licensed",
+            "approval_date": "2014-07-11",
+            "submission_type": "Supplement",
+            "supplement_number": "234"
+          }
+        ],
+        "first_approval_date": "2004-05-21",
+        "date_of_first_licensure": null,
+        "reference_product_exclusivity_expiration": null,
+        "exclusivity_expiration_date": null,
+        "first_interchangeable_exclusivity_expiration": null,
+        "orphan_exclusivity_expiration": "2028-07-15",
+        "patent_list_provided": null,
+        "biosimilars": [],
+        "data_file_month": "August 2026"
+      },
+      "source_type": "purple_book",
+      "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2026/purplebook-search-August-data-download.csv",
+      "source_excerpt": "Purple Book Monthly Historical Data Changes Report, August 2026 snapshot -- accessdata.fda.gov monthly-CSV fallback (same fetch pattern already used for Vyjuvek/Ustekinumab; live purplebooksearch.fda.gov UI still Akamai-blocked), filtered to BLA Number=125062: 9 product rows, all license type 351(a) (no 351(k) biosimilars on file), Center=CBER (this is a plasma-derived blood product reviewed by CBER's Office of Tissues and Advanced Therapies, not CDER like the atlas's other biologics). Orphan Exclusivity Exp. Date column reads 15-Jul-28 -- this is the 7-year orphan-drug exclusivity granted for the 2021 dermatomyositis indication specifically (the original 2004 ITP indication carries no orphan exclusivity), per The Rheumatologist's coverage confirming the 7-year grant.",
+      "extracted_by": "manual accessdata.fda.gov CSV fallback pass; cycle18",
+      "reviewed_by": null,
+      "confidence": 1.0
+    }
+  }
+}
