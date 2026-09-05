@@ -32,7 +32,7 @@ This file is the project's committed home for project-intrinsic agent memory: bu
   couldn't reliably extract. Don't force-fill it by inference — a wrong schedule is worse than a
   null.
 - **This atlas is an ongoing, multi-cycle scale-out effort, not a one-shot.** It started at 1
-  indication (AD, 5 drugs, 17 trials) and is now at 19 indications, 42 unique drugs, 108 trials
+  indication (AD, 5 drugs, 17 trials) and is now at 21 indications, 45 unique drugs, 116 trials
   (see README's "What this covers" for the full per-indication breakdown and exactly which
   candidate trials were checked and excluded as non-pivotal for each). Every drug/indication
   pairing was verified against real, live ClinicalTrials.gov and openFDA data before being
@@ -314,6 +314,30 @@ This file is the project's committed home for project-intrinsic agent memory: bu
   covering skin-only disease — the same systemic-vs-cutaneous-indication boundary already
   established for Mastocytosis (avapritinib is for *systemic* mastocytosis, not cutaneous).
   Re-check both next cycle only if a name here shows up in `openfda label.json` as newly approved.
+- **Cycle 13's broad sweep (no named candidate backlog left) found Icotrokinra (Icotyde,
+  NDA220149, Janssen), a real, very recently approved (2026-03-17) oral IL-23 receptor antagonist
+  peptide, expanding Plaque Psoriasis with 4 label-cited placebo-controlled pivotal trials (PSO-1
+  through PSO-4).** Found by querying `openfda label.json?search=openfda.substance_name:<NAME>`
+  for a batch of known late-stage dermatology pipeline compounds (rocatinlimab, amlitelimab,
+  zasocitinib, povorcitinib, icotrokinra) rather than guessing from memory which had reached
+  approval — 4 of 5 were still genuine `NOT_FOUND` (unapproved as of this check), 1 was real. Two
+  source-lookup wrinkles, both now-familiar patterns applied to a new drug: (1) Orange Book
+  indexes it under the salt name `ICOTROKINRA HYDROCHLORIDE`, not the bare `ICOTROKINRA` the
+  label's `openfda.substance_name` uses (same shape as Glycopyrronium Tosylate) — 1 clean product
+  row, no collision to pin; (2) FAERS under `ICOTROKINRA` returns only 2 real-world reports, a
+  correct near-zero (not a bug) for a drug approved ~6 months before this cycle's pull, not a
+  search-term miss requiring a brand-name retry.
+- **A prior cycle's AGENTS.md update is not proof the same cycle's README update actually
+  landed — check both independently.** Cycle 12's commit updated this file with real Impetigo/
+  Seborrheic Keratosis findings, but never added those 2 indications' sections to README's "What
+  this covers" catalog, and the README's own summary counts (top-of-file, Fill status table,
+  "files in this repo" section) had silently drifted stale since cycle 10 (still said "19
+  indications, 42 unique drugs, 108 trials" against an actual 21/44/112 before this cycle's own
+  addition). Fixed in cycle 13 alongside the Icotrokinra addition: added the 2 missing README
+  sections, recomputed the Fill status table's per-field numerators directly from the regenerated
+  `sources.csv` (not hand-estimated), and updated every count reference. Recompute and grep for
+  stale counts in README every cycle, not just AGENTS.md — the two files can drift independently
+  since they're edited by hand, not generated.
 
 ## Maintaining this file
 
