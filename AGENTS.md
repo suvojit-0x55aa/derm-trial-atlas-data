@@ -813,6 +813,34 @@ This file is the project's committed home for project-intrinsic agent memory: bu
   CT.gov `documentSection` listing, not a guessed URL); a future cycle could verify the
   SC1401/SC1402 assignment against Seysara's FDA label section 14 if it matters for citation
   precision.
+- **A trial with no posted Study Protocol/SAP can still have real, if thin, `rescue_therapy`/
+  `background_therapy` content sitting directly in CT.gov's own free-text `eligibilityCriteria`
+  field — cheap to check (one API call, no PDF) and worth running before writing off a
+  no-document trial as a complete dead end.** Batch-checked all 50 no-document gap trials'
+  eligibility text this cycle for rescue/background keywords: 3 of 4 hits were false leads (an
+  eligibility exclusion mentioning "topical corticosteroids" or "concomitant medication" as a
+  *disqualifying* criterion, not a description of the trial's own background/rescue design), but
+  Head Lice (NCT02060903, Abametapir) had a real one — exclusion criteria 2-3 state subjects may
+  not use other lice treatment or a lice comb "unless provided as rescue therapy to this
+  Protocol," confirming rescue therapy is a real, permitted part of this trial's design. The
+  actual composition/trigger/timing isn't stated anywhere reachable (no protocol posted), so the
+  field was filled as a genuine partial fact (`permitted: true`, every compositional sub-field
+  left null, `rationale` quoting the real text and stating plainly what still isn't known) rather
+  than left at `needs_extraction` (which would incorrectly imply nothing at all is known) or
+  over-filled with a guessed composition.
+- **After 3 cycles of increasingly wide re-checking (narrow keyword search, then broadened
+  keywords with amendment-history verification, then CT.gov eligibility-text as a document-free
+  fallback), the `background_therapy`/`multiplicity_control`/`study_schedule`/`rescue_therapy`
+  backlog is at a genuine, real stopping point, not a paused-for-time one.** Every one of the 19
+  gap trials confirmed to have a posted protocol/SAP document was individually re-read this cycle
+  with a wide keyword net (see the "fixed-sequence method" and "escape arm" notes above) and its
+  remaining gap confirmed as the document's real, stated position, not an extraction miss. The
+  other ~49 gap trials have no document on CT.gov at all, and a fresh eligibility-text sweep found
+  only one more real (if partial) fact to add. The only remaining path to close more of this
+  backlog for real is the paywalled-publication research effort AGENTS.md already documents as
+  out-of-scope for every indication past the original 5-drug AD pass — not a re-run of the same
+  CT.gov/protocol-PDF method, which has now been applied as thoroughly as the available sources
+  allow.
 
 ## Maintaining this file
 
