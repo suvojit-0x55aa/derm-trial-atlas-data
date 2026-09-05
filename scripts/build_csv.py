@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Flatten every data/trials/<NCT_ID>.json (schema v2) into repo-root CSVs:
+Flatten every data/trials/<NCT_ID>.json (schema v3) into repo-root CSVs:
 
   trials.csv             one row per trial, one column per sourced field
                          (structured values are JSON-encoded in the cell)
@@ -13,6 +13,12 @@ Flatten every data/trials/<NCT_ID>.json (schema v2) into repo-root CSVs:
                          "EASI-75 at week 16" query is a filter, not a parse
   severity_criteria.csv  one row per baseline-severity ScoreCriterion
   adverse_event_rates.csv one row per (trial, arm, measure) safety rate
+  arm_results.csv        one row per endpoint x timepoint x arm CT.gov results
+                         measurement; keyed on nct_id + endpoint_rank +
+                         endpoint_position to join endpoints.csv's rank/position
+  effect_estimates.csv   one row per endpoint x timepoint x pairwise arm
+                         comparison; same nct_id/endpoint_rank/endpoint_position
+                         join key as arm_results.csv
 
 Run:
     python3 scripts/build_csv.py
@@ -55,6 +61,51 @@ def write_csv(path, fieldnames, rows):
     print(f"Wrote {path} ({len(rows)} rows, {len(fieldnames)} columns)")
 
 
+def _timepoint_cell(tp):
+    if not tp:
+        return None
+    return f"{tp['value']}{'-' + str(tp['end_value']) if tp.get('end_value') else ''}{tp['unit'][0]}"
+
+
+def arm_result_rows(nct, drug, trial_name, results):
+    rows = []
+    for r in results["arm_results"]["value"] or []:
+        ep = r["endpoint"]
+        rows.append({
+            "nct_id": nct, "drug": drug, "trial_name": trial_name,
+            "endpoint_rank": ep["rank"], "endpoint_position": ep["position"], "endpoint_verbatim_sha1": ep["verbatim_sha1"],
+            "arm_id": r["arm_id"], "timepoint": _timepoint_cell(r["timepoint"]),
+            "analysis_population": r["analysis_population"], "study_period": r["study_period"],
+            "denominator": r["denominator"], "value_type": r["value_type"],
+            "reported_value": r["reported_value"], "reported_unit": r["reported_unit"],
+            "responders": r["responders"], "response_rate_pct": r["response_rate_pct"],
+            "rate_is_derived": r["rate_is_derived"], "dispersion_type": r["dispersion_type"],
+            "dispersion_value": r["dispersion_value"], "ci_pct": r["ci_pct"], "ci_lower": r["ci_lower"],
+            "ci_upper": r["ci_upper"], "ctgov_class_title": r["ctgov_class_title"],
+        })
+    return rows
+
+
+def effect_estimate_rows(nct, drug, trial_name, results):
+    rows = []
+    for r in results["effect_estimates"]["value"] or []:
+        ep = r["endpoint"]
+        pv = r["p_value"]
+        rows.append({
+            "nct_id": nct, "drug": drug, "trial_name": trial_name,
+            "endpoint_rank": ep["rank"], "endpoint_position": ep["position"], "endpoint_verbatim_sha1": ep["verbatim_sha1"],
+            "timepoint": _timepoint_cell(r["timepoint"]),
+            "test_arm_id": r["test_arm_id"], "reference_arm_id": r["reference_arm_id"],
+            "comparison_kind": r["comparison_kind"], "effect_type": r["effect_type"],
+            "effect_type_verbatim": r["effect_type_verbatim"], "effect_value": r["effect_value"],
+            "ci_pct": r["ci_pct"], "ci_lower": r["ci_lower"], "ci_upper": r["ci_upper"], "ci_sides": r["ci_sides"],
+            "p_value_comparator": pv["comparator"] if pv else None, "p_value": pv["value"] if pv else None,
+            "p_value_verbatim": pv["verbatim"] if pv else None,
+            "statistical_method": r["statistical_method"], "adjusted_for": ";".join(r["adjusted_for"]),
+        })
+    return rows
+
+
 def endpoint_rows(nct, drug, trial_name, endpoints):
     rows = []
     for ep in endpoints:
@@ -82,11 +133,11 @@ def main():
         raise SystemExit(f"No trial files found in {TRIALS_DIR}")
 
     trial_rows, field_order, seen, source_rows = [], [], set(), []
-    ep_rows, sev_rows, ae_rows = [], [], []
+    ep_rows, sev_rows, ae_rows, arm_result_csv_rows, effect_estimate_csv_rows = [], [], [], [], []
     for f in trial_files:
         record = json.loads(f.read_text())
-        if record.get("schema_version") != 2:
-            raise SystemExit(f"{f.name} is not schema v2 -- run scripts/migrate_v1_to_v2.py first")
+        if record.get("schema_version") != 3:
+            raise SystemExit(f"{f.name} is not schema v3 -- run atlas.migrate.migrate_v2_to_v3 first")
         nct = record["nct_id"]["value"]
         drug = record["molecule"]["drug"]["value"]
         trial_name = record["identity"]["trial_name"]["value"]
@@ -117,6 +168,9 @@ def main():
                 ae_rows.append({"nct_id": nct, "drug": drug, "trial_name": trial_name, "measure": "most_common_adverse_events",
                                 "arm": r["arm"], "n_affected": r["n_affected"], "n_at_risk": r["n_at_risk"], "pct": r["pct"],
                                 "meddra_pt": term["meddra_pt"], "meddra_soc": term["meddra_soc"]})
+        results = record["results"]
+        arm_result_csv_rows.extend(arm_result_rows(nct, drug, trial_name, results))
+        effect_estimate_csv_rows.extend(effect_estimate_rows(nct, drug, trial_name, results))
 
     write_csv(ROOT / "trials.csv", ["nct_id_file", "schema_version"] + field_order, trial_rows)
     write_csv(ROOT / "sources.csv", ["nct_id", "field", "source_type", "source_url", "source_excerpt", "extracted_by", "reviewed_by", "confidence"], source_rows)
@@ -126,6 +180,16 @@ def main():
     write_csv(ROOT / "endpoints.csv", ep_cols, ep_rows)
     write_csv(ROOT / "severity_criteria.csv", ["nct_id", "drug", "trial_name", "criterion_index", "severity_label", "basis"] + CRITERION_COLS + ["scale_anchors"], sev_rows)
     write_csv(ROOT / "adverse_event_rates.csv", ["nct_id", "drug", "trial_name", "measure", "arm", "meddra_pt", "meddra_soc", "n_affected", "n_at_risk", "pct"], ae_rows)
+    arm_result_cols = ["nct_id", "drug", "trial_name", "endpoint_rank", "endpoint_position", "endpoint_verbatim_sha1",
+                        "arm_id", "timepoint", "analysis_population", "study_period", "denominator", "value_type",
+                        "reported_value", "reported_unit", "responders", "response_rate_pct", "rate_is_derived",
+                        "dispersion_type", "dispersion_value", "ci_pct", "ci_lower", "ci_upper", "ctgov_class_title"]
+    write_csv(ROOT / "arm_results.csv", arm_result_cols, arm_result_csv_rows)
+    effect_estimate_cols = ["nct_id", "drug", "trial_name", "endpoint_rank", "endpoint_position", "endpoint_verbatim_sha1",
+                             "timepoint", "test_arm_id", "reference_arm_id", "comparison_kind", "effect_type",
+                             "effect_type_verbatim", "effect_value", "ci_pct", "ci_lower", "ci_upper", "ci_sides",
+                             "p_value_comparator", "p_value", "p_value_verbatim", "statistical_method", "adjusted_for"]
+    write_csv(ROOT / "effect_estimates.csv", effect_estimate_cols, effect_estimate_csv_rows)
 
 
 if __name__ == "__main__":

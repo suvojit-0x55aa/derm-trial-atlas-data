@@ -22,13 +22,14 @@ compared against the committed v2 record (data/trials/):
                       needs_extraction in v2 (renamed, never invented), and
                       the only new gaps are the three source placeholders
 """
+import copy
 import json
 import re
 import unittest
 from pathlib import Path
 
 from atlas.criteria import SCALE_PATTERNS
-from atlas.migrate import RENAMES, migrate_trial
+from atlas.migrate import RENAMES, migrate_trial, migrate_v2_to_v3
 from atlas.scalars import parse_age_years, parse_ctgov_date
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -254,11 +255,54 @@ class LosslessMigrationTest(unittest.TestCase):
             self.assertEqual(v2["real_world_safety"]["faers_summary"]["source_type"], "openfda_faers", nct)
 
     def test_field_count(self):
-        # 17 trials x 35 v1 fields = 595 sourced values, all still present (renamed) plus 4 new ones per trial
+        # 17 trials x 35 v1 fields = 595 sourced values, all still present (renamed),
+        # plus 4 new v2 fields (real_world_safety.faers_summary, exclusivity.*) and,
+        # since migrate_trial chains straight through to the current schema version,
+        # 4 more new v3 fields (results.*) per trial.
         v1_total = sum(len(list(sourced_fields(v1))) for _, v1, _ in self.pairs)
         v2_total = sum(len(list(sourced_fields(v2))) for _, _, v2 in self.pairs)
         self.assertEqual(v1_total, 595)
-        self.assertEqual(v2_total, 595 + 17 * 4)
+        self.assertEqual(v2_total, 595 + 17 * 4 + 17 * 4)
+
+
+class V2ToV3MigrationTest(unittest.TestCase):
+    """migrate_v2_to_v3 is a pure no-op: it adds exactly one new field group
+    (results) and bumps schema_version; every existing v2 value, including
+    nested objects, is untouched (proven by round-tripping a real committed
+    v2-shaped record with the new group stripped back off)."""
+
+    def v2_shaped(self, v3_record):
+        v2 = copy.deepcopy(v3_record)
+        v2["schema_version"] = 2
+        del v2["results"]
+        return v2
+
+    def test_adds_exactly_one_group_and_bumps_version(self):
+        for f in sorted((ROOT / "data" / "trials").glob("*.json")):
+            v3 = json.loads(f.read_text())
+            v2 = self.v2_shaped(v3)
+            with self.subTest(nct=v2["nct_id"]["value"]):
+                migrated = migrate_v2_to_v3(v2)
+                self.assertEqual(migrated["schema_version"], 3)
+                self.assertEqual(set(migrated) - set(v2), {"results"})
+                for group, fields in v2.items():
+                    if group == "schema_version":
+                        continue
+                    self.assertEqual(migrated[group], fields, f"{group} changed by v2->v3")
+
+    def test_new_fields_are_needs_extraction_placeholders(self):
+        v2 = self.v2_shaped(json.loads((ROOT / "data" / "trials" / "NCT02277743.json").read_text()))
+        migrated = migrate_v2_to_v3(v2)
+        for key in ("arms", "arm_results", "effect_estimates", "published_results"):
+            sv = migrated["results"][key]
+            self.assertEqual(sv["source_type"], "needs_extraction")
+            self.assertIsNone(sv["value"])
+
+    def test_idempotent_on_value(self):
+        # applying it twice to the same v2 input produces the same result
+        # (pure function, no hidden state / timestamps in the placeholder).
+        v2 = self.v2_shaped(json.loads((ROOT / "data" / "trials" / "NCT02277743.json").read_text()))
+        self.assertEqual(migrate_v2_to_v3(v2), migrate_v2_to_v3(v2))
 
 
 if __name__ == "__main__":

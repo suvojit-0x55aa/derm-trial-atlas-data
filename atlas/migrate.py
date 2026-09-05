@@ -1,7 +1,7 @@
 """
-v1 -> v2 migration of a trial record (data/trials/<NCT_ID>.json).
+v1 -> v2 -> v3 migration of a trial record (data/trials/<NCT_ID>.json).
 
-Rules:
+v1 -> v2 rules:
   * every v1 sourced value keeps its provenance envelope; only `value` changes
     shape, `extracted_by` gets a "; structured by atlas.migrate v1->v2" suffix
     on the fields whose value was restructured, and -- where the v1 value was
@@ -14,11 +14,21 @@ Rules:
     atlas/regulatory_applications.py (the NDA/BLA join key the scale-out task
     needs before it can write Orange/Purple Book data).
 
-`migrate_trial` is pure (dict in, dict out) so tests can run it on fixtures.
+v2 -> v3 rule: pure no-op. Adds the `results` field group (arms/arm_results/
+effect_estimates/published_results) as needs_extraction placeholders. No
+existing v2 value is touched -- see `migrate_v2_to_v3`.
+
+`migrate_trial` (v1 -> current) and `migrate_v2_to_v3` are both pure
+(dict in, dict out) so tests can run them on fixtures. `migrate_trial`
+chains straight through to the current schema version -- it does not stop
+at v2 -- so a fresh v1 fetch never needs a second migration pass.
 """
 import copy
 
 from . import SCHEMA_VERSION
+
+V2_SCHEMA_VERSION = 2  # what migrate_trial's own v1->v2 restructuring stage produces,
+                       # independent of the current overall SCHEMA_VERSION (3)
 from .curated_background import BACKGROUND_THERAPY
 from .curated_multiplicity import MULTIPLICITY_CONTROL
 from .curated_rescue import RESCUE_THERAPY
@@ -98,15 +108,31 @@ def _ae_terms(sv):
     return restructure(sv, rows)
 
 
+def migrate_v2_to_v3(v2: dict) -> dict:
+    """Pure no-op v2 -> v3 upgrade: adds the `results` field group as
+    needs_extraction placeholders. No existing v2 value is touched, so this
+    is trivially lossless (unlike v1->v2, nothing here needs restructuring --
+    v3 only adds new fields, it renames or reshapes none of v2's)."""
+    out = copy.deepcopy(v2)
+    out["schema_version"] = SCHEMA_VERSION
+    out["results"] = {
+        "arms": needs_extraction(),
+        "arm_results": needs_extraction(),
+        "effect_estimates": needs_extraction(),
+        "published_results": needs_extraction(),
+    }
+    return out
+
+
 def migrate_trial(v1: dict) -> dict:
-    if v1.get("schema_version") == SCHEMA_VERSION:
+    if v1.get("schema_version") in (V2_SCHEMA_VERSION, SCHEMA_VERSION):
         raise AlreadyMigrated(v1["nct_id"]["value"])
     nct = v1["nct_id"]["value"]
     idn, mol, pop, des, end, tim, ae = (v1[g] for g in ("identity", "molecule", "population", "design", "endpoints", "timing_ops", "adverse_events"))
     drug = mol["drug"]["value"]
 
     out = {
-        "schema_version": SCHEMA_VERSION,
+        "schema_version": V2_SCHEMA_VERSION,
         "nct_id": copy.deepcopy(v1["nct_id"]),
         "identity": copy.deepcopy(idn),
         "molecule": {
@@ -160,4 +186,4 @@ def migrate_trial(v1: dict) -> dict:
     bw = out["adverse_events"]["boxed_warning"]
     if ae["boxed_warning"]["value"] is None and ae["boxed_warning"]["source_type"] == "openfda_label":
         bw["extracted_by"] = f"{ae['boxed_warning'].get('extracted_by')}; structured by {MIGRATOR}"
-    return out
+    return migrate_v2_to_v3(out)

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Render the v2 schema (atlas/schema.py, the single source of truth) into the
+Render the v3 schema (atlas/schema.py, the single source of truth) into the
 two committed artefacts consumers read:
 
     schema/trial.schema.json   JSON Schema draft-07 of one trial record
@@ -34,6 +34,8 @@ NAMED_TYPES = [
     ("AdverseEventTerm", S.AE_TERM), ("BoxedWarning", S.BOXED_WARNING), ("PartialDate", S.DATE_P),
     ("FaersSummary", S.FAERS_SUMMARY), ("ReactionRow", S.REACTION_ROW), ("OrangeBookRecord", S.ORANGE_BOOK),
     ("PurpleBookRecord", S.PURPLE_BOOK), ("RegulatoryApplication", S.REG_APP),
+    ("EndpointKey", S.ENDPOINT_KEY), ("PValue", S.PVALUE), ("Arm", S.ARM),
+    ("ArmResult", S.ARM_RESULT), ("EffectEstimate", S.EFFECT_ESTIMATE),
 ]
 NAME_OF = {id(spec["properties"]): name for name, spec in NAMED_TYPES}
 
@@ -57,7 +59,7 @@ def type_name(spec):
 
 def render_md():
     lines = [
-        "# Open Derm Trial Atlas -- schema v2 (field reference)",
+        "# Open Derm Trial Atlas -- schema v3 (field reference)",
         "",
         "Generated from `atlas/schema.py` by `scripts/export_schema.py`; do not edit by hand.",
         "The machine-readable form is `schema/trial.schema.json`.",
@@ -84,7 +86,7 @@ def render_md():
     for path, spec, desc in S.FIELD_DOCS:
         v1 = inverse.get(path, "")
         lines.append(f"| `{path}` | {type_name(spec)} | {desc or ''} | {('`' + v1 + '`') if v1 else ''} |")
-    lines += ["", "Plus the top-level literal `schema_version: 2`.", ""]
+    lines += ["", "Plus the top-level literal `schema_version: 3`.", ""]
     for name, spec in NAMED_TYPES:
         lines += [f"## {name}", ""]
         if spec.get("description"):

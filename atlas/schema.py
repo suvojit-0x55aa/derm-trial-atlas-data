@@ -1,5 +1,5 @@
 """
-The v2 trial-record schema: one declarative spec, used three ways --
+The v3 trial-record schema: one declarative spec, used three ways --
 
   * validate(record)      -> list of "path: problem" strings (empty = valid)
   * to_json_schema()      -> JSON Schema (draft-07) for external consumers
@@ -260,9 +260,95 @@ REG_APP = OBJ({
 })
 
 
+# ---- results layer (schema v3) --------------------------------------------------
+# CT.gov's outcome-measure paramType IS a controlled vocabulary -- reuse it verbatim.
+VALUE_TYPES = ("number", "count_of_participants", "mean", "least_squares_mean",
+               "median", "geometric_mean")
+DISPERSION_TYPES = ("standard_deviation", "standard_error", "confidence_interval",
+                     "inter_quartile_range", "full_range", "geometric_cv")
+# CT.gov's analyses[].paramType is NOT controlled: 62 raw spellings -> these 8 (99.8%
+# of rows); effect_type is null (with the raw string kept in effect_type_verbatim)
+# for the remainder rather than force-fit a wrong bucket.
+EFFECT_TYPES = ("response_rate_difference", "ls_mean_difference", "mean_difference",
+                "median_difference", "odds_ratio", "risk_ratio", "risk_difference",
+                "hazard_ratio")
+ARM_ROLES = ("investigational", "placebo", "vehicle", "active_comparator", "other")
+COMPARISON_KINDS = ("superiority", "non_inferiority", "equivalence", "other")
+
+# A pointer INTO endpoints.{primary,secondary}_endpoints -- never a re-description.
+# Endpoint is already a rich, typed, 99.9%-joinable object (scale, responder_criteria,
+# timepoints, measure_type, analysis_population); duplicating any of that into a
+# results row would create two sources of truth for "what is EASI-75" and guarantee
+# drift. verbatim_sha1 guards the join against exactly the kind of silent position
+# shift phase 1 of this same effort found and fixed (missing co-primaries changed
+# every endpoint's position after them).
+ENDPOINT_KEY = OBJ({
+    "rank": ENUM(["primary", "secondary"]),
+    "position": INT(),
+    "verbatim_sha1": STR(False, "sha1 hex digest of the referenced endpoint's verbatim; "
+                                "guards the join against a silent position shift"),
+}, d="Reference to endpoints.<rank>_endpoints[position-1]; never re-describes the endpoint")
+
+# A p-value is an inequality bound 61% of the time (e.g. "< 0.0001"). Never a bare
+# float -- that would either drop the majority of values or silently coerce a bound
+# into a point estimate.
+PVALUE = OBJ({
+    "comparator": ENUM(["<", "<=", "=", ">", ">="]),
+    "value": NUM(),
+    "verbatim": STR(False, "CT.gov pValue string exactly as posted, e.g. '< 0.0001'"),
+}, d="P-value as bound + value; reuses the ScoreCriterion comparator idiom")
+
+ARM = OBJ({
+    "arm_id": STR(False, "CT.gov results group id (OG000); unique within this trial"),
+    "label": STR(False, "CT.gov results group title, verbatim"),
+    "role": ENUM(ARM_ROLES, d="curated; CT.gov armGroups[].type is unreliable -- a trial can "
+                              "label its own placebo arm EXPERIMENTAL"),
+    "intervention_names": LIST(STR(), d="join to molecule.dosing_regimen[].intervention_name"),
+    "dose_value": NUM(True), "dose_unit": STR(True),
+    "frequency": ENUM(FREQUENCIES, True),
+    "randomized_n": INT(True),
+}, d="One CT.gov results group (arm), role-classified")
+
+ARM_RESULT = OBJ({
+    "endpoint": ENDPOINT_KEY,
+    "arm_id": STR(),
+    "timepoint": {**TIMEPOINT, "nullable": True},
+    "analysis_population": ENUM(POPULATIONS, True),
+    "study_period": ENUM(STUDY_PERIODS, True),
+    "denominator": INT(True, "participants analyzed in this arm for this measure"),
+    "value_type": ENUM(VALUE_TYPES),
+    "reported_value": NUM(False, "the number CT.gov posted, untouched"),
+    "reported_unit": STR(True, "CT.gov unitOfMeasure verbatim (4 casings exist in the corpus -- "
+                               "do not parse it, use value_type to disambiguate count vs. rate)"),
+    "responders": INT(True, "count; null when the source posted only a rate, never back-computed"),
+    "response_rate_pct": NUM(True, "0-100; null unless the measure is a responder rate"),
+    "rate_is_derived": BOOL(False, "true when response_rate_pct was computed as "
+                                   "responders/denominator rather than posted directly"),
+    "dispersion_type": ENUM(DISPERSION_TYPES, True),
+    "dispersion_value": NUM(True),
+    "ci_pct": NUM(True), "ci_lower": NUM(True), "ci_upper": NUM(True),
+    "ctgov_class_title": STR(True, "the classes[].title the timepoint was parsed from, e.g. "
+                                   "'Week 16' -- provenance for the timepoint binding"),
+}, d="One row per endpoint x timepoint x arm (a CT.gov results measurement)")
+
+EFFECT_ESTIMATE = OBJ({
+    "endpoint": ENDPOINT_KEY,
+    "timepoint": {**TIMEPOINT, "nullable": True},
+    "test_arm_id": STR(), "reference_arm_id": STR(),
+    "comparison_kind": ENUM(COMPARISON_KINDS, True),
+    "effect_type": ENUM(EFFECT_TYPES, True, "null when the raw label maps to none of the 8 canonical types"),
+    "effect_type_verbatim": STR(True, "CT.gov analyses[].paramType, unchanged"),
+    "effect_value": NUM(True),
+    "ci_pct": NUM(True), "ci_lower": NUM(True), "ci_upper": NUM(True), "ci_sides": INT(True),
+    "p_value": {**PVALUE, "nullable": True},
+    "statistical_method": STR(True, "CT.gov statisticalMethod, e.g. 'Cochran-Mantel-Haenszel'"),
+    "adjusted_for": LIST(STR(), d="stratification factors parsed from groupDescription"),
+}, d="One row per endpoint x timepoint x pairwise arm comparison (a CT.gov analysis)")
+
+
 # ---- the trial record ----------------------------------------------------------
 TRIAL = OBJ({
-    "schema_version": S("integer", False, "always 2", const=SCHEMA_VERSION),
+    "schema_version": S("integer", False, "always 3", const=SCHEMA_VERSION),
     "nct_id": SV(STR(), "ClinicalTrials.gov identifier"),
     "identity": OBJ({
         "trial_name": SV(STR(), "CT.gov acronym (null when the registry has none)"),
@@ -319,6 +405,14 @@ TRIAL = OBJ({
         "regulatory_application": SV(REG_APP, "NDA/BLA join key for Orange/Purple Book (drug-level)"),
         "orange_book": SV(ORANGE_BOOK, "Orange Book patents + exclusivities (small-molecule NDAs only)"),
         "purple_book": SV(PURPLE_BOOK, "Purple Book licensure + BPCIA exclusivity (biologic BLAs only)"),
+    }),
+    "results": OBJ({
+        "arms": SV(LIST(ARM), "per-trial arm registry from CT.gov results groups, role-classified"),
+        "arm_results": SV(LIST(ARM_RESULT), "one row per endpoint x timepoint x arm (CT.gov results)"),
+        "effect_estimates": SV(LIST(EFFECT_ESTIMATE), "one row per endpoint x timepoint x pairwise comparison"),
+        "published_results": SV(LIST(ARM_RESULT), "same shape as arm_results, publication/label sourced; "
+                                 "NEVER mixed with arm_results -- keeps registry-grade CT.gov numbers and "
+                                 "literature-grade numbers separable at the field level"),
     }),
 })
 

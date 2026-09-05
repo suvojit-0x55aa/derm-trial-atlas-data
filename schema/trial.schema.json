@@ -6,8 +6,8 @@
   "properties": {
     "schema_version": {
       "type": "integer",
-      "const": 2,
-      "description": "always 2"
+      "const": 3,
+      "description": "always 3"
     },
     "nct_id": {
       "type": "object",
@@ -9153,6 +9153,1242 @@
         "orange_book",
         "purple_book"
       ]
+    },
+    "results": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "arms": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "value": {
+              "anyOf": [
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "arm_id": {
+                        "type": "string",
+                        "description": "CT.gov results group id (OG000); unique within this trial"
+                      },
+                      "label": {
+                        "type": "string",
+                        "description": "CT.gov results group title, verbatim"
+                      },
+                      "role": {
+                        "type": "string",
+                        "enum": [
+                          "investigational",
+                          "placebo",
+                          "vehicle",
+                          "active_comparator",
+                          "other"
+                        ],
+                        "description": "curated; CT.gov armGroups[].type is unreliable -- a trial can label its own placebo arm EXPERIMENTAL"
+                      },
+                      "intervention_names": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        },
+                        "description": "join to molecule.dosing_regimen[].intervention_name"
+                      },
+                      "dose_value": {
+                        "anyOf": [
+                          {
+                            "type": "number"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      },
+                      "dose_unit": {
+                        "anyOf": [
+                          {
+                            "type": "string"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      },
+                      "frequency": {
+                        "anyOf": [
+                          {
+                            "type": "string",
+                            "enum": [
+                              "once_daily",
+                              "twice_daily",
+                              "weekly",
+                              "every_2_weeks",
+                              "every_4_weeks"
+                            ]
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      },
+                      "randomized_n": {
+                        "anyOf": [
+                          {
+                            "type": "integer"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      }
+                    },
+                    "required": [
+                      "arm_id",
+                      "label",
+                      "role",
+                      "intervention_names",
+                      "dose_value",
+                      "dose_unit",
+                      "frequency",
+                      "randomized_n"
+                    ],
+                    "description": "One CT.gov results group (arm), role-classified"
+                  }
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "source_type": {
+              "type": "string",
+              "enum": [
+                "ctgov_api",
+                "ctgov_text_extraction",
+                "protocol_pdf_extraction",
+                "publication_extraction",
+                "openfda_label",
+                "openfda_faers",
+                "orange_book",
+                "purple_book",
+                "needs_extraction"
+              ]
+            },
+            "source_url": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "source_excerpt": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "extracted_by": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "reviewed_by": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "confidence": {
+              "anyOf": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "value",
+            "source_type",
+            "source_url",
+            "source_excerpt",
+            "extracted_by",
+            "reviewed_by",
+            "confidence"
+          ],
+          "description": "per-trial arm registry from CT.gov results groups, role-classified"
+        },
+        "arm_results": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "value": {
+              "anyOf": [
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "endpoint": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                          "rank": {
+                            "type": "string",
+                            "enum": [
+                              "primary",
+                              "secondary"
+                            ]
+                          },
+                          "position": {
+                            "type": "integer"
+                          },
+                          "verbatim_sha1": {
+                            "type": "string",
+                            "description": "sha1 hex digest of the referenced endpoint's verbatim; guards the join against a silent position shift"
+                          }
+                        },
+                        "required": [
+                          "rank",
+                          "position",
+                          "verbatim_sha1"
+                        ],
+                        "description": "Reference to endpoints.<rank>_endpoints[position-1]; never re-describes the endpoint"
+                      },
+                      "arm_id": {
+                        "type": "string"
+                      },
+                      "timepoint": {
+                        "anyOf": [
+                          {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "properties": {
+                              "value": {
+                                "type": "integer"
+                              },
+                              "unit": {
+                                "type": "string",
+                                "enum": [
+                                  "week",
+                                  "day"
+                                ]
+                              },
+                              "end_value": {
+                                "anyOf": [
+                                  {
+                                    "type": "integer"
+                                  },
+                                  {
+                                    "type": "null"
+                                  }
+                                ]
+                              }
+                            },
+                            "required": [
+                              "value",
+                              "unit",
+                              "end_value"
+                            ]
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      },
+                      "analysis_population": {
+                        "anyOf": [
+                          {
+                            "type": "string",
+                            "enum": [
+                              "main_study",
+                              "adolescents",
+                              "adults",
+                              "pediatrics",
+                              "full_analysis_set",
+                              "per_protocol",
+                              "prior_cyclosporine_use",
+                              "comorbid_asthma",
+                              "re_randomized_responders",
+                              "initially_randomized_to_active"
+                            ]
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      },
+                      "study_period": {
+                        "anyOf": [
+                          {
+                            "type": "string",
+                            "enum": [
+                              "double_blind",
+                              "rescue",
+                              "maintenance",
+                              "treatment_period"
+                            ]
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      },
+                      "denominator": {
+                        "anyOf": [
+                          {
+                            "type": "integer"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ],
+                        "description": "participants analyzed in this arm for this measure"
+                      },
+                      "value_type": {
+                        "type": "string",
+                        "enum": [
+                          "number",
+                          "count_of_participants",
+                          "mean",
+                          "least_squares_mean",
+                          "median",
+                          "geometric_mean"
+                        ]
+                      },
+                      "reported_value": {
+                        "type": "number",
+                        "description": "the number CT.gov posted, untouched"
+                      },
+                      "reported_unit": {
+                        "anyOf": [
+                          {
+                            "type": "string"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ],
+                        "description": "CT.gov unitOfMeasure verbatim (4 casings exist in the corpus -- do not parse it, use value_type to disambiguate count vs. rate)"
+                      },
+                      "responders": {
+                        "anyOf": [
+                          {
+                            "type": "integer"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ],
+                        "description": "count; null when the source posted only a rate, never back-computed"
+                      },
+                      "response_rate_pct": {
+                        "anyOf": [
+                          {
+                            "type": "number"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ],
+                        "description": "0-100; null unless the measure is a responder rate"
+                      },
+                      "rate_is_derived": {
+                        "type": "boolean",
+                        "description": "true when response_rate_pct was computed as responders/denominator rather than posted directly"
+                      },
+                      "dispersion_type": {
+                        "anyOf": [
+                          {
+                            "type": "string",
+                            "enum": [
+                              "standard_deviation",
+                              "standard_error",
+                              "confidence_interval",
+                              "inter_quartile_range",
+                              "full_range",
+                              "geometric_cv"
+                            ]
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      },
+                      "dispersion_value": {
+                        "anyOf": [
+                          {
+                            "type": "number"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      },
+                      "ci_pct": {
+                        "anyOf": [
+                          {
+                            "type": "number"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      },
+                      "ci_lower": {
+                        "anyOf": [
+                          {
+                            "type": "number"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      },
+                      "ci_upper": {
+                        "anyOf": [
+                          {
+                            "type": "number"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      },
+                      "ctgov_class_title": {
+                        "anyOf": [
+                          {
+                            "type": "string"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ],
+                        "description": "the classes[].title the timepoint was parsed from, e.g. 'Week 16' -- provenance for the timepoint binding"
+                      }
+                    },
+                    "required": [
+                      "endpoint",
+                      "arm_id",
+                      "timepoint",
+                      "analysis_population",
+                      "study_period",
+                      "denominator",
+                      "value_type",
+                      "reported_value",
+                      "reported_unit",
+                      "responders",
+                      "response_rate_pct",
+                      "rate_is_derived",
+                      "dispersion_type",
+                      "dispersion_value",
+                      "ci_pct",
+                      "ci_lower",
+                      "ci_upper",
+                      "ctgov_class_title"
+                    ],
+                    "description": "One row per endpoint x timepoint x arm (a CT.gov results measurement)"
+                  }
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "source_type": {
+              "type": "string",
+              "enum": [
+                "ctgov_api",
+                "ctgov_text_extraction",
+                "protocol_pdf_extraction",
+                "publication_extraction",
+                "openfda_label",
+                "openfda_faers",
+                "orange_book",
+                "purple_book",
+                "needs_extraction"
+              ]
+            },
+            "source_url": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "source_excerpt": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "extracted_by": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "reviewed_by": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "confidence": {
+              "anyOf": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "value",
+            "source_type",
+            "source_url",
+            "source_excerpt",
+            "extracted_by",
+            "reviewed_by",
+            "confidence"
+          ],
+          "description": "one row per endpoint x timepoint x arm (CT.gov results)"
+        },
+        "effect_estimates": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "value": {
+              "anyOf": [
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "endpoint": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                          "rank": {
+                            "type": "string",
+                            "enum": [
+                              "primary",
+                              "secondary"
+                            ]
+                          },
+                          "position": {
+                            "type": "integer"
+                          },
+                          "verbatim_sha1": {
+                            "type": "string",
+                            "description": "sha1 hex digest of the referenced endpoint's verbatim; guards the join against a silent position shift"
+                          }
+                        },
+                        "required": [
+                          "rank",
+                          "position",
+                          "verbatim_sha1"
+                        ],
+                        "description": "Reference to endpoints.<rank>_endpoints[position-1]; never re-describes the endpoint"
+                      },
+                      "timepoint": {
+                        "anyOf": [
+                          {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "properties": {
+                              "value": {
+                                "type": "integer"
+                              },
+                              "unit": {
+                                "type": "string",
+                                "enum": [
+                                  "week",
+                                  "day"
+                                ]
+                              },
+                              "end_value": {
+                                "anyOf": [
+                                  {
+                                    "type": "integer"
+                                  },
+                                  {
+                                    "type": "null"
+                                  }
+                                ]
+                              }
+                            },
+                            "required": [
+                              "value",
+                              "unit",
+                              "end_value"
+                            ]
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      },
+                      "test_arm_id": {
+                        "type": "string"
+                      },
+                      "reference_arm_id": {
+                        "type": "string"
+                      },
+                      "comparison_kind": {
+                        "anyOf": [
+                          {
+                            "type": "string",
+                            "enum": [
+                              "superiority",
+                              "non_inferiority",
+                              "equivalence",
+                              "other"
+                            ]
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      },
+                      "effect_type": {
+                        "anyOf": [
+                          {
+                            "type": "string",
+                            "enum": [
+                              "response_rate_difference",
+                              "ls_mean_difference",
+                              "mean_difference",
+                              "median_difference",
+                              "odds_ratio",
+                              "risk_ratio",
+                              "risk_difference",
+                              "hazard_ratio"
+                            ]
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ],
+                        "description": "null when the raw label maps to none of the 8 canonical types"
+                      },
+                      "effect_type_verbatim": {
+                        "anyOf": [
+                          {
+                            "type": "string"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ],
+                        "description": "CT.gov analyses[].paramType, unchanged"
+                      },
+                      "effect_value": {
+                        "anyOf": [
+                          {
+                            "type": "number"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      },
+                      "ci_pct": {
+                        "anyOf": [
+                          {
+                            "type": "number"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      },
+                      "ci_lower": {
+                        "anyOf": [
+                          {
+                            "type": "number"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      },
+                      "ci_upper": {
+                        "anyOf": [
+                          {
+                            "type": "number"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      },
+                      "ci_sides": {
+                        "anyOf": [
+                          {
+                            "type": "integer"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      },
+                      "p_value": {
+                        "anyOf": [
+                          {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "properties": {
+                              "comparator": {
+                                "type": "string",
+                                "enum": [
+                                  "<",
+                                  "<=",
+                                  "=",
+                                  ">",
+                                  ">="
+                                ]
+                              },
+                              "value": {
+                                "type": "number"
+                              },
+                              "verbatim": {
+                                "type": "string",
+                                "description": "CT.gov pValue string exactly as posted, e.g. '< 0.0001'"
+                              }
+                            },
+                            "required": [
+                              "comparator",
+                              "value",
+                              "verbatim"
+                            ]
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ],
+                        "description": "P-value as bound + value; reuses the ScoreCriterion comparator idiom"
+                      },
+                      "statistical_method": {
+                        "anyOf": [
+                          {
+                            "type": "string"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ],
+                        "description": "CT.gov statisticalMethod, e.g. 'Cochran-Mantel-Haenszel'"
+                      },
+                      "adjusted_for": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        },
+                        "description": "stratification factors parsed from groupDescription"
+                      }
+                    },
+                    "required": [
+                      "endpoint",
+                      "timepoint",
+                      "test_arm_id",
+                      "reference_arm_id",
+                      "comparison_kind",
+                      "effect_type",
+                      "effect_type_verbatim",
+                      "effect_value",
+                      "ci_pct",
+                      "ci_lower",
+                      "ci_upper",
+                      "ci_sides",
+                      "p_value",
+                      "statistical_method",
+                      "adjusted_for"
+                    ],
+                    "description": "One row per endpoint x timepoint x pairwise arm comparison (a CT.gov analysis)"
+                  }
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "source_type": {
+              "type": "string",
+              "enum": [
+                "ctgov_api",
+                "ctgov_text_extraction",
+                "protocol_pdf_extraction",
+                "publication_extraction",
+                "openfda_label",
+                "openfda_faers",
+                "orange_book",
+                "purple_book",
+                "needs_extraction"
+              ]
+            },
+            "source_url": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "source_excerpt": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "extracted_by": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "reviewed_by": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "confidence": {
+              "anyOf": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "value",
+            "source_type",
+            "source_url",
+            "source_excerpt",
+            "extracted_by",
+            "reviewed_by",
+            "confidence"
+          ],
+          "description": "one row per endpoint x timepoint x pairwise comparison"
+        },
+        "published_results": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "value": {
+              "anyOf": [
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "endpoint": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                          "rank": {
+                            "type": "string",
+                            "enum": [
+                              "primary",
+                              "secondary"
+                            ]
+                          },
+                          "position": {
+                            "type": "integer"
+                          },
+                          "verbatim_sha1": {
+                            "type": "string",
+                            "description": "sha1 hex digest of the referenced endpoint's verbatim; guards the join against a silent position shift"
+                          }
+                        },
+                        "required": [
+                          "rank",
+                          "position",
+                          "verbatim_sha1"
+                        ],
+                        "description": "Reference to endpoints.<rank>_endpoints[position-1]; never re-describes the endpoint"
+                      },
+                      "arm_id": {
+                        "type": "string"
+                      },
+                      "timepoint": {
+                        "anyOf": [
+                          {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "properties": {
+                              "value": {
+                                "type": "integer"
+                              },
+                              "unit": {
+                                "type": "string",
+                                "enum": [
+                                  "week",
+                                  "day"
+                                ]
+                              },
+                              "end_value": {
+                                "anyOf": [
+                                  {
+                                    "type": "integer"
+                                  },
+                                  {
+                                    "type": "null"
+                                  }
+                                ]
+                              }
+                            },
+                            "required": [
+                              "value",
+                              "unit",
+                              "end_value"
+                            ]
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      },
+                      "analysis_population": {
+                        "anyOf": [
+                          {
+                            "type": "string",
+                            "enum": [
+                              "main_study",
+                              "adolescents",
+                              "adults",
+                              "pediatrics",
+                              "full_analysis_set",
+                              "per_protocol",
+                              "prior_cyclosporine_use",
+                              "comorbid_asthma",
+                              "re_randomized_responders",
+                              "initially_randomized_to_active"
+                            ]
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      },
+                      "study_period": {
+                        "anyOf": [
+                          {
+                            "type": "string",
+                            "enum": [
+                              "double_blind",
+                              "rescue",
+                              "maintenance",
+                              "treatment_period"
+                            ]
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      },
+                      "denominator": {
+                        "anyOf": [
+                          {
+                            "type": "integer"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ],
+                        "description": "participants analyzed in this arm for this measure"
+                      },
+                      "value_type": {
+                        "type": "string",
+                        "enum": [
+                          "number",
+                          "count_of_participants",
+                          "mean",
+                          "least_squares_mean",
+                          "median",
+                          "geometric_mean"
+                        ]
+                      },
+                      "reported_value": {
+                        "type": "number",
+                        "description": "the number CT.gov posted, untouched"
+                      },
+                      "reported_unit": {
+                        "anyOf": [
+                          {
+                            "type": "string"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ],
+                        "description": "CT.gov unitOfMeasure verbatim (4 casings exist in the corpus -- do not parse it, use value_type to disambiguate count vs. rate)"
+                      },
+                      "responders": {
+                        "anyOf": [
+                          {
+                            "type": "integer"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ],
+                        "description": "count; null when the source posted only a rate, never back-computed"
+                      },
+                      "response_rate_pct": {
+                        "anyOf": [
+                          {
+                            "type": "number"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ],
+                        "description": "0-100; null unless the measure is a responder rate"
+                      },
+                      "rate_is_derived": {
+                        "type": "boolean",
+                        "description": "true when response_rate_pct was computed as responders/denominator rather than posted directly"
+                      },
+                      "dispersion_type": {
+                        "anyOf": [
+                          {
+                            "type": "string",
+                            "enum": [
+                              "standard_deviation",
+                              "standard_error",
+                              "confidence_interval",
+                              "inter_quartile_range",
+                              "full_range",
+                              "geometric_cv"
+                            ]
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      },
+                      "dispersion_value": {
+                        "anyOf": [
+                          {
+                            "type": "number"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      },
+                      "ci_pct": {
+                        "anyOf": [
+                          {
+                            "type": "number"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      },
+                      "ci_lower": {
+                        "anyOf": [
+                          {
+                            "type": "number"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      },
+                      "ci_upper": {
+                        "anyOf": [
+                          {
+                            "type": "number"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      },
+                      "ctgov_class_title": {
+                        "anyOf": [
+                          {
+                            "type": "string"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ],
+                        "description": "the classes[].title the timepoint was parsed from, e.g. 'Week 16' -- provenance for the timepoint binding"
+                      }
+                    },
+                    "required": [
+                      "endpoint",
+                      "arm_id",
+                      "timepoint",
+                      "analysis_population",
+                      "study_period",
+                      "denominator",
+                      "value_type",
+                      "reported_value",
+                      "reported_unit",
+                      "responders",
+                      "response_rate_pct",
+                      "rate_is_derived",
+                      "dispersion_type",
+                      "dispersion_value",
+                      "ci_pct",
+                      "ci_lower",
+                      "ci_upper",
+                      "ctgov_class_title"
+                    ],
+                    "description": "One row per endpoint x timepoint x arm (a CT.gov results measurement)"
+                  }
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "source_type": {
+              "type": "string",
+              "enum": [
+                "ctgov_api",
+                "ctgov_text_extraction",
+                "protocol_pdf_extraction",
+                "publication_extraction",
+                "openfda_label",
+                "openfda_faers",
+                "orange_book",
+                "purple_book",
+                "needs_extraction"
+              ]
+            },
+            "source_url": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "source_excerpt": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "extracted_by": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "reviewed_by": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "confidence": {
+              "anyOf": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "value",
+            "source_type",
+            "source_url",
+            "source_excerpt",
+            "extracted_by",
+            "reviewed_by",
+            "confidence"
+          ],
+          "description": "same shape as arm_results, publication/label sourced; NEVER mixed with arm_results -- keeps registry-grade CT.gov numbers and literature-grade numbers separable at the field level"
+        }
+      },
+      "required": [
+        "arms",
+        "arm_results",
+        "effect_estimates",
+        "published_results"
+      ]
     }
   },
   "required": [
@@ -9166,6 +10402,7 @@
     "timing_ops",
     "adverse_events",
     "real_world_safety",
-    "exclusivity"
+    "exclusivity",
+    "results"
   ]
 }
