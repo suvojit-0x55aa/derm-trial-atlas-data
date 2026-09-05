@@ -412,14 +412,17 @@ This file is the project's committed home for project-intrinsic agent memory: bu
   finding closed out: Adalimumab (Humira, already in the atlas for HS) has its own older Plaque
   Psoriasis approval (2008) — HUMIRA's label names "Study Ps-I" (n=1212), which matches
   NCT00237887's exact enrollment, but that trial has `hasResults: false` and started ~2005 — the
-  same permanent pre-2007 dead end as Etanercept/Infliximab, not a gap to fill. One deferred,
-  real candidate needing a scope decision rather than a data check: Apremilast (already in the
-  atlas for Psoriasis) is also FDA-approved for oral ulcers associated with Behçet's Disease, with
-  a real randomized placebo-controlled completed trial with posted results (NCT00866359, n=111) —
-  but Behçet's is a systemic vasculitis with mucosal (oral/genital), not cutaneous, primary
-  lesions, stretching this atlas's "dermatology" scope past every indication added so far (all
-  literal skin conditions). Flagged rather than added unilaterally; worth a scope call before a
-  future cycle adds it.
+  same permanent pre-2007 dead end as Etanercept/Infliximab, not a gap to fill. One flagged
+  candidate resolved by a scope decision, not a data check: Apremilast (already in the atlas for
+  Psoriasis) is also FDA-approved for oral ulcers associated with Behçet's Disease, with a real
+  randomized placebo-controlled completed trial with posted results (NCT00866359, n=111) — this
+  passes every one of the atlas's usual data-quality bars. **Decided (cycle 16, captain call):
+  excluded on scope, not data quality.** This atlas's framing is cutaneous/dermatologic
+  conditions — every indication added so far, including the skin-oncology and systemic-biologic
+  ones (CTCL, Mastocytosis), is a literal skin condition. Behçet's is a systemic vasculitis whose
+  primary lesions are mucosal (oral/genital), which is oral-medicine/rheumatology territory, not
+  dermatology, even though the drug and trial are otherwise atlas-quality. Do not add this trial;
+  do not re-flag it as a gap in a future sweep — the boundary is deliberate, not an oversight.
 - Checked and excluded in cycle 15 (real negative finding): Cutaneous T-Cell Lymphoma / Mycosis
   Fungoides — despite 3 real FDA-approved drugs specific to this skin-oncology indication
   (Vorinostat/Zolinza, Romidepsin, Mogamulizumab/Poteligeo), every one fails the
