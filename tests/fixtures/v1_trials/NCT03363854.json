@@ -1,0 +1,902 @@
+{
+  "nct_id": {
+    "value": "NCT03363854",
+    "source_type": "ctgov_api",
+    "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03363854",
+    "source_excerpt": "protocolSection.identificationModule.nctId",
+    "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+    "reviewed_by": null,
+    "confidence": 1.0
+  },
+  "identity": {
+    "trial_name": {
+      "value": null,
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03363854",
+      "source_excerpt": "protocolSection.identificationModule.acronym",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 0.0
+    },
+    "official_title": {
+      "value": "A Randomised, Double-blind, Placebo-controlled, Phase 3 Trial to Evaluate the Efficacy and Safety of Tralokinumab in Combination With Topical Corticosteroids in Subjects With Moderate to Severe Atopic Dermatitis",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03363854",
+      "source_excerpt": "protocolSection.identificationModule.officialTitle",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "sponsor": {
+      "value": "LEO Pharma",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03363854",
+      "source_excerpt": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "phase": {
+      "value": [
+        "PHASE3"
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03363854",
+      "source_excerpt": "protocolSection.designModule.phases",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    }
+  },
+  "molecule": {
+    "drug": {
+      "value": "Tralokinumab",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03363854",
+      "source_excerpt": "protocolSection.armsInterventionsModule.interventions[].name (curated)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "intervention_names": {
+      "value": [
+        "Tralokinumab",
+        "Placebo"
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03363854",
+      "source_excerpt": "protocolSection.armsInterventionsModule.interventions[].name",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "intervention_type": {
+      "value": [
+        "DRUG"
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03363854",
+      "source_excerpt": "protocolSection.armsInterventionsModule.interventions[].type",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "mechanism_of_action": {
+      "value": "12.1 Mechanism of Action Tralokinumab-ldrm is a human IgG4 monoclonal antibody that specifically binds to human interleukin-13 (IL-13) and inhibits its interaction with the IL-13 receptor \u03b11 and \u03b12 subunits (IL-13R\u03b11 and IL-13R\u03b12). IL-13 is a naturally occurring cytokine of the Type 2 immune response. Tralokinumab-ldrm inhibits the bioactivity of IL-13 by blocking IL-13 interaction with IL-13R\u03b11/IL-4R\u03b1 receptor complex. Tralokinumab-ldrm inhibits IL-13-induced responses including the release of proinflammatory cytokines, chemokines and IgE.",
+      "source_type": "openfda_label",
+      "source_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=8abedac8-f75e-42a0-8591-10fabcf41fb5",
+      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1)",
+      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA)",
+      "reviewed_by": null,
+      "confidence": 0.9
+    },
+    "dosing_regimen": {
+      "value": "Tralokinumab: Tralokinumab is a human recombinant monoclonal antibody of the IgG4 subclass that specifically binds to human IL-13 and blocks interaction with the IL-13 receptors. It is presented as a liquid formulation for subcutaneous (SC) administration. || Placebo: Placebo contains the same excipients in the same concentration only lacking tralokinumab.",
+      "source_type": "ctgov_text_extraction",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03363854",
+      "source_excerpt": "Tralokinumab: Tralokinumab is a human recombinant monoclonal antibody of the IgG4 subclass that specifically binds to human IL-13 and blocks interaction with the IL-13 receptors. It is presented as a liquid formulation for subcutaneous (SC) administration. || Placebo: Placebo contains the same excipients in the same concentration only lacking tralokinumab.",
+      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA)",
+      "reviewed_by": null,
+      "confidence": 0.8
+    }
+  },
+  "population": {
+    "condition": {
+      "value": [
+        "Atopic Dermatitis"
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03363854",
+      "source_excerpt": "protocolSection.conditionsModule.conditions",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "min_age": {
+      "value": "18 Years",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03363854",
+      "source_excerpt": "protocolSection.eligibilityModule.minimumAge",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "max_age": {
+      "value": null,
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03363854",
+      "source_excerpt": "protocolSection.eligibilityModule.maximumAge",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 0.0
+    },
+    "sex": {
+      "value": "ALL",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03363854",
+      "source_excerpt": "protocolSection.eligibilityModule.sex",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "enrollment_count": {
+      "value": 380,
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03363854",
+      "source_excerpt": "protocolSection.designModule.enrollmentInfo.count",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "severity_definition": {
+      "value": "AD involvement of \u226510% body surface area at screening and baseline.",
+      "source_type": "ctgov_text_extraction",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03363854",
+      "source_excerpt": "AD involvement of \u226510% body surface area at screening and baseline.",
+      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA)",
+      "reviewed_by": null,
+      "confidence": 0.75
+    }
+  },
+  "design": {
+    "study_type": {
+      "value": "INTERVENTIONAL",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03363854",
+      "source_excerpt": "protocolSection.designModule.studyType",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "allocation": {
+      "value": "RANDOMIZED",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03363854",
+      "source_excerpt": "protocolSection.designModule.designInfo.allocation",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "intervention_model": {
+      "value": "PARALLEL",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03363854",
+      "source_excerpt": "protocolSection.designModule.designInfo.interventionModel",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "masking": {
+      "value": "DOUBLE",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03363854",
+      "source_excerpt": "protocolSection.designModule.designInfo.maskingInfo.masking",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "number_of_arms": {
+      "value": 5,
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03363854",
+      "source_excerpt": "len(protocolSection.armsInterventionsModule.armGroups)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "background_therapy_rule": {
+      "value": "Tralokinumab (or placebo) is given in combination with a background topical corticosteroid (TCS) regimen throughout the study; all subjects, including those re-randomized into the maintenance continuation period, stay on the TCS regimen.",
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/54/NCT03363854/Prot_000.pdf",
+      "source_excerpt": "Continuation treatment period narrative (\"All subjects will stay on the TCS regimen\")",
+      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA)",
+      "reviewed_by": null,
+      "confidence": 0.7
+    }
+  },
+  "endpoints": {
+    "primary_endpoint_measure": {
+      "value": "Participants With Investigator's Global Assessment (IGA) Score of 0 (Clear) or 1 (Almost Clear) at Week 16 (Time frame: Week 16)",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03363854",
+      "source_excerpt": "protocolSection.outcomesModule.primaryOutcomes[0].measure/timeFrame",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "secondary_endpoint_measures": {
+      "value": [
+        "Reduction of Worst Daily Pruritus Numeric Rating Scale (NRS) (Weekly Average) of at Least 4 From Baseline to Week 16",
+        "Change in Scoring Atopic Dermatitis (SCORAD) From Baseline to Week 16",
+        "Change in Dermatology Life Quality Index (DLQI) Score From Baseline to Week 16",
+        "Frequency of Anti-drug Antibodies (ADA)",
+        "Amount of Topical Corticosteroid (TCS) Used Through Week 16 Assuming no TCS Used From the Non-returned Tubes",
+        "Amount of Topical Corticosteroid (TCS) Used Through Week 16 Assuming All TCS Used From the Non-returned Tubes",
+        "Number of Atopic Dermatitis Flares Through Week 16",
+        "Number of Days Without Topical Treatment Use From Baseline to Week 16",
+        "Participants Achieving at Least 50% Reduction in Eczema Area and Severity Index (EASI) at Week 16",
+        "Participants Achieving at Least 90% Reduction in Eczema Area and Severity Index (EASI) at Week 16",
+        "Change From Baseline to Week 16 in Eczema Area and Severity Index (EASI) Score",
+        "Participants Achieving at Least 50% Reduction in Scoring Atopic Dermatitis (SCORAD) at Week 16",
+        "Participants Achieving at Least 75% Reduction in Scoring Atopic Dermatitis (SCORAD) at Week 16",
+        "Change From Baseline to Week 16 in Worst Daily Pruritus Numeric Rating Scale (NRS) (Weekly Average)",
+        "Reduction From Baseline to Week 16 of Dermatology Life Quality Index (DLQI) of at Least 4 Points Among Participants With Baseline DLQI \u22654",
+        "Participants With Investigator's Global Assessment (IGA) Score of 0 (Clear) or 1 (Almost Clear) at Week 32 Among Participants With IGA Score of 0 or 1 at Week 16 After Initial Randomisation to Tralokinumab",
+        "Participants Achieving at Least 75% Reduction in Eczema Area and Severity Index (EASI) at Week 32 Among Participants Who Had Achieved at Least 75% Reduction in EASI at Week 16 After Initial Randomisation to Tralokinumab"
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03363854",
+      "source_excerpt": "protocolSection.outcomesModule.secondaryOutcomes[].measure",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "endpoint_hierarchy_multiplicity": {
+      "value": "US submission: a dedicated modified confirmatory testing hierarchy analogous to ECZTRA 1/2 -- primary and secondary endpoints for tralokinumab + TCS vs. placebo + TCS tested in a prespecified sequential order (IGA 0/1, then EASI-75, then Pruritus) at Week 16, with maintenance-period endpoints tested in a separate branch.",
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/54/NCT03363854/SAP_001.pdf",
+      "source_excerpt": "Section 6.6.1 Multiple testing procedure",
+      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA)",
+      "reviewed_by": null,
+      "confidence": 0.75
+    }
+  },
+  "timing_ops": {
+    "start_date": {
+      "value": "2018-02-22",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03363854",
+      "source_excerpt": "protocolSection.statusModule.startDateStruct.date",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "primary_completion_date": {
+      "value": "2019-03-08",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03363854",
+      "source_excerpt": "protocolSection.statusModule.primaryCompletionDateStruct.date",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "completion_date": {
+      "value": "2019-09-26",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03363854",
+      "source_excerpt": "protocolSection.statusModule.completionDateStruct.date",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "visit_schedule": {
+      "value": "16-week initial treatment period (Week 0-16), 16-week continuation treatment period (Week 16-32), 14-week off-treatment follow-up (Week 32-46). Trial design text also states \"clinic visits at baseline, screening, and every other week thereafter until Week 52. A follow-up visit was conducted at Week 66\" -- this appears to reuse ECZTRA-1/2 boilerplate inconsistent with ECZTRA-3's own stated Week 46 endpoint; quoted as written, not reconciled. Not a full per-visit assessment table.",
+      "source_type": "publication_extraction",
+      "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/nda/2022/761180Orig1s000IntegratedR.pdf",
+      "source_excerpt": "Section 6.2.1 \"Trial Design\" (ECZTRA-3)",
+      "extracted_by": "manual publication_extraction pass (FDA approval-package review, v1 addendum follow-up; pending human QA)",
+      "reviewed_by": null,
+      "confidence": 0.6
+    },
+    "rescue_therapy_rules": {
+      "value": "If medically necessary (i.e., to control intolerable AD symptoms), rescue treatment for AD may be provided at investigator discretion. Investigators should limit the first step of rescue to topical medications (higher-potency TCS: EU Class >3 / US Class <4), escalating to systemic medications only after at least 14 days without adequate response; subjects on topical rescue continue IMP. Systemic corticosteroid/immunosuppressive rescue requires immediate IMP discontinuation; IMP may resume no sooner than 5 half-lives after the last dose of systemic rescue medication.",
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/54/NCT03363854/Prot_000.pdf",
+      "source_excerpt": "Section 9.6 Rescue treatment",
+      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA)",
+      "reviewed_by": null,
+      "confidence": 0.75
+    }
+  },
+  "adverse_events": {
+    "serious_adverse_event_rate": {
+      "value": [
+        {
+          "arm": "Initial Treatment Period: Tralokinumab Q2W+TCS",
+          "n_affected": 2,
+          "n_at_risk": 252,
+          "pct": 0.8
+        },
+        {
+          "arm": "Initial Treatment Period: Placebo+TCS",
+          "n_affected": 4,
+          "n_at_risk": 126,
+          "pct": 3.2
+        },
+        {
+          "arm": "Continuation Treatment Period: Tralokinumab R/Q2W+TCS",
+          "n_affected": 3,
+          "n_at_risk": 69,
+          "pct": 4.3
+        },
+        {
+          "arm": "Continuation Treatment Period: Tralokinumab R/Q4W+TCS",
+          "n_affected": 0,
+          "n_at_risk": 69,
+          "pct": 0.0
+        },
+        {
+          "arm": "Continuation Treatment Period: Tralokinumab NR/Q2W+TCS",
+          "n_affected": 2,
+          "n_at_risk": 95,
+          "pct": 2.1
+        },
+        {
+          "arm": "Continuation Treatment Period: Placebo NR/Tralokinumab Q2W+TCS",
+          "n_affected": 0,
+          "n_at_risk": 79,
+          "pct": 0.0
+        },
+        {
+          "arm": "Continuation Treatment Period: Placebo R/Placebo+TCS",
+          "n_affected": 1,
+          "n_at_risk": 41,
+          "pct": 2.4
+        },
+        {
+          "arm": "Safety Follow-up",
+          "n_affected": 3,
+          "n_at_risk": 278,
+          "pct": 1.1
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03363854",
+      "source_excerpt": "resultsSection.adverseEventsModule.eventGroups[].seriousNumAffected/seriousNumAtRisk",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "death_rate": {
+      "value": [
+        {
+          "arm": "Initial Treatment Period: Tralokinumab Q2W+TCS",
+          "n_affected": 0,
+          "n_at_risk": 252,
+          "pct": 0.0
+        },
+        {
+          "arm": "Initial Treatment Period: Placebo+TCS",
+          "n_affected": 0,
+          "n_at_risk": 126,
+          "pct": 0.0
+        },
+        {
+          "arm": "Continuation Treatment Period: Tralokinumab R/Q2W+TCS",
+          "n_affected": 0,
+          "n_at_risk": 69,
+          "pct": 0.0
+        },
+        {
+          "arm": "Continuation Treatment Period: Tralokinumab R/Q4W+TCS",
+          "n_affected": 0,
+          "n_at_risk": 69,
+          "pct": 0.0
+        },
+        {
+          "arm": "Continuation Treatment Period: Tralokinumab NR/Q2W+TCS",
+          "n_affected": 0,
+          "n_at_risk": 95,
+          "pct": 0.0
+        },
+        {
+          "arm": "Continuation Treatment Period: Placebo NR/Tralokinumab Q2W+TCS",
+          "n_affected": 0,
+          "n_at_risk": 79,
+          "pct": 0.0
+        },
+        {
+          "arm": "Continuation Treatment Period: Placebo R/Placebo+TCS",
+          "n_affected": 0,
+          "n_at_risk": 41,
+          "pct": 0.0
+        },
+        {
+          "arm": "Safety Follow-up",
+          "n_affected": 0,
+          "n_at_risk": 278,
+          "pct": 0.0
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03363854",
+      "source_excerpt": "resultsSection.adverseEventsModule.eventGroups[].deathsNumAffected/deathsNumAtRisk",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "most_common_adverse_events": {
+      "value": [
+        {
+          "term": "Viral upper respiratory tract infection",
+          "organ_system": "Infections and infestations",
+          "per_arm": [
+            {
+              "arm": "Initial Treatment Period: Tralokinumab Q2W+TCS",
+              "n_affected": 49,
+              "n_at_risk": 252,
+              "pct": 19.4
+            },
+            {
+              "arm": "Initial Treatment Period: Placebo+TCS",
+              "n_affected": 14,
+              "n_at_risk": 126,
+              "pct": 11.1
+            },
+            {
+              "arm": "Continuation Treatment Period: Tralokinumab R/Q2W+TCS",
+              "n_affected": 12,
+              "n_at_risk": 69,
+              "pct": 17.4
+            },
+            {
+              "arm": "Continuation Treatment Period: Tralokinumab R/Q4W+TCS",
+              "n_affected": 9,
+              "n_at_risk": 69,
+              "pct": 13.0
+            },
+            {
+              "arm": "Continuation Treatment Period: Tralokinumab NR/Q2W+TCS",
+              "n_affected": 20,
+              "n_at_risk": 95,
+              "pct": 21.1
+            },
+            {
+              "arm": "Continuation Treatment Period: Placebo NR/Tralokinumab Q2W+TCS",
+              "n_affected": 15,
+              "n_at_risk": 79,
+              "pct": 19.0
+            },
+            {
+              "arm": "Continuation Treatment Period: Placebo R/Placebo+TCS",
+              "n_affected": 7,
+              "n_at_risk": 41,
+              "pct": 17.1
+            },
+            {
+              "arm": "Safety Follow-up",
+              "n_affected": 0,
+              "n_at_risk": 278,
+              "pct": 0.0
+            }
+          ]
+        },
+        {
+          "term": "Conjunctivitis",
+          "organ_system": "Infections and infestations",
+          "per_arm": [
+            {
+              "arm": "Initial Treatment Period: Tralokinumab Q2W+TCS",
+              "n_affected": 28,
+              "n_at_risk": 252,
+              "pct": 11.1
+            },
+            {
+              "arm": "Initial Treatment Period: Placebo+TCS",
+              "n_affected": 4,
+              "n_at_risk": 126,
+              "pct": 3.2
+            },
+            {
+              "arm": "Continuation Treatment Period: Tralokinumab R/Q2W+TCS",
+              "n_affected": 4,
+              "n_at_risk": 69,
+              "pct": 5.8
+            },
+            {
+              "arm": "Continuation Treatment Period: Tralokinumab R/Q4W+TCS",
+              "n_affected": 0,
+              "n_at_risk": 69,
+              "pct": 0.0
+            },
+            {
+              "arm": "Continuation Treatment Period: Tralokinumab NR/Q2W+TCS",
+              "n_affected": 3,
+              "n_at_risk": 95,
+              "pct": 3.2
+            },
+            {
+              "arm": "Continuation Treatment Period: Placebo NR/Tralokinumab Q2W+TCS",
+              "n_affected": 3,
+              "n_at_risk": 79,
+              "pct": 3.8
+            },
+            {
+              "arm": "Continuation Treatment Period: Placebo R/Placebo+TCS",
+              "n_affected": 1,
+              "n_at_risk": 41,
+              "pct": 2.4
+            },
+            {
+              "arm": "Safety Follow-up",
+              "n_affected": 0,
+              "n_at_risk": 278,
+              "pct": 0.0
+            }
+          ]
+        },
+        {
+          "term": "Upper respiratory tract infection",
+          "organ_system": "Infections and infestations",
+          "per_arm": [
+            {
+              "arm": "Initial Treatment Period: Tralokinumab Q2W+TCS",
+              "n_affected": 19,
+              "n_at_risk": 252,
+              "pct": 7.5
+            },
+            {
+              "arm": "Initial Treatment Period: Placebo+TCS",
+              "n_affected": 6,
+              "n_at_risk": 126,
+              "pct": 4.8
+            },
+            {
+              "arm": "Continuation Treatment Period: Tralokinumab R/Q2W+TCS",
+              "n_affected": 7,
+              "n_at_risk": 69,
+              "pct": 10.1
+            },
+            {
+              "arm": "Continuation Treatment Period: Tralokinumab R/Q4W+TCS",
+              "n_affected": 3,
+              "n_at_risk": 69,
+              "pct": 4.3
+            },
+            {
+              "arm": "Continuation Treatment Period: Tralokinumab NR/Q2W+TCS",
+              "n_affected": 6,
+              "n_at_risk": 95,
+              "pct": 6.3
+            },
+            {
+              "arm": "Continuation Treatment Period: Placebo NR/Tralokinumab Q2W+TCS",
+              "n_affected": 3,
+              "n_at_risk": 79,
+              "pct": 3.8
+            },
+            {
+              "arm": "Continuation Treatment Period: Placebo R/Placebo+TCS",
+              "n_affected": 2,
+              "n_at_risk": 41,
+              "pct": 4.9
+            },
+            {
+              "arm": "Safety Follow-up",
+              "n_affected": 2,
+              "n_at_risk": 278,
+              "pct": 0.7
+            }
+          ]
+        },
+        {
+          "term": "Headache",
+          "organ_system": "Nervous system disorders",
+          "per_arm": [
+            {
+              "arm": "Initial Treatment Period: Tralokinumab Q2W+TCS",
+              "n_affected": 22,
+              "n_at_risk": 252,
+              "pct": 8.7
+            },
+            {
+              "arm": "Initial Treatment Period: Placebo+TCS",
+              "n_affected": 6,
+              "n_at_risk": 126,
+              "pct": 4.8
+            },
+            {
+              "arm": "Continuation Treatment Period: Tralokinumab R/Q2W+TCS",
+              "n_affected": 2,
+              "n_at_risk": 69,
+              "pct": 2.9
+            },
+            {
+              "arm": "Continuation Treatment Period: Tralokinumab R/Q4W+TCS",
+              "n_affected": 5,
+              "n_at_risk": 69,
+              "pct": 7.2
+            },
+            {
+              "arm": "Continuation Treatment Period: Tralokinumab NR/Q2W+TCS",
+              "n_affected": 7,
+              "n_at_risk": 95,
+              "pct": 7.4
+            },
+            {
+              "arm": "Continuation Treatment Period: Placebo NR/Tralokinumab Q2W+TCS",
+              "n_affected": 2,
+              "n_at_risk": 79,
+              "pct": 2.5
+            },
+            {
+              "arm": "Continuation Treatment Period: Placebo R/Placebo+TCS",
+              "n_affected": 1,
+              "n_at_risk": 41,
+              "pct": 2.4
+            },
+            {
+              "arm": "Safety Follow-up",
+              "n_affected": 3,
+              "n_at_risk": 278,
+              "pct": 1.1
+            }
+          ]
+        },
+        {
+          "term": "Dermatitis atopic",
+          "organ_system": "Skin and subcutaneous tissue disorders",
+          "per_arm": [
+            {
+              "arm": "Initial Treatment Period: Tralokinumab Q2W+TCS",
+              "n_affected": 6,
+              "n_at_risk": 252,
+              "pct": 2.4
+            },
+            {
+              "arm": "Initial Treatment Period: Placebo+TCS",
+              "n_affected": 10,
+              "n_at_risk": 126,
+              "pct": 7.9
+            },
+            {
+              "arm": "Continuation Treatment Period: Tralokinumab R/Q2W+TCS",
+              "n_affected": 1,
+              "n_at_risk": 69,
+              "pct": 1.4
+            },
+            {
+              "arm": "Continuation Treatment Period: Tralokinumab R/Q4W+TCS",
+              "n_affected": 1,
+              "n_at_risk": 69,
+              "pct": 1.4
+            },
+            {
+              "arm": "Continuation Treatment Period: Tralokinumab NR/Q2W+TCS",
+              "n_affected": 8,
+              "n_at_risk": 95,
+              "pct": 8.4
+            },
+            {
+              "arm": "Continuation Treatment Period: Placebo NR/Tralokinumab Q2W+TCS",
+              "n_affected": 6,
+              "n_at_risk": 79,
+              "pct": 7.6
+            },
+            {
+              "arm": "Continuation Treatment Period: Placebo R/Placebo+TCS",
+              "n_affected": 2,
+              "n_at_risk": 41,
+              "pct": 4.9
+            },
+            {
+              "arm": "Safety Follow-up",
+              "n_affected": 2,
+              "n_at_risk": 278,
+              "pct": 0.7
+            }
+          ]
+        },
+        {
+          "term": "Injection site reaction",
+          "organ_system": "General disorders",
+          "per_arm": [
+            {
+              "arm": "Initial Treatment Period: Tralokinumab Q2W+TCS",
+              "n_affected": 17,
+              "n_at_risk": 252,
+              "pct": 6.7
+            },
+            {
+              "arm": "Initial Treatment Period: Placebo+TCS",
+              "n_affected": 0,
+              "n_at_risk": 126,
+              "pct": 0.0
+            },
+            {
+              "arm": "Continuation Treatment Period: Tralokinumab R/Q2W+TCS",
+              "n_affected": 5,
+              "n_at_risk": 69,
+              "pct": 7.2
+            },
+            {
+              "arm": "Continuation Treatment Period: Tralokinumab R/Q4W+TCS",
+              "n_affected": 4,
+              "n_at_risk": 69,
+              "pct": 5.8
+            },
+            {
+              "arm": "Continuation Treatment Period: Tralokinumab NR/Q2W+TCS",
+              "n_affected": 5,
+              "n_at_risk": 95,
+              "pct": 5.3
+            },
+            {
+              "arm": "Continuation Treatment Period: Placebo NR/Tralokinumab Q2W+TCS",
+              "n_affected": 2,
+              "n_at_risk": 79,
+              "pct": 2.5
+            },
+            {
+              "arm": "Continuation Treatment Period: Placebo R/Placebo+TCS",
+              "n_affected": 0,
+              "n_at_risk": 41,
+              "pct": 0.0
+            },
+            {
+              "arm": "Safety Follow-up",
+              "n_affected": 0,
+              "n_at_risk": 278,
+              "pct": 0.0
+            }
+          ]
+        },
+        {
+          "term": "Diarrhoea",
+          "organ_system": "Gastrointestinal disorders",
+          "per_arm": [
+            {
+              "arm": "Initial Treatment Period: Tralokinumab Q2W+TCS",
+              "n_affected": 8,
+              "n_at_risk": 252,
+              "pct": 3.2
+            },
+            {
+              "arm": "Initial Treatment Period: Placebo+TCS",
+              "n_affected": 2,
+              "n_at_risk": 126,
+              "pct": 1.6
+            },
+            {
+              "arm": "Continuation Treatment Period: Tralokinumab R/Q2W+TCS",
+              "n_affected": 4,
+              "n_at_risk": 69,
+              "pct": 5.8
+            },
+            {
+              "arm": "Continuation Treatment Period: Tralokinumab R/Q4W+TCS",
+              "n_affected": 1,
+              "n_at_risk": 69,
+              "pct": 1.4
+            },
+            {
+              "arm": "Continuation Treatment Period: Tralokinumab NR/Q2W+TCS",
+              "n_affected": 1,
+              "n_at_risk": 95,
+              "pct": 1.1
+            },
+            {
+              "arm": "Continuation Treatment Period: Placebo NR/Tralokinumab Q2W+TCS",
+              "n_affected": 2,
+              "n_at_risk": 79,
+              "pct": 2.5
+            },
+            {
+              "arm": "Continuation Treatment Period: Placebo R/Placebo+TCS",
+              "n_affected": 2,
+              "n_at_risk": 41,
+              "pct": 4.9
+            },
+            {
+              "arm": "Safety Follow-up",
+              "n_affected": 1,
+              "n_at_risk": 278,
+              "pct": 0.4
+            }
+          ]
+        },
+        {
+          "term": "Nausea",
+          "organ_system": "Gastrointestinal disorders",
+          "per_arm": [
+            {
+              "arm": "Initial Treatment Period: Tralokinumab Q2W+TCS",
+              "n_affected": 0,
+              "n_at_risk": 252,
+              "pct": 0.0
+            },
+            {
+              "arm": "Initial Treatment Period: Placebo+TCS",
+              "n_affected": 1,
+              "n_at_risk": 126,
+              "pct": 0.8
+            },
+            {
+              "arm": "Continuation Treatment Period: Tralokinumab R/Q2W+TCS",
+              "n_affected": 3,
+              "n_at_risk": 69,
+              "pct": 4.3
+            },
+            {
+              "arm": "Continuation Treatment Period: Tralokinumab R/Q4W+TCS",
+              "n_affected": 4,
+              "n_at_risk": 69,
+              "pct": 5.8
+            },
+            {
+              "arm": "Continuation Treatment Period: Tralokinumab NR/Q2W+TCS",
+              "n_affected": 3,
+              "n_at_risk": 95,
+              "pct": 3.2
+            },
+            {
+              "arm": "Continuation Treatment Period: Placebo NR/Tralokinumab Q2W+TCS",
+              "n_affected": 1,
+              "n_at_risk": 79,
+              "pct": 1.3
+            },
+            {
+              "arm": "Continuation Treatment Period: Placebo R/Placebo+TCS",
+              "n_affected": 0,
+              "n_at_risk": 41,
+              "pct": 0.0
+            },
+            {
+              "arm": "Safety Follow-up",
+              "n_affected": 2,
+              "n_at_risk": 278,
+              "pct": 0.7
+            }
+          ]
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03363854",
+      "source_excerpt": "resultsSection.adverseEventsModule.otherEvents[] (top 8 of 9 by highest single-arm incidence; CT.gov's own >=5% frequency-threshold table)",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "discontinuation_due_to_ae_rate": {
+      "value": [
+        {
+          "arm": "Placebo Q2W + TCS",
+          "n_discontinued": 1,
+          "n_started": 126,
+          "pct": 0.8
+        },
+        {
+          "arm": "Tralokinumab Q2W + TCS",
+          "n_discontinued": 6,
+          "n_started": 252,
+          "pct": 2.4
+        }
+      ],
+      "source_type": "publication_extraction",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7986183/",
+      "source_excerpt": "Table 3, \"16-week initial treatment period, safety analysis set\": \"Leading to discontinuation of IMP\" row (Placebo Q2W+TCS N=126; Tralokinumab Q2W+TCS N=252)",
+      "extracted_by": "manual publication_extraction pass (PMC full-text, v1 addendum follow-up; pending human QA)",
+      "reviewed_by": null,
+      "confidence": 0.75
+    },
+    "boxed_warning": {
+      "value": null,
+      "source_type": "openfda_label",
+      "source_url": "https://api.fda.gov/drug/label.json?search=openfda.substance_name:TRALOKINUMAB&limit=1",
+      "source_excerpt": "results[0] has no boxed_warning key (checked, none present)",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    }
+  }
+}
