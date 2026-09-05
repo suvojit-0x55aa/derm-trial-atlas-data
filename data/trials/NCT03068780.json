@@ -219,7 +219,7 @@
     "primary_endpoints": {
       "value": [
         {
-          "verbatim": "Proportion of Patients With First Complete Closure of the EB Target Wound Within 45 Days of Treatment (Time frame: 45±7 days)",
+          "verbatim": "Proportion of Patients With First Complete Closure of the EB Target Wound Within 45 Days of Treatment (Time frame: 45\u00b17 days)",
           "rank": "primary",
           "position": 1,
           "measure_type": "other",
@@ -235,7 +235,7 @@
           "subgroup_labels": [],
           "study_period": null,
           "event_type": null,
-          "time_frame": "45±7 days"
+          "time_frame": "45\u00b17 days"
         }
       ],
       "source_type": "ctgov_api",
@@ -346,7 +346,7 @@
           "time_frame": null
         },
         {
-          "verbatim": "Change From Baseline (DBP D0) in Itching Using the 'Itch Man Scale' in Patients ≥ 4 Years and up to 13 Years of Age Before Wound Dressing Changes at D90 or EDBP",
+          "verbatim": "Change From Baseline (DBP D0) in Itching Using the 'Itch Man Scale' in Patients \u2265 4 Years and up to 13 Years of Age Before Wound Dressing Changes at D90 or EDBP",
           "rank": "secondary",
           "position": 6,
           "measure_type": "change_from_baseline",
@@ -365,7 +365,7 @@
           "time_frame": null
         },
         {
-          "verbatim": "Change From Baseline (DBP D0) in Itching Using the 'Leuven Itch Scale' in Patients ≥ 14 Years of Age Before Wound Dressing Changes at D90 or End of Double Blind Phase (EDBP)",
+          "verbatim": "Change From Baseline (DBP D0) in Itching Using the 'Leuven Itch Scale' in Patients \u2265 14 Years of Age Before Wound Dressing Changes at D90 or End of Double Blind Phase (EDBP)",
           "rank": "secondary",
           "position": 7,
           "measure_type": "change_from_baseline",
@@ -800,31 +800,204 @@
       "value": {
         "query": {
           "search_field": "patient.drug.medicinalproduct",
-          "search_term": "BIRCH TRITERPENES",
-          "receivedate_from": null,
-          "receivedate_to": null,
+          "search_term": "FILSUVEZ",
+          "receivedate_from": "2024-04-09",
+          "receivedate_to": "2026-06-08",
           "api_urls": [
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"BIRCH+TRITERPENES\"&limit=1"
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"FILSUVEZ\"&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"FILSUVEZ\"+AND+serious:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"FILSUVEZ\"+AND+seriousnessdeath:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"FILSUVEZ\"+AND+seriousnesshospitalization:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"FILSUVEZ\"+AND+seriousnesslifethreatening:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"FILSUVEZ\"+AND+seriousnessdisabling:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"FILSUVEZ\"&count=patient.reaction.reactionmeddrapt.exact&limit=15",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"FILSUVEZ\"+AND+serious:1&count=patient.reaction.reactionmeddrapt.exact&limit=15",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"FILSUVEZ\"&count=receivedate"
           ],
-          "data_last_updated": null
+          "data_last_updated": "2026-07-30"
         },
-        "total_reports": 0,
-        "serious_reports": 0,
-        "death_reports": 0,
-        "hospitalization_reports": 0,
+        "total_reports": 209,
+        "serious_reports": 50,
+        "death_reports": 13,
+        "hospitalization_reports": 25,
         "life_threatening_reports": 0,
-        "disability_reports": 0,
-        "top_reactions": [],
-        "top_serious_reactions": [],
-        "reports_by_year": [],
+        "disability_reports": 1,
+        "top_reactions": [
+          {
+            "meddra_pt": "WOUND COMPLICATION",
+            "report_count": 34,
+            "pct_of_reports": 16.27
+          },
+          {
+            "meddra_pt": "WOUND",
+            "report_count": 24,
+            "pct_of_reports": 11.48
+          },
+          {
+            "meddra_pt": "DRUG INEFFECTIVE",
+            "report_count": 20,
+            "pct_of_reports": 9.57
+          },
+          {
+            "meddra_pt": "PRODUCT DOSE OMISSION ISSUE",
+            "report_count": 20,
+            "pct_of_reports": 9.57
+          },
+          {
+            "meddra_pt": "PRODUCT USE ISSUE",
+            "report_count": 19,
+            "pct_of_reports": 9.09
+          },
+          {
+            "meddra_pt": "WRONG TECHNIQUE IN PRODUCT USAGE PROCESS",
+            "report_count": 16,
+            "pct_of_reports": 7.66
+          },
+          {
+            "meddra_pt": "BLISTER",
+            "report_count": 13,
+            "pct_of_reports": 6.22
+          },
+          {
+            "meddra_pt": "OFF LABEL USE",
+            "report_count": 13,
+            "pct_of_reports": 6.22
+          },
+          {
+            "meddra_pt": "PRODUCT ADMINISTRATION INTERRUPTED",
+            "report_count": 13,
+            "pct_of_reports": 6.22
+          },
+          {
+            "meddra_pt": "WOUND INFECTION",
+            "report_count": 13,
+            "pct_of_reports": 6.22
+          },
+          {
+            "meddra_pt": "PRURITUS",
+            "report_count": 12,
+            "pct_of_reports": 5.74
+          },
+          {
+            "meddra_pt": "ILL-DEFINED DISORDER",
+            "report_count": 11,
+            "pct_of_reports": 5.26
+          },
+          {
+            "meddra_pt": "WOUND SECRETION",
+            "report_count": 11,
+            "pct_of_reports": 5.26
+          },
+          {
+            "meddra_pt": "DEATH",
+            "report_count": 10,
+            "pct_of_reports": 4.78
+          },
+          {
+            "meddra_pt": "PRODUCT QUALITY ISSUE",
+            "report_count": 10,
+            "pct_of_reports": 4.78
+          }
+        ],
+        "top_serious_reactions": [
+          {
+            "meddra_pt": "ILL-DEFINED DISORDER",
+            "report_count": 11,
+            "pct_of_reports": 22.0
+          },
+          {
+            "meddra_pt": "DEATH",
+            "report_count": 10,
+            "pct_of_reports": 20.0
+          },
+          {
+            "meddra_pt": "WOUND COMPLICATION",
+            "report_count": 5,
+            "pct_of_reports": 10.0
+          },
+          {
+            "meddra_pt": "WOUND INFECTION",
+            "report_count": 5,
+            "pct_of_reports": 10.0
+          },
+          {
+            "meddra_pt": "PRURITUS",
+            "report_count": 4,
+            "pct_of_reports": 8.0
+          },
+          {
+            "meddra_pt": "WOUND",
+            "report_count": 4,
+            "pct_of_reports": 8.0
+          },
+          {
+            "meddra_pt": "BLISTER",
+            "report_count": 3,
+            "pct_of_reports": 6.0
+          },
+          {
+            "meddra_pt": "DRUG INEFFECTIVE",
+            "report_count": 3,
+            "pct_of_reports": 6.0
+          },
+          {
+            "meddra_pt": "IMPAIRED HEALING",
+            "report_count": 3,
+            "pct_of_reports": 6.0
+          },
+          {
+            "meddra_pt": "PRODUCT ADMINISTRATION INTERRUPTED",
+            "report_count": 3,
+            "pct_of_reports": 6.0
+          },
+          {
+            "meddra_pt": "SKIN INFECTION",
+            "report_count": 3,
+            "pct_of_reports": 6.0
+          },
+          {
+            "meddra_pt": "WOUND SECRETION",
+            "report_count": 3,
+            "pct_of_reports": 6.0
+          },
+          {
+            "meddra_pt": "EXCESSIVE GRANULATION TISSUE",
+            "report_count": 2,
+            "pct_of_reports": 4.0
+          },
+          {
+            "meddra_pt": "HYPERHIDROSIS",
+            "report_count": 2,
+            "pct_of_reports": 4.0
+          },
+          {
+            "meddra_pt": "ILLNESS",
+            "report_count": 2,
+            "pct_of_reports": 4.0
+          }
+        ],
+        "reports_by_year": [
+          {
+            "year": 2024,
+            "report_count": 53
+          },
+          {
+            "year": 2025,
+            "report_count": 102
+          },
+          {
+            "year": 2026,
+            "report_count": 54
+          }
+        ],
         "meddra_version": null
       },
       "source_type": "openfda_faers",
-      "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"BIRCH+TRITERPENES\"&limit=1",
-      "source_excerpt": "openFDA drug/event.json: confirmed zero FAERS reports for BIRCH TRITERPENES (query 404/NOT_FOUND on patient.drug.medicinalproduct) -- a real negative finding (very recently approved, low-volume topical product), not an unknown",
-      "extracted_by": "fetch_faers.py (openfda drug/event.json, v2 pass)",
+      "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"FILSUVEZ\"&limit=1",
+      "source_excerpt": "openFDA drug/event.json aggregate under brand name FILSUVEZ (generic BIRCH TRITERPENES returns a false NOT_FOUND -- reports are filed under the brand): total_reports=209, serious=50, deaths=13",
+      "extracted_by": "fetch_faers.py (openfda drug/event.json, cycle-10 correction pass, brand-name fallback)",
       "reviewed_by": null,
-      "confidence": 0.0
+      "confidence": 1.0
     }
   },
   "exclusivity": {

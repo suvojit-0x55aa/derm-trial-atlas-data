@@ -117,9 +117,9 @@ This file is the project's committed home for project-intrinsic agent memory: bu
   the reporter wrote, so a drug whose reports are all filed under its brand name looks like it has
   none under its generic — found in cycle 10 (`BERDAZIMER` NOT_FOUND vs `ZELSUVMI` 71 reports;
   `TIRBANIBULIN` 17 vs `KLISYRI` 227). **Before writing a confirmed zero, always retry the brand
-  name.** This means the committed Birch Triterpenes `total_reports: 0` is wrong — `FILSUVEZ`
-  returns 209 real reports — a known, unfixed defect in the existing corpus, not a real negative
-  finding. Where the generic returns real reports it stays the atlas-wide default term (Tapinarof:
+  name.** The committed Birch Triterpenes `total_reports: 0` was exactly this bug — `FILSUVEZ`
+  returns 209 real reports (50 serious, 13 deaths) — corrected same cycle once found (not left as
+  a known defect). Where the generic returns real reports it stays the atlas-wide default term (Tapinarof:
   `TAPINAROF` 997 > `VTAMA` 758); the brand is a fallback for a hard `NOT_FOUND` only, and
   `query.search_term` records which was used either way.
 - **A drug's FDA label's own "Clinical Studies" section is the authoritative source for which
