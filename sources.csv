@@ -1919,6 +1919,84 @@ NCT03160885,real_world_safety.faers_summary,openfda_faers,"https://api.fda.gov/d
 NCT03160885,exclusivity.regulatory_application,purple_book,https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2026/purplebook-search-August-data-download.csv,row: LEO Pharma A/S | BLA 761180 | Adbry | tralokinumab-ldrm | 351(a) | 150MG/ML Injection Subcutaneous Pre-Filled Syringe | Rx | Licensed | 27-Dec-21 | Original | License 2169 | Product 001 | CDER,atlas.regulatory_applications (registry file fetched 2026-09-05),,1.0
 NCT03160885,exclusivity.orange_book,needs_extraction,,,,,
 NCT03160885,exclusivity.purple_book,purple_book,https://purplebooksearch.fda.gov/index.cfm?event=advancedsearch,"purplebooksearch.fda.gov live search table, BLA 761180 (Adbry), 0 biosimilar(s) on file","fetch_purple_book.py (purplebooksearch.fda.gov live search table, raw staging pass)",,1.0
+NCT03285477,nct_id,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03285477,protocolSection.identificationModule.nctId,"fetch_trials.py (ctgov_api v2, v1 pass)",,1.0
+NCT03285477,identity.trial_name,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03285477,protocolSection.identificationModule.acronym,"fetch_trials.py (ctgov_api v2, v1 pass)",,1.0
+NCT03285477,identity.official_title,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03285477,protocolSection.identificationModule.officialTitle,"fetch_trials.py (ctgov_api v2, v1 pass)",,1.0
+NCT03285477,identity.sponsor,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03285477,protocolSection.sponsorCollaboratorsModule.leadSponsor.name,"fetch_trials.py (ctgov_api v2, v1 pass)",,1.0
+NCT03285477,identity.phase,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03285477,protocolSection.designModule.phases,"fetch_trials.py (ctgov_api v2, v1 pass)",,1.0
+NCT03285477,molecule.drug,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03285477,protocolSection.armsInterventionsModule.interventions[].name (curated),"fetch_trials.py (ctgov_api v2, v1 pass)",,1.0
+NCT03285477,molecule.intervention_names,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03285477,protocolSection.armsInterventionsModule.interventions[].name,"fetch_trials.py (ctgov_api v2, v1 pass)",,1.0
+NCT03285477,molecule.intervention_type,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03285477,protocolSection.armsInterventionsModule.interventions[].type,"fetch_trials.py (ctgov_api v2, v1 pass)",,1.0
+NCT03285477,molecule.mechanism_of_action,needs_extraction,,,,,
+NCT03285477,molecule.dosing_regimen,needs_extraction,,,,,
+NCT03285477,population.condition,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03285477,protocolSection.conditionsModule.conditions,"fetch_trials.py (ctgov_api v2, v1 pass)",,1.0
+NCT03285477,population.min_age_years,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03285477,protocolSection.eligibilityModule.minimumAge,"fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",,1.0
+NCT03285477,population.max_age_years,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03285477,protocolSection.eligibilityModule.maximumAge,"fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",,0.0
+NCT03285477,population.sex,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03285477,protocolSection.eligibilityModule.sex,"fetch_trials.py (ctgov_api v2, v1 pass)",,1.0
+NCT03285477,population.enrollment_count,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03285477,protocolSection.designModule.enrollmentInfo.count,"fetch_trials.py (ctgov_api v2, v1 pass)",,1.0
+NCT03285477,population.severity_criteria,needs_extraction,,,,,
+NCT03285477,design.study_type,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03285477,protocolSection.designModule.studyType,"fetch_trials.py (ctgov_api v2, v1 pass)",,1.0
+NCT03285477,design.allocation,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03285477,protocolSection.designModule.designInfo.allocation,"fetch_trials.py (ctgov_api v2, v1 pass)",,1.0
+NCT03285477,design.intervention_model,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03285477,protocolSection.designModule.designInfo.interventionModel,"fetch_trials.py (ctgov_api v2, v1 pass)",,1.0
+NCT03285477,design.masking,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03285477,protocolSection.designModule.designInfo.maskingInfo.masking,"fetch_trials.py (ctgov_api v2, v1 pass)",,1.0
+NCT03285477,design.number_of_arms,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03285477,len(protocolSection.armsInterventionsModule.armGroups),"fetch_trials.py (ctgov_api v2, v1 pass)",,1.0
+NCT03285477,design.background_therapy,needs_extraction,,,,,
+NCT03285477,endpoints.primary_endpoints,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03285477,protocolSection.outcomesModule.primaryOutcomes[0].measure/timeFrame,"fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",,1.0
+NCT03285477,endpoints.secondary_endpoints,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03285477,protocolSection.outcomesModule.secondaryOutcomes[].measure,"fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",,1.0
+NCT03285477,endpoints.multiplicity_control,needs_extraction,,,,,
+NCT03285477,timing_ops.start_date,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03285477,protocolSection.statusModule.startDateStruct.date,"fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",,1.0
+NCT03285477,timing_ops.primary_completion_date,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03285477,protocolSection.statusModule.primaryCompletionDateStruct.date,"fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",,1.0
+NCT03285477,timing_ops.completion_date,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03285477,protocolSection.statusModule.completionDateStruct.date,"fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",,1.0
+NCT03285477,timing_ops.study_schedule,needs_extraction,,,,,
+NCT03285477,timing_ops.rescue_therapy,needs_extraction,,,,,
+NCT03285477,adverse_events.serious_adverse_event_rate,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03285477,resultsSection.adverseEventsModule.eventGroups[].seriousNumAffected/seriousNumAtRisk,"fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass)",,1.0
+NCT03285477,adverse_events.death_rate,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03285477,resultsSection.adverseEventsModule.eventGroups[].deathsNumAffected/deathsNumAtRisk,"fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass)",,1.0
+NCT03285477,adverse_events.most_common_adverse_events,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03285477,resultsSection.adverseEventsModule.otherEvents[] (top 8 of 105 by highest single-arm incidence; CT.gov's own >=5% frequency-threshold table),"fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass); structured by atlas.migrate v1->v2",,1.0
+NCT03285477,adverse_events.discontinuation_due_to_ae_rate,needs_extraction,,,,,
+NCT03285477,adverse_events.boxed_warning,openfda_label,https://api.fda.gov/drug/label.json?search=openfda.substance_name:TIRBANIBULIN&limit=1,"results[0] has no boxed_warning key (checked, none present)","fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass); structured by atlas.migrate v1->v2",,1.0
+NCT03285477,real_world_safety.faers_summary,openfda_faers,"https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:""TIRBANIBULIN""&limit=1","openFDA drug/event.json aggregate: total_reports=17, serious=8, deaths=0","fetch_faers.py (openfda drug/event.json, cycle-10 pass)",,1.0
+NCT03285477,exclusivity.regulatory_application,orange_book,https://api.fda.gov/drug/orangebook.json,"openfda orangebook.json: products.active_ingredients.name=TIRBANIBULIN, application_number N213189, brand_name KLISYRI, applicant_full_name ALMIRALL LLC, approval_date 2020-12-14",atlas.regulatory_applications (registry file fetched 2026-09-05),,1.0
+NCT03285477,exclusivity.orange_book,orange_book,https://api.fda.gov/drug/orangebook.json?search=products.active_ingredients.name%3A%22TIRBANIBULIN%22&limit=100,"openFDA drug/orangebook.json, 1 product row(s) matched on products.active_ingredients.name='TIRBANIBULIN'","fetch_orange_book.py (openfda drug/orangebook.json, cycle-10 pass)",,1.0
+NCT03285477,exclusivity.purple_book,needs_extraction,,,,,
+NCT03285490,nct_id,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03285490,protocolSection.identificationModule.nctId,"fetch_trials.py (ctgov_api v2, v1 pass)",,1.0
+NCT03285490,identity.trial_name,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03285490,protocolSection.identificationModule.acronym,"fetch_trials.py (ctgov_api v2, v1 pass)",,0.0
+NCT03285490,identity.official_title,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03285490,protocolSection.identificationModule.officialTitle,"fetch_trials.py (ctgov_api v2, v1 pass)",,1.0
+NCT03285490,identity.sponsor,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03285490,protocolSection.sponsorCollaboratorsModule.leadSponsor.name,"fetch_trials.py (ctgov_api v2, v1 pass)",,1.0
+NCT03285490,identity.phase,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03285490,protocolSection.designModule.phases,"fetch_trials.py (ctgov_api v2, v1 pass)",,1.0
+NCT03285490,molecule.drug,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03285490,protocolSection.armsInterventionsModule.interventions[].name (curated),"fetch_trials.py (ctgov_api v2, v1 pass)",,1.0
+NCT03285490,molecule.intervention_names,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03285490,protocolSection.armsInterventionsModule.interventions[].name,"fetch_trials.py (ctgov_api v2, v1 pass)",,1.0
+NCT03285490,molecule.intervention_type,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03285490,protocolSection.armsInterventionsModule.interventions[].type,"fetch_trials.py (ctgov_api v2, v1 pass)",,1.0
+NCT03285490,molecule.mechanism_of_action,needs_extraction,,,,,
+NCT03285490,molecule.dosing_regimen,needs_extraction,,,,,
+NCT03285490,population.condition,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03285490,protocolSection.conditionsModule.conditions,"fetch_trials.py (ctgov_api v2, v1 pass)",,1.0
+NCT03285490,population.min_age_years,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03285490,protocolSection.eligibilityModule.minimumAge,"fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",,1.0
+NCT03285490,population.max_age_years,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03285490,protocolSection.eligibilityModule.maximumAge,"fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",,0.0
+NCT03285490,population.sex,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03285490,protocolSection.eligibilityModule.sex,"fetch_trials.py (ctgov_api v2, v1 pass)",,1.0
+NCT03285490,population.enrollment_count,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03285490,protocolSection.designModule.enrollmentInfo.count,"fetch_trials.py (ctgov_api v2, v1 pass)",,1.0
+NCT03285490,population.severity_criteria,needs_extraction,,,,,
+NCT03285490,design.study_type,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03285490,protocolSection.designModule.studyType,"fetch_trials.py (ctgov_api v2, v1 pass)",,1.0
+NCT03285490,design.allocation,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03285490,protocolSection.designModule.designInfo.allocation,"fetch_trials.py (ctgov_api v2, v1 pass)",,1.0
+NCT03285490,design.intervention_model,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03285490,protocolSection.designModule.designInfo.interventionModel,"fetch_trials.py (ctgov_api v2, v1 pass)",,1.0
+NCT03285490,design.masking,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03285490,protocolSection.designModule.designInfo.maskingInfo.masking,"fetch_trials.py (ctgov_api v2, v1 pass)",,1.0
+NCT03285490,design.number_of_arms,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03285490,len(protocolSection.armsInterventionsModule.armGroups),"fetch_trials.py (ctgov_api v2, v1 pass)",,1.0
+NCT03285490,design.background_therapy,needs_extraction,,,,,
+NCT03285490,endpoints.primary_endpoints,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03285490,protocolSection.outcomesModule.primaryOutcomes[0].measure/timeFrame,"fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",,1.0
+NCT03285490,endpoints.secondary_endpoints,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03285490,protocolSection.outcomesModule.secondaryOutcomes[].measure,"fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",,1.0
+NCT03285490,endpoints.multiplicity_control,needs_extraction,,,,,
+NCT03285490,timing_ops.start_date,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03285490,protocolSection.statusModule.startDateStruct.date,"fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",,1.0
+NCT03285490,timing_ops.primary_completion_date,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03285490,protocolSection.statusModule.primaryCompletionDateStruct.date,"fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",,1.0
+NCT03285490,timing_ops.completion_date,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03285490,protocolSection.statusModule.completionDateStruct.date,"fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",,1.0
+NCT03285490,timing_ops.study_schedule,needs_extraction,,,,,
+NCT03285490,timing_ops.rescue_therapy,needs_extraction,,,,,
+NCT03285490,adverse_events.serious_adverse_event_rate,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03285490,resultsSection.adverseEventsModule.eventGroups[].seriousNumAffected/seriousNumAtRisk,"fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass)",,1.0
+NCT03285490,adverse_events.death_rate,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03285490,resultsSection.adverseEventsModule.eventGroups[].deathsNumAffected/deathsNumAtRisk,"fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass)",,1.0
+NCT03285490,adverse_events.most_common_adverse_events,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03285490,resultsSection.adverseEventsModule.otherEvents[] (top 8 of 108 by highest single-arm incidence; CT.gov's own >=5% frequency-threshold table),"fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass); structured by atlas.migrate v1->v2",,1.0
+NCT03285490,adverse_events.discontinuation_due_to_ae_rate,needs_extraction,,,,,
+NCT03285490,adverse_events.boxed_warning,openfda_label,https://api.fda.gov/drug/label.json?search=openfda.substance_name:TIRBANIBULIN&limit=1,"results[0] has no boxed_warning key (checked, none present)","fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass); structured by atlas.migrate v1->v2",,1.0
+NCT03285490,real_world_safety.faers_summary,openfda_faers,"https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:""TIRBANIBULIN""&limit=1","openFDA drug/event.json aggregate: total_reports=17, serious=8, deaths=0","fetch_faers.py (openfda drug/event.json, cycle-10 pass)",,1.0
+NCT03285490,exclusivity.regulatory_application,orange_book,https://api.fda.gov/drug/orangebook.json,"openfda orangebook.json: products.active_ingredients.name=TIRBANIBULIN, application_number N213189, brand_name KLISYRI, applicant_full_name ALMIRALL LLC, approval_date 2020-12-14",atlas.regulatory_applications (registry file fetched 2026-09-05),,1.0
+NCT03285490,exclusivity.orange_book,orange_book,https://api.fda.gov/drug/orangebook.json?search=products.active_ingredients.name%3A%22TIRBANIBULIN%22&limit=100,"openFDA drug/orangebook.json, 1 product row(s) matched on products.active_ingredients.name='TIRBANIBULIN'","fetch_orange_book.py (openfda drug/orangebook.json, cycle-10 pass)",,1.0
+NCT03285490,exclusivity.purple_book,needs_extraction,,,,,
 NCT03349060,nct_id,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03349060,protocolSection.identificationModule.nctId,"fetch_trials.py (ctgov_api v2, v1 pass)",,1.0
 NCT03349060,identity.trial_name,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03349060,protocolSection.identificationModule.acronym,"fetch_trials.py (ctgov_api v2, v1 pass)",,1.0
 NCT03349060,identity.official_title,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03349060,protocolSection.identificationModule.officialTitle,"fetch_trials.py (ctgov_api v2, v1 pass)",,1.0
@@ -2671,6 +2749,84 @@ NCT03899259,real_world_safety.faers_summary,openfda_faers,"https://api.fda.gov/d
 NCT03899259,exclusivity.regulatory_application,orange_book,https://api.fda.gov/drug/orangebook.json,"openFDA drug/orangebook.json: BARICITINIB application N207924, brand OLUMIANT, applicant ELI LILLY AND CO, approved 2018-05-31",atlas.regulatory_applications (registry file fetched 2026-09-05),,1.0
 NCT03899259,exclusivity.orange_book,orange_book,https://api.fda.gov/drug/orangebook.json?search=products.active_ingredients.name%3A%22BARICITINIB%22&limit=100,"openFDA drug/orangebook.json, 8 product row(s) matched on products.active_ingredients.name='BARICITINIB'","fetch_orange_book.py (openfda drug/orangebook.json, v2 pass)",,1.0
 NCT03899259,exclusivity.purple_book,needs_extraction,,,,,
+NCT03927703,nct_id,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03927703,protocolSection.identificationModule.nctId,"fetch_trials.py (ctgov_api v2, v1 pass)",,1.0
+NCT03927703,identity.trial_name,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03927703,protocolSection.identificationModule.acronym,"fetch_trials.py (ctgov_api v2, v1 pass)",,1.0
+NCT03927703,identity.official_title,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03927703,protocolSection.identificationModule.officialTitle,"fetch_trials.py (ctgov_api v2, v1 pass)",,1.0
+NCT03927703,identity.sponsor,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03927703,protocolSection.sponsorCollaboratorsModule.leadSponsor.name,"fetch_trials.py (ctgov_api v2, v1 pass)",,1.0
+NCT03927703,identity.phase,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03927703,protocolSection.designModule.phases,"fetch_trials.py (ctgov_api v2, v1 pass)",,1.0
+NCT03927703,molecule.drug,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03927703,protocolSection.armsInterventionsModule.interventions[].name (curated),"fetch_trials.py (ctgov_api v2, v1 pass)",,1.0
+NCT03927703,molecule.intervention_names,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03927703,protocolSection.armsInterventionsModule.interventions[].name,"fetch_trials.py (ctgov_api v2, v1 pass)",,1.0
+NCT03927703,molecule.intervention_type,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03927703,protocolSection.armsInterventionsModule.interventions[].type,"fetch_trials.py (ctgov_api v2, v1 pass)",,1.0
+NCT03927703,molecule.mechanism_of_action,needs_extraction,,,,,
+NCT03927703,molecule.dosing_regimen,needs_extraction,,,,,
+NCT03927703,population.condition,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03927703,protocolSection.conditionsModule.conditions,"fetch_trials.py (ctgov_api v2, v1 pass)",,1.0
+NCT03927703,population.min_age_years,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03927703,protocolSection.eligibilityModule.minimumAge,"fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",,1.0
+NCT03927703,population.max_age_years,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03927703,protocolSection.eligibilityModule.maximumAge,"fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",,0.0
+NCT03927703,population.sex,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03927703,protocolSection.eligibilityModule.sex,"fetch_trials.py (ctgov_api v2, v1 pass)",,1.0
+NCT03927703,population.enrollment_count,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03927703,protocolSection.designModule.enrollmentInfo.count,"fetch_trials.py (ctgov_api v2, v1 pass)",,1.0
+NCT03927703,population.severity_criteria,needs_extraction,,,,,
+NCT03927703,design.study_type,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03927703,protocolSection.designModule.studyType,"fetch_trials.py (ctgov_api v2, v1 pass)",,1.0
+NCT03927703,design.allocation,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03927703,protocolSection.designModule.designInfo.allocation,"fetch_trials.py (ctgov_api v2, v1 pass)",,1.0
+NCT03927703,design.intervention_model,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03927703,protocolSection.designModule.designInfo.interventionModel,"fetch_trials.py (ctgov_api v2, v1 pass)",,1.0
+NCT03927703,design.masking,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03927703,protocolSection.designModule.designInfo.maskingInfo.masking,"fetch_trials.py (ctgov_api v2, v1 pass)",,1.0
+NCT03927703,design.number_of_arms,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03927703,len(protocolSection.armsInterventionsModule.armGroups),"fetch_trials.py (ctgov_api v2, v1 pass)",,1.0
+NCT03927703,design.background_therapy,needs_extraction,,,,,
+NCT03927703,endpoints.primary_endpoints,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03927703,protocolSection.outcomesModule.primaryOutcomes[0].measure/timeFrame,"fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",,1.0
+NCT03927703,endpoints.secondary_endpoints,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03927703,protocolSection.outcomesModule.secondaryOutcomes[].measure,"fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",,1.0
+NCT03927703,endpoints.multiplicity_control,needs_extraction,,,,,
+NCT03927703,timing_ops.start_date,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03927703,protocolSection.statusModule.startDateStruct.date,"fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",,1.0
+NCT03927703,timing_ops.primary_completion_date,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03927703,protocolSection.statusModule.primaryCompletionDateStruct.date,"fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",,1.0
+NCT03927703,timing_ops.completion_date,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03927703,protocolSection.statusModule.completionDateStruct.date,"fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",,1.0
+NCT03927703,timing_ops.study_schedule,needs_extraction,,,,,
+NCT03927703,timing_ops.rescue_therapy,needs_extraction,,,,,
+NCT03927703,adverse_events.serious_adverse_event_rate,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03927703,resultsSection.adverseEventsModule.eventGroups[].seriousNumAffected/seriousNumAtRisk,"fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass)",,1.0
+NCT03927703,adverse_events.death_rate,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03927703,resultsSection.adverseEventsModule.eventGroups[].deathsNumAffected/deathsNumAtRisk,"fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass)",,1.0
+NCT03927703,adverse_events.most_common_adverse_events,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03927703,resultsSection.adverseEventsModule.otherEvents[] (top 8 of 3 by highest single-arm incidence; CT.gov's own >=5% frequency-threshold table),"fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass); structured by atlas.migrate v1->v2",,1.0
+NCT03927703,adverse_events.discontinuation_due_to_ae_rate,needs_extraction,,,,,
+NCT03927703,adverse_events.boxed_warning,openfda_label,https://api.fda.gov/drug/label.json?search=openfda.generic_name:BERDAZIMER&limit=1,"results[0] has no boxed_warning key (checked, none present)","fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass); structured by atlas.migrate v1->v2",,1.0
+NCT03927703,real_world_safety.faers_summary,openfda_faers,"https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:""ZELSUVMI""&limit=1","openFDA drug/event.json aggregate: total_reports=71, serious=0, deaths=0 -- searched on the brand name ZELSUVMI: the generic name BERDAZIMER returns a hard NOT_FOUND on patient.drug.medicinalproduct (checked live), so every real report for this drug is filed under the brand","fetch_faers.py (openfda drug/event.json, cycle-10 pass)",,1.0
+NCT03927703,exclusivity.regulatory_application,orange_book,https://api.fda.gov/drug/orangebook.json,"openfda orangebook.json: products.active_ingredients.name=BERDAZIMER (row ingredient BERDAZIMER SODIUM), application_number N217424, brand_name ZELSUVMI, applicant_full_name LNHC INC, approval_date 2024-01-05",atlas.regulatory_applications (registry file fetched 2026-09-05),,1.0
+NCT03927703,exclusivity.orange_book,orange_book,https://api.fda.gov/drug/orangebook.json?search=products.active_ingredients.name%3A%22BERDAZIMER%22&limit=100,"openFDA drug/orangebook.json, 1 product row(s) matched on products.active_ingredients.name='BERDAZIMER'","fetch_orange_book.py (openfda drug/orangebook.json, cycle-10 pass)",,1.0
+NCT03927703,exclusivity.purple_book,needs_extraction,,,,,
+NCT03927716,nct_id,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03927716,protocolSection.identificationModule.nctId,"fetch_trials.py (ctgov_api v2, v1 pass)",,1.0
+NCT03927716,identity.trial_name,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03927716,protocolSection.identificationModule.acronym,"fetch_trials.py (ctgov_api v2, v1 pass)",,0.0
+NCT03927716,identity.official_title,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03927716,protocolSection.identificationModule.officialTitle,"fetch_trials.py (ctgov_api v2, v1 pass)",,1.0
+NCT03927716,identity.sponsor,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03927716,protocolSection.sponsorCollaboratorsModule.leadSponsor.name,"fetch_trials.py (ctgov_api v2, v1 pass)",,1.0
+NCT03927716,identity.phase,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03927716,protocolSection.designModule.phases,"fetch_trials.py (ctgov_api v2, v1 pass)",,1.0
+NCT03927716,molecule.drug,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03927716,protocolSection.armsInterventionsModule.interventions[].name (curated),"fetch_trials.py (ctgov_api v2, v1 pass)",,1.0
+NCT03927716,molecule.intervention_names,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03927716,protocolSection.armsInterventionsModule.interventions[].name,"fetch_trials.py (ctgov_api v2, v1 pass)",,1.0
+NCT03927716,molecule.intervention_type,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03927716,protocolSection.armsInterventionsModule.interventions[].type,"fetch_trials.py (ctgov_api v2, v1 pass)",,1.0
+NCT03927716,molecule.mechanism_of_action,needs_extraction,,,,,
+NCT03927716,molecule.dosing_regimen,needs_extraction,,,,,
+NCT03927716,population.condition,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03927716,protocolSection.conditionsModule.conditions,"fetch_trials.py (ctgov_api v2, v1 pass)",,1.0
+NCT03927716,population.min_age_years,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03927716,protocolSection.eligibilityModule.minimumAge,"fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",,1.0
+NCT03927716,population.max_age_years,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03927716,protocolSection.eligibilityModule.maximumAge,"fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",,0.0
+NCT03927716,population.sex,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03927716,protocolSection.eligibilityModule.sex,"fetch_trials.py (ctgov_api v2, v1 pass)",,1.0
+NCT03927716,population.enrollment_count,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03927716,protocolSection.designModule.enrollmentInfo.count,"fetch_trials.py (ctgov_api v2, v1 pass)",,1.0
+NCT03927716,population.severity_criteria,needs_extraction,,,,,
+NCT03927716,design.study_type,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03927716,protocolSection.designModule.studyType,"fetch_trials.py (ctgov_api v2, v1 pass)",,1.0
+NCT03927716,design.allocation,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03927716,protocolSection.designModule.designInfo.allocation,"fetch_trials.py (ctgov_api v2, v1 pass)",,1.0
+NCT03927716,design.intervention_model,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03927716,protocolSection.designModule.designInfo.interventionModel,"fetch_trials.py (ctgov_api v2, v1 pass)",,1.0
+NCT03927716,design.masking,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03927716,protocolSection.designModule.designInfo.maskingInfo.masking,"fetch_trials.py (ctgov_api v2, v1 pass)",,1.0
+NCT03927716,design.number_of_arms,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03927716,len(protocolSection.armsInterventionsModule.armGroups),"fetch_trials.py (ctgov_api v2, v1 pass)",,1.0
+NCT03927716,design.background_therapy,needs_extraction,,,,,
+NCT03927716,endpoints.primary_endpoints,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03927716,protocolSection.outcomesModule.primaryOutcomes[0].measure/timeFrame,"fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",,1.0
+NCT03927716,endpoints.secondary_endpoints,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03927716,protocolSection.outcomesModule.secondaryOutcomes[].measure,"fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",,1.0
+NCT03927716,endpoints.multiplicity_control,needs_extraction,,,,,
+NCT03927716,timing_ops.start_date,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03927716,protocolSection.statusModule.startDateStruct.date,"fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",,1.0
+NCT03927716,timing_ops.primary_completion_date,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03927716,protocolSection.statusModule.primaryCompletionDateStruct.date,"fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",,1.0
+NCT03927716,timing_ops.completion_date,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03927716,protocolSection.statusModule.completionDateStruct.date,"fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",,1.0
+NCT03927716,timing_ops.study_schedule,needs_extraction,,,,,
+NCT03927716,timing_ops.rescue_therapy,needs_extraction,,,,,
+NCT03927716,adverse_events.serious_adverse_event_rate,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03927716,resultsSection.adverseEventsModule.eventGroups[].seriousNumAffected/seriousNumAtRisk,"fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass)",,1.0
+NCT03927716,adverse_events.death_rate,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03927716,resultsSection.adverseEventsModule.eventGroups[].deathsNumAffected/deathsNumAtRisk,"fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass)",,1.0
+NCT03927716,adverse_events.most_common_adverse_events,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03927716,resultsSection.adverseEventsModule.otherEvents[] (top 8 of 4 by highest single-arm incidence; CT.gov's own >=5% frequency-threshold table),"fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass); structured by atlas.migrate v1->v2",,1.0
+NCT03927716,adverse_events.discontinuation_due_to_ae_rate,needs_extraction,,,,,
+NCT03927716,adverse_events.boxed_warning,openfda_label,https://api.fda.gov/drug/label.json?search=openfda.generic_name:BERDAZIMER&limit=1,"results[0] has no boxed_warning key (checked, none present)","fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass); structured by atlas.migrate v1->v2",,1.0
+NCT03927716,real_world_safety.faers_summary,openfda_faers,"https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:""ZELSUVMI""&limit=1","openFDA drug/event.json aggregate: total_reports=71, serious=0, deaths=0 -- searched on the brand name ZELSUVMI: the generic name BERDAZIMER returns a hard NOT_FOUND on patient.drug.medicinalproduct (checked live), so every real report for this drug is filed under the brand","fetch_faers.py (openfda drug/event.json, cycle-10 pass)",,1.0
+NCT03927716,exclusivity.regulatory_application,orange_book,https://api.fda.gov/drug/orangebook.json,"openfda orangebook.json: products.active_ingredients.name=BERDAZIMER (row ingredient BERDAZIMER SODIUM), application_number N217424, brand_name ZELSUVMI, applicant_full_name LNHC INC, approval_date 2024-01-05",atlas.regulatory_applications (registry file fetched 2026-09-05),,1.0
+NCT03927716,exclusivity.orange_book,orange_book,https://api.fda.gov/drug/orangebook.json?search=products.active_ingredients.name%3A%22BERDAZIMER%22&limit=100,"openFDA drug/orangebook.json, 1 product row(s) matched on products.active_ingredients.name='BERDAZIMER'","fetch_orange_book.py (openfda drug/orangebook.json, cycle-10 pass)",,1.0
+NCT03927716,exclusivity.purple_book,needs_extraction,,,,,
 NCT03956355,nct_id,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03956355,protocolSection.identificationModule.nctId,"fetch_trials.py (ctgov_api v2, v1 pass)",,1.0
 NCT03956355,identity.trial_name,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03956355,protocolSection.identificationModule.acronym,"fetch_trials.py (ctgov_api v2, v1 pass)",,0.0
 NCT03956355,identity.official_title,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT03956355,protocolSection.identificationModule.officialTitle,"fetch_trials.py (ctgov_api v2, v1 pass)",,1.0
@@ -3533,6 +3689,45 @@ NCT04518995,real_world_safety.faers_summary,openfda_faers,"https://api.fda.gov/d
 NCT04518995,exclusivity.regulatory_application,orange_book,https://api.fda.gov/drug/orangebook.json,"openFDA drug/orangebook.json: DEURUXOLITINIB application N217900, brand LEQSELVI, applicant SUN PHARM INDS INC, approved 2024-07-25",atlas.regulatory_applications (registry file fetched 2026-09-05),,1.0
 NCT04518995,exclusivity.orange_book,orange_book,https://api.fda.gov/drug/orangebook.json?search=products.active_ingredients.name%3A%22DEURUXOLITINIB%22&limit=100,"openFDA drug/orangebook.json, 1 product row(s) matched on products.active_ingredients.name='DEURUXOLITINIB'","fetch_orange_book.py (openfda drug/orangebook.json, v2 pass)",,1.0
 NCT04518995,exclusivity.purple_book,needs_extraction,,,,,
+NCT04535531,nct_id,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT04535531,protocolSection.identificationModule.nctId,"fetch_trials.py (ctgov_api v2, v1 pass)",,1.0
+NCT04535531,identity.trial_name,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT04535531,protocolSection.identificationModule.acronym,"fetch_trials.py (ctgov_api v2, v1 pass)",,1.0
+NCT04535531,identity.official_title,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT04535531,protocolSection.identificationModule.officialTitle,"fetch_trials.py (ctgov_api v2, v1 pass)",,1.0
+NCT04535531,identity.sponsor,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT04535531,protocolSection.sponsorCollaboratorsModule.leadSponsor.name,"fetch_trials.py (ctgov_api v2, v1 pass)",,1.0
+NCT04535531,identity.phase,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT04535531,protocolSection.designModule.phases,"fetch_trials.py (ctgov_api v2, v1 pass)",,1.0
+NCT04535531,molecule.drug,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT04535531,protocolSection.armsInterventionsModule.interventions[].name (curated),"fetch_trials.py (ctgov_api v2, v1 pass)",,1.0
+NCT04535531,molecule.intervention_names,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT04535531,protocolSection.armsInterventionsModule.interventions[].name,"fetch_trials.py (ctgov_api v2, v1 pass)",,1.0
+NCT04535531,molecule.intervention_type,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT04535531,protocolSection.armsInterventionsModule.interventions[].type,"fetch_trials.py (ctgov_api v2, v1 pass)",,1.0
+NCT04535531,molecule.mechanism_of_action,needs_extraction,,,,,
+NCT04535531,molecule.dosing_regimen,needs_extraction,,,,,
+NCT04535531,population.condition,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT04535531,protocolSection.conditionsModule.conditions,"fetch_trials.py (ctgov_api v2, v1 pass)",,1.0
+NCT04535531,population.min_age_years,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT04535531,protocolSection.eligibilityModule.minimumAge,"fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",,1.0
+NCT04535531,population.max_age_years,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT04535531,protocolSection.eligibilityModule.maximumAge,"fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",,0.0
+NCT04535531,population.sex,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT04535531,protocolSection.eligibilityModule.sex,"fetch_trials.py (ctgov_api v2, v1 pass)",,1.0
+NCT04535531,population.enrollment_count,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT04535531,protocolSection.designModule.enrollmentInfo.count,"fetch_trials.py (ctgov_api v2, v1 pass)",,1.0
+NCT04535531,population.severity_criteria,needs_extraction,,,,,
+NCT04535531,design.study_type,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT04535531,protocolSection.designModule.studyType,"fetch_trials.py (ctgov_api v2, v1 pass)",,1.0
+NCT04535531,design.allocation,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT04535531,protocolSection.designModule.designInfo.allocation,"fetch_trials.py (ctgov_api v2, v1 pass)",,1.0
+NCT04535531,design.intervention_model,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT04535531,protocolSection.designModule.designInfo.interventionModel,"fetch_trials.py (ctgov_api v2, v1 pass)",,1.0
+NCT04535531,design.masking,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT04535531,protocolSection.designModule.designInfo.maskingInfo.masking,"fetch_trials.py (ctgov_api v2, v1 pass)",,1.0
+NCT04535531,design.number_of_arms,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT04535531,len(protocolSection.armsInterventionsModule.armGroups),"fetch_trials.py (ctgov_api v2, v1 pass)",,1.0
+NCT04535531,design.background_therapy,needs_extraction,,,,,
+NCT04535531,endpoints.primary_endpoints,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT04535531,protocolSection.outcomesModule.primaryOutcomes[0].measure/timeFrame,"fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",,1.0
+NCT04535531,endpoints.secondary_endpoints,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT04535531,protocolSection.outcomesModule.secondaryOutcomes[].measure,"fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",,1.0
+NCT04535531,endpoints.multiplicity_control,needs_extraction,,,,,
+NCT04535531,timing_ops.start_date,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT04535531,protocolSection.statusModule.startDateStruct.date,"fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",,1.0
+NCT04535531,timing_ops.primary_completion_date,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT04535531,protocolSection.statusModule.primaryCompletionDateStruct.date,"fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",,1.0
+NCT04535531,timing_ops.completion_date,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT04535531,protocolSection.statusModule.completionDateStruct.date,"fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",,1.0
+NCT04535531,timing_ops.study_schedule,needs_extraction,,,,,
+NCT04535531,timing_ops.rescue_therapy,needs_extraction,,,,,
+NCT04535531,adverse_events.serious_adverse_event_rate,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT04535531,resultsSection.adverseEventsModule.eventGroups[].seriousNumAffected/seriousNumAtRisk,"fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass)",,1.0
+NCT04535531,adverse_events.death_rate,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT04535531,resultsSection.adverseEventsModule.eventGroups[].deathsNumAffected/deathsNumAtRisk,"fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass)",,1.0
+NCT04535531,adverse_events.most_common_adverse_events,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT04535531,resultsSection.adverseEventsModule.otherEvents[] (top 8 of 5 by highest single-arm incidence; CT.gov's own >=5% frequency-threshold table),"fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass); structured by atlas.migrate v1->v2",,1.0
+NCT04535531,adverse_events.discontinuation_due_to_ae_rate,needs_extraction,,,,,
+NCT04535531,adverse_events.boxed_warning,openfda_label,https://api.fda.gov/drug/label.json?search=openfda.generic_name:BERDAZIMER&limit=1,"results[0] has no boxed_warning key (checked, none present)","fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass); structured by atlas.migrate v1->v2",,1.0
+NCT04535531,real_world_safety.faers_summary,openfda_faers,"https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:""ZELSUVMI""&limit=1","openFDA drug/event.json aggregate: total_reports=71, serious=0, deaths=0 -- searched on the brand name ZELSUVMI: the generic name BERDAZIMER returns a hard NOT_FOUND on patient.drug.medicinalproduct (checked live), so every real report for this drug is filed under the brand","fetch_faers.py (openfda drug/event.json, cycle-10 pass)",,1.0
+NCT04535531,exclusivity.regulatory_application,orange_book,https://api.fda.gov/drug/orangebook.json,"openfda orangebook.json: products.active_ingredients.name=BERDAZIMER (row ingredient BERDAZIMER SODIUM), application_number N217424, brand_name ZELSUVMI, applicant_full_name LNHC INC, approval_date 2024-01-05",atlas.regulatory_applications (registry file fetched 2026-09-05),,1.0
+NCT04535531,exclusivity.orange_book,orange_book,https://api.fda.gov/drug/orangebook.json?search=products.active_ingredients.name%3A%22BERDAZIMER%22&limit=100,"openFDA drug/orangebook.json, 1 product row(s) matched on products.active_ingredients.name='BERDAZIMER'","fetch_orange_book.py (openfda drug/orangebook.json, cycle-10 pass)",,1.0
+NCT04535531,exclusivity.purple_book,needs_extraction,,,,,
 NCT04773587,nct_id,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT04773587,protocolSection.identificationModule.nctId,"fetch_trials.py (ctgov_api v2, v1 pass)",,1.0
 NCT04773587,identity.trial_name,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT04773587,protocolSection.identificationModule.acronym,"fetch_trials.py (ctgov_api v2, v1 pass)",,1.0
 NCT04773587,identity.official_title,ctgov_api,https://clinicaltrials.gov/api/v2/studies/NCT04773587,protocolSection.identificationModule.officialTitle,"fetch_trials.py (ctgov_api v2, v1 pass)",,1.0

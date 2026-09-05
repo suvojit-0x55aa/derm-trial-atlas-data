@@ -32,7 +32,7 @@ This file is the project's committed home for project-intrinsic agent memory: bu
   couldn't reliably extract. Don't force-fill it by inference — a wrong schedule is worse than a
   null.
 - **This atlas is an ongoing, multi-cycle scale-out effort, not a one-shot.** It started at 1
-  indication (AD, 5 drugs, 17 trials) and is now at 16 indications, 38 unique drugs, 101 trials
+  indication (AD, 5 drugs, 17 trials) and is now at 18 indications, 41 unique drugs, 106 trials
   (see README's "What this covers" for the full per-indication breakdown and exactly which
   candidate trials were checked and excluded as non-pivotal for each). Every drug/indication
   pairing was verified against real, live ClinicalTrials.gov and openFDA data before being
@@ -108,11 +108,20 @@ This file is the project's committed home for project-intrinsic agent memory: bu
   `accessdata.fda.gov` monthly-CSV fallback (see the note above) rather than the live search UI.
 - **`fetch_faers.py`'s "zero real-world reports" path had a real, previously-latent schema bug**,
   found and fixed in cycle 5: openFDA's genuine `NOT_FOUND` for a drug's FAERS query (Birch
-  Triterpenes, approved 2023, apparently never reported under its generic name) was being written
-  with `total_reports: null` and friends, which fails `FAERS_SUMMARY`'s non-nullable `total_reports:
-  INT()` — every prior atlas drug happened to have >=1 real report, so this path was never
-  exercised before. Fixed by writing real `0`s (a confirmed negative count) instead of `null`s
-  (an unknown) for every count field, with empty lists for the reaction/year breakdowns.
+  Triterpenes) was being written with `total_reports: null` and friends, which fails
+  `FAERS_SUMMARY`'s non-nullable `total_reports: INT()` — every prior atlas drug happened to have
+  >=1 real report, so this path was never exercised before. Fixed by writing real `0`s (a
+  confirmed negative count) instead of `null`s (an unknown) for every count field, with empty
+  lists for the reaction/year breakdowns. **The `NOT_FOUND` itself, though, is usually a
+  search-term artifact, not a real zero**: FAERS's `patient.drug.medicinalproduct` holds whatever
+  the reporter wrote, so a drug whose reports are all filed under its brand name looks like it has
+  none under its generic — found in cycle 10 (`BERDAZIMER` NOT_FOUND vs `ZELSUVMI` 71 reports;
+  `TIRBANIBULIN` 17 vs `KLISYRI` 227). **Before writing a confirmed zero, always retry the brand
+  name.** This means the committed Birch Triterpenes `total_reports: 0` is wrong — `FILSUVEZ`
+  returns 209 real reports — a known, unfixed defect in the existing corpus, not a real negative
+  finding. Where the generic returns real reports it stays the atlas-wide default term (Tapinarof:
+  `TAPINAROF` 997 > `VTAMA` 758); the brand is a fallback for a hard `NOT_FOUND` only, and
+  `query.search_term` records which was used either way.
 - **A drug's FDA label's own "Clinical Studies" section is the authoritative source for which
   CT.gov trials are actually pivotal**, when a drug has more registered Phase 3 trials than the
   ones FDA relied on for approval — used to pick Afamelanotide/Erythropoietic Protoporphyria's 2
@@ -228,6 +237,24 @@ This file is the project's committed home for project-intrinsic agent memory: bu
   unaffected, because `label.json` only indexes *currently marketed* labels; `drug/orangebook.json`
   keeps every historical row regardless of current marketing status, so it stays the authoritative
   check for approval history even after a brand is discontinued.
+- **A drug can be fully indexed in openFDA's `drug/label.json` and still have
+  `openfda.substance_name: None`** — Berdazimer (Zelsuvmi, NDA217424, added cycle 10 for Molluscum
+  Contagiosum alongside Tirbanibulin/Klisyri for Actinic Keratosis). `fetch_adverse_events.py`'s
+  `build_boxed_warning()` hardcodes `openfda.substance_name:<DRUG>`, so it 404s and silently
+  degrades to `needs_extraction` — losing the real, checked "label exists, no boxed warning"
+  finding this atlas deliberately keeps distinct. Fall back to `openfda.generic_name:` (or
+  `openfda.brand_name:` / `openfda.application_number:`) rather than accepting the null; verify the
+  returned row's `application_number` matches. Two other cycle-10 findings: **a trial the label
+  cites as pivotal belongs in the atlas even when it MISSED its primary endpoint** — Zelsuvmi's
+  section 14 names Trials 1/2/3 and then says efficacy was shown in 1 and 2 only, so NCT03927716 is
+  in (the atlas records the program FDA reviewed, not just its positive arms). And **the recovered
+  `tests/` suite has 3 failures that are stale, not data problems** — `test_schema.py` hardcodes
+  `len(TRIALS) == 63` (twice; the branch was cut at 63 trials) and `export_schema.py --check` calls
+  the committed `docs/SCHEMA.md` stale against that branch's diverged `atlas/schema.py`. Confirm
+  they also fail on the untouched pre-change corpus before treating any as yours; the 1000+
+  per-field schema subtests are the ones that actually validate new trials, and
+  `atlas.schema.validate()` can be called directly if `pytest` is unavailable (`uv venv` + `uv pip
+  install pytest` in a scratch dir works without touching the system Python).
 
 ## Maintaining this file
 
