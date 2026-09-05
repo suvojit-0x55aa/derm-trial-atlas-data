@@ -711,6 +711,51 @@ This file is the project's committed home for project-intrinsic agent memory: bu
   for very recent NDA/BLA numbers not yet cross-checked, rather than a web-search recap of already-
   known approvals, is the more promising next angle).
 
+- **Deep-extraction cycle 2 (same 2026-09-05 captain instruction, continued): read the real Study
+  Protocol/SAP PDF for every one of the 61 non-AD trials that had one posted on CT.gov's
+  `documentSection`, closing `design.background_therapy` 17->73/122,
+  `endpoints.multiplicity_control` 16->67/122, `timing_ops.study_schedule` 15->74/122,
+  `timing_ops.rescue_therapy` 14->57/122, plus a bonus 5 more `population.severity_criteria`
+  (110/122) found along the way.** Downloaded all 139 PDFs (some trials have both a Protocol and a
+  separate SAP doc) via the CDN URL pattern in `fetch_protocol_docs.py`, converted with
+  `pdftotext -layout`, then fanned out 8 parallel subagents (one per ~8-trial batch) to read the
+  real text and write per-trial JSON patches — orchestrator applied, schema-validated, and
+  CSV-diffed every patch before committing, same regression discipline as every prior cycle.
+  **Garbled PDF-text extraction is common and must not be mistaken for a missing quote**: this
+  cycle hit column-bleed (stray words from a facing margin interleaved mid-sentence), pervasive
+  letter-spacing ("C o n c o m i t a n t"), and a consistent byte-shift cipher (every character
+  offset by a fixed amount, e.g. "Athenex"->"$WKHQH[", reverse-engineered and decoded before
+  reading) — all three still contain the real text and are extractable, but a naive substring
+  match against the raw or whitespace-collapsed text will report a false negative even for a
+  genuine, correctly-quoted excerpt. Verify a flagged excerpt by stripping ALL whitespace (not
+  just collapsing it) from both the quote and the source before substring-checking, and manually
+  spot-check a sample by hand (~20 checked this cycle, all confirmed real) rather than trusting
+  one mechanical pass.
+- **This cycle's much wider RESCUE/MULTIPLICITY content exposed real gaps in the metric/scale_variant
+  enums beyond the severity-criteria gaps already documented above**: no metric exists for a
+  worsening/increase relative to a reference (a `point_increase` in GPPGA or SALT, or an AN-count
+  rising to `>=150% of baseline`, are real rescue/flare triggers with no valid
+  `absolute_score`/`*_improvement`/`*_reduction` mapping — reduction/improvement metrics all assume
+  the direction is toward getting better) and no metric for lesion-clearance endpoints (Tirbanibulin's
+  "100% complete clearance" / "≥75% partial clearance" AK primary/key-secondary). Same
+  established practice applies: drop the specific unrepresentable criterion (or null out a
+  sub-object like `rescue_period`/`oral_corticosteroid_limit`/`maintenance_period_rule` whose
+  schema requires ALL its non-nullable sub-fields once present, e.g. a real day-based OCS limit
+  when the schema only models `max_mg_per_kg`/`max_consecutive_weeks` in weeks) rather than
+  force-fit a wrong enum value or invented number — the real detail stays fully documented in that
+  field's own free-text `rationale`, just not structurally represented. A future cycle extending
+  the schema should treat both this note and the severity-criteria one above as one combined
+  backlog for `kolai-website`.
+- **Remaining gaps after this cycle are two genuinely different kinds, not one undifferentiated
+  backlog**: roughly half the ~48-65 trials still missing each of the 4 fields have NO Study
+  Protocol/SAP document posted on CT.gov at all (unextractable without a different source, e.g. a
+  paywalled publication); the other half have a real posted document that was fully read this
+  cycle and genuinely states no rescue-medication concept or no formal multiplicity-control
+  procedure applies to that trial (a correct, checked finding — e.g. several simple 8-week
+  topical-monotherapy-vs-vehicle Phase 2/3 designs have no rescue mechanism by design). Don't
+  re-attempt PDF extraction on a trial already confirmed to have no document; do treat a
+  "no-document" trial as worth re-checking if CT.gov later posts one.
+
 ## Maintaining this file
 
 Keep this file for knowledge useful to almost every future agent session in this project.
