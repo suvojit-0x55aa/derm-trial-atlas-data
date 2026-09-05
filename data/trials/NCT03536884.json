@@ -101,7 +101,7 @@
       },
       "source_type": "openfda_label",
       "source_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=37b310bd-f6a0-9d4e-e063-6294a90a889d",
-      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1) -- v1 extracted text: 12.1 Mechanism of Action Bimekizumab-bkzx is a humanized immunoglobulin IgG1/ \u03ba monoclonal antibody with two identical antigen binding regions that selectively bind to human interleukin 17A (IL-17A), interleukin 17F (IL-17F), and interleukin 17-AF cytokines, and inhibits their interaction with the IL-17 receptor complex. IL-17A and IL-17F are naturally occurring cytokines that are involved in normal inflammatory and immune responses. Bimekizumab-bkzx inhibits the release of proinflammatory cytokines and chemokines.",
+      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1) -- v1 extracted text: 12.1 Mechanism of Action Bimekizumab-bkzx is a humanized immunoglobulin IgG1/ κ monoclonal antibody with two identical antigen binding regions that selectively bind to human interleukin 17A (IL-17A), interleukin 17F (IL-17F), and interleukin 17-AF cytokines, and inhibits their interaction with the IL-17 receptor complex. IL-17A and IL-17F are naturally occurring cytokines that are involved in normal inflammatory and immune responses. Bimekizumab-bkzx inhibits the release of proinflammatory cytokines and chemokines.",
       "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 0.9
@@ -275,13 +275,57 @@
       "confidence": 1.0
     },
     "background_therapy": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "regimen_type": null,
+        "background_agent_class": null,
+        "tcs_regimen": null,
+        "step_down_rule": null,
+        "recommended_agents": [],
+        "emollient_required": false,
+        "emollient_frequency": "as needed",
+        "prohibited_concomitant": [
+          "topicals except mild/low-potency topical steroids for face, axilla, genitalia (double-blind period)",
+          "systemic retinoids",
+          "systemic immunosuppressants (methotrexate, cyclosporine, azathioprine, thioguanine)",
+          "fumaric acid esters for psoriasis",
+          "systemic corticosteroids",
+          "phototherapy",
+          "anti-TNF biologics (etanercept, infliximab, golimumab, certolizumab pegol, adalimumab)",
+          "ustekinumab",
+          "apremilast",
+          "tofacitinib",
+          "alefacept",
+          "efalizumab",
+          "guselkumab",
+          "tildrakizumab",
+          "risankizumab",
+          "briakinumab",
+          "rituximab"
+        ],
+        "permitted_concomitant": [
+          "topical moisturizers/emollients, bath oils, oatmeal bath preparations as needed",
+          "over-the-counter shampoos for scalp psoriasis",
+          "double-blind period: mild and low-potency topical steroids limited to face, axilla, and/or genitalia, as needed",
+          "OLE/OLE2 periods: any topical steroids and vitamin D analog ointment, as needed",
+          "pain relievers (acetaminophen/paracetamol, NSAIDs, opiates) as needed for pain",
+          "intra-articular injections (steroids or hyaluronic acid)",
+          "stable pre-existing antidepressant regimen"
+        ],
+        "applies_to_rerandomized_maintenance": true,
+        "sponsor_trial_ids": [
+          "PS0015"
+        ],
+        "study_drug_doses_mg": [
+          320
+        ],
+        "population_note": "This is a psoriasis biologic active-comparator trial (bimekizumab vs. secukinumab), not an AD/TCS-flavored design, so regimen_type does not map to any of the 3 enum values (limited topical corticosteroid use on face/axilla/genitalia is explicitly permitted during the double-blind period, and expands to any topical steroid/vitamin D analog in the open-label extension). Left null as a real schema-enum gap; the permitted/prohibited concomitant lists below are the actual protocol Section 7.8 policy. Note the permitted topical policy differs by period: restricted to face/axilla/genitalia mild/low-potency steroids during the double-blind Treatment Period, but broadened to any topical steroid + vitamin D analog ointment during the OLE/OLE2 periods."
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/84/NCT03536884/Prot_000.pdf",
+      "source_excerpt": "Section 7.8.1.1 Topical medications: \"In the double-blind Treatment Period, mild and low potency topical steroids will be permitted for use limited to the face, axilla, and/or genitalia, as needed... In the OLE and OLE2 Periods, the medications listed as permitted for the double-blind Treatment Period will be allowed. In addition, any topical steroids and vitamin D analog ointment will be permitted for use, as needed.\" Section 7.8.2, Table 7-4 Prohibited psoriasis medications: lists topicals (except permitted), systemic retinoids, systemic immunosuppressants, fumaric acid esters, systemic corticosteroids, phototherapy, anti-TNFs, ustekinumab, apremilast/tofacitinib, alefacept/efalizumab/guselkumab, tildrakizumab/risankizumab/briakinumab, and rituximab, each with a stated washout period.",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.6
     }
   },
   "endpoints": {
@@ -454,7 +498,7 @@
           "time_frame": null
         },
         {
-          "verbatim": "Percentage of Participants With a Investigator\u00b4s Global Assessment (IGA) Response (0/1) at Week 16",
+          "verbatim": "Percentage of Participants With a Investigator´s Global Assessment (IGA) Response (0/1) at Week 16",
           "rank": "secondary",
           "position": 4,
           "measure_type": "responder_rate",
@@ -570,13 +614,56 @@
       "confidence": 0.85
     },
     "multiplicity_control": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "procedure": "serial_gatekeeping",
+        "familywise_error_controlled": true,
+        "alpha": 0.05,
+        "alpha_sided": 2,
+        "alpha_per_dose": null,
+        "co_primary_endpoints": [
+          {
+            "label": "PASI100 response at Week 16 (non-inferiority then superiority vs secukinumab)",
+            "scale": "PASI",
+            "responder_criteria": [],
+            "timepoint_week": 16,
+            "alpha": 0.05,
+            "step": 1
+          }
+        ],
+        "testing_sequence": [],
+        "alpha_split": [],
+        "alpha_recycling": false,
+        "doses_compared": [
+          "bimekizumab 320mg Q4W",
+          "bimekizumab 320mg Q8W"
+        ],
+        "dose_comparison_order": [],
+        "branching_on": null,
+        "regulatory_variants": [],
+        "rescue_counted_as_nonresponder": null,
+        "active_comparator_excluded_from_hierarchy": null,
+        "background_tcs": null,
+        "method_citations": [],
+        "finalized_in_sap": true,
+        "same_design_as": [
+          {
+            "nct_id": "NCT03370133",
+            "trial_name": "PS0009 (BE VIVID)"
+          },
+          {
+            "nct_id": "NCT03412747",
+            "trial_name": "PS0008 (BE READY)"
+          }
+        ],
+        "gatekeeping_structure": true,
+        "further_endpoints_through_week": null
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/84/NCT03536884/SAP_001.pdf",
+      "source_excerpt": "SAP Section 4.5 Multiple comparisons/multiplicity: \"The statistical analysis of the primary efficacy variable and selected secondary efficacy variables will account for multiplicity and control the familywise Type I error rate at a 2-sided alpha level of 0.05 by using a fixed sequence testing procedure. The hypotheses (H1, H2, H3, H4, H5, and H6) comparing bimekizumab vs secukinumab will be tested at a 2-sided alpha level of 0.05. The first 2 hypotheses (H1 and H2) test whether bimekizumab is non-inferior and superior, respectively, to secukinumab for PASI100 response at Week 16. These are the hypothesis tests corresponding to the primary endpoint.\"",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.6
     }
   },
   "timing_ops": {
@@ -617,13 +704,91 @@
       "confidence": 1.0
     },
     "study_schedule": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "screening_days": null,
+        "screening_washout": true,
+        "periods": [
+          {
+            "name": "screening",
+            "start_week": null,
+            "end_week": null,
+            "duration_weeks": 2,
+            "blinding": null,
+            "background_tcs": null
+          },
+          {
+            "name": "double_blind_treatment",
+            "start_week": 0,
+            "end_week": 48,
+            "duration_weeks": 48,
+            "blinding": "double_blind",
+            "background_tcs": null
+          },
+          {
+            "name": "long_term_extension",
+            "start_week": 48,
+            "end_week": 144,
+            "duration_weeks": 96,
+            "blinding": null,
+            "background_tcs": null
+          },
+          {
+            "name": "follow_up",
+            "start_week": 144,
+            "end_week": null,
+            "duration_weeks": 20,
+            "blinding": null,
+            "background_tcs": null
+          }
+        ],
+        "dosing_interval": "every 4 weeks (Q4W) or every 8 weeks (Q8W) after Week 16 re-randomization",
+        "visit_cadence": "every_4_weeks",
+        "visit_cadence_until_week": 48,
+        "visit_weeks": null,
+        "visit_days": null,
+        "phone_contact_weeks": null,
+        "primary_endpoint_week": 16,
+        "end_of_treatment_week": 44,
+        "end_of_study_week": null,
+        "total_duration_weeks": 165,
+        "follow_up_weeks": 20,
+        "follow_up_days": null,
+        "follow_up_visit_week": null,
+        "long_term_extension": true,
+        "extension_end_week": 144,
+        "extension_visit_interval_weeks": null,
+        "extension_study_id": null,
+        "rerandomization_week": 16,
+        "maintenance_arms": [
+          "bimekizumab 320mg Q4W (from initial randomization)",
+          "bimekizumab 320mg Q4W or Q8W (re-randomized 1:2 at Week 16)",
+          "secukinumab 300mg Q4W (after loading doses at Baseline/Weeks 1,2,3,4)"
+        ],
+        "maintenance_response_check_weeks": null,
+        "last_injection_week": null,
+        "key_secondary_weeks": null,
+        "follow_up_visit_interval_weeks": null,
+        "end_of_treatment_weeks_after_last_dose": null,
+        "background_tcs_from_day": null,
+        "primary_endpoint_refs": [],
+        "double_dummy_arms": [
+          "bimekizumab arm receives placebo sc at Weeks 1-3 to maintain blind"
+        ],
+        "active_comparator": "secukinumab",
+        "boilerplate_reused_from": [
+          "NCT03370133",
+          "NCT03412747"
+        ],
+        "conflicts_with_trial": null,
+        "full_visit_table_available": true,
+        "source_inconsistency": "An OLE2 Period (48 additional weeks plus a second SFU) was added later via Protocol Amendment #5.4; the base periods list above reflects the original double-blind Treatment Period (48 weeks) plus the original 96-week OLE Period only, not the amendment's OLE2 extension."
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/84/NCT03536884/Prot_000.pdf",
+      "source_excerpt": "Section 5.2 Study periods: \"A Screening Period (2 to 5 weeks); A double-blind Treatment Period (48 weeks; final dose at Week 44); An optional OLE Period (96 weeks; final dose at Week 136 for subjects receiving bimekizumab 320mg Q8W and at Week 140 for subjects receiving bimekizumab 320mg Q4W) followed by a SFU Period (20 weeks after the final dose of IMP...)\". Section 5.3: \"For each subject, the study will last a maximum of up to 165 weeks.\"",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.7
     },
     "rescue_therapy": {
       "value": null,

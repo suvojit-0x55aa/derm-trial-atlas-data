@@ -317,13 +317,56 @@
       "confidence": 1.0
     },
     "background_therapy": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "regimen_type": "monotherapy",
+        "background_agent_class": null,
+        "tcs_regimen": null,
+        "step_down_rule": null,
+        "recommended_agents": [],
+        "emollient_required": null,
+        "emollient_frequency": null,
+        "prohibited_concomitant": [
+          "JAK inhibitors for use in any disease indication",
+          "Immunosuppressants (e.g. cyclosporine A, azathioprine, methotrexate, sulfasalazine, mycophenolate mofetil, everolimus, ibrutinib)",
+          "Intralesional, oral or injectable steroids",
+          "5-alpha-reductase inhibitors (e.g. finasteride, dutasteride)",
+          "Oral minoxidil",
+          "Spironolactone if used specifically for AA",
+          "Other systemic treatments that could affect AA",
+          "Topical treatments that could affect AA on areas under assessment (scalp, eyebrows, eyelashes, fingernails) (e.g. steroid cream, medicated shampoo, minoxidil)",
+          "Phototherapy (UVB, PUVA)",
+          "Contact immunotherapy (DPCP, SADBE, DNCB)",
+          "Topical irritants (e.g. anthralin) and liquid nitrogen cryotherapy",
+          "Lymphocyte-depleting agents/therapies (e.g. alefacept, alemtuzumab, rituximab)",
+          "Other biologics with immunomodulatory properties",
+          "Live (attenuated) vaccines",
+          "Moderate to potent CYP3A inducers"
+        ],
+        "permitted_concomitant": [
+          "Vitamin/mineral/dietary supplements in amounts not associated with adverse effects",
+          "CYP3A inhibitors except those specifically prohibited in Appendix 4",
+          "Sensitive and moderate-sensitive CYP3A substrates listed in Appendix 4",
+          "Acetaminophen intermittently, not to exceed 3 g/day",
+          "Other medications for concomitant medical disorders unless specifically prohibited"
+        ],
+        "applies_to_rerandomized_maintenance": null,
+        "sponsor_trial_ids": [
+          "B7981015"
+        ],
+        "study_drug_doses_mg": [
+          200,
+          50,
+          30,
+          10
+        ],
+        "population_note": "All medications/treatments that could affect Alopecia Areata must be discontinued (Section 5.8.2) -- study drug (ritlecitinib/PF-06651600) is the sole permitted AA treatment, so regimen_type is set to monotherapy even though this is not an AD/TCS trial."
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/07/NCT03732807/Prot_000.pdf",
+      "source_excerpt": "Section 5.8.2 Prohibited Medications and Treatments: 'All medications and treatments that could affect AA must be discontinued. During the study if it is discovered that a subject has been taking a medication or treatment that could affect AA, the investigator should contact the Sponsor for each case to determine whether the subject should be discontinued.' Prohibited list includes 'JAK inhibitors for use in any disease indication', 'Immunosuppressants (eg, cyclosporine A, azathioprine, methotrexate [MTX], sulfasalazine, mycophenolate mofetil [MMF], everolimus, ibrutinib)', 'Intralesional, oral or injectable steroids', 'Topical treatments that could affect AA on areas under assessment... (eg, steroid cream, medicated shampoo, minoxidil)', 'Phototherapy', 'Contact immunotherapy'.",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.65
     }
   },
   "endpoints": {
@@ -1098,13 +1141,103 @@
       "confidence": 1.0
     },
     "multiplicity_control": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "procedure": "graphical",
+        "familywise_error_controlled": true,
+        "alpha": 0.05,
+        "alpha_sided": 2,
+        "alpha_per_dose": null,
+        "co_primary_endpoints": [],
+        "testing_sequence": [
+          {
+            "label": "H1: 200 mg QD/50 mg QD vs placebo, primary endpoint (SALT<=20 at Week 24)",
+            "scale": null,
+            "responder_criteria": [],
+            "timepoint_week": null,
+            "alpha": null,
+            "step": null
+          },
+          {
+            "label": "H2/H3: 50 mg QD/50 mg QD and 200 mg QD/30 mg QD vs placebo, primary endpoint (tested simultaneously after H1)",
+            "scale": null,
+            "responder_criteria": [],
+            "timepoint_week": null,
+            "alpha": null,
+            "step": null
+          },
+          {
+            "label": "H4: 30 mg QD/30 mg QD vs placebo, primary endpoint (tested after H2/H3)",
+            "scale": null,
+            "responder_criteria": [],
+            "timepoint_week": null,
+            "alpha": null,
+            "step": null
+          },
+          {
+            "label": "H1p-H4p: same dose regimens vs placebo, key secondary endpoint (SALT<=10 at Week 24)",
+            "scale": null,
+            "responder_criteria": [],
+            "timepoint_week": null,
+            "alpha": null,
+            "step": null
+          }
+        ],
+        "alpha_split": [
+          {
+            "group": "Overall study (with SALT<=10 key secondary)",
+            "n_endpoints": 8,
+            "alpha": 0.05,
+            "method": "graphical gatekeeping with weighted alpha transition; Holm's method within simultaneous H2/H3 test",
+            "timepoint_week": 24
+          },
+          {
+            "group": "EMA and VHP competent authorities",
+            "n_endpoints": 4,
+            "alpha": 0.01,
+            "method": "graphical gatekeeping in 3 groups (H1; H2+H3 via Holm's method; H4)",
+            "timepoint_week": 24
+          },
+          {
+            "group": "FDA/PMDA (no key secondary)",
+            "n_endpoints": 4,
+            "alpha": 0.00125,
+            "method": "graphical gatekeeping in 3 groups (H1; H2+H3 via Holm's method; H4)",
+            "timepoint_week": 24
+          }
+        ],
+        "alpha_recycling": true,
+        "doses_compared": [
+          "200 mg QD/50 mg QD",
+          "50 mg QD/50 mg QD",
+          "200 mg QD/30 mg QD",
+          "30 mg QD/30 mg QD",
+          "10 mg QD (exploratory, excluded from Type I error control)"
+        ],
+        "dose_comparison_order": [
+          "200 mg QD/50 mg QD (H1, tested first)",
+          "50 mg QD/50 mg QD and 200 mg QD/30 mg QD (H2, H3, tested simultaneously after H1)",
+          "30 mg QD/30 mg QD (H4, tested last)"
+        ],
+        "branching_on": null,
+        "regulatory_variants": [
+          "US",
+          "EU"
+        ],
+        "rescue_counted_as_nonresponder": null,
+        "active_comparator_excluded_from_hierarchy": "10 mg QD group (included only to support exposure-response estimation, not in the Type I error controlled procedure)",
+        "background_tcs": null,
+        "method_citations": [],
+        "finalized_in_sap": true,
+        "same_design_as": [],
+        "gatekeeping_structure": true,
+        "further_endpoints_through_week": null
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/07/NCT03732807/SAP_001.pdf",
+      "source_excerpt": "SAP Section 5.1 Hypotheses and Decision Rules: 'The study is tested at an overall α = 0.05... more stringent levels have been advised for regulatory submission... ie, 1% for EMA and competent authorities in the VHP countries, and 0.125% for the FDA/PMDA.' Section 5.1.1: 'The family-wise Type I error will be strongly controlled using a gatekeeping approach as described in the following order and shown in Figure 2... The primary endpoint for 200 mg QD/50 mg QD dose regimen (H1) will be tested at α significance level first. If significant, then the primary endpoint for 50 mg QD dose regimen and the 200 mg QD/30 mg QD dose regimen (H2 and H3)... will be tested simultaneously.' Section 5.1.2 (FDA/PMDA): 'The family-wise Type I error will be strongly controlled using a gate-keeping approach to test these hypotheses in 3 groups... The statistical significance of the first hypothesis (H1) will allow simultaneous testing of H2 and H3 using Holm's method... The 10 mg group comparison to placebo is not included in the Type I error controlled procedure.' Figures 2 and 3 are titled 'Schematic and Graphical Presentation for Multiple Testing Procedure'.",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.7
     }
   },
   "timing_ops": {
@@ -1145,13 +1278,129 @@
       "confidence": 1.0
     },
     "study_schedule": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "screening_days": 35,
+        "screening_washout": true,
+        "periods": [
+          {
+            "name": "screening",
+            "start_week": -5,
+            "end_week": 0,
+            "duration_weeks": 5,
+            "blinding": null,
+            "background_tcs": null
+          },
+          {
+            "name": "induction_treatment",
+            "start_week": 0,
+            "end_week": 4,
+            "duration_weeks": 4,
+            "blinding": "double_blind",
+            "background_tcs": null
+          },
+          {
+            "name": "maintenance_treatment",
+            "start_week": 4,
+            "end_week": 24,
+            "duration_weeks": 20,
+            "blinding": "double_blind",
+            "background_tcs": null
+          },
+          {
+            "name": "long_term_extension",
+            "start_week": 24,
+            "end_week": 48,
+            "duration_weeks": 24,
+            "blinding": "double_blind (placebo-treated subjects re-allocated to active treatment sequences at Week 24)",
+            "background_tcs": null
+          },
+          {
+            "name": "follow_up",
+            "start_week": 48,
+            "end_week": 52,
+            "duration_weeks": 4,
+            "blinding": null,
+            "background_tcs": null
+          }
+        ],
+        "dosing_interval": "Once daily (QD) oral tablets; 7 tablets/day during the loading phase (Weeks 0-4), 4 tablets/day during the maintenance phase (Weeks 4-24), 7 tablets/day for the first 4 weeks of the extension phase, then 4 tablets/day for the remainder of the extension phase",
+        "visit_cadence": null,
+        "visit_cadence_until_week": null,
+        "visit_weeks": [
+          2,
+          4,
+          8,
+          12,
+          18,
+          24,
+          26,
+          28,
+          34,
+          40,
+          48
+        ],
+        "visit_days": [
+          1,
+          15,
+          29,
+          57,
+          85,
+          127,
+          169,
+          183,
+          197,
+          239,
+          281,
+          337,
+          365
+        ],
+        "phone_contact_weeks": null,
+        "primary_endpoint_week": 24,
+        "end_of_treatment_week": 48,
+        "end_of_study_week": 52,
+        "total_duration_weeks": 57,
+        "follow_up_weeks": 4,
+        "follow_up_days": null,
+        "follow_up_visit_week": 52,
+        "long_term_extension": true,
+        "extension_end_week": 48,
+        "extension_visit_interval_weeks": null,
+        "extension_study_id": "B7981032 (Phase 3 long-term extension study)",
+        "rerandomization_week": null,
+        "maintenance_arms": [
+          "200 mg QD/50 mg QD",
+          "50 mg QD/50 mg QD",
+          "200 mg QD/30 mg QD",
+          "30 mg QD/30 mg QD",
+          "10 mg QD (exploratory)",
+          "placebo"
+        ],
+        "maintenance_response_check_weeks": null,
+        "last_injection_week": null,
+        "key_secondary_weeks": [
+          24,
+          18,
+          12,
+          8,
+          4
+        ],
+        "follow_up_visit_interval_weeks": null,
+        "end_of_treatment_weeks_after_last_dose": null,
+        "background_tcs_from_day": null,
+        "primary_endpoint_refs": [],
+        "double_dummy_arms": [],
+        "active_comparator": null,
+        "boilerplate_reused_from": [],
+        "conflicts_with_trial": null,
+        "full_visit_table_available": true,
+        "source_inconsistency": null
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/07/NCT03732807/Prot_000.pdf",
+      "source_excerpt": "Study Design: 'This is a Phase 2b/3, randomized, double-blind, placebo-controlled, dose-ranging study to investigate PF-06651600 in AA. The study will have a maximum duration of approximately 57 weeks. This includes an up to 5-week Screening period, a 48-week treatment period, and a 4-week follow-up period... The treatment period will be comprised of a placebo-controlled period that includes a 4-week loading phase and a 20-week maintenance phase, followed by a 24-week extension phase.' 'All subjects will begin dosing during the loading phase... Following the 4-week loading phase, subjects will continue dosing... in the 20-week maintenance phase. At the end of the maintenance phase, placebo-treated subjects will be advanced in a prespecified, blinded manner to one of 2 active treatment sequences for the remainder of the study (through Week 48)... both discontinued and completed subjects will enter into a 4-week follow-up period... Subjects who complete treatment may be eligible for enrollment in a long-term study (Phase 3 study B7981032).' Primary endpoint is SALT<=20 at Week 24.",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.7
     },
     "rescue_therapy": {
       "value": null,
@@ -1738,7 +1987,7 @@
       },
       "source_type": "openfda_label",
       "source_url": "https://api.fda.gov/drug/label.json?search=openfda.substance_name:RITLECITINIB&limit=1",
-      "source_excerpt": "results[0].boxed_warning -- v1 extracted text: WARNING: SERIOUS INFECTIONS, MORTALITY, MALIGNANCY, MAJOR ADVERSE CARDIOVASCULAR EVENTS (MACE), and THROMBOSIS WARNING: SERIOUS INFECTIONS, MORTALITY, MALIGNANCY, MAJOR ADVERSE CARDIOVASCULAR EVENTS (MACE), and THROMBOSIS See full prescribing information for complete boxed warning. \u2022 Increased risk of serious bacterial, fungal, viral, and opportunistic infections that may lead to hospitalization or death, including tuberculosis (TB). Interrupt treatment if serious infection occurs until the infection is controlled. LITFULO should not be given to patients with active tuberculosis. Test for latent TB before and during therapy; start treating latent TB prior to use. Monitor all patients for active TB during treatment, even patients with initial negative, latent TB test. ( 5.1 ). Monitor all patients for signs and symptoms of infection during and after treatment with LITFULO. ( 5.1 ) \u2022 Higher rate of all-cause mortality, including sudden cardiovascular death with another Janus kinase inhibitor (JAK) vs. TNF blockers in rheumatoid arthritis (RA) patients. LITFULO is not approved for use in RA patients. ( 5.2 ) \u2022 Malignancies were reported in patients treated with LITFULO ( 5.3 ). Higher rate of lymphomas and lung cancers with another JAK inhibitor vs. TNF blockers in RA patients. \u2022 Higher rate of MACE (defined as cardiovascular death, myocardial infarction, and stroke) with another JAK inhibitor vs. TNF blockers in RA patients. ( 5.4 ). \u2022 Thrombosis has occurred in patients treated with LITFULO. Increased incidence of pulmonary embolism, venous and arterial thrombosis with another JAK inhibitor vs. TNF blockers. ( 5.5 ) \u2022 Increased risk of serious bacterial, fungal, viral and opportunistic infections leading to hospitalization or death, including tuberculosis (TB). Interrupt treatment if serious infection occurs until the infection is controlled. LITFULO should not be given to patients with active tuberculosis. Test for latent TB before and during therapy; treat latent TB prior to use. Monitor all patients for active TB during treatment, even patients with initial negative, latent TB test. ( 5.1 ) \u2022 Higher rate of all-cause mortality, including sudden cardiovascular death with another Janus kinase inhibitor (JAK) vs. TNF blockers in rheumatoid arthritis (RA) patients. LITFULO is not approved for use in RA patients. ( 5.2 ) \u2022 Malignancies have occurred in patients treated with LITFULO [see Warnings and Precautions (5.3) ] . Higher rate of lymphomas and lung cancers with another JAK inhibitor vs. TNF blockers in RA patients. ( 5.3 ) \u2022 Higher rate of MACE (defined as cardiovascular death, myocardial infarction, and stroke) with another JAK inhibitor vs. TNF blockers in RA patients. ( 5.4 ) \u2022 Thrombosis has occurred in patients treated with LITFULO. Increased incidence of pulmonary embolism, venous and arterial thrombosis with another JAK inhibitor vs. TNF blockers. ( 5.5 )",
+      "source_excerpt": "results[0].boxed_warning -- v1 extracted text: WARNING: SERIOUS INFECTIONS, MORTALITY, MALIGNANCY, MAJOR ADVERSE CARDIOVASCULAR EVENTS (MACE), and THROMBOSIS WARNING: SERIOUS INFECTIONS, MORTALITY, MALIGNANCY, MAJOR ADVERSE CARDIOVASCULAR EVENTS (MACE), and THROMBOSIS See full prescribing information for complete boxed warning. • Increased risk of serious bacterial, fungal, viral, and opportunistic infections that may lead to hospitalization or death, including tuberculosis (TB). Interrupt treatment if serious infection occurs until the infection is controlled. LITFULO should not be given to patients with active tuberculosis. Test for latent TB before and during therapy; start treating latent TB prior to use. Monitor all patients for active TB during treatment, even patients with initial negative, latent TB test. ( 5.1 ). Monitor all patients for signs and symptoms of infection during and after treatment with LITFULO. ( 5.1 ) • Higher rate of all-cause mortality, including sudden cardiovascular death with another Janus kinase inhibitor (JAK) vs. TNF blockers in rheumatoid arthritis (RA) patients. LITFULO is not approved for use in RA patients. ( 5.2 ) • Malignancies were reported in patients treated with LITFULO ( 5.3 ). Higher rate of lymphomas and lung cancers with another JAK inhibitor vs. TNF blockers in RA patients. • Higher rate of MACE (defined as cardiovascular death, myocardial infarction, and stroke) with another JAK inhibitor vs. TNF blockers in RA patients. ( 5.4 ). • Thrombosis has occurred in patients treated with LITFULO. Increased incidence of pulmonary embolism, venous and arterial thrombosis with another JAK inhibitor vs. TNF blockers. ( 5.5 ) • Increased risk of serious bacterial, fungal, viral and opportunistic infections leading to hospitalization or death, including tuberculosis (TB). Interrupt treatment if serious infection occurs until the infection is controlled. LITFULO should not be given to patients with active tuberculosis. Test for latent TB before and during therapy; treat latent TB prior to use. Monitor all patients for active TB during treatment, even patients with initial negative, latent TB test. ( 5.1 ) • Higher rate of all-cause mortality, including sudden cardiovascular death with another Janus kinase inhibitor (JAK) vs. TNF blockers in rheumatoid arthritis (RA) patients. LITFULO is not approved for use in RA patients. ( 5.2 ) • Malignancies have occurred in patients treated with LITFULO [see Warnings and Precautions (5.3) ] . Higher rate of lymphomas and lung cancers with another JAK inhibitor vs. TNF blockers in RA patients. ( 5.3 ) • Higher rate of MACE (defined as cardiovascular death, myocardial infarction, and stroke) with another JAK inhibitor vs. TNF blockers in RA patients. ( 5.4 ) • Thrombosis has occurred in patients treated with LITFULO. Increased incidence of pulmonary embolism, venous and arterial thrombosis with another JAK inhibitor vs. TNF blockers. ( 5.5 )",
       "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0

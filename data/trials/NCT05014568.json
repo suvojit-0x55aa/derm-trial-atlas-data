@@ -300,13 +300,38 @@
       "confidence": 1.0
     },
     "background_therapy": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "regimen_type": "monotherapy",
+        "background_agent_class": null,
+        "tcs_regimen": null,
+        "step_down_rule": null,
+        "recommended_agents": [],
+        "emollient_required": false,
+        "emollient_frequency": "as needed on nonlesional skin, at least 30 minutes after study drug application; same emollient used throughout the study",
+        "prohibited_concomitant": [
+          "Medicated shampoos containing coal tar, salicylic acid, or hydrocortisone (if scalp is treated with study drug)",
+          "Emollients containing salicylic acid",
+          "Gentamicin and neomycin sulfate topical antibacterial agents (other topical antibacterials permitted for skin infection, applied away from lesional/study-drug areas)",
+          "Any prohibited medication or nondrug therapy listed in the Exclusion Criteria (Section 4.3)"
+        ],
+        "permitted_concomitant": [
+          "Medications for other medical conditions, provided dosage/administration is not planned to change from Baseline through Week 8 and the medication is not on the prohibited list",
+          "Topical antibacterial agents (except gentamicin and neomycin sulfate) for skin infection, applied to the infected area (study drug withheld from that area until healed)",
+          "Nonmedicated emollients without salicylic acid on nonlesional skin, at least 30 minutes after study drug application"
+        ],
+        "applies_to_rerandomized_maintenance": null,
+        "sponsor_trial_ids": [
+          "DMVT-505-3101"
+        ],
+        "study_drug_doses_mg": [],
+        "population_note": "Single active-drug (tapinarof cream 1% QD) vs. vehicle cream design; no protocol-defined background therapy, only permitted/prohibited concomitant medication rules (Sections 5.6.1-5.6.2)."
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/68/NCT05014568/Prot_000.pdf",
+      "source_excerpt": "5.6.1 Permitted Medications and Nondrug Therapies: Concomitant medications for medical treatment of other conditions are allowed under the condition that the dosage and administration of these treatments is not planned to change from the Baseline visit to the completion of the treatment phase (Week 8)... Nonmedicated emollients that do not contain salicylic acid may be used on nonlesional skin but the subject (or caregiver) should wait at least 30 minutes after applying study drug... 5.6.2 Prohibited Medications and Nondrug Therapies: ...If a subject chooses to treat scalp with study drug, then medicated shampoos that contain coal tar, salicylic acid, or hydrocortisone are prohibited for use. Emollients containing salicylic acid are prohibited.",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.7
     }
   },
   "endpoints": {
@@ -348,7 +373,7 @@
     "secondary_endpoints": {
       "value": [
         {
-          "verbatim": "Percent of Subjects With \u2265 75% Improvement in Eczema Area and Severity Index (EASI) From Baseline to Week 8. Analyses Were Done Using Multiple Imputation.",
+          "verbatim": "Percent of Subjects With ≥ 75% Improvement in Eczema Area and Severity Index (EASI) From Baseline to Week 8. Analyses Were Done Using Multiple Imputation.",
           "rank": "secondary",
           "position": 1,
           "measure_type": "other",
@@ -398,7 +423,7 @@
           "time_frame": null
         },
         {
-          "verbatim": "Percent of Subjects With \u2265 90% Improvement in Eczema Area and Severity Index (EASI) From Baseline to Week 8. Analyses Were Done Using Multiple Imputation.",
+          "verbatim": "Percent of Subjects With ≥ 90% Improvement in Eczema Area and Severity Index (EASI) From Baseline to Week 8. Analyses Were Done Using Multiple Imputation.",
           "rank": "secondary",
           "position": 3,
           "measure_type": "other",
@@ -423,7 +448,7 @@
           "time_frame": null
         },
         {
-          "verbatim": "Percent of Subjects \u2265 12 Years Old With a Baseline Peak Pruritis-Numeric Rating Scale (PP-NRS) Score \u2265 4 Who Achieve \u2265 4-point Reduction in the Average Weekly PP-NRS From Baseline to Week 8.",
+          "verbatim": "Percent of Subjects ≥ 12 Years Old With a Baseline Peak Pruritis-Numeric Rating Scale (PP-NRS) Score ≥ 4 Who Achieve ≥ 4-point Reduction in the Average Weekly PP-NRS From Baseline to Week 8.",
           "rank": "secondary",
           "position": 4,
           "measure_type": "other",
@@ -456,13 +481,79 @@
       "confidence": 1.0
     },
     "multiplicity_control": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "procedure": "sequential_bonferroni",
+        "familywise_error_controlled": true,
+        "alpha": 0.05,
+        "alpha_sided": 2,
+        "alpha_per_dose": null,
+        "co_primary_endpoints": [],
+        "testing_sequence": [
+          {
+            "label": "Proportion of subjects with >=75% improvement in EASI from Baseline at Week 8",
+            "scale": "EASI",
+            "responder_criteria": [],
+            "timepoint_week": 8,
+            "alpha": 0.05,
+            "step": 1
+          },
+          {
+            "label": "Mean change in %BSA affected from Baseline at Week 8",
+            "scale": "BSA",
+            "responder_criteria": [],
+            "timepoint_week": 8,
+            "alpha": 0.05,
+            "step": 2
+          },
+          {
+            "label": "Proportion of subjects with >=90% improvement in EASI from Baseline at Week 8",
+            "scale": "EASI",
+            "responder_criteria": [],
+            "timepoint_week": 8,
+            "alpha": 0.05,
+            "step": 3
+          },
+          {
+            "label": "Proportion of subjects >12 years old with Baseline PP-NRS >=4 who achieve >=4-point reduction in average weekly PP-NRS from Baseline at Week 8",
+            "scale": "PP-NRS",
+            "responder_criteria": [],
+            "timepoint_week": 8,
+            "alpha": 0.05,
+            "step": 4
+          }
+        ],
+        "alpha_split": [],
+        "alpha_recycling": false,
+        "doses_compared": [
+          "tapinarof cream, 1%"
+        ],
+        "dose_comparison_order": [],
+        "branching_on": {
+          "label": "vIGA-AD score of clear (0) or almost clear (1) with >=2-grade reduction from Baseline at Week 8 (primary endpoint)",
+          "scale": "vIGA-AD",
+          "responder_criteria": [],
+          "timepoint_week": 8,
+          "alpha": null,
+          "step": null
+        },
+        "regulatory_variants": [],
+        "rescue_counted_as_nonresponder": null,
+        "active_comparator_excluded_from_hierarchy": null,
+        "background_tcs": null,
+        "method_citations": [
+          "Fixed-Sequence method (SAP Section 10.7)"
+        ],
+        "finalized_in_sap": true,
+        "same_design_as": [],
+        "gatekeeping_structure": false,
+        "further_endpoints_through_week": 8
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/68/NCT05014568/SAP_001.pdf",
+      "source_excerpt": "10.7 Multiple Comparison/Multiplicity: Multiple comparisons of the secondary endpoints will be controlled using the Fixed-Sequence method. Hypotheses testing for the secondary efficacy endpoints will only be conducted if the primary efficacy endpoint has demonstrated statistical significance at 0.05 two-sided in favor of tapinarof. Testing of the secondary endpoints will be performed sequentially following the below pre-specified order... Hypothesis testing for secondary endpoints will stop if statistical significance at 0.05 two-sided in favor of tapinarof is not observed.",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.7
     }
   },
   "timing_ops": {
@@ -503,13 +594,85 @@
       "confidence": 1.0
     },
     "study_schedule": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "screening_days": 30,
+        "screening_washout": true,
+        "periods": [
+          {
+            "name": "screening",
+            "start_week": -4,
+            "end_week": 0,
+            "duration_weeks": 4,
+            "blinding": null,
+            "background_tcs": null
+          },
+          {
+            "name": "double_blind_treatment",
+            "start_week": 0,
+            "end_week": 8,
+            "duration_weeks": 8,
+            "blinding": "double_blind",
+            "background_tcs": null
+          },
+          {
+            "name": "follow_up",
+            "start_week": 8,
+            "end_week": 9,
+            "duration_weeks": 1,
+            "blinding": null,
+            "background_tcs": null
+          }
+        ],
+        "dosing_interval": "once daily",
+        "visit_cadence": null,
+        "visit_cadence_until_week": null,
+        "visit_weeks": [
+          0,
+          1,
+          2,
+          4,
+          8
+        ],
+        "visit_days": null,
+        "phone_contact_weeks": [
+          3,
+          6
+        ],
+        "primary_endpoint_week": 8,
+        "end_of_treatment_week": 8,
+        "end_of_study_week": 9,
+        "total_duration_weeks": 13,
+        "follow_up_weeks": 1,
+        "follow_up_days": null,
+        "follow_up_visit_week": 9,
+        "long_term_extension": true,
+        "extension_end_week": null,
+        "extension_visit_interval_weeks": null,
+        "extension_study_id": "OL-LTE (open-label long-term extension study), 48 additional weeks",
+        "rerandomization_week": null,
+        "maintenance_arms": null,
+        "maintenance_response_check_weeks": null,
+        "last_injection_week": null,
+        "key_secondary_weeks": [
+          8
+        ],
+        "follow_up_visit_interval_weeks": null,
+        "end_of_treatment_weeks_after_last_dose": null,
+        "background_tcs_from_day": null,
+        "primary_endpoint_refs": [],
+        "double_dummy_arms": [],
+        "active_comparator": null,
+        "boilerplate_reused_from": [],
+        "conflicts_with_trial": null,
+        "full_visit_table_available": true,
+        "source_inconsistency": null
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/68/NCT05014568/Prot_000.pdf",
+      "source_excerpt": "Following a 30-day screening period, eligible subjects will be randomized at a 2:1 ratio to receive QD treatment with tapinarof cream, 1% or vehicle cream. Subjects will return to the clinic at Weeks 1, 2, 4, and 8 for efficacy and safety assessments. Subjects will be contacted by phone at Weeks 3 and 6... The total study duration for subjects who complete this Phase 3 study and who fail to qualify for participation in the OL-LTE study... is up to 13 weeks in total (including up to 30 days screening, 8 weeks treatment, and a 1-week follow-up period). ...subjects will have the option to enroll in an Open-Label, Long-Term Extension (OL-LTE) study for an additional 48 weeks... will complete a Follow-up Visit (Visit 7/Week 9 visit) approximately 1 week after the end of treatment.",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.7
     },
     "rescue_therapy": {
       "value": null,

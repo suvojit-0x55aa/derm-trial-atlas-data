@@ -200,13 +200,85 @@
       "confidence": 1.0
     },
     "severity_criteria": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "severity_label": null,
+        "basis": "eligibility_text",
+        "cross_reference": null,
+        "source_criterion_numbers": [
+          4,
+          5,
+          6
+        ],
+        "baseline_visit_number": null,
+        "criteria": [
+          {
+            "scale": "IGA",
+            "scale_component": null,
+            "scale_variant": null,
+            "metric": "absolute_score",
+            "comparator": ">=",
+            "value": 2,
+            "unit": "score",
+            "scale_min": 0,
+            "scale_max": 4,
+            "assessed_at": [
+              "baseline"
+            ],
+            "scale_anchors": null
+          },
+          {
+            "scale": "PASI",
+            "scale_component": null,
+            "scale_variant": null,
+            "metric": "absolute_score",
+            "comparator": ">=",
+            "value": 2,
+            "unit": "score",
+            "scale_min": null,
+            "scale_max": null,
+            "assessed_at": [
+              "baseline"
+            ],
+            "scale_anchors": null
+          },
+          {
+            "scale": "BSA",
+            "scale_component": null,
+            "scale_variant": null,
+            "metric": "percent_bsa",
+            "comparator": ">=",
+            "value": 2,
+            "unit": "percent",
+            "scale_min": null,
+            "scale_max": null,
+            "assessed_at": [
+              "baseline"
+            ],
+            "scale_anchors": null
+          },
+          {
+            "scale": "BSA",
+            "scale_component": null,
+            "scale_variant": null,
+            "metric": "percent_bsa",
+            "comparator": "<=",
+            "value": 20,
+            "unit": "percent",
+            "scale_min": null,
+            "scale_max": null,
+            "assessed_at": [
+              "baseline"
+            ],
+            "scale_anchors": null
+          }
+        ]
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/89/NCT04211389/Prot_000.pdf",
+      "source_excerpt": "Main Inclusion Criteria: '4. Psoriasis vulgaris on the face, extremities, trunk, and/or intertriginous areas involving 2% to 20% of BSA (excluding the scalp, palms and soles) 5. An Investigator's Global Assessment of disease severity (IGA) of at least Mild ('2') at Baseline 6. A PASI score of at least 2 (excluding the scalp, palms and soles) at Baseline.' IGA scale table (Section defining IGA): '0 Clear... 1 Almost Clear... 2 Mild... 3 Moderate... 4 Severe.' This trial enrolls Mild-or-greater disease (IGA>=2), not the 'moderate_to_severe' band, so severity_label is left null.",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.8
     }
   },
   "design": {
@@ -256,13 +328,43 @@
       "confidence": 1.0
     },
     "background_therapy": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "regimen_type": "monotherapy",
+        "background_agent_class": null,
+        "tcs_regimen": null,
+        "step_down_rule": null,
+        "recommended_agents": [],
+        "emollient_required": false,
+        "emollient_frequency": null,
+        "prohibited_concomitant": [
+          "Systemic biologics with possible effect on psoriasis vulgaris (etanercept 4-week washout; adalimumab/infliximab 8-week washout; all other biologics 12 weeks or 5 half-lives)",
+          "Oral/systemic corticosteroids, retinoids, apremilast, methotrexate, cyclosporine and other systemic immunosuppressants (4-week washout)",
+          "Topical anti-psoriasis medications (e.g. topical corticosteroids, vitamin D analogs, prescription shampoos), except emollients (2-week washout)",
+          "PUVA or UVB phototherapy (4-week washout)",
+          "Investigational drugs (12 weeks or 5 half-lives for biologics; 5 half-lives for orals; 2 weeks for topical)",
+          "Antihistamines if prescribed for pruritus associated with psoriasis (2-week washout)",
+          "Strong P-450 cytochrome inhibitors and inducers (2-week washout)"
+        ],
+        "permitted_concomitant": [
+          "Non-medicated emollients, moisturizers and sunscreens as normally used by subjects (on non-treated areas, not within 12 hours of a study visit)",
+          "Eye and ear drop and nasal corticosteroid preparations",
+          "Inhaled corticosteroid preparations if used for a stable condition and at a stable dose for >28 days before screening, continued at the same dose throughout the study",
+          "Tar-containing or dandruff shampoo (zinc pyrithione or selenium sulfide) for the scalp",
+          "Chronically used medications such as statins and anti-hypertensives"
+        ],
+        "applies_to_rerandomized_maintenance": null,
+        "sponsor_trial_ids": [
+          "ARQ-151-302"
+        ],
+        "study_drug_doses_mg": [],
+        "population_note": "This is a monotherapy design: subjects apply only ARQ-151 (roflumilast) cream 0.3% or vehicle cream QD to psoriatic plaques; no standardized background TCS or other anti-psoriatic treatment is used or permitted (2-week washout required for topical anti-psoriasis medications other than emollients), which is why regimen_type is set to 'monotherapy' rather than a TCS-combination value."
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/89/NCT04211389/Prot_000.pdf",
+      "source_excerpt": "Section 6.5.1 Prohibitions and Concomitant Therapy / Table 1 Excluded Medications and Treatments (full list quoted above). Notes: '(2) Non-medicated emollients, moisturizers and sunscreens will be allowed as used normally by the subjects. These can be applied to non-treated areas as needed and should not be used within 12 hours of a study visit.' Section 6.2.2: 'Subjects will apply ARQ-151 cream 0.3% QD or vehicle cream QD to psoriatic plaques of 2% BSA up to a maximum application area of 20% BSA.'",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.7
     }
   },
   "endpoints": {
@@ -457,13 +559,99 @@
       "confidence": 1.0
     },
     "multiplicity_control": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "procedure": "gatekeeping_with_holm",
+        "familywise_error_controlled": true,
+        "alpha": 0.05,
+        "alpha_sided": 2,
+        "alpha_per_dose": null,
+        "co_primary_endpoints": [],
+        "testing_sequence": [
+          {
+            "label": "IGA success (IGA 'clear' or 'almost clear' plus 2-grade improvement from Baseline) at Week 8 (Family 1, primary)",
+            "scale": "IGA",
+            "responder_criteria": [],
+            "timepoint_week": 8,
+            "alpha": 0.05,
+            "step": 1
+          },
+          {
+            "label": "WI-NRS success (>=4-point reduction in WI-NRS pruritus score, in subjects with baseline WI-NRS >=4) at Week 8 (Partition 2)",
+            "scale": "WI-NRS",
+            "responder_criteria": [],
+            "timepoint_week": 8,
+            "alpha": 0.02,
+            "step": 2
+          },
+          {
+            "label": "WI-NRS success at Week 4 (Partition 2)",
+            "scale": "WI-NRS",
+            "responder_criteria": [],
+            "timepoint_week": 4,
+            "alpha": 0.02,
+            "step": 3
+          },
+          {
+            "label": "WI-NRS success at Week 2 (Partition 2)",
+            "scale": "WI-NRS",
+            "responder_criteria": [],
+            "timepoint_week": 2,
+            "alpha": 0.02,
+            "step": 4
+          }
+        ],
+        "alpha_split": [
+          {
+            "group": "Family 2 (hierarchical) + Family 3 (Holm procedure), Partition 1",
+            "n_endpoints": null,
+            "alpha": 0.03,
+            "method": "Family 2 tested hierarchically in a pre-specified order, then Family 3 (next 3 secondary endpoints) tested via the Holm procedure using alpha remaining after Family 2",
+            "timepoint_week": 8
+          },
+          {
+            "group": "WI-NRS timepoints, Partition 2",
+            "n_endpoints": 3,
+            "alpha": 0.02,
+            "method": "sequential testing: Week 8, then Week 4, then Week 2",
+            "timepoint_week": null
+          }
+        ],
+        "alpha_recycling": null,
+        "doses_compared": [
+          "ARQ-151 (roflumilast) cream 0.3%"
+        ],
+        "dose_comparison_order": [],
+        "branching_on": {
+          "label": "IGA success at Week 8",
+          "scale": "IGA",
+          "responder_criteria": [],
+          "timepoint_week": 8,
+          "alpha": 0.05,
+          "step": 1
+        },
+        "regulatory_variants": [],
+        "rescue_counted_as_nonresponder": null,
+        "active_comparator_excluded_from_hierarchy": null,
+        "background_tcs": null,
+        "method_citations": [
+          "SAP Section 6.1.3 Multiple Comparisons"
+        ],
+        "finalized_in_sap": true,
+        "same_design_as": [
+          {
+            "nct_id": "NCT04211363",
+            "trial_name": "ARQ-151-301 (DERMIS-1)"
+          }
+        ],
+        "gatekeeping_structure": true,
+        "further_endpoints_through_week": null
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/89/NCT04211389/SAP_001.pdf",
+      "source_excerpt": "SAP Section 6.1.3 Multiple Comparisons: 'Secondary endpoints will only be tested statistically if the primary endpoint is considered statistically significant... Upon successful testing of the primary endpoint (Family 1) the alpha will be partitioned to test secondary endpoint Families 2 and 3 (Partition 1) and to test WI-NRS timepoints (Partition 2). Partition 1 of alpha = 0.03 will be allocated to test Family 2 and Family 3. The endpoints in Family 2 will be tested hierarchically in the order depicted below; the next 3 secondary endpoints (Family 3) will be tested using the alpha available after testing endpoint Family 2. The Holm procedure will be used to control for multiple comparisons in endpoint Family 3. Partition 2 of alpha = 0.02 will be allocated to sequentially test WI-NRS success at week 8, then week 4 and subsequently week 2. No adjustments will be made for multiple comparisons for other endpoints.' Note: the table depicting Family 2's exact endpoint order did not extract as text (image/table artifact in the source PDF), so individual Family 2/Family 3 endpoint membership beyond the explicitly named WI-NRS partition could not be confirmed and is not asserted in testing_sequence.",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.6
     }
   },
   "timing_ops": {
@@ -504,13 +692,84 @@
       "confidence": 1.0
     },
     "study_schedule": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "screening_days": 35,
+        "screening_washout": true,
+        "periods": [
+          {
+            "name": "screening",
+            "start_week": null,
+            "end_week": 0,
+            "duration_weeks": 5,
+            "blinding": null,
+            "background_tcs": null
+          },
+          {
+            "name": "randomized_treatment",
+            "start_week": 0,
+            "end_week": 8,
+            "duration_weeks": 8,
+            "blinding": "double_blind",
+            "background_tcs": null
+          },
+          {
+            "name": "follow_up",
+            "start_week": 8,
+            "end_week": 9,
+            "duration_weeks": 1,
+            "blinding": null,
+            "background_tcs": null
+          }
+        ],
+        "dosing_interval": "Once daily (QD) topical application",
+        "visit_cadence": null,
+        "visit_cadence_until_week": null,
+        "visit_weeks": null,
+        "visit_days": [
+          1,
+          29,
+          57
+        ],
+        "phone_contact_weeks": null,
+        "primary_endpoint_week": 8,
+        "end_of_treatment_week": 8,
+        "end_of_study_week": 9,
+        "total_duration_weeks": 14,
+        "follow_up_weeks": 1,
+        "follow_up_days": 7,
+        "follow_up_visit_week": 9,
+        "long_term_extension": true,
+        "extension_end_week": null,
+        "extension_visit_interval_weeks": null,
+        "extension_study_id": "ARQ-151-306",
+        "rerandomization_week": null,
+        "maintenance_arms": null,
+        "maintenance_response_check_weeks": null,
+        "last_injection_week": null,
+        "key_secondary_weeks": [
+          2,
+          4,
+          8
+        ],
+        "follow_up_visit_interval_weeks": null,
+        "end_of_treatment_weeks_after_last_dose": null,
+        "background_tcs_from_day": null,
+        "primary_endpoint_refs": [],
+        "double_dummy_arms": [],
+        "active_comparator": null,
+        "boilerplate_reused_from": [
+          "NCT04211363 (ARQ-151-301, DERMIS-1)"
+        ],
+        "conflicts_with_trial": null,
+        "full_visit_table_available": true,
+        "source_inconsistency": "This trial (ARQ-151-302, DERMIS-2) uses byte-identical synopsis/duration/dosing text to its sister trial NCT04211363 (ARQ-151-301, DERMIS-1); confirmed by direct text comparison of both protocol PDFs, not assumed."
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/89/NCT04211389/Prot_000.pdf",
+      "source_excerpt": "Synopsis: 'Duration of Participation for Subjects: Screening (up to 5 weeks), Treatment phases (8 weeks), and a follow up (1 week post-treatment completion) for subjects who do not enroll in ARQ-151-306. Upon completion of the treatment phase of this study (week 8), subjects may have the opportunity, subject to regulatory approval, to participate in an open-label extension study (ARQ-151-306) of up to 6 months.' Also: 'Pharmacokinetic (PK) samples will be collected at pre-dose (trough) on days 1 (baseline), 29 (week 4), and 57 (week 8) for all subjects.' Study title: 'A Phase 3, 8-Week, Parallel Group, Double Blind, Vehicle-Controlled Study...'",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.7
     },
     "rescue_therapy": {
       "value": null,

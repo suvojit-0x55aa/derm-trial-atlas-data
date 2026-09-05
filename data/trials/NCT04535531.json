@@ -272,13 +272,38 @@
       "confidence": 1.0
     },
     "background_therapy": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "regimen_type": "monotherapy",
+        "background_agent_class": null,
+        "tcs_regimen": null,
+        "step_down_rule": null,
+        "recommended_agents": [],
+        "emollient_required": null,
+        "emollient_frequency": null,
+        "prohibited_concomitant": [
+          "Topical calcineurin inhibitors or steroids on MC or within 2 cm of MC lesions within 14 days prior to Baseline",
+          "Treatment for MC during the 14 days prior to Baseline with podophyllotoxin, imiquimod, cantharidin, sinecatechins, topical retinoids, oral or topical zinc, or other homeopathic/OTC products (e.g. ZymaDerm, tea tree oil), cimetidine and other H2 receptor antagonists, or other MC-relevant agents (e.g. wart therapies)",
+          "Surgical procedures related to MC (e.g. cryotherapy, curettage) within 14 days prior to Baseline",
+          "Participation in a previous or concurrent study with a berdazimer-containing product (SB204, SB206, SB208, SB414)"
+        ],
+        "permitted_concomitant": [
+          "Any medication/therapy used by the subject following first application of study product is recorded as a concomitant medication (e.g. aspirin, acetaminophen, birth control pills, vitamins); every attempt should be made to keep concomitant medication/therapy dosing constant during the study",
+          "Non-medicated treatment such as petroleum gel may be added as a concomitant medication if a local skin reaction (LSR) occurs",
+          "Topical corticosteroids may be used to treat LSRs for up to 2 weeks"
+        ],
+        "applies_to_rerandomized_maintenance": null,
+        "sponsor_trial_ids": [
+          "NI-MC304"
+        ],
+        "study_drug_doses_mg": [],
+        "population_note": "Topical monotherapy design (SB206/berdazimer gel 10.3% QD vs vehicle gel) -- subjects with recent competing MC treatment are excluded (an up-to-14-day washout via Exclusion Criteria #4-6) rather than combined with a standardized background regimen, so 'monotherapy' fits."
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/31/NCT04535531/Prot_000.pdf",
+      "source_excerpt": "5.3 Exclusion Criteria: ...4. Have received treatment with topical calcineurin inhibitors or steroids on MC or within 2 cm of MC lesions within 14 days prior to Baseline; 5. Have received treatment for MC during the 14 days prior to Baseline with podophyllotoxin, imiquimod, cantharidin, sinecatechins, topical retinoids, oral or topical zinc, or other homeopathic or over the counter (OTC) products... 6. Have received surgical procedures related to MC (e.g. cryotherapy, curettage) within 14 days prior to Baseline... 8.7 Prior and Concomitant Therapies: Any medication/therapy used by the subject following first application of study product will be considered a concomitant medication (e.g., aspirin, acetaminophen, birth control pills, vitamins, etc.)... Clinically significant LSRs... may result in an investigator directed temporary treatment hold (drug holiday), and topical corticosteroids may be used to treat LSRs for up to 2 weeks.",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.6
     }
   },
   "endpoints": {
@@ -428,13 +453,68 @@
       "confidence": 1.0
     },
     "multiplicity_control": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "procedure": "serial_gatekeeping",
+        "familywise_error_controlled": true,
+        "alpha": 0.05,
+        "alpha_sided": 2,
+        "alpha_per_dose": null,
+        "co_primary_endpoints": [],
+        "testing_sequence": [
+          {
+            "label": "Proportion of subjects achieving a lesion count of 0 or 1 of all treatable MC at Week 12",
+            "scale": null,
+            "responder_criteria": [],
+            "timepoint_week": null,
+            "alpha": null,
+            "step": null
+          },
+          {
+            "label": "Proportion of subjects achieving at least a 90% reduction from Baseline in the number of all treatable MC at Week 12",
+            "scale": null,
+            "responder_criteria": [],
+            "timepoint_week": null,
+            "alpha": null,
+            "step": null
+          },
+          {
+            "label": "Proportion of subjects with complete clearance of all treatable MC at Week 8",
+            "scale": null,
+            "responder_criteria": [],
+            "timepoint_week": null,
+            "alpha": null,
+            "step": null
+          },
+          {
+            "label": "Percent change from Baseline in the number of all treatable MC at Week 4",
+            "scale": null,
+            "responder_criteria": [],
+            "timepoint_week": null,
+            "alpha": null,
+            "step": null
+          }
+        ],
+        "alpha_split": [],
+        "alpha_recycling": null,
+        "doses_compared": [],
+        "dose_comparison_order": [],
+        "branching_on": null,
+        "regulatory_variants": [],
+        "rescue_counted_as_nonresponder": null,
+        "active_comparator_excluded_from_hierarchy": null,
+        "background_tcs": null,
+        "method_citations": [],
+        "finalized_in_sap": true,
+        "same_design_as": [],
+        "gatekeeping_structure": true,
+        "further_endpoints_through_week": 12
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/31/NCT04535531/SAP_001.pdf",
+      "source_excerpt": "10.7 Multiple Comparison/Multiplicity: The familywise error rate with respect to the primary endpoint and secondary endpoints will be strongly controlled at the alpha=0.05 level using a hierarchical fixed sequence method testing strategy... If the primary endpoint is statistically significant at the alpha=0.05 level, then the secondary efficacy endpoints will be tested in the following hierarchical fixed sequence: 1) Proportion of subjects achieving a lesion count of 0 or 1 of all treatable MC at Week 12. 2) Proportion of subjects achieving at least a 90% reduction from Baseline in the number of all treatable MC at Week 12. 3) Proportion of subjects with complete clearance of all treatable MC at Week 8. 4) Percent change from Baseline in the number of all treatable MC at Week 4.",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.7
     }
   },
   "timing_ops": {
@@ -475,13 +555,98 @@
       "confidence": 1.0
     },
     "study_schedule": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "screening_days": 15,
+        "screening_washout": true,
+        "periods": [
+          {
+            "name": "screening",
+            "start_week": null,
+            "end_week": 0,
+            "duration_weeks": 2,
+            "blinding": null,
+            "background_tcs": null
+          },
+          {
+            "name": "randomized_treatment",
+            "start_week": 0,
+            "end_week": 12,
+            "duration_weeks": 12,
+            "blinding": "double_blind",
+            "background_tcs": null
+          },
+          {
+            "name": "off_treatment_follow_up",
+            "start_week": 12,
+            "end_week": 24,
+            "duration_weeks": 12,
+            "blinding": "double_blind",
+            "background_tcs": null
+          }
+        ],
+        "dosing_interval": "once_daily",
+        "visit_cadence": null,
+        "visit_cadence_until_week": null,
+        "visit_weeks": [
+          2,
+          4,
+          8,
+          12,
+          16,
+          20,
+          24
+        ],
+        "visit_days": [
+          1,
+          2,
+          15,
+          29,
+          57,
+          85,
+          113,
+          141,
+          169
+        ],
+        "phone_contact_weeks": [
+          16,
+          20
+        ],
+        "primary_endpoint_week": 12,
+        "end_of_treatment_week": 12,
+        "end_of_study_week": 24,
+        "total_duration_weeks": 24,
+        "follow_up_weeks": 12,
+        "follow_up_days": null,
+        "follow_up_visit_week": 24,
+        "long_term_extension": null,
+        "extension_end_week": null,
+        "extension_visit_interval_weeks": null,
+        "extension_study_id": null,
+        "rerandomization_week": null,
+        "maintenance_arms": null,
+        "maintenance_response_check_weeks": null,
+        "last_injection_week": null,
+        "key_secondary_weeks": [
+          8,
+          4
+        ],
+        "follow_up_visit_interval_weeks": null,
+        "end_of_treatment_weeks_after_last_dose": null,
+        "background_tcs_from_day": null,
+        "primary_endpoint_refs": [],
+        "double_dummy_arms": [],
+        "active_comparator": null,
+        "boilerplate_reused_from": [],
+        "conflicts_with_trial": null,
+        "full_visit_table_available": true,
+        "source_inconsistency": null
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/31/NCT04535531/Prot_000.pdf",
+      "source_excerpt": "Figure 1 Study Timeline Diagram: SB206 (berdazimer) gel 10.3% QD / Vehicle gel -- Screening (Up to 2 weeks) -> Randomized Treatment Period (Double-Blind) (12 weeks) -> Safety Follow-Up Period (Double-Blind) (12 weeks; No treatment after Week 12 through 24). Table 1 Schedule of Assessments: Screening (Day -15 to Day 1), Baseline (Day 1), TC (Day 2), Week 2 (Day 15+/-3), Week 4 (Day 29+/-5), Week 8 (Day 57+/-5), Week 12/ET1 (Day 85+/-5), Visit 7/Week 16 and Visit 8/Week 20 (Telephone Contact), Visit 9/Week 24 (Day 169+/-7).",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.7
     },
     "rescue_therapy": {
       "value": null,

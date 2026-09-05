@@ -241,13 +241,54 @@
       "confidence": 1.0
     },
     "background_therapy": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "regimen_type": null,
+        "background_agent_class": null,
+        "tcs_regimen": null,
+        "step_down_rule": null,
+        "recommended_agents": [
+          {
+            "name": "Tacrolimus",
+            "strength_pct": null,
+            "form": "topical",
+            "potency": null
+          },
+          {
+            "name": "Clobetasol",
+            "strength_pct": null,
+            "form": "topical",
+            "potency": null
+          },
+          {
+            "name": "Regranex",
+            "strength_pct": null,
+            "form": "topical",
+            "potency": null
+          }
+        ],
+        "emollient_required": null,
+        "emollient_frequency": null,
+        "prohibited_concomitant": [
+          "Topical administration of any medication (other than B-VEC and placebo) to a study target wound, throughout the study assessment period up to Week 26, unless approved in advance by the Medical Monitor/Sponsor"
+        ],
+        "permitted_concomitant": [
+          "Tacrolimus, Clobetasol, or Regranex may be prescribed by the Investigator to be topically applied to all study target wounds during the study",
+          "Topical concomitant medications or treatments deemed necessary to provide adequate supportive care to non-target wounds"
+        ],
+        "applies_to_rerandomized_maintenance": null,
+        "sponsor_trial_ids": [
+          "GEM-3",
+          "B-VEC-03"
+        ],
+        "study_drug_doses_mg": [],
+        "population_note": "Design is an intra-subject, wound-level randomization (each subject serves as their own control with matched wound pairs), not a systemic background-therapy regimen, so none of the schema's 3 regimen_type values (all AD/TCS-flavored) cleanly apply; left null rather than force-fit."
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/04/NCT04491604/Prot_000.pdf",
+      "source_excerpt": "4.4 Study Restrictions: Throughout the study assessments period, up to Week 26, topical administration of any medication (other than B-VEC and placebo) to a study target wound is prohibited, unless approved in advance by the Medical Monitor/Sponsor... 4.5 Concomitant Medications and Topical Treatments: Topical concomitant medications or treatments deemed necessary to provide adequate supportive care to non-target wounds may be prescribed and will be documented on the concomitant medication log. Additionally, the Investigator may prescribe Tacrolimus, Clobetasol or Regranex, to be topically applied to all study target wounds, during the study.",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.6
     }
   },
   "endpoints": {
@@ -387,13 +428,37 @@
       "confidence": 1.0
     },
     "multiplicity_control": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "procedure": "serial_gatekeeping",
+        "familywise_error_controlled": true,
+        "alpha": 0.05,
+        "alpha_sided": 2,
+        "alpha_per_dose": null,
+        "co_primary_endpoints": [],
+        "testing_sequence": [],
+        "alpha_split": [],
+        "alpha_recycling": null,
+        "doses_compared": [],
+        "dose_comparison_order": [],
+        "branching_on": null,
+        "regulatory_variants": [],
+        "rescue_counted_as_nonresponder": null,
+        "active_comparator_excluded_from_hierarchy": null,
+        "background_tcs": null,
+        "method_citations": [
+          "McNemar test"
+        ],
+        "finalized_in_sap": true,
+        "same_design_as": [],
+        "gatekeeping_structure": true,
+        "further_endpoints_through_week": null
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/04/NCT04491604/SAP_001.pdf",
+      "source_excerpt": "7.1.4 Multiple Comparisons/Multiplicity: The primary efficacy endpoint is a single responder outcome during weeks 24 through 26 that will be compared between two treatment groups. Therefore, the primary analysis will not be adjusted for multiple comparisons. ... 7.3 Key Secondary Efficacy Analysis: The McNemar testing procedure used for the primary endpoint will [be] repeated for this key secondary endpoint. ... If the primary endpoint is statistically significant at a type I rate of 0.05, the same full type I rate of 0.05 will [be] passed on to evaluate the key secondary endpoint.",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.6
     }
   },
   "timing_ops": {
@@ -434,13 +499,84 @@
       "confidence": 1.0
     },
     "study_schedule": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "screening_days": 60,
+        "screening_washout": null,
+        "periods": [
+          {
+            "name": "screening",
+            "start_week": null,
+            "end_week": null,
+            "duration_weeks": null,
+            "blinding": null,
+            "background_tcs": null
+          },
+          {
+            "name": "randomized_treatment",
+            "start_week": 1,
+            "end_week": 26,
+            "duration_weeks": 25,
+            "blinding": "double_blind",
+            "background_tcs": null
+          },
+          {
+            "name": "follow_up",
+            "start_week": null,
+            "end_week": null,
+            "duration_weeks": null,
+            "blinding": null,
+            "background_tcs": null
+          }
+        ],
+        "dosing_interval": "weekly",
+        "visit_cadence": "weekly",
+        "visit_cadence_until_week": 21,
+        "visit_weeks": [
+          1,
+          22,
+          23,
+          24,
+          25,
+          26
+        ],
+        "visit_days": null,
+        "phone_contact_weeks": null,
+        "primary_endpoint_week": 26,
+        "end_of_treatment_week": 26,
+        "end_of_study_week": 26,
+        "total_duration_weeks": 26,
+        "follow_up_weeks": null,
+        "follow_up_days": 30,
+        "follow_up_visit_week": null,
+        "long_term_extension": null,
+        "extension_end_week": null,
+        "extension_visit_interval_weeks": null,
+        "extension_study_id": null,
+        "rerandomization_week": null,
+        "maintenance_arms": null,
+        "maintenance_response_check_weeks": null,
+        "last_injection_week": null,
+        "key_secondary_weeks": [
+          24,
+          26
+        ],
+        "follow_up_visit_interval_weeks": null,
+        "end_of_treatment_weeks_after_last_dose": null,
+        "background_tcs_from_day": null,
+        "primary_endpoint_refs": [],
+        "double_dummy_arms": [],
+        "active_comparator": null,
+        "boilerplate_reused_from": [],
+        "conflicts_with_trial": null,
+        "full_visit_table_available": true,
+        "source_inconsistency": null
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/04/NCT04491604/Prot_000.pdf",
+      "source_excerpt": "4.2.3 Screening: If a subject has not undergone genetic testing... they may visit the site up to 60 days prior to Visit 1 (Week 1). ... 4.1.2 Treatment Period: Each subject visits the Investigative site at the beginning of the study for Visit 1 (Week 1) and the matched wounds are randomized... and the assessment/treatment period begins and will continue for 25 weeks. Additionally, the subject will return to the Investigative site for a single day Safety Follow-up Visit 30 days (±4 days) from the last dose of B-VEC. Schedule of Events Table 1: Screening, Week 1, Week 2-21, Week 22, 23, 24, 25, 26, SFU (30 days after last dose). Primary endpoint defined as wounds healed on Week 22 and Week 24, or healed on Week 24 and Week 26.",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.7
     },
     "rescue_therapy": {
       "value": null,

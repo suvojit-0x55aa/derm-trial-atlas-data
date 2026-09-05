@@ -275,13 +275,40 @@
       "confidence": 1.0
     },
     "background_therapy": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "regimen_type": "monotherapy",
+        "background_agent_class": null,
+        "tcs_regimen": null,
+        "step_down_rule": null,
+        "recommended_agents": [],
+        "emollient_required": false,
+        "emollient_frequency": null,
+        "prohibited_concomitant": [
+          "Any treatment for AK lesions other than study drug on the treatment area (AK lesions outside the treatment area may only be treated by lesion-directed treatment, e.g. cryotherapy or biopsy)",
+          "Until Day 57: immunomodulators/immunosuppressive therapies, cytotoxic drugs, interferon/interferon inducers, topical or systemic steroids, 5-FU, ingenol mebutate, imiquimod, diclofenac, topical or systemic retinoids, topical salicylic acid, bichloroacetic/trichloroacetic acid, acid-containing therapeutic products, benzoyl peroxide, chemodestruction, medicated/therapeutic topical salves, photodynamic therapy, psoralen plus UVA/UVB therapy, artificial tanner, excessive/prolonged UV exposure",
+          "Until end of Day 57: any topical products (lotions, creams, ointments, moisturizers, sunscreen, artificial tanners, make-up) on the treatment area, except when prescribed by the Investigator for LSR management",
+          "During Recurrence Follow-up: AK treatment and medicated topical products in the treatment area, and systemic therapies (e.g. immunosuppressive agents, systemic AK treatment) that may interfere with AK recurrence assessment",
+          "Subjects who start systemic or topical therapies for AK treatment are withdrawn from the study"
+        ],
+        "permitted_concomitant": [
+          "Sunblock only in the treatment area from Day 15 onward, at investigator discretion, if direct sun/UV exposure cannot be avoided",
+          "During Recurrence Follow-up: sunblock and non-medicated topical products in the treatment area",
+          "Unrestricted use of nonmedicated topical products outside the treatment area throughout the study",
+          "No restrictions during the study on smoking/tobacco, diet, alcohol/caffeine, or physical activity"
+        ],
+        "applies_to_rerandomized_maintenance": null,
+        "sponsor_trial_ids": [
+          "KX01-AK-003"
+        ],
+        "study_drug_doses_mg": [],
+        "population_note": "Monotherapy design (Phase 3, vehicle-controlled, KX2-391/tirbanibulin ointment 1% once daily for 5 consecutive days). Section 6.4.3 gives a detailed list of drug products/treatments prohibited until Day 57 because they could mask treatment effect; Section 6.4.4 confirms no other lifestyle restrictions."
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/77/NCT03285477/Prot_000.pdf",
+      "source_excerpt": "6.4.3 Prohibited Medication/Therapy: Use of any treatment for AK lesions other than study drug on the treatment area is prohibited during the study. ... Prohibited drug products and treatments that might influence or mask the effects of treatment until Day 57 include: immunomodulators or immunosuppressive therapies, cytotoxic drugs, interferon/interferon inducers, topical or systemic steroids, 5-FU, ingenol mebutate, imiquimod, diclofenac, topical or systemic retinoids, topical salicylic acid, bichloroacetic acid, trichloroacetic acid, acid-containing therapeutic products, benzoyl peroxide, chemodestruction, medicated/therapeutic topical salves, photodynamic therapy, psoralen plus UVA or UVB therapy, artificial tanner, excessive or prolonged exposure to UV light source. ... Any subjects who start systemic or topical therapies for the treatment of AK will be withdrawn from the study.",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.7
     }
   },
   "endpoints": {
@@ -584,13 +611,64 @@
       "confidence": 1.0
     },
     "multiplicity_control": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "procedure": "serial_gatekeeping",
+        "familywise_error_controlled": true,
+        "alpha": 0.05,
+        "alpha_sided": 2,
+        "alpha_per_dose": null,
+        "co_primary_endpoints": [
+          {
+            "label": "Complete clearance rate (100% clearance of AK lesions in the treatment area) at Day 57",
+            "scale": "AK Lesion Clearance",
+            "responder_criteria": [],
+            "timepoint_week": null,
+            "alpha": 0.05,
+            "step": 1
+          }
+        ],
+        "testing_sequence": [
+          {
+            "label": "Key secondary: Partial clearance rate (>=75% clearance of AK lesions in the treatment area) at Day 57, tested only if the primary endpoint is statistically significant",
+            "scale": "AK Lesion Clearance",
+            "responder_criteria": [],
+            "timepoint_week": null,
+            "alpha": 0.05,
+            "step": 2
+          }
+        ],
+        "alpha_split": [],
+        "alpha_recycling": false,
+        "doses_compared": [
+          "KX2-391 (tirbanibulin) Ointment 1%"
+        ],
+        "dose_comparison_order": [],
+        "branching_on": null,
+        "regulatory_variants": [],
+        "rescue_counted_as_nonresponder": null,
+        "active_comparator_excluded_from_hierarchy": null,
+        "background_tcs": null,
+        "method_citations": [
+          "Cochran-Mantel-Haenszel (CMH) model",
+          "Pearson Chi-Square test",
+          "Breslow-Day test for heterogeneity"
+        ],
+        "finalized_in_sap": true,
+        "same_design_as": [
+          {
+            "nct_id": "NCT03285490",
+            "trial_name": "KX01-AK-004"
+          }
+        ],
+        "gatekeeping_structure": true,
+        "further_endpoints_through_week": null
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/77/NCT03285477/SAP_001.pdf",
+      "source_excerpt": "10.11.3 Secondary Efficacy Analyses -- Key Secondary Efficacy Endpoint: Partial clearance rate will be analyzed in the same way as the primary efficacy endpoint (complete clearance rate). However, to control for multiplicity, partial clearance rate as the key secondary efficacy endpoint will be examined using a step-down gatekeeping testing strategy for the overall type I error rate. In other words, the primary endpoint will serve as a gatekeeper for the key secondary endpoint. The complete clearance rate will be tested initially; if, and only if it is statistically significant at the 0.05 significance level, then the partial clearance rate will be statistically tested at the same significance level.",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.7
     }
   },
   "timing_ops": {
@@ -631,22 +709,140 @@
       "confidence": 1.0
     },
     "study_schedule": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "screening_days": 28,
+        "screening_washout": null,
+        "periods": [
+          {
+            "name": "screening",
+            "start_week": null,
+            "end_week": 0,
+            "duration_weeks": 4,
+            "blinding": null,
+            "background_tcs": null
+          },
+          {
+            "name": "induction_treatment",
+            "start_week": 0,
+            "end_week": 1,
+            "duration_weeks": 1,
+            "blinding": "double_blind",
+            "background_tcs": null
+          },
+          {
+            "name": "follow_up",
+            "start_week": 1,
+            "end_week": 8,
+            "duration_weeks": 7,
+            "blinding": "double_blind",
+            "background_tcs": null
+          },
+          {
+            "name": "off_treatment_follow_up",
+            "start_week": 8,
+            "end_week": 60,
+            "duration_weeks": 52,
+            "blinding": "open_label",
+            "background_tcs": null
+          }
+        ],
+        "dosing_interval": "once_daily",
+        "visit_cadence": null,
+        "visit_cadence_until_week": null,
+        "visit_weeks": null,
+        "visit_days": [
+          -28,
+          1,
+          2,
+          5,
+          8,
+          15,
+          29,
+          57,
+          87,
+          177,
+          267,
+          360
+        ],
+        "phone_contact_weeks": null,
+        "primary_endpoint_week": 8,
+        "end_of_treatment_week": 1,
+        "end_of_study_week": 60,
+        "total_duration_weeks": 60,
+        "follow_up_weeks": 52,
+        "follow_up_days": null,
+        "follow_up_visit_week": null,
+        "long_term_extension": false,
+        "extension_end_week": null,
+        "extension_visit_interval_weeks": null,
+        "extension_study_id": null,
+        "rerandomization_week": null,
+        "maintenance_arms": null,
+        "maintenance_response_check_weeks": null,
+        "last_injection_week": null,
+        "key_secondary_weeks": [
+          8
+        ],
+        "follow_up_visit_interval_weeks": 13,
+        "end_of_treatment_weeks_after_last_dose": null,
+        "background_tcs_from_day": null,
+        "primary_endpoint_refs": [],
+        "double_dummy_arms": [],
+        "active_comparator": null,
+        "boilerplate_reused_from": [],
+        "conflicts_with_trial": null,
+        "full_visit_table_available": true,
+        "source_inconsistency": "Protocol expresses timing in study DAYS, not weeks: Screening up to Day -28 to -1, Baseline/Day 1, 5-day self-applied treatment (Days 2-5), Response Assessment visits at Day 8, 15, 29, and Day 57 (primary/key-secondary endpoint, 'complete clearance'/'partial clearance' of AK lesions), then a Recurrence Follow-up Period at 3, 6, 9, and 12 months post-Day 57 (approximated here as Days 177, 267, 360 relative to Day 1, i.e. ~13-week intervals). visit_weeks left null in favor of the exact visit_days; total_duration_weeks (60) and follow_up_visit_interval_weeks (13, i.e. ~quarterly) are derived approximations from the day-based schedule, not stated verbatim in weeks."
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/77/NCT03285477/Prot_000.pdf",
+      "source_excerpt": "The study consists of Screening, Treatment, Response Assessment Period, and a Recurrence Follow-up Period. After a Screening Period of up to 28 days, subjects will return to the site for confirmation of eligibility. ... The Treatment Period will be Days 1 to 5. ... Table 1 Schedule of Procedures and Assessments in KX01-AK-003: Day -28 to -1 (Screening, Visit 1); Day 1 (Baseline, Visit 2); Days 2-5 (at-home once-daily self-administration); Visit 3 Day 5; Visit 4 Day 8 (±2); Visit 5 Day 15 (±2); Visit 6 Day 29 (±3); Visit 7/Early Term Day 57 (±5); Visits 8-11 at 3, 6, 9, 12 Months Post-Day 57 (±14). Primary Objective: to evaluate 100% clearance at Day 57.",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.6
     },
     "rescue_therapy": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "permitted": false,
+        "trigger": "prohibited",
+        "earliest_week": null,
+        "prohibited_through_week": null,
+        "trigger_rules": [],
+        "flare_definition": [],
+        "first_step": null,
+        "topical_min_days_before_systemic": null,
+        "topical_rescue_requires_study_drug_discontinuation": null,
+        "systemic_rescue_requires_study_drug_discontinuation": null,
+        "resume_after_systemic_rescue_half_lives": null,
+        "resume_after_phototherapy_months": null,
+        "rescued_counted_as_nonresponder": null,
+        "rescued_counted_as_treatment_failure": null,
+        "continue_visits_after_discontinuation": null,
+        "continue_visits_through_week": null,
+        "topical_rescue_not_counted_after_week": null,
+        "topical_agents": [],
+        "topical_potency_classes": [],
+        "tci_reserved_areas": [],
+        "systemic_agents": [],
+        "oral_corticosteroid_limit": null,
+        "rescue_period": null,
+        "escape_arm_washout_half_lives": null,
+        "maintenance_period_rule": null,
+        "permitted_concomitant": [
+          "Lesion-directed treatment (e.g. cryotherapy, biopsy) for AK lesions located outside the treatment area only"
+        ],
+        "recorded_in_ecrf": true,
+        "applies_to_period": "double_blind_treatment",
+        "long_term_extension_eligible_after_rescue": null,
+        "topical_agent_class": null,
+        "rationale": "No rescue-medication provision is described for AK lesions inside the treatment area; use of any AK treatment other than study drug on the treatment area is explicitly prohibited during the study, and subjects who start systemic or topical AK therapy are withdrawn from the study rather than rescued. Lesion-directed treatment is permitted only for AK lesions outside the treatment area, which is a normal-care allowance, not a rescue provision for treatment failure within the study."
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/77/NCT03285477/Prot_000.pdf",
+      "source_excerpt": "Use of any treatment for AK lesions other than study drug on the treatment area is prohibited during the study. Subjects will be reminded that AK lesions located outside the treatment area may be treated by lesion-directed treatment only, eg, cryotherapy or biopsy. ... Any subjects who start systemic or topical therapies for the treatment of AK will be withdrawn from the study.",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.7
     }
   },
   "adverse_events": {

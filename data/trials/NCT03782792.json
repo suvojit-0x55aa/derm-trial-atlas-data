@@ -212,13 +212,108 @@
       "confidence": 1.0
     },
     "severity_criteria": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "severity_label": "moderate_to_severe",
+        "basis": "eligibility_text",
+        "cross_reference": null,
+        "source_criterion_numbers": [],
+        "baseline_visit_number": 2,
+        "criteria": [
+          {
+            "scale": "GPPGA",
+            "scale_component": null,
+            "scale_variant": null,
+            "metric": "absolute_score",
+            "comparator": ">=",
+            "value": 3,
+            "unit": "score",
+            "scale_min": 0,
+            "scale_max": 4,
+            "assessed_at": [
+              "Visit 2 (randomization/treatment initiation)"
+            ],
+            "scale_anchors": [
+              {
+                "score": 0,
+                "label": "Clear"
+              },
+              {
+                "score": 1,
+                "label": "Almost Clear"
+              },
+              {
+                "score": 2,
+                "label": "Mild"
+              },
+              {
+                "score": 3,
+                "label": "Moderate"
+              },
+              {
+                "score": 4,
+                "label": "Severe; overall GPPGA is derived from mean of erythema/pustules/scaling-crusting component scores (Section 10.1.1)"
+              }
+            ]
+          },
+          {
+            "scale": "GPPGA",
+            "scale_component": "pustulation subscore",
+            "scale_variant": null,
+            "metric": "absolute_score",
+            "comparator": ">=",
+            "value": 2,
+            "unit": "score",
+            "scale_min": 0,
+            "scale_max": 4,
+            "assessed_at": [
+              "Visit 2 (randomization/treatment initiation)"
+            ],
+            "scale_anchors": [
+              {
+                "score": 0,
+                "label": "Clear (no visible pustules)"
+              },
+              {
+                "score": 1,
+                "label": "Almost Clear (low density occasional small discrete pustules)"
+              },
+              {
+                "score": 2,
+                "label": "Mild (moderate density grouped discrete small pustules)"
+              },
+              {
+                "score": 3,
+                "label": "Moderate (high density pustules with some coalescence)"
+              },
+              {
+                "score": 4,
+                "label": "Severe (very high density pustules with pustular lakes)"
+              }
+            ]
+          },
+          {
+            "scale": "BSA",
+            "scale_component": null,
+            "scale_variant": null,
+            "metric": "percent_bsa",
+            "comparator": ">=",
+            "value": 5,
+            "unit": "percent",
+            "scale_min": null,
+            "scale_max": null,
+            "assessed_at": [
+              "Visit 2 (randomization/treatment initiation)"
+            ],
+            "scale_anchors": null
+          }
+        ]
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/92/NCT03782792/Prot_000.pdf",
+      "source_excerpt": "Table 3.1:1 Study definitions, 'Criteria for Randomization/Initiation of Treatment': 'Randomized Treatment at Visit 2 will be initiated immediately in patients: Who meet all of the inclusion/exclusion criteria at screening And With GPP presenting with an acute flare of moderate to severe intensity, defined by the emergence of: a) a GPPGA score of at least 3 (moderate), and b) presence of fresh pustules (new appearance or worsening of pustules), and c) GPPGA pustulation sub score of at least 2 (mild), and d) at least 5% of Body Surface Area (BSA) covered with erythema and the presence of pustules.' Section 10.1.1 gives the GPPGA 0-4 anchor definitions for erythema, pustules, and scaling/crusting components.",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.7
     }
   },
   "design": {
@@ -268,13 +363,47 @@
       "confidence": 1.0
     },
     "background_therapy": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "regimen_type": "monotherapy",
+        "background_agent_class": null,
+        "tcs_regimen": null,
+        "step_down_rule": null,
+        "recommended_agents": [],
+        "emollient_required": null,
+        "emollient_frequency": null,
+        "prohibited_concomitant": [
+          "secukinumab, risankizumab, tildrakizumab - 2 months prior to Visit 2, not allowed during trial",
+          "rituximab, ustekinumab - 2 months prior to Visit 2, not allowed during trial",
+          "natalizumab, alemtuzumab, guselkumab, ixekizumab, adalimumab, non-biologic investigational psoriasis products - 2 months prior to Visit 2, not allowed during trial",
+          "brodalumab, efalizumab, visilizumab, briakinumab, infliximab - 2 months prior to Visit 2, not allowed during trial",
+          "IL36R inhibitors - not allowed before or during trial participation",
+          "etanercept, live virus vaccinations - 6 weeks prior to Visit 2, not allowed during trial",
+          "any investigational device or product (excluding psoriasis products) - 30 days prior to Visit 2",
+          "other systemic immunomodulating treatments (e.g. corticosteroids, cyclophosphamide), tofacitinib, apremilast - not allowed during trial (permitted only as escape treatment)",
+          "other systemic psoriasis treatments (e.g. fumarates), photochemotherapy (PUVA), GMA apheresis - not allowed during trial (permitted only as escape treatment)",
+          "phototherapy (UVA, UVB), topical treatment for psoriasis or any other skin condition (e.g. topical corticosteroids, topical vitamin D analogues, tar, anthralin, topical retinoids) - no initiation 1 week prior to Visit 2, not allowed after Visit 2 except as escape treatment",
+          "anakinra - 7 days prior to Visit 2",
+          "methotrexate, cyclosporine, retinoids - no initiation or dose escalation within 2 weeks prior to Visit 2; must be discontinued prior to first dose of BI 655130/placebo"
+        ],
+        "permitted_concomitant": [
+          "Stable doses of concomitant therapies for chronic conditions unrelated to GPP, where neither the condition nor the treatment excludes the patient from participation",
+          "Any drug from the restricted-medications table (Table 4.2.2.1:1) if used specifically as escape treatment for disease worsening or GPP flare recurrence (excludes the patient from same-visit open-label BI 655130 qualification at D8, but not from later open-label dosing)"
+        ],
+        "applies_to_rerandomized_maintenance": null,
+        "sponsor_trial_ids": [
+          "1368-0013 (Effisayil-1)"
+        ],
+        "study_drug_doses_mg": [
+          900
+        ],
+        "population_note": "Patients may enter with background retinoid/methotrexate/cyclosporine therapy for GPP but must discontinue it before the first dose of BI 655130/placebo (Section 3.3, inclusion criteria); thereafter the study drug is the sole permitted GPP treatment, so regimen_type is set to monotherapy. Real-world GPP disease worsening is managed via a separate 'escape treatment' (Standard of Care, physician's choice) mechanism captured under rescue_therapy, not as a continued background regimen."
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/92/NCT03782792/Prot_000.pdf",
+      "source_excerpt": "Section 3.3 inclusion criteria: 'Patients may or may not be receiving background treatment with retinoids and/or methotrexate and/or cyclosporine. Patients must discontinue retinoids/methotrexate/cyclosporine prior to receiving the first dose of BI 655130/ placebo.' Section 4.2.2.1 Restrictions regarding concomitant treatment / Table 4.2.2.1:1 Restricted medications: 'The medications (or classes of medications) listed... must not have been taken before inclusion for the time periods as specified, and are not permitted throughout the study participation except in the following circumstances. These drugs are permitted only when used as escape treatment in the event of disease worsening and/or recurrence of GPP flare.'",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.65
     }
   },
   "endpoints": {
@@ -675,13 +804,96 @@
       "confidence": 1.0
     },
     "multiplicity_control": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "procedure": "serial_gatekeeping",
+        "familywise_error_controlled": true,
+        "alpha": 0.025,
+        "alpha_sided": 1,
+        "alpha_per_dose": null,
+        "co_primary_endpoints": [],
+        "testing_sequence": [
+          {
+            "label": "Primary: pustule clearance (GPPGA pustulation subscore=0) at Week 1",
+            "scale": null,
+            "responder_criteria": [],
+            "timepoint_week": null,
+            "alpha": null,
+            "step": null
+          },
+          {
+            "label": "Key secondary: GPPGA 0 or 1 at Week 1",
+            "scale": null,
+            "responder_criteria": [],
+            "timepoint_week": null,
+            "alpha": null,
+            "step": null
+          },
+          {
+            "label": "Secondary: GPPASI 75 at Week 4",
+            "scale": null,
+            "responder_criteria": [],
+            "timepoint_week": null,
+            "alpha": null,
+            "step": null
+          },
+          {
+            "label": "Secondary: change from baseline in Pain VAS at Week 4",
+            "scale": null,
+            "responder_criteria": [],
+            "timepoint_week": null,
+            "alpha": null,
+            "step": null
+          },
+          {
+            "label": "Secondary: change from baseline in Psoriasis Symptom Scale (PSS) total score at Week 4",
+            "scale": null,
+            "responder_criteria": [],
+            "timepoint_week": null,
+            "alpha": null,
+            "step": null
+          },
+          {
+            "label": "Secondary: change from baseline in FACIT-Fatigue total score at Week 4",
+            "scale": null,
+            "responder_criteria": [],
+            "timepoint_week": null,
+            "alpha": null,
+            "step": null
+          }
+        ],
+        "alpha_split": [
+          {
+            "group": "Full fixed-sequence hierarchy (no alpha splitting)",
+            "n_endpoints": 6,
+            "alpha": 0.025,
+            "method": "fixed-sequence hierarchical testing (each subsequent test performed only if the prior test's null hypothesis was rejected, at the full un-adjusted 1-sided alpha)",
+            "timepoint_week": null
+          }
+        ],
+        "alpha_recycling": false,
+        "doses_compared": [
+          "BI 655130 (spesolimab) 900 mg IV single dose"
+        ],
+        "dose_comparison_order": [],
+        "branching_on": null,
+        "regulatory_variants": [],
+        "rescue_counted_as_nonresponder": true,
+        "active_comparator_excluded_from_hierarchy": null,
+        "background_tcs": null,
+        "method_citations": [
+          "Suissa-Shuster test (pooled method) for the primary and key secondary endpoint comparisons"
+        ],
+        "finalized_in_sap": true,
+        "same_design_as": [],
+        "gatekeeping_structure": true,
+        "further_endpoints_through_week": 4
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/92/NCT03782792/Prot_000.pdf",
+      "source_excerpt": "Synopsis / Statistical methods: 'The trial is designed to demonstrate superiority of BI 655130 in the primary endpoint, achievement of pustule clearance at week 1, and the key secondary endpoint, GPPGA (0, 1) at Week 1, relative to placebo. The primary analysis... will use a Suissa-Shuster test (pooled method)... A further hypothesis on the secondary endpoints, GPPASI 75 at Week 4, Pain VAS score at Week 4, PSS score at Week 4 and FACIT Fatigue Score at Week 4, will be tested in a hierarchical manner if the test of the null hypotheses for both primary and key secondary endpoints has previously been rejected.' Section 7.2: 'No adjustment of the 1-sided alpha-level of 0.025 is necessary'; each secondary endpoint 'tested in a hierarchical manner subsequent to rejection of the null hypothesis on the previous secondary endpoint hence no adjustment to the 1-sided alpha-level of 0.025 is necessary.'",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.7
     }
   },
   "timing_ops": {
@@ -722,22 +934,222 @@
       "confidence": 1.0
     },
     "study_schedule": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "screening_days": null,
+        "screening_washout": true,
+        "periods": [
+          {
+            "name": "screening",
+            "start_week": null,
+            "end_week": 0,
+            "duration_weeks": null,
+            "blinding": null,
+            "background_tcs": null
+          },
+          {
+            "name": "randomized_treatment",
+            "start_week": 0,
+            "end_week": 12,
+            "duration_weeks": 12,
+            "blinding": "double_blind",
+            "background_tcs": null
+          },
+          {
+            "name": "follow_up",
+            "start_week": 12,
+            "end_week": 28,
+            "duration_weeks": 16,
+            "blinding": null,
+            "background_tcs": null
+          }
+        ],
+        "dosing_interval": "Single IV dose of 900 mg BI 655130 or placebo at Day 1/Week 1 (Visit 2); optional single open-label 900 mg IV rescue/non-response dose at Week 1/Day 8 or, once only, after a flare recurrence between Day 8 and Week 12",
+        "visit_cadence": null,
+        "visit_cadence_until_week": null,
+        "visit_weeks": [
+          1,
+          2,
+          4,
+          12
+        ],
+        "visit_days": [
+          1,
+          2,
+          3,
+          8
+        ],
+        "phone_contact_weeks": null,
+        "primary_endpoint_week": 1,
+        "end_of_treatment_week": null,
+        "end_of_study_week": null,
+        "total_duration_weeks": 28,
+        "follow_up_weeks": 16,
+        "follow_up_days": null,
+        "follow_up_visit_week": null,
+        "long_term_extension": true,
+        "extension_end_week": null,
+        "extension_visit_interval_weeks": null,
+        "extension_study_id": "1368-0025 (open-label extension trial)",
+        "rerandomization_week": null,
+        "maintenance_arms": null,
+        "maintenance_response_check_weeks": null,
+        "last_injection_week": null,
+        "key_secondary_weeks": [
+          1
+        ],
+        "follow_up_visit_interval_weeks": null,
+        "end_of_treatment_weeks_after_last_dose": null,
+        "background_tcs_from_day": null,
+        "primary_endpoint_refs": [],
+        "double_dummy_arms": [],
+        "active_comparator": null,
+        "boilerplate_reused_from": [],
+        "conflicts_with_trial": null,
+        "full_visit_table_available": true,
+        "source_inconsistency": "End-of-study timing is patient-dependent, not fixed: patients not requiring rescue are followed to Week 12 (V14/EoS); patients rescued between Wk2-Wk6 are also followed to Week 12; patients rescued between Wk7-12 are followed 6 weeks past rescue (V15/EoS, Wk13-18); patients not entering the open-label extension trial (1368-0025) are followed 16 weeks after their last dose of trial medication (V16/EoS, up to Wk16-28). total_duration_weeks (28) and follow_up_weeks (16) reflect the maximum, non-OLE-entry scenario, not every patient's actual duration."
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/92/NCT03782792/Prot_000.pdf",
+      "source_excerpt": "Section 3.1: 'All patients will receive the first dose of study medication (900 mg i.v. BI 655130 or Placebo) on Day 1 of Week 1 (Randomization). Based on the subsequent treatment response patients will then be followed for 12 to 28 weeks.' 'Patients who do not require rescue treatment with OL BI 655130 are to be followed until Week 12 (V14/EoS). Patients who receive rescue treatment with OL BI 655130 between Wk2-Wk6 are to be followed until Week 12 (V14/EoS). Patients who receive rescue treatment with OL BI 655130 between Wk 7-Wk12 are to be followed for additional 6 weeks from administration of rescue treatment up to Wk 13-Wk18 (V15/EoS).' 'Patients who do not qualify to enter into the open label extension (OLE) trial (1368-0025), will be followed for 16 weeks (EoS/V16/Wk16-Wk28) after the last dose of trial medication.' 'During Week 1, D1, D2, D3 and D8 are mandatory visits, however, D4-D7 are optional.'",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.65
     },
     "rescue_therapy": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "permitted": true,
+        "trigger": "flare_definition",
+        "earliest_week": 1,
+        "prohibited_through_week": null,
+        "trigger_rules": [
+          {
+            "from_week": 1,
+            "to_week": 1,
+            "criterion": {
+              "scale": "GPPGA",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "absolute_score",
+              "comparator": ">=",
+              "value": 2,
+              "unit": "score",
+              "scale_min": 0,
+              "scale_max": 4,
+              "assessed_at": [
+                "Week 1/Day 8"
+              ],
+              "scale_anchors": null
+            },
+            "consecutive_visits": 1
+          },
+          {
+            "from_week": 1,
+            "to_week": 1,
+            "criterion": {
+              "scale": "GPPGA",
+              "scale_component": "pustulation subscore",
+              "scale_variant": null,
+              "metric": "absolute_score",
+              "comparator": ">=",
+              "value": 2,
+              "unit": "score",
+              "scale_min": 0,
+              "scale_max": 4,
+              "assessed_at": [
+                "Week 1/Day 8"
+              ],
+              "scale_anchors": null
+            },
+            "consecutive_visits": 1
+          },
+          {
+            "from_week": 1,
+            "to_week": 12,
+            "criterion": {
+              "scale": "GPPGA",
+              "scale_component": "pustulation subscore",
+              "scale_variant": null,
+              "metric": "absolute_score",
+              "comparator": ">=",
+              "value": 2,
+              "unit": "score",
+              "scale_min": 0,
+              "scale_max": 4,
+              "assessed_at": [
+                "any scheduled or unscheduled visit after D8 through Week 12, after achieving a clinical response (GPPGA 0 or 1)"
+              ],
+              "scale_anchors": null
+            },
+            "consecutive_visits": 1
+          }
+        ],
+        "flare_definition": [],
+        "first_step": null,
+        "topical_min_days_before_systemic": null,
+        "topical_rescue_requires_study_drug_discontinuation": null,
+        "systemic_rescue_requires_study_drug_discontinuation": null,
+        "resume_after_systemic_rescue_half_lives": null,
+        "resume_after_phototherapy_months": null,
+        "rescued_counted_as_nonresponder": true,
+        "rescued_counted_as_treatment_failure": null,
+        "continue_visits_after_discontinuation": true,
+        "continue_visits_through_week": null,
+        "topical_rescue_not_counted_after_week": null,
+        "topical_agents": [
+          {
+            "name": "topical corticosteroids",
+            "strength_pct": null,
+            "form": null,
+            "potency": null
+          },
+          {
+            "name": "topical vitamin D analogues",
+            "strength_pct": null,
+            "form": null,
+            "potency": null
+          },
+          {
+            "name": "tar",
+            "strength_pct": null,
+            "form": null,
+            "potency": null
+          },
+          {
+            "name": "anthralin",
+            "strength_pct": null,
+            "form": null,
+            "potency": null
+          },
+          {
+            "name": "topical retinoids",
+            "strength_pct": null,
+            "form": null,
+            "potency": null
+          }
+        ],
+        "topical_potency_classes": [],
+        "tci_reserved_areas": [],
+        "systemic_agents": [
+          "open-label BI 655130 (spesolimab) 900 mg IV, single dose - for non-response at Week 1/Day 8 (GPPGA>=2 and pustulation subscore>=2) or for one recurrence of GPP flare after Day 8 through Week 12",
+          "Standard of Care escape treatment (physician's choice) for disease worsening or subsequent flares after the one permitted open-label BI 655130 rescue dose - e.g. secukinumab, risankizumab, tildrakizumab, rituximab, ustekinumab, adalimumab, ixekizumab, brodalumab, infliximab, IL36R inhibitors, etanercept, cyclophosphamide, tofacitinib, apremilast, fumarates, PUVA, methotrexate, cyclosporine, retinoids, anakinra"
+        ],
+        "oral_corticosteroid_limit": null,
+        "rescue_period": null,
+        "escape_arm_washout_half_lives": null,
+        "maintenance_period_rule": null,
+        "permitted_concomitant": [],
+        "recorded_in_ecrf": true,
+        "applies_to_period": "Week 1 (Day 8 non-response) through Week 12 (flare recurrence)",
+        "long_term_extension_eligible_after_rescue": true,
+        "topical_agent_class": null,
+        "rationale": "Table 3.1:1 defines three distinct escalation mechanisms: (1) 'Qualification for treatment with Open Label (OL) single i.v. dose of 900 mg BI 655130 at Wk1/D8' for patients with GPPGA>=2 and pustular component of GPPGA>=2 at Week 1 after the first dose (i.e. non-responders to blinded treatment); (2) 'Recurrence of GPP Flare' / rescue treatment: after Wk1/D8 through Week 12, a >=2 point increase in GPPGA score with pustular component >=2 after achieving a clinical response (GPPGA 0 or 1) triggers one single i.v. rescue dose of BI 655130 900mg -- only one such rescue dose is permitted per patient; subsequent flares are treated with investigator-choice Standard of Care escape treatment; (3) 'Escape treatment' for disease worsening at any point (defined loosely as investigator-judged worsening of clinical status or GPP skin/systemic symptoms), using any drug from the restricted-medications table at physician's discretion -- use of escape medication in Week 1 excludes the patient from same-visit OL BI 655130 at D8, and any prior escape medication use is counted as non-response for the primary, key secondary, and GPPASI75 hypothesis tests."
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/92/NCT03782792/Prot_000.pdf",
+      "source_excerpt": "Table 3.1:1 Study definitions: 'Qualification for treatment with Open Label (OL) single i.v. dose of 900 mg BI 655130 at Wk1/D8: Patients with a GPPGA >=2 at Wk1 and pustular component of GPPGA >=2 at Wk1 after receiving the first dose.' 'Recurrence of GPP Flare: After Wk1/D8 and through week 12, if there is >=2 point increase in the GPPGA score and the pustular component of GPPGA >=2 after achieving a clinical response (GPPGA 0 or 1) to initial treatment... Criteria to receive rescue treatment with Open Label (OL) single i.v. dose of 900 mg BI 655130 after Wk1/D8... Note: Only one rescue dose with BI 655130 is permitted if a patient experiences a recurrence of a GPP flare. Subsequent flares are to be treated with Standard of Care (SoC) per physician's discretion.' Section 7.2: hypothesis H01/H11/H21 count 'any prior use of escape medication' as non-response.",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.7
     }
   },
   "adverse_events": {

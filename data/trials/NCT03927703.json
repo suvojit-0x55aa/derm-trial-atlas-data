@@ -272,13 +272,37 @@
       "confidence": 1.0
     },
     "background_therapy": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "regimen_type": "monotherapy",
+        "background_agent_class": null,
+        "tcs_regimen": null,
+        "step_down_rule": null,
+        "recommended_agents": [],
+        "emollient_required": null,
+        "emollient_frequency": null,
+        "prohibited_concomitant": [
+          "Immunosuppressive treatment (prohibited during the study)",
+          "Topical calcineurin inhibitors or steroids on MC or within 2 cm of MC lesions - prohibited within 14 days of baseline and during the study",
+          "Podophyllotoxin, imiquimod, cantharidin, sinecatechins, topical retinoids, oral or topical zinc, other homeopathic/OTC products (e.g. ZymaDerm, tea tree oil), cimetidine and other H2 antagonists - prohibited to treat MC 14 days prior to baseline and during the study",
+          "Surgical procedures to treat MC (cryotherapy, curettage, other) - prohibited during the study"
+        ],
+        "permitted_concomitant": [
+          "Stable-dose medications for other conditions (e.g. aspirin, acetaminophen, birth control pills, vitamins)",
+          "Topical corticosteroid or topical anesthetic for symptomatic relief of a clinically significant Local Skin Reaction (LSR); systemic corticosteroids may be considered for very severe LSR"
+        ],
+        "applies_to_rerandomized_maintenance": null,
+        "sponsor_trial_ids": [
+          "NI-MC302"
+        ],
+        "study_drug_doses_mg": [],
+        "population_note": "Section 8.7: 'Immunosuppressive treatment is prohibited during the study. Use of topical calcineurin inhibitors or steroids on MC or within 2 cm of MC lesions is prohibited...' Subjects with current MC treatment undergo a 14-day washout before randomization; study drug (SB206/berdazimer 12% gel) is the sole MC treatment during the trial, so regimen_type is set to monotherapy."
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/03/NCT03927703/Prot_SAP_000.pdf",
+      "source_excerpt": "Section 8.7 Prohibited Concomitant Medication/Therapy: 'Immunosuppressive treatment is prohibited during the study. Use of topical calcineurin inhibitors or steroids on MC or within 2 cm of MC lesions is prohibited within 14 days of baseline and during the study. Use of the following concomitant medications to treat MC 14 days prior to baseline and during the study is prohibited: podophyllotoxin, imiquimod, cantharidin, sinecatechins, topical retinoids, oral or topical zinc, other homeopathic or over-the-counter products including, but not limited to, ZymaDerm and tea tree oil, cimetidine and other histamine H2 receptor antagonists. Surgical procedures to treat MC (cryotherapy, curettage, other) are prohibited during the study.'",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.65
     }
   },
   "endpoints": {
@@ -400,22 +424,145 @@
       "confidence": 1.0
     },
     "study_schedule": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "screening_days": 14,
+        "screening_washout": true,
+        "periods": [
+          {
+            "name": "screening",
+            "start_week": -2,
+            "end_week": 0,
+            "duration_weeks": 2,
+            "blinding": null,
+            "background_tcs": null
+          },
+          {
+            "name": "double_blind_treatment",
+            "start_week": 0,
+            "end_week": 12,
+            "duration_weeks": 12,
+            "blinding": "double_blind",
+            "background_tcs": null
+          },
+          {
+            "name": "off_treatment_follow_up",
+            "start_week": 12,
+            "end_week": 24,
+            "duration_weeks": 12,
+            "blinding": null,
+            "background_tcs": null
+          }
+        ],
+        "dosing_interval": "Once daily topical application, minimum 4 weeks up to 12 weeks (can stop early if all lesions clear; re-initiated if new lesions arise before Week 12)",
+        "visit_cadence": null,
+        "visit_cadence_until_week": null,
+        "visit_weeks": [
+          2,
+          4,
+          8,
+          12,
+          16,
+          20,
+          24
+        ],
+        "visit_days": [
+          2
+        ],
+        "phone_contact_weeks": [
+          16,
+          20
+        ],
+        "primary_endpoint_week": 12,
+        "end_of_treatment_week": 12,
+        "end_of_study_week": 24,
+        "total_duration_weeks": 26,
+        "follow_up_weeks": 12,
+        "follow_up_days": null,
+        "follow_up_visit_week": 24,
+        "long_term_extension": false,
+        "extension_end_week": null,
+        "extension_visit_interval_weeks": null,
+        "extension_study_id": null,
+        "rerandomization_week": null,
+        "maintenance_arms": null,
+        "maintenance_response_check_weeks": null,
+        "last_injection_week": null,
+        "key_secondary_weeks": [],
+        "follow_up_visit_interval_weeks": null,
+        "end_of_treatment_weeks_after_last_dose": null,
+        "background_tcs_from_day": null,
+        "primary_endpoint_refs": [],
+        "double_dummy_arms": [],
+        "active_comparator": null,
+        "boilerplate_reused_from": [
+          "NCT03927716 (NI-MC301, identical design)"
+        ],
+        "conflicts_with_trial": null,
+        "full_visit_table_available": true,
+        "source_inconsistency": null
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/03/NCT03927703/Prot_SAP_000.pdf",
+      "source_excerpt": "Section 4.1 Study Design: 'This is a Phase 3 multi-center, randomized, double-blind, vehicle-controlled, parallel group study... Subjects receiving current treatment for MC at the time of the Screening Visit will enter a wash out period of up to 14 days prior to randomization... Subjects or their caregivers will apply SB206 12% or Vehicle Gel once daily for a minimum of 4 weeks and up to 12 weeks... Subjects will visit the clinic at Screening/Baseline, Week 2, Week 4, Week 8, Week 12, and Week 24. Subjects will be contacted via phone on Day 2... At Weeks 16 and 20, subjects will be contacted via phone... at Week 24, the subject will be seen at the site for a final study visit... No study drug treatment will be provided after the Week 12 visit.'",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.7
     },
     "rescue_therapy": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "permitted": true,
+        "trigger": "investigator_discretion",
+        "earliest_week": null,
+        "prohibited_through_week": null,
+        "trigger_rules": [],
+        "flare_definition": [],
+        "first_step": "topical",
+        "topical_min_days_before_systemic": null,
+        "topical_rescue_requires_study_drug_discontinuation": false,
+        "systemic_rescue_requires_study_drug_discontinuation": true,
+        "resume_after_systemic_rescue_half_lives": null,
+        "resume_after_phototherapy_months": null,
+        "rescued_counted_as_nonresponder": null,
+        "rescued_counted_as_treatment_failure": null,
+        "continue_visits_after_discontinuation": null,
+        "continue_visits_through_week": null,
+        "topical_rescue_not_counted_after_week": null,
+        "topical_agents": [
+          {
+            "name": "topical corticosteroid",
+            "strength_pct": null,
+            "form": null,
+            "potency": null
+          },
+          {
+            "name": "topical anesthetic",
+            "strength_pct": null,
+            "form": null,
+            "potency": null
+          }
+        ],
+        "topical_potency_classes": [],
+        "tci_reserved_areas": [],
+        "systemic_agents": [
+          "systemic corticosteroids (for very severe LSR only)"
+        ],
+        "oral_corticosteroid_limit": null,
+        "rescue_period": null,
+        "escape_arm_washout_half_lives": null,
+        "maintenance_period_rule": null,
+        "permitted_concomitant": [],
+        "recorded_in_ecrf": true,
+        "applies_to_period": "Treatment period (through Week 12)",
+        "long_term_extension_eligible_after_rescue": null,
+        "topical_agent_class": "corticosteroid",
+        "rationale": "This is not a disease-flare rescue but an investigator-directed local skin reaction (LSR) management pathway: 'Clinically significant LSRs reported as AEs and/or subject reported intolerability (i.e. itching, pain) may result in an investigator-directed temporary treatment hold (drug holiday), and topical corticosteroids may be used to treat LSRs for up to 2 weeks.' If a subject develops worsening LSRs on re-initiation of study drug, allergic contact dermatitis may be suspected, the investigator discontinues the subject from study drug and treats the affected area(s) with corticosteroids for up to 2 weeks."
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/03/NCT03927703/Prot_SAP_000.pdf",
+      "source_excerpt": "Section 4.1 Study Design: 'Clinically significant LSRs reported as AEs and/or subject reported intolerability (i.e. itching, pain) may result in an investigator-directed temporary treatment hold (drug holiday), and topical corticosteroids may be used to treat LSRs for up to 2 weeks... Upon re-initiation of study drug treatment, if a subject develops worsening LSRs, allergic contact dermatitis may be suspected... The investigator will then discontinue the subject from study drug treatment and treat the area(s) with corticosteroids for up to 2 weeks.' Section 4.1: 'For very severe LSR, systemic corticosteroids may be considered.'",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.6
     }
   },
   "adverse_events": {

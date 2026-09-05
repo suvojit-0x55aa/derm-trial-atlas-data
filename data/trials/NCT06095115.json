@@ -291,13 +291,41 @@
       "confidence": 1.0
     },
     "background_therapy": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "regimen_type": "monotherapy",
+        "background_agent_class": null,
+        "tcs_regimen": null,
+        "step_down_rule": null,
+        "recommended_agents": [],
+        "emollient_required": false,
+        "emollient_frequency": "medicated shampoos containing salicylic acid and bland emollients allowed on all body regions, not within 24 hours before a study visit",
+        "prohibited_concomitant": [
+          "Topical corticosteroids, topical calcineurin inhibitors, vitamin D analogs, vitamin A analogs, retinoids, tar, anthralin, calcipotriene, tazarotene, methoxsalen, trimethylpsoralens, fumarate, PDE4 inhibitors, topical JAK inhibitors, aryl hydrocarbon receptor-modulating agents (Week 0 to Week 52)",
+          "Shampoos containing corticosteroids, coal tar, or vitamin D3 analogs",
+          "Phototherapy",
+          "TNFα antagonists (adalimumab, infliximab, etanercept)",
+          "IL-12/23, IL-17, or IL-23 inhibitors (ustekinumab, briakinumab, guselkumab, tildrakizumab, secukinumab, risankizumab, ixekizumab, brodalumab)",
+          "Alpha-4 integrin antagonists (e.g. natalizumab)"
+        ],
+        "permitted_concomitant": [
+          "Nonmedicated shampoos on the day of a study visit",
+          "After Week 52: most topical therapies (ultra-high potency corticosteroids and topical JAK inhibitors remain prohibited)"
+        ],
+        "applies_to_rerandomized_maintenance": true,
+        "sponsor_trial_ids": [
+          "77242113PSO3001"
+        ],
+        "study_drug_doses_mg": [
+          200
+        ],
+        "population_note": "Same sponsor concomitant-medication template as NCT06095102 (Icotrokinra PSO3003), applied here to the PSO3001 randomized-withdrawal design; the prohibition rules explicitly carry over into the Week 24-52 randomized withdrawal/retreatment period ('applies_to_rerandomized_maintenance'). No dedicated background psoriasis therapy is provided; regimen_type recorded as 'monotherapy' since no adjunct psoriasis treatment is part of the protocol."
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/15/NCT06095115/Prot_000.pdf",
+      "source_excerpt": "6.9. Prior and Concomitant Therapy ... No rescue therapies for psoriasis are permitted in the study. Psoriasis Concomitant Medications: Topical Therapy Week 0 to Week 52: Medicated shampoos containing salicylic acid and bland emollients are allowed on all body regions but should not be used within 24 hours before any study visit... Week 52 to Week 160: After the Week 52 visit, most topical therapies are permitted for treatment of psoriasis; ultra-high potency corticosteroids and topical JAK inhibitors are still prohibited during this period.",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.65
     }
   },
   "endpoints": {
@@ -1802,13 +1830,206 @@
       "confidence": 0.85
     },
     "multiplicity_control": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "procedure": "gatekeeping_with_holm",
+        "familywise_error_controlled": true,
+        "alpha": 0.05,
+        "alpha_sided": 2,
+        "alpha_per_dose": null,
+        "co_primary_endpoints": [
+          {
+            "label": "IGA score of cleared (0) or minimal (1) and >=2-grade improvement from baseline at Week 16",
+            "scale": "IGA",
+            "responder_criteria": [],
+            "timepoint_week": 16,
+            "alpha": 0.05,
+            "step": 0
+          },
+          {
+            "label": "PASI 90 response at Week 16",
+            "scale": "PASI",
+            "responder_criteria": [],
+            "timepoint_week": 16,
+            "alpha": 0.05,
+            "step": 0
+          }
+        ],
+        "testing_sequence": [
+          {
+            "label": "PASI 75 at Week 16",
+            "scale": "PASI",
+            "responder_criteria": [],
+            "timepoint_week": 16,
+            "alpha": null,
+            "step": 1
+          },
+          {
+            "label": "PASI 100 at Week 16",
+            "scale": "PASI",
+            "responder_criteria": [],
+            "timepoint_week": 16,
+            "alpha": null,
+            "step": 1
+          },
+          {
+            "label": "IGA score of 0 at Week 16",
+            "scale": "IGA",
+            "responder_criteria": [],
+            "timepoint_week": 16,
+            "alpha": null,
+            "step": 1
+          },
+          {
+            "label": "PSSD symptom score of 0 at Week 16",
+            "scale": "PSSD",
+            "responder_criteria": [],
+            "timepoint_week": 16,
+            "alpha": null,
+            "step": 2
+          },
+          {
+            "label": ">=4-point improvement from baseline in PSSD itch score at Week 16",
+            "scale": "PSSD",
+            "responder_criteria": [],
+            "timepoint_week": 16,
+            "alpha": null,
+            "step": 2
+          },
+          {
+            "label": "ss-IGA score of 0 or 1 and >=2-grade improvement from baseline at Week 16",
+            "scale": "ss-IGA",
+            "responder_criteria": [],
+            "timepoint_week": 16,
+            "alpha": null,
+            "step": 2
+          },
+          {
+            "label": "PASI 90 at Week 8",
+            "scale": "PASI",
+            "responder_criteria": [],
+            "timepoint_week": 8,
+            "alpha": null,
+            "step": 3
+          },
+          {
+            "label": "PSSD symptom score of 0 at Week 8",
+            "scale": "PSSD",
+            "responder_criteria": [],
+            "timepoint_week": 8,
+            "alpha": null,
+            "step": 3
+          },
+          {
+            "label": "PASI 75 response at Week 4",
+            "scale": "PASI",
+            "responder_criteria": [],
+            "timepoint_week": 4,
+            "alpha": null,
+            "step": 4
+          },
+          {
+            "label": ">=4-point improvement from baseline in PSSD itch score at Week 4",
+            "scale": "PSSD",
+            "responder_criteria": [],
+            "timepoint_week": 4,
+            "alpha": null,
+            "step": 4
+          },
+          {
+            "label": "Time to loss of PASI 75",
+            "scale": "PASI",
+            "responder_criteria": [],
+            "timepoint_week": 52,
+            "alpha": null,
+            "step": 5
+          },
+          {
+            "label": "Time to loss of PASI 90",
+            "scale": "PASI",
+            "responder_criteria": [],
+            "timepoint_week": 52,
+            "alpha": null,
+            "step": 5
+          },
+          {
+            "label": "PASI 75 response at Week 52",
+            "scale": "PASI",
+            "responder_criteria": [],
+            "timepoint_week": 52,
+            "alpha": null,
+            "step": 5
+          },
+          {
+            "label": "PASI 90 response at Week 52",
+            "scale": "PASI",
+            "responder_criteria": [],
+            "timepoint_week": 52,
+            "alpha": null,
+            "step": 5
+          }
+        ],
+        "alpha_split": [
+          {
+            "group": "Tier 1 (PASI 75, PASI 100, IGA=0 at Week 16)",
+            "n_endpoints": 3,
+            "alpha": null,
+            "method": "Bonferroni-Holm",
+            "timepoint_week": 16
+          },
+          {
+            "group": "Tier 2 (PSSD symptom=0, PSSD itch, ss-IGA at Week 16)",
+            "n_endpoints": 3,
+            "alpha": null,
+            "method": "Bonferroni-Holm",
+            "timepoint_week": 16
+          },
+          {
+            "group": "Tier 3 (PASI 90, PSSD symptom=0 at Week 8)",
+            "n_endpoints": 2,
+            "alpha": null,
+            "method": "Bonferroni-Holm",
+            "timepoint_week": 8
+          },
+          {
+            "group": "Tier 4 (PASI 75, PSSD itch at Week 4)",
+            "n_endpoints": 2,
+            "alpha": null,
+            "method": "Bonferroni-Holm",
+            "timepoint_week": 4
+          },
+          {
+            "group": "Randomized withdrawal endpoints (time to loss of PASI 75/90, PASI 75/90 at Week 52)",
+            "n_endpoints": 4,
+            "alpha": 0.05,
+            "method": "graphical approach",
+            "timepoint_week": 52
+          }
+        ],
+        "alpha_recycling": false,
+        "doses_compared": [
+          "JNJ-77242113 200 mg",
+          "placebo"
+        ],
+        "dose_comparison_order": [],
+        "branching_on": null,
+        "regulatory_variants": [],
+        "rescue_counted_as_nonresponder": null,
+        "active_comparator_excluded_from_hierarchy": null,
+        "background_tcs": null,
+        "method_citations": [
+          "Holm S. (1979). A simple sequentially rejective multiple test procedure. Scand J Statist 6: 65-70."
+        ],
+        "finalized_in_sap": true,
+        "same_design_as": [],
+        "gatekeeping_structure": true,
+        "further_endpoints_through_week": null
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/15/NCT06095115/SAP_001.pdf",
+      "source_excerpt": "Multiplicity adjustment procedure will be used to control the overall Type I error rate for the 2 co-primary and 14 key secondary endpoints. Since there are 2 randomizations utilized in the study (i.e., 2 different experiments), the endpoints prior to or at Week 16, and the endpoints related to the randomized withdrawal will each be assigned with a 2-sided significance level of 0.05. ... The endpoints during the first 16 weeks of placebo-controlled period are grouped in 4 tiers. Within each tier, the Bonferroni-Holm's (Holm S 1979) procedure ... will be used to test all endpoints in that tier with an overall type I error rate of 0.05 (2-sided). ... Additionally, if the co-primary endpoints are significant, the following endpoints during the randomized withdrawal portion will also be tested using the graphical approach at a 2-sided overall alpha of 0.05.",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.7
     }
   },
   "timing_ops": {
@@ -1849,22 +2070,148 @@
       "confidence": 1.0
     },
     "study_schedule": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "screening_days": 35,
+        "screening_washout": true,
+        "periods": [
+          {
+            "name": "screening",
+            "start_week": -5,
+            "end_week": 0,
+            "duration_weeks": 5,
+            "blinding": null,
+            "background_tcs": null
+          },
+          {
+            "name": "double_blind_treatment",
+            "start_week": 0,
+            "end_week": 24,
+            "duration_weeks": 24,
+            "blinding": "double-blind",
+            "background_tcs": null
+          },
+          {
+            "name": "maintenance_treatment",
+            "start_week": 24,
+            "end_week": 52,
+            "duration_weeks": 28,
+            "blinding": "double-blind",
+            "background_tcs": null
+          },
+          {
+            "name": "continuation_treatment",
+            "start_week": 52,
+            "end_week": 156,
+            "duration_weeks": 104,
+            "blinding": "open-label",
+            "background_tcs": null
+          },
+          {
+            "name": "follow_up",
+            "start_week": 156,
+            "end_week": 160,
+            "duration_weeks": 4,
+            "blinding": null,
+            "background_tcs": null
+          }
+        ],
+        "dosing_interval": "once daily",
+        "visit_cadence": null,
+        "visit_cadence_until_week": null,
+        "visit_weeks": [
+          16,
+          24,
+          52
+        ],
+        "visit_days": null,
+        "phone_contact_weeks": null,
+        "primary_endpoint_week": 16,
+        "end_of_treatment_week": 156,
+        "end_of_study_week": 160,
+        "total_duration_weeks": 165,
+        "follow_up_weeks": 4,
+        "follow_up_days": null,
+        "follow_up_visit_week": 160,
+        "long_term_extension": false,
+        "extension_end_week": null,
+        "extension_visit_interval_weeks": null,
+        "extension_study_id": null,
+        "rerandomization_week": 24,
+        "maintenance_arms": [
+          "continue JNJ-77242113 200 mg",
+          "transition to placebo (with retreatment on loss of response)"
+        ],
+        "maintenance_response_check_weeks": [
+          24,
+          52
+        ],
+        "last_injection_week": null,
+        "key_secondary_weeks": [
+          4,
+          8,
+          16,
+          52
+        ],
+        "follow_up_visit_interval_weeks": null,
+        "end_of_treatment_weeks_after_last_dose": null,
+        "background_tcs_from_day": null,
+        "primary_endpoint_refs": [],
+        "double_dummy_arms": [],
+        "active_comparator": null,
+        "boilerplate_reused_from": [
+          "77242113PSO3003"
+        ],
+        "conflicts_with_trial": null,
+        "full_visit_table_available": true,
+        "source_inconsistency": null
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/15/NCT06095115/Prot_000.pdf",
+      "source_excerpt": "This is a Phase 3 randomized, double-blind, placebo-controlled, parallel-group, multicenter, interventional study with randomized withdrawal and retreatment... The total duration of this study for each participant is approximately 165 weeks, which includes a 5-week screening period, a placebo-controlled period through Week 16 and a randomized withdrawal and retreatment period from Week 24 through Week 52. At Week 52, participants will be transitioned to open-label JNJ-77242113 through Week 156 and a 4-week safety follow-up period will be observed... Participants who are PASI 75 responders or IGA 0 or 1 responders ... at Week 24 will be re-randomized 1:1 to either continue JNJ-77242113 or to be transitioned to placebo.",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.7
     },
     "rescue_therapy": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "permitted": false,
+        "trigger": "prohibited",
+        "earliest_week": null,
+        "prohibited_through_week": null,
+        "trigger_rules": [],
+        "flare_definition": [],
+        "first_step": null,
+        "topical_min_days_before_systemic": null,
+        "topical_rescue_requires_study_drug_discontinuation": null,
+        "systemic_rescue_requires_study_drug_discontinuation": null,
+        "resume_after_systemic_rescue_half_lives": null,
+        "resume_after_phototherapy_months": null,
+        "rescued_counted_as_nonresponder": null,
+        "rescued_counted_as_treatment_failure": null,
+        "continue_visits_after_discontinuation": true,
+        "continue_visits_through_week": null,
+        "topical_rescue_not_counted_after_week": null,
+        "topical_agents": [],
+        "topical_potency_classes": [],
+        "tci_reserved_areas": [],
+        "systemic_agents": [],
+        "oral_corticosteroid_limit": null,
+        "rescue_period": null,
+        "escape_arm_washout_half_lives": null,
+        "maintenance_period_rule": null,
+        "permitted_concomitant": [],
+        "recorded_in_ecrf": null,
+        "applies_to_period": "entire study",
+        "long_term_extension_eligible_after_rescue": null,
+        "topical_agent_class": null,
+        "rationale": "No rescue therapy for psoriasis is permitted; instead, loss of response during the Week 24-52 randomized-withdrawal period triggers protocol-defined retreatment with open-label active drug, not an external rescue medication."
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/15/NCT06095115/Prot_000.pdf",
+      "source_excerpt": "No rescue therapies for psoriasis are permitted in the study. ... Participants who are PASI 75 responders or IGA 0 or 1 responders ... at Week 24 will be re-randomized 1:1 to either continue JNJ-77242113 or to be transitioned to placebo. Participants transitioned to placebo will be retreated with JNJ-77242113 200 mg once daily upon loss of >=50% of Week 24 PASI improvement or starting at Week 52 if loss of response is not observed.",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.65
     }
   },
   "adverse_events": {

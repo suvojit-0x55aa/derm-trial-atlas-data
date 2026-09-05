@@ -354,13 +354,34 @@
       "confidence": 1.0
     },
     "background_therapy": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "regimen_type": "monotherapy",
+        "background_agent_class": null,
+        "tcs_regimen": null,
+        "step_down_rule": null,
+        "recommended_agents": [],
+        "emollient_required": null,
+        "emollient_frequency": null,
+        "prohibited_concomitant": [
+          "All other treatments for acne including topical and medicated cleansers and therapies (prohibited during the study)",
+          "Initiation or change of hormonal contraception during the study"
+        ],
+        "permitted_concomitant": [
+          "Non-medicated facial hygiene products (cleansers) approved by the Sponsor"
+        ],
+        "applies_to_rerandomized_maintenance": null,
+        "sponsor_trial_ids": [
+          "SC1401"
+        ],
+        "study_drug_doses_mg": [],
+        "population_note": "Monotherapy design: protocol Section 9.4.6.1 states all other acne treatments are prohibited during the study; only Sponsor-approved non-medicated facial cleansers are permitted."
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/49/NCT02320149/Prot_000.pdf",
+      "source_excerpt": "9.4.6.1 Excluded Medications and Therapies Subjects must abstain from use of all excluded medications and therapies (Section 9.3.2) after the initial screening visit and throughout the treatment period. Subjects may use non-medicated cleansers approved by the Sponsor as a facial cleanser during the study. All other treatments for acne including topical and medicated cleansers and therapies are prohibited during the study.",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.7
     }
   },
   "endpoints": {
@@ -832,22 +853,116 @@
       "confidence": 1.0
     },
     "study_schedule": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "screening_days": null,
+        "screening_washout": true,
+        "periods": [
+          {
+            "name": "screening",
+            "start_week": null,
+            "end_week": null,
+            "duration_weeks": null,
+            "blinding": null,
+            "background_tcs": null
+          },
+          {
+            "name": "randomized_treatment",
+            "start_week": 0,
+            "end_week": 12,
+            "duration_weeks": 12,
+            "blinding": "double_blind",
+            "background_tcs": null
+          }
+        ],
+        "dosing_interval": null,
+        "visit_cadence": null,
+        "visit_cadence_until_week": null,
+        "visit_weeks": [
+          1,
+          3,
+          6,
+          9,
+          12,
+          13
+        ],
+        "visit_days": null,
+        "phone_contact_weeks": [
+          1
+        ],
+        "primary_endpoint_week": 12,
+        "end_of_treatment_week": 12,
+        "end_of_study_week": null,
+        "total_duration_weeks": 12,
+        "follow_up_weeks": null,
+        "follow_up_days": null,
+        "follow_up_visit_week": null,
+        "long_term_extension": false,
+        "extension_end_week": null,
+        "extension_visit_interval_weeks": null,
+        "extension_study_id": null,
+        "rerandomization_week": null,
+        "maintenance_arms": null,
+        "maintenance_response_check_weeks": null,
+        "last_injection_week": null,
+        "key_secondary_weeks": null,
+        "follow_up_visit_interval_weeks": null,
+        "end_of_treatment_weeks_after_last_dose": null,
+        "background_tcs_from_day": null,
+        "primary_endpoint_refs": [],
+        "double_dummy_arms": [],
+        "active_comparator": null,
+        "boilerplate_reused_from": [],
+        "conflicts_with_trial": null,
+        "full_visit_table_available": true,
+        "source_inconsistency": "Visit 5 (Week 13, included in visit_weeks) applies only to the PK Schedule 3 subgroup (subjects aged 9-11 years participating in that PK sampling option), not to all subjects; the main treatment period and primary-endpoint visit (Visit 4) is Week 12."
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/49/NCT02320149/Prot_000.pdf",
+      "source_excerpt": "Duration of Treatment: 12 weeks. Efficacy Assessments: IGA scores and lesion counts at baseline and following 3, 6, 9, and 12 weeks of treatment. ... 9.5.1 Screening Period [SV1, SV2/Baseline]; 9.5.2 Treatment Period: 9.5.2.1 Telephone Contact (Week 1±3 days); 9.5.2.2 Visit 1 (Week 3±3 days); 9.5.2.3 Visit 2 (Week 6±3 days); 9.5.2.4 Visit 3 (Week 9±3 days); 9.5.2.5 Visit 4 (Week 12±3 days); 9.5.2.6 Visit 5 (Week 13±3 days)(for subjects participating in PK Schedule 3); 9.5.2.7 Early Termination Visit.",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.7
     },
     "rescue_therapy": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "permitted": false,
+        "trigger": "prohibited",
+        "earliest_week": null,
+        "prohibited_through_week": null,
+        "trigger_rules": [],
+        "flare_definition": [],
+        "first_step": null,
+        "topical_min_days_before_systemic": null,
+        "topical_rescue_requires_study_drug_discontinuation": null,
+        "systemic_rescue_requires_study_drug_discontinuation": null,
+        "resume_after_systemic_rescue_half_lives": null,
+        "resume_after_phototherapy_months": null,
+        "rescued_counted_as_nonresponder": null,
+        "rescued_counted_as_treatment_failure": null,
+        "continue_visits_after_discontinuation": null,
+        "continue_visits_through_week": null,
+        "topical_rescue_not_counted_after_week": null,
+        "topical_agents": [],
+        "topical_potency_classes": [],
+        "tci_reserved_areas": [],
+        "systemic_agents": [],
+        "oral_corticosteroid_limit": null,
+        "rescue_period": null,
+        "escape_arm_washout_half_lives": null,
+        "maintenance_period_rule": null,
+        "permitted_concomitant": [],
+        "recorded_in_ecrf": null,
+        "applies_to_period": "treatment_period",
+        "long_term_extension_eligible_after_rescue": null,
+        "topical_agent_class": null,
+        "rationale": "No rescue-medication provision is described anywhere in the protocol; all other acne treatments are prohibited during the study (Section 9.4.6.1), and subjects with clinically significant worsening of acne requiring a change in acne treatment are instead withdrawn from the study rather than given rescue therapy."
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/49/NCT02320149/Prot_000.pdf",
+      "source_excerpt": "Subjects must be withdrawn from the study for any of the following events: ... Clinically significant worsening of acne status requiring change of treatment in acne management (eg. increased size or number of nodules). ... All other treatments for acne including topical and medicated cleansers and therapies are prohibited during the study.",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.6
     }
   },
   "adverse_events": {

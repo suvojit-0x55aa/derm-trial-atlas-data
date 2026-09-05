@@ -247,13 +247,48 @@
       "confidence": 1.0
     },
     "background_therapy": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "regimen_type": "monotherapy",
+        "background_agent_class": null,
+        "tcs_regimen": null,
+        "step_down_rule": null,
+        "recommended_agents": [],
+        "emollient_required": null,
+        "emollient_frequency": "as needed, not within 24 hours of a study visit",
+        "prohibited_concomitant": [
+          "biologic medications (e.g. adalimumab, etanercept, infliximab, ustekinumab)",
+          "oral psoriasis medications (methotrexate, cyclosporine, retinoids, fumaric acid derivatives)",
+          "oral or injectable corticosteroids unless necessary for AE/SAE treatment",
+          "topical medications that could affect psoriasis evaluation (high potency corticosteroids WHO Classes I-V, >3% salicylic acid, urea, alpha-/beta-hydroxyl acids, anthralin, calcipotriene, vitamin D derivatives, retinoids, tazarotene, methoxsalen, trimethylpsoralens, pimecrolimus, tacrolimus)",
+          "medicated shampoos containing corticosteroids, coal tar, >3% salicylic acid, or vitamin D3 analogues",
+          "phototherapy, tanning booths, therapeutic sunbathing",
+          "medications/therapy that could aggravate psoriasis (lithium, antimalarials, propranolol, indomethacin, quinidine) unless necessary for AE/SAE treatment",
+          "opioid analgesics unless necessary for AE/SAE treatment",
+          "strong CYP450 inducers (rifampin, phenobarbital, carbamazepine, phenytoin) per apremilast label",
+          "any other investigational drug or placebo outside this study",
+          "live vaccination"
+        ],
+        "permitted_concomitant": [
+          "stable doses of concomitant medication for chronic medical conditions other than psoriasis",
+          "otic, ophthalmic, nasal, or inhaled corticosteroids at recommended doses with no systemic effect",
+          "low potency topical steroids (WHO Classes VI and VII) on palms, soles, face, and intertriginous areas (not within 24 hours of a study visit)",
+          "bland emollients (without urea, alpha/beta-hydroxy acids, or other active ingredients) on all body regions (not within 24 hours of a study visit)"
+        ],
+        "applies_to_rerandomized_maintenance": true,
+        "sponsor_trial_ids": [
+          "IM011047"
+        ],
+        "study_drug_doses_mg": [
+          6
+        ],
+        "population_note": "BMS-986165 (deucravacitinib) is dosed as monotherapy vs. placebo/apremilast for plaque psoriasis (regimen_type=monotherapy fits: Section 6.7.1 prohibits any other biologic/oral/topical antipsoriatic treatment that could affect assessment). A limited, time-boxed topical/shampoo exception exists only from Week 24 for sPGA>=3 nonresponders -- see rescue_therapy for that rule."
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/51/NCT03611751/Prot_000.pdf",
+      "source_excerpt": "Section 6.7.1 Prohibited and/or Restricted Treatments: lists exposure to other investigational drugs, strong CYP450 inducers, medications aggravating psoriasis, opioid analgesics, phototherapy, biologic medications, oral psoriasis medications, oral/injectable corticosteroids (with otic/ophthalmic/nasal/inhaled exception), topical medications affecting psoriasis evaluation, medicated shampoos, and live vaccination as prohibited/restricted. Section 6.7.2 Permitted Concomitant Medications: \"Stable doses of concomitant medication for chronic medical conditions, except for psoriasis, are permitted... Low potency topical steroids (WHO Classes VI and VII) are permitted on the palms, soles, face, and intertriginous areas... Bland emollients... are allowed on all body regions.\"",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.65
     }
   },
   "endpoints": {
@@ -681,13 +716,69 @@
       "confidence": 1.0
     },
     "multiplicity_control": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "procedure": "serial_gatekeeping",
+        "familywise_error_controlled": true,
+        "alpha": 0.05,
+        "alpha_sided": 2,
+        "alpha_per_dose": null,
+        "co_primary_endpoints": [
+          {
+            "label": "sPGA 0/1 at Week 16 vs placebo",
+            "scale": "sPGA",
+            "responder_criteria": [],
+            "timepoint_week": 16,
+            "alpha": 0.05,
+            "step": 1
+          },
+          {
+            "label": "PASI 75 at Week 16 vs placebo",
+            "scale": "PASI",
+            "responder_criteria": [],
+            "timepoint_week": 16,
+            "alpha": 0.05,
+            "step": 1
+          }
+        ],
+        "testing_sequence": [],
+        "alpha_split": [
+          {
+            "group": "key secondary endpoints vs placebo",
+            "n_endpoints": null,
+            "alpha": 0.025,
+            "method": "hierarchical (fixed sequence) within branch",
+            "timepoint_week": null
+          },
+          {
+            "group": "key secondary endpoints vs apremilast",
+            "n_endpoints": null,
+            "alpha": 0.025,
+            "method": "hierarchical (fixed sequence) within branch",
+            "timepoint_week": null
+          }
+        ],
+        "alpha_recycling": false,
+        "doses_compared": [
+          "BMS-986165 6mg QD"
+        ],
+        "dose_comparison_order": [],
+        "branching_on": null,
+        "regulatory_variants": [],
+        "rescue_counted_as_nonresponder": null,
+        "active_comparator_excluded_from_hierarchy": null,
+        "background_tcs": null,
+        "method_citations": [],
+        "finalized_in_sap": true,
+        "same_design_as": [],
+        "gatekeeping_structure": true,
+        "further_endpoints_through_week": 52
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/51/NCT03611751/Prot_000.pdf",
+      "source_excerpt": "Testing Strategy for Efficacy Endpoints: \"The primary family of coprimary endpoints will each be tested at a Type I error =0.05 first and, if significant for both endpoints, testing will proceed for the secondary family of key secondary endpoints. The primary family of coprimary endpoints will be the serial gatekeeper for proceeding with testing of the secondary family of key secondary efficacy endpoints. Primary Family - Coprimary endpoints compared with placebo; both must be significant at a Type I error=0.05... Primary 1: Proportion of subjects who achieve sPGA 0/1 at Week 16; Primary 2: Proportion of subjects who achieve PASI 75 at Week 16. In order to control for Type I error rate inflation within the secondary family of key secondary endpoints, separate testing branches with a 2-sided Type I error=0.025 will be used for comparisons of BMS-986165 6 mg QD compared to placebo and BMS-986165 6 mg QD compared to apremilast. A hierarchical testing method within each testing branch will be implemented.\"",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.7
     }
   },
   "timing_ops": {
@@ -728,22 +819,196 @@
       "confidence": 1.0
     },
     "study_schedule": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "screening_days": 28,
+        "screening_washout": true,
+        "periods": [
+          {
+            "name": "screening",
+            "start_week": null,
+            "end_week": 0,
+            "duration_weeks": 4,
+            "blinding": null,
+            "background_tcs": null
+          },
+          {
+            "name": "double_dummy_treatment",
+            "start_week": 0,
+            "end_week": 24,
+            "duration_weeks": 24,
+            "blinding": "double_blind",
+            "background_tcs": null
+          },
+          {
+            "name": "maintenance_treatment",
+            "start_week": 24,
+            "end_week": 52,
+            "duration_weeks": 28,
+            "blinding": "double_blind",
+            "background_tcs": null
+          },
+          {
+            "name": "follow_up",
+            "start_week": 52,
+            "end_week": null,
+            "duration_weeks": 4,
+            "blinding": null,
+            "background_tcs": null
+          }
+        ],
+        "dosing_interval": "once daily (QD)",
+        "visit_cadence": null,
+        "visit_cadence_until_week": null,
+        "visit_weeks": [
+          0,
+          1,
+          2,
+          4,
+          8,
+          12,
+          16,
+          20,
+          24,
+          52
+        ],
+        "visit_days": null,
+        "phone_contact_weeks": null,
+        "primary_endpoint_week": 16,
+        "end_of_treatment_week": 52,
+        "end_of_study_week": null,
+        "total_duration_weeks": 56,
+        "follow_up_weeks": 4,
+        "follow_up_days": null,
+        "follow_up_visit_week": null,
+        "long_term_extension": null,
+        "extension_end_week": null,
+        "extension_visit_interval_weeks": null,
+        "extension_study_id": null,
+        "rerandomization_week": 24,
+        "maintenance_arms": [
+          "BMS-986165 6mg QD (Week-24 PASI75 responders re-randomized to continue)",
+          "placebo (Week-24 PASI75 responders re-randomized, with relapse rescue back to BMS-986165 6mg QD)",
+          "BMS-986165 6mg QD (Week-24 PASI75 non-responders, continue unblinded to re-randomization)"
+        ],
+        "maintenance_response_check_weeks": [
+          24
+        ],
+        "last_injection_week": null,
+        "key_secondary_weeks": [
+          16,
+          24
+        ],
+        "follow_up_visit_interval_weeks": null,
+        "end_of_treatment_weeks_after_last_dose": null,
+        "background_tcs_from_day": null,
+        "primary_endpoint_refs": [],
+        "double_dummy_arms": [
+          "BMS-986165 6mg QD",
+          "placebo",
+          "apremilast 30mg BID (titrated from 10mg QD over first 5 days)"
+        ],
+        "active_comparator": "apremilast",
+        "boilerplate_reused_from": [],
+        "conflicts_with_trial": null,
+        "full_visit_table_available": true,
+        "source_inconsistency": null
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/51/NCT03611751/Prot_000.pdf",
+      "source_excerpt": "Section 1.1 Overall Design: \"This will be a 52-week, multi-center, randomized double-blind, double-dummy, placebo- and active comparator-controlled study... Subjects will undergo screening evaluations within 28 days prior to administration of study medication... At Week 16, subjects receiving placebo will be switched in a blinded manner to BMS-986165 6 mg QD... At Week 24, subjects originally randomized to BMS-986165 6 mg QD who do not achieve PASI 75 response will continue to receive BMS-986165 6 mg QD... Subjects who achieve PASI 75 response will enter the randomized withdrawal and maintenance period.\" And later: \"The coprimary endpoints will be evaluated at Week 16. The duration of the study for each subject will be up to 52 weeks on treatment, and 4 additional weeks for safety follow-up.\"",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.7
     },
     "rescue_therapy": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "permitted": true,
+        "trigger": "protocol_response_threshold",
+        "earliest_week": 16,
+        "prohibited_through_week": 24,
+        "trigger_rules": [
+          {
+            "from_week": 24,
+            "to_week": 24,
+            "criterion": {
+              "scale": "sPGA",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "absolute_score",
+              "comparator": ">=",
+              "value": 3,
+              "unit": "score",
+              "scale_min": 0,
+              "scale_max": 4,
+              "assessed_at": [
+                "week_24"
+              ],
+              "scale_anchors": null
+            },
+            "consecutive_visits": 1
+          }
+        ],
+        "flare_definition": [
+          {
+            "scale": "PASI",
+            "scale_component": null,
+            "scale_variant": null,
+            "metric": "percent_of_response_lost",
+            "comparator": ">=",
+            "value": 50,
+            "unit": "percent",
+            "scale_min": null,
+            "scale_max": null,
+            "assessed_at": [
+              "any_visit_during_randomized_withdrawal_period"
+            ],
+            "scale_anchors": null
+          }
+        ],
+        "first_step": "topical",
+        "topical_min_days_before_systemic": null,
+        "topical_rescue_requires_study_drug_discontinuation": false,
+        "systemic_rescue_requires_study_drug_discontinuation": false,
+        "resume_after_systemic_rescue_half_lives": null,
+        "resume_after_phototherapy_months": null,
+        "rescued_counted_as_nonresponder": null,
+        "rescued_counted_as_treatment_failure": null,
+        "continue_visits_after_discontinuation": null,
+        "continue_visits_through_week": null,
+        "topical_rescue_not_counted_after_week": 24,
+        "topical_agents": [
+          {
+            "name": "high potency corticosteroids",
+            "strength_pct": null,
+            "form": "topical",
+            "potency": "high (WHO Classes I-V)"
+          }
+        ],
+        "topical_potency_classes": [],
+        "tci_reserved_areas": [],
+        "systemic_agents": [
+          "BMS-986165 (deucravacitinib) 6mg QD"
+        ],
+        "oral_corticosteroid_limit": null,
+        "rescue_period": null,
+        "escape_arm_washout_half_lives": null,
+        "maintenance_period_rule": {
+          "topical_rescue": "At Week 24 only, a subject with sPGA>=3 may be treated with restricted topicals (high potency corticosteroids WHO Classes I-V, >3% salicylic acid, urea, alpha-/beta-hydroxyl acids, anthralin, calcipotriene, vitamin D derivatives, retinoids, tazarotene) or medicated shampoos (containing corticosteroids, coal tar, >3% salicylic acid, or vitamin D3 analogues), at investigator discretion, usable as needed through Week 52; cannot be initiated at any later time point.",
+          "systemic_rescue": "During the randomized withdrawal/maintenance period (Weeks 24-52), Week-24 PASI75 responders re-randomized to placebo (and apremilast-arm PASI75 responders switched to placebo) who relapse (>=50% loss of Week 24 PASI percent improvement from baseline) are switched to BMS-986165 6mg QD until the end of the maintenance period (Week 52). Apremilast-arm PASI75 non-responders at Week 24 are also switched to BMS-986165 6mg QD."
+        },
+        "permitted_concomitant": [],
+        "recorded_in_ecrf": true,
+        "applies_to_period": "randomized withdrawal and maintenance period (Weeks 24-52)",
+        "long_term_extension_eligible_after_rescue": null,
+        "topical_agent_class": "high potency corticosteroids (WHO Classes I-V) and other restricted topicals/medicated shampoos",
+        "rationale": "POETYK PSO-1 has two distinct rescue mechanisms: (1) a topical/shampoo escape restricted to a single Week-24 initiation window for sPGA>=3 nonresponders, and (2) a systemic relapse-triggered switch back to active drug (BMS-986165 6mg QD) for re-randomized-to-placebo responders during the Week 24-52 randomized withdrawal period."
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/51/NCT03611751/Prot_000.pdf",
+      "source_excerpt": "Section 6.7.3 Rescue Medications: \"At Week 24, a subject who has an sPGA [>=3] may be treated with restricted topicals or shampoos, respectively, at the investigator's discretion (see Section 6.7.1). These treatments may be only initiated at Week 24, and not at subsequent time points.\" (sPGA threshold recovered from Section 1.1 Overall Design: \"Any subject with sPGA >= 3 at Week 24 may be treated with restricted topical medications, such as topical high potency corticosteroids (WHO Classes I-V), only at this time point at the discretion of the investigator.\") Section 1.1: \"If the subjects re-randomized to placebo experience a relapse as defined below at any visit during this period, they will be treated with BMS-986165 6 mg QD until the end of the maintenance period (Week 52)... relapse will be defined as at least a 50% loss of Week 24 PASI percent improvement from baseline.\"",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.7
     }
   },
   "adverse_events": {

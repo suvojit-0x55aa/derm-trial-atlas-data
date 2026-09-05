@@ -265,13 +265,42 @@
       "confidence": 1.0
     },
     "background_therapy": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "regimen_type": "monotherapy",
+        "background_agent_class": null,
+        "tcs_regimen": null,
+        "step_down_rule": null,
+        "recommended_agents": [],
+        "emollient_required": null,
+        "emollient_frequency": null,
+        "prohibited_concomitant": [
+          "Medications that may affect hair regrowth or immune response: corticosteroids administered orally, by injection, or applied to areas of skin affected by alopecia; platelet-rich injections; topical application to affected areas of anthralin, squaric acid, diphenylcyclopropenone, or minoxidil",
+          "Chronic or long-term treatment with systemic immunosuppressive medications including but not limited to methotrexate, cyclosporine, and azathioprine; chloroquine derivatives; Janus kinase inhibitors (ruxolitinib, tofacitinib, etc); etanercept; or biologics (adalimumab, atlizumab, canakinumab, certolizumab, fontolizumab, golimumab, infliximab, mepolizumab, rituximab, secukinumab, tocilizumab, ustekinumab)",
+          "Use of strong CYP3A4 inhibitors dosed for systemic exposure (e.g. clarithromycin, conivaptan, grapefruit juice, indinavir, itraconazole, ketoconazole, lopinavir/ritonavir, mibefradil, nefazodone, nelfinavir, posaconazole, saquinavir, telaprevir, telithromycin, voriconazole, fluconazole)",
+          "Use of strong CYP3A4 inducers dosed for systemic exposure (e.g. barbiturates, carbamazepine, efavirenz, glucocorticoids, modafinil, nevirapine, oxcarbazepine, phenobarbital, phenytoin, pioglitazone, rifabutin, rifampin, St. John's Wort, troglitazone)",
+          "Live vaccines including measles/mumps/rubella (MMR), intranasal flu vaccine, and Zostavax (Shingrix is not prohibited)"
+        ],
+        "permitted_concomitant": [
+          "Any concomitant medication deemed necessary for the wellbeing of the patient may be given at the discretion of the Investigator",
+          "A short course of steroid treatment for acute treatment of a condition during the trial may be allowed following discussion with the Medical Monitor",
+          "Shingrix (non-live herpes zoster vaccine) is not prohibited"
+        ],
+        "applies_to_rerandomized_maintenance": null,
+        "sponsor_trial_ids": [
+          "CP543.3002"
+        ],
+        "study_drug_doses_mg": [
+          8,
+          12
+        ],
+        "population_note": "Sister trial to NCT04518995 (CP543.3001), identical concomitant-medication policy text (Protocol CP543.3002, randomization ratio 1:2:1 12mg BID:8mg BID:placebo vs the sister trial's 3:5:2). No background/co-therapy is administered alongside CTP-543 (deuruxolitinib) or placebo -- a real monotherapy design."
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/50/NCT04797650/Prot_000.pdf",
+      "source_excerpt": "9.5. Concomitant Medications and Procedures: Any concomitant medication deemed necessary for the wellbeing of the patient may be given at the discretion of the Investigator. Use of medications that are prohibited per protocol will require patient withdrawal from the study... The following treatments are not permitted during the study: Medications that may affect hair regrowth or immune response (such as: corticosteroids administered orally, by injection, or applied to areas of skin affected by alopecia; platelet-rich injections; topical application to affected areas of anthralin, squaric acid, diphenylcyclopropenone, or minoxidil; Chronic or long-term treatment with systemic immunosuppressive medications including but not limited to methotrexate, cyclosporine, and azathioprine; chloroquine derivatives; Janus kinase inhibitors (ruxolitinib, tofacitinib, etc), etanercept; or biologics... NOTE: a short course of steroid treatment for acute treatment of a condition during the trial may be allowed following discussion with the Medical Monitor.",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.65
     }
   },
   "endpoints": {
@@ -876,13 +905,68 @@
       "confidence": 1.0
     },
     "multiplicity_control": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "procedure": "gatekeeping_with_holm",
+        "familywise_error_controlled": true,
+        "alpha": 0.025,
+        "alpha_sided": 2,
+        "alpha_per_dose": 0.025,
+        "co_primary_endpoints": [
+          {
+            "label": "Percentage of patients achieving absolute SALT score <=20 at Week 24",
+            "scale": "SALT",
+            "responder_criteria": [],
+            "timepoint_week": 24,
+            "alpha": 0.025,
+            "step": 1
+          }
+        ],
+        "testing_sequence": [],
+        "alpha_split": [
+          {
+            "group": "CTP-543 12 mg BID vs placebo",
+            "n_endpoints": null,
+            "alpha": 0.025,
+            "method": "hierarchical",
+            "timepoint_week": 24
+          },
+          {
+            "group": "CTP-543 8 mg BID vs placebo",
+            "n_endpoints": null,
+            "alpha": 0.025,
+            "method": "hierarchical",
+            "timepoint_week": 24
+          }
+        ],
+        "alpha_recycling": null,
+        "doses_compared": [
+          "8 mg BID",
+          "12 mg BID",
+          "placebo"
+        ],
+        "dose_comparison_order": [],
+        "branching_on": null,
+        "regulatory_variants": [],
+        "rescue_counted_as_nonresponder": null,
+        "active_comparator_excluded_from_hierarchy": null,
+        "background_tcs": null,
+        "method_citations": [],
+        "finalized_in_sap": true,
+        "same_design_as": [
+          {
+            "nct_id": "NCT04518995",
+            "trial_name": "THRIVE-AA1"
+          }
+        ],
+        "gatekeeping_structure": true,
+        "further_endpoints_through_week": 24
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/50/NCT04797650/SAP_002.pdf",
+      "source_excerpt": "8.1.4. Multiple Comparisons/Multiplicity: Hierarchical testing will be used to control for multiple comparisons (Figure 1). For the primary efficacy analysis and the key secondary efficacy analyses, a <=0.025 (two-sided) alpha-level will be allocated to each dose for comparison with placebo to adjust for multiplicity of testing associated with two doses. Once p>0.025 is observed for a treatment group comparison, inference for additional endpoints is no longer alpha-level protected for that dose group, however nominal p-values will still be reported. Subsequently, conditional upon significance (<=0.025) for the primary endpoint and first key secondary endpoint for each dose, a linear hierarchical testing approach with <=0.025 (two-sided) alpha-level will be used to test the remaining key secondary endpoint comparisons versus placebo.",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.65
     }
   },
   "timing_ops": {
@@ -923,13 +1007,78 @@
       "confidence": 1.0
     },
     "study_schedule": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "screening_days": 28,
+        "screening_washout": null,
+        "periods": [
+          {
+            "name": "screening",
+            "start_week": null,
+            "end_week": 0,
+            "duration_weeks": 4,
+            "blinding": null,
+            "background_tcs": null
+          },
+          {
+            "name": "randomized_treatment",
+            "start_week": 0,
+            "end_week": 24,
+            "duration_weeks": 24,
+            "blinding": "double_blind",
+            "background_tcs": null
+          },
+          {
+            "name": "follow_up",
+            "start_week": 24,
+            "end_week": 28,
+            "duration_weeks": 4,
+            "blinding": null,
+            "background_tcs": null
+          }
+        ],
+        "dosing_interval": "twice_daily",
+        "visit_cadence": null,
+        "visit_cadence_until_week": null,
+        "visit_weeks": null,
+        "visit_days": null,
+        "phone_contact_weeks": null,
+        "primary_endpoint_week": 24,
+        "end_of_treatment_week": 24,
+        "end_of_study_week": 28,
+        "total_duration_weeks": 28,
+        "follow_up_weeks": 4,
+        "follow_up_days": null,
+        "follow_up_visit_week": 28,
+        "long_term_extension": true,
+        "extension_end_week": null,
+        "extension_visit_interval_weeks": null,
+        "extension_study_id": null,
+        "rerandomization_week": null,
+        "maintenance_arms": null,
+        "maintenance_response_check_weeks": null,
+        "last_injection_week": null,
+        "key_secondary_weeks": [
+          24
+        ],
+        "follow_up_visit_interval_weeks": null,
+        "end_of_treatment_weeks_after_last_dose": null,
+        "background_tcs_from_day": null,
+        "primary_endpoint_refs": [],
+        "double_dummy_arms": [],
+        "active_comparator": null,
+        "boilerplate_reused_from": [
+          "NCT04518995"
+        ],
+        "conflicts_with_trial": null,
+        "full_visit_table_available": true,
+        "source_inconsistency": "Study duration for non-extension patients is stated as both '32 weeks' (4-week Screening + 24-week Treatment + 4-week Safety Follow-up, arithmetically consistent) and 'approximately 28 weeks' in the same paragraph of the protocol synopsis -- recorded total_duration_weeks as 28 per the explicit non-extension-arm statement, matching the same internal inconsistency already documented for sister trial NCT04518995."
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/50/NCT04797650/Prot_000.pdf",
+      "source_excerpt": "Duration of treatment: Patients will receive up to 24 weeks of study drug. Duration of study participation: Upon completion of the 24-week Treatment Period, patients will be eligible to either enroll in the Open-Label Extension study or complete treatment and exit the study following the 4-week Safety Follow-up visit. Patients will participate in the study for up to 32 weeks if they decide not to enroll in the Open-Label Extension study (4-week Screening, 24-week Treatment, 4-week Safety Follow-up). Otherwise study duration will be up to approximately 28 weeks. CTP-543 will be dosed orally as tablets at doses of 8 mg or 12 mg every 12 hours during the Treatment Period. The primary efficacy endpoint will be the proportion of patients achieving an absolute SALT score of <=20 at Week 24.",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.65
     },
     "rescue_therapy": {
       "value": null,

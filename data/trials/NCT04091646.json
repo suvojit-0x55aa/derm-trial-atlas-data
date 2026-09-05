@@ -285,13 +285,43 @@
       "confidence": 1.0
     },
     "background_therapy": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "regimen_type": "monotherapy",
+        "background_agent_class": null,
+        "tcs_regimen": null,
+        "step_down_rule": null,
+        "recommended_agents": [],
+        "emollient_required": false,
+        "emollient_frequency": "once daily as normally used, applied at least 3 hours after application of investigational product, to untreated areas only",
+        "prohibited_concomitant": [
+          "Biologics -- 12-week or 5-half-life washout before Baseline",
+          "Systemic antifungal agents, corticosteroids, immunosuppressive therapies, retinoids, roflumilast, or apremilast (Otezla) -- 4-week washout before Baseline",
+          "Topical antifungals, corticosteroids, calcineurin inhibitors, sulfur-based treatments, medical devices, crisaborole (Eucrisa), azelaic acid, or metronidazole -- 2-week washout before Baseline",
+          "Medicated shampoos (eg, coal tar, keratolytics including salicylic acid, antifungals, zinc pyrithione, selenium sulfide, corticosteroids, medical devices) -- 2-week washout before Baseline, and prohibited during the study",
+          "Topical medications used on the scalp for conditions besides seborrheic dermatitis (eg, topical minoxidil for androgenetic alopecia) -- 4-week washout before Baseline",
+          "Phototherapy, tanning beds, other light-emitting devices -- 4-week washout before Baseline",
+          "Investigational drugs -- 12 weeks (biologics) or 5 half-lives, whichever longer; 5 half-lives (orals); 2 weeks (topical)"
+        ],
+        "permitted_concomitant": [
+          "Eye drop and nasal corticosteroid preparations are allowed",
+          "Inhaled corticosteroid preparations are allowed if used for a stable condition at a stable dose for >28 days before screening and continued at the same dose throughout the study",
+          "Non-medicated emollients, moisturizers, and sunscreens once daily as normally used, applied at least 3 hours after investigational product, to untreated areas only",
+          "Chronically used medications (particularly statins and anti-hypertensives) are allowed unless separately prohibited in Table 1",
+          "Only non-medicated shampoos are permitted; subjects should not use other hair products for at least 1 hour before or after application of investigational product"
+        ],
+        "applies_to_rerandomized_maintenance": null,
+        "sponsor_trial_ids": [
+          "ARQ-154-203"
+        ],
+        "study_drug_doses_mg": [],
+        "population_note": "This is a monotherapy design (ARQ-154/roflumilast foam 0.3% QD vs vehicle foam QD, applied to all affected areas for the full 8-week treatment period) with a formal prohibited/permitted concomitant medication table (Table 1) rather than a standardized background topical regimen -- there is no background TCS or co-administered active agent."
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/46/NCT04091646/Prot_000.pdf",
+      "source_excerpt": "4.5.1 Prohibitions and Concomitant Therapy: Prohibited medications and products are detailed in Table 1... Note: Eye drop and nasal corticosteroid preparations are allowed. Inhaled corticosteroid preparations are allowed if used for a stable condition and at a stable dose for > 28 days before screening and are continued at the same dose throughout the study. Non-medicated emollients, moisturizers and sunscreens will be allowed once daily as normally used by the subjects and applied at least 3 hours after application of randomized investigational product to untreated areas only... Only non-medicated shampoos are permitted. Medicated shampoos ... are prohibited.",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.7
     }
   },
   "endpoints": {
@@ -485,13 +515,38 @@
       "confidence": 1.0
     },
     "multiplicity_control": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "procedure": null,
+        "familywise_error_controlled": false,
+        "alpha": 0.1,
+        "alpha_sided": 2,
+        "alpha_per_dose": null,
+        "co_primary_endpoints": [],
+        "testing_sequence": [],
+        "alpha_split": [],
+        "alpha_recycling": null,
+        "doses_compared": [
+          "ARQ-154 (roflumilast) foam 0.3% QD",
+          "vehicle foam"
+        ],
+        "dose_comparison_order": [],
+        "branching_on": null,
+        "regulatory_variants": [],
+        "rescue_counted_as_nonresponder": null,
+        "active_comparator_excluded_from_hierarchy": null,
+        "background_tcs": false,
+        "method_citations": [],
+        "finalized_in_sap": null,
+        "same_design_as": [],
+        "gatekeeping_structure": false,
+        "further_endpoints_through_week": null
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/46/NCT04091646/Prot_000.pdf",
+      "source_excerpt": "6.1 Statistical Methods: ... P-values of less than 0.10 will be considered statistically significant based on a two-sided test unless otherwise specified. No adjustments for multiplicity are planned.",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.7
     }
   },
   "timing_ops": {
@@ -532,13 +587,77 @@
       "confidence": 1.0
     },
     "study_schedule": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "screening_days": 28,
+        "screening_washout": null,
+        "periods": [
+          {
+            "name": "screening",
+            "start_week": null,
+            "end_week": 0,
+            "duration_weeks": null,
+            "blinding": null,
+            "background_tcs": null
+          },
+          {
+            "name": "double_blind_treatment",
+            "start_week": 0,
+            "end_week": 8,
+            "duration_weeks": 8,
+            "blinding": "double_blind",
+            "background_tcs": false
+          },
+          {
+            "name": "follow_up",
+            "start_week": 8,
+            "end_week": 9,
+            "duration_weeks": 1,
+            "blinding": null,
+            "background_tcs": null
+          }
+        ],
+        "dosing_interval": "once daily (QD)",
+        "visit_cadence": null,
+        "visit_cadence_until_week": null,
+        "visit_weeks": [
+          4,
+          8
+        ],
+        "visit_days": null,
+        "phone_contact_weeks": null,
+        "primary_endpoint_week": 8,
+        "end_of_treatment_week": 8,
+        "end_of_study_week": 9,
+        "total_duration_weeks": 13,
+        "follow_up_weeks": 1,
+        "follow_up_days": null,
+        "follow_up_visit_week": 9,
+        "long_term_extension": false,
+        "extension_end_week": null,
+        "extension_visit_interval_weeks": null,
+        "extension_study_id": null,
+        "rerandomization_week": null,
+        "maintenance_arms": null,
+        "maintenance_response_check_weeks": null,
+        "last_injection_week": null,
+        "key_secondary_weeks": null,
+        "follow_up_visit_interval_weeks": null,
+        "end_of_treatment_weeks_after_last_dose": null,
+        "background_tcs_from_day": null,
+        "primary_endpoint_refs": [],
+        "double_dummy_arms": [],
+        "active_comparator": null,
+        "boilerplate_reused_from": [],
+        "conflicts_with_trial": null,
+        "full_visit_table_available": true,
+        "source_inconsistency": null
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/46/NCT04091646/Prot_000.pdf",
+      "source_excerpt": "Duration of Participation for Subjects: Screening (up to 4 weeks) + Treatment phase (8 weeks) and follow-up (1 week post-treatment completion) for a total of up to approximately 13 weeks. ... Study Design: This is a parallel group, double blind, vehicle-controlled study in which ARQ-154 foam 0.3% or vehicle foam is applied QD x 8 weeks to adult subjects with at least moderate seborrheic dermatitis affecting the scalp and/or rest of body. 1.2 Study Schema: Screening (Visit 1) -> Baseline (Visit 2) Randomization and Treatment Day 0 -> 8-Week Treatment Period (Visits 3, 4, & 5) -> Follow Up Period / Visit 6.",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.7
     },
     "rescue_therapy": {
       "value": null,

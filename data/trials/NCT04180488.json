@@ -254,13 +254,91 @@
       "confidence": 1.0
     },
     "background_therapy": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "regimen_type": null,
+        "background_agent_class": "H1-AH (non-sedating H1-antihistamine)",
+        "tcs_regimen": null,
+        "step_down_rule": null,
+        "recommended_agents": [
+          {
+            "name": "Cetirizine 10 mg once per day",
+            "strength_pct": null,
+            "form": null,
+            "potency": null
+          },
+          {
+            "name": "Levocetirizine dihydrochloride 5 mg qd",
+            "strength_pct": null,
+            "form": null,
+            "potency": null
+          },
+          {
+            "name": "Fexofenadine 60 mg twice per day or 180 mg qd",
+            "strength_pct": null,
+            "form": null,
+            "potency": null
+          },
+          {
+            "name": "Loratadine 10 mg qd",
+            "strength_pct": null,
+            "form": null,
+            "potency": null
+          },
+          {
+            "name": "Desloratadine 5 mg qd",
+            "strength_pct": null,
+            "form": null,
+            "potency": null
+          },
+          {
+            "name": "Bilastine 20 mg qd",
+            "strength_pct": null,
+            "form": null,
+            "potency": null
+          },
+          {
+            "name": "Rupatadine 10 mg qd",
+            "strength_pct": null,
+            "form": null,
+            "potency": null
+          }
+        ],
+        "emollient_required": null,
+        "emollient_frequency": null,
+        "prohibited_concomitant": [
+          "Systemic immunosuppressants (e.g. systemic corticosteroids, cyclosporine, mycophenolate-mofetil, interferon gamma, JAK inhibitors, azathioprine, methotrexate, hydroxychloroquine, dapsone, sulfasalazine, colchicine)",
+          "Antifibrinolytic tranexamic acid and epsilon-aminocaproic acid",
+          "Other monoclonal antibodies",
+          "Phototherapy, including tanning beds",
+          "IVIG",
+          "Plasmapheresis",
+          "Other investigational drugs",
+          "Topical corticosteroids",
+          "Topical calcineurin inhibitors",
+          "Topical and oral antihistamines other than those allowed as background therapy",
+          "Routine doses of doxepin (daily or every other day during 5 or more consecutive days)",
+          "LTRAs and H2 receptor antagonists, unless stable and taken for diseases other than CSU"
+        ],
+        "permitted_concomitant": [
+          "Long-acting non-sedating H1-AH at up to 4-fold recommended dose, as background medication and on-demand as rescue medication",
+          "Short course of oral corticosteroids as rescue therapy"
+        ],
+        "applies_to_rerandomized_maintenance": null,
+        "sponsor_trial_ids": [
+          "EFC16461"
+        ],
+        "study_drug_doses_mg": [
+          200,
+          300
+        ],
+        "population_note": "This CSU (chronic spontaneous urticaria) trial's background therapy is a long-acting non-sedating H1-antihistamine, not TCS; the schema's regimen_type enum (monotherapy/combination_tcs/standardized_background_topical) has no value describing a standardized antihistamine background regimen, so left null."
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/88/NCT04180488/Prot_002.pdf",
+      "source_excerpt": "Section 6.5 CONCOMITANT THERAPY: 'Long-acting non-sedating H1-AH, at up to 4-fold the recommended dose, are allowed as background medication and on demand as recue medication... The concomitant use of the following therapies is prohibited during the entire study. Study treatment will need to be discontinued in participants receiving these treatments: Systemic immunosuppressants... Other monoclonal antibodies... Phototherapy... IVIG... Plasmapheresis... Other investigational drugs.' Also Section 6.1: 'Participants should continue their established standard of care background therapy with a long-acting non-sedating H1-AH, at up to 4-fold the recommended dose... Cetirizine 10 mg once per day (qd). Levocetirizine dihydrochloride 5 mg qd... Fexofenadine 60 mg twice per day or 180 mg qd... Loratadine 10 mg qd... Desloratadine 5 mg qd... Bilastine 20 mg qd... Rupatadine 10 mg qd'.",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.7
     }
   },
   "endpoints": {
@@ -925,13 +1003,156 @@
       "confidence": 1.0
     },
     "multiplicity_control": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "procedure": "serial_gatekeeping",
+        "familywise_error_controlled": true,
+        "alpha": 0.05,
+        "alpha_sided": 2,
+        "alpha_per_dose": null,
+        "co_primary_endpoints": [],
+        "testing_sequence": [
+          {
+            "label": "Change from baseline in ISS7 at Week 24 (non-EU/non-EU reference countries) / UAS7 at Week 24 (EU/EU reference countries)",
+            "scale": "ISS7/UAS7",
+            "responder_criteria": [],
+            "timepoint_week": 24,
+            "alpha": 0.05,
+            "step": 1
+          },
+          {
+            "label": "Change from baseline in the other of UAS7/ISS7 at Week 24",
+            "scale": "UAS7/ISS7",
+            "responder_criteria": [],
+            "timepoint_week": 24,
+            "alpha": 0.05,
+            "step": 2
+          },
+          {
+            "label": "Proportion of patients with UAS7 <=6 at Week 24",
+            "scale": "UAS7",
+            "responder_criteria": [],
+            "timepoint_week": 24,
+            "alpha": 0.05,
+            "step": 3
+          },
+          {
+            "label": "Proportion of patients with UAS7 = 0 at Week 24",
+            "scale": "UAS7",
+            "responder_criteria": [],
+            "timepoint_week": 24,
+            "alpha": 0.05,
+            "step": 4
+          },
+          {
+            "label": "Change from baseline in HSS7 at Week 24",
+            "scale": "HSS7",
+            "responder_criteria": [],
+            "timepoint_week": 24,
+            "alpha": 0.05,
+            "step": 5
+          },
+          {
+            "label": "Change from baseline in ISS7 at Week 12",
+            "scale": "ISS7",
+            "responder_criteria": [],
+            "timepoint_week": 12,
+            "alpha": 0.05,
+            "step": 6
+          },
+          {
+            "label": "Change from baseline in UAS7 at Week 12",
+            "scale": "UAS7",
+            "responder_criteria": [],
+            "timepoint_week": 12,
+            "alpha": 0.05,
+            "step": 7
+          },
+          {
+            "label": "Proportion of patients with UAS7 <=6 at Week 12",
+            "scale": "UAS7",
+            "responder_criteria": [],
+            "timepoint_week": 12,
+            "alpha": 0.05,
+            "step": 8
+          },
+          {
+            "label": "Proportion of patients with MID (ISS7 >=5) response at Week 24",
+            "scale": "ISS7",
+            "responder_criteria": [],
+            "timepoint_week": 24,
+            "alpha": 0.05,
+            "step": 9
+          },
+          {
+            "label": "Proportion of patients with MID (ISS7 >=5) response at Week 12",
+            "scale": "ISS7",
+            "responder_criteria": [],
+            "timepoint_week": 12,
+            "alpha": 0.05,
+            "step": 10
+          },
+          {
+            "label": "Change from baseline in HSS7 at Week 12",
+            "scale": "HSS7",
+            "responder_criteria": [],
+            "timepoint_week": 12,
+            "alpha": 0.05,
+            "step": 11
+          },
+          {
+            "label": "Proportion of patients with UAS7 = 0 at Week 12",
+            "scale": "UAS7",
+            "responder_criteria": [],
+            "timepoint_week": 12,
+            "alpha": 0.05,
+            "step": 12
+          },
+          {
+            "label": "Change from baseline in UCT at Week 24",
+            "scale": "UCT",
+            "responder_criteria": [],
+            "timepoint_week": 24,
+            "alpha": 0.05,
+            "step": 13
+          },
+          {
+            "label": "Change from baseline in UCT at Week 12",
+            "scale": "UCT",
+            "responder_criteria": [],
+            "timepoint_week": 12,
+            "alpha": 0.05,
+            "step": 14
+          }
+        ],
+        "alpha_split": [],
+        "alpha_recycling": null,
+        "doses_compared": [
+          "300 mg",
+          "200 mg"
+        ],
+        "dose_comparison_order": [],
+        "branching_on": null,
+        "regulatory_variants": [
+          "US",
+          "EU"
+        ],
+        "rescue_counted_as_nonresponder": true,
+        "active_comparator_excluded_from_hierarchy": null,
+        "background_tcs": null,
+        "method_citations": [
+          "SAP Section 4.6 Multiplicity Issues"
+        ],
+        "finalized_in_sap": true,
+        "same_design_as": [],
+        "gatekeeping_structure": true,
+        "further_endpoints_through_week": null
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/88/NCT04180488/SAP_003.pdf",
+      "source_excerpt": "SAP Section 4.6 MULTIPLICITY ISSUES (Study A, non-EU/non-EU reference countries hierarchy shown): 'A multiplicity procedure is proposed to control the overall type-I error rate for testing the primary and selected secondary endpoints. The overall alpha is 0.05. The comparisons with placebo will be tested based on the hierarchical order below at 2-sided alpha = 0.05: In non-EU and non-EU reference countries: 1. Change from baseline in ISS7 at Week 24 2. Change from baseline in UAS7 at Week 24 3. Proportion of patients with UAS7 <=6 at Week 24 ... 14. Change from baseline in UCT at Week 12.' Note: this SAP text covers Study A of this master-protocol NCT (which also includes Study B and Study C); the SAP states 'A separate SAP is prepared for Study B', whose interim-analysis alpha spending differs (0.021 at interim, 0.043 at final) -- recorded here as the Study A/primary hierarchy, not a claim that it applies identically to every sub-study under this NCT.",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.5
     }
   },
   "timing_ops": {
@@ -972,22 +1193,125 @@
       "confidence": 1.0
     },
     "study_schedule": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "screening_days": 28,
+        "screening_washout": null,
+        "periods": [
+          {
+            "name": "screening",
+            "start_week": null,
+            "end_week": 0,
+            "duration_weeks": 4,
+            "blinding": null,
+            "background_tcs": null
+          },
+          {
+            "name": "randomized_treatment",
+            "start_week": 0,
+            "end_week": 24,
+            "duration_weeks": 24,
+            "blinding": "quadruple",
+            "background_tcs": null
+          },
+          {
+            "name": "follow_up",
+            "start_week": 24,
+            "end_week": 36,
+            "duration_weeks": 12,
+            "blinding": null,
+            "background_tcs": null
+          }
+        ],
+        "dosing_interval": "1 injection every 2 weeks (q2w) after an initial loading dose (2 injections) on Day 1; every 4 weeks (q4w) for children <30 kg and >=15 kg",
+        "visit_cadence": null,
+        "visit_cadence_until_week": null,
+        "visit_weeks": [
+          0,
+          12,
+          24,
+          36
+        ],
+        "visit_days": null,
+        "phone_contact_weeks": null,
+        "primary_endpoint_week": 24,
+        "end_of_treatment_week": 24,
+        "end_of_study_week": 36,
+        "total_duration_weeks": 40,
+        "follow_up_weeks": 12,
+        "follow_up_days": null,
+        "follow_up_visit_week": 36,
+        "long_term_extension": null,
+        "extension_end_week": null,
+        "extension_visit_interval_weeks": null,
+        "extension_study_id": null,
+        "rerandomization_week": null,
+        "maintenance_arms": null,
+        "maintenance_response_check_weeks": null,
+        "last_injection_week": 22,
+        "key_secondary_weeks": [
+          12,
+          24
+        ],
+        "follow_up_visit_interval_weeks": null,
+        "end_of_treatment_weeks_after_last_dose": null,
+        "background_tcs_from_day": null,
+        "primary_endpoint_refs": [],
+        "double_dummy_arms": [],
+        "active_comparator": null,
+        "boilerplate_reused_from": [],
+        "conflicts_with_trial": null,
+        "full_visit_table_available": true,
+        "source_inconsistency": "This NCT registers a master protocol of 3 sub-studies (Study A/B/C); the quoted Schedule of Activities table and duration text is Study A/C's shared design (Study B, in omalizumab intolerant/incomplete-responder patients, follows the same visit schema per the protocol)."
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/88/NCT04180488/Prot_002.pdf",
+      "source_excerpt": "Section 1.1 Synopsis, 'Duration of study period (per participant)': 'Screening period (2 to 4 weeks); Randomized IMP treatment period (24 weeks); Post IMP treatment period (12 weeks)'. Section 1.3 SCHEDULE OF ACTIVITIES (SoA) table: 'Screening (2 to 4 weeks before Day 1) | Intervention period (Weeks) 0 (Day 1), 12, 24 | Follow-up (12 weeks) 36 ... Visit 1, 2a, 3, 4 (EOT), 5 (EOS)'.",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.6
     },
     "rescue_therapy": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "permitted": true,
+        "trigger": "investigator_discretion",
+        "earliest_week": 8,
+        "prohibited_through_week": null,
+        "trigger_rules": [],
+        "flare_definition": [],
+        "first_step": null,
+        "topical_min_days_before_systemic": null,
+        "topical_rescue_requires_study_drug_discontinuation": null,
+        "systemic_rescue_requires_study_drug_discontinuation": false,
+        "resume_after_systemic_rescue_half_lives": null,
+        "resume_after_phototherapy_months": null,
+        "rescued_counted_as_nonresponder": true,
+        "rescued_counted_as_treatment_failure": null,
+        "continue_visits_after_discontinuation": null,
+        "continue_visits_through_week": null,
+        "topical_rescue_not_counted_after_week": null,
+        "topical_agents": [],
+        "topical_potency_classes": [],
+        "tci_reserved_areas": [],
+        "systemic_agents": [
+          "Oral corticosteroids (e.g. oral prednisone or clinically comparable OCS)"
+        ],
+        "oral_corticosteroid_limit": null,
+        "rescue_period": null,
+        "escape_arm_washout_half_lives": null,
+        "maintenance_period_rule": null,
+        "permitted_concomitant": [],
+        "recorded_in_ecrf": true,
+        "applies_to_period": "treatment and follow-up periods",
+        "long_term_extension_eligible_after_rescue": null,
+        "topical_agent_class": null,
+        "rationale": "Section 6.5.1 Rescue medicine: participants on 1- to 3-fold the approved H1-AH dose may take additional H1-AH doses as rescue therapy up to 4-fold the recommended dose during screening/treatment/follow-up; if symptoms remain uncontrolled after increasing H1-AH to the maximum allowed dose, participants may take a short course of OCS as rescue therapy (participants already on stable 4-fold H1-AH dose may go straight to OCS). Recommended OCS course: 5 to 7 days, starting dose oral prednisone 40 mg (or clinically comparable OCS), followed by taper per Investigator judgment. Use of permitted rescue medications should be delayed, if possible, for at least 8 weeks following initiation of investigational treatment."
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/88/NCT04180488/Prot_002.pdf",
+      "source_excerpt": "Section 6.5.1 Rescue medicine: 'All participants on 1- to 3-fold the approved non-sedating H1-AH dose... will be allowed to take additional doses of their H1-AH medications as rescue therapy as long as they do not exceed 4-fold the recommended dose... If symptoms are still uncontrolled after increase of H1-AH to the maximum allowed dose, participants can take a short course of OCS as rescue therapy... it is recommended to use OCS for 5 to 7 days with a starting dose of oral prednisone 40 mg (or clinically comparable OCS) followed by taper per the Investigator's judgment... The use of permitted rescue medications should be delayed, if possible, for at least 8 weeks following the initiation of the investigational treatment.' Section 9 SAP: 'Participants who receive selected prohibited medications and/or rescue medications will be considered as non-responders for time points after medication usage.'",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.7
     }
   },
   "adverse_events": {

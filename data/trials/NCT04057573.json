@@ -248,13 +248,41 @@
       "confidence": 1.0
     },
     "background_therapy": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "regimen_type": "monotherapy",
+        "background_agent_class": null,
+        "tcs_regimen": null,
+        "step_down_rule": null,
+        "recommended_agents": [],
+        "emollient_required": null,
+        "emollient_frequency": null,
+        "prohibited_concomitant": [
+          "Topical drugs applied to vitiligo areas (corticosteroids, calcineurin inhibitors, phosphodiesterase type 4 inhibitors, retinoids) -- 1-week washout before baseline, and prohibited during the study",
+          "Melanocyte-stimulating agents (eg, afamelanotide) -- 4-week washout before baseline",
+          "Immunomodulating systemic medications (eg, corticosteroids, methotrexate, cyclosporine) -- 4-week washout before baseline",
+          "Systemic therapies that increase skin sensitivity to UV/visible light or impact skin pigmentation (eg, tetracyclines, metoxypsoralens) -- 4-week washout before baseline",
+          "Live vaccines -- prohibited during the course of the study and within 4 weeks after the EOT visit",
+          "Laser or any phototherapy, including tanning bed or intentional UV exposure -- 8-week washout before baseline",
+          "Biologic agents, investigational or experimental therapy/procedures for vitiligo -- washout of 5 half-lives or 12 weeks (whichever longer) before baseline",
+          "Prior or current JAK inhibitors (systemic or topical) -- exclusionary",
+          "Any prohibited concomitant medication for worsening vitiligo during the study requires permanent study drug discontinuation (Section 6.5.2)"
+        ],
+        "permitted_concomitant": [
+          "Hydroquinone use is not prohibited (it is a bleaching agent, not a depigmentation treatment)"
+        ],
+        "applies_to_rerandomized_maintenance": null,
+        "sponsor_trial_ids": [
+          "INCB 18424-307"
+        ],
+        "study_drug_doses_mg": [],
+        "population_note": "This is a monotherapy design for vitiligo: ruxolitinib cream 1.5% BID vs vehicle, with no background vitiligo therapy permitted. Section 6.5.2 requires permanent study drug discontinuation if worsening vitiligo requires treatment with a prohibited concomitant medication -- there is no standardized background regimen, only a list of pre-baseline washout requirements (Section 5.2 exclusion criteria) that also function as prohibitions during the study."
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/73/NCT04057573/Prot_000.pdf",
+      "source_excerpt": "6.5.2. Criteria for Permanent Discontinuation of Study Drug Due to an Adverse Event: ... Worsening of vitiligo that requires treatment with a prohibited concomitant medication. ... 5.2 Exclusion Criteria: 5. Participants using any of the following treatments within the indicated washout period before baseline: a. 1 week: Topical drugs when used on the vitiligo areas, for example, corticosteroids, calcineurin, and phosphodiesterase type 4 inhibitors or retinoids. b. 4 weeks: Melanocyte-stimulating agents (eg, afamelanotide). Immunomodulating systemic medications (eg, corticosteroids, methotrexate, cyclosporine)... Note: Prior use of hydroquinone is not prohibited (as it is a bleaching agent, not a depigmentation treatment).",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.6
     }
   },
   "endpoints": {
@@ -865,13 +893,95 @@
       "confidence": 1.0
     },
     "multiplicity_control": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "procedure": "serial_gatekeeping",
+        "familywise_error_controlled": true,
+        "alpha": 0.05,
+        "alpha_sided": 2,
+        "alpha_per_dose": null,
+        "co_primary_endpoints": [],
+        "testing_sequence": [
+          {
+            "label": "Proportion of participants achieving F-VASI75 at Week 24 (primary endpoint)",
+            "scale": "F-VASI",
+            "responder_criteria": [],
+            "timepoint_week": 24,
+            "alpha": 0.05,
+            "step": 1
+          },
+          {
+            "label": "Proportion of participants achieving F-VASI50 at Week 24",
+            "scale": "F-VASI",
+            "responder_criteria": [],
+            "timepoint_week": 24,
+            "alpha": 0.05,
+            "step": 2
+          },
+          {
+            "label": "Proportion of participants achieving F-VASI90 at Week 24",
+            "scale": "F-VASI",
+            "responder_criteria": [],
+            "timepoint_week": 24,
+            "alpha": 0.05,
+            "step": 3
+          },
+          {
+            "label": "Proportion of participants achieving T-VASI50 at Week 24",
+            "scale": "T-VASI",
+            "responder_criteria": [],
+            "timepoint_week": 24,
+            "alpha": 0.05,
+            "step": 4
+          },
+          {
+            "label": "Vitiligo-VNS Response at Week 24",
+            "scale": "Vitiligo-VNS",
+            "responder_criteria": [],
+            "timepoint_week": 24,
+            "alpha": 0.05,
+            "step": 5
+          },
+          {
+            "label": "Percentage change from baseline in F-BSA at Week 24",
+            "scale": "F-BSA",
+            "responder_criteria": [],
+            "timepoint_week": 24,
+            "alpha": 0.05,
+            "step": 6
+          }
+        ],
+        "alpha_split": [],
+        "alpha_recycling": false,
+        "doses_compared": [
+          "ruxolitinib cream 1.5% BID",
+          "vehicle"
+        ],
+        "dose_comparison_order": [],
+        "branching_on": null,
+        "regulatory_variants": [],
+        "rescue_counted_as_nonresponder": true,
+        "active_comparator_excluded_from_hierarchy": null,
+        "background_tcs": false,
+        "method_citations": [
+          "gatekeeping testing strategy (fixed sequence)",
+          "Bretz F, Maurer W, Brannath W, Posch M. A graphical approach to sequentially rejective..."
+        ],
+        "finalized_in_sap": true,
+        "same_design_as": [
+          {
+            "nct_id": "NCT04052425",
+            "trial_name": "INCB 18424-306 (TRuE-V1)"
+          }
+        ],
+        "gatekeeping_structure": true,
+        "further_endpoints_through_week": null
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/73/NCT04057573/SAP_001.pdf",
+      "source_excerpt": "3.2. Control of Type I Error: The gatekeeping testing strategy for the primary and key secondary analyses will be implemented to control the overall Type I error rate, 2-sided alpha = 0.05. These endpoints will be tested in a fixed sequence at 2-sided alpha = 0.05 level in the following order: Proportion of participants achieving F-VASI75 at Week 24; Proportion of participants achieving F-VASI50 at Week 24; Proportion of participants achieving F-VASI90 at Week 24; Proportion of participants achieving T-VASI50 at Week 24; Vitiligo - VNS Response at Week 24; Percentage change from baseline in F-BSA at Week 24. The endpoint will be tested only if the primary endpoint (and the secondary endpoints in previous steps) are rejected. [SAP title page: 'INCB 18424-306/307 Statistical Analysis Plan' -- this SAP jointly covers both TRuE-V1 (NCT04052425) and TRuE-V2 (NCT04057573).]",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.7
     }
   },
   "timing_ops": {
@@ -912,22 +1022,137 @@
       "confidence": 1.0
     },
     "study_schedule": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "screening_days": 32,
+        "screening_washout": null,
+        "periods": [
+          {
+            "name": "screening",
+            "start_week": null,
+            "end_week": 0,
+            "duration_weeks": null,
+            "blinding": null,
+            "background_tcs": null
+          },
+          {
+            "name": "double_blind_treatment",
+            "start_week": 0,
+            "end_week": 24,
+            "duration_weeks": 24,
+            "blinding": "double_blind",
+            "background_tcs": null
+          },
+          {
+            "name": "continuation_treatment",
+            "start_week": 24,
+            "end_week": 52,
+            "duration_weeks": 28,
+            "blinding": "open_label",
+            "background_tcs": null
+          },
+          {
+            "name": "follow_up",
+            "start_week": 52,
+            "end_week": null,
+            "duration_weeks": null,
+            "blinding": null,
+            "background_tcs": null
+          }
+        ],
+        "dosing_interval": "twice daily (BID)",
+        "visit_cadence": null,
+        "visit_cadence_until_week": null,
+        "visit_weeks": [
+          4,
+          8,
+          12,
+          18,
+          24,
+          28,
+          34,
+          40,
+          46,
+          52
+        ],
+        "visit_days": null,
+        "phone_contact_weeks": null,
+        "primary_endpoint_week": 24,
+        "end_of_treatment_week": 52,
+        "end_of_study_week": 56,
+        "total_duration_weeks": 60,
+        "follow_up_weeks": null,
+        "follow_up_days": 30,
+        "follow_up_visit_week": null,
+        "long_term_extension": true,
+        "extension_end_week": null,
+        "extension_visit_interval_weeks": null,
+        "extension_study_id": null,
+        "rerandomization_week": null,
+        "maintenance_arms": null,
+        "maintenance_response_check_weeks": null,
+        "last_injection_week": null,
+        "key_secondary_weeks": [
+          24,
+          52
+        ],
+        "follow_up_visit_interval_weeks": null,
+        "end_of_treatment_weeks_after_last_dose": null,
+        "background_tcs_from_day": null,
+        "primary_endpoint_refs": [],
+        "double_dummy_arms": [],
+        "active_comparator": null,
+        "boilerplate_reused_from": [],
+        "conflicts_with_trial": null,
+        "full_visit_table_available": true,
+        "source_inconsistency": "Participants who do not enter the treatment extension (i.e. do not continue past Week 24/EOT1) have an effective end-of-treatment at Week 24, not Week 52; the periods/end_of_treatment_week values here represent the full-extension path only, per Table 2's total-duration framing ('Up to approximately 60 weeks')."
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/73/NCT04057573/Prot_000.pdf",
+      "source_excerpt": "Table 2: Key Study Design Elements -- Study Design: Randomized, double-blind, vehicle-controlled, with a treatment extension period. Estimated Duration of Study Participation: Screening: Up to 32 days; Double-blind period: 24 weeks; Treatment extension period: 28 weeks; Safety follow-up: 30 days after last application of study medication or last study visit; Total: Up to approximately 60 weeks. ... After completion of the Week 24 assessments, participants will be offered the opportunity to receive an additional 28 weeks of treatment extension with ruxolitinib cream 1.5% BID.",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.7
     },
     "rescue_therapy": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "permitted": false,
+        "trigger": "prohibited",
+        "earliest_week": null,
+        "prohibited_through_week": null,
+        "trigger_rules": [],
+        "flare_definition": [],
+        "first_step": null,
+        "topical_min_days_before_systemic": null,
+        "topical_rescue_requires_study_drug_discontinuation": null,
+        "systemic_rescue_requires_study_drug_discontinuation": null,
+        "resume_after_systemic_rescue_half_lives": null,
+        "resume_after_phototherapy_months": null,
+        "rescued_counted_as_nonresponder": true,
+        "rescued_counted_as_treatment_failure": null,
+        "continue_visits_after_discontinuation": null,
+        "continue_visits_through_week": null,
+        "topical_rescue_not_counted_after_week": null,
+        "topical_agents": [],
+        "topical_potency_classes": [],
+        "tci_reserved_areas": [],
+        "systemic_agents": [],
+        "oral_corticosteroid_limit": null,
+        "rescue_period": null,
+        "escape_arm_washout_half_lives": null,
+        "maintenance_period_rule": null,
+        "permitted_concomitant": [],
+        "recorded_in_ecrf": null,
+        "applies_to_period": "entire double-blind treatment period",
+        "long_term_extension_eligible_after_rescue": null,
+        "topical_agent_class": null,
+        "rationale": "SAP Section 7.3.1: 'Rescue therapy is not allowed in the studies. Any participant who received rescue therapy will be considered as a protocol violation and will be imputed as a nonresponder.' This is an explicit, unambiguous prohibition (not an inference from a prohibited-medication list, unlike Tapinarof)."
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/73/NCT04057573/SAP_001.pdf",
+      "source_excerpt": "All participants who are missing the F-VASI assessment at a given visit in the DB period will be handled using MI under the missing-at-random assumption. Rescue therapy is not allowed in the studies. Any participant who received rescue therapy will be considered as a protocol violation and will be imputed as a nonresponder.",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.7
     }
   },
   "adverse_events": {

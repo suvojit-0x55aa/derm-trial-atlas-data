@@ -20,7 +20,7 @@
       "confidence": 0.0
     },
     "official_title": {
-      "value": "A Multi-Center, Randomized, Double-Blind, Parallel-Group Vehicle Controlled Study To Compare The Efficacy And Safety Of CD5789 (Trifarotene) 50\u03bcg/g Cream Versus Vehicle Cream In Subjects With Acne Vulgaris",
+      "value": "A Multi-Center, Randomized, Double-Blind, Parallel-Group Vehicle Controlled Study To Compare The Efficacy And Safety Of CD5789 (Trifarotene) 50μg/g Cream Versus Vehicle Cream In Subjects With Acne Vulgaris",
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02566369",
       "source_excerpt": "protocolSection.identificationModule.officialTitle",
@@ -61,7 +61,7 @@
     },
     "intervention_names": {
       "value": [
-        "CD5789 (trifarotene) 50\u03bcg/g cream",
+        "CD5789 (trifarotene) 50μg/g cream",
         "Placebo cream"
       ],
       "source_type": "ctgov_api",
@@ -90,7 +90,7 @@
         "binding_targets": [],
         "pathway_cytokines": [],
         "receptor_subunits": [
-          "RAR\u03b3"
+          "RARγ"
         ],
         "kinases_inhibited": [],
         "lower_potency_kinases": [],
@@ -109,8 +109,8 @@
     "dosing_regimen": {
       "value": [
         {
-          "intervention_name": "CD5789 (trifarotene) 50\u03bcg/g cream",
-          "description": "CD5789 (trifarotene) 50\u00b5g/g cream applied once daily for 12 weeks.",
+          "intervention_name": "CD5789 (trifarotene) 50μg/g cream",
+          "description": "CD5789 (trifarotene) 50µg/g cream applied once daily for 12 weeks.",
           "is_placebo": false,
           "route": "topical",
           "dose_form": "cream",
@@ -129,7 +129,7 @@
       ],
       "source_type": "ctgov_text_extraction",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02566369",
-      "source_excerpt": "CD5789 (trifarotene) 50\u03bcg/g cream: CD5789 (trifarotene) 50\u00b5g/g cream applied once daily for 12 weeks.",
+      "source_excerpt": "CD5789 (trifarotene) 50μg/g cream: CD5789 (trifarotene) 50µg/g cream applied once daily for 12 weeks.",
       "extracted_by": "deep-extraction pass (LLM-assisted extraction, scale-out backfill; pending human QA)",
       "reviewed_by": null,
       "confidence": 0.8
@@ -240,13 +240,36 @@
       "confidence": 1.0
     },
     "background_therapy": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "regimen_type": "monotherapy",
+        "background_agent_class": null,
+        "tcs_regimen": null,
+        "step_down_rule": null,
+        "recommended_agents": [],
+        "emollient_required": null,
+        "emollient_frequency": null,
+        "prohibited_concomitant": [
+          "Non-steroidal anti-inflammatory drugs (NSAIDs) beyond 21 cumulative days, or within 1 week of final study assessment",
+          "Corticosteroids (except inhaled or intrathecal), require 4-week washout",
+          "Antibiotics (except plain penicillin), require 4-week washout",
+          "Oral retinoids, require 6-month washout",
+          "Immunomodulators including biologics, require 6-month washout",
+          "Alpha-hydroxy acid products, medicated shaving creams, after-shaves, colognes, astringents, or alcohol-containing preparations (prohibited throughout the study, no washout period specified)"
+        ],
+        "permitted_concomitant": [],
+        "applies_to_rerandomized_maintenance": null,
+        "sponsor_trial_ids": [
+          "RD.06.SPR.18251"
+        ],
+        "study_drug_doses_mg": [],
+        "population_note": "Monotherapy design (Phase 3, vehicle-controlled). Section 5.5.5/exclusion criterion 17 requires subjects to refrain from prohibited medication use during the trial; a washout table lists minimum washout periods for each excluded medication class prior to Baseline."
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/69/NCT02566369/Prot_000.pdf",
+      "source_excerpt": "Systemic treatment: Non-steroidal anti-inflammatory drugs [2 weeks]; Corticosteroids (except inhaled corticosteroids or intrathecal corticosteroids) [4 weeks]; Antibiotics (except plain penicillin) [4 weeks]; Oral retinoids [6 months]; Immunomodulators, including biologics [6 months]. ... No time frame period is specified for Alpha-hydroxy acid products, medicated shaving creams, after-shaves, colognes, astringents, or preparations with alcohol, but their application is prohibited during the study. ... 17. The subject is unwilling to refrain from use of prohibited medication during the clinical trial (see Section 5.5.5 of the protocol v06 March 2017).",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.7
     }
   },
   "endpoints": {
@@ -295,13 +318,89 @@
       "confidence": 1.0
     },
     "multiplicity_control": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "procedure": null,
+        "familywise_error_controlled": true,
+        "alpha": 0.05,
+        "alpha_sided": 2,
+        "alpha_per_dose": null,
+        "co_primary_endpoints": [
+          {
+            "label": "Success Rate (IGA 0/1 with >=2-grade improvement) at Week 12",
+            "scale": "IGA",
+            "responder_criteria": [
+              {
+                "scale": "IGA",
+                "scale_component": null,
+                "scale_variant": null,
+                "metric": "absolute_score",
+                "comparator": "in",
+                "value": [
+                  0,
+                  1
+                ],
+                "unit": "score",
+                "scale_min": 0,
+                "scale_max": 4,
+                "assessed_at": [
+                  "week_12"
+                ],
+                "scale_anchors": null
+              }
+            ],
+            "timepoint_week": 12,
+            "alpha": null,
+            "step": null
+          },
+          {
+            "label": "Absolute change in facial non-inflammatory lesion count from Baseline to Week 12",
+            "scale": "Non-inflammatory Lesion Count",
+            "responder_criteria": [],
+            "timepoint_week": 12,
+            "alpha": null,
+            "step": null
+          },
+          {
+            "label": "Absolute change in facial inflammatory lesion count from Baseline to Week 12",
+            "scale": "Inflammatory Lesion Count",
+            "responder_criteria": [],
+            "timepoint_week": 12,
+            "alpha": null,
+            "step": null
+          }
+        ],
+        "testing_sequence": [],
+        "alpha_split": [],
+        "alpha_recycling": false,
+        "doses_compared": [
+          "CD5789 50 µg/g"
+        ],
+        "dose_comparison_order": [],
+        "branching_on": null,
+        "regulatory_variants": [],
+        "rescue_counted_as_nonresponder": null,
+        "active_comparator_excluded_from_hierarchy": null,
+        "background_tcs": null,
+        "method_citations": [
+          "Cochran-Mantel-Haenszel (CMH) test stratified by analysis center",
+          "Analysis of Covariance (ANCOVA)"
+        ],
+        "finalized_in_sap": true,
+        "same_design_as": [
+          {
+            "nct_id": "NCT02556788",
+            "trial_name": "RD.06.SPR.18252"
+          }
+        ],
+        "gatekeeping_structure": false,
+        "further_endpoints_through_week": null
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/69/NCT02566369/SAP_002.pdf",
+      "source_excerpt": "7.4.2.5 Multiple comparison/multiplicity: Control of type 1 error, the experiment-wise error rate is controlled at alpha level of 0.05. No adjustment for multiplicity is required for the primary efficacy endpoint as the statistical significance needs to be met for all 3 co-primary endpoints. ... As the primary efficacy endpoint consists of 3 co-primary endpoints, all of which need statistical significance for the primary efficacy endpoint to be successful, there is no need for Type I error adjustment for the multiple comparisons of the 3 co-primary efficacy endpoints.",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.7
     }
   },
   "timing_ops": {
@@ -342,29 +441,120 @@
       "confidence": 1.0
     },
     "study_schedule": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "screening_days": 14,
+        "screening_washout": true,
+        "periods": [
+          {
+            "name": "screening",
+            "start_week": null,
+            "end_week": 0,
+            "duration_weeks": 2,
+            "blinding": null,
+            "background_tcs": null
+          },
+          {
+            "name": "randomized_treatment",
+            "start_week": 0,
+            "end_week": 12,
+            "duration_weeks": 12,
+            "blinding": "double_blind",
+            "background_tcs": null
+          }
+        ],
+        "dosing_interval": "once_daily",
+        "visit_cadence": null,
+        "visit_cadence_until_week": null,
+        "visit_weeks": [
+          1,
+          2,
+          4,
+          8,
+          12
+        ],
+        "visit_days": null,
+        "phone_contact_weeks": null,
+        "primary_endpoint_week": 12,
+        "end_of_treatment_week": 12,
+        "end_of_study_week": 12,
+        "total_duration_weeks": 12,
+        "follow_up_weeks": null,
+        "follow_up_days": null,
+        "follow_up_visit_week": null,
+        "long_term_extension": null,
+        "extension_end_week": null,
+        "extension_visit_interval_weeks": null,
+        "extension_study_id": null,
+        "rerandomization_week": null,
+        "maintenance_arms": null,
+        "maintenance_response_check_weeks": null,
+        "last_injection_week": null,
+        "key_secondary_weeks": null,
+        "follow_up_visit_interval_weeks": null,
+        "end_of_treatment_weeks_after_last_dose": null,
+        "background_tcs_from_day": null,
+        "primary_endpoint_refs": [],
+        "double_dummy_arms": [],
+        "active_comparator": null,
+        "boilerplate_reused_from": [],
+        "conflicts_with_trial": null,
+        "full_visit_table_available": true,
+        "source_inconsistency": null
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/69/NCT02566369/Prot_000.pdf",
+      "source_excerpt": "Schedule of assessments: Screening Visit 1 (maximum 14 days +3 days prior to Baseline), Baseline Visit, Week 1 Visit (±3 days), Week 2 Visit (±3 days), Week 4 Visit (±3 days), Week 8 Visit (±3 days), Week 12 Final/ET Visit (±5 days). (1) Baseline visit must be performed maximum 14 days after Screening with a time window of +3 days ... No re-screening will be allowed. (2) Week 12 procedures will be performed earlier in case of study discontinuation. Applied once daily in the evening for 12 weeks.",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.7
     },
     "rescue_therapy": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "permitted": null,
+        "trigger": null,
+        "earliest_week": null,
+        "prohibited_through_week": null,
+        "trigger_rules": [],
+        "flare_definition": [],
+        "first_step": null,
+        "topical_min_days_before_systemic": null,
+        "topical_rescue_requires_study_drug_discontinuation": null,
+        "systemic_rescue_requires_study_drug_discontinuation": null,
+        "resume_after_systemic_rescue_half_lives": null,
+        "resume_after_phototherapy_months": null,
+        "rescued_counted_as_nonresponder": null,
+        "rescued_counted_as_treatment_failure": null,
+        "continue_visits_after_discontinuation": null,
+        "continue_visits_through_week": null,
+        "topical_rescue_not_counted_after_week": null,
+        "topical_agents": [],
+        "topical_potency_classes": [],
+        "tci_reserved_areas": [],
+        "systemic_agents": [],
+        "oral_corticosteroid_limit": null,
+        "rescue_period": null,
+        "escape_arm_washout_half_lives": null,
+        "maintenance_period_rule": null,
+        "permitted_concomitant": [],
+        "recorded_in_ecrf": null,
+        "applies_to_period": null,
+        "long_term_extension_eligible_after_rescue": null,
+        "topical_agent_class": null,
+        "rationale": "No rescue-medication provision is described in the protocol summary or SAP; subjects are instead required to refrain from all prohibited/excluded medications for the trial's duration (exclusion criterion 17, Section 5.5.5), with no described mechanism for a subject to receive rescue treatment while remaining on study."
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/69/NCT02566369/Prot_000.pdf",
+      "source_excerpt": "17. The subject is unwilling to refrain from use of prohibited medication during the clinical trial (see Section 5.5.5 of the protocol v06 March 2017).",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.5
     }
   },
   "adverse_events": {
     "serious_adverse_event_rate": {
       "value": [
         {
-          "arm": "CD5789 (Trifarotene) 50\u03bcg/g Cream",
+          "arm": "CD5789 (Trifarotene) 50μg/g Cream",
           "n_affected": 4,
           "n_at_risk": 612,
           "pct": 0.7
@@ -386,7 +576,7 @@
     "death_rate": {
       "value": [
         {
-          "arm": "CD5789 (Trifarotene) 50\u03bcg/g Cream",
+          "arm": "CD5789 (Trifarotene) 50μg/g Cream",
           "n_affected": 0,
           "n_at_risk": 612,
           "pct": 0.0
@@ -412,7 +602,7 @@
           "meddra_soc": "General disorders",
           "per_arm": [
             {
-              "arm": "CD5789 (Trifarotene) 50\u03bcg/g Cream",
+              "arm": "CD5789 (Trifarotene) 50μg/g Cream",
               "n_affected": 66,
               "n_at_risk": 612,
               "pct": 10.8
@@ -430,7 +620,7 @@
           "meddra_soc": "Infections and infestations",
           "per_arm": [
             {
-              "arm": "CD5789 (Trifarotene) 50\u03bcg/g Cream",
+              "arm": "CD5789 (Trifarotene) 50μg/g Cream",
               "n_affected": 24,
               "n_at_risk": 612,
               "pct": 3.9
@@ -448,7 +638,7 @@
           "meddra_soc": "Injury, poisoning and procedural complications",
           "per_arm": [
             {
-              "arm": "CD5789 (Trifarotene) 50\u03bcg/g Cream",
+              "arm": "CD5789 (Trifarotene) 50μg/g Cream",
               "n_affected": 27,
               "n_at_risk": 612,
               "pct": 4.4
@@ -466,7 +656,7 @@
           "meddra_soc": "General disorders",
           "per_arm": [
             {
-              "arm": "CD5789 (Trifarotene) 50\u03bcg/g Cream",
+              "arm": "CD5789 (Trifarotene) 50μg/g Cream",
               "n_affected": 24,
               "n_at_risk": 612,
               "pct": 3.9
@@ -484,7 +674,7 @@
           "meddra_soc": "Nervous system disorders",
           "per_arm": [
             {
-              "arm": "CD5789 (Trifarotene) 50\u03bcg/g Cream",
+              "arm": "CD5789 (Trifarotene) 50μg/g Cream",
               "n_affected": 6,
               "n_at_risk": 612,
               "pct": 1.0
@@ -502,7 +692,7 @@
           "meddra_soc": "Infections and infestations",
           "per_arm": [
             {
-              "arm": "CD5789 (Trifarotene) 50\u03bcg/g Cream",
+              "arm": "CD5789 (Trifarotene) 50μg/g Cream",
               "n_affected": 10,
               "n_at_risk": 612,
               "pct": 1.6
@@ -520,7 +710,7 @@
           "meddra_soc": "Infections and infestations",
           "per_arm": [
             {
-              "arm": "CD5789 (Trifarotene) 50\u03bcg/g Cream",
+              "arm": "CD5789 (Trifarotene) 50μg/g Cream",
               "n_affected": 6,
               "n_at_risk": 612,
               "pct": 1.0
@@ -538,7 +728,7 @@
           "meddra_soc": "Skin and subcutaneous tissue disorders",
           "per_arm": [
             {
-              "arm": "CD5789 (Trifarotene) 50\u03bcg/g Cream",
+              "arm": "CD5789 (Trifarotene) 50μg/g Cream",
               "n_affected": 8,
               "n_at_risk": 612,
               "pct": 1.3

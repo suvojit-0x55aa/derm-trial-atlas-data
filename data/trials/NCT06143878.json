@@ -311,13 +311,41 @@
       "confidence": 1.0
     },
     "background_therapy": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "regimen_type": "monotherapy",
+        "background_agent_class": null,
+        "tcs_regimen": null,
+        "step_down_rule": null,
+        "recommended_agents": [],
+        "emollient_required": false,
+        "emollient_frequency": "medicated shampoos containing salicylic acid and bland emollients allowed on all body regions, not within 24 hours before a study visit",
+        "prohibited_concomitant": [
+          "Topical corticosteroids, topical calcineurin inhibitors, vitamin D analogs, vitamin A analogs, retinoids, tar, anthralin, calcipotriene, tazarotene, methoxsalen, trimethylpsoralens, fumarate, PDE4 inhibitors, topical JAK inhibitors, aryl hydrocarbon receptor-modulating agents (Week 0 to Week 52)",
+          "Shampoos containing corticosteroids, coal tar, or vitamin D3 analogs",
+          "Phototherapy",
+          "TNFα antagonists (adalimumab, infliximab, etanercept)",
+          "IL-12/23, IL-17, or IL-23 inhibitors (ustekinumab, briakinumab, guselkumab, tildrakizumab, secukinumab, risankizumab, ixekizumab, brodalumab)",
+          "Alpha-4 integrin antagonists (e.g. natalizumab)"
+        ],
+        "permitted_concomitant": [
+          "Nonmedicated shampoos on the day of a study visit",
+          "After Week 52: most topical therapies (ultra-high potency corticosteroids and topical JAK inhibitors remain prohibited)"
+        ],
+        "applies_to_rerandomized_maintenance": null,
+        "sponsor_trial_ids": [
+          "77242113PSO3002"
+        ],
+        "study_drug_doses_mg": [
+          200
+        ],
+        "population_note": "Same sponsor concomitant-medication template as NCT06095102/NCT06095115, applied here to the 3-arm (JNJ-77242113 / placebo / deucravacitinib active comparator) design. No dedicated background psoriasis therapy; regimen_type recorded as 'monotherapy'."
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/78/NCT06143878/Prot_000.pdf",
+      "source_excerpt": "6.9. Prior and Concomitant Therapy ... No rescue therapies for psoriasis are permitted in the study. Psoriasis Concomitant Medications: Topical Therapy Week 0 to Week 52: Medicated shampoos containing salicylic acid and bland emollients are allowed on all body regions but should not be used within 24 hours before any study visit... Week 52 to Week 160: After the Week 52 visit, most topical therapies are permitted for treatment of psoriasis; ultra-high potency corticosteroids and topical JAK inhibitors are still prohibited during this period.",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.65
     }
   },
   "endpoints": {
@@ -1727,13 +1755,152 @@
       "confidence": 0.85
     },
     "multiplicity_control": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "procedure": "graphical",
+        "familywise_error_controlled": true,
+        "alpha": 0.05,
+        "alpha_sided": 2,
+        "alpha_per_dose": null,
+        "co_primary_endpoints": [
+          {
+            "label": "IGA score of cleared (0) or minimal (1) at Week 16",
+            "scale": "IGA",
+            "responder_criteria": [],
+            "timepoint_week": 16,
+            "alpha": 0.05,
+            "step": 0
+          },
+          {
+            "label": "PASI 90 response at Week 16",
+            "scale": "PASI",
+            "responder_criteria": [],
+            "timepoint_week": 16,
+            "alpha": 0.05,
+            "step": 0
+          }
+        ],
+        "testing_sequence": [
+          {
+            "label": "Tier 1 vs placebo at Week 16: IGA=0, PASI 75, PASI 100",
+            "scale": null,
+            "responder_criteria": [],
+            "timepoint_week": 16,
+            "alpha": null,
+            "step": 1
+          },
+          {
+            "label": "Tier 2 vs deucravacitinib at Week 16 (non-inferiority): IGA 0/1 with >=2-grade improvement, PASI 75",
+            "scale": null,
+            "responder_criteria": [],
+            "timepoint_week": 16,
+            "alpha": null,
+            "step": 2
+          },
+          {
+            "label": "Tier 3 vs deucravacitinib at Week 16 (superiority): IGA 0/1 with >=2-grade improvement, PASI 75",
+            "scale": null,
+            "responder_criteria": [],
+            "timepoint_week": 16,
+            "alpha": null,
+            "step": 3
+          },
+          {
+            "label": "Tier 4 vs placebo at Week 16: ss-IGA 0/1 with >=2-grade improvement, PSSD symptom=0, PSSD itch improvement >=4 points",
+            "scale": null,
+            "responder_criteria": [],
+            "timepoint_week": 16,
+            "alpha": null,
+            "step": 4
+          },
+          {
+            "label": "Tier 5 vs deucravacitinib at Week 16: IGA=0, PASI 90, PASI 100",
+            "scale": null,
+            "responder_criteria": [],
+            "timepoint_week": 16,
+            "alpha": null,
+            "step": 5
+          },
+          {
+            "label": "Tier 6 vs deucravacitinib at Week 24: IGA=0, PASI 90, PASI 100",
+            "scale": null,
+            "responder_criteria": [],
+            "timepoint_week": 24,
+            "alpha": null,
+            "step": 6
+          },
+          {
+            "label": "Tier 7 vs deucravacitinib at Week 24 (non-inferiority): IGA 0/1 with >=2-grade improvement, PASI 75",
+            "scale": null,
+            "responder_criteria": [],
+            "timepoint_week": 24,
+            "alpha": null,
+            "step": 7
+          },
+          {
+            "label": "Tier 8 vs deucravacitinib at Week 24 (superiority): IGA 0/1 with >=2-grade improvement, PASI 75",
+            "scale": null,
+            "responder_criteria": [],
+            "timepoint_week": 24,
+            "alpha": null,
+            "step": 8
+          },
+          {
+            "label": "Tier 9 vs deucravacitinib at Week 16: PSSD symptom score of 0",
+            "scale": "PSSD",
+            "responder_criteria": [],
+            "timepoint_week": 16,
+            "alpha": null,
+            "step": 9
+          },
+          {
+            "label": "Tier 10 vs placebo early timepoints: PASI 75 at Week 4, PASI 90 at Week 8",
+            "scale": null,
+            "responder_criteria": [],
+            "timepoint_week": 8,
+            "alpha": null,
+            "step": 10
+          },
+          {
+            "label": "Tier 11 vs placebo early timepoints: PSSD symptom=0 at Week 8, PSSD itch improvement >=4 points at Week 4",
+            "scale": null,
+            "responder_criteria": [],
+            "timepoint_week": 8,
+            "alpha": null,
+            "step": 11
+          }
+        ],
+        "alpha_split": [],
+        "alpha_recycling": true,
+        "doses_compared": [
+          "JNJ-77242113 200 mg",
+          "placebo",
+          "deucravacitinib 6 mg"
+        ],
+        "dose_comparison_order": [],
+        "branching_on": null,
+        "regulatory_variants": [],
+        "rescue_counted_as_nonresponder": null,
+        "active_comparator_excluded_from_hierarchy": "No — deucravacitinib comparisons (non-inferiority then superiority) are included as their own dedicated tiers within the same graphical multiplicity hierarchy, not excluded from it.",
+        "background_tcs": null,
+        "method_citations": [
+          "Holm, 1979 Bonferroni-Holm multiple comparison procedure"
+        ],
+        "finalized_in_sap": true,
+        "same_design_as": [
+          {
+            "nct_id": "NCT06220604",
+            "trial_name": "77242113PSO3004 (SAP shared: 'Statistical Analysis Plan 77242113PSO3002 and 77242113PSO3004')"
+          }
+        ],
+        "gatekeeping_structure": true,
+        "further_endpoints_through_week": 24
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/78/NCT06143878/SAP_002.pdf",
+      "source_excerpt": "Appropriate multiplicity adjustment procedure will be used to control the overall Type I error rate of alpha=0.05 (2-sided) for the primary and 21 key secondary endpoints. ... In addition, for the key secondary analyses ... non-inferiority test between JNJ-77242113 and deucravacitinib will be performed before the superiority test is performed respectively and will be part of the multiplicity adjustment procedure. ... When the co-primary endpoints are positive, a graphical approach as shown in Figure 3 will be applied to the key secondary endpoints. The key secondary endpoint hypotheses are grouped into 11 tiers ... Within each tier, the Bonferroni-Holm's (Holm, 1979) multiple comparison procedure will be used ... The assigned alpha for each tier can be passed to other tiers ONLY if all hypotheses within the tier are rejected.",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.7
     }
   },
   "timing_ops": {
@@ -1774,22 +1941,147 @@
       "confidence": 1.0
     },
     "study_schedule": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "screening_days": 35,
+        "screening_washout": true,
+        "periods": [
+          {
+            "name": "screening",
+            "start_week": -5,
+            "end_week": 0,
+            "duration_weeks": 5,
+            "blinding": null,
+            "background_tcs": null
+          },
+          {
+            "name": "double_blind_treatment",
+            "start_week": 0,
+            "end_week": 16,
+            "duration_weeks": 16,
+            "blinding": "double-blind",
+            "background_tcs": null
+          },
+          {
+            "name": "double_blind_treatment",
+            "start_week": 16,
+            "end_week": 24,
+            "duration_weeks": 8,
+            "blinding": "double-blind (active comparator vs JNJ-77242113, placebo arm crossed to JNJ-77242113 at Week 16)",
+            "background_tcs": null
+          },
+          {
+            "name": "continuation_treatment",
+            "start_week": 24,
+            "end_week": 156,
+            "duration_weeks": 132,
+            "blinding": "open-label",
+            "background_tcs": null
+          },
+          {
+            "name": "follow_up",
+            "start_week": 156,
+            "end_week": 160,
+            "duration_weeks": 4,
+            "blinding": null,
+            "background_tcs": null
+          }
+        ],
+        "dosing_interval": "once daily",
+        "visit_cadence": null,
+        "visit_cadence_until_week": null,
+        "visit_weeks": [
+          4,
+          8,
+          16,
+          24
+        ],
+        "visit_days": null,
+        "phone_contact_weeks": null,
+        "primary_endpoint_week": 16,
+        "end_of_treatment_week": 156,
+        "end_of_study_week": 160,
+        "total_duration_weeks": 165,
+        "follow_up_weeks": 4,
+        "follow_up_days": null,
+        "follow_up_visit_week": 160,
+        "long_term_extension": false,
+        "extension_end_week": null,
+        "extension_visit_interval_weeks": null,
+        "extension_study_id": null,
+        "rerandomization_week": null,
+        "maintenance_arms": null,
+        "maintenance_response_check_weeks": null,
+        "last_injection_week": null,
+        "key_secondary_weeks": [
+          4,
+          8,
+          16,
+          24
+        ],
+        "follow_up_visit_interval_weeks": null,
+        "end_of_treatment_weeks_after_last_dose": null,
+        "background_tcs_from_day": null,
+        "primary_endpoint_refs": [],
+        "double_dummy_arms": [
+          "placebo",
+          "deucravacitinib"
+        ],
+        "active_comparator": "Deucravacitinib (SOTYKTU) 6 mg once daily, Week 0 to Week 24",
+        "boilerplate_reused_from": [
+          "77242113PSO3003",
+          "77242113PSO3001"
+        ],
+        "conflicts_with_trial": null,
+        "full_visit_table_available": true,
+        "source_inconsistency": null
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/78/NCT06143878/Prot_000.pdf",
+      "source_excerpt": "The total duration of this study for each participant is approximately 165 weeks, which includes a screening period of 5 weeks, followed by a 16-week placebo-controlled period which will run concurrently with a 24-week active comparator-controlled period, followed by treatment with JNJ-77242113 200 mg once daily through Week 156 and a 4-week safety follow-up period. Participants will be randomized in a 2:1:2 ratio to 1 of the 3 treatment arms: JNJ-77242113 ... Placebo ... Deucravacitinib: Participants in the deucravacitinib arm will receive deucravacitinib 6 mg once daily from Week 0 to Week 24 and JNJ-77242113 200 mg once daily from Week 24 to Week 156. Placebo will be administered in all treatment groups to maintain the blind until Week 24.",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.7
     },
     "rescue_therapy": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "permitted": false,
+        "trigger": "prohibited",
+        "earliest_week": null,
+        "prohibited_through_week": null,
+        "trigger_rules": [],
+        "flare_definition": [],
+        "first_step": null,
+        "topical_min_days_before_systemic": null,
+        "topical_rescue_requires_study_drug_discontinuation": null,
+        "systemic_rescue_requires_study_drug_discontinuation": null,
+        "resume_after_systemic_rescue_half_lives": null,
+        "resume_after_phototherapy_months": null,
+        "rescued_counted_as_nonresponder": null,
+        "rescued_counted_as_treatment_failure": null,
+        "continue_visits_after_discontinuation": true,
+        "continue_visits_through_week": null,
+        "topical_rescue_not_counted_after_week": null,
+        "topical_agents": [],
+        "topical_potency_classes": [],
+        "tci_reserved_areas": [],
+        "systemic_agents": [],
+        "oral_corticosteroid_limit": null,
+        "rescue_period": null,
+        "escape_arm_washout_half_lives": null,
+        "maintenance_period_rule": null,
+        "permitted_concomitant": [],
+        "recorded_in_ecrf": null,
+        "applies_to_period": "entire study",
+        "long_term_extension_eligible_after_rescue": null,
+        "topical_agent_class": null,
+        "rationale": "No rescue therapy for psoriasis is permitted; the active-comparator (deucravacitinib) and placebo-to-active crossovers built into the design substitute for a separate rescue-medication pathway."
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/78/NCT06143878/Prot_000.pdf",
+      "source_excerpt": "No rescue therapies for psoriasis are permitted in the study.",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.7
     }
   },
   "adverse_events": {

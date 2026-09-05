@@ -182,13 +182,82 @@
       "confidence": 1.0
     },
     "severity_criteria": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "severity_label": "moderate_to_severe",
+        "basis": "eligibility_text",
+        "cross_reference": null,
+        "source_criterion_numbers": [
+          5,
+          6,
+          7
+        ],
+        "baseline_visit_number": 1,
+        "criteria": [
+          {
+            "scale": "EASI",
+            "scale_component": null,
+            "scale_variant": null,
+            "metric": "absolute_score",
+            "comparator": ">",
+            "value": 5,
+            "unit": "score",
+            "scale_min": null,
+            "scale_max": null,
+            "assessed_at": [
+              "screening"
+            ],
+            "scale_anchors": null
+          },
+          {
+            "scale": "vIGA-AD",
+            "scale_component": null,
+            "scale_variant": null,
+            "metric": "absolute_score",
+            "comparator": "in",
+            "value": [
+              2,
+              3
+            ],
+            "unit": "score",
+            "scale_min": 2,
+            "scale_max": 3,
+            "assessed_at": [
+              "baseline"
+            ],
+            "scale_anchors": [
+              {
+                "score": 2,
+                "label": "Mild"
+              },
+              {
+                "score": 3,
+                "label": "Moderate"
+              }
+            ]
+          },
+          {
+            "scale": "BSA",
+            "scale_component": null,
+            "scale_variant": null,
+            "metric": "percent_bsa",
+            "comparator": ">",
+            "value": 3,
+            "unit": "percent",
+            "scale_min": null,
+            "scale_max": null,
+            "assessed_at": [
+              "screening"
+            ],
+            "scale_anchors": null
+          }
+        ]
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/00/NCT04773600/Prot_000.pdf",
+      "source_excerpt": "5. EASI Score >5. EASI is evaluated for the entire body except the scalp, palms, and soles. 6. vIGA-AD score of 'Mild' ('2') of 'Moderate' ('3') at Baseline. ... 7. Has AD involvement of >3% BSA (excluding the scalp, palms, soles).",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.7
     }
   },
   "design": {
@@ -238,13 +307,51 @@
       "confidence": 1.0
     },
     "background_therapy": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "regimen_type": "monotherapy",
+        "background_agent_class": null,
+        "tcs_regimen": null,
+        "step_down_rule": null,
+        "recommended_agents": [],
+        "emollient_required": false,
+        "emollient_frequency": "Non-medicated emollients or moisturizers allowed once daily in a stable regimen as normally used by the subject, applied only to untreated areas and only after study drug is applied to treatment areas",
+        "prohibited_concomitant": [
+          "Approved biologics such as dupilumab (6-month washout)",
+          "Investigational biologics (6-month washout)",
+          "Systemic treatments that could affect AD (corticosteroids, retinoids, calcineurin inhibitors, hydroxycarbamide, methotrexate, cyclosporine, azathioprine, hydroxychloroquine, mycophenolate mofetil, or other immunosuppressive therapies, or nonsedating antihistamines in a nonstable regimen) (4 weeks or 5 half-lives washout, whichever is longer)",
+          "PUVA or NBUVB phototherapy (4-week washout)",
+          "Topical products containing urea (1-week washout)",
+          "Sedating antihistamines and OTC remedies containing sedating antihistamine (1-week washout)",
+          "Topical corticosteroids, calcineurin inhibitors, or Eucrisa (crisaborole) (2-week washout)",
+          "Topical antibacterial medications/products including soaps, dilute bleach baths, sodium hypochlorite-based products anywhere on the body",
+          "Strong CYP3A4 inhibitors and inducers (2-week washout)",
+          "Systemic antibiotics (2-week washout)",
+          "Tanning beds/other light emitting devices (4-week washout)",
+          "Oral roflumilast (Daxas/Daliresp) (4-week washout)",
+          "All other investigational drugs (4 weeks or 5 half-lives, whichever is longer)",
+          "No rescue medication for AD is allowed during this study up to Week 4",
+          "Topical antibiotics, topical antihistamines, or any other topical agents may not be applied to treated areas"
+        ],
+        "permitted_concomitant": [
+          "Medications used chronically, in particular statins and anti-hypertensives, are allowed for use during the study except as specifically prohibited",
+          "Eye/ear drop and nasal corticosteroid preparations are allowed; inhaled corticosteroid preparations allowed if used for a stable condition and stable dose for >28 days before screening, continued at same dose throughout study",
+          "Non-sedating antihistamines (e.g. cetirizine, desloratadine, loratadine) in a stable regimen are allowed",
+          "Sunscreens allowed daily as needed, applied at least 2 hours after randomized study drug",
+          "Concomitant other medications for chronic conditions (e.g. NSAIDs, statins, anti-hypertensives) are permitted unless specifically prohibited"
+        ],
+        "applies_to_rerandomized_maintenance": null,
+        "sponsor_trial_ids": [
+          "ARQ-151-312"
+        ],
+        "study_drug_doses_mg": [],
+        "population_note": "Sister trial to NCT04773587 (ARQ-151-311), identical excluded-medications table and concomitant-therapy policy. Monotherapy design (ARQ-151/roflumilast cream 0.15% vs vehicle QD for 4 weeks) -- no standardized concurrent TCS regimen; topical corticosteroids are themselves prohibited concomitant therapy, not a background regimen, so the TCS-flavored sub-fields don't apply."
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/00/NCT04773600/Prot_000.pdf",
+      "source_excerpt": "Medications which have been used chronically by subjects, in particular statins and anti-hypertensives, are allowed for use during the study, except as prohibited in Table 2. No rescue medication for AD is allowed during this study up to Week 4. Table 2: Excluded Medications and Treatments [approved biologics/dupilumab 6 months; investigational biologics 6 months; systemic AD-affecting treatments 4 weeks or 5 half-lives; PUVA/NBUVB 4 weeks; topical urea 1 week; sedating antihistamines 1 week; TCS/TCI/Eucrisa 2 weeks; topical antibacterials; strong CYP3A4 inhibitors/inducers 2 weeks; systemic antibiotics 2 weeks; tanning beds 4 weeks; oral roflumilast 4 weeks; other investigational drugs 4 weeks or 5 half-lives].",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.7
     }
   },
   "endpoints": {
@@ -361,7 +468,7 @@
           "time_frame": null
         },
         {
-          "verbatim": "Achievement of a 4-point Reduction at Week 4 in the Average, Weekly Worst Itch Numeric Rating Scale (WI-NRS) in Participants With Baseline WI-NRS Score \u22654",
+          "verbatim": "Achievement of a 4-point Reduction at Week 4 in the Average, Weekly Worst Itch Numeric Rating Scale (WI-NRS) in Participants With Baseline WI-NRS Score ≥4",
           "rank": "secondary",
           "position": 4,
           "measure_type": "absolute_value",
@@ -386,7 +493,7 @@
           "time_frame": null
         },
         {
-          "verbatim": "Achievement of a 4-point Reduction at Week 2 in the WI-NRS in Participants With Baseline WI-NRS Score \u22654",
+          "verbatim": "Achievement of a 4-point Reduction at Week 2 in the WI-NRS in Participants With Baseline WI-NRS Score ≥4",
           "rank": "secondary",
           "position": 5,
           "measure_type": "absolute_value",
@@ -411,7 +518,7 @@
           "time_frame": null
         },
         {
-          "verbatim": "Achievement of a 4-point Reduction at Week 1 in the WI-NRS in Participants With Baseline WI-NRS Score \u22654",
+          "verbatim": "Achievement of a 4-point Reduction at Week 1 in the WI-NRS in Participants With Baseline WI-NRS Score ≥4",
           "rank": "secondary",
           "position": 6,
           "measure_type": "absolute_value",
@@ -436,7 +543,7 @@
           "time_frame": null
         },
         {
-          "verbatim": "Achievement of \u226575% Decrease From Baseline at Week 4 in the Eczema Area and Severity Index (EASI-75)",
+          "verbatim": "Achievement of ≥75% Decrease From Baseline at Week 4 in the Eczema Area and Severity Index (EASI-75)",
           "rank": "secondary",
           "position": 7,
           "measure_type": "absolute_value",
@@ -544,13 +651,90 @@
       "confidence": 1.0
     },
     "multiplicity_control": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "procedure": "gatekeeping_with_holm",
+        "familywise_error_controlled": true,
+        "alpha": 0.05,
+        "alpha_sided": 2,
+        "alpha_per_dose": null,
+        "co_primary_endpoints": [],
+        "testing_sequence": [
+          {
+            "label": "Primary efficacy endpoint (IGA success at Week 4)",
+            "timepoint_week": 4,
+            "alpha": 0.05,
+            "step": 1,
+            "scale": null,
+            "responder_criteria": []
+          },
+          {
+            "label": "vIGA-AD Success at Week 4 (subjects with vIGA-AD Moderate at randomization)",
+            "timepoint_week": 4,
+            "step": 2,
+            "scale": null,
+            "responder_criteria": [],
+            "alpha": null
+          },
+          {
+            "label": "Secondary Endpoint Family 1: >=4-point WI-NRS reduction at Week 4, Week 2, Week 1 (subjects >=12y, baseline WI-NRS>=4)",
+            "step": 3,
+            "scale": null,
+            "responder_criteria": [],
+            "timepoint_week": null,
+            "alpha": null
+          },
+          {
+            "label": "Secondary Endpoint Family 2: EASI-75 at Week 4; vIGA-AD clear/almost clear at Week 4; vIGA-AD Success at Week 2 and Week 1; vIGA-AD clear/almost clear at Week 2 and Week 1",
+            "step": 4,
+            "scale": null,
+            "responder_criteria": [],
+            "timepoint_week": null,
+            "alpha": null
+          }
+        ],
+        "alpha_split": [
+          {
+            "group": "Secondary Endpoint Family 1",
+            "n_endpoints": 3,
+            "alpha": 0.03,
+            "method": "fallback (fixed-sequence with alpha recycling)",
+            "timepoint_week": 4
+          },
+          {
+            "group": "Secondary Endpoint Family 2",
+            "n_endpoints": 6,
+            "alpha": 0.02,
+            "method": "fallback (fixed-sequence with alpha recycling)",
+            "timepoint_week": 4
+          }
+        ],
+        "alpha_recycling": true,
+        "doses_compared": [],
+        "dose_comparison_order": [],
+        "branching_on": null,
+        "regulatory_variants": [],
+        "rescue_counted_as_nonresponder": null,
+        "active_comparator_excluded_from_hierarchy": null,
+        "background_tcs": null,
+        "method_citations": [
+          "Fallback Method (fixed-sequence with alpha recycling)"
+        ],
+        "finalized_in_sap": true,
+        "same_design_as": [
+          {
+            "nct_id": "NCT04773587",
+            "trial_name": "ARQ-151-311"
+          }
+        ],
+        "gatekeeping_structure": true,
+        "further_endpoints_through_week": 4
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/00/NCT04773600/SAP_001.pdf",
+      "source_excerpt": "6.5 Multiple Comparisons/Multiplicity: To control for familywise type I error at level of 0.05, the secondary endpoint of vIGA-AD Success at Week 4 for subjects with vIGA-AD score of 'Moderate' at randomization will only be tested if the primary endpoint demonstrates statistical significance... the remaining endpoints will be grouped into secondary endpoint family 1... and secondary endpoint family 2... An alpha level of 0.03 will be used to test the endpoints in the secondary endpoint family 1 sequentially. An alpha level of 0.02 will be used to test the endpoints in secondary endpoint family 2 sequentially... the Fallback Method will be applied.",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.7
     }
   },
   "timing_ops": {
@@ -591,22 +775,122 @@
       "confidence": 1.0
     },
     "study_schedule": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "screening_days": 30,
+        "screening_washout": true,
+        "periods": [
+          {
+            "name": "screening",
+            "start_week": null,
+            "end_week": 0,
+            "duration_weeks": 4,
+            "blinding": null,
+            "background_tcs": null
+          },
+          {
+            "name": "randomized_treatment",
+            "start_week": 0,
+            "end_week": 4,
+            "duration_weeks": 4,
+            "blinding": "double_blind",
+            "background_tcs": null
+          }
+        ],
+        "dosing_interval": "once_daily",
+        "visit_cadence": "weekly",
+        "visit_cadence_until_week": 4,
+        "visit_weeks": [
+          1,
+          2,
+          4
+        ],
+        "visit_days": [
+          1,
+          8,
+          15,
+          29
+        ],
+        "phone_contact_weeks": null,
+        "primary_endpoint_week": 4,
+        "end_of_treatment_week": 4,
+        "end_of_study_week": 4,
+        "total_duration_weeks": 8,
+        "follow_up_weeks": null,
+        "follow_up_days": null,
+        "follow_up_visit_week": null,
+        "long_term_extension": true,
+        "extension_end_week": null,
+        "extension_visit_interval_weeks": null,
+        "extension_study_id": "ARQ-151-313",
+        "rerandomization_week": null,
+        "maintenance_arms": null,
+        "maintenance_response_check_weeks": null,
+        "last_injection_week": null,
+        "key_secondary_weeks": [
+          1,
+          2,
+          4
+        ],
+        "follow_up_visit_interval_weeks": null,
+        "end_of_treatment_weeks_after_last_dose": null,
+        "background_tcs_from_day": null,
+        "primary_endpoint_refs": [],
+        "double_dummy_arms": [],
+        "active_comparator": null,
+        "boilerplate_reused_from": [
+          "NCT04773587"
+        ],
+        "conflicts_with_trial": null,
+        "full_visit_table_available": true,
+        "source_inconsistency": null
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/00/NCT04773600/Prot_000.pdf",
+      "source_excerpt": "Duration of Participation for Subjects: Screening (up to 30 days) + Treatment phase (4 weeks) for a total of about 8 weeks. Upon completion of the treatment phase of the study, subjects may participate in an open-label extension study (ARQ-151-313)... Subjects who enroll into the open label extension study (ARQ-151-313) must complete the ARQ-151-312 visit [schedule].",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.7
     },
     "rescue_therapy": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "permitted": false,
+        "trigger": "prohibited",
+        "earliest_week": null,
+        "prohibited_through_week": 4,
+        "trigger_rules": [],
+        "flare_definition": [],
+        "first_step": null,
+        "topical_min_days_before_systemic": null,
+        "topical_rescue_requires_study_drug_discontinuation": null,
+        "systemic_rescue_requires_study_drug_discontinuation": null,
+        "resume_after_systemic_rescue_half_lives": null,
+        "resume_after_phototherapy_months": null,
+        "rescued_counted_as_nonresponder": null,
+        "rescued_counted_as_treatment_failure": null,
+        "continue_visits_after_discontinuation": null,
+        "continue_visits_through_week": null,
+        "topical_rescue_not_counted_after_week": null,
+        "topical_agents": [],
+        "topical_potency_classes": [],
+        "tci_reserved_areas": [],
+        "systemic_agents": [],
+        "oral_corticosteroid_limit": null,
+        "rescue_period": null,
+        "escape_arm_washout_half_lives": null,
+        "maintenance_period_rule": null,
+        "permitted_concomitant": [],
+        "recorded_in_ecrf": null,
+        "applies_to_period": "entire 4-week treatment phase",
+        "long_term_extension_eligible_after_rescue": null,
+        "topical_agent_class": null,
+        "rationale": "Sister trial to NCT04773587, same short (4-week), fixed-duration Phase 3 design; the protocol states plainly that no rescue medication for AD is allowed during the study up to Week 4."
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/00/NCT04773600/Prot_000.pdf",
+      "source_excerpt": "Medications which have been used chronically by subjects... are allowed for use during the study, except as prohibited in Table 2. No rescue medication for AD is allowed during this study up to Week 4.",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.7
     }
   },
   "adverse_events": {

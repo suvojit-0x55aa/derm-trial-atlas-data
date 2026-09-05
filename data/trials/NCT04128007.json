@@ -285,13 +285,46 @@
       "confidence": 1.0
     },
     "background_therapy": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "regimen_type": "monotherapy",
+        "background_agent_class": null,
+        "tcs_regimen": null,
+        "step_down_rule": null,
+        "recommended_agents": [],
+        "emollient_required": false,
+        "emollient_frequency": "as normally used by the subjects, applied to non-treated areas only, not within 12 hours of a study visit",
+        "prohibited_concomitant": [
+          "Etanercept -- 4-week washout before Day 0",
+          "Adalimumab, infliximab -- 8-week washout before Day 0",
+          "All other biologics -- 12-week washout before Day 0",
+          "Oral corticosteroids, retinoids, apremilast, roflumilast, methotrexate, cyclosporine, fumarates, and other systemic immunosuppressants -- 4-week washout before Day 0",
+          "Medicated shampoos (eg, coal tar, keratolytics, antifungals, zinc pyrithione, selenium sulfide, corticosteroids, medical devices) -- 2-week washout before Day 0, and prohibited during the study",
+          "Topical medications used on the scalp for conditions besides psoriasis (eg, topical minoxidil for androgenetic alopecia) -- 4-week washout before Day 0",
+          "Topical anti-psoriasis medications (eg, topical corticosteroids, vitamin D analogs, prescription shampoos), except emollients -- 2-week washout before Day 0",
+          "PUVA or UVB phototherapy -- 4-week washout before Day 0",
+          "Investigational drugs -- 12 weeks (biologics), 5 half-lives (orals), or 2 weeks (topical)",
+          "Antihistamines, if prescribed for pruritus associated with psoriasis -- 2-week washout before Day 0"
+        ],
+        "permitted_concomitant": [
+          "Eye drop, ear, and nasal corticosteroid preparations are allowed",
+          "Inhaled corticosteroid preparations are allowed if used for a stable condition at a stable dose for >28 days before screening and continued at the same dose throughout the study",
+          "Non-medicated emollients, moisturizers, and sunscreens as normally used, applied to non-treated areas as needed, not within 12 hours of a study visit (none applied to treated areas)",
+          "Chronically used medications (particularly statins and anti-hypertensives) are allowed unless separately prohibited in Table 1",
+          "Only non-medicated shampoos are permitted"
+        ],
+        "applies_to_rerandomized_maintenance": null,
+        "sponsor_trial_ids": [
+          "ARQ-154-204"
+        ],
+        "study_drug_doses_mg": [],
+        "population_note": "Monotherapy design (ARQ-154/roflumilast foam 0.3% QD vs vehicle foam QD to scalp and body psoriasis for the full 8-week treatment period), governed by a formal prohibited/permitted concomitant medication table (Table 1) rather than a standardized background regimen -- no background TCS or co-administered active agent."
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/07/NCT04128007/Prot_000.pdf",
+      "source_excerpt": "4.5.1 Prohibitions and Concomitant Therapy: Prohibited medications and products are detailed in Table 1... Notes: (1) Eye drop, ear, and nasal corticosteroid preparations are allowed. Inhaled corticosteroid preparations are allowed if used for a stable condition and at a stable dose for > 28 days before screening, and are continued at the same dose throughout the study. (2) Non-medicated emollients, moisturizers and sunscreens will be allowed as used normally by the subjects. These can be applied to non-treated areas as needed and should not be used within 12 hours of a study visit. (3) No emollients or moisturizers should be applied on treated areas.",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.7
     }
   },
   "endpoints": {
@@ -508,13 +541,82 @@
       "confidence": 1.0
     },
     "study_schedule": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "screening_days": 28,
+        "screening_washout": null,
+        "periods": [
+          {
+            "name": "screening",
+            "start_week": null,
+            "end_week": 0,
+            "duration_weeks": null,
+            "blinding": null,
+            "background_tcs": null
+          },
+          {
+            "name": "double_blind_treatment",
+            "start_week": 0,
+            "end_week": 8,
+            "duration_weeks": 8,
+            "blinding": "double_blind",
+            "background_tcs": false
+          },
+          {
+            "name": "follow_up",
+            "start_week": 8,
+            "end_week": 9,
+            "duration_weeks": 1,
+            "blinding": null,
+            "background_tcs": null
+          }
+        ],
+        "dosing_interval": "once daily (QD), applied in the evening except at Baseline, Week 2, and Week 4 visits",
+        "visit_cadence": null,
+        "visit_cadence_until_week": null,
+        "visit_weeks": [
+          2,
+          4,
+          8
+        ],
+        "visit_days": null,
+        "phone_contact_weeks": null,
+        "primary_endpoint_week": 8,
+        "end_of_treatment_week": 8,
+        "end_of_study_week": 9,
+        "total_duration_weeks": 13,
+        "follow_up_weeks": 1,
+        "follow_up_days": null,
+        "follow_up_visit_week": 9,
+        "long_term_extension": false,
+        "extension_end_week": null,
+        "extension_visit_interval_weeks": null,
+        "extension_study_id": null,
+        "rerandomization_week": null,
+        "maintenance_arms": null,
+        "maintenance_response_check_weeks": null,
+        "last_injection_week": null,
+        "key_secondary_weeks": [
+          2,
+          4,
+          8
+        ],
+        "follow_up_visit_interval_weeks": null,
+        "end_of_treatment_weeks_after_last_dose": null,
+        "background_tcs_from_day": null,
+        "primary_endpoint_refs": [],
+        "double_dummy_arms": [],
+        "active_comparator": null,
+        "boilerplate_reused_from": [],
+        "conflicts_with_trial": null,
+        "full_visit_table_available": true,
+        "source_inconsistency": null
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/07/NCT04128007/Prot_000.pdf",
+      "source_excerpt": "4.3 Subject Participation: There will be a minimum of 6 clinic visits, including Screening, Baseline, Week 2, Week 4, and Week 8, of treatment, as well as a Week 9 follow-up visit (1 week after last dose). Since the interval between the Screening and Baseline visits may be up to 4 weeks, the anticipated maximum duration of subject participation is approximately 13 weeks.",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.7
     },
     "rescue_therapy": {
       "value": null,

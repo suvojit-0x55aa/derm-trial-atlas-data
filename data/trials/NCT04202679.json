@@ -88,10 +88,10 @@
     "mechanism_of_action": {
       "value": {
         "modality": "monoclonal_antibody",
-        "drug_class": "IL-4R\u03b1 antagonist",
+        "drug_class": "IL-4Rα antagonist",
         "antibody_isotype": "IgG4",
         "binding_targets": [
-          "IL-4R\u03b1"
+          "IL-4Rα"
         ],
         "pathway_cytokines": [
           "IL-13",
@@ -99,7 +99,7 @@
           "IgE"
         ],
         "receptor_subunits": [
-          "IL-4R\u03b1"
+          "IL-4Rα"
         ],
         "kinases_inhibited": [],
         "lower_potency_kinases": [],
@@ -110,7 +110,7 @@
       },
       "source_type": "openfda_label",
       "source_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=06b9c64b-52b1-490b-b118-bd079e69264e",
-      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1) -- v1 extracted text: 12.1 Mechanism of Action Dupilumab is a human monoclonal IgG4 antibody that inhibits interleukin-4 (IL-4) and interleukin-13 (IL-13) signaling by specifically binding to the IL-4R\u03b1 subunit shared by the IL-4 and IL-13 receptor complexes. Dupilumab inhibits IL-4 signaling via the Type I receptor and both IL-4 and IL-13 signaling through the Type II receptor. Inflammation driven by IL-4 and IL-13 is an important component in the pathogenesis of asthma, AD, CRSwNP, EoE, PN, COPD, CSU, BP, and AFRS. Multiple cell types that express IL-4R\u03b1 (e.g., mast cells, basophils, eosinophils, macrophages, lymphocytes, epithelial cells, goblet cells) and inflammatory mediators (e.g., histamine, eicosanoids, leukotrienes, cytokines, chemokines) are involved in inflammation. Blocking IL-4R\u03b1 with dupilumab inhibits IL-4 and IL-13 cytokine-induced inflammatory responses, including the release of proinflammatory cytokines, chemokines, nitric oxide, and IgE. The mechanism of dupilumab action has not been definitively established.",
+      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1) -- v1 extracted text: 12.1 Mechanism of Action Dupilumab is a human monoclonal IgG4 antibody that inhibits interleukin-4 (IL-4) and interleukin-13 (IL-13) signaling by specifically binding to the IL-4Rα subunit shared by the IL-4 and IL-13 receptor complexes. Dupilumab inhibits IL-4 signaling via the Type I receptor and both IL-4 and IL-13 signaling through the Type II receptor. Inflammation driven by IL-4 and IL-13 is an important component in the pathogenesis of asthma, AD, CRSwNP, EoE, PN, COPD, CSU, BP, and AFRS. Multiple cell types that express IL-4Rα (e.g., mast cells, basophils, eosinophils, macrophages, lymphocytes, epithelial cells, goblet cells) and inflammatory mediators (e.g., histamine, eicosanoids, leukotrienes, cytokines, chemokines) are involved in inflammation. Blocking IL-4Rα with dupilumab inhibits IL-4 and IL-13 cytokine-induced inflammatory responses, including the release of proinflammatory cytokines, chemokines, nitric oxide, and IgE. The mechanism of dupilumab action has not been definitively established.",
       "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 0.9
@@ -1316,13 +1316,127 @@
       "confidence": 1.0
     },
     "multiplicity_control": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "procedure": "serial_gatekeeping",
+        "familywise_error_controlled": true,
+        "alpha": 0.05,
+        "alpha_sided": 2,
+        "alpha_per_dose": null,
+        "co_primary_endpoints": [],
+        "testing_sequence": [
+          {
+            "label": "Proportion of participants with improvement (reduction) in WI-NRS by >=4 from baseline to Week 12",
+            "scale": "WI-NRS",
+            "responder_criteria": [],
+            "timepoint_week": 12,
+            "alpha": 0.05,
+            "step": 1
+          },
+          {
+            "label": "Proportion of participants with improvement (reduction) in WI-NRS by >=4 from baseline to Week 24",
+            "scale": "WI-NRS",
+            "responder_criteria": [],
+            "timepoint_week": 24,
+            "alpha": 0.05,
+            "step": 2
+          },
+          {
+            "label": "Proportion of participants with IGA PN-S 0 or 1 score at Week 24",
+            "scale": "IGA PN-S",
+            "responder_criteria": [],
+            "timepoint_week": 24,
+            "alpha": 0.05,
+            "step": 3
+          },
+          {
+            "label": "Proportion of participants with both an improvement (reduction) in WI-NRS by >=4 from baseline to Week 24 and an IGA PN-S 0 or 1 score at Week 24 (US and US reference countries only)",
+            "scale": "WI-NRS + IGA PN-S",
+            "responder_criteria": [],
+            "timepoint_week": 24,
+            "alpha": 0.05,
+            "step": 4
+          },
+          {
+            "label": "Proportion of participants with IGA PN-S 0 or 1 score at Week 12",
+            "scale": "IGA PN-S",
+            "responder_criteria": [],
+            "timepoint_week": 12,
+            "alpha": 0.05,
+            "step": 5
+          },
+          {
+            "label": "Percent change from baseline in WI-NRS at Week 24",
+            "scale": "WI-NRS",
+            "responder_criteria": [],
+            "timepoint_week": 24,
+            "alpha": 0.05,
+            "step": 6
+          },
+          {
+            "label": "Change from baseline in HRQoL (DLQI) to Week 24",
+            "scale": "DLQI",
+            "responder_criteria": [],
+            "timepoint_week": 24,
+            "alpha": 0.05,
+            "step": 7
+          },
+          {
+            "label": "Change from baseline in skin Pain-NRS to Week 24",
+            "scale": "Pain-NRS",
+            "responder_criteria": [],
+            "timepoint_week": 24,
+            "alpha": 0.05,
+            "step": 8
+          },
+          {
+            "label": "Change from baseline in Sleep-NRS to Week 24",
+            "scale": "Sleep-NRS",
+            "responder_criteria": [],
+            "timepoint_week": 24,
+            "alpha": 0.05,
+            "step": 9
+          },
+          {
+            "label": "Change from baseline in HADS total score to Week 24",
+            "scale": "HADS",
+            "responder_criteria": [],
+            "timepoint_week": 24,
+            "alpha": 0.05,
+            "step": 10
+          }
+        ],
+        "alpha_split": [],
+        "alpha_recycling": null,
+        "doses_compared": [
+          "300 mg"
+        ],
+        "dose_comparison_order": [],
+        "branching_on": null,
+        "regulatory_variants": [
+          "US"
+        ],
+        "rescue_counted_as_nonresponder": true,
+        "active_comparator_excluded_from_hierarchy": null,
+        "background_tcs": null,
+        "method_citations": [
+          "SAP Section 4.6 Multiplicity Issues"
+        ],
+        "finalized_in_sap": true,
+        "same_design_as": [
+          {
+            "nct_id": "NCT04183335",
+            "trial_name": "EFC16459"
+          }
+        ],
+        "gatekeeping_structure": true,
+        "further_endpoints_through_week": null
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/79/NCT04202679/SAP_001.pdf",
+      "source_excerpt": "SAP Section 4.6 MULTIPLICITY ISSUES: 'The multiplicity procedure is proposed to control the overall type-I error rate for testing the primary and selected secondary endpoints. The overall alpha is 0.05. The comparisons with placebo will be tested based on the hierarchical order below at 2-sided alpha = 0.05: In US and US reference countries: Proportion of participants with improvement (reduction) in WI-NRS by >=4 from baseline to Week 12. Proportion of participants with improvement (reduction) in WI-NRS by >=4 from baseline to Week 24 Proportion of participants with IGA PN-S 0 or 1 score at Week 24 Proportion of participants with both an improvement (reduction) in WI-NRS by >=4 from baseline to Week 24 and an IGA PN-S 0 or 1 score at Week 24 Proportion of participants with IGA PN-S 0 or 1 score at Week 12 Percent change from baseline in WI-NRS at Week 24 Change from baseline in HRQoL... to Week 24 Change from baseline in skin Pain-NRS to Week 24 ... Change from baseline in Sleep-NRS to Week 24 Change from baseline in Hospital Anxiety and Depression Scale (HADS) total score to Week 24.' In all other countries the WI-NRS+IGA PN-S multi-component step is omitted, per the SAP text immediately following.",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.7
     }
   },
   "timing_ops": {
@@ -1363,22 +1477,138 @@
       "confidence": 1.0
     },
     "study_schedule": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "screening_days": 28,
+        "screening_washout": null,
+        "periods": [
+          {
+            "name": "screening",
+            "start_week": null,
+            "end_week": 0,
+            "duration_weeks": 4,
+            "blinding": null,
+            "background_tcs": null
+          },
+          {
+            "name": "randomized_treatment",
+            "start_week": 0,
+            "end_week": 24,
+            "duration_weeks": 24,
+            "blinding": "double_blind",
+            "background_tcs": null
+          },
+          {
+            "name": "follow_up",
+            "start_week": 24,
+            "end_week": 36,
+            "duration_weeks": 12,
+            "blinding": null,
+            "background_tcs": null
+          }
+        ],
+        "dosing_interval": "300 mg every 2 weeks (Q2W) after an initial loading dose on Day 1",
+        "visit_cadence": null,
+        "visit_cadence_until_week": null,
+        "visit_weeks": null,
+        "visit_days": null,
+        "phone_contact_weeks": [
+          16,
+          20,
+          28,
+          32
+        ],
+        "primary_endpoint_week": 12,
+        "end_of_treatment_week": 24,
+        "end_of_study_week": 36,
+        "total_duration_weeks": 40,
+        "follow_up_weeks": 12,
+        "follow_up_days": null,
+        "follow_up_visit_week": 36,
+        "long_term_extension": null,
+        "extension_end_week": null,
+        "extension_visit_interval_weeks": null,
+        "extension_study_id": null,
+        "rerandomization_week": null,
+        "maintenance_arms": null,
+        "maintenance_response_check_weeks": null,
+        "last_injection_week": null,
+        "key_secondary_weeks": [
+          12,
+          24
+        ],
+        "follow_up_visit_interval_weeks": null,
+        "end_of_treatment_weeks_after_last_dose": null,
+        "background_tcs_from_day": null,
+        "primary_endpoint_refs": [],
+        "double_dummy_arms": [],
+        "active_comparator": null,
+        "boilerplate_reused_from": [
+          "NCT04183335 (EFC16459)"
+        ],
+        "conflicts_with_trial": null,
+        "full_visit_table_available": true,
+        "source_inconsistency": "Note: SAP dose change restriction text says 'dose change of non-sedating antihistamine is not allowed both from Week 11 to Week 12 and from Week 23 to Week 24', confirming this trial (EFC16460) reads out at BOTH Week 12 (its own primary endpoint per the multiplicity hierarchy's first-listed comparison) and Week 24, unlike its sister trial EFC16459/NCT04183335 which is Week-24-primary only."
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/79/NCT04202679/Prot_000.pdf",
+      "source_excerpt": "Section 1.1 Synopsis, 'Duration of study period (per participant)': 'Screening period (2-4 weeks); Randomized IMP intervention period (24 weeks); Follow-up period (12 weeks).' Also SoA digest excerpt lists phone-contact home visits at 'Weeks 16, 20, 28, 32'. SAP Section 4.6 hierarchy places 'Proportion of participants with improvement (reduction) in WI-NRS by >=4 from baseline to Week 12' as the first-tested (primary) endpoint.",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.6
     },
     "rescue_therapy": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "permitted": true,
+        "trigger": "investigator_discretion",
+        "earliest_week": 2,
+        "prohibited_through_week": null,
+        "trigger_rules": [],
+        "flare_definition": [],
+        "first_step": "topical",
+        "topical_min_days_before_systemic": null,
+        "topical_rescue_requires_study_drug_discontinuation": null,
+        "systemic_rescue_requires_study_drug_discontinuation": null,
+        "resume_after_systemic_rescue_half_lives": null,
+        "resume_after_phototherapy_months": null,
+        "rescued_counted_as_nonresponder": true,
+        "rescued_counted_as_treatment_failure": true,
+        "continue_visits_after_discontinuation": null,
+        "continue_visits_through_week": null,
+        "topical_rescue_not_counted_after_week": null,
+        "topical_agents": [
+          {
+            "name": "High potency or superpotent topical corticosteroids (TCS)",
+            "strength_pct": null,
+            "form": null,
+            "potency": "high_or_superpotent"
+          },
+          {
+            "name": "Topical calcineurin inhibitors (TCI)",
+            "strength_pct": null,
+            "form": null,
+            "potency": null
+          }
+        ],
+        "topical_potency_classes": [],
+        "tci_reserved_areas": [],
+        "systemic_agents": [],
+        "oral_corticosteroid_limit": null,
+        "rescue_period": null,
+        "escape_arm_washout_half_lives": null,
+        "maintenance_period_rule": null,
+        "permitted_concomitant": [],
+        "recorded_in_ecrf": true,
+        "applies_to_period": "any time during the study (recommended to delay at least 14 days after initiation of investigational treatment)",
+        "long_term_extension_eligible_after_rescue": null,
+        "topical_agent_class": "high potency or superpotent TCS/TCI",
+        "rationale": "Section 6.5.1 Rescue medicine: 'The following rescue medications may be used: Dermatological preparations of high potency or superpotent TCS and TCI. If medically necessary (ie, to control intolerable PN symptoms), rescue treatment for PN may be provided to study patients at the discretion of the Investigator. Although the use of rescue medications is allowed at any time during the study, the use of rescue medications should be delayed, if possible, for at least 14 days following the initiation of the investigational treatment. For the purpose of the efficacy responder analysis, a pre-specified algorithm will be used to classify rescue (details in the SAP). In addition, a blinded review of all post-baseline medications to adjudicate rescue treatment, based on medical judgment, will be performed to adjudicate rescue. Patients who receive rescue treatment as per this adjudication during the study will be considered treatment failures.'"
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/79/NCT04202679/Prot_000.pdf",
+      "source_excerpt": "Section 6.5.1 Rescue medicine (full text quoted in rationale above), including 'Patients who receive rescue treatment as per this adjudication during the study will be considered treatment failures.'",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.7
     }
   },
   "adverse_events": {
