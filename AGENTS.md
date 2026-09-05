@@ -32,7 +32,7 @@ This file is the project's committed home for project-intrinsic agent memory: bu
   couldn't reliably extract. Don't force-fill it by inference — a wrong schedule is worse than a
   null.
 - **This atlas is an ongoing, multi-cycle scale-out effort, not a one-shot.** It started at 1
-  indication (AD, 5 drugs, 17 trials) and is now at 13 indications, 28 unique drugs, 78 trials
+  indication (AD, 5 drugs, 17 trials) and is now at 13 indications, 30 unique drugs, 84 trials
   (see README's "What this covers" for the full per-indication breakdown and exactly which
   candidate trials were checked and excluded as non-pivotal for each). Every drug/indication
   pairing was verified against real, live ClinicalTrials.gov and openFDA data before being
@@ -158,6 +158,23 @@ This file is the project's committed home for project-intrinsic agent memory: bu
   the same cycle for Tapinarof (Vtama, NDA215272, a single-NDA drug expanding the same two
   indications — PSOARING 1/2 for Psoriasis, ADORING 1/2 for AD), confirming the pattern
   generalizes to a second drug in one sitting without re-deriving it from scratch.
+- **Ustekinumab (Stelara) and Apremilast (Otezla) are two of dermatology's best-known,
+  longest-approved Psoriasis drugs (2009, 2014) that had been missing from this atlas through 6
+  prior cycles** -- a real gap, not a deliberate exclusion; found by checking well-known FDA
+  approvals against the atlas's own drug list rather than only chasing newly-approved candidates.
+  Ustekinumab's Purple Book entry (BLA125261) needed a NEW parser
+  (`scripts/purple_book_csv_helper.py`), not `fetch_purple_book.py`'s live-search-table scraper
+  (still genuinely Akamai-blocked) -- parses the same accessdata.fda.gov monthly CSV fallback
+  already used for Vyjuvek, but for a drug with 8 distinct biosimilar BLAs (more than Adalimumab's
+  10 *rows* but similarly large), it must dedupe multi-row BLAs down to one `biosimilars[]` entry
+  each and normalize the CSV's `351(k) Interchangeable`/`351(k) Biosimilar` license-type values
+  down to the schema's plain `"351(k)"` enum (interchangeable status lives in
+  `interchangeable_approval_date` instead, matching how the existing Adalimumab data was already
+  shaped). Checked and queued, not yet added: Etanercept and Infliximab (real Psoriasis pivotal
+  trials but predate CT.gov's 2007 results-reporting mandate, need a `resultsSection` check
+  trial-by-trial) and Brodalumab (3 real AMAGINE trials, but all show `OverallStatus: TERMINATED`
+  on CT.gov tied to Siliq's suicidal-ideation boxed warning -- needs confirming `resultsSection`
+  data survived the termination).
 
 ## Maintaining this file
 
