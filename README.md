@@ -13,7 +13,7 @@ way around.
 Real, live-pulled pivotal Phase III trials (adult / adult+adolescent,
 systemic therapy), from the [ClinicalTrials.gov API
 v2](https://clinicaltrials.gov/data-api/api) (`/api/v2/studies`, no API
-key required), across **13 indications, 30 unique drugs, 84 trials**:
+key required), across **13 indications, 31 unique drugs, 87 trials**:
 
 ### Atopic Dermatitis (9 drugs, 25 trials)
 
@@ -29,7 +29,7 @@ key required), across **13 indications, 30 unique drugs, 84 trials**:
 | Tapinarof (topical cream) | ADORING 1 (NCT05014568), ADORING 2 (NCT05032859) — FDA-approved (Vtama, NDA 215272) via a 2024-12-12 efficacy supplement, for ages 2 and older |
 | Crisaborole (topical ointment) | AD-301 (NCT02118792), AD-302 (NCT02118766) — FDA-approved (Eucrisa, NDA 207695) 2016-12-14, for ages 3 months and older |
 
-### Plaque Psoriasis (11 drugs, 25 trials)
+### Plaque Psoriasis (12 drugs, 28 trials)
 
 | Drug | Pivotal Phase III trials |
 |---|---|
@@ -44,6 +44,7 @@ key required), across **13 indications, 30 unique drugs, 84 trials**:
 | Tapinarof (topical cream) | PSOARING 1 (NCT03956355), PSOARING 2 (NCT03983980) — FDA-approved (Vtama, NDA 215272) 2022-05-23, its original approval |
 | Ustekinumab | PHOENIX 1 (NCT00267969), PHOENIX 2 (NCT00307437) — FDA-approved (Stelara, BLA 125261) 2009-09-25 |
 | Apremilast | ESTEEM 1 (NCT01194219), ESTEEM 2 (NCT01232283) — FDA-approved (Otezla, NDA 205437) 2014-03-21 |
+| Brodalumab | AMAGINE-1 (NCT01708590, n=661), AMAGINE-2 (NCT01708603, n=1831), AMAGINE-3 (NCT01708629, n=1881) — FDA-approved (Siliq, BLA 761032) 2017-02-15 |
 
 Excluded during curation (not pivotal registrational trials): NCT02203032
 "NAVIGATE" (guselkumab ustekinumab-inadequate-responder switch study),
@@ -51,18 +52,23 @@ NCT03162796 "Discover-1" (guselkumab, but this trial is actually Psoriatic
 Arthritis — a different indication), NCT04102007 (single-arm open-label
 risankizumab post-switch study).
 
-Ustekinumab and Apremilast are two of dermatology's best-known,
-longest-approved Psoriasis drugs (2009 and 2014 respectively) — a real gap
-in prior cycles' curation, closed this cycle. Other older biologics
-checked but not yet added, queued for a future cycle: Etanercept (Enbrel,
-approved for Psoriasis 2004) and Infliximab (Remicade, approved 2006) both
-have real placebo-controlled pivotal trials on CT.gov, but predate CT.gov's
-2007 mandatory-results-reporting rule — need a trial-by-trial
-`resultsSection` presence check before adding, not assumed. Brodalumab
-(Siliq, approved 2017) has 3 real pivotal trials (AMAGINE-1/2/3), but all
-3 show `OverallStatus: TERMINATED` on CT.gov (early termination tied to
-Siliq's suicidal-ideation boxed warning) — needs confirming `resultsSection`
-data survived the termination before adding, not yet done.
+Ustekinumab, Apremilast, and Brodalumab are three of dermatology's
+best-known, longest-approved Psoriasis drugs (2009, 2014, 2017
+respectively) — a real gap in prior cycles' curation, closed this cycle.
+All 3 AMAGINE trials show `OverallStatus: TERMINATED` on CT.gov (an early
+"Sponsor decision" tied to Siliq's eventual suicidal-ideation boxed
+warning) but all 3 have a real, complete `resultsSection` — confirmed
+against Siliq's own FDA label section 14, which describes "Trials 1, 2,
+and 3" totalling n=4373, matching AMAGINE 1/2/3's combined enrollment
+exactly; termination doesn't disqualify a trial under this atlas's own
+bar, only a missing `resultsSection` does. Two older biologics checked but
+still not added, queued for a future cycle: Etanercept (Enbrel, approved
+for Psoriasis 2004) and Infliximab (Remicade, approved 2006) both have
+real placebo-controlled pivotal trials on CT.gov (EXPRESS/EXPRESS II for
+Infliximab), but both predate CT.gov's 2007 mandatory-results-reporting
+rule and were individually confirmed to have **no** `resultsSection` at
+all — a genuine dead end for this atlas's `adverse_events` field group,
+not an oversight.
 
 ### Hidradenitis Suppurativa (3 drugs, 6 trials)
 
@@ -393,7 +399,7 @@ gaps elsewhere in `design.background_therapy`,
 `timing_ops.study_schedule` for the newer indications are a real,
 un-worked backlog, not a pipeline limitation.
 
-### Fill status (all 84 trials, 39 fields each — 3276 sourced values)
+### Fill status (all 87 trials, 39 fields each — 3393 sourced values)
 
 Fields fully or near-fully filled across every trial (`ctgov_api` for the
 identity/population/design/endpoints/timing_ops/adverse_events core,
@@ -404,28 +410,28 @@ drug-level cross-source groups): `nct_id`, `trial_name`, `official_title`,
 `study_type`, `allocation`, `intervention_model`, `masking`,
 `number_of_arms`, `primary_endpoints`, `secondary_endpoints`,
 `start_date`, `primary_completion_date`, `completion_date`,
-`serious_adverse_event_rate`, `real_world_safety.faers_summary` (84/84),
-`exclusivity.regulatory_application` (84/84).
+`serious_adverse_event_rate`, `real_world_safety.faers_summary` (87/87),
+`exclusivity.regulatory_application` (87/87).
 
-Fields with real, checkable gaps (numerator = filled, out of 84 trials):
+Fields with real, checkable gaps (numerator = filled, out of 87 trials):
 
 | Field | Filled | Gap reason |
 |---|---|---|
-| `molecule.mechanism_of_action` | 62/84 | openFDA label lookup miss for a few trials |
-| `molecule.dosing_regimen` | 58/84 | no intervention-description text on file at CT.gov for those trials |
-| `population.severity_criteria` | 47/84 | extraction regex catches EASI/IGA/BSA (AD) and most PASI/sPGA (psoriasis) phrasing reliably; HiSCR/IHS4 (HS), SALT (AA), UAS7 (CSU), GPPGA/GPPASI (GPP), and most newer-indication trials' eligibility-criteria phrasing (including EB, EPP, Seb Derm, and the older Ustekinumab/Apremilast/Crisaborole trials' eligibility text) not yet caught |
-| `design.background_therapy` | 17/84 | curated per-trial excerpts exist only for the original AD program |
-| `endpoints.multiplicity_control` | 16/84 | same — curated only for the original AD program |
-| `timing_ops.study_schedule` | 15/84 | full per-visit schedule lives only in multi-page PDF tables not reliably machine-extractable; curated cadence exists only for the original AD program |
-| `timing_ops.rescue_therapy` | 14/84 | curated only for the original AD program |
-| `adverse_events.death_rate` | 66/84 | some trials report zero deaths as a genuine null-count edge case in CT.gov's `resultsSection`, not a missing value |
-| `adverse_events.discontinuation_due_to_ae_rate` | 73/84 | CT.gov `resultsSection` gap for a few trials |
-| `adverse_events.most_common_adverse_events` | 77/84 | CT.gov `resultsSection` gap for a few trials |
-| `adverse_events.boxed_warning` | 82/84 | openFDA label lookup miss for 2 trials |
-| `exclusivity.orange_book` | 38/84 | only the NDA small-molecule drugs' trials get this field (BLA biologics use `purple_book` instead) |
-| `exclusivity.purple_book` | 46/84 | only the BLA biologic drugs' trials get this field (NDA small molecules use `orange_book` instead) |
+| `molecule.mechanism_of_action` | 62/87 | openFDA label lookup miss for a few trials |
+| `molecule.dosing_regimen` | 58/87 | no intervention-description text on file at CT.gov for those trials |
+| `population.severity_criteria` | 47/87 | extraction regex catches EASI/IGA/BSA (AD) and most PASI/sPGA (psoriasis) phrasing reliably; HiSCR/IHS4 (HS), SALT (AA), UAS7 (CSU), GPPGA/GPPASI (GPP), and most newer-indication trials' eligibility-criteria phrasing (including EB, EPP, Seb Derm, and the older Ustekinumab/Apremilast/Crisaborole/Brodalumab trials' eligibility text) not yet caught |
+| `design.background_therapy` | 17/87 | curated per-trial excerpts exist only for the original AD program |
+| `endpoints.multiplicity_control` | 16/87 | same — curated only for the original AD program |
+| `timing_ops.study_schedule` | 15/87 | full per-visit schedule lives only in multi-page PDF tables not reliably machine-extractable; curated cadence exists only for the original AD program |
+| `timing_ops.rescue_therapy` | 14/87 | curated only for the original AD program |
+| `adverse_events.death_rate` | 66/87 | some trials report zero deaths as a genuine null-count edge case in CT.gov's `resultsSection`, not a missing value |
+| `adverse_events.discontinuation_due_to_ae_rate` | 73/87 | CT.gov `resultsSection` gap for a few trials |
+| `adverse_events.most_common_adverse_events` | 80/87 | CT.gov `resultsSection` gap for a few trials |
+| `adverse_events.boxed_warning` | 85/87 | openFDA label lookup miss for 2 trials |
+| `exclusivity.orange_book` | 38/87 | only the NDA small-molecule drugs' trials get this field (BLA biologics use `purple_book` instead) |
+| `exclusivity.purple_book` | 49/87 | only the BLA biologic drugs' trials get this field (NDA small molecules use `orange_book` instead) |
 
-**2795 of 3276 sourced values are filled with real data (85.3%); 481
+**2882 of 3393 sourced values are filled with real data (84.9%); 511
 remain `needs_extraction`** — see `sources.csv` for the per-trial,
 per-field breakdown. Every non-`ctgov_api` fill was produced by
 LLM-assisted reading of a real, cited source (CT.gov free text, a
@@ -440,13 +446,13 @@ before it's treated as authoritative for publication.
 
 This repo holds only the pipeline's output — no code, no tests:
 
-- `data/trials/<NCT_ID>.json` — one file per trial (84 files), the
+- `data/trials/<NCT_ID>.json` — one file per trial (87 files), the
   sourced-value format described above (schema v2).
 - `trials.csv` — one row per trial, one column per field (the field's
   `value`, JSON-encoded when structured; `needs_extraction` fields blank).
 - `sources.csv` — one row per sourced value: `nct_id`, `field`,
   `source_type`, `source_url`, `source_excerpt`, `extracted_by`,
-  `reviewed_by`, `confidence`. 84 trials × 39 fields = 3276 rows.
+  `reviewed_by`, `confidence`. 87 trials × 39 fields = 3393 rows.
 - `endpoints.csv` — one row per outcome measure × criterion: `measure_type`,
   `scale`, `timepoints`, `analysis_population`, and the `ScoreCriterion`
   columns, so "EASI-75 responders at week 16" is a column filter.
@@ -464,7 +470,7 @@ owns the pipeline this data is exported from.
 
 - The human QA pass on top of the LLM-assisted extraction (captain +
   Garvita review of every non-`ctgov_api` value).
-- The 481 fields that remain `needs_extraction` (see the fill-status table
+- The 511 fields that remain `needs_extraction` (see the fill-status table
   above) — a mix of genuinely unreachable sources (paywalled papers behind
   Cloudflare, PDF tables that don't extract reliably) and real, un-worked
   backlog (the curated per-trial prose tables — background therapy,

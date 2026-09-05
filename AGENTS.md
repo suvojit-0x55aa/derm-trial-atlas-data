@@ -32,7 +32,7 @@ This file is the project's committed home for project-intrinsic agent memory: bu
   couldn't reliably extract. Don't force-fill it by inference — a wrong schedule is worse than a
   null.
 - **This atlas is an ongoing, multi-cycle scale-out effort, not a one-shot.** It started at 1
-  indication (AD, 5 drugs, 17 trials) and is now at 13 indications, 30 unique drugs, 84 trials
+  indication (AD, 5 drugs, 17 trials) and is now at 13 indications, 31 unique drugs, 87 trials
   (see README's "What this covers" for the full per-indication breakdown and exactly which
   candidate trials were checked and excluded as non-pivotal for each). Every drug/indication
   pairing was verified against real, live ClinicalTrials.gov and openFDA data before being
@@ -170,11 +170,17 @@ This file is the project's committed home for project-intrinsic agent memory: bu
   each and normalize the CSV's `351(k) Interchangeable`/`351(k) Biosimilar` license-type values
   down to the schema's plain `"351(k)"` enum (interchangeable status lives in
   `interchangeable_approval_date` instead, matching how the existing Adalimumab data was already
-  shaped). Checked and queued, not yet added: Etanercept and Infliximab (real Psoriasis pivotal
-  trials but predate CT.gov's 2007 results-reporting mandate, need a `resultsSection` check
-  trial-by-trial) and Brodalumab (3 real AMAGINE trials, but all show `OverallStatus: TERMINATED`
-  on CT.gov tied to Siliq's suicidal-ideation boxed warning -- needs confirming `resultsSection`
-  data survived the termination).
+  shaped). Also added same session: Brodalumab (Siliq, BLA761032, no biosimilars) via AMAGINE-1/2/3
+  -- all 3 show `OverallStatus: TERMINATED` on CT.gov (an early "Sponsor decision" tied to Siliq's
+  eventual suicidal-ideation boxed warning) but all 3 have a complete `resultsSection`, confirmed
+  against Siliq's FDA label section 14 ("Trials 1, 2, and 3", n=4373 total, matching AMAGINE
+  1/2/3's combined enrollment exactly) -- **`OverallStatus: TERMINATED` does not by itself
+  disqualify a trial for this atlas; check for a real `resultsSection` before excluding.** Checked
+  and confirmed as genuine dead ends (not oversights): Etanercept (Enbrel, Psoriasis 2004) and
+  Infliximab (Remicade, Psoriasis 2006, via EXPRESS/EXPRESS II) both have real placebo-controlled
+  pivotal trials on CT.gov, but individually fetching each trial confirmed **zero** `resultsSection`
+  on any of them -- both predate CT.gov's 2007 mandatory-results-reporting rule, so no amount of
+  further searching will surface a `resultsSection` for these specific trials.
 
 ## Maintaining this file
 
