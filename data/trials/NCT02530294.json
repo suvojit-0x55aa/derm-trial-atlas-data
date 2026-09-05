@@ -84,13 +84,26 @@
       "confidence": 1.0
     },
     "mechanism_of_action": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "modality": "small_molecule",
+        "drug_class": "anticholinergic (acetylcholine receptor antagonist)",
+        "antibody_isotype": null,
+        "binding_targets": [],
+        "pathway_cytokines": [],
+        "receptor_subunits": [],
+        "kinases_inhibited": [],
+        "lower_potency_kinases": [],
+        "selectivity": [],
+        "reversible": null,
+        "mechanism_established": null,
+        "label_section": "12.1"
+      },
+      "source_type": "openfda_label",
+      "source_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=52537ea0-9410-1691-e063-6394a90a9468",
+      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1) -- extracted text: 12.1 Mechanism of Action Glycopyrronium is a competitive inhibitor of acetylcholine receptors that are located on certain peripheral tissues, including sweat glands. In hyperhidrosis, glycopyrronium inhibits the action of acetylcholine on sweat glands, reducing sweating.",
+      "extracted_by": "deep-extraction pass (LLM-assisted extraction, scale-out backfill; pending human QA)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.9
     },
     "dosing_regimen": {
       "value": null,
@@ -220,7 +233,7 @@
     "primary_endpoints": {
       "value": [
         {
-          "verbatim": "Percentage of Subjects Who Have a ≥4-point Improvement in the Weekly Mean Score of Axillary Sweating Daily Diary (ASDD) Item #2 From Baseline at Week 4 (Time frame: From Baseline to Week 4)",
+          "verbatim": "Percentage of Subjects Who Have a \u22654-point Improvement in the Weekly Mean Score of Axillary Sweating Daily Diary (ASDD) Item #2 From Baseline at Week 4 (Time frame: From Baseline to Week 4)",
           "rank": "primary",
           "position": 1,
           "measure_type": "responder_rate",
@@ -255,7 +268,7 @@
     "secondary_endpoints": {
       "value": [
         {
-          "verbatim": "Percentage of Subjects Who Have a ≥2 Grade Improvement in Hyperhidrosis Disease Severity Scale (HDSS) From Baseline at Week 4",
+          "verbatim": "Percentage of Subjects Who Have a \u22652 Grade Improvement in Hyperhidrosis Disease Severity Scale (HDSS) From Baseline at Week 4",
           "rank": "secondary",
           "position": 1,
           "measure_type": "responder_rate",

@@ -83,13 +83,28 @@
       "confidence": 1.0
     },
     "mechanism_of_action": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "modality": "small_molecule",
+        "drug_class": "aryl hydrocarbon receptor (AhR) agonist",
+        "antibody_isotype": null,
+        "binding_targets": [],
+        "pathway_cytokines": [],
+        "receptor_subunits": [
+          "AhR"
+        ],
+        "kinases_inhibited": [],
+        "lower_potency_kinases": [],
+        "selectivity": [],
+        "reversible": null,
+        "mechanism_established": false,
+        "label_section": "12.1"
+      },
+      "source_type": "openfda_label",
+      "source_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=4615ce09-cf4d-4410-91ff-db3caea7a802",
+      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1) -- extracted text: 12.1 Mechanism of Action Tapinarof is an aryl hydrocarbon receptor (AhR) agonist. The specific mechanisms by which VTAMA cream exerts its therapeutic actions are unknown.",
+      "extracted_by": "deep-extraction pass (LLM-assisted extraction, scale-out backfill; pending human QA)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.9
     },
     "dosing_regimen": {
       "value": null,
@@ -254,7 +269,7 @@
     "secondary_endpoints": {
       "value": [
         {
-          "verbatim": "Percent of Subjects With ≥ 75% Improvement in Psoriasis Area and Severity Index (PASI) From Baseline at Week 12. Analyses Were Done Using Multiple Imputation.",
+          "verbatim": "Percent of Subjects With \u2265 75% Improvement in Psoriasis Area and Severity Index (PASI) From Baseline at Week 12. Analyses Were Done Using Multiple Imputation.",
           "rank": "secondary",
           "position": 1,
           "measure_type": "absolute_value",
@@ -329,7 +344,7 @@
           "time_frame": null
         },
         {
-          "verbatim": "Percent of Subjects With ≥90% Improvement in PASI Score From Baseline to Week 12. Analyses Were Done Using Multiple Imputation.",
+          "verbatim": "Percent of Subjects With \u226590% Improvement in PASI Score From Baseline to Week 12. Analyses Were Done Using Multiple Imputation.",
           "rank": "secondary",
           "position": 4,
           "measure_type": "other",
