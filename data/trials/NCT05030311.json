@@ -102,19 +102,56 @@
       },
       "source_type": "openfda_label",
       "source_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=9e44a793-9940-4ae3-9fe6-0f901afa37e0",
-      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1) -- v1 extracted text: 12.1 Mechanism of Action Remibrutinib is an oral, small molecule kinase inhibitor that inhibits Bruton’s tyrosine kinase (BTK). BTK is an intracellular protein expressed in mast cells, basophils, B cells, macrophages, and thrombocytes. BTK is involved in intracellular signaling via Fc epsilon receptor-1 (FcεR1), Fc gamma receptors (FcγR), and the B cell antigen receptor (BCR). Remibrutinib also inhibits the BTK-related kinases tec protein tyrosine kinase (TEC) and BMX non-receptor tyrosine kinase (BMX). Remibrutinib inhibits mast cell and basophil degranulation, including release of histamine and other proinflammatory mediators, mediated by pathogenic IgE or IgG directed against the FcεR1 or IgE.",
+      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1) -- v1 extracted text: 12.1 Mechanism of Action Remibrutinib is an oral, small molecule kinase inhibitor that inhibits Bruton\u2019s tyrosine kinase (BTK). BTK is an intracellular protein expressed in mast cells, basophils, B cells, macrophages, and thrombocytes. BTK is involved in intracellular signaling via Fc epsilon receptor-1 (Fc\u03b5R1), Fc gamma receptors (Fc\u03b3R), and the B cell antigen receptor (BCR). Remibrutinib also inhibits the BTK-related kinases tec protein tyrosine kinase (TEC) and BMX non-receptor tyrosine kinase (BMX). Remibrutinib inhibits mast cell and basophil degranulation, including release of histamine and other proinflammatory mediators, mediated by pathogenic IgE or IgG directed against the Fc\u03b5R1 or IgE.",
       "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 0.9
     },
     "dosing_regimen": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": [
+        {
+          "intervention_name": "LOU064 25 mg (b.i.d)",
+          "description": "LOU064 25 mg was administered by oral route twice a day (b.i.d) as a tablet.",
+          "is_placebo": false,
+          "route": "oral",
+          "dose_form": "tablet",
+          "dose_value": 25,
+          "dose_unit": "mg",
+          "units_per_dose": null,
+          "frequency": "twice_daily",
+          "duration_weeks": null,
+          "dosing_periods": [],
+          "administration_sites": [],
+          "antibody_isotype": null,
+          "molecular_target": null,
+          "arm_names": [],
+          "co_administered_with": []
+        },
+        {
+          "intervention_name": "LOU064 25 mg (b.i.d) as a tablet.",
+          "description": "LOU064 25 mg was administered by oral route twice a day (b.i.d) as a tablet in open label phase.",
+          "is_placebo": false,
+          "route": "oral",
+          "dose_form": "tablet",
+          "dose_value": 25,
+          "dose_unit": "mg",
+          "units_per_dose": null,
+          "frequency": "twice_daily",
+          "duration_weeks": null,
+          "dosing_periods": [],
+          "administration_sites": [],
+          "antibody_isotype": null,
+          "molecular_target": null,
+          "arm_names": [],
+          "co_administered_with": []
+        }
+      ],
+      "source_type": "ctgov_text_extraction",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT05030311",
+      "source_excerpt": "LOU064 25 mg (b.i.d): LOU064 25 mg was administered by oral route twice a day (b.i.d) as a tablet. || LOU064 25 mg (b.i.d) as a tablet.: LOU064 25 mg was administered by oral route twice a day (b.i.d) as a tablet in open label phase.",
+      "extracted_by": "deep-extraction pass (LLM-assisted extraction, scale-out backfill; pending human QA)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.8
     }
   },
   "population": {
@@ -176,7 +213,7 @@
       },
       "source_type": "ctgov_text_extraction",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT05030311",
-      "source_excerpt": "UAS7 score (range 0-42) ≥16, ISS7 score (range 0-21) ≥ 6 and HSS7 score (range 0-21) ≥ 6 during the 7 days prior to randomization (Day 1)",
+      "source_excerpt": "UAS7 score (range 0-42) \u226516, ISS7 score (range 0-21) \u2265 6 and HSS7 score (range 0-21) \u2265 6 during the 7 days prior to randomization (Day 1)",
       "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 0.75
@@ -277,7 +314,7 @@
     "secondary_endpoints": {
       "value": [
         {
-          "verbatim": "Number of Patients Who Achieved Disease Activity Control (UAS7 ≤6)",
+          "verbatim": "Number of Patients Who Achieved Disease Activity Control (UAS7 \u22646)",
           "rank": "secondary",
           "position": 1,
           "measure_type": "count",
@@ -315,7 +352,7 @@
           "time_frame": null
         },
         {
-          "verbatim": "Number of Patients With Early Onset of Disease Control (UAS7 ≤ 6 at Week 2)",
+          "verbatim": "Number of Patients With Early Onset of Disease Control (UAS7 \u2264 6 at Week 2)",
           "rank": "secondary",
           "position": 3,
           "measure_type": "count",
