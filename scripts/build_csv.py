@@ -146,7 +146,14 @@ def main():
             if path not in seen:
                 seen.add(path)
                 field_order.append(path)
-            row[path] = obj.get("value")
+            # arm_results/effect_estimates already have their own dedicated CSVs
+            # (keyed on nct_id + endpoint_rank + endpoint_position) and can run to
+            # hundreds of rows per trial -- embedding the whole list again as one
+            # JSON cell here blows past Python's csv module field-size limit for a
+            # trial with a lot of endpoints x timepoints x arms. Source provenance
+            # is still recorded below regardless.
+            if path not in ("results.arm_results", "results.effect_estimates"):
+                row[path] = obj.get("value")
             source_rows.append({"nct_id": f.stem, "field": path, **{k: obj.get(k) for k in
                                 ("source_type", "source_url", "source_excerpt", "extracted_by", "reviewed_by", "confidence")}})
         trial_rows.append(row)

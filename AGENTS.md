@@ -2,13 +2,18 @@
 
 This file is the project's committed home for project-intrinsic agent memory: build, test, release, architecture, and sharp-edge notes that should travel with the code.
 
-- This repo is **data only** — `data/trials/*.json` (schema v2), the flattened CSVs
-  (`trials.csv`, `sources.csv`, `endpoints.csv`, `severity_criteria.csv`,
-  `adverse_event_rates.csv`), and two static doc snapshots (`docs/SCHEMA.md`,
-  `schema/trial.schema.json`). No pipeline code, no schema spec, no tests — the
-  fetch/extraction/migration/build pipeline, `atlas/schema.py`, and the test suite all live in
-  `kolai-website`; this repo is regenerated from there. Don't hand-edit the CSVs or the doc
-  snapshots — they're generated, and will drift from `kolai-website`'s copy if edited here.
+- **Repo consolidation (2026-09, captain decision): `kolai-website` is no longer part of this
+  project.** There are exactly two repos now: `open-derm-trial-atlas` (the website) and
+  `derm-trial-atlas-data` (this repo). `scripts/` and `atlas/` (the fetch/extraction/migration/
+  build pipeline, schema v3 spec) and `tests/` (recovered from the last pre-consolidation branch,
+  `origin/fm/derm-trial-atlas-scale-out`) are now first-class, permanently committed code here —
+  the prior "data only, pipeline lives in kolai-website" split is over; don't port anything to
+  kolai-website or reference it. `data/trials/*.json` (schema v3), the flattened CSVs
+  (`trials.csv`, `sources.csv`, `endpoints.csv`, `severity_criteria.csv`, `adverse_event_rates.csv`,
+  `arm_results.csv`, `effect_estimates.csv`), and the two generated doc snapshots (`docs/SCHEMA.md`,
+  `schema/trial.schema.json`) are still all regenerated from `atlas/schema.py` + `data/trials/` via
+  `scripts/build_csv.py` / `scripts/export_schema.py` — don't hand-edit them, they'll just get
+  overwritten (and now, correctly, diverge from nothing else since there's no other copy).
 - Field groups, the full fill-status table, and what `source_type` means: see `README.md`.
   Full field-by-field types: `docs/SCHEMA.md`.
 - Every field value everywhere in `data/trials/*.json` is a sourced-value object (`value`,
@@ -877,6 +882,78 @@ This file is the project's committed home for project-intrinsic agent memory: bu
   out-of-scope for every indication past the original 5-drug AD pass — not a re-run of the same
   CT.gov/protocol-PDF method, which has now been applied as thoroughly as the available sources
   allow.
+
+- **Results-layer effort (2026-09-06, 3 sequential phases, per the design report at
+  `data/derm-trial-atlas-results-schema/report.md` in the firstmate repo): endpoint-completeness
+  fix, schema v3, CT.gov results backfill.** Phase 1 fixed `scripts/fetch_trials.py`'s
+  `primaryOutcomes[0]`-only bug (recovered 83 co-primary endpoints across 55 trials, including
+  UNCOVER-1/2/3 and AMAGINE-2/3's PASI-75, ECZTRA 1's co-primary EASI-75) and a second, related
+  parser bug in `atlas/endpoints.py`: `_timepoints()` scanned the pre-subgroup-strip text, so a
+  subgroup clause's own week mention ("...at Week 52 Among Subjects With EASI75 at Week 16")
+  leaked a spurious extra timepoint onto the endpoint's real single assessment week (16 real
+  instances across ECZTRA 1/2, a 3rd Tralokinumab trial, both Lebrikizumab ADvocate trials).
+  Phase 2 added `results.{arms,arm_results,effect_estimates,published_results}` (schema v3,
+  `atlas/results.py`'s types), each referencing `endpoints.*` by `(rank, position,
+  verbatim_sha1)` rather than re-describing the endpoint. Phase 3 backfilled all 125
+  `hasResults:true` trials from live CT.gov data (9,201 arm_results, 2,765 effect_estimates,
+  zero hard-QC-gate exclusions) — confirmed the exact ECZTRA 1 regression the report proved is
+  fixed: the true initial-period ITT endpoint now correctly reads 25.0%/12.7%, cleanly separated
+  by its own distinct endpoint reference from the real-but-different 59.6%/49.1%/33.3%
+  re-randomized-maintenance-subgroup numbers under theirs (`tests/test_results_backfill.py`'s
+  `test_ecztra1_easi75_week16_regression` is the permanent regression test).
+- **CT.gov results groups (OG### ids) are unique only WITHIN one outcome measure, not trial-wide
+  — a real, load-bearing finding the design report didn't anticipate.** 51 of 125 `hasResults`
+  trials reuse an id for a genuinely different arm in a different measure, almost always a
+  re-randomization/maintenance-period design: ECZTRA 1's own OG001 is "Placebo Q2W" in its
+  initial-period measures and "Tralokinumab 300 mg Q4W" in its maintenance-period ones.
+  `atlas.results.build_arm_registry` dedupes by the `(arm_id, label)` PAIR, not by `arm_id`
+  alone, so an ambiguous id legitimately appears more than once in `results.arms` with its real,
+  distinct labels — lossless, but it means a consumer must resolve an `arm_results`/
+  `effect_estimates` row's `arm_id` in the context of which endpoint (which CT.gov outcome
+  measure) it came from, never by a global `arm_id -> label` dict/hash join. A future schema
+  revision should consider scoping `arm_id` to `(rank, position)` directly; this is a real,
+  checked ontology gap for `kolai-website`'s eventual successor, not an oversight.
+- **A second, more severe variant of the count-vs-percentage trap the design report named**
+  (which warned only about the unit-string's casing being unreliable): CT.gov's own
+  outcome-measure-level `paramType` metadata can itself be wrong. 10 trials (mostly the oldest in
+  this corpus, e.g. PHOENIX1/Ustekinumab, 2006) post a plain participant count (e.g. "8" of 255)
+  tagged `paramType: NUMBER` instead of `COUNT_OF_PARTICIPANTS`. Their `unitOfMeasure` is the
+  unambiguous, non-percentage string `"Participants"` though — never one of the report's warned
+  inconsistently-cased *percentage* unit variants — so `atlas.results` treats that one specific
+  literal unit value as a safe correction to a `NUMBER` paramType, not a reversion to trusting
+  the unit string generally.
+- **`om.dispersionType` (the free-text label naming what a measurement's `spread`/
+  `lowerLimit`/`upperLimit` actually mean) has a real vocabulary gap against the v3
+  `DISPERSION_TYPES` enum**: `inter_quartile_range` and `full_range` both report their bounds via
+  `lowerLimit`/`upperLimit` (same fields a confidence interval uses), but the schema's
+  `ci_lower`/`ci_upper` are semantically CI-specific and there's no generic "dispersion bounds"
+  slot distinct from them. `atlas.results` records the correct `dispersion_type` for these rows
+  but leaves the actual bound numbers uncaptured (`dispersion_value`/`ci_lower`/`ci_upper` all
+  null) rather than mislabel a real IQR/range bound as a confidence interval — the same
+  leave-the-specific-subfield-null discipline as every other documented schema-enum gap above.
+  Real, small (31 of ~9,700 arm_results rows), and worth raising with the schema's next revision.
+- **A real, checked, NOT-closed backlog after this effort**: of the endpoints whose title states
+  a PASI/EASI/SCORAD/IGA-style responder threshold, roughly 100+ (a superset of the ~49 the
+  design report counted, found via a broader post-backfill sweep) still have `measure_type !=
+  responder_rate` or empty `responder_criteria` — mostly older trials (Ustekinumab PHOENIX1/2,
+  Secukinumab FIXTURE/ERASURE/FEATURE, Ixekizumab UNCOVER, Certolizumab CIMPASI/CIMPACT,
+  Tildrakizumab reSURFACE, Risankizumab UltIMMa, Bimekizumab BE VIVID/BE SURE) whose titles use
+  older, more varied phrasing (`"Efficacy of X Compared to Y in Subjects With..."`,
+  `"Percent of Responders With PASI >= 50, 75, 90, 100"` multi-threshold titles, `"Maintenance of
+  PASI 75 Response..."`) the existing `atlas/endpoints.py` classifier genuinely doesn't recognize.
+  This is squarely a `_measure_type()`/`_threshold_criteria()` pattern-coverage gap in the
+  endpoints parser, not a results-layer problem: `atlas.results` still correctly extracts and
+  preserves every one of these rows' raw `reported_value`/`denominator` (nothing is dropped), it
+  just can't derive `response_rate_pct`/`responders` for a row whose endpoint isn't classified as
+  a responder-rate measure. Fixing the classifier and re-running the phase-1-style before/after
+  diff audit (to avoid touching endpoints that are already correct) is the real next step here —
+  not attempted this cycle, to avoid risking a wrong reclassification under time pressure.
+  `study_period` on `arm_results` rows was also left `null` throughout (unlike
+  `analysis_population`, which the CT.gov outcome-measure's own `populationDescription` text
+  fills for ~78% of rows) — its own signal (`om.timeFrame` text mentioning "double-blind"/
+  "maintenance"/"rescue") only appears on 15 outcome measures in the whole corpus, too sparse to
+  be worth a dedicated pass; the endpoint's OWN `study_period` field (parsed in phase 1/earlier
+  cycles from the verbatim title) is the more complete source when this matters.
 
 ## Maintaining this file
 

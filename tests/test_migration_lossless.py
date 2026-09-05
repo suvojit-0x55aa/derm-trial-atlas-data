@@ -111,16 +111,19 @@ class LosslessMigrationTest(unittest.TestCase):
         assert len(cls.pairs) == 17, "expected the 17 committed v1 trials"
 
     def test_determinism(self):
-        # migrate_trial() itself only ever stages real_world_safety.faers_summary
-        # and exclusivity.{orange_book,purple_book} as needs_extraction
-        # placeholders (see atlas/migrate.py) -- the real FAERS/Orange Book/
-        # Purple Book values in the committed v2 files come from a later,
-        # separate pipeline stage (scripts/apply_source_data.py). Compare
-        # everything migrate_trial *is* responsible for byte-for-byte, and
-        # exclusivity.regulatory_application (which it does set, via
-        # atlas.regulatory_applications) separately from those three.
+        # migrate_trial() itself only ever stages real_world_safety.faers_summary,
+        # exclusivity.{orange_book,purple_book}, and (since the v3 results layer)
+        # results.{arms,arm_results,effect_estimates,published_results} as
+        # needs_extraction placeholders (see atlas/migrate.py) -- the real values
+        # in the committed v2/v3 files come from later, separate pipeline stages
+        # (scripts/apply_source_data.py; atlas/results.py's CT.gov backfill).
+        # Compare everything migrate_trial *is* responsible for byte-for-byte,
+        # and exclusivity.regulatory_application (which it does set, via
+        # atlas.regulatory_applications) separately from those.
         source_integrated = {("real_world_safety", "faers_summary"),
-                             ("exclusivity", "orange_book"), ("exclusivity", "purple_book")}
+                             ("exclusivity", "orange_book"), ("exclusivity", "purple_book"),
+                             ("results", "arms"), ("results", "arm_results"),
+                             ("results", "effect_estimates"), ("results", "published_results")}
         for nct, v1, v2 in self.pairs:
             with self.subTest(nct=nct):
                 migrated = migrate_trial(v1)
@@ -242,13 +245,17 @@ class LosslessMigrationTest(unittest.TestCase):
         # the other is a genuine not-applicable gap, not a placeholder
         # awaiting a future pass (a biologic BLA has no Orange Book NDA entry,
         # and vice versa) -- so it's still expected here, just drug-dependent
-        # rather than the same fixed set for every trial.
+        # rather than the same fixed set for every trial. results.published_results
+        # is a permanent gap too: literature/label-sourced results are explicitly
+        # out of scope for the results-layer backfill (design report S5.4) --
+        # every AD trial here has real CT.gov results, so arms/arm_results/
+        # effect_estimates are populated, but published_results never is.
         for nct, v1, v2 in self.pairs:
             old_gaps = {v2_path(g, k) for (g, k), sv in sourced_fields(v1) if sv["source_type"] == "needs_extraction"}
             new_gaps = {(g, k) for (g, k), sv in sourced_fields(v2) if sv["source_type"] == "needs_extraction"}
             registry = v2["exclusivity"]["regulatory_application"]["value"]["registry"]
             not_applicable_registry = "purple_book" if registry == "orange_book" else "orange_book"
-            placeholders = {("exclusivity", not_applicable_registry)}
+            placeholders = {("exclusivity", not_applicable_registry), ("results", "published_results")}
             self.assertEqual(new_gaps, old_gaps | placeholders, nct)
             self.assertEqual(v2["exclusivity"]["regulatory_application"]["source_type"] in ("orange_book", "purple_book"), True, nct)
             self.assertEqual(v2["exclusivity"][registry]["source_type"], registry, nct)
