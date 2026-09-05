@@ -32,7 +32,7 @@ This file is the project's committed home for project-intrinsic agent memory: bu
   couldn't reliably extract. Don't force-fill it by inference — a wrong schedule is worse than a
   null.
 - **This atlas is an ongoing, multi-cycle scale-out effort, not a one-shot.** It started at 1
-  indication (AD, 5 drugs, 17 trials) and is now at 14 indications, 34 unique drugs, 93 trials
+  indication (AD, 5 drugs, 17 trials) and is now at 16 indications, 38 unique drugs, 101 trials
   (see README's "What this covers" for the full per-indication breakdown and exactly which
   candidate trials were checked and excluded as non-pivotal for each). Every drug/indication
   pairing was verified against real, live ClinicalTrials.gov and openFDA data before being
@@ -211,6 +211,23 @@ This file is the project's committed home for project-intrinsic agent memory: bu
   future cycle; a real posted-results trial (e.g. spesolimab's Lunsayil 1 HS trial) is not
   sufficient on its own -- the drug's own current FDA label must show the matching indication
   (Spevigo's label is GPP-only even though its HS trial has posted results).
+- **An old, generic-eroded small-molecule NDA needs an `application_number` tuple-pin on its Orange
+  Book fetch, same as Ruxolitinib/Roflumilast's ingredient-name collisions -- but for a different
+  reason.** Added same session: Onychomycosis (Efinaconazole/Jublia, Tavaborole/Kerydin) and Rosacea
+  (Ivermectin/Soolantra, Oxymetazoline HCl/Rhofade), 4 drugs old enough (approved 2014-2017) to have
+  real generic competition. A plain `products.active_ingredients.name` openFDA query for any of
+  these returns the original NDA row mixed with several *generic ANDA* rows for the same ingredient
+  (7-12 extra rows each) -- `fetch_orange_book.build_record()` doesn't filter by application type,
+  so an unpinned query would silently merge a generic manufacturer's own patent/exclusivity rows
+  into the branded drug's `exclusivity.orange_book` value. Ivermectin is a 3-way version of this:
+  the bare ingredient also covers Stromectol (N050742, oral, systemic parasites) and Sklice
+  (N202736, topical lice lotion), both real, unrelated NDAs. Confirm the fix worked by checking the
+  filtered result has exactly 1 product row before writing it. Separately: Kerydin's brand is
+  market-discontinued (superseded by generics after patent expiry) -- `openfda label.json?search=
+  openfda.brand_name:Kerydin` returns a genuine `NOT_FOUND` even though the approval is real and
+  unaffected, because `label.json` only indexes *currently marketed* labels; `drug/orangebook.json`
+  keeps every historical row regardless of current marketing status, so it stays the authoritative
+  check for approval history even after a brand is discontinued.
 
 ## Maintaining this file
 

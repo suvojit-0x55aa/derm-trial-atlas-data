@@ -13,7 +13,7 @@ way around.
 Real, live-pulled pivotal Phase III trials (adult / adult+adolescent,
 systemic therapy), from the [ClinicalTrials.gov API
 v2](https://clinicaltrials.gov/data-api/api) (`/api/v2/studies`, no API
-key required), across **14 indications, 34 unique drugs, 93 trials**:
+key required), across **16 indications, 38 unique drugs, 101 trials**:
 
 ### Atopic Dermatitis (9 drugs, 25 trials)
 
@@ -290,6 +290,46 @@ Phase 2b/3 programs, none with an FDA label yet — including spesolimab's
 own real, posted-results HS trial Lunsayil 1, since Spevigo's FDA label
 is GPP-only), and ligelizumab/barzolvolimab for CSU.
 
+### Onychomycosis (2 drugs, 4 trials)
+
+| Drug | Pivotal Phase III trials |
+|---|---|
+| Efinaconazole (topical solution) | NCT01007708 (n=780), NCT01008033 (n=870), both vehicle-controlled (development code IDP-108) — FDA-approved (Jublia, NDA 203567) 2014-06-06 |
+| Tavaborole (topical solution) | NCT01270971 (n=594), NCT01302119 (n=604), both vehicle-controlled (development code AN2690) — FDA-approved (Kerydin, NDA 204427) 2014-07-07, brand since discontinued (many generic ANDAs remain on market) |
+
+### Rosacea (2 drugs, 4 trials)
+
+| Drug | Pivotal Phase III trials |
+|---|---|
+| Ivermectin (topical cream) | NCT01493687 (n=683), NCT01494467 (n=688), both vehicle-controlled (development code CD5024) — FDA-approved (Soolantra, NDA 206255) 2014-12-19 |
+| Oxymetazoline HCl (topical cream) | NCT02131636 (n=440), NCT02132117 (n=445), both vehicle-controlled (development code AGN-199201) — FDA-approved (Rhofade, NDA 208552) 2017-01-18 |
+
+15th and 16th indications, added 2026-09-05 (cycle 9, same session as Acne
+Vulgaris). Both found the same way: checking well-known, decades-familiar
+dermatology drug classes (antifungals, rosacea topicals) against the
+atlas's own list rather than only chasing newly-approved candidates. All
+4 drugs are single-NDA small molecules old enough to have real generic
+competition on the market — a genuinely new wrinkle for this atlas's
+Orange Book fetch: a plain `products.active_ingredients.name` search on
+openFDA now returns the original NDA row mixed with several generic
+ANDA rows for the *same* ingredient (Efinaconazole: 7 ANDA generics;
+Tavaborole: 8; Ivermectin: 12, including two *other* NDAs for the same
+ingredient — Stromectol/oral and Sklice/lice lotion — a 3-way collision
+worse than Ruxolitinib's 2-way one; Oxymetazoline HCl: 1). Every one of
+these 4 drugs needed an `application_number` tuple-pin (the
+Ruxolitinib/Roflumilast precedent) before calling
+`fetch_orange_book.build_record()`, confirmed by checking each result
+came back with exactly 1 product row after filtering — an unpinned query
+would have silently merged another applicant's patents/exclusivities
+into the wrong drug's `exclusivity.orange_book` value. Kerydin's brand
+label lookup via `openfda label.json?search=openfda.brand_name:Kerydin`
+returns `NOT_FOUND` (brand discontinued, superseded by generics) even
+though the drug's own NDA approval is real and unaffected — a real,
+documented edge case: `openfda.brand_name` label search only returns
+*currently marketed* labels, so a discontinued-but-real approval needs
+`drug/orangebook.json` (which keeps every historical row regardless of
+current marketing status) as the authoritative check instead.
+
 Every NCT ID above was pulled live from the API during curation — none
 were guessed or reused from memory (see `data/trials/*.json` →
 `source_url` on every field for the exact API call), and every drug/trial
@@ -424,7 +464,7 @@ text for 4 of the 13 unique primary-publication PMIDs, via NCBI's
 `elink`/`efetch` — not Cloudflare-protected) and **FDA Drugs@FDA
 approval-package reviews** (accessdata.fda.gov, also not
 Cloudflare-protected, often more granular on protocol detail than the
-paper itself). The 13 indications added after that pass did not repeat this
+paper itself). The 15 indications added after that pass did not repeat this
 same paywalled-paper research effort — their `publication_extraction`
 fills remain confined to the original 17 AD trials; `needs_extraction`
 gaps elsewhere in `design.background_therapy`,
@@ -432,7 +472,7 @@ gaps elsewhere in `design.background_therapy`,
 `timing_ops.study_schedule` for the newer indications are a real,
 un-worked backlog, not a pipeline limitation.
 
-### Fill status (all 93 trials, 39 fields each — 3627 sourced values)
+### Fill status (all 101 trials, 39 fields each — 3939 sourced values)
 
 Fields fully or near-fully filled across every trial (`ctgov_api` for the
 identity/population/design/endpoints/timing_ops/adverse_events core,
@@ -443,28 +483,28 @@ drug-level cross-source groups): `nct_id`, `trial_name`, `official_title`,
 `study_type`, `allocation`, `intervention_model`, `masking`,
 `number_of_arms`, `primary_endpoints`, `secondary_endpoints`,
 `start_date`, `primary_completion_date`, `completion_date`,
-`serious_adverse_event_rate`, `real_world_safety.faers_summary` (93/93),
-`exclusivity.regulatory_application` (93/93).
+`serious_adverse_event_rate`, `real_world_safety.faers_summary` (101/101),
+`exclusivity.regulatory_application` (101/101).
 
-Fields with real, checkable gaps (numerator = filled, out of 93 trials):
+Fields with real, checkable gaps (numerator = filled, out of 101 trials):
 
 | Field | Filled | Gap reason |
 |---|---|---|
-| `molecule.mechanism_of_action` | 62/93 | openFDA label lookup miss for a few trials |
-| `molecule.dosing_regimen` | 58/93 | no intervention-description text on file at CT.gov for those trials |
-| `population.severity_criteria` | 47/93 | extraction regex catches EASI/IGA/BSA (AD) and most PASI/sPGA (psoriasis) phrasing reliably; HiSCR/IHS4 (HS), SALT (AA), UAS7 (CSU), GPPGA/GPPASI (GPP), and most newer-indication trials' eligibility-criteria phrasing (including EB, EPP, Seb Derm, Acne Vulgaris, and the older Ustekinumab/Apremilast/Crisaborole/Brodalumab trials' eligibility text) not yet caught |
-| `design.background_therapy` | 17/93 | curated per-trial excerpts exist only for the original AD program |
-| `endpoints.multiplicity_control` | 16/93 | same — curated only for the original AD program |
-| `timing_ops.study_schedule` | 15/93 | full per-visit schedule lives only in multi-page PDF tables not reliably machine-extractable; curated cadence exists only for the original AD program |
-| `timing_ops.rescue_therapy` | 14/93 | curated only for the original AD program |
-| `adverse_events.death_rate` | 72/93 | some trials report zero deaths as a genuine null-count edge case in CT.gov's `resultsSection`, not a missing value |
-| `adverse_events.discontinuation_due_to_ae_rate` | 77/93 | CT.gov `resultsSection` gap for a few trials |
-| `adverse_events.most_common_adverse_events` | 84/93 | CT.gov `resultsSection` gap for a few trials |
-| `adverse_events.boxed_warning` | 91/93 | openFDA label lookup miss for 2 trials |
-| `exclusivity.orange_book` | 44/93 | only the NDA small-molecule drugs' trials get this field (BLA biologics use `purple_book` instead) |
-| `exclusivity.purple_book` | 49/93 | only the BLA biologic drugs' trials get this field (NDA small molecules use `orange_book` instead) |
+| `molecule.mechanism_of_action` | 62/101 | openFDA label lookup miss for a few trials |
+| `molecule.dosing_regimen` | 58/101 | no intervention-description text on file at CT.gov for those trials |
+| `population.severity_criteria` | 47/101 | extraction regex catches EASI/IGA/BSA (AD) and most PASI/sPGA (psoriasis) phrasing reliably; HiSCR/IHS4 (HS), SALT (AA), UAS7 (CSU), GPPGA/GPPASI (GPP), and most newer-indication trials' eligibility-criteria phrasing (including EB, EPP, Seb Derm, Acne Vulgaris, Onychomycosis, Rosacea, and the older Ustekinumab/Apremilast/Crisaborole/Brodalumab trials' eligibility text) not yet caught |
+| `design.background_therapy` | 17/101 | curated per-trial excerpts exist only for the original AD program |
+| `endpoints.multiplicity_control` | 16/101 | same — curated only for the original AD program |
+| `timing_ops.study_schedule` | 15/101 | full per-visit schedule lives only in multi-page PDF tables not reliably machine-extractable; curated cadence exists only for the original AD program |
+| `timing_ops.rescue_therapy` | 14/101 | curated only for the original AD program |
+| `adverse_events.death_rate` | 72/101 | some trials report zero deaths as a genuine null-count edge case in CT.gov's `resultsSection`, not a missing value |
+| `adverse_events.discontinuation_due_to_ae_rate` | 83/101 | CT.gov `resultsSection` gap for a few trials |
+| `adverse_events.most_common_adverse_events` | 88/101 | CT.gov `resultsSection` gap for a few trials |
+| `adverse_events.boxed_warning` | 99/101 | openFDA label lookup miss for 2 trials |
+| `exclusivity.orange_book` | 52/101 | only the NDA small-molecule drugs' trials get this field (BLA biologics use `purple_book` instead) |
+| `exclusivity.purple_book` | 49/101 | only the BLA biologic drugs' trials get this field (NDA small molecules use `orange_book` instead) |
 
-**3064 of 3627 sourced values are filled with real data (84.5%); 563
+**3296 of 3939 sourced values are filled with real data (83.7%); 643
 remain `needs_extraction`** — see `sources.csv` for the per-trial,
 per-field breakdown. Every non-`ctgov_api` fill was produced by
 LLM-assisted reading of a real, cited source (CT.gov free text, a
