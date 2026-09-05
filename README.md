@@ -13,7 +13,7 @@ way around.
 Real, live-pulled pivotal Phase III trials (adult / adult+adolescent,
 systemic therapy), from the [ClinicalTrials.gov API
 v2](https://clinicaltrials.gov/data-api/api) (`/api/v2/studies`, no API
-key required), across **21 indications, 45 unique drugs, 116 trials**
+key required), across **21 indications, 45 unique drugs, 120 trials**
 (all three counts recomputed from `data/trials/*.json` each cycle):
 
 ### Atopic Dermatitis (9 drugs, 25 trials)
@@ -30,7 +30,7 @@ key required), across **21 indications, 45 unique drugs, 116 trials**
 | Tapinarof (topical cream) | ADORING 1 (NCT05014568), ADORING 2 (NCT05032859) — FDA-approved (Vtama, NDA 215272) via a 2024-12-12 efficacy supplement, for ages 2 and older |
 | Crisaborole (topical ointment) | AD-301 (NCT02118792), AD-302 (NCT02118766) — FDA-approved (Eucrisa, NDA 207695) 2016-12-14, for ages 3 months and older |
 
-### Plaque Psoriasis (13 drugs, 32 trials)
+### Plaque Psoriasis (14 drugs, 36 trials)
 
 | Drug | Pivotal Phase III trials |
 |---|---|
@@ -47,6 +47,7 @@ key required), across **21 indications, 45 unique drugs, 116 trials**
 | Apremilast | ESTEEM 1 (NCT01194219), ESTEEM 2 (NCT01232283) — FDA-approved (Otezla, NDA 205437) 2014-03-21 |
 | Brodalumab | AMAGINE-1 (NCT01708590, n=661), AMAGINE-2 (NCT01708603, n=1831), AMAGINE-3 (NCT01708629, n=1881) — FDA-approved (Siliq, BLA 761032) 2017-02-15 |
 | Icotrokinra (oral, once daily) | Trial PSO-1 (NCT06143878, n=774), Trial PSO-2 (NCT06220604, n=731), Trial PSO-3 (NCT06095115, n=684), Trial PSO-4 (NCT06095102, n=311, scalp/genital/hands-feet subpopulation) — FDA-approved (Icotyde, NDA 220149, Janssen) 2026-03-17 |
+| Secukinumab | ERASURE / Trial PsO1 (NCT01365455, n=738), FIXTURE / Trial PsO2 (NCT01358578, n=1306, active-comparator arm vs. etanercept alongside placebo), FEATURE / Trial PsO3 (NCT01555125, n=177), JUNCTURE / Trial PsO4 (NCT01636687, n=182) — FDA-approved (Cosentyx, BLA 125504) 2015-01-21 |
 
 Excluded during curation (not pivotal registrational trials): NCT02203032
 "NAVIGATE" (guselkumab ustekinumab-inadequate-responder switch study),
@@ -89,6 +90,29 @@ Infliximab), but both predate CT.gov's 2007 mandatory-results-reporting
 rule and were individually confirmed to have **no** `resultsSection` at
 all — a genuine dead end for this atlas's `adverse_events` field group,
 not an oversight.
+
+Secukinumab (Cosentyx), added cycle 15 (2026-09-05), was already in this
+atlas for Hidradenitis Suppurativa but was missing its own, much
+better-known Plaque Psoriasis approval (2015, one of dermatology's
+original anti-IL-17 biologics) — a real 14-cycle gap, found the same way
+as the Ustekinumab/Apremilast gap: checking a well-known FDA-approved
+dermatology drug already present in the atlas for OTHER indications it
+might also cover, rather than only chasing brand-new approvals.
+COSENTYX's own FDA label section 14 names all 4 pivotal trials by
+CT.gov ID under the codes Trial PsO1-PsO4 ("Four multicenter, randomized,
+double-blind, placebo-controlled trials... enrolled 2,403 subjects"),
+matching this atlas's existing "label-cited trial is pivotal" precedent —
+FEATURE and JUNCTURE are smaller (n=177, n=182) device-usability studies
+(pre-filled syringe, then autoinjector) rather than the primary efficacy
+trials, but the label frames all 4 together as one 4-trial evidence base,
+so all 4 are included, matching the precedent already set for
+Icotrokinra's 4 label-cited trials. FIXTURE is a 3-arm design (secukinumab
+vs. etanercept vs. placebo) — a real active-comparator arm alongside a
+genuine placebo arm, not an active-comparator-only trial, so it still
+qualifies under this atlas's placebo-controlled bar. FAERS and Purple
+Book data were already staged for Secukinumab from its HS addition
+(cycle 3) and are drug-level, not trial-level, so they were reused
+verbatim for these 4 new trials rather than re-fetched.
 
 ### Hidradenitis Suppurativa (3 drugs, 6 trials)
 
@@ -631,7 +655,7 @@ gaps elsewhere in `design.background_therapy`,
 `timing_ops.study_schedule` for the newer indications are a real,
 un-worked backlog, not a pipeline limitation.
 
-### Fill status (all 116 trials, 39 fields each — 4524 sourced values)
+### Fill status (all 120 trials, 39 fields each — 4680 sourced values)
 
 Fields fully or near-fully filled across every trial (`ctgov_api` for the
 identity/population/design/endpoints/timing_ops/adverse_events core,
@@ -642,30 +666,30 @@ drug-level cross-source groups): `nct_id`, `trial_name`, `official_title`,
 `study_type`, `allocation`, `intervention_model`, `masking`,
 `number_of_arms`, `primary_endpoints`, `secondary_endpoints`,
 `start_date`, `primary_completion_date`, `completion_date`,
-`real_world_safety.faers_summary` (116/116),
-`exclusivity.regulatory_application` (116/116).
+`real_world_safety.faers_summary` (120/120),
+`exclusivity.regulatory_application` (120/120).
 
-Fields with real, checkable gaps (numerator = filled, out of 116 trials;
+Fields with real, checkable gaps (numerator = filled, out of 120 trials;
 every count below recomputed from `sources.csv` this cycle):
 
 | Field | Filled | Gap reason |
 |---|---|---|
-| `molecule.mechanism_of_action` | 62/116 | openFDA label lookup miss for a few trials |
-| `molecule.dosing_regimen` | 58/116 | no intervention-description text on file at CT.gov for those trials |
-| `population.severity_criteria` | 47/116 | extraction regex catches EASI/IGA/BSA (AD) and most PASI/sPGA (psoriasis) phrasing reliably; HiSCR/IHS4 (HS), SALT (AA), UAS7 (CSU), GPPGA/GPPASI (GPP), and most newer-indication trials' eligibility-criteria phrasing not yet caught |
-| `design.background_therapy` | 17/116 | curated per-trial excerpts exist only for the original AD program |
-| `endpoints.multiplicity_control` | 16/116 | same — curated only for the original AD program |
-| `timing_ops.study_schedule` | 15/116 | full per-visit schedule lives only in multi-page PDF tables not reliably machine-extractable; curated cadence exists only for the original AD program |
-| `timing_ops.rescue_therapy` | 14/116 | curated only for the original AD program |
-| `adverse_events.serious_adverse_event_rate` | 114/116 | CT.gov posts `eventGroups[]` without per-arm serious counts for 2 trials (a genuine gap in what was posted, not a computable zero) |
-| `adverse_events.death_rate` | 87/116 | some trials report zero deaths as a genuine null-count edge case in CT.gov's `resultsSection`, not a missing value |
-| `adverse_events.discontinuation_due_to_ae_rate` | 86/116 | CT.gov `resultsSection` gap for several trials whose `participantFlowModule` posts milestones only, no `dropWithdraws` section |
-| `adverse_events.most_common_adverse_events` | 103/116 | CT.gov `resultsSection` gap for a few trials |
-| `adverse_events.boxed_warning` | 114/116 | openFDA label lookup miss for 2 trials |
-| `exclusivity.orange_book` | 67/116 | only the NDA small-molecule drugs' trials get this field (BLA biologics use `purple_book` instead) |
-| `exclusivity.purple_book` | 49/116 | only the BLA biologic drugs' trials get this field (NDA small molecules use `orange_book` instead) |
+| `molecule.mechanism_of_action` | 62/120 | openFDA label lookup miss for a few trials |
+| `molecule.dosing_regimen` | 58/120 | no intervention-description text on file at CT.gov for those trials |
+| `population.severity_criteria` | 47/120 | extraction regex catches EASI/IGA/BSA (AD) and most PASI/sPGA (psoriasis) phrasing reliably; HiSCR/IHS4 (HS), SALT (AA), UAS7 (CSU), GPPGA/GPPASI (GPP), and most newer-indication trials' eligibility-criteria phrasing not yet caught |
+| `design.background_therapy` | 17/120 | curated per-trial excerpts exist only for the original AD program |
+| `endpoints.multiplicity_control` | 16/120 | same — curated only for the original AD program |
+| `timing_ops.study_schedule` | 15/120 | full per-visit schedule lives only in multi-page PDF tables not reliably machine-extractable; curated cadence exists only for the original AD program |
+| `timing_ops.rescue_therapy` | 14/120 | curated only for the original AD program |
+| `adverse_events.serious_adverse_event_rate` | 118/120 | CT.gov posts `eventGroups[]` without per-arm serious counts for 2 trials (a genuine gap in what was posted, not a computable zero) |
+| `adverse_events.death_rate` | 87/120 | some trials report zero deaths as a genuine null-count edge case in CT.gov's `resultsSection`, not a missing value |
+| `adverse_events.discontinuation_due_to_ae_rate` | 90/120 | CT.gov `resultsSection` gap for several trials whose `participantFlowModule` posts milestones only, no `dropWithdraws` section |
+| `adverse_events.most_common_adverse_events` | 107/120 | CT.gov `resultsSection` gap for a few trials |
+| `adverse_events.boxed_warning` | 118/120 | openFDA label lookup miss for 2 trials |
+| `exclusivity.orange_book` | 67/120 | only the NDA small-molecule drugs' trials get this field (BLA biologics use `purple_book` instead) |
+| `exclusivity.purple_book` | 53/120 | only the BLA biologic drugs' trials get this field (NDA small molecules use `orange_book` instead) |
 
-**3749 of 4524 sourced values are filled with real data (82.9%); 775
+**3869 of 4680 sourced values are filled with real data (82.7%); 811
 remain `needs_extraction`** — see `sources.csv` for the per-trial,
 per-field breakdown. Every non-`ctgov_api` fill was produced by
 LLM-assisted reading of a real, cited source (CT.gov free text, a
@@ -680,13 +704,13 @@ before it's treated as authoritative for publication.
 
 This repo holds only the pipeline's output — no code, no tests:
 
-- `data/trials/<NCT_ID>.json` — one file per trial (116 files), the
+- `data/trials/<NCT_ID>.json` — one file per trial (120 files), the
   sourced-value format described above (schema v2).
 - `trials.csv` — one row per trial, one column per field (the field's
   `value`, JSON-encoded when structured; `needs_extraction` fields blank).
 - `sources.csv` — one row per sourced value: `nct_id`, `field`,
   `source_type`, `source_url`, `source_excerpt`, `extracted_by`,
-  `reviewed_by`, `confidence`. 116 trials × 39 fields = 4524 rows.
+  `reviewed_by`, `confidence`. 120 trials × 39 fields = 4680 rows.
 - `endpoints.csv` — one row per outcome measure × criterion: `measure_type`,
   `scale`, `timepoints`, `analysis_population`, and the `ScoreCriterion`
   columns, so "EASI-75 responders at week 16" is a column filter.

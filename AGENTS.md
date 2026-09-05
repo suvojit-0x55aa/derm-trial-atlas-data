@@ -32,7 +32,7 @@ This file is the project's committed home for project-intrinsic agent memory: bu
   couldn't reliably extract. Don't force-fill it by inference — a wrong schedule is worse than a
   null.
 - **This atlas is an ongoing, multi-cycle scale-out effort, not a one-shot.** It started at 1
-  indication (AD, 5 drugs, 17 trials) and is now at 21 indications, 45 unique drugs, 116 trials
+  indication (AD, 5 drugs, 17 trials) and is now at 21 indications, 45 unique drugs, 120 trials
   (see README's "What this covers" for the full per-indication breakdown and exactly which
   candidate trials were checked and excluded as non-pivotal for each). Every drug/indication
   pairing was verified against real, live ClinicalTrials.gov and openFDA data before being
@@ -359,6 +359,46 @@ This file is the project's committed home for project-intrinsic agent memory: bu
   (PD-1-for-oncology approvals typically use single-arm response-rate designs without a placebo
   arm, the same bar that excluded the BCC hedgehog inhibitors) but are worth a look if revisiting
   Cemiplimab.
+- **Cycle 15 re-checked both cycle-14 re-check candidates via live CT.gov API: still
+  `hasResults: false` for both** — Zevaskyn/VIITAL (NCT04227106, `OverallStatus: COMPLETED`) and
+  Cemiplimab/C-POST (NCT03969004, `OverallStatus: ACTIVE_NOT_RECRUITING`), no change from cycle
+  14's finding, genuinely worth another periodic re-check rather than assuming a stale check.
+  Cemiplimab's older mCSCC/laBCC oncology indications were also checked this cycle: its original
+  pivotal trial EMPOWER-CSCC-1 (NCT02760498) is confirmed `NON_RANDOMIZED` (single-arm cohort
+  expansion, `hasResults: true`) — the same oncology-dose-ranging-without-placebo dead end as the
+  BCC hedgehog inhibitors, not a placebo-controlled design, so Cemiplimab's oncology indications
+  stay excluded on design grounds (not a `resultsSection` gap this time).
+- **A drug already in this atlas for one indication can have a second, older, much
+  better-known FDA approval for a DIFFERENT indication that was never checked** — a new failure
+  mode distinct from "drug missing entirely" (Ustekinumab/Apremilast) or "newer approval not yet
+  swept" (Icotrokinra). Secukinumab (Cosentyx) was already in the atlas for Hidradenitis
+  Suppurativa (added cycle 3) but its original, far more famous Plaque Psoriasis approval (2015,
+  ERASURE/FIXTURE/FEATURE/JUNCTURE, label-cited as Trials PsO1-4) sat unchecked through 14 cycles
+  because every prior openFDA sweep only tested drugs *entirely absent* from the atlas's drug
+  list, never re-checked an already-present drug's OTHER FDA-labeled indications. Worth a
+  dedicated pass next cycle: for every drug already in the atlas, check its FDA label's full
+  `indications_and_usage` list against which of *this atlas's own indications* it appears under —
+  a drug present for indication A but silently missing from indication B (despite an FDA
+  approval + real pivotal trials for B) is exactly this failure mode repeating. FIXTURE's 3-arm
+  design (secukinumab vs. etanercept vs. placebo) still qualifies under the placebo-controlled
+  bar despite carrying a real active-comparator arm too — an active comparator ALONGSIDE a
+  genuine placebo arm is fine; only an active-comparator-ONLY design (Pemphigus
+  Vulgaris/Rituximab, BCC hedgehog inhibitors) is disqualifying. Also reused a new pattern worth
+  keeping: FAERS/Purple Book/`regulatory_application` are drug-level, not trial-level, so when a
+  drug already has this data staged for one indication, copy it verbatim into new trials for that
+  same drug rather than re-querying openFDA — confirmed byte-identical source, saves 3 API calls
+  per new trial.
+- **Recovered pipeline note for future cycles: `atlas.migrate.migrate_trial()` (v1→v2) plus
+  `scripts/fetch_trials.py`'s `build_record()` and `scripts/fetch_adverse_events.py`'s per-field
+  builders (`build_sae_rate`, `build_death_rate`, `build_common_aes`,
+  `build_discontinuation_rate`, `build_boxed_warning`) together do the FULL structured-endpoint
+  and structured-AE build (`atlas.endpoints.parse_endpoint` handles PASI/IGA/EASI-style responder
+  criteria and timepoints automatically) — cycles 4-14 were hand-typing this shape from scratch
+  each time, more work than necessary.** The one-off per-cycle script pattern (`AGENTS.md`'s
+  existing scratch-checkout procedure) should build a v1-shape record via these two scripts' pure
+  functions, call `migrate_trial()` to get schema v2, THEN overlay `real_world_safety`/
+  `exclusivity` (freshly fetched or copied from an existing same-drug trial per the note above).
+  Validate with `atlas.schema.validate()` before writing.
 
 ## Maintaining this file
 
