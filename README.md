@@ -1,19 +1,21 @@
 # Open Derm Trial Atlas — Data (schema v2)
 
-Structured, sourced trial-design and safety data for atopic dermatitis (AD)
-drug trials. **This repo holds data only** — every JSON/CSV file below and
+Structured, sourced trial-design and safety data for dermatology drug
+trials. **This repo holds data only** — every JSON/CSV file below and
 nothing else. The fetch/extraction/build/migration pipeline that produces
 this data, the schema spec (`atlas/schema.py`), the portal UI
 (`superderma.ai/atlas`), and their tests all live in the separate
 `kolai-website` repo; this repo is regenerated from there, not the other
 way around.
 
-## What v1 covers
+## What this covers
 
 Real, live-pulled pivotal Phase III trials (adult / adult+adolescent,
-systemic therapy) for 5 drugs, from the [ClinicalTrials.gov API
+systemic therapy), from the [ClinicalTrials.gov API
 v2](https://clinicaltrials.gov/data-api/api) (`/api/v2/studies`, no API
-key required):
+key required), across **9 indications, 22 unique drugs, 63 trials**:
+
+### Atopic Dermatitis (6 drugs, 19 trials)
 
 | Drug | Pivotal Phase III trials |
 |---|---|
@@ -22,10 +24,121 @@ key required):
 | Tralokinumab | ECZTRA 1 (NCT03131648), ECZTRA 2 (NCT03160885), ECZTRA 3 (NCT03363854) |
 | Abrocitinib | JADE MONO-1 (NCT03349060), JADE MONO-2 (NCT03575871), JADE COMPARE (NCT03720470), JADE REGIMEN (NCT03627767) |
 | Upadacitinib | Measure Up 1 (NCT03569293), Measure Up 2 (NCT03607422), AD Up (NCT03568318) |
+| Nemolizumab | ARCADIA 1 (NCT03985943), ARCADIA 2 (NCT03989349) — FDA-approved for AD Jan 2025 |
 
-17 trials total. Every NCT ID above was pulled live from the API during
-this pass — none were guessed or reused from memory (see
-`data/trials/*.json` → `source_url` on every field for the exact API call).
+### Plaque Psoriasis (7 drugs, 17 trials)
+
+| Drug | Pivotal Phase III trials |
+|---|---|
+| Guselkumab | VOYAGE 1 (NCT02207231), VOYAGE 2 (NCT02207244) |
+| Risankizumab | UltIMMa-1 (NCT02684370), UltIMMa-2 (NCT02684357) |
+| Tildrakizumab | reSURFACE 1 (NCT01722331), reSURFACE 2 (NCT01729754) |
+| Bimekizumab | BE VIVID (NCT03370133), BE SURE (NCT03412747), BE RADIANT (NCT03536884) |
+| Deucravacitinib | POETYK-PSO-1 (NCT03624127), POETYK-PSO-2 (NCT03611751) |
+| Ixekizumab | UNCOVER-1 (NCT01474512), UNCOVER-2 (NCT01597245), UNCOVER-3 (NCT01646177) — FDA-approved 2016 |
+| Certolizumab | CIMPASI-1 (NCT02326298), CIMPASI-2 (NCT02326272), CIMPACT (NCT02346240) — FDA-approved 2018 |
+
+Excluded during curation (not pivotal registrational trials): NCT02203032
+"NAVIGATE" (guselkumab ustekinumab-inadequate-responder switch study),
+NCT03162796 "Discover-1" (guselkumab, but this trial is actually Psoriatic
+Arthritis — a different indication), NCT04102007 (single-arm open-label
+risankizumab post-switch study).
+
+### Hidradenitis Suppurativa (3 drugs, 6 trials)
+
+| Drug | Pivotal Phase III trials |
+|---|---|
+| Adalimumab | PIONEER I (NCT01468207), PIONEER II (NCT01468233) |
+| Secukinumab | SUNSHINE (NCT03713619), SUNRISE (NCT03713632) |
+| Bimekizumab | BE HEARD I (NCT04242446), BE HEARD II (NCT04242498) |
+
+### Alopecia Areata (3 drugs, 5 trials)
+
+| Drug | Pivotal Phase III trials |
+|---|---|
+| Baricitinib | BRAVE-AA1 (NCT03570749), BRAVE-AA2 (NCT03899259) |
+| Ritlecitinib | ALLEGRO-2b/3 (NCT03732807) |
+| Deuruxolitinib | THRIVE-AA1 (NCT04518995), THRIVE-AA2 (NCT04797650) — registered on CT.gov under the pre-approval compound code CTP-543 |
+
+### Chronic Spontaneous Urticaria (3 drugs, 6 trials)
+
+| Drug | Pivotal Phase III trials |
+|---|---|
+| Omalizumab | ASTERIA I (NCT01287117), ASTERIA II (NCT01292473), GLACIAL (NCT01264939) — acronyms per literature, CT.gov's own `acronym` field is empty for these 3 |
+| Dupilumab | LIBERTY-CSU CUPID (NCT04180488) — master protocol, 3 sub-studies; CSU is a real, separate FDA-approved indication for dupilumab (confirmed via the live openFDA label, section 1.7), distinct from the AD trials above |
+| Remibrutinib | REMIX-1 (NCT05030311), REMIX-2 (NCT05032157) — FDA-approved (Rhapsido, NDA 218436) 2025-09-30. Excluded as non-pivotal: NCT05048342 "BISCUIT" (Japan-only open-label regional bridging study, n=71), NCT06868212 "RECLAIM" (active-comparator vs. dupilumab, not yet complete) |
+
+### Prurigo Nodularis (2 drugs, 4 trials)
+
+| Drug | Pivotal Phase III trials |
+|---|---|
+| Dupilumab | PRIME (NCT04183335), PRIME2 (NCT04202679) — FDA-approved for PN Sept 2022 |
+| Nemolizumab | OLYMPIA 1 (NCT04501679), OLYMPIA 2 (NCT04501666) — FDA-approved for PN Aug 2024 |
+
+CT.gov maps these trials' condition to "Neurodermatitis" (a MeSH-adjacent
+synonym), not the literal string "Prurigo Nodularis" — confirmed as the
+correct indication via each trial's title and the sponsor's own registry
+page, not assumed from the condition field alone.
+
+### Vitiligo (1 drug, 2 trials)
+
+| Drug | Pivotal Phase III trials |
+|---|---|
+| Ruxolitinib (topical cream) | TRuE-V1 (NCT04052425), TRuE-V2 (NCT04057573) — FDA-approved (Opzelura) July 2022 |
+
+Thin (1 drug) but real: Opzelura cream is the only FDA-approved
+repigmentation therapy for vitiligo as of this pass. A separate,
+previously-investigated 3-drug **oral**-JAK systemic Phase III program
+(ritlecitinib "Tranquillo", upadacitinib "Viti-Up", povorcitinib
+"STOP-V1/V2") remains excluded: every trial in that program still has
+zero posted results — none can populate the `adverse_events` field group
+yet.
+
+Ruxolitinib the ingredient also covers Jakafi/Jakafi XR (oral tablets,
+NDA 202192/217180, oncology/GVHD use) under separate NDAs from Opzelura
+(NDA 215309, this atlas's drug) — `exclusivity.orange_book` is pinned to
+215309 specifically, but openFDA's FAERS `medicinalproduct` search field
+can't distinguish formulation/route, so `real_world_safety.faers_summary`
+for Ruxolitinib is a mix of Opzelura and Jakafi(XR) reports, not
+Opzelura-only — a real, documented limitation of FAERS's report-level
+data, not a pipeline bug.
+
+### Chronic Hand Eczema (1 drug, 3 trials)
+
+| Drug | Pivotal Phase III trials |
+|---|---|
+| Delgocitinib (topical cream) | DELTA 1 (NCT04871711), DELTA 2 (NCT04872101), DELTA TEEN (NCT05355818) — FDA-approved (Anzupgo, NDA 219155) 2025-07-23 |
+
+DELTA 1/2 are the twin global vehicle-controlled adult pivotal trials;
+DELTA TEEN extends the same registrational program to adolescents 12-17
+(vehicle-controlled, not an open-label extension). Excluded as non-pivotal:
+NCT05259722 "DELTA FORCE" (active-comparator vs. Toctino/alitretinoin, not
+placebo/vehicle-controlled), NCT04949841 (open-label extension of DELTA
+1/2), NCT06004050 (Phase III, no posted results yet).
+
+### Bullous Pemphigoid (1 drug, 1 trial)
+
+| Drug | Pivotal Phase III trials |
+|---|---|
+| Dupilumab | LIBERTY-BP (NCT04206553) — Phase 2/3 combined trial, n=106; BP is a real, separate FDA-approved indication for dupilumab (confirmed via the live openFDA label, section 1.8) |
+
+Thinnest indication in the atlas (1 drug, 1 trial), but real and verified —
+same precedent as Vitiligo's inclusion. A drug initially proposed as a
+candidate for this indication, rilzabrutinib (Wayrilz), does **not** hold
+up: it has zero CT.gov trials for Bullous Pemphigoid and its FDA label
+indications are Immune Thrombocytopenia only — a wrong lead, not a real BP
+drug. Also checked and excluded: efgartigimod (Vyvgart) has a completed BP
+Phase 2/3 trial (NCT05267600) but its FDA label indications are gMG and
+CIDP only, not BP.
+
+Every NCT ID above was pulled live from the API during curation — none
+were guessed or reused from memory (see `data/trials/*.json` →
+`source_url` on every field for the exact API call), and every drug/trial
+inclusion followed the same hand-curation discipline throughout: query by
+indication + intervention, then individually fetch and confirm each
+candidate is a real pivotal arm (not a comparator, switch study,
+active-comparator head-to-head, regional bridging study, or
+wrong-indication trial) before adding it.
 
 ## Data model
 
@@ -74,14 +187,14 @@ never a bare scalar:
 - `needs_extraction` — not available in any of the sources above after
   real effort (still only in full protocol tables/appendices, a paywalled
   paper genuinely unreachable, or not published at all). `value` is
-  `null` and stays `null` until human QA can fill it — v1 never guesses a
-  plausible-sounding clinical number.
+  `null` and stays `null` until human QA can fill it — this pipeline never
+  guesses a plausible-sounding clinical number.
 - `openfda_faers` — openFDA adverse-event API, drug-level real-world
   report summary (`real_world_safety.faers_summary`).
-- `orange_book` — FDA Orange Book data files, small-molecule NDAs only
-  (`exclusivity.orange_book`, and the `exclusivity.regulatory_application`
-  join key).
-- `purple_book` — FDA Purple Book monthly CSV, biologic BLAs only
+- `orange_book` — FDA Orange Book data (via openFDA's mirror),
+  small-molecule NDAs only (`exclusivity.orange_book`, and the
+  `exclusivity.regulatory_application` join key).
+- `purple_book` — FDA Purple Book live search table, biologic BLAs only
   (`exclusivity.purple_book`, and the join key for biologics).
 
 ### Schema v2: typed, atomic values
@@ -90,7 +203,13 @@ Every `value` is a typed structure that can be filtered and compared
 directly — no re-parsing prose at read time. The full field-by-field
 reference is `docs/SCHEMA.md` (human-readable) / `schema/trial.schema.json`
 (JSON Schema draft-07) — both are static snapshots generated from
-`atlas/schema.py` in `kolai-website`, which owns the spec now.
+`atlas/schema.py` in `kolai-website`, which owns the spec now. The schema
+is indication-agnostic: adding 8 more indications beyond the original AD
+set required zero schema changes — `severity_definition`/severity criteria
+and the endpoint-measure fields are free text sized for any indication's
+own severity/endpoint vocabulary (PASI/sPGA for psoriasis, HiSCR/IHS4 for
+HS, SALT for AA, UAS7 for CSU, IGA PN-S/Worst Itch NRS for PN, VASI for
+vitiligo, and so on).
 
 The one atomic building block is **`ScoreCriterion`** — a threshold on a
 named clinical scale (`{scale, metric, comparator, value, unit,
@@ -104,18 +223,22 @@ never the queryable value. `kolai-website`'s test suite proves the v1→v2
 migration is lossless (deterministic, byte-identical on re-run, every v1
 fact traceable in the v2 value, every gap preserved, nothing invented).
 
-New field groups, designed against the real source shapes so incoming data
-lands in typed fields:
+Cross-source field groups, now populated for every one of the 22 drugs in
+the atlas:
 
 - `real_world_safety.faers_summary` — openFDA FAERS report counts,
   seriousness breakdown, top MedDRA reaction terms, reports by year.
+  Report volume varies enormously with market exposure time (Adalimumab:
+  46,072 reports; Deuruxolitinib, approved 2025: 1 report) — a real
+  finding, not an error.
 - `exclusivity.regulatory_application` — the NDA/BLA number, the join key
   the other two need.
 - `exclusivity.orange_book` — products, patents (number, expiry, use code,
-  claims), exclusivity codes with dates; NDAs only.
+  claims), exclusivity codes with dates; NDAs only (9 small molecules).
 - `exclusivity.purple_book` — licensure, BPCIA reference-product /
   interchangeable / orphan exclusivity dates, biosimilars; BLAs only
-  (separate shape from Orange Book because BLA exclusivity rules differ).
+  (13 biologics; separate shape from Orange Book because BLA exclusivity
+  rules differ).
 
 **Every non-`ctgov_api` value here is machine/LLM-extracted, not
 hand-verified.** `reviewed_by` is `null` and `confidence` is `< 1.0` on all
@@ -123,132 +246,82 @@ of them — they still need the human clinical QA pass (captain + Garvita)
 called for in the project brief before being treated as authoritative for
 publication.
 
-**Paywalled full-text journal papers were explicitly in scope for this
-pass.** Each trial's primary results publication was identified (via
-CT.gov's own `referencesModule` where present, or PubMed search by trial
-acronym/author/journal otherwise, always confirmed against the live API —
-see `AGENTS.md` for the full PMID/DOI list) and a direct fetch was
-attempted for every one. Every publisher/repository host tried — NEJM,
-Wiley, JAMA Network, JAAD/Elsevier, and a university repository mirror —
-sits behind a Cloudflare bot-challenge, one of which escalates to an
-interactive "Verify you are human" Turnstile CAPTCHA; this pipeline does
-not solve that (defeating an anti-bot check to scrape paywalled content is
-out of bounds regardless of the paywall). Two other routes did work:
+**Paywalled full-text journal papers were explicitly in scope for the
+original 5-drug AD pass.** Each of those trials' primary results
+publication was identified (via CT.gov's own `referencesModule` where
+present, or PubMed search by trial acronym/author/journal otherwise,
+always confirmed against the live API) and a direct fetch was attempted
+for every one. Every publisher/repository host tried — NEJM, Wiley, JAMA
+Network, JAAD/Elsevier, and a university repository mirror — sits behind a
+Cloudflare bot-challenge, one of which escalates to an interactive "Verify
+you are human" Turnstile CAPTCHA; this pipeline does not solve that
+(defeating an anti-bot check to scrape paywalled content is out of bounds
+regardless of the paywall). Two other routes did work: **PMC** (free full
+text for 4 of the 13 unique primary-publication PMIDs, via NCBI's
+`elink`/`efetch` — not Cloudflare-protected) and **FDA Drugs@FDA
+approval-package reviews** (accessdata.fda.gov, also not
+Cloudflare-protected, often more granular on protocol detail than the
+paper itself). The 8 indications added after that pass did not repeat this
+same paywalled-paper research effort — their `publication_extraction`
+fills remain confined to the original 17 AD trials; `needs_extraction`
+gaps elsewhere in `design.background_therapy`,
+`endpoints.multiplicity_control`, `timing_ops.rescue_therapy`, and
+`timing_ops.study_schedule` for the newer indications are a real,
+un-worked backlog, not a pipeline limitation.
 
-1. **PMC** had free full text for 4 of the 13 unique primary-publication
-   PMIDs (checked via NCBI's `elink` `pubmed_pmc` linkage, then fetched
-   with `efetch` — NCBI's own API is not behind Cloudflare). Fetched and
-   mined for ECZTRA-1/2, ECZTRA-3, JADE MONO-2, and ADhere.
-2. **FDA Drugs@FDA approval-package reviews** (accessdata.fda.gov, also
-   not Cloudflare-protected) turned out to carry *more* granular
-   protocol detail than the journal papers would have — exact visit
-   schedules, rescue-therapy algorithms, background-therapy regimens, and
-   endpoint testing hierarchies, organized in clearly labeled per-trial
-   sections. This filled the majority of the remaining gaps across all 5
-   drugs (the full per-trial breakdown and exact citations live in the
-   pipeline's `enrich_publications.py`, in `kolai-website`).
+### Fill status (all 63 trials, 39 fields each — 2457 sourced values)
 
-**Unpaywall** (checked for all 13 PMIDs via DOI) reported a legal
-open-access location for 10 of them — but "legal OA" doesn't mean
-"programmatically fetchable": every one of those 10 locations is on a
-Cloudflare-protected host too, so Unpaywall's coverage didn't add
-anything PMC/FDA hadn't already provided.
+Fields fully or near-fully filled across every trial (`ctgov_api` for the
+identity/population/design/endpoints/timing_ops/adverse_events core,
+`openfda_label`/`openfda_faers`/`orange_book`/`purple_book` for the
+drug-level cross-source groups): `nct_id`, `trial_name`, `official_title`,
+`sponsor`, `phase`, `drug`, `intervention_names`, `intervention_type`,
+`condition`, `min_age_years`, `max_age_years`, `sex`, `enrollment_count`,
+`study_type`, `allocation`, `intervention_model`, `masking`,
+`number_of_arms`, `primary_endpoints`, `secondary_endpoints`,
+`start_date`, `primary_completion_date`, `completion_date`,
+`serious_adverse_event_rate`, `real_world_safety.faers_summary` (63/63),
+`exclusivity.regulatory_application` (63/63).
 
-This closed most of the gap (46 → 10 `needs_extraction` fields
-remaining). What's still genuinely unreachable, and why:
+Fields with real, checkable gaps (numerator = filled, out of 63 trials):
 
-- **CAFE (NCT02755649), all 6 remaining fields**: no PMC entry for its
-  paper, no Unpaywall OA location, and it falls in the gap between the
-  original 2017 Dupixent FDA approval package (predates CAFE, which
-  completed 2017-03-31) and the next FDA supplement checked (2018-10-19,
-  doesn't mention CAFE or cyclosporine either).
-- **JADE MONO-1 and JADE COMPARE `rescue_therapy_rules`**: the abrocitinib
-  FDA review discusses these trials' rescue medication only in terms of
-  its *statistical handling*, never states the protocol-level rescue
-  algorithm — unlike JADE MONO-2, whose own PMC paper has an explicit
-  "rescue medication was prohibited" eligibility-criteria quote.
-- **JADE REGIMEN `background_therapy_rule` and `visit_schedule`**: a
-  randomized-withdrawal design (open-label run-in, then randomized
-  withdrawal to rescue) structurally unlike the other trials; it was
-  still "ONGOING" at the FDA review's cutoff, covered only in a one-line
-  summary table with no detailed design section to extract from.
-- **Dupilumab `dosing_regimen`** (CAFE): no intervention-description text
-  on file at CT.gov for this trial specifically.
-- `visit_schedule` note: where filled, this is the trial's visit
-  *cadence* (screening/baseline/weekly-or-per-protocol visits through a
-  named endpoint, sometimes an itemized list of visit weeks when the
-  source gave one) — not a full per-visit lab/assessment table, which
-  still isn't reliably machine-extractable from these sources.
+| Field | Filled | Gap reason |
+|---|---|---|
+| `molecule.mechanism_of_action` | 61/63 | openFDA label lookup miss for 2 trials |
+| `molecule.dosing_regimen` | 57/63 | no intervention-description text on file at CT.gov for those trials |
+| `population.severity_criteria` | 47/63 | extraction regex catches EASI/IGA/BSA (AD) and most PASI/sPGA (psoriasis) phrasing reliably; HiSCR/IHS4 (HS), SALT (AA), UAS7 (CSU), and some newer trials' eligibility-criteria phrasing not yet caught |
+| `design.background_therapy` | 17/63 | curated per-trial excerpts exist only for the original AD program |
+| `endpoints.multiplicity_control` | 16/63 | same — curated only for the original AD program |
+| `timing_ops.study_schedule` | 15/63 | full per-visit schedule lives only in multi-page PDF tables not reliably machine-extractable; curated cadence exists only for the original AD program |
+| `timing_ops.rescue_therapy` | 14/63 | curated only for the original AD program |
+| `adverse_events.death_rate` | 53/63 | some trials report zero deaths as a genuine null-count edge case in CT.gov's `resultsSection`, not a missing value |
+| `adverse_events.discontinuation_due_to_ae_rate` | 60/63 | CT.gov `resultsSection` gap for a few trials |
+| `adverse_events.most_common_adverse_events` | 62/63 | CT.gov `resultsSection` gap for 1 trial |
+| `exclusivity.orange_book` | 21/63 | only the 9 NDA small-molecule drugs' trials get this field (BLA biologics use `purple_book` instead) |
+| `exclusivity.purple_book` | 42/63 | only the 13 BLA biologic drugs' trials get this field (NDA small molecules use `orange_book` instead) |
 
-### Field groups (schema v2 names; see `docs/SCHEMA.md` for the full reference)
-
-| Group | Field | v1 status | Source |
-|---|---|---|---|
-| identity | `nct_id` | ✅ filled | `ctgov_api` |
-| identity | `trial_name` (acronym) | ✅ filled | `ctgov_api` |
-| identity | `official_title` | ✅ filled | `ctgov_api` |
-| identity | `sponsor` | ✅ filled | `ctgov_api` |
-| identity | `phase` | ✅ filled | `ctgov_api` |
-| molecule | `drug` | ✅ filled | `ctgov_api` (intervention name, curated to canonical drug) |
-| molecule | `intervention_names` | ✅ filled | `ctgov_api` |
-| molecule | `intervention_type` | ✅ filled | `ctgov_api` |
-| molecule | `mechanism_of_action` | ✅ filled (17/17) | `openfda_label` — typed from the drug-level FDA label text (kept in `source_excerpt`) |
-| molecule | `dosing_regimen` | ✅ filled (16/17) | `ctgov_text_extraction` — intervention description; null only where CT.gov has no description text on file (Dupilumab CAFE) |
-| population | `condition` | ✅ filled | `ctgov_api` |
-| population | `min_age_years` | ✅ filled | `ctgov_api` |
-| population | `max_age_years` | ✅ filled | `ctgov_api` |
-| population | `sex` | ✅ filled | `ctgov_api` |
-| population | `enrollment_count` | ✅ filled | `ctgov_api` |
-| population | `severity_criteria` (EASI/IGA/BSA thresholds as `ScoreCriterion` rows) | ✅ filled (17/17) | `ctgov_text_extraction` (16) direct; `publication_extraction` (1) — CHRONOS, by an FDA-review cross-reference to SOLO 1/2's identical criteria |
-| design | `study_type` | ✅ filled | `ctgov_api` |
-| design | `allocation` | ✅ filled | `ctgov_api` |
-| design | `intervention_model` | ✅ filled | `ctgov_api` |
-| design | `masking` | ✅ filled | `ctgov_api` |
-| design | `number_of_arms` | ✅ filled | `ctgov_api` |
-| design | `background_therapy` | ✅ filled (15/17) | `ctgov_text_extraction`/`protocol_pdf_extraction`/`publication_extraction` — combination-TCS trials have a regimen, monotherapy trials confirmed "none" from FDA-review/paper text; needs_extraction only for CAFE and JADE REGIMEN |
-| endpoints | `primary_endpoints` | ✅ filled | `ctgov_api` |
-| endpoints | `secondary_endpoints` | ✅ filled | `ctgov_api` |
-| endpoints | `multiplicity_control` | ✅ filled (16/17) | `protocol_pdf_extraction` (13) / `publication_extraction` (3, SOLO 1/2/CHRONOS via FDA review); needs_extraction only for CAFE |
-| timing_ops | `start_date` | ✅ filled | `ctgov_api` |
-| timing_ops | `primary_completion_date` | ✅ filled | `ctgov_api` |
-| timing_ops | `completion_date` | ✅ filled | `ctgov_api` |
-| timing_ops | `study_schedule` | ✅ filled (15/17) | `publication_extraction` — visit cadence/key timepoints from FDA reviews or PMC papers (see note above on granularity); needs_extraction only for CAFE and JADE REGIMEN |
-| timing_ops | `rescue_therapy` | ✅ filled (14/17) | `protocol_pdf_extraction` (10) / `publication_extraction` (4); needs_extraction for CAFE, JADE MONO-1, JADE COMPARE |
-| adverse_events | `serious_adverse_event_rate` | ✅ filled (17/17) | `ctgov_api` — per-arm % from `resultsSection.adverseEventsModule.eventGroups[]` |
-| adverse_events | `death_rate` | ✅ filled (17/17) | `ctgov_api` — per-arm % from the same `eventGroups[]` |
-| adverse_events | `most_common_adverse_events` | ✅ filled (17/17) | `ctgov_api` — top non-serious AEs by incidence from `adverseEventsModule.otherEvents[]` (CT.gov's own ≥5% frequency-threshold table) |
-| adverse_events | `discontinuation_due_to_ae_rate` | ✅ filled (16/17) | `ctgov_api` (13) direct; `publication_extraction` (3, the 3 Tralokinumab ECZTRA trials, from their PMC papers' AE tables); needs_extraction only for CAFE |
-| adverse_events | `boxed_warning` | ✅ filled (17/17) | `openfda_label` — drug-level; `present: false` for Dupilumab/Tralokinumab/Lebrikizumab means confirmed no boxed warning, not a gap |
-| real_world_safety | `faers_summary` | ⬜ needs_extraction (17/17) | `openfda_faers` — structured home ready; populated by the scale-out pass |
-| exclusivity | `regulatory_application` | ✅ filled (17/17) | `orange_book` (Abrocitinib, Upadacitinib NDAs) / `purple_book` (Dupilumab, Lebrikizumab, Tralokinumab BLAs) — the NDA/BLA join key |
-| exclusivity | `orange_book` | ⬜ needs_extraction (17/17) | `orange_book` — structured home ready; populated by the scale-out pass |
-| exclusivity | `purple_book` | ⬜ needs_extraction (17/17) | `purple_book` — structured home ready; populated by the scale-out pass |
-
-**595 v1 sourced values (17 trials × 35 fields), all carried into v2 (663 =
-17 × 39 with the 4 new fields). 585 are filled with real data (455
-`ctgov_api`, 36 `ctgov_text_extraction`, 24 `protocol_pdf_extraction`, 36
-`publication_extraction`, 34 `openfda_label`); 10 remain `needs_extraction`,
-all on CAFE (6), JADE MONO-1 (1), JADE COMPARE (1), and JADE REGIMEN (2) —
-see the list above for exactly why each one is unreachable.** Every
-non-`ctgov_api` fill was produced by LLM-assisted reading of a real, cited
-source (CT.gov free text, a downloaded protocol/SAP PDF, CT.gov's
-structured results tables, a PMC full-text paper, an FDA approval-package
-review, or the openFDA label) — `kolai-website`'s pipeline records exactly
-which excerpt backs which field — and every one is `reviewed_by: null`
-pending the human clinical QA pass (captain + Garvita) before it's treated
-as authoritative for publication.
+**2166 of 2457 sourced values are filled with real data (88.2%); 291
+remain `needs_extraction`** — see `sources.csv` for the per-trial,
+per-field breakdown. Every non-`ctgov_api` fill was produced by
+LLM-assisted reading of a real, cited source (CT.gov free text, a
+downloaded protocol/SAP PDF, CT.gov's structured results tables, a PMC
+full-text paper, an FDA approval-package review, the openFDA label, or a
+live openFDA/FDA registry query) — `kolai-website`'s pipeline records
+exactly which excerpt backs which field — and every one is
+`reviewed_by: null` pending the human clinical QA pass (captain + Garvita)
+before it's treated as authoritative for publication.
 
 ## The files in this repo
 
 This repo holds only the pipeline's output — no code, no tests:
 
-- `data/trials/<NCT_ID>.json` — one file per trial, the sourced-value
-  format described above (schema v2).
+- `data/trials/<NCT_ID>.json` — one file per trial (63 files), the
+  sourced-value format described above (schema v2).
 - `trials.csv` — one row per trial, one column per field (the field's
   `value`, JSON-encoded when structured; `needs_extraction` fields blank).
 - `sources.csv` — one row per sourced value: `nct_id`, `field`,
   `source_type`, `source_url`, `source_excerpt`, `extracted_by`,
-  `reviewed_by`, `confidence`. 17 trials × 39 fields = 663 rows.
+  `reviewed_by`, `confidence`. 63 trials × 39 fields = 2457 rows.
 - `endpoints.csv` — one row per outcome measure × criterion: `measure_type`,
   `scale`, `timepoints`, `analysis_population`, and the `ScoreCriterion`
   columns, so "EASI-75 responders at week 16" is a column filter.
@@ -262,14 +335,20 @@ To regenerate or extend this data (fetch, extraction, migration, and build
 scripts, the schema spec, and their test suite) see `kolai-website`, which
 owns the pipeline this data is exported from.
 
-## Out of scope for v1
+## Out of scope for this pass
 
 - The human QA pass on top of the LLM-assisted extraction (captain +
   Garvita review of every non-`ctgov_api` value).
-- The 10 fields that remain `needs_extraction` after real extraction
-  effort across CT.gov, protocol/SAP PDFs, PMC, Unpaywall, and FDA
-  approval-package reviews (see the fill-status table and the notes
-  above it) — genuinely not available from a machine-readable,
-  non-CAPTCHA-gated source in this environment.
+- The 291 fields that remain `needs_extraction` (see the fill-status table
+  above) — a mix of genuinely unreachable sources (paywalled papers behind
+  Cloudflare, PDF tables that don't extract reliably) and real, un-worked
+  backlog (the curated per-trial prose tables — background therapy,
+  multiplicity control, rescue therapy, visit schedule — built only for
+  the original AD program, not yet extended to the 8 indications added
+  since).
+- Further indication candidates not yet live-verified (this is explicitly
+  an ongoing effort, not a one-shot; each addition to date was checked
+  against real ClinicalTrials.gov and openFDA data before being added, not
+  assumed).
 - AACT bulk-seeding (a possible future bulk source, not integrated here).
 - Any change to the atlas portal UI or the `kolai-website` repo.

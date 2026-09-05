@@ -1,0 +1,1866 @@
+{
+  "schema_version": 2,
+  "nct_id": {
+    "value": "NCT04202679",
+    "source_type": "ctgov_api",
+    "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04202679",
+    "source_excerpt": "protocolSection.identificationModule.nctId",
+    "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+    "reviewed_by": null,
+    "confidence": 1.0
+  },
+  "identity": {
+    "trial_name": {
+      "value": null,
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04202679",
+      "source_excerpt": "protocolSection.identificationModule.acronym",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 0.0
+    },
+    "official_title": {
+      "value": "A Randomized, Double Blind, Placebo-controlled, Multi-center, Parallel Group Study to Evaluate the Efficacy and Safety of Dupilumab in Patients With Prurigo Nodularis Who Are Inadequately Controlled on Topical Prescription Therapies or When Those Therapies Are Not Advisable",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04202679",
+      "source_excerpt": "protocolSection.identificationModule.officialTitle",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "sponsor": {
+      "value": "Sanofi",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04202679",
+      "source_excerpt": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "phase": {
+      "value": [
+        "PHASE3"
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04202679",
+      "source_excerpt": "protocolSection.designModule.phases",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    }
+  },
+  "molecule": {
+    "drug": {
+      "value": "Dupilumab",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04202679",
+      "source_excerpt": "protocolSection.armsInterventionsModule.interventions[].name (curated)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "intervention_names": {
+      "value": [
+        "Dupilumab SAR231893",
+        "Placebo",
+        "Moisturizers",
+        "Low to medium potent topical corticosteroids",
+        "Topical calcineurin inhibitors"
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04202679",
+      "source_excerpt": "protocolSection.armsInterventionsModule.interventions[].name",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "intervention_type": {
+      "value": [
+        "DRUG"
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04202679",
+      "source_excerpt": "protocolSection.armsInterventionsModule.interventions[].type",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "mechanism_of_action": {
+      "value": {
+        "modality": "monoclonal_antibody",
+        "drug_class": "IL-4Rα antagonist",
+        "antibody_isotype": "IgG4",
+        "binding_targets": [
+          "IL-4Rα"
+        ],
+        "pathway_cytokines": [
+          "IL-13",
+          "IL-4",
+          "IgE"
+        ],
+        "receptor_subunits": [
+          "IL-4Rα"
+        ],
+        "kinases_inhibited": [],
+        "lower_potency_kinases": [],
+        "selectivity": [],
+        "reversible": null,
+        "mechanism_established": false,
+        "label_section": "12.1"
+      },
+      "source_type": "openfda_label",
+      "source_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=06b9c64b-52b1-490b-b118-bd079e69264e",
+      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1) -- v1 extracted text: 12.1 Mechanism of Action Dupilumab is a human monoclonal IgG4 antibody that inhibits interleukin-4 (IL-4) and interleukin-13 (IL-13) signaling by specifically binding to the IL-4Rα subunit shared by the IL-4 and IL-13 receptor complexes. Dupilumab inhibits IL-4 signaling via the Type I receptor and both IL-4 and IL-13 signaling through the Type II receptor. Inflammation driven by IL-4 and IL-13 is an important component in the pathogenesis of asthma, AD, CRSwNP, EoE, PN, COPD, CSU, BP, and AFRS. Multiple cell types that express IL-4Rα (e.g., mast cells, basophils, eosinophils, macrophages, lymphocytes, epithelial cells, goblet cells) and inflammatory mediators (e.g., histamine, eicosanoids, leukotrienes, cytokines, chemokines) are involved in inflammation. Blocking IL-4Rα with dupilumab inhibits IL-4 and IL-13 cytokine-induced inflammatory responses, including the release of proinflammatory cytokines, chemokines, nitric oxide, and IgE. The mechanism of dupilumab action has not been definitively established.",
+      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 0.9
+    },
+    "dosing_regimen": {
+      "value": [
+        {
+          "intervention_name": "Dupilumab SAR231893",
+          "description": "Pharmaceutical form:Injection solution Route of administration: Subcutaneous",
+          "is_placebo": false,
+          "route": "subcutaneous",
+          "dose_form": "injection",
+          "dose_value": null,
+          "dose_unit": null,
+          "units_per_dose": null,
+          "frequency": null,
+          "duration_weeks": null,
+          "dosing_periods": [],
+          "administration_sites": [],
+          "antibody_isotype": null,
+          "molecular_target": null,
+          "arm_names": [],
+          "co_administered_with": []
+        }
+      ],
+      "source_type": "ctgov_text_extraction",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04202679",
+      "source_excerpt": "Dupilumab SAR231893: Pharmaceutical form:Injection solution Route of administration: Subcutaneous",
+      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 0.8
+    }
+  },
+  "population": {
+    "condition": {
+      "value": [
+        "Neurodermatitis"
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04202679",
+      "source_excerpt": "protocolSection.conditionsModule.conditions",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "min_age_years": {
+      "value": 18,
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04202679",
+      "source_excerpt": "protocolSection.eligibilityModule.minimumAge",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "max_age_years": {
+      "value": 80,
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04202679",
+      "source_excerpt": "protocolSection.eligibilityModule.maximumAge",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "sex": {
+      "value": "ALL",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04202679",
+      "source_excerpt": "protocolSection.eligibilityModule.sex",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "enrollment_count": {
+      "value": 160,
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04202679",
+      "source_excerpt": "protocolSection.designModule.enrollmentInfo.count",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "severity_criteria": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    }
+  },
+  "design": {
+    "study_type": {
+      "value": "INTERVENTIONAL",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04202679",
+      "source_excerpt": "protocolSection.designModule.studyType",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "allocation": {
+      "value": "RANDOMIZED",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04202679",
+      "source_excerpt": "protocolSection.designModule.designInfo.allocation",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "intervention_model": {
+      "value": "PARALLEL",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04202679",
+      "source_excerpt": "protocolSection.designModule.designInfo.interventionModel",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "masking": {
+      "value": "QUADRUPLE",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04202679",
+      "source_excerpt": "protocolSection.designModule.designInfo.maskingInfo.masking",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "number_of_arms": {
+      "value": 2,
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04202679",
+      "source_excerpt": "len(protocolSection.armsInterventionsModule.armGroups)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "background_therapy": {
+      "value": {
+        "regimen_type": "standardized_background_topical",
+        "background_agent_class": "topical",
+        "tcs_regimen": null,
+        "step_down_rule": null,
+        "recommended_agents": [],
+        "emollient_required": null,
+        "emollient_frequency": null,
+        "prohibited_concomitant": [],
+        "permitted_concomitant": [
+          "Moisturizers",
+          "Low to medium potent topical corticosteroids",
+          "Topical calcineurin inhibitors"
+        ],
+        "applies_to_rerandomized_maintenance": null,
+        "sponsor_trial_ids": [],
+        "study_drug_doses_mg": [],
+        "population_note": null
+      },
+      "source_type": "ctgov_text_extraction",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04202679",
+      "source_excerpt": "Low to medium potent topical corticosteroids: Pharmaceutical form:\n\nRoute of administration: Topical",
+      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 0.65
+    }
+  },
+  "endpoints": {
+    "primary_endpoints": {
+      "value": [
+        {
+          "verbatim": "Percentage of Participants With Greater Than or Equal to (>=) 4 Points Improvement (Reduction) From Baseline in Worst-Itch Numeric Rating Scale (WI-NRS) Scores at Week 12 (Time frame: Baseline, Week 12)",
+          "rank": "primary",
+          "position": 1,
+          "measure_type": "responder_rate",
+          "scale": "Pruritus NRS",
+          "scale_component": null,
+          "scale_variant": "worst_daily",
+          "responder_criteria": [
+            {
+              "scale": "Pruritus NRS",
+              "scale_component": null,
+              "scale_variant": "worst_daily",
+              "metric": "point_reduction_from_baseline",
+              "comparator": ">=",
+              "value": 4,
+              "unit": "points",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": "Baseline, Week 12"
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04202679",
+      "source_excerpt": "protocolSection.outcomesModule.primaryOutcomes[0].measure/timeFrame",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "secondary_endpoints": {
+      "value": [
+        {
+          "verbatim": "Percentage of Participants With >=4 Points Improvement (Reduction) From Baseline in WI-NRS Scores at Week 24",
+          "rank": "secondary",
+          "position": 1,
+          "measure_type": "responder_rate",
+          "scale": "Pruritus NRS",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [
+            {
+              "scale": "Pruritus NRS",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "point_reduction_from_baseline",
+              "comparator": ">=",
+              "value": 4,
+              "unit": "points",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants With Investigator's Global Assessment For Prurigo Nodularis-Stage (IGA PN-S) Scores of 0 or 1 at Week 24",
+          "rank": "secondary",
+          "position": 2,
+          "measure_type": "responder_rate",
+          "scale": "IGA",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [
+            {
+              "scale": "IGA",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "absolute_score",
+              "comparator": "in",
+              "value": [
+                0,
+                1
+              ],
+              "unit": "score",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants With Both an Improvement (Reduction) in WI-NRS by >=4 Points and an IGA PN-S Score of 0 or 1 From Baseline at Week 24",
+          "rank": "secondary",
+          "position": 3,
+          "measure_type": "responder_rate",
+          "scale": "Pruritus NRS",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [
+            {
+              "scale": "Pruritus NRS",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "absolute_score",
+              "comparator": "in",
+              "value": [
+                0,
+                1
+              ],
+              "unit": "score",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants With IGA PN-S Scores of 0 or 1 at Week 12",
+          "rank": "secondary",
+          "position": 4,
+          "measure_type": "responder_rate",
+          "scale": "IGA",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [
+            {
+              "scale": "IGA",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "absolute_score",
+              "comparator": "in",
+              "value": [
+                0,
+                1
+              ],
+              "unit": "score",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percent Change From Baseline in WI-NRS Scores at Week 24",
+          "rank": "secondary",
+          "position": 5,
+          "measure_type": "percent_change_from_baseline",
+          "scale": "Pruritus NRS",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Change From Baseline in Health-related Quality of Life (HRQoL) as Measured by Dermatology Life Quality Index (DLQI) at Week 24",
+          "rank": "secondary",
+          "position": 6,
+          "measure_type": "change_from_baseline",
+          "scale": "DLQI",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Change From Baseline in Skin Pain-NRS at Week 24",
+          "rank": "secondary",
+          "position": 7,
+          "measure_type": "change_from_baseline",
+          "scale": "Pruritus NRS",
+          "scale_component": "Skin Pain",
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Change From Baseline in Sleep-NRS at Week 24",
+          "rank": "secondary",
+          "position": 8,
+          "measure_type": "change_from_baseline",
+          "scale": "Pruritus NRS",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Change From Baseline in Hospital Anxiety and Depression Scale (HADS) Total Score at Week 24",
+          "rank": "secondary",
+          "position": 9,
+          "measure_type": "change_from_baseline",
+          "scale": "HADS",
+          "scale_component": "Total",
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Probability of Participants With an Improvement (Reduction) in WI-NRS by >=4 From Baseline at Week 24",
+          "rank": "secondary",
+          "position": 10,
+          "measure_type": "absolute_value",
+          "scale": "Pruritus NRS",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Change From Baseline in WI-NRS Scores at Weeks 12 and 24",
+          "rank": "secondary",
+          "position": 11,
+          "measure_type": "change_from_baseline",
+          "scale": "Pruritus NRS",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percent Change From Baseline in WI-NRS Scores at Weeks 2, 4 and 12",
+          "rank": "secondary",
+          "position": 12,
+          "measure_type": "percent_change_from_baseline",
+          "scale": "Pruritus NRS",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 2,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 4,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percent Change From Baseline in WI-NRS Scores at Weeks 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, and 24",
+          "rank": "secondary",
+          "position": 13,
+          "measure_type": "percent_change_from_baseline",
+          "scale": "Pruritus NRS",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 1,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 2,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 3,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 4,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 5,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 6,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 7,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 8,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 9,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 10,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 11,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 13,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 14,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 15,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 17,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 18,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 19,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 20,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 21,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 22,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 23,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants With Improvement (Reduction) in WI-NRS >=4 Points From Baseline at Week 4",
+          "rank": "secondary",
+          "position": 14,
+          "measure_type": "responder_rate",
+          "scale": "Pruritus NRS",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [
+            {
+              "scale": "Pruritus NRS",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "point_reduction_from_baseline",
+              "comparator": ">=",
+              "value": 4,
+              "unit": "points",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 4,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants Achieving >=4 Points Improvement (Reduction) From Baseline in WI-NRS Scores at Weeks 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, and 24",
+          "rank": "secondary",
+          "position": 15,
+          "measure_type": "responder_rate",
+          "scale": "Pruritus NRS",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [
+            {
+              "scale": "Pruritus NRS",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "point_reduction_from_baseline",
+              "comparator": ">=",
+              "value": 4,
+              "unit": "points",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 1,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 2,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 3,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 4,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 5,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 6,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 7,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 8,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 9,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 10,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 11,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 13,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 14,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 15,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 17,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 18,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 19,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 20,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 21,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 22,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 23,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Onset of Action Based on Change From Baseline in WI-NRS at Week 4",
+          "rank": "secondary",
+          "position": 16,
+          "measure_type": "absolute_value",
+          "scale": "Pruritus NRS",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 4,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants With Investigator's Global Assessment for PN-Stage (IGA PN-S) Score of 0 or 1 at Weeks 4 and 8",
+          "rank": "secondary",
+          "position": 17,
+          "measure_type": "responder_rate",
+          "scale": "IGA",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [
+            {
+              "scale": "IGA",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "absolute_score",
+              "comparator": "in",
+              "value": [
+                0,
+                1
+              ],
+              "unit": "score",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 4,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 8,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Change From Baseline in IGA PN-S Scores at Weeks 4, 8, 12, and 24",
+          "rank": "secondary",
+          "position": 18,
+          "measure_type": "change_from_baseline",
+          "scale": "IGA",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 4,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 8,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants With Investigator's Global Assessment for PN-Activity (IGA PN-A) Score of 0 or 1 at Weeks 4, 8, 12 and 24",
+          "rank": "secondary",
+          "position": 19,
+          "measure_type": "responder_rate",
+          "scale": "IGA",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [
+            {
+              "scale": "IGA",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "absolute_score",
+              "comparator": "in",
+              "value": [
+                0,
+                1
+              ],
+              "unit": "score",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 4,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 8,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Change From Baseline in HRQoL, as Measured by DLQI at Week 12",
+          "rank": "secondary",
+          "position": 20,
+          "measure_type": "change_from_baseline",
+          "scale": "DLQI",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Number of Participants With Treatment-emergent Adverse Events (TEAEs) and Treatment-emergent Serious Adverse Events (TESAEs)",
+          "rank": "secondary",
+          "position": 21,
+          "measure_type": "count",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Number of Participants With Treatment-emergent and Treatment Boosted Antidrug Antibodies (ADA)",
+          "rank": "secondary",
+          "position": 22,
+          "measure_type": "count",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04202679",
+      "source_excerpt": "protocolSection.outcomesModule.secondaryOutcomes[].measure",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "multiplicity_control": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    }
+  },
+  "timing_ops": {
+    "start_date": {
+      "value": {
+        "date": "2020-01-16",
+        "precision": "day"
+      },
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04202679",
+      "source_excerpt": "protocolSection.statusModule.startDateStruct.date",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "primary_completion_date": {
+      "value": {
+        "date": "2021-08-30",
+        "precision": "day"
+      },
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04202679",
+      "source_excerpt": "protocolSection.statusModule.primaryCompletionDateStruct.date",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "completion_date": {
+      "value": {
+        "date": "2021-11-22",
+        "precision": "day"
+      },
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04202679",
+      "source_excerpt": "protocolSection.statusModule.completionDateStruct.date",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "study_schedule": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    },
+    "rescue_therapy": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    }
+  },
+  "adverse_events": {
+    "serious_adverse_event_rate": {
+      "value": [
+        {
+          "arm": "Placebo",
+          "n_affected": 4,
+          "n_at_risk": 82,
+          "pct": 4.9
+        },
+        {
+          "arm": "Dupilumab 300 mg Q2W",
+          "n_affected": 2,
+          "n_at_risk": 77,
+          "pct": 2.6
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04202679",
+      "source_excerpt": "resultsSection.adverseEventsModule.eventGroups[].seriousNumAffected/seriousNumAtRisk",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "death_rate": {
+      "value": [
+        {
+          "arm": "Placebo",
+          "n_affected": 0,
+          "n_at_risk": 82,
+          "pct": 0.0
+        },
+        {
+          "arm": "Dupilumab 300 mg Q2W",
+          "n_affected": 0,
+          "n_at_risk": 77,
+          "pct": 0.0
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04202679",
+      "source_excerpt": "resultsSection.adverseEventsModule.eventGroups[].deathsNumAffected/deathsNumAtRisk",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "most_common_adverse_events": {
+      "value": [
+        {
+          "meddra_pt": "Headache",
+          "meddra_soc": "Nervous system disorders",
+          "per_arm": [
+            {
+              "arm": "Placebo",
+              "n_affected": 5,
+              "n_at_risk": 82,
+              "pct": 6.1
+            },
+            {
+              "arm": "Dupilumab 300 mg Q2W",
+              "n_affected": 4,
+              "n_at_risk": 77,
+              "pct": 5.2
+            }
+          ]
+        },
+        {
+          "meddra_pt": "Accidental Overdose",
+          "meddra_soc": "Injury, poisoning and procedural complications",
+          "per_arm": [
+            {
+              "arm": "Placebo",
+              "n_affected": 5,
+              "n_at_risk": 82,
+              "pct": 6.1
+            },
+            {
+              "arm": "Dupilumab 300 mg Q2W",
+              "n_affected": 4,
+              "n_at_risk": 77,
+              "pct": 5.2
+            }
+          ]
+        },
+        {
+          "meddra_pt": "Nasopharyngitis",
+          "meddra_soc": "Infections and infestations",
+          "per_arm": [
+            {
+              "arm": "Placebo",
+              "n_affected": 0,
+              "n_at_risk": 82,
+              "pct": 0.0
+            },
+            {
+              "arm": "Dupilumab 300 mg Q2W",
+              "n_affected": 4,
+              "n_at_risk": 77,
+              "pct": 5.2
+            }
+          ]
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04202679",
+      "source_excerpt": "resultsSection.adverseEventsModule.otherEvents[] (top 8 of 3 by highest single-arm incidence; CT.gov's own >=5% frequency-threshold table)",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "discontinuation_due_to_ae_rate": {
+      "value": [
+        {
+          "arm": "Placebo",
+          "n_discontinued": 2,
+          "n_started": 82,
+          "pct": 2.4
+        },
+        {
+          "arm": "Dupilumab 300 mg Q2W",
+          "n_discontinued": 0,
+          "n_started": 78,
+          "pct": 0.0
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04202679",
+      "source_excerpt": "resultsSection.participantFlowModule.periods[0].dropWithdraws[type=\"Adverse Event\"].reasons[] vs periods[0].milestones[type=STARTED].achievements[]",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "boxed_warning": {
+      "value": {
+        "present": false,
+        "title": null,
+        "warning_categories": [],
+        "referenced_label_sections": [],
+        "product_names": []
+      },
+      "source_type": "openfda_label",
+      "source_url": "https://api.fda.gov/drug/label.json?search=openfda.substance_name:DUPILUMAB&limit=1",
+      "source_excerpt": "results[0] has no boxed_warning key (checked, none present)",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    }
+  },
+  "real_world_safety": {
+    "faers_summary": {
+      "value": {
+        "query": {
+          "search_field": "patient.drug.medicinalproduct",
+          "search_term": "DUPILUMAB",
+          "receivedate_from": "2013-02-04",
+          "receivedate_to": "2026-06-30",
+          "api_urls": [
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"DUPILUMAB\"&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"DUPILUMAB\"+AND+serious:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"DUPILUMAB\"+AND+seriousnessdeath:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"DUPILUMAB\"+AND+seriousnesshospitalization:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"DUPILUMAB\"+AND+seriousnesslifethreatening:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"DUPILUMAB\"+AND+seriousnessdisabling:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"DUPILUMAB\"&count=patient.reaction.reactionmeddrapt.exact&limit=15",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"DUPILUMAB\"+AND+serious:1&count=patient.reaction.reactionmeddrapt.exact&limit=15",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"DUPILUMAB\"&count=receivedate"
+          ],
+          "data_last_updated": "2026-07-30"
+        },
+        "total_reports": 13441,
+        "serious_reports": 6179,
+        "death_reports": 324,
+        "hospitalization_reports": 2421,
+        "life_threatening_reports": 146,
+        "disability_reports": 225,
+        "top_reactions": [
+          {
+            "meddra_pt": "PRURITUS",
+            "report_count": 1522,
+            "pct_of_reports": 11.32
+          },
+          {
+            "meddra_pt": "RASH",
+            "report_count": 1236,
+            "pct_of_reports": 9.2
+          },
+          {
+            "meddra_pt": "INJECTION SITE PAIN",
+            "report_count": 1167,
+            "pct_of_reports": 8.68
+          },
+          {
+            "meddra_pt": "OFF LABEL USE",
+            "report_count": 1087,
+            "pct_of_reports": 8.09
+          },
+          {
+            "meddra_pt": "DRUG INEFFECTIVE",
+            "report_count": 1044,
+            "pct_of_reports": 7.77
+          },
+          {
+            "meddra_pt": "DERMATITIS ATOPIC",
+            "report_count": 894,
+            "pct_of_reports": 6.65
+          },
+          {
+            "meddra_pt": "CONDITION AGGRAVATED",
+            "report_count": 749,
+            "pct_of_reports": 5.57
+          },
+          {
+            "meddra_pt": "DYSPNOEA",
+            "report_count": 718,
+            "pct_of_reports": 5.34
+          },
+          {
+            "meddra_pt": "PRODUCT USE IN UNAPPROVED INDICATION",
+            "report_count": 711,
+            "pct_of_reports": 5.29
+          },
+          {
+            "meddra_pt": "ARTHRALGIA",
+            "report_count": 687,
+            "pct_of_reports": 5.11
+          },
+          {
+            "meddra_pt": "PRODUCT USE ISSUE",
+            "report_count": 658,
+            "pct_of_reports": 4.9
+          },
+          {
+            "meddra_pt": "ECZEMA",
+            "report_count": 632,
+            "pct_of_reports": 4.7
+          },
+          {
+            "meddra_pt": "ERYTHEMA",
+            "report_count": 596,
+            "pct_of_reports": 4.43
+          },
+          {
+            "meddra_pt": "COUGH",
+            "report_count": 589,
+            "pct_of_reports": 4.38
+          },
+          {
+            "meddra_pt": "PRODUCT DOSE OMISSION ISSUE",
+            "report_count": 559,
+            "pct_of_reports": 4.16
+          }
+        ],
+        "top_serious_reactions": [
+          {
+            "meddra_pt": "OFF LABEL USE",
+            "report_count": 515,
+            "pct_of_reports": 8.33
+          },
+          {
+            "meddra_pt": "DYSPNOEA",
+            "report_count": 499,
+            "pct_of_reports": 8.08
+          },
+          {
+            "meddra_pt": "PRURITUS",
+            "report_count": 494,
+            "pct_of_reports": 7.99
+          },
+          {
+            "meddra_pt": "DRUG INEFFECTIVE",
+            "report_count": 465,
+            "pct_of_reports": 7.53
+          },
+          {
+            "meddra_pt": "PNEUMONIA",
+            "report_count": 417,
+            "pct_of_reports": 6.75
+          },
+          {
+            "meddra_pt": "RASH",
+            "report_count": 406,
+            "pct_of_reports": 6.57
+          },
+          {
+            "meddra_pt": "CONDITION AGGRAVATED",
+            "report_count": 383,
+            "pct_of_reports": 6.2
+          },
+          {
+            "meddra_pt": "COUGH",
+            "report_count": 365,
+            "pct_of_reports": 5.91
+          },
+          {
+            "meddra_pt": "ASTHMA",
+            "report_count": 335,
+            "pct_of_reports": 5.42
+          },
+          {
+            "meddra_pt": "ARTHRALGIA",
+            "report_count": 299,
+            "pct_of_reports": 4.84
+          },
+          {
+            "meddra_pt": "INJECTION SITE PAIN",
+            "report_count": 275,
+            "pct_of_reports": 4.45
+          },
+          {
+            "meddra_pt": "PRODUCT USE ISSUE",
+            "report_count": 267,
+            "pct_of_reports": 4.32
+          },
+          {
+            "meddra_pt": "ERYTHEMA",
+            "report_count": 264,
+            "pct_of_reports": 4.27
+          },
+          {
+            "meddra_pt": "PYREXIA",
+            "report_count": 263,
+            "pct_of_reports": 4.26
+          },
+          {
+            "meddra_pt": "FATIGUE",
+            "report_count": 253,
+            "pct_of_reports": 4.09
+          }
+        ],
+        "reports_by_year": [
+          {
+            "year": 2013,
+            "report_count": 1
+          },
+          {
+            "year": 2016,
+            "report_count": 5
+          },
+          {
+            "year": 2017,
+            "report_count": 82
+          },
+          {
+            "year": 2018,
+            "report_count": 799
+          },
+          {
+            "year": 2019,
+            "report_count": 1350
+          },
+          {
+            "year": 2020,
+            "report_count": 1224
+          },
+          {
+            "year": 2021,
+            "report_count": 1894
+          },
+          {
+            "year": 2022,
+            "report_count": 1323
+          },
+          {
+            "year": 2023,
+            "report_count": 1807
+          },
+          {
+            "year": 2024,
+            "report_count": 2282
+          },
+          {
+            "year": 2025,
+            "report_count": 1341
+          },
+          {
+            "year": 2026,
+            "report_count": 1333
+          }
+        ],
+        "meddra_version": null
+      },
+      "source_type": "openfda_faers",
+      "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"DUPILUMAB\"&limit=1",
+      "source_excerpt": "openFDA drug/event.json aggregate: total_reports=13441, serious=6179, deaths=324",
+      "extracted_by": "fetch_faers.py (openfda drug/event.json, v2 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    }
+  },
+  "exclusivity": {
+    "regulatory_application": {
+      "value": {
+        "application_type": "BLA",
+        "application_number": "761055",
+        "registry": "purple_book",
+        "center": "CDER",
+        "proprietary_name": "Dupixent",
+        "applicant": "Regeneron Pharmaceuticals, Inc.",
+        "first_approval_date": "2017-03-28"
+      },
+      "source_type": "purple_book",
+      "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2026/purplebook-search-August-data-download.csv",
+      "source_excerpt": "row: Regeneron Pharmaceuticals, Inc. | BLA 761055 | Dupixent | dupilumab | 351(a) | 300MG/2ML Injection Subcutaneous Pre-Filled Syringe | Rx | Licensed | 28-Mar-17 | Original | License 1760 | Product 001 | CDER | Orphan Exclusivity Exp. Date 25-Jan-31",
+      "extracted_by": "atlas.regulatory_applications (registry file fetched 2026-09-05)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "orange_book": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    },
+    "purple_book": {
+      "value": {
+        "bla_number": "761055",
+        "proprietary_name": "Dupixent",
+        "proper_name": "dupilumab",
+        "applicant": "Regeneron Pharmaceuticals, Inc.",
+        "license_type": "351(a)",
+        "license_number": "1760",
+        "center": "CDER",
+        "products": [
+          {
+            "product_number": "001",
+            "strength": "300MG/2ML",
+            "dosage_form": "Injection",
+            "route": "Subcutaneous",
+            "presentation": "Pre-Filled Syringe",
+            "marketing_status": "Rx",
+            "licensure": "Licensed",
+            "approval_date": "2017-03-28",
+            "submission_type": "Original",
+            "supplement_number": null
+          },
+          {
+            "product_number": "002",
+            "strength": "300MG/2ML",
+            "dosage_form": "Injection",
+            "route": "Subcutaneous",
+            "presentation": "Pre-Filled Syringe",
+            "marketing_status": "Disc",
+            "licensure": "Licensed",
+            "approval_date": "2017-03-28",
+            "submission_type": "Original",
+            "supplement_number": null
+          },
+          {
+            "product_number": "003",
+            "strength": "200MG/1.14ML",
+            "dosage_form": "Injection",
+            "route": "Subcutaneous",
+            "presentation": "Pre-Filled Syringe",
+            "marketing_status": "Rx",
+            "licensure": "Licensed",
+            "approval_date": "2018-10-19",
+            "submission_type": "Supplement",
+            "supplement_number": "7"
+          },
+          {
+            "product_number": "004",
+            "strength": "300MG/2ML",
+            "dosage_form": "Injection",
+            "route": "Subcutaneous",
+            "presentation": "Autoinjector",
+            "marketing_status": "Rx",
+            "licensure": "Licensed",
+            "approval_date": "2020-06-18",
+            "submission_type": "Supplement",
+            "supplement_number": "17"
+          },
+          {
+            "product_number": "005",
+            "strength": "200MG/1.14ML",
+            "dosage_form": "Injection",
+            "route": "Subcutaneous",
+            "presentation": "Autoinjector",
+            "marketing_status": "Rx",
+            "licensure": "Licensed",
+            "approval_date": "2021-06-14",
+            "submission_type": "Supplement",
+            "supplement_number": "16"
+          },
+          {
+            "product_number": "006",
+            "strength": "100MG/0.67ML",
+            "dosage_form": "Injection",
+            "route": "Subcutaneous",
+            "presentation": "Pre-Filled Syringe",
+            "marketing_status": "Disc",
+            "licensure": "Licensed",
+            "approval_date": "2021-10-20",
+            "submission_type": "Supplement",
+            "supplement_number": "31"
+          }
+        ],
+        "first_approval_date": "2017-03-28",
+        "date_of_first_licensure": null,
+        "reference_product_exclusivity_expiration": null,
+        "exclusivity_expiration_date": null,
+        "first_interchangeable_exclusivity_expiration": null,
+        "orphan_exclusivity_expiration": "2031-01-25",
+        "patent_list_provided": null,
+        "biosimilars": [],
+        "data_file_month": null
+      },
+      "source_type": "purple_book",
+      "source_url": "https://purplebooksearch.fda.gov/index.cfm?event=advancedsearch",
+      "source_excerpt": "purplebooksearch.fda.gov live search table, BLA 761055 (Dupixent), 0 biosimilar(s) on file",
+      "extracted_by": "fetch_purple_book.py (purplebooksearch.fda.gov live search table, raw staging pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    }
+  }
+}

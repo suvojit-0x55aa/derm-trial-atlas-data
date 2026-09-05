@@ -1,0 +1,1611 @@
+{
+  "schema_version": 2,
+  "nct_id": {
+    "value": "NCT02684357",
+    "source_type": "ctgov_api",
+    "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02684357",
+    "source_excerpt": "protocolSection.identificationModule.nctId",
+    "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+    "reviewed_by": null,
+    "confidence": 1.0
+  },
+  "identity": {
+    "trial_name": {
+      "value": null,
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02684357",
+      "source_excerpt": "protocolSection.identificationModule.acronym",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 0.0
+    },
+    "official_title": {
+      "value": "BI 655066 Versus Ustekinumab and Placebo Comparators in a Randomized Double Blind trIal for Maintenance Use in Moderate to Severe Plaque Type Psoriasis-2 (UltIMMa-2)",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02684357",
+      "source_excerpt": "protocolSection.identificationModule.officialTitle",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "sponsor": {
+      "value": "AbbVie",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02684357",
+      "source_excerpt": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "phase": {
+      "value": [
+        "PHASE3"
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02684357",
+      "source_excerpt": "protocolSection.designModule.phases",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    }
+  },
+  "molecule": {
+    "drug": {
+      "value": "Risankizumab",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02684357",
+      "source_excerpt": "protocolSection.armsInterventionsModule.interventions[].name (curated)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "intervention_names": {
+      "value": [
+        "risankizumab",
+        "ustekinumab",
+        "placebo for risankizumab",
+        "placebo for ustekinumab"
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02684357",
+      "source_excerpt": "protocolSection.armsInterventionsModule.interventions[].name",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "intervention_type": {
+      "value": [
+        "DRUG"
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02684357",
+      "source_excerpt": "protocolSection.armsInterventionsModule.interventions[].type",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "mechanism_of_action": {
+      "value": {
+        "modality": "monoclonal_antibody",
+        "drug_class": "monoclonal antibody",
+        "antibody_isotype": "IgG1",
+        "binding_targets": [],
+        "pathway_cytokines": [
+          "IL-23"
+        ],
+        "receptor_subunits": [],
+        "kinases_inhibited": [],
+        "lower_potency_kinases": [],
+        "selectivity": [],
+        "reversible": null,
+        "mechanism_established": null,
+        "label_section": "12.1"
+      },
+      "source_type": "openfda_label",
+      "source_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=388f783d-f41e-4f04-bf64-ec637fe05bdf",
+      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1) -- v1 extracted text: 12.1 Mechanism of Action Risankizumab-rzaa is a humanized IgG1 monoclonal antibody that selectively binds to the p19 subunit of human IL-23 cytokine and inhibits its interaction with the IL-23 receptor. IL-23 is a naturally occurring cytokine that is involved in inflammatory and immune responses. Risankizumab-rzaa inhibits the release of pro-inflammatory cytokines and chemokines.",
+      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 0.9
+    },
+    "dosing_regimen": {
+      "value": [
+        {
+          "intervention_name": "risankizumab",
+          "description": "Risankizumab pre-filled syringe, administered by subcutaneous (SC) injection",
+          "is_placebo": false,
+          "route": "subcutaneous",
+          "dose_form": "injection",
+          "dose_value": null,
+          "dose_unit": null,
+          "units_per_dose": null,
+          "frequency": null,
+          "duration_weeks": null,
+          "dosing_periods": [],
+          "administration_sites": [],
+          "antibody_isotype": null,
+          "molecular_target": null,
+          "arm_names": [],
+          "co_administered_with": []
+        },
+        {
+          "intervention_name": "placebo for risankizumab",
+          "description": "Placebo for risankizumab pre-filled syringe, administered by subcutaneous (SC) injection",
+          "is_placebo": true,
+          "route": "subcutaneous",
+          "dose_form": "injection",
+          "dose_value": null,
+          "dose_unit": null,
+          "units_per_dose": null,
+          "frequency": null,
+          "duration_weeks": null,
+          "dosing_periods": [],
+          "administration_sites": [],
+          "antibody_isotype": null,
+          "molecular_target": null,
+          "arm_names": [],
+          "co_administered_with": []
+        }
+      ],
+      "source_type": "ctgov_text_extraction",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02684357",
+      "source_excerpt": "risankizumab: Risankizumab pre-filled syringe, administered by subcutaneous (SC) injection || placebo for risankizumab: Placebo for risankizumab pre-filled syringe, administered by subcutaneous (SC) injection",
+      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 0.8
+    }
+  },
+  "population": {
+    "condition": {
+      "value": [
+        "Psoriasis"
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02684357",
+      "source_excerpt": "protocolSection.conditionsModule.conditions",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "min_age_years": {
+      "value": 18,
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02684357",
+      "source_excerpt": "protocolSection.eligibilityModule.minimumAge",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "max_age_years": {
+      "value": null,
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02684357",
+      "source_excerpt": "protocolSection.eligibilityModule.maximumAge",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 0.0
+    },
+    "sex": {
+      "value": "ALL",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02684357",
+      "source_excerpt": "protocolSection.eligibilityModule.sex",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "enrollment_count": {
+      "value": 577,
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02684357",
+      "source_excerpt": "protocolSection.designModule.enrollmentInfo.count",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "severity_criteria": {
+      "value": {
+        "severity_label": null,
+        "basis": "eligibility_text",
+        "cross_reference": null,
+        "source_criterion_numbers": [
+          1,
+          2,
+          3
+        ],
+        "baseline_visit_number": null,
+        "criteria": [
+          {
+            "scale": "BSA",
+            "scale_component": null,
+            "scale_variant": null,
+            "metric": "percent_bsa",
+            "comparator": ">=",
+            "value": 10,
+            "unit": "percent",
+            "scale_min": null,
+            "scale_max": null,
+            "assessed_at": null,
+            "scale_anchors": null
+          }
+        ]
+      },
+      "source_type": "ctgov_text_extraction",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02684357",
+      "source_excerpt": "1. Have an involved body surface area (BSA) ≥ 10% and | 2. Have a Psoriasis Area and Severity Index (PASI) score ≥ 12 and | 3. Have a static Physician Global Assessment (sPGA) score of ≥ 3.",
+      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 0.75
+    }
+  },
+  "design": {
+    "study_type": {
+      "value": "INTERVENTIONAL",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02684357",
+      "source_excerpt": "protocolSection.designModule.studyType",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "allocation": {
+      "value": "RANDOMIZED",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02684357",
+      "source_excerpt": "protocolSection.designModule.designInfo.allocation",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "intervention_model": {
+      "value": "PARALLEL",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02684357",
+      "source_excerpt": "protocolSection.designModule.designInfo.interventionModel",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "masking": {
+      "value": "DOUBLE",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02684357",
+      "source_excerpt": "protocolSection.designModule.designInfo.maskingInfo.masking",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "number_of_arms": {
+      "value": 3,
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02684357",
+      "source_excerpt": "len(protocolSection.armsInterventionsModule.armGroups)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "background_therapy": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    }
+  },
+  "endpoints": {
+    "primary_endpoints": {
+      "value": [
+        {
+          "verbatim": "Percentage of Participants Achieving 90% Improvement in Psoriasis Area and Severity Index (PASI) Score (PASI90) at Week 16 in Participants Who Received Risankizumab Compared With Placebo (Part A) (Time frame: Week 16)",
+          "rank": "primary",
+          "position": 1,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": "Week 16"
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02684357",
+      "source_excerpt": "protocolSection.outcomesModule.primaryOutcomes[0].measure/timeFrame",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "secondary_endpoints": {
+      "value": [
+        {
+          "verbatim": "Percentage of Participants Achieving sPGA Score of Clear at Week 16 in Participants Who Received Risankizumab Compared With Placebo (Part A)",
+          "rank": "secondary",
+          "position": 1,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants Achieving PASI100 at Week 16 in Participants Who Received Risankizumab Compared With Placebo (Part A)",
+          "rank": "secondary",
+          "position": 2,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants Achieving a Dermatology Life Quality Index (DLQI) Score of 0 or 1 at Week 16 in Participants Who Received Risankizumab Compared With Placebo (Part A)",
+          "rank": "secondary",
+          "position": 3,
+          "measure_type": "responder_rate",
+          "scale": "DLQI",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [
+            {
+              "scale": "DLQI",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "absolute_score",
+              "comparator": "in",
+              "value": [
+                0,
+                1
+              ],
+              "unit": "score",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants Achieving a Psoriasis Symptom Scale (PSS) Score of 0 at Week 16 in Participants Who Received Risankizumab Compared With Placebo (Part A)",
+          "rank": "secondary",
+          "position": 4,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants Achieving PASI90 at Week 16 in Participants Who Received Risankizumab Compared With Ustekinumab (Part A)",
+          "rank": "secondary",
+          "position": 5,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants Achieving sPGA Score of Clear or Almost Clear at Week 16 in Participants Who Received Risankizumab Compared With Ustekinumab (Part A)",
+          "rank": "secondary",
+          "position": 6,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants Achieving PASI100 at Week 16 in Participants Who Received Risankizumab Compared With Ustekinumab (Part A)",
+          "rank": "secondary",
+          "position": 7,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants Achieving sPGA Score of Clear at Week 16 in Participants Who Received Risankizumab Compared With Ustekinumab (Part A)",
+          "rank": "secondary",
+          "position": 8,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants Achieving PASI90 at Week 52 in Participants Who Received Risankizumab Compared With Ustekinumab (Part B)",
+          "rank": "secondary",
+          "position": 9,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 52,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants Achieving PASI100 at Week 52 in Participants Who Received Risankizumab Compared With Ustekinumab (Part B)",
+          "rank": "secondary",
+          "position": 10,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 52,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants Achieving sPGA Score of Clear at Week 52 in Participants Who Received Risankizumab Compared With Ustekinumab (Part B)",
+          "rank": "secondary",
+          "position": 11,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 52,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants Achieving PASI75 at Week 12 in Participants Who Received Risankizumab Compared With Ustekinumab (Part A)",
+          "rank": "secondary",
+          "position": 12,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants Achieving sPGA Score of Clear or Almost Clear at Week 12 in Participants Who Received Risankizumab Compared With Ustekinumab (Part A)",
+          "rank": "secondary",
+          "position": 13,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants Achieving a DLQI Score of 0 or 1 at Week 16 in Participants Who Received Risankizumab Compared With Ustekinumab (Part A)",
+          "rank": "secondary",
+          "position": 14,
+          "measure_type": "responder_rate",
+          "scale": "DLQI",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [
+            {
+              "scale": "DLQI",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "absolute_score",
+              "comparator": "in",
+              "value": [
+                0,
+                1
+              ],
+              "unit": "score",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Change From Baseline to Week 16 in PSS Total Score in Participants Who Received Risankizumab Compared With Placebo (Part A)",
+          "rank": "secondary",
+          "position": 15,
+          "measure_type": "change_from_baseline",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants Achieving PASI75 at Week 16 in Participants Who Received Risankizumab Compared With Placebo (Part A)",
+          "rank": "secondary",
+          "position": 16,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants Achieving sPGA Score of Clear or Almost Clear at Week 52 in Participants Who Received Risankizumab Compared With Ustekinumab (Part B)",
+          "rank": "secondary",
+          "position": 17,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 52,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants Achieving PASI75 at Week 52 in Participants Who Received Risankizumab Compared With Ustekinumab (Part B)",
+          "rank": "secondary",
+          "position": 18,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 52,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02684357",
+      "source_excerpt": "protocolSection.outcomesModule.secondaryOutcomes[].measure",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "multiplicity_control": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    }
+  },
+  "timing_ops": {
+    "start_date": {
+      "value": {
+        "date": "2016-03-01",
+        "precision": "month"
+      },
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02684357",
+      "source_excerpt": "protocolSection.statusModule.startDateStruct.date",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "primary_completion_date": {
+      "value": {
+        "date": "2016-12-01",
+        "precision": "month"
+      },
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02684357",
+      "source_excerpt": "protocolSection.statusModule.primaryCompletionDateStruct.date",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "completion_date": {
+      "value": {
+        "date": "2017-09-01",
+        "precision": "month"
+      },
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02684357",
+      "source_excerpt": "protocolSection.statusModule.completionDateStruct.date",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "study_schedule": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    },
+    "rescue_therapy": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    }
+  },
+  "adverse_events": {
+    "serious_adverse_event_rate": {
+      "value": [
+        {
+          "arm": "Placebo (Part A)",
+          "n_affected": 1,
+          "n_at_risk": 98,
+          "pct": 1.0
+        },
+        {
+          "arm": "Ustekinumab (Part A)",
+          "n_affected": 3,
+          "n_at_risk": 99,
+          "pct": 3.0
+        },
+        {
+          "arm": "Risankizumab (Part A)",
+          "n_affected": 6,
+          "n_at_risk": 294,
+          "pct": 2.0
+        },
+        {
+          "arm": "Placebo/Risankizumab (Part B)",
+          "n_affected": 4,
+          "n_at_risk": 94,
+          "pct": 4.3
+        },
+        {
+          "arm": "Ustekinumab/Ustekinumab (Part B)",
+          "n_affected": 3,
+          "n_at_risk": 94,
+          "pct": 3.2
+        },
+        {
+          "arm": "Risankizumab/Risankizumab (Part B)",
+          "n_affected": 13,
+          "n_at_risk": 291,
+          "pct": 4.5
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02684357",
+      "source_excerpt": "resultsSection.adverseEventsModule.eventGroups[].seriousNumAffected/seriousNumAtRisk",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "death_rate": {
+      "value": [
+        {
+          "arm": "Placebo (Part A)",
+          "n_affected": 0,
+          "n_at_risk": 98,
+          "pct": 0.0
+        },
+        {
+          "arm": "Ustekinumab (Part A)",
+          "n_affected": 0,
+          "n_at_risk": 99,
+          "pct": 0.0
+        },
+        {
+          "arm": "Risankizumab (Part A)",
+          "n_affected": 1,
+          "n_at_risk": 294,
+          "pct": 0.3
+        },
+        {
+          "arm": "Placebo/Risankizumab (Part B)",
+          "n_affected": 0,
+          "n_at_risk": 94,
+          "pct": 0.0
+        },
+        {
+          "arm": "Ustekinumab/Ustekinumab (Part B)",
+          "n_affected": 0,
+          "n_at_risk": 94,
+          "pct": 0.0
+        },
+        {
+          "arm": "Risankizumab/Risankizumab (Part B)",
+          "n_affected": 1,
+          "n_at_risk": 291,
+          "pct": 0.3
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02684357",
+      "source_excerpt": "resultsSection.adverseEventsModule.eventGroups[].deathsNumAffected/deathsNumAtRisk",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "most_common_adverse_events": {
+      "value": [
+        {
+          "meddra_pt": "Viral upper respiratory tract infection",
+          "meddra_soc": "Infections and infestations",
+          "per_arm": [
+            {
+              "arm": "Placebo (Part A)",
+              "n_affected": 2,
+              "n_at_risk": 98,
+              "pct": 2.0
+            },
+            {
+              "arm": "Ustekinumab (Part A)",
+              "n_affected": 5,
+              "n_at_risk": 99,
+              "pct": 5.1
+            },
+            {
+              "arm": "Risankizumab (Part A)",
+              "n_affected": 10,
+              "n_at_risk": 294,
+              "pct": 3.4
+            },
+            {
+              "arm": "Placebo/Risankizumab (Part B)",
+              "n_affected": 17,
+              "n_at_risk": 94,
+              "pct": 18.1
+            },
+            {
+              "arm": "Ustekinumab/Ustekinumab (Part B)",
+              "n_affected": 14,
+              "n_at_risk": 94,
+              "pct": 14.9
+            },
+            {
+              "arm": "Risankizumab/Risankizumab (Part B)",
+              "n_affected": 34,
+              "n_at_risk": 291,
+              "pct": 11.7
+            }
+          ]
+        },
+        {
+          "meddra_pt": "Upper respiratory tract infection",
+          "meddra_soc": "Infections and infestations",
+          "per_arm": [
+            {
+              "arm": "Placebo (Part A)",
+              "n_affected": 2,
+              "n_at_risk": 98,
+              "pct": 2.0
+            },
+            {
+              "arm": "Ustekinumab (Part A)",
+              "n_affected": 4,
+              "n_at_risk": 99,
+              "pct": 4.0
+            },
+            {
+              "arm": "Risankizumab (Part A)",
+              "n_affected": 11,
+              "n_at_risk": 294,
+              "pct": 3.7
+            },
+            {
+              "arm": "Placebo/Risankizumab (Part B)",
+              "n_affected": 9,
+              "n_at_risk": 94,
+              "pct": 9.6
+            },
+            {
+              "arm": "Ustekinumab/Ustekinumab (Part B)",
+              "n_affected": 8,
+              "n_at_risk": 94,
+              "pct": 8.5
+            },
+            {
+              "arm": "Risankizumab/Risankizumab (Part B)",
+              "n_affected": 24,
+              "n_at_risk": 291,
+              "pct": 8.2
+            }
+          ]
+        },
+        {
+          "meddra_pt": "Influenza",
+          "meddra_soc": "Infections and infestations",
+          "per_arm": [
+            {
+              "arm": "Placebo (Part A)",
+              "n_affected": 1,
+              "n_at_risk": 98,
+              "pct": 1.0
+            },
+            {
+              "arm": "Ustekinumab (Part A)",
+              "n_affected": 0,
+              "n_at_risk": 99,
+              "pct": 0.0
+            },
+            {
+              "arm": "Risankizumab (Part A)",
+              "n_affected": 6,
+              "n_at_risk": 294,
+              "pct": 2.0
+            },
+            {
+              "arm": "Placebo/Risankizumab (Part B)",
+              "n_affected": 2,
+              "n_at_risk": 94,
+              "pct": 2.1
+            },
+            {
+              "arm": "Ustekinumab/Ustekinumab (Part B)",
+              "n_affected": 5,
+              "n_at_risk": 94,
+              "pct": 5.3
+            },
+            {
+              "arm": "Risankizumab/Risankizumab (Part B)",
+              "n_affected": 4,
+              "n_at_risk": 291,
+              "pct": 1.4
+            }
+          ]
+        },
+        {
+          "meddra_pt": "Diarrhoea",
+          "meddra_soc": "Gastrointestinal disorders",
+          "per_arm": [
+            {
+              "arm": "Placebo (Part A)",
+              "n_affected": 3,
+              "n_at_risk": 98,
+              "pct": 3.1
+            },
+            {
+              "arm": "Ustekinumab (Part A)",
+              "n_affected": 5,
+              "n_at_risk": 99,
+              "pct": 5.1
+            },
+            {
+              "arm": "Risankizumab (Part A)",
+              "n_affected": 3,
+              "n_at_risk": 294,
+              "pct": 1.0
+            },
+            {
+              "arm": "Placebo/Risankizumab (Part B)",
+              "n_affected": 2,
+              "n_at_risk": 94,
+              "pct": 2.1
+            },
+            {
+              "arm": "Ustekinumab/Ustekinumab (Part B)",
+              "n_affected": 3,
+              "n_at_risk": 94,
+              "pct": 3.2
+            },
+            {
+              "arm": "Risankizumab/Risankizumab (Part B)",
+              "n_affected": 6,
+              "n_at_risk": 291,
+              "pct": 2.1
+            }
+          ]
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02684357",
+      "source_excerpt": "resultsSection.adverseEventsModule.otherEvents[] (top 8 of 4 by highest single-arm incidence; CT.gov's own >=5% frequency-threshold table)",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "discontinuation_due_to_ae_rate": {
+      "value": [
+        {
+          "arm": "Placebo (Part A)",
+          "n_discontinued": 1,
+          "n_started": 98,
+          "pct": 1.0
+        },
+        {
+          "arm": "Ustekinumab (Part A)",
+          "n_discontinued": 0,
+          "n_started": 99,
+          "pct": 0.0
+        },
+        {
+          "arm": "Risankizumab (Part A)",
+          "n_discontinued": 0,
+          "n_started": 294,
+          "pct": 0.0
+        },
+        {
+          "arm": "Placebo/Risankizumab (Part B)",
+          "n_discontinued": 0,
+          "n_started": 0,
+          "pct": null
+        },
+        {
+          "arm": "Ustekinumab/Ustekinumab (Part B)",
+          "n_discontinued": 0,
+          "n_started": 0,
+          "pct": null
+        },
+        {
+          "arm": "Risankizumab/Risankizumab (Part B)",
+          "n_discontinued": 0,
+          "n_started": 0,
+          "pct": null
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02684357",
+      "source_excerpt": "resultsSection.participantFlowModule.periods[0].dropWithdraws[type=\"Adverse Event (Worsening of Disease)\"].reasons[] vs periods[0].milestones[type=STARTED].achievements[]",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "boxed_warning": {
+      "value": {
+        "present": false,
+        "title": null,
+        "warning_categories": [],
+        "referenced_label_sections": [],
+        "product_names": []
+      },
+      "source_type": "openfda_label",
+      "source_url": "https://api.fda.gov/drug/label.json?search=openfda.substance_name:RISANKIZUMAB&limit=1",
+      "source_excerpt": "results[0] has no boxed_warning key (checked, none present)",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    }
+  },
+  "real_world_safety": {
+    "faers_summary": {
+      "value": {
+        "query": {
+          "search_field": "patient.drug.medicinalproduct",
+          "search_term": "RISANKIZUMAB",
+          "receivedate_from": "2017-05-18",
+          "receivedate_to": "2026-06-30",
+          "api_urls": [
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"RISANKIZUMAB\"&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"RISANKIZUMAB\"+AND+serious:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"RISANKIZUMAB\"+AND+seriousnessdeath:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"RISANKIZUMAB\"+AND+seriousnesshospitalization:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"RISANKIZUMAB\"+AND+seriousnesslifethreatening:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"RISANKIZUMAB\"+AND+seriousnessdisabling:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"RISANKIZUMAB\"&count=patient.reaction.reactionmeddrapt.exact&limit=15",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"RISANKIZUMAB\"+AND+serious:1&count=patient.reaction.reactionmeddrapt.exact&limit=15",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"RISANKIZUMAB\"&count=receivedate"
+          ],
+          "data_last_updated": "2026-07-30"
+        },
+        "total_reports": 4185,
+        "serious_reports": 1588,
+        "death_reports": 64,
+        "hospitalization_reports": 656,
+        "life_threatening_reports": 35,
+        "disability_reports": 31,
+        "top_reactions": [
+          {
+            "meddra_pt": "PRODUCT STORAGE ERROR",
+            "report_count": 907,
+            "pct_of_reports": 21.67
+          },
+          {
+            "meddra_pt": "DRUG INEFFECTIVE",
+            "report_count": 283,
+            "pct_of_reports": 6.76
+          },
+          {
+            "meddra_pt": "OFF LABEL USE",
+            "report_count": 187,
+            "pct_of_reports": 4.47
+          },
+          {
+            "meddra_pt": "PSORIASIS",
+            "report_count": 183,
+            "pct_of_reports": 4.37
+          },
+          {
+            "meddra_pt": "PRODUCT TEMPERATURE EXCURSION ISSUE",
+            "report_count": 178,
+            "pct_of_reports": 4.25
+          },
+          {
+            "meddra_pt": "CROHN^S DISEASE",
+            "report_count": 147,
+            "pct_of_reports": 3.51
+          },
+          {
+            "meddra_pt": "ARTHRALGIA",
+            "report_count": 134,
+            "pct_of_reports": 3.2
+          },
+          {
+            "meddra_pt": "DIARRHOEA",
+            "report_count": 100,
+            "pct_of_reports": 2.39
+          },
+          {
+            "meddra_pt": "FATIGUE",
+            "report_count": 97,
+            "pct_of_reports": 2.32
+          },
+          {
+            "meddra_pt": "HEADACHE",
+            "report_count": 88,
+            "pct_of_reports": 2.1
+          },
+          {
+            "meddra_pt": "PRURITUS",
+            "report_count": 81,
+            "pct_of_reports": 1.94
+          },
+          {
+            "meddra_pt": "ABDOMINAL PAIN",
+            "report_count": 80,
+            "pct_of_reports": 1.91
+          },
+          {
+            "meddra_pt": "RASH",
+            "report_count": 80,
+            "pct_of_reports": 1.91
+          },
+          {
+            "meddra_pt": "THERAPEUTIC PRODUCT EFFECT INCOMPLETE",
+            "report_count": 74,
+            "pct_of_reports": 1.77
+          },
+          {
+            "meddra_pt": "PRODUCT QUALITY ISSUE",
+            "report_count": 71,
+            "pct_of_reports": 1.7
+          }
+        ],
+        "top_serious_reactions": [
+          {
+            "meddra_pt": "DRUG INEFFECTIVE",
+            "report_count": 203,
+            "pct_of_reports": 12.78
+          },
+          {
+            "meddra_pt": "CROHN^S DISEASE",
+            "report_count": 84,
+            "pct_of_reports": 5.29
+          },
+          {
+            "meddra_pt": "OFF LABEL USE",
+            "report_count": 81,
+            "pct_of_reports": 5.1
+          },
+          {
+            "meddra_pt": "PSORIASIS",
+            "report_count": 80,
+            "pct_of_reports": 5.04
+          },
+          {
+            "meddra_pt": "ARTHRALGIA",
+            "report_count": 73,
+            "pct_of_reports": 4.6
+          },
+          {
+            "meddra_pt": "DIARRHOEA",
+            "report_count": 66,
+            "pct_of_reports": 4.16
+          },
+          {
+            "meddra_pt": "ABDOMINAL PAIN",
+            "report_count": 65,
+            "pct_of_reports": 4.09
+          },
+          {
+            "meddra_pt": "HEADACHE",
+            "report_count": 58,
+            "pct_of_reports": 3.65
+          },
+          {
+            "meddra_pt": "THERAPEUTIC PRODUCT EFFECT INCOMPLETE",
+            "report_count": 54,
+            "pct_of_reports": 3.4
+          },
+          {
+            "meddra_pt": "FATIGUE",
+            "report_count": 53,
+            "pct_of_reports": 3.34
+          },
+          {
+            "meddra_pt": "WEIGHT DECREASED",
+            "report_count": 47,
+            "pct_of_reports": 2.96
+          },
+          {
+            "meddra_pt": "PRURITUS",
+            "report_count": 46,
+            "pct_of_reports": 2.9
+          },
+          {
+            "meddra_pt": "ASTHENIA",
+            "report_count": 40,
+            "pct_of_reports": 2.52
+          },
+          {
+            "meddra_pt": "MYALGIA",
+            "report_count": 39,
+            "pct_of_reports": 2.46
+          },
+          {
+            "meddra_pt": "ERYTHEMA",
+            "report_count": 38,
+            "pct_of_reports": 2.39
+          }
+        ],
+        "reports_by_year": [
+          {
+            "year": 2017,
+            "report_count": 1
+          },
+          {
+            "year": 2018,
+            "report_count": 4
+          },
+          {
+            "year": 2019,
+            "report_count": 26
+          },
+          {
+            "year": 2020,
+            "report_count": 54
+          },
+          {
+            "year": 2021,
+            "report_count": 103
+          },
+          {
+            "year": 2022,
+            "report_count": 125
+          },
+          {
+            "year": 2023,
+            "report_count": 191
+          },
+          {
+            "year": 2024,
+            "report_count": 794
+          },
+          {
+            "year": 2025,
+            "report_count": 1965
+          },
+          {
+            "year": 2026,
+            "report_count": 922
+          }
+        ],
+        "meddra_version": null
+      },
+      "source_type": "openfda_faers",
+      "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"RISANKIZUMAB\"&limit=1",
+      "source_excerpt": "openFDA drug/event.json aggregate: total_reports=4185, serious=1588, deaths=64",
+      "extracted_by": "fetch_faers.py (openfda drug/event.json, v2 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    }
+  },
+  "exclusivity": {
+    "regulatory_application": {
+      "value": {
+        "application_type": "BLA",
+        "application_number": "761105",
+        "registry": "purple_book",
+        "center": "CDER",
+        "proprietary_name": "Skyrizi",
+        "applicant": "AbbVie Inc.",
+        "first_approval_date": "2019-04-23"
+      },
+      "source_type": "purple_book",
+      "source_url": "https://purplebooksearch.fda.gov/index.cfm?event=advancedsearch",
+      "source_excerpt": "purplebooksearch.fda.gov live search table: BLA 761105 | Skyrizi | risankizumab-rzaa | 351(a) | AbbVie Inc. | first approved 2019-04-23",
+      "extracted_by": "atlas.regulatory_applications (registry file fetched 2026-09-05)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "orange_book": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    },
+    "purple_book": {
+      "value": {
+        "bla_number": "761105",
+        "proprietary_name": "Skyrizi",
+        "proper_name": "risankizumab-rzaa",
+        "applicant": "AbbVie Inc.",
+        "license_type": "351(a)",
+        "license_number": "1889",
+        "center": "CDER",
+        "products": [
+          {
+            "product_number": "001",
+            "strength": "75MG/0.83ML",
+            "dosage_form": "Injection",
+            "route": "Subcutaneous",
+            "presentation": "Pre-Filled Syringe",
+            "marketing_status": "Disc",
+            "licensure": "Licensed",
+            "approval_date": "2019-04-23",
+            "submission_type": "Original",
+            "supplement_number": null
+          },
+          {
+            "product_number": "002",
+            "strength": "150MG/ML",
+            "dosage_form": "Injection",
+            "route": "Subcutaneous",
+            "presentation": "Pre-Filled Syringe",
+            "marketing_status": "Rx",
+            "licensure": "Licensed",
+            "approval_date": "2021-04-26",
+            "submission_type": "Supplement",
+            "supplement_number": "9"
+          },
+          {
+            "product_number": "003",
+            "strength": "150MG/ML",
+            "dosage_form": "Injection",
+            "route": "Subcutaneous",
+            "presentation": "Autoinjector",
+            "marketing_status": "Rx",
+            "licensure": "Licensed",
+            "approval_date": "2021-04-26",
+            "submission_type": "Supplement",
+            "supplement_number": "10"
+          },
+          {
+            "product_number": "004",
+            "strength": "180MG/1.2ML (150MG/ML)",
+            "dosage_form": "Injection",
+            "route": "Subcutaneous",
+            "presentation": "Single-Dose Cartridge",
+            "marketing_status": "Rx",
+            "licensure": "Licensed",
+            "approval_date": "2022-09-23",
+            "submission_type": "Supplement",
+            "supplement_number": "18"
+          },
+          {
+            "product_number": "005",
+            "strength": "360MG/2.4ML (150MG/ML)",
+            "dosage_form": "Injection",
+            "route": "Subcutaneous",
+            "presentation": "Single-Dose Cartridge",
+            "marketing_status": "Rx",
+            "licensure": "Licensed",
+            "approval_date": "2022-06-16",
+            "submission_type": "Supplement",
+            "supplement_number": "16"
+          },
+          {
+            "product_number": "006",
+            "strength": "90MG/ML",
+            "dosage_form": "Injection",
+            "route": "Subcutaneous",
+            "presentation": "Pre-Filled Syringe",
+            "marketing_status": "Rx",
+            "licensure": "Licensed",
+            "approval_date": "2023-03-22",
+            "submission_type": "Supplement",
+            "supplement_number": "24"
+          },
+          {
+            "product_number": "007",
+            "strength": "180MG/1.2ML (150MG/ML)",
+            "dosage_form": "Injection",
+            "route": "Subcutaneous",
+            "presentation": "Pre-Filled Syringe",
+            "marketing_status": "Rx",
+            "licensure": "Licensed",
+            "approval_date": "2025-09-03",
+            "submission_type": "Supplement",
+            "supplement_number": "39"
+          },
+          {
+            "product_number": "008",
+            "strength": "55MG/0.37ML",
+            "dosage_form": "Injection",
+            "route": "Subcutaneous",
+            "presentation": "Pre-Filled Syringe",
+            "marketing_status": "Rx",
+            "licensure": "Licensed",
+            "approval_date": "2026-06-12",
+            "submission_type": "Supplement",
+            "supplement_number": "44"
+          }
+        ],
+        "first_approval_date": "2019-04-23",
+        "date_of_first_licensure": null,
+        "reference_product_exclusivity_expiration": null,
+        "exclusivity_expiration_date": null,
+        "first_interchangeable_exclusivity_expiration": null,
+        "orphan_exclusivity_expiration": null,
+        "patent_list_provided": null,
+        "biosimilars": [],
+        "data_file_month": null
+      },
+      "source_type": "purple_book",
+      "source_url": "https://purplebooksearch.fda.gov/index.cfm?event=advancedsearch",
+      "source_excerpt": "purplebooksearch.fda.gov live search table, BLA 761105 (Skyrizi), 0 biosimilar(s) on file",
+      "extracted_by": "fetch_purple_book.py (purplebooksearch.fda.gov live search table, raw staging pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    }
+  }
+}

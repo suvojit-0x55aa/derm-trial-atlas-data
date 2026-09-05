@@ -1,0 +1,1445 @@
+{
+  "schema_version": 2,
+  "nct_id": {
+    "value": "NCT04242498",
+    "source_type": "ctgov_api",
+    "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04242498",
+    "source_excerpt": "protocolSection.identificationModule.nctId",
+    "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+    "reviewed_by": null,
+    "confidence": 1.0
+  },
+  "identity": {
+    "trial_name": {
+      "value": "BE HEARD II",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04242498",
+      "source_excerpt": "protocolSection.identificationModule.acronym",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "official_title": {
+      "value": "A Phase 3, Randomized, Double-Blind, Placebo-Controlled, Multicenter Study Evaluating the Efficacy and Safety of Bimekizumab in Study Participants With Moderate to Severe Hidradenitis Suppurativa",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04242498",
+      "source_excerpt": "protocolSection.identificationModule.officialTitle",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "sponsor": {
+      "value": "UCB Biopharma SRL",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04242498",
+      "source_excerpt": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "phase": {
+      "value": [
+        "PHASE3"
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04242498",
+      "source_excerpt": "protocolSection.designModule.phases",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    }
+  },
+  "molecule": {
+    "drug": {
+      "value": "Bimekizumab",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04242498",
+      "source_excerpt": "protocolSection.armsInterventionsModule.interventions[].name (curated)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "intervention_names": {
+      "value": [
+        "Bimekizumab",
+        "Placebo"
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04242498",
+      "source_excerpt": "protocolSection.armsInterventionsModule.interventions[].name",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "intervention_type": {
+      "value": [
+        "DRUG",
+        "OTHER"
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04242498",
+      "source_excerpt": "protocolSection.armsInterventionsModule.interventions[].type",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "mechanism_of_action": {
+      "value": {
+        "modality": "monoclonal_antibody",
+        "drug_class": "monoclonal antibody",
+        "antibody_isotype": "IgG1",
+        "binding_targets": [],
+        "pathway_cytokines": [],
+        "receptor_subunits": [],
+        "kinases_inhibited": [],
+        "lower_potency_kinases": [],
+        "selectivity": [],
+        "reversible": null,
+        "mechanism_established": null,
+        "label_section": "12.1"
+      },
+      "source_type": "openfda_label",
+      "source_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=37b310bd-f6a0-9d4e-e063-6294a90a889d",
+      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1) -- v1 extracted text: 12.1 Mechanism of Action Bimekizumab-bkzx is a humanized immunoglobulin IgG1/ κ monoclonal antibody with two identical antigen binding regions that selectively bind to human interleukin 17A (IL-17A), interleukin 17F (IL-17F), and interleukin 17-AF cytokines, and inhibits their interaction with the IL-17 receptor complex. IL-17A and IL-17F are naturally occurring cytokines that are involved in normal inflammatory and immune responses. Bimekizumab-bkzx inhibits the release of proinflammatory cytokines and chemokines.",
+      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 0.9
+    },
+    "dosing_regimen": {
+      "value": [
+        {
+          "intervention_name": "Bimekizumab",
+          "description": "Subjects will receive bimekizumab at pre-specified time-points.",
+          "is_placebo": false,
+          "route": null,
+          "dose_form": null,
+          "dose_value": null,
+          "dose_unit": null,
+          "units_per_dose": null,
+          "frequency": null,
+          "duration_weeks": null,
+          "dosing_periods": [],
+          "administration_sites": [],
+          "antibody_isotype": null,
+          "molecular_target": null,
+          "arm_names": [],
+          "co_administered_with": []
+        }
+      ],
+      "source_type": "ctgov_text_extraction",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04242498",
+      "source_excerpt": "Bimekizumab: Subjects will receive bimekizumab at pre-specified time-points.",
+      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 0.8
+    }
+  },
+  "population": {
+    "condition": {
+      "value": [
+        "Hidradenitis Suppurativa"
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04242498",
+      "source_excerpt": "protocolSection.conditionsModule.conditions",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "min_age_years": {
+      "value": 18,
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04242498",
+      "source_excerpt": "protocolSection.eligibilityModule.minimumAge",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "max_age_years": {
+      "value": null,
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04242498",
+      "source_excerpt": "protocolSection.eligibilityModule.maximumAge",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 0.0
+    },
+    "sex": {
+      "value": "ALL",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04242498",
+      "source_excerpt": "protocolSection.eligibilityModule.sex",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "enrollment_count": {
+      "value": 509,
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04242498",
+      "source_excerpt": "protocolSection.designModule.enrollmentInfo.count",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "severity_criteria": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    }
+  },
+  "design": {
+    "study_type": {
+      "value": "INTERVENTIONAL",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04242498",
+      "source_excerpt": "protocolSection.designModule.studyType",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "allocation": {
+      "value": "RANDOMIZED",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04242498",
+      "source_excerpt": "protocolSection.designModule.designInfo.allocation",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "intervention_model": {
+      "value": "PARALLEL",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04242498",
+      "source_excerpt": "protocolSection.designModule.designInfo.interventionModel",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "masking": {
+      "value": "QUADRUPLE",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04242498",
+      "source_excerpt": "protocolSection.designModule.designInfo.maskingInfo.masking",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "number_of_arms": {
+      "value": 4,
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04242498",
+      "source_excerpt": "len(protocolSection.armsInterventionsModule.armGroups)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "background_therapy": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    }
+  },
+  "endpoints": {
+    "primary_endpoints": {
+      "value": [
+        {
+          "verbatim": "Percentage of Participants Achieving Clinical Response as Measured by Hidradenitis Suppurativa Clinical Response 50 (HiSCR50) at Week 16 (Time frame: Week 16)",
+          "rank": "primary",
+          "position": 1,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": "Week 16"
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04242498",
+      "source_excerpt": "protocolSection.outcomesModule.primaryOutcomes[0].measure/timeFrame",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "secondary_endpoints": {
+      "value": [
+        {
+          "verbatim": "Percentage of Participants Achieving Clinical Response as Measured by Hidradenitis Suppurativa Clinical Response 75 (HiSCR75) at Week 16",
+          "rank": "secondary",
+          "position": 1,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants With Flare by Week 16",
+          "rank": "secondary",
+          "position": 2,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": "flare",
+          "time_frame": null
+        },
+        {
+          "verbatim": "Absolute Change From Baseline in Dermatology Life Quality Index (DLQI) Total Score at Week 16",
+          "rank": "secondary",
+          "position": 3,
+          "measure_type": "absolute_value",
+          "scale": "DLQI",
+          "scale_component": "Total",
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Absolute Change From Baseline in Worst Skin Pain Score at Week 16",
+          "rank": "secondary",
+          "position": 4,
+          "measure_type": "absolute_value",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants Achieving Skin Pain Response at Week 16",
+          "rank": "secondary",
+          "position": 5,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants With Treatment-emergent Adverse Events (TEAEs) During the Study",
+          "rank": "secondary",
+          "position": 6,
+          "measure_type": "safety_incidence",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants With Serious Treatment-emergent Adverse Events During the Study",
+          "rank": "secondary",
+          "position": 7,
+          "measure_type": "safety_incidence",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants With Treatment-emergent Adverse Events (TEAEs) Leading to Withdrawal From the Study",
+          "rank": "secondary",
+          "position": 8,
+          "measure_type": "safety_incidence",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04242498",
+      "source_excerpt": "protocolSection.outcomesModule.secondaryOutcomes[].measure",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "multiplicity_control": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    }
+  },
+  "timing_ops": {
+    "start_date": {
+      "value": {
+        "date": "2020-03-02",
+        "precision": "day"
+      },
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04242498",
+      "source_excerpt": "protocolSection.statusModule.startDateStruct.date",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "primary_completion_date": {
+      "value": {
+        "date": "2021-11-09",
+        "precision": "day"
+      },
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04242498",
+      "source_excerpt": "protocolSection.statusModule.primaryCompletionDateStruct.date",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "completion_date": {
+      "value": {
+        "date": "2022-09-28",
+        "precision": "day"
+      },
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04242498",
+      "source_excerpt": "protocolSection.statusModule.completionDateStruct.date",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "study_schedule": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    },
+    "rescue_therapy": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    }
+  },
+  "adverse_events": {
+    "serious_adverse_event_rate": {
+      "value": [
+        {
+          "arm": "Placebo",
+          "n_affected": 0,
+          "n_at_risk": 74,
+          "pct": 0.0
+        },
+        {
+          "arm": "BKZ Dosing Regimen 1",
+          "n_affected": 3,
+          "n_at_risk": 142,
+          "pct": 2.1
+        },
+        {
+          "arm": "BKZ Dosing Regimen 2",
+          "n_affected": 9,
+          "n_at_risk": 290,
+          "pct": 3.1
+        },
+        {
+          "arm": "Placebo/BKZ Dosing Regimen 2",
+          "n_affected": 2,
+          "n_at_risk": 69,
+          "pct": 2.9
+        },
+        {
+          "arm": "BKZ Dosing Regimen 1/BKZ Dosing Regimen 1",
+          "n_affected": 4,
+          "n_at_risk": 133,
+          "pct": 3.0
+        },
+        {
+          "arm": "BKZ Dosing Regimen 2/BKZ Dosing Regimen 1",
+          "n_affected": 3,
+          "n_at_risk": 130,
+          "pct": 2.3
+        },
+        {
+          "arm": "BKZ Dosing Regimen 2/BKZ Dosing Regimen 2",
+          "n_affected": 4,
+          "n_at_risk": 131,
+          "pct": 3.1
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04242498",
+      "source_excerpt": "resultsSection.adverseEventsModule.eventGroups[].seriousNumAffected/seriousNumAtRisk",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "death_rate": {
+      "value": [
+        {
+          "arm": "Placebo",
+          "n_affected": 0,
+          "n_at_risk": 74,
+          "pct": 0.0
+        },
+        {
+          "arm": "BKZ Dosing Regimen 1",
+          "n_affected": 0,
+          "n_at_risk": 142,
+          "pct": 0.0
+        },
+        {
+          "arm": "BKZ Dosing Regimen 2",
+          "n_affected": 0,
+          "n_at_risk": 290,
+          "pct": 0.0
+        },
+        {
+          "arm": "Placebo/BKZ Dosing Regimen 2",
+          "n_affected": 0,
+          "n_at_risk": 69,
+          "pct": 0.0
+        },
+        {
+          "arm": "BKZ Dosing Regimen 1/BKZ Dosing Regimen 1",
+          "n_affected": 0,
+          "n_at_risk": 133,
+          "pct": 0.0
+        },
+        {
+          "arm": "BKZ Dosing Regimen 2/BKZ Dosing Regimen 1",
+          "n_affected": 0,
+          "n_at_risk": 130,
+          "pct": 0.0
+        },
+        {
+          "arm": "BKZ Dosing Regimen 2/BKZ Dosing Regimen 2",
+          "n_affected": 0,
+          "n_at_risk": 131,
+          "pct": 0.0
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04242498",
+      "source_excerpt": "resultsSection.adverseEventsModule.eventGroups[].deathsNumAffected/deathsNumAtRisk",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "most_common_adverse_events": {
+      "value": [
+        {
+          "meddra_pt": "Hidradenitis",
+          "meddra_soc": "Skin and subcutaneous tissue disorders",
+          "per_arm": [
+            {
+              "arm": "Placebo",
+              "n_affected": 5,
+              "n_at_risk": 74,
+              "pct": 6.8
+            },
+            {
+              "arm": "BKZ Dosing Regimen 1",
+              "n_affected": 13,
+              "n_at_risk": 142,
+              "pct": 9.2
+            },
+            {
+              "arm": "BKZ Dosing Regimen 2",
+              "n_affected": 23,
+              "n_at_risk": 290,
+              "pct": 7.9
+            },
+            {
+              "arm": "Placebo/BKZ Dosing Regimen 2",
+              "n_affected": 7,
+              "n_at_risk": 69,
+              "pct": 10.1
+            },
+            {
+              "arm": "BKZ Dosing Regimen 1/BKZ Dosing Regimen 1",
+              "n_affected": 16,
+              "n_at_risk": 133,
+              "pct": 12.0
+            },
+            {
+              "arm": "BKZ Dosing Regimen 2/BKZ Dosing Regimen 1",
+              "n_affected": 24,
+              "n_at_risk": 130,
+              "pct": 18.5
+            },
+            {
+              "arm": "BKZ Dosing Regimen 2/BKZ Dosing Regimen 2",
+              "n_affected": 15,
+              "n_at_risk": 131,
+              "pct": 11.5
+            }
+          ]
+        },
+        {
+          "meddra_pt": "Oral candidiasis",
+          "meddra_soc": "Infections and infestations",
+          "per_arm": [
+            {
+              "arm": "Placebo",
+              "n_affected": 0,
+              "n_at_risk": 74,
+              "pct": 0.0
+            },
+            {
+              "arm": "BKZ Dosing Regimen 1",
+              "n_affected": 5,
+              "n_at_risk": 142,
+              "pct": 3.5
+            },
+            {
+              "arm": "BKZ Dosing Regimen 2",
+              "n_affected": 24,
+              "n_at_risk": 290,
+              "pct": 8.3
+            },
+            {
+              "arm": "Placebo/BKZ Dosing Regimen 2",
+              "n_affected": 3,
+              "n_at_risk": 69,
+              "pct": 4.3
+            },
+            {
+              "arm": "BKZ Dosing Regimen 1/BKZ Dosing Regimen 1",
+              "n_affected": 11,
+              "n_at_risk": 133,
+              "pct": 8.3
+            },
+            {
+              "arm": "BKZ Dosing Regimen 2/BKZ Dosing Regimen 1",
+              "n_affected": 16,
+              "n_at_risk": 130,
+              "pct": 12.3
+            },
+            {
+              "arm": "BKZ Dosing Regimen 2/BKZ Dosing Regimen 2",
+              "n_affected": 14,
+              "n_at_risk": 131,
+              "pct": 10.7
+            }
+          ]
+        },
+        {
+          "meddra_pt": "Headache",
+          "meddra_soc": "Nervous system disorders",
+          "per_arm": [
+            {
+              "arm": "Placebo",
+              "n_affected": 7,
+              "n_at_risk": 74,
+              "pct": 9.5
+            },
+            {
+              "arm": "BKZ Dosing Regimen 1",
+              "n_affected": 7,
+              "n_at_risk": 142,
+              "pct": 4.9
+            },
+            {
+              "arm": "BKZ Dosing Regimen 2",
+              "n_affected": 18,
+              "n_at_risk": 290,
+              "pct": 6.2
+            },
+            {
+              "arm": "Placebo/BKZ Dosing Regimen 2",
+              "n_affected": 3,
+              "n_at_risk": 69,
+              "pct": 4.3
+            },
+            {
+              "arm": "BKZ Dosing Regimen 1/BKZ Dosing Regimen 1",
+              "n_affected": 7,
+              "n_at_risk": 133,
+              "pct": 5.3
+            },
+            {
+              "arm": "BKZ Dosing Regimen 2/BKZ Dosing Regimen 1",
+              "n_affected": 4,
+              "n_at_risk": 130,
+              "pct": 3.1
+            },
+            {
+              "arm": "BKZ Dosing Regimen 2/BKZ Dosing Regimen 2",
+              "n_affected": 7,
+              "n_at_risk": 131,
+              "pct": 5.3
+            }
+          ]
+        },
+        {
+          "meddra_pt": "Nasopharyngitis",
+          "meddra_soc": "Infections and infestations",
+          "per_arm": [
+            {
+              "arm": "Placebo",
+              "n_affected": 0,
+              "n_at_risk": 74,
+              "pct": 0.0
+            },
+            {
+              "arm": "BKZ Dosing Regimen 1",
+              "n_affected": 3,
+              "n_at_risk": 142,
+              "pct": 2.1
+            },
+            {
+              "arm": "BKZ Dosing Regimen 2",
+              "n_affected": 11,
+              "n_at_risk": 290,
+              "pct": 3.8
+            },
+            {
+              "arm": "Placebo/BKZ Dosing Regimen 2",
+              "n_affected": 2,
+              "n_at_risk": 69,
+              "pct": 2.9
+            },
+            {
+              "arm": "BKZ Dosing Regimen 1/BKZ Dosing Regimen 1",
+              "n_affected": 6,
+              "n_at_risk": 133,
+              "pct": 4.5
+            },
+            {
+              "arm": "BKZ Dosing Regimen 2/BKZ Dosing Regimen 1",
+              "n_affected": 8,
+              "n_at_risk": 130,
+              "pct": 6.2
+            },
+            {
+              "arm": "BKZ Dosing Regimen 2/BKZ Dosing Regimen 2",
+              "n_affected": 11,
+              "n_at_risk": 131,
+              "pct": 8.4
+            }
+          ]
+        },
+        {
+          "meddra_pt": "Diarrhoea",
+          "meddra_soc": "Gastrointestinal disorders",
+          "per_arm": [
+            {
+              "arm": "Placebo",
+              "n_affected": 6,
+              "n_at_risk": 74,
+              "pct": 8.1
+            },
+            {
+              "arm": "BKZ Dosing Regimen 1",
+              "n_affected": 5,
+              "n_at_risk": 142,
+              "pct": 3.5
+            },
+            {
+              "arm": "BKZ Dosing Regimen 2",
+              "n_affected": 18,
+              "n_at_risk": 290,
+              "pct": 6.2
+            },
+            {
+              "arm": "Placebo/BKZ Dosing Regimen 2",
+              "n_affected": 2,
+              "n_at_risk": 69,
+              "pct": 2.9
+            },
+            {
+              "arm": "BKZ Dosing Regimen 1/BKZ Dosing Regimen 1",
+              "n_affected": 6,
+              "n_at_risk": 133,
+              "pct": 4.5
+            },
+            {
+              "arm": "BKZ Dosing Regimen 2/BKZ Dosing Regimen 1",
+              "n_affected": 4,
+              "n_at_risk": 130,
+              "pct": 3.1
+            },
+            {
+              "arm": "BKZ Dosing Regimen 2/BKZ Dosing Regimen 2",
+              "n_affected": 3,
+              "n_at_risk": 131,
+              "pct": 2.3
+            }
+          ]
+        },
+        {
+          "meddra_pt": "Folliculitis",
+          "meddra_soc": "Infections and infestations",
+          "per_arm": [
+            {
+              "arm": "Placebo",
+              "n_affected": 0,
+              "n_at_risk": 74,
+              "pct": 0.0
+            },
+            {
+              "arm": "BKZ Dosing Regimen 1",
+              "n_affected": 5,
+              "n_at_risk": 142,
+              "pct": 3.5
+            },
+            {
+              "arm": "BKZ Dosing Regimen 2",
+              "n_affected": 8,
+              "n_at_risk": 290,
+              "pct": 2.8
+            },
+            {
+              "arm": "Placebo/BKZ Dosing Regimen 2",
+              "n_affected": 2,
+              "n_at_risk": 69,
+              "pct": 2.9
+            },
+            {
+              "arm": "BKZ Dosing Regimen 1/BKZ Dosing Regimen 1",
+              "n_affected": 5,
+              "n_at_risk": 133,
+              "pct": 3.8
+            },
+            {
+              "arm": "BKZ Dosing Regimen 2/BKZ Dosing Regimen 1",
+              "n_affected": 6,
+              "n_at_risk": 130,
+              "pct": 4.6
+            },
+            {
+              "arm": "BKZ Dosing Regimen 2/BKZ Dosing Regimen 2",
+              "n_affected": 9,
+              "n_at_risk": 131,
+              "pct": 6.9
+            }
+          ]
+        },
+        {
+          "meddra_pt": "Corona virus infection",
+          "meddra_soc": "Infections and infestations",
+          "per_arm": [
+            {
+              "arm": "Placebo",
+              "n_affected": 0,
+              "n_at_risk": 74,
+              "pct": 0.0
+            },
+            {
+              "arm": "BKZ Dosing Regimen 1",
+              "n_affected": 3,
+              "n_at_risk": 142,
+              "pct": 2.1
+            },
+            {
+              "arm": "BKZ Dosing Regimen 2",
+              "n_affected": 11,
+              "n_at_risk": 290,
+              "pct": 3.8
+            },
+            {
+              "arm": "Placebo/BKZ Dosing Regimen 2",
+              "n_affected": 4,
+              "n_at_risk": 69,
+              "pct": 5.8
+            },
+            {
+              "arm": "BKZ Dosing Regimen 1/BKZ Dosing Regimen 1",
+              "n_affected": 2,
+              "n_at_risk": 133,
+              "pct": 1.5
+            },
+            {
+              "arm": "BKZ Dosing Regimen 2/BKZ Dosing Regimen 1",
+              "n_affected": 7,
+              "n_at_risk": 130,
+              "pct": 5.4
+            },
+            {
+              "arm": "BKZ Dosing Regimen 2/BKZ Dosing Regimen 2",
+              "n_affected": 8,
+              "n_at_risk": 131,
+              "pct": 6.1
+            }
+          ]
+        },
+        {
+          "meddra_pt": "Upper respiratory tract infection",
+          "meddra_soc": "Infections and infestations",
+          "per_arm": [
+            {
+              "arm": "Placebo",
+              "n_affected": 1,
+              "n_at_risk": 74,
+              "pct": 1.4
+            },
+            {
+              "arm": "BKZ Dosing Regimen 1",
+              "n_affected": 0,
+              "n_at_risk": 142,
+              "pct": 0.0
+            },
+            {
+              "arm": "BKZ Dosing Regimen 2",
+              "n_affected": 5,
+              "n_at_risk": 290,
+              "pct": 1.7
+            },
+            {
+              "arm": "Placebo/BKZ Dosing Regimen 2",
+              "n_affected": 4,
+              "n_at_risk": 69,
+              "pct": 5.8
+            },
+            {
+              "arm": "BKZ Dosing Regimen 1/BKZ Dosing Regimen 1",
+              "n_affected": 7,
+              "n_at_risk": 133,
+              "pct": 5.3
+            },
+            {
+              "arm": "BKZ Dosing Regimen 2/BKZ Dosing Regimen 1",
+              "n_affected": 5,
+              "n_at_risk": 130,
+              "pct": 3.8
+            },
+            {
+              "arm": "BKZ Dosing Regimen 2/BKZ Dosing Regimen 2",
+              "n_affected": 3,
+              "n_at_risk": 131,
+              "pct": 2.3
+            }
+          ]
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04242498",
+      "source_excerpt": "resultsSection.adverseEventsModule.otherEvents[] (top 8 of 11 by highest single-arm incidence; CT.gov's own >=5% frequency-threshold table)",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "discontinuation_due_to_ae_rate": {
+      "value": [
+        {
+          "arm": "Placebo",
+          "n_discontinued": 1,
+          "n_started": 74,
+          "pct": 1.4
+        },
+        {
+          "arm": "BKZ Dosing Regimen 1",
+          "n_discontinued": 1,
+          "n_started": 144,
+          "pct": 0.7
+        },
+        {
+          "arm": "BKZ Dosing Regimen 2",
+          "n_discontinued": 9,
+          "n_started": 291,
+          "pct": 3.1
+        },
+        {
+          "arm": "Placebo/BKZ Dosing Regimen 2",
+          "n_discontinued": 0,
+          "n_started": 0,
+          "pct": null
+        },
+        {
+          "arm": "BKZ Dosing Regimen 1/BKZ Dosing Regimen 1",
+          "n_discontinued": 0,
+          "n_started": 0,
+          "pct": null
+        },
+        {
+          "arm": "BKZ Dosing Regimen 2/BKZ Dosing Regimen 1",
+          "n_discontinued": 0,
+          "n_started": 0,
+          "pct": null
+        },
+        {
+          "arm": "BKZ Dosing Regimen 2/BKZ Dosing Regimen 2",
+          "n_discontinued": 0,
+          "n_started": 0,
+          "pct": null
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04242498",
+      "source_excerpt": "resultsSection.participantFlowModule.periods[0].dropWithdraws[type=\"Adverse Event\"].reasons[] vs periods[0].milestones[type=STARTED].achievements[]",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "boxed_warning": {
+      "value": {
+        "present": false,
+        "title": null,
+        "warning_categories": [],
+        "referenced_label_sections": [],
+        "product_names": []
+      },
+      "source_type": "openfda_label",
+      "source_url": "https://api.fda.gov/drug/label.json?search=openfda.substance_name:BIMEKIZUMAB&limit=1",
+      "source_excerpt": "results[0] has no boxed_warning key (checked, none present)",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    }
+  },
+  "real_world_safety": {
+    "faers_summary": {
+      "value": {
+        "query": {
+          "search_field": "patient.drug.medicinalproduct",
+          "search_term": "BIMEKIZUMAB",
+          "receivedate_from": "2016-04-19",
+          "receivedate_to": "2026-06-30",
+          "api_urls": [
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"BIMEKIZUMAB\"&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"BIMEKIZUMAB\"+AND+serious:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"BIMEKIZUMAB\"+AND+seriousnessdeath:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"BIMEKIZUMAB\"+AND+seriousnesshospitalization:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"BIMEKIZUMAB\"+AND+seriousnesslifethreatening:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"BIMEKIZUMAB\"+AND+seriousnessdisabling:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"BIMEKIZUMAB\"&count=patient.reaction.reactionmeddrapt.exact&limit=15",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"BIMEKIZUMAB\"+AND+serious:1&count=patient.reaction.reactionmeddrapt.exact&limit=15",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"BIMEKIZUMAB\"&count=receivedate"
+          ],
+          "data_last_updated": "2026-07-30"
+        },
+        "total_reports": 4062,
+        "serious_reports": 3865,
+        "death_reports": 57,
+        "hospitalization_reports": 1018,
+        "life_threatening_reports": 53,
+        "disability_reports": 35,
+        "top_reactions": [
+          {
+            "meddra_pt": "PSORIATIC ARTHROPATHY",
+            "report_count": 971,
+            "pct_of_reports": 23.9
+          },
+          {
+            "meddra_pt": "PSORIASIS",
+            "report_count": 618,
+            "pct_of_reports": 15.21
+          },
+          {
+            "meddra_pt": "DRUG INEFFECTIVE",
+            "report_count": 487,
+            "pct_of_reports": 11.99
+          },
+          {
+            "meddra_pt": "INJECTION SITE PAIN",
+            "report_count": 398,
+            "pct_of_reports": 9.8
+          },
+          {
+            "meddra_pt": "INAPPROPRIATE SCHEDULE OF PRODUCT ADMINISTRATION",
+            "report_count": 362,
+            "pct_of_reports": 8.91
+          },
+          {
+            "meddra_pt": "OFF LABEL USE",
+            "report_count": 288,
+            "pct_of_reports": 7.09
+          },
+          {
+            "meddra_pt": "PRODUCT DOSE OMISSION ISSUE",
+            "report_count": 285,
+            "pct_of_reports": 7.02
+          },
+          {
+            "meddra_pt": "THERAPY INTERRUPTED",
+            "report_count": 282,
+            "pct_of_reports": 6.94
+          },
+          {
+            "meddra_pt": "HIDRADENITIS",
+            "report_count": 245,
+            "pct_of_reports": 6.03
+          },
+          {
+            "meddra_pt": "FATIGUE",
+            "report_count": 221,
+            "pct_of_reports": 5.44
+          },
+          {
+            "meddra_pt": "ORAL CANDIDIASIS",
+            "report_count": 220,
+            "pct_of_reports": 5.42
+          },
+          {
+            "meddra_pt": "CONDITION AGGRAVATED",
+            "report_count": 208,
+            "pct_of_reports": 5.12
+          },
+          {
+            "meddra_pt": "PNEUMONIA",
+            "report_count": 198,
+            "pct_of_reports": 4.87
+          },
+          {
+            "meddra_pt": "INCORRECT DOSE ADMINISTERED",
+            "report_count": 188,
+            "pct_of_reports": 4.63
+          },
+          {
+            "meddra_pt": "THERAPEUTIC RESPONSE SHORTENED",
+            "report_count": 177,
+            "pct_of_reports": 4.36
+          }
+        ],
+        "top_serious_reactions": [
+          {
+            "meddra_pt": "PSORIATIC ARTHROPATHY",
+            "report_count": 971,
+            "pct_of_reports": 25.12
+          },
+          {
+            "meddra_pt": "PSORIASIS",
+            "report_count": 598,
+            "pct_of_reports": 15.47
+          },
+          {
+            "meddra_pt": "DRUG INEFFECTIVE",
+            "report_count": 467,
+            "pct_of_reports": 12.08
+          },
+          {
+            "meddra_pt": "INJECTION SITE PAIN",
+            "report_count": 383,
+            "pct_of_reports": 9.91
+          },
+          {
+            "meddra_pt": "INAPPROPRIATE SCHEDULE OF PRODUCT ADMINISTRATION",
+            "report_count": 349,
+            "pct_of_reports": 9.03
+          },
+          {
+            "meddra_pt": "THERAPY INTERRUPTED",
+            "report_count": 276,
+            "pct_of_reports": 7.14
+          },
+          {
+            "meddra_pt": "OFF LABEL USE",
+            "report_count": 271,
+            "pct_of_reports": 7.01
+          },
+          {
+            "meddra_pt": "PRODUCT DOSE OMISSION ISSUE",
+            "report_count": 269,
+            "pct_of_reports": 6.96
+          },
+          {
+            "meddra_pt": "HIDRADENITIS",
+            "report_count": 234,
+            "pct_of_reports": 6.05
+          },
+          {
+            "meddra_pt": "FATIGUE",
+            "report_count": 212,
+            "pct_of_reports": 5.49
+          },
+          {
+            "meddra_pt": "ORAL CANDIDIASIS",
+            "report_count": 205,
+            "pct_of_reports": 5.3
+          },
+          {
+            "meddra_pt": "CONDITION AGGRAVATED",
+            "report_count": 199,
+            "pct_of_reports": 5.15
+          },
+          {
+            "meddra_pt": "PNEUMONIA",
+            "report_count": 198,
+            "pct_of_reports": 5.12
+          },
+          {
+            "meddra_pt": "INCORRECT DOSE ADMINISTERED",
+            "report_count": 181,
+            "pct_of_reports": 4.68
+          },
+          {
+            "meddra_pt": "THERAPEUTIC RESPONSE SHORTENED",
+            "report_count": 175,
+            "pct_of_reports": 4.53
+          }
+        ],
+        "reports_by_year": [
+          {
+            "year": 2016,
+            "report_count": 4
+          },
+          {
+            "year": 2019,
+            "report_count": 1
+          },
+          {
+            "year": 2020,
+            "report_count": 3
+          },
+          {
+            "year": 2021,
+            "report_count": 2
+          },
+          {
+            "year": 2022,
+            "report_count": 10
+          },
+          {
+            "year": 2023,
+            "report_count": 89
+          },
+          {
+            "year": 2024,
+            "report_count": 881
+          },
+          {
+            "year": 2025,
+            "report_count": 2123
+          },
+          {
+            "year": 2026,
+            "report_count": 949
+          }
+        ],
+        "meddra_version": null
+      },
+      "source_type": "openfda_faers",
+      "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"BIMEKIZUMAB\"&limit=1",
+      "source_excerpt": "openFDA drug/event.json aggregate: total_reports=4062, serious=3865, deaths=57",
+      "extracted_by": "fetch_faers.py (openfda drug/event.json, v2 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    }
+  },
+  "exclusivity": {
+    "regulatory_application": {
+      "value": {
+        "application_type": "BLA",
+        "application_number": "761151",
+        "registry": "purple_book",
+        "center": "CDER",
+        "proprietary_name": "Bimzelx",
+        "applicant": "UCB, Inc.",
+        "first_approval_date": "2023-10-17"
+      },
+      "source_type": "purple_book",
+      "source_url": "https://purplebooksearch.fda.gov/index.cfm?event=advancedsearch",
+      "source_excerpt": "purplebooksearch.fda.gov live search table: BLA 761151 | Bimzelx | bimekizumab-bkzx | 351(a) | UCB, Inc. | first approved 2023-10-17",
+      "extracted_by": "atlas.regulatory_applications (registry file fetched 2026-09-05)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "orange_book": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    },
+    "purple_book": {
+      "value": {
+        "bla_number": "761151",
+        "proprietary_name": "Bimzelx",
+        "proper_name": "bimekizumab-bkzx",
+        "applicant": "UCB, Inc.",
+        "license_type": "351(a)",
+        "license_number": "1736",
+        "center": "CDER",
+        "products": [
+          {
+            "product_number": "001",
+            "strength": "160MG/ML",
+            "dosage_form": "Injection",
+            "route": "Subcutaneous",
+            "presentation": "Pre-Filled Syringe",
+            "marketing_status": "Rx",
+            "licensure": "Licensed",
+            "approval_date": "2023-10-17",
+            "submission_type": "Original",
+            "supplement_number": null
+          },
+          {
+            "product_number": "002",
+            "strength": "160MG/ML",
+            "dosage_form": "Injection",
+            "route": "Subcutaneous",
+            "presentation": "Autoinjector",
+            "marketing_status": "Rx",
+            "licensure": "Licensed",
+            "approval_date": "2023-10-17",
+            "submission_type": "Original",
+            "supplement_number": null
+          },
+          {
+            "product_number": "003",
+            "strength": "320MG/2ML (160MG/2ML)",
+            "dosage_form": "Injection",
+            "route": "Subcutaneous",
+            "presentation": "Pre-Filled Syringe",
+            "marketing_status": "Rx",
+            "licensure": "Licensed",
+            "approval_date": "2024-10-11",
+            "submission_type": "Supplement",
+            "supplement_number": "9"
+          },
+          {
+            "product_number": "004",
+            "strength": "320MG/2ML (160MG/2ML)",
+            "dosage_form": "Injection",
+            "route": "Subcutaneous",
+            "presentation": "Autoinjector",
+            "marketing_status": "Rx",
+            "licensure": "Licensed",
+            "approval_date": "2024-10-11",
+            "submission_type": "Supplement",
+            "supplement_number": "9"
+          }
+        ],
+        "first_approval_date": "2023-10-17",
+        "date_of_first_licensure": null,
+        "reference_product_exclusivity_expiration": null,
+        "exclusivity_expiration_date": null,
+        "first_interchangeable_exclusivity_expiration": null,
+        "orphan_exclusivity_expiration": null,
+        "patent_list_provided": null,
+        "biosimilars": [],
+        "data_file_month": null
+      },
+      "source_type": "purple_book",
+      "source_url": "https://purplebooksearch.fda.gov/index.cfm?event=advancedsearch",
+      "source_excerpt": "purplebooksearch.fda.gov live search table, BLA 761151 (Bimzelx), 0 biosimilar(s) on file",
+      "extracted_by": "fetch_purple_book.py (purplebooksearch.fda.gov live search table, raw staging pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    }
+  }
+}

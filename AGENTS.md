@@ -31,6 +31,43 @@ This file is the project's committed home for project-intrinsic agent memory: bu
   and JADE REGIMEN: the full per-visit schedule lives only in multi-page PDF tables the pipeline
   couldn't reliably extract. Don't force-fill it by inference — a wrong schedule is worse than a
   null.
+- **This atlas is an ongoing, multi-cycle scale-out effort, not a one-shot.** It started at 1
+  indication (AD, 5 drugs, 17 trials) and is now at 9 indications, 22 unique drugs, 63 trials
+  (see README's "What this covers" for the full per-indication breakdown and exactly which
+  candidate trials were checked and excluded as non-pivotal for each). Every drug/indication
+  pairing was verified against real, live ClinicalTrials.gov and openFDA data before being
+  added — never assumed from general knowledge. When extending further, apply the same bar:
+  live-query CT.gov (`query.cond=<indication>&query.intr=<drug>`) and confirm each candidate
+  trial is a genuine pivotal EXPERIMENTAL arm (placebo/vehicle/vs.-nothing-controlled,
+  `resultsSection` present) before adding it — not a comparator arm in someone else's program,
+  a switch/extension study, an active-comparator head-to-head, or a regional bridging study.
+- **A drug named as a candidate for a new indication is not automatically the right drug for
+  that indication.** Verify the FDA label's own `indications_and_usage` text for the literal
+  indication name before spending time on trial curation — co-occurrence of a drug and a
+  condition in some CT.gov trial is not proof of an FDA-approved indication match. A queued
+  "rilzabrutinib for Bullous Pemphigoid" candidate turned out to have zero CT.gov trials for BP
+  and an FDA label limited to Immune Thrombocytopenia; the real BP drug was Dupilumab (already
+  in this atlas), confirmed via its own label section 1.8.
+- **The cross-source fields (`real_world_safety.faers_summary`, `exclusivity.{orange_book,
+  purple_book}`) are now populated for every drug**, not just the original 5. openFDA's
+  `drug/orangebook.json` matches on `products.active_ingredients.name`, not a bare `ingredient`
+  field — a hand-run query using `ingredient:"<NAME>"` returns a false NOT_FOUND even for a
+  real, indexed drug, including very recent (2025) approvals. A drug with FDA-approved
+  biosimilars (e.g. Adalimumab has 10) has every biosimilar's BLA row in the Purple Book table
+  alongside the reference product's — the reference product is the row with
+  `License Type == "351(a)"`; every `"351(k)"` row is a biosimilar, not the drug itself.
+  Ruxolitinib the ingredient also covers Jakafi/Jakafi XR (oral, oncology/GVHD, unrelated NDAs)
+  — `exclusivity.orange_book` can be pinned to the right NDA by application number, but
+  openFDA's FAERS search has no such filter, so Ruxolitinib's `real_world_safety.faers_summary`
+  is a real, documented, unavoidable mix of all three products' reports — not a bug to "fix".
+- **Publication-extraction depth is uneven by design, not by accident.** The original 5-drug AD
+  program got a dedicated paywalled-paper research pass (PMC + FDA Drugs@FDA approval-package
+  reviews, since direct publisher fetches are blocked by Cloudflare bot-challenges this pipeline
+  will not defeat) — see README's "Paywalled full-text journal papers" note. The 8 indications
+  added since have not repeated that same research effort, so `design.background_therapy`,
+  `endpoints.multiplicity_control`, `timing_ops.rescue_therapy`, and `timing_ops.study_schedule`
+  stay `needs_extraction` for nearly all of them — a real, checkable backlog for `kolai-website`
+  to pick up, not a fabricated null.
 
 ## Maintaining this file
 

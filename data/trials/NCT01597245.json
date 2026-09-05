@@ -1,0 +1,2425 @@
+{
+  "schema_version": 2,
+  "nct_id": {
+    "value": "NCT01597245",
+    "source_type": "ctgov_api",
+    "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01597245",
+    "source_excerpt": "protocolSection.identificationModule.nctId",
+    "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+    "reviewed_by": null,
+    "confidence": 1.0
+  },
+  "identity": {
+    "trial_name": {
+      "value": "UNCOVER-2",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01597245",
+      "source_excerpt": "protocolSection.identificationModule.acronym",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "official_title": {
+      "value": "A Multicenter, Randomized, Double-Blind, Placebo-Controlled Study Comparing the Efficacy and Safety of LY2439821 to Etanercept and Placebo in Patients With Moderate-to-Severe Plaque Psoriasis",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01597245",
+      "source_excerpt": "protocolSection.identificationModule.officialTitle",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "sponsor": {
+      "value": "Eli Lilly and Company",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01597245",
+      "source_excerpt": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "phase": {
+      "value": [
+        "PHASE3"
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01597245",
+      "source_excerpt": "protocolSection.designModule.phases",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    }
+  },
+  "molecule": {
+    "drug": {
+      "value": "Ixekizumab",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01597245",
+      "source_excerpt": "protocolSection.armsInterventionsModule.interventions[].name (curated)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "intervention_names": {
+      "value": [
+        "80 mg ixekizumab Dosing Regimen",
+        "50 mg etanercept",
+        "Placebo"
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01597245",
+      "source_excerpt": "protocolSection.armsInterventionsModule.interventions[].name",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "intervention_type": {
+      "value": [
+        "DRUG"
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01597245",
+      "source_excerpt": "protocolSection.armsInterventionsModule.interventions[].type",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "mechanism_of_action": {
+      "value": {
+        "modality": "monoclonal_antibody",
+        "drug_class": "monoclonal antibody",
+        "antibody_isotype": "IgG4",
+        "binding_targets": [],
+        "pathway_cytokines": [],
+        "receptor_subunits": [],
+        "kinases_inhibited": [],
+        "lower_potency_kinases": [],
+        "selectivity": [],
+        "reversible": null,
+        "mechanism_established": null,
+        "label_section": "12.1"
+      },
+      "source_type": "openfda_label",
+      "source_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=1c6425de-1f8c-4385-bfb9-6e01db55275f",
+      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1) -- v1 extracted text: 12.1 Mechanism of Action Ixekizumab is a humanized IgG4 monoclonal antibody that selectively binds with the interleukin 17A (IL-17A) cytokine and inhibits its interaction with the IL-17 receptor. IL-17A is a naturally occurring cytokine that is involved in normal inflammatory and immune responses. Ixekizumab inhibits the release of proinflammatory cytokines and chemokines.",
+      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 0.9
+    },
+    "dosing_regimen": {
+      "value": [
+        {
+          "intervention_name": "80 mg ixekizumab Dosing Regimen",
+          "description": "Administered SC",
+          "is_placebo": false,
+          "route": null,
+          "dose_form": null,
+          "dose_value": 80,
+          "dose_unit": "mg",
+          "units_per_dose": null,
+          "frequency": null,
+          "duration_weeks": null,
+          "dosing_periods": [],
+          "administration_sites": [],
+          "antibody_isotype": null,
+          "molecular_target": null,
+          "arm_names": [],
+          "co_administered_with": []
+        }
+      ],
+      "source_type": "ctgov_text_extraction",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01597245",
+      "source_excerpt": "80 mg ixekizumab Dosing Regimen: Administered SC",
+      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 0.8
+    }
+  },
+  "population": {
+    "condition": {
+      "value": [
+        "Psoriasis"
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01597245",
+      "source_excerpt": "protocolSection.conditionsModule.conditions",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "min_age_years": {
+      "value": 18,
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01597245",
+      "source_excerpt": "protocolSection.eligibilityModule.minimumAge",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "max_age_years": {
+      "value": null,
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01597245",
+      "source_excerpt": "protocolSection.eligibilityModule.maximumAge",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 0.0
+    },
+    "sex": {
+      "value": "ALL",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01597245",
+      "source_excerpt": "protocolSection.eligibilityModule.sex",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "enrollment_count": {
+      "value": 1224,
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01597245",
+      "source_excerpt": "protocolSection.designModule.enrollmentInfo.count",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "severity_criteria": {
+      "value": {
+        "severity_label": null,
+        "basis": "eligibility_text",
+        "cross_reference": null,
+        "source_criterion_numbers": [],
+        "baseline_visit_number": null,
+        "criteria": []
+      },
+      "source_type": "ctgov_text_extraction",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01597245",
+      "source_excerpt": "Static Physician Global Assessment (sPGA) score of at least 3 and Psoriasis Area and Severity Index (PASI) score of at least 12 at screening and at first dose of study drug",
+      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 0.75
+    }
+  },
+  "design": {
+    "study_type": {
+      "value": "INTERVENTIONAL",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01597245",
+      "source_excerpt": "protocolSection.designModule.studyType",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "allocation": {
+      "value": "RANDOMIZED",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01597245",
+      "source_excerpt": "protocolSection.designModule.designInfo.allocation",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "intervention_model": {
+      "value": "PARALLEL",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01597245",
+      "source_excerpt": "protocolSection.designModule.designInfo.interventionModel",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "masking": {
+      "value": "QUADRUPLE",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01597245",
+      "source_excerpt": "protocolSection.designModule.designInfo.maskingInfo.masking",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "number_of_arms": {
+      "value": 5,
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01597245",
+      "source_excerpt": "len(protocolSection.armsInterventionsModule.armGroups)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "background_therapy": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    }
+  },
+  "endpoints": {
+    "primary_endpoints": {
+      "value": [
+        {
+          "verbatim": "Percentage of Participants With a Static Physician Global Assessment (sPGA) of (0,1) (Efficacy of Ixekizumab in Participants With Moderate to Severe Chronic Plaque Psoriasis. Measure: Static Physician Global Assessment [sPGA]) (Time frame: Week 12)",
+          "rank": "primary",
+          "position": 1,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": "Week 12"
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01597245",
+      "source_excerpt": "protocolSection.outcomesModule.primaryOutcomes[0].measure/timeFrame",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "secondary_endpoints": {
+      "value": [
+        {
+          "verbatim": "Percentage of Participants Achieving an sPGA (0) (Efficacy of Ixekizumab in Participants With Moderate to Severe Chronic Plaque Psoriasis. Measure: [sPGA])",
+          "rank": "secondary",
+          "position": 1,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants Achieving PASI 90% (PASI90) (Efficacy of Ixekizumab in Participants With Moderate to Severe Chronic Plaque Psoriasis. Measure: [PASI])",
+          "rank": "secondary",
+          "position": 2,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants Achieving PASI 100% (PASI100)",
+          "rank": "secondary",
+          "position": 3,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants Maintaining an sPGA (0,1) From Week 12 After Re-randomization at Start of Maintenance Dosing Period to Week 60",
+          "rank": "secondary",
+          "position": 4,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 60,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants With Itching Severity (Itch Numeric Rating Scale [NRI]) Score ≥4 Point Reduction From Baseline",
+          "rank": "secondary",
+          "position": 5,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Change From Baseline in Dermatology-Specific Quality of Life Index (DLQI) Total Score (Quality of Life and Outcome Assessments. Measures: Participant Reported Outcomes [PRO])",
+          "rank": "secondary",
+          "position": 6,
+          "measure_type": "change_from_baseline",
+          "scale": "DLQI",
+          "scale_component": "Total",
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Change From Baseline in Nail Psoriasis Severity Index (NAPSI)",
+          "rank": "secondary",
+          "position": 7,
+          "measure_type": "change_from_baseline",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Change From Baseline Psoriasis Scalp Severity Index (PSSI) Score",
+          "rank": "secondary",
+          "position": 8,
+          "measure_type": "change_from_baseline",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Change From Baseline in Percent of Body Surface Area (BSA) Involvement of Psoriasis",
+          "rank": "secondary",
+          "position": 9,
+          "measure_type": "change_from_baseline",
+          "scale": "BSA",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Change From Baseline in Quick Inventory of Depressive Symptomatology-Self Report 16 Items (QIDS-SR16) Total Score",
+          "rank": "secondary",
+          "position": 10,
+          "measure_type": "change_from_baseline",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Change From Baseline in All Scores of the Work Productivity Activity Impairment Questionnaire-Psoriasis (WPAI-PSO)",
+          "rank": "secondary",
+          "position": 11,
+          "measure_type": "change_from_baseline",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Change From Baseline in Medical Outcomes Study 36-Item Short Form Health Survey (SF-36) and Physical Component Summary (PCS) and Mental Component Summary (MCS) Scores",
+          "rank": "secondary",
+          "position": 12,
+          "measure_type": "change_from_baseline",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Change From Baseline in Patient's Global Assessment (PatGA) of Disease Severity",
+          "rank": "secondary",
+          "position": 13,
+          "measure_type": "change_from_baseline",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants Achieving Palmoplantar PASI (PPASI) of ≥50% (PPASI50), ≥75% (PPASI75) or 100% (PPASI100) Improvement",
+          "rank": "secondary",
+          "position": 14,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants With Anti-Ixekizumab Antibodies",
+          "rank": "secondary",
+          "position": 15,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01597245",
+      "source_excerpt": "protocolSection.outcomesModule.secondaryOutcomes[].measure",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "multiplicity_control": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    }
+  },
+  "timing_ops": {
+    "start_date": {
+      "value": {
+        "date": "2012-05-18",
+        "precision": "day"
+      },
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01597245",
+      "source_excerpt": "protocolSection.statusModule.startDateStruct.date",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "primary_completion_date": {
+      "value": {
+        "date": "2014-03-25",
+        "precision": "day"
+      },
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01597245",
+      "source_excerpt": "protocolSection.statusModule.primaryCompletionDateStruct.date",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "completion_date": {
+      "value": {
+        "date": "2019-06-18",
+        "precision": "day"
+      },
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01597245",
+      "source_excerpt": "protocolSection.statusModule.completionDateStruct.date",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "study_schedule": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    },
+    "rescue_therapy": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    }
+  },
+  "adverse_events": {
+    "serious_adverse_event_rate": {
+      "value": [
+        {
+          "arm": "Placebo - Induction Period",
+          "n_affected": 3,
+          "n_at_risk": 167,
+          "pct": 1.8
+        },
+        {
+          "arm": "50 mg ETN - Induction Period",
+          "n_affected": 8,
+          "n_at_risk": 357,
+          "pct": 2.2
+        },
+        {
+          "arm": "Ixe Q4W - Induction Period",
+          "n_affected": 8,
+          "n_at_risk": 347,
+          "pct": 2.3
+        },
+        {
+          "arm": "Ixe Q2W - Induction Period",
+          "n_affected": 5,
+          "n_at_risk": 350,
+          "pct": 1.4
+        },
+        {
+          "arm": "Ixe/Placebo- Maintenance Period Primary Pop",
+          "n_affected": 8,
+          "n_at_risk": 176,
+          "pct": 4.5
+        },
+        {
+          "arm": "Ixe/Ixe Q4W - Maintenance Period Primary Pop",
+          "n_affected": 12,
+          "n_at_risk": 187,
+          "pct": 6.4
+        },
+        {
+          "arm": "Ixe/Ixe Q12W - Maintenance Period Primary Pop",
+          "n_affected": 14,
+          "n_at_risk": 181,
+          "pct": 7.7
+        },
+        {
+          "arm": "Placebo Resp/Placebo - Maintenance Period Secondary Pop",
+          "n_affected": 0,
+          "n_at_risk": 3,
+          "pct": 0.0
+        },
+        {
+          "arm": "Placebo NonResp/Ixe Q4W - Maintenance Period Secondary Pop",
+          "n_affected": 13,
+          "n_at_risk": 155,
+          "pct": 8.4
+        },
+        {
+          "arm": "ETN Resp/Placebo Maintenance Period Secondary Pop",
+          "n_affected": 2,
+          "n_at_risk": 132,
+          "pct": 1.5
+        },
+        {
+          "arm": "ETN NonResp/Ixe Q4W - Maintenance Period Secondary Pop",
+          "n_affected": 9,
+          "n_at_risk": 200,
+          "pct": 4.5
+        },
+        {
+          "arm": "Ixe Q4W NonResp/Ixe Q4W- Maintenance Period Secondary Pop",
+          "n_affected": 4,
+          "n_at_risk": 75,
+          "pct": 5.3
+        },
+        {
+          "arm": "Ixe Q2W NonResp/Ixe Q4W Maintenance Period Secondary Pop",
+          "n_affected": 2,
+          "n_at_risk": 49,
+          "pct": 4.1
+        },
+        {
+          "arm": "Ixe Q4W Maintenance Period Relapsed Pop",
+          "n_affected": 14,
+          "n_at_risk": 368,
+          "pct": 3.8
+        },
+        {
+          "arm": "Placebo Long-Term Extension",
+          "n_affected": 1,
+          "n_at_risk": 26,
+          "pct": 3.8
+        },
+        {
+          "arm": "Ixe Long-Term Extension",
+          "n_affected": 107,
+          "n_at_risk": 979,
+          "pct": 10.9
+        },
+        {
+          "arm": "Total Ixe Long-Term Extension",
+          "n_affected": 107,
+          "n_at_risk": 1002,
+          "pct": 10.7
+        },
+        {
+          "arm": "Placebo Post-Treatment Follow-Up",
+          "n_affected": 1,
+          "n_at_risk": 16,
+          "pct": 6.2
+        },
+        {
+          "arm": "ETN Post-Treatment Follow-Up",
+          "n_affected": 0,
+          "n_at_risk": 6,
+          "pct": 0.0
+        },
+        {
+          "arm": "Ixe Q2W Post-Treatment Follow-Up",
+          "n_affected": 3,
+          "n_at_risk": 248,
+          "pct": 1.2
+        },
+        {
+          "arm": "Ixe Q4W Post-Treatment Follow-Up",
+          "n_affected": 12,
+          "n_at_risk": 656,
+          "pct": 1.8
+        },
+        {
+          "arm": "Ixe Q12W Post-Treatment Follow-Up",
+          "n_affected": 0,
+          "n_at_risk": 24,
+          "pct": 0.0
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01597245",
+      "source_excerpt": "resultsSection.adverseEventsModule.eventGroups[].seriousNumAffected/seriousNumAtRisk",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "death_rate": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    },
+    "most_common_adverse_events": {
+      "value": [
+        {
+          "meddra_pt": "Urinary tract infection",
+          "meddra_soc": "Infections and infestations",
+          "per_arm": [
+            {
+              "arm": "Placebo - Induction Period",
+              "n_affected": 2,
+              "n_at_risk": 167,
+              "pct": 1.2
+            },
+            {
+              "arm": "50 mg ETN - Induction Period",
+              "n_affected": 2,
+              "n_at_risk": 357,
+              "pct": 0.6
+            },
+            {
+              "arm": "Ixe Q4W - Induction Period",
+              "n_affected": 7,
+              "n_at_risk": 347,
+              "pct": 2.0
+            },
+            {
+              "arm": "Ixe Q2W - Induction Period",
+              "n_affected": 5,
+              "n_at_risk": 350,
+              "pct": 1.4
+            },
+            {
+              "arm": "Ixe/Placebo- Maintenance Period Primary Pop",
+              "n_affected": 3,
+              "n_at_risk": 176,
+              "pct": 1.7
+            },
+            {
+              "arm": "Ixe/Ixe Q4W - Maintenance Period Primary Pop",
+              "n_affected": 5,
+              "n_at_risk": 187,
+              "pct": 2.7
+            },
+            {
+              "arm": "Ixe/Ixe Q12W - Maintenance Period Primary Pop",
+              "n_affected": 7,
+              "n_at_risk": 181,
+              "pct": 3.9
+            },
+            {
+              "arm": "Placebo Resp/Placebo - Maintenance Period Secondary Pop",
+              "n_affected": 1,
+              "n_at_risk": 3,
+              "pct": 33.3
+            },
+            {
+              "arm": "Placebo NonResp/Ixe Q4W - Maintenance Period Secondary Pop",
+              "n_affected": 8,
+              "n_at_risk": 155,
+              "pct": 5.2
+            },
+            {
+              "arm": "ETN Resp/Placebo Maintenance Period Secondary Pop",
+              "n_affected": 0,
+              "n_at_risk": 132,
+              "pct": 0.0
+            },
+            {
+              "arm": "ETN NonResp/Ixe Q4W - Maintenance Period Secondary Pop",
+              "n_affected": 8,
+              "n_at_risk": 200,
+              "pct": 4.0
+            },
+            {
+              "arm": "Ixe Q4W NonResp/Ixe Q4W- Maintenance Period Secondary Pop",
+              "n_affected": 1,
+              "n_at_risk": 75,
+              "pct": 1.3
+            },
+            {
+              "arm": "Ixe Q2W NonResp/Ixe Q4W Maintenance Period Secondary Pop",
+              "n_affected": 3,
+              "n_at_risk": 49,
+              "pct": 6.1
+            },
+            {
+              "arm": "Ixe Q4W Maintenance Period Relapsed Pop",
+              "n_affected": 4,
+              "n_at_risk": 368,
+              "pct": 1.1
+            },
+            {
+              "arm": "Placebo Long-Term Extension",
+              "n_affected": 1,
+              "n_at_risk": 26,
+              "pct": 3.8
+            },
+            {
+              "arm": "Ixe Long-Term Extension",
+              "n_affected": 27,
+              "n_at_risk": 979,
+              "pct": 2.8
+            },
+            {
+              "arm": "Total Ixe Long-Term Extension",
+              "n_affected": 27,
+              "n_at_risk": 1002,
+              "pct": 2.7
+            },
+            {
+              "arm": "Placebo Post-Treatment Follow-Up",
+              "n_affected": 0,
+              "n_at_risk": 16,
+              "pct": 0.0
+            },
+            {
+              "arm": "ETN Post-Treatment Follow-Up",
+              "n_affected": 0,
+              "n_at_risk": 6,
+              "pct": 0.0
+            },
+            {
+              "arm": "Ixe Q2W Post-Treatment Follow-Up",
+              "n_affected": 0,
+              "n_at_risk": 248,
+              "pct": 0.0
+            },
+            {
+              "arm": "Ixe Q4W Post-Treatment Follow-Up",
+              "n_affected": 1,
+              "n_at_risk": 656,
+              "pct": 0.2
+            },
+            {
+              "arm": "Ixe Q12W Post-Treatment Follow-Up",
+              "n_affected": 0,
+              "n_at_risk": 24,
+              "pct": 0.0
+            }
+          ]
+        },
+        {
+          "meddra_pt": "Mycobacterium tuberculosis complex test positive",
+          "meddra_soc": "Investigations",
+          "per_arm": [
+            {
+              "arm": "Placebo - Induction Period",
+              "n_affected": 0,
+              "n_at_risk": 167,
+              "pct": 0.0
+            },
+            {
+              "arm": "50 mg ETN - Induction Period",
+              "n_affected": 0,
+              "n_at_risk": 357,
+              "pct": 0.0
+            },
+            {
+              "arm": "Ixe Q4W - Induction Period",
+              "n_affected": 0,
+              "n_at_risk": 347,
+              "pct": 0.0
+            },
+            {
+              "arm": "Ixe Q2W - Induction Period",
+              "n_affected": 0,
+              "n_at_risk": 350,
+              "pct": 0.0
+            },
+            {
+              "arm": "Ixe/Placebo- Maintenance Period Primary Pop",
+              "n_affected": 0,
+              "n_at_risk": 176,
+              "pct": 0.0
+            },
+            {
+              "arm": "Ixe/Ixe Q4W - Maintenance Period Primary Pop",
+              "n_affected": 3,
+              "n_at_risk": 187,
+              "pct": 1.6
+            },
+            {
+              "arm": "Ixe/Ixe Q12W - Maintenance Period Primary Pop",
+              "n_affected": 2,
+              "n_at_risk": 181,
+              "pct": 1.1
+            },
+            {
+              "arm": "Placebo Resp/Placebo - Maintenance Period Secondary Pop",
+              "n_affected": 1,
+              "n_at_risk": 3,
+              "pct": 33.3
+            },
+            {
+              "arm": "Placebo NonResp/Ixe Q4W - Maintenance Period Secondary Pop",
+              "n_affected": 1,
+              "n_at_risk": 155,
+              "pct": 0.6
+            },
+            {
+              "arm": "ETN Resp/Placebo Maintenance Period Secondary Pop",
+              "n_affected": 0,
+              "n_at_risk": 132,
+              "pct": 0.0
+            },
+            {
+              "arm": "ETN NonResp/Ixe Q4W - Maintenance Period Secondary Pop",
+              "n_affected": 1,
+              "n_at_risk": 200,
+              "pct": 0.5
+            },
+            {
+              "arm": "Ixe Q4W NonResp/Ixe Q4W- Maintenance Period Secondary Pop",
+              "n_affected": 0,
+              "n_at_risk": 75,
+              "pct": 0.0
+            },
+            {
+              "arm": "Ixe Q2W NonResp/Ixe Q4W Maintenance Period Secondary Pop",
+              "n_affected": 0,
+              "n_at_risk": 49,
+              "pct": 0.0
+            },
+            {
+              "arm": "Ixe Q4W Maintenance Period Relapsed Pop",
+              "n_affected": 2,
+              "n_at_risk": 368,
+              "pct": 0.5
+            },
+            {
+              "arm": "Placebo Long-Term Extension",
+              "n_affected": 0,
+              "n_at_risk": 26,
+              "pct": 0.0
+            },
+            {
+              "arm": "Ixe Long-Term Extension",
+              "n_affected": 5,
+              "n_at_risk": 979,
+              "pct": 0.5
+            },
+            {
+              "arm": "Total Ixe Long-Term Extension",
+              "n_affected": 5,
+              "n_at_risk": 1002,
+              "pct": 0.5
+            },
+            {
+              "arm": "Placebo Post-Treatment Follow-Up",
+              "n_affected": 0,
+              "n_at_risk": 16,
+              "pct": 0.0
+            },
+            {
+              "arm": "ETN Post-Treatment Follow-Up",
+              "n_affected": 0,
+              "n_at_risk": 6,
+              "pct": 0.0
+            },
+            {
+              "arm": "Ixe Q2W Post-Treatment Follow-Up",
+              "n_affected": 0,
+              "n_at_risk": 248,
+              "pct": 0.0
+            },
+            {
+              "arm": "Ixe Q4W Post-Treatment Follow-Up",
+              "n_affected": 2,
+              "n_at_risk": 656,
+              "pct": 0.3
+            },
+            {
+              "arm": "Ixe Q12W Post-Treatment Follow-Up",
+              "n_affected": 0,
+              "n_at_risk": 24,
+              "pct": 0.0
+            }
+          ]
+        },
+        {
+          "meddra_pt": "Musculoskeletal chest pain",
+          "meddra_soc": "Musculoskeletal and connective tissue disorders",
+          "per_arm": [
+            {
+              "arm": "Placebo - Induction Period",
+              "n_affected": 0,
+              "n_at_risk": 167,
+              "pct": 0.0
+            },
+            {
+              "arm": "50 mg ETN - Induction Period",
+              "n_affected": 1,
+              "n_at_risk": 357,
+              "pct": 0.3
+            },
+            {
+              "arm": "Ixe Q4W - Induction Period",
+              "n_affected": 0,
+              "n_at_risk": 347,
+              "pct": 0.0
+            },
+            {
+              "arm": "Ixe Q2W - Induction Period",
+              "n_affected": 2,
+              "n_at_risk": 350,
+              "pct": 0.6
+            },
+            {
+              "arm": "Ixe/Placebo- Maintenance Period Primary Pop",
+              "n_affected": 1,
+              "n_at_risk": 176,
+              "pct": 0.6
+            },
+            {
+              "arm": "Ixe/Ixe Q4W - Maintenance Period Primary Pop",
+              "n_affected": 0,
+              "n_at_risk": 187,
+              "pct": 0.0
+            },
+            {
+              "arm": "Ixe/Ixe Q12W - Maintenance Period Primary Pop",
+              "n_affected": 0,
+              "n_at_risk": 181,
+              "pct": 0.0
+            },
+            {
+              "arm": "Placebo Resp/Placebo - Maintenance Period Secondary Pop",
+              "n_affected": 1,
+              "n_at_risk": 3,
+              "pct": 33.3
+            },
+            {
+              "arm": "Placebo NonResp/Ixe Q4W - Maintenance Period Secondary Pop",
+              "n_affected": 0,
+              "n_at_risk": 155,
+              "pct": 0.0
+            },
+            {
+              "arm": "ETN Resp/Placebo Maintenance Period Secondary Pop",
+              "n_affected": 0,
+              "n_at_risk": 132,
+              "pct": 0.0
+            },
+            {
+              "arm": "ETN NonResp/Ixe Q4W - Maintenance Period Secondary Pop",
+              "n_affected": 2,
+              "n_at_risk": 200,
+              "pct": 1.0
+            },
+            {
+              "arm": "Ixe Q4W NonResp/Ixe Q4W- Maintenance Period Secondary Pop",
+              "n_affected": 0,
+              "n_at_risk": 75,
+              "pct": 0.0
+            },
+            {
+              "arm": "Ixe Q2W NonResp/Ixe Q4W Maintenance Period Secondary Pop",
+              "n_affected": 1,
+              "n_at_risk": 49,
+              "pct": 2.0
+            },
+            {
+              "arm": "Ixe Q4W Maintenance Period Relapsed Pop",
+              "n_affected": 0,
+              "n_at_risk": 368,
+              "pct": 0.0
+            },
+            {
+              "arm": "Placebo Long-Term Extension",
+              "n_affected": 0,
+              "n_at_risk": 26,
+              "pct": 0.0
+            },
+            {
+              "arm": "Ixe Long-Term Extension",
+              "n_affected": 3,
+              "n_at_risk": 979,
+              "pct": 0.3
+            },
+            {
+              "arm": "Total Ixe Long-Term Extension",
+              "n_affected": 3,
+              "n_at_risk": 1002,
+              "pct": 0.3
+            },
+            {
+              "arm": "Placebo Post-Treatment Follow-Up",
+              "n_affected": 0,
+              "n_at_risk": 16,
+              "pct": 0.0
+            },
+            {
+              "arm": "ETN Post-Treatment Follow-Up",
+              "n_affected": 0,
+              "n_at_risk": 6,
+              "pct": 0.0
+            },
+            {
+              "arm": "Ixe Q2W Post-Treatment Follow-Up",
+              "n_affected": 0,
+              "n_at_risk": 248,
+              "pct": 0.0
+            },
+            {
+              "arm": "Ixe Q4W Post-Treatment Follow-Up",
+              "n_affected": 0,
+              "n_at_risk": 656,
+              "pct": 0.0
+            },
+            {
+              "arm": "Ixe Q12W Post-Treatment Follow-Up",
+              "n_affected": 0,
+              "n_at_risk": 24,
+              "pct": 0.0
+            }
+          ]
+        },
+        {
+          "meddra_pt": "Nasopharyngitis",
+          "meddra_soc": "Infections and infestations",
+          "per_arm": [
+            {
+              "arm": "Placebo - Induction Period",
+              "n_affected": 17,
+              "n_at_risk": 167,
+              "pct": 10.2
+            },
+            {
+              "arm": "50 mg ETN - Induction Period",
+              "n_affected": 37,
+              "n_at_risk": 357,
+              "pct": 10.4
+            },
+            {
+              "arm": "Ixe Q4W - Induction Period",
+              "n_affected": 28,
+              "n_at_risk": 347,
+              "pct": 8.1
+            },
+            {
+              "arm": "Ixe Q2W - Induction Period",
+              "n_affected": 34,
+              "n_at_risk": 350,
+              "pct": 9.7
+            },
+            {
+              "arm": "Ixe/Placebo- Maintenance Period Primary Pop",
+              "n_affected": 19,
+              "n_at_risk": 176,
+              "pct": 10.8
+            },
+            {
+              "arm": "Ixe/Ixe Q4W - Maintenance Period Primary Pop",
+              "n_affected": 32,
+              "n_at_risk": 187,
+              "pct": 17.1
+            },
+            {
+              "arm": "Ixe/Ixe Q12W - Maintenance Period Primary Pop",
+              "n_affected": 24,
+              "n_at_risk": 181,
+              "pct": 13.3
+            },
+            {
+              "arm": "Placebo Resp/Placebo - Maintenance Period Secondary Pop",
+              "n_affected": 0,
+              "n_at_risk": 3,
+              "pct": 0.0
+            },
+            {
+              "arm": "Placebo NonResp/Ixe Q4W - Maintenance Period Secondary Pop",
+              "n_affected": 29,
+              "n_at_risk": 155,
+              "pct": 18.7
+            },
+            {
+              "arm": "ETN Resp/Placebo Maintenance Period Secondary Pop",
+              "n_affected": 19,
+              "n_at_risk": 132,
+              "pct": 14.4
+            },
+            {
+              "arm": "ETN NonResp/Ixe Q4W - Maintenance Period Secondary Pop",
+              "n_affected": 35,
+              "n_at_risk": 200,
+              "pct": 17.5
+            },
+            {
+              "arm": "Ixe Q4W NonResp/Ixe Q4W- Maintenance Period Secondary Pop",
+              "n_affected": 12,
+              "n_at_risk": 75,
+              "pct": 16.0
+            },
+            {
+              "arm": "Ixe Q2W NonResp/Ixe Q4W Maintenance Period Secondary Pop",
+              "n_affected": 8,
+              "n_at_risk": 49,
+              "pct": 16.3
+            },
+            {
+              "arm": "Ixe Q4W Maintenance Period Relapsed Pop",
+              "n_affected": 41,
+              "n_at_risk": 368,
+              "pct": 11.1
+            },
+            {
+              "arm": "Placebo Long-Term Extension",
+              "n_affected": 0,
+              "n_at_risk": 26,
+              "pct": 0.0
+            },
+            {
+              "arm": "Ixe Long-Term Extension",
+              "n_affected": 125,
+              "n_at_risk": 979,
+              "pct": 12.8
+            },
+            {
+              "arm": "Total Ixe Long-Term Extension",
+              "n_affected": 125,
+              "n_at_risk": 1002,
+              "pct": 12.5
+            },
+            {
+              "arm": "Placebo Post-Treatment Follow-Up",
+              "n_affected": 0,
+              "n_at_risk": 16,
+              "pct": 0.0
+            },
+            {
+              "arm": "ETN Post-Treatment Follow-Up",
+              "n_affected": 1,
+              "n_at_risk": 6,
+              "pct": 16.7
+            },
+            {
+              "arm": "Ixe Q2W Post-Treatment Follow-Up",
+              "n_affected": 3,
+              "n_at_risk": 248,
+              "pct": 1.2
+            },
+            {
+              "arm": "Ixe Q4W Post-Treatment Follow-Up",
+              "n_affected": 4,
+              "n_at_risk": 656,
+              "pct": 0.6
+            },
+            {
+              "arm": "Ixe Q12W Post-Treatment Follow-Up",
+              "n_affected": 0,
+              "n_at_risk": 24,
+              "pct": 0.0
+            }
+          ]
+        },
+        {
+          "meddra_pt": "Nausea",
+          "meddra_soc": "Gastrointestinal disorders",
+          "per_arm": [
+            {
+              "arm": "Placebo - Induction Period",
+              "n_affected": 3,
+              "n_at_risk": 167,
+              "pct": 1.8
+            },
+            {
+              "arm": "50 mg ETN - Induction Period",
+              "n_affected": 1,
+              "n_at_risk": 357,
+              "pct": 0.3
+            },
+            {
+              "arm": "Ixe Q4W - Induction Period",
+              "n_affected": 5,
+              "n_at_risk": 347,
+              "pct": 1.4
+            },
+            {
+              "arm": "Ixe Q2W - Induction Period",
+              "n_affected": 7,
+              "n_at_risk": 350,
+              "pct": 2.0
+            },
+            {
+              "arm": "Ixe/Placebo- Maintenance Period Primary Pop",
+              "n_affected": 2,
+              "n_at_risk": 176,
+              "pct": 1.1
+            },
+            {
+              "arm": "Ixe/Ixe Q4W - Maintenance Period Primary Pop",
+              "n_affected": 2,
+              "n_at_risk": 187,
+              "pct": 1.1
+            },
+            {
+              "arm": "Ixe/Ixe Q12W - Maintenance Period Primary Pop",
+              "n_affected": 4,
+              "n_at_risk": 181,
+              "pct": 2.2
+            },
+            {
+              "arm": "Placebo Resp/Placebo - Maintenance Period Secondary Pop",
+              "n_affected": 0,
+              "n_at_risk": 3,
+              "pct": 0.0
+            },
+            {
+              "arm": "Placebo NonResp/Ixe Q4W - Maintenance Period Secondary Pop",
+              "n_affected": 6,
+              "n_at_risk": 155,
+              "pct": 3.9
+            },
+            {
+              "arm": "ETN Resp/Placebo Maintenance Period Secondary Pop",
+              "n_affected": 2,
+              "n_at_risk": 132,
+              "pct": 1.5
+            },
+            {
+              "arm": "ETN NonResp/Ixe Q4W - Maintenance Period Secondary Pop",
+              "n_affected": 4,
+              "n_at_risk": 200,
+              "pct": 2.0
+            },
+            {
+              "arm": "Ixe Q4W NonResp/Ixe Q4W- Maintenance Period Secondary Pop",
+              "n_affected": 1,
+              "n_at_risk": 75,
+              "pct": 1.3
+            },
+            {
+              "arm": "Ixe Q2W NonResp/Ixe Q4W Maintenance Period Secondary Pop",
+              "n_affected": 2,
+              "n_at_risk": 49,
+              "pct": 4.1
+            },
+            {
+              "arm": "Ixe Q4W Maintenance Period Relapsed Pop",
+              "n_affected": 4,
+              "n_at_risk": 368,
+              "pct": 1.1
+            },
+            {
+              "arm": "Placebo Long-Term Extension",
+              "n_affected": 0,
+              "n_at_risk": 26,
+              "pct": 0.0
+            },
+            {
+              "arm": "Ixe Long-Term Extension",
+              "n_affected": 11,
+              "n_at_risk": 979,
+              "pct": 1.1
+            },
+            {
+              "arm": "Total Ixe Long-Term Extension",
+              "n_affected": 11,
+              "n_at_risk": 1002,
+              "pct": 1.1
+            },
+            {
+              "arm": "Placebo Post-Treatment Follow-Up",
+              "n_affected": 0,
+              "n_at_risk": 16,
+              "pct": 0.0
+            },
+            {
+              "arm": "ETN Post-Treatment Follow-Up",
+              "n_affected": 1,
+              "n_at_risk": 6,
+              "pct": 16.7
+            },
+            {
+              "arm": "Ixe Q2W Post-Treatment Follow-Up",
+              "n_affected": 1,
+              "n_at_risk": 248,
+              "pct": 0.4
+            },
+            {
+              "arm": "Ixe Q4W Post-Treatment Follow-Up",
+              "n_affected": 2,
+              "n_at_risk": 656,
+              "pct": 0.3
+            },
+            {
+              "arm": "Ixe Q12W Post-Treatment Follow-Up",
+              "n_affected": 0,
+              "n_at_risk": 24,
+              "pct": 0.0
+            }
+          ]
+        },
+        {
+          "meddra_pt": "Asthenia",
+          "meddra_soc": "General disorders",
+          "per_arm": [
+            {
+              "arm": "Placebo - Induction Period",
+              "n_affected": 0,
+              "n_at_risk": 167,
+              "pct": 0.0
+            },
+            {
+              "arm": "50 mg ETN - Induction Period",
+              "n_affected": 2,
+              "n_at_risk": 357,
+              "pct": 0.6
+            },
+            {
+              "arm": "Ixe Q4W - Induction Period",
+              "n_affected": 3,
+              "n_at_risk": 347,
+              "pct": 0.9
+            },
+            {
+              "arm": "Ixe Q2W - Induction Period",
+              "n_affected": 0,
+              "n_at_risk": 350,
+              "pct": 0.0
+            },
+            {
+              "arm": "Ixe/Placebo- Maintenance Period Primary Pop",
+              "n_affected": 0,
+              "n_at_risk": 176,
+              "pct": 0.0
+            },
+            {
+              "arm": "Ixe/Ixe Q4W - Maintenance Period Primary Pop",
+              "n_affected": 1,
+              "n_at_risk": 187,
+              "pct": 0.5
+            },
+            {
+              "arm": "Ixe/Ixe Q12W - Maintenance Period Primary Pop",
+              "n_affected": 2,
+              "n_at_risk": 181,
+              "pct": 1.1
+            },
+            {
+              "arm": "Placebo Resp/Placebo - Maintenance Period Secondary Pop",
+              "n_affected": 0,
+              "n_at_risk": 3,
+              "pct": 0.0
+            },
+            {
+              "arm": "Placebo NonResp/Ixe Q4W - Maintenance Period Secondary Pop",
+              "n_affected": 1,
+              "n_at_risk": 155,
+              "pct": 0.6
+            },
+            {
+              "arm": "ETN Resp/Placebo Maintenance Period Secondary Pop",
+              "n_affected": 1,
+              "n_at_risk": 132,
+              "pct": 0.8
+            },
+            {
+              "arm": "ETN NonResp/Ixe Q4W - Maintenance Period Secondary Pop",
+              "n_affected": 0,
+              "n_at_risk": 200,
+              "pct": 0.0
+            },
+            {
+              "arm": "Ixe Q4W NonResp/Ixe Q4W- Maintenance Period Secondary Pop",
+              "n_affected": 0,
+              "n_at_risk": 75,
+              "pct": 0.0
+            },
+            {
+              "arm": "Ixe Q2W NonResp/Ixe Q4W Maintenance Period Secondary Pop",
+              "n_affected": 0,
+              "n_at_risk": 49,
+              "pct": 0.0
+            },
+            {
+              "arm": "Ixe Q4W Maintenance Period Relapsed Pop",
+              "n_affected": 0,
+              "n_at_risk": 368,
+              "pct": 0.0
+            },
+            {
+              "arm": "Placebo Long-Term Extension",
+              "n_affected": 0,
+              "n_at_risk": 26,
+              "pct": 0.0
+            },
+            {
+              "arm": "Ixe Long-Term Extension",
+              "n_affected": 3,
+              "n_at_risk": 979,
+              "pct": 0.3
+            },
+            {
+              "arm": "Total Ixe Long-Term Extension",
+              "n_affected": 3,
+              "n_at_risk": 1002,
+              "pct": 0.3
+            },
+            {
+              "arm": "Placebo Post-Treatment Follow-Up",
+              "n_affected": 0,
+              "n_at_risk": 16,
+              "pct": 0.0
+            },
+            {
+              "arm": "ETN Post-Treatment Follow-Up",
+              "n_affected": 1,
+              "n_at_risk": 6,
+              "pct": 16.7
+            },
+            {
+              "arm": "Ixe Q2W Post-Treatment Follow-Up",
+              "n_affected": 0,
+              "n_at_risk": 248,
+              "pct": 0.0
+            },
+            {
+              "arm": "Ixe Q4W Post-Treatment Follow-Up",
+              "n_affected": 0,
+              "n_at_risk": 656,
+              "pct": 0.0
+            },
+            {
+              "arm": "Ixe Q12W Post-Treatment Follow-Up",
+              "n_affected": 0,
+              "n_at_risk": 24,
+              "pct": 0.0
+            }
+          ]
+        },
+        {
+          "meddra_pt": "Injection site pain",
+          "meddra_soc": "General disorders",
+          "per_arm": [
+            {
+              "arm": "Placebo - Induction Period",
+              "n_affected": 2,
+              "n_at_risk": 167,
+              "pct": 1.2
+            },
+            {
+              "arm": "50 mg ETN - Induction Period",
+              "n_affected": 4,
+              "n_at_risk": 357,
+              "pct": 1.1
+            },
+            {
+              "arm": "Ixe Q4W - Induction Period",
+              "n_affected": 5,
+              "n_at_risk": 347,
+              "pct": 1.4
+            },
+            {
+              "arm": "Ixe Q2W - Induction Period",
+              "n_affected": 13,
+              "n_at_risk": 350,
+              "pct": 3.7
+            },
+            {
+              "arm": "Ixe/Placebo- Maintenance Period Primary Pop",
+              "n_affected": 4,
+              "n_at_risk": 176,
+              "pct": 2.3
+            },
+            {
+              "arm": "Ixe/Ixe Q4W - Maintenance Period Primary Pop",
+              "n_affected": 1,
+              "n_at_risk": 187,
+              "pct": 0.5
+            },
+            {
+              "arm": "Ixe/Ixe Q12W - Maintenance Period Primary Pop",
+              "n_affected": 1,
+              "n_at_risk": 181,
+              "pct": 0.6
+            },
+            {
+              "arm": "Placebo Resp/Placebo - Maintenance Period Secondary Pop",
+              "n_affected": 0,
+              "n_at_risk": 3,
+              "pct": 0.0
+            },
+            {
+              "arm": "Placebo NonResp/Ixe Q4W - Maintenance Period Secondary Pop",
+              "n_affected": 1,
+              "n_at_risk": 155,
+              "pct": 0.6
+            },
+            {
+              "arm": "ETN Resp/Placebo Maintenance Period Secondary Pop",
+              "n_affected": 1,
+              "n_at_risk": 132,
+              "pct": 0.8
+            },
+            {
+              "arm": "ETN NonResp/Ixe Q4W - Maintenance Period Secondary Pop",
+              "n_affected": 2,
+              "n_at_risk": 200,
+              "pct": 1.0
+            },
+            {
+              "arm": "Ixe Q4W NonResp/Ixe Q4W- Maintenance Period Secondary Pop",
+              "n_affected": 0,
+              "n_at_risk": 75,
+              "pct": 0.0
+            },
+            {
+              "arm": "Ixe Q2W NonResp/Ixe Q4W Maintenance Period Secondary Pop",
+              "n_affected": 1,
+              "n_at_risk": 49,
+              "pct": 2.0
+            },
+            {
+              "arm": "Ixe Q4W Maintenance Period Relapsed Pop",
+              "n_affected": 1,
+              "n_at_risk": 368,
+              "pct": 0.3
+            },
+            {
+              "arm": "Placebo Long-Term Extension",
+              "n_affected": 1,
+              "n_at_risk": 26,
+              "pct": 3.8
+            },
+            {
+              "arm": "Ixe Long-Term Extension",
+              "n_affected": 1,
+              "n_at_risk": 979,
+              "pct": 0.1
+            },
+            {
+              "arm": "Total Ixe Long-Term Extension",
+              "n_affected": 1,
+              "n_at_risk": 1002,
+              "pct": 0.1
+            },
+            {
+              "arm": "Placebo Post-Treatment Follow-Up",
+              "n_affected": 0,
+              "n_at_risk": 16,
+              "pct": 0.0
+            },
+            {
+              "arm": "ETN Post-Treatment Follow-Up",
+              "n_affected": 1,
+              "n_at_risk": 6,
+              "pct": 16.7
+            },
+            {
+              "arm": "Ixe Q2W Post-Treatment Follow-Up",
+              "n_affected": 0,
+              "n_at_risk": 248,
+              "pct": 0.0
+            },
+            {
+              "arm": "Ixe Q4W Post-Treatment Follow-Up",
+              "n_affected": 0,
+              "n_at_risk": 656,
+              "pct": 0.0
+            },
+            {
+              "arm": "Ixe Q12W Post-Treatment Follow-Up",
+              "n_affected": 0,
+              "n_at_risk": 24,
+              "pct": 0.0
+            }
+          ]
+        },
+        {
+          "meddra_pt": "Arthritis",
+          "meddra_soc": "Musculoskeletal and connective tissue disorders",
+          "per_arm": [
+            {
+              "arm": "Placebo - Induction Period",
+              "n_affected": 0,
+              "n_at_risk": 167,
+              "pct": 0.0
+            },
+            {
+              "arm": "50 mg ETN - Induction Period",
+              "n_affected": 0,
+              "n_at_risk": 357,
+              "pct": 0.0
+            },
+            {
+              "arm": "Ixe Q4W - Induction Period",
+              "n_affected": 0,
+              "n_at_risk": 347,
+              "pct": 0.0
+            },
+            {
+              "arm": "Ixe Q2W - Induction Period",
+              "n_affected": 0,
+              "n_at_risk": 350,
+              "pct": 0.0
+            },
+            {
+              "arm": "Ixe/Placebo- Maintenance Period Primary Pop",
+              "n_affected": 0,
+              "n_at_risk": 176,
+              "pct": 0.0
+            },
+            {
+              "arm": "Ixe/Ixe Q4W - Maintenance Period Primary Pop",
+              "n_affected": 0,
+              "n_at_risk": 187,
+              "pct": 0.0
+            },
+            {
+              "arm": "Ixe/Ixe Q12W - Maintenance Period Primary Pop",
+              "n_affected": 0,
+              "n_at_risk": 181,
+              "pct": 0.0
+            },
+            {
+              "arm": "Placebo Resp/Placebo - Maintenance Period Secondary Pop",
+              "n_affected": 0,
+              "n_at_risk": 3,
+              "pct": 0.0
+            },
+            {
+              "arm": "Placebo NonResp/Ixe Q4W - Maintenance Period Secondary Pop",
+              "n_affected": 0,
+              "n_at_risk": 155,
+              "pct": 0.0
+            },
+            {
+              "arm": "ETN Resp/Placebo Maintenance Period Secondary Pop",
+              "n_affected": 1,
+              "n_at_risk": 132,
+              "pct": 0.8
+            },
+            {
+              "arm": "ETN NonResp/Ixe Q4W - Maintenance Period Secondary Pop",
+              "n_affected": 2,
+              "n_at_risk": 200,
+              "pct": 1.0
+            },
+            {
+              "arm": "Ixe Q4W NonResp/Ixe Q4W- Maintenance Period Secondary Pop",
+              "n_affected": 0,
+              "n_at_risk": 75,
+              "pct": 0.0
+            },
+            {
+              "arm": "Ixe Q2W NonResp/Ixe Q4W Maintenance Period Secondary Pop",
+              "n_affected": 0,
+              "n_at_risk": 49,
+              "pct": 0.0
+            },
+            {
+              "arm": "Ixe Q4W Maintenance Period Relapsed Pop",
+              "n_affected": 1,
+              "n_at_risk": 368,
+              "pct": 0.3
+            },
+            {
+              "arm": "Placebo Long-Term Extension",
+              "n_affected": 0,
+              "n_at_risk": 26,
+              "pct": 0.0
+            },
+            {
+              "arm": "Ixe Long-Term Extension",
+              "n_affected": 4,
+              "n_at_risk": 979,
+              "pct": 0.4
+            },
+            {
+              "arm": "Total Ixe Long-Term Extension",
+              "n_affected": 4,
+              "n_at_risk": 1002,
+              "pct": 0.4
+            },
+            {
+              "arm": "Placebo Post-Treatment Follow-Up",
+              "n_affected": 0,
+              "n_at_risk": 16,
+              "pct": 0.0
+            },
+            {
+              "arm": "ETN Post-Treatment Follow-Up",
+              "n_affected": 1,
+              "n_at_risk": 6,
+              "pct": 16.7
+            },
+            {
+              "arm": "Ixe Q2W Post-Treatment Follow-Up",
+              "n_affected": 1,
+              "n_at_risk": 248,
+              "pct": 0.4
+            },
+            {
+              "arm": "Ixe Q4W Post-Treatment Follow-Up",
+              "n_affected": 0,
+              "n_at_risk": 656,
+              "pct": 0.0
+            },
+            {
+              "arm": "Ixe Q12W Post-Treatment Follow-Up",
+              "n_affected": 0,
+              "n_at_risk": 24,
+              "pct": 0.0
+            }
+          ]
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01597245",
+      "source_excerpt": "resultsSection.adverseEventsModule.otherEvents[] (top 8 of 26 by highest single-arm incidence; CT.gov's own >=5% frequency-threshold table)",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "discontinuation_due_to_ae_rate": {
+      "value": [
+        {
+          "arm": "Placebo- Induction Period",
+          "n_discontinued": 1,
+          "n_started": 168,
+          "pct": 0.6
+        },
+        {
+          "arm": "50 mg Etanercept (ETN) - Induction Period",
+          "n_discontinued": 5,
+          "n_started": 358,
+          "pct": 1.4
+        },
+        {
+          "arm": "Ixe Q4W - Induction Period",
+          "n_discontinued": 5,
+          "n_started": 347,
+          "pct": 1.4
+        },
+        {
+          "arm": "Ixe Q2W - Induction Period",
+          "n_discontinued": 4,
+          "n_started": 351,
+          "pct": 1.1
+        },
+        {
+          "arm": "Ixe/Placebo- Maintenance Period Primary Population (Pop)",
+          "n_discontinued": 0,
+          "n_started": 0,
+          "pct": null
+        },
+        {
+          "arm": "Ixe/Ixe Q4W - Maintenance Period Primary Pop",
+          "n_discontinued": 0,
+          "n_started": 0,
+          "pct": null
+        },
+        {
+          "arm": "Ixe/Ixe Q12W - Maintenance Period Primary Pop",
+          "n_discontinued": 0,
+          "n_started": 0,
+          "pct": null
+        },
+        {
+          "arm": "Placebo Resp/Placebo - Maintenance Period Secondary Pop",
+          "n_discontinued": 0,
+          "n_started": 0,
+          "pct": null
+        },
+        {
+          "arm": "Placebo NonResp/Ixe Q4W - Maintenance Period Secondary Pop",
+          "n_discontinued": 0,
+          "n_started": 0,
+          "pct": null
+        },
+        {
+          "arm": "ETN Resp/Placebo Maintenance Period Secondary Pop",
+          "n_discontinued": 0,
+          "n_started": 0,
+          "pct": null
+        },
+        {
+          "arm": "ETN NonResp/Ixe Q4W - Maintenance Period Secondary Pop",
+          "n_discontinued": 0,
+          "n_started": 0,
+          "pct": null
+        },
+        {
+          "arm": "Ixe Q4W NonResp/Ixe Q4W - Maintenance Period Secondary Pop",
+          "n_discontinued": 0,
+          "n_started": 0,
+          "pct": null
+        },
+        {
+          "arm": "Ixe Q2W NonResp/Ixe Q4W - Maintenance Period Secondary Pop",
+          "n_discontinued": 0,
+          "n_started": 0,
+          "pct": null
+        },
+        {
+          "arm": "Placebo Long-Term Extension (LTE)",
+          "n_discontinued": 0,
+          "n_started": 0,
+          "pct": null
+        },
+        {
+          "arm": "Ixe Long-Term Extension",
+          "n_discontinued": 0,
+          "n_started": 0,
+          "pct": null
+        },
+        {
+          "arm": "Total Ixe Long-Term Extension",
+          "n_discontinued": 0,
+          "n_started": 0,
+          "pct": null
+        },
+        {
+          "arm": "Placebo Post-Treatment Follow-Up",
+          "n_discontinued": 0,
+          "n_started": 0,
+          "pct": null
+        },
+        {
+          "arm": "ETN Post-Treatment Follow-Up",
+          "n_discontinued": 0,
+          "n_started": 0,
+          "pct": null
+        },
+        {
+          "arm": "Ixe Q12W Post-Treatment Follow-Up",
+          "n_discontinued": 0,
+          "n_started": 0,
+          "pct": null
+        },
+        {
+          "arm": "Ixe Q4W Post-Treatment Follow-Up",
+          "n_discontinued": 0,
+          "n_started": 0,
+          "pct": null
+        },
+        {
+          "arm": "Ixe Q2W Post-Treatment Follow-Up",
+          "n_discontinued": 0,
+          "n_started": 0,
+          "pct": null
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01597245",
+      "source_excerpt": "resultsSection.participantFlowModule.periods[0].dropWithdraws[type=\"Adverse Event\"].reasons[] vs periods[0].milestones[type=STARTED].achievements[]",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "boxed_warning": {
+      "value": {
+        "present": false,
+        "title": null,
+        "warning_categories": [],
+        "referenced_label_sections": [],
+        "product_names": []
+      },
+      "source_type": "openfda_label",
+      "source_url": "https://api.fda.gov/drug/label.json?search=openfda.substance_name:IXEKIZUMAB&limit=1",
+      "source_excerpt": "results[0] has no boxed_warning key (checked, none present)",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    }
+  },
+  "real_world_safety": {
+    "faers_summary": {
+      "value": {
+        "query": {
+          "search_field": "patient.drug.medicinalproduct",
+          "search_term": "IXEKIZUMAB",
+          "receivedate_from": "2016-05-16",
+          "receivedate_to": "2026-06-30",
+          "api_urls": [
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"IXEKIZUMAB\"&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"IXEKIZUMAB\"+AND+serious:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"IXEKIZUMAB\"+AND+seriousnessdeath:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"IXEKIZUMAB\"+AND+seriousnesshospitalization:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"IXEKIZUMAB\"+AND+seriousnesslifethreatening:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"IXEKIZUMAB\"+AND+seriousnessdisabling:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"IXEKIZUMAB\"&count=patient.reaction.reactionmeddrapt.exact&limit=15",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"IXEKIZUMAB\"+AND+serious:1&count=patient.reaction.reactionmeddrapt.exact&limit=15",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"IXEKIZUMAB\"&count=receivedate"
+          ],
+          "data_last_updated": "2026-07-30"
+        },
+        "total_reports": 1372,
+        "serious_reports": 1168,
+        "death_reports": 44,
+        "hospitalization_reports": 447,
+        "life_threatening_reports": 55,
+        "disability_reports": 29,
+        "top_reactions": [
+          {
+            "meddra_pt": "DRUG INEFFECTIVE",
+            "report_count": 259,
+            "pct_of_reports": 18.88
+          },
+          {
+            "meddra_pt": "OFF LABEL USE",
+            "report_count": 172,
+            "pct_of_reports": 12.54
+          },
+          {
+            "meddra_pt": "PSORIASIS",
+            "report_count": 169,
+            "pct_of_reports": 12.32
+          },
+          {
+            "meddra_pt": "ARTHRALGIA",
+            "report_count": 104,
+            "pct_of_reports": 7.58
+          },
+          {
+            "meddra_pt": "TREATMENT FAILURE",
+            "report_count": 95,
+            "pct_of_reports": 6.92
+          },
+          {
+            "meddra_pt": "PSORIATIC ARTHROPATHY",
+            "report_count": 85,
+            "pct_of_reports": 6.2
+          },
+          {
+            "meddra_pt": "NAUSEA",
+            "report_count": 80,
+            "pct_of_reports": 5.83
+          },
+          {
+            "meddra_pt": "THERAPEUTIC PRODUCT EFFECT DECREASED",
+            "report_count": 78,
+            "pct_of_reports": 5.69
+          },
+          {
+            "meddra_pt": "PAIN",
+            "report_count": 72,
+            "pct_of_reports": 5.25
+          },
+          {
+            "meddra_pt": "CARDIAC FAILURE CONGESTIVE",
+            "report_count": 67,
+            "pct_of_reports": 4.88
+          },
+          {
+            "meddra_pt": "CONDITION AGGRAVATED",
+            "report_count": 61,
+            "pct_of_reports": 4.45
+          },
+          {
+            "meddra_pt": "EJECTION FRACTION DECREASED",
+            "report_count": 61,
+            "pct_of_reports": 4.45
+          },
+          {
+            "meddra_pt": "THERAPEUTIC PRODUCT EFFECT INCOMPLETE",
+            "report_count": 59,
+            "pct_of_reports": 4.3
+          },
+          {
+            "meddra_pt": "CELLULITIS",
+            "report_count": 56,
+            "pct_of_reports": 4.08
+          },
+          {
+            "meddra_pt": "HEADACHE",
+            "report_count": 56,
+            "pct_of_reports": 4.08
+          }
+        ],
+        "top_serious_reactions": [
+          {
+            "meddra_pt": "DRUG INEFFECTIVE",
+            "report_count": 227,
+            "pct_of_reports": 19.43
+          },
+          {
+            "meddra_pt": "OFF LABEL USE",
+            "report_count": 159,
+            "pct_of_reports": 13.61
+          },
+          {
+            "meddra_pt": "PSORIASIS",
+            "report_count": 146,
+            "pct_of_reports": 12.5
+          },
+          {
+            "meddra_pt": "ARTHRALGIA",
+            "report_count": 98,
+            "pct_of_reports": 8.39
+          },
+          {
+            "meddra_pt": "PSORIATIC ARTHROPATHY",
+            "report_count": 85,
+            "pct_of_reports": 7.28
+          },
+          {
+            "meddra_pt": "TREATMENT FAILURE",
+            "report_count": 82,
+            "pct_of_reports": 7.02
+          },
+          {
+            "meddra_pt": "THERAPEUTIC PRODUCT EFFECT DECREASED",
+            "report_count": 76,
+            "pct_of_reports": 6.51
+          },
+          {
+            "meddra_pt": "NAUSEA",
+            "report_count": 75,
+            "pct_of_reports": 6.42
+          },
+          {
+            "meddra_pt": "PAIN",
+            "report_count": 70,
+            "pct_of_reports": 5.99
+          },
+          {
+            "meddra_pt": "CARDIAC FAILURE CONGESTIVE",
+            "report_count": 67,
+            "pct_of_reports": 5.74
+          },
+          {
+            "meddra_pt": "EJECTION FRACTION DECREASED",
+            "report_count": 61,
+            "pct_of_reports": 5.22
+          },
+          {
+            "meddra_pt": "CONDITION AGGRAVATED",
+            "report_count": 59,
+            "pct_of_reports": 5.05
+          },
+          {
+            "meddra_pt": "THERAPEUTIC PRODUCT EFFECT INCOMPLETE",
+            "report_count": 58,
+            "pct_of_reports": 4.97
+          },
+          {
+            "meddra_pt": "PNEUMONIA",
+            "report_count": 56,
+            "pct_of_reports": 4.79
+          },
+          {
+            "meddra_pt": "CELLULITIS",
+            "report_count": 55,
+            "pct_of_reports": 4.71
+          }
+        ],
+        "reports_by_year": [
+          {
+            "year": 2016,
+            "report_count": 21
+          },
+          {
+            "year": 2017,
+            "report_count": 68
+          },
+          {
+            "year": 2018,
+            "report_count": 56
+          },
+          {
+            "year": 2019,
+            "report_count": 93
+          },
+          {
+            "year": 2020,
+            "report_count": 140
+          },
+          {
+            "year": 2021,
+            "report_count": 158
+          },
+          {
+            "year": 2022,
+            "report_count": 175
+          },
+          {
+            "year": 2023,
+            "report_count": 139
+          },
+          {
+            "year": 2024,
+            "report_count": 212
+          },
+          {
+            "year": 2025,
+            "report_count": 215
+          },
+          {
+            "year": 2026,
+            "report_count": 95
+          }
+        ],
+        "meddra_version": null
+      },
+      "source_type": "openfda_faers",
+      "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"IXEKIZUMAB\"&limit=1",
+      "source_excerpt": "openFDA drug/event.json aggregate: total_reports=1372, serious=1168, deaths=44",
+      "extracted_by": "fetch_faers.py (openfda drug/event.json, v2 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    }
+  },
+  "exclusivity": {
+    "regulatory_application": {
+      "value": {
+        "application_type": "BLA",
+        "application_number": "125521",
+        "registry": "purple_book",
+        "center": "CDER",
+        "proprietary_name": "Taltz",
+        "applicant": "Eli Lilly and Company",
+        "first_approval_date": "2016-03-22"
+      },
+      "source_type": "purple_book",
+      "source_url": "https://purplebooksearch.fda.gov/index.cfm?event=advancedsearch",
+      "source_excerpt": "purplebooksearch.fda.gov live search table: BLA 125521 | Taltz | ixekizumab | 351(a) | Eli Lilly and Company | first approved 2016-03-22",
+      "extracted_by": "atlas.regulatory_applications (registry file fetched 2026-09-05)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "orange_book": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    },
+    "purple_book": {
+      "value": {
+        "bla_number": "125521",
+        "proprietary_name": "Taltz",
+        "proper_name": "ixekizumab",
+        "applicant": "Eli Lilly and Company",
+        "license_type": "351(a)",
+        "license_number": "1891",
+        "center": "CDER",
+        "products": [
+          {
+            "product_number": "001",
+            "strength": "80MG/ML",
+            "dosage_form": "Injection",
+            "route": "Subcutaneous",
+            "presentation": "Autoinjector",
+            "marketing_status": "Rx",
+            "licensure": "Licensed",
+            "approval_date": "2016-03-22",
+            "submission_type": "Original",
+            "supplement_number": null
+          },
+          {
+            "product_number": "002",
+            "strength": "80MG/ML",
+            "dosage_form": "Injection",
+            "route": "Subcutaneous",
+            "presentation": "Pre-Filled Syringe",
+            "marketing_status": "Rx",
+            "licensure": "Licensed",
+            "approval_date": "2016-03-22",
+            "submission_type": "Original",
+            "supplement_number": null
+          },
+          {
+            "product_number": "003",
+            "strength": "40MG/0.5ML",
+            "dosage_form": "Injection",
+            "route": "Subcutaneous",
+            "presentation": "Pre-Filled Syringe",
+            "marketing_status": "Rx",
+            "licensure": "Licensed",
+            "approval_date": "2024-08-20",
+            "submission_type": "Supplement",
+            "supplement_number": "32"
+          },
+          {
+            "product_number": "004",
+            "strength": "20MG/0.25ML",
+            "dosage_form": "Injection",
+            "route": "Subcutaneous",
+            "presentation": "Pre-Filled Syringe",
+            "marketing_status": "Rx",
+            "licensure": "Licensed",
+            "approval_date": "2024-08-20",
+            "submission_type": "Supplement",
+            "supplement_number": "32"
+          }
+        ],
+        "first_approval_date": "2016-03-22",
+        "date_of_first_licensure": null,
+        "reference_product_exclusivity_expiration": null,
+        "exclusivity_expiration_date": null,
+        "first_interchangeable_exclusivity_expiration": null,
+        "orphan_exclusivity_expiration": null,
+        "patent_list_provided": null,
+        "biosimilars": [],
+        "data_file_month": null
+      },
+      "source_type": "purple_book",
+      "source_url": "https://purplebooksearch.fda.gov/index.cfm?event=advancedsearch",
+      "source_excerpt": "purplebooksearch.fda.gov live search table, BLA 125521 (Taltz), 0 biosimilar(s) on file",
+      "extracted_by": "fetch_purple_book.py (purplebooksearch.fda.gov live search table, raw staging pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    }
+  }
+}

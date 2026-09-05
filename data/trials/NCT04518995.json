@@ -1,0 +1,1441 @@
+{
+  "schema_version": 2,
+  "nct_id": {
+    "value": "NCT04518995",
+    "source_type": "ctgov_api",
+    "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04518995",
+    "source_excerpt": "protocolSection.identificationModule.nctId",
+    "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+    "reviewed_by": null,
+    "confidence": 1.0
+  },
+  "identity": {
+    "trial_name": {
+      "value": "THRIVE-AA1",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04518995",
+      "source_excerpt": "protocolSection.identificationModule.acronym",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "official_title": {
+      "value": "A Double-Blind, Randomized, Placebo-Controlled Study to Evaluate the Efficacy and Safety of CTP-543 in Adult Patients With Moderate to Severe Alopecia Areata (THRIVE-AA1)",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04518995",
+      "source_excerpt": "protocolSection.identificationModule.officialTitle",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "sponsor": {
+      "value": "Concert Pharmaceuticals",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04518995",
+      "source_excerpt": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "phase": {
+      "value": [
+        "PHASE3"
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04518995",
+      "source_excerpt": "protocolSection.designModule.phases",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    }
+  },
+  "molecule": {
+    "drug": {
+      "value": "Deuruxolitinib",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04518995",
+      "source_excerpt": "protocolSection.armsInterventionsModule.interventions[].name (curated)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "intervention_names": {
+      "value": [
+        "CTP-543 matching placebo",
+        "CTP-543",
+        "CTP-543"
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04518995",
+      "source_excerpt": "protocolSection.armsInterventionsModule.interventions[].name",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "intervention_type": {
+      "value": [
+        "DRUG"
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04518995",
+      "source_excerpt": "protocolSection.armsInterventionsModule.interventions[].type",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "mechanism_of_action": {
+      "value": {
+        "modality": "small_molecule",
+        "drug_class": "JAK inhibitor",
+        "antibody_isotype": null,
+        "binding_targets": [],
+        "pathway_cytokines": [],
+        "receptor_subunits": [],
+        "kinases_inhibited": [],
+        "lower_potency_kinases": [
+          "JAK3"
+        ],
+        "selectivity": [],
+        "reversible": null,
+        "mechanism_established": false,
+        "label_section": "12.1"
+      },
+      "source_type": "openfda_label",
+      "source_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=606e15f1-063b-40c2-84a3-142272020d64",
+      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1) -- v1 extracted text: 12.1 Mechanism of Action Deuruxolitinib is a Janus kinase (JAK) inhibitor. JAKs mediate the signaling of a number of cytokines and growth factors that are important for hematopoiesis and immune function. JAK signaling involves recruitment of STATs (signal transducers and activators of transcription) to cytokine receptors, activation and subsequent localization of STATs to the nucleus leading to modulation of gene expression. In an in vitro kinase activity assay, deuruxolitinib had greater inhibitory potency for JAK1, JAK2 and TYK2 relative to JAK3. The relevance of inhibition of JAK enzymes to therapeutic effectiveness is not currently known.",
+      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 0.9
+    },
+    "dosing_regimen": {
+      "value": [
+        {
+          "intervention_name": "CTP-543 matching placebo",
+          "description": "Administered as tablets.",
+          "is_placebo": true,
+          "route": null,
+          "dose_form": "tablet",
+          "dose_value": null,
+          "dose_unit": null,
+          "units_per_dose": null,
+          "frequency": null,
+          "duration_weeks": null,
+          "dosing_periods": [],
+          "administration_sites": [],
+          "antibody_isotype": null,
+          "molecular_target": null,
+          "arm_names": [],
+          "co_administered_with": []
+        },
+        {
+          "intervention_name": "CTP-543",
+          "description": "Administered as tablets.",
+          "is_placebo": false,
+          "route": null,
+          "dose_form": "tablet",
+          "dose_value": null,
+          "dose_unit": null,
+          "units_per_dose": null,
+          "frequency": null,
+          "duration_weeks": null,
+          "dosing_periods": [],
+          "administration_sites": [],
+          "antibody_isotype": null,
+          "molecular_target": null,
+          "arm_names": [],
+          "co_administered_with": []
+        },
+        {
+          "intervention_name": "CTP-543",
+          "description": "Administered as tablets.",
+          "is_placebo": false,
+          "route": null,
+          "dose_form": "tablet",
+          "dose_value": null,
+          "dose_unit": null,
+          "units_per_dose": null,
+          "frequency": null,
+          "duration_weeks": null,
+          "dosing_periods": [],
+          "administration_sites": [],
+          "antibody_isotype": null,
+          "molecular_target": null,
+          "arm_names": [],
+          "co_administered_with": []
+        }
+      ],
+      "source_type": "ctgov_text_extraction",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04518995",
+      "source_excerpt": "CTP-543 matching placebo: Administered as tablets. || CTP-543: Administered as tablets. || CTP-543: Administered as tablets.",
+      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 0.8
+    }
+  },
+  "population": {
+    "condition": {
+      "value": [
+        "Alopecia Areata"
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04518995",
+      "source_excerpt": "protocolSection.conditionsModule.conditions",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "min_age_years": {
+      "value": 18,
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04518995",
+      "source_excerpt": "protocolSection.eligibilityModule.minimumAge",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "max_age_years": {
+      "value": 65,
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04518995",
+      "source_excerpt": "protocolSection.eligibilityModule.maximumAge",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "sex": {
+      "value": "ALL",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04518995",
+      "source_excerpt": "protocolSection.eligibilityModule.sex",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "enrollment_count": {
+      "value": 706,
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04518995",
+      "source_excerpt": "protocolSection.designModule.enrollmentInfo.count",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "severity_criteria": {
+      "value": {
+        "severity_label": null,
+        "basis": "eligibility_text",
+        "cross_reference": null,
+        "source_criterion_numbers": [],
+        "baseline_visit_number": null,
+        "criteria": []
+      },
+      "source_type": "ctgov_text_extraction",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04518995",
+      "source_excerpt": "At least 50% scalp hair loss, as defined by a Severity of Alopecia Tool (SALT) score ≥50, at Screening and Baseline.",
+      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 0.75
+    }
+  },
+  "design": {
+    "study_type": {
+      "value": "INTERVENTIONAL",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04518995",
+      "source_excerpt": "protocolSection.designModule.studyType",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "allocation": {
+      "value": "RANDOMIZED",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04518995",
+      "source_excerpt": "protocolSection.designModule.designInfo.allocation",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "intervention_model": {
+      "value": "PARALLEL",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04518995",
+      "source_excerpt": "protocolSection.designModule.designInfo.interventionModel",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "masking": {
+      "value": "QUADRUPLE",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04518995",
+      "source_excerpt": "protocolSection.designModule.designInfo.maskingInfo.masking",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "number_of_arms": {
+      "value": 3,
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04518995",
+      "source_excerpt": "len(protocolSection.armsInterventionsModule.armGroups)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "background_therapy": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    }
+  },
+  "endpoints": {
+    "primary_endpoints": {
+      "value": [
+        {
+          "verbatim": "Percentage of Participants Achieving an Absolute Severity of Alopecia Tool (SALT) Score of ≤20 at Week 24 (Time frame: Week 24)",
+          "rank": "primary",
+          "position": 1,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": "Week 24"
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04518995",
+      "source_excerpt": "protocolSection.outcomesModule.primaryOutcomes[0].measure/timeFrame",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "secondary_endpoints": {
+      "value": [
+        {
+          "verbatim": "Percentage of Responders on the Hair Satisfaction Patient Reported Outcome (SPRO) Scale at Weeks 12, 16, 20, and 24",
+          "rank": "secondary",
+          "position": 1,
+          "measure_type": "absolute_value",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 20,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants Achieving an Absolute SALT Score of ≤20 at Weeks 4, 8, 12, 16, and 20",
+          "rank": "secondary",
+          "position": 2,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 4,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 8,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 20,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Relative Change in SALT Scores From Baseline at Weeks 4, 8, 12, 16, 20, and 24",
+          "rank": "secondary",
+          "position": 3,
+          "measure_type": "absolute_value",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 4,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 8,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 20,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Responders Assessed Using the Clinician Global Impression of Improvement (CGI-I) at Weeks 12, 16, 20, and 24",
+          "rank": "secondary",
+          "position": 4,
+          "measure_type": "absolute_value",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 20,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Responders Assessed Using the Patient Global Impression of Improvement (PGI-I) at Weeks 12, 16, 20, and 24",
+          "rank": "secondary",
+          "position": 5,
+          "measure_type": "absolute_value",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 20,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Change in the Clinician Global Impression of Severity (CGI-S) Scores From Baseline at Weeks 12, 16, 20, and 24",
+          "rank": "secondary",
+          "position": 6,
+          "measure_type": "change_from_baseline",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 20,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Change in the Patient Global Impression of Severity (PGI-S) Scores From Baseline at Weeks 12, 16, 20, and 24",
+          "rank": "secondary",
+          "position": 7,
+          "measure_type": "change_from_baseline",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 20,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants Achieving at Least a 75% and 90% Relative Reduction in SALT Score From Baseline at Weeks 12 and 24",
+          "rank": "secondary",
+          "position": 8,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Change in the Brigham Eyebrow Tool for Alopecia (BETA) Scores From Baseline at Weeks 12 and 24",
+          "rank": "secondary",
+          "position": 9,
+          "measure_type": "change_from_baseline",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Change in the Brigham Eyelash Tool for Alopecia (BELA) Scores From Baseline at Weeks 12 and 24",
+          "rank": "secondary",
+          "position": 10,
+          "measure_type": "change_from_baseline",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Change in the SPRO Scale From Baseline at Weeks 12, 16, 20, and 24",
+          "rank": "secondary",
+          "position": 11,
+          "measure_type": "change_from_baseline",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 20,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants Achieving a ≥2-point Change From Baseline in the SPRO Scale at Weeks 12, 16, 20, and 24",
+          "rank": "secondary",
+          "position": 12,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 20,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Change in the Individual Items of the Hair Quality Patient Reported Outcome (QPRO) Scale From Baseline at Weeks 12, 16, 20, and 24",
+          "rank": "secondary",
+          "position": 13,
+          "measure_type": "change_from_baseline",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 20,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Change in the Anxiety and Depression Scale Scores of the Hospital Anxiety and Depression Scale (HADS) From Baseline at Week 24",
+          "rank": "secondary",
+          "position": 14,
+          "measure_type": "change_from_baseline",
+          "scale": "HADS",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants Achieving an Absolute SALT Score of ≤10 at Week 24",
+          "rank": "secondary",
+          "position": 15,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04518995",
+      "source_excerpt": "protocolSection.outcomesModule.secondaryOutcomes[].measure",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "multiplicity_control": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    }
+  },
+  "timing_ops": {
+    "start_date": {
+      "value": {
+        "date": "2020-11-23",
+        "precision": "day"
+      },
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04518995",
+      "source_excerpt": "protocolSection.statusModule.startDateStruct.date",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "primary_completion_date": {
+      "value": {
+        "date": "2022-04-19",
+        "precision": "day"
+      },
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04518995",
+      "source_excerpt": "protocolSection.statusModule.primaryCompletionDateStruct.date",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "completion_date": {
+      "value": {
+        "date": "2022-04-19",
+        "precision": "day"
+      },
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04518995",
+      "source_excerpt": "protocolSection.statusModule.completionDateStruct.date",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "study_schedule": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    },
+    "rescue_therapy": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    }
+  },
+  "adverse_events": {
+    "serious_adverse_event_rate": {
+      "value": [
+        {
+          "arm": "Placebo",
+          "n_affected": 4,
+          "n_at_risk": 140,
+          "pct": 2.9
+        },
+        {
+          "arm": "CTP-543 8 mg BID",
+          "n_affected": 4,
+          "n_at_risk": 350,
+          "pct": 1.1
+        },
+        {
+          "arm": "CTP-543 12 mg BID",
+          "n_affected": 1,
+          "n_at_risk": 215,
+          "pct": 0.5
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04518995",
+      "source_excerpt": "resultsSection.adverseEventsModule.eventGroups[].seriousNumAffected/seriousNumAtRisk",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "death_rate": {
+      "value": [
+        {
+          "arm": "Placebo",
+          "n_affected": 0,
+          "n_at_risk": 140,
+          "pct": 0.0
+        },
+        {
+          "arm": "CTP-543 8 mg BID",
+          "n_affected": 0,
+          "n_at_risk": 351,
+          "pct": 0.0
+        },
+        {
+          "arm": "CTP-543 12 mg BID",
+          "n_affected": 0,
+          "n_at_risk": 215,
+          "pct": 0.0
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04518995",
+      "source_excerpt": "resultsSection.adverseEventsModule.eventGroups[].deathsNumAffected/deathsNumAtRisk",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "most_common_adverse_events": {
+      "value": [
+        {
+          "meddra_pt": "Acne",
+          "meddra_soc": "Skin and subcutaneous tissue disorders",
+          "per_arm": [
+            {
+              "arm": "Placebo",
+              "n_affected": 7,
+              "n_at_risk": 140,
+              "pct": 5.0
+            },
+            {
+              "arm": "CTP-543 8 mg BID",
+              "n_affected": 31,
+              "n_at_risk": 350,
+              "pct": 8.9
+            },
+            {
+              "arm": "CTP-543 12 mg BID",
+              "n_affected": 26,
+              "n_at_risk": 215,
+              "pct": 12.1
+            }
+          ]
+        },
+        {
+          "meddra_pt": "Headache",
+          "meddra_soc": "Nervous system disorders",
+          "per_arm": [
+            {
+              "arm": "Placebo",
+              "n_affected": 8,
+              "n_at_risk": 140,
+              "pct": 5.7
+            },
+            {
+              "arm": "CTP-543 8 mg BID",
+              "n_affected": 41,
+              "n_at_risk": 350,
+              "pct": 11.7
+            },
+            {
+              "arm": "CTP-543 12 mg BID",
+              "n_affected": 24,
+              "n_at_risk": 215,
+              "pct": 11.2
+            }
+          ]
+        },
+        {
+          "meddra_pt": "COVID-19",
+          "meddra_soc": "Infections and infestations",
+          "per_arm": [
+            {
+              "arm": "Placebo",
+              "n_affected": 8,
+              "n_at_risk": 140,
+              "pct": 5.7
+            },
+            {
+              "arm": "CTP-543 8 mg BID",
+              "n_affected": 19,
+              "n_at_risk": 350,
+              "pct": 5.4
+            },
+            {
+              "arm": "CTP-543 12 mg BID",
+              "n_affected": 15,
+              "n_at_risk": 215,
+              "pct": 7.0
+            }
+          ]
+        },
+        {
+          "meddra_pt": "Upper respiratory tract infection",
+          "meddra_soc": "Infections and infestations",
+          "per_arm": [
+            {
+              "arm": "Placebo",
+              "n_affected": 9,
+              "n_at_risk": 140,
+              "pct": 6.4
+            },
+            {
+              "arm": "CTP-543 8 mg BID",
+              "n_affected": 9,
+              "n_at_risk": 350,
+              "pct": 2.6
+            },
+            {
+              "arm": "CTP-543 12 mg BID",
+              "n_affected": 8,
+              "n_at_risk": 215,
+              "pct": 3.7
+            }
+          ]
+        },
+        {
+          "meddra_pt": "Blood creatine phosphokinase (increased)",
+          "meddra_soc": "Investigations",
+          "per_arm": [
+            {
+              "arm": "Placebo",
+              "n_affected": 2,
+              "n_at_risk": 140,
+              "pct": 1.4
+            },
+            {
+              "arm": "CTP-543 8 mg BID",
+              "n_affected": 21,
+              "n_at_risk": 350,
+              "pct": 6.0
+            },
+            {
+              "arm": "CTP-543 12 mg BID",
+              "n_affected": 11,
+              "n_at_risk": 215,
+              "pct": 5.1
+            }
+          ]
+        },
+        {
+          "meddra_pt": "Nasopharyngitis",
+          "meddra_soc": "Infections and infestations",
+          "per_arm": [
+            {
+              "arm": "Placebo",
+              "n_affected": 5,
+              "n_at_risk": 140,
+              "pct": 3.6
+            },
+            {
+              "arm": "CTP-543 8 mg BID",
+              "n_affected": 18,
+              "n_at_risk": 350,
+              "pct": 5.1
+            },
+            {
+              "arm": "CTP-543 12 mg BID",
+              "n_affected": 8,
+              "n_at_risk": 215,
+              "pct": 3.7
+            }
+          ]
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04518995",
+      "source_excerpt": "resultsSection.adverseEventsModule.otherEvents[] (top 8 of 6 by highest single-arm incidence; CT.gov's own >=5% frequency-threshold table)",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "discontinuation_due_to_ae_rate": {
+      "value": [
+        {
+          "arm": "Placebo",
+          "n_discontinued": 2,
+          "n_started": 140,
+          "pct": 1.4
+        },
+        {
+          "arm": "CTP-543 8 mg BID",
+          "n_discontinued": 8,
+          "n_started": 351,
+          "pct": 2.3
+        },
+        {
+          "arm": "CTP-543 12 mg BID",
+          "n_discontinued": 4,
+          "n_started": 215,
+          "pct": 1.9
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04518995",
+      "source_excerpt": "resultsSection.participantFlowModule.periods[0].dropWithdraws[type=\"Treatment Emergent or Worsening Adverse Event\"].reasons[] vs periods[0].milestones[type=STARTED].achievements[]",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "boxed_warning": {
+      "value": {
+        "present": true,
+        "title": "SERIOUS INFECTIONS, MORTALITY, MALIGNANCY, MAJOR ADVERSE CARDIOVASCULAR EVENTS, AND THROMBOSIS",
+        "warning_categories": [
+          "serious_infections",
+          "mortality",
+          "malignancy",
+          "mace",
+          "thrombosis"
+        ],
+        "referenced_label_sections": [
+          "5.1",
+          "5.2",
+          "5.3",
+          "5.4",
+          "5.5"
+        ],
+        "product_names": [
+          "LEQSELVI"
+        ]
+      },
+      "source_type": "openfda_label",
+      "source_url": "https://api.fda.gov/drug/label.json?search=openfda.substance_name:DEURUXOLITINIB&limit=1",
+      "source_excerpt": "results[0].boxed_warning -- v1 extracted text: WARNING: SERIOUS INFECTIONS, MORTALITY, MALIGNANCY, MAJOR ADVERSE CARDIOVASCULAR EVENTS, AND THROMBOSIS Increased risk of serious bacterial, fungal, viral and opportunistic infections, including tuberculosis (TB), that may lead to hospitalization or death. Interrupt treatment with LEQSELVI if a serious infection occurs until the infection is controlled. LEQSELVI treatment is not recommended in patients with active tuberculosis. Test for latent TB before and during therapy; treat latent TB prior to use. Monitor all patients for active TB during treatment, even patients with initial negative, latent TB test. ( 5.1 ) Higher rate of all-cause mortality, including sudden cardiovascular death, was observed with another Janus kinase (JAK) inhibitor vs. TNF blockers in rheumatoid arthritis (RA) patients. LEQSELVI is not approved for use in RA patients. ( 5.2 ) Malignancies were reported in patients treated with LEQSELVI. Higher rate of lymphomas and lung cancers was observed with another JAK inhibitor vs. TNF blockers in RA patients. ( 5.3 ) Higher rate of major adverse cardiovascular events (MACE) (defined as cardiovascular death, myocardial infarction, and stroke) was observed with another JAK inhibitor vs. TNF blockers in RA patients. ( 5.4 ) Thrombosis, including cerebral venous sinus thrombosis (CVT), deep vein thrombosis (DVT) and pulmonary embolism (PE) have been reported in patients treated with LEQSELVI. Increased incidence of pulmonary embolism, venous and arterial thrombosis was observed with another JAK inhibitor vs. TNF blockers. ( 5.5 ) WARNING: SERIOUS INFECTIONS, MORTALITY, MALIGNANCY, MAJOR ADVERSE CARDIOVASCULAR EVENTS (MACE) and THROMBOSIS See full prescribing information for complete boxed warning. Increased risk of serious bacterial, fungal, viral and opportunistic infections including tuberculosis (TB), that may lead to hospitalization or death. Interrupt treatment with LEQSELVI if a serious infection occurs until the infection is controlled. Test for latent TB before and during therapy; treat latent TB prior to use. Monitor all patients for active TB during treatment, even patients with initial negative, latent TB test. ( 5.1 ) Higher rate of all-cause mortality, including sudden cardiovascular death with another Janus kinase inhibitor (JAK) vs. TNF blockers in rheumatoid arthritis (RA) patients. LEQSELVI is not approved for use in RA patients. ( 5.2 ) Malignancies have occurred in patients treated with LEQSELVI. Higher rate of lymphomas and lung cancers with another JAK inhibitor vs. TNF blockers in RA patients. ( 5.3 ) Higher rate of MACE (defined as cardiovascular death, myocardial infarction, and stroke) with another Janus kinase inhibitor (JAK) vs. TNF blockers in rheumatoid arthritis (RA) patients. ( 5.4 ) Thrombosis has occurred in patients treated with LEQSELVI. Increased incidence of pulmonary embolism, venous and arterial thrombosis with another JAK inhibitor vs. TNF blockers. ( 5.5 )",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    }
+  },
+  "real_world_safety": {
+    "faers_summary": {
+      "value": {
+        "query": {
+          "search_field": "patient.drug.medicinalproduct",
+          "search_term": "DEURUXOLITINIB",
+          "receivedate_from": "2024-11-20",
+          "receivedate_to": "2024-11-20",
+          "api_urls": [
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"DEURUXOLITINIB\"&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"DEURUXOLITINIB\"+AND+serious:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"DEURUXOLITINIB\"+AND+seriousnessdeath:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"DEURUXOLITINIB\"+AND+seriousnesshospitalization:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"DEURUXOLITINIB\"+AND+seriousnesslifethreatening:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"DEURUXOLITINIB\"+AND+seriousnessdisabling:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"DEURUXOLITINIB\"&count=patient.reaction.reactionmeddrapt.exact&limit=15",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"DEURUXOLITINIB\"+AND+serious:1&count=patient.reaction.reactionmeddrapt.exact&limit=15",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"DEURUXOLITINIB\"&count=receivedate"
+          ],
+          "data_last_updated": "2026-07-30"
+        },
+        "total_reports": 1,
+        "serious_reports": 0,
+        "death_reports": 0,
+        "hospitalization_reports": 0,
+        "life_threatening_reports": 0,
+        "disability_reports": 0,
+        "top_reactions": [
+          {
+            "meddra_pt": "ACNE",
+            "report_count": 1,
+            "pct_of_reports": 100.0
+          },
+          {
+            "meddra_pt": "ALOPECIA",
+            "report_count": 1,
+            "pct_of_reports": 100.0
+          },
+          {
+            "meddra_pt": "BLOOD CHOLESTEROL INCREASED",
+            "report_count": 1,
+            "pct_of_reports": 100.0
+          },
+          {
+            "meddra_pt": "WEIGHT INCREASED",
+            "report_count": 1,
+            "pct_of_reports": 100.0
+          }
+        ],
+        "top_serious_reactions": [],
+        "reports_by_year": [
+          {
+            "year": 2024,
+            "report_count": 1
+          }
+        ],
+        "meddra_version": null
+      },
+      "source_type": "openfda_faers",
+      "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"DEURUXOLITINIB\"&limit=1",
+      "source_excerpt": "openFDA drug/event.json aggregate: total_reports=1, serious=0, deaths=0",
+      "extracted_by": "fetch_faers.py (openfda drug/event.json, v2 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    }
+  },
+  "exclusivity": {
+    "regulatory_application": {
+      "value": {
+        "application_type": "NDA",
+        "application_number": "217900",
+        "registry": "orange_book",
+        "center": "CDER",
+        "proprietary_name": "LEQSELVI",
+        "applicant": "SUN PHARMACEUTICAL INDUSTRIES INC",
+        "first_approval_date": "2024-07-25"
+      },
+      "source_type": "orange_book",
+      "source_url": "https://api.fda.gov/drug/orangebook.json",
+      "source_excerpt": "openFDA drug/orangebook.json: DEURUXOLITINIB application N217900, brand LEQSELVI, applicant SUN PHARM INDS INC, approved 2024-07-25",
+      "extracted_by": "atlas.regulatory_applications (registry file fetched 2026-09-05)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "orange_book": {
+      "value": {
+        "application_type": "N",
+        "application_number": "217900",
+        "ingredient": "DEURUXOLITINIB",
+        "trade_name": "LEQSELVI",
+        "applicant": "SUN PHARM INDS INC",
+        "applicant_full_name": "SUN PHARMACEUTICAL INDUSTRIES INC",
+        "products": [
+          {
+            "product_number": "001",
+            "strength": "EQ 8MG BASE",
+            "dosage_form": "TABLET",
+            "route": "ORAL",
+            "approval_date": "2024-07-25",
+            "rld": true,
+            "rs": true,
+            "te_code": null,
+            "marketing_type": "HUMAN PRESCRIPTION DRUG"
+          }
+        ],
+        "patents": [
+          {
+            "patent_number": "10561659",
+            "expiration_date": "2037-05-04",
+            "drug_substance_claim": false,
+            "drug_product_claim": false,
+            "patent_use_code": "U-3976",
+            "delisted": false,
+            "submission_date": "2024-08-23",
+            "product_numbers": [
+              "001"
+            ]
+          },
+          {
+            "patent_number": "12076323",
+            "expiration_date": "2037-05-04",
+            "drug_substance_claim": false,
+            "drug_product_claim": false,
+            "patent_use_code": "U-3976",
+            "delisted": false,
+            "submission_date": "2024-10-01",
+            "product_numbers": [
+              "001"
+            ]
+          },
+          {
+            "patent_number": "11919907",
+            "expiration_date": "2041-05-21",
+            "drug_substance_claim": false,
+            "drug_product_claim": true,
+            "patent_use_code": "U-3976",
+            "delisted": false,
+            "submission_date": "2024-08-23",
+            "product_numbers": [
+              "001"
+            ]
+          },
+          {
+            "patent_number": "12285432",
+            "expiration_date": "2042-08-11",
+            "drug_substance_claim": false,
+            "drug_product_claim": false,
+            "patent_use_code": "U-3976",
+            "delisted": false,
+            "submission_date": "2025-05-29",
+            "product_numbers": [
+              "001"
+            ]
+          },
+          {
+            "patent_number": "12247034",
+            "expiration_date": "2044-05-10",
+            "drug_substance_claim": true,
+            "drug_product_claim": true,
+            "patent_use_code": null,
+            "delisted": false,
+            "submission_date": "2025-04-08",
+            "product_numbers": [
+              "001"
+            ]
+          },
+          {
+            "patent_number": "12364699",
+            "expiration_date": "2044-10-10",
+            "drug_substance_claim": false,
+            "drug_product_claim": false,
+            "patent_use_code": "U-3976",
+            "delisted": false,
+            "submission_date": "2025-08-21",
+            "product_numbers": [
+              "001"
+            ]
+          }
+        ],
+        "exclusivities": [
+          {
+            "code": "NCE",
+            "expiration_date": "2029-07-25",
+            "product_numbers": [
+              "001"
+            ]
+          }
+        ],
+        "latest_patent_expiration": "2044-10-10",
+        "latest_exclusivity_expiration": "2029-07-25",
+        "data_file_date": null
+      },
+      "source_type": "orange_book",
+      "source_url": "https://api.fda.gov/drug/orangebook.json?search=products.active_ingredients.name%3A%22DEURUXOLITINIB%22&limit=100",
+      "source_excerpt": "openFDA drug/orangebook.json, 1 product row(s) matched on products.active_ingredients.name='DEURUXOLITINIB'",
+      "extracted_by": "fetch_orange_book.py (openfda drug/orangebook.json, v2 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "purple_book": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    }
+  }
+}

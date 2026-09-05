@@ -1,0 +1,1798 @@
+{
+  "schema_version": 2,
+  "nct_id": {
+    "value": "NCT02207231",
+    "source_type": "ctgov_api",
+    "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02207231",
+    "source_excerpt": "protocolSection.identificationModule.nctId",
+    "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+    "reviewed_by": null,
+    "confidence": 1.0
+  },
+  "identity": {
+    "trial_name": {
+      "value": "VOYAGE 1",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02207231",
+      "source_excerpt": "protocolSection.identificationModule.acronym",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "official_title": {
+      "value": "Phase 3, Multicenter, Randomized, Double-blind, Placebo and Active Comparator-controlled Study Evaluating the Efficacy and Safety of Guselkumab in the Treatment of Subjects With Moderate to Severe Plaque-type Psoriasis",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02207231",
+      "source_excerpt": "protocolSection.identificationModule.officialTitle",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "sponsor": {
+      "value": "Janssen Research & Development, LLC",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02207231",
+      "source_excerpt": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "phase": {
+      "value": [
+        "PHASE3"
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02207231",
+      "source_excerpt": "protocolSection.designModule.phases",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    }
+  },
+  "molecule": {
+    "drug": {
+      "value": "Guselkumab",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02207231",
+      "source_excerpt": "protocolSection.armsInterventionsModule.interventions[].name (curated)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "intervention_names": {
+      "value": [
+        "Guselkumab 100 mg",
+        "Placebo for guselkumab",
+        "Adalimumab",
+        "Placebo for adalimumab"
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02207231",
+      "source_excerpt": "protocolSection.armsInterventionsModule.interventions[].name",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "intervention_type": {
+      "value": [
+        "DRUG"
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02207231",
+      "source_excerpt": "protocolSection.armsInterventionsModule.interventions[].type",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "mechanism_of_action": {
+      "value": {
+        "modality": "monoclonal_antibody",
+        "drug_class": "monoclonal antibody",
+        "antibody_isotype": null,
+        "binding_targets": [],
+        "pathway_cytokines": [
+          "IL-23"
+        ],
+        "receptor_subunits": [],
+        "kinases_inhibited": [],
+        "lower_potency_kinases": [],
+        "selectivity": [],
+        "reversible": null,
+        "mechanism_established": null,
+        "label_section": "12.1"
+      },
+      "source_type": "openfda_label",
+      "source_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=01b4ab20-c027-482f-b358-b9beae545cb3",
+      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1) -- v1 extracted text: 12.1 Mechanism of Action Guselkumab is a human monoclonal IgG1λ antibody that selectively binds to the p19 subunit of interleukin 23 (IL-23) and inhibits its interaction with the IL-23 receptor. IL-23 is a naturally occurring cytokine that is involved in normal inflammatory and immune responses. Guselkumab inhibits the release of proinflammatory cytokines and chemokines.",
+      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 0.9
+    },
+    "dosing_regimen": {
+      "value": [
+        {
+          "intervention_name": "Guselkumab 100 mg",
+          "description": "100 mg by subcutaneous injection at Weeks 0, 4 and q8w thereafter through Week 252 (Group 1). 100 mg by subcutaneous injection at Weeks 16, 20 and q8w thereafter through Week 252 (Group II). 100 mg by subcutaneous injection at Week 52 and q8w thereafter through Week 252 (Group III).",
+          "is_placebo": false,
+          "route": "subcutaneous",
+          "dose_form": "injection",
+          "dose_value": 100,
+          "dose_unit": "mg",
+          "units_per_dose": null,
+          "frequency": null,
+          "duration_weeks": null,
+          "dosing_periods": [],
+          "administration_sites": [],
+          "antibody_isotype": null,
+          "molecular_target": null,
+          "arm_names": [],
+          "co_administered_with": []
+        },
+        {
+          "intervention_name": "Placebo for guselkumab",
+          "description": "Subcutaneous injections to maintain the blind.",
+          "is_placebo": true,
+          "route": "subcutaneous",
+          "dose_form": null,
+          "dose_value": null,
+          "dose_unit": null,
+          "units_per_dose": null,
+          "frequency": null,
+          "duration_weeks": null,
+          "dosing_periods": [],
+          "administration_sites": [],
+          "antibody_isotype": null,
+          "molecular_target": null,
+          "arm_names": [],
+          "co_administered_with": []
+        }
+      ],
+      "source_type": "ctgov_text_extraction",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02207231",
+      "source_excerpt": "Guselkumab 100 mg: 100 mg by subcutaneous injection at Weeks 0, 4 and q8w thereafter through Week 252 (Group 1). 100 mg by subcutaneous injection at Weeks 16, 20 and q8w thereafter through Week 252 (Group II). 100 mg by subcutaneous injection at Week 52 and q8w thereafter through Week 252 (Group III). || Placebo for guselkumab: Subcutaneous injections to maintain the blind.",
+      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 0.8
+    }
+  },
+  "population": {
+    "condition": {
+      "value": [
+        "Psoriasis"
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02207231",
+      "source_excerpt": "protocolSection.conditionsModule.conditions",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "min_age_years": {
+      "value": 18,
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02207231",
+      "source_excerpt": "protocolSection.eligibilityModule.minimumAge",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "max_age_years": {
+      "value": 99,
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02207231",
+      "source_excerpt": "protocolSection.eligibilityModule.maximumAge",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "sex": {
+      "value": "ALL",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02207231",
+      "source_excerpt": "protocolSection.eligibilityModule.sex",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "enrollment_count": {
+      "value": 837,
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02207231",
+      "source_excerpt": "protocolSection.designModule.enrollmentInfo.count",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "severity_criteria": {
+      "value": {
+        "severity_label": null,
+        "basis": "eligibility_text",
+        "cross_reference": null,
+        "source_criterion_numbers": [],
+        "baseline_visit_number": null,
+        "criteria": [
+          {
+            "scale": "IGA",
+            "scale_component": null,
+            "scale_variant": null,
+            "metric": "absolute_score",
+            "comparator": ">=",
+            "value": 3,
+            "unit": "score",
+            "scale_min": null,
+            "scale_max": null,
+            "assessed_at": [
+              "screening",
+              "baseline"
+            ],
+            "scale_anchors": null
+          },
+          {
+            "scale": "BSA",
+            "scale_component": null,
+            "scale_variant": null,
+            "metric": "percent_bsa",
+            "comparator": ">=",
+            "value": 10,
+            "unit": "percent",
+            "scale_min": null,
+            "scale_max": null,
+            "assessed_at": [
+              "screening",
+              "baseline"
+            ],
+            "scale_anchors": null
+          }
+        ]
+      },
+      "source_type": "ctgov_text_extraction",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02207231",
+      "source_excerpt": "Have a Psoriasis Area and Severity Index (PASI) greater than or equal to (\\>=) 12 at Screening and at Baseline | Have an Investigator's Global Assessment (IGA) score \\>=3 at Screening and at Baseline | Have an involved body surface area (BSA) \\>=10 percent (%) at Screening and at Baseline",
+      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 0.75
+    }
+  },
+  "design": {
+    "study_type": {
+      "value": "INTERVENTIONAL",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02207231",
+      "source_excerpt": "protocolSection.designModule.studyType",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "allocation": {
+      "value": "RANDOMIZED",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02207231",
+      "source_excerpt": "protocolSection.designModule.designInfo.allocation",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "intervention_model": {
+      "value": "PARALLEL",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02207231",
+      "source_excerpt": "protocolSection.designModule.designInfo.interventionModel",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "masking": {
+      "value": "QUADRUPLE",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02207231",
+      "source_excerpt": "protocolSection.designModule.designInfo.maskingInfo.masking",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "number_of_arms": {
+      "value": 3,
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02207231",
+      "source_excerpt": "len(protocolSection.armsInterventionsModule.armGroups)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "background_therapy": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    }
+  },
+  "endpoints": {
+    "primary_endpoints": {
+      "value": [
+        {
+          "verbatim": "Percentage of Participants Who Achieved an Investigator's Global Assessment (IGA) Score of Cleared (0) or Minimal (1) in the Guselkumab Group Compared to the Placebo Group at Week 16 (Time frame: Week 16)",
+          "rank": "primary",
+          "position": 1,
+          "measure_type": "responder_rate",
+          "scale": "IGA",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": "Week 16"
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02207231",
+      "source_excerpt": "protocolSection.outcomesModule.primaryOutcomes[0].measure/timeFrame",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "secondary_endpoints": {
+      "value": [
+        {
+          "verbatim": "Percentage of Participants Who Achieved an Investigator's Global Assessment (IGA) Score of Cleared (0) in the Guselkumab Group Compared to the Adalimumab Group at Week 24 and 48",
+          "rank": "secondary",
+          "position": 1,
+          "measure_type": "responder_rate",
+          "scale": "IGA",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 48,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants Who Achieved an Investigator's Global Assessment (IGA) Score of Cleared (0) or Minimal (1) in the Guselkumab Group Compared to the Adalimumab Group at Week 24 and 48",
+          "rank": "secondary",
+          "position": 2,
+          "measure_type": "responder_rate",
+          "scale": "IGA",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 48,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants Who Achieved Psoriasis Area and Severity Index (PASI) 90 Response in the Guselkumab Group Compared to the Adalimumab Group at Week 24 and 48",
+          "rank": "secondary",
+          "position": 3,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 48,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Change From Baseline in Dermatology Life Quality Index (DLQI) Score at Week 16 in the Guselkumab Group Compared to the Placebo Group",
+          "rank": "secondary",
+          "position": 4,
+          "measure_type": "change_from_baseline",
+          "scale": "DLQI",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants Who Achieved an Investigator's Global Assessment (IGA) Score of Cleared (0) or Minimal (1) in the Guselkumab Group Compared to the Adalimumab Group at Week 16",
+          "rank": "secondary",
+          "position": 5,
+          "measure_type": "responder_rate",
+          "scale": "IGA",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants Who Achieved Psoriasis Area and Severity Index (PASI) 90 Response in the Guselkumab Group Compared to the Adalimumab Group at Week 16",
+          "rank": "secondary",
+          "position": 6,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants Who Achieved Psoriasis Area and Severity Index (PASI) 75 Response in the Guselkumab Group Compared to the Adalimumab Group at Week 16",
+          "rank": "secondary",
+          "position": 7,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants Who Achieved a Scalp-specific Investigator's Global Assessment (Ss-IGA) Score of 0 or 1 and at Least a 2-Grade Improvement From Baseline at Week 16 in the Guselkumab Group Compared to the Placebo Group",
+          "rank": "secondary",
+          "position": 8,
+          "measure_type": "responder_rate",
+          "scale": "IGA",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [
+            {
+              "scale": "IGA",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "absolute_score",
+              "comparator": "in",
+              "value": [
+                0,
+                1
+              ],
+              "unit": "score",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Change From Baseline in Psoriasis Symptom and Sign Diary (PSSD) Symptom Score at Week 16 in the Guselkumab Group Compared to the Placebo Group",
+          "rank": "secondary",
+          "position": 9,
+          "measure_type": "change_from_baseline",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants Who Achieved a Psoriasis Symptom and Sign Diary (PSSD) Symptom Score of 0 in the Guselkumab Group Compared to the Adalimumab Group at Week 24",
+          "rank": "secondary",
+          "position": 10,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants Who Achieved PASI 90 Response at Week 252",
+          "rank": "secondary",
+          "position": 11,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 252,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants Who Achieved PASI 75 Response at Week 252",
+          "rank": "secondary",
+          "position": 12,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 252,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants Who Achieved an IGA Score of Cleared (0) or Minimal (1) at Week 252",
+          "rank": "secondary",
+          "position": 13,
+          "measure_type": "responder_rate",
+          "scale": "IGA",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 252,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants With a DLQI Score of 0 or 1 at Week 252",
+          "rank": "secondary",
+          "position": 14,
+          "measure_type": "responder_rate",
+          "scale": "DLQI",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [
+            {
+              "scale": "DLQI",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "absolute_score",
+              "comparator": "in",
+              "value": [
+                0,
+                1
+              ],
+              "unit": "score",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 252,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants Who Achieved a PSSD Symptom Score of 0 at Week 252",
+          "rank": "secondary",
+          "position": 15,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 252,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants Who Achieved a PSSD Sign Score of 0 at Week 252",
+          "rank": "secondary",
+          "position": 16,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 252,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02207231",
+      "source_excerpt": "protocolSection.outcomesModule.secondaryOutcomes[].measure",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "multiplicity_control": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    }
+  },
+  "timing_ops": {
+    "start_date": {
+      "value": {
+        "date": "2014-11-26",
+        "precision": "day"
+      },
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02207231",
+      "source_excerpt": "protocolSection.statusModule.startDateStruct.date",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "primary_completion_date": {
+      "value": {
+        "date": "2015-09-29",
+        "precision": "day"
+      },
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02207231",
+      "source_excerpt": "protocolSection.statusModule.primaryCompletionDateStruct.date",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "completion_date": {
+      "value": {
+        "date": "2020-06-17",
+        "precision": "day"
+      },
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02207231",
+      "source_excerpt": "protocolSection.statusModule.completionDateStruct.date",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "study_schedule": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    },
+    "rescue_therapy": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    }
+  },
+  "adverse_events": {
+    "serious_adverse_event_rate": {
+      "value": [
+        {
+          "arm": "Placebo (PCP)",
+          "n_affected": 3,
+          "n_at_risk": 174,
+          "pct": 1.7
+        },
+        {
+          "arm": "Guselkumab 100 mg (PCP)",
+          "n_affected": 8,
+          "n_at_risk": 329,
+          "pct": 2.4
+        },
+        {
+          "arm": "Adalimumab (PCP)",
+          "n_affected": 6,
+          "n_at_risk": 333,
+          "pct": 1.8
+        },
+        {
+          "arm": "Placebo Then Guselkumab 100 mg (ACP)",
+          "n_affected": 5,
+          "n_at_risk": 165,
+          "pct": 3.0
+        },
+        {
+          "arm": "Guselkumab 100 mg (ACP)",
+          "n_affected": 8,
+          "n_at_risk": 324,
+          "pct": 2.5
+        },
+        {
+          "arm": "Adalimumab (ACP)",
+          "n_affected": 10,
+          "n_at_risk": 326,
+          "pct": 3.1
+        },
+        {
+          "arm": "Adalimumab Then Guselkumab 100 mg (After ACP)",
+          "n_affected": 34,
+          "n_at_risk": 280,
+          "pct": 12.1
+        },
+        {
+          "arm": "Guselkumab Combined",
+          "n_affected": 79,
+          "n_at_risk": 494,
+          "pct": 16.0
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02207231",
+      "source_excerpt": "resultsSection.adverseEventsModule.eventGroups[].seriousNumAffected/seriousNumAtRisk",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "death_rate": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    },
+    "most_common_adverse_events": {
+      "value": [
+        {
+          "meddra_pt": "Nasopharyngitis",
+          "meddra_soc": "Infections and infestations",
+          "per_arm": [
+            {
+              "arm": "Placebo (PCP)",
+              "n_affected": 17,
+              "n_at_risk": 174,
+              "pct": 9.8
+            },
+            {
+              "arm": "Guselkumab 100 mg (PCP)",
+              "n_affected": 30,
+              "n_at_risk": 329,
+              "pct": 9.1
+            },
+            {
+              "arm": "Adalimumab (PCP)",
+              "n_affected": 36,
+              "n_at_risk": 333,
+              "pct": 10.8
+            },
+            {
+              "arm": "Placebo Then Guselkumab 100 mg (ACP)",
+              "n_affected": 34,
+              "n_at_risk": 165,
+              "pct": 20.6
+            },
+            {
+              "arm": "Guselkumab 100 mg (ACP)",
+              "n_affected": 65,
+              "n_at_risk": 324,
+              "pct": 20.1
+            },
+            {
+              "arm": "Adalimumab (ACP)",
+              "n_affected": 57,
+              "n_at_risk": 326,
+              "pct": 17.5
+            },
+            {
+              "arm": "Adalimumab Then Guselkumab 100 mg (After ACP)",
+              "n_affected": 89,
+              "n_at_risk": 280,
+              "pct": 31.8
+            },
+            {
+              "arm": "Guselkumab Combined",
+              "n_affected": 148,
+              "n_at_risk": 494,
+              "pct": 30.0
+            }
+          ]
+        },
+        {
+          "meddra_pt": "Upper Respiratory Tract Infection",
+          "meddra_soc": "Infections and infestations",
+          "per_arm": [
+            {
+              "arm": "Placebo (PCP)",
+              "n_affected": 9,
+              "n_at_risk": 174,
+              "pct": 5.2
+            },
+            {
+              "arm": "Guselkumab 100 mg (PCP)",
+              "n_affected": 25,
+              "n_at_risk": 329,
+              "pct": 7.6
+            },
+            {
+              "arm": "Adalimumab (PCP)",
+              "n_affected": 16,
+              "n_at_risk": 333,
+              "pct": 4.8
+            },
+            {
+              "arm": "Placebo Then Guselkumab 100 mg (ACP)",
+              "n_affected": 17,
+              "n_at_risk": 165,
+              "pct": 10.3
+            },
+            {
+              "arm": "Guselkumab 100 mg (ACP)",
+              "n_affected": 31,
+              "n_at_risk": 324,
+              "pct": 9.6
+            },
+            {
+              "arm": "Adalimumab (ACP)",
+              "n_affected": 33,
+              "n_at_risk": 326,
+              "pct": 10.1
+            },
+            {
+              "arm": "Adalimumab Then Guselkumab 100 mg (After ACP)",
+              "n_affected": 69,
+              "n_at_risk": 280,
+              "pct": 24.6
+            },
+            {
+              "arm": "Guselkumab Combined",
+              "n_affected": 107,
+              "n_at_risk": 494,
+              "pct": 21.7
+            }
+          ]
+        },
+        {
+          "meddra_pt": "Arthralgia",
+          "meddra_soc": "Musculoskeletal and connective tissue disorders",
+          "per_arm": [
+            {
+              "arm": "Placebo (PCP)",
+              "n_affected": 3,
+              "n_at_risk": 174,
+              "pct": 1.7
+            },
+            {
+              "arm": "Guselkumab 100 mg (PCP)",
+              "n_affected": 11,
+              "n_at_risk": 329,
+              "pct": 3.3
+            },
+            {
+              "arm": "Adalimumab (PCP)",
+              "n_affected": 8,
+              "n_at_risk": 333,
+              "pct": 2.4
+            },
+            {
+              "arm": "Placebo Then Guselkumab 100 mg (ACP)",
+              "n_affected": 2,
+              "n_at_risk": 165,
+              "pct": 1.2
+            },
+            {
+              "arm": "Guselkumab 100 mg (ACP)",
+              "n_affected": 10,
+              "n_at_risk": 324,
+              "pct": 3.1
+            },
+            {
+              "arm": "Adalimumab (ACP)",
+              "n_affected": 8,
+              "n_at_risk": 326,
+              "pct": 2.5
+            },
+            {
+              "arm": "Adalimumab Then Guselkumab 100 mg (After ACP)",
+              "n_affected": 26,
+              "n_at_risk": 280,
+              "pct": 9.3
+            },
+            {
+              "arm": "Guselkumab Combined",
+              "n_affected": 37,
+              "n_at_risk": 494,
+              "pct": 7.5
+            }
+          ]
+        },
+        {
+          "meddra_pt": "Hypertension",
+          "meddra_soc": "Vascular disorders",
+          "per_arm": [
+            {
+              "arm": "Placebo (PCP)",
+              "n_affected": 4,
+              "n_at_risk": 174,
+              "pct": 2.3
+            },
+            {
+              "arm": "Guselkumab 100 mg (PCP)",
+              "n_affected": 10,
+              "n_at_risk": 329,
+              "pct": 3.0
+            },
+            {
+              "arm": "Adalimumab (PCP)",
+              "n_affected": 7,
+              "n_at_risk": 333,
+              "pct": 2.1
+            },
+            {
+              "arm": "Placebo Then Guselkumab 100 mg (ACP)",
+              "n_affected": 6,
+              "n_at_risk": 165,
+              "pct": 3.6
+            },
+            {
+              "arm": "Guselkumab 100 mg (ACP)",
+              "n_affected": 5,
+              "n_at_risk": 324,
+              "pct": 1.5
+            },
+            {
+              "arm": "Adalimumab (ACP)",
+              "n_affected": 10,
+              "n_at_risk": 326,
+              "pct": 3.1
+            },
+            {
+              "arm": "Adalimumab Then Guselkumab 100 mg (After ACP)",
+              "n_affected": 17,
+              "n_at_risk": 280,
+              "pct": 6.1
+            },
+            {
+              "arm": "Guselkumab Combined",
+              "n_affected": 40,
+              "n_at_risk": 494,
+              "pct": 8.1
+            }
+          ]
+        },
+        {
+          "meddra_pt": "Back Pain",
+          "meddra_soc": "Musculoskeletal and connective tissue disorders",
+          "per_arm": [
+            {
+              "arm": "Placebo (PCP)",
+              "n_affected": 2,
+              "n_at_risk": 174,
+              "pct": 1.1
+            },
+            {
+              "arm": "Guselkumab 100 mg (PCP)",
+              "n_affected": 6,
+              "n_at_risk": 329,
+              "pct": 1.8
+            },
+            {
+              "arm": "Adalimumab (PCP)",
+              "n_affected": 5,
+              "n_at_risk": 333,
+              "pct": 1.5
+            },
+            {
+              "arm": "Placebo Then Guselkumab 100 mg (ACP)",
+              "n_affected": 1,
+              "n_at_risk": 165,
+              "pct": 0.6
+            },
+            {
+              "arm": "Guselkumab 100 mg (ACP)",
+              "n_affected": 7,
+              "n_at_risk": 324,
+              "pct": 2.2
+            },
+            {
+              "arm": "Adalimumab (ACP)",
+              "n_affected": 12,
+              "n_at_risk": 326,
+              "pct": 3.7
+            },
+            {
+              "arm": "Adalimumab Then Guselkumab 100 mg (After ACP)",
+              "n_affected": 22,
+              "n_at_risk": 280,
+              "pct": 7.9
+            },
+            {
+              "arm": "Guselkumab Combined",
+              "n_affected": 28,
+              "n_at_risk": 494,
+              "pct": 5.7
+            }
+          ]
+        },
+        {
+          "meddra_pt": "Cough",
+          "meddra_soc": "Respiratory, thoracic and mediastinal disorders",
+          "per_arm": [
+            {
+              "arm": "Placebo (PCP)",
+              "n_affected": 1,
+              "n_at_risk": 174,
+              "pct": 0.6
+            },
+            {
+              "arm": "Guselkumab 100 mg (PCP)",
+              "n_affected": 2,
+              "n_at_risk": 329,
+              "pct": 0.6
+            },
+            {
+              "arm": "Adalimumab (PCP)",
+              "n_affected": 4,
+              "n_at_risk": 333,
+              "pct": 1.2
+            },
+            {
+              "arm": "Placebo Then Guselkumab 100 mg (ACP)",
+              "n_affected": 6,
+              "n_at_risk": 165,
+              "pct": 3.6
+            },
+            {
+              "arm": "Guselkumab 100 mg (ACP)",
+              "n_affected": 10,
+              "n_at_risk": 324,
+              "pct": 3.1
+            },
+            {
+              "arm": "Adalimumab (ACP)",
+              "n_affected": 8,
+              "n_at_risk": 326,
+              "pct": 2.5
+            },
+            {
+              "arm": "Adalimumab Then Guselkumab 100 mg (After ACP)",
+              "n_affected": 20,
+              "n_at_risk": 280,
+              "pct": 7.1
+            },
+            {
+              "arm": "Guselkumab Combined",
+              "n_affected": 24,
+              "n_at_risk": 494,
+              "pct": 4.9
+            }
+          ]
+        },
+        {
+          "meddra_pt": "Bronchitis",
+          "meddra_soc": "Infections and infestations",
+          "per_arm": [
+            {
+              "arm": "Placebo (PCP)",
+              "n_affected": 2,
+              "n_at_risk": 174,
+              "pct": 1.1
+            },
+            {
+              "arm": "Guselkumab 100 mg (PCP)",
+              "n_affected": 2,
+              "n_at_risk": 329,
+              "pct": 0.6
+            },
+            {
+              "arm": "Adalimumab (PCP)",
+              "n_affected": 3,
+              "n_at_risk": 333,
+              "pct": 0.9
+            },
+            {
+              "arm": "Placebo Then Guselkumab 100 mg (ACP)",
+              "n_affected": 5,
+              "n_at_risk": 165,
+              "pct": 3.0
+            },
+            {
+              "arm": "Guselkumab 100 mg (ACP)",
+              "n_affected": 4,
+              "n_at_risk": 324,
+              "pct": 1.2
+            },
+            {
+              "arm": "Adalimumab (ACP)",
+              "n_affected": 7,
+              "n_at_risk": 326,
+              "pct": 2.1
+            },
+            {
+              "arm": "Adalimumab Then Guselkumab 100 mg (After ACP)",
+              "n_affected": 19,
+              "n_at_risk": 280,
+              "pct": 6.8
+            },
+            {
+              "arm": "Guselkumab Combined",
+              "n_affected": 23,
+              "n_at_risk": 494,
+              "pct": 4.7
+            }
+          ]
+        },
+        {
+          "meddra_pt": "Pharyngitis",
+          "meddra_soc": "Infections and infestations",
+          "per_arm": [
+            {
+              "arm": "Placebo (PCP)",
+              "n_affected": 0,
+              "n_at_risk": 174,
+              "pct": 0.0
+            },
+            {
+              "arm": "Guselkumab 100 mg (PCP)",
+              "n_affected": 0,
+              "n_at_risk": 329,
+              "pct": 0.0
+            },
+            {
+              "arm": "Adalimumab (PCP)",
+              "n_affected": 2,
+              "n_at_risk": 333,
+              "pct": 0.6
+            },
+            {
+              "arm": "Placebo Then Guselkumab 100 mg (ACP)",
+              "n_affected": 1,
+              "n_at_risk": 165,
+              "pct": 0.6
+            },
+            {
+              "arm": "Guselkumab 100 mg (ACP)",
+              "n_affected": 5,
+              "n_at_risk": 324,
+              "pct": 1.5
+            },
+            {
+              "arm": "Adalimumab (ACP)",
+              "n_affected": 7,
+              "n_at_risk": 326,
+              "pct": 2.1
+            },
+            {
+              "arm": "Adalimumab Then Guselkumab 100 mg (After ACP)",
+              "n_affected": 17,
+              "n_at_risk": 280,
+              "pct": 6.1
+            },
+            {
+              "arm": "Guselkumab Combined",
+              "n_affected": 18,
+              "n_at_risk": 494,
+              "pct": 3.6
+            }
+          ]
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02207231",
+      "source_excerpt": "resultsSection.adverseEventsModule.otherEvents[] (top 8 of 16 by highest single-arm incidence; CT.gov's own >=5% frequency-threshold table)",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "discontinuation_due_to_ae_rate": {
+      "value": [
+        {
+          "arm": "Placebo Then Guselkumab 100 mg",
+          "n_discontinued": 2,
+          "n_started": 174,
+          "pct": 1.1
+        },
+        {
+          "arm": "Guselkumab 100 mg",
+          "n_discontinued": 4,
+          "n_started": 329,
+          "pct": 1.2
+        },
+        {
+          "arm": "Adalimumab Then Guselkumab 100 mg",
+          "n_discontinued": 2,
+          "n_started": 334,
+          "pct": 0.6
+        },
+        {
+          "arm": "Guselkumab Combined",
+          "n_discontinued": 0,
+          "n_started": 0,
+          "pct": null
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02207231",
+      "source_excerpt": "resultsSection.participantFlowModule.periods[0].dropWithdraws[type=\"Adverse Event\"].reasons[] vs periods[0].milestones[type=STARTED].achievements[]",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "boxed_warning": {
+      "value": {
+        "present": false,
+        "title": null,
+        "warning_categories": [],
+        "referenced_label_sections": [],
+        "product_names": []
+      },
+      "source_type": "openfda_label",
+      "source_url": "https://api.fda.gov/drug/label.json?search=openfda.substance_name:GUSELKUMAB&limit=1",
+      "source_excerpt": "results[0] has no boxed_warning key (checked, none present)",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    }
+  },
+  "real_world_safety": {
+    "faers_summary": {
+      "value": {
+        "query": {
+          "search_field": "patient.drug.medicinalproduct",
+          "search_term": "GUSELKUMAB",
+          "receivedate_from": "2016-03-04",
+          "receivedate_to": "2026-06-30",
+          "api_urls": [
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"GUSELKUMAB\"&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"GUSELKUMAB\"+AND+serious:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"GUSELKUMAB\"+AND+seriousnessdeath:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"GUSELKUMAB\"+AND+seriousnesshospitalization:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"GUSELKUMAB\"+AND+seriousnesslifethreatening:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"GUSELKUMAB\"+AND+seriousnessdisabling:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"GUSELKUMAB\"&count=patient.reaction.reactionmeddrapt.exact&limit=15",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"GUSELKUMAB\"+AND+serious:1&count=patient.reaction.reactionmeddrapt.exact&limit=15",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"GUSELKUMAB\"&count=receivedate"
+          ],
+          "data_last_updated": "2026-07-30"
+        },
+        "total_reports": 2320,
+        "serious_reports": 679,
+        "death_reports": 31,
+        "hospitalization_reports": 254,
+        "life_threatening_reports": 34,
+        "disability_reports": 8,
+        "top_reactions": [
+          {
+            "meddra_pt": "PRODUCT DOSE OMISSION ISSUE",
+            "report_count": 917,
+            "pct_of_reports": 39.53
+          },
+          {
+            "meddra_pt": "DEVICE DEPLOYMENT ISSUE",
+            "report_count": 750,
+            "pct_of_reports": 32.33
+          },
+          {
+            "meddra_pt": "ACCIDENTAL EXPOSURE TO PRODUCT",
+            "report_count": 312,
+            "pct_of_reports": 13.45
+          },
+          {
+            "meddra_pt": "NEEDLE ISSUE",
+            "report_count": 294,
+            "pct_of_reports": 12.67
+          },
+          {
+            "meddra_pt": "DEVICE ISSUE",
+            "report_count": 199,
+            "pct_of_reports": 8.58
+          },
+          {
+            "meddra_pt": "DEVICE DEFECTIVE",
+            "report_count": 190,
+            "pct_of_reports": 8.19
+          },
+          {
+            "meddra_pt": "DRUG INEFFECTIVE",
+            "report_count": 164,
+            "pct_of_reports": 7.07
+          },
+          {
+            "meddra_pt": "DEVICE LEAKAGE",
+            "report_count": 122,
+            "pct_of_reports": 5.26
+          },
+          {
+            "meddra_pt": "OFF LABEL USE",
+            "report_count": 119,
+            "pct_of_reports": 5.13
+          },
+          {
+            "meddra_pt": "PSORIASIS",
+            "report_count": 116,
+            "pct_of_reports": 5.0
+          },
+          {
+            "meddra_pt": "INCORRECT DOSE ADMINISTERED",
+            "report_count": 90,
+            "pct_of_reports": 3.88
+          },
+          {
+            "meddra_pt": "INJECTION SITE HAEMORRHAGE",
+            "report_count": 67,
+            "pct_of_reports": 2.89
+          },
+          {
+            "meddra_pt": "INJECTION SITE PAIN",
+            "report_count": 65,
+            "pct_of_reports": 2.8
+          },
+          {
+            "meddra_pt": "INAPPROPRIATE SCHEDULE OF PRODUCT ADMINISTRATION",
+            "report_count": 62,
+            "pct_of_reports": 2.67
+          },
+          {
+            "meddra_pt": "PSORIATIC ARTHROPATHY",
+            "report_count": 62,
+            "pct_of_reports": 2.67
+          }
+        ],
+        "top_serious_reactions": [
+          {
+            "meddra_pt": "DRUG INEFFECTIVE",
+            "report_count": 139,
+            "pct_of_reports": 20.47
+          },
+          {
+            "meddra_pt": "PSORIASIS",
+            "report_count": 76,
+            "pct_of_reports": 11.19
+          },
+          {
+            "meddra_pt": "OFF LABEL USE",
+            "report_count": 72,
+            "pct_of_reports": 10.6
+          },
+          {
+            "meddra_pt": "PSORIATIC ARTHROPATHY",
+            "report_count": 62,
+            "pct_of_reports": 9.13
+          },
+          {
+            "meddra_pt": "PNEUMONIA",
+            "report_count": 44,
+            "pct_of_reports": 6.48
+          },
+          {
+            "meddra_pt": "TREATMENT FAILURE",
+            "report_count": 39,
+            "pct_of_reports": 5.74
+          },
+          {
+            "meddra_pt": "ARTHRALGIA",
+            "report_count": 34,
+            "pct_of_reports": 5.01
+          },
+          {
+            "meddra_pt": "COVID-19",
+            "report_count": 33,
+            "pct_of_reports": 4.86
+          },
+          {
+            "meddra_pt": "DIARRHOEA",
+            "report_count": 30,
+            "pct_of_reports": 4.42
+          },
+          {
+            "meddra_pt": "PRODUCT DOSE OMISSION ISSUE",
+            "report_count": 28,
+            "pct_of_reports": 4.12
+          },
+          {
+            "meddra_pt": "PYREXIA",
+            "report_count": 27,
+            "pct_of_reports": 3.98
+          },
+          {
+            "meddra_pt": "THERAPEUTIC PRODUCT EFFECT INCOMPLETE",
+            "report_count": 27,
+            "pct_of_reports": 3.98
+          },
+          {
+            "meddra_pt": "ARTHRITIS",
+            "report_count": 24,
+            "pct_of_reports": 3.53
+          },
+          {
+            "meddra_pt": "NAUSEA",
+            "report_count": 24,
+            "pct_of_reports": 3.53
+          },
+          {
+            "meddra_pt": "FATIGUE",
+            "report_count": 23,
+            "pct_of_reports": 3.39
+          }
+        ],
+        "reports_by_year": [
+          {
+            "year": 2016,
+            "report_count": 2
+          },
+          {
+            "year": 2017,
+            "report_count": 11
+          },
+          {
+            "year": 2018,
+            "report_count": 28
+          },
+          {
+            "year": 2019,
+            "report_count": 61
+          },
+          {
+            "year": 2020,
+            "report_count": 48
+          },
+          {
+            "year": 2021,
+            "report_count": 71
+          },
+          {
+            "year": 2022,
+            "report_count": 106
+          },
+          {
+            "year": 2023,
+            "report_count": 106
+          },
+          {
+            "year": 2024,
+            "report_count": 140
+          },
+          {
+            "year": 2025,
+            "report_count": 1115
+          },
+          {
+            "year": 2026,
+            "report_count": 632
+          }
+        ],
+        "meddra_version": null
+      },
+      "source_type": "openfda_faers",
+      "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"GUSELKUMAB\"&limit=1",
+      "source_excerpt": "openFDA drug/event.json aggregate: total_reports=2320, serious=679, deaths=31",
+      "extracted_by": "fetch_faers.py (openfda drug/event.json, v2 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    }
+  },
+  "exclusivity": {
+    "regulatory_application": {
+      "value": {
+        "application_type": "BLA",
+        "application_number": "761061",
+        "registry": "purple_book",
+        "center": "CDER",
+        "proprietary_name": "Tremfya",
+        "applicant": "Janssen Biotech, Inc.",
+        "first_approval_date": "2017-07-13"
+      },
+      "source_type": "purple_book",
+      "source_url": "https://purplebooksearch.fda.gov/index.cfm?event=advancedsearch",
+      "source_excerpt": "purplebooksearch.fda.gov live search table: BLA 761061 | Tremfya | guselkumab | 351(a) | Janssen Biotech, Inc. | first approved 2017-07-13",
+      "extracted_by": "atlas.regulatory_applications (registry file fetched 2026-09-05)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "orange_book": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    },
+    "purple_book": {
+      "value": {
+        "bla_number": "761061",
+        "proprietary_name": "Tremfya",
+        "proper_name": "guselkumab",
+        "applicant": "Janssen Biotech, Inc.",
+        "license_type": "351(a)",
+        "license_number": "1864",
+        "center": "CDER",
+        "products": [
+          {
+            "product_number": "001",
+            "strength": "100MG/ML",
+            "dosage_form": "Injection",
+            "route": "Subcutaneous",
+            "presentation": "Pre-Filled Syringe",
+            "marketing_status": "Rx",
+            "licensure": "Licensed",
+            "approval_date": "2017-07-13",
+            "submission_type": "Original",
+            "supplement_number": null
+          },
+          {
+            "product_number": "002",
+            "strength": "100MG/ML",
+            "dosage_form": "Injection",
+            "route": "Subcutaneous",
+            "presentation": "Autoinjector",
+            "marketing_status": "Rx",
+            "licensure": "Licensed",
+            "approval_date": "2019-01-28",
+            "submission_type": "Supplement",
+            "supplement_number": "1"
+          },
+          {
+            "product_number": "003",
+            "strength": "200MG/2ML (100MG/ML)",
+            "dosage_form": "Injection",
+            "route": "Subcutaneous",
+            "presentation": "Autoinjector",
+            "marketing_status": "Rx",
+            "licensure": "Licensed",
+            "approval_date": "2024-09-11",
+            "submission_type": "Supplement",
+            "supplement_number": "21"
+          },
+          {
+            "product_number": "004",
+            "strength": "200MG/2ML (100MG/ML)",
+            "dosage_form": "Injection",
+            "route": "Subcutaneous",
+            "presentation": "Pre-Filled Syringe",
+            "marketing_status": "Rx",
+            "licensure": "Licensed",
+            "approval_date": "2024-09-11",
+            "submission_type": "Supplement",
+            "supplement_number": "21"
+          },
+          {
+            "product_number": "005",
+            "strength": "200MG/20ML (10MG/ML)",
+            "dosage_form": "Injection",
+            "route": "Intravenous",
+            "presentation": "Single-Dose Vial",
+            "marketing_status": "Rx",
+            "licensure": "Licensed",
+            "approval_date": "2024-09-11",
+            "submission_type": "Supplement",
+            "supplement_number": "21"
+          },
+          {
+            "product_number": "006",
+            "strength": "100MG/ML",
+            "dosage_form": "Injection",
+            "route": "Subcutaneous",
+            "presentation": "Autoinjector",
+            "marketing_status": "Rx",
+            "licensure": "Licensed",
+            "approval_date": "2025-03-25",
+            "submission_type": "Supplement",
+            "supplement_number": "27"
+          }
+        ],
+        "first_approval_date": "2017-07-13",
+        "date_of_first_licensure": null,
+        "reference_product_exclusivity_expiration": null,
+        "exclusivity_expiration_date": null,
+        "first_interchangeable_exclusivity_expiration": null,
+        "orphan_exclusivity_expiration": null,
+        "patent_list_provided": null,
+        "biosimilars": [],
+        "data_file_month": null
+      },
+      "source_type": "purple_book",
+      "source_url": "https://purplebooksearch.fda.gov/index.cfm?event=advancedsearch",
+      "source_excerpt": "purplebooksearch.fda.gov live search table, BLA 761061 (Tremfya), 0 biosimilar(s) on file",
+      "extracted_by": "fetch_purple_book.py (purplebooksearch.fda.gov live search table, raw staging pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    }
+  }
+}
