@@ -1,0 +1,1037 @@
+{
+  "schema_version": 2,
+  "nct_id": {
+    "value": "NCT03911401",
+    "source_type": "ctgov_api",
+    "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03911401",
+    "source_excerpt": "protocolSection.identificationModule.nctId",
+    "extracted_by": "cycle19 one-off build (ctgov_api v2 + openfda_label/orangebook/faers pass); manual full deep extraction",
+    "reviewed_by": null,
+    "confidence": 1.0
+  },
+  "identity": {
+    "trial_name": {
+      "value": "Trial 3",
+      "source_type": "openfda_label",
+      "source_url": "https://api.fda.gov/drug/label.json?search=openfda.generic_name:difamilast&limit=1",
+      "source_excerpt": "CT.gov acronym field is empty for this trial; the FDA label section 14 refers to it as \"Trial 3 [NCT03911401]\" -- used the label's own naming, matching Trials 1/2's convention.",
+      "extracted_by": "cycle19 one-off build (ctgov_api v2 + openfda_label/orangebook/faers pass); manual full deep extraction",
+      "reviewed_by": null,
+      "confidence": 0.9
+    },
+    "official_title": {
+      "value": "A Multicenter, Randomized, Double-blind, Vehicle Controlled, Parallel-group Comparison Trial to Demonstrate the Superiority of 0.3% and 1% OPA-15406 Ointment to the Vehicle in Pediatric Patients With Atopic Dermatitis (Phase 3 Trial)",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03911401",
+      "source_excerpt": "protocolSection.identificationModule.officialTitle",
+      "extracted_by": "cycle19 one-off build (ctgov_api v2 + openfda_label/orangebook/faers pass); manual full deep extraction",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "sponsor": {
+      "value": "Otsuka Pharmaceutical Co., Ltd.",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03911401",
+      "source_excerpt": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name",
+      "extracted_by": "cycle19 one-off build (ctgov_api v2 + openfda_label/orangebook/faers pass); manual full deep extraction",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "phase": {
+      "value": [
+        "PHASE3"
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03911401",
+      "source_excerpt": "protocolSection.designModule.phases",
+      "extracted_by": "cycle19 one-off build (ctgov_api v2 + openfda_label/orangebook/faers pass); manual full deep extraction",
+      "reviewed_by": null,
+      "confidence": 1.0
+    }
+  },
+  "molecule": {
+    "drug": {
+      "value": "Difamilast",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03911401",
+      "source_excerpt": "protocolSection.armsInterventionsModule.interventions[].name (curated; registered under the pre-approval development code OPA-15406; FDA label section 14 confirms NCT03911401 as \"Trial 3\")",
+      "extracted_by": "cycle19 one-off build (ctgov_api v2 + openfda_label/orangebook/faers pass); manual full deep extraction",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "intervention_names": {
+      "value": [
+        "0.3% OPA-15406",
+        "1% OPA-15406",
+        "Placebos"
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03911401",
+      "source_excerpt": "protocolSection.armsInterventionsModule.interventions[].name",
+      "extracted_by": "cycle19 one-off build (ctgov_api v2 + openfda_label/orangebook/faers pass); manual full deep extraction",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "intervention_type": {
+      "value": [
+        "DRUG",
+        "DRUG",
+        "DRUG"
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03911401",
+      "source_excerpt": "protocolSection.armsInterventionsModule.interventions[].type",
+      "extracted_by": "cycle19 one-off build (ctgov_api v2 + openfda_label/orangebook/faers pass); manual full deep extraction",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "mechanism_of_action": {
+      "value": {
+        "modality": "small_molecule",
+        "drug_class": "phosphodiesterase-4 (PDE-4) inhibitor",
+        "antibody_isotype": null,
+        "binding_targets": [
+          "phosphodiesterase-4 (PDE-4)"
+        ],
+        "pathway_cytokines": [],
+        "receptor_subunits": [],
+        "kinases_inhibited": [],
+        "lower_potency_kinases": [],
+        "selectivity": [],
+        "reversible": null,
+        "mechanism_established": false,
+        "label_section": "12.1"
+      },
+      "source_type": "openfda_label",
+      "source_url": "https://api.fda.gov/drug/label.json?search=openfda.generic_name:difamilast&limit=1",
+      "source_excerpt": "Section 12.1 Mechanism of Action -- full text: \"Difamilast is an inhibitor of phosphodiesterase-4 (PDE-4). Difamilast's inhibition of PDE-4 (a major cyclic adenosine monophosphate (AMP)-metabolizing enzyme) activity leads to accumulation of intracellular cyclic AMP and decreased productions of various cytokines and chemokines. However, the specific mechanism(s) by which difamilast exerts its therapeutic action is not well defined.\" PDE-4 is an enzyme, not a kinase or cell-surface receptor, so recorded under binding_targets rather than kinases_inhibited/receptor_subunits; the label names no specific cytokines/chemokines, so pathway_cytokines is left empty rather than guessed.",
+      "extracted_by": "cycle19 one-off build (ctgov_api v2 + openfda_label/orangebook/faers pass); manual full deep extraction",
+      "reviewed_by": null,
+      "confidence": 0.9
+    },
+    "dosing_regimen": {
+      "value": [
+        {
+          "intervention_name": "0.3% OPA-15406",
+          "description": "0.3% OPA-15406 ointment applied topically twice daily to the entire treatment area for 4 weeks.",
+          "is_placebo": false,
+          "route": "topical",
+          "dose_form": "ointment",
+          "dose_value": 0.3,
+          "dose_unit": "%",
+          "units_per_dose": null,
+          "frequency": "twice_daily",
+          "duration_weeks": 4,
+          "dosing_periods": [
+            {
+              "start_value": 0,
+              "start_unit": "week",
+              "end_value": 4,
+              "end_unit": "week"
+            }
+          ],
+          "administration_sites": [],
+          "antibody_isotype": null,
+          "molecular_target": null,
+          "arm_names": [
+            "0.3% OPA-15406"
+          ],
+          "co_administered_with": []
+        },
+        {
+          "intervention_name": "1% OPA-15406",
+          "description": "1% OPA-15406 ointment applied topically twice daily to the entire treatment area for 4 weeks. This is the dose approved as ADQUEY (difamilast) ointment, 1%.",
+          "is_placebo": false,
+          "route": "topical",
+          "dose_form": "ointment",
+          "dose_value": 1.0,
+          "dose_unit": "%",
+          "units_per_dose": null,
+          "frequency": "twice_daily",
+          "duration_weeks": 4,
+          "dosing_periods": [
+            {
+              "start_value": 0,
+              "start_unit": "week",
+              "end_value": 4,
+              "end_unit": "week"
+            }
+          ],
+          "administration_sites": [],
+          "antibody_isotype": null,
+          "molecular_target": null,
+          "arm_names": [
+            "1% OPA-15406"
+          ],
+          "co_administered_with": []
+        },
+        {
+          "intervention_name": "Placebos",
+          "description": "Vehicle ointment applied topically twice daily to the entire treatment area for 4 weeks.",
+          "is_placebo": true,
+          "route": "topical",
+          "dose_form": "ointment",
+          "dose_value": null,
+          "dose_unit": null,
+          "units_per_dose": null,
+          "frequency": "twice_daily",
+          "duration_weeks": 4,
+          "dosing_periods": [
+            {
+              "start_value": 0,
+              "start_unit": "week",
+              "end_value": 4,
+              "end_unit": "week"
+            }
+          ],
+          "administration_sites": [],
+          "antibody_isotype": null,
+          "molecular_target": null,
+          "arm_names": [
+            "Placebo"
+          ],
+          "co_administered_with": []
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03911401",
+      "source_excerpt": "protocolSection.armsInterventionsModule.armGroups[]; per-arm treatment duration and \"entire treatment area\" application detail cross-checked against FDA label section 14",
+      "extracted_by": "cycle19 one-off build (ctgov_api v2 + openfda_label/orangebook/faers pass); manual full deep extraction",
+      "reviewed_by": null,
+      "confidence": 0.9
+    }
+  },
+  "population": {
+    "condition": {
+      "value": [
+        "Atopic Dermatitis"
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03911401",
+      "source_excerpt": "protocolSection.conditionsModule.conditions",
+      "extracted_by": "cycle19 one-off build (ctgov_api v2 + openfda_label/orangebook/faers pass); manual full deep extraction",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "min_age_years": {
+      "value": 2,
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03911401",
+      "source_excerpt": "protocolSection.eligibilityModule.minimumAge",
+      "extracted_by": "cycle19 one-off build (ctgov_api v2 + openfda_label/orangebook/faers pass); manual full deep extraction",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "max_age_years": {
+      "value": 14,
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03911401",
+      "source_excerpt": "protocolSection.eligibilityModule.maximumAge",
+      "extracted_by": "cycle19 one-off build (ctgov_api v2 + openfda_label/orangebook/faers pass); manual full deep extraction",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "sex": {
+      "value": "ALL",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03911401",
+      "source_excerpt": "protocolSection.eligibilityModule.sex",
+      "extracted_by": "cycle19 one-off build (ctgov_api v2 + openfda_label/orangebook/faers pass); manual full deep extraction",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "enrollment_count": {
+      "value": 251,
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03911401",
+      "source_excerpt": "protocolSection.designModule.enrollmentInfo.count",
+      "extracted_by": "cycle19 one-off build (ctgov_api v2 + openfda_label/orangebook/faers pass); manual full deep extraction",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "severity_criteria": {
+      "value": {
+        "severity_label": null,
+        "basis": "eligibility_text",
+        "cross_reference": null,
+        "source_criterion_numbers": [
+          4,
+          5
+        ],
+        "baseline_visit_number": null,
+        "criteria": [
+          {
+            "scale": "IGA",
+            "scale_component": null,
+            "scale_variant": null,
+            "metric": "absolute_score",
+            "comparator": "in",
+            "value": [
+              2,
+              3
+            ],
+            "unit": "score",
+            "scale_min": 0,
+            "scale_max": 4,
+            "assessed_at": [
+              "screening",
+              "baseline"
+            ],
+            "scale_anchors": null
+          },
+          {
+            "scale": "BSA",
+            "scale_component": null,
+            "scale_variant": null,
+            "metric": "percent_bsa",
+            "comparator": ">=",
+            "value": 5,
+            "unit": "percent",
+            "scale_min": null,
+            "scale_max": null,
+            "assessed_at": [
+              "screening",
+              "baseline"
+            ],
+            "scale_anchors": null
+          },
+          {
+            "scale": "BSA",
+            "scale_component": null,
+            "scale_variant": null,
+            "metric": "percent_bsa",
+            "comparator": "<=",
+            "value": 40,
+            "unit": "percent",
+            "scale_min": null,
+            "scale_max": null,
+            "assessed_at": [
+              "screening",
+              "baseline"
+            ],
+            "scale_anchors": null
+          }
+        ]
+      },
+      "source_type": "ctgov_text_extraction",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03911401",
+      "source_excerpt": "CT.gov eligibilityModule.eligibilityCriteria (Inclusion): \"AD affecting greater than or equal to 5% and less than or equal to 40% of total body surface area (BSA(excluding scalp)) at Baseline\" + \"Investigator's Global Assessment of Disease Severity score of 2 (mild) or 3 (moderate) in the selected treatment area(s)\". Cross-checked against FDA label section 14: IGA scale 0-4 assesses erythema, induration/papulation, and oozing/crusting; entry criteria IGA 2 or 3 with affected BSA (excluding scalp) >=5% and <=40%. severity_label left null: this schema's only enum value (moderate_to_severe) does not match this trial's mild-to-moderate (IGA 2/3) population.",
+      "extracted_by": "cycle19 one-off build (ctgov_api v2 + openfda_label/orangebook/faers pass); manual full deep extraction",
+      "reviewed_by": null,
+      "confidence": 0.9
+    }
+  },
+  "design": {
+    "study_type": {
+      "value": "INTERVENTIONAL",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03911401",
+      "source_excerpt": "protocolSection.designModule.studyType",
+      "extracted_by": "cycle19 one-off build (ctgov_api v2 + openfda_label/orangebook/faers pass); manual full deep extraction",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "allocation": {
+      "value": "RANDOMIZED",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03911401",
+      "source_excerpt": "protocolSection.designModule.designInfo.allocation",
+      "extracted_by": "cycle19 one-off build (ctgov_api v2 + openfda_label/orangebook/faers pass); manual full deep extraction",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "intervention_model": {
+      "value": "PARALLEL",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03911401",
+      "source_excerpt": "protocolSection.designModule.designInfo.interventionModel",
+      "extracted_by": "cycle19 one-off build (ctgov_api v2 + openfda_label/orangebook/faers pass); manual full deep extraction",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "masking": {
+      "value": "TRIPLE",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03911401",
+      "source_excerpt": "protocolSection.designModule.designInfo.maskingInfo.masking",
+      "extracted_by": "cycle19 one-off build (ctgov_api v2 + openfda_label/orangebook/faers pass); manual full deep extraction",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "number_of_arms": {
+      "value": 3,
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03911401",
+      "source_excerpt": "len(protocolSection.armsInterventionsModule.armGroups)",
+      "extracted_by": "cycle19 one-off build (ctgov_api v2 + openfda_label/orangebook/faers pass); manual full deep extraction",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "background_therapy": {
+      "value": {
+        "regimen_type": "monotherapy",
+        "background_agent_class": null,
+        "tcs_regimen": null,
+        "step_down_rule": null,
+        "recommended_agents": [],
+        "emollient_required": null,
+        "emollient_frequency": null,
+        "prohibited_concomitant": [
+          "any concomitant treatment for atopic dermatitis (topical or systemic) during the treatment period"
+        ],
+        "permitted_concomitant": [],
+        "applies_to_rerandomized_maintenance": null,
+        "sponsor_trial_ids": [
+          "271-102-00008"
+        ],
+        "study_drug_doses_mg": [],
+        "population_note": "A Japan-only Phase 3 trial enrolling pediatric subjects 2 to 14 years of age; treated for 4 weeks with concomitant AD treatment prohibited."
+      },
+      "source_type": "openfda_label",
+      "source_url": "https://api.fda.gov/drug/label.json?search=openfda.generic_name:difamilast&limit=1",
+      "source_excerpt": "FDA label section 14 Clinical Studies: \"Concomitant treatment for atopic dermatitis was prohibited.\" A true monotherapy design (no standardized background topical regimen permitted at all, stricter than the AD biologics' TCS-combination designs) -- regimen_type 'monotherapy' matches how Tralokinumab's ECZTRA-1/2 (no background TCS permitted) already recorded this field.",
+      "extracted_by": "cycle19 one-off build (ctgov_api v2 + openfda_label/orangebook/faers pass); manual full deep extraction",
+      "reviewed_by": null,
+      "confidence": 0.85
+    }
+  },
+  "endpoints": {
+    "primary_endpoints": {
+      "value": [
+        {
+          "verbatim": "Responder Rate of Investigator's Global Assesment (IGA) of Disease Severity",
+          "rank": "primary",
+          "position": 1,
+          "measure_type": "responder_rate",
+          "scale": "IGA",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [
+            {
+              "scale": "IGA",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "absolute_score",
+              "comparator": "<=",
+              "value": 1,
+              "unit": "score",
+              "scale_min": 0,
+              "scale_max": 4,
+              "assessed_at": [
+                "week_4"
+              ],
+              "scale_anchors": [
+                {
+                  "score": 0,
+                  "label": "clear"
+                },
+                {
+                  "score": 1,
+                  "label": "almost clear"
+                }
+              ]
+            },
+            {
+              "scale": "IGA",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "point_improvement_from_baseline",
+              "comparator": ">=",
+              "value": 2,
+              "unit": "points",
+              "scale_min": 0,
+              "scale_max": 4,
+              "assessed_at": [
+                "week_4"
+              ],
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 4,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": "double_blind",
+          "event_type": null,
+          "time_frame": "At Week 4"
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03911401",
+      "source_excerpt": "protocolSection.outcomesModule.primaryOutcomes[0].measure/timeFrame; IGA success definition (0 or 1 with >=2-grade improvement from baseline) per FDA label section 14 Table 2 footnote.",
+      "extracted_by": "cycle19 one-off build (ctgov_api v2 + openfda_label/orangebook/faers pass); manual full deep extraction",
+      "reviewed_by": null,
+      "confidence": 0.95
+    },
+    "secondary_endpoints": {
+      "value": [
+        {
+          "verbatim": "Change From Baseline in Eczema Area and Severity Index (EASI) Score",
+          "rank": "secondary",
+          "position": 1,
+          "measure_type": "change_from_baseline",
+          "scale": "EASI",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 4,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": "double_blind",
+          "event_type": null,
+          "time_frame": "Baseline, Week 4"
+        },
+        {
+          "verbatim": "Change From Baseline in Verbal Rating Scale (VRS) for Pruritus Score",
+          "rank": "secondary",
+          "position": 2,
+          "measure_type": "change_from_baseline",
+          "scale": "Pruritus VRS",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 4,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": "double_blind",
+          "event_type": null,
+          "time_frame": "Baseline, Week 4"
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03911401",
+      "source_excerpt": "protocolSection.outcomesModule.secondaryOutcomes[].measure",
+      "extracted_by": "cycle19 one-off build (ctgov_api v2 + openfda_label/orangebook/faers pass); manual full deep extraction",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "multiplicity_control": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    }
+  },
+  "timing_ops": {
+    "start_date": {
+      "value": {
+        "date": "2019-05-07",
+        "precision": "day"
+      },
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03911401",
+      "source_excerpt": "protocolSection.statusModule.startDateStruct.date",
+      "extracted_by": "cycle19 one-off build (ctgov_api v2 + openfda_label/orangebook/faers pass); manual full deep extraction",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "primary_completion_date": {
+      "value": {
+        "date": "2019-12-13",
+        "precision": "day"
+      },
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03911401",
+      "source_excerpt": "protocolSection.statusModule.primaryCompletionDateStruct.date",
+      "extracted_by": "cycle19 one-off build (ctgov_api v2 + openfda_label/orangebook/faers pass); manual full deep extraction",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "completion_date": {
+      "value": {
+        "date": "2019-12-13",
+        "precision": "day"
+      },
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03911401",
+      "source_excerpt": "protocolSection.statusModule.completionDateStruct.date",
+      "extracted_by": "cycle19 one-off build (ctgov_api v2 + openfda_label/orangebook/faers pass); manual full deep extraction",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "study_schedule": {
+      "value": {
+        "screening_days": null,
+        "screening_washout": null,
+        "periods": [
+          {
+            "name": "double_blind_treatment",
+            "start_week": 0,
+            "end_week": 4,
+            "duration_weeks": 4,
+            "blinding": "double_blind",
+            "background_tcs": false
+          }
+        ],
+        "dosing_interval": "twice_daily",
+        "visit_cadence": null,
+        "visit_cadence_until_week": null,
+        "visit_weeks": [
+          0,
+          4
+        ],
+        "visit_days": null,
+        "phone_contact_weeks": null,
+        "primary_endpoint_week": 4,
+        "end_of_treatment_week": 4,
+        "end_of_study_week": 4,
+        "total_duration_weeks": 4,
+        "follow_up_weeks": null,
+        "follow_up_days": null,
+        "follow_up_visit_week": null,
+        "long_term_extension": false,
+        "extension_end_week": null,
+        "extension_visit_interval_weeks": null,
+        "extension_study_id": null,
+        "rerandomization_week": null,
+        "maintenance_arms": null,
+        "maintenance_response_check_weeks": null,
+        "last_injection_week": null,
+        "key_secondary_weeks": [
+          4
+        ],
+        "follow_up_visit_interval_weeks": null,
+        "end_of_treatment_weeks_after_last_dose": null,
+        "background_tcs_from_day": null,
+        "primary_endpoint_refs": [],
+        "double_dummy_arms": [],
+        "active_comparator": null,
+        "boilerplate_reused_from": [],
+        "conflicts_with_trial": null,
+        "full_visit_table_available": false,
+        "source_inconsistency": null
+      },
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03911401",
+      "source_excerpt": "protocolSection.outcomesModule primary/secondary time frames (Baseline, Week 4) + FDA label section 14. No interim visit weeks are confirmed in available CT.gov free text, so left unrecorded rather than assumed.",
+      "extracted_by": "cycle19 one-off build (ctgov_api v2 + openfda_label/orangebook/faers pass); manual full deep extraction",
+      "reviewed_by": null,
+      "confidence": 0.85
+    },
+    "rescue_therapy": {
+      "value": {
+        "permitted": false,
+        "trigger": "prohibited",
+        "earliest_week": null,
+        "prohibited_through_week": 4,
+        "trigger_rules": [],
+        "flare_definition": [],
+        "first_step": null,
+        "topical_min_days_before_systemic": null,
+        "topical_rescue_requires_study_drug_discontinuation": null,
+        "systemic_rescue_requires_study_drug_discontinuation": null,
+        "resume_after_systemic_rescue_half_lives": null,
+        "resume_after_phototherapy_months": null,
+        "rescued_counted_as_nonresponder": null,
+        "rescued_counted_as_treatment_failure": true,
+        "continue_visits_after_discontinuation": null,
+        "continue_visits_through_week": null,
+        "topical_rescue_not_counted_after_week": null,
+        "topical_agents": [],
+        "topical_potency_classes": [],
+        "tci_reserved_areas": [],
+        "systemic_agents": [],
+        "oral_corticosteroid_limit": null,
+        "rescue_period": null,
+        "escape_arm_washout_half_lives": null,
+        "maintenance_period_rule": null,
+        "permitted_concomitant": [],
+        "recorded_in_ecrf": null,
+        "applies_to_period": "double_blind_treatment",
+        "long_term_extension_eligible_after_rescue": null,
+        "topical_agent_class": null,
+        "rationale": "Concomitant treatment for atopic dermatitis was prohibited during the trial (FDA label section 14: \"Concomitant treatment for atopic dermatitis was prohibited\"); no protocol-defined rescue/escape mechanism was found in CT.gov's eligibility criteria or outcome-measure free text -- this is a no-rescue design, not a topical-then-systemic step-up (unlike the AD biologic trials). Label Table 2 footnote: \"Subjects with missing IGA scores were imputed as failures,\" so a subject who discontinued or needed AD treatment was counted as a non-responder rather than rescued and continued in the analysis."
+      },
+      "source_type": "openfda_label",
+      "source_url": "https://api.fda.gov/drug/label.json?search=openfda.generic_name:difamilast&limit=1",
+      "source_excerpt": "FDA label section 14 Clinical Studies (\"Concomitant treatment for atopic dermatitis was prohibited\") and Table 2 footnote (\"Subjects with missing IGA scores were imputed as failures\"). CT.gov eligibilityModule exclusion criteria only bar an AD/contact-dermatitis flare within 28 days pre-baseline (an entry criterion, not a rescue rule) -- no additional rescue-trigger detail was found after checking eligibility text and outcome-measure free text for this trial.",
+      "extracted_by": "cycle19 one-off build (ctgov_api v2 + openfda_label/orangebook/faers pass); manual full deep extraction",
+      "reviewed_by": null,
+      "confidence": 0.8
+    }
+  },
+  "adverse_events": {
+    "serious_adverse_event_rate": {
+      "value": [
+        {
+          "arm": "0.3% OPA-15406",
+          "n_affected": 0,
+          "n_at_risk": 83,
+          "pct": 0.0
+        },
+        {
+          "arm": "1% OPA-15406",
+          "n_affected": 0,
+          "n_at_risk": 85,
+          "pct": 0.0
+        },
+        {
+          "arm": "Placebo",
+          "n_affected": 0,
+          "n_at_risk": 83,
+          "pct": 0.0
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03911401",
+      "source_excerpt": "resultsSection.adverseEventsModule.eventGroups[].seriousNumAffected/seriousNumAtRisk",
+      "extracted_by": "cycle19 one-off build (ctgov_api v2 + openfda_label/orangebook/faers pass); manual full deep extraction",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "death_rate": {
+      "value": [
+        {
+          "arm": "0.3% OPA-15406",
+          "n_affected": 0,
+          "n_at_risk": 83,
+          "pct": 0.0
+        },
+        {
+          "arm": "1% OPA-15406",
+          "n_affected": 0,
+          "n_at_risk": 85,
+          "pct": 0.0
+        },
+        {
+          "arm": "Placebo",
+          "n_affected": 0,
+          "n_at_risk": 83,
+          "pct": 0.0
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03911401",
+      "source_excerpt": "resultsSection.adverseEventsModule.eventGroups[].deathsNumAffected/deathsNumAtRisk",
+      "extracted_by": "cycle19 one-off build (ctgov_api v2 + openfda_label/orangebook/faers pass); manual full deep extraction",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "most_common_adverse_events": {
+      "value": [
+        {
+          "meddra_pt": "Impetigo",
+          "meddra_soc": "Infections and infestations",
+          "per_arm": [
+            {
+              "arm": "0.3% OPA-15406",
+              "n_affected": 6,
+              "n_at_risk": 83,
+              "pct": 7.2
+            },
+            {
+              "arm": "1% OPA-15406",
+              "n_affected": 2,
+              "n_at_risk": 85,
+              "pct": 2.4
+            },
+            {
+              "arm": "Placebo",
+              "n_affected": 5,
+              "n_at_risk": 83,
+              "pct": 6.0
+            }
+          ]
+        },
+        {
+          "meddra_pt": "Nasopharyngitis",
+          "meddra_soc": "Infections and infestations",
+          "per_arm": [
+            {
+              "arm": "0.3% OPA-15406",
+              "n_affected": 5,
+              "n_at_risk": 83,
+              "pct": 6.0
+            },
+            {
+              "arm": "1% OPA-15406",
+              "n_affected": 7,
+              "n_at_risk": 85,
+              "pct": 8.2
+            },
+            {
+              "arm": "Placebo",
+              "n_affected": 3,
+              "n_at_risk": 83,
+              "pct": 3.6
+            }
+          ]
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03911401",
+      "source_excerpt": "resultsSection.adverseEventsModule.otherEvents[] (all 2 reported terms, frequencyThreshold=0 -- CT.gov lists every reported non-serious AE term for this trial)",
+      "extracted_by": "cycle19 one-off build (ctgov_api v2 + openfda_label/orangebook/faers pass); manual full deep extraction",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "discontinuation_due_to_ae_rate": {
+      "value": [
+        {
+          "arm": "0.3% OPA-15406",
+          "n_discontinued": 1,
+          "n_started": 83,
+          "pct": 1.2
+        },
+        {
+          "arm": "1% OPA-15406",
+          "n_discontinued": 2,
+          "n_started": 85,
+          "pct": 2.4
+        },
+        {
+          "arm": "Placebo",
+          "n_discontinued": 5,
+          "n_started": 83,
+          "pct": 6.0
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03911401",
+      "source_excerpt": "resultsSection.participantFlowModule.periods[0].dropWithdraws[type=\"Adverse Event\"].reasons[] vs periods[0].milestones[type=STARTED].achievements[]",
+      "extracted_by": "cycle19 one-off build (ctgov_api v2 + openfda_label/orangebook/faers pass); manual full deep extraction",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "boxed_warning": {
+      "value": {
+        "present": false,
+        "title": null,
+        "warning_categories": [],
+        "referenced_label_sections": [],
+        "product_names": []
+      },
+      "source_type": "openfda_label",
+      "source_url": "https://api.fda.gov/drug/label.json?search=openfda.generic_name:difamilast&limit=1",
+      "source_excerpt": "results[0].keys() checked directly: no 'boxed_warning' key present at all in the label JSON (the same genuinely-absent-key shape already established for Xeglyze/Zelsuvmi, not a null value) -- confirmed absent, not unchecked.",
+      "extracted_by": "cycle19 one-off build (ctgov_api v2 + openfda_label/orangebook/faers pass); manual full deep extraction",
+      "reviewed_by": null,
+      "confidence": 1.0
+    }
+  },
+  "real_world_safety": {
+    "faers_summary": {
+      "value": {
+        "query": {
+          "search_field": "patient.drug.medicinalproduct",
+          "search_term": "DIFAMILAST",
+          "receivedate_from": "2025-04-04",
+          "receivedate_to": "2026-06-08",
+          "api_urls": [
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"DIFAMILAST\"&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"DIFAMILAST\"+AND+serious:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"DIFAMILAST\"+AND+seriousnessdeath:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"DIFAMILAST\"+AND+seriousnesshospitalization:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"DIFAMILAST\"+AND+seriousnesslifethreatening:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"DIFAMILAST\"+AND+seriousnessdisabling:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"DIFAMILAST\"&count=patient.reaction.reactionmeddrapt.exact&limit=15",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"DIFAMILAST\"+AND+serious:1&count=patient.reaction.reactionmeddrapt.exact&limit=15",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"DIFAMILAST\"&count=receivedate"
+          ],
+          "data_last_updated": "2026-07-30"
+        },
+        "total_reports": 3,
+        "serious_reports": 2,
+        "death_reports": 0,
+        "hospitalization_reports": 1,
+        "life_threatening_reports": 0,
+        "disability_reports": 0,
+        "top_reactions": [
+          {
+            "meddra_pt": "BLISTER",
+            "report_count": 1,
+            "pct_of_reports": 33.33
+          },
+          {
+            "meddra_pt": "CHILLS",
+            "report_count": 1,
+            "pct_of_reports": 33.33
+          },
+          {
+            "meddra_pt": "ECZEMA HERPETICUM",
+            "report_count": 1,
+            "pct_of_reports": 33.33
+          },
+          {
+            "meddra_pt": "ECZEMA NUMMULAR",
+            "report_count": 1,
+            "pct_of_reports": 33.33
+          },
+          {
+            "meddra_pt": "ERYTHEMA",
+            "report_count": 1,
+            "pct_of_reports": 33.33
+          },
+          {
+            "meddra_pt": "METAPNEUMOVIRUS BRONCHITIS",
+            "report_count": 1,
+            "pct_of_reports": 33.33
+          },
+          {
+            "meddra_pt": "PRURITUS",
+            "report_count": 1,
+            "pct_of_reports": 33.33
+          },
+          {
+            "meddra_pt": "RHINORRHOEA",
+            "report_count": 1,
+            "pct_of_reports": 33.33
+          }
+        ],
+        "top_serious_reactions": [
+          {
+            "meddra_pt": "ECZEMA HERPETICUM",
+            "report_count": 1,
+            "pct_of_reports": 50.0
+          },
+          {
+            "meddra_pt": "METAPNEUMOVIRUS BRONCHITIS",
+            "report_count": 1,
+            "pct_of_reports": 50.0
+          }
+        ],
+        "reports_by_year": [
+          {
+            "year": 2025,
+            "report_count": 1
+          },
+          {
+            "year": 2026,
+            "report_count": 2
+          }
+        ],
+        "meddra_version": null
+      },
+      "source_type": "openfda_faers",
+      "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:%22DIFAMILAST%22&limit=1",
+      "source_excerpt": "openFDA drug/event.json aggregate for \"DIFAMILAST\": total_reports=3, serious=2, deaths=0, hospitalizations=1. Ran the atlas's standard drugindication count check before accepting the generic term (per AGENTS.md's Qbrexza/Glycopyrronium and Xepi/Ozenoxacin precedent): top drugindication terms are \"Dermatitis atopic\" (2 of 3 reports) and \"Product used for unknown indication\" (1) -- a clean, on-label term, no brand-name (\"ADQUEY\", 0 reports, expected for a drug approved ~7 months before this pull) retry needed. A genuinely small, real-world-report volume consistent with a drug 7 months post-approval, not a search-term artifact.",
+      "extracted_by": "cycle19 one-off build (ctgov_api v2 + openfda_label/orangebook/faers pass); manual full deep extraction",
+      "reviewed_by": null,
+      "confidence": 1.0
+    }
+  },
+  "exclusivity": {
+    "regulatory_application": {
+      "value": {
+        "application_type": "NDA",
+        "application_number": "219474",
+        "registry": "orange_book",
+        "center": "CDER",
+        "proprietary_name": "ADQUEY",
+        "applicant": "Acrotech Biopharma Inc",
+        "first_approval_date": "2026-02-12"
+      },
+      "source_type": "orange_book",
+      "source_url": "https://api.fda.gov/drug/orangebook.json?search=products.active_ingredients.name:%22DIFAMILAST%22&limit=100",
+      "source_excerpt": "openFDA drug/orangebook.json: products.active_ingredients.name=DIFAMILAST, application_number N219474 (ADQUEY), applicant_full_name ACROTECH BIOPHARMA INC, approval_date 2026-02-12. drug/drugsfda.json cross-check: sponsor_name ACROTECH BIOPHARMA, submissions=[ORIG 1, TYPE 1 New Molecular Entity, status AP, status_date 2026-02-12] -- an original NDA approval, not a supplement, and originally developed by Otsuka Pharmaceutical (OPA-15406) before Acrotech acquired US commercial rights, the same sponsor-vs-trial-sponsor licensing-change pattern as Spesolimab/LEO Pharma.",
+      "extracted_by": "cycle19 one-off build (ctgov_api v2 + openfda_label/orangebook/faers pass); manual full deep extraction",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "orange_book": {
+      "value": {
+        "application_type": "N",
+        "application_number": "219474",
+        "ingredient": "DIFAMILAST",
+        "trade_name": "ADQUEY",
+        "applicant": "ACROTECH BIOPHARMA",
+        "applicant_full_name": "ACROTECH BIOPHARMA INC",
+        "products": [
+          {
+            "product_number": "001",
+            "strength": "1%",
+            "dosage_form": "OINTMENT",
+            "route": "TOPICAL",
+            "approval_date": "2026-02-12",
+            "rld": true,
+            "rs": true,
+            "te_code": null,
+            "marketing_type": "HUMAN PRESCRIPTION DRUG"
+          }
+        ],
+        "patents": [
+          {
+            "patent_number": "10588893",
+            "expiration_date": "2036-12-31",
+            "drug_substance_claim": true,
+            "drug_product_claim": true,
+            "patent_use_code": null,
+            "delisted": false,
+            "submission_date": "2026-03-11",
+            "product_numbers": [
+              "001"
+            ]
+          },
+          {
+            "patent_number": "RE46792",
+            "expiration_date": "2028-03-01",
+            "drug_substance_claim": true,
+            "drug_product_claim": true,
+            "patent_use_code": "U-4445",
+            "delisted": false,
+            "submission_date": "2026-03-11",
+            "product_numbers": [
+              "001"
+            ]
+          }
+        ],
+        "exclusivities": [
+          {
+            "code": "NCE",
+            "expiration_date": "2031-02-12",
+            "product_numbers": [
+              "001"
+            ]
+          }
+        ],
+        "latest_patent_expiration": "2036-12-31",
+        "latest_exclusivity_expiration": "2031-02-12",
+        "data_file_date": null
+      },
+      "source_type": "orange_book",
+      "source_url": "https://api.fda.gov/drug/orangebook.json?search=products.active_ingredients.name:%22DIFAMILAST%22&limit=100",
+      "source_excerpt": "openFDA drug/orangebook.json, 1 product row matched on products.active_ingredients.name='DIFAMILAST' -- no ingredient-name collision, no application_number pin needed (unlike Ruxolitinib/Roflumilast/Ivermectin). NCE (New Chemical Entity) exclusivity to 2031-02-12; substance+product patent 10588893 to 2036-12-31 and reissue patent RE46792 (use code U-4445) to 2028-03-01.",
+      "extracted_by": "cycle19 one-off build (ctgov_api v2 + openfda_label/orangebook/faers pass); manual full deep extraction",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "purple_book": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    }
+  }
+}

@@ -32,7 +32,7 @@ This file is the project's committed home for project-intrinsic agent memory: bu
   couldn't reliably extract. Don't force-fill it by inference — a wrong schedule is worse than a
   null.
 - **This atlas is an ongoing, multi-cycle scale-out effort, not a one-shot.** It started at 1
-  indication (AD, 5 drugs, 17 trials) and is now at 23 indications, 47 unique drugs, 124 trials
+  indication (AD, 5 drugs, 17 trials) and is now at 23 indications, 48 unique drugs, 127 trials
   (see README's "What this covers" for the full per-indication breakdown and exactly which
   candidate trials were checked and excluded as non-pivotal for each). Every drug/indication
   pairing was verified against real, live ClinicalTrials.gov and openFDA data before being
@@ -658,6 +658,30 @@ This file is the project's committed home for project-intrinsic agent memory: bu
   `background_agent_class`/`permitted_concomitant`/`population_note` instead — **a new trial whose
   design doesn't fit an existing curated enum is a real "extend the schema later" signal, not a
   reason to force a wrong-but-valid enum value.**
+
+- **Cycle 19 added Difamilast (ADQUEY, NDA219474, Acrotech Biopharma) to Atopic Dermatitis** — a
+  10th AD drug, via Trial 1 (NCT02068352, Phase 2 dose-ranging, US/Australia/Poland, n=121), Trial 2
+  (NCT03908970, Phase 3, Japan, n=364), and Trial 3 (NCT03911401, Phase 3, Japan pediatric, n=251),
+  all label-cited (section 14), vehicle-controlled, `hasResults: true`. Difamilast was originally
+  developed by Otsuka Pharmaceutical under the code name OPA-15406 (both CT.gov registrations still
+  use that name) before Acrotech acquired US commercial rights for the 2026-02-12 approval — another
+  instance of the sponsor-vs-trial-sponsor licensing-change pattern already seen with
+  Spesolimab/LEO Pharma. Trial 1's Phase 2 label-cited-as-pivotal status is another instance of the
+  real-trial-over-literal-phase-label precedent (Spesolimab/GPP). All 3 trials share one
+  IGA success definition (IGA 0/1 clear/almost-clear with >=2-grade improvement from baseline at
+  Week 4, entry IGA 2/3 + BSA 5-40%) and one no-rescue design (concomitant AD treatment prohibited,
+  per label section 14) rather than the AD biologics' topical-then-systemic step-up shape — recorded
+  via `rescue_therapy.trigger: "prohibited"` with the real rule quoted in `rationale`, the same
+  shape-mismatch handling as ProDERM's blinded-switch design (cycle 18). ADQUEY's openFDA label
+  confirms the genuinely-absent-boxed-warning-key pattern already established by Xeglyze/Zelsuvmi
+  (no `boxed_warning` key at all, not a null) — `openfda.substance_name` resolved fine here (unlike
+  Zelsuvmi), so no `generic_name` fallback was needed. FAERS on `DIFAMILAST` (3 reports, 2 of 3
+  correctly indication-matched to "Dermatitis atopic") is a real, small, clean total appropriate for
+  a drug ~7 months post-approval — no brand-name retry needed (`ADQUEY` itself returns 0, as
+  expected this soon after launch). Orange Book has exactly 1 clean product row (small-molecule NDA,
+  no ingredient collision); `exclusivity.purple_book` stays `needs_extraction` per the atlas-wide
+  convention for NDA-only drugs (confirmed against Roflumilast/Tapinarof's existing AD entries
+  rather than inventing a distinct "not applicable" value).
 
 ## Maintaining this file
 

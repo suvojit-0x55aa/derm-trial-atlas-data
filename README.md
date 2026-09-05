@@ -13,10 +13,10 @@ way around.
 Real, live-pulled pivotal Phase III trials (adult / adult+adolescent,
 systemic therapy), from the [ClinicalTrials.gov API
 v2](https://clinicaltrials.gov/data-api/api) (`/api/v2/studies`, no API
-key required), across **23 indications, 47 unique drugs, 124 trials**
+key required), across **23 indications, 48 unique drugs, 127 trials**
 (all three counts recomputed from `data/trials/*.json` each cycle):
 
-### Atopic Dermatitis (9 drugs, 25 trials)
+### Atopic Dermatitis (10 drugs, 28 trials)
 
 | Drug | Pivotal Phase III trials |
 |---|---|
@@ -29,6 +29,7 @@ key required), across **23 indications, 47 unique drugs, 124 trials**
 | Roflumilast (topical cream) | INTEGUMENT-1 (NCT04773587), INTEGUMENT-2 (NCT04773600) — FDA-approved (Zoryve cream 0.15%/0.05%, NDA 215985) 2024-07-09, extended to ages 2-5 2025-10-04 |
 | Tapinarof (topical cream) | ADORING 1 (NCT05014568), ADORING 2 (NCT05032859) — FDA-approved (Vtama, NDA 215272) via a 2024-12-12 efficacy supplement, for ages 2 and older |
 | Crisaborole (topical ointment) | AD-301 (NCT02118792), AD-302 (NCT02118766) — FDA-approved (Eucrisa, NDA 207695) 2016-12-14, for ages 3 months and older |
+| Difamilast (topical ointment) | Trial 1 (NCT02068352, Phase 2, n=121), Trial 2 (NCT03908970, Phase 3, n=364), Trial 3 (NCT03911401, Phase 3, n=251) — FDA-approved (ADQUEY, NDA 219474, Acrotech Biopharma) 2026-02-12, for ages 2 and older |
 
 ### Plaque Psoriasis (14 drugs, 38 trials)
 
@@ -759,7 +760,7 @@ a per-trial PDF read the way the original AD program's
 `RESCUE_RULES`/`MULTIPLICITY_RULES` dicts were built — not yet attempted
 for these indications, not a pipeline limitation.
 
-### Fill status (all 124 trials, 39 fields each — 4836 sourced values)
+### Fill status (all 127 trials, 39 fields each — 4953 sourced values)
 
 Fields fully or near-fully filled across every trial (`ctgov_api` for the
 identity/population/design/endpoints/timing_ops/adverse_events core,
@@ -770,30 +771,30 @@ drug-level cross-source groups): `nct_id`, `trial_name`, `official_title`,
 `study_type`, `allocation`, `intervention_model`, `masking`,
 `number_of_arms`, `primary_endpoints`, `secondary_endpoints`,
 `start_date`, `primary_completion_date`, `completion_date`,
-`real_world_safety.faers_summary` (124/124),
-`exclusivity.regulatory_application` (124/124).
+`real_world_safety.faers_summary` (127/127),
+`exclusivity.regulatory_application` (127/127).
 
-Fields with real, checkable gaps (numerator = filled, out of 124 trials;
+Fields with real, checkable gaps (numerator = filled, out of 127 trials;
 every count below recomputed from `sources.csv` this cycle):
 
 | Field | Filled | Gap reason |
 |---|---|---|
-| `molecule.mechanism_of_action` | PLACEHOLDER/124 | fully filled for the deep-extraction cycle's trials plus every cycle-18+ new trial's own full deep extraction — real openFDA structured label text for every drug (a few drugs needed the approval-package label PDF fallback since they have no `label.json` entry at all); recompute after merge |
-| `molecule.dosing_regimen` | PLACEHOLDER/124 | fully filled for the deep-extraction cycle's trials plus every cycle-18+ new trial's own full deep extraction — real CT.gov intervention description text, matched to each trial's own drug by generic name or known development/compound code; recompute after merge |
-| `population.severity_criteria` | PLACEHOLDER/124 | real CT.gov eligibility-criteria text now covers PASI/sPGA/ISGA/S-IGA/B-IGA/PGA (psoriasis family), Hurley Stage + AN Count (HS), SIRS (impetigo), HDSS/ASDD (hyperhidrosis), SALT (AA), BPDAI (bullous pemphigoid), CDASI (dermatomyositis), and lesion-count ranges (acne/rosacea/molluscum/AK) in addition to the original EASI/IGA/BSA (AD); the remaining trials genuinely state no quantitative baseline threshold in their CT.gov text, or their real number uses a unit the current schema has no metric for (percent-of-nail-area, wound size in cm²) |
-| `design.background_therapy` | PLACEHOLDER/124 | curated per-trial excerpts exist only for the original AD program plus deep-extracted new trials (cycle 18+) |
-| `endpoints.multiplicity_control` | PLACEHOLDER/124 | same — curated only for the original AD program plus deep-extracted new trials |
-| `timing_ops.study_schedule` | PLACEHOLDER/124 | full per-visit schedule lives only in multi-page PDF tables not reliably machine-extractable; curated cadence exists only for the original AD program plus deep-extracted new trials |
-| `timing_ops.rescue_therapy` | PLACEHOLDER/124 | curated only for the original AD program plus deep-extracted new trials |
-| `adverse_events.serious_adverse_event_rate` | PLACEHOLDER/124 | CT.gov posts `eventGroups[]` without per-arm serious counts for a few trials (a genuine gap in what was posted, not a computable zero) |
-| `adverse_events.death_rate` | PLACEHOLDER/124 | some trials report zero deaths as a genuine null-count edge case in CT.gov's `resultsSection`, not a missing value |
-| `adverse_events.discontinuation_due_to_ae_rate` | PLACEHOLDER/124 | CT.gov `resultsSection` gap for several trials whose `participantFlowModule` posts milestones only, no `dropWithdraws` section |
-| `adverse_events.most_common_adverse_events` | PLACEHOLDER/124 | CT.gov `resultsSection` gap for a few trials |
-| `adverse_events.boxed_warning` | PLACEHOLDER/124 | openFDA label lookup miss for a few trials |
-| `exclusivity.orange_book` | PLACEHOLDER/124 | only the NDA small-molecule drugs' trials get this field (BLA biologics use `purple_book` instead) |
-| `exclusivity.purple_book` | PLACEHOLDER/124 | only the BLA biologic drugs' trials get this field (NDA small molecules use `orange_book` instead) |
+| `molecule.mechanism_of_action` | 127/127 | fully filled for the deep-extraction cycle's trials plus every cycle-18+ new trial's own full deep extraction — real openFDA structured label text for every drug (a few drugs needed the approval-package label PDF fallback since they have no `label.json` entry at all); recompute after merge |
+| `molecule.dosing_regimen` | 126/127 | fully filled for the deep-extraction cycle's trials plus every cycle-18+ new trial's own full deep extraction — real CT.gov intervention description text, matched to each trial's own drug by generic name or known development/compound code; recompute after merge |
+| `population.severity_criteria` | 109/127 | real CT.gov eligibility-criteria text now covers PASI/sPGA/ISGA/S-IGA/B-IGA/PGA (psoriasis family), Hurley Stage + AN Count (HS), SIRS (impetigo), HDSS/ASDD (hyperhidrosis), SALT (AA), BPDAI (bullous pemphigoid), CDASI (dermatomyositis), IGA (Difamilast), and lesion-count ranges (acne/rosacea/molluscum/AK) in addition to the original EASI/IGA/BSA (AD); the remaining trials genuinely state no quantitative baseline threshold in their CT.gov text, or their real number uses a unit the current schema has no metric for (percent-of-nail-area, wound size in cm²) |
+| `design.background_therapy` | 21/127 | curated per-trial excerpts exist only for the original AD program plus deep-extracted new trials (cycle 18+) |
+| `endpoints.multiplicity_control` | 17/127 | same — curated only for the original AD program plus deep-extracted new trials |
+| `timing_ops.study_schedule` | 19/127 | full per-visit schedule lives only in multi-page PDF tables not reliably machine-extractable; curated cadence exists only for the original AD program plus deep-extracted new trials |
+| `timing_ops.rescue_therapy` | 18/127 | curated only for the original AD program plus deep-extracted new trials |
+| `adverse_events.serious_adverse_event_rate` | 125/127 | CT.gov posts `eventGroups[]` without per-arm serious counts for a few trials (a genuine gap in what was posted, not a computable zero) |
+| `adverse_events.death_rate` | 94/127 | some trials report zero deaths as a genuine null-count edge case in CT.gov's `resultsSection`, not a missing value |
+| `adverse_events.discontinuation_due_to_ae_rate` | 95/127 | CT.gov `resultsSection` gap for several trials whose `participantFlowModule` posts milestones only, no `dropWithdraws` section |
+| `adverse_events.most_common_adverse_events` | 112/127 | CT.gov `resultsSection` gap for a few trials |
+| `adverse_events.boxed_warning` | 125/127 | openFDA label lookup miss for a few trials |
+| `exclusivity.orange_book` | 73/127 | only the NDA small-molecule drugs' trials get this field (BLA biologics use `purple_book` instead) |
+| `exclusivity.purple_book` | 54/127 | only the BLA biologic drugs' trials get this field (NDA small molecules use `orange_book` instead) |
 
-**PLACEHOLDER of PLACEHOLDER sourced values are filled with real data (PLACEHOLDER%); PLACEHOLDER
+**4290 of 4953 sourced values are filled with real data (86.6%); 663
 remain `needs_extraction`** — see `sources.csv` for the per-trial,
 per-field breakdown. Every non-`ctgov_api` fill was produced by
 LLM-assisted reading of a real, cited source (CT.gov free text, a
@@ -808,13 +809,13 @@ before it's treated as authoritative for publication.
 
 This repo holds only the pipeline's output — no code, no tests:
 
-- `data/trials/<NCT_ID>.json` — one file per trial (124 files), the
+- `data/trials/<NCT_ID>.json` — one file per trial (127 files), the
   sourced-value format described above (schema v2).
 - `trials.csv` — one row per trial, one column per field (the field's
   `value`, JSON-encoded when structured; `needs_extraction` fields blank).
 - `sources.csv` — one row per sourced value: `nct_id`, `field`,
   `source_type`, `source_url`, `source_excerpt`, `extracted_by`,
-  `reviewed_by`, `confidence`. 124 trials × 39 fields = 4836 rows.
+  `reviewed_by`, `confidence`. 127 trials × 39 fields = 4953 rows.
 - `endpoints.csv` — one row per outcome measure × criterion: `measure_type`,
   `scale`, `timepoints`, `analysis_population`, and the `ScoreCriterion`
   columns, so "EASI-75 responders at week 16" is a column filter.
