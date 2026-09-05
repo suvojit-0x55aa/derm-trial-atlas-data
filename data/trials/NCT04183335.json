@@ -88,10 +88,10 @@
     "mechanism_of_action": {
       "value": {
         "modality": "monoclonal_antibody",
-        "drug_class": "IL-4Rα antagonist",
+        "drug_class": "IL-4R\u03b1 antagonist",
         "antibody_isotype": "IgG4",
         "binding_targets": [
-          "IL-4Rα"
+          "IL-4R\u03b1"
         ],
         "pathway_cytokines": [
           "IL-13",
@@ -99,7 +99,7 @@
           "IgE"
         ],
         "receptor_subunits": [
-          "IL-4Rα"
+          "IL-4R\u03b1"
         ],
         "kinases_inhibited": [],
         "lower_potency_kinases": [],
@@ -110,7 +110,7 @@
       },
       "source_type": "openfda_label",
       "source_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=06b9c64b-52b1-490b-b118-bd079e69264e",
-      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1) -- v1 extracted text: 12.1 Mechanism of Action Dupilumab is a human monoclonal IgG4 antibody that inhibits interleukin-4 (IL-4) and interleukin-13 (IL-13) signaling by specifically binding to the IL-4Rα subunit shared by the IL-4 and IL-13 receptor complexes. Dupilumab inhibits IL-4 signaling via the Type I receptor and both IL-4 and IL-13 signaling through the Type II receptor. Inflammation driven by IL-4 and IL-13 is an important component in the pathogenesis of asthma, AD, CRSwNP, EoE, PN, COPD, CSU, BP, and AFRS. Multiple cell types that express IL-4Rα (e.g., mast cells, basophils, eosinophils, macrophages, lymphocytes, epithelial cells, goblet cells) and inflammatory mediators (e.g., histamine, eicosanoids, leukotrienes, cytokines, chemokines) are involved in inflammation. Blocking IL-4Rα with dupilumab inhibits IL-4 and IL-13 cytokine-induced inflammatory responses, including the release of proinflammatory cytokines, chemokines, nitric oxide, and IgE. The mechanism of dupilumab action has not been definitively established.",
+      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1) -- v1 extracted text: 12.1 Mechanism of Action Dupilumab is a human monoclonal IgG4 antibody that inhibits interleukin-4 (IL-4) and interleukin-13 (IL-13) signaling by specifically binding to the IL-4R\u03b1 subunit shared by the IL-4 and IL-13 receptor complexes. Dupilumab inhibits IL-4 signaling via the Type I receptor and both IL-4 and IL-13 signaling through the Type II receptor. Inflammation driven by IL-4 and IL-13 is an important component in the pathogenesis of asthma, AD, CRSwNP, EoE, PN, COPD, CSU, BP, and AFRS. Multiple cell types that express IL-4R\u03b1 (e.g., mast cells, basophils, eosinophils, macrophages, lymphocytes, epithelial cells, goblet cells) and inflammatory mediators (e.g., histamine, eicosanoids, leukotrienes, cytokines, chemokines) are involved in inflammation. Blocking IL-4R\u03b1 with dupilumab inhibits IL-4 and IL-13 cytokine-induced inflammatory responses, including the release of proinflammatory cytokines, chemokines, nitric oxide, and IgE. The mechanism of dupilumab action has not been definitively established.",
       "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 0.9
@@ -193,13 +193,47 @@
       "confidence": 1.0
     },
     "severity_criteria": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "severity_label": null,
+        "basis": "eligibility_text",
+        "cross_reference": null,
+        "source_criterion_numbers": [],
+        "baseline_visit_number": null,
+        "criteria": [
+          {
+            "scale": "Pruritus NRS",
+            "scale_component": null,
+            "scale_variant": "worst_daily_weekly_average",
+            "metric": "absolute_score",
+            "comparator": ">=",
+            "value": 7,
+            "unit": "score",
+            "scale_min": 0,
+            "scale_max": 10,
+            "assessed_at": null,
+            "scale_anchors": null
+          },
+          {
+            "scale": "PN Lesion Count",
+            "scale_component": null,
+            "scale_variant": null,
+            "metric": "absolute_score",
+            "comparator": ">=",
+            "value": 20,
+            "unit": "score",
+            "scale_min": null,
+            "scale_max": null,
+            "assessed_at": null,
+            "scale_anchors": null
+          }
+        ]
+      },
+      "source_type": "ctgov_text_extraction",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04183335",
+      "source_excerpt": "On the worst-Itch Numeric Rating Scale (WI-NRS) ranged from 0 to 10, participants who had an average worst itch score of >=7 in the 7 days prior to Day 1 | Participants who had a minimum of 20 PN lesions in total on both legs, and/or both arms and/or trunk",
+      "extracted_by": "deep-extraction pass (LLM-assisted extraction, scale-out backfill; pending human QA)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.8
     }
   },
   "design": {

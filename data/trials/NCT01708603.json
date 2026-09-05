@@ -204,13 +204,60 @@
       "confidence": 1.0
     },
     "severity_criteria": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "severity_label": "moderate_to_severe",
+        "basis": "eligibility_text",
+        "cross_reference": null,
+        "source_criterion_numbers": [],
+        "baseline_visit_number": null,
+        "criteria": [
+          {
+            "scale": "BSA",
+            "scale_component": null,
+            "scale_variant": null,
+            "metric": "percent_bsa",
+            "comparator": ">=",
+            "value": 10,
+            "unit": "percent",
+            "scale_min": null,
+            "scale_max": null,
+            "assessed_at": null,
+            "scale_anchors": null
+          },
+          {
+            "scale": "PASI",
+            "scale_component": null,
+            "scale_variant": null,
+            "metric": "absolute_score",
+            "comparator": ">=",
+            "value": 12,
+            "unit": "score",
+            "scale_min": null,
+            "scale_max": null,
+            "assessed_at": null,
+            "scale_anchors": null
+          },
+          {
+            "scale": "sPGA",
+            "scale_component": null,
+            "scale_variant": null,
+            "metric": "absolute_score",
+            "comparator": ">=",
+            "value": 3,
+            "unit": "score",
+            "scale_min": null,
+            "scale_max": null,
+            "assessed_at": null,
+            "scale_anchors": null
+          }
+        ]
+      },
+      "source_type": "ctgov_text_extraction",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01708603",
+      "source_excerpt": "Subject has had stable moderate to severe plaque psoriasis for at least 6 months | Subject has involved body surface area (BSA) >= 10%, PASI >= 12, and sPGA >= 3 at screening and at baseline",
+      "extracted_by": "deep-extraction pass (LLM-assisted extraction, scale-out backfill; pending human QA)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.8
     }
   },
   "design": {

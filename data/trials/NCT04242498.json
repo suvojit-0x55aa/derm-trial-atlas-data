@@ -100,7 +100,7 @@
       },
       "source_type": "openfda_label",
       "source_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=37b310bd-f6a0-9d4e-e063-6294a90a889d",
-      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1) -- v1 extracted text: 12.1 Mechanism of Action Bimekizumab-bkzx is a humanized immunoglobulin IgG1/ κ monoclonal antibody with two identical antigen binding regions that selectively bind to human interleukin 17A (IL-17A), interleukin 17F (IL-17F), and interleukin 17-AF cytokines, and inhibits their interaction with the IL-17 receptor complex. IL-17A and IL-17F are naturally occurring cytokines that are involved in normal inflammatory and immune responses. Bimekizumab-bkzx inhibits the release of proinflammatory cytokines and chemokines.",
+      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1) -- v1 extracted text: 12.1 Mechanism of Action Bimekizumab-bkzx is a humanized immunoglobulin IgG1/ \u03ba monoclonal antibody with two identical antigen binding regions that selectively bind to human interleukin 17A (IL-17A), interleukin 17F (IL-17F), and interleukin 17-AF cytokines, and inhibits their interaction with the IL-17 receptor complex. IL-17A and IL-17F are naturally occurring cytokines that are involved in normal inflammatory and immune responses. Bimekizumab-bkzx inhibits the release of proinflammatory cytokines and chemokines.",
       "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 0.9
@@ -183,13 +183,47 @@
       "confidence": 1.0
     },
     "severity_criteria": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "severity_label": "moderate_to_severe",
+        "basis": "eligibility_text",
+        "cross_reference": null,
+        "source_criterion_numbers": [],
+        "baseline_visit_number": null,
+        "criteria": [
+          {
+            "scale": "Hurley Stage",
+            "scale_component": null,
+            "scale_variant": null,
+            "metric": "absolute_score",
+            "comparator": ">=",
+            "value": 2,
+            "unit": "score",
+            "scale_min": 1,
+            "scale_max": 3,
+            "assessed_at": null,
+            "scale_anchors": null
+          },
+          {
+            "scale": "AN Count",
+            "scale_component": null,
+            "scale_variant": null,
+            "metric": "absolute_score",
+            "comparator": ">=",
+            "value": 5,
+            "unit": "score",
+            "scale_min": null,
+            "scale_max": null,
+            "assessed_at": null,
+            "scale_anchors": null
+          }
+        ]
+      },
+      "source_type": "ctgov_text_extraction",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04242498",
+      "source_excerpt": "one of which must be at least Hurley Stage II or Hurley Stage III | moderate to severe HS defined as a total of >=5 inflammatory lesions (i.e., number of abscesses plus number of inflammatory nodules)",
+      "extracted_by": "deep-extraction pass (LLM-assisted extraction, scale-out backfill; pending human QA)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.8
     }
   },
   "design": {
