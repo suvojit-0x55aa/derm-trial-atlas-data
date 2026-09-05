@@ -32,7 +32,7 @@ This file is the project's committed home for project-intrinsic agent memory: bu
   couldn't reliably extract. Don't force-fill it by inference — a wrong schedule is worse than a
   null.
 - **This atlas is an ongoing, multi-cycle scale-out effort, not a one-shot.** It started at 1
-  indication (AD, 5 drugs, 17 trials) and is now at 18 indications, 41 unique drugs, 106 trials
+  indication (AD, 5 drugs, 17 trials) and is now at 19 indications, 42 unique drugs, 108 trials
   (see README's "What this covers" for the full per-indication breakdown and exactly which
   candidate trials were checked and excluded as non-pivotal for each). Every drug/indication
   pairing was verified against real, live ClinicalTrials.gov and openFDA data before being
@@ -255,6 +255,30 @@ This file is the project's committed home for project-intrinsic agent memory: bu
   per-field schema subtests are the ones that actually validate new trials, and
   `atlas.schema.validate()` can be called directly if `pytest` is unavailable (`uv venv` + `uv pip
   install pytest` in a scratch dir works without touching the system Python).
+- **The generic-name-preferred FAERS default has a third failure mode: the generic term returns
+  plenty of real reports that belong to a DIFFERENT drug family.** Found on Hyperhidrosis /
+  Glycopyrronium (Qbrexza, NDA210361, cycle 11).
+  `patient.drug.medicinalproduct:"GLYCOPYRRONIUM"` returns 9,183 reports, but
+  `count=patient.drug.drugindication.exact` on the same query is dominated by *inhaled*
+  glycopyrronium-bromide COPD/asthma bronchodilators (COPD 1,824; asthma 891) with hyperhidrosis
+  absent from the top 12; `"QBREXZA"` returns 844 whose top indication is HYPERHIDROSIS (485).
+  **Always run the `drugindication` count before accepting a generic term** — a plausible-looking
+  total is not evidence the reports are about your drug. This is not the Ruxolitinib case (one
+  ingredient, two products, no cleaner term, so the mix is unavoidable and kept): when a clean term
+  exists, use it and say so in `source_excerpt` + `query.search_term`. Same drug, separate Orange
+  Book wrinkle: it is indexed under the **salt** name `GLYCOPYRRONIUM TOSYLATE`, not the bare
+  `GLYCOPYRRONIUM` its label's `openfda.generic_name` uses, and needs the usual
+  `application_number` pin (2 rows: N210361 QBREXZA + A214448, a DISCONTINUED Padagis generic
+  ANDA). The inhaled products do *not* collide there — Orange Book files them under
+  `GLYCOPYRROLATE` (94 rows, 15 NDAs) — so the Orange Book and FAERS collisions for one drug can
+  have completely different shapes; check each separately.
+- Checked and excluded in cycle 11 (real negative finding): Basal Cell Carcinoma — both approved
+  hedgehog inhibitors fail the placebo/vehicle-controlled bar. Vismodegib (Erivedge, NDA203388)
+  rests on SHH4476g (NCT00833417), single-arm open-label with no comparator; Sonidegib (Odomzo,
+  NDA205266) rests on BOLT (NCT01327053), which randomizes 200mg vs. 800mg of the same drug — the
+  same active-comparator exclusion as Pemphigus Vulgaris/Rituximab. Oncology dose-ranging pivotal
+  designs without a placebo arm are a recurring shape to expect in any solid-tumour skin
+  indication, not a data gap.
 
 ## Maintaining this file
 
