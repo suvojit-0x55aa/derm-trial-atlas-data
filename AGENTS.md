@@ -710,6 +710,42 @@ This file is the project's committed home for project-intrinsic agent memory: bu
   sweep that needs repeating verbatim next cycle without a new angle (an openFDA `label.json` sweep
   for very recent NDA/BLA numbers not yet cross-checked, rather than a web-search recap of already-
   known approvals, is the more promising next angle).
+- **Cycle 21 tried the more-promising angle cycle 20 flagged and it paid off as a cleaner sweep
+  method, even though it still surfaced zero new drugs.** FDA's own `fda.gov/drugs/novel-drug-
+  approvals-fda/novel-drug-approvals-2026` page lists all 37 CDER novel drugs approved in 2026 by
+  name + date + indication in one place — a strictly better source than recap articles (authoritative,
+  complete, dated) and worth using as the standing first step in every future sweep before falling
+  back to a web search. Checked all 37 against this atlas: only 3 are dermatology-relevant — Adquey/
+  Difamilast (already in atlas, cycle 19), Icotyde/Icotrokinra (already in atlas, cycle 13; checked
+  its full CT.gov trial list for a new pediatric-specific pivotal trial behind the "ages 12+" label
+  update and found none — only PsA/UC/Crohn's trials, all unrelated indications, all `hasResults:
+  false`), and Lisraya/Brepocitinib for Dermatomyositis (already checked and excluded cycle 18;
+  VALOR/NCT05437263 re-confirmed still `hasResults: false`). Two new items surfaced and excluded on
+  **scope**, not data quality, extending the Behçet's precedent: Lynavoy/linerixibat for cholestatic
+  pruritus in primary biliary cholangitis (itching as a symptom of liver disease — hepatology
+  territory, the itch is skin-perceived but the disease is not cutaneous) and Lumvoa/veligrotug for
+  thyroid eye disease (orbital/ophthalmology, not skin, despite periorbital involvement). Re-checked
+  Zevaskyn/VIITAL and Cemiplimab/C-POST again too: both still `hasResults: false`, unchanged for the
+  3rd consecutive cycle.
+- **A named secondary source can flatly claim an FDA approval that has not actually happened —
+  worth an explicit cross-check against the primary source, not just trend-worthiness.** A search
+  for "ritlecitinib vitiligo FDA approval" surfaced an article (imedic.health, dated March 2026)
+  stating outright that the FDA had approved Litfulo (ritlecitinib) for non-segmental vitiligo.
+  Cross-checked against openFDA's `label.json` for `LITFULO` (effective_time 20260617 — 3+ months
+  *after* the article's claimed approval) and it lists only severe alopecia areata, no vitiligo;
+  CT.gov confirms the pivotal TRANQUILLO trial (NCT05583526) is `COMPLETED` but `hasResults: false`
+  — the same real-trial-not-yet-posted status as every prior cycle's check, meaning the article's
+  claim is simply wrong (likely a content-mill piece confusing "expected to file" with "approved").
+  **Treat a single low-authority secondary source's approval claim as unverified until confirmed
+  against openFDA `label.json` (by effective_time) or CT.gov directly** — the same standing
+  live-verify bar this file has always applied to drug/trial existence, now shown to matter for
+  approval-status claims specifically, not just candidate discovery. Upadacitinib/vitiligo
+  (RINVOQ, effective_time 20260630) and povorcitinib/HS and barzolvolimab/CSU (checked via direct
+  web search of company/press coverage, no approval claimed by any source) all remain correctly
+  unapproved, consistent with every prior cycle. Also checked and confirmed a dead end: Sinecatechins
+  (Veregen, genital warts, approved 2006) has no CT.gov-registered original pivotal placebo-controlled
+  trial with results — the same pre-2007 mandatory-reporting dead end as Etanercept/Infliximab/
+  Pimecrolimus/Tacrolimus.
 
 - **Deep-extraction cycle 2 (same 2026-09-05 captain instruction, continued): read the real Study
   Protocol/SAP PDF for every one of the 61 non-AD trials that had one posted on CT.gov's
