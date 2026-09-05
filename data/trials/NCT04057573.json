@@ -1,0 +1,1840 @@
+{
+  "schema_version": 2,
+  "nct_id": {
+    "value": "NCT04057573",
+    "source_type": "ctgov_api",
+    "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04057573",
+    "source_excerpt": "protocolSection.identificationModule.nctId",
+    "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+    "reviewed_by": null,
+    "confidence": 1.0
+  },
+  "identity": {
+    "trial_name": {
+      "value": null,
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04057573",
+      "source_excerpt": "protocolSection.identificationModule.acronym",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 0.0
+    },
+    "official_title": {
+      "value": "Topical Ruxolitinib Evaluation in Vitiligo Study 2 (TRuE-V2): A Phase 3, Double-Blind, Randomized, Vehicle-Controlled, Efficacy and Safety Study of Ruxolitinib Cream Followed by an Extension Period in Participants With Vitiligo",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04057573",
+      "source_excerpt": "protocolSection.identificationModule.officialTitle",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "sponsor": {
+      "value": "Incyte Corporation",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04057573",
+      "source_excerpt": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "phase": {
+      "value": [
+        "PHASE3"
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04057573",
+      "source_excerpt": "protocolSection.designModule.phases",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    }
+  },
+  "molecule": {
+    "drug": {
+      "value": "Ruxolitinib",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04057573",
+      "source_excerpt": "protocolSection.armsInterventionsModule.interventions[].name (curated)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "intervention_names": {
+      "value": [
+        "Ruxolitinib cream",
+        "Vehicle"
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04057573",
+      "source_excerpt": "protocolSection.armsInterventionsModule.interventions[].name",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "intervention_type": {
+      "value": [
+        "DRUG"
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04057573",
+      "source_excerpt": "protocolSection.armsInterventionsModule.interventions[].type",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "mechanism_of_action": {
+      "value": {
+        "modality": "small_molecule",
+        "drug_class": "JAK inhibitor",
+        "antibody_isotype": null,
+        "binding_targets": [],
+        "pathway_cytokines": [],
+        "receptor_subunits": [],
+        "kinases_inhibited": [
+          "JAK1",
+          "JAK2"
+        ],
+        "lower_potency_kinases": [],
+        "selectivity": [],
+        "reversible": null,
+        "mechanism_established": false,
+        "label_section": "12.1"
+      },
+      "source_type": "openfda_label",
+      "source_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=af30042b-ecb2-4e8b-82be-117685dff4ed",
+      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1) -- v1 extracted text: 12.1 Mechanism of Action Ruxolitinib, a Janus kinase (JAK) inhibitor, inhibits JAK1 and JAK2 which mediate the signaling of a number of cytokines and growth factors that are important for hematopoiesis and immune function. JAK signaling involves recruitment of STATs (signal transducers and activators of transcription) to cytokine receptors, activation and subsequent localization of STATs to the nucleus leading to modulation of gene expression. The relevance of inhibition of specific JAK enzymes to therapeutic effectiveness is not currently known.",
+      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 0.9
+    },
+    "dosing_regimen": {
+      "value": [
+        {
+          "intervention_name": "Ruxolitinib cream",
+          "description": "Ruxolitinib cream is a topical formulation applied as a thin film to affected areas.",
+          "is_placebo": false,
+          "route": null,
+          "dose_form": null,
+          "dose_value": null,
+          "dose_unit": null,
+          "units_per_dose": null,
+          "frequency": null,
+          "duration_weeks": null,
+          "dosing_periods": [],
+          "administration_sites": [],
+          "antibody_isotype": null,
+          "molecular_target": null,
+          "arm_names": [],
+          "co_administered_with": []
+        }
+      ],
+      "source_type": "ctgov_text_extraction",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04057573",
+      "source_excerpt": "Ruxolitinib cream: Ruxolitinib cream is a topical formulation applied as a thin film to affected areas.",
+      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 0.8
+    }
+  },
+  "population": {
+    "condition": {
+      "value": [
+        "Non-segmental Vitiligo"
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04057573",
+      "source_excerpt": "protocolSection.conditionsModule.conditions",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "min_age_years": {
+      "value": 12,
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04057573",
+      "source_excerpt": "protocolSection.eligibilityModule.minimumAge",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "max_age_years": {
+      "value": null,
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04057573",
+      "source_excerpt": "protocolSection.eligibilityModule.maximumAge",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 0.0
+    },
+    "sex": {
+      "value": "ALL",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04057573",
+      "source_excerpt": "protocolSection.eligibilityModule.sex",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "enrollment_count": {
+      "value": 344,
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04057573",
+      "source_excerpt": "protocolSection.designModule.enrollmentInfo.count",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "severity_criteria": {
+      "value": {
+        "severity_label": null,
+        "basis": "eligibility_text",
+        "cross_reference": null,
+        "source_criterion_numbers": [],
+        "baseline_visit_number": null,
+        "criteria": []
+      },
+      "source_type": "ctgov_text_extraction",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04057573",
+      "source_excerpt": "Clinical diagnosis of non-segmental vitiligo with depigmented area including ≥ 0.5% BSA on the face, ≥ 0.5 F-VASI, ≥ 3% BSA on nonfacial areas, ≥ 3 T-VASI, and total body vitiligo area (facial and nonfacial) not exceeding 10% BSA.",
+      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 0.75
+    }
+  },
+  "design": {
+    "study_type": {
+      "value": "INTERVENTIONAL",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04057573",
+      "source_excerpt": "protocolSection.designModule.studyType",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "allocation": {
+      "value": "RANDOMIZED",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04057573",
+      "source_excerpt": "protocolSection.designModule.designInfo.allocation",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "intervention_model": {
+      "value": "CROSSOVER",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04057573",
+      "source_excerpt": "protocolSection.designModule.designInfo.interventionModel",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "masking": {
+      "value": "TRIPLE",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04057573",
+      "source_excerpt": "protocolSection.designModule.designInfo.maskingInfo.masking",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "number_of_arms": {
+      "value": 4,
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04057573",
+      "source_excerpt": "len(protocolSection.armsInterventionsModule.armGroups)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "background_therapy": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    }
+  },
+  "endpoints": {
+    "primary_endpoints": {
+      "value": [
+        {
+          "verbatim": "Percentage of Participants Achieving a ≥ 75% Improvement From Baseline in the Face Vitiligo Area Scoring Index (F-VASI75) Score at Week 24 (Time frame: Baseline; Week 24)",
+          "rank": "primary",
+          "position": 1,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": "Baseline; Week 24"
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04057573",
+      "source_excerpt": "protocolSection.outcomesModule.primaryOutcomes[0].measure/timeFrame",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "secondary_endpoints": {
+      "value": [
+        {
+          "verbatim": "Percentage of Participants Achieving a ≥ 50% Improvement From Baseline in the Face Vitiligo Area Scoring Index (F-VASI50) Score at Week 24",
+          "rank": "secondary",
+          "position": 1,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants Achieving a ≥ 90% Improvement From Baseline in the Face Vitiligo Area Scoring Index (F-VASI90) Score at Week 24",
+          "rank": "secondary",
+          "position": 2,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants Achieving a ≥ 50% Improvement From Baseline in the Total Body Vitiligo Area Scoring Index (T-VASI50) Score at Week 24",
+          "rank": "secondary",
+          "position": 3,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants Achieving a Vitiligo Noticeability Scale (VNS) of 4 or 5 at Week 24",
+          "rank": "secondary",
+          "position": 4,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage Change From Baseline in Facial Body Surface Area (F-BSA) at Week 24",
+          "rank": "secondary",
+          "position": 5,
+          "measure_type": "percent_change_from_baseline",
+          "scale": "BSA",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Number of Participants With Treatment-emergent Adverse Events (TEAEs) During the Double-Blind Period",
+          "rank": "secondary",
+          "position": 6,
+          "measure_type": "count",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Number of Participants With Treatment-emergent Adverse Events (TEAEs) During the Treatment-Extension Period",
+          "rank": "secondary",
+          "position": 7,
+          "measure_type": "count",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants Achieving a ≥ 25% Improvement in the Face Vitiligo Area Scoring Index (F-VASI25) Score at Week 24",
+          "rank": "secondary",
+          "position": 8,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants Achieving a ≥ %25, ≥ %50, ≥ 75%, and ≥ 90% Improvement in the Face Vitiligo Area Scoring Index (F-VASI25/50/75/90) Score at Week 52",
+          "rank": "secondary",
+          "position": 9,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 52,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage Change From Baseline in F-VASI at Week 24",
+          "rank": "secondary",
+          "position": 10,
+          "measure_type": "percent_change_from_baseline",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage Change From Baseline in F-VASI at Week 52",
+          "rank": "secondary",
+          "position": 11,
+          "measure_type": "percent_change_from_baseline",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 52,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage Change From Baseline in F-BSA at Week 52",
+          "rank": "secondary",
+          "position": 12,
+          "measure_type": "percent_change_from_baseline",
+          "scale": "BSA",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 52,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage Change From Baseline in T-VASI at Week 24",
+          "rank": "secondary",
+          "position": 13,
+          "measure_type": "percent_change_from_baseline",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage Change From Baseline in T-VASI at Week 52",
+          "rank": "secondary",
+          "position": 14,
+          "measure_type": "percent_change_from_baseline",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 52,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage Change From Baseline in T-BSA at Week 24",
+          "rank": "secondary",
+          "position": 15,
+          "measure_type": "percent_change_from_baseline",
+          "scale": "BSA",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage Change From Baseline in T-BSA at Week 52",
+          "rank": "secondary",
+          "position": 16,
+          "measure_type": "percent_change_from_baseline",
+          "scale": "BSA",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 52,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants Achieving a ≥ 25%, ≥ 75%, and ≥ 90% Improvement in the Total Body Vitiligo Area Scoring Index (T-VASI25/75/90) Score at Week 24",
+          "rank": "secondary",
+          "position": 17,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants Achieving a ≥ 25%, ≥ 50%, ≥ 75%, and ≥ 90% Improvement in the Total Body Vitiligo Area Scoring Index (T-VASI25/50/75/90) Score at Week 52",
+          "rank": "secondary",
+          "position": 18,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 52,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants in Each Category of VNS During the Treatment Period (Double-Blind and Treatment-Extension Periods)",
+          "rank": "secondary",
+          "position": 19,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Change From Baseline in Dermatology Life Quality Index (DLQI) at Week 24",
+          "rank": "secondary",
+          "position": 20,
+          "measure_type": "change_from_baseline",
+          "scale": "DLQI",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Change From Baseline in DLQI at Week 52",
+          "rank": "secondary",
+          "position": 21,
+          "measure_type": "change_from_baseline",
+          "scale": "DLQI",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 52,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Change From Baseline in Children's Dermatology Life Quality Index (CDLQI) During the Treatment Period (Double-Blind and Treatment-Extension Periods)",
+          "rank": "secondary",
+          "position": 22,
+          "measure_type": "change_from_baseline",
+          "scale": "CDLQI",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Trough Plasma Concentrations of Ruxolitinib at Weeks 4, 24, and 40",
+          "rank": "secondary",
+          "position": 23,
+          "measure_type": "pharmacokinetics",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 4,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 40,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": "plasma_concentration",
+          "time_frame": null
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04057573",
+      "source_excerpt": "protocolSection.outcomesModule.secondaryOutcomes[].measure",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "multiplicity_control": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    }
+  },
+  "timing_ops": {
+    "start_date": {
+      "value": {
+        "date": "2019-10-03",
+        "precision": "day"
+      },
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04057573",
+      "source_excerpt": "protocolSection.statusModule.startDateStruct.date",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "primary_completion_date": {
+      "value": {
+        "date": "2021-03-15",
+        "precision": "day"
+      },
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04057573",
+      "source_excerpt": "protocolSection.statusModule.primaryCompletionDateStruct.date",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "completion_date": {
+      "value": {
+        "date": "2021-10-01",
+        "precision": "day"
+      },
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04057573",
+      "source_excerpt": "protocolSection.statusModule.completionDateStruct.date",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "study_schedule": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    },
+    "rescue_therapy": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    }
+  },
+  "adverse_events": {
+    "serious_adverse_event_rate": {
+      "value": [
+        {
+          "arm": "Vehicle Cream BID",
+          "n_affected": 0,
+          "n_at_risk": 115,
+          "pct": 0.0
+        },
+        {
+          "arm": "Ruxolitinib Cream 1.5% BID",
+          "n_affected": 6,
+          "n_at_risk": 326,
+          "pct": 1.8
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04057573",
+      "source_excerpt": "resultsSection.adverseEventsModule.eventGroups[].seriousNumAffected/seriousNumAtRisk",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "death_rate": {
+      "value": [
+        {
+          "arm": "Vehicle Cream BID",
+          "n_affected": 0,
+          "n_at_risk": 115,
+          "pct": 0.0
+        },
+        {
+          "arm": "Ruxolitinib Cream 1.5% BID",
+          "n_affected": 0,
+          "n_at_risk": 326,
+          "pct": 0.0
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04057573",
+      "source_excerpt": "resultsSection.adverseEventsModule.eventGroups[].deathsNumAffected/deathsNumAtRisk",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "most_common_adverse_events": {
+      "value": [
+        {
+          "meddra_pt": "COVID-19",
+          "meddra_soc": "Infections and infestations",
+          "per_arm": [
+            {
+              "arm": "Vehicle Cream BID",
+              "n_affected": 2,
+              "n_at_risk": 115,
+              "pct": 1.7
+            },
+            {
+              "arm": "Ruxolitinib Cream 1.5% BID",
+              "n_affected": 24,
+              "n_at_risk": 326,
+              "pct": 7.4
+            }
+          ]
+        },
+        {
+          "meddra_pt": "Application site acne",
+          "meddra_soc": "General disorders",
+          "per_arm": [
+            {
+              "arm": "Vehicle Cream BID",
+              "n_affected": 3,
+              "n_at_risk": 115,
+              "pct": 2.6
+            },
+            {
+              "arm": "Ruxolitinib Cream 1.5% BID",
+              "n_affected": 20,
+              "n_at_risk": 326,
+              "pct": 6.1
+            }
+          ]
+        },
+        {
+          "meddra_pt": "Nasopharyngitis",
+          "meddra_soc": "Infections and infestations",
+          "per_arm": [
+            {
+              "arm": "Vehicle Cream BID",
+              "n_affected": 1,
+              "n_at_risk": 115,
+              "pct": 0.9
+            },
+            {
+              "arm": "Ruxolitinib Cream 1.5% BID",
+              "n_affected": 17,
+              "n_at_risk": 326,
+              "pct": 5.2
+            }
+          ]
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04057573",
+      "source_excerpt": "resultsSection.adverseEventsModule.otherEvents[] (top 8 of 3 by highest single-arm incidence; CT.gov's own >=5% frequency-threshold table)",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "discontinuation_due_to_ae_rate": {
+      "value": [
+        {
+          "arm": "Double-Blind Period: Ruxolitinib Cream 1.5% BID",
+          "n_discontinued": 2,
+          "n_started": 229,
+          "pct": 0.9
+        },
+        {
+          "arm": "Double-Blind Period: Vehicle Cream BID",
+          "n_discontinued": 0,
+          "n_started": 115,
+          "pct": 0.0
+        },
+        {
+          "arm": "Treatment-Extension Period: Ruxolitinib Cream 1.5% BID",
+          "n_discontinued": 0,
+          "n_started": 0,
+          "pct": null
+        },
+        {
+          "arm": "Treatment-Extension Period: Vehicle Cream to Ruxolitinib Cream 1.5% BID",
+          "n_discontinued": 0,
+          "n_started": 0,
+          "pct": null
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04057573",
+      "source_excerpt": "resultsSection.participantFlowModule.periods[0].dropWithdraws[type=\"Adverse Event\"].reasons[] vs periods[0].milestones[type=STARTED].achievements[]",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "boxed_warning": {
+      "value": {
+        "present": true,
+        "title": "SERIOUS INFECTIONS, MORTALITY, MALIGNANCY, MAJOR ADVERSE CARDIOVASCULAR EVENTS, AND THROMBOSIS",
+        "warning_categories": [
+          "serious_infections",
+          "mortality",
+          "malignancy",
+          "mace",
+          "thrombosis"
+        ],
+        "referenced_label_sections": [
+          "5.1",
+          "5.2",
+          "5.3",
+          "5.4",
+          "5.5"
+        ],
+        "product_names": [
+          "OPZELURA"
+        ]
+      },
+      "source_type": "openfda_label",
+      "source_url": "https://api.fda.gov/drug/label.json?search=openfda.substance_name:RUXOLITINIB&limit=1",
+      "source_excerpt": "results[0].boxed_warning -- v1 extracted text: WARNING: SERIOUS INFECTIONS, MORTALITY, MALIGNANCY, MAJOR ADVERSE CARDIOVASCULAR EVENTS, AND THROMBOSIS SERIOUS INFECTIONS Patients treated with oral Janus kinase inhibitors for inflammatory conditions are at risk for developing serious infections that may lead to hospitalization or death [see Warnings and Precautions ( 5.1 ) and Adverse Reactions ( 6.1 )] . Reported infections include: Active tuberculosis, which may present with pulmonary or extrapulmonary disease. Invasive fungal infections, including cryptococcosis, and pneumocystosis. Bacterial, viral, including herpes zoster, and other infections due to opportunistic pathogens. Avoid use of OPZELURA in patients with an active, serious infection, including localized infections. If a serious infection develops, interrupt OPZELURA until the infection is controlled. The risks and benefits of treatment with OPZELURA should be carefully considered prior to initiating therapy in patients with chronic or recurrent infection. Patients should be closely monitored for the development of signs and symptoms of infection during and after treatment with OPZELURA [see Warnings and Precautions ( 5.1 )] . MORTALITY In a large, randomized, postmarketing safety study in rheumatoid arthritis (RA) patients 50 years of age and older with at least one cardiovascular risk factor comparing an oral JAK inhibitor to tumor necrosis factor (TNF) blocker treatment, a h igher rate of all-cause mortality, including sudden cardiovascular death, was observed with the JAK inhibitor [see Warnings and Precautions ( 5.2 )] . MALIGNANCIES Malignancies were reported in patients treated with OPZELURA. Lymphoma and other malignancies have been observed in patients receiving JAK inhibitors used to treat inflammatory conditions. In RA patients treated with an oral JAK inhibitor, a higher rate of malignancies (excluding non-melanoma skin cancer (NMSC)) was observed when compared with TNF blockers. Patients who are current or past smokers are at additional increased risk [see Warnings and Precautions ( 5.3 )] . MAJOR ADVERSE CARDIOVASCULAR EVENTS (MACE) In RA patients 50 years of age and older with at least one cardiovascular risk factor treated with an oral JAK inhibitor, a higher rate of major adverse cardiovascular events ( MACE) ( defined as cardiovascular death, myocardial infarction, and stroke) , was observed when compared with TNF blockers. Patients who are current or past smokers are at additional increased risk. Discontinue OPZELURA in patients who have experienced a myocardial infarction or stroke [see Warnings and Precautions ( 5.4 )] . THROMBOSIS Thromboembolic events were observed in trials with OPZELURA. Thrombosis, including pulmonary embolism (PE), deep venous thrombosis (DVT), and arterial thrombosis have been reported in patients receiving JAK inhibitors used to treat inflammatory conditions. Many of these adverse reactions were serious and some resulted in death. In RA patients 50 years of age and older with at least one cardiovascular risk factor treated with an oral JAK inhibitor, a higher rate of thrombosis was observed when compared with TNF blockers. Avoid OPZELURA in patients at risk. If symptoms of thrombosis occur, discontinue OPZELURA and treat appropriately [see Warnings and Precautions ( 5.5 )] . WARNING: SERIOUS INFECTIONS, MORTALITY, MALIGNANCY, MAJOR ADVERSE CARDIOVASCULAR EVENTS (MACE), AND THROMBOSIS See full prescribing information for complete boxed warning. Serious infections leading to hospitalization or death, including tuberculosis and bacterial, invasive fungal, viral, and other opportunistic infections, have occurred in patients receiving Janus kinase inhibitors for inflammatory conditions. ( 5.1 ) Higher rate of all-cause mortality, including sudden cardiovascular death have been observed in patients treated with Janus kinase inhibitors for inflammatory conditions. ( 5.2 ) Lymphoma and other malignancies have been observed in patients treated with Janus kinase inhibitors for inflammatory conditions. ( 5.3 ) Higher rate of MACE (including cardiovascular death, myocardial infarction, and stroke) has been observed in patients treated with Janus kinase inhibitors for inflammatory conditions. ( 5.4 ) Thrombosis, including deep venous thrombosis, pulmonary embolism, and arterial thrombosis, some fatal, have occurred in patients treated with Janus kinase inhibitors for inflammatory conditions. ( 5.5 )",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    }
+  },
+  "real_world_safety": {
+    "faers_summary": {
+      "value": {
+        "query": {
+          "search_field": "patient.drug.medicinalproduct",
+          "search_term": "RUXOLITINIB",
+          "receivedate_from": "2012-04-09",
+          "receivedate_to": "2026-06-30",
+          "api_urls": [
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"RUXOLITINIB\"&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"RUXOLITINIB\"+AND+serious:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"RUXOLITINIB\"+AND+seriousnessdeath:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"RUXOLITINIB\"+AND+seriousnesshospitalization:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"RUXOLITINIB\"+AND+seriousnesslifethreatening:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"RUXOLITINIB\"+AND+seriousnessdisabling:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"RUXOLITINIB\"&count=patient.reaction.reactionmeddrapt.exact&limit=15",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"RUXOLITINIB\"+AND+serious:1&count=patient.reaction.reactionmeddrapt.exact&limit=15",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"RUXOLITINIB\"&count=receivedate"
+          ],
+          "data_last_updated": "2026-07-30"
+        },
+        "total_reports": 10645,
+        "serious_reports": 10317,
+        "death_reports": 2668,
+        "hospitalization_reports": 4111,
+        "life_threatening_reports": 902,
+        "disability_reports": 146,
+        "top_reactions": [
+          {
+            "meddra_pt": "OFF LABEL USE",
+            "report_count": 1318,
+            "pct_of_reports": 12.38
+          },
+          {
+            "meddra_pt": "DRUG INEFFECTIVE",
+            "report_count": 994,
+            "pct_of_reports": 9.34
+          },
+          {
+            "meddra_pt": "PRODUCT USE IN UNAPPROVED INDICATION",
+            "report_count": 786,
+            "pct_of_reports": 7.38
+          },
+          {
+            "meddra_pt": "DEATH",
+            "report_count": 779,
+            "pct_of_reports": 7.32
+          },
+          {
+            "meddra_pt": "ANAEMIA",
+            "report_count": 734,
+            "pct_of_reports": 6.9
+          },
+          {
+            "meddra_pt": "PYREXIA",
+            "report_count": 607,
+            "pct_of_reports": 5.7
+          },
+          {
+            "meddra_pt": "PNEUMONIA",
+            "report_count": 581,
+            "pct_of_reports": 5.46
+          },
+          {
+            "meddra_pt": "THROMBOCYTOPENIA",
+            "report_count": 571,
+            "pct_of_reports": 5.36
+          },
+          {
+            "meddra_pt": "PLATELET COUNT DECREASED",
+            "report_count": 543,
+            "pct_of_reports": 5.1
+          },
+          {
+            "meddra_pt": "HAEMOGLOBIN DECREASED",
+            "report_count": 516,
+            "pct_of_reports": 4.85
+          },
+          {
+            "meddra_pt": "FEBRILE NEUTROPENIA",
+            "report_count": 476,
+            "pct_of_reports": 4.47
+          },
+          {
+            "meddra_pt": "SPLENOMEGALY",
+            "report_count": 433,
+            "pct_of_reports": 4.07
+          },
+          {
+            "meddra_pt": "DIARRHOEA",
+            "report_count": 424,
+            "pct_of_reports": 3.98
+          },
+          {
+            "meddra_pt": "FATIGUE",
+            "report_count": 397,
+            "pct_of_reports": 3.73
+          },
+          {
+            "meddra_pt": "ASTHENIA",
+            "report_count": 376,
+            "pct_of_reports": 3.53
+          }
+        ],
+        "top_serious_reactions": [
+          {
+            "meddra_pt": "OFF LABEL USE",
+            "report_count": 1221,
+            "pct_of_reports": 11.83
+          },
+          {
+            "meddra_pt": "DRUG INEFFECTIVE",
+            "report_count": 974,
+            "pct_of_reports": 9.44
+          },
+          {
+            "meddra_pt": "DEATH",
+            "report_count": 779,
+            "pct_of_reports": 7.55
+          },
+          {
+            "meddra_pt": "PRODUCT USE IN UNAPPROVED INDICATION",
+            "report_count": 758,
+            "pct_of_reports": 7.35
+          },
+          {
+            "meddra_pt": "ANAEMIA",
+            "report_count": 730,
+            "pct_of_reports": 7.08
+          },
+          {
+            "meddra_pt": "PYREXIA",
+            "report_count": 601,
+            "pct_of_reports": 5.83
+          },
+          {
+            "meddra_pt": "PNEUMONIA",
+            "report_count": 581,
+            "pct_of_reports": 5.63
+          },
+          {
+            "meddra_pt": "THROMBOCYTOPENIA",
+            "report_count": 569,
+            "pct_of_reports": 5.52
+          },
+          {
+            "meddra_pt": "PLATELET COUNT DECREASED",
+            "report_count": 537,
+            "pct_of_reports": 5.21
+          },
+          {
+            "meddra_pt": "HAEMOGLOBIN DECREASED",
+            "report_count": 508,
+            "pct_of_reports": 4.92
+          },
+          {
+            "meddra_pt": "FEBRILE NEUTROPENIA",
+            "report_count": 476,
+            "pct_of_reports": 4.61
+          },
+          {
+            "meddra_pt": "SPLENOMEGALY",
+            "report_count": 426,
+            "pct_of_reports": 4.13
+          },
+          {
+            "meddra_pt": "DIARRHOEA",
+            "report_count": 413,
+            "pct_of_reports": 4.0
+          },
+          {
+            "meddra_pt": "FATIGUE",
+            "report_count": 384,
+            "pct_of_reports": 3.72
+          },
+          {
+            "meddra_pt": "ASTHENIA",
+            "report_count": 375,
+            "pct_of_reports": 3.63
+          }
+        ],
+        "reports_by_year": [
+          {
+            "year": 2012,
+            "report_count": 16
+          },
+          {
+            "year": 2013,
+            "report_count": 21
+          },
+          {
+            "year": 2014,
+            "report_count": 28
+          },
+          {
+            "year": 2015,
+            "report_count": 95
+          },
+          {
+            "year": 2016,
+            "report_count": 121
+          },
+          {
+            "year": 2017,
+            "report_count": 221
+          },
+          {
+            "year": 2018,
+            "report_count": 313
+          },
+          {
+            "year": 2019,
+            "report_count": 347
+          },
+          {
+            "year": 2020,
+            "report_count": 564
+          },
+          {
+            "year": 2021,
+            "report_count": 1140
+          },
+          {
+            "year": 2022,
+            "report_count": 1677
+          },
+          {
+            "year": 2023,
+            "report_count": 1865
+          },
+          {
+            "year": 2024,
+            "report_count": 1657
+          },
+          {
+            "year": 2025,
+            "report_count": 1697
+          },
+          {
+            "year": 2026,
+            "report_count": 883
+          }
+        ],
+        "meddra_version": null
+      },
+      "source_type": "openfda_faers",
+      "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"RUXOLITINIB\"&limit=1",
+      "source_excerpt": "openFDA drug/event.json aggregate: total_reports=10645, serious=10317, deaths=2668",
+      "extracted_by": "fetch_faers.py (openfda drug/event.json, v2 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    }
+  },
+  "exclusivity": {
+    "regulatory_application": {
+      "value": {
+        "application_type": "NDA",
+        "application_number": "215309",
+        "registry": "orange_book",
+        "center": "CDER",
+        "proprietary_name": "OPZELURA",
+        "applicant": "INCYTE CORP",
+        "first_approval_date": "2021-09-21"
+      },
+      "source_type": "orange_book",
+      "source_url": "https://api.fda.gov/drug/orangebook.json",
+      "source_excerpt": "openFDA drug/orangebook.json: RUXOLITINIB application N215309, brand OPZELURA, applicant INCYTE CORP, approved 2021-09-21",
+      "extracted_by": "atlas.regulatory_applications (registry file fetched 2026-09-05)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "orange_book": {
+      "value": {
+        "application_type": "N",
+        "application_number": "215309",
+        "ingredient": "RUXOLITINIB",
+        "trade_name": "OPZELURA",
+        "applicant": "INCYTE CORP",
+        "applicant_full_name": "INCYTE CORP",
+        "products": [
+          {
+            "product_number": "001",
+            "strength": "EQ 1.5% BASE",
+            "dosage_form": "CREAM",
+            "route": "TOPICAL",
+            "approval_date": "2021-09-21",
+            "rld": true,
+            "rs": true,
+            "te_code": null,
+            "marketing_type": "HUMAN PRESCRIPTION DRUG"
+          }
+        ],
+        "patents": [
+          {
+            "patent_number": "10639310",
+            "expiration_date": "2026-12-12",
+            "drug_substance_claim": false,
+            "drug_product_claim": false,
+            "patent_use_code": "U-3229",
+            "delisted": false,
+            "submission_date": "2021-10-20",
+            "product_numbers": [
+              "001"
+            ]
+          },
+          {
+            "patent_number": "9079912",
+            "expiration_date": "2026-12-12",
+            "drug_substance_claim": false,
+            "drug_product_claim": false,
+            "patent_use_code": "U-3229",
+            "delisted": false,
+            "submission_date": "2021-10-20",
+            "product_numbers": [
+              "001"
+            ]
+          },
+          {
+            "patent_number": "9974790",
+            "expiration_date": "2026-12-12",
+            "drug_substance_claim": false,
+            "drug_product_claim": false,
+            "patent_use_code": "U-3229",
+            "delisted": false,
+            "submission_date": "2021-10-20",
+            "product_numbers": [
+              "001"
+            ]
+          },
+          {
+            "patent_number": "10639310*PED",
+            "expiration_date": "2027-06-12",
+            "drug_substance_claim": false,
+            "drug_product_claim": false,
+            "patent_use_code": null,
+            "delisted": false,
+            "submission_date": null,
+            "product_numbers": [
+              "001"
+            ]
+          },
+          {
+            "patent_number": "9079912*PED",
+            "expiration_date": "2027-06-12",
+            "drug_substance_claim": false,
+            "drug_product_claim": false,
+            "patent_use_code": null,
+            "delisted": false,
+            "submission_date": null,
+            "product_numbers": [
+              "001"
+            ]
+          },
+          {
+            "patent_number": "9974790*PED",
+            "expiration_date": "2027-06-12",
+            "drug_substance_claim": false,
+            "drug_product_claim": false,
+            "patent_use_code": null,
+            "delisted": false,
+            "submission_date": null,
+            "product_numbers": [
+              "001"
+            ]
+          },
+          {
+            "patent_number": "7598257",
+            "expiration_date": "2027-12-24",
+            "drug_substance_claim": true,
+            "drug_product_claim": true,
+            "patent_use_code": null,
+            "delisted": false,
+            "submission_date": "2021-10-20",
+            "product_numbers": [
+              "001"
+            ]
+          },
+          {
+            "patent_number": "8415362",
+            "expiration_date": "2027-12-24",
+            "drug_substance_claim": true,
+            "drug_product_claim": true,
+            "patent_use_code": null,
+            "delisted": false,
+            "submission_date": "2021-10-20",
+            "product_numbers": [
+              "001"
+            ]
+          },
+          {
+            "patent_number": "10610530",
+            "expiration_date": "2028-06-12",
+            "drug_substance_claim": false,
+            "drug_product_claim": false,
+            "patent_use_code": "U-3229",
+            "delisted": false,
+            "submission_date": "2021-10-20",
+            "product_numbers": [
+              "001"
+            ]
+          },
+          {
+            "patent_number": "8722693",
+            "expiration_date": "2028-06-12",
+            "drug_substance_claim": true,
+            "drug_product_claim": true,
+            "patent_use_code": null,
+            "delisted": false,
+            "submission_date": "2021-10-20",
+            "product_numbers": [
+              "001"
+            ]
+          },
+          {
+            "patent_number": "8822481",
+            "expiration_date": "2028-06-12",
+            "drug_substance_claim": false,
+            "drug_product_claim": false,
+            "patent_use_code": "U-3404",
+            "delisted": false,
+            "submission_date": "2021-10-20",
+            "product_numbers": [
+              "001"
+            ]
+          },
+          {
+            "patent_number": "7598257*PED",
+            "expiration_date": "2028-06-24",
+            "drug_substance_claim": false,
+            "drug_product_claim": false,
+            "patent_use_code": null,
+            "delisted": false,
+            "submission_date": null,
+            "product_numbers": [
+              "001"
+            ]
+          },
+          {
+            "patent_number": "8415362*PED",
+            "expiration_date": "2028-06-24",
+            "drug_substance_claim": false,
+            "drug_product_claim": false,
+            "patent_use_code": null,
+            "delisted": false,
+            "submission_date": null,
+            "product_numbers": [
+              "001"
+            ]
+          },
+          {
+            "patent_number": "10610530*PED",
+            "expiration_date": "2028-12-12",
+            "drug_substance_claim": false,
+            "drug_product_claim": false,
+            "patent_use_code": null,
+            "delisted": false,
+            "submission_date": null,
+            "product_numbers": [
+              "001"
+            ]
+          },
+          {
+            "patent_number": "8722693*PED",
+            "expiration_date": "2028-12-12",
+            "drug_substance_claim": false,
+            "drug_product_claim": false,
+            "patent_use_code": null,
+            "delisted": false,
+            "submission_date": null,
+            "product_numbers": [
+              "001"
+            ]
+          },
+          {
+            "patent_number": "8822481*PED",
+            "expiration_date": "2028-12-12",
+            "drug_substance_claim": false,
+            "drug_product_claim": false,
+            "patent_use_code": null,
+            "delisted": false,
+            "submission_date": null,
+            "product_numbers": [
+              "001"
+            ]
+          },
+          {
+            "patent_number": "10758543",
+            "expiration_date": "2031-05-20",
+            "drug_substance_claim": false,
+            "drug_product_claim": true,
+            "patent_use_code": null,
+            "delisted": false,
+            "submission_date": "2021-10-20",
+            "product_numbers": [
+              "001"
+            ]
+          },
+          {
+            "patent_number": "10869870",
+            "expiration_date": "2031-05-20",
+            "drug_substance_claim": false,
+            "drug_product_claim": false,
+            "patent_use_code": "U-3229",
+            "delisted": false,
+            "submission_date": "2021-10-20",
+            "product_numbers": [
+              "001"
+            ]
+          },
+          {
+            "patent_number": "11219624",
+            "expiration_date": "2031-05-20",
+            "drug_substance_claim": false,
+            "drug_product_claim": true,
+            "patent_use_code": "U-3229",
+            "delisted": false,
+            "submission_date": "2022-02-08",
+            "product_numbers": [
+              "001"
+            ]
+          },
+          {
+            "patent_number": "11571425",
+            "expiration_date": "2031-05-20",
+            "drug_substance_claim": false,
+            "drug_product_claim": true,
+            "patent_use_code": null,
+            "delisted": false,
+            "submission_date": "2023-02-28",
+            "product_numbers": [
+              "001"
+            ]
+          },
+          {
+            "patent_number": "11590136",
+            "expiration_date": "2031-05-20",
+            "drug_substance_claim": false,
+            "drug_product_claim": false,
+            "patent_use_code": "U-3404",
+            "delisted": false,
+            "submission_date": "2023-03-28",
+            "product_numbers": [
+              "001"
+            ]
+          },
+          {
+            "patent_number": "12226419",
+            "expiration_date": "2031-05-20",
+            "drug_substance_claim": false,
+            "drug_product_claim": true,
+            "patent_use_code": null,
+            "delisted": false,
+            "submission_date": "2025-03-17",
+            "product_numbers": [
+              "001"
+            ]
+          },
+          {
+            "patent_number": "12544381",
+            "expiration_date": "2031-05-20",
+            "drug_substance_claim": false,
+            "drug_product_claim": true,
+            "patent_use_code": null,
+            "delisted": false,
+            "submission_date": "2026-03-03",
+            "product_numbers": [
+              "001"
+            ]
+          },
+          {
+            "patent_number": "12564593",
+            "expiration_date": "2031-05-20",
+            "drug_substance_claim": false,
+            "drug_product_claim": true,
+            "patent_use_code": null,
+            "delisted": false,
+            "submission_date": "2026-03-24",
+            "product_numbers": [
+              "001"
+            ]
+          },
+          {
+            "patent_number": "10758543*PED",
+            "expiration_date": "2031-11-20",
+            "drug_substance_claim": false,
+            "drug_product_claim": false,
+            "patent_use_code": null,
+            "delisted": false,
+            "submission_date": null,
+            "product_numbers": [
+              "001"
+            ]
+          },
+          {
+            "patent_number": "10869870*PED",
+            "expiration_date": "2031-11-20",
+            "drug_substance_claim": false,
+            "drug_product_claim": false,
+            "patent_use_code": null,
+            "delisted": false,
+            "submission_date": null,
+            "product_numbers": [
+              "001"
+            ]
+          },
+          {
+            "patent_number": "11219624*PED",
+            "expiration_date": "2031-11-20",
+            "drug_substance_claim": false,
+            "drug_product_claim": false,
+            "patent_use_code": null,
+            "delisted": false,
+            "submission_date": null,
+            "product_numbers": [
+              "001"
+            ]
+          },
+          {
+            "patent_number": "11590138",
+            "expiration_date": "2040-06-10",
+            "drug_substance_claim": false,
+            "drug_product_claim": false,
+            "patent_use_code": "U-3551",
+            "delisted": false,
+            "submission_date": "2023-03-28",
+            "product_numbers": [
+              "001"
+            ]
+          },
+          {
+            "patent_number": "12233067",
+            "expiration_date": "2040-07-28",
+            "drug_substance_claim": false,
+            "drug_product_claim": false,
+            "patent_use_code": "U-4151",
+            "delisted": false,
+            "submission_date": "2025-03-17",
+            "product_numbers": [
+              "001"
+            ]
+          },
+          {
+            "patent_number": "11510923",
+            "expiration_date": "2040-09-04",
+            "drug_substance_claim": false,
+            "drug_product_claim": false,
+            "patent_use_code": "U-3505",
+            "delisted": false,
+            "submission_date": "2022-12-16",
+            "product_numbers": [
+              "001"
+            ]
+          },
+          {
+            "patent_number": "11590137",
+            "expiration_date": "2040-09-04",
+            "drug_substance_claim": false,
+            "drug_product_claim": false,
+            "patent_use_code": "U-3505",
+            "delisted": false,
+            "submission_date": "2023-03-28",
+            "product_numbers": [
+              "001"
+            ]
+          },
+          {
+            "patent_number": "12589096",
+            "expiration_date": "2040-09-04",
+            "drug_substance_claim": false,
+            "drug_product_claim": false,
+            "patent_use_code": "U-3505",
+            "delisted": false,
+            "submission_date": "2026-04-27",
+            "product_numbers": [
+              "001"
+            ]
+          },
+          {
+            "patent_number": "11602536",
+            "expiration_date": "2041-05-05",
+            "drug_substance_claim": false,
+            "drug_product_claim": false,
+            "patent_use_code": "U-3550",
+            "delisted": false,
+            "submission_date": "2023-03-28",
+            "product_numbers": [
+              "001"
+            ]
+          }
+        ],
+        "exclusivities": [
+          {
+            "code": "I-896",
+            "expiration_date": "2025-07-18",
+            "product_numbers": [
+              "001"
+            ]
+          },
+          {
+            "code": "PED",
+            "expiration_date": "2026-01-18",
+            "product_numbers": [
+              "001"
+            ]
+          },
+          {
+            "code": "NPP",
+            "expiration_date": "2028-09-18",
+            "product_numbers": [
+              "001"
+            ]
+          }
+        ],
+        "latest_patent_expiration": "2041-05-05",
+        "latest_exclusivity_expiration": "2028-09-18",
+        "data_file_date": null
+      },
+      "source_type": "orange_book",
+      "source_url": "https://api.fda.gov/drug/orangebook.json?search=products.active_ingredients.name%3A%22RUXOLITINIB%22&limit=100",
+      "source_excerpt": "openFDA drug/orangebook.json, 1 product row(s) matched on products.active_ingredients.name='RUXOLITINIB'",
+      "extracted_by": "fetch_orange_book.py (openfda drug/orangebook.json, v2 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "purple_book": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    }
+  }
+}

@@ -2168,13 +2168,243 @@
   },
   "real_world_safety": {
     "faers_summary": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "query": {
+          "search_field": "patient.drug.medicinalproduct",
+          "search_term": "DUPILUMAB",
+          "receivedate_from": "2013-02-04",
+          "receivedate_to": "2026-06-30",
+          "api_urls": [
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"DUPILUMAB\"&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"DUPILUMAB\"+AND+serious:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"DUPILUMAB\"+AND+seriousnessdeath:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"DUPILUMAB\"+AND+seriousnesshospitalization:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"DUPILUMAB\"+AND+seriousnesslifethreatening:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"DUPILUMAB\"+AND+seriousnessdisabling:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"DUPILUMAB\"&count=patient.reaction.reactionmeddrapt.exact&limit=15",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"DUPILUMAB\"+AND+serious:1&count=patient.reaction.reactionmeddrapt.exact&limit=15",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"DUPILUMAB\"&count=receivedate"
+          ],
+          "data_last_updated": "2026-07-30"
+        },
+        "total_reports": 13441,
+        "serious_reports": 6179,
+        "death_reports": 324,
+        "hospitalization_reports": 2421,
+        "life_threatening_reports": 146,
+        "disability_reports": 225,
+        "top_reactions": [
+          {
+            "meddra_pt": "PRURITUS",
+            "report_count": 1522,
+            "pct_of_reports": 11.32
+          },
+          {
+            "meddra_pt": "RASH",
+            "report_count": 1236,
+            "pct_of_reports": 9.2
+          },
+          {
+            "meddra_pt": "INJECTION SITE PAIN",
+            "report_count": 1167,
+            "pct_of_reports": 8.68
+          },
+          {
+            "meddra_pt": "OFF LABEL USE",
+            "report_count": 1087,
+            "pct_of_reports": 8.09
+          },
+          {
+            "meddra_pt": "DRUG INEFFECTIVE",
+            "report_count": 1044,
+            "pct_of_reports": 7.77
+          },
+          {
+            "meddra_pt": "DERMATITIS ATOPIC",
+            "report_count": 894,
+            "pct_of_reports": 6.65
+          },
+          {
+            "meddra_pt": "CONDITION AGGRAVATED",
+            "report_count": 749,
+            "pct_of_reports": 5.57
+          },
+          {
+            "meddra_pt": "DYSPNOEA",
+            "report_count": 718,
+            "pct_of_reports": 5.34
+          },
+          {
+            "meddra_pt": "PRODUCT USE IN UNAPPROVED INDICATION",
+            "report_count": 711,
+            "pct_of_reports": 5.29
+          },
+          {
+            "meddra_pt": "ARTHRALGIA",
+            "report_count": 687,
+            "pct_of_reports": 5.11
+          },
+          {
+            "meddra_pt": "PRODUCT USE ISSUE",
+            "report_count": 658,
+            "pct_of_reports": 4.9
+          },
+          {
+            "meddra_pt": "ECZEMA",
+            "report_count": 632,
+            "pct_of_reports": 4.7
+          },
+          {
+            "meddra_pt": "ERYTHEMA",
+            "report_count": 596,
+            "pct_of_reports": 4.43
+          },
+          {
+            "meddra_pt": "COUGH",
+            "report_count": 589,
+            "pct_of_reports": 4.38
+          },
+          {
+            "meddra_pt": "PRODUCT DOSE OMISSION ISSUE",
+            "report_count": 559,
+            "pct_of_reports": 4.16
+          }
+        ],
+        "top_serious_reactions": [
+          {
+            "meddra_pt": "OFF LABEL USE",
+            "report_count": 515,
+            "pct_of_reports": 8.33
+          },
+          {
+            "meddra_pt": "DYSPNOEA",
+            "report_count": 499,
+            "pct_of_reports": 8.08
+          },
+          {
+            "meddra_pt": "PRURITUS",
+            "report_count": 494,
+            "pct_of_reports": 7.99
+          },
+          {
+            "meddra_pt": "DRUG INEFFECTIVE",
+            "report_count": 465,
+            "pct_of_reports": 7.53
+          },
+          {
+            "meddra_pt": "PNEUMONIA",
+            "report_count": 417,
+            "pct_of_reports": 6.75
+          },
+          {
+            "meddra_pt": "RASH",
+            "report_count": 406,
+            "pct_of_reports": 6.57
+          },
+          {
+            "meddra_pt": "CONDITION AGGRAVATED",
+            "report_count": 383,
+            "pct_of_reports": 6.2
+          },
+          {
+            "meddra_pt": "COUGH",
+            "report_count": 365,
+            "pct_of_reports": 5.91
+          },
+          {
+            "meddra_pt": "ASTHMA",
+            "report_count": 335,
+            "pct_of_reports": 5.42
+          },
+          {
+            "meddra_pt": "ARTHRALGIA",
+            "report_count": 299,
+            "pct_of_reports": 4.84
+          },
+          {
+            "meddra_pt": "INJECTION SITE PAIN",
+            "report_count": 275,
+            "pct_of_reports": 4.45
+          },
+          {
+            "meddra_pt": "PRODUCT USE ISSUE",
+            "report_count": 267,
+            "pct_of_reports": 4.32
+          },
+          {
+            "meddra_pt": "ERYTHEMA",
+            "report_count": 264,
+            "pct_of_reports": 4.27
+          },
+          {
+            "meddra_pt": "PYREXIA",
+            "report_count": 263,
+            "pct_of_reports": 4.26
+          },
+          {
+            "meddra_pt": "FATIGUE",
+            "report_count": 253,
+            "pct_of_reports": 4.09
+          }
+        ],
+        "reports_by_year": [
+          {
+            "year": 2013,
+            "report_count": 1
+          },
+          {
+            "year": 2016,
+            "report_count": 5
+          },
+          {
+            "year": 2017,
+            "report_count": 82
+          },
+          {
+            "year": 2018,
+            "report_count": 799
+          },
+          {
+            "year": 2019,
+            "report_count": 1350
+          },
+          {
+            "year": 2020,
+            "report_count": 1224
+          },
+          {
+            "year": 2021,
+            "report_count": 1894
+          },
+          {
+            "year": 2022,
+            "report_count": 1323
+          },
+          {
+            "year": 2023,
+            "report_count": 1807
+          },
+          {
+            "year": 2024,
+            "report_count": 2282
+          },
+          {
+            "year": 2025,
+            "report_count": 1341
+          },
+          {
+            "year": 2026,
+            "report_count": 1333
+          }
+        ],
+        "meddra_version": null
+      },
+      "source_type": "openfda_faers",
+      "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"DUPILUMAB\"&limit=1",
+      "source_excerpt": "openFDA drug/event.json aggregate: total_reports=13441, serious=6179, deaths=324",
+      "extracted_by": "fetch_faers.py (openfda drug/event.json, v2 pass)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 1.0
     }
   },
   "exclusivity": {
@@ -2205,13 +2435,104 @@
       "confidence": null
     },
     "purple_book": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "bla_number": "761055",
+        "proprietary_name": "Dupixent",
+        "proper_name": "dupilumab",
+        "applicant": "Regeneron Pharmaceuticals, Inc.",
+        "license_type": "351(a)",
+        "license_number": "1760",
+        "center": "CDER",
+        "products": [
+          {
+            "product_number": "001",
+            "strength": "300MG/2ML",
+            "dosage_form": "Injection",
+            "route": "Subcutaneous",
+            "presentation": "Pre-Filled Syringe",
+            "marketing_status": "Rx",
+            "licensure": "Licensed",
+            "approval_date": "2017-03-28",
+            "submission_type": "Original",
+            "supplement_number": null
+          },
+          {
+            "product_number": "002",
+            "strength": "300MG/2ML",
+            "dosage_form": "Injection",
+            "route": "Subcutaneous",
+            "presentation": "Pre-Filled Syringe",
+            "marketing_status": "Disc",
+            "licensure": "Licensed",
+            "approval_date": "2017-03-28",
+            "submission_type": "Original",
+            "supplement_number": null
+          },
+          {
+            "product_number": "003",
+            "strength": "200MG/1.14ML",
+            "dosage_form": "Injection",
+            "route": "Subcutaneous",
+            "presentation": "Pre-Filled Syringe",
+            "marketing_status": "Rx",
+            "licensure": "Licensed",
+            "approval_date": "2018-10-19",
+            "submission_type": "Supplement",
+            "supplement_number": "7"
+          },
+          {
+            "product_number": "004",
+            "strength": "300MG/2ML",
+            "dosage_form": "Injection",
+            "route": "Subcutaneous",
+            "presentation": "Autoinjector",
+            "marketing_status": "Rx",
+            "licensure": "Licensed",
+            "approval_date": "2020-06-18",
+            "submission_type": "Supplement",
+            "supplement_number": "17"
+          },
+          {
+            "product_number": "005",
+            "strength": "200MG/1.14ML",
+            "dosage_form": "Injection",
+            "route": "Subcutaneous",
+            "presentation": "Autoinjector",
+            "marketing_status": "Rx",
+            "licensure": "Licensed",
+            "approval_date": "2021-06-14",
+            "submission_type": "Supplement",
+            "supplement_number": "16"
+          },
+          {
+            "product_number": "006",
+            "strength": "100MG/0.67ML",
+            "dosage_form": "Injection",
+            "route": "Subcutaneous",
+            "presentation": "Pre-Filled Syringe",
+            "marketing_status": "Disc",
+            "licensure": "Licensed",
+            "approval_date": "2021-10-20",
+            "submission_type": "Supplement",
+            "supplement_number": "31"
+          }
+        ],
+        "first_approval_date": "2017-03-28",
+        "date_of_first_licensure": null,
+        "reference_product_exclusivity_expiration": null,
+        "exclusivity_expiration_date": null,
+        "first_interchangeable_exclusivity_expiration": null,
+        "orphan_exclusivity_expiration": "2031-01-25",
+        "patent_list_provided": null,
+        "biosimilars": [],
+        "data_file_month": null
+      },
+      "source_type": "purple_book",
+      "source_url": "https://purplebooksearch.fda.gov/index.cfm?event=advancedsearch",
+      "source_excerpt": "purplebooksearch.fda.gov live search table, BLA 761055 (Dupixent), 0 biosimilar(s) on file",
+      "extracted_by": "fetch_purple_book.py (purplebooksearch.fda.gov live search table, raw staging pass)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 1.0
     }
   }
 }

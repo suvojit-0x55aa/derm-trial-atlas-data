@@ -1,0 +1,1285 @@
+{
+  "schema_version": 2,
+  "nct_id": {
+    "value": "NCT03782792",
+    "source_type": "ctgov_api",
+    "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03782792",
+    "source_excerpt": "protocolSection.identificationModule.nctId",
+    "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+    "reviewed_by": null,
+    "confidence": 1.0
+  },
+  "identity": {
+    "trial_name": {
+      "value": null,
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03782792",
+      "source_excerpt": "protocolSection.identificationModule.acronym",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 0.0
+    },
+    "official_title": {
+      "value": "Effisayil™ 1:Multi-center, Double-blind, Randomised, Placebo-controlled, Phase II Study to Evaluate Efficacy, Safety and Tolerability of a Single Intravenous Dose of Spesolimab (BI 655130) in Patients With Generalized Pustular Psoriasis (GPP) Presenting With an Acute Flare of Moderate to Severe Intensity",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03782792",
+      "source_excerpt": "protocolSection.identificationModule.officialTitle",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "sponsor": {
+      "value": "Boehringer Ingelheim",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03782792",
+      "source_excerpt": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "phase": {
+      "value": [
+        "PHASE2"
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03782792",
+      "source_excerpt": "protocolSection.designModule.phases",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    }
+  },
+  "molecule": {
+    "drug": {
+      "value": "Spesolimab",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03782792",
+      "source_excerpt": "protocolSection.armsInterventionsModule.interventions[].name (curated)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "intervention_names": {
+      "value": [
+        "Spesolimab",
+        "Placebo"
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03782792",
+      "source_excerpt": "protocolSection.armsInterventionsModule.interventions[].name",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "intervention_type": {
+      "value": [
+        "DRUG"
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03782792",
+      "source_excerpt": "protocolSection.armsInterventionsModule.interventions[].type",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "mechanism_of_action": {
+      "value": {
+        "modality": "monoclonal_antibody",
+        "drug_class": "IL-36 receptor antagonist",
+        "antibody_isotype": "IgG1",
+        "binding_targets": [
+          "IL36R"
+        ],
+        "pathway_cytokines": [
+          "IL-36α",
+          "IL-36β",
+          "IL-36γ"
+        ],
+        "receptor_subunits": [
+          "IL36R"
+        ],
+        "kinases_inhibited": [],
+        "lower_potency_kinases": [],
+        "selectivity": [],
+        "reversible": null,
+        "mechanism_established": false,
+        "label_section": "12.1"
+      },
+      "source_type": "openfda_label",
+      "source_url": "https://api.fda.gov/drug/label.json?search=openfda.brand_name:SPEVIGO&limit=1",
+      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1): 12.1 Mechanism of Action Spesolimab-sbzo is a humanized monoclonal immunoglobulin G1 antibody that inhibits interleukin-36 (IL-36) signaling by specifically binding to the IL36R. Binding of spesolimab-sbzo to IL36R prevents the subsequent activation of IL36R by its ligands (IL-36 α, β and γ) and downstream activation of pro-inflammatory and pro-fibrotic pathways. The precise mechanism linking reduced IL36R activity and the treatment of flares of GPP is unclear.",
+      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v2 pass; pending human QA)",
+      "reviewed_by": null,
+      "confidence": 0.9
+    },
+    "dosing_regimen": {
+      "value": [
+        {
+          "intervention_name": "Spesolimab",
+          "description": "Single intravenous (i.v.) dose of 900 mg on Day 1 of Week 1; patients whose disease worsened were eligible for one additional single open-label rescue i.v. dose of 900 mg between Week 1 and Week 12.",
+          "is_placebo": false,
+          "route": "intravenous",
+          "dose_form": "solution",
+          "dose_value": 900,
+          "dose_unit": "mg",
+          "units_per_dose": null,
+          "frequency": null,
+          "duration_weeks": null,
+          "dosing_periods": [],
+          "administration_sites": [],
+          "antibody_isotype": null,
+          "molecular_target": null,
+          "arm_names": [
+            "Spesolimab"
+          ],
+          "co_administered_with": []
+        },
+        {
+          "intervention_name": "Placebo",
+          "description": "Matching intravenous placebo solution to spesolimab on Day 1 of Week 1.",
+          "is_placebo": true,
+          "route": "intravenous",
+          "dose_form": "solution",
+          "dose_value": null,
+          "dose_unit": null,
+          "units_per_dose": null,
+          "frequency": null,
+          "duration_weeks": null,
+          "dosing_periods": [],
+          "administration_sites": [],
+          "antibody_isotype": null,
+          "molecular_target": null,
+          "arm_names": [
+            "Placebo"
+          ],
+          "co_administered_with": []
+        }
+      ],
+      "source_type": "ctgov_text_extraction",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03782792",
+      "source_excerpt": "Spesolimab: 900 mg single i.v. dose Day 1, Week1; one additional 900mg i.v. rescue dose allowed through Week 12 || Placebo: matching i.v. placebo solution",
+      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v2 pass; pending human QA)",
+      "reviewed_by": null,
+      "confidence": 0.8
+    }
+  },
+  "population": {
+    "condition": {
+      "value": [
+        "Generalized Pustular Psoriasis"
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03782792",
+      "source_excerpt": "protocolSection.conditionsModule.conditions",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "min_age_years": {
+      "value": 18,
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03782792",
+      "source_excerpt": "protocolSection.eligibilityModule.minimumAge",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "max_age_years": {
+      "value": 75,
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03782792",
+      "source_excerpt": "protocolSection.eligibilityModule.maximumAge",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "sex": {
+      "value": "ALL",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03782792",
+      "source_excerpt": "protocolSection.eligibilityModule.sex",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "enrollment_count": {
+      "value": 53,
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03782792",
+      "source_excerpt": "protocolSection.designModule.enrollmentInfo.count",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "severity_criteria": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    }
+  },
+  "design": {
+    "study_type": {
+      "value": "INTERVENTIONAL",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03782792",
+      "source_excerpt": "protocolSection.designModule.studyType",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "allocation": {
+      "value": "RANDOMIZED",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03782792",
+      "source_excerpt": "protocolSection.designModule.designInfo.allocation",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "intervention_model": {
+      "value": "PARALLEL",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03782792",
+      "source_excerpt": "protocolSection.designModule.designInfo.interventionModel",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "masking": {
+      "value": "DOUBLE",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03782792",
+      "source_excerpt": "protocolSection.designModule.designInfo.maskingInfo.masking",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "number_of_arms": {
+      "value": 2,
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03782792",
+      "source_excerpt": "len(protocolSection.armsInterventionsModule.armGroups)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "background_therapy": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    }
+  },
+  "endpoints": {
+    "primary_endpoints": {
+      "value": [
+        {
+          "verbatim": "Proportion of Patients With a Generalized Pustular Psoriasis Physician Global Assessment (GPPGA) Pustulation Subscore of 0 Indicating no Visible Pustules at Week 1",
+          "rank": "primary",
+          "position": 1,
+          "measure_type": "absolute_value",
+          "scale": "GPPGA",
+          "scale_component": "pustulation subscore",
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 1,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": "At Week 1."
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03782792",
+      "source_excerpt": "protocolSection.outcomesModule.primaryOutcomes[0].measure/timeFrame",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "secondary_endpoints": {
+      "value": [
+        {
+          "verbatim": "Key Secondary: Proportion of Patients With a Generalized Pustular Psoriasis Physician Global Assessment (GPPGA) Score of 0 or 1 at Week 1",
+          "rank": "secondary",
+          "position": 1,
+          "measure_type": "absolute_value",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 1,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": "At Week 1."
+        },
+        {
+          "verbatim": "Proportion of Patients With a Psoriasis Area and Severity Index for Generalized Pustular Psoriasis (GPPASI) 75 at Week 4",
+          "rank": "secondary",
+          "position": 2,
+          "measure_type": "other",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 4,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": "At Week 4."
+        },
+        {
+          "verbatim": "Change From Baseline in Pain Visual Analog Scale (VAS) Score at Week 4",
+          "rank": "secondary",
+          "position": 3,
+          "measure_type": "change_from_baseline",
+          "scale": "Pain VAS",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 4,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": "Baseline and at Week 4."
+        },
+        {
+          "verbatim": "Change From Baseline in Psoriasis Symptom Scale (PSS) Score at Week 4",
+          "rank": "secondary",
+          "position": 4,
+          "measure_type": "change_from_baseline",
+          "scale": "PSS",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 4,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": "Baseline and at Week 4."
+        },
+        {
+          "verbatim": "Change From Baseline in Functional Assessment of Chronic Illness Therapy (FACIT) - Fatigue Score at Week 4",
+          "rank": "secondary",
+          "position": 5,
+          "measure_type": "change_from_baseline",
+          "scale": "FACIT-Fatigue",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 4,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": "Baseline and at Week 4."
+        },
+        {
+          "verbatim": "Proportion of Patients With a Generalized Pustular Psoriasis Physician Global Assessment (GPPGA) Score of 0 or 1 at Week 4",
+          "rank": "secondary",
+          "position": 6,
+          "measure_type": "absolute_value",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 4,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": "At Week 4."
+        },
+        {
+          "verbatim": "Proportion of Patients With a Generalized Pustular Psoriasis Physician Global Assessment (GPPGA) Pustulation Sub-score of 0 Indicating no Visible Pustules at Week 4",
+          "rank": "secondary",
+          "position": 7,
+          "measure_type": "absolute_value",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 4,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": "At Week 4."
+        },
+        {
+          "verbatim": "Proportion of Patients With a Generalized Pustular Psoriasis Area and Severity Index (GPPASI) 50 at Week 4",
+          "rank": "secondary",
+          "position": 8,
+          "measure_type": "other",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 4,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": "At Week 4."
+        },
+        {
+          "verbatim": "Percent Change in Generalized Pustular Psoriasis Area and Severity Index (GPPASI) From Baseline at Week 4",
+          "rank": "secondary",
+          "position": 9,
+          "measure_type": "percent_change_from_baseline",
+          "scale": "GPPASI",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 4,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": "Baseline and at Week 4."
+        },
+        {
+          "verbatim": "Proportion of Patients With a Generalized Pustular Psoriasis Area and Severity Index (GPPASI) 50 at Week 1",
+          "rank": "secondary",
+          "position": 10,
+          "measure_type": "other",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 1,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": "At Week 1."
+        },
+        {
+          "verbatim": "Percent Change in Generalized Pustular Psoriasis Area and Severity Index (GPPASI) From Baseline at Week 1",
+          "rank": "secondary",
+          "position": 11,
+          "measure_type": "percent_change_from_baseline",
+          "scale": "GPPASI",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 1,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": "At Week 1."
+        },
+        {
+          "verbatim": "Occurrence of Treatment Emergent Adverse Events (TEAEs) up to Week 1",
+          "rank": "secondary",
+          "position": 12,
+          "measure_type": "other",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": "From start of treatment until Day 7, up to 7 days."
+        },
+        {
+          "verbatim": "Number of Patients With Treatment Emergent Adverse Events (TEAEs) up to Week 1",
+          "rank": "secondary",
+          "position": 13,
+          "measure_type": "count",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": "From start of treatment until Day 7, up to 7 days."
+        },
+        {
+          "verbatim": "Occurrence of Treatment Emergent Adverse Events (TEAEs) Within the Treatment Phase",
+          "rank": "secondary",
+          "position": 14,
+          "measure_type": "other",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": "From start of treatment until end of the residual effect period (REP) but censored at any use of open label spesolimab, up to 16 weeks."
+        },
+        {
+          "verbatim": "Number of Patients With Treatment Emergent Adverse Events (TEAEs) Within the Treatment Phase",
+          "rank": "secondary",
+          "position": 15,
+          "measure_type": "count",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": "From start of treatment until end of the residual effect period (REP) but censored at any use of open label spesolimab, up to 16 weeks."
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03782792",
+      "source_excerpt": "protocolSection.outcomesModule.secondaryOutcomes[].measure",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "multiplicity_control": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    }
+  },
+  "timing_ops": {
+    "start_date": {
+      "value": {
+        "date": "2019-01-31",
+        "precision": "day"
+      },
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03782792",
+      "source_excerpt": "protocolSection.statusModule.startDateStruct.date",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "primary_completion_date": {
+      "value": {
+        "date": "2020-09-23",
+        "precision": "day"
+      },
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03782792",
+      "source_excerpt": "protocolSection.statusModule.primaryCompletionDateStruct.date",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "completion_date": {
+      "value": {
+        "date": "2021-01-05",
+        "precision": "day"
+      },
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03782792",
+      "source_excerpt": "protocolSection.statusModule.completionDateStruct.date",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "study_schedule": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    },
+    "rescue_therapy": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    }
+  },
+  "adverse_events": {
+    "serious_adverse_event_rate": {
+      "value": [
+        {
+          "arm": "Placebo",
+          "n_affected": 3,
+          "n_at_risk": 18,
+          "pct": 16.7
+        },
+        {
+          "arm": "Spesolimab 900 mg i.v. SD",
+          "n_affected": 6,
+          "n_at_risk": 35,
+          "pct": 17.1
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03782792",
+      "source_excerpt": "resultsSection.adverseEventsModule.eventGroups[].seriousNumAffected/seriousNumAtRisk",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v2 AE pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "death_rate": {
+      "value": [
+        {
+          "arm": "Placebo",
+          "n_affected": 0,
+          "n_at_risk": 18,
+          "pct": 0.0
+        },
+        {
+          "arm": "Spesolimab 900 mg i.v. SD",
+          "n_affected": 0,
+          "n_at_risk": 35,
+          "pct": 0.0
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03782792",
+      "source_excerpt": "resultsSection.adverseEventsModule.eventGroups[].deathsNumAffected/deathsNumAtRisk",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v2 AE pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "most_common_adverse_events": {
+      "value": [
+        {
+          "meddra_pt": "Pustular psoriasis",
+          "meddra_soc": "Skin and subcutaneous tissue disorders",
+          "per_arm": [
+            {
+              "arm": "Placebo",
+              "n_affected": 4,
+              "n_at_risk": 18,
+              "pct": 22.2
+            },
+            {
+              "arm": "Spesolimab 900 mg i.v. SD",
+              "n_affected": 17,
+              "n_at_risk": 35,
+              "pct": 48.6
+            }
+          ]
+        },
+        {
+          "meddra_pt": "Pyrexia",
+          "meddra_soc": "General disorders",
+          "per_arm": [
+            {
+              "arm": "Placebo",
+              "n_affected": 4,
+              "n_at_risk": 18,
+              "pct": 22.2
+            },
+            {
+              "arm": "Spesolimab 900 mg i.v. SD",
+              "n_affected": 2,
+              "n_at_risk": 35,
+              "pct": 5.7
+            }
+          ]
+        },
+        {
+          "meddra_pt": "Headache",
+          "meddra_soc": "Nervous system disorders",
+          "per_arm": [
+            {
+              "arm": "Placebo",
+              "n_affected": 1,
+              "n_at_risk": 18,
+              "pct": 5.6
+            },
+            {
+              "arm": "Spesolimab 900 mg i.v. SD",
+              "n_affected": 4,
+              "n_at_risk": 35,
+              "pct": 11.4
+            }
+          ]
+        },
+        {
+          "meddra_pt": "Dizziness",
+          "meddra_soc": "Nervous system disorders",
+          "per_arm": [
+            {
+              "arm": "Placebo",
+              "n_affected": 2,
+              "n_at_risk": 18,
+              "pct": 11.1
+            },
+            {
+              "arm": "Spesolimab 900 mg i.v. SD",
+              "n_affected": 0,
+              "n_at_risk": 35,
+              "pct": 0.0
+            }
+          ]
+        },
+        {
+          "meddra_pt": "Alanine aminotransferase increased",
+          "meddra_soc": "Investigations",
+          "per_arm": [
+            {
+              "arm": "Placebo",
+              "n_affected": 2,
+              "n_at_risk": 18,
+              "pct": 11.1
+            },
+            {
+              "arm": "Spesolimab 900 mg i.v. SD",
+              "n_affected": 1,
+              "n_at_risk": 35,
+              "pct": 2.9
+            }
+          ]
+        },
+        {
+          "meddra_pt": "Nausea",
+          "meddra_soc": "Gastrointestinal disorders",
+          "per_arm": [
+            {
+              "arm": "Placebo",
+              "n_affected": 0,
+              "n_at_risk": 18,
+              "pct": 0.0
+            },
+            {
+              "arm": "Spesolimab 900 mg i.v. SD",
+              "n_affected": 3,
+              "n_at_risk": 35,
+              "pct": 8.6
+            }
+          ]
+        },
+        {
+          "meddra_pt": "Vomiting",
+          "meddra_soc": "Gastrointestinal disorders",
+          "per_arm": [
+            {
+              "arm": "Placebo",
+              "n_affected": 1,
+              "n_at_risk": 18,
+              "pct": 5.6
+            },
+            {
+              "arm": "Spesolimab 900 mg i.v. SD",
+              "n_affected": 2,
+              "n_at_risk": 35,
+              "pct": 5.7
+            }
+          ]
+        },
+        {
+          "meddra_pt": "Pain in extremity",
+          "meddra_soc": "Musculoskeletal and connective tissue disorders",
+          "per_arm": [
+            {
+              "arm": "Placebo",
+              "n_affected": 1,
+              "n_at_risk": 18,
+              "pct": 5.6
+            },
+            {
+              "arm": "Spesolimab 900 mg i.v. SD",
+              "n_affected": 2,
+              "n_at_risk": 35,
+              "pct": 5.7
+            }
+          ]
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03782792",
+      "source_excerpt": "resultsSection.adverseEventsModule.otherEvents[] (top 8 of 62 by highest single-arm incidence; CT.gov's own >=5% frequency-threshold table, randomized arms only)",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v2 AE pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "discontinuation_due_to_ae_rate": {
+      "value": [
+        {
+          "arm": "Placebo",
+          "n_discontinued": 0,
+          "n_started": 18,
+          "pct": 0.0
+        },
+        {
+          "arm": "Spesolimab 900 mg i.v. SD",
+          "n_discontinued": 0,
+          "n_started": 35,
+          "pct": 0.0
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03782792",
+      "source_excerpt": "resultsSection.participantFlowModule.periods[0].dropWithdraws[] (no 'Adverse Event' reason listed; only 'Patient left the country' and 'Withdrawal by Subject')",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v2 AE pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "boxed_warning": {
+      "value": {
+        "present": false,
+        "title": null,
+        "warning_categories": [],
+        "referenced_label_sections": [],
+        "product_names": []
+      },
+      "source_type": "openfda_label",
+      "source_url": "https://api.fda.gov/drug/label.json?search=openfda.brand_name:SPEVIGO&limit=1",
+      "source_excerpt": "results[0] has no boxed_warning key (checked, none present)",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v2 AE pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    }
+  },
+  "real_world_safety": {
+    "faers_summary": {
+      "value": {
+        "query": {
+          "search_field": "patient.drug.medicinalproduct",
+          "search_term": "SPESOLIMAB",
+          "receivedate_from": "2022-09-20",
+          "receivedate_to": "2026-05-12",
+          "api_urls": [
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"SPESOLIMAB\"&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"SPESOLIMAB\"+AND+serious:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"SPESOLIMAB\"+AND+seriousnessdeath:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"SPESOLIMAB\"+AND+seriousnesshospitalization:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"SPESOLIMAB\"+AND+seriousnesslifethreatening:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"SPESOLIMAB\"+AND+seriousnessdisabling:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"SPESOLIMAB\"&count=patient.reaction.reactionmeddrapt.exact&limit=15",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"SPESOLIMAB\"+AND+serious:1&count=patient.reaction.reactionmeddrapt.exact&limit=15",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"SPESOLIMAB\"&count=receivedate"
+          ],
+          "data_last_updated": "2026-07-30"
+        },
+        "total_reports": 67,
+        "serious_reports": 59,
+        "death_reports": 6,
+        "hospitalization_reports": 28,
+        "life_threatening_reports": 2,
+        "disability_reports": 0,
+        "top_reactions": [
+          {
+            "meddra_pt": "OFF LABEL USE",
+            "report_count": 15,
+            "pct_of_reports": 22.39
+          },
+          {
+            "meddra_pt": "PUSTULAR PSORIASIS",
+            "report_count": 14,
+            "pct_of_reports": 20.9
+          },
+          {
+            "meddra_pt": "DRUG INEFFECTIVE",
+            "report_count": 13,
+            "pct_of_reports": 19.4
+          },
+          {
+            "meddra_pt": "GENERALISED PUSTULAR PSORIASIS",
+            "report_count": 11,
+            "pct_of_reports": 16.42
+          },
+          {
+            "meddra_pt": "ARTHRITIS",
+            "report_count": 7,
+            "pct_of_reports": 10.45
+          },
+          {
+            "meddra_pt": "BREAST SWELLING",
+            "report_count": 7,
+            "pct_of_reports": 10.45
+          },
+          {
+            "meddra_pt": "DERMATITIS EXFOLIATIVE GENERALISED",
+            "report_count": 7,
+            "pct_of_reports": 10.45
+          },
+          {
+            "meddra_pt": "INFLAMMATORY PAIN",
+            "report_count": 7,
+            "pct_of_reports": 10.45
+          },
+          {
+            "meddra_pt": "LIVER DISORDER",
+            "report_count": 7,
+            "pct_of_reports": 10.45
+          },
+          {
+            "meddra_pt": "PSORIASIS AREA SEVERITY INDEX INCREASED",
+            "report_count": 7,
+            "pct_of_reports": 10.45
+          },
+          {
+            "meddra_pt": "PSORIATIC ARTHROPATHY",
+            "report_count": 7,
+            "pct_of_reports": 10.45
+          },
+          {
+            "meddra_pt": "PYREXIA",
+            "report_count": 7,
+            "pct_of_reports": 10.45
+          },
+          {
+            "meddra_pt": "SACROILIITIS",
+            "report_count": 7,
+            "pct_of_reports": 10.45
+          },
+          {
+            "meddra_pt": "SKIN STRIAE",
+            "report_count": 7,
+            "pct_of_reports": 10.45
+          },
+          {
+            "meddra_pt": "SPONDYLITIS",
+            "report_count": 7,
+            "pct_of_reports": 10.45
+          }
+        ],
+        "top_serious_reactions": [
+          {
+            "meddra_pt": "OFF LABEL USE",
+            "report_count": 14,
+            "pct_of_reports": 23.73
+          },
+          {
+            "meddra_pt": "PUSTULAR PSORIASIS",
+            "report_count": 14,
+            "pct_of_reports": 23.73
+          },
+          {
+            "meddra_pt": "DRUG INEFFECTIVE",
+            "report_count": 13,
+            "pct_of_reports": 22.03
+          },
+          {
+            "meddra_pt": "GENERALISED PUSTULAR PSORIASIS",
+            "report_count": 11,
+            "pct_of_reports": 18.64
+          },
+          {
+            "meddra_pt": "ARTHRITIS",
+            "report_count": 7,
+            "pct_of_reports": 11.86
+          },
+          {
+            "meddra_pt": "BREAST SWELLING",
+            "report_count": 7,
+            "pct_of_reports": 11.86
+          },
+          {
+            "meddra_pt": "DERMATITIS EXFOLIATIVE GENERALISED",
+            "report_count": 7,
+            "pct_of_reports": 11.86
+          },
+          {
+            "meddra_pt": "INFLAMMATORY PAIN",
+            "report_count": 7,
+            "pct_of_reports": 11.86
+          },
+          {
+            "meddra_pt": "LIVER DISORDER",
+            "report_count": 7,
+            "pct_of_reports": 11.86
+          },
+          {
+            "meddra_pt": "PSORIASIS AREA SEVERITY INDEX INCREASED",
+            "report_count": 7,
+            "pct_of_reports": 11.86
+          },
+          {
+            "meddra_pt": "PSORIATIC ARTHROPATHY",
+            "report_count": 7,
+            "pct_of_reports": 11.86
+          },
+          {
+            "meddra_pt": "PYREXIA",
+            "report_count": 7,
+            "pct_of_reports": 11.86
+          },
+          {
+            "meddra_pt": "SACROILIITIS",
+            "report_count": 7,
+            "pct_of_reports": 11.86
+          },
+          {
+            "meddra_pt": "SKIN STRIAE",
+            "report_count": 7,
+            "pct_of_reports": 11.86
+          },
+          {
+            "meddra_pt": "SPONDYLITIS",
+            "report_count": 7,
+            "pct_of_reports": 11.86
+          }
+        ],
+        "reports_by_year": [
+          {
+            "year": 2022,
+            "report_count": 8
+          },
+          {
+            "year": 2023,
+            "report_count": 16
+          },
+          {
+            "year": 2024,
+            "report_count": 15
+          },
+          {
+            "year": 2025,
+            "report_count": 19
+          },
+          {
+            "year": 2026,
+            "report_count": 9
+          }
+        ],
+        "meddra_version": null
+      },
+      "source_type": "openfda_faers",
+      "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"SPESOLIMAB\"&limit=1",
+      "source_excerpt": "openFDA drug/event.json aggregate: total_reports=67, serious=59, deaths=6",
+      "extracted_by": "fetch_faers.py (openfda drug/event.json, v2 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    }
+  },
+  "exclusivity": {
+    "regulatory_application": {
+      "value": {
+        "application_type": "BLA",
+        "application_number": "761244",
+        "registry": "purple_book",
+        "center": "CDER",
+        "proprietary_name": "Spevigo",
+        "applicant": "LEO Pharma A/S",
+        "first_approval_date": "2022-09-01"
+      },
+      "source_type": "purple_book",
+      "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2026/purplebook-search-August-data-download.csv",
+      "source_excerpt": "row: LEO Pharma A/S | BLA 761244 | Spevigo | spesolimab-sbzo | 351(a) | 450MG/7.5ML (60MG/ML) Injection Intravenous Single-Dose Vial | Rx | Licensed | 1-Sep-22 | Original | License 2169 | Product 001 | CDER | Orphan Exclusivity Exp. Date 18-Mar-31",
+      "extracted_by": "atlas.regulatory_applications (registry file fetched 2026-09-05)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "orange_book": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    },
+    "purple_book": {
+      "value": {
+        "bla_number": "761244",
+        "proprietary_name": "Spevigo",
+        "proper_name": "spesolimab-sbzo",
+        "applicant": "LEO Pharma A/S",
+        "license_type": "351(a)",
+        "license_number": "2169",
+        "center": "CDER",
+        "products": [
+          {
+            "product_number": "001",
+            "strength": "450MG/7.5ML (60MG/ML)",
+            "dosage_form": "Injection",
+            "route": "Intravenous",
+            "presentation": "Single-Dose Vial",
+            "marketing_status": "Rx",
+            "licensure": "Licensed",
+            "approval_date": "2022-09-01",
+            "submission_type": "Original",
+            "supplement_number": null
+          },
+          {
+            "product_number": "002",
+            "strength": "150MG/ML",
+            "dosage_form": "Injection",
+            "route": "Subcutaneous",
+            "presentation": "Pre-Filled Syringe",
+            "marketing_status": "Rx",
+            "licensure": "Licensed",
+            "approval_date": "2024-03-18",
+            "submission_type": "Supplement",
+            "supplement_number": "3"
+          },
+          {
+            "product_number": "003",
+            "strength": "300MG/2ML (150MG/ML)",
+            "dosage_form": "Injection",
+            "route": "Subcutaneous",
+            "presentation": "Pre-Filled Syringe",
+            "marketing_status": "Rx",
+            "licensure": "Licensed",
+            "approval_date": "2025-05-28",
+            "submission_type": "Supplement",
+            "supplement_number": "4"
+          }
+        ],
+        "first_approval_date": "2022-09-01",
+        "date_of_first_licensure": null,
+        "reference_product_exclusivity_expiration": null,
+        "exclusivity_expiration_date": null,
+        "first_interchangeable_exclusivity_expiration": null,
+        "orphan_exclusivity_expiration": "2031-03-18",
+        "patent_list_provided": null,
+        "biosimilars": [],
+        "data_file_month": "August 2026"
+      },
+      "source_type": "purple_book",
+      "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2026/purplebook-search-August-data-download.csv",
+      "source_excerpt": "Purple Book Monthly Historical Data Changes Report, August 2026 release; BLA 761244 (Spevigo), 3 product rows (IV vial original 2022-09-01, SC PFS supplements 2024-03-18 and 2025-05-28), 0 biosimilars on file",
+      "extracted_by": "fetch_purple_book.py (accessdata.fda.gov CSV download, raw staging pass; purplebooksearch.fda.gov live search UI blocked by Akamai bot-detection same as Orange Book)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    }
+  }
+}

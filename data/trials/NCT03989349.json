@@ -1,0 +1,1528 @@
+{
+  "schema_version": 2,
+  "nct_id": {
+    "value": "NCT03989349",
+    "source_type": "ctgov_api",
+    "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03989349",
+    "source_excerpt": "protocolSection.identificationModule.nctId",
+    "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+    "reviewed_by": null,
+    "confidence": 1.0
+  },
+  "identity": {
+    "trial_name": {
+      "value": null,
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03989349",
+      "source_excerpt": "protocolSection.identificationModule.acronym",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 0.0
+    },
+    "official_title": {
+      "value": "A Randomized, Double-Blind, Placebo-Controlled Study to Assess the Efficacy and Safety of Nemolizumab in Subjects With Moderate-to-Severe Atopic Dermatitis",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03989349",
+      "source_excerpt": "protocolSection.identificationModule.officialTitle",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "sponsor": {
+      "value": "Galderma R&D",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03989349",
+      "source_excerpt": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "phase": {
+      "value": [
+        "PHASE3"
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03989349",
+      "source_excerpt": "protocolSection.designModule.phases",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    }
+  },
+  "molecule": {
+    "drug": {
+      "value": "Nemolizumab",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03989349",
+      "source_excerpt": "protocolSection.armsInterventionsModule.interventions[].name (curated)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "intervention_names": {
+      "value": [
+        "Placebo",
+        "Nemolizumab"
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03989349",
+      "source_excerpt": "protocolSection.armsInterventionsModule.interventions[].name",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "intervention_type": {
+      "value": [
+        "DRUG"
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03989349",
+      "source_excerpt": "protocolSection.armsInterventionsModule.interventions[].type",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "mechanism_of_action": {
+      "value": {
+        "modality": "monoclonal_antibody",
+        "drug_class": "monoclonal antibody",
+        "antibody_isotype": "IgG2",
+        "binding_targets": [],
+        "pathway_cytokines": [
+          "IL-31"
+        ],
+        "receptor_subunits": [],
+        "kinases_inhibited": [],
+        "lower_potency_kinases": [],
+        "selectivity": [],
+        "reversible": null,
+        "mechanism_established": null,
+        "label_section": "12.1"
+      },
+      "source_type": "openfda_label",
+      "source_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=df0e2be2-b6bd-40e5-9175-0c8e893433ea",
+      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1) -- v1 extracted text: 12.1 Mechanism of Action Nemolizumab-ilto is a humanized IgG2 monoclonal antibody that inhibits IL-31 signaling by binding selectively to IL-31 RA. IL-31 is a naturally occurring cytokine that is involved in pruritus, inflammation, epidermal dysregulation, and fibrosis. Nemolizumab-ilto inhibited IL-31-induced responses including the release of proinflammatory cytokines and chemokines.",
+      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 0.9
+    },
+    "dosing_regimen": {
+      "value": [
+        {
+          "intervention_name": "Nemolizumab",
+          "description": "Nemolizumab",
+          "is_placebo": false,
+          "route": null,
+          "dose_form": null,
+          "dose_value": null,
+          "dose_unit": null,
+          "units_per_dose": null,
+          "frequency": null,
+          "duration_weeks": null,
+          "dosing_periods": [],
+          "administration_sites": [],
+          "antibody_isotype": null,
+          "molecular_target": null,
+          "arm_names": [],
+          "co_administered_with": []
+        }
+      ],
+      "source_type": "ctgov_text_extraction",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03989349",
+      "source_excerpt": "Nemolizumab: Nemolizumab",
+      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 0.8
+    }
+  },
+  "population": {
+    "condition": {
+      "value": [
+        "Moderate-to-Severe Atopic Dermatitis"
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03989349",
+      "source_excerpt": "protocolSection.conditionsModule.conditions",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "min_age_years": {
+      "value": 12,
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03989349",
+      "source_excerpt": "protocolSection.eligibilityModule.minimumAge",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "max_age_years": {
+      "value": null,
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03989349",
+      "source_excerpt": "protocolSection.eligibilityModule.maximumAge",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 0.0
+    },
+    "sex": {
+      "value": "ALL",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03989349",
+      "source_excerpt": "protocolSection.eligibilityModule.sex",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "enrollment_count": {
+      "value": 787,
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03989349",
+      "source_excerpt": "protocolSection.designModule.enrollmentInfo.count",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "severity_criteria": {
+      "value": {
+        "severity_label": null,
+        "basis": "eligibility_text",
+        "cross_reference": null,
+        "source_criterion_numbers": [],
+        "baseline_visit_number": null,
+        "criteria": [
+          {
+            "scale": "EASI",
+            "scale_component": null,
+            "scale_variant": null,
+            "metric": "absolute_score",
+            "comparator": ">=",
+            "value": 16,
+            "unit": "score",
+            "scale_min": null,
+            "scale_max": null,
+            "assessed_at": [
+              "screening",
+              "baseline"
+            ],
+            "scale_anchors": null
+          },
+          {
+            "scale": "IGA",
+            "scale_component": null,
+            "scale_variant": null,
+            "metric": "absolute_score",
+            "comparator": ">=",
+            "value": 3,
+            "unit": "score",
+            "scale_min": 0,
+            "scale_max": 4,
+            "assessed_at": [
+              "screening",
+              "baseline"
+            ],
+            "scale_anchors": null
+          }
+        ]
+      },
+      "source_type": "ctgov_text_extraction",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03989349",
+      "source_excerpt": "Eczema Area and Severity Index (EASI) score \\>=16 at the screening and baseline visits. | Investigator Global Assessment (IGA) score \\>= 3 (scale of 0 to 4) at the screening and baseline visits. | AD involvement \\>= 10 percent (%) of body surface area (BSA) at screening and baseline visits.",
+      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 0.75
+    }
+  },
+  "design": {
+    "study_type": {
+      "value": "INTERVENTIONAL",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03989349",
+      "source_excerpt": "protocolSection.designModule.studyType",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "allocation": {
+      "value": "RANDOMIZED",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03989349",
+      "source_excerpt": "protocolSection.designModule.designInfo.allocation",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "intervention_model": {
+      "value": "PARALLEL",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03989349",
+      "source_excerpt": "protocolSection.designModule.designInfo.interventionModel",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "masking": {
+      "value": "QUADRUPLE",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03989349",
+      "source_excerpt": "protocolSection.designModule.designInfo.maskingInfo.masking",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "number_of_arms": {
+      "value": 2,
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03989349",
+      "source_excerpt": "len(protocolSection.armsInterventionsModule.armGroups)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "background_therapy": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    }
+  },
+  "endpoints": {
+    "primary_endpoints": {
+      "value": [
+        {
+          "verbatim": "Percentage of Participants With Investigator's Global Assessment (IGA) Success at Week 16: Intent-To-Treat (ITT) Population (Time frame: Week 16)",
+          "rank": "primary",
+          "position": 1,
+          "measure_type": "responder_rate",
+          "scale": "IGA",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": "Week 16"
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03989349",
+      "source_excerpt": "protocolSection.outcomesModule.primaryOutcomes[0].measure/timeFrame",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "secondary_endpoints": {
+      "value": [
+        {
+          "verbatim": "Percentage of Participants With Improvement of >=4 Points in Weekly Average Peak Pruritus Numeric Rating Scale (PP NRS) at Week 16: ITT Population",
+          "rank": "secondary",
+          "position": 1,
+          "measure_type": "responder_rate",
+          "scale": "Pruritus NRS",
+          "scale_component": null,
+          "scale_variant": "peak_daily_weekly_average",
+          "responder_criteria": [
+            {
+              "scale": "Pruritus NRS",
+              "scale_component": null,
+              "scale_variant": "peak_daily_weekly_average",
+              "metric": "point_reduction_from_baseline",
+              "comparator": ">=",
+              "value": 4,
+              "unit": "points",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants With Improvement of >=4 Points in Weekly Average Peak Pruritus Numeric Rating Scale (PP NRS) at Week 16: Severe Pruritus Population",
+          "rank": "secondary",
+          "position": 2,
+          "measure_type": "responder_rate",
+          "scale": "Pruritus NRS",
+          "scale_component": null,
+          "scale_variant": "peak_daily_weekly_average",
+          "responder_criteria": [
+            {
+              "scale": "Pruritus NRS",
+              "scale_component": null,
+              "scale_variant": "peak_daily_weekly_average",
+              "metric": "point_reduction_from_baseline",
+              "comparator": ">=",
+              "value": 4,
+              "unit": "points",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants With <2 Points in Weekly Average PP NRS at Week 16: ITT Population",
+          "rank": "secondary",
+          "position": 3,
+          "measure_type": "responder_rate",
+          "scale": "Pruritus NRS",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [
+            {
+              "scale": "Pruritus NRS",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "absolute_score",
+              "comparator": "<",
+              "value": 2,
+              "unit": "score",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants With <2 Points in Weekly Average PP NRS at Week 16: Severe Pruritus Population",
+          "rank": "secondary",
+          "position": 4,
+          "measure_type": "responder_rate",
+          "scale": "Pruritus NRS",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [
+            {
+              "scale": "Pruritus NRS",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "absolute_score",
+              "comparator": "<",
+              "value": 2,
+              "unit": "score",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants With an Improvement of Sleep Disturbance Numeric Rating Scale (SD NRS) >=4 at Week 16: ITT Population",
+          "rank": "secondary",
+          "position": 5,
+          "measure_type": "responder_rate",
+          "scale": "Pruritus NRS",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants With an Improvement of Sleep Disturbance Numeric Rating Scale (SD NRS) >=4 at Week 16: Severe Pruritus Population",
+          "rank": "secondary",
+          "position": 6,
+          "measure_type": "responder_rate",
+          "scale": "Pruritus NRS",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants With Improvement of >=4 Points in Weekly Average Peak Pruritus Numeric Rating Scale (PP NRS) at Week 4: ITT Population",
+          "rank": "secondary",
+          "position": 7,
+          "measure_type": "responder_rate",
+          "scale": "Pruritus NRS",
+          "scale_component": null,
+          "scale_variant": "peak_daily_weekly_average",
+          "responder_criteria": [
+            {
+              "scale": "Pruritus NRS",
+              "scale_component": null,
+              "scale_variant": "peak_daily_weekly_average",
+              "metric": "point_reduction_from_baseline",
+              "comparator": ">=",
+              "value": 4,
+              "unit": "points",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 4,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants With Improvement of >=4 Points in Weekly Average Peak Pruritus Numeric Rating Scale (PP NRS) at Week 4: Severe Pruritus Population",
+          "rank": "secondary",
+          "position": 8,
+          "measure_type": "responder_rate",
+          "scale": "Pruritus NRS",
+          "scale_component": null,
+          "scale_variant": "peak_daily_weekly_average",
+          "responder_criteria": [
+            {
+              "scale": "Pruritus NRS",
+              "scale_component": null,
+              "scale_variant": "peak_daily_weekly_average",
+              "metric": "point_reduction_from_baseline",
+              "comparator": ">=",
+              "value": 4,
+              "unit": "points",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 4,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants With Peak Pruritus Numeric Rating Scale (PP NRS) <2 at Week 4: ITT Population",
+          "rank": "secondary",
+          "position": 9,
+          "measure_type": "responder_rate",
+          "scale": "Pruritus NRS",
+          "scale_component": null,
+          "scale_variant": "peak_daily",
+          "responder_criteria": [
+            {
+              "scale": "Pruritus NRS",
+              "scale_component": null,
+              "scale_variant": "peak_daily",
+              "metric": "absolute_score",
+              "comparator": "<",
+              "value": 2,
+              "unit": "score",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 4,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants With Peak Pruritus Numeric Rating Scale (PP NRS) <2 at Week 4: Severe Pruritus Population",
+          "rank": "secondary",
+          "position": 10,
+          "measure_type": "responder_rate",
+          "scale": "Pruritus NRS",
+          "scale_component": null,
+          "scale_variant": "peak_daily",
+          "responder_criteria": [
+            {
+              "scale": "Pruritus NRS",
+              "scale_component": null,
+              "scale_variant": "peak_daily",
+              "metric": "absolute_score",
+              "comparator": "<",
+              "value": 2,
+              "unit": "score",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 4,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants With Improvement of >=4 Points in Weekly Average Peak Pruritus Numeric Rating Scale (PP NRS) at Week 2: ITT Population",
+          "rank": "secondary",
+          "position": 11,
+          "measure_type": "responder_rate",
+          "scale": "Pruritus NRS",
+          "scale_component": null,
+          "scale_variant": "peak_daily_weekly_average",
+          "responder_criteria": [
+            {
+              "scale": "Pruritus NRS",
+              "scale_component": null,
+              "scale_variant": "peak_daily_weekly_average",
+              "metric": "point_reduction_from_baseline",
+              "comparator": ">=",
+              "value": 4,
+              "unit": "points",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 2,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants With Improvement of >=4 Points in Weekly Average Peak Pruritus Numeric Rating Scale (PP NRS) at Week 2: Severe Pruritus Population",
+          "rank": "secondary",
+          "position": 12,
+          "measure_type": "responder_rate",
+          "scale": "Pruritus NRS",
+          "scale_component": null,
+          "scale_variant": "peak_daily_weekly_average",
+          "responder_criteria": [
+            {
+              "scale": "Pruritus NRS",
+              "scale_component": null,
+              "scale_variant": "peak_daily_weekly_average",
+              "metric": "point_reduction_from_baseline",
+              "comparator": ">=",
+              "value": 4,
+              "unit": "points",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 2,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants With Improvement of >=4 Points in Weekly Average Peak Pruritus Numeric Rating Scale (PP NRS) at Week 1: ITT Population",
+          "rank": "secondary",
+          "position": 13,
+          "measure_type": "responder_rate",
+          "scale": "Pruritus NRS",
+          "scale_component": null,
+          "scale_variant": "peak_daily_weekly_average",
+          "responder_criteria": [
+            {
+              "scale": "Pruritus NRS",
+              "scale_component": null,
+              "scale_variant": "peak_daily_weekly_average",
+              "metric": "point_reduction_from_baseline",
+              "comparator": ">=",
+              "value": 4,
+              "unit": "points",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 1,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants With Improvement of >=4 Points in Weekly Average Peak Pruritus Numeric Rating Scale (PP NRS) at Week 1: Severe Pruritus Population",
+          "rank": "secondary",
+          "position": 14,
+          "measure_type": "responder_rate",
+          "scale": "Pruritus NRS",
+          "scale_component": null,
+          "scale_variant": "peak_daily_weekly_average",
+          "responder_criteria": [
+            {
+              "scale": "Pruritus NRS",
+              "scale_component": null,
+              "scale_variant": "peak_daily_weekly_average",
+              "metric": "point_reduction_from_baseline",
+              "comparator": ">=",
+              "value": 4,
+              "unit": "points",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 1,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03989349",
+      "source_excerpt": "protocolSection.outcomesModule.secondaryOutcomes[].measure",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "multiplicity_control": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    }
+  },
+  "timing_ops": {
+    "start_date": {
+      "value": {
+        "date": "2019-06-30",
+        "precision": "day"
+      },
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03989349",
+      "source_excerpt": "protocolSection.statusModule.startDateStruct.date",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "primary_completion_date": {
+      "value": {
+        "date": "2022-02-23",
+        "precision": "day"
+      },
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03989349",
+      "source_excerpt": "protocolSection.statusModule.primaryCompletionDateStruct.date",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "completion_date": {
+      "value": {
+        "date": "2022-09-26",
+        "precision": "day"
+      },
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03989349",
+      "source_excerpt": "protocolSection.statusModule.completionDateStruct.date",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "study_schedule": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    },
+    "rescue_therapy": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    }
+  },
+  "adverse_events": {
+    "serious_adverse_event_rate": {
+      "value": [
+        {
+          "arm": "Initial Treatment Period (Baseline - Week 16 Predose): Nemolizumab 30 mg",
+          "n_affected": 13,
+          "n_at_risk": 519,
+          "pct": 2.5
+        },
+        {
+          "arm": "Initial Treatment Period (Baseline - Week 16 Predose): Placebo",
+          "n_affected": 3,
+          "n_at_risk": 263,
+          "pct": 1.1
+        },
+        {
+          "arm": "Maintenance Period (Week 16- Week 48): Nemolizumab 30 mg Q4W to Q4W",
+          "n_affected": 6,
+          "n_at_risk": 79,
+          "pct": 7.6
+        },
+        {
+          "arm": "Maintenance Period (Week 16- Week 48): Nemolizumab 30 mg Q4W to Q8W",
+          "n_affected": 0,
+          "n_at_risk": 77,
+          "pct": 0.0
+        },
+        {
+          "arm": "Maintenance Period (Week 16- Week 48): Nemolizumab 30 mg Q4W to Placebo Q4W",
+          "n_affected": 2,
+          "n_at_risk": 77,
+          "pct": 2.6
+        },
+        {
+          "arm": "Maintenance Period (Week 16- Week 48): Placebo Q4W Re-assigned to Placebo Q4W",
+          "n_affected": 1,
+          "n_at_risk": 84,
+          "pct": 1.2
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03989349",
+      "source_excerpt": "resultsSection.adverseEventsModule.eventGroups[].seriousNumAffected/seriousNumAtRisk",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "death_rate": {
+      "value": [
+        {
+          "arm": "Initial Treatment Period (Baseline - Week 16 Predose): Nemolizumab 30 mg",
+          "n_affected": 0,
+          "n_at_risk": 519,
+          "pct": 0.0
+        },
+        {
+          "arm": "Initial Treatment Period (Baseline - Week 16 Predose): Placebo",
+          "n_affected": 0,
+          "n_at_risk": 263,
+          "pct": 0.0
+        },
+        {
+          "arm": "Maintenance Period (Week 16- Week 48): Nemolizumab 30 mg Q4W to Q4W",
+          "n_affected": 0,
+          "n_at_risk": 79,
+          "pct": 0.0
+        },
+        {
+          "arm": "Maintenance Period (Week 16- Week 48): Nemolizumab 30 mg Q4W to Q8W",
+          "n_affected": 0,
+          "n_at_risk": 77,
+          "pct": 0.0
+        },
+        {
+          "arm": "Maintenance Period (Week 16- Week 48): Nemolizumab 30 mg Q4W to Placebo Q4W",
+          "n_affected": 0,
+          "n_at_risk": 77,
+          "pct": 0.0
+        },
+        {
+          "arm": "Maintenance Period (Week 16- Week 48): Placebo Q4W Re-assigned to Placebo Q4W",
+          "n_affected": 0,
+          "n_at_risk": 84,
+          "pct": 0.0
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03989349",
+      "source_excerpt": "resultsSection.adverseEventsModule.eventGroups[].deathsNumAffected/deathsNumAtRisk",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "most_common_adverse_events": {
+      "value": [
+        {
+          "meddra_pt": "COVID-19",
+          "meddra_soc": "Infections and infestations",
+          "per_arm": [
+            {
+              "arm": "Initial Treatment Period (Baseline - Week 16 Predose): Nemolizumab 30 mg",
+              "n_affected": 14,
+              "n_at_risk": 519,
+              "pct": 2.7
+            },
+            {
+              "arm": "Initial Treatment Period (Baseline - Week 16 Predose): Placebo",
+              "n_affected": 8,
+              "n_at_risk": 263,
+              "pct": 3.0
+            },
+            {
+              "arm": "Maintenance Period (Week 16- Week 48): Nemolizumab 30 mg Q4W to Q4W",
+              "n_affected": 3,
+              "n_at_risk": 79,
+              "pct": 3.8
+            },
+            {
+              "arm": "Maintenance Period (Week 16- Week 48): Nemolizumab 30 mg Q4W to Q8W",
+              "n_affected": 4,
+              "n_at_risk": 77,
+              "pct": 5.2
+            },
+            {
+              "arm": "Maintenance Period (Week 16- Week 48): Nemolizumab 30 mg Q4W to Placebo Q4W",
+              "n_affected": 13,
+              "n_at_risk": 77,
+              "pct": 16.9
+            },
+            {
+              "arm": "Maintenance Period (Week 16- Week 48): Placebo Q4W Re-assigned to Placebo Q4W",
+              "n_affected": 6,
+              "n_at_risk": 84,
+              "pct": 7.1
+            }
+          ]
+        },
+        {
+          "meddra_pt": "Nasopharyngitis",
+          "meddra_soc": "Infections and infestations",
+          "per_arm": [
+            {
+              "arm": "Initial Treatment Period (Baseline - Week 16 Predose): Nemolizumab 30 mg",
+              "n_affected": 19,
+              "n_at_risk": 519,
+              "pct": 3.7
+            },
+            {
+              "arm": "Initial Treatment Period (Baseline - Week 16 Predose): Placebo",
+              "n_affected": 12,
+              "n_at_risk": 263,
+              "pct": 4.6
+            },
+            {
+              "arm": "Maintenance Period (Week 16- Week 48): Nemolizumab 30 mg Q4W to Q4W",
+              "n_affected": 7,
+              "n_at_risk": 79,
+              "pct": 8.9
+            },
+            {
+              "arm": "Maintenance Period (Week 16- Week 48): Nemolizumab 30 mg Q4W to Q8W",
+              "n_affected": 3,
+              "n_at_risk": 77,
+              "pct": 3.9
+            },
+            {
+              "arm": "Maintenance Period (Week 16- Week 48): Nemolizumab 30 mg Q4W to Placebo Q4W",
+              "n_affected": 5,
+              "n_at_risk": 77,
+              "pct": 6.5
+            },
+            {
+              "arm": "Maintenance Period (Week 16- Week 48): Placebo Q4W Re-assigned to Placebo Q4W",
+              "n_affected": 6,
+              "n_at_risk": 84,
+              "pct": 7.1
+            }
+          ]
+        },
+        {
+          "meddra_pt": "Dermatitis atopic",
+          "meddra_soc": "Skin and subcutaneous tissue disorders",
+          "per_arm": [
+            {
+              "arm": "Initial Treatment Period (Baseline - Week 16 Predose): Nemolizumab 30 mg",
+              "n_affected": 34,
+              "n_at_risk": 519,
+              "pct": 6.6
+            },
+            {
+              "arm": "Initial Treatment Period (Baseline - Week 16 Predose): Placebo",
+              "n_affected": 15,
+              "n_at_risk": 263,
+              "pct": 5.7
+            },
+            {
+              "arm": "Maintenance Period (Week 16- Week 48): Nemolizumab 30 mg Q4W to Q4W",
+              "n_affected": 6,
+              "n_at_risk": 79,
+              "pct": 7.6
+            },
+            {
+              "arm": "Maintenance Period (Week 16- Week 48): Nemolizumab 30 mg Q4W to Q8W",
+              "n_affected": 3,
+              "n_at_risk": 77,
+              "pct": 3.9
+            },
+            {
+              "arm": "Maintenance Period (Week 16- Week 48): Nemolizumab 30 mg Q4W to Placebo Q4W",
+              "n_affected": 6,
+              "n_at_risk": 77,
+              "pct": 7.8
+            },
+            {
+              "arm": "Maintenance Period (Week 16- Week 48): Placebo Q4W Re-assigned to Placebo Q4W",
+              "n_affected": 5,
+              "n_at_risk": 84,
+              "pct": 6.0
+            }
+          ]
+        },
+        {
+          "meddra_pt": "Upper respiratory tract infection",
+          "meddra_soc": "Infections and infestations",
+          "per_arm": [
+            {
+              "arm": "Initial Treatment Period (Baseline - Week 16 Predose): Nemolizumab 30 mg",
+              "n_affected": 6,
+              "n_at_risk": 519,
+              "pct": 1.2
+            },
+            {
+              "arm": "Initial Treatment Period (Baseline - Week 16 Predose): Placebo",
+              "n_affected": 5,
+              "n_at_risk": 263,
+              "pct": 1.9
+            },
+            {
+              "arm": "Maintenance Period (Week 16- Week 48): Nemolizumab 30 mg Q4W to Q4W",
+              "n_affected": 1,
+              "n_at_risk": 79,
+              "pct": 1.3
+            },
+            {
+              "arm": "Maintenance Period (Week 16- Week 48): Nemolizumab 30 mg Q4W to Q8W",
+              "n_affected": 2,
+              "n_at_risk": 77,
+              "pct": 2.6
+            },
+            {
+              "arm": "Maintenance Period (Week 16- Week 48): Nemolizumab 30 mg Q4W to Placebo Q4W",
+              "n_affected": 5,
+              "n_at_risk": 77,
+              "pct": 6.5
+            },
+            {
+              "arm": "Maintenance Period (Week 16- Week 48): Placebo Q4W Re-assigned to Placebo Q4W",
+              "n_affected": 2,
+              "n_at_risk": 84,
+              "pct": 2.4
+            }
+          ]
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03989349",
+      "source_excerpt": "resultsSection.adverseEventsModule.otherEvents[] (top 8 of 4 by highest single-arm incidence; CT.gov's own >=5% frequency-threshold table)",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "discontinuation_due_to_ae_rate": {
+      "value": [
+        {
+          "arm": "Initial Treatment Period (Baseline - Week 16 Predose): Nemolizumab 30 mg",
+          "n_discontinued": 17,
+          "n_started": 522,
+          "pct": 3.3
+        },
+        {
+          "arm": "Initial Treatment Period (Baseline - Week 16 Predose): Placebo",
+          "n_discontinued": 4,
+          "n_started": 265,
+          "pct": 1.5
+        },
+        {
+          "arm": "Maintenance Period (Week 16-Week 48): Nemolizumab 30 mg Q4W to Q4W",
+          "n_discontinued": 0,
+          "n_started": 0,
+          "pct": null
+        },
+        {
+          "arm": "Maintenance Period (Week 16-Week 48): Nemolizumab 30 mg Q4W to Q8W",
+          "n_discontinued": 0,
+          "n_started": 0,
+          "pct": null
+        },
+        {
+          "arm": "Maintenance Period (Week 16-Week 48): Nemolizumab 30 mg Q4W to Placebo Q4W",
+          "n_discontinued": 0,
+          "n_started": 0,
+          "pct": null
+        },
+        {
+          "arm": "Maintenance Period (Week 16-Week 48): Placebo Q4W Re-assigned to Placebo Q4W",
+          "n_discontinued": 0,
+          "n_started": 0,
+          "pct": null
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03989349",
+      "source_excerpt": "resultsSection.participantFlowModule.periods[0].dropWithdraws[type=\"Adverse Event\"].reasons[] vs periods[0].milestones[type=STARTED].achievements[]",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "boxed_warning": {
+      "value": {
+        "present": false,
+        "title": null,
+        "warning_categories": [],
+        "referenced_label_sections": [],
+        "product_names": []
+      },
+      "source_type": "openfda_label",
+      "source_url": "https://api.fda.gov/drug/label.json?search=openfda.substance_name:NEMOLIZUMAB&limit=1",
+      "source_excerpt": "results[0] has no boxed_warning key (checked, none present)",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    }
+  },
+  "real_world_safety": {
+    "faers_summary": {
+      "value": {
+        "query": {
+          "search_field": "patient.drug.medicinalproduct",
+          "search_term": "NEMOLIZUMAB",
+          "receivedate_from": "2024-07-10",
+          "receivedate_to": "2026-06-30",
+          "api_urls": [
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"NEMOLIZUMAB\"&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"NEMOLIZUMAB\"+AND+serious:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"NEMOLIZUMAB\"+AND+seriousnessdeath:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"NEMOLIZUMAB\"+AND+seriousnesshospitalization:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"NEMOLIZUMAB\"+AND+seriousnesslifethreatening:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"NEMOLIZUMAB\"+AND+seriousnessdisabling:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"NEMOLIZUMAB\"&count=patient.reaction.reactionmeddrapt.exact&limit=15",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"NEMOLIZUMAB\"+AND+serious:1&count=patient.reaction.reactionmeddrapt.exact&limit=15",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"NEMOLIZUMAB\"&count=receivedate"
+          ],
+          "data_last_updated": "2026-07-30"
+        },
+        "total_reports": 996,
+        "serious_reports": 804,
+        "death_reports": 129,
+        "hospitalization_reports": 309,
+        "life_threatening_reports": 4,
+        "disability_reports": 8,
+        "top_reactions": [
+          {
+            "meddra_pt": "DEATH",
+            "report_count": 99,
+            "pct_of_reports": 9.94
+          },
+          {
+            "meddra_pt": "PEMPHIGOID",
+            "report_count": 96,
+            "pct_of_reports": 9.64
+          },
+          {
+            "meddra_pt": "ERYTHEMA",
+            "report_count": 60,
+            "pct_of_reports": 6.02
+          },
+          {
+            "meddra_pt": "DERMATITIS ATOPIC",
+            "report_count": 59,
+            "pct_of_reports": 5.92
+          },
+          {
+            "meddra_pt": "PRURITUS",
+            "report_count": 59,
+            "pct_of_reports": 5.92
+          },
+          {
+            "meddra_pt": "ERYTHEMA MULTIFORME",
+            "report_count": 54,
+            "pct_of_reports": 5.42
+          },
+          {
+            "meddra_pt": "PRODUCT DOSE OMISSION ISSUE",
+            "report_count": 50,
+            "pct_of_reports": 5.02
+          },
+          {
+            "meddra_pt": "RASH",
+            "report_count": 49,
+            "pct_of_reports": 4.92
+          },
+          {
+            "meddra_pt": "DERMATITIS EXFOLIATIVE GENERALISED",
+            "report_count": 41,
+            "pct_of_reports": 4.12
+          },
+          {
+            "meddra_pt": "PNEUMONIA",
+            "report_count": 41,
+            "pct_of_reports": 4.12
+          },
+          {
+            "meddra_pt": "DRUG INEFFECTIVE",
+            "report_count": 35,
+            "pct_of_reports": 3.51
+          },
+          {
+            "meddra_pt": "OFF LABEL USE",
+            "report_count": 30,
+            "pct_of_reports": 3.01
+          },
+          {
+            "meddra_pt": "ECZEMA",
+            "report_count": 27,
+            "pct_of_reports": 2.71
+          },
+          {
+            "meddra_pt": "HEADACHE",
+            "report_count": 27,
+            "pct_of_reports": 2.71
+          },
+          {
+            "meddra_pt": "BLISTER",
+            "report_count": 26,
+            "pct_of_reports": 2.61
+          }
+        ],
+        "top_serious_reactions": [
+          {
+            "meddra_pt": "DEATH",
+            "report_count": 99,
+            "pct_of_reports": 12.31
+          },
+          {
+            "meddra_pt": "PEMPHIGOID",
+            "report_count": 94,
+            "pct_of_reports": 11.69
+          },
+          {
+            "meddra_pt": "ERYTHEMA",
+            "report_count": 48,
+            "pct_of_reports": 5.97
+          },
+          {
+            "meddra_pt": "PRODUCT DOSE OMISSION ISSUE",
+            "report_count": 48,
+            "pct_of_reports": 5.97
+          },
+          {
+            "meddra_pt": "PNEUMONIA",
+            "report_count": 40,
+            "pct_of_reports": 4.98
+          },
+          {
+            "meddra_pt": "DERMATITIS EXFOLIATIVE GENERALISED",
+            "report_count": 37,
+            "pct_of_reports": 4.6
+          },
+          {
+            "meddra_pt": "RASH",
+            "report_count": 34,
+            "pct_of_reports": 4.23
+          },
+          {
+            "meddra_pt": "DERMATITIS ATOPIC",
+            "report_count": 33,
+            "pct_of_reports": 4.1
+          },
+          {
+            "meddra_pt": "ERYTHEMA MULTIFORME",
+            "report_count": 33,
+            "pct_of_reports": 4.1
+          },
+          {
+            "meddra_pt": "PRURITUS",
+            "report_count": 33,
+            "pct_of_reports": 4.1
+          },
+          {
+            "meddra_pt": "CELLULITIS",
+            "report_count": 25,
+            "pct_of_reports": 3.11
+          },
+          {
+            "meddra_pt": "OFF LABEL USE",
+            "report_count": 25,
+            "pct_of_reports": 3.11
+          },
+          {
+            "meddra_pt": "HEADACHE",
+            "report_count": 22,
+            "pct_of_reports": 2.74
+          },
+          {
+            "meddra_pt": "BLISTER",
+            "report_count": 18,
+            "pct_of_reports": 2.24
+          },
+          {
+            "meddra_pt": "ECZEMA HERPETICUM",
+            "report_count": 16,
+            "pct_of_reports": 1.99
+          }
+        ],
+        "reports_by_year": [
+          {
+            "year": 2024,
+            "report_count": 104
+          },
+          {
+            "year": 2025,
+            "report_count": 490
+          },
+          {
+            "year": 2026,
+            "report_count": 402
+          }
+        ],
+        "meddra_version": null
+      },
+      "source_type": "openfda_faers",
+      "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"NEMOLIZUMAB\"&limit=1",
+      "source_excerpt": "openFDA drug/event.json aggregate: total_reports=996, serious=804, deaths=129",
+      "extracted_by": "fetch_faers.py (openfda drug/event.json, v2 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    }
+  },
+  "exclusivity": {
+    "regulatory_application": {
+      "value": {
+        "application_type": "BLA",
+        "application_number": "761390",
+        "registry": "purple_book",
+        "center": "CDER",
+        "proprietary_name": "Nemluvio",
+        "applicant": "Galderma Laboratories, L.P.",
+        "first_approval_date": "2024-08-12"
+      },
+      "source_type": "purple_book",
+      "source_url": "https://purplebooksearch.fda.gov/index.cfm?event=advancedsearch",
+      "source_excerpt": "purplebooksearch.fda.gov live search table: BLA 761390 | Nemluvio | nemolizumab-ilto | 351(a) | Galderma Laboratories, L.P. | first approved 2024-08-12",
+      "extracted_by": "atlas.regulatory_applications (registry file fetched 2026-09-05)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "orange_book": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    },
+    "purple_book": {
+      "value": {
+        "bla_number": "761390",
+        "proprietary_name": "Nemluvio",
+        "proper_name": "nemolizumab-ilto",
+        "applicant": "Galderma Laboratories, L.P.",
+        "license_type": "351(a)",
+        "license_number": "2289",
+        "center": "CDER",
+        "products": [
+          {
+            "product_number": "001",
+            "strength": "30MG",
+            "dosage_form": "For Injection",
+            "route": "Subcutaneous",
+            "presentation": "Autoinjector",
+            "marketing_status": "Rx",
+            "licensure": "Licensed",
+            "approval_date": "2024-08-12",
+            "submission_type": "Original",
+            "supplement_number": null
+          }
+        ],
+        "first_approval_date": "2024-08-12",
+        "date_of_first_licensure": null,
+        "reference_product_exclusivity_expiration": null,
+        "exclusivity_expiration_date": null,
+        "first_interchangeable_exclusivity_expiration": null,
+        "orphan_exclusivity_expiration": null,
+        "patent_list_provided": null,
+        "biosimilars": [],
+        "data_file_month": null
+      },
+      "source_type": "purple_book",
+      "source_url": "https://purplebooksearch.fda.gov/index.cfm?event=advancedsearch",
+      "source_excerpt": "purplebooksearch.fda.gov live search table, BLA 761390 (Nemluvio), 0 biosimilar(s) on file",
+      "extracted_by": "fetch_purple_book.py (purplebooksearch.fda.gov live search table, raw staging pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    }
+  }
+}

@@ -1,0 +1,1287 @@
+{
+  "schema_version": 2,
+  "nct_id": {
+    "value": "NCT03713632",
+    "source_type": "ctgov_api",
+    "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03713632",
+    "source_excerpt": "protocolSection.identificationModule.nctId",
+    "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+    "reviewed_by": null,
+    "confidence": 1.0
+  },
+  "identity": {
+    "trial_name": {
+      "value": "SUNRISE",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03713632",
+      "source_excerpt": "protocolSection.identificationModule.acronym",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "official_title": {
+      "value": "A Randomized, Double-blind, Multicenter Study Assessing Short (16 Weeks) and Long-term Efficacy (up to 1 Year), Safety, and Tolerability of 2 Subcutaneous Secukinumab Dose Regimens in Adult Patients With Moderate to Severe Hidradenitis Suppurativa (SUNRISE)",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03713632",
+      "source_excerpt": "protocolSection.identificationModule.officialTitle",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "sponsor": {
+      "value": "Novartis Pharmaceuticals",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03713632",
+      "source_excerpt": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "phase": {
+      "value": [
+        "PHASE3"
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03713632",
+      "source_excerpt": "protocolSection.designModule.phases",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    }
+  },
+  "molecule": {
+    "drug": {
+      "value": "Secukinumab",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03713632",
+      "source_excerpt": "protocolSection.armsInterventionsModule.interventions[].name (curated)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "intervention_names": {
+      "value": [
+        "Secukinumab",
+        "Placebo"
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03713632",
+      "source_excerpt": "protocolSection.armsInterventionsModule.interventions[].name",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "intervention_type": {
+      "value": [
+        "DRUG"
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03713632",
+      "source_excerpt": "protocolSection.armsInterventionsModule.interventions[].type",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "mechanism_of_action": {
+      "value": {
+        "modality": "monoclonal_antibody",
+        "drug_class": "IL-17A antagonist",
+        "antibody_isotype": "IgG1",
+        "binding_targets": [
+          "IL-17A"
+        ],
+        "pathway_cytokines": [],
+        "receptor_subunits": [],
+        "kinases_inhibited": [],
+        "lower_potency_kinases": [],
+        "selectivity": [],
+        "reversible": null,
+        "mechanism_established": null,
+        "label_section": "12.1"
+      },
+      "source_type": "openfda_label",
+      "source_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=53e23ae2-ecfb-4322-8e42-cc9a2d71bcb9",
+      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1) -- v1 extracted text: 12.1 Mechanism of Action Secukinumab is a human IgG1 monoclonal antibody that selectively binds to the interleukin-17A (IL-17A) cytokine and inhibits its interaction with the IL-17 receptor. IL-17A is a naturally occurring cytokine that is involved in normal inflammatory and immune responses. Secukinumab inhibits the release of proinflammatory cytokines and chemokines.",
+      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 0.9
+    },
+    "dosing_regimen": {
+      "value": [
+        {
+          "intervention_name": "Secukinumab",
+          "description": "Secukinumab 300mg every 2 or every 4 weeks",
+          "is_placebo": false,
+          "route": null,
+          "dose_form": null,
+          "dose_value": 300,
+          "dose_unit": "mg",
+          "units_per_dose": null,
+          "frequency": "every_4_weeks",
+          "duration_weeks": null,
+          "dosing_periods": [],
+          "administration_sites": [],
+          "antibody_isotype": null,
+          "molecular_target": null,
+          "arm_names": [],
+          "co_administered_with": []
+        }
+      ],
+      "source_type": "ctgov_text_extraction",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03713632",
+      "source_excerpt": "Secukinumab: Secukinumab 300mg every 2 or every 4 weeks",
+      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 0.8
+    }
+  },
+  "population": {
+    "condition": {
+      "value": [
+        "Hidradenitis Suppurativa"
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03713632",
+      "source_excerpt": "protocolSection.conditionsModule.conditions",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "min_age_years": {
+      "value": 18,
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03713632",
+      "source_excerpt": "protocolSection.eligibilityModule.minimumAge",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "max_age_years": {
+      "value": null,
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03713632",
+      "source_excerpt": "protocolSection.eligibilityModule.maximumAge",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 0.0
+    },
+    "sex": {
+      "value": "ALL",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03713632",
+      "source_excerpt": "protocolSection.eligibilityModule.sex",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "enrollment_count": {
+      "value": 545,
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03713632",
+      "source_excerpt": "protocolSection.designModule.enrollmentInfo.count",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "severity_criteria": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    }
+  },
+  "design": {
+    "study_type": {
+      "value": "INTERVENTIONAL",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03713632",
+      "source_excerpt": "protocolSection.designModule.studyType",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "allocation": {
+      "value": "RANDOMIZED",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03713632",
+      "source_excerpt": "protocolSection.designModule.designInfo.allocation",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "intervention_model": {
+      "value": "PARALLEL",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03713632",
+      "source_excerpt": "protocolSection.designModule.designInfo.interventionModel",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "masking": {
+      "value": "TRIPLE",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03713632",
+      "source_excerpt": "protocolSection.designModule.designInfo.maskingInfo.masking",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "number_of_arms": {
+      "value": 4,
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03713632",
+      "source_excerpt": "len(protocolSection.armsInterventionsModule.armGroups)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "background_therapy": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    }
+  },
+  "endpoints": {
+    "primary_endpoints": {
+      "value": [
+        {
+          "verbatim": "Percentage of Participants With Hidradenitis Suppurativa Clinical Response (HiSCR50) (Time frame: 16 weeks)",
+          "rank": "primary",
+          "position": 1,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": "16 weeks"
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03713632",
+      "source_excerpt": "protocolSection.outcomesModule.primaryOutcomes[0].measure/timeFrame",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "secondary_endpoints": {
+      "value": [
+        {
+          "verbatim": "Percentage Change From Baseline in AN Count",
+          "rank": "secondary",
+          "position": 1,
+          "measure_type": "percent_change_from_baseline",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants With Hidradenitis Suppurativa (HS) Flares",
+          "rank": "secondary",
+          "position": 2,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": "flare",
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants Achieving NRS30",
+          "rank": "secondary",
+          "position": 3,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03713632",
+      "source_excerpt": "protocolSection.outcomesModule.secondaryOutcomes[].measure",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "multiplicity_control": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    }
+  },
+  "timing_ops": {
+    "start_date": {
+      "value": {
+        "date": "2019-02-25",
+        "precision": "day"
+      },
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03713632",
+      "source_excerpt": "protocolSection.statusModule.startDateStruct.date",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "primary_completion_date": {
+      "value": {
+        "date": "2021-09-23",
+        "precision": "day"
+      },
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03713632",
+      "source_excerpt": "protocolSection.statusModule.primaryCompletionDateStruct.date",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "completion_date": {
+      "value": {
+        "date": "2022-07-19",
+        "precision": "day"
+      },
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03713632",
+      "source_excerpt": "protocolSection.statusModule.completionDateStruct.date",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "study_schedule": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    },
+    "rescue_therapy": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    }
+  },
+  "adverse_events": {
+    "serious_adverse_event_rate": {
+      "value": [
+        {
+          "arm": "AIN457 Q2W",
+          "n_affected": 19,
+          "n_at_risk": 180,
+          "pct": 10.6
+        },
+        {
+          "arm": "AIN457 Q4W",
+          "n_affected": 15,
+          "n_at_risk": 180,
+          "pct": 8.3
+        },
+        {
+          "arm": "Placebo",
+          "n_affected": 5,
+          "n_at_risk": 183,
+          "pct": 2.7
+        },
+        {
+          "arm": "Any AIN457 Q2W",
+          "n_affected": 22,
+          "n_at_risk": 261,
+          "pct": 8.4
+        },
+        {
+          "arm": "Any AIN457 Q4W",
+          "n_affected": 23,
+          "n_at_risk": 266,
+          "pct": 8.6
+        },
+        {
+          "arm": "Any AIN457",
+          "n_affected": 45,
+          "n_at_risk": 527,
+          "pct": 8.5
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03713632",
+      "source_excerpt": "resultsSection.adverseEventsModule.eventGroups[].seriousNumAffected/seriousNumAtRisk",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "death_rate": {
+      "value": [
+        {
+          "arm": "AIN457 Q2W",
+          "n_affected": 0,
+          "n_at_risk": 180,
+          "pct": 0.0
+        },
+        {
+          "arm": "AIN457 Q4W",
+          "n_affected": 1,
+          "n_at_risk": 180,
+          "pct": 0.6
+        },
+        {
+          "arm": "Placebo",
+          "n_affected": 0,
+          "n_at_risk": 183,
+          "pct": 0.0
+        },
+        {
+          "arm": "Any AIN457 Q2W",
+          "n_affected": 0,
+          "n_at_risk": 261,
+          "pct": 0.0
+        },
+        {
+          "arm": "Any AIN457 Q4W",
+          "n_affected": 2,
+          "n_at_risk": 266,
+          "pct": 0.8
+        },
+        {
+          "arm": "Any AIN457",
+          "n_affected": 2,
+          "n_at_risk": 527,
+          "pct": 0.4
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03713632",
+      "source_excerpt": "resultsSection.adverseEventsModule.eventGroups[].deathsNumAffected/deathsNumAtRisk",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "most_common_adverse_events": {
+      "value": [
+        {
+          "meddra_pt": "Headache",
+          "meddra_soc": "Nervous system disorders",
+          "per_arm": [
+            {
+              "arm": "AIN457 Q2W",
+              "n_affected": 31,
+              "n_at_risk": 180,
+              "pct": 17.2
+            },
+            {
+              "arm": "AIN457 Q4W",
+              "n_affected": 27,
+              "n_at_risk": 180,
+              "pct": 15.0
+            },
+            {
+              "arm": "Placebo",
+              "n_affected": 16,
+              "n_at_risk": 183,
+              "pct": 8.7
+            },
+            {
+              "arm": "Any AIN457 Q2W",
+              "n_affected": 39,
+              "n_at_risk": 261,
+              "pct": 14.9
+            },
+            {
+              "arm": "Any AIN457 Q4W",
+              "n_affected": 36,
+              "n_at_risk": 266,
+              "pct": 13.5
+            },
+            {
+              "arm": "Any AIN457",
+              "n_affected": 75,
+              "n_at_risk": 527,
+              "pct": 14.2
+            }
+          ]
+        },
+        {
+          "meddra_pt": "Hidradenitis",
+          "meddra_soc": "Skin and subcutaneous tissue disorders",
+          "per_arm": [
+            {
+              "arm": "AIN457 Q2W",
+              "n_affected": 21,
+              "n_at_risk": 180,
+              "pct": 11.7
+            },
+            {
+              "arm": "AIN457 Q4W",
+              "n_affected": 23,
+              "n_at_risk": 180,
+              "pct": 12.8
+            },
+            {
+              "arm": "Placebo",
+              "n_affected": 14,
+              "n_at_risk": 183,
+              "pct": 7.7
+            },
+            {
+              "arm": "Any AIN457 Q2W",
+              "n_affected": 26,
+              "n_at_risk": 261,
+              "pct": 10.0
+            },
+            {
+              "arm": "Any AIN457 Q4W",
+              "n_affected": 31,
+              "n_at_risk": 266,
+              "pct": 11.7
+            },
+            {
+              "arm": "Any AIN457",
+              "n_affected": 57,
+              "n_at_risk": 527,
+              "pct": 10.8
+            }
+          ]
+        },
+        {
+          "meddra_pt": "Nasopharyngitis",
+          "meddra_soc": "Infections and infestations",
+          "per_arm": [
+            {
+              "arm": "AIN457 Q2W",
+              "n_affected": 21,
+              "n_at_risk": 180,
+              "pct": 11.7
+            },
+            {
+              "arm": "AIN457 Q4W",
+              "n_affected": 18,
+              "n_at_risk": 180,
+              "pct": 10.0
+            },
+            {
+              "arm": "Placebo",
+              "n_affected": 16,
+              "n_at_risk": 183,
+              "pct": 8.7
+            },
+            {
+              "arm": "Any AIN457 Q2W",
+              "n_affected": 28,
+              "n_at_risk": 261,
+              "pct": 10.7
+            },
+            {
+              "arm": "Any AIN457 Q4W",
+              "n_affected": 25,
+              "n_at_risk": 266,
+              "pct": 9.4
+            },
+            {
+              "arm": "Any AIN457",
+              "n_affected": 53,
+              "n_at_risk": 527,
+              "pct": 10.1
+            }
+          ]
+        },
+        {
+          "meddra_pt": "Diarrhoea",
+          "meddra_soc": "Gastrointestinal disorders",
+          "per_arm": [
+            {
+              "arm": "AIN457 Q2W",
+              "n_affected": 13,
+              "n_at_risk": 180,
+              "pct": 7.2
+            },
+            {
+              "arm": "AIN457 Q4W",
+              "n_affected": 14,
+              "n_at_risk": 180,
+              "pct": 7.8
+            },
+            {
+              "arm": "Placebo",
+              "n_affected": 13,
+              "n_at_risk": 183,
+              "pct": 7.1
+            },
+            {
+              "arm": "Any AIN457 Q2W",
+              "n_affected": 19,
+              "n_at_risk": 261,
+              "pct": 7.3
+            },
+            {
+              "arm": "Any AIN457 Q4W",
+              "n_affected": 19,
+              "n_at_risk": 266,
+              "pct": 7.1
+            },
+            {
+              "arm": "Any AIN457",
+              "n_affected": 38,
+              "n_at_risk": 527,
+              "pct": 7.2
+            }
+          ]
+        },
+        {
+          "meddra_pt": "Upper respiratory tract infection",
+          "meddra_soc": "Infections and infestations",
+          "per_arm": [
+            {
+              "arm": "AIN457 Q2W",
+              "n_affected": 13,
+              "n_at_risk": 180,
+              "pct": 7.2
+            },
+            {
+              "arm": "AIN457 Q4W",
+              "n_affected": 8,
+              "n_at_risk": 180,
+              "pct": 4.4
+            },
+            {
+              "arm": "Placebo",
+              "n_affected": 7,
+              "n_at_risk": 183,
+              "pct": 3.8
+            },
+            {
+              "arm": "Any AIN457 Q2W",
+              "n_affected": 16,
+              "n_at_risk": 261,
+              "pct": 6.1
+            },
+            {
+              "arm": "Any AIN457 Q4W",
+              "n_affected": 11,
+              "n_at_risk": 266,
+              "pct": 4.1
+            },
+            {
+              "arm": "Any AIN457",
+              "n_affected": 27,
+              "n_at_risk": 527,
+              "pct": 5.1
+            }
+          ]
+        },
+        {
+          "meddra_pt": "Back pain",
+          "meddra_soc": "Musculoskeletal and connective tissue disorders",
+          "per_arm": [
+            {
+              "arm": "AIN457 Q2W",
+              "n_affected": 4,
+              "n_at_risk": 180,
+              "pct": 2.2
+            },
+            {
+              "arm": "AIN457 Q4W",
+              "n_affected": 12,
+              "n_at_risk": 180,
+              "pct": 6.7
+            },
+            {
+              "arm": "Placebo",
+              "n_affected": 4,
+              "n_at_risk": 183,
+              "pct": 2.2
+            },
+            {
+              "arm": "Any AIN457 Q2W",
+              "n_affected": 7,
+              "n_at_risk": 261,
+              "pct": 2.7
+            },
+            {
+              "arm": "Any AIN457 Q4W",
+              "n_affected": 14,
+              "n_at_risk": 266,
+              "pct": 5.3
+            },
+            {
+              "arm": "Any AIN457",
+              "n_affected": 21,
+              "n_at_risk": 527,
+              "pct": 4.0
+            }
+          ]
+        },
+        {
+          "meddra_pt": "Hypertension",
+          "meddra_soc": "Vascular disorders",
+          "per_arm": [
+            {
+              "arm": "AIN457 Q2W",
+              "n_affected": 11,
+              "n_at_risk": 180,
+              "pct": 6.1
+            },
+            {
+              "arm": "AIN457 Q4W",
+              "n_affected": 6,
+              "n_at_risk": 180,
+              "pct": 3.3
+            },
+            {
+              "arm": "Placebo",
+              "n_affected": 2,
+              "n_at_risk": 183,
+              "pct": 1.1
+            },
+            {
+              "arm": "Any AIN457 Q2W",
+              "n_affected": 14,
+              "n_at_risk": 261,
+              "pct": 5.4
+            },
+            {
+              "arm": "Any AIN457 Q4W",
+              "n_affected": 7,
+              "n_at_risk": 266,
+              "pct": 2.6
+            },
+            {
+              "arm": "Any AIN457",
+              "n_affected": 21,
+              "n_at_risk": 527,
+              "pct": 4.0
+            }
+          ]
+        },
+        {
+          "meddra_pt": "COVID-19",
+          "meddra_soc": "Infections and infestations",
+          "per_arm": [
+            {
+              "arm": "AIN457 Q2W",
+              "n_affected": 10,
+              "n_at_risk": 180,
+              "pct": 5.6
+            },
+            {
+              "arm": "AIN457 Q4W",
+              "n_affected": 7,
+              "n_at_risk": 180,
+              "pct": 3.9
+            },
+            {
+              "arm": "Placebo",
+              "n_affected": 3,
+              "n_at_risk": 183,
+              "pct": 1.6
+            },
+            {
+              "arm": "Any AIN457 Q2W",
+              "n_affected": 13,
+              "n_at_risk": 261,
+              "pct": 5.0
+            },
+            {
+              "arm": "Any AIN457 Q4W",
+              "n_affected": 14,
+              "n_at_risk": 266,
+              "pct": 5.3
+            },
+            {
+              "arm": "Any AIN457",
+              "n_affected": 27,
+              "n_at_risk": 527,
+              "pct": 5.1
+            }
+          ]
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03713632",
+      "source_excerpt": "resultsSection.adverseEventsModule.otherEvents[] (top 8 of 50 by highest single-arm incidence; CT.gov's own >=5% frequency-threshold table)",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "discontinuation_due_to_ae_rate": {
+      "value": [
+        {
+          "arm": "AIN457 Q2W",
+          "n_discontinued": 1,
+          "n_started": 181,
+          "pct": 0.6
+        },
+        {
+          "arm": "AIN457 Q4W",
+          "n_discontinued": 4,
+          "n_started": 180,
+          "pct": 2.2
+        },
+        {
+          "arm": "Placebo",
+          "n_discontinued": 4,
+          "n_started": 183,
+          "pct": 2.2
+        },
+        {
+          "arm": "Placebo - Re-randomized to AIN457 Q2W",
+          "n_discontinued": 0,
+          "n_started": 0,
+          "pct": null
+        },
+        {
+          "arm": "Placebo - Re-randomized to AIN457 Q4W",
+          "n_discontinued": 0,
+          "n_started": 0,
+          "pct": null
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03713632",
+      "source_excerpt": "resultsSection.participantFlowModule.periods[0].dropWithdraws[type=\"Adverse Event\"].reasons[] vs periods[0].milestones[type=STARTED].achievements[]",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "boxed_warning": {
+      "value": {
+        "present": false,
+        "title": null,
+        "warning_categories": [],
+        "referenced_label_sections": [],
+        "product_names": []
+      },
+      "source_type": "openfda_label",
+      "source_url": "https://api.fda.gov/drug/label.json?search=openfda.substance_name:SECUKINUMAB&limit=1",
+      "source_excerpt": "results[0] has no boxed_warning key (checked, none present)",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    }
+  },
+  "real_world_safety": {
+    "faers_summary": {
+      "value": {
+        "query": {
+          "search_field": "patient.drug.medicinalproduct",
+          "search_term": "SECUKINUMAB",
+          "receivedate_from": "2013-09-04",
+          "receivedate_to": "2026-06-30",
+          "api_urls": [
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"SECUKINUMAB\"&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"SECUKINUMAB\"+AND+serious:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"SECUKINUMAB\"+AND+seriousnessdeath:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"SECUKINUMAB\"+AND+seriousnesshospitalization:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"SECUKINUMAB\"+AND+seriousnesslifethreatening:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"SECUKINUMAB\"+AND+seriousnessdisabling:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"SECUKINUMAB\"&count=patient.reaction.reactionmeddrapt.exact&limit=15",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"SECUKINUMAB\"+AND+serious:1&count=patient.reaction.reactionmeddrapt.exact&limit=15",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"SECUKINUMAB\"&count=receivedate"
+          ],
+          "data_last_updated": "2026-07-30"
+        },
+        "total_reports": 4923,
+        "serious_reports": 4731,
+        "death_reports": 690,
+        "hospitalization_reports": 1614,
+        "life_threatening_reports": 738,
+        "disability_reports": 670,
+        "top_reactions": [
+          {
+            "meddra_pt": "DRUG INEFFECTIVE",
+            "report_count": 1329,
+            "pct_of_reports": 27.0
+          },
+          {
+            "meddra_pt": "PAIN",
+            "report_count": 791,
+            "pct_of_reports": 16.07
+          },
+          {
+            "meddra_pt": "OFF LABEL USE",
+            "report_count": 767,
+            "pct_of_reports": 15.58
+          },
+          {
+            "meddra_pt": "PSORIATIC ARTHROPATHY",
+            "report_count": 751,
+            "pct_of_reports": 15.25
+          },
+          {
+            "meddra_pt": "ARTHRALGIA",
+            "report_count": 736,
+            "pct_of_reports": 14.95
+          },
+          {
+            "meddra_pt": "PSORIASIS",
+            "report_count": 654,
+            "pct_of_reports": 13.28
+          },
+          {
+            "meddra_pt": "FATIGUE",
+            "report_count": 649,
+            "pct_of_reports": 13.18
+          },
+          {
+            "meddra_pt": "CONDITION AGGRAVATED",
+            "report_count": 617,
+            "pct_of_reports": 12.53
+          },
+          {
+            "meddra_pt": "HEADACHE",
+            "report_count": 600,
+            "pct_of_reports": 12.19
+          },
+          {
+            "meddra_pt": "DRUG INTOLERANCE",
+            "report_count": 582,
+            "pct_of_reports": 11.82
+          },
+          {
+            "meddra_pt": "RASH",
+            "report_count": 581,
+            "pct_of_reports": 11.8
+          },
+          {
+            "meddra_pt": "TREATMENT FAILURE",
+            "report_count": 581,
+            "pct_of_reports": 11.8
+          },
+          {
+            "meddra_pt": "JOINT SWELLING",
+            "report_count": 576,
+            "pct_of_reports": 11.7
+          },
+          {
+            "meddra_pt": "MUSCULOSKELETAL STIFFNESS",
+            "report_count": 547,
+            "pct_of_reports": 11.11
+          },
+          {
+            "meddra_pt": "SYNOVITIS",
+            "report_count": 531,
+            "pct_of_reports": 10.79
+          }
+        ],
+        "top_serious_reactions": [
+          {
+            "meddra_pt": "DRUG INEFFECTIVE",
+            "report_count": 1286,
+            "pct_of_reports": 27.18
+          },
+          {
+            "meddra_pt": "PAIN",
+            "report_count": 774,
+            "pct_of_reports": 16.36
+          },
+          {
+            "meddra_pt": "OFF LABEL USE",
+            "report_count": 755,
+            "pct_of_reports": 15.96
+          },
+          {
+            "meddra_pt": "PSORIATIC ARTHROPATHY",
+            "report_count": 751,
+            "pct_of_reports": 15.87
+          },
+          {
+            "meddra_pt": "ARTHRALGIA",
+            "report_count": 723,
+            "pct_of_reports": 15.28
+          },
+          {
+            "meddra_pt": "PSORIASIS",
+            "report_count": 643,
+            "pct_of_reports": 13.59
+          },
+          {
+            "meddra_pt": "FATIGUE",
+            "report_count": 642,
+            "pct_of_reports": 13.57
+          },
+          {
+            "meddra_pt": "CONDITION AGGRAVATED",
+            "report_count": 608,
+            "pct_of_reports": 12.85
+          },
+          {
+            "meddra_pt": "HEADACHE",
+            "report_count": 596,
+            "pct_of_reports": 12.6
+          },
+          {
+            "meddra_pt": "DRUG INTOLERANCE",
+            "report_count": 578,
+            "pct_of_reports": 12.22
+          },
+          {
+            "meddra_pt": "RASH",
+            "report_count": 575,
+            "pct_of_reports": 12.15
+          },
+          {
+            "meddra_pt": "JOINT SWELLING",
+            "report_count": 573,
+            "pct_of_reports": 12.11
+          },
+          {
+            "meddra_pt": "TREATMENT FAILURE",
+            "report_count": 567,
+            "pct_of_reports": 11.98
+          },
+          {
+            "meddra_pt": "MUSCULOSKELETAL STIFFNESS",
+            "report_count": 542,
+            "pct_of_reports": 11.46
+          },
+          {
+            "meddra_pt": "SYNOVITIS",
+            "report_count": 530,
+            "pct_of_reports": 11.2
+          }
+        ],
+        "reports_by_year": [
+          {
+            "year": 2013,
+            "report_count": 2
+          },
+          {
+            "year": 2014,
+            "report_count": 8
+          },
+          {
+            "year": 2015,
+            "report_count": 15
+          },
+          {
+            "year": 2016,
+            "report_count": 69
+          },
+          {
+            "year": 2017,
+            "report_count": 139
+          },
+          {
+            "year": 2018,
+            "report_count": 231
+          },
+          {
+            "year": 2019,
+            "report_count": 341
+          },
+          {
+            "year": 2020,
+            "report_count": 547
+          },
+          {
+            "year": 2021,
+            "report_count": 505
+          },
+          {
+            "year": 2022,
+            "report_count": 688
+          },
+          {
+            "year": 2023,
+            "report_count": 675
+          },
+          {
+            "year": 2024,
+            "report_count": 666
+          },
+          {
+            "year": 2025,
+            "report_count": 816
+          },
+          {
+            "year": 2026,
+            "report_count": 221
+          }
+        ],
+        "meddra_version": null
+      },
+      "source_type": "openfda_faers",
+      "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"SECUKINUMAB\"&limit=1",
+      "source_excerpt": "openFDA drug/event.json aggregate: total_reports=4923, serious=4731, deaths=690",
+      "extracted_by": "fetch_faers.py (openfda drug/event.json, v2 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    }
+  },
+  "exclusivity": {
+    "regulatory_application": {
+      "value": {
+        "application_type": "BLA",
+        "application_number": "125504",
+        "registry": "purple_book",
+        "center": "CDER",
+        "proprietary_name": "Cosentyx",
+        "applicant": "Novartis Pharmaceuticals Corporation",
+        "first_approval_date": "2015-01-21"
+      },
+      "source_type": "purple_book",
+      "source_url": "https://purplebooksearch.fda.gov/index.cfm?event=advancedsearch",
+      "source_excerpt": "purplebooksearch.fda.gov live search table: BLA 125504 | Cosentyx | secukinumab | 351(a) | Novartis Pharmaceuticals Corporation | first approved 2015-01-21",
+      "extracted_by": "atlas.regulatory_applications (registry file fetched 2026-09-05)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "orange_book": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    },
+    "purple_book": {
+      "value": {
+        "bla_number": "125504",
+        "proprietary_name": "Cosentyx",
+        "proper_name": "secukinumab",
+        "applicant": "Novartis Pharmaceuticals Corporation",
+        "license_type": "351(a)",
+        "license_number": "1244",
+        "center": "CDER",
+        "products": [
+          {
+            "product_number": "001",
+            "strength": "150MG/ML",
+            "dosage_form": "Injection",
+            "route": "Subcutaneous",
+            "presentation": "Autoinjector",
+            "marketing_status": "Rx",
+            "licensure": "Licensed",
+            "approval_date": "2015-01-21",
+            "submission_type": "Original",
+            "supplement_number": null
+          },
+          {
+            "product_number": "002",
+            "strength": "150MG/ML",
+            "dosage_form": "Injection",
+            "route": "Subcutaneous",
+            "presentation": "Pre-Filled Syringe",
+            "marketing_status": "Rx",
+            "licensure": "Licensed",
+            "approval_date": "2015-01-21",
+            "submission_type": "Original",
+            "supplement_number": null
+          },
+          {
+            "product_number": "003",
+            "strength": "150MG",
+            "dosage_form": "For Injection",
+            "route": "Subcutaneous",
+            "presentation": "Single-Dose Vial",
+            "marketing_status": "Disc",
+            "licensure": "Voluntarily Revoked",
+            "approval_date": "2015-01-21",
+            "submission_type": "Original",
+            "supplement_number": null
+          },
+          {
+            "product_number": "004",
+            "strength": "75MG/0.5ML",
+            "dosage_form": "Injection",
+            "route": "Subcutaneous",
+            "presentation": "Pre-Filled Syringe",
+            "marketing_status": "Rx",
+            "licensure": "Licensed",
+            "approval_date": "2021-05-28",
+            "submission_type": "Supplement",
+            "supplement_number": "43"
+          },
+          {
+            "product_number": "005",
+            "strength": "300MG/2ML",
+            "dosage_form": "Injection",
+            "route": "Subcutaneous",
+            "presentation": "Autoinjector",
+            "marketing_status": "Rx",
+            "licensure": "Licensed",
+            "approval_date": "2023-05-11",
+            "submission_type": "Supplement",
+            "supplement_number": "44"
+          },
+          {
+            "product_number": "006",
+            "strength": "300MG/2ML",
+            "dosage_form": "Injection",
+            "route": "Subcutaneous",
+            "presentation": "Pre-Filled Syringe",
+            "marketing_status": "Disc",
+            "licensure": "Voluntarily Revoked",
+            "approval_date": "2023-05-11",
+            "submission_type": "Supplement",
+            "supplement_number": "44"
+          }
+        ],
+        "first_approval_date": "2015-01-21",
+        "date_of_first_licensure": null,
+        "reference_product_exclusivity_expiration": null,
+        "exclusivity_expiration_date": null,
+        "first_interchangeable_exclusivity_expiration": null,
+        "orphan_exclusivity_expiration": null,
+        "patent_list_provided": null,
+        "biosimilars": [],
+        "data_file_month": null
+      },
+      "source_type": "purple_book",
+      "source_url": "https://purplebooksearch.fda.gov/index.cfm?event=advancedsearch",
+      "source_excerpt": "purplebooksearch.fda.gov live search table, BLA 125504 (Cosentyx), 0 biosimilar(s) on file",
+      "extracted_by": "fetch_purple_book.py (purplebooksearch.fda.gov live search table, raw staging pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    }
+  }
+}

@@ -1837,13 +1837,227 @@
   },
   "real_world_safety": {
     "faers_summary": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "query": {
+          "search_field": "patient.drug.medicinalproduct",
+          "search_term": "ABROCITINIB",
+          "receivedate_from": "2019-09-12",
+          "receivedate_to": "2026-06-23",
+          "api_urls": [
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ABROCITINIB\"&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ABROCITINIB\"+AND+serious:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ABROCITINIB\"+AND+seriousnessdeath:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ABROCITINIB\"+AND+seriousnesshospitalization:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ABROCITINIB\"+AND+seriousnesslifethreatening:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ABROCITINIB\"+AND+seriousnessdisabling:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ABROCITINIB\"&count=patient.reaction.reactionmeddrapt.exact&limit=15",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ABROCITINIB\"+AND+serious:1&count=patient.reaction.reactionmeddrapt.exact&limit=15",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ABROCITINIB\"&count=receivedate"
+          ],
+          "data_last_updated": "2026-07-30"
+        },
+        "total_reports": 422,
+        "serious_reports": 296,
+        "death_reports": 18,
+        "hospitalization_reports": 149,
+        "life_threatening_reports": 27,
+        "disability_reports": 6,
+        "top_reactions": [
+          {
+            "meddra_pt": "DRUG INEFFECTIVE",
+            "report_count": 31,
+            "pct_of_reports": 7.35
+          },
+          {
+            "meddra_pt": "OFF LABEL USE",
+            "report_count": 29,
+            "pct_of_reports": 6.87
+          },
+          {
+            "meddra_pt": "NAUSEA",
+            "report_count": 23,
+            "pct_of_reports": 5.45
+          },
+          {
+            "meddra_pt": "ECZEMA HERPETICUM",
+            "report_count": 14,
+            "pct_of_reports": 3.32
+          },
+          {
+            "meddra_pt": "CONDITION AGGRAVATED",
+            "report_count": 13,
+            "pct_of_reports": 3.08
+          },
+          {
+            "meddra_pt": "PRURITUS",
+            "report_count": 12,
+            "pct_of_reports": 2.84
+          },
+          {
+            "meddra_pt": "DERMATITIS ATOPIC",
+            "report_count": 11,
+            "pct_of_reports": 2.61
+          },
+          {
+            "meddra_pt": "HERPES ZOSTER",
+            "report_count": 10,
+            "pct_of_reports": 2.37
+          },
+          {
+            "meddra_pt": "ACNE",
+            "report_count": 9,
+            "pct_of_reports": 2.13
+          },
+          {
+            "meddra_pt": "HEADACHE",
+            "report_count": 9,
+            "pct_of_reports": 2.13
+          },
+          {
+            "meddra_pt": "PNEUMONIA",
+            "report_count": 8,
+            "pct_of_reports": 1.9
+          },
+          {
+            "meddra_pt": "RASH",
+            "report_count": 8,
+            "pct_of_reports": 1.9
+          },
+          {
+            "meddra_pt": "THERAPEUTIC PRODUCT EFFECT INCOMPLETE",
+            "report_count": 8,
+            "pct_of_reports": 1.9
+          },
+          {
+            "meddra_pt": "THERAPEUTIC RESPONSE UNEXPECTED",
+            "report_count": 8,
+            "pct_of_reports": 1.9
+          },
+          {
+            "meddra_pt": "VOMITING",
+            "report_count": 8,
+            "pct_of_reports": 1.9
+          }
+        ],
+        "top_serious_reactions": [
+          {
+            "meddra_pt": "OFF LABEL USE",
+            "report_count": 16,
+            "pct_of_reports": 5.41
+          },
+          {
+            "meddra_pt": "ECZEMA HERPETICUM",
+            "report_count": 14,
+            "pct_of_reports": 4.73
+          },
+          {
+            "meddra_pt": "NAUSEA",
+            "report_count": 12,
+            "pct_of_reports": 4.05
+          },
+          {
+            "meddra_pt": "DRUG INEFFECTIVE",
+            "report_count": 11,
+            "pct_of_reports": 3.72
+          },
+          {
+            "meddra_pt": "HERPES ZOSTER",
+            "report_count": 10,
+            "pct_of_reports": 3.38
+          },
+          {
+            "meddra_pt": "PRURITUS",
+            "report_count": 9,
+            "pct_of_reports": 3.04
+          },
+          {
+            "meddra_pt": "PNEUMONIA",
+            "report_count": 8,
+            "pct_of_reports": 2.7
+          },
+          {
+            "meddra_pt": "CONDITION AGGRAVATED",
+            "report_count": 7,
+            "pct_of_reports": 2.36
+          },
+          {
+            "meddra_pt": "PULMONARY EMBOLISM",
+            "report_count": 7,
+            "pct_of_reports": 2.36
+          },
+          {
+            "meddra_pt": "PYREXIA",
+            "report_count": 7,
+            "pct_of_reports": 2.36
+          },
+          {
+            "meddra_pt": "ANAEMIA",
+            "report_count": 6,
+            "pct_of_reports": 2.03
+          },
+          {
+            "meddra_pt": "DERMATITIS ATOPIC",
+            "report_count": 6,
+            "pct_of_reports": 2.03
+          },
+          {
+            "meddra_pt": "HEADACHE",
+            "report_count": 6,
+            "pct_of_reports": 2.03
+          },
+          {
+            "meddra_pt": "RASH",
+            "report_count": 6,
+            "pct_of_reports": 2.03
+          },
+          {
+            "meddra_pt": "THROMBOCYTOPENIA",
+            "report_count": 6,
+            "pct_of_reports": 2.03
+          }
+        ],
+        "reports_by_year": [
+          {
+            "year": 2019,
+            "report_count": 2
+          },
+          {
+            "year": 2020,
+            "report_count": 1
+          },
+          {
+            "year": 2021,
+            "report_count": 11
+          },
+          {
+            "year": 2022,
+            "report_count": 140
+          },
+          {
+            "year": 2023,
+            "report_count": 61
+          },
+          {
+            "year": 2024,
+            "report_count": 114
+          },
+          {
+            "year": 2025,
+            "report_count": 61
+          },
+          {
+            "year": 2026,
+            "report_count": 32
+          }
+        ],
+        "meddra_version": null
+      },
+      "source_type": "openfda_faers",
+      "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ABROCITINIB\"&limit=1",
+      "source_excerpt": "openFDA drug/event.json aggregate: total_reports=422, serious=296, deaths=18",
+      "extracted_by": "fetch_faers.py (openfda drug/event.json, v2 pass)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 1.0
     }
   },
   "exclusivity": {
@@ -1865,13 +2079,122 @@
       "confidence": 1.0
     },
     "orange_book": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "application_type": "N",
+        "application_number": "213871",
+        "ingredient": "ABROCITINIB",
+        "trade_name": "CIBINQO",
+        "applicant": "PFIZER",
+        "applicant_full_name": "PFIZER INC",
+        "products": [
+          {
+            "product_number": "001",
+            "strength": "50MG",
+            "dosage_form": "TABLET",
+            "route": "ORAL",
+            "approval_date": "2022-01-14",
+            "rld": true,
+            "rs": false,
+            "te_code": null,
+            "marketing_type": "HUMAN PRESCRIPTION DRUG"
+          },
+          {
+            "product_number": "002",
+            "strength": "100MG",
+            "dosage_form": "TABLET",
+            "route": "ORAL",
+            "approval_date": "2022-01-14",
+            "rld": true,
+            "rs": false,
+            "te_code": null,
+            "marketing_type": "HUMAN PRESCRIPTION DRUG"
+          },
+          {
+            "product_number": "003",
+            "strength": "200MG",
+            "dosage_form": "TABLET",
+            "route": "ORAL",
+            "approval_date": "2022-01-14",
+            "rld": true,
+            "rs": true,
+            "te_code": null,
+            "marketing_type": "HUMAN PRESCRIPTION DRUG"
+          }
+        ],
+        "patents": [
+          {
+            "patent_number": "9545405",
+            "expiration_date": "2034-02-19",
+            "drug_substance_claim": true,
+            "drug_product_claim": true,
+            "patent_use_code": null,
+            "delisted": false,
+            "submission_date": "2022-02-11",
+            "product_numbers": [
+              "001",
+              "002",
+              "003"
+            ]
+          },
+          {
+            "patent_number": "9549929",
+            "expiration_date": "2034-02-19",
+            "drug_substance_claim": false,
+            "drug_product_claim": false,
+            "patent_use_code": "U-3195",
+            "delisted": false,
+            "submission_date": "2022-02-11",
+            "product_numbers": [
+              "001",
+              "002",
+              "003"
+            ]
+          },
+          {
+            "patent_number": "9035074",
+            "expiration_date": "2036-01-14",
+            "drug_substance_claim": true,
+            "drug_product_claim": true,
+            "patent_use_code": null,
+            "delisted": false,
+            "submission_date": "2022-02-11",
+            "product_numbers": [
+              "001",
+              "002",
+              "003"
+            ]
+          }
+        ],
+        "exclusivities": [
+          {
+            "code": "NPP",
+            "expiration_date": "2026-02-09",
+            "product_numbers": [
+              "001",
+              "002",
+              "003"
+            ]
+          },
+          {
+            "code": "NCE",
+            "expiration_date": "2027-01-14",
+            "product_numbers": [
+              "001",
+              "002",
+              "003"
+            ]
+          }
+        ],
+        "latest_patent_expiration": "2036-01-14",
+        "latest_exclusivity_expiration": "2027-01-14",
+        "data_file_date": null
+      },
+      "source_type": "orange_book",
+      "source_url": "https://api.fda.gov/drug/orangebook.json?search=products.active_ingredients.name%3A%22ABROCITINIB%22&limit=100",
+      "source_excerpt": "openFDA drug/orangebook.json, 3 product row(s) matched on products.active_ingredients.name='ABROCITINIB'",
+      "extracted_by": "fetch_orange_book.py (openfda drug/orangebook.json, v2 pass)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 1.0
     },
     "purple_book": {
       "value": null,
