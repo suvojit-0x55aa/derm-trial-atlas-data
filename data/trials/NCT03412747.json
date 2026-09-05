@@ -101,7 +101,7 @@
       },
       "source_type": "openfda_label",
       "source_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=37b310bd-f6a0-9d4e-e063-6294a90a889d",
-      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1) -- v1 extracted text: 12.1 Mechanism of Action Bimekizumab-bkzx is a humanized immunoglobulin IgG1/ \u03ba monoclonal antibody with two identical antigen binding regions that selectively bind to human interleukin 17A (IL-17A), interleukin 17F (IL-17F), and interleukin 17-AF cytokines, and inhibits their interaction with the IL-17 receptor complex. IL-17A and IL-17F are naturally occurring cytokines that are involved in normal inflammatory and immune responses. Bimekizumab-bkzx inhibits the release of proinflammatory cytokines and chemokines.",
+      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1) -- v1 extracted text: 12.1 Mechanism of Action Bimekizumab-bkzx is a humanized immunoglobulin IgG1/ κ monoclonal antibody with two identical antigen binding regions that selectively bind to human interleukin 17A (IL-17A), interleukin 17F (IL-17F), and interleukin 17-AF cytokines, and inhibits their interaction with the IL-17 receptor complex. IL-17A and IL-17F are naturally occurring cytokines that are involved in normal inflammatory and immune responses. Bimekizumab-bkzx inhibits the release of proinflammatory cytokines and chemokines.",
       "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 0.9
@@ -275,13 +275,59 @@
       "confidence": 1.0
     },
     "background_therapy": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "regimen_type": null,
+        "background_agent_class": null,
+        "tcs_regimen": null,
+        "step_down_rule": null,
+        "recommended_agents": [],
+        "emollient_required": false,
+        "emollient_frequency": "as needed",
+        "prohibited_concomitant": [
+          "topicals except mild/low-potency topical steroids for face, axilla, genitalia",
+          "systemic retinoids",
+          "systemic immunosuppressants (methotrexate, cyclosporine, azathioprine, thioguanine)",
+          "fumaric acid esters for psoriasis",
+          "systemic corticosteroids",
+          "phototherapy",
+          "anti-TNF biologics (adalimumab, etanercept, infliximab, golimumab, certolizumab pegol)",
+          "apremilast",
+          "tofacitinib",
+          "alefacept",
+          "efalizumab",
+          "guselkumab",
+          "tildrakizumab",
+          "risankizumab",
+          "ustekinumab",
+          "briakinumab",
+          "rituximab",
+          "anti-IL-17 therapy (brodalumab, ixekizumab, secukinumab)",
+          "any other investigational (or newly approved) systemic or topical antipsoriatic agent"
+        ],
+        "permitted_concomitant": [
+          "topical moisturizers/emollients, bath oils, oatmeal bath preparations as needed",
+          "over-the-counter shampoos for scalp psoriasis",
+          "mild and low-potency topical steroids limited to face, axilla, and/or genitalia, as needed (not within ~24 hours of IGA/PASI visits)",
+          "stable pre-existing NSAID regimen for PsA/arthritis symptoms",
+          "mild pain relievers (acetaminophen/paracetamol, mild opiates) for arthritis pain",
+          "intra-articular steroid or hyaluronic acid injections after Week 24",
+          "stable pre-existing antidepressant regimen"
+        ],
+        "applies_to_rerandomized_maintenance": false,
+        "sponsor_trial_ids": [
+          "PS0008"
+        ],
+        "study_drug_doses_mg": [
+          320
+        ],
+        "population_note": "This is a psoriasis biologic active-comparator trial (bimekizumab vs. adalimumab), not an AD/TCS-flavored design, so regimen_type does not map to any of the 3 enum values (limited topical corticosteroid use on face/axilla/genitalia is explicitly permitted, not prohibited, so it isn't strict monotherapy either). Left null as a real schema-enum gap; the permitted/prohibited concomitant lists below are the actual protocol Section 7.8 policy."
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/47/NCT03412747/Prot_000.pdf",
+      "source_excerpt": "Section 7.8.1.1 Topical medications: \"Subjects may continue to use topical moisturizers or emollients, bath oils, or oatmeal bath preparations for skin conditions during the study, as needed... Mild and low potency topical steroids will be permitted for use limited to the face, axilla, and/or genitalia, as needed.\" Section 7.8.2, Table 7-2 Prohibited psoriasis medications: lists topicals (except permitted), systemic retinoids, systemic immunosuppressants, fumaric acid esters, systemic corticosteroids, phototherapy, anti-TNFs (adalimumab/etanercept/infliximab/golimumab/certolizumab pegol), apremilast/tofacitinib, alefacept/efalizumab/guselkumab, tildrakizumab/risankizumab, ustekinumab/briakinumab, rituximab, and anti-IL-17 therapy (brodalumab, ixekizumab, secukinumab), each with a stated washout period.",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.6
     }
   },
   "endpoints": {
@@ -731,13 +777,59 @@
       "confidence": 0.85
     },
     "multiplicity_control": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "procedure": "serial_gatekeeping",
+        "familywise_error_controlled": true,
+        "alpha": 0.05,
+        "alpha_sided": 2,
+        "alpha_per_dose": null,
+        "co_primary_endpoints": [
+          {
+            "label": "PASI90 response at Week 16 (noninferiority vs adalimumab, then superiority)",
+            "scale": "PASI",
+            "responder_criteria": [],
+            "timepoint_week": 16,
+            "alpha": 0.025,
+            "step": 1
+          },
+          {
+            "label": "IGA response at Week 16 (noninferiority vs adalimumab, then superiority)",
+            "scale": "IGA",
+            "responder_criteria": [],
+            "timepoint_week": 16,
+            "alpha": 0.025,
+            "step": 2
+          }
+        ],
+        "testing_sequence": [],
+        "alpha_split": [],
+        "alpha_recycling": false,
+        "doses_compared": [
+          "bimekizumab 320mg Q4W"
+        ],
+        "dose_comparison_order": [],
+        "branching_on": null,
+        "regulatory_variants": [],
+        "rescue_counted_as_nonresponder": null,
+        "active_comparator_excluded_from_hierarchy": null,
+        "background_tcs": null,
+        "method_citations": [],
+        "finalized_in_sap": true,
+        "same_design_as": [
+          {
+            "nct_id": "NCT03370133",
+            "trial_name": "PS0009 (BE VIVID)"
+          }
+        ],
+        "gatekeeping_structure": true,
+        "further_endpoints_through_week": null
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/47/NCT03412747/SAP_001.pdf",
+      "source_excerpt": "SAP Section 4.5 Multiple comparisons/multiplicity: \"The statistical analysis of the co-primary efficacy variables and selected secondary efficacy variables will account for multiplicity and control the familywise Type I error rate at a 2-sided alpha level of 0.05 by using a fixed sequence testing procedure... The first 2 hypotheses (H1 and H2) will test whether bimekizumab is noninferior to adalimumab for the co-primary efficacy variables, PASI90 response at Week 16 and IGA response at Week 16. This evaluation of noninferiority will be tested at a 1-sided alpha level of 0.025... If noninferiority is achieved, the alpha will be passed to the next test in the sequence... The co-primary efficacy variables... will then be evaluated for superiority relative to adalimumab at a 2-sided alpha level of 0.05.\"",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.6
     }
   },
   "timing_ops": {
@@ -778,13 +870,88 @@
       "confidence": 1.0
     },
     "study_schedule": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "screening_days": null,
+        "screening_washout": true,
+        "periods": [
+          {
+            "name": "screening",
+            "start_week": null,
+            "end_week": null,
+            "duration_weeks": 2,
+            "blinding": null,
+            "background_tcs": null
+          },
+          {
+            "name": "initial_treatment",
+            "start_week": 0,
+            "end_week": 16,
+            "duration_weeks": 16,
+            "blinding": "double_blind",
+            "background_tcs": null
+          },
+          {
+            "name": "maintenance_treatment",
+            "start_week": 16,
+            "end_week": 56,
+            "duration_weeks": 40,
+            "blinding": "double_blind",
+            "background_tcs": null
+          },
+          {
+            "name": "follow_up",
+            "start_week": 56,
+            "end_week": null,
+            "duration_weeks": 20,
+            "blinding": null,
+            "background_tcs": null
+          }
+        ],
+        "dosing_interval": "every 4 weeks (Q4W) or every 8 weeks (Q8W) depending on arm",
+        "visit_cadence": "every_4_weeks",
+        "visit_cadence_until_week": 56,
+        "visit_weeks": null,
+        "visit_days": null,
+        "phone_contact_weeks": null,
+        "primary_endpoint_week": 16,
+        "end_of_treatment_week": 56,
+        "end_of_study_week": null,
+        "total_duration_weeks": 77,
+        "follow_up_weeks": 20,
+        "follow_up_days": null,
+        "follow_up_visit_week": null,
+        "long_term_extension": true,
+        "extension_end_week": null,
+        "extension_visit_interval_weeks": null,
+        "extension_study_id": null,
+        "rerandomization_week": null,
+        "maintenance_arms": [
+          "bimekizumab 320mg Q4W throughout",
+          "bimekizumab 320mg Q4W to Week 16 then Q8W to Week 52",
+          "adalimumab subjects switched to bimekizumab 320mg Q4W from Week 24 to Week 52"
+        ],
+        "maintenance_response_check_weeks": null,
+        "last_injection_week": null,
+        "key_secondary_weeks": null,
+        "follow_up_visit_interval_weeks": null,
+        "end_of_treatment_weeks_after_last_dose": null,
+        "background_tcs_from_day": null,
+        "primary_endpoint_refs": [],
+        "double_dummy_arms": [],
+        "active_comparator": "adalimumab",
+        "boilerplate_reused_from": [
+          "NCT03370133"
+        ],
+        "conflicts_with_trial": null,
+        "full_visit_table_available": true,
+        "source_inconsistency": null
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/47/NCT03412747/Prot_000.pdf",
+      "source_excerpt": "Section 5.2 Study periods: \"This study will include 4 periods, a Screening Period (2 to 5 weeks), an Initial Treatment Period (16 weeks), a Maintenance Treatment Period (40 weeks), and a SFU Period (20 weeks after the final dose of IMP).\" Section 5.2.3: \"Subjects in the adalimumab treatment arm will receive bimekizumab 320mg Q4W from Week 24 to Week 52.\" Section 5.3: \"For each subject, the study will last a maximum of up to 77 weeks.\"",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.7
     },
     "rescue_therapy": {
       "value": null,

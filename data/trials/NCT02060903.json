@@ -242,11 +242,26 @@
           "responder_criteria": [],
           "baseline_reference": null,
           "timepoints": [
-            {"value": 1, "unit": "day", "end_value": null},
-            {"value": 7, "unit": "day", "end_value": null},
-            {"value": 14, "unit": "day", "end_value": null}
+            {
+              "value": 1,
+              "unit": "day",
+              "end_value": null
+            },
+            {
+              "value": 7,
+              "unit": "day",
+              "end_value": null
+            },
+            {
+              "value": 14,
+              "unit": "day",
+              "end_value": null
+            }
           ],
-          "through": {"value": 14, "unit": "day"},
+          "through": {
+            "value": 14,
+            "unit": "day"
+          },
           "analysis_population": "full_analysis_set",
           "subgroup_criteria": [],
           "subgroup_labels": [],
@@ -328,13 +343,45 @@
       "confidence": null
     },
     "rescue_therapy": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "permitted": true,
+        "trigger": null,
+        "earliest_week": null,
+        "prohibited_through_week": null,
+        "trigger_rules": [],
+        "flare_definition": [],
+        "first_step": null,
+        "topical_min_days_before_systemic": null,
+        "topical_rescue_requires_study_drug_discontinuation": null,
+        "systemic_rescue_requires_study_drug_discontinuation": null,
+        "resume_after_systemic_rescue_half_lives": null,
+        "resume_after_phototherapy_months": null,
+        "rescued_counted_as_nonresponder": null,
+        "rescued_counted_as_treatment_failure": null,
+        "continue_visits_after_discontinuation": null,
+        "continue_visits_through_week": null,
+        "topical_rescue_not_counted_after_week": null,
+        "topical_agents": [],
+        "topical_potency_classes": [],
+        "tci_reserved_areas": [],
+        "systemic_agents": [],
+        "oral_corticosteroid_limit": null,
+        "rescue_period": null,
+        "escape_arm_washout_half_lives": null,
+        "maintenance_period_rule": null,
+        "permitted_concomitant": [],
+        "recorded_in_ecrf": null,
+        "applies_to_period": "Day 0 through Day 14",
+        "long_term_extension_eligible_after_rescue": null,
+        "topical_agent_class": null,
+        "rationale": "CT.gov eligibility criteria (exclusion criteria 2-3) confirm a rescue-therapy concept exists for this trial but do not define its composition, trigger threshold, or timing: 'Intends to use any other form of lice treatment from Day 0 through the Day 14 visit, unless provided as rescue therapy to this Protocol' and 'Intends to use a lice comb from the Day 0 through the Day 14 visit unless provided as rescue therapy to this Protocol.' No Study Protocol/SAP document is posted on CT.gov's documentSection for this trial, so the actual rescue-therapy definition (composition, trigger, timing) is not extractable from any source this pipeline can reach."
+      },
+      "source_type": "ctgov_text_extraction",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02060903",
+      "source_excerpt": "protocolSection.eligibilityModule.eligibilityCriteria, Exclusion Criteria 2-3: 'Intends to use any other form of lice treatment from Day 0 through the Day 14 visit, unless provided as rescue therapy to this Protocol.' / 'Intends to use a lice comb from the Day 0 through the Day 14 visit unless provided as rescue therapy to this Protocol.'",
+      "extracted_by": "deep-extraction cycle 3 (ctgov_api eligibilityCriteria text)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.4
     }
   },
   "adverse_events": {
@@ -388,32 +435,72 @@
           "meddra_pt": "Erythema",
           "meddra_soc": null,
           "per_arm": [
-            {"arm": "Abametapir Lotion 0.74% w/w", "n_affected": 14, "n_at_risk": 349, "pct": 4.0},
-            {"arm": "Vehicle Lotion", "n_affected": 6, "n_at_risk": 350, "pct": 1.7}
+            {
+              "arm": "Abametapir Lotion 0.74% w/w",
+              "n_affected": 14,
+              "n_at_risk": 349,
+              "pct": 4.0
+            },
+            {
+              "arm": "Vehicle Lotion",
+              "n_affected": 6,
+              "n_at_risk": 350,
+              "pct": 1.7
+            }
           ]
         },
         {
           "meddra_pt": "Rash",
           "meddra_soc": null,
           "per_arm": [
-            {"arm": "Abametapir Lotion 0.74% w/w", "n_affected": 11, "n_at_risk": 349, "pct": 3.2},
-            {"arm": "Vehicle Lotion", "n_affected": 8, "n_at_risk": 350, "pct": 2.3}
+            {
+              "arm": "Abametapir Lotion 0.74% w/w",
+              "n_affected": 11,
+              "n_at_risk": 349,
+              "pct": 3.2
+            },
+            {
+              "arm": "Vehicle Lotion",
+              "n_affected": 8,
+              "n_at_risk": 350,
+              "pct": 2.3
+            }
           ]
         },
         {
           "meddra_pt": "Skin burning sensation",
           "meddra_soc": null,
           "per_arm": [
-            {"arm": "Abametapir Lotion 0.74% w/w", "n_affected": 9, "n_at_risk": 349, "pct": 2.6},
-            {"arm": "Vehicle Lotion", "n_affected": 0, "n_at_risk": 350, "pct": 0.0}
+            {
+              "arm": "Abametapir Lotion 0.74% w/w",
+              "n_affected": 9,
+              "n_at_risk": 349,
+              "pct": 2.6
+            },
+            {
+              "arm": "Vehicle Lotion",
+              "n_affected": 0,
+              "n_at_risk": 350,
+              "pct": 0.0
+            }
           ]
         },
         {
           "meddra_pt": "Contact dermatitis",
           "meddra_soc": null,
           "per_arm": [
-            {"arm": "Abametapir Lotion 0.74% w/w", "n_affected": 6, "n_at_risk": 349, "pct": 1.7},
-            {"arm": "Vehicle Lotion", "n_affected": 4, "n_at_risk": 350, "pct": 1.1}
+            {
+              "arm": "Abametapir Lotion 0.74% w/w",
+              "n_affected": 6,
+              "n_at_risk": 349,
+              "pct": 1.7
+            },
+            {
+              "arm": "Vehicle Lotion",
+              "n_affected": 4,
+              "n_at_risk": 350,
+              "pct": 1.1
+            }
           ]
         }
       ],

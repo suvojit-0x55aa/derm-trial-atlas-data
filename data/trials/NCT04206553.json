@@ -87,10 +87,10 @@
     "mechanism_of_action": {
       "value": {
         "modality": "monoclonal_antibody",
-        "drug_class": "IL-4R\u03b1 antagonist",
+        "drug_class": "IL-4Rα antagonist",
         "antibody_isotype": "IgG4",
         "binding_targets": [
-          "IL-4R\u03b1"
+          "IL-4Rα"
         ],
         "pathway_cytokines": [
           "IL-13",
@@ -98,7 +98,7 @@
           "IgE"
         ],
         "receptor_subunits": [
-          "IL-4R\u03b1"
+          "IL-4Rα"
         ],
         "kinases_inhibited": [],
         "lower_potency_kinases": [],
@@ -109,7 +109,7 @@
       },
       "source_type": "openfda_label",
       "source_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=06b9c64b-52b1-490b-b118-bd079e69264e",
-      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1) -- v1 extracted text: 12.1 Mechanism of Action Dupilumab is a human monoclonal IgG4 antibody that inhibits interleukin-4 (IL-4) and interleukin-13 (IL-13) signaling by specifically binding to the IL-4R\u03b1 subunit shared by the IL-4 and IL-13 receptor complexes. Dupilumab inhibits IL-4 signaling via the Type I receptor and both IL-4 and IL-13 signaling through the Type II receptor. Inflammation driven by IL-4 and IL-13 is an important component in the pathogenesis of asthma, AD, CRSwNP, EoE, PN, COPD, CSU, BP, and AFRS. Multiple cell types that express IL-4R\u03b1 (e.g., mast cells, basophils, eosinophils, macrophages, lymphocytes, epithelial cells, goblet cells) and inflammatory mediators (e.g., histamine, eicosanoids, leukotrienes, cytokines, chemokines) are involved in inflammation. Blocking IL-4R\u03b1 with dupilumab inhibits IL-4 and IL-13 cytokine-induced inflammatory responses, including the release of proinflammatory cytokines, chemokines, nitric oxide, and IgE. The mechanism of dupilumab action has not been definitively established.",
+      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1) -- v1 extracted text: 12.1 Mechanism of Action Dupilumab is a human monoclonal IgG4 antibody that inhibits interleukin-4 (IL-4) and interleukin-13 (IL-13) signaling by specifically binding to the IL-4Rα subunit shared by the IL-4 and IL-13 receptor complexes. Dupilumab inhibits IL-4 signaling via the Type I receptor and both IL-4 and IL-13 signaling through the Type II receptor. Inflammation driven by IL-4 and IL-13 is an important component in the pathogenesis of asthma, AD, CRSwNP, EoE, PN, COPD, CSU, BP, and AFRS. Multiple cell types that express IL-4Rα (e.g., mast cells, basophils, eosinophils, macrophages, lymphocytes, epithelial cells, goblet cells) and inflammatory mediators (e.g., histamine, eicosanoids, leukotrienes, cytokines, chemokines) are involved in inflammation. Blocking IL-4Rα with dupilumab inhibits IL-4 and IL-13 cytokine-induced inflammatory responses, including the release of proinflammatory cytokines, chemokines, nitric oxide, and IgE. The mechanism of dupilumab action has not been definitively established.",
       "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 0.9
@@ -300,13 +300,51 @@
       "confidence": 1.0
     },
     "background_therapy": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "regimen_type": null,
+        "background_agent_class": "OCS (oral prednisone or prednisolone)",
+        "tcs_regimen": null,
+        "step_down_rule": null,
+        "recommended_agents": [
+          {
+            "name": "Prednisone (or prednisolone)",
+            "strength_pct": null,
+            "form": "oral",
+            "potency": null
+          }
+        ],
+        "emollient_required": null,
+        "emollient_frequency": null,
+        "prohibited_concomitant": [
+          "Topical corticosteroids",
+          "Topical calcineurin inhibitors",
+          "Topical crisaborole",
+          "Immunomodulating biologics (e.g. omalizumab, rituximab, IVIG)",
+          "Systemic non-steroidal immunosuppressive drugs (e.g. mycophenolate-mofetil, azathioprine, methotrexate)",
+          "Any BP-directed therapy, including dapsone or tetracycline-class antibiotics (unless treating a susceptible infection)",
+          "Investigational drugs other than dupilumab",
+          "Nicotinamide directed at BP treatment (multivitamins containing nicotinamide allowed)",
+          "Initial treatment with a live attenuated vaccine",
+          "Major elective surgical procedures"
+        ],
+        "permitted_concomitant": [
+          "Medications used to treat chronic disease such as diabetes, hypertension, and asthma",
+          "Drugs/biologics without immunosuppressive/immunomodulating effect that are not intended to treat BP (e.g. Praluent)",
+          "Intranasal, inhaled, and ophthalmic corticosteroids as per label"
+        ],
+        "applies_to_rerandomized_maintenance": null,
+        "sponsor_trial_ids": [
+          "R668-BP-1902"
+        ],
+        "study_drug_doses_mg": [],
+        "population_note": "All patients in this Bullous Pemphigoid trial receive mandatory background OCS (prednisone or prednisolone) beginning at the baseline visit to obtain control of disease activity, per a protocol-defined dose/taper schedule (Section 8.2); the specific mg/kg dose levels are redacted (blank) in the extracted protocol PDF text, so exact numeric doses could not be captured. This is an OCS-based mandatory background regimen, not a TCS-based one, so the schema's regimen_type enum (monotherapy/combination_tcs/standardized_background_topical) has no matching value and was left null."
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/53/NCT04206553/Prot_000.pdf",
+      "source_excerpt": "Section 6.1/8.2: 'All patients will receive a standard regimen of OCS (prednisone or prednisolone) on day 1/baseline visit to obtain control of disease... Patients will therefore be maintained on their assigned treatment level of OCS until they have achieved control of disease activity.' Section 8.10.1 Prohibited Medications and Procedures: 'Topical corticosteroids; Topical calcineurin inhibitors; Topical crisaborole; Treatment with immunomodulating biologics (eg, omalizumab, rituximab, IVIG); Treatment with a systemic non-steroidal immunosuppressive drug...' Section 8.10.2 Permitted Medications: 'Other than the prohibited medications listed in Section 8.10.1, treatment with concomitant medications are permitted during the study. Medications used to treat chronic disease such as diabetes, hypertension, and asthma are also permitted.'",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.6
     }
   },
   "endpoints": {
@@ -398,7 +436,7 @@
           "time_frame": null
         },
         {
-          "verbatim": "Percent of Participants With Improvement (Reduction) of Weekly Average of Daily Peak Pruritus NRS \u22654 From Baseline to Week 36",
+          "verbatim": "Percent of Participants With Improvement (Reduction) of Weekly Average of Daily Peak Pruritus NRS ≥4 From Baseline to Week 36",
           "rank": "secondary",
           "position": 3,
           "measure_type": "other",
@@ -564,7 +602,7 @@
           "time_frame": null
         },
         {
-          "verbatim": "Percent of Participants Achieving a Reduction in BPDAI Activity Score of \u226550% From Baseline to Week 36",
+          "verbatim": "Percent of Participants Achieving a Reduction in BPDAI Activity Score of ≥50% From Baseline to Week 36",
           "rank": "secondary",
           "position": 10,
           "measure_type": "other",
@@ -589,7 +627,7 @@
           "time_frame": null
         },
         {
-          "verbatim": "Percent of Participants Achieving a Reduction in BPDAI Activity Score of \u226575% From Baseline to Week 36",
+          "verbatim": "Percent of Participants Achieving a Reduction in BPDAI Activity Score of ≥75% From Baseline to Week 36",
           "rank": "secondary",
           "position": 11,
           "measure_type": "other",
@@ -614,7 +652,7 @@
           "time_frame": null
         },
         {
-          "verbatim": "Percent of Participants Achieving a Reduction in BPDAI Activity Score of \u226590% From Baseline to Week 36",
+          "verbatim": "Percent of Participants Achieving a Reduction in BPDAI Activity Score of ≥90% From Baseline to Week 36",
           "rank": "secondary",
           "position": 12,
           "measure_type": "other",
@@ -908,7 +946,7 @@
           "time_frame": null
         },
         {
-          "verbatim": "Percent of Participants With Improvement (Reduction) of Weekly Average of Daily Peak Pruritus NRS \u22654 From Baseline to Week 52",
+          "verbatim": "Percent of Participants With Improvement (Reduction) of Weekly Average of Daily Peak Pruritus NRS ≥4 From Baseline to Week 52",
           "rank": "secondary",
           "position": 24,
           "measure_type": "other",
@@ -958,7 +996,7 @@
           "time_frame": null
         },
         {
-          "verbatim": "Percent of Participants Achieving a Reduction in BPDAI Activity Score of \u226550% From Baseline to Week 52",
+          "verbatim": "Percent of Participants Achieving a Reduction in BPDAI Activity Score of ≥50% From Baseline to Week 52",
           "rank": "secondary",
           "position": 26,
           "measure_type": "other",
@@ -983,7 +1021,7 @@
           "time_frame": null
         },
         {
-          "verbatim": "Percent of Participants Achieving a Reduction in BPDAI Activity Score of \u226575% From Baseline to Week 52",
+          "verbatim": "Percent of Participants Achieving a Reduction in BPDAI Activity Score of ≥75% From Baseline to Week 52",
           "rank": "secondary",
           "position": 27,
           "measure_type": "other",
@@ -1008,7 +1046,7 @@
           "time_frame": null
         },
         {
-          "verbatim": "Percent of Participants Achieving a Reduction in BPDAI Activity Score of \u226590% From Baseline to Week 52",
+          "verbatim": "Percent of Participants Achieving a Reduction in BPDAI Activity Score of ≥90% From Baseline to Week 52",
           "rank": "secondary",
           "position": 28,
           "measure_type": "other",
@@ -1183,7 +1221,7 @@
           "time_frame": null
         },
         {
-          "verbatim": "Percent of Participants Achieving a Reduction in BPDAI Activity Score of \u226550% From Baseline to Week 16",
+          "verbatim": "Percent of Participants Achieving a Reduction in BPDAI Activity Score of ≥50% From Baseline to Week 16",
           "rank": "secondary",
           "position": 35,
           "measure_type": "other",
@@ -1208,7 +1246,7 @@
           "time_frame": null
         },
         {
-          "verbatim": "Percent of Participants Achieving a Reduction in BPDAI Activity Score of \u226575% From Baseline to Week 16",
+          "verbatim": "Percent of Participants Achieving a Reduction in BPDAI Activity Score of ≥75% From Baseline to Week 16",
           "rank": "secondary",
           "position": 36,
           "measure_type": "other",
@@ -1233,7 +1271,7 @@
           "time_frame": null
         },
         {
-          "verbatim": "Percent of Participants Achieving a Reduction in BPDAI Activity Score of \u226590% From Baseline to Week 16",
+          "verbatim": "Percent of Participants Achieving a Reduction in BPDAI Activity Score of ≥90% From Baseline to Week 16",
           "rank": "secondary",
           "position": 37,
           "measure_type": "other",
@@ -1283,7 +1321,7 @@
           "time_frame": null
         },
         {
-          "verbatim": "Percent of Participants With Improvement (Reduction) of Weekly Average of Daily Peak Pruritus NRS \u22654 From Baseline to Week 16",
+          "verbatim": "Percent of Participants With Improvement (Reduction) of Weekly Average of Daily Peak Pruritus NRS ≥4 From Baseline to Week 16",
           "rank": "secondary",
           "position": 39,
           "measure_type": "other",
@@ -1486,13 +1524,125 @@
       "confidence": 1.0
     },
     "multiplicity_control": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "procedure": "serial_gatekeeping",
+        "familywise_error_controlled": true,
+        "alpha": 0.05,
+        "alpha_sided": 2,
+        "alpha_per_dose": null,
+        "co_primary_endpoints": [
+          {
+            "label": "Percent of Participants Achieving Sustained Remission at Week 36 (Time frame: At Week 36)",
+            "scale": null,
+            "responder_criteria": [],
+            "timepoint_week": 36,
+            "alpha": null,
+            "step": 1
+          }
+        ],
+        "testing_sequence": [
+          {
+            "label": "Percent Change in Bullous Pemphigoid Disease Area Index (BPDAI) Activity Score From Baseline to Week 36",
+            "scale": null,
+            "responder_criteria": [],
+            "timepoint_week": 36,
+            "alpha": null,
+            "step": 2
+          },
+          {
+            "label": "Time to First Use of Rescue Medication Up to Week 36",
+            "scale": null,
+            "responder_criteria": [],
+            "timepoint_week": null,
+            "alpha": null,
+            "step": 3
+          },
+          {
+            "label": "Percent of Participants With Improvement (Reduction) of Weekly Average of Daily Peak Pruritus NRS ≥4 From Baseline to Week 36",
+            "scale": "Pruritus NRS",
+            "responder_criteria": [],
+            "timepoint_week": 36,
+            "alpha": null,
+            "step": 4
+          },
+          {
+            "label": "Percent Change in Weekly Average of Daily Peak Pruritus Numerical Rating Scale (NRS) Score From Baseline to Week 36",
+            "scale": "Pruritus NRS",
+            "responder_criteria": [],
+            "timepoint_week": 36,
+            "alpha": null,
+            "step": 5
+          },
+          {
+            "label": "Total Cumulative Dose of Oral Corticosteroids (OCS) From Baseline to Week 36",
+            "scale": null,
+            "responder_criteria": [],
+            "timepoint_week": 36,
+            "alpha": null,
+            "step": 6
+          },
+          {
+            "label": "Duration of Complete Remission While Not Requiring OCS Up to Week 36",
+            "scale": null,
+            "responder_criteria": [],
+            "timepoint_week": null,
+            "alpha": null,
+            "step": 7
+          },
+          {
+            "label": "Percent of Participants Achieving a Reduction in BPDAI Activity Score of ≥90% From Baseline to Week 36",
+            "scale": null,
+            "responder_criteria": [],
+            "timepoint_week": 36,
+            "alpha": null,
+            "step": 8
+          },
+          {
+            "label": "Change in Percent Body Surface Area (BSA) of BP Involvement From Baseline to Week 36",
+            "scale": "BSA",
+            "responder_criteria": [],
+            "timepoint_week": 36,
+            "alpha": null,
+            "step": 9
+          },
+          {
+            "label": "Change in BP180 Immunoglobulin G (IgG) Autoantibody Titer From Baseline to Week 36",
+            "scale": null,
+            "responder_criteria": [],
+            "timepoint_week": 36,
+            "alpha": null,
+            "step": 10
+          },
+          {
+            "label": "Change in Autoimmune Bullous Disease Quality of Life (ABQOL) Score From Baseline to Week 36",
+            "scale": null,
+            "responder_criteria": [],
+            "timepoint_week": 36,
+            "alpha": null,
+            "step": 11
+          }
+        ],
+        "alpha_split": [],
+        "alpha_recycling": null,
+        "doses_compared": [],
+        "dose_comparison_order": [],
+        "branching_on": null,
+        "regulatory_variants": [],
+        "rescue_counted_as_nonresponder": null,
+        "active_comparator_excluded_from_hierarchy": null,
+        "background_tcs": null,
+        "method_citations": [],
+        "finalized_in_sap": true,
+        "same_design_as": [],
+        "gatekeeping_structure": true,
+        "further_endpoints_through_week": 36
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/53/NCT04206553/SAP_001.pdf",
+      "source_excerpt": "8.2. Multiplicity Control: A hierarchical procedure will be used to control the overall Type-1 error rate at 0.05 for the primary endpoint and specified secondary endpoints comparing the dupilumab group and the placebo group. Each hypothesis will be formally tested only if the preceding one is significant at the 2-sided 0.05 significance level. Table 6 Hierarchical Order: 1 Primary Endpoint (sustained remission wk36); 2 BPDAI activity score % change wk36; 3 Time to first use of rescue medication (up to wk36); 4 PP NRS >=4-point improvement wk36; 5 PP NRS % change wk36; 6 Total cumulative OCS dose wk36; 7 Duration of complete remission off OCS (up to wk36); 8 BPDAI reduction >=90% wk36; 9 % BSA change wk36; 10 BP180 IgG titer change wk36; 11 ABQOL change wk36.",
+      "extracted_by": "deep-extraction cycle 3 (SAP PDF, pdftotext -layout)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.8
     }
   },
   "timing_ops": {
@@ -1533,22 +1683,136 @@
       "confidence": 1.0
     },
     "study_schedule": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "screening_days": 35,
+        "screening_washout": true,
+        "periods": [
+          {
+            "name": "screening",
+            "start_week": null,
+            "end_week": 0,
+            "duration_weeks": 5,
+            "blinding": null,
+            "background_tcs": null
+          },
+          {
+            "name": "double_blind_treatment",
+            "start_week": 0,
+            "end_week": 52,
+            "duration_weeks": 52,
+            "blinding": "double_blind",
+            "background_tcs": null
+          },
+          {
+            "name": "follow_up",
+            "start_week": 52,
+            "end_week": 64,
+            "duration_weeks": 12,
+            "blinding": null,
+            "background_tcs": null
+          }
+        ],
+        "dosing_interval": "Subcutaneous every 2 weeks (q2w) through week 50",
+        "visit_cadence": "every_2_weeks",
+        "visit_cadence_until_week": 16,
+        "visit_weeks": null,
+        "visit_days": null,
+        "phone_contact_weeks": [
+          38,
+          40,
+          42,
+          46,
+          48,
+          50
+        ],
+        "primary_endpoint_week": 36,
+        "end_of_treatment_week": 52,
+        "end_of_study_week": 64,
+        "total_duration_weeks": 69,
+        "follow_up_weeks": 12,
+        "follow_up_days": null,
+        "follow_up_visit_week": 64,
+        "long_term_extension": null,
+        "extension_end_week": null,
+        "extension_visit_interval_weeks": null,
+        "extension_study_id": null,
+        "rerandomization_week": null,
+        "maintenance_arms": null,
+        "maintenance_response_check_weeks": null,
+        "last_injection_week": 50,
+        "key_secondary_weeks": [
+          36,
+          52
+        ],
+        "follow_up_visit_interval_weeks": null,
+        "end_of_treatment_weeks_after_last_dose": null,
+        "background_tcs_from_day": null,
+        "primary_endpoint_refs": [],
+        "double_dummy_arms": [],
+        "active_comparator": null,
+        "boilerplate_reused_from": [],
+        "conflicts_with_trial": null,
+        "full_visit_table_available": true,
+        "source_inconsistency": "The primary endpoint (sustained remission) and most key/other secondary endpoints are assessed at Week 36 even though Amendment 1 extended the double-blind treatment period itself from 36 to 52 weeks (adding new week-52 secondary endpoints alongside, not replacing, the week-36 primary) -- both week-36 and week-52 timepoints are real and independently confirmed in the protocol text, not a typo."
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/53/NCT04206553/Prot_000.pdf",
+      "source_excerpt": "Section 6.1 Study Description and Duration: 'The study consists of a 35-day screening period, a 52-week double-blind treatment period, and a 12-week follow-up period.' ... 'During the 52-week double-blind treatment period, patients will have study visits every 2 weeks until week 16... After week 16, patients will have in-clinic or phone visits as specified during the remainder of the 52-week treatment period. Study drug will be administered SC q2w through week 50. Following the 52-week double-blind treatment period, patients will have phone visits as specified and then return for an in-person follow-up visit at week 64 (end of study).' Amendment 1 table: 'Increased the duration of the double-blind treatment period from 36 weeks to 52 weeks and added visits/procedures at weeks 38 (phone visit), 40 (phone visit), 42 (phone visit), 44, 46 (phone visit), 48 (phone visit), 50 (phone visit), and 52.' Synopsis: 'The primary endpoint is the proportion of patients achieving sustained remission at week 36...'",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.7
     },
     "rescue_therapy": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "permitted": true,
+        "trigger": "protocol_response_threshold",
+        "earliest_week": null,
+        "prohibited_through_week": null,
+        "trigger_rules": [],
+        "flare_definition": [],
+        "first_step": null,
+        "topical_min_days_before_systemic": null,
+        "topical_rescue_requires_study_drug_discontinuation": false,
+        "systemic_rescue_requires_study_drug_discontinuation": true,
+        "resume_after_systemic_rescue_half_lives": null,
+        "resume_after_phototherapy_months": null,
+        "rescued_counted_as_nonresponder": null,
+        "rescued_counted_as_treatment_failure": true,
+        "continue_visits_after_discontinuation": true,
+        "continue_visits_through_week": null,
+        "topical_rescue_not_counted_after_week": null,
+        "topical_agents": [
+          {
+            "name": "High-potency topical corticosteroids",
+            "strength_pct": null,
+            "form": null,
+            "potency": "high"
+          }
+        ],
+        "topical_potency_classes": [],
+        "tci_reserved_areas": [],
+        "systemic_agents": [
+          "OCS dose increase during taper / re-initiation of OCS after completing taper (prednisone or prednisolone)",
+          "Systemic non-steroidal immunosuppressive drugs (e.g. mycophenolate-mofetil, azathioprine, methotrexate)",
+          "Immunomodulating biologics (e.g. omalizumab, rituximab, IVIG)"
+        ],
+        "oral_corticosteroid_limit": null,
+        "rescue_period": null,
+        "escape_arm_washout_half_lives": null,
+        "maintenance_period_rule": null,
+        "permitted_concomitant": [],
+        "recorded_in_ecrf": null,
+        "applies_to_period": "52-week double-blind treatment period and subsequent remission/follow-up period",
+        "long_term_extension_eligible_after_rescue": null,
+        "topical_agent_class": "high-potency topical corticosteroids",
+        "rationale": "Section 8.3 Rescue Treatments: 'Patients requiring doses greater than [redacted] of prednisone (or prednisolone) and those who do not achieve control of disease activity by week 4 will be considered treatment failures. These patients should receive rescue treatment per investigator's discretion... A relapse is defined as the appearance of 3 or more new lesions a month (blisters, eczematous lesions, or urticarial plaques) or at least 1 large (>10 cm diameter) eczematous lesion or urticarial plaque that does not heal within 1 week... Rescue treatment may include treatment with high-potency topical corticosteroids, OCS (eg, increases of OCS doses during the taper regimen, or re-initiation of OCS after tapering completely off OCS), and systemic non-steroidal immunosuppressive drugs or immunomodulating biologics. If topical or oral corticosteroids are used as rescue treatments, patients may continue study treatment. If a patient receives rescue treatment with a systemic non-steroidal immunosuppressive drug or immunomodulating biologic..., study treatment will be permanently discontinued immediately. Unless permanently discontinued from the study, all patients will be requested to complete the scheduled study visits and assessments, whether or not they complete study drug treatment and whether or not they receive rescue treatment.'"
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/53/NCT04206553/Prot_000.pdf",
+      "source_excerpt": "Section 8.3 Rescue Treatments (quoted in full in rationale above).",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.6
     }
   },
   "adverse_events": {

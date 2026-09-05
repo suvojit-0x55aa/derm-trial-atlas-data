@@ -247,13 +247,57 @@
       "confidence": 1.0
     },
     "background_therapy": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "regimen_type": null,
+        "background_agent_class": null,
+        "tcs_regimen": null,
+        "step_down_rule": null,
+        "recommended_agents": [],
+        "emollient_required": false,
+        "emollient_frequency": "Subjects may continue their own daily moisturizer (started at screening) provided it contains no anti-itch compound (e.g. menthol, polidocanol); no change of emollient/moisturizer permitted during the study",
+        "prohibited_concomitant": [
+          "Topical calcineurin inhibitors (tacrolimus, pimecrolimus) and topical corticosteroids (2 weeks before baseline, prohibited Day 1-Week 32 unless used as rescue)",
+          "Topical vitamin D analogs (2 weeks before baseline, prohibited)",
+          "Topical or systemic PDE-4 inhibitors (2 weeks before baseline, prohibited)",
+          "Any other topical treatment other than moisturizer (e.g. capsaicin, cryotherapy for PN) (2 weeks before baseline, prohibited)",
+          "Emollients or moisturizers with menthol, polidocanol or other anti-itch claim (1 week before baseline, prohibited)",
+          "Systemic or intralesional corticosteroids (corticosteroid inhalers permitted) (4 weeks before baseline, prohibited unless rescue)",
+          "Oral antihistamines unless taken at stable dose 3 months prior to screening or for seasonal allergy (1 week before baseline, prohibited unless rescue)",
+          "Sedative drugs (benzodiazepines, imidazopyridines, barbiturates, sedative antidepressants, SSRIs, SNRIs) unless stable dose >=3 months before screening (1 week before baseline, prohibited)",
+          "Phototherapy (4 weeks before baseline, prohibited unless rescue)",
+          "Tanning beds (4 weeks before baseline, prohibited)",
+          "Immunosuppressive or immunomodulatory drugs (e.g. cyclosporine A, methotrexate, thalidomide, oral tacrolimus, cyclophosphamide, azathioprine, mycophenolate mofetil, JAK inhibitors) (8 weeks or 5 half-lives before baseline, prohibited unless rescue)",
+          "Biologics and their biosimilars (e.g. etanercept, adalimumab, infliximab, omalizumab) (8 weeks or 5 half-lives before baseline, prohibited unless rescue)",
+          "Dupilumab (10 weeks before baseline, prohibited unless rescue)",
+          "Systemic retinoids (8 weeks or 5 half-lives before baseline, prohibited)",
+          "Systemic roxithromycin, erythromycin (1 week before baseline, prohibited)",
+          "Opioid antagonists/agonists, NK1 receptor antagonists (e.g. aprepitant, serlopitant) (4 weeks or 5 half-lives before baseline, prohibited)",
+          "Gabapentinoids unless stable dose >=6 months or used for non-PN conditions (4 weeks before baseline, prohibited unless rescue)",
+          "Cannabinoids (2 weeks before baseline, prohibited)",
+          "Investigational topical or systemic medication (12 weeks or 5 half-lives before baseline, prohibited)",
+          "Alternative medicine for PN (e.g. traditional Chinese medicine) (2 weeks before baseline, prohibited)",
+          "Live vaccines (12 weeks before baseline, prohibited); non-live vaccines (4 weeks before baseline, prohibited with exceptions)"
+        ],
+        "permitted_concomitant": [
+          "Unless specified as prohibited, all therapies are authorized, including basic skin care (cleansing and bathing), moisturizers, bleach baths, and topical anesthetics",
+          "Sedatives and antidepressants allowed if administered for at least 3 months at a stable dose before screening baseline with no planned dose changes during the study"
+        ],
+        "applies_to_rerandomized_maintenance": null,
+        "sponsor_trial_ids": [
+          "RD.06.SPR.202685"
+        ],
+        "study_drug_doses_mg": [
+          30,
+          60
+        ],
+        "population_note": "PN trial design, not the AD/TCS-flavored background-therapy shape this schema's regimen_type enum was built for (no standardized or step-down TCS regimen is specified) -- left regimen_type null rather than force-fit; the real, extensive concomitant-medication policy is captured in prohibited_concomitant/permitted_concomitant/emollient fields instead."
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/66/NCT04501666/Prot_002.pdf",
+      "source_excerpt": "Permitted Concomitant Therapy: Unless specified as prohibited therapies (see Section 9.10.3), all therapies are authorized, including basic skin care (cleansing and bathing), moisturizers, bleach baths, and topical anesthetics. Starting from the screening visit, subjects can use their daily moisturizer, if it does not contain any compound with known anti-itch effect... Subjects should not change emollients or moisturizers or apply products for itching relief during the course of the study. ... Prohibited Therapy: Treatment with the following concomitant medications/therapies in Table 4 is prohibited during the study unless otherwise specified. Table 4. Prohibited Therapy [lists topical calcineurin inhibitors/TCS, vitamin D analogs, PDE-4 inhibitors, systemic/intralesional corticosteroids, oral antihistamines, sedatives, phototherapy, immunosuppressants, biologics, dupilumab, systemic retinoids, gabapentinoids, cannabinoids, investigational drugs, alternative medicine, vaccines with specific washout timeframes].",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.7
     }
   },
   "endpoints": {
@@ -447,13 +491,54 @@
       "confidence": 1.0
     },
     "multiplicity_control": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "procedure": "serial_gatekeeping",
+        "familywise_error_controlled": true,
+        "alpha": 0.05,
+        "alpha_sided": 2,
+        "alpha_per_dose": null,
+        "co_primary_endpoints": [
+          {
+            "label": "PP NRS improvement >=4 from baseline at Week 16",
+            "scale": "PP NRS",
+            "responder_criteria": [],
+            "timepoint_week": 16,
+            "alpha": 0.05,
+            "step": 1
+          },
+          {
+            "label": "IGA success (0 or 1 with >=2-point reduction) at Week 16",
+            "scale": "IGA",
+            "responder_criteria": [],
+            "timepoint_week": 16,
+            "alpha": 0.05,
+            "step": 1
+          }
+        ],
+        "testing_sequence": [],
+        "alpha_split": [],
+        "alpha_recycling": null,
+        "doses_compared": [],
+        "dose_comparison_order": [],
+        "branching_on": null,
+        "regulatory_variants": [],
+        "rescue_counted_as_nonresponder": true,
+        "active_comparator_excluded_from_hierarchy": null,
+        "background_tcs": null,
+        "method_citations": [
+          "Cochran-Mantel-Haenszel (CMH) test"
+        ],
+        "finalized_in_sap": true,
+        "same_design_as": [],
+        "gatekeeping_structure": true,
+        "further_endpoints_through_week": 24
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/66/NCT04501666/SAP_003.pdf",
+      "source_excerpt": "To control the type I error at 5%, a fixed sequential testing approach will be implemented. For testing purposes, both primary endpoints will be tested first in a predefined order as listed in Section 5.1 at 5% significance level, and testing of key secondary endpoints will start only if both primary endpoints are successful at 5% level of significance. Key secondary endpoints will be tested in an order listed in Section 5.2, stopping when non-significant result (p > 0.05) is found. The primary endpoints include: the proportion of subjects with an improvement of >=4 from baseline in PP NRS at Week 16; the proportion of subjects reporting success on the IGA at Week 16...",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.7
     }
   },
   "timing_ops": {
@@ -494,22 +579,126 @@
       "confidence": 1.0
     },
     "study_schedule": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "screening_days": 28,
+        "screening_washout": true,
+        "periods": [
+          {
+            "name": "screening",
+            "start_week": null,
+            "end_week": 0,
+            "duration_weeks": 4,
+            "blinding": null,
+            "background_tcs": null
+          },
+          {
+            "name": "randomized_treatment",
+            "start_week": 0,
+            "end_week": 24,
+            "duration_weeks": 24,
+            "blinding": "double_blind",
+            "background_tcs": null
+          },
+          {
+            "name": "follow_up",
+            "start_week": 24,
+            "end_week": 32,
+            "duration_weeks": 8,
+            "blinding": null,
+            "background_tcs": null
+          }
+        ],
+        "dosing_interval": "every_4_weeks",
+        "visit_cadence": "every_4_weeks",
+        "visit_cadence_until_week": 24,
+        "visit_weeks": null,
+        "visit_days": null,
+        "phone_contact_weeks": null,
+        "primary_endpoint_week": 16,
+        "end_of_treatment_week": 24,
+        "end_of_study_week": 32,
+        "total_duration_weeks": 32,
+        "follow_up_weeks": 8,
+        "follow_up_days": null,
+        "follow_up_visit_week": 32,
+        "long_term_extension": true,
+        "extension_end_week": null,
+        "extension_visit_interval_weeks": null,
+        "extension_study_id": "RD.06.SPR.202699",
+        "rerandomization_week": null,
+        "maintenance_arms": null,
+        "maintenance_response_check_weeks": null,
+        "last_injection_week": 20,
+        "key_secondary_weeks": [
+          16,
+          20,
+          24
+        ],
+        "follow_up_visit_interval_weeks": null,
+        "end_of_treatment_weeks_after_last_dose": null,
+        "background_tcs_from_day": null,
+        "primary_endpoint_refs": [],
+        "double_dummy_arms": [],
+        "active_comparator": null,
+        "boilerplate_reused_from": [],
+        "conflicts_with_trial": null,
+        "full_visit_table_available": true,
+        "source_inconsistency": null
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/66/NCT04501666/Prot_002.pdf",
+      "source_excerpt": "Duration: [...] weeks, including a screening period (up to 4 weeks), a 24-week treatment period, and an 8-week follow-up. ... At the end of the 24-week treatment period, consenting subjects may be eligible to enter an active treatment/long-term extension (LTE) study (RD.06.SPR.202699). Subjects who participate in the LTE are not required to complete the follow-up visit. Subjects who do not participate in the LTE will return for a follow-up visit at Week 32 (12 weeks after the last study drug [administration])... During the treatment period, eligible subjects will be randomized to receive either nemolizumab (CD14152) or placebo, administered Q4W for 24 weeks (last injection at Week 20).",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.7
     },
     "rescue_therapy": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "permitted": true,
+        "trigger": "investigator_discretion",
+        "earliest_week": 4,
+        "prohibited_through_week": null,
+        "trigger_rules": [],
+        "flare_definition": [],
+        "first_step": "topical",
+        "topical_min_days_before_systemic": null,
+        "topical_rescue_requires_study_drug_discontinuation": false,
+        "systemic_rescue_requires_study_drug_discontinuation": true,
+        "resume_after_systemic_rescue_half_lives": null,
+        "resume_after_phototherapy_months": null,
+        "rescued_counted_as_nonresponder": true,
+        "rescued_counted_as_treatment_failure": true,
+        "continue_visits_after_discontinuation": true,
+        "continue_visits_through_week": 24,
+        "topical_rescue_not_counted_after_week": null,
+        "topical_agents": [],
+        "topical_potency_classes": [],
+        "tci_reserved_areas": [],
+        "systemic_agents": [
+          "Oral antihistamines",
+          "Systemic or intralesional corticosteroids",
+          "Biologics (including biosimilars)",
+          "Systemic nonsteroidal immunosuppressants/immunomodulators",
+          "Phototherapy",
+          "Gabapentinoids"
+        ],
+        "oral_corticosteroid_limit": null,
+        "rescue_period": null,
+        "escape_arm_washout_half_lives": null,
+        "maintenance_period_rule": null,
+        "permitted_concomitant": [],
+        "recorded_in_ecrf": true,
+        "applies_to_period": "randomized_treatment (Day 1 through Week 24); not permitted during screening",
+        "long_term_extension_eligible_after_rescue": true,
+        "topical_agent_class": "Topical corticosteroids, topical calcineurin inhibitors",
+        "rationale": "If deemed to be medically necessary by the investigator (e.g. to control intolerable PN signs/symptoms), rescue therapies can be prescribed. Rescue therapy must not be prescribed during the screening period, and as a general guideline should not be prescribed within the first 4 weeks after baseline to allow a minimum time for study drug exposure."
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/66/NCT04501666/Prot_002.pdf",
+      "source_excerpt": "Rescue Therapy: If deemed to be medically necessary by the investigator (eg, to control intolerable PN signs/symptoms), rescue therapies can be prescribed to the subjects. Rescue therapy must not be prescribed during the screening period. As a general guideline and per individual investigator judgment, rescue therapy should not be prescribed within the first 4 weeks after baseline... Rescue therapies include: Topical corticosteroids, Topical calcineurin inhibitors, Oral antihistamines, Systemic or intralesional corticosteroids, Biologics (including their biosimilars), Systemic nonsteroidal immunosuppressants/immunomodulators, Phototherapy, Gabapentinoids. Whenever possible, investigators should first use topical medication or oral antihistamines as rescue therapy before escalating to other systemic therapies. If subjects receive topical treatments, oral antihistamines, or UVB phototherapy as rescue therapy, study drug administration should be continued... If subjects receive systemic rescue therapy (other than oral antihistamines), intralesional corticosteroids, or oral PUVA treatment, the study drug administration must be permanently discontinued... For the purpose of efficacy analysis, subjects receiving any rescue therapies will be considered as treatment failures.",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.7
     }
   },
   "adverse_events": {

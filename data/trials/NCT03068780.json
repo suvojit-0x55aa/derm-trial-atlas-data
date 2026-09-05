@@ -256,20 +256,63 @@
       "confidence": 1.0
     },
     "background_therapy": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "regimen_type": "standardized_background_topical",
+        "background_agent_class": "non-adhesive wound dressing (standard of care)",
+        "tcs_regimen": null,
+        "step_down_rule": null,
+        "recommended_agents": [
+          {
+            "name": "Mepitel (Molnlycke Health Care AB)",
+            "strength_pct": null,
+            "form": "non-adhesive wound dressing",
+            "potency": null
+          },
+          {
+            "name": "PolyMem (Ferris Mfg. Corp.)",
+            "strength_pct": null,
+            "form": "non-adhesive wound dressing",
+            "potency": null
+          }
+        ],
+        "emollient_required": false,
+        "emollient_frequency": null,
+        "prohibited_concomitant": [
+          "Silver dressings and dressings containing topical emollients (e.g. vaselinized gauze) as the standard-of-care dressing",
+          "On EB wound areas during the DBP: skin products such as creams (incl. barrier creams), ointments, gels, or emollients",
+          "On the EB target wound until confirmed closure/epithelialisation: silver dressings, silver sulfadiazine, topical antibiotics, topical steroids",
+          "Systemic steroids (except inhaled/ophthalmic/topical, e.g. budesonide for oesophageal strictures) until M3±14 days of open-label FU",
+          "Immunosuppressive therapy or cytotoxic chemotherapy until M3±14 days of open-label FU",
+          "Systemic antibiotics to treat EB target wound infections until M3±14 days of open-label FU"
+        ],
+        "permitted_concomitant": [
+          "Liquid antiseptics (polyhexanide, iodine products, octenidine dihydrochloride) at each dressing change to clean/reduce microbial colonisation prior to study treatment",
+          "Bathing (e.g. chlorhexidine, diluted bleach, or salt) prior to study treatment at each dressing change",
+          "Systemic antibiotics except for treatment of EB target wound infections",
+          "Inhaled, ophthalmic, or topical steroids (e.g. budesonide suspension for oesophageal strictures)",
+          "Supportive therapy at investigator's discretion",
+          "On non-target single EB wounds: silver sulfadiazine, topical antibiotics, topical steroids"
+        ],
+        "applies_to_rerandomized_maintenance": null,
+        "sponsor_trial_ids": [
+          "BEB-13"
+        ],
+        "study_drug_doses_mg": [],
+        "population_note": "Both arms (Oleogel-S10 and vehicle) receive study medication applied topically to EB partial-thickness wounds, then covered with a standard-of-care non-adhesive wound dressing (Section 6.3); SOC dressings are not fully standardized across sites/patients but silver dressings and emollient-containing dressings are excluded. Section 7.5.1/7.5.2 give detailed permitted/non-permitted concomitant medication lists."
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/80/NCT03068780/Prot_000.pdf",
+      "source_excerpt": "6.3 Standard of Care Non-adhesive Wound Dressings: ... patients will be allowed to continue using their SOC non-adhesive wound dressings except for silver dressings and dressings containing topical emollients (e.g. vaselinized gauze). However, it is recommended to reduce the diversity of wound dressings as much as possible, e.g., by using a small number of products, such as Mepitel (Molnlycke Health Care AB, Sweden) or PolyMem (Ferris Mfg. Corp., USA) only. 7.5.1 Permitted Concomitant Medication: Liquid antiseptics such as polyhexanide, iodine products, or octenidine dihydrochloride... 7.5.2 Non-permitted Concomitant Medication: Systemic steroids (except for inhaled, ophthalmic, or topical applications...); Immunosuppressive therapy or cytotoxic chemotherapy...",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.7
     }
   },
   "endpoints": {
     "primary_endpoints": {
       "value": [
         {
-          "verbatim": "Proportion of Patients With First Complete Closure of the EB Target Wound Within 45 Days of Treatment (Time frame: 45\u00b17 days)",
+          "verbatim": "Proportion of Patients With First Complete Closure of the EB Target Wound Within 45 Days of Treatment (Time frame: 45±7 days)",
           "rank": "primary",
           "position": 1,
           "measure_type": "other",
@@ -285,7 +328,7 @@
           "subgroup_labels": [],
           "study_period": null,
           "event_type": null,
-          "time_frame": "45\u00b17 days"
+          "time_frame": "45±7 days"
         }
       ],
       "source_type": "ctgov_api",
@@ -396,7 +439,7 @@
           "time_frame": null
         },
         {
-          "verbatim": "Change From Baseline (DBP D0) in Itching Using the 'Itch Man Scale' in Patients \u2265 4 Years and up to 13 Years of Age Before Wound Dressing Changes at D90 or EDBP",
+          "verbatim": "Change From Baseline (DBP D0) in Itching Using the 'Itch Man Scale' in Patients ≥ 4 Years and up to 13 Years of Age Before Wound Dressing Changes at D90 or EDBP",
           "rank": "secondary",
           "position": 6,
           "measure_type": "change_from_baseline",
@@ -415,7 +458,7 @@
           "time_frame": null
         },
         {
-          "verbatim": "Change From Baseline (DBP D0) in Itching Using the 'Leuven Itch Scale' in Patients \u2265 14 Years of Age Before Wound Dressing Changes at D90 or End of Double Blind Phase (EDBP)",
+          "verbatim": "Change From Baseline (DBP D0) in Itching Using the 'Leuven Itch Scale' in Patients ≥ 14 Years of Age Before Wound Dressing Changes at D90 or End of Double Blind Phase (EDBP)",
           "rank": "secondary",
           "position": 7,
           "measure_type": "change_from_baseline",
@@ -442,13 +485,97 @@
       "confidence": 1.0
     },
     "multiplicity_control": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "procedure": "serial_gatekeeping",
+        "familywise_error_controlled": true,
+        "alpha": 0.05,
+        "alpha_sided": 2,
+        "alpha_per_dose": null,
+        "co_primary_endpoints": [
+          {
+            "label": "Proportion of patients with first complete closure of the EB target wound within 45±7 days",
+            "scale": "Wound Closure",
+            "responder_criteria": [],
+            "timepoint_week": null,
+            "alpha": 0.05,
+            "step": 1
+          }
+        ],
+        "testing_sequence": [
+          {
+            "label": "Key secondary 1: Time to first complete closure of the EB target wound until EDBP (D90±7)",
+            "scale": null,
+            "responder_criteria": [],
+            "timepoint_week": null,
+            "alpha": 0.05,
+            "step": 2
+          },
+          {
+            "label": "Key secondary 2: Proportion of patients with first complete closure of the EB target wound within 90±7 days",
+            "scale": "Wound Closure",
+            "responder_criteria": [],
+            "timepoint_week": null,
+            "alpha": 0.05,
+            "step": 3
+          },
+          {
+            "label": "Key secondary 3: Incidence of wound infection between baseline and D90±7",
+            "scale": null,
+            "responder_criteria": [],
+            "timepoint_week": null,
+            "alpha": 0.05,
+            "step": 4
+          },
+          {
+            "label": "Key secondary 4: Maximum severity of target wound infection between baseline and D90±7",
+            "scale": null,
+            "responder_criteria": [],
+            "timepoint_week": null,
+            "alpha": 0.05,
+            "step": 5
+          },
+          {
+            "label": "Key secondary 5: Change from baseline in total body wound burden (EBDASI Section I overall score) at D90±7",
+            "scale": "EBDASI",
+            "responder_criteria": [],
+            "timepoint_week": null,
+            "alpha": 0.05,
+            "step": 6
+          },
+          {
+            "label": "Key secondary 6: Change from baseline in itching (Itch Man Scale and Leuven Itch Scale, tested separately) at D90±7",
+            "scale": "Itch Man Scale / Leuven Itch Scale",
+            "responder_criteria": [],
+            "timepoint_week": null,
+            "alpha": 0.05,
+            "step": 7
+          }
+        ],
+        "alpha_split": [],
+        "alpha_recycling": false,
+        "doses_compared": [
+          "Oleogel-S10"
+        ],
+        "dose_comparison_order": [],
+        "branching_on": null,
+        "regulatory_variants": [],
+        "rescue_counted_as_nonresponder": null,
+        "active_comparator_excluded_from_hierarchy": null,
+        "background_tcs": false,
+        "method_citations": [
+          "Cui, Hung, Wang (CHW) weighted test-statistic for sample size re-estimation"
+        ],
+        "finalized_in_sap": true,
+        "same_design_as": [],
+        "gatekeeping_structure": true,
+        "further_endpoints_through_week": null
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/80/NCT03068780/SAP_001.pdf",
+      "source_excerpt": "7.6 Level of Significance, Multiple Comparisons and Multiplicity: The overall level of significance for the primary endpoint analysis is 0.05 (two-sided). At the final analysis, the primary endpoint is tested at the 5% significance level. If the primary analysis is statistically significant, the confirmatory testing approach continues hierarchically with statistical testing of the key secondary endpoints at the 5% significance level (see Section 9.3 for more details). The Cui, Hung, Wang (CHW) weighted test-statistic for sample size re-estimation does not require an adjustment of the significance level as the IA is for sample size re-estimation only and does not allow for early stopping due to early efficacy. All further analyses are considered as non-confirmatory and descriptive only.",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.7
     }
   },
   "timing_ops": {
@@ -489,22 +616,131 @@
       "confidence": 1.0
     },
     "study_schedule": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "screening_days": null,
+        "screening_washout": null,
+        "periods": [
+          {
+            "name": "screening",
+            "start_week": null,
+            "end_week": 0,
+            "duration_weeks": null,
+            "blinding": null,
+            "background_tcs": null
+          },
+          {
+            "name": "double_blind_treatment",
+            "start_week": 0,
+            "end_week": 13,
+            "duration_weeks": 13,
+            "blinding": "double_blind",
+            "background_tcs": null
+          },
+          {
+            "name": "long_term_extension",
+            "start_week": 13,
+            "end_week": 117,
+            "duration_weeks": 104,
+            "blinding": "open_label",
+            "background_tcs": null
+          }
+        ],
+        "dosing_interval": "at_least_every_4_days",
+        "visit_cadence": null,
+        "visit_cadence_until_week": null,
+        "visit_weeks": null,
+        "visit_days": [
+          7,
+          14,
+          30,
+          45,
+          60,
+          90
+        ],
+        "phone_contact_weeks": null,
+        "primary_endpoint_week": null,
+        "end_of_treatment_week": 13,
+        "end_of_study_week": 117,
+        "total_duration_weeks": 117,
+        "follow_up_weeks": null,
+        "follow_up_days": null,
+        "follow_up_visit_week": null,
+        "long_term_extension": true,
+        "extension_end_week": 117,
+        "extension_visit_interval_weeks": null,
+        "extension_study_id": null,
+        "rerandomization_week": null,
+        "maintenance_arms": null,
+        "maintenance_response_check_weeks": null,
+        "last_injection_week": null,
+        "key_secondary_weeks": null,
+        "follow_up_visit_interval_weeks": null,
+        "end_of_treatment_weeks_after_last_dose": null,
+        "background_tcs_from_day": null,
+        "primary_endpoint_refs": [],
+        "double_dummy_arms": [],
+        "active_comparator": null,
+        "boilerplate_reused_from": [],
+        "conflicts_with_trial": null,
+        "full_visit_table_available": true,
+        "source_inconsistency": "The protocol/SAP express all timing in study DAYS, not weeks: primary efficacy endpoint at D45±7 (~week 6.4), End of Double-Blind Phase (EDBP) at D90±7 (~week 12.9, rounded here to week 13), then an open-label follow-up phase to M3/M12/M24 (~24 months, rounded here to week 117 total). primary_endpoint_week is left null rather than force a rounded value since the schema's week-granularity does not cleanly represent a D45 endpoint; see visit_days for the exact day-based schedule."
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/80/NCT03068780/Prot_000.pdf",
+      "source_excerpt": "9 VISIT SCHEDULE ... D0 ... blinded evaluation of photographs taken at D7±2, D14±5, D30±7, D45±7, D60±7, and D90±7 ... Visit 7a (Site Visit at D90±7): End of Double-blind Phase/Premature [Discontinuation]. ... [SAP] The primary efficacy endpoint of the DBP is: Proportion of patients with first complete closure of the EB target wound ... within 45±7 days of treatment. ... 24-month Open-label Follow-up of Oleogel-S10 in Patients with Inherited Epidermolysis Bullosa.",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.6
     },
     "rescue_therapy": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "permitted": null,
+        "trigger": null,
+        "earliest_week": null,
+        "prohibited_through_week": null,
+        "trigger_rules": [],
+        "flare_definition": [],
+        "first_step": null,
+        "topical_min_days_before_systemic": null,
+        "topical_rescue_requires_study_drug_discontinuation": null,
+        "systemic_rescue_requires_study_drug_discontinuation": null,
+        "resume_after_systemic_rescue_half_lives": null,
+        "resume_after_phototherapy_months": null,
+        "rescued_counted_as_nonresponder": null,
+        "rescued_counted_as_treatment_failure": null,
+        "continue_visits_after_discontinuation": null,
+        "continue_visits_through_week": null,
+        "topical_rescue_not_counted_after_week": null,
+        "topical_agents": [
+          {
+            "name": "Systemic antibiotics for treatment of EB target wound infections (permitted at any time, not a formal rescue provision)",
+            "strength_pct": null,
+            "form": null,
+            "potency": null
+          }
+        ],
+        "topical_potency_classes": [],
+        "tci_reserved_areas": [],
+        "systemic_agents": [
+          "Systemic antibiotics for target wound infection"
+        ],
+        "oral_corticosteroid_limit": null,
+        "rescue_period": null,
+        "escape_arm_washout_half_lives": null,
+        "maintenance_period_rule": null,
+        "permitted_concomitant": [],
+        "recorded_in_ecrf": true,
+        "applies_to_period": "double_blind_treatment",
+        "long_term_extension_eligible_after_rescue": null,
+        "topical_agent_class": null,
+        "rationale": "No formal rescue-medication protocol for treatment failure (non-healing wound) is described; patients simply continue on randomized study medication/vehicle through the DBP regardless of wound healing progress. The only medication explicitly permitted specifically to address a clinical event (wound infection) is systemic antibiotics for target-wound infection, which is treated as concomitant medication, not a rescue provision changing study-drug status. Administration of non-permitted concomitant medication is instead listed as a criterion for withdrawal/discontinuation."
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/80/NCT03068780/Prot_000.pdf",
+      "source_excerpt": "7.5.1 Permitted Concomitant Medication: ... Systemic antibiotics except for treatment of EB target wound (and other wounds matching target wound criteria) infections [is listed under non-permitted, i.e. antibiotics FOR target-wound infection are the one systemic-antibiotic exception permitted]. ... Administration of non-permitted concomitant medication(s) [is a withdrawal/discontinuation criterion].",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.5
     }
   },
   "adverse_events": {

@@ -2741,13 +2741,47 @@
       "confidence": 0.75
     },
     "rescue_therapy": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "permitted": false,
+        "trigger": "prohibited",
+        "earliest_week": null,
+        "prohibited_through_week": null,
+        "trigger_rules": [],
+        "flare_definition": [],
+        "first_step": null,
+        "topical_min_days_before_systemic": null,
+        "topical_rescue_requires_study_drug_discontinuation": null,
+        "systemic_rescue_requires_study_drug_discontinuation": null,
+        "resume_after_systemic_rescue_half_lives": null,
+        "resume_after_phototherapy_months": null,
+        "rescued_counted_as_nonresponder": true,
+        "rescued_counted_as_treatment_failure": null,
+        "continue_visits_after_discontinuation": null,
+        "continue_visits_through_week": null,
+        "topical_rescue_not_counted_after_week": null,
+        "topical_agents": [],
+        "topical_potency_classes": [],
+        "tci_reserved_areas": [],
+        "systemic_agents": [],
+        "oral_corticosteroid_limit": null,
+        "rescue_period": null,
+        "escape_arm_washout_half_lives": null,
+        "maintenance_period_rule": null,
+        "permitted_concomitant": [
+          "oral antihistamines"
+        ],
+        "recorded_in_ecrf": true,
+        "applies_to_period": null,
+        "long_term_extension_eligible_after_rescue": null,
+        "topical_agent_class": null,
+        "rationale": "Protocol design is a strict monotherapy trial (PF-04965842 vs placebo); no sanctioned rescue regimen is offered, and any concomitant AD treatment is a prohibited protocol deviation rather than a permitted escape option."
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/60/NCT03349060/Prot_001.pdf",
+      "source_excerpt": "Section 5.8.2, Prohibited Medications and Treatments: \"All medications and treatments that could affect atopic dermatitis must be discontinued except oral antihistamines.\" Cross-referenced against the Statistical Analysis Plan (SAP_000.pdf), Section 5.3.1 Binary Endpoints: \"for subjects who drop out for any reason or require a rescue medication, any missing data will be defined as ‘non-responsive’ from that point on at all subsequent visits.\"",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.6
     }
   },
   "adverse_events": {

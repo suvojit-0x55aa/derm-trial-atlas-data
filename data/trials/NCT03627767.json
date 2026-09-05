@@ -361,13 +361,48 @@
       "confidence": 1.0
     },
     "background_therapy": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "regimen_type": "monotherapy",
+        "background_agent_class": null,
+        "tcs_regimen": null,
+        "step_down_rule": null,
+        "recommended_agents": [],
+        "emollient_required": null,
+        "emollient_frequency": null,
+        "prohibited_concomitant": [
+          "any medicated topical AD therapy (any topical product containing an active pharmaceutical ingredient indicated for AD, OTC or prescription) outside the rescue period",
+          "prior JAK inhibitor treatment",
+          "herbal medications with unknown properties or known beneficial effects for AD (discontinue >=4 weeks before first dose)",
+          "prolonged UV light exposure, tanning booths, sun lamps",
+          "any other investigational drugs or treatments"
+        ],
+        "permitted_concomitant": [
+          "oral antihistamines",
+          "topical non-medicated emollient",
+          "corticosteroid inhalers and intranasal sprays for stable asthma/allergic rhinitis",
+          "ophthalmic corticosteroids for stable rhinoconjunctivitis",
+          "low-dose acetylsalicylic acid (<=100mg QD) for cardiovascular prophylaxis",
+          "acetaminophen/paracetamol intermittently (not exceeding 1g/day)",
+          "standard-potency vitamin/mineral supplements",
+          "other medically necessary medications for concomitant medical disorders, provided not otherwise prohibited"
+        ],
+        "applies_to_rerandomized_maintenance": true,
+        "sponsor_trial_ids": [
+          "B7451014",
+          "JADE REGIMEN"
+        ],
+        "study_drug_doses_mg": [
+          100,
+          200
+        ],
+        "population_note": "This is a strict monotherapy design identical in wording to sister trial NCT03349060 (JADE MONO-1, same Section 5.9 text): 'All medications and treatments that could affect atopic dermatitis must be discontinued except oral antihistamines.' Medicated topical AD therapy is explicitly permitted ONLY during the open-label rescue period for flaring subjects (see rescue_therapy, already extracted), not during the open-label induction run-in or double-blind maintenance periods."
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/67/NCT03627767/Prot_000.pdf",
+      "source_excerpt": "Section 5.9.2 Prohibited Medications and Treatments: \"All medications and treatments that could affect atopic dermatitis must be discontinued except oral antihistamines.\" Section 5.9: \"Medicated topical therapies [i.e., a topical product that contains an active pharmaceutical ingredient indicated for the treatment of AD... are only permitted in this trial during the rescue period.\" Section 5.9.1 Permitted Concomitant Medications lists oral antihistamines, topical non-medicated emollient, corticosteroid inhalers/intranasal sprays, ophthalmic corticosteroids, low-dose aspirin, intermittent acetaminophen, and standard-potency vitamin/mineral supplements.",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.65
     }
   },
   "endpoints": {
@@ -1898,13 +1933,95 @@
       "confidence": 1.0
     },
     "study_schedule": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "screening_days": 28,
+        "screening_washout": true,
+        "periods": [
+          {
+            "name": "screening",
+            "start_week": null,
+            "end_week": 0,
+            "duration_weeks": 4,
+            "blinding": null,
+            "background_tcs": null
+          },
+          {
+            "name": "induction_treatment",
+            "start_week": 0,
+            "end_week": 12,
+            "duration_weeks": 12,
+            "blinding": "open_label",
+            "background_tcs": null
+          },
+          {
+            "name": "double_blind_treatment",
+            "start_week": 12,
+            "end_week": 52,
+            "duration_weeks": 40,
+            "blinding": "double_blind",
+            "background_tcs": null
+          },
+          {
+            "name": "follow_up",
+            "start_week": 52,
+            "end_week": null,
+            "duration_weeks": 4,
+            "blinding": null,
+            "background_tcs": null
+          }
+        ],
+        "dosing_interval": "once daily (QD)",
+        "visit_cadence": null,
+        "visit_cadence_until_week": null,
+        "visit_weeks": [
+          0,
+          4,
+          12,
+          52
+        ],
+        "visit_days": null,
+        "phone_contact_weeks": null,
+        "primary_endpoint_week": null,
+        "end_of_treatment_week": 52,
+        "end_of_study_week": null,
+        "total_duration_weeks": 52,
+        "follow_up_weeks": 4,
+        "follow_up_days": null,
+        "follow_up_visit_week": null,
+        "long_term_extension": true,
+        "extension_end_week": null,
+        "extension_visit_interval_weeks": null,
+        "extension_study_id": "B7451015",
+        "rerandomization_week": 12,
+        "maintenance_arms": [
+          "PF-04965842 200mg QD",
+          "PF-04965842 100mg QD",
+          "placebo"
+        ],
+        "maintenance_response_check_weeks": [
+          12
+        ],
+        "last_injection_week": null,
+        "key_secondary_weeks": null,
+        "follow_up_visit_interval_weeks": null,
+        "end_of_treatment_weeks_after_last_dose": null,
+        "background_tcs_from_day": null,
+        "primary_endpoint_refs": [],
+        "double_dummy_arms": [],
+        "active_comparator": null,
+        "boilerplate_reused_from": [
+          "NCT03349060"
+        ],
+        "conflicts_with_trial": null,
+        "full_visit_table_available": true,
+        "source_inconsistency": "Maximum study duration (if a subject flares on the last day of maintenance treatment and enters the 12-week rescue period) extends to up to 64 weeks (52 + 12), or 68 weeks including the +4-week untreated follow-up for subjects not entering the LTE study; the periods list above reflects the standard non-flaring 52-week (+4-week follow-up) pathway."
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/67/NCT03627767/SAP_001.pdf",
+      "source_excerpt": "SAP Section 2.2 Study Design: \"This is a randomized, responder-enriched, double-blind, placebo-controlled, Phase 3 withdrawal trial... The trial consists of an open-label run-in period to determine responder status to an initial induction treatment with 200 mg PF-04965842 QD, a randomized, placebo-controlled, double-blinded PF-04965842 maintenance treatment period, and a 4-week untreated follow-up safety period... Responders at the end of the 12-week open-label run-in period enter the 40 week, double-blind, maintenance treatment period in which they are randomized 1:1:1 into either PF-04965842 200 mg QD, PF-04965842 100 mg QD or placebo... The total study duration if a subject does not flare is 52 weeks (12 weeks open-label treatment + 40 weeks blinded treatment). The maximum study duration is up to 64 weeks.\"",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.7
     },
     "rescue_therapy": {
       "value": {

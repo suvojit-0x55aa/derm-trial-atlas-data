@@ -749,16 +749,20 @@ cycle (captain instruction 2026-09-05) did close their real,
 non-paywalled `molecule.mechanism_of_action`/`molecule.dosing_regimen`
 (openFDA label + CT.gov intervention text) and most of
 `population.severity_criteria` (CT.gov eligibility text) gaps to near-zero
-without needing paywalled sources — see the Fill status table below.
-`needs_extraction` gaps in `design.background_therapy`,
-`endpoints.multiplicity_control`, `timing_ops.rescue_therapy`, and
-`timing_ops.study_schedule` for the newer indications remain a real,
-un-worked backlog: roughly half of the ~109 trials missing at least one of
-these 4 fields have a Study Protocol/SAP document actually posted on
-CT.gov (confirmed live), so real extraction is possible there, but it needs
-a per-trial PDF read the way the original AD program's
-`RESCUE_RULES`/`MULTIPLICITY_RULES` dicts were built — not yet attempted
-for these indications, not a pipeline limitation.
+without needing paywalled sources — see the Fill status table below. A
+second deep-extraction cycle (same captain instruction, continued
+2026-09-05) then read the real Study Protocol/SAP PDF posted on CT.gov's
+`documentSection` for every one of the 61 non-AD trials that had one
+(downloaded via the CDN URL pattern documented in AGENTS.md,
+`pdftotext -layout` to convert), and extracted whatever
+`design.background_therapy`/`timing_ops.rescue_therapy`/
+`timing_ops.study_schedule`/`endpoints.multiplicity_control` content that
+real text actually supported — closing 53-64 more trials per field (see the
+Fill status table). The remaining gaps split into two real categories: a
+trial with no Study Protocol/SAP document posted on CT.gov at all (roughly
+half of the corpus), and a trial whose real posted text genuinely states no
+rescue-medication concept or no formal multiplicity procedure applies (a
+correct finding, not a miss) — both confirmed per-trial, not assumed.
 
 ### Fill status (all 127 trials, 39 fields each — 4953 sourced values)
 
@@ -779,13 +783,13 @@ every count below recomputed from `sources.csv` this cycle):
 
 | Field | Filled | Gap reason |
 |---|---|---|
-| `molecule.mechanism_of_action` | 127/127 | fully filled for the deep-extraction cycle's trials plus every cycle-18+ new trial's own full deep extraction — real openFDA structured label text for every drug (a few drugs needed the approval-package label PDF fallback since they have no `label.json` entry at all); recompute after merge |
-| `molecule.dosing_regimen` | 126/127 | fully filled for the deep-extraction cycle's trials plus every cycle-18+ new trial's own full deep extraction — real CT.gov intervention description text, matched to each trial's own drug by generic name or known development/compound code; recompute after merge |
-| `population.severity_criteria` | 109/127 | real CT.gov eligibility-criteria text now covers PASI/sPGA/ISGA/S-IGA/B-IGA/PGA (psoriasis family), Hurley Stage + AN Count (HS), SIRS (impetigo), HDSS/ASDD (hyperhidrosis), SALT (AA), BPDAI (bullous pemphigoid), CDASI (dermatomyositis), IGA (Difamilast), and lesion-count ranges (acne/rosacea/molluscum/AK) in addition to the original EASI/IGA/BSA (AD); the remaining trials genuinely state no quantitative baseline threshold in their CT.gov text, or their real number uses a unit the current schema has no metric for (percent-of-nail-area, wound size in cm²) |
-| `design.background_therapy` | 21/127 | curated per-trial excerpts exist only for the original AD program plus deep-extracted new trials (cycle 18+) |
-| `endpoints.multiplicity_control` | 17/127 | same — curated only for the original AD program plus deep-extracted new trials |
-| `timing_ops.study_schedule` | 19/127 | full per-visit schedule lives only in multi-page PDF tables not reliably machine-extractable; curated cadence exists only for the original AD program plus deep-extracted new trials |
-| `timing_ops.rescue_therapy` | 18/127 | curated only for the original AD program plus deep-extracted new trials |
+| `molecule.mechanism_of_action` | 127/127 | fully filled — real openFDA structured label text for every drug (a few drugs needed the approval-package label PDF fallback since they have no `label.json` entry at all) |
+| `molecule.dosing_regimen` | 126/127 | real CT.gov intervention description text, matched to each trial's own drug by generic name or known development/compound code, for every trial except one whose intervention text doesn't state a regimen |
+| `population.severity_criteria` | 114/127 | real CT.gov eligibility-criteria text now covers PASI/sPGA/ISGA/S-IGA/B-IGA/PGA (psoriasis family), Hurley Stage + AN Count (HS), SIRS (impetigo), HDSS/ASDD (hyperhidrosis), SALT (AA), BPDAI (bullous pemphigoid), GPPGA (GPP), CDASI (dermatomyositis), and lesion-count ranges (acne/rosacea/molluscum/AK) in addition to the original EASI/IGA/BSA (AD); the remaining trials genuinely state no quantitative baseline threshold in their CT.gov text, or their real number uses a unit the current schema has no metric for (percent-of-nail-area, wound size in cm²) |
+| `design.background_therapy` | 78/127 | real protocol/SAP PDF text (CT.gov `documentSection`, including a scanned Protocol Summary OCR'd with tesseract) covers every indication with a posted Study Protocol/SAP; the remaining gap trials have no protocol/SAP document posted on CT.gov at all, so real extraction isn't possible without a different source |
+| `endpoints.multiplicity_control` | 75/127 | same PDF-extraction pass closed the real testing-hierarchy/alpha-control text it could, plus a cycle-3 re-read (wider keyword net, one scanned SAP OCR'd with tesseract) that found real serial-gatekeeping/fixed-sequence/gatekeeping-with-Holm procedures the first pass's narrower keyword search missed; remaining gaps are genuine — either no posted document, or the document states no formal multiplicity procedure was used |
+| `timing_ops.study_schedule` | 78/127 | same pass closed the real screening/treatment/follow-up period breakdown from every posted protocol; remaining gaps have no protocol/SAP document posted |
+| `timing_ops.rescue_therapy` | 62/127 | same pass closed the real rescue-medication rules it could (including trials whose real finding is "rescue explicitly prohibited"), plus one partial fill from CT.gov eligibility-criteria text alone (no posted protocol) confirming rescue therapy is permitted without stating its composition; remaining gaps are a mix of no-posted-document trials and trials whose protocol genuinely states no rescue-medication concept applies (e.g. simple 8-week monotherapy-vs-vehicle designs, or an "escape arm" that a later amendment removed) |
 | `adverse_events.serious_adverse_event_rate` | 125/127 | CT.gov posts `eventGroups[]` without per-arm serious counts for a few trials (a genuine gap in what was posted, not a computable zero) |
 | `adverse_events.death_rate` | 94/127 | some trials report zero deaths as a genuine null-count edge case in CT.gov's `resultsSection`, not a missing value |
 | `adverse_events.discontinuation_due_to_ae_rate` | 95/127 | CT.gov `resultsSection` gap for several trials whose `participantFlowModule` posts milestones only, no `dropWithdraws` section |
@@ -794,7 +798,7 @@ every count below recomputed from `sources.csv` this cycle):
 | `exclusivity.orange_book` | 73/127 | only the NDA small-molecule drugs' trials get this field (BLA biologics use `purple_book` instead) |
 | `exclusivity.purple_book` | 54/127 | only the BLA biologic drugs' trials get this field (NDA small molecules use `orange_book` instead) |
 
-**4290 of 4953 sourced values are filled with real data (86.6%); 663
+**4513 of 4953 sourced values are filled with real data (91.1%); 440
 remain `needs_extraction`** — see `sources.csv` for the per-trial,
 per-field breakdown. Every non-`ctgov_api` fill was produced by
 LLM-assisted reading of a real, cited source (CT.gov free text, a
@@ -833,7 +837,7 @@ owns the pipeline this data is exported from.
 
 - The human QA pass on top of the LLM-assisted extraction (captain +
   Garvita review of every non-`ctgov_api` value).
-- The 837 fields that remain `needs_extraction` (see the fill-status table
+- The 440 fields that remain `needs_extraction` (see the fill-status table
   above) — a mix of genuinely unreachable sources (paywalled papers behind
   Cloudflare, PDF tables that don't extract reliably) and real, un-worked
   backlog (the curated per-trial prose tables — background therapy,

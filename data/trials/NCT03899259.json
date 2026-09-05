@@ -192,7 +192,7 @@
       },
       "source_type": "ctgov_text_extraction",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03899259",
-      "source_excerpt": "Current AA episode of more than 6 months' duration and hair loss encompassing \u226550% of the scalp, as measured by SALT (AA-IGA of 3 or 4) at screening and baseline.",
+      "source_excerpt": "Current AA episode of more than 6 months' duration and hair loss encompassing ≥50% of the scalp, as measured by SALT (AA-IGA of 3 or 4) at screening and baseline.",
       "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 0.75
@@ -245,20 +245,58 @@
       "confidence": 1.0
     },
     "background_therapy": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "regimen_type": "monotherapy",
+        "background_agent_class": null,
+        "tcs_regimen": null,
+        "step_down_rule": null,
+        "recommended_agents": [],
+        "emollient_required": null,
+        "emollient_frequency": null,
+        "prohibited_concomitant": [
+          "Any investigational or commercial topical, intralesional, or systemic therapy (other than those explicitly permitted) or phototherapy to treat AA",
+          "Live vaccines (BCG, herpes zoster) - requires temporary IP interruption; permanent discontinuation if BCG given prior to Week 36",
+          "Probenecid - requires temporary IP interruption until discontinued",
+          "Full body UV phototherapy - requires temporary IP interruption",
+          "Corticosteroids (systemic, intralesional, or topical on the scalp/eyebrows/eyelids) for AA treatment - requires permanent IP discontinuation",
+          "Topical JAK inhibitors applied to scalp, eyebrows, eyelids - requires permanent IP discontinuation",
+          "Other oral JAK inhibitors (e.g. tofacitinib, ruxolitinib) - requires permanent IP discontinuation",
+          "Any systemic immunosuppressive/immunomodulating treatment (e.g. cyclosporine, mycophenolate mofetil, IFN-gamma, azathioprine, methotrexate, dimethyl fumarate derivatives, hydroxychloroquine, biologics) - requires permanent IP discontinuation"
+        ],
+        "permitted_concomitant": [
+          "Topical corticosteroids except on the scalp, eyebrows, and eyelids",
+          "Topical calcineurin inhibitors except on the scalp, eyebrows, and eyelids",
+          "Intranasal, ophthalmic, or inhaled steroid use",
+          "Up to 2 intra-articular or soft tissue corticosteroid injections before the Week 36 primary endpoint (unrestricted after)",
+          "Non-live vaccinations",
+          "Bimatoprost ophthalmic solution (if stable dose for 8 weeks prior to randomization)",
+          "Finasteride/other 5-alpha-reductase inhibitors, or oral/topical minoxidil (if stable dose for 12 months prior to randomization)",
+          "HMG-CoA reductase inhibitors (statins)",
+          "Concomitant therapies for other medical conditions (e.g. diabetes, hypertension)"
+        ],
+        "applies_to_rerandomized_maintenance": null,
+        "sponsor_trial_ids": [
+          "I4V-MC-JAIR (BRAVE-AA1)"
+        ],
+        "study_drug_doses_mg": [
+          2,
+          4
+        ],
+        "population_note": "Section 7.7.2: 'Any investigational or commercial topical, intralesional, or systemic therapies (except those listed in Section 7.7.1), or phototherapy to treat AA are not allowed during the trial.' Study drug (baricitinib) is the sole AA treatment; regimen_type set to monotherapy."
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/59/NCT03899259/Prot_000.pdf",
+      "source_excerpt": "Section 7.7.1 Permitted Medications and Procedures: 'The following medications are permitted during the study: Topical corticosteroids except on the scalp, eyebrows, and eyelids. Topical calcineurin inhibitors except on the scalp, eyebrows, and eyelids...' Section 7.7.2 Prohibited Medications and Procedures: 'Any investigational or commercial topical, intralesional, or systemic therapies (except those listed in Section 7.7.1), or phototherapy to treat AA are not allowed during the trial... Corticosteroids (systemic, intralesional or topical on the scalp, eyebrows, and eyelids) for the treatment of AA [and] Topical JAK inhibitors applied to the scalp, eyebrows, and eyelids... requiring permanent discontinuation of investigational product.'",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.65
     }
   },
   "endpoints": {
     "primary_endpoints": {
       "value": [
         {
-          "verbatim": "Percentage of Participants Achieving Severity of Alopecia Tool (SALT) \u2264 20 (Time frame: Week 36)",
+          "verbatim": "Percentage of Participants Achieving Severity of Alopecia Tool (SALT) ≤ 20 (Time frame: Week 36)",
           "rank": "primary",
           "position": 1,
           "measure_type": "responder_rate",
@@ -337,7 +375,7 @@
           "time_frame": null
         },
         {
-          "verbatim": "Percentage of Participants With Patient-Reported Outcome (PRO) for Scalp Hair Assessment Score of 0 or 1 With a \u22652-point Improvement From Baseline Among Participants With a Score of \u22653 at Baseline",
+          "verbatim": "Percentage of Participants With Patient-Reported Outcome (PRO) for Scalp Hair Assessment Score of 0 or 1 With a ≥2-point Improvement From Baseline Among Participants With a Score of ≥3 at Baseline",
           "rank": "secondary",
           "position": 3,
           "measure_type": "responder_rate",
@@ -372,7 +410,7 @@
           "time_frame": null
         },
         {
-          "verbatim": "Time for Participants to Achieve SALT \u2264 20 at Week 36.",
+          "verbatim": "Time for Participants to Achieve SALT ≤ 20 at Week 36.",
           "rank": "secondary",
           "position": 4,
           "measure_type": "absolute_value",
@@ -397,7 +435,7 @@
           "time_frame": null
         },
         {
-          "verbatim": "Percentage of Participants Achieving Clinician-Reported Outcome (ClinRO) Measure for Eyebrow (EB) Hair Loss 0 or 1 With \u22652-point Improvement From Baseline (Among Participants With ClinRO Measure for EB Hair Loss \u22652 at Baseline)",
+          "verbatim": "Percentage of Participants Achieving Clinician-Reported Outcome (ClinRO) Measure for Eyebrow (EB) Hair Loss 0 or 1 With ≥2-point Improvement From Baseline (Among Participants With ClinRO Measure for EB Hair Loss ≥2 at Baseline)",
           "rank": "secondary",
           "position": 5,
           "measure_type": "responder_rate",
@@ -416,7 +454,7 @@
           "time_frame": null
         },
         {
-          "verbatim": "Percentage of Participants Achieving ClinRO Measure for Eyelash (EL) Hair Loss 0 or 1 With \u22652-point Improvement From Baseline (Among Participants With ClinRO Measure for EL Hair Loss \u22652 at Baseline)",
+          "verbatim": "Percentage of Participants Achieving ClinRO Measure for Eyelash (EL) Hair Loss 0 or 1 With ≥2-point Improvement From Baseline (Among Participants With ClinRO Measure for EL Hair Loss ≥2 at Baseline)",
           "rank": "secondary",
           "position": 6,
           "measure_type": "responder_rate",
@@ -435,7 +473,7 @@
           "time_frame": null
         },
         {
-          "verbatim": "Percentage of Participants Achieving Patient-Reported Outcome (PRO) Measure for EB 0 or 1 With \u22652-point Improvement From Baseline (Among Participants With PRO Measure for EB \u22652 at Baseline)",
+          "verbatim": "Percentage of Participants Achieving Patient-Reported Outcome (PRO) Measure for EB 0 or 1 With ≥2-point Improvement From Baseline (Among Participants With PRO Measure for EB ≥2 at Baseline)",
           "rank": "secondary",
           "position": 7,
           "measure_type": "responder_rate",
@@ -454,7 +492,7 @@
           "time_frame": null
         },
         {
-          "verbatim": "Percentage of Participants Achieving PRO Measure for EL 0 or 1 With \u22652-point Improvement From Baseline (Among Participants With PRO Measure EL \u22652 at Baseline)",
+          "verbatim": "Percentage of Participants Achieving PRO Measure for EL 0 or 1 With ≥2-point Improvement From Baseline (Among Participants With PRO Measure EL ≥2 at Baseline)",
           "rank": "secondary",
           "position": 8,
           "measure_type": "responder_rate",
@@ -600,13 +638,106 @@
       "confidence": 1.0
     },
     "multiplicity_control": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "procedure": "graphical",
+        "familywise_error_controlled": true,
+        "alpha": 0.05,
+        "alpha_sided": 2,
+        "alpha_per_dose": null,
+        "co_primary_endpoints": [
+          {
+            "label": "SALT<=20 at Week 36, baricitinib 4-mg vs placebo",
+            "scale": "SALT",
+            "responder_criteria": [],
+            "timepoint_week": 36,
+            "alpha": 0.04,
+            "step": 1
+          },
+          {
+            "label": "SALT<=20 at Week 36, baricitinib 2-mg vs placebo",
+            "scale": "SALT",
+            "responder_criteria": [],
+            "timepoint_week": 36,
+            "alpha": 0.01,
+            "step": 1
+          }
+        ],
+        "testing_sequence": [
+          {
+            "label": "Primary: SALT<=20 at Week 36 (both doses)",
+            "scale": null,
+            "responder_criteria": [],
+            "timepoint_week": null,
+            "alpha": null,
+            "step": null
+          },
+          {
+            "label": "Key secondary Tier 1 (Week 36): PRO Scalp Hair Assessment 0/1 with >=2-pt improvement; SALT<=10; SALT90; ClinRO eyebrow/eyelash hair loss 0/1 with >=2-pt improvement; percent change from baseline in SALT",
+            "scale": null,
+            "responder_criteria": [],
+            "timepoint_week": null,
+            "alpha": null,
+            "step": null
+          },
+          {
+            "label": "Key secondary: SALT<=20 at Week 24",
+            "scale": null,
+            "responder_criteria": [],
+            "timepoint_week": null,
+            "alpha": null,
+            "step": null
+          },
+          {
+            "label": "Key secondary: SALT<=10 at Week 24, SALT50 at Week 12, SALT<=20 at Week 16 (tested sequentially if all endpoints up to SALT<=20 at Week 24 are rejected)",
+            "scale": null,
+            "responder_criteria": [],
+            "timepoint_week": null,
+            "alpha": null,
+            "step": null
+          }
+        ],
+        "alpha_split": [
+          {
+            "group": "Step 1 (primary, per sample-size design assumption)",
+            "n_endpoints": 2,
+            "alpha": 0.05,
+            "method": "graphical (Bretz et al. 2011); initial split 0.04 for 4-mg dose and 0.01 for 2-mg dose per sample size section",
+            "timepoint_week": 36
+          },
+          {
+            "group": "Step 1 (primary, per final SAP Section 6.6 procedure text)",
+            "n_endpoints": 2,
+            "alpha": 0.05,
+            "method": "graphical; 'tested at a 2-sided alpha=0.025 for both 2-mg and 4-mg doses'",
+            "timepoint_week": 36
+          }
+        ],
+        "alpha_recycling": true,
+        "doses_compared": [
+          "baricitinib 2-mg QD",
+          "baricitinib 4-mg QD"
+        ],
+        "dose_comparison_order": [],
+        "branching_on": null,
+        "regulatory_variants": [],
+        "rescue_counted_as_nonresponder": null,
+        "active_comparator_excluded_from_hierarchy": null,
+        "background_tcs": null,
+        "method_citations": [
+          "Bretz F, Posch M, Glimm E, et al. Graphical approaches for multiple comparison procedures (2011)",
+          "Alosh M, Bretz F, Huque M. Advanced multiplicity adjustment methods in clinical trials (2014)"
+        ],
+        "finalized_in_sap": true,
+        "same_design_as": [],
+        "gatekeeping_structure": true,
+        "further_endpoints_through_week": 36
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/59/NCT03899259/SAP_002.pdf",
+      "source_excerpt": "Protocol Section 10.3.1.3: 'Multiplicity adjusted analyses will be performed on the primary and key secondary objectives in order to control the overall family-wise Type I error rate at a 2-sided alpha level of 0.05. The graphical multiple testing procedure described in Bretz et al. (2011) will be used. The graphical approach is a closed testing procedure; hence, it strongly controls the familywise error rate across all endpoints (Alosh et al. 2014).' SAP Section 6.1: '...based on a 2-sided Fisher's exact test within the graphical testing scheme, at an initial significance level of 0.04 for 4-mg dose and 0.01 for 2-mg dose.' SAP Section 6.6, Step 1: 'The primary endpoint SALT <=20 will be first tested at a 2-sided alpha=0.025 for both 2-mg and 4-mg doses. If neither of the null hypotheses is rejected, no further testing is conducted... If at least 1 of null hypotheses is rejected, the testing process continues to Step 2, with the remaining alpha propagated according to the weights on the corresponding edges.'",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.65
     }
   },
   "timing_ops": {
@@ -647,22 +778,175 @@
       "confidence": 1.0
     },
     "study_schedule": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "screening_days": 35,
+        "screening_washout": null,
+        "periods": [
+          {
+            "name": "screening",
+            "start_week": -5,
+            "end_week": 0,
+            "duration_weeks": 5,
+            "blinding": null,
+            "background_tcs": null
+          },
+          {
+            "name": "double_blind_treatment",
+            "start_week": 0,
+            "end_week": 36,
+            "duration_weeks": 36,
+            "blinding": "double_blind",
+            "background_tcs": null
+          },
+          {
+            "name": "long_term_extension",
+            "start_week": 36,
+            "end_week": 104,
+            "duration_weeks": 68,
+            "blinding": "double_blind (randomized withdrawal/downtitration for responders at Week 52)",
+            "background_tcs": null
+          },
+          {
+            "name": "continuation_treatment",
+            "start_week": 104,
+            "end_week": 200,
+            "duration_weeks": 96,
+            "blinding": "open-label bridging extension",
+            "background_tcs": null
+          },
+          {
+            "name": "follow_up",
+            "start_week": 200,
+            "end_week": 204,
+            "duration_weeks": 4,
+            "blinding": null,
+            "background_tcs": null
+          }
+        ],
+        "dosing_interval": "Once daily (QD) oral tablets throughout",
+        "visit_cadence": null,
+        "visit_cadence_until_week": null,
+        "visit_weeks": [
+          16,
+          24,
+          36,
+          52,
+          64,
+          76,
+          104,
+          200
+        ],
+        "visit_days": null,
+        "phone_contact_weeks": null,
+        "primary_endpoint_week": 36,
+        "end_of_treatment_week": 200,
+        "end_of_study_week": 204,
+        "total_duration_weeks": 204,
+        "follow_up_weeks": 4,
+        "follow_up_days": null,
+        "follow_up_visit_week": 204,
+        "long_term_extension": true,
+        "extension_end_week": 200,
+        "extension_visit_interval_weeks": null,
+        "extension_study_id": null,
+        "rerandomization_week": 52,
+        "maintenance_arms": [
+          "baricitinib 4-mg (stay)",
+          "baricitinib 2-mg (downtitration)"
+        ],
+        "maintenance_response_check_weeks": [
+          36,
+          52,
+          76
+        ],
+        "last_injection_week": null,
+        "key_secondary_weeks": [
+          36,
+          24,
+          16
+        ],
+        "follow_up_visit_interval_weeks": null,
+        "end_of_treatment_weeks_after_last_dose": null,
+        "background_tcs_from_day": null,
+        "primary_endpoint_refs": [],
+        "double_dummy_arms": [],
+        "active_comparator": null,
+        "boilerplate_reused_from": [],
+        "conflicts_with_trial": null,
+        "full_visit_table_available": true,
+        "source_inconsistency": null
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/59/NCT03899259/Prot_000.pdf",
+      "source_excerpt": "Study Design: 'The study design includes 5 periods: a 5-week screening period; a 36-week double-blind, placebo-controlled treatment period; a 68-week long-term extension period; a 96-week bridging extension; and a posttreatment follow-up period. Period 1: Screening period (Visit 1) is between 3 and 35 days prior to Visit 2 (Week 0). Period 2: 36-week double-blind, placebo-controlled treatment period is from Week 0 (Baseline; Visit 2) to Week 36 (Visit 8). Period 3: 68-week, long-term extension period with randomized withdrawal (for responders) is from Week 36 (Visit 8) to Week 104 (Visit 18). Period 4: Bridging Extension: from Week 104 (Visit 18) and up to Week 200 (Visit 24)... Period 5: Posttreatment follow-up period; the posttreatment follow-up visit should occur approximately 4 weeks after the last dose of investigational product.' Patients randomized 2:2:3 to placebo, baricitinib 2-mg, or baricitinib 4-mg QD 'for up to 200 weeks.'",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.7
     },
     "rescue_therapy": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "permitted": true,
+        "trigger": "protocol_response_threshold",
+        "earliest_week": 36,
+        "prohibited_through_week": 36,
+        "trigger_rules": [
+          {
+            "from_week": 36,
+            "to_week": 36,
+            "criterion": {
+              "scale": "SALT",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "absolute_score",
+              "comparator": ">",
+              "value": 20,
+              "unit": "score",
+              "scale_min": 0,
+              "scale_max": 100,
+              "assessed_at": [
+                "Week 36"
+              ],
+              "scale_anchors": null
+            },
+            "consecutive_visits": 1
+          }
+        ],
+        "flare_definition": [],
+        "first_step": null,
+        "topical_min_days_before_systemic": null,
+        "topical_rescue_requires_study_drug_discontinuation": null,
+        "systemic_rescue_requires_study_drug_discontinuation": false,
+        "resume_after_systemic_rescue_half_lives": null,
+        "resume_after_phototherapy_months": null,
+        "rescued_counted_as_nonresponder": null,
+        "rescued_counted_as_treatment_failure": null,
+        "continue_visits_after_discontinuation": null,
+        "continue_visits_through_week": null,
+        "topical_rescue_not_counted_after_week": null,
+        "topical_agents": [],
+        "topical_potency_classes": [],
+        "tci_reserved_areas": [],
+        "systemic_agents": [
+          "baricitinib 2-mg QD",
+          "baricitinib 4-mg QD"
+        ],
+        "oral_corticosteroid_limit": null,
+        "rescue_period": null,
+        "escape_arm_washout_half_lives": null,
+        "maintenance_period_rule": null,
+        "permitted_concomitant": [],
+        "recorded_in_ecrf": true,
+        "applies_to_period": "Week 36 onward (double-blind placebo-controlled period ends at Week 36; subsequent rescue/downtitration occurs in the long-term extension period, Weeks 36-104)",
+        "long_term_extension_eligible_after_rescue": true,
+        "topical_agent_class": null,
+        "rationale": "This is a dose-adjustment/rescue design specific to a long-duration JAK-inhibitor AA trial, not a topical/systemic escalation ladder. Core rule (Section 'At Week 36'): 'Patients in the placebo treatment arm who have not achieved a SALT <=20 at Week 36 will be rescued to baricitinib and randomized in a 1:1 ratio to baricitinib 2-mg dose or baricitinib 4-mg dose.' Patients on placebo who achieved SALT<=20 by Week 36 remain on placebo until Week 52; if they experience a >20-point absolute worsening in SALT after Week 52 they are rescued to baricitinib 2-mg. Baricitinib-arm patients (2-mg since baseline) who remain non-responders (SALT>20) at Week 52 are rescued to 4-mg. This rescue/downtitration state machine continues in further detail through Weeks 52 and 76 (see protocol Summary of Study Design), well beyond the primary Week-36 double-blind endpoint window that this schema field is centered on."
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/59/NCT03899259/Prot_000.pdf",
+      "source_excerpt": "Summary of Study Design, 'At Week 36': 'Patients in the placebo treatment arm who have not achieved a SALT <=20 at Week 36 will be rescued to baricitinib and randomized in a 1:1 ratio to baricitinib 2-mg dose or baricitinib 4-mg dose. Patients in the placebo arm who have achieved a SALT <=20 at Week 36 will remain on placebo... until Week 52, even if a relapse is observed between Week 36 and Week 52.' 'At Week 52... Responders who experience a loss of treatment benefit after Week 52 (defined as >20-point absolute worsening in total SALT score)... had remained on placebo since Baseline (Visit 2), will be rescued to baricitinib 2-mg.'",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.65
     }
   },
   "adverse_events": {

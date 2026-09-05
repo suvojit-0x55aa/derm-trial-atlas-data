@@ -342,13 +342,48 @@
       "confidence": 1.0
     },
     "background_therapy": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "regimen_type": "monotherapy",
+        "background_agent_class": null,
+        "tcs_regimen": null,
+        "step_down_rule": null,
+        "recommended_agents": [],
+        "emollient_required": false,
+        "emollient_frequency": "as normally used by the subject, applied to non-treated areas only, not within 12 hours of a study visit",
+        "prohibited_concomitant": [
+          "Etanercept (4-week washout)",
+          "Adalimumab, infliximab (8-week washout)",
+          "All other biologics (12 weeks or 5 half-lives)",
+          "Systemic corticosteroids, retinoids, apremilast, roflumilast, methotrexate, cyclosporine, fumarates, and other systemic immunosuppressants (4-week washout)",
+          "Shampoos containing coal tar, keratolytics including salicylic acid, antifungals, zinc pyrithione, selenium sulfide, or medical devices",
+          "Topical medications used on the scalp for conditions besides psoriasis (e.g. topical minoxidil for androgenetic alopecia)",
+          "Topical anti-psoriasis medications (e.g. topical corticosteroids including corticosteroid shampoos, vitamin D analogs)",
+          "Strong systemic P-450 cytochrome inhibitors (e.g. indinavir, nelfinavir, ritonavir, clarithromycin, itraconazole, ketoconazole, nefazodone, saquinavir, suboxone, telithromycin)",
+          "PUVA or UVB phototherapy",
+          "Investigational drugs",
+          "Sedating antihistamines including OTC products containing sedating antihistamines"
+        ],
+        "permitted_concomitant": [
+          "Non-medicated emollients, moisturizers and sunscreens as normally used, applied to non-treated areas only, not within 12 hours of a study visit",
+          "Non-medicated shampoos",
+          "Eye drop and nasal corticosteroid preparations",
+          "Inhaled corticosteroids if used for a stable condition at a stable dose for >28 days before screening and continued at the same dose throughout the study",
+          "Nonsedating antihistamines (e.g. cetirizine, desloratadine, loratadine) in a stable regimen",
+          "Chronically used medications such as statins and anti-hypertensives"
+        ],
+        "applies_to_rerandomized_maintenance": null,
+        "sponsor_trial_ids": [
+          "ARQ-154-309"
+        ],
+        "study_drug_doses_mg": [],
+        "population_note": "Single active-drug (roflumilast foam 0.3% QD) vs. vehicle foam design; no background/rescue therapy concept, only a prohibited/permitted concomitant medication list (Table 1)."
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/82/NCT05028582/Prot_000.pdf",
+      "source_excerpt": "4.7. Prohibitions and Concomitant Therapy: Prohibited medications and products are detailed in Table 1... Table 1: Excluded Medications and Treatments: Etanercept - 4 weeks; Adalimumab, infliximab - 8 weeks; All other Biologics - 12 weeks or 5 half-lives...; Note 2: Non-medicated emollients, moisturizers and sunscreens will be allowed as used normally by the subjects. These can be applied to non-treated areas as needed and should not be used within 12 hours of a study visit. Note 3: No emollients or moisturizers should be applied on treated areas.",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.7
     }
   },
   "endpoints": {
@@ -830,13 +865,78 @@
       "confidence": 1.0
     },
     "multiplicity_control": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "procedure": "gatekeeping_with_holm",
+        "familywise_error_controlled": true,
+        "alpha": 0.025,
+        "alpha_sided": 2,
+        "alpha_per_dose": null,
+        "co_primary_endpoints": [
+          {
+            "label": "S-IGA Success at Week 8",
+            "scale": "S-IGA",
+            "responder_criteria": [],
+            "timepoint_week": 8,
+            "alpha": 0.025,
+            "step": null
+          },
+          {
+            "label": "B-IGA Success at Week 8",
+            "scale": "B-IGA",
+            "responder_criteria": [],
+            "timepoint_week": 8,
+            "alpha": 0.025,
+            "step": null
+          }
+        ],
+        "testing_sequence": [],
+        "alpha_split": [
+          {
+            "group": "Family 2 (WI-NRS Success Wk8, PASI-75 Wk8, PSD item CFB/=0 items, PSSI-75 Wk8)",
+            "n_endpoints": 7,
+            "alpha": 0.005,
+            "method": "sequential within family, tested first; Fallback Method passes unused alpha to Family 1",
+            "timepoint_week": 8
+          },
+          {
+            "group": "Family 1 (SI-NRS Success Wk8/Wk4/Wk2, SI-NRS CFB Wk1, SI-NRS CFB 72h)",
+            "n_endpoints": 5,
+            "alpha": 0.01,
+            "method": "sequential within family, tested second at 0.01 or 0.015 depending on Family 2 outcome; Fallback Method passes unused alpha to Family 3",
+            "timepoint_week": null
+          },
+          {
+            "group": "Family 3 (S-IGA Clear Wk8, S-IGA Success Wk4/Wk2, CFB PASI Wk2, PSD Total=0 Wk8, SI-NRS CFB Day1)",
+            "n_endpoints": 6,
+            "alpha": 0.01,
+            "method": "Holm's procedure within family, tested third at 0.01, 0.02, or 0.025 depending on Family 1/2 outcomes",
+            "timepoint_week": null
+          }
+        ],
+        "alpha_recycling": true,
+        "doses_compared": [
+          "roflumilast foam 0.3%"
+        ],
+        "dose_comparison_order": [],
+        "branching_on": null,
+        "regulatory_variants": [],
+        "rescue_counted_as_nonresponder": null,
+        "active_comparator_excluded_from_hierarchy": null,
+        "background_tcs": null,
+        "method_citations": [
+          "Fallback Method across families; Holm's procedure within Family 3 (SAP Section 6.1.3)"
+        ],
+        "finalized_in_sap": true,
+        "same_design_as": [],
+        "gatekeeping_structure": true,
+        "further_endpoints_through_week": 8
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/82/NCT05028582/SAP_001.pdf",
+      "source_excerpt": "6.1.3. Multiple Comparisons: Upon demonstration of concurrent statistical significance for S-IGA Success at Week 8 at the 2.5% level, and statistical significance of B-IGA Success at Week 8 at the 2.5% level, the testing scheme described below will be used... The overall alpha level of 0.025 will be split to test 3 families of secondary endpoints, and the Fallback Method will be applied across the families. Family 1 (alpha=0.01 or 0.015)... Family 2 (alpha=0.005)... Family 3 (alpha=0.01 or 0.02 or 0.025)... The Families will be tested in this order: Family 2, Family 1, Family 3. Testing will be sequential within Family 2 and Family 1... Testing within Family 3 will be implemented with Holm's procedure. ... Each co-primary endpoint will be tested with using 2-sided alpha value of 0.025.",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.7
     }
   },
   "timing_ops": {
@@ -877,13 +977,83 @@
       "confidence": 1.0
     },
     "study_schedule": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "screening_days": 28,
+        "screening_washout": true,
+        "periods": [
+          {
+            "name": "screening",
+            "start_week": -4,
+            "end_week": 0,
+            "duration_weeks": 4,
+            "blinding": null,
+            "background_tcs": null
+          },
+          {
+            "name": "double_blind_treatment",
+            "start_week": 0,
+            "end_week": 8,
+            "duration_weeks": 8,
+            "blinding": "double_blind",
+            "background_tcs": null
+          }
+        ],
+        "dosing_interval": "once daily",
+        "visit_cadence": null,
+        "visit_cadence_until_week": null,
+        "visit_weeks": [
+          0,
+          2,
+          4,
+          8
+        ],
+        "visit_days": [
+          1,
+          15,
+          29,
+          57
+        ],
+        "phone_contact_weeks": null,
+        "primary_endpoint_week": 8,
+        "end_of_treatment_week": 8,
+        "end_of_study_week": 8,
+        "total_duration_weeks": 8,
+        "follow_up_weeks": null,
+        "follow_up_days": 30,
+        "follow_up_visit_week": null,
+        "long_term_extension": null,
+        "extension_end_week": null,
+        "extension_visit_interval_weeks": null,
+        "extension_study_id": null,
+        "rerandomization_week": null,
+        "maintenance_arms": null,
+        "maintenance_response_check_weeks": null,
+        "last_injection_week": null,
+        "key_secondary_weeks": [
+          1,
+          2,
+          4,
+          8
+        ],
+        "follow_up_visit_interval_weeks": null,
+        "end_of_treatment_weeks_after_last_dose": null,
+        "background_tcs_from_day": null,
+        "primary_endpoint_refs": [],
+        "double_dummy_arms": [],
+        "active_comparator": null,
+        "boilerplate_reused_from": [
+          "NCT04973228 (ARQ-154-304 STRATUM, same sponsor template)"
+        ],
+        "conflicts_with_trial": null,
+        "full_visit_table_available": true,
+        "source_inconsistency": null
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/82/NCT05028582/Prot_000.pdf",
+      "source_excerpt": "1.3. Schedule of Visits and Assessments: Study Procedure | Screening | Baseline Day 1 | Week 2 Day 15 | Week 4 Day 29 | Week 8 Day 57 -- Visit Window -4 Weeks | | +/-3 Days | +/-5 Days | +/-5 Days. Approximately 420 adolescent and adult subjects with scalp and body psoriasis will be randomized 2:1... 8-Week Treatment Period (Visits 3, 4, & 5). SAEs collected starting after signing of informed consent through 30 days after the last day of the IP application or the end of study (whichever is later).",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.7
     },
     "rescue_therapy": {
       "value": null,

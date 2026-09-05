@@ -102,7 +102,7 @@
       },
       "source_type": "openfda_label",
       "source_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=9e44a793-9940-4ae3-9fe6-0f901afa37e0",
-      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1) -- v1 extracted text: 12.1 Mechanism of Action Remibrutinib is an oral, small molecule kinase inhibitor that inhibits Bruton\u2019s tyrosine kinase (BTK). BTK is an intracellular protein expressed in mast cells, basophils, B cells, macrophages, and thrombocytes. BTK is involved in intracellular signaling via Fc epsilon receptor-1 (Fc\u03b5R1), Fc gamma receptors (Fc\u03b3R), and the B cell antigen receptor (BCR). Remibrutinib also inhibits the BTK-related kinases tec protein tyrosine kinase (TEC) and BMX non-receptor tyrosine kinase (BMX). Remibrutinib inhibits mast cell and basophil degranulation, including release of histamine and other proinflammatory mediators, mediated by pathogenic IgE or IgG directed against the Fc\u03b5R1 or IgE.",
+      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1) -- v1 extracted text: 12.1 Mechanism of Action Remibrutinib is an oral, small molecule kinase inhibitor that inhibits Bruton’s tyrosine kinase (BTK). BTK is an intracellular protein expressed in mast cells, basophils, B cells, macrophages, and thrombocytes. BTK is involved in intracellular signaling via Fc epsilon receptor-1 (FcεR1), Fc gamma receptors (FcγR), and the B cell antigen receptor (BCR). Remibrutinib also inhibits the BTK-related kinases tec protein tyrosine kinase (TEC) and BMX non-receptor tyrosine kinase (BMX). Remibrutinib inhibits mast cell and basophil degranulation, including release of histamine and other proinflammatory mediators, mediated by pathogenic IgE or IgG directed against the FcεR1 or IgE.",
       "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 0.9
@@ -213,7 +213,7 @@
       },
       "source_type": "ctgov_text_extraction",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT05030311",
-      "source_excerpt": "UAS7 score (range 0-42) \u226516, ISS7 score (range 0-21) \u2265 6 and HSS7 score (range 0-21) \u2265 6 during the 7 days prior to randomization (Day 1)",
+      "source_excerpt": "UAS7 score (range 0-42) ≥16, ISS7 score (range 0-21) ≥ 6 and HSS7 score (range 0-21) ≥ 6 during the 7 days prior to randomization (Day 1)",
       "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 0.75
@@ -266,13 +266,49 @@
       "confidence": 1.0
     },
     "background_therapy": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "regimen_type": "standardized_background_topical",
+        "background_agent_class": "H1-antihistamine (second generation)",
+        "tcs_regimen": null,
+        "step_down_rule": null,
+        "recommended_agents": [],
+        "emollient_required": null,
+        "emollient_frequency": null,
+        "prohibited_concomitant": [
+          "Biologics for treatment of CSU including omalizumab and ligelizumab (4 months prior to randomization until end of treatment)",
+          "Routine oral corticosteroids (more than 3 doses over 5 days) except as rescue therapy after Week 12",
+          "i.v./IM/IA corticosteroids",
+          "Leukotriene antagonists (including montelukast and zafirlukast)",
+          "H2-antihistamines",
+          "First generation antihistamines",
+          "Second generation antihistamines other than the participant's defined background and rescue medication",
+          "Other immunosuppressive/immunomodulating medication (e.g. hydroxychloroquine, methotrexate, cyclosporine A, cyclophosphamide, tacrolimus, mycophenolate mofetil)",
+          "Intravenous immunoglobulins or plasmapheresis",
+          "Ultraviolet (UV) therapy",
+          "Any other therapy intended for the treatment of urticaria, including herbal therapies",
+          "Live attenuated vaccines",
+          "Strong inhibitors or moderate/strong inducers of CYP3A4",
+          "Anticoagulant medication (e.g. warfarin, NOACs)",
+          "Anti-platelet medication except low-dose acetylsalicylic acid or clopidogrel monotherapy"
+        ],
+        "permitted_concomitant": [
+          "Oral BCRP substrates with a small safety margin (pitavastatin, rosuvastatin, sulfasalazine, ubrogepant) administered with staggered dosing (2 hours before/after remibrutinib)",
+          "Intra-nasal or topical corticosteroids for non-CSU indications, on an as-needed basis",
+          "Low-dose acetylsalicylic acid (up to 100 mg/d) or clopidogrel (up to 75 mg/d) monotherapy (not combined)"
+        ],
+        "applies_to_rerandomized_maintenance": null,
+        "sponsor_trial_ids": [
+          "CLOU064A2301"
+        ],
+        "study_drug_doses_mg": [],
+        "population_note": "All participants remain on a stable, locally label-approved dose of a second generation H1-antihistamine as background therapy throughout the study (from >=7 days prior to randomization until end of study); remibrutinib/placebo is added on top of this background therapy, per current CSU treatment guidelines (Zuberbier et al 2018)."
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/11/NCT05030311/Prot_000.pdf",
+      "source_excerpt": "6.2.1 Concomitant therapy: Throughout the study, participants must take a second generation H1-antihistamine at a locally label approved dose (background therapy). Background therapy should not be changed until the Week 12 visit and should only be changed thereafter if medically required... 6.2.3 Prohibited medication: Use of the treatments displayed in the below table are not allowed during the specified time period. Table 6-3 Prohibited medication: Biologics for treatment of CSU (including omalizumab and ligelizumab) - 4 months prior to randomization until end of treatment...",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.7
     }
   },
   "endpoints": {
@@ -314,7 +350,7 @@
     "secondary_endpoints": {
       "value": [
         {
-          "verbatim": "Number of Patients Who Achieved Disease Activity Control (UAS7 \u22646)",
+          "verbatim": "Number of Patients Who Achieved Disease Activity Control (UAS7 ≤6)",
           "rank": "secondary",
           "position": 1,
           "measure_type": "count",
@@ -352,7 +388,7 @@
           "time_frame": null
         },
         {
-          "verbatim": "Number of Patients With Early Onset of Disease Control (UAS7 \u2264 6 at Week 2)",
+          "verbatim": "Number of Patients With Early Onset of Disease Control (UAS7 ≤ 6 at Week 2)",
           "rank": "secondary",
           "position": 3,
           "measure_type": "count",
@@ -464,13 +500,120 @@
       "confidence": 1.0
     },
     "multiplicity_control": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "procedure": "graphical",
+        "familywise_error_controlled": true,
+        "alpha": 0.025,
+        "alpha_sided": 1,
+        "alpha_per_dose": null,
+        "co_primary_endpoints": [],
+        "testing_sequence": [
+          {
+            "label": "UAS7 score change from baseline at Week 12 (primary)",
+            "scale": "UAS7",
+            "responder_criteria": [],
+            "timepoint_week": 12,
+            "alpha": 0.025,
+            "step": 1
+          },
+          {
+            "label": "UAS7 <= 6 at Week 12",
+            "scale": "UAS7",
+            "responder_criteria": [],
+            "timepoint_week": 12,
+            "alpha": 0.025,
+            "step": 2
+          },
+          {
+            "label": "UAS7 = 0 at Week 12",
+            "scale": "UAS7",
+            "responder_criteria": [],
+            "timepoint_week": 12,
+            "alpha": 0.025,
+            "step": 3
+          },
+          {
+            "label": "ISS7 score change from baseline at Week 12",
+            "scale": "ISS7",
+            "responder_criteria": [],
+            "timepoint_week": 12,
+            "alpha": 0.025,
+            "step": 4
+          },
+          {
+            "label": "HSS7 score change from baseline at Week 12",
+            "scale": "HSS7",
+            "responder_criteria": [],
+            "timepoint_week": 12,
+            "alpha": 0.025,
+            "step": 5
+          },
+          {
+            "label": "UAS7 <= 6 at Week 2",
+            "scale": "UAS7",
+            "responder_criteria": [],
+            "timepoint_week": 2,
+            "alpha": 0.025,
+            "step": 6
+          },
+          {
+            "label": "DLQI = 0/1 at Week 12",
+            "scale": "DLQI",
+            "responder_criteria": [],
+            "timepoint_week": 12,
+            "alpha": 0.025,
+            "step": 7
+          },
+          {
+            "label": "Cumulative number of weeks with UAS7<=6 response between baseline and Week 12",
+            "scale": "UAS7",
+            "responder_criteria": [],
+            "timepoint_week": 12,
+            "alpha": 0.025,
+            "step": 8
+          },
+          {
+            "label": "Cumulative number of weeks with AAS7=0 response between baseline and Week 12",
+            "scale": "AAS7",
+            "responder_criteria": [],
+            "timepoint_week": 12,
+            "alpha": 0.025,
+            "step": 9
+          }
+        ],
+        "alpha_split": [],
+        "alpha_recycling": false,
+        "doses_compared": [
+          "remibrutinib 25 mg b.i.d."
+        ],
+        "dose_comparison_order": [],
+        "branching_on": {
+          "label": "UAS7 score change from baseline at Week 12 (primary endpoint)",
+          "scale": "UAS7",
+          "responder_criteria": [],
+          "timepoint_week": 12,
+          "alpha": null,
+          "step": null
+        },
+        "regulatory_variants": [],
+        "rescue_counted_as_nonresponder": null,
+        "active_comparator_excluded_from_hierarchy": null,
+        "background_tcs": null,
+        "method_citations": [
+          "Closed testing procedure (Bretz F, Maurer W, Brannath W, et al. 2009, 'A graphical approach to sequentially rejective multiple test procedures')",
+          "Two independent primary-objective scenarios are tested in two distinct strictly hierarchical testing strategies to satisfy different regional Health Authority requests: (1) UAS7 as sole primary endpoint (to support Japan and China registration; Figure 2-1, reproduced above), and (2) ISS7 and HSS7 as co-primary endpoints, where the union null hypothesis requires BOTH ISS7 and HSS7 to be rejected before the identical secondary hierarchy (UAS7 change, UAS7<=6, UAS7=0, UAS7<=6 at Week 2, DLQI=0/1, cumulative UAS7<=6 weeks, cumulative AAS7=0 weeks) is tested (Figure 2-2)."
+        ],
+        "finalized_in_sap": true,
+        "same_design_as": [],
+        "gatekeeping_structure": true,
+        "further_endpoints_through_week": 12
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/11/NCT05030311/SAP_001.pdf",
+      "source_excerpt": "2.5.2.2 Statistical hypothesis, model, and method of analysis: The following null hypotheses (H0) will be tested against the respective alternative hypotheses (HA) in a closed testing procedure (Bretz et al 2009), thus controlling the family-wise type I error which is set to 0.025 (one-sided): Primary: UAS7 score change from baseline at Week 12... The first hypothesis is tested with full level alpha (0.025 one-sided). If significant, the second hypothesis is tested with full-level alpha; otherwise, the testing procedure stops. The testing is strictly hierarchical... 1.2: There are two primary objective scenarios based on regional regulatory precedent and Health Authorities' feedback. These two primary objective scenarios will be tested in two distinct testing strategies (Table 1-1 and Table 1-2)... To support Japan and China registration, scenario with UAS7 as the primary efficacy endpoint... will be adopted. 2.6.2.2: co-Primary ISS7/HSS7... The union null hypothesis is rejected if both elementary null hypotheses (H01a, H01b) are rejected.",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.7
     }
   },
   "timing_ops": {
@@ -511,22 +654,152 @@
       "confidence": 1.0
     },
     "study_schedule": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "screening_days": 28,
+        "screening_washout": true,
+        "periods": [
+          {
+            "name": "screening",
+            "start_week": -4,
+            "end_week": 0,
+            "duration_weeks": 4,
+            "blinding": null,
+            "background_tcs": null
+          },
+          {
+            "name": "double_blind_treatment",
+            "start_week": 0,
+            "end_week": 24,
+            "duration_weeks": 24,
+            "blinding": "double_blind",
+            "background_tcs": null
+          },
+          {
+            "name": "continuation_treatment",
+            "start_week": 24,
+            "end_week": 52,
+            "duration_weeks": 28,
+            "blinding": "open_label",
+            "background_tcs": null
+          },
+          {
+            "name": "follow_up",
+            "start_week": 52,
+            "end_week": 56,
+            "duration_weeks": 4,
+            "blinding": null,
+            "background_tcs": null
+          }
+        ],
+        "dosing_interval": "twice daily (b.i.d.)",
+        "visit_cadence": null,
+        "visit_cadence_until_week": null,
+        "visit_weeks": [
+          0,
+          2,
+          4,
+          8,
+          12,
+          16,
+          20,
+          24,
+          32,
+          40,
+          52
+        ],
+        "visit_days": [
+          1,
+          15,
+          29,
+          57,
+          85,
+          113,
+          141,
+          169,
+          225,
+          281,
+          365
+        ],
+        "phone_contact_weeks": null,
+        "primary_endpoint_week": 12,
+        "end_of_treatment_week": 52,
+        "end_of_study_week": 56,
+        "total_duration_weeks": 60,
+        "follow_up_weeks": 4,
+        "follow_up_days": null,
+        "follow_up_visit_week": 56,
+        "long_term_extension": true,
+        "extension_end_week": null,
+        "extension_visit_interval_weeks": null,
+        "extension_study_id": "extension study in development (details to be described in a separate protocol); eligible participants may roll over at Week 52",
+        "rerandomization_week": 24,
+        "maintenance_arms": null,
+        "maintenance_response_check_weeks": null,
+        "last_injection_week": null,
+        "key_secondary_weeks": [
+          2,
+          12
+        ],
+        "follow_up_visit_interval_weeks": null,
+        "end_of_treatment_weeks_after_last_dose": null,
+        "background_tcs_from_day": null,
+        "primary_endpoint_refs": [],
+        "double_dummy_arms": [],
+        "active_comparator": null,
+        "boilerplate_reused_from": [],
+        "conflicts_with_trial": null,
+        "full_visit_table_available": true,
+        "source_inconsistency": null
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/11/NCT05030311/Prot_000.pdf",
+      "source_excerpt": "The study consists of four periods, the total study duration is up to 60 weeks: Screening period: up to 4 weeks. Double-blind treatment period: 24 weeks of double-blind treatment with remibrutinib (25 mg b.i.d.) or placebo. Open-label treatment period: 28 weeks of open-label treatment with remibrutinib (25 mg b.i.d.). Follow-up period: 4 weeks of treatment-free follow-up. ... At week 24 participants in the placebo arm will be switched to active treatment. ... Table 8-1 Assessment Schedule: Days -28 to -1 (Screening), 1 (Baseline/Randomization), 15 (Week 2), 29 (Week 4), 57 (Week 8), 85 (Week 12), 113 (Week 16), 141 (Week 20), 169 (Week 24), 225 (Week 32), 281 (Week 40), 365 (Week 52/Study discontinuation), 394 (Week 56/Safety FU/Study completion).",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.7
     },
     "rescue_therapy": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "permitted": true,
+        "trigger": "investigator_discretion",
+        "earliest_week": 0,
+        "prohibited_through_week": null,
+        "trigger_rules": [],
+        "flare_definition": [],
+        "first_step": "topical",
+        "topical_min_days_before_systemic": null,
+        "topical_rescue_requires_study_drug_discontinuation": false,
+        "systemic_rescue_requires_study_drug_discontinuation": false,
+        "resume_after_systemic_rescue_half_lives": null,
+        "resume_after_phototherapy_months": null,
+        "rescued_counted_as_nonresponder": null,
+        "rescued_counted_as_treatment_failure": null,
+        "continue_visits_after_discontinuation": null,
+        "continue_visits_through_week": null,
+        "topical_rescue_not_counted_after_week": null,
+        "topical_agents": [],
+        "topical_potency_classes": [],
+        "tci_reserved_areas": [],
+        "systemic_agents": [
+          "prednisone or equivalent oral corticosteroid (rescue only, after Week 12)"
+        ],
+        "oral_corticosteroid_limit": null,
+        "rescue_period": null,
+        "escape_arm_washout_half_lives": null,
+        "maintenance_period_rule": null,
+        "permitted_concomitant": [],
+        "recorded_in_ecrf": true,
+        "applies_to_period": "screening, treatment and follow-up periods",
+        "long_term_extension_eligible_after_rescue": null,
+        "topical_agent_class": "second generation H1-antihistamine (must differ from background H1-antihistamine)",
+        "rationale": "Applying a treatment policy strategy for treatment non-compliance; use of rescue medication (a second generation H1-antihistamine that differs from background medication) is part of the estimand handling, not counted as an intercurrent event requiring discontinuation. Real OCS limit is day-based (max 3 consecutive days per course, max 9 days total per 30-day window) -- schema's max_mg_per_kg/max_consecutive_weeks fields can't represent a day-based cap, so left null rather than mis-mapped."
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/11/NCT05030311/Prot_000.pdf",
+      "source_excerpt": "6.2.4 Rescue medication: H1-antihistamines: In addition to being used as background medication, second generation H1-antihistamines are allowed as rescue medication, used on an as needed basis for participants with CSU flare-ups of unbearable symptoms during screening, treatment and follow-up periods... the H1-antihistamine used as rescue medication must differ from the H1-antihistamine used as background medication. The daily dose of H1-antihistamine rescue medication should not exceed 4-fold of the approved dose... Oral corticosteroids: Prior to Week 12, any corticosteroid use for CSU is prohibited. After the Week 12 primary endpoint, participants will be permitted to use oral corticosteroids such as prednisone or its equivalent, as rescue medication if needed for CSU flare-ups of unbearable symptoms... limited to 3 days in a 30-day period and a maximum of 9 days in total after Week 12... recommended dose is 20-50 mg prednisone or equivalent per day.",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.7
     }
   },
   "adverse_events": {

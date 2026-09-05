@@ -280,13 +280,47 @@
       "confidence": 1.0
     },
     "background_therapy": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "regimen_type": "standardized_background_topical",
+        "background_agent_class": "TCS",
+        "tcs_regimen": "standardized",
+        "step_down_rule": null,
+        "recommended_agents": [
+          {
+            "name": "medium-potency TCS (for trunk/extremities)",
+            "strength_pct": null,
+            "form": "topical",
+            "potency": "medium"
+          },
+          {
+            "name": "low-potency TCS or TCI (for sensitive areas: face, neck, intertriginous areas)",
+            "strength_pct": null,
+            "form": "topical",
+            "potency": "low"
+          }
+        ],
+        "emollient_required": true,
+        "emollient_frequency": "at least once daily, and liberally as needed, beginning at screening and throughout the study",
+        "prohibited_concomitant": [],
+        "permitted_concomitant": [
+          "Unless specified as prohibited (Section 8.4.9.2), all other therapies are authorized, including basic skin care (cleansing, bathing), moisturizers, bleach baths, topical anesthetics, and antihistamines without a sedative effect"
+        ],
+        "applies_to_rerandomized_maintenance": true,
+        "sponsor_trial_ids": [
+          "RD.06.SPR.118161"
+        ],
+        "study_drug_doses_mg": [
+          30,
+          60
+        ],
+        "population_note": "Standardized background topical therapy (medium-potency TCS for non-sensitive areas; low-potency TCS or TCI for sensitive areas) is introduced during a run-in period of at least 14 days before Day 1/baseline and continued throughout the study by ALL subjects (both nemolizumab and placebo arms). 'As needed' (PRN) use is not permitted -- only investigator-directed tapering/discontinuation/restarting based on disease activity. Subjects transitioning into the maintenance period (Week 16-48) generally continue the same background topical therapy used leading up to Week 16, with further investigator-directed adjustments permitted based on clinical response."
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/43/NCT03985943/Prot_000.pdf",
+      "source_excerpt": "8.4.9.1.2 Background Topical Therapy: Subjects will apply the authorized background topical therapy to all AD lesions beginning within the screening period and >= 14 days before Day 1 (ie, run-in). Medium-potency TCS Therapy for Non-Sensitive Areas: Subjects will apply a medium-potency TCS in areas of the body where use of medium-potency TCS is considered safe (eg, trunk and extremities). Low-potency TCS or TCI Therapy for Sensitive Areas: A low-potency TCS or a TCI will be used in sensitive areas... 'As needed' (PRN) use of TCS or TCI is not permitted... The investigator should adjust background therapy use during the study, according to the disease activity and tolerability of the subject, including tapering when signs and symptoms improve, discontinuation when lesions clear, and restarting if signs and symptoms recur.",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.7
     }
   },
   "endpoints": {
@@ -871,13 +905,113 @@
       "confidence": 1.0
     },
     "multiplicity_control": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "procedure": "serial_gatekeeping",
+        "familywise_error_controlled": true,
+        "alpha": 0.05,
+        "alpha_sided": 2,
+        "alpha_per_dose": 0.025,
+        "co_primary_endpoints": [
+          {
+            "label": "Percentage of Participants With an Investigator's Global Assessment (IGA) Success (IGA of 0 or 1 and a More Than Equal to [>=] 2-point Reduction): Intent-To-Treat (ITT) Population (Time frame: Week 16)",
+            "scale": "IGA",
+            "responder_criteria": [
+              {
+                "scale": "IGA",
+                "scale_component": null,
+                "scale_variant": null,
+                "metric": "absolute_score",
+                "comparator": "in",
+                "value": [
+                  0,
+                  1
+                ],
+                "unit": "score",
+                "scale_min": null,
+                "scale_max": null,
+                "assessed_at": null,
+                "scale_anchors": null
+              }
+            ],
+            "timepoint_week": 16,
+            "alpha": 0.025,
+            "step": null
+          }
+        ],
+        "testing_sequence": [
+          {
+            "label": "Percentage of Participants With Improvement of >=4 Points in Weekly Average Peak Pruritus Numeric Rating Scale (PP NRS) at Week 16: ITT Population",
+            "scale": "Pruritus NRS",
+            "responder_criteria": [
+              {
+                "scale": "Pruritus NRS",
+                "scale_component": null,
+                "scale_variant": "peak_daily_weekly_average",
+                "metric": "point_reduction_from_baseline",
+                "comparator": ">=",
+                "value": 4,
+                "unit": "points",
+                "scale_min": null,
+                "scale_max": null,
+                "assessed_at": null,
+                "scale_anchors": null
+              }
+            ],
+            "timepoint_week": 16,
+            "alpha": null,
+            "step": 1
+          },
+          {
+            "label": "Percentage of Participants With <2 Points in Weekly Average PP NRS at Week 16: ITT Population",
+            "scale": "Pruritus NRS",
+            "responder_criteria": [
+              {
+                "scale": "Pruritus NRS",
+                "scale_component": null,
+                "scale_variant": null,
+                "metric": "absolute_score",
+                "comparator": "<",
+                "value": 2,
+                "unit": "score",
+                "scale_min": null,
+                "scale_max": null,
+                "assessed_at": null,
+                "scale_anchors": null
+              }
+            ],
+            "timepoint_week": 16,
+            "alpha": null,
+            "step": 2
+          }
+        ],
+        "alpha_split": [],
+        "alpha_recycling": null,
+        "doses_compared": [
+          "30 mg"
+        ],
+        "dose_comparison_order": [],
+        "branching_on": null,
+        "regulatory_variants": [],
+        "rescue_counted_as_nonresponder": null,
+        "active_comparator_excluded_from_hierarchy": null,
+        "background_tcs": null,
+        "method_citations": [],
+        "finalized_in_sap": null,
+        "same_design_as": [
+          {
+            "nct_id": "NCT03989349",
+            "trial_name": "ARCADIA 2"
+          }
+        ],
+        "gatekeeping_structure": true,
+        "further_endpoints_through_week": null
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/43/NCT03985943/Prot_000.pdf",
+      "source_excerpt": "Protocol RD.06.SPR.118161 V8.0, Statistical Methods, \"Multiplicity Adjustment\": Multiplicity Adjustment: The primary comparison of interest is nemolizumab 30 mg compared to placebo for the co-primary endpoints in both populations (baseline PP NRS 4; baseline PP NRS 7). To control the type I error at 5% significance level, a serial gatekeeping approach will be implemented. The co-primary endpoints will be tested at 2.5% significance level for each population. If both co-primary endpoints are statistically significant at 2.5% significance level, the key secondary endpoints will be tested sequentially following hierarchical testing procedure using the pre-specified order of endpoints for each population. ... Other secondary endpoint comparisons will not be adjusted for multiplicity.",
+      "extracted_by": "deep-extraction cycle 3 (Prot PDF, pdftotext -layout)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.75
     }
   },
   "timing_ops": {
@@ -918,22 +1052,164 @@
       "confidence": 1.0
     },
     "study_schedule": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "screening_days": 14,
+        "screening_washout": null,
+        "periods": [
+          {
+            "name": "screening",
+            "start_week": null,
+            "end_week": 0,
+            "duration_weeks": null,
+            "blinding": null,
+            "background_tcs": true
+          },
+          {
+            "name": "initial_treatment",
+            "start_week": 0,
+            "end_week": 16,
+            "duration_weeks": 16,
+            "blinding": "double_blind",
+            "background_tcs": true
+          },
+          {
+            "name": "maintenance_treatment",
+            "start_week": 16,
+            "end_week": 48,
+            "duration_weeks": 32,
+            "blinding": "double_blind",
+            "background_tcs": true
+          },
+          {
+            "name": "follow_up",
+            "start_week": 48,
+            "end_week": 56,
+            "duration_weeks": 8,
+            "blinding": null,
+            "background_tcs": null
+          }
+        ],
+        "dosing_interval": "every 4 weeks (Q4W) during initial treatment; Q4W or Q8W during maintenance depending on re-randomized group",
+        "visit_cadence": "every_4_weeks",
+        "visit_cadence_until_week": 44,
+        "visit_weeks": [
+          4,
+          8,
+          12,
+          16,
+          20,
+          24,
+          28,
+          32,
+          36,
+          40,
+          44,
+          48
+        ],
+        "visit_days": null,
+        "phone_contact_weeks": null,
+        "primary_endpoint_week": 16,
+        "end_of_treatment_week": 44,
+        "end_of_study_week": 56,
+        "total_duration_weeks": 60,
+        "follow_up_weeks": 12,
+        "follow_up_days": null,
+        "follow_up_visit_week": 56,
+        "long_term_extension": true,
+        "extension_end_week": null,
+        "extension_visit_interval_weeks": null,
+        "extension_study_id": "Protocol 118163",
+        "rerandomization_week": 16,
+        "maintenance_arms": [
+          "Group 1A: nemolizumab 30 mg Q4W",
+          "Group 1B: nemolizumab 30 mg Q8W (placebo Q4W at alternating visits to maintain blind)",
+          "Group 1C: placebo Q4W"
+        ],
+        "maintenance_response_check_weeks": [
+          48
+        ],
+        "last_injection_week": 44,
+        "key_secondary_weeks": [
+          16
+        ],
+        "follow_up_visit_interval_weeks": null,
+        "end_of_treatment_weeks_after_last_dose": 12,
+        "background_tcs_from_day": -14,
+        "primary_endpoint_refs": [],
+        "double_dummy_arms": [
+          "Group 1B receives placebo injections at alternating Q4W visits (Weeks 20, 28, 36, 44) to maintain the blind against the Q4W dosing groups"
+        ],
+        "active_comparator": null,
+        "boilerplate_reused_from": [],
+        "conflicts_with_trial": null,
+        "full_visit_table_available": true,
+        "source_inconsistency": "The protocol describes the follow-up period two ways that both resolve to the same visit: an '8-week follow-up period' measured from the Week 48 maintenance-completion visit, and separately 'a follow-up/final visit 12 weeks after the last study drug injection' (last injection at Week 44, so Week 44+12=Week 56=Week 48+8). Not a real inconsistency once the reference points are reconciled."
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/43/NCT03985943/Prot_000.pdf",
+      "source_excerpt": "8.5 Duration of Subject Participation: Up to 28 weeks (including a 4-week screening period, a 16-week initial treatment period, and an 8-week follow-up period [12-weeks after the last study medication injection]) for subjects who are non-responders at the completion of the initial treatment period (Week 16); Up to 60 weeks (including a 4-week screening period, a 16-week initial treatment period, a 32-week maintenance period, and an 8-week follow-up period [12-weeks after the last study medication injection]) in subjects who are clinical responders at the completion of the initial treatment period (Week 16)... The initial treatment period is defined as Day 1/baseline through Week 16 (before the Week 16 dose, with last dose at Week 12)... The maintenance period is defined as Week 16 (maintenance baseline) to Week 48... Group 1B subjects will receive the last active study drug injection at Week 40 (final injection at Week 44 will be placebo).",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.7
     },
     "rescue_therapy": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "permitted": true,
+        "trigger": "investigator_discretion",
+        "earliest_week": 2,
+        "prohibited_through_week": null,
+        "trigger_rules": [],
+        "flare_definition": [],
+        "first_step": "topical",
+        "topical_min_days_before_systemic": null,
+        "topical_rescue_requires_study_drug_discontinuation": false,
+        "systemic_rescue_requires_study_drug_discontinuation": true,
+        "resume_after_systemic_rescue_half_lives": null,
+        "resume_after_phototherapy_months": null,
+        "rescued_counted_as_nonresponder": true,
+        "rescued_counted_as_treatment_failure": null,
+        "continue_visits_after_discontinuation": true,
+        "continue_visits_through_week": null,
+        "topical_rescue_not_counted_after_week": null,
+        "topical_agents": [
+          {
+            "name": "Higher-potency TCS (US class I-II)",
+            "strength_pct": null,
+            "form": "topical",
+            "potency": "high"
+          }
+        ],
+        "topical_potency_classes": [
+          {
+            "system": "US",
+            "comparator": ">=",
+            "class": "I-II"
+          }
+        ],
+        "tci_reserved_areas": [],
+        "systemic_agents": [
+          "Oral corticosteroids",
+          "Biologics (including biosimilars)",
+          "Systemic nonsteroidal immunosuppressants/immunomodulators",
+          "Phototherapy"
+        ],
+        "oral_corticosteroid_limit": null,
+        "rescue_period": null,
+        "escape_arm_washout_half_lives": null,
+        "maintenance_period_rule": null,
+        "permitted_concomitant": [],
+        "recorded_in_ecrf": true,
+        "applies_to_period": "entire study except the run-in period (subjects requiring rescue during run-in are ineligible to participate)",
+        "long_term_extension_eligible_after_rescue": true,
+        "topical_agent_class": "TCS",
+        "rationale": "Rescue therapies are only treatments that directly treat AD (approved or standard-of-care); antihistamines, sleep aids, topical/systemic antibiotics, and anti-itch creams are explicitly NOT considered rescue therapy because they do not directly treat AD. Subjects who receive rescue therapy are considered non-responders for the primary/maintenance analyses."
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/43/NCT03985943/Prot_000.pdf",
+      "source_excerpt": "8.4.9.1.3 Rescue Therapy: If deemed to be medically necessary by the investigator (eg, to control intolerable AD signs/symptoms), rescue therapies can be prescribed to the subjects at any time during the study, except during the run-in period... rescue therapy should not be prescribed within the first 2 weeks after baseline (ie, Week 2)... Rescue therapies include: Higher potency of TCS (equivalent to class I-II according to the US classification), Oral corticosteroids, Biologics (including their biosimilars), Systemic nonsteroidal immunosuppressants/immunomodulators, Phototherapy. Antihistamines, sleep aids, topical and systemic antibiotics, and anti-itch creams are not considered to be rescue therapy because they do not directly treat AD. Whenever possible, investigators should first use topical medication as rescue therapy before escalating to systemic therapies. If subjects receive topical treatments or phototherapy as rescue therapy, study drug administration should be continued unless there is a safety concern... If subjects receive systemic rescue therapy, the study drug administration must be permanently discontinued. ... Subjects who receive rescue therapy will be considered non-responders.",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.7
     }
   },
   "adverse_events": {

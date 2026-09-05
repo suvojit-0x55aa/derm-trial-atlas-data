@@ -261,13 +261,49 @@
       "confidence": 1.0
     },
     "background_therapy": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "regimen_type": null,
+        "background_agent_class": null,
+        "tcs_regimen": null,
+        "step_down_rule": null,
+        "recommended_agents": [],
+        "emollient_required": null,
+        "emollient_frequency": null,
+        "prohibited_concomitant": [
+          "Prior treatment with secukinumab or other agents blocking IL-17A/F or IL-17R (not allowed)",
+          "Systemic biological immunomodulating treatment (e.g. adalimumab, infliximab, ustekinumab, anakinra, natalizumab) - 12 week or 5 half-life washout, not allowed after randomization",
+          "Systemic non-biologic immunomodulating treatment (e.g. methotrexate, cyclosporine A, retinoids, apremilast) - 28 day washout, not allowed after randomization",
+          "Topical antibiotic therapies for HS - 14 day washout, not allowed until Week 16",
+          "Antibiotics for HS treatment (non-antibiotic strata) - 28 day washout, not allowed until Week 16 except rescue treatment",
+          "Systemic corticosteroids for HS treatment - 28 day washout, not allowed after randomization",
+          "Opioid analgesics - 14 day washout, not allowed after randomization",
+          "Surgeries for HS treatment other than allowed rescue therapy - not allowed within 6 weeks prior to randomization or until Week 16",
+          "Live vaccines - not allowed within 6 weeks prior to randomization or after",
+          "Any investigational treatment or interventional trial participation - 28 days or 5 half-lives washout"
+        ],
+        "permitted_concomitant": [
+          "Daily topical over-the-counter antiseptics on HS-affected skin areas per local standard practice",
+          "Wound care dressings on HS wounds per local standard practice",
+          "Systemic antibiotics for acute systemic infectious disease unrelated or related to HS (e.g. pneumonia, cellulitis), as medically warranted",
+          "For subjects in the antibiotic strata: stable-dose tetracycline (up to 500 mg bid), minocycline (up to 100 mg bid), or doxycycline (up to 100 mg bid) during Treatment Period 1",
+          "Non-opioid analgesics on a stable dose (14 days prior to Baseline, anticipated stable through 16 weeks)",
+          "Ibuprofen/acetaminophen for uncontrolled HS-related pain; tramadol up to 100 mg every 4h (max 400 mg/24h) if pain uncontrolled on those"
+        ],
+        "applies_to_rerandomized_maintenance": null,
+        "sponsor_trial_ids": [
+          "CAIN457M2302"
+        ],
+        "study_drug_doses_mg": [
+          300
+        ],
+        "population_note": "Hidradenitis Suppurativa trial; schema's regimen_type enum (monotherapy/combination_tcs/standardized_background_topical) is AD/TCS-oriented and does not map cleanly onto this HS trial's concomitant-antiseptic/antibiotic-strata design, so regimen_type is left null rather than force-fit. Protocol Section 6.2.1-6.2.2 explicitly enumerates permitted and prohibited concomitant therapy."
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/32/NCT03713632/Prot_000.pdf",
+      "source_excerpt": "Section 6.2.1 Concomitant therapy / 6.2.1.1 Permitted concomitant therapy: 'Subjects should be instructed to use daily topical over-the-counter antiseptics on the skin areas affected by HS lesions... Concomitant use of wound care dressings on HS wounds is allowed...' Section 6.2.2 Prohibited medication, Table 6-2: 'Prior treatment with secukinumab or other agents blocking IL-17 A/F or IL-17R... Not allowed... Systemic biological immunomodulating treatment (e.g. adalimumab, infliximab, ustekinumab, anakinra, natalizumab) 12 weeks wash-out period or 5 half-lives, whichever is longer... Systemic non-biologic immunomodulating treatment (e.g. methotrexate (MTX), cyclosporine A, retinoids, apremilast) 28 days wash-out period required...'",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.65
     }
   },
   "endpoints": {
@@ -382,13 +418,113 @@
       "confidence": 1.0
     },
     "multiplicity_control": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "procedure": "graphical",
+        "familywise_error_controlled": true,
+        "alpha": 0.025,
+        "alpha_sided": 1,
+        "alpha_per_dose": null,
+        "co_primary_endpoints": [
+          {
+            "label": "HiSCR at Week 16 (secukinumab 300mg q2w vs placebo)",
+            "scale": "HiSCR",
+            "responder_criteria": [],
+            "timepoint_week": 16,
+            "alpha": 0.02,
+            "step": 1
+          },
+          {
+            "label": "HiSCR at Week 16 (secukinumab 300mg q4w vs placebo)",
+            "scale": "HiSCR",
+            "responder_criteria": [],
+            "timepoint_week": 16,
+            "alpha": 0.005,
+            "step": 1
+          }
+        ],
+        "testing_sequence": [
+          {
+            "label": "HiSCR at Week 16 (H1/H2, primary)",
+            "scale": null,
+            "responder_criteria": [],
+            "timepoint_week": null,
+            "alpha": null,
+            "step": null
+          },
+          {
+            "label": "Percentage change from baseline in AN count at Week 16 (H3/H4)",
+            "scale": null,
+            "responder_criteria": [],
+            "timepoint_week": null,
+            "alpha": null,
+            "step": null
+          },
+          {
+            "label": "Flare over 16 weeks (H5/H6)",
+            "scale": null,
+            "responder_criteria": [],
+            "timepoint_week": null,
+            "alpha": null,
+            "step": null
+          },
+          {
+            "label": "Pain/NRS30 at Week 16, combined dataset of both studies (H7/H8)",
+            "scale": null,
+            "responder_criteria": [],
+            "timepoint_week": null,
+            "alpha": null,
+            "step": null
+          }
+        ],
+        "alpha_split": [
+          {
+            "group": "H1 (secukinumab q2w primary)",
+            "n_endpoints": 1,
+            "alpha": 0.02,
+            "method": "graphical alpha allocation (4α/5)",
+            "timepoint_week": 16
+          },
+          {
+            "group": "H2 (secukinumab q4w primary)",
+            "n_endpoints": 1,
+            "alpha": 0.005,
+            "method": "graphical alpha allocation (α/5)",
+            "timepoint_week": 16
+          }
+        ],
+        "alpha_recycling": true,
+        "doses_compared": [
+          "secukinumab 300 mg every 2 weeks",
+          "secukinumab 300 mg every 4 weeks"
+        ],
+        "dose_comparison_order": [
+          "secukinumab 300 mg every 2 weeks (high dose, 4α/5)",
+          "secukinumab 300 mg every 4 weeks (low dose, α/5)"
+        ],
+        "branching_on": null,
+        "regulatory_variants": [],
+        "rescue_counted_as_nonresponder": null,
+        "active_comparator_excluded_from_hierarchy": null,
+        "background_tcs": null,
+        "method_citations": [
+          "Bretz F, Maurer W, Xi D. (2019) Replicability, reproducibility and multiplicity in drug development. CHANCE. p.4-11."
+        ],
+        "finalized_in_sap": null,
+        "same_design_as": [
+          {
+            "nct_id": "NCT03713619",
+            "trial_name": "CAIN457M2301"
+          }
+        ],
+        "gatekeeping_structure": true,
+        "further_endpoints_through_week": null
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/32/NCT03713632/Prot_000.pdf",
+      "source_excerpt": "Section 12.5.1 Testing strategy: 'Two studies of identical design (CAIN457M2302 (twin study CAIN457M2301) and CAIN457M2302) are planned... The hypothesis H'1 of the primary objective (this study's own primary hypothesis is denoted with a prime, e.g. H'1/H'2, in the twin-study notation) (HiSCR at Week 16) for the high dose secukinumab regimen (q2w) versus placebo will be tested at 4α/5 while the hypothesis H2... for the low dose secukinumab regimen (q4w) versus placebo will be tested at α/5 simultaneously. If at least one of H1 and/or H2 are/is rejected then H3 and/or H4 (percentage change from baseline in AN count at Week 16), is tested. If at least one of H3 and/or H4 are/is rejected, then the corresponding alpha will be passed to H5 and/or H6 (flare over 16 weeks)... Therefore, the type I error rate is controlled at level α for the submission on all hypothesis endpoints... the testing procedure outlined above controls the type I error rate (one-sided) at the study-level to <0.025, and at the submission level to <0.000625(=0.025^2)... (Bretz et al 2019).'",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.7
     }
   },
   "timing_ops": {
@@ -429,22 +565,130 @@
       "confidence": 1.0
     },
     "study_schedule": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "screening_days": 28,
+        "screening_washout": true,
+        "periods": [
+          {
+            "name": "screening",
+            "start_week": -4,
+            "end_week": 0,
+            "duration_weeks": 4,
+            "blinding": null,
+            "background_tcs": null
+          },
+          {
+            "name": "double_blind_treatment",
+            "start_week": 0,
+            "end_week": 16,
+            "duration_weeks": 16,
+            "blinding": "double_blind",
+            "background_tcs": null
+          },
+          {
+            "name": "maintenance_treatment",
+            "start_week": 16,
+            "end_week": 52,
+            "duration_weeks": 36,
+            "blinding": "double_blind (dose-frequency masked; all subjects receive secukinumab from Week 16)",
+            "background_tcs": null
+          },
+          {
+            "name": "follow_up",
+            "start_week": 52,
+            "end_week": 60,
+            "duration_weeks": 8,
+            "blinding": null,
+            "background_tcs": null
+          }
+        ],
+        "dosing_interval": "Weekly induction doses at Baseline, Week 1, 2, 3, 4; every 2 weeks thereafter through Week 14; re-induction weekly at Week 16, 17, 18, 19, 20; every 2 weeks thereafter through Week 50",
+        "visit_cadence": "every_2_weeks",
+        "visit_cadence_until_week": 50,
+        "visit_weeks": null,
+        "visit_days": null,
+        "phone_contact_weeks": null,
+        "primary_endpoint_week": 16,
+        "end_of_treatment_week": 52,
+        "end_of_study_week": 60,
+        "total_duration_weeks": 60,
+        "follow_up_weeks": 8,
+        "follow_up_days": null,
+        "follow_up_visit_week": 60,
+        "long_term_extension": true,
+        "extension_end_week": null,
+        "extension_visit_interval_weeks": null,
+        "extension_study_id": null,
+        "rerandomization_week": null,
+        "maintenance_arms": null,
+        "maintenance_response_check_weeks": null,
+        "last_injection_week": 50,
+        "key_secondary_weeks": [
+          16
+        ],
+        "follow_up_visit_interval_weeks": null,
+        "end_of_treatment_weeks_after_last_dose": 2,
+        "background_tcs_from_day": null,
+        "primary_endpoint_refs": [],
+        "double_dummy_arms": [],
+        "active_comparator": null,
+        "boilerplate_reused_from": [
+          "NCT03713619 (CAIN457M2301, identical design)"
+        ],
+        "conflicts_with_trial": null,
+        "full_visit_table_available": true,
+        "source_inconsistency": null
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/32/NCT03713632/Prot_000.pdf",
+      "source_excerpt": "Section 3 Study design: 'This is a multicenter, randomized, double-blind, placebo controlled, parallel group study with two secukinumab dose regimens in approximately 541 patients with moderate to severe HS. The study consists of: Screening (up to 4 weeks), Treatment Period 1 (16 weeks) and Treatment Period 2 (36 weeks)... a post-treatment Follow-Up period (8 weeks).' 'Treatment Period 1 covers the time from randomization (baseline) through Week 16... All subjects will receive a single s.c. injection of blinded study drug... once a week for four weeks (induction) at Baseline, Week 1, 2, 3 and 4. Thereafter, the frequency of study drug injections will be every 2 weeks...' 'Treatment Period 2 is defined as the time from Week 16 (post-dose) through Week 52... At Week 16, all subjects will receive a re-induction consisting of a single s.c. injection... once a week for four weeks, at Week 16, 17, 18, 19 and 20. Thereafter, all subjects will receive study drug injections every 2 weeks... until Week 50.' The End of Treatment visit is 'performed two weeks (where possible) after their last dose of study drug.'",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.7
     },
     "rescue_therapy": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "permitted": true,
+        "trigger": "protocol_response_threshold",
+        "earliest_week": 4,
+        "prohibited_through_week": null,
+        "trigger_rules": [],
+        "flare_definition": [],
+        "first_step": null,
+        "topical_min_days_before_systemic": null,
+        "topical_rescue_requires_study_drug_discontinuation": null,
+        "systemic_rescue_requires_study_drug_discontinuation": false,
+        "resume_after_systemic_rescue_half_lives": null,
+        "resume_after_phototherapy_months": null,
+        "rescued_counted_as_nonresponder": null,
+        "rescued_counted_as_treatment_failure": null,
+        "continue_visits_after_discontinuation": null,
+        "continue_visits_through_week": null,
+        "topical_rescue_not_counted_after_week": null,
+        "topical_agents": [],
+        "topical_potency_classes": [],
+        "tci_reserved_areas": [],
+        "systemic_agents": [
+          "minocycline (up to 100 mg bid)",
+          "doxycycline (up to 100 mg bid)"
+        ],
+        "oral_corticosteroid_limit": null,
+        "rescue_period": null,
+        "escape_arm_washout_half_lives": null,
+        "maintenance_period_rule": null,
+        "permitted_concomitant": [],
+        "recorded_in_ecrf": true,
+        "applies_to_period": "Treatment Period 1 (through Week 16)",
+        "long_term_extension_eligible_after_rescue": null,
+        "topical_agent_class": null,
+        "rationale": "Section 6.2.3 Rescue medication: at Week 4, 8 or 12, if AN count increases to >=150% of the weighted average of screening and baseline AN count with a minimum absolute increase of 3 lesions, oral antibiotic rescue (minocycline or doxycycline up to 100 mg bid, stable until Week 16) is permitted; applies only to Treatment Period 1. Separately, an unplanned surgical 'lesion intervention' (excision, drainage, or intra-lesion steroid) is allowed at any time for an acutely painful single lesion; other HS-related surgery is prohibited until after Week 16."
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/32/NCT03713632/Prot_000.pdf",
+      "source_excerpt": "6.2.3 Rescue medication: 'At Week 4, 8 and 12, if a subject experiences an increase in their AN count (for example, the total count is greater-than-or-equal-to 150% of the weighted average of screening and baseline AN count (Section 12.4.1)) with a minimum increase of 3 lesions, oral antibiotics rescue medication can be used. This applies only to Treatment Period 1. Subjects who qualify for rescue medication may initiate antibiotic treatment with minocycline or doxycycline up to 100 mg bid.' 'Lesion Intervention: In the event of an acutely painful single lesion that requires an immediate intervention, the investigator will be allowed to perform an unplanned surgery/intervention for lesion such as excision, drainage or intra-lesion steroid administration at any time. Other HS related surgery is not allowed until after Week 16.'",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.7
     }
   },
   "adverse_events": {

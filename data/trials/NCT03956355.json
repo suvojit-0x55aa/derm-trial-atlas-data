@@ -304,13 +304,42 @@
       "confidence": 1.0
     },
     "background_therapy": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "regimen_type": "monotherapy",
+        "background_agent_class": null,
+        "tcs_regimen": null,
+        "step_down_rule": null,
+        "recommended_agents": [],
+        "emollient_required": false,
+        "emollient_frequency": null,
+        "prohibited_concomitant": [
+          "Biologic agents: rituximab, ustekinumab, secukinumab, golimumab, ixekizumab, infliximab, adalimumab, alefacept, etanercept",
+          "Systemic treatments: cyclosporin, interferon, methotrexate, apremilast, tofacitinib, mycophenolate, thioguanine, hydroxyurea, sirolimus, azathioprine, other systemic immunosuppressive or immunomodulating agents, fumaric acid derivatives, vitamin D3 and analogs (>5,000 IU/day), retinoids (eg, acitretin, isotretinoin), psoralens, corticosteroids, or adrenocorticotropic hormone analogs",
+          "Ultraviolet light therapy or prolonged exposure to natural or artificial UV sources (eg, phototherapy, tanning beds/booths, therapeutic sunbathing)",
+          "Topical treatments: corticosteroids, antihistamines, immunomodulators, anthralin (dithranol), Vitamin D derivatives (eg, calcipotriene, calcipotriol), retinoids (eg, tazarotene), or coal tar",
+          "Drugs known to possibly worsen psoriasis (unless on a stable dose for >12 weeks): beta blockers, lithium, iodides, ACE inhibitors, indomethacin",
+          "Live, attenuated vaccines",
+          "Any investigational products or procedures"
+        ],
+        "permitted_concomitant": [
+          "Concomitant medications for medical treatment of OTHER conditions, provided dosage/administration is not planned to change from Baseline through Week 12 and the medication is not on the prohibited list",
+          "Topical antibacterial agents applied to an infected area (study drug withheld from that area until healed)",
+          "Nonmedicated shampoos (must not contain corticosteroids, vitamin D analogs, salicylic acid, or coal tar)",
+          "Nonmedicated emollients on nonlesional skin (not on lesional skin during treatment, not on morning of clinic visits; same emollient throughout)"
+        ],
+        "applies_to_rerandomized_maintenance": null,
+        "sponsor_trial_ids": [
+          "DMVT-505-3001"
+        ],
+        "study_drug_doses_mg": [],
+        "population_note": "This is a monotherapy design for plaque psoriasis: Section 5.6.2 prohibits every topical and systemic treatment for psoriasis itself throughout the 12-week study; only concomitant medication for unrelated medical conditions is permitted (Section 5.6.1). No standardized background psoriasis therapy (e.g. background TCS) is used."
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/55/NCT03956355/Prot_000.pdf",
+      "source_excerpt": "5.6.1. Permitted Medications and Nondrug Therapies: Concomitant medications for medical treatment of other conditions are allowed under the condition that the dosage and administration of these treatments is not planned to change from the Baseline visit to the completion of the treatment phase (Week 12) and that the medication is not a prohibited medication as described in the Exclusion Criteria (Section 4.3)... 5.6.2. Prohibited Medications and Nondrug Therapies: Medications and nondrug therapies that are prohibited throughout the study duration are as follows: Biologic agents: rituximab, ustekinumab, secukinumab... Topical treatments: corticosteroids, antihistamines, immunomodulators, anthralin (dithranol), Vitamin D derivatives (eg, calcipotriene, calcipotriol), retinoids (eg, tazarotene), or coal tar.",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.7
     }
   },
   "endpoints": {
@@ -352,7 +381,7 @@
     "secondary_endpoints": {
       "value": [
         {
-          "verbatim": "Percent of Subjects With \u2265 75% Improvement in Psoriasis Area and Severity Index (PASI) From Baseline at Week 12. Analyses Were Done Using Multiple Imputation.",
+          "verbatim": "Percent of Subjects With ≥ 75% Improvement in Psoriasis Area and Severity Index (PASI) From Baseline at Week 12. Analyses Were Done Using Multiple Imputation.",
           "rank": "secondary",
           "position": 1,
           "measure_type": "absolute_value",
@@ -427,7 +456,7 @@
           "time_frame": null
         },
         {
-          "verbatim": "Percent of Subjects With \u226590% Improvement in PASI Score From Baseline to Week 12. Analyses Were Done Using Multiple Imputation.",
+          "verbatim": "Percent of Subjects With ≥90% Improvement in PASI Score From Baseline to Week 12. Analyses Were Done Using Multiple Imputation.",
           "rank": "secondary",
           "position": 4,
           "measure_type": "other",
@@ -460,13 +489,70 @@
       "confidence": 1.0
     },
     "multiplicity_control": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "procedure": "serial_gatekeeping",
+        "familywise_error_controlled": true,
+        "alpha": 0.05,
+        "alpha_sided": 2,
+        "alpha_per_dose": null,
+        "co_primary_endpoints": [],
+        "testing_sequence": [
+          {
+            "label": "Proportion of subjects with >=75% improvement in PASI from Baseline (PASI-75) at Week 12",
+            "scale": "PASI",
+            "responder_criteria": [],
+            "timepoint_week": 12,
+            "alpha": 0.05,
+            "step": 1
+          },
+          {
+            "label": "Proportion of subjects with a PGA score of 0 or 1 at Week 12",
+            "scale": "PGA",
+            "responder_criteria": [],
+            "timepoint_week": 12,
+            "alpha": 0.05,
+            "step": 2
+          },
+          {
+            "label": "Mean change in %BSA affected from Baseline to Week 12",
+            "scale": "BSA",
+            "responder_criteria": [],
+            "timepoint_week": 12,
+            "alpha": 0.05,
+            "step": 3
+          },
+          {
+            "label": "Proportion of subjects with >=90% improvement in PASI (PASI-90) from Baseline to Week 12",
+            "scale": "PASI",
+            "responder_criteria": [],
+            "timepoint_week": 12,
+            "alpha": 0.05,
+            "step": 4
+          }
+        ],
+        "alpha_split": [],
+        "alpha_recycling": false,
+        "doses_compared": [],
+        "dose_comparison_order": [],
+        "branching_on": null,
+        "regulatory_variants": [],
+        "rescue_counted_as_nonresponder": null,
+        "active_comparator_excluded_from_hierarchy": null,
+        "background_tcs": false,
+        "method_citations": [
+          "Fixed-Sequence method"
+        ],
+        "finalized_in_sap": true,
+        "same_design_as": [],
+        "gatekeeping_structure": true,
+        "further_endpoints_through_week": null
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/55/NCT03956355/SAP_001.pdf",
+      "source_excerpt": "11.6 Multiple Comparisons: Multiple comparisons of the secondary endpoints will be controlled using the Fixed-Sequence method. Hypotheses testing for the secondary efficacy endpoints will only be conducted if the primary efficacy endpoint has demonstrated statistical significance at 0.05 two-sided in favor of tapinarof. Testing of the secondary endpoints will be performed sequentially following the below pre-specified order... Hypothesis testing for secondary endpoints will stop if statistical significance at 0.05 two-sided in favor of tapinarof is not observed.",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.7
     }
   },
   "timing_ops": {
@@ -507,22 +593,123 @@
       "confidence": 1.0
     },
     "study_schedule": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "screening_days": 34,
+        "screening_washout": null,
+        "periods": [
+          {
+            "name": "screening",
+            "start_week": null,
+            "end_week": 0,
+            "duration_weeks": null,
+            "blinding": null,
+            "background_tcs": null
+          },
+          {
+            "name": "double_blind_treatment",
+            "start_week": 0,
+            "end_week": 12,
+            "duration_weeks": 12,
+            "blinding": "double_blind",
+            "background_tcs": false
+          },
+          {
+            "name": "follow_up",
+            "start_week": 12,
+            "end_week": 16,
+            "duration_weeks": 4,
+            "blinding": null,
+            "background_tcs": null
+          }
+        ],
+        "dosing_interval": "once daily",
+        "visit_cadence": null,
+        "visit_cadence_until_week": null,
+        "visit_weeks": [
+          2,
+          4,
+          8,
+          12
+        ],
+        "visit_days": null,
+        "phone_contact_weeks": [
+          6,
+          10
+        ],
+        "primary_endpoint_week": 12,
+        "end_of_treatment_week": 12,
+        "end_of_study_week": 16,
+        "total_duration_weeks": 20,
+        "follow_up_weeks": 4,
+        "follow_up_days": null,
+        "follow_up_visit_week": 16,
+        "long_term_extension": true,
+        "extension_end_week": null,
+        "extension_visit_interval_weeks": null,
+        "extension_study_id": null,
+        "rerandomization_week": null,
+        "maintenance_arms": null,
+        "maintenance_response_check_weeks": null,
+        "last_injection_week": null,
+        "key_secondary_weeks": null,
+        "follow_up_visit_interval_weeks": null,
+        "end_of_treatment_weeks_after_last_dose": null,
+        "background_tcs_from_day": null,
+        "primary_endpoint_refs": [],
+        "double_dummy_arms": [],
+        "active_comparator": null,
+        "boilerplate_reused_from": [],
+        "conflicts_with_trial": null,
+        "full_visit_table_available": true,
+        "source_inconsistency": null
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/55/NCT03956355/Prot_000.pdf",
+      "source_excerpt": "Following a 34-day screening period, eligible subjects will be randomized at a 2:1 ratio to receive once daily treatment with tapinarof cream, 1% or vehicle cream for 12 weeks. Subjects will return to the clinic at Weeks 2, 4, 8, and 12 for efficacy and safety assessments. Additionally, subjects will be contacted by phone at Weeks 6 and 10... Subjects who choose not to participate in the open-label long-term study... will complete a Follow-up Visit approximately 4 weeks (Week 16 visit) after the end of treatment in this study... Study duration for subjects who complete this Phase 3 study and who fail to qualify for participation in the open-label long-term study... is approximately 20 weeks in total.",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.7
     },
     "rescue_therapy": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "permitted": false,
+        "trigger": "prohibited",
+        "earliest_week": null,
+        "prohibited_through_week": 12,
+        "trigger_rules": [],
+        "flare_definition": [],
+        "first_step": null,
+        "topical_min_days_before_systemic": null,
+        "topical_rescue_requires_study_drug_discontinuation": null,
+        "systemic_rescue_requires_study_drug_discontinuation": null,
+        "resume_after_systemic_rescue_half_lives": null,
+        "resume_after_phototherapy_months": null,
+        "rescued_counted_as_nonresponder": null,
+        "rescued_counted_as_treatment_failure": null,
+        "continue_visits_after_discontinuation": null,
+        "continue_visits_through_week": null,
+        "topical_rescue_not_counted_after_week": null,
+        "topical_agents": [],
+        "topical_potency_classes": [],
+        "tci_reserved_areas": [],
+        "systemic_agents": [],
+        "oral_corticosteroid_limit": null,
+        "rescue_period": null,
+        "escape_arm_washout_half_lives": null,
+        "maintenance_period_rule": null,
+        "permitted_concomitant": [],
+        "recorded_in_ecrf": null,
+        "applies_to_period": "double_blind_treatment",
+        "long_term_extension_eligible_after_rescue": null,
+        "topical_agent_class": null,
+        "rationale": "The protocol contains no rescue-medication provision anywhere in the Study Protocol or SAP (no mention of 'rescue' in either document). Section 5.6.2 prohibits every topical and systemic treatment for plaque psoriasis throughout the 12-week study duration, meaning subjects have no permitted escape treatment for worsening disease during the double-blind period."
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/55/NCT03956355/Prot_000.pdf",
+      "source_excerpt": "5.6.2. Prohibited Medications and Nondrug Therapies: Medications and nondrug therapies that are prohibited throughout the study duration are as follows: ... Topical treatments: corticosteroids, antihistamines, immunomodulators, anthralin (dithranol), Vitamin D derivatives (eg, calcipotriene, calcipotriol), retinoids (eg, tazarotene), or coal tar.",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.5
     }
   },
   "adverse_events": {

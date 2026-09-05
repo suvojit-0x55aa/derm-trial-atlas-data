@@ -263,13 +263,42 @@
       "confidence": 1.0
     },
     "background_therapy": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "regimen_type": "monotherapy",
+        "background_agent_class": null,
+        "tcs_regimen": null,
+        "step_down_rule": null,
+        "recommended_agents": [],
+        "emollient_required": null,
+        "emollient_frequency": null,
+        "prohibited_concomitant": [
+          "Systemic immunosuppressive/immunomodulating drugs (e.g. methotrexate, cyclosporine, azathioprine)",
+          "Retinoids (e.g. alitretinoin)",
+          "Corticosteroids (except steroid eyedrops or inhaled/intranasal steroids up to 1 mg prednisolone equivalent)",
+          "JAK inhibitors, systemic or topical (except the IMP)",
+          "Tanning beds, phototherapy (e.g. UVB, UVA1, PUVA), or bleach baths on the hands",
+          "Cutaneously applied immunomodulators (e.g. PDE-4 inhibitors, pimecrolimus, tacrolimus) or TCS on the hands",
+          "Cutaneously applied antibiotics on the hands",
+          "Other transdermal or cutaneously applied therapy on the hands (except the IMP and the subject's own emollient)"
+        ],
+        "permitted_concomitant": [
+          "Subject's usual emollient, as long as not applied within 2 hours before/after IMP application",
+          "COVID-19 vaccine (recorded as concomitant medication, no need to pause or discontinue IMP)",
+          "Cosmetic body care products (e.g. body lotion, shampoo, bath oil) routinely used by the subject, applied as per instructions for use"
+        ],
+        "applies_to_rerandomized_maintenance": null,
+        "sponsor_trial_ids": [
+          "LP0133-1402"
+        ],
+        "study_drug_doses_mg": [],
+        "population_note": "No background treatment is required in this trial; subjects continue their usual skin-care routine outside a 2-hour window around IMP application."
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/01/NCT04872101/Prot_SAP_000.pdf",
+      "source_excerpt": "9.4 Background treatment: No background treatment is required in this trial. The subjects should not change their usual skin care routine for the hands regarding use of emollients. However, emollients should preferably not be used on the affected areas within 2 hours before and after application of IMP... Panel 7: Prohibited medications and procedures: Systemic immunosuppressive/immunomodulating drugs... JAK inhibitors, systemic or topical (except for the IMP)... Cutaneously applied treatment with immunomodulators (e.g. PDE-4 inhibitors, pimecrolimus, tacrolimus) or TCS on the hands.",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.7
     }
   },
   "endpoints": {
@@ -913,13 +942,59 @@
       "confidence": 1.0
     },
     "multiplicity_control": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "procedure": "graphical",
+        "familywise_error_controlled": true,
+        "alpha": 0.025,
+        "alpha_sided": 1,
+        "alpha_per_dose": null,
+        "co_primary_endpoints": [],
+        "testing_sequence": [],
+        "alpha_split": [
+          {
+            "group": "key secondary tier 1",
+            "n_endpoints": 2,
+            "alpha": null,
+            "method": "alpha splitting/recycling",
+            "timepoint_week": 16
+          },
+          {
+            "group": "key secondary tier 2",
+            "n_endpoints": 10,
+            "alpha": null,
+            "method": "alpha splitting/recycling",
+            "timepoint_week": null
+          },
+          {
+            "group": "key secondary tier 3",
+            "n_endpoints": 11,
+            "alpha": null,
+            "method": "alpha splitting/recycling",
+            "timepoint_week": 16
+          }
+        ],
+        "alpha_recycling": true,
+        "doses_compared": [
+          "delgocitinib cream 20 mg/g"
+        ],
+        "dose_comparison_order": [],
+        "branching_on": null,
+        "regulatory_variants": [],
+        "rescue_counted_as_nonresponder": true,
+        "active_comparator_excluded_from_hierarchy": null,
+        "background_tcs": null,
+        "method_citations": [],
+        "finalized_in_sap": true,
+        "same_design_as": [],
+        "gatekeeping_structure": true,
+        "further_endpoints_through_week": 16
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/01/NCT04872101/Prot_SAP_000.pdf",
+      "source_excerpt": "A closed testing procedure with hierarchical tests, alpha splitting and alpha recycling will be used to control the overall type I error at a nominal one-sided 2.5% level. The statistical testing strategy is built on the principle that the IGA-CHE TS superiority at Week 16 will have to be established before testing for additional benefits (key secondary endpoints)... Panel 22: Graphical display of closed testing procedure for primary and key secondary endpoints [alpha=2.5% (one-sided), IGA-CHE TS at Week 16 -> Primary endpoint, branching 4/5 alpha and 1/5 alpha to two tiers of key secondary endpoints].",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.7
     }
   },
   "timing_ops": {
@@ -960,22 +1035,129 @@
       "confidence": 1.0
     },
     "study_schedule": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "screening_days": 28,
+        "screening_washout": true,
+        "periods": [
+          {
+            "name": "screening",
+            "start_week": -4,
+            "end_week": 0,
+            "duration_weeks": 4,
+            "blinding": null,
+            "background_tcs": null
+          },
+          {
+            "name": "double_blind_treatment",
+            "start_week": 0,
+            "end_week": 16,
+            "duration_weeks": 16,
+            "blinding": "double_blind",
+            "background_tcs": null
+          },
+          {
+            "name": "follow_up",
+            "start_week": 16,
+            "end_week": 18,
+            "duration_weeks": 2,
+            "blinding": null,
+            "background_tcs": null
+          }
+        ],
+        "dosing_interval": "twice daily",
+        "visit_cadence": null,
+        "visit_cadence_until_week": null,
+        "visit_weeks": [
+          0,
+          1,
+          2,
+          4,
+          8,
+          12,
+          16
+        ],
+        "visit_days": null,
+        "phone_contact_weeks": [
+          18
+        ],
+        "primary_endpoint_week": 16,
+        "end_of_treatment_week": 16,
+        "end_of_study_week": 18,
+        "total_duration_weeks": 18,
+        "follow_up_weeks": 2,
+        "follow_up_days": null,
+        "follow_up_visit_week": 18,
+        "long_term_extension": true,
+        "extension_end_week": null,
+        "extension_visit_interval_weeks": null,
+        "extension_study_id": "LP0133-1403",
+        "rerandomization_week": null,
+        "maintenance_arms": null,
+        "maintenance_response_check_weeks": null,
+        "last_injection_week": null,
+        "key_secondary_weeks": [
+          4,
+          8,
+          16
+        ],
+        "follow_up_visit_interval_weeks": null,
+        "end_of_treatment_weeks_after_last_dose": null,
+        "background_tcs_from_day": null,
+        "primary_endpoint_refs": [],
+        "double_dummy_arms": [],
+        "active_comparator": null,
+        "boilerplate_reused_from": [],
+        "conflicts_with_trial": null,
+        "full_visit_table_available": true,
+        "source_inconsistency": null
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/01/NCT04872101/Prot_SAP_000.pdf",
+      "source_excerpt": "Trial design: ...The trial consists of a screening period, a treatment period, and a follow-up period. Screening period: ...minimum duration of 1 week and a maximum duration of 4 weeks... can be extended up to 31 days. Treatment period: ...randomised 2:1... twice daily for 16 weeks... return to the trial site for the visits scheduled at Weeks 1, 2, 4, 8, 12, and 16. Follow-up period: ...follow-up visit (performed via phone...) approximately 2 weeks after the last IMP application... Eligible subjects who complete the treatment period... will be invited to participate in an open-label LTE trial (LP0133-1403).",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.7
     },
     "rescue_therapy": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "permitted": true,
+        "trigger": "investigator_discretion",
+        "earliest_week": null,
+        "prohibited_through_week": null,
+        "trigger_rules": [],
+        "flare_definition": [],
+        "first_step": null,
+        "topical_min_days_before_systemic": null,
+        "topical_rescue_requires_study_drug_discontinuation": true,
+        "systemic_rescue_requires_study_drug_discontinuation": true,
+        "resume_after_systemic_rescue_half_lives": null,
+        "resume_after_phototherapy_months": null,
+        "rescued_counted_as_nonresponder": true,
+        "rescued_counted_as_treatment_failure": null,
+        "continue_visits_after_discontinuation": true,
+        "continue_visits_through_week": 16,
+        "topical_rescue_not_counted_after_week": null,
+        "topical_agents": [],
+        "topical_potency_classes": [],
+        "tci_reserved_areas": [],
+        "systemic_agents": [],
+        "oral_corticosteroid_limit": null,
+        "rescue_period": null,
+        "escape_arm_washout_half_lives": null,
+        "maintenance_period_rule": null,
+        "permitted_concomitant": [],
+        "recorded_in_ecrf": true,
+        "applies_to_period": "treatment and follow-up periods",
+        "long_term_extension_eligible_after_rescue": null,
+        "topical_agent_class": null,
+        "rationale": "IGA-CHE TS at Week 16 without IEs (initiation of rescue treatment or permanent discontinuation of IMP) is the primary estimand; subjects who experience these intercurrent events are treated as non-responders in the composite strategy."
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/01/NCT04872101/Prot_SAP_000.pdf",
+      "source_excerpt": "9.5 Rescue treatment: If medically necessary (i.e. to control intolerable CHE symptoms), rescue treatment for CHE may be prescribed to trial subjects at the discretion of the investigator... If rescue treatment is initiated, the subject must stop treatment with IMP immediately and will not be allowed to restart treatment with IMP. Subjects who discontinue IMP will be asked to attend an early termination visit, a follow-up visit... and also the primary endpoint visit at Week 16. ... (Section 5.3): the primary estimand... is selected to be IGA-CHE TS... at Week 16 without IEs (initiation of rescue treatment or permanent discontinuation of IMP)... subjects who experience IEs are considered non-responders to treatment.",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.7
     }
   },
   "adverse_events": {

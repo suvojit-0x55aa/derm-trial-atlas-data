@@ -278,13 +278,50 @@
       "confidence": 1.0
     },
     "background_therapy": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "regimen_type": "monotherapy",
+        "background_agent_class": null,
+        "tcs_regimen": null,
+        "step_down_rule": null,
+        "recommended_agents": [],
+        "emollient_required": false,
+        "emollient_frequency": "medicated shampoos containing salicylic acid and bland emollients allowed on all body regions, not within 24 hours before a study visit",
+        "prohibited_concomitant": [
+          "Topical corticosteroids, topical calcineurin inhibitors, vitamin D analogs, vitamin A analogs, retinoids, tar, anthralin, calcipotriene, tazarotene, methoxsalen, trimethylpsoralens, fumarate, PDE4 inhibitors, topical JAK inhibitors, aryl hydrocarbon receptor-modulating agents (Week 0 to Week 52)",
+          "Shampoos containing corticosteroids, coal tar, or vitamin D3 analogs",
+          "Phototherapy",
+          "TNFα antagonists (adalimumab, infliximab, etanercept)",
+          "IL-12/23, IL-17, or IL-23 inhibitors (ustekinumab, briakinumab, guselkumab, tildrakizumab, secukinumab, risankizumab, ixekizumab, brodalumab)",
+          "Alpha-4 integrin antagonists (e.g. natalizumab)",
+          "JAK inhibitors (including TYK2 inhibitors)",
+          "PDE4 inhibitors (e.g. apremilast)",
+          "Oral and injectable corticosteroids",
+          "Conventional systemic therapies (methotrexate, cyclosporine A, acitretin or other retinoids)",
+          "Antimalarial agents",
+          "Herbal treatments; traditional Taiwanese, Korean, or Chinese medicines"
+        ],
+        "permitted_concomitant": [
+          "Nonmedicated shampoos on the day of a study visit",
+          "Inhaled, otic, ocular, nasal, or other mucosal-delivery corticosteroids throughout the study",
+          "Intra-articular corticosteroids after Week 16 (for indications other than psoriasis)",
+          "Vitamin D3 and analogs for dietary supplementation",
+          "After Week 52: most topical therapies (ultra-high potency corticosteroids and topical JAK inhibitors remain prohibited)"
+        ],
+        "applies_to_rerandomized_maintenance": null,
+        "sponsor_trial_ids": [
+          "77242113PSO3003"
+        ],
+        "study_drug_doses_mg": [
+          200
+        ],
+        "population_note": "No dedicated background therapy regimen is used for psoriasis; the schema's 3-value regimen_type enum (monotherapy/combination_tcs/standardized_background_topical) doesn't have a clean fit for a psoriasis trial with a tiered concomitant-medication prohibition list, but 'monotherapy' is used here since no adjunct psoriasis treatment is provided as part of the protocol and most concomitant psoriasis therapies are prohibited (Section 6.9: 'No rescue therapies for psoriasis are permitted in the study.'). Restrictions loosen substantially after Week 52 (most topicals become permitted) since the study intervention has already been established over the placebo-controlled and initial active period."
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/02/NCT06095102/Prot_000.pdf",
+      "source_excerpt": "6.9. Prior and Concomitant Therapy ... Prohibited Therapy: All experimental therapies or new investigational interventions ... must be discontinued prior to the first administration of study intervention ... No rescue therapies for psoriasis are permitted in the study. Psoriasis Concomitant Medications: Topical Therapy Week 0 to Week 52: Medicated shampoos containing salicylic acid and bland emollients are allowed on all body regions but should not be used within 24 hours before any study visit... Week 52 to Week 160: After the Week 52 visit, most topical therapies are permitted for treatment of psoriasis; ultra-high potency corticosteroids and topical JAK inhibitors are still prohibited during this period.",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.65
     }
   },
   "endpoints": {
@@ -1552,13 +1589,159 @@
       "confidence": 0.85
     },
     "multiplicity_control": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "procedure": "gatekeeping_with_holm",
+        "familywise_error_controlled": true,
+        "alpha": 0.05,
+        "alpha_sided": 2,
+        "alpha_per_dose": null,
+        "co_primary_endpoints": [
+          {
+            "label": "IGA (overall) score of cleared (0) or minimal (1) and >=2-grade improvement from baseline at Week 16",
+            "scale": "IGA",
+            "responder_criteria": [],
+            "timepoint_week": 16,
+            "alpha": 0.05,
+            "step": 0
+          }
+        ],
+        "testing_sequence": [
+          {
+            "label": "ss-IGA score of 0 or 1 at Week 16",
+            "scale": "ss-IGA",
+            "responder_criteria": [],
+            "timepoint_week": 16,
+            "alpha": null,
+            "step": 1
+          },
+          {
+            "label": "hf-PGA score of 0 or 1 at Week 16",
+            "scale": "hf-PGA",
+            "responder_criteria": [],
+            "timepoint_week": 16,
+            "alpha": null,
+            "step": 1
+          },
+          {
+            "label": "sPGA-G score of 0 or 1 at Week 16",
+            "scale": "sPGA-G",
+            "responder_criteria": [],
+            "timepoint_week": 16,
+            "alpha": null,
+            "step": 1
+          },
+          {
+            "label": "PSSD symptom score of 0 at Week 16",
+            "scale": "PSSD",
+            "responder_criteria": [],
+            "timepoint_week": 16,
+            "alpha": null,
+            "step": 2
+          },
+          {
+            "label": ">=4-point improvement from baseline in PSSD Itch score at Week 16",
+            "scale": "PSSD",
+            "responder_criteria": [],
+            "timepoint_week": 16,
+            "alpha": null,
+            "step": 2
+          },
+          {
+            "label": "IGA (overall) score of 0 at Week 16",
+            "scale": "IGA",
+            "responder_criteria": [],
+            "timepoint_week": 16,
+            "alpha": null,
+            "step": 2
+          },
+          {
+            "label": "PSSI 90 at Week 16",
+            "scale": "PSSI",
+            "responder_criteria": [],
+            "timepoint_week": 16,
+            "alpha": null,
+            "step": 3
+          },
+          {
+            "label": ">=4-point improvement from baseline in Scalp Itch NRS score at Week 16",
+            "scale": "Scalp Itch NRS",
+            "responder_criteria": [],
+            "timepoint_week": 16,
+            "alpha": null,
+            "step": 3
+          },
+          {
+            "label": ">=4-point improvement from baseline in GPSS Genital Itch NRS score (Item 1) at Week 16",
+            "scale": "GPSS",
+            "responder_criteria": [],
+            "timepoint_week": 16,
+            "alpha": null,
+            "step": 3
+          },
+          {
+            "label": "GenPs-SFQ item 2 score of 0 or 1 at Week 16",
+            "scale": "GenPs-SFQ",
+            "responder_criteria": [],
+            "timepoint_week": 16,
+            "alpha": null,
+            "step": 3
+          }
+        ],
+        "alpha_split": [
+          {
+            "group": "Tier 1 (ss-IGA, hf-PGA, sPGA-G)",
+            "n_endpoints": 3,
+            "alpha": null,
+            "method": "truncated Bonferroni-Holm",
+            "timepoint_week": 16
+          },
+          {
+            "group": "Tier 2 (PSSD symptom, PSSD Itch, IGA overall=0)",
+            "n_endpoints": 3,
+            "alpha": null,
+            "method": "Bonferroni-Holm",
+            "timepoint_week": 16
+          },
+          {
+            "group": "Remaining fixed-sequence endpoints (PSSI 90, Scalp Itch NRS, GPSS Genital Itch NRS, GenPs-SFQ)",
+            "n_endpoints": 4,
+            "alpha": null,
+            "method": "fixed sequential",
+            "timepoint_week": 16
+          }
+        ],
+        "alpha_recycling": true,
+        "doses_compared": [
+          "JNJ-77242113 200 mg",
+          "placebo"
+        ],
+        "dose_comparison_order": [],
+        "branching_on": {
+          "label": "IGA (overall) score of cleared (0) or minimal (1) and >=2-grade improvement from baseline at Week 16",
+          "scale": "IGA",
+          "responder_criteria": [],
+          "timepoint_week": 16,
+          "alpha": 0.05,
+          "step": 0
+        },
+        "regulatory_variants": [],
+        "rescue_counted_as_nonresponder": null,
+        "active_comparator_excluded_from_hierarchy": null,
+        "background_tcs": null,
+        "method_citations": [
+          "Holm S. (1979). A simple sequentially rejective multiple test procedure. Scand J Statist 6: 65-70."
+        ],
+        "finalized_in_sap": true,
+        "same_design_as": [],
+        "gatekeeping_structure": true,
+        "further_endpoints_through_week": null
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/02/NCT06095102/SAP_001.pdf",
+      "source_excerpt": "A multiplicity adjustment procedure will be used to control the overall Type I error rate of alpha=0.05 (2-sided) for the primary and 10 key secondary endpoints. ... Key secondary endpoints will only be tested if the primary endpoint is significant. ... When the primary endpoint is positive, a truncated Bonferroni-Holm procedure (Holm, 1979) as shown in Figure 2 will be applied to the key secondary endpoints at Week 16 in Tier 1. In this truncated version, if ss-IGA 0/1 or sPGA-G 0/1 is significant at their assigned alpha levels, 1/3 of the assigned alpha level will be passed down to the endpoints in Tier 2. The Bonferroni-Holm procedure will be used to test endpoints in Tier 2 at an alpha level propagated from Tier 1. ... testing will continue to the remaining endpoints in a fixed sequence...",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.7
     }
   },
   "timing_ops": {
@@ -1599,22 +1782,125 @@
       "confidence": 1.0
     },
     "study_schedule": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "screening_days": 35,
+        "screening_washout": true,
+        "periods": [
+          {
+            "name": "screening",
+            "start_week": -5,
+            "end_week": 0,
+            "duration_weeks": 5,
+            "blinding": null,
+            "background_tcs": null
+          },
+          {
+            "name": "double_blind_treatment",
+            "start_week": 0,
+            "end_week": 16,
+            "duration_weeks": 16,
+            "blinding": "double-blind",
+            "background_tcs": null
+          },
+          {
+            "name": "continuation_treatment",
+            "start_week": 16,
+            "end_week": 156,
+            "duration_weeks": 140,
+            "blinding": null,
+            "background_tcs": null
+          },
+          {
+            "name": "follow_up",
+            "start_week": 156,
+            "end_week": 160,
+            "duration_weeks": 4,
+            "blinding": null,
+            "background_tcs": null
+          }
+        ],
+        "dosing_interval": "once daily",
+        "visit_cadence": null,
+        "visit_cadence_until_week": null,
+        "visit_weeks": null,
+        "visit_days": null,
+        "phone_contact_weeks": null,
+        "primary_endpoint_week": 16,
+        "end_of_treatment_week": 156,
+        "end_of_study_week": 160,
+        "total_duration_weeks": 165,
+        "follow_up_weeks": 4,
+        "follow_up_days": null,
+        "follow_up_visit_week": 160,
+        "long_term_extension": false,
+        "extension_end_week": null,
+        "extension_visit_interval_weeks": null,
+        "extension_study_id": null,
+        "rerandomization_week": null,
+        "maintenance_arms": null,
+        "maintenance_response_check_weeks": null,
+        "last_injection_week": null,
+        "key_secondary_weeks": [
+          16
+        ],
+        "follow_up_visit_interval_weeks": null,
+        "end_of_treatment_weeks_after_last_dose": null,
+        "background_tcs_from_day": null,
+        "primary_endpoint_refs": [],
+        "double_dummy_arms": [],
+        "active_comparator": null,
+        "boilerplate_reused_from": [],
+        "conflicts_with_trial": null,
+        "full_visit_table_available": true,
+        "source_inconsistency": null
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/02/NCT06095102/Prot_000.pdf",
+      "source_excerpt": "STUDY ARMS AND DURATION: The total duration of this study for each participant is approximately 165 weeks, which includes a 5-week screening period, a placebo-controlled period through Week 16, and a 140-week active treatment period. All participants will have a 4-week safety follow-up period after discontinuation of study intervention or at the end of the treatment period. Participants will be randomized in a 2:1 ratio to JNJ-77242113 200 mg daily or placebo. JNJ-77242113 200 mg once daily: Week 0 to Week 156... Placebo to JNJ-77242113 200 mg once daily: Week 0 to Week 16 placebo, Week 16 to Week 156 cross-over to JNJ-77242113 200 mg once daily.",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.7
     },
     "rescue_therapy": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "permitted": false,
+        "trigger": "prohibited",
+        "earliest_week": null,
+        "prohibited_through_week": null,
+        "trigger_rules": [],
+        "flare_definition": [],
+        "first_step": null,
+        "topical_min_days_before_systemic": null,
+        "topical_rescue_requires_study_drug_discontinuation": null,
+        "systemic_rescue_requires_study_drug_discontinuation": null,
+        "resume_after_systemic_rescue_half_lives": null,
+        "resume_after_phototherapy_months": null,
+        "rescued_counted_as_nonresponder": null,
+        "rescued_counted_as_treatment_failure": null,
+        "continue_visits_after_discontinuation": true,
+        "continue_visits_through_week": null,
+        "topical_rescue_not_counted_after_week": null,
+        "topical_agents": [],
+        "topical_potency_classes": [],
+        "tci_reserved_areas": [],
+        "systemic_agents": [],
+        "oral_corticosteroid_limit": null,
+        "rescue_period": null,
+        "escape_arm_washout_half_lives": null,
+        "maintenance_period_rule": null,
+        "permitted_concomitant": [],
+        "recorded_in_ecrf": null,
+        "applies_to_period": "entire study",
+        "long_term_extension_eligible_after_rescue": null,
+        "topical_agent_class": null,
+        "rationale": "No rescue therapy for psoriasis is permitted in this study; a placebo-to-active crossover at Week 16 (rather than rescue medication) serves the ethical need for early relief of the placebo arm."
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/02/NCT06095102/Prot_000.pdf",
+      "source_excerpt": "No rescue therapies for psoriasis are permitted in the study.",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.7
     }
   },
   "adverse_events": {

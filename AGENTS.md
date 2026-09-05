@@ -711,6 +711,137 @@ This file is the project's committed home for project-intrinsic agent memory: bu
   for very recent NDA/BLA numbers not yet cross-checked, rather than a web-search recap of already-
   known approvals, is the more promising next angle).
 
+- **Deep-extraction cycle 2 (same 2026-09-05 captain instruction, continued): read the real Study
+  Protocol/SAP PDF for every one of the 61 non-AD trials that had one posted on CT.gov's
+  `documentSection`, closing `design.background_therapy` 17->73/122,
+  `endpoints.multiplicity_control` 16->67/122, `timing_ops.study_schedule` 15->74/122,
+  `timing_ops.rescue_therapy` 14->57/122, plus a bonus 5 more `population.severity_criteria`
+  (110/122) found along the way.** Downloaded all 139 PDFs (some trials have both a Protocol and a
+  separate SAP doc) via the CDN URL pattern in `fetch_protocol_docs.py`, converted with
+  `pdftotext -layout`, then fanned out 8 parallel subagents (one per ~8-trial batch) to read the
+  real text and write per-trial JSON patches — orchestrator applied, schema-validated, and
+  CSV-diffed every patch before committing, same regression discipline as every prior cycle.
+  **Garbled PDF-text extraction is common and must not be mistaken for a missing quote**: this
+  cycle hit column-bleed (stray words from a facing margin interleaved mid-sentence), pervasive
+  letter-spacing ("C o n c o m i t a n t"), and a consistent byte-shift cipher (every character
+  offset by a fixed amount, e.g. "Athenex"->"$WKHQH[", reverse-engineered and decoded before
+  reading) — all three still contain the real text and are extractable, but a naive substring
+  match against the raw or whitespace-collapsed text will report a false negative even for a
+  genuine, correctly-quoted excerpt. Verify a flagged excerpt by stripping ALL whitespace (not
+  just collapsing it) from both the quote and the source before substring-checking, and manually
+  spot-check a sample by hand (~20 checked this cycle, all confirmed real) rather than trusting
+  one mechanical pass.
+- **This cycle's much wider RESCUE/MULTIPLICITY content exposed real gaps in the metric/scale_variant
+  enums beyond the severity-criteria gaps already documented above**: no metric exists for a
+  worsening/increase relative to a reference (a `point_increase` in GPPGA or SALT, or an AN-count
+  rising to `>=150% of baseline`, are real rescue/flare triggers with no valid
+  `absolute_score`/`*_improvement`/`*_reduction` mapping — reduction/improvement metrics all assume
+  the direction is toward getting better) and no metric for lesion-clearance endpoints (Tirbanibulin's
+  "100% complete clearance" / "≥75% partial clearance" AK primary/key-secondary). Same
+  established practice applies: drop the specific unrepresentable criterion (or null out a
+  sub-object like `rescue_period`/`oral_corticosteroid_limit`/`maintenance_period_rule` whose
+  schema requires ALL its non-nullable sub-fields once present, e.g. a real day-based OCS limit
+  when the schema only models `max_mg_per_kg`/`max_consecutive_weeks` in weeks) rather than
+  force-fit a wrong enum value or invented number — the real detail stays fully documented in that
+  field's own free-text `rationale`, just not structurally represented. A future cycle extending
+  the schema should treat both this note and the severity-criteria one above as one combined
+  backlog for `kolai-website`.
+- **Remaining gaps after this cycle are two genuinely different kinds, not one undifferentiated
+  backlog**: roughly half the ~48-65 trials still missing each of the 4 fields have NO Study
+  Protocol/SAP document posted on CT.gov at all (unextractable without a different source, e.g. a
+  paywalled publication); the other half have a real posted document that was fully read this
+  cycle and genuinely states no rescue-medication concept or no formal multiplicity-control
+  procedure applies to that trial (a correct, checked finding — e.g. several simple 8-week
+  topical-monotherapy-vs-vehicle Phase 2/3 designs have no rescue mechanism by design). Don't
+  re-attempt PDF extraction on a trial already confirmed to have no document; do treat a
+  "no-document" trial as worth re-checking if CT.gov later posts one.
+
+- **Deep-extraction cycle 3 (2026-09-05, same captain instruction, after rebasing this branch onto
+  main's cycle 17-21 scale-out additions): re-verified every trial cycle 2 left as a
+  `background_therapy`/`multiplicity_control`/`study_schedule`/`rescue_therapy` gap, using a wider
+  keyword net, and closed 6 real multiplicity_control misses cycle 2's narrower search terms had
+  passed over — ARCADIA 1/2 (NCT03985943/NCT03989349, Nemolizumab AD), LIBERTY-BP
+  (NCT04206553, Dupilumab), Roflumilast Trial 204 (NCT04128007, SebDerm), and both Berdazimer
+  B-SIMPLE trials (NCT03927703/NCT03927716, Molluscum) — taking the field from 68/127 to 74/127.
+  Every one of these 6 documents genuinely states a real hierarchical/gatekeeping procedure (a
+  literal "Multiplicity Adjustment"/"Multiple Comparison/Multiplicity" section with a named
+  method), but cycle 2's search for "multiplic|hierarch|type I error|gatekeep|closed testing|
+  sequential test" missed docs that instead say **"fixed-sequence method"** (both Berdazimer
+  trials) or bury the section under a differently-worded heading — always also search
+  `"significance level"`, `"family[- ]wise"`, `"Holm"`, and read the 40-80 lines around any hit
+  rather than trusting a keyword miss as evidence of absence.
+- **A protocol PDF's full text includes its own amendment history, and a keyword hit inside a
+  tracked-changes "the following text has been deleted" block describes a design the sponsor later
+  REMOVED, not the trial's final design** — found checking BE VIVID (NCT03370133, Bimekizumab
+  Psoriasis) for `rescue_therapy`: an "escape arm" (non-PASI90-responders switched to open-label
+  bimekizumab) appears at real length in the PDF, but is explicitly framed by a later amendment as
+  deleted text ("To remove the escape arm..."), so the trial's actual final design has no
+  escape/rescue mechanism — confirmed by BE SURE/BE RADIANT (same drug program, active-comparator
+  designs) both having zero "escape"/"rescue" hits at all. Always check whether a hit sits inside
+  a change-log/amendment section before treating it as the trial's real, final rule.
+- **A real, quoted, schema-representable multiplicity procedure can still leave `co_primary_endpoints`/
+  `testing_sequence` needing an empty `responder_criteria: []`** when the endpoint itself has no
+  representable metric — both Berdazimer trials' real "fixed-sequence method... strongly controlled
+  at the alpha=0.05 level" procedure is fully quotable, but its one endpoint ("Complete Clearance of
+  All Treatable MC") is the same lesion-clearance-metric schema gap already documented above for
+  Tirbanibulin; matching the primary endpoint's own already-committed `responder_criteria: []`
+  (rather than leaving the whole `multiplicity_control` field `needs_extraction`) is the correct,
+  precedent-consistent way to record a real procedure without a representable criterion — verify
+  the referenced endpoint's own JSON before assuming a `[]` list is a mistake to fix.
+- **After this cycle's re-check, the remaining `rescue_therapy` gaps for Bimekizumab (all 3
+  Psoriasis trials), JADE COMPARE, DERMIS 1/2, STRATUM, Trial 204, Trial 203/SebDerm, Vyjuvek/EB,
+  both AA trials (BRAVE-AA1, THRIVE-AA2), all 3 remaining Berdazimer trials, and ADORING
+  2/ARRECTOR/PSOARING 2 are now confirmed via a real, documented zero-hit "rescue"/"escape" search
+  of their own protocol PDFs — genuine dead ends, not oversights.** The 2 Difamilast Phase 3
+  trials' (NCT03908970/NCT03911401) `multiplicity_control` gap is also a confirmed genuine dead
+  end: both PDFs were read in full and state only a single primary + one "important secondary
+  endpoint," with no formal Type-I-error-control language anywhere in either SAP.
+- **A PDF that yields 0 lines from `pdftotext` is a scanned/image-only PDF, not an empty or
+  unreadable one — `pdftoppm -r 150/200 -png` + `tesseract --psm 6 -l eng` (both already on this
+  machine, `/opt/homebrew/bin/`) recovers real, quotable text just as reliably as the Read-tool
+  page-image route already used for the Eskata/Xepi label PDFs, and is far cheaper for a
+  multi-page document** — closed both of this cycle's scanned-PDF gaps this way: Sarecycline
+  SC1401/SC1402's 64-page SAP (`NCT02320149`, `endpoints.multiplicity_control` — a full 8-step
+  fixed-sequence hierarchy over inflammatory/noninflammatory lesion-count endpoints) and
+  Trifarotene's 10-page rotated Protocol Summary (`NCT02556788`, `design.background_therapy` — a
+  real vehicle-controlled monotherapy design with a fully quoted prohibited-concomitant-medication
+  list). Tesseract handled the Trifarotene PDF's 270-degree page rotation with no pre-rotation
+  step needed. One naming curiosity found and left as-is: NCT02320149's own SAP title page reads
+  "Study SC1401" even though this repo's README calls NCT02320149 "SC1402" — both Sarecycline
+  trials share one identical official title and design, so this is likely a sponsor internal-code
+  labeling quirk, not a wrong document (confirmed by fetching the PDF from NCT02320149's own
+  CT.gov `documentSection` listing, not a guessed URL); a future cycle could verify the
+  SC1401/SC1402 assignment against Seysara's FDA label section 14 if it matters for citation
+  precision.
+- **A trial with no posted Study Protocol/SAP can still have real, if thin, `rescue_therapy`/
+  `background_therapy` content sitting directly in CT.gov's own free-text `eligibilityCriteria`
+  field — cheap to check (one API call, no PDF) and worth running before writing off a
+  no-document trial as a complete dead end.** Batch-checked all 50 no-document gap trials'
+  eligibility text this cycle for rescue/background keywords: 3 of 4 hits were false leads (an
+  eligibility exclusion mentioning "topical corticosteroids" or "concomitant medication" as a
+  *disqualifying* criterion, not a description of the trial's own background/rescue design), but
+  Head Lice (NCT02060903, Abametapir) had a real one — exclusion criteria 2-3 state subjects may
+  not use other lice treatment or a lice comb "unless provided as rescue therapy to this
+  Protocol," confirming rescue therapy is a real, permitted part of this trial's design. The
+  actual composition/trigger/timing isn't stated anywhere reachable (no protocol posted), so the
+  field was filled as a genuine partial fact (`permitted: true`, every compositional sub-field
+  left null, `rationale` quoting the real text and stating plainly what still isn't known) rather
+  than left at `needs_extraction` (which would incorrectly imply nothing at all is known) or
+  over-filled with a guessed composition.
+- **After 3 cycles of increasingly wide re-checking (narrow keyword search, then broadened
+  keywords with amendment-history verification, then CT.gov eligibility-text as a document-free
+  fallback), the `background_therapy`/`multiplicity_control`/`study_schedule`/`rescue_therapy`
+  backlog is at a genuine, real stopping point, not a paused-for-time one.** Every one of the 19
+  gap trials confirmed to have a posted protocol/SAP document was individually re-read this cycle
+  with a wide keyword net (see the "fixed-sequence method" and "escape arm" notes above) and its
+  remaining gap confirmed as the document's real, stated position, not an extraction miss. The
+  other ~49 gap trials have no document on CT.gov at all, and a fresh eligibility-text sweep found
+  only one more real (if partial) fact to add. The only remaining path to close more of this
+  backlog for real is the paywalled-publication research effort AGENTS.md already documents as
+  out-of-scope for every indication past the original 5-drug AD pass — not a re-run of the same
+  CT.gov/protocol-PDF method, which has now been applied as thoroughly as the available sources
+  allow.
+
 ## Maintaining this file
 
 Keep this file for knowledge useful to almost every future agent session in this project.

@@ -354,13 +354,34 @@
       "confidence": 1.0
     },
     "background_therapy": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "regimen_type": "monotherapy",
+        "background_agent_class": null,
+        "tcs_regimen": null,
+        "step_down_rule": null,
+        "recommended_agents": [],
+        "emollient_required": null,
+        "emollient_frequency": null,
+        "prohibited_concomitant": [
+          "All other treatments for acne including topical and medicated cleansers and therapies (prohibited during the study)",
+          "Initiation or change of hormonal contraception during the study"
+        ],
+        "permitted_concomitant": [
+          "Non-medicated facial hygiene products (cleansers) approved by the Sponsor"
+        ],
+        "applies_to_rerandomized_maintenance": null,
+        "sponsor_trial_ids": [
+          "SC1401"
+        ],
+        "study_drug_doses_mg": [],
+        "population_note": "Monotherapy design: protocol Section 9.4.6.1 states all other acne treatments are prohibited during the study; only Sponsor-approved non-medicated facial cleansers are permitted."
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/49/NCT02320149/Prot_000.pdf",
+      "source_excerpt": "9.4.6.1 Excluded Medications and Therapies Subjects must abstain from use of all excluded medications and therapies (Section 9.3.2) after the initial screening visit and throughout the treatment period. Subjects may use non-medicated cleansers approved by the Sponsor as a facial cleanser during the study. All other treatments for acne including topical and medicated cleansers and therapies are prohibited during the study.",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.7
     }
   },
   "endpoints": {
@@ -785,13 +806,122 @@
       "confidence": 1.0
     },
     "multiplicity_control": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "procedure": "serial_gatekeeping",
+        "familywise_error_controlled": true,
+        "alpha": 0.05,
+        "alpha_sided": 2,
+        "alpha_per_dose": null,
+        "co_primary_endpoints": [
+          {
+            "label": "Absolute Change in Facial Inflammatory Lesion Counts at Week 12 (Time frame: Baseline (Day 1) to Week 12)",
+            "scale": null,
+            "responder_criteria": [],
+            "timepoint_week": 12,
+            "alpha": 0.05,
+            "step": 1
+          },
+          {
+            "label": "IGA success (co-primary; investigator's global assessment)",
+            "scale": "IGA",
+            "responder_criteria": [],
+            "timepoint_week": 12,
+            "alpha": 0.05,
+            "step": null
+          }
+        ],
+        "testing_sequence": [
+          {
+            "label": "Percent Change From Baseline in Facial Inflammatory Lesion Counts at Week 12",
+            "scale": null,
+            "responder_criteria": [],
+            "timepoint_week": 12,
+            "alpha": 0.05,
+            "step": 1
+          },
+          {
+            "label": "Absolute Change From Baseline in Facial Inflammatory Lesion Counts at Week 9",
+            "scale": null,
+            "responder_criteria": [],
+            "timepoint_week": 9,
+            "alpha": 0.05,
+            "step": 2
+          },
+          {
+            "label": "Absolute Change From Baseline in Facial Inflammatory Lesion Counts at Week 6",
+            "scale": null,
+            "responder_criteria": [],
+            "timepoint_week": 6,
+            "alpha": 0.05,
+            "step": 3
+          },
+          {
+            "label": "Absolute Change From Baseline in Facial Inflammatory Lesion Counts at Week 3",
+            "scale": null,
+            "responder_criteria": [],
+            "timepoint_week": 3,
+            "alpha": 0.05,
+            "step": 4
+          },
+          {
+            "label": "Absolute Change From Baseline in Facial Noninflammatory Lesion Counts at Week 12",
+            "scale": null,
+            "responder_criteria": [],
+            "timepoint_week": 12,
+            "alpha": 0.05,
+            "step": 5
+          },
+          {
+            "label": "Absolute Change From Baseline in Facial Noninflammatory Lesion Counts at Week 9",
+            "scale": null,
+            "responder_criteria": [],
+            "timepoint_week": 9,
+            "alpha": 0.05,
+            "step": 6
+          },
+          {
+            "label": "Absolute Change From Baseline in Facial Noninflammatory Lesion Counts at Week 6",
+            "scale": null,
+            "responder_criteria": [],
+            "timepoint_week": 6,
+            "alpha": 0.05,
+            "step": 7
+          },
+          {
+            "label": "Absolute Change From Baseline in Facial Noninflammatory Lesion Counts at Week 3",
+            "scale": null,
+            "responder_criteria": [],
+            "timepoint_week": 3,
+            "alpha": 0.05,
+            "step": 8
+          }
+        ],
+        "alpha_split": [],
+        "alpha_recycling": false,
+        "doses_compared": [],
+        "dose_comparison_order": [],
+        "branching_on": null,
+        "regulatory_variants": [],
+        "rescue_counted_as_nonresponder": null,
+        "active_comparator_excluded_from_hierarchy": null,
+        "background_tcs": null,
+        "method_citations": [],
+        "finalized_in_sap": true,
+        "same_design_as": [
+          {
+            "nct_id": "NCT02322866",
+            "trial_name": "Sarecycline sister trial"
+          }
+        ],
+        "gatekeeping_structure": true,
+        "further_endpoints_through_week": 12
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/49/NCT02320149/SAP_001.pdf",
+      "source_excerpt": "10.2 SECONDARY EFFICACY PARAMETERS: A hierarchical testing approach will be used for the secondary efficacy endpoints, such that statistical testing will only be performed if both co-primary efficacy endpoints are statistically superior to placebo at alpha=0.05. In addition, statistical testing of the secondary endpoints will be conducted in the following order, with all tests proceeding at the 0.05 level if and only if the previous tests were all significant at the 0.05 level: 1. Percent CFB for inflammatory lesion counts at Week 12; 2. Absolute and percent CFB for inflammatory lesion counts at Week 9; 3. ...Week 6; 4. ...Week 3; 5. Absolute and percent CFB for noninflammatory lesion counts at Week 12; 6. ...Week 9; 7. ...Week 6; 8. ...Week 3 (both endpoints must meet the 0.05 level for Week 3 to meet statistical significance). [Statistical Analysis Plan, Study SC1401/SC1402 twin design, Sarecycline Acne Vulgaris, Amendment 1, Revised 03 Mar 2017 -- OCR'd from a scanned PDF via tesseract, since pdftotext extracts 0 lines from this document] \"2-sided hypothesis tests performed at the 5% level of significance for main effects.\"",
+      "extracted_by": "deep-extraction cycle 3 (scanned SAP PDF, tesseract OCR)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.65
     }
   },
   "timing_ops": {
@@ -832,22 +962,116 @@
       "confidence": 1.0
     },
     "study_schedule": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "screening_days": null,
+        "screening_washout": true,
+        "periods": [
+          {
+            "name": "screening",
+            "start_week": null,
+            "end_week": null,
+            "duration_weeks": null,
+            "blinding": null,
+            "background_tcs": null
+          },
+          {
+            "name": "randomized_treatment",
+            "start_week": 0,
+            "end_week": 12,
+            "duration_weeks": 12,
+            "blinding": "double_blind",
+            "background_tcs": null
+          }
+        ],
+        "dosing_interval": null,
+        "visit_cadence": null,
+        "visit_cadence_until_week": null,
+        "visit_weeks": [
+          1,
+          3,
+          6,
+          9,
+          12,
+          13
+        ],
+        "visit_days": null,
+        "phone_contact_weeks": [
+          1
+        ],
+        "primary_endpoint_week": 12,
+        "end_of_treatment_week": 12,
+        "end_of_study_week": null,
+        "total_duration_weeks": 12,
+        "follow_up_weeks": null,
+        "follow_up_days": null,
+        "follow_up_visit_week": null,
+        "long_term_extension": false,
+        "extension_end_week": null,
+        "extension_visit_interval_weeks": null,
+        "extension_study_id": null,
+        "rerandomization_week": null,
+        "maintenance_arms": null,
+        "maintenance_response_check_weeks": null,
+        "last_injection_week": null,
+        "key_secondary_weeks": null,
+        "follow_up_visit_interval_weeks": null,
+        "end_of_treatment_weeks_after_last_dose": null,
+        "background_tcs_from_day": null,
+        "primary_endpoint_refs": [],
+        "double_dummy_arms": [],
+        "active_comparator": null,
+        "boilerplate_reused_from": [],
+        "conflicts_with_trial": null,
+        "full_visit_table_available": true,
+        "source_inconsistency": "Visit 5 (Week 13, included in visit_weeks) applies only to the PK Schedule 3 subgroup (subjects aged 9-11 years participating in that PK sampling option), not to all subjects; the main treatment period and primary-endpoint visit (Visit 4) is Week 12."
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/49/NCT02320149/Prot_000.pdf",
+      "source_excerpt": "Duration of Treatment: 12 weeks. Efficacy Assessments: IGA scores and lesion counts at baseline and following 3, 6, 9, and 12 weeks of treatment. ... 9.5.1 Screening Period [SV1, SV2/Baseline]; 9.5.2 Treatment Period: 9.5.2.1 Telephone Contact (Week 1±3 days); 9.5.2.2 Visit 1 (Week 3±3 days); 9.5.2.3 Visit 2 (Week 6±3 days); 9.5.2.4 Visit 3 (Week 9±3 days); 9.5.2.5 Visit 4 (Week 12±3 days); 9.5.2.6 Visit 5 (Week 13±3 days)(for subjects participating in PK Schedule 3); 9.5.2.7 Early Termination Visit.",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.7
     },
     "rescue_therapy": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "permitted": false,
+        "trigger": "prohibited",
+        "earliest_week": null,
+        "prohibited_through_week": null,
+        "trigger_rules": [],
+        "flare_definition": [],
+        "first_step": null,
+        "topical_min_days_before_systemic": null,
+        "topical_rescue_requires_study_drug_discontinuation": null,
+        "systemic_rescue_requires_study_drug_discontinuation": null,
+        "resume_after_systemic_rescue_half_lives": null,
+        "resume_after_phototherapy_months": null,
+        "rescued_counted_as_nonresponder": null,
+        "rescued_counted_as_treatment_failure": null,
+        "continue_visits_after_discontinuation": null,
+        "continue_visits_through_week": null,
+        "topical_rescue_not_counted_after_week": null,
+        "topical_agents": [],
+        "topical_potency_classes": [],
+        "tci_reserved_areas": [],
+        "systemic_agents": [],
+        "oral_corticosteroid_limit": null,
+        "rescue_period": null,
+        "escape_arm_washout_half_lives": null,
+        "maintenance_period_rule": null,
+        "permitted_concomitant": [],
+        "recorded_in_ecrf": null,
+        "applies_to_period": "treatment_period",
+        "long_term_extension_eligible_after_rescue": null,
+        "topical_agent_class": null,
+        "rationale": "No rescue-medication provision is described anywhere in the protocol; all other acne treatments are prohibited during the study (Section 9.4.6.1), and subjects with clinically significant worsening of acne requiring a change in acne treatment are instead withdrawn from the study rather than given rescue therapy."
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/49/NCT02320149/Prot_000.pdf",
+      "source_excerpt": "Subjects must be withdrawn from the study for any of the following events: ... Clinically significant worsening of acne status requiring change of treatment in acne management (eg. increased size or number of nodules). ... All other treatments for acne including topical and medicated cleansers and therapies are prohibited during the study.",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.6
     }
   },
   "adverse_events": {

@@ -100,7 +100,7 @@
       },
       "source_type": "openfda_label",
       "source_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=37b310bd-f6a0-9d4e-e063-6294a90a889d",
-      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1) -- v1 extracted text: 12.1 Mechanism of Action Bimekizumab-bkzx is a humanized immunoglobulin IgG1/ \u03ba monoclonal antibody with two identical antigen binding regions that selectively bind to human interleukin 17A (IL-17A), interleukin 17F (IL-17F), and interleukin 17-AF cytokines, and inhibits their interaction with the IL-17 receptor complex. IL-17A and IL-17F are naturally occurring cytokines that are involved in normal inflammatory and immune responses. Bimekizumab-bkzx inhibits the release of proinflammatory cytokines and chemokines.",
+      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1) -- v1 extracted text: 12.1 Mechanism of Action Bimekizumab-bkzx is a humanized immunoglobulin IgG1/ κ monoclonal antibody with two identical antigen binding regions that selectively bind to human interleukin 17A (IL-17A), interleukin 17F (IL-17F), and interleukin 17-AF cytokines, and inhibits their interaction with the IL-17 receptor complex. IL-17A and IL-17F are naturally occurring cytokines that are involved in normal inflammatory and immune responses. Bimekizumab-bkzx inhibits the release of proinflammatory cytokines and chemokines.",
       "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 0.9
@@ -273,13 +273,46 @@
       "confidence": 1.0
     },
     "background_therapy": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "regimen_type": null,
+        "background_agent_class": null,
+        "tcs_regimen": null,
+        "step_down_rule": null,
+        "recommended_agents": [],
+        "emollient_required": null,
+        "emollient_frequency": null,
+        "prohibited_concomitant": [
+          "All biologic therapy with potential therapeutic impact on HS",
+          "Phototherapy (PUVA and/or UVB) or photochemotherapy",
+          "Immunomodulatory therapy, including topical or systemic steroids, except as permitted rescue lesion intervention",
+          "Topical and systemic therapies for HS (per Table 6-3 exclusions)",
+          "Surgical or laser intervention for an HS lesion, except as permitted rescue lesion intervention",
+          "Systemic antibiotics used within 2 weeks prior to Baseline (except stable-dose antibiotic-strata participants)",
+          "Systemic retinoids used within 4 weeks prior to Baseline",
+          "Systemic non-biologic treatment including apremilast used within 4 weeks prior to Baseline",
+          "Opioid analgesics (including tramadol) for any indication"
+        ],
+        "permitted_concomitant": [
+          "Wound care dressings on HS wounds, limited to alginates, hydrocolloids, and hydrogels (recorded in eCRF)",
+          "Saline, water, and/or Vaseline (petroleum jelly) for lesion care",
+          "Stable (scheduled) dose of a non-opioid analgesic for HS-related pain or a non-HS medical condition, continued if stable for 14 days prior to Baseline",
+          "For study participants entering in the antibiotic strata: a stable dose/regimen of doxycycline, minocycline, or an equivalent systemic tetracycline for 28 days prior to Baseline, continued stable through at least Week 16"
+        ],
+        "applies_to_rerandomized_maintenance": null,
+        "sponsor_trial_ids": [
+          "HS0004"
+        ],
+        "study_drug_doses_mg": [
+          320
+        ],
+        "population_note": "This HS trial has no standardized TCS-based background regimen; background/permitted therapy is limited to wound care, lesion care, stable analgesics, and (for a stratified subgroup) stable systemic tetracycline-class antibiotics. None of the schema's regimen_type enum values (monotherapy/combination_tcs/standardized_background_topical) accurately describe this design, so left null."
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/98/NCT04242498/Prot_000.pdf",
+      "source_excerpt": "Section 6.5.1 Permitted concomitant treatments: 'Wound care: Concomitant use of wound care dressings on HS wounds is allowed; however, options are limited to alginates, hydrocolloids, and hydrogels... Lesion care: Concomitant use of saline, water, and/or Vaseline (petroleum jelly) is allowed... Analgesic therapy: Study participants will be required to wash out of all analgesics for HS-related pain 14 days prior to Baseline. However, if a study participant is on a stable (scheduled) dose of a non-opioid analgesic... the study participant may continue the analgesic... Antibiotic therapy: For study participants entering the study in the antibiotic strata, they should be on a stable dose and regimen of doxycycline, minocycline, or an equivalent systemic tetracycline for 28 days prior to Baseline.' Section 6.5.2 Prohibited concomitant treatments: 'All biologic therapy with a potential therapeutic impact on the disease being studied... Phototherapy... Immunomodulatory therapy, including topical or systemic steroids except as noted in Section 6.5.3.1... Topical and systemic therapies for HS...'",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.7
     }
   },
   "endpoints": {
@@ -539,13 +572,112 @@
       "confidence": 0.85
     },
     "multiplicity_control": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "procedure": "closed_testing_bonferroni",
+        "familywise_error_controlled": true,
+        "alpha": 0.05,
+        "alpha_sided": 2,
+        "alpha_per_dose": 0.025,
+        "co_primary_endpoints": [],
+        "testing_sequence": [
+          {
+            "label": "HiSCR50 at Week 16 (Step 1)",
+            "scale": "HiSCR50",
+            "responder_criteria": [],
+            "timepoint_week": 16,
+            "alpha": 0.025,
+            "step": 1
+          },
+          {
+            "label": "HiSCR75 at Week 16 (Step 2)",
+            "scale": "HiSCR75",
+            "responder_criteria": [],
+            "timepoint_week": 16,
+            "alpha": 0.025,
+            "step": 2
+          },
+          {
+            "label": "Absolute change from Baseline in DLQI Total Score at Week 16 (Step 3)",
+            "scale": "DLQI",
+            "responder_criteria": [],
+            "timepoint_week": 16,
+            "alpha": 0.025,
+            "step": 3
+          },
+          {
+            "label": "Absolute change from Baseline in Skin Pain Score (HSSDD worst-pain item) at Week 16 (Step 4)",
+            "scale": "HSSDD worst pain NRS",
+            "responder_criteria": [],
+            "timepoint_week": 16,
+            "alpha": 0.025,
+            "step": 4
+          },
+          {
+            "label": "Pain response (decrease from Baseline in HSSDD weekly worst skin pain score at or beyond threshold for clinically meaningful change) at Week 16 (Step 5)",
+            "scale": "HSSDD worst pain NRS",
+            "responder_criteria": [],
+            "timepoint_week": 16,
+            "alpha": 0.025,
+            "step": 5
+          }
+        ],
+        "alpha_split": [
+          {
+            "group": "bimekizumab 320mg Q2W vs placebo",
+            "n_endpoints": 5,
+            "alpha": 0.025,
+            "method": "closed testing, fixed sequence of 5 steps",
+            "timepoint_week": 16
+          },
+          {
+            "group": "bimekizumab 320mg Q4W vs placebo",
+            "n_endpoints": 5,
+            "alpha": 0.025,
+            "method": "closed testing, fixed sequence of 5 steps, only tested if Q2W dose reaches Step 5 significant (then re-tested at alpha 0.05)",
+            "timepoint_week": 16
+          }
+        ],
+        "alpha_recycling": false,
+        "doses_compared": [
+          "320mg Q2W",
+          "320mg Q4W"
+        ],
+        "dose_comparison_order": [
+          "320mg Q2W",
+          "320mg Q4W"
+        ],
+        "branching_on": {
+          "label": "HiSCR50 at Week 16",
+          "scale": "HiSCR50",
+          "responder_criteria": [],
+          "timepoint_week": 16,
+          "alpha": 0.025,
+          "step": 1
+        },
+        "regulatory_variants": [],
+        "rescue_counted_as_nonresponder": null,
+        "active_comparator_excluded_from_hierarchy": null,
+        "background_tcs": null,
+        "method_citations": [
+          "Protocol Section 9 (Sun, 2018)",
+          "Figure 9-1 Closed Testing Procedure"
+        ],
+        "finalized_in_sap": true,
+        "same_design_as": [
+          {
+            "nct_id": "NCT04242446",
+            "trial_name": "HS0003 (BE HEARD I)"
+          }
+        ],
+        "gatekeeping_structure": true,
+        "further_endpoints_through_week": 48
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/98/NCT04242498/Prot_000.pdf",
+      "source_excerpt": "This trial's own protocol PDF text: 'To control the overall type I error rate at 0.05 for the multiple comparisons in the primary and secondary efficacy variables, a closed testing procedure under a parallel gatekeeping framework will be applied (Sun, 2018). Under this framework, each bimekizumab dose of [redacted] and [redacted] will be compared to placebo in the first instance at a familywise error rate of 0.025 (alpha/2)... Step 1: Test HiSCR50 at significance level 0.025. Steps 2 to 5 - If Step 1 is significant at 0.025 then test each secondary endpoint sequentially in the order shown below... In the event that Step 5 is significant at 0.025 for a given dose, then Steps 1 to 5 will be repeated for the other dose using a significance level of 0.05.' Secondary endpoint list (doses also redacted per-item): '1. HiSCR75 at Week 16... 2. Absolute change from Baseline in DLQI Total Score at Week 16... 3. Absolute change from Baseline in Skin Pain Score at Week 16... 4. Pain response... at Week 16.' The specific dose labels (320mg Q2W / 320mg Q4W) are redacted/blank in this trial's own extracted PDF text; they are carried over from the byte-identical passage in sister trial NCT04242446 (HS0003, BE HEARD I), whose corresponding PDF has them unredacted, and both trials share the same randomized 2:2:2:1 bimekizumab dose design per their synopses.",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.6
     }
   },
   "timing_ops": {
@@ -586,22 +718,137 @@
       "confidence": 1.0
     },
     "study_schedule": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "screening_days": 35,
+        "screening_washout": true,
+        "periods": [
+          {
+            "name": "screening",
+            "start_week": -5,
+            "end_week": 0,
+            "duration_weeks": 5,
+            "blinding": null,
+            "background_tcs": null
+          },
+          {
+            "name": "initial_treatment",
+            "start_week": 0,
+            "end_week": 16,
+            "duration_weeks": 16,
+            "blinding": "double_blind",
+            "background_tcs": null
+          },
+          {
+            "name": "maintenance_treatment",
+            "start_week": 16,
+            "end_week": 48,
+            "duration_weeks": 32,
+            "blinding": "double_blind",
+            "background_tcs": null
+          },
+          {
+            "name": "follow_up",
+            "start_week": 48,
+            "end_week": 68,
+            "duration_weeks": 20,
+            "blinding": null,
+            "background_tcs": null
+          }
+        ],
+        "dosing_interval": "Subcutaneous injection; bimekizumab 320 mg every 2 weeks (Q2W) or every 4 weeks (Q4W) depending on dose regimen/period",
+        "visit_cadence": null,
+        "visit_cadence_until_week": null,
+        "visit_weeks": null,
+        "visit_days": null,
+        "phone_contact_weeks": null,
+        "primary_endpoint_week": 16,
+        "end_of_treatment_week": 48,
+        "end_of_study_week": 68,
+        "total_duration_weeks": 70,
+        "follow_up_weeks": 20,
+        "follow_up_days": null,
+        "follow_up_visit_week": 68,
+        "long_term_extension": true,
+        "extension_end_week": null,
+        "extension_visit_interval_weeks": null,
+        "extension_study_id": "HS0005",
+        "rerandomization_week": 16,
+        "maintenance_arms": [
+          "Bimekizumab 320mg Q2W (Weeks 0-16) then Q2W (Weeks 16-48)",
+          "Bimekizumab 320mg Q2W (Weeks 0-16) then Q4W (Weeks 16-48)",
+          "Placebo (Weeks 0-16) then Bimekizumab 320mg Q2W (Weeks 16-48)"
+        ],
+        "maintenance_response_check_weeks": null,
+        "last_injection_week": null,
+        "key_secondary_weeks": [
+          16,
+          48
+        ],
+        "follow_up_visit_interval_weeks": null,
+        "end_of_treatment_weeks_after_last_dose": null,
+        "background_tcs_from_day": null,
+        "primary_endpoint_refs": [],
+        "double_dummy_arms": [],
+        "active_comparator": null,
+        "boilerplate_reused_from": [
+          "NCT04242446 (HS0003, BE HEARD I)"
+        ],
+        "conflicts_with_trial": null,
+        "full_visit_table_available": true,
+        "source_inconsistency": "Total study duration is stated as a range: '68 to 71 weeks for those who complete HS0004 and do not participate in the extension study HS0005 and 50 to 53 weeks for those who participate in HS0005' (since HS0005 participants skip the 20-week SFU Period); total_duration_weeks above (70) uses the mid-to-upper end of the non-extension range (5-week screening + 48-week treatment + 20-week follow-up ~= 73, though the protocol's own stated range is 68-71, likely reflecting the 14-35 day screening window rather than a flat 5 weeks). This trial's (HS0004, BE HEARD II) synopsis/duration text is byte-identical to sister trial NCT04242446 (HS0003, BE HEARD I) apart from the protocol number itself, confirmed by direct text comparison of both protocol PDFs."
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/98/NCT04242498/Prot_000.pdf",
+      "source_excerpt": "Synopsis, 'Treatment Groups and Duration': 'Study participants... will complete a Screening Period of 14 days to up to 5 weeks; a double-blind, 48-week Treatment Period comprising a 16-week Initial Treatment Period and 32-week Maintenance Treatment Period; and a 20-week Safety Follow-up (SFU) Period following the final injection of investigational medicinal product (IMP) if study participants do not enter a subsequent extension study (HS0005) or withdraw prematurely from treatment. The total duration of study participation in HS0004 will be 68 to 71 weeks for those who complete HS0004 and do not participate in the extension study HS0005 and 50 to 53 weeks for those who participate in HS0005... Study participants will be randomized in a 2:2:2:1 ratio... to 1 of 3 dose regimens of bimekizumab or placebo... The primary efficacy variable at Week 16 is HiSCR50.' Section 4.1.1/4.1.2 headers confirm 'Screening Period (Weeks -5 to 0)' and 'Initial Treatment Period (Weeks 0-16) and Maintenance Treatment Period (Weeks 16-48)'.",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.7
     },
     "rescue_therapy": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "permitted": true,
+        "trigger": "investigator_discretion",
+        "earliest_week": null,
+        "prohibited_through_week": null,
+        "trigger_rules": [],
+        "flare_definition": [],
+        "first_step": null,
+        "topical_min_days_before_systemic": null,
+        "topical_rescue_requires_study_drug_discontinuation": false,
+        "systemic_rescue_requires_study_drug_discontinuation": false,
+        "resume_after_systemic_rescue_half_lives": null,
+        "resume_after_phototherapy_months": null,
+        "rescued_counted_as_nonresponder": null,
+        "rescued_counted_as_treatment_failure": null,
+        "continue_visits_after_discontinuation": null,
+        "continue_visits_through_week": null,
+        "topical_rescue_not_counted_after_week": null,
+        "topical_agents": [],
+        "topical_potency_classes": [],
+        "tci_reserved_areas": [],
+        "systemic_agents": [
+          "Systemic antibiotics (new antibiotic or change in dose/type of current antibiotic) initiated on or after Baseline"
+        ],
+        "oral_corticosteroid_limit": null,
+        "rescue_period": null,
+        "escape_arm_washout_half_lives": null,
+        "maintenance_period_rule": {
+          "topical_rescue": "Maximum of 2 lesion interventions (analgesics, intralesional triamcinolone up to 20mg across all lesions per visit at <=20mg/mL, and/or incision and drainage) every 4 weeks during the Maintenance Treatment Period (Weeks 16-48); discontinuation required if exceeded",
+          "systemic_rescue": "Any newly initiated/changed systemic antibiotic on or after Baseline is considered rescue medication throughout both the Initial and Maintenance Treatment Periods"
+        },
+        "permitted_concomitant": [],
+        "recorded_in_ecrf": true,
+        "applies_to_period": "Initial Treatment Period (Weeks 0-16) and Maintenance Treatment Period (Weeks 16-48)",
+        "long_term_extension_eligible_after_rescue": null,
+        "topical_agent_class": null,
+        "rationale": "Section 6.5.3 Rescue medication: 'The Sponsor will not supply rescue medication.' Section 6.5.3.1 Antibiotic Rescue Medication/Antibiotics: 'Any systemic antibiotic that is initiated (new antibiotic or change in the dose/type of current antibiotic) on or after Baseline (first day of study drug administration) will be considered rescue medication for both the Initial Treatment Period and Maintenance Treatment Period.' Section 6.5.3.2 Rescue Medications/Lesion Intervention: 'There are no absolute restrictions on the use of rescue medications for study participants whose HS deteriorates during the study... Investigators will have the option to perform interventions. Interventions can include analgesics for a limited period of time, intralesional injections of triamcinolone, and/or incision and drainage of the abscess... A total of 2 protocol-allowed interventions are permissible during the Initial Treatment Period (from Baseline Visit to Week 16)... If a study participant requires more than 2 interventions within the first 16 weeks of the study, then the study participant should be discontinued from the study. During the Maintenance Treatment Period (Weeks 16 to 48), a maximum of 2 interventions every 4 weeks are permitted... If a study participant requires more than 2 interventions within a 4-week period... then the study participant should be discontinued from the study.'"
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/98/NCT04242498/Prot_000.pdf",
+      "source_excerpt": "Sections 6.5.3, 6.5.3.1, 6.5.3.2 (quoted in full in rationale above).",
+      "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.7
     }
   },
   "adverse_events": {
