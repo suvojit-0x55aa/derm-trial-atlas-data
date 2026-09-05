@@ -682,6 +682,34 @@ This file is the project's committed home for project-intrinsic agent memory: bu
   no ingredient collision); `exclusivity.purple_book` stays `needs_extraction` per the atlas-wide
   convention for NDA-only drugs (confirmed against Roflumilast/Tapinarof's existing AD entries
   rather than inventing a distinct "not applicable" value).
+- **Cycle 20 rebased this branch onto current `main` after a sibling deep-extraction task's PR #7
+  (severity/mechanism/dosing enrichment over the 97 pre-cycle-17 non-AD trials) merged first and
+  changed the same generated CSVs cycles 17-19 had also touched.** Resolved by keeping BOTH sides'
+  real content in `AGENTS.md`/`README.md` prose (no cycle's findings dropped), then fully
+  regenerating all 5 CSVs from the merged `data/trials/*.json` via `scripts/build_csv.py` rather
+  than hand-merging generated-file conflicts — confirmed via diff against a pre-rebase backup that
+  every pre-existing row (including PR #7's enrichment) stayed byte-identical, only this branch's 5
+  new-trial NCT IDs' rows differed. **When two branches both touch the generated CSVs for different
+  trials, regenerate from the merged source JSON rather than resolving the CSV conflict by hand** —
+  the flattening logic (JSON-encoded cells, endpoint/criterion joins) is exactly the kind of thing a
+  manual conflict resolution gets subtly wrong. README's Fill-status table numbers were recomputed
+  directly from the regenerated `sources.csv` (a short Python pass counting non-`needs_extraction`
+  rows per field) rather than trusting either side's conflicting, now-stale table.
+- **Cycle 20's "FDA dermatology approvals 2026" web sweep came back genuinely empty** — every named
+  drug across 6 fetched articles (Dermatology Times' August/July 2026 monthly reviews, Dermatology
+  Advisor's 2025 year-end recap, and 2 blocked-behind-403 pages) is either already in this atlas
+  (Dupilumab-CSU, Remibrutinib, Guselkumab pediatric-age expansion, Roflumilast Foam-Psoriasis),
+  already checked and excluded with an unchanged status on live re-check (Zevaskyn/VIITAL,
+  Cemiplimab/C-POST, Brepocitinib/VALOR — all 3 still `hasResults: false`, re-confirmed this cycle
+  via a live CT.gov fetch), or not yet FDA-approved (BOTOX Cosmetic/masseter-muscle-prominence: FDA
+  *accepted* the sBLA 2026-08-04, decision still pending; upadacitinib/alopecia areata: EU-approved
+  only, US decision pending). BOTOX/masseter would also be a scope call like Behçet's even if
+  approved — a cosmetic aesthetic indication, not a disease, a different axis from the
+  systemic-vs-cutaneous line that included Dermatomyositis/CTCL. **The broad-sweep well is
+  genuinely running dry** — a real, reportable outcome after ~10 cycles of the same method, not a
+  sweep that needs repeating verbatim next cycle without a new angle (an openFDA `label.json` sweep
+  for very recent NDA/BLA numbers not yet cross-checked, rather than a web-search recap of already-
+  known approvals, is the more promising next angle).
 
 ## Maintaining this file
 
