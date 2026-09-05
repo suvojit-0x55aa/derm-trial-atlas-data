@@ -806,13 +806,122 @@
       "confidence": 1.0
     },
     "multiplicity_control": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "procedure": "serial_gatekeeping",
+        "familywise_error_controlled": true,
+        "alpha": 0.05,
+        "alpha_sided": 2,
+        "alpha_per_dose": null,
+        "co_primary_endpoints": [
+          {
+            "label": "Absolute Change in Facial Inflammatory Lesion Counts at Week 12 (Time frame: Baseline (Day 1) to Week 12)",
+            "scale": null,
+            "responder_criteria": [],
+            "timepoint_week": 12,
+            "alpha": 0.05,
+            "step": 1
+          },
+          {
+            "label": "IGA success (co-primary; investigator's global assessment)",
+            "scale": "IGA",
+            "responder_criteria": [],
+            "timepoint_week": 12,
+            "alpha": 0.05,
+            "step": null
+          }
+        ],
+        "testing_sequence": [
+          {
+            "label": "Percent Change From Baseline in Facial Inflammatory Lesion Counts at Week 12",
+            "scale": null,
+            "responder_criteria": [],
+            "timepoint_week": 12,
+            "alpha": 0.05,
+            "step": 1
+          },
+          {
+            "label": "Absolute Change From Baseline in Facial Inflammatory Lesion Counts at Week 9",
+            "scale": null,
+            "responder_criteria": [],
+            "timepoint_week": 9,
+            "alpha": 0.05,
+            "step": 2
+          },
+          {
+            "label": "Absolute Change From Baseline in Facial Inflammatory Lesion Counts at Week 6",
+            "scale": null,
+            "responder_criteria": [],
+            "timepoint_week": 6,
+            "alpha": 0.05,
+            "step": 3
+          },
+          {
+            "label": "Absolute Change From Baseline in Facial Inflammatory Lesion Counts at Week 3",
+            "scale": null,
+            "responder_criteria": [],
+            "timepoint_week": 3,
+            "alpha": 0.05,
+            "step": 4
+          },
+          {
+            "label": "Absolute Change From Baseline in Facial Noninflammatory Lesion Counts at Week 12",
+            "scale": null,
+            "responder_criteria": [],
+            "timepoint_week": 12,
+            "alpha": 0.05,
+            "step": 5
+          },
+          {
+            "label": "Absolute Change From Baseline in Facial Noninflammatory Lesion Counts at Week 9",
+            "scale": null,
+            "responder_criteria": [],
+            "timepoint_week": 9,
+            "alpha": 0.05,
+            "step": 6
+          },
+          {
+            "label": "Absolute Change From Baseline in Facial Noninflammatory Lesion Counts at Week 6",
+            "scale": null,
+            "responder_criteria": [],
+            "timepoint_week": 6,
+            "alpha": 0.05,
+            "step": 7
+          },
+          {
+            "label": "Absolute Change From Baseline in Facial Noninflammatory Lesion Counts at Week 3",
+            "scale": null,
+            "responder_criteria": [],
+            "timepoint_week": 3,
+            "alpha": 0.05,
+            "step": 8
+          }
+        ],
+        "alpha_split": [],
+        "alpha_recycling": false,
+        "doses_compared": [],
+        "dose_comparison_order": [],
+        "branching_on": null,
+        "regulatory_variants": [],
+        "rescue_counted_as_nonresponder": null,
+        "active_comparator_excluded_from_hierarchy": null,
+        "background_tcs": null,
+        "method_citations": [],
+        "finalized_in_sap": true,
+        "same_design_as": [
+          {
+            "nct_id": "NCT02322866",
+            "trial_name": "Sarecycline sister trial"
+          }
+        ],
+        "gatekeeping_structure": true,
+        "further_endpoints_through_week": 12
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/49/NCT02320149/SAP_001.pdf",
+      "source_excerpt": "10.2 SECONDARY EFFICACY PARAMETERS: A hierarchical testing approach will be used for the secondary efficacy endpoints, such that statistical testing will only be performed if both co-primary efficacy endpoints are statistically superior to placebo at alpha=0.05. In addition, statistical testing of the secondary endpoints will be conducted in the following order, with all tests proceeding at the 0.05 level if and only if the previous tests were all significant at the 0.05 level: 1. Percent CFB for inflammatory lesion counts at Week 12; 2. Absolute and percent CFB for inflammatory lesion counts at Week 9; 3. ...Week 6; 4. ...Week 3; 5. Absolute and percent CFB for noninflammatory lesion counts at Week 12; 6. ...Week 9; 7. ...Week 6; 8. ...Week 3 (both endpoints must meet the 0.05 level for Week 3 to meet statistical significance). [Statistical Analysis Plan, Study SC1401/SC1402 twin design, Sarecycline Acne Vulgaris, Amendment 1, Revised 03 Mar 2017 -- OCR'd from a scanned PDF via tesseract, since pdftotext extracts 0 lines from this document] \"2-sided hypothesis tests performed at the 5% level of significance for main effects.\"",
+      "extracted_by": "deep-extraction cycle 3 (scanned SAP PDF, tesseract OCR)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.65
     }
   },
   "timing_ops": {

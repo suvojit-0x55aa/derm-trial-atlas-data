@@ -795,11 +795,24 @@ This file is the project's committed home for project-intrinsic agent memory: bu
   of their own protocol PDFs — genuine dead ends, not oversights.** The 2 Difamilast Phase 3
   trials' (NCT03908970/NCT03911401) `multiplicity_control` gap is also a confirmed genuine dead
   end: both PDFs were read in full and state only a single primary + one "important secondary
-  endpoint," with no formal Type-I-error-control language anywhere in either SAP. Two documents
-  (Sarecycline NCT02320149's SAP, Trifarotene NCT02556788's Protocol) are scanned/image-only PDFs
-  that `pdftotext` extracts as 0 lines — same real limitation as the Impetigo/Seborrheic Keratosis
-  label PDFs noted above, extractable only via the Read tool's page-image OCR (not attempted this
-  cycle; a real, specific 2-document backlog item, not folded into the generic no-document count).
+  endpoint," with no formal Type-I-error-control language anywhere in either SAP.
+- **A PDF that yields 0 lines from `pdftotext` is a scanned/image-only PDF, not an empty or
+  unreadable one — `pdftoppm -r 150/200 -png` + `tesseract --psm 6 -l eng` (both already on this
+  machine, `/opt/homebrew/bin/`) recovers real, quotable text just as reliably as the Read-tool
+  page-image route already used for the Eskata/Xepi label PDFs, and is far cheaper for a
+  multi-page document** — closed both of this cycle's scanned-PDF gaps this way: Sarecycline
+  SC1401/SC1402's 64-page SAP (`NCT02320149`, `endpoints.multiplicity_control` — a full 8-step
+  fixed-sequence hierarchy over inflammatory/noninflammatory lesion-count endpoints) and
+  Trifarotene's 10-page rotated Protocol Summary (`NCT02556788`, `design.background_therapy` — a
+  real vehicle-controlled monotherapy design with a fully quoted prohibited-concomitant-medication
+  list). Tesseract handled the Trifarotene PDF's 270-degree page rotation with no pre-rotation
+  step needed. One naming curiosity found and left as-is: NCT02320149's own SAP title page reads
+  "Study SC1401" even though this repo's README calls NCT02320149 "SC1402" — both Sarecycline
+  trials share one identical official title and design, so this is likely a sponsor internal-code
+  labeling quirk, not a wrong document (confirmed by fetching the PDF from NCT02320149's own
+  CT.gov `documentSection` listing, not a guessed URL); a future cycle could verify the
+  SC1401/SC1402 assignment against Seysara's FDA label section 14 if it matters for citation
+  precision.
 
 ## Maintaining this file
 
