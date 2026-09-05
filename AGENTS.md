@@ -32,7 +32,7 @@ This file is the project's committed home for project-intrinsic agent memory: bu
   couldn't reliably extract. Don't force-fill it by inference — a wrong schedule is worse than a
   null.
 - **This atlas is an ongoing, multi-cycle scale-out effort, not a one-shot.** It started at 1
-  indication (AD, 5 drugs, 17 trials) and is now at 9 indications, 22 unique drugs, 63 trials
+  indication (AD, 5 drugs, 17 trials) and is now at 10 indications, 23 unique drugs, 64 trials
   (see README's "What this covers" for the full per-indication breakdown and exactly which
   candidate trials were checked and excluded as non-pivotal for each). Every drug/indication
   pairing was verified against real, live ClinicalTrials.gov and openFDA data before being
@@ -68,6 +68,37 @@ This file is the project's committed home for project-intrinsic agent memory: bu
   `endpoints.multiplicity_control`, `timing_ops.rescue_therapy`, and `timing_ops.study_schedule`
   stay `needs_extraction` for nearly all of them — a real, checkable backlog for `kolai-website`
   to pick up, not a fabricated null.
+- **This repo's own pipeline scripts (`scripts/`, `atlas/`, `tests/`) are intentionally absent
+  from `main`, but a prior scale-out cycle's pre-cleanup branch (`fm/derm-trial-atlas-scale-out`,
+  kept on `origin` as a safety net) still has the real, working versions.** To add a trial
+  correctly rather than hand-crafting CSVs: `git archive origin/fm/derm-trial-atlas-scale-out --
+  scripts atlas tests | tar -x -C <scratch dir>`, copy into a scratch checkout of this repo,
+  build the new trial's JSON by hand (matching an existing trial's structure), run
+  `scripts/build_csv.py` to regenerate all 5 flattened CSVs, run the copied `tests/` (needs
+  `pytest` — not committed here) to validate schema conformance, diff the regenerated CSVs
+  against a pre-change backup to confirm every pre-existing row is byte-identical (only the new
+  trial's rows should differ), then delete `scripts/`/`atlas/`/`tests/` again before committing.
+  Never hand-edit the CSVs directly — the flattening (JSON-encoding, endpoint/criterion joins,
+  compact timepoint formats) is nontrivial and easy to get subtly wrong.
+- **The Purple Book monthly CSV at `accessdata.fda.gov` (e.g.
+  `.../PurpleBook/2026/purplebook-search-August-data-download.csv`) 302-redirects to an Akamai
+  bot-detection apology page for a bare `curl`, but succeeds with a real browser `User-Agent`
+  header** — no browser automation needed, unlike `purplebooksearch.fda.gov`'s live search UI
+  (still genuinely blocked, same as Orange Book's live UI). Despite its filename saying
+  "-August-", the file is a full historical snapshot (every product's full approval-date
+  history), not just that month's changes — don't assume a narrower scope than what's actually
+  in it. A drug's BLA applicant of record (Purple Book) can differ from its trial sponsor
+  (CT.gov) when commercial rights were licensed after the pivotal trial — e.g. Spesolimab/Spevigo:
+  Boehringer Ingelheim ran Effisayil-1, but LEO Pharma A/S holds BLA761244. Real, not a data bug.
+- **A pivotal trial that is literal Phase 2 (not "Phase 2/3") can still belong in this atlas** for
+  a genuinely rare/orphan indication where a standard-sized Phase 3 isn't feasible and the trial
+  is the real, cited basis for FDA approval (randomized, placebo-controlled, `resultsSection`
+  present) — established by Generalized Pustular Psoriasis/Spesolimab (Effisayil-1, pure Phase 2,
+  n=53), extending the same "genuine pivotal trial over literal phase label" precedent Bullous
+  Pemphigoid's Phase 2/3 LIBERTY-BP set. An **active-comparator** pivotal trial still doesn't
+  qualify regardless of rarity or real FDA approval status — Pemphigus Vulgaris/Rituximab was
+  checked and excluded on exactly this ground (its approval trial is rituximab-vs-mycophenolate,
+  not placebo-controlled).
 
 ## Maintaining this file
 
