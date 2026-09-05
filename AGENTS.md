@@ -420,6 +420,18 @@ This file is the project's committed home for project-intrinsic agent memory: bu
   lesions, stretching this atlas's "dermatology" scope past every indication added so far (all
   literal skin conditions). Flagged rather than added unilaterally; worth a scope call before a
   future cycle adds it.
+- Checked and excluded in cycle 15 (real negative finding): Cutaneous T-Cell Lymphoma / Mycosis
+  Fungoides — despite 3 real FDA-approved drugs specific to this skin-oncology indication
+  (Vorinostat/Zolinza, Romidepsin, Mogamulizumab/Poteligeo), every one fails the
+  placebo-controlled bar. Mogamulizumab's pivotal MAVORIC trial (NCT01728805) is confirmed
+  RANDOMIZED but ACTIVE_COMPARATOR-only (mogamulizumab vs. vorinostat, no placebo arm) — the
+  same active-comparator-only exclusion as Pemphigus Vulgaris/Rituximab and the BCC hedgehog
+  inhibitors. Vorinostat and Romidepsin are older HDAC-inhibitor oncology approvals from the
+  single-arm-Phase-2-cohort era, the same non-randomized design pattern that excluded Cemiplimab's
+  mCSCC/laBCC approval. A real, well-documented dermatology-oncology indication that nonetheless
+  has zero drugs meeting this atlas's own design bar — oncology approval patterns (single-arm or
+  active-comparator-only) are proving to be a systematic, not incidental, exclusion category
+  across every skin-cancer indication checked so far (BCC, CSCC, CTCL).
 
 ## Maintaining this file
 
