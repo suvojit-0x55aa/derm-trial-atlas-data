@@ -32,7 +32,7 @@ This file is the project's committed home for project-intrinsic agent memory: bu
   couldn't reliably extract. Don't force-fill it by inference — a wrong schedule is worse than a
   null.
 - **This atlas is an ongoing, multi-cycle scale-out effort, not a one-shot.** It started at 1
-  indication (AD, 5 drugs, 17 trials) and is now at 13 indications, 31 unique drugs, 87 trials
+  indication (AD, 5 drugs, 17 trials) and is now at 14 indications, 34 unique drugs, 93 trials
   (see README's "What this covers" for the full per-indication breakdown and exactly which
   candidate trials were checked and excluded as non-pivotal for each). Every drug/indication
   pairing was verified against real, live ClinicalTrials.gov and openFDA data before being
@@ -181,6 +181,36 @@ This file is the project's committed home for project-intrinsic agent memory: bu
   pivotal trials on CT.gov, but individually fetching each trial confirmed **zero** `resultsSection`
   on any of them -- both predate CT.gov's 2007 mandatory-results-reporting rule, so no amount of
   further searching will surface a `resultsSection` for these specific trials.
+- **Acne Vulgaris (Trifarotene/Aklief, Sarecycline/Seysara, Clascoterone/Winlevi) was dermatology's
+  highest-prevalence indication and had been entirely absent through 8 prior cycles** -- found the
+  same way Ustekinumab/Apremilast were, by checking well-known FDA-approved topical/oral
+  dermatology drugs against the atlas's own drug list rather than only chasing newly-approved
+  candidates. All three are single-NDA small molecules (no Purple Book entries, no ingredient-name
+  collision in openFDA's `orangebook.json`, so no application-number tuple pin needed unlike
+  Ruxolitinib/Roflumilast). Clascoterone's own CT.gov trials are registered under its
+  pre-approval development code `CB-03-01` (cortexolone 17alpha-propionate, sponsor Cassiopea
+  SpA) rather than its generic name -- confirmed as the same drug via Winlevi's FDA label before
+  treating them as pivotal.
+- **The pre-2007 CT.gov mandatory-results-reporting dead-end pattern (first established by
+  Etanercept/Infliximab) extends to topical calcineurin inhibitors**: Pimecrolimus (Elidel,
+  approved 2001) and Tacrolimus ointment (Protopic, approved 2000) both have zero CT.gov-registered
+  trials that are the original branded placebo/vehicle-controlled pivotal trial -- every trial found
+  is either a post-approval Phase 4 study (safety/QoL registries, all sponsored by Novartis/Astellas
+  post-approval) or a **generic-manufacturer bioequivalence/ANDA trial** referencing the original
+  NDA (e.g. Fougera Pharmaceuticals' "0416"/"0417" ointment studies, vehicle-controlled vs. the
+  branded reference product -- these support a generic's ANDA, not a new drug approval, and don't
+  count as this atlas's own pivotal trial for the reference product). A generic manufacturer's own
+  vehicle-controlled trial is a new, real pattern to exclude on sight: it looks superficially like a
+  qualifying trial (randomized, vehicle-controlled, Phase 3, real `resultsSection`) but its FDA
+  basis is someone else's decades-old NDA, not its own approval.
+- **Every oral-JAK Vitiligo candidate (ritlecitinib, upadacitinib, povorcitinib) and every HS/CSU
+  biologic-pipeline candidate checked this cycle (spesolimab-for-HS, povorcitinib-for-HS,
+  sonelokimab, izokibep, lutikizumab, ligelizumab, barzolvolimab) remains a real, live, unapproved
+  program** -- re-verify via `openfda label.json?search=openfda.substance_name:<NAME>` (a genuine
+  `NOT_FOUND` means no FDA label exists yet, i.e. not approved) before re-adding any of these on a
+  future cycle; a real posted-results trial (e.g. spesolimab's Lunsayil 1 HS trial) is not
+  sufficient on its own -- the drug's own current FDA label must show the matching indication
+  (Spevigo's label is GPP-only even though its HS trial has posted results).
 
 ## Maintaining this file
 
