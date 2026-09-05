@@ -1524,13 +1524,125 @@
       "confidence": 1.0
     },
     "multiplicity_control": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "procedure": "serial_gatekeeping",
+        "familywise_error_controlled": true,
+        "alpha": 0.05,
+        "alpha_sided": 2,
+        "alpha_per_dose": null,
+        "co_primary_endpoints": [
+          {
+            "label": "Percent of Participants Achieving Sustained Remission at Week 36 (Time frame: At Week 36)",
+            "scale": null,
+            "responder_criteria": [],
+            "timepoint_week": 36,
+            "alpha": null,
+            "step": 1
+          }
+        ],
+        "testing_sequence": [
+          {
+            "label": "Percent Change in Bullous Pemphigoid Disease Area Index (BPDAI) Activity Score From Baseline to Week 36",
+            "scale": null,
+            "responder_criteria": [],
+            "timepoint_week": 36,
+            "alpha": null,
+            "step": 2
+          },
+          {
+            "label": "Time to First Use of Rescue Medication Up to Week 36",
+            "scale": null,
+            "responder_criteria": [],
+            "timepoint_week": null,
+            "alpha": null,
+            "step": 3
+          },
+          {
+            "label": "Percent of Participants With Improvement (Reduction) of Weekly Average of Daily Peak Pruritus NRS ≥4 From Baseline to Week 36",
+            "scale": "Pruritus NRS",
+            "responder_criteria": [],
+            "timepoint_week": 36,
+            "alpha": null,
+            "step": 4
+          },
+          {
+            "label": "Percent Change in Weekly Average of Daily Peak Pruritus Numerical Rating Scale (NRS) Score From Baseline to Week 36",
+            "scale": "Pruritus NRS",
+            "responder_criteria": [],
+            "timepoint_week": 36,
+            "alpha": null,
+            "step": 5
+          },
+          {
+            "label": "Total Cumulative Dose of Oral Corticosteroids (OCS) From Baseline to Week 36",
+            "scale": null,
+            "responder_criteria": [],
+            "timepoint_week": 36,
+            "alpha": null,
+            "step": 6
+          },
+          {
+            "label": "Duration of Complete Remission While Not Requiring OCS Up to Week 36",
+            "scale": null,
+            "responder_criteria": [],
+            "timepoint_week": null,
+            "alpha": null,
+            "step": 7
+          },
+          {
+            "label": "Percent of Participants Achieving a Reduction in BPDAI Activity Score of ≥90% From Baseline to Week 36",
+            "scale": null,
+            "responder_criteria": [],
+            "timepoint_week": 36,
+            "alpha": null,
+            "step": 8
+          },
+          {
+            "label": "Change in Percent Body Surface Area (BSA) of BP Involvement From Baseline to Week 36",
+            "scale": "BSA",
+            "responder_criteria": [],
+            "timepoint_week": 36,
+            "alpha": null,
+            "step": 9
+          },
+          {
+            "label": "Change in BP180 Immunoglobulin G (IgG) Autoantibody Titer From Baseline to Week 36",
+            "scale": null,
+            "responder_criteria": [],
+            "timepoint_week": 36,
+            "alpha": null,
+            "step": 10
+          },
+          {
+            "label": "Change in Autoimmune Bullous Disease Quality of Life (ABQOL) Score From Baseline to Week 36",
+            "scale": null,
+            "responder_criteria": [],
+            "timepoint_week": 36,
+            "alpha": null,
+            "step": 11
+          }
+        ],
+        "alpha_split": [],
+        "alpha_recycling": null,
+        "doses_compared": [],
+        "dose_comparison_order": [],
+        "branching_on": null,
+        "regulatory_variants": [],
+        "rescue_counted_as_nonresponder": null,
+        "active_comparator_excluded_from_hierarchy": null,
+        "background_tcs": null,
+        "method_citations": [],
+        "finalized_in_sap": true,
+        "same_design_as": [],
+        "gatekeeping_structure": true,
+        "further_endpoints_through_week": 36
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/53/NCT04206553/SAP_001.pdf",
+      "source_excerpt": "8.2. Multiplicity Control: A hierarchical procedure will be used to control the overall Type-1 error rate at 0.05 for the primary endpoint and specified secondary endpoints comparing the dupilumab group and the placebo group. Each hypothesis will be formally tested only if the preceding one is significant at the 2-sided 0.05 significance level. Table 6 Hierarchical Order: 1 Primary Endpoint (sustained remission wk36); 2 BPDAI activity score % change wk36; 3 Time to first use of rescue medication (up to wk36); 4 PP NRS >=4-point improvement wk36; 5 PP NRS % change wk36; 6 Total cumulative OCS dose wk36; 7 Duration of complete remission off OCS (up to wk36); 8 BPDAI reduction >=90% wk36; 9 % BSA change wk36; 10 BP180 IgG titer change wk36; 11 ABQOL change wk36.",
+      "extracted_by": "deep-extraction cycle 3 (SAP PDF, pdftotext -layout)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.8
     }
   },
   "timing_ops": {

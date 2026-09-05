@@ -756,6 +756,51 @@ This file is the project's committed home for project-intrinsic agent memory: bu
   re-attempt PDF extraction on a trial already confirmed to have no document; do treat a
   "no-document" trial as worth re-checking if CT.gov later posts one.
 
+- **Deep-extraction cycle 3 (2026-09-05, same captain instruction, after rebasing this branch onto
+  main's cycle 17-21 scale-out additions): re-verified every trial cycle 2 left as a
+  `background_therapy`/`multiplicity_control`/`study_schedule`/`rescue_therapy` gap, using a wider
+  keyword net, and closed 6 real multiplicity_control misses cycle 2's narrower search terms had
+  passed over — ARCADIA 1/2 (NCT03985943/NCT03989349, Nemolizumab AD), LIBERTY-BP
+  (NCT04206553, Dupilumab), Roflumilast Trial 204 (NCT04128007, SebDerm), and both Berdazimer
+  B-SIMPLE trials (NCT03927703/NCT03927716, Molluscum) — taking the field from 68/127 to 74/127.
+  Every one of these 6 documents genuinely states a real hierarchical/gatekeeping procedure (a
+  literal "Multiplicity Adjustment"/"Multiple Comparison/Multiplicity" section with a named
+  method), but cycle 2's search for "multiplic|hierarch|type I error|gatekeep|closed testing|
+  sequential test" missed docs that instead say **"fixed-sequence method"** (both Berdazimer
+  trials) or bury the section under a differently-worded heading — always also search
+  `"significance level"`, `"family[- ]wise"`, `"Holm"`, and read the 40-80 lines around any hit
+  rather than trusting a keyword miss as evidence of absence.
+- **A protocol PDF's full text includes its own amendment history, and a keyword hit inside a
+  tracked-changes "the following text has been deleted" block describes a design the sponsor later
+  REMOVED, not the trial's final design** — found checking BE VIVID (NCT03370133, Bimekizumab
+  Psoriasis) for `rescue_therapy`: an "escape arm" (non-PASI90-responders switched to open-label
+  bimekizumab) appears at real length in the PDF, but is explicitly framed by a later amendment as
+  deleted text ("To remove the escape arm..."), so the trial's actual final design has no
+  escape/rescue mechanism — confirmed by BE SURE/BE RADIANT (same drug program, active-comparator
+  designs) both having zero "escape"/"rescue" hits at all. Always check whether a hit sits inside
+  a change-log/amendment section before treating it as the trial's real, final rule.
+- **A real, quoted, schema-representable multiplicity procedure can still leave `co_primary_endpoints`/
+  `testing_sequence` needing an empty `responder_criteria: []`** when the endpoint itself has no
+  representable metric — both Berdazimer trials' real "fixed-sequence method... strongly controlled
+  at the alpha=0.05 level" procedure is fully quotable, but its one endpoint ("Complete Clearance of
+  All Treatable MC") is the same lesion-clearance-metric schema gap already documented above for
+  Tirbanibulin; matching the primary endpoint's own already-committed `responder_criteria: []`
+  (rather than leaving the whole `multiplicity_control` field `needs_extraction`) is the correct,
+  precedent-consistent way to record a real procedure without a representable criterion — verify
+  the referenced endpoint's own JSON before assuming a `[]` list is a mistake to fix.
+- **After this cycle's re-check, the remaining `rescue_therapy` gaps for Bimekizumab (all 3
+  Psoriasis trials), JADE COMPARE, DERMIS 1/2, STRATUM, Trial 204, Trial 203/SebDerm, Vyjuvek/EB,
+  both AA trials (BRAVE-AA1, THRIVE-AA2), all 3 remaining Berdazimer trials, and ADORING
+  2/ARRECTOR/PSOARING 2 are now confirmed via a real, documented zero-hit "rescue"/"escape" search
+  of their own protocol PDFs — genuine dead ends, not oversights.** The 2 Difamilast Phase 3
+  trials' (NCT03908970/NCT03911401) `multiplicity_control` gap is also a confirmed genuine dead
+  end: both PDFs were read in full and state only a single primary + one "important secondary
+  endpoint," with no formal Type-I-error-control language anywhere in either SAP. Two documents
+  (Sarecycline NCT02320149's SAP, Trifarotene NCT02556788's Protocol) are scanned/image-only PDFs
+  that `pdftotext` extracts as 0 lines — same real limitation as the Impetigo/Seborrheic Keratosis
+  label PDFs noted above, extractable only via the Read tool's page-image OCR (not attempted this
+  cycle; a real, specific 2-document backlog item, not folded into the generic no-document count).
+
 ## Maintaining this file
 
 Keep this file for knowledge useful to almost every future agent session in this project.

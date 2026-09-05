@@ -787,7 +787,7 @@ every count below recomputed from `sources.csv` this cycle):
 | `molecule.dosing_regimen` | 126/127 | real CT.gov intervention description text, matched to each trial's own drug by generic name or known development/compound code, for every trial except one whose intervention text doesn't state a regimen |
 | `population.severity_criteria` | 114/127 | real CT.gov eligibility-criteria text now covers PASI/sPGA/ISGA/S-IGA/B-IGA/PGA (psoriasis family), Hurley Stage + AN Count (HS), SIRS (impetigo), HDSS/ASDD (hyperhidrosis), SALT (AA), BPDAI (bullous pemphigoid), GPPGA (GPP), CDASI (dermatomyositis), and lesion-count ranges (acne/rosacea/molluscum/AK) in addition to the original EASI/IGA/BSA (AD); the remaining trials genuinely state no quantitative baseline threshold in their CT.gov text, or their real number uses a unit the current schema has no metric for (percent-of-nail-area, wound size in cm²) |
 | `design.background_therapy` | 77/127 | real protocol/SAP PDF text (CT.gov `documentSection`) covers every indication with a posted Study Protocol/SAP; the remaining gap trials have no protocol/SAP document posted on CT.gov at all, so real extraction isn't possible without a different source |
-| `endpoints.multiplicity_control` | 68/127 | same PDF-extraction pass closed the real testing-hierarchy/alpha-control text it could; remaining gaps are genuine — either no posted document, or the document states no formal multiplicity procedure was used |
+| `endpoints.multiplicity_control` | 74/127 | same PDF-extraction pass closed the real testing-hierarchy/alpha-control text it could, plus a cycle-3 re-read that found real serial-gatekeeping/fixed-sequence/gatekeeping-with-Holm procedures the first pass's narrower keyword search missed; remaining gaps are genuine — either no posted document, or the document states no formal multiplicity procedure was used |
 | `timing_ops.study_schedule` | 78/127 | same pass closed the real screening/treatment/follow-up period breakdown from every posted protocol; remaining gaps have no protocol/SAP document posted |
 | `timing_ops.rescue_therapy` | 61/127 | same pass closed the real rescue-medication rules it could (including trials whose real finding is "rescue explicitly prohibited"); remaining gaps are a mix of no-posted-document trials and trials whose protocol genuinely states no rescue-medication concept applies (e.g. simple 8-week monotherapy-vs-vehicle designs) |
 | `adverse_events.serious_adverse_event_rate` | 125/127 | CT.gov posts `eventGroups[]` without per-arm serious counts for a few trials (a genuine gap in what was posted, not a computable zero) |
@@ -798,7 +798,7 @@ every count below recomputed from `sources.csv` this cycle):
 | `exclusivity.orange_book` | 73/127 | only the NDA small-molecule drugs' trials get this field (BLA biologics use `purple_book` instead) |
 | `exclusivity.purple_book` | 54/127 | only the BLA biologic drugs' trials get this field (NDA small molecules use `orange_book` instead) |
 
-**4504 of 4953 sourced values are filled with real data (90.9%); 449
+**4510 of 4953 sourced values are filled with real data (91.1%); 443
 remain `needs_extraction`** — see `sources.csv` for the per-trial,
 per-field breakdown. Every non-`ctgov_api` fill was produced by
 LLM-assisted reading of a real, cited source (CT.gov free text, a
@@ -837,7 +837,7 @@ owns the pipeline this data is exported from.
 
 - The human QA pass on top of the LLM-assisted extraction (captain +
   Garvita review of every non-`ctgov_api` value).
-- The 449 fields that remain `needs_extraction` (see the fill-status table
+- The 443 fields that remain `needs_extraction` (see the fill-status table
   above) — a mix of genuinely unreachable sources (paywalled papers behind
   Cloudflare, PDF tables that don't extract reliably) and real, un-worked
   backlog (the curated per-trial prose tables — background therapy,

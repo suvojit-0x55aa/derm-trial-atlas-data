@@ -494,13 +494,68 @@
       "confidence": 1.0
     },
     "multiplicity_control": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "procedure": "gatekeeping_with_holm",
+        "familywise_error_controlled": true,
+        "alpha": 0.05,
+        "alpha_sided": 2,
+        "alpha_per_dose": null,
+        "co_primary_endpoints": [
+          {
+            "label": "Number of Participants Achieving Success in the Scalp Investigator Global Assessment (S-IGA) Scale (Time frame: Week 8)",
+            "scale": "IGA",
+            "responder_criteria": [],
+            "timepoint_week": 8,
+            "alpha": null,
+            "step": 1
+          }
+        ],
+        "testing_sequence": [
+          {
+            "label": "Number of Participants Achieving Body Investigator Global Assessment (B-IGA) Success at Week 8",
+            "scale": "IGA",
+            "responder_criteria": [],
+            "timepoint_week": 8,
+            "alpha": 0.05,
+            "step": 2
+          }
+        ],
+        "alpha_split": [
+          {
+            "group": "Family 1 (PSSI, Holm-adjusted after PSSI-75 gatekeeper)",
+            "n_endpoints": 5,
+            "alpha": 0.03,
+            "method": "PSSI-75 gatekeeper, then Holm on PSSI-50 time-to-success, PSD change-from-baseline Week 8, PSD change-from-baseline Week 4, and PSSI-90 at Week 8",
+            "timepoint_week": 8
+          },
+          {
+            "group": "Family 2 (Scalp WI-NRS, hierarchical by week)",
+            "n_endpoints": 3,
+            "alpha": 0.02,
+            "method": "hierarchical, Week 8 then Week 4 then Week 2",
+            "timepoint_week": 8
+          }
+        ],
+        "alpha_recycling": true,
+        "doses_compared": [],
+        "dose_comparison_order": [],
+        "branching_on": null,
+        "regulatory_variants": [],
+        "rescue_counted_as_nonresponder": null,
+        "active_comparator_excluded_from_hierarchy": null,
+        "background_tcs": null,
+        "method_citations": [],
+        "finalized_in_sap": null,
+        "same_design_as": [],
+        "gatekeeping_structure": true,
+        "further_endpoints_through_week": 8
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/07/NCT04128007/Prot_000.pdf",
+      "source_excerpt": "To control for multiple comparisons among the secondary endpoints, the following testing plan will be used: Upon demonstration of statistical significance for S-IGA Success at Week 8, the secondary endpoint of B-IGA Success at Week 8 will be tested hierarchically at the 5% significance level. If the test for B-IGA Success at Week 8 is significant, the alpha of 0.05 will be split to test 2 families of secondary endpoints. The first family will be comprised of the PSSI-75, which will be tested at alpha = 0.03 level. If the test of PSSI-75 is statistically significant, the alpha=0.03 will be used with a Holm testing procedure to test the 4-endpoints of time to success in PSSI-50, CFB in Total PSD score at Week 8, CFB in Total PSD score at Week 4, and PSSI-90 at Week 8. The remaining alpha = 0.02 will be used to test the second family, comprised of the Scalp WI-NRS at Week 8, the Scalp WI-NRS at Week 4, and the Scalp WI-NRS at Week 2. The tests within this second family will be hierarchical, beginning with the endpoint at Week 8, followed by Week 4 and Week 2.",
+      "extracted_by": "deep-extraction cycle 3 (Prot PDF, pdftotext -layout)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.75
     }
   },
   "timing_ops": {

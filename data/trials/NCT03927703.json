@@ -377,13 +377,58 @@
       "confidence": 1.0
     },
     "multiplicity_control": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "procedure": "serial_gatekeeping",
+        "familywise_error_controlled": true,
+        "alpha": 0.05,
+        "alpha_sided": 2,
+        "alpha_per_dose": null,
+        "co_primary_endpoints": [
+          {
+            "label": "Complete Clearance of All Treatable MC at Week 12 (Time frame: 12 Weeks)",
+            "scale": null,
+            "responder_criteria": [],
+            "timepoint_week": 12,
+            "alpha": null,
+            "step": 1
+          }
+        ],
+        "testing_sequence": [
+          {
+            "label": "Complete Clearance of All Treatable MC at Week 8",
+            "scale": null,
+            "responder_criteria": [],
+            "timepoint_week": 8,
+            "alpha": null,
+            "step": 2
+          }
+        ],
+        "alpha_split": [],
+        "alpha_recycling": false,
+        "doses_compared": [],
+        "dose_comparison_order": [],
+        "branching_on": null,
+        "regulatory_variants": [],
+        "rescue_counted_as_nonresponder": null,
+        "active_comparator_excluded_from_hierarchy": null,
+        "background_tcs": null,
+        "method_citations": [],
+        "finalized_in_sap": true,
+        "same_design_as": [
+          {
+            "nct_id": "NCT03927716",
+            "trial_name": "B-SIMPLE (sister trial)"
+          }
+        ],
+        "gatekeeping_structure": true,
+        "further_endpoints_through_week": null
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/03/NCT03927703/Prot_SAP_000.pdf",
+      "source_excerpt": "10.7 Multiple Comparison/Multiplicity: The familywise error rate with respect to the primary endpoint and secondary endpoint will be strongly controlled at the alpha=0.05 level using a fixed-sequence method testing strategy. If the primary endpoint is not statistically significant at the alpha=0.05 level, the secondary efficacy endpoint will be considered not significant. If the primary endpoint is statistically significant at the alpha=0.05 level, then the secondary efficacy endpoint will be analyzed. Unless otherwise noted, all statistical testing will be 2-sided and will be performed at the 0.05 significance level.",
+      "extracted_by": "deep-extraction cycle 3 (combined Prot/SAP PDF, pdftotext -layout)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 0.7
     }
   },
   "timing_ops": {
