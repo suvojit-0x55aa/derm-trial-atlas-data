@@ -11,7 +11,7 @@ data backend only — fetch, extraction, and build scripts all live here in
 Real, live-pulled pivotal Phase III trials (adult / adult+adolescent,
 systemic therapy), from the [ClinicalTrials.gov API
 v2](https://clinicaltrials.gov/data-api/api) (`/api/v2/studies`, no API
-key required), across **7 indications, 20 unique drugs, 57 trials**:
+key required), across **9 indications, 22 unique drugs, 63 trials**:
 
 ### Atopic Dermatitis (6 drugs, 19 trials)
 
@@ -59,12 +59,13 @@ trial is actually Psoriatic Arthritis — a different indication), NCT04102007
 | Ritlecitinib | ALLEGRO-2b/3 (NCT03732807) |
 | Deuruxolitinib | THRIVE-AA1 (NCT04518995), THRIVE-AA2 (NCT04797650) — registered on CT.gov under the pre-approval compound code CTP-543 |
 
-### Chronic Spontaneous Urticaria (new — 2 drugs, 4 trials)
+### Chronic Spontaneous Urticaria (3 drugs, 6 trials)
 
 | Drug | Pivotal Phase III trials |
 |---|---|
 | Omalizumab | ASTERIA I (NCT01287117), ASTERIA II (NCT01292473), GLACIAL (NCT01264939) — acronyms per literature, CT.gov's own `acronym` field is empty for these 3 |
 | Dupilumab | LIBERTY-CSU CUPID (NCT04180488) — master protocol, 3 sub-studies; CSU is a real, separate FDA-approved indication for dupilumab (confirmed via the live openFDA label, section 1.7), distinct from the AD trials above |
+| Remibrutinib | REMIX-1 (NCT05030311), REMIX-2 (NCT05032157) — added 2026-09-05, FDA-approved (Rhapsido, NDA 218436) 2025-09-30. Excluded as non-pivotal: NCT05048342 "BISCUIT" (Japan-only open-label regional bridging study, n=71), NCT06868212 "RECLAIM" (active-comparator vs. dupilumab, not yet complete) |
 
 ### Prurigo Nodularis (2 drugs, 4 trials — new indication, added 2026-09-05)
 
@@ -92,6 +93,34 @@ previously-investigated 3-drug **oral**-JAK systemic Phase III program
 zero posted results — none can populate the `adverse_events` field group
 yet. Revisit that program once it reports out; it is unrelated to
 Ruxolitinib's topical program above, which already has full results.
+
+### Chronic Hand Eczema (1 drug, 3 trials — new indication, added 2026-09-05)
+
+| Drug | Pivotal Phase III trials |
+|---|---|
+| Delgocitinib (topical cream) | DELTA 1 (NCT04871711), DELTA 2 (NCT04872101), DELTA TEEN (NCT05355818) — FDA-approved (Anzupgo, NDA 219155) 2025-07-23 |
+
+DELTA 1/2 are the twin global vehicle-controlled adult pivotal trials;
+DELTA TEEN extends the same registrational program to adolescents 12-17
+(vehicle-controlled, not an open-label extension). Excluded as non-pivotal:
+NCT05259722 "DELTA FORCE" (active-comparator vs. Toctino/alitretinoin, not
+placebo/vehicle-controlled), NCT04949841 (open-label extension of DELTA
+1/2), NCT06004050 (Phase III, no posted results yet).
+
+### Bullous Pemphigoid (1 drug, 1 trial — new indication, added 2026-09-05)
+
+| Drug | Pivotal Phase III trials |
+|---|---|
+| Dupilumab | LIBERTY-BP (NCT04206553) — Phase 2/3 combined trial, n=106; BP is a real, separate FDA-approved indication for dupilumab (confirmed via the live openFDA label, section 1.8) |
+
+Thinnest indication in the atlas (1 drug, 1 trial), but real and verified —
+same precedent as Vitiligo's inclusion. A queued candidate from a prior
+cycle (rilzabrutinib/Wayrilz) was checked and does **not** hold up:
+rilzabrutinib has zero CT.gov trials for Bullous Pemphigoid and its FDA
+label indications are Immune Thrombocytopenia only — a wrong lead, not a
+real BP drug. Also checked and excluded: efgartigimod (Vyvgart) has a
+completed BP Phase 2/3 trial (NCT05267600) but its FDA label indications
+are gMG and CIDP only, not BP.
 
 Ruxolitinib the ingredient also covers Jakafi/Jakafi XR (oral tablets,
 NDA 202192/217180, oncology/GVHD use) under separate NDAs from Opzelura
@@ -379,8 +408,9 @@ severity instruments (HiSCR/IHS4, SALT, UAS7) are checked for by the
 extraction regex but most trials phrase the eligibility criterion in a way
 the regex doesn't catch — a real, checkable gap, not a fabricated null.
 
-Aggregate: **1995 sourced values across all 57 trials (57 × 35 fields);
-1794 filled with real data (89.9%), 201 remain `needs_extraction`** — see
+Aggregate: **2457 sourced values across all 63 trials (63 × 39 rows in
+`sources.csv`, which flattens nested sub-fields into their own rows);
+2166 filled with real data (88.2%), 291 remain `needs_extraction`** — see
 `sources.csv` for the per-trial, per-field breakdown.
 
 ## Running the pipeline
@@ -389,7 +419,7 @@ Requires Python 3.9+, standard library only (no dependencies to install).
 
 ```bash
 # 1. Fetch trial data live from ClinicalTrials.gov API v2 and write
-#    data/trials/<NCT_ID>.json for each of the 57 trials above.
+#    data/trials/<NCT_ID>.json for each of the 63 trials above.
 python3 scripts/fetch_trials.py
 
 # 2. LLM-assisted second pass: fill severity_definition, background_therapy_rule,
@@ -458,7 +488,7 @@ exact URL to re-fetch each one from is in the corresponding field's
   `value`, JSON-encoded when structured; `needs_extraction` fields are blank).
 - `sources.csv` — one row per sourced value: `nct_id`, `field`,
   `source_type`, `source_url`, `source_excerpt`, `extracted_by`,
-  `reviewed_by`, `confidence`. 57 trials × 39 fields (see counts below;
+  `reviewed_by`, `confidence`. 63 trials × 39 fields (see counts below;
   regenerated after the indication-expansion + cross-source integration).
 - `endpoints.csv` — one row per outcome measure × criterion: `measure_type`,
   `scale`, `timepoints`, `analysis_population`, and the `ScoreCriterion`
@@ -479,7 +509,7 @@ CSVs.
 ## Cross-source data (FAERS, Orange Book, Purple Book)
 
 Real data fetched for all 3 sources validated in the cross-source
-data-strategy scout report, for every drug across all 7 indications, and
+data-strategy scout report, for every drug across all 9 indications, and
 integrated into every trial's real `real_world_safety.faers_summary` /
 `exclusivity.{orange_book,purple_book}` schema v2 fields — no free-text/
 prose intermediate, no data left sitting in a staging directory.
@@ -503,9 +533,9 @@ biologic BLA has no Orange Book NDA entry and vice versa).
 
 | Source | Script | Coverage | Result |
 |---|---|---|---|
-| **openFDA FAERS** (`api.fda.gov/drug/event.json`) | `scripts/fetch_faers.py` | All 20 unique drugs across all 7 indications | ✅ Real data for all 20 — total/serious/death/hospitalization/life-threatening/disability report counts, top 15 reactions (overall and serious-only), and a real per-year report-count histogram (openFDA has no year-granularity aggregation, so this is built by summing its daily `receivedate` buckets — verified lossless: the daily counts for Dupilumab sum to exactly its `total_reports`). Report volume varies enormously with market exposure time (Adalimumab: 46,072 reports; Deuruxolitinib, approved 2025: 1 report) — a real finding, not an error. Ruxolitinib's FAERS search term also matches Jakafi/Jakafi XR (same active ingredient, unrelated oral oncology NDAs) — openFDA's `medicinalproduct` field carries no formulation/route distinction, so this one drug's FAERS numbers are a real, unavoidable mix, not Opzelura-only (see Vitiligo section above). |
+| **openFDA FAERS** (`api.fda.gov/drug/event.json`) | `scripts/fetch_faers.py` | All 22 unique drugs across all 9 indications | ✅ Real data for all 22 — total/serious/death/hospitalization/life-threatening/disability report counts, top 15 reactions (overall and serious-only), and a real per-year report-count histogram (openFDA has no year-granularity aggregation, so this is built by summing its daily `receivedate` buckets — verified lossless: the daily counts for Dupilumab sum to exactly its `total_reports`). Report volume varies enormously with market exposure time (Adalimumab: 46,072 reports; Deuruxolitinib, approved 2025: 1 report) — a real finding, not an error. Ruxolitinib's FAERS search term also matches Jakafi/Jakafi XR (same active ingredient, unrelated oral oncology NDAs) — openFDA's `medicinalproduct` field carries no formulation/route distinction, so this one drug's FAERS numbers are a real, unavoidable mix, not Opzelura-only (see Vitiligo section above). |
 | **FDA Purple Book** (biologic BLA exclusivity) | `scripts/fetch_purple_book.py` | 13 biologics (Dupilumab, Lebrikizumab, Tralokinumab, Guselkumab, Risankizumab, Tildrakizumab, Bimekizumab, Adalimumab, Secukinumab, Omalizumab, Nemolizumab, Ixekizumab, Certolizumab) | ✅ Real matched product rows for all 13 (BLA number, approval date, exclusivity fields where populated) — parsed from the live `purplebooksearch.fda.gov` search-results table (its downloads page only offers monthly delta CSVs, not a full snapshot; the live table has the full current dataset, ~2242 product rows). |
-| **FDA Orange Book** (small-molecule NDA patent/exclusivity) | `scripts/fetch_orange_book.py` | 7 small molecules (Abrocitinib, Upadacitinib, Baricitinib, Ritlecitinib, Deuruxolitinib, Deucravacitinib, Ruxolitinib) | ✅ Real patent/exclusivity data for all 7, via **openFDA's `drug/orangebook.json`** endpoint — a separate, script-friendly mirror of the same dataset. The official FDA-hosted routes (the `fda.gov/media/...` ZIP and the `accessdata.fda.gov` query tool) are genuinely blocked by Akamai bot-detection (confirmed independently twice, different User-Agents/cookies/Referers); openFDA's own mirror isn't behind that wall. Ruxolitinib needed an extra `application_number` filter (see script) to isolate Opzelura's NDA (215309) from Jakafi/Jakafi XR's (202192/217180), which otherwise merge under the shared ingredient search. |
+| **FDA Orange Book** (small-molecule NDA patent/exclusivity) | `scripts/fetch_orange_book.py` | 9 small molecules (Abrocitinib, Upadacitinib, Baricitinib, Ritlecitinib, Deuruxolitinib, Deucravacitinib, Ruxolitinib, Remibrutinib, Delgocitinib) | ✅ Real patent/exclusivity data for all 9, via **openFDA's `drug/orangebook.json`** endpoint — a separate, script-friendly mirror of the same dataset. The official FDA-hosted routes (the `fda.gov/media/...` ZIP and the `accessdata.fda.gov` query tool) are genuinely blocked by Akamai bot-detection (confirmed independently twice, different User-Agents/cookies/Referers); openFDA's own mirror isn't behind that wall. Ruxolitinib needed an extra `application_number` filter (see script) to isolate Opzelura's NDA (215309) from Jakafi/Jakafi XR's (202192/217180), which otherwise merge under the shared ingredient search. Remibrutinib and Delgocitinib (both approved 2025) needed the exact field name `products.active_ingredients.name` — a plain `ingredient` field search returns a false NOT_FOUND for recent approvals even though the row exists. |
 
 Each of these 3 scripts is a separate parser matching the source's own
 shape (FAERS's JSON aggregation API; Purple Book's HTML search table with

@@ -93,6 +93,11 @@ DRUGS = [
     # Prurigo Nodularis (Dupilumab, Nemolizumab already listed above)
     # Vitiligo
     "Ruxolitinib",
+    # Chronic Spontaneous Urticaria (Dupilumab, Omalizumab already listed above)
+    "Remibrutinib",
+    # Chronic Hand Eczema
+    "Delgocitinib",
+    # Bullous Pemphigoid (Dupilumab already listed above)
 ]
 
 

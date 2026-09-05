@@ -61,6 +61,10 @@ DRUGS = {
     # confirmed live 2026-09-05: 215309=OPZELURA/CREAM/TOPICAL,
     # 202192=JAKAFI/TABLET/ORAL, 217180=JAKAFI XR/TABLET,EXTENDED RELEASE/ORAL.
     "Ruxolitinib": ("RUXOLITINIB", "215309"),
+    # Chronic Spontaneous Urticaria (oral BTK inhibitor, small-molecule NDA)
+    "Remibrutinib": "REMIBRUTINIB",
+    # Chronic Hand Eczema (topical JAK inhibitor, small-molecule NDA)
+    "Delgocitinib": "DELGOCITINIB",
 }
 
 

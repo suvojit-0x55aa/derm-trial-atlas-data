@@ -157,6 +157,56 @@ CSU_TRIALS = {
     "NCT01292473": "Omalizumab",  # ASTERIA II (acronym per literature), n=323, Genentech
     "NCT01264939": "Omalizumab",  # GLACIAL (acronym per literature), n=336, Genentech
     "NCT04180488": "Dupilumab",   # LIBERTY-CSU CUPID (master protocol, studies A/B/C), n=397, Sanofi
+    # Remibrutinib (Rhapsido, BTK inhibitor) added 2026-09-05: FDA-approved for
+    # CSU, confirmed via live openFDA label (RHAPSIDO section 1, "treatment of
+    # chronic spontaneous urticaria (CSU) in adult patients who remain
+    # symptomatic despite H1 antihistamine treatment"). REMIX-1/2 are the twin
+    # global placebo-controlled pivotal trials. Excluded as non-pivotal:
+    # NCT05048342 "BISCUIT" (Japan-only open-label regional bridging study,
+    # n=71, not placebo-controlled), NCT06868212 "RECLAIM" (active-comparator
+    # vs. dupilumab, not yet complete), NCT05513001/NCT05677451 (open-label
+    # long-term extensions), NCT06042478 (Phase 3b add-on study).
+    "NCT05030311": "Remibrutinib",  # REMIX-1, n=470, Novartis
+    "NCT05032157": "Remibrutinib",  # REMIX-2, n=455, Novartis
+}
+
+# Chronic Hand Eczema, Phase III, 1 FDA-approved topical JAK inhibitor -- 8th
+# indication, added 2026-09-05. Delgocitinib cream (Anzupgo) FDA-approved for
+# adults with moderate-to-severe CHE, confirmed via live openFDA label
+# (ANZUPGO section 1). DELTA 1/2 are the twin global vehicle-controlled adult
+# pivotal trials; DELTA TEEN is a distinct vehicle-controlled pivotal trial
+# extending the program to adolescents 12-17 (same registrational program,
+# not an extension study). Excluded as non-pivotal: NCT05259722 "DELTA FORCE"
+# (active-comparator vs. Toctino/alitretinoin, single-masked outcomes-assessor
+# only -- a head-to-head trial, not a placebo/vehicle-controlled registrational
+# trial), NCT04949841 (open-label extension of DELTA 1/2), NCT06004050 (no
+# posted results), NCT05486117 (Phase 1 PK study), NCT03683719 (Phase 2
+# dose-ranging, correctly excluded by the phase:3 filter).
+CHE_TRIALS = {
+    "NCT04871711": "Delgocitinib",  # DELTA 1, n=487, LEO Pharma
+    "NCT04872101": "Delgocitinib",  # DELTA 2, n=473, LEO Pharma
+    "NCT05355818": "Delgocitinib",  # DELTA TEEN, n=98, LEO Pharma
+}
+
+# Bullous Pemphigoid, Phase 2/3, 1 FDA-approved biologic -- 9th indication,
+# added 2026-09-05. Dupilumab (Dupixent, already in this atlas for AD/CSU/PN)
+# FDA-approved for adult BP, confirmed via live openFDA label (DUPIXENT
+# section 1.8, "Bullous Pemphigoid for the treatment of adult patients with
+# bullous pemphigoid (BP)"). Only 1 pivotal trial exists on CT.gov: LIBERTY-BP
+# is a combined Phase 2/3 randomized, double-blind, placebo-controlled trial
+# (n=106) -- thin (1 drug, 1 trial) but real and verified, same precedent as
+# Vitiligo's inclusion. A queued candidate from the prior cycle
+# (rilzabrutinib/Wayrilz) was checked and does NOT hold up: rilzabrutinib has
+# zero CT.gov trials for Bullous Pemphigoid and its FDA label indications are
+# Immune Thrombocytopenia only -- it was a wrong lead, not a real BP drug.
+# Also checked and excluded: efgartigimod (Vyvgart) has a completed BP Phase
+# 2/3 trial (NCT05267600) but its FDA label indications are gMG and CIDP only
+# -- not FDA-approved for BP, so out of scope for this atlas (FDA-approved
+# drugs only). Other BP Phase III CT.gov trials (rituximab, mycophenolic
+# acid, methotrexate+steroids, NPB-01) are generic/off-label agents, not a
+# drug's own FDA approval trial for this indication.
+BULLOUS_PEMPHIGOID_TRIALS = {
+    "NCT04206553": "Dupilumab",  # LIBERTY-BP, n=106, Regeneron/Sanofi
 }
 
 # Prurigo Nodularis, Phase III, 2 FDA-approved biologics -- 6th indication,
@@ -200,6 +250,8 @@ TRIALS = {
     **CSU_TRIALS,
     **PRURIGO_NODULARIS_TRIALS,
     **VITILIGO_TRIALS,
+    **CHE_TRIALS,
+    **BULLOUS_PEMPHIGOID_TRIALS,
 }
 
 NEEDS_EXTRACTION = {

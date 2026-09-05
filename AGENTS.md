@@ -202,6 +202,20 @@ This file is the project's committed home for project-intrinsic agent memory: bu
     (tilde/CSV) versions of these sources; the live API/page versions this repo actually fetches
     from use different column names and date formats (confirmed on real rows) — the fetch scripts
     build the schema shape directly rather than forcing a mismatch through those builders.
+  - openFDA's `drug/orangebook.json` matches on `products.active_ingredients.name`, not a bare
+    `ingredient` field — a hand-run query using `ingredient:"<NAME>"` returns a false NOT_FOUND
+    even for a real, indexed drug (confirmed on Remibrutinib/Delgocitinib, both approved
+    2025-07/2025-09: `fetch_orange_book.py`'s actual query worked immediately once run; a manual
+    `ingredient:` query first suggested, wrongly, that openFDA's Orange Book mirror hadn't
+    indexed them yet). Trust `fetch_orange_book.py`'s own query shape, not an ad hoc one, before
+    concluding a recent NDA is genuinely unindexed.
+  - A drug named as a candidate for a new indication is not automatically the right drug for that
+    indication — verify the FDA label's own indications section, not just that the drug and
+    condition co-occur in some CT.gov trial. A queued "rilzabrutinib for Bullous Pemphigoid"
+    candidate turned out to have zero CT.gov trials for BP and an FDA label limited to Immune
+    Thrombocytopenia; the real BP drug was Dupilumab (already in this atlas), confirmed via its
+    own label section 1.8. Checking the openFDA label's `indications_and_usage` text for the
+    literal indication name is the fast, reliable check before spending time on trial curation.
 
 ## Maintaining this file
 

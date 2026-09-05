@@ -175,6 +175,20 @@ APPLICATIONS = {
         "source_type": "purple_book", "source_url": PURPLE_BOOK_SEARCH_URL,
         "source_excerpt": "purplebooksearch.fda.gov live search table: BLA 125160 | Cimzia | certolizumab pegol | 351(a) | UCB, Inc. | first approved 2008-04-22",
     },
+    "Remibrutinib": {
+        "value": {"application_type": "NDA", "application_number": "218436", "registry": "orange_book",
+                  "center": "CDER", "proprietary_name": "RHAPSIDO", "applicant": "NOVARTIS",
+                  "first_approval_date": "2025-09-30"},
+        "source_type": "orange_book", "source_url": OPENFDA_ORANGEBOOK_URL,
+        "source_excerpt": "openfda orangebook.json: products.active_ingredients.name=REMIBRUTINIB, application_number N218436, brand_name RHAPSIDO, applicant_full_name NOVARTIS, approval_date 2025-09-30",
+    },
+    "Delgocitinib": {
+        "value": {"application_type": "NDA", "application_number": "219155", "registry": "orange_book",
+                  "center": "CDER", "proprietary_name": "ANZUPGO", "applicant": "LEO PHARMA AS",
+                  "first_approval_date": "2025-07-23"},
+        "source_type": "orange_book", "source_url": OPENFDA_ORANGEBOOK_URL,
+        "source_excerpt": "openfda orangebook.json: products.active_ingredients.name=DELGOCITINIB, application_number N219155, brand_name ANZUPGO, applicant_full_name LEO PHARMA AS, approval_date 2025-07-23",
+    },
 }
 
 
