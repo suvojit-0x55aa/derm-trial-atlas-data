@@ -303,6 +303,17 @@ This file is the project's committed home for project-intrinsic agent memory: bu
   top indication SEBORRHOEIC KERATOSIS 159/212) is the clean one — used instead per the existing
   run-the-drugindication-count-first rule. Two genuinely different resolutions for the same class
   of problem; always check both terms rather than assuming the convention picks itself.
+- Checked and excluded in cycle 12 (real negative findings): Netherton Syndrome and Discoid Lupus
+  Erythematosus (DLE) — neither has an FDA-approved drug at all. Netherton Syndrome's entire CT.gov
+  trial list (QRX003, ATR12-351, BCX-series, SXR1096, and pipeline reuse of spesolimab/secukinumab/
+  dupilumab/adalimumab from other indications) is Phase 1-3 investigational, several TERMINATED,
+  none approved. DLE's CT.gov list (deucravacitinib, litifilimab, anifrolumab, enpatoran, and
+  older terminated CC-930/AMG-811/tofacitinib trials) is the same story — all investigational.
+  The one DLE-adjacent FDA-approved drug found, Anifrolumab (Saphnelo), is labeled only for
+  systemic lupus erythematosus (SLE) — "Limitations of Use" explicitly excludes the label from
+  covering skin-only disease — the same systemic-vs-cutaneous-indication boundary already
+  established for Mastocytosis (avapritinib is for *systemic* mastocytosis, not cutaneous).
+  Re-check both next cycle only if a name here shows up in `openfda label.json` as newly approved.
 
 ## Maintaining this file
 
