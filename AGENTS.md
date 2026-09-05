@@ -32,7 +32,7 @@ This file is the project's committed home for project-intrinsic agent memory: bu
   couldn't reliably extract. Don't force-fill it by inference — a wrong schedule is worse than a
   null.
 - **This atlas is an ongoing, multi-cycle scale-out effort, not a one-shot.** It started at 1
-  indication (AD, 5 drugs, 17 trials) and is now at 12 indications, 26 unique drugs, 68 trials
+  indication (AD, 5 drugs, 17 trials) and is now at 13 indications, 27 unique drugs, 74 trials
   (see README's "What this covers" for the full per-indication breakdown and exactly which
   candidate trials were checked and excluded as non-pivotal for each). Every drug/indication
   pairing was verified against real, live ClinicalTrials.gov and openFDA data before being
@@ -125,6 +125,36 @@ This file is the project's committed home for project-intrinsic agent memory: bu
   Membrane Pemphigoid (no FDA-approved drug specific to this indication has a completed
   placebo-controlled pivotal trial: baricitinib's ocular-MMP trial was Phase 2 and terminated,
   rituximab's Phase 3 MMP trial is an active-comparator design and not yet complete).
+- **A single drug substance can hold two genuinely separate NDAs, one per dosage form, each with
+  its own indications** — established by Roflumilast: NDA215985 (ZORYVE Cream) covers Plaque
+  Psoriasis and Atopic Dermatitis, NDA217242 (ZORYVE Foam) covers Seborrheic Dermatitis and
+  scalp/body psoriasis, confirmed via openFDA's `drug/orangebook.json`
+  (`products.active_ingredients.name=ROFLUMILAST` returns both application numbers as separate
+  rows). This is a different shape from Ruxolitinib's Opzelura-vs-Jakafi split (there, 2 unrelated
+  products under 1 ingredient for unrelated indications) — here it's the same overall drug program,
+  same company, split into 2 applications by formulation. `exclusivity.orange_book` must be fetched
+  per-NDA (openFDA's `products.active_ingredients.name` query, filtered by `application_number`,
+  same tuple-pin pattern `atlas.regulatory_applications`/`fetch_orange_book.py` already use for
+  Ruxolitinib); `real_world_safety.faers_summary` stays shared across every trial of the drug
+  regardless of formulation, same FAERS `medicinalproduct`-can't-split-by-NDA limitation already
+  documented for Ruxolitinib.
+- **A trial the FDA's own product label cites by name in section 6.1 (Adverse Reactions) or 14
+  (Clinical Studies) as one of the pivotal basis trials is pivotal for this atlas even when CT.gov's
+  own `phases` field says Phase 2/2b, not Phase 3** — the same "real trial over literal phase label"
+  principle as Generalized Pustular Psoriasis/Spesolimab, but here directly evidenced (the label
+  names the trial), not inferred from rarity: ZORYVE Foam's label cites "Trial 203" (NCT04091646,
+  Phase 2b on CT.gov) alongside STRATUM (Phase 3) as the two vehicle-controlled trials the
+  Seborrheic Dermatitis approval rests on.
+- **When adding new trials to an established multi-cycle corpus, never run a pipeline script's own
+  `main()` if it globs/rewrites every file in `data/trials/`** — `fetch_adverse_events.py`'s
+  `_refuse_v2` guard and `apply_source_data.py`'s full-corpus loop both process every trial file
+  unconditionally; the latter would silently blank `real_world_safety`/`exclusivity` for every
+  pre-existing drug whose `data/_raw_staging/` file no longer exists (staging is ephemeral,
+  cleaned up each cycle, see the scratch-checkout note above). Cycle 6 instead imported these
+  scripts' pure per-trial functions (`fetch_study`, `build_record`, `build_sae_rate`, `fetch_drug`,
+  etc.) into a one-off script scoped to only the new NCT IDs — verify this by diffing the
+  regenerated CSVs against a pre-change backup with the new NCT IDs grep'd out, exactly as the
+  established `build_csv.py`-diff procedure already does for hand-built trial JSON.
 
 ## Maintaining this file
 
