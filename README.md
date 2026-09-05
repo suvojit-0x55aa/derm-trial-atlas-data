@@ -658,13 +658,23 @@ text for 4 of the 13 unique primary-publication PMIDs, via NCBI's
 `elink`/`efetch` — not Cloudflare-protected) and **FDA Drugs@FDA
 approval-package reviews** (accessdata.fda.gov, also not
 Cloudflare-protected, often more granular on protocol detail than the
-paper itself). The 18 indications added after that pass did not repeat this
+paper itself). The 20 indications added after that pass did not repeat this
 same paywalled-paper research effort — their `publication_extraction`
-fills remain confined to the original 17 AD trials; `needs_extraction`
-gaps elsewhere in `design.background_therapy`,
+fills remain confined to the original 17 AD trials. A later deep-extraction
+cycle (captain instruction 2026-09-05) did close their real,
+non-paywalled `molecule.mechanism_of_action`/`molecule.dosing_regimen`
+(openFDA label + CT.gov intervention text) and most of
+`population.severity_criteria` (CT.gov eligibility text) gaps to near-zero
+without needing paywalled sources — see the Fill status table below.
+`needs_extraction` gaps in `design.background_therapy`,
 `endpoints.multiplicity_control`, `timing_ops.rescue_therapy`, and
-`timing_ops.study_schedule` for the newer indications are a real,
-un-worked backlog, not a pipeline limitation.
+`timing_ops.study_schedule` for the newer indications remain a real,
+un-worked backlog: roughly half of the ~109 trials missing at least one of
+these 4 fields have a Study Protocol/SAP document actually posted on
+CT.gov (confirmed live), so real extraction is possible there, but it needs
+a per-trial PDF read the way the original AD program's
+`RESCUE_RULES`/`MULTIPLICITY_RULES` dicts were built — not yet attempted
+for these indications, not a pipeline limitation.
 
 ### Fill status (all 122 trials, 39 fields each — 4758 sourced values)
 
@@ -685,9 +695,9 @@ every count below recomputed from `sources.csv` this cycle):
 
 | Field | Filled | Gap reason |
 |---|---|---|
-| `molecule.mechanism_of_action` | 62/122 | openFDA label lookup miss for a few trials |
-| `molecule.dosing_regimen` | 58/122 | no intervention-description text on file at CT.gov for those trials |
-| `population.severity_criteria` | 47/122 | extraction regex catches EASI/IGA/BSA (AD) and most PASI/sPGA (psoriasis) phrasing reliably; HiSCR/IHS4 (HS), SALT (AA), UAS7 (CSU), GPPGA/GPPASI (GPP), and most newer-indication trials' eligibility-criteria phrasing not yet caught |
+| `molecule.mechanism_of_action` | 122/122 | fully filled — real openFDA structured label text for every drug (2 drugs needed the approval-package label PDF fallback since they have no `label.json` entry at all) |
+| `molecule.dosing_regimen` | 122/122 | fully filled — real CT.gov intervention description text, matched to each trial's own drug by generic name or known development/compound code |
+| `population.severity_criteria` | 105/122 | real CT.gov eligibility-criteria text now covers PASI/sPGA/ISGA/S-IGA/B-IGA/PGA (psoriasis family), Hurley Stage + AN Count (HS), SIRS (impetigo), HDSS/ASDD (hyperhidrosis), SALT (AA), BPDAI (bullous pemphigoid), and lesion-count ranges (acne/rosacea/molluscum/AK) in addition to the original EASI/IGA/BSA (AD); the remaining 17 trials genuinely state no quantitative baseline threshold in their CT.gov text, or their real number uses a unit the current schema has no metric for (percent-of-nail-area, wound size in cm²) |
 | `design.background_therapy` | 17/122 | curated per-trial excerpts exist only for the original AD program |
 | `endpoints.multiplicity_control` | 16/122 | same — curated only for the original AD program |
 | `timing_ops.study_schedule` | 15/122 | full per-visit schedule lives only in multi-page PDF tables not reliably machine-extractable; curated cadence exists only for the original AD program |
@@ -700,7 +710,7 @@ every count below recomputed from `sources.csv` this cycle):
 | `exclusivity.orange_book` | 69/122 | only the NDA small-molecule drugs' trials get this field (BLA biologics use `purple_book` instead) |
 | `exclusivity.purple_book` | 53/122 | only the BLA biologic drugs' trials get this field (NDA small molecules use `orange_book` instead) |
 
-**3929 of 4758 sourced values are filled with real data (82.6%); 829
+**4111 of 4758 sourced values are filled with real data (86.4%); 647
 remain `needs_extraction`** — see `sources.csv` for the per-trial,
 per-field breakdown. Every non-`ctgov_api` fill was produced by
 LLM-assisted reading of a real, cited source (CT.gov free text, a

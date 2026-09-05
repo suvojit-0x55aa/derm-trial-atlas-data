@@ -473,6 +473,120 @@ This file is the project's committed home for project-intrinsic agent memory: bu
   Urticaria) — all 4 of these 2025 FDA approvals cited in the web sweep were already live-verified
   and in the atlas from earlier cycles, not new gaps.
 
+- **Deep-extraction cycle (captain instruction 2026-09-05, PR #7): the scale-out cycles' 97
+  non-AD trials had real drug/trial-existence + FAERS/Orange Book/Purple Book work but had never
+  had the original 25 AD trials' own deeper clinical-text extraction pass
+  (`severity_criteria`/`mechanism_of_action`/`dosing_regimen`/endpoint `responder_criteria`) run
+  against them.** Closed `mechanism_of_action` and `dosing_regimen` to 0/122 missing and
+  `severity_criteria` from 87 to 17/122 missing, using the same real-CT.gov-text +
+  real-openFDA-label method as the original pass, reusing the recovered
+  `origin/fm/derm-trial-atlas-scale-out` branch's `atlas/criteria.py`/`severity.py`/`dosing.py`/
+  `label.py` modules (already v2-native — schema_version 2 — despite the branch being cut at 63
+  trials) as a parsing toolkit, not a data source. Two openFDA `label.json` gaps needed the
+  approval-package PDF fallback already established for Eskata/Xepi in earlier cycles: this time
+  the SAME two drugs (Eskata/hydrogen peroxide, Xepi/ozenoxacin) needed it again for
+  `mechanism_of_action` specifically — the PDF's own section 12.1 confirms Eskata's mechanism is a
+  real, checked "unknown" (recorded as such, not `needs_extraction`); Xepi's real mechanism (a
+  quinolone antimicrobial, DNA gyrase A/topoisomerase IV inhibition) is stated only in section 12.4
+  Microbiology, not 12.1 — check both sections before concluding a label lacks a mechanism.
+- **openFDA's `drug/label.json` substance-name query can return the WRONG product's label
+  outright, not just a missing field, when an ingredient is shared across unrelated dosage
+  forms/routes** — a new, more severe variant of the Ruxolitinib/Ivermectin ingredient-collision
+  pattern (AGENTS.md's existing notes cover Orange Book and FAERS collisions; this is the same
+  problem in `label.json`). `openfda.substance_name:BARICITINIB` returns an OTC-looking
+  "Baricitinib" listing with no populated sections at all before the real Olumiant row; bare
+  `IVERMECTIN`/`OXYMETAZOLINE` substance-name queries return oral-antiparasitic and OTC-nasal-
+  decongestant products respectively instead of the topical dermatology products (Soolantra,
+  Rhofade) this atlas actually needs. Pin to `openfda.application_number` (found via a
+  `brand_name` query first) whenever a substance-name label query's `mechanism_of_action` reads
+  wrong for the drug's known clinical use.
+- **`atlas/label.py`'s `parse_mechanism()` regex only classifies `modality` as `monoclonal_antibody`
+  when the label's own mechanism paragraph contains the literal phrase "monoclonal ... antibody",
+  and `small_molecule` only for a literal "JAK inhibitor" phrase** — both real limitations of the
+  ported parser, not deliberate design choices, exposed by this cycle's much wider drug-class mix
+  (antifungals, antibiotics, retinoids, BTK/TYK2 inhibitors, adrenergic agonists, gene therapy,
+  peptides). The already-committed Adalimumab record classifies as `modality: "other"` for exactly
+  this reason (its own 12.1 paragraph never says "monoclonal antibody") — this is real precedent to
+  match for Adalimumab specifically, not a bug to silently fix, but for every other drug this cycle
+  hand-classified `modality`/`drug_class` from the literal label text directly (e.g. Apremilast's
+  label says "an oral small molecule inhibitor of phosphodiesterase 4" verbatim) rather than
+  trusting the regex output as-is. A future cycle extending `parse_mechanism()` itself should treat
+  the Adalimumab record as a known, accepted quirk, not a regression to fix.
+- **`molecule.dosing_regimen`'s convention (from `enrich_needs_extraction.py`'s `extract_dosing`,
+  confirmed against the already-committed multi-arm JADE COMPARE record) is: include only CT.gov
+  interventions whose name OR description textually references the trial's own `molecule.drug`**
+  (by generic name or a known development/compound code, e.g. `IDP-108`=efinaconazole,
+  `CB-03-01`=clascoterone, `BMS-986165`=deucravacitinib, `JNJ-77242113`=icotrokinra,
+  `LOU064`=remibrutinib) — **not every arm.** A placebo/vehicle entry is included only when its own
+  description references the drug (e.g. "matching placebo for X"); a genuine active comparator in
+  a different drug's own dosing arm (ustekinumab in a brodalumab trial, apremilast in a
+  deucravacitinib trial) is correctly excluded, since that comparator's own dosing belongs to ITS
+  OWN trial record, not this one.
+- **The current schema's `DOSE_FORMS` enum (`tablet`/`injection`/`solution`/`cream`/`ointment`) and
+  `FREQUENCIES` enum (`once_daily`/`twice_daily`/`weekly`/`every_2_weeks`/`every_4_weeks`) don't
+  cover every real dosage form/frequency this atlas's now much wider drug mix uses** — `gel`,
+  `foam`, `wipe`, `implant` dose forms and `every_2_months` dosing (Afamelanotide's subcutaneous
+  implant) have no enum slot. Since `atlas/schema.py` is generated from `kolai-website` and not
+  hand-editable here, leave the specific sub-field (`dose_form`/`frequency`) null rather than
+  force-fitting the nearest wrong category when this happens — `route` can still often be inferred
+  as `topical` directly from the literal text (a cream/ointment/gel/foam/wipe has no other route)
+  even when `dose_form` itself can't be represented. A future cycle should flag these 4 missing
+  enum values to `kolai-website` rather than re-discover the same gap.
+- **`population.severity_criteria`'s `ScoreCriterion.metric` enum has no slot for "percent of an
+  anatomical structure other than skin" or for area stated in cm² — found on Efinaconazole/
+  Tavaborole (Onychomycosis, "20-50% of the target nail area affected") and Oleogel-S10 (EB, wound
+  size "10 cm² to 50 cm²").** `percent_bsa` is specifically body-surface-area; reusing it for
+  percent-of-nail-area would misrepresent the criterion. Left `needs_extraction` rather than
+  mislabeled — a real schema-enum gap for a future cycle to raise with `kolai-website`, not an
+  unattempted extraction. The same real-vs-schema-gap distinction applies project-wide: 17 of the
+  75 severity-gap trials this cycle stayed `needs_extraction` for this reason or because the real
+  CT.gov eligibility text genuinely states no quantitative baseline threshold at all (documented
+  per-trial in this cycle's `severity_criteria` commit) — a real, checked outcome, not a shortcut.
+- **The `Severity.severity_label` enum has exactly one non-null value, `"moderate_to_severe"`** —
+  a trial whose eligibility literally says "moderate acne" (no "to severe") or "mild to moderate"
+  (ISGA Mild/Moderate AD trials) correctly gets `severity_label: null`; don't stretch the label to
+  cover a different real severity band than the one CT.gov's text actually states.
+- **This cycle introduced several new canonical `scale` name strings beyond the AD/psoriasis set
+  the corpus already had** (PASI, sPGA, ISGA, S-IGA, B-IGA, PGA, Hurley Stage, AN Count, SIRS,
+  HDSS, ASDD, SALT, BPDAI, PLA, PPASI, UAS7, PSSD, plus lesion-count "scales" like `Inflammatory
+  Lesion Count`/`Noninflammatory Lesion Count`/`Nodule Count`/`AK Lesion Count`/`MC Lesion Count`).
+  `scale` is a free string in the schema (no enum), so these are all valid, but keep names
+  consistent with what's already used in `severity_criteria.csv`/`endpoints.csv` rather than
+  inventing a new spelling for the same real instrument in a future cycle — grep those two CSVs
+  for a scale's canonical spelling before adding a new trial that uses it.
+- **`scripts/fetch_trials.py`'s CT.gov outcome-measure fetch (and `atlas.endpoints.parse_endpoint`)
+  already runs unconditionally for every trial regardless of extraction-pass depth — every trial's
+  `primary_endpoints`/`secondary_endpoints` are populated with `source_type: ctgov_api` from day
+  one** (confirmed: even trials this repo's own git history shows were added in "scale-out only,
+  no deep extraction" cycles already carry real endpoint titles/timepoints). But the endpoint
+  title parser that fills each endpoint's own `responder_criteria` sub-list was tuned to the
+  original 17 AD trials' specific phrasing (e.g. "Main Study:" population prefixes) and left it
+  empty for 338 `responder_rate` endpoints project-wide (not just the non-AD trials) whose titles
+  use different real phrasing (`PASI-NN`/bare `PASINN`, `sPGA`/`IGA` "of 0 or 1" success
+  definitions, `UAS7<=6`, `HiSCR`, `DLQI` 0/1, N-point NRS reduction, N-grade CEA/SSA improvement,
+  `PSSD` Symptom/Sign Score of 0). A deterministic pattern-matcher over each endpoint's own already-
+  fetched verbatim text (no new source needed) closed 190 of these 338 in this cycle; the remaining
+  148 are categorical-distribution measures, immunogenicity/device-usability endpoints the original
+  parser mislabeled `responder_rate` (anti-drug antibodies, self-administration success), satisfaction
+  surveys, and titles with no stated threshold at all (e.g. Ozenoxacin's "Clinical Success") — a
+  real, checkable backlog, not a data problem to re-flag as identical to the severity/MoA/dosing
+  gaps.
+- **`design.background_therapy`/`timing_ops.rescue_therapy`/`timing_ops.study_schedule`/
+  `endpoints.multiplicity_control` remain a real, large, PDF-dependent backlog after this cycle**
+  (105-108 of 122 trials each, essentially unchanged by this cycle's work) — confirmed via a live
+  CT.gov `documentSection` check that 61 of the 109 trials missing at least one of these 4 fields
+  actually have a Study Protocol and/or SAP document posted (`hasProtocol`/`hasSap` flags), meaning
+  real extraction is genuinely possible for roughly half the gap, the same way the original AD
+  corpus's `RESCUE_RULES`/`MULTIPLICITY_RULES`/`BACKGROUND_THERAPY_PDF` dicts in
+  `enrich_needs_extraction.py` were built: download each PDF from CT.gov's `documentSection` ->
+  CDN URL (see `fetch_protocol_docs.py`), and read the relevant section by hand (`pdftotext
+  -layout` was the original tool; this cycle confirmed the Read tool extracts scanned/compressed
+  PDF text fine when a raw fetch returns garbled bytes). Not attempted this cycle — each field
+  needs its own PDF read per trial, materially higher effort per field than the CT.gov-API-only
+  extraction that closed severity/MoA/dosing to near-zero, and a natural place for the next
+  deep-extraction cycle to pick up rather than re-discovering which 61 trials even have a document
+  to read.
+
 ## Maintaining this file
 
 Keep this file for knowledge useful to almost every future agent session in this project.
