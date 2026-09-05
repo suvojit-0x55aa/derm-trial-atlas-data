@@ -82,7 +82,7 @@
       "confidence": 1.0
     },
     "mechanism_of_action": {
-      "value": "12.1 Mechanism of Action Tralokinumab-ldrm is a human IgG4 monoclonal antibody that specifically binds to human interleukin-13 (IL-13) and inhibits its interaction with the IL-13 receptor \u03b11 and \u03b12 subunits (IL-13R\u03b11 and IL-13R\u03b12). IL-13 is a naturally occurring cytokine of the Type 2 immune response. Tralokinumab-ldrm inhibits the bioactivity of IL-13 by blocking IL-13 interaction with IL-13R\u03b11/IL-4R\u03b1 receptor complex. Tralokinumab-ldrm inhibits IL-13-induced responses including the release of proinflammatory cytokines, chemokines and IgE.",
+      "value": "12.1 Mechanism of Action Tralokinumab-ldrm is a human IgG4 monoclonal antibody that specifically binds to human interleukin-13 (IL-13) and inhibits its interaction with the IL-13 receptor α1 and α2 subunits (IL-13Rα1 and IL-13Rα2). IL-13 is a naturally occurring cytokine of the Type 2 immune response. Tralokinumab-ldrm inhibits the bioactivity of IL-13 by blocking IL-13 interaction with IL-13Rα1/IL-4Rα receptor complex. Tralokinumab-ldrm inhibits IL-13-induced responses including the release of proinflammatory cytokines, chemokines and IgE.",
       "source_type": "openfda_label",
       "source_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=8abedac8-f75e-42a0-8591-10fabcf41fb5",
       "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1)",
@@ -149,10 +149,10 @@
       "confidence": 1.0
     },
     "severity_definition": {
-      "value": "AD involvement of \u226510% body surface area at screening and baseline.",
+      "value": "AD involvement of ≥10% body surface area at screening and baseline.",
       "source_type": "ctgov_text_extraction",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03363854",
-      "source_excerpt": "AD involvement of \u226510% body surface area at screening and baseline.",
+      "source_excerpt": "AD involvement of ≥10% body surface area at screening and baseline.",
       "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA)",
       "reviewed_by": null,
       "confidence": 0.75
@@ -216,10 +216,13 @@
   },
   "endpoints": {
     "primary_endpoint_measure": {
-      "value": "Participants With Investigator's Global Assessment (IGA) Score of 0 (Clear) or 1 (Almost Clear) at Week 16 (Time frame: Week 16)",
+      "value": [
+        "Participants With Investigator's Global Assessment (IGA) Score of 0 (Clear) or 1 (Almost Clear) at Week 16 (Time frame: Week 16)",
+        "Participants Achieving at Least 75% Reduction in Eczema Area and Severity Index (EASI) at Week 16 (Time frame: Week 16)"
+      ],
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03363854",
-      "source_excerpt": "protocolSection.outcomesModule.primaryOutcomes[0].measure/timeFrame",
+      "source_excerpt": "protocolSection.outcomesModule.primaryOutcomes[].measure/timeFrame",
       "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
       "reviewed_by": null,
       "confidence": 1.0
@@ -240,7 +243,7 @@
         "Participants Achieving at Least 50% Reduction in Scoring Atopic Dermatitis (SCORAD) at Week 16",
         "Participants Achieving at Least 75% Reduction in Scoring Atopic Dermatitis (SCORAD) at Week 16",
         "Change From Baseline to Week 16 in Worst Daily Pruritus Numeric Rating Scale (NRS) (Weekly Average)",
-        "Reduction From Baseline to Week 16 of Dermatology Life Quality Index (DLQI) of at Least 4 Points Among Participants With Baseline DLQI \u22654",
+        "Reduction From Baseline to Week 16 of Dermatology Life Quality Index (DLQI) of at Least 4 Points Among Participants With Baseline DLQI ≥4",
         "Participants With Investigator's Global Assessment (IGA) Score of 0 (Clear) or 1 (Almost Clear) at Week 32 Among Participants With IGA Score of 0 or 1 at Week 16 After Initial Randomisation to Tralokinumab",
         "Participants Achieving at Least 75% Reduction in Eczema Area and Severity Index (EASI) at Week 32 Among Participants Who Had Achieved at Least 75% Reduction in EASI at Week 16 After Initial Randomisation to Tralokinumab"
       ],

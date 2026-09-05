@@ -349,11 +349,47 @@
           "study_period": null,
           "event_type": null,
           "time_frame": "12 weeks"
+        },
+        {
+          "verbatim": "Percentage of Participants Who Achieved (Investigator's Global Assessment) IGA Score of 0 or 1 (Time frame: 12 weeks)",
+          "rank": "primary",
+          "position": 2,
+          "measure_type": "responder_rate",
+          "scale": "IGA",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [
+            {
+              "scale": "IGA",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "absolute_score",
+              "comparator": "in",
+              "value": [
+                0,
+                1
+              ],
+              "unit": "score",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": null,
+          "timepoints": [],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": "12 weeks"
         }
       ],
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01365455",
-      "source_excerpt": "protocolSection.outcomesModule.primaryOutcomes[0].measure/timeFrame",
+      "source_excerpt": "protocolSection.outcomesModule.primaryOutcomes[].measure/timeFrame",
       "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2; responder_criteria backfilled by deep-extraction pass (pattern-matched from CT.gov verbatim title; pending human QA)",
       "reviewed_by": null,
       "confidence": 0.85
@@ -814,7 +850,7 @@
           "time_frame": null
         },
         {
-          "verbatim": "Percentage of Participants Achieving PASI 75, PASI 90 and IGA Mod 2011 0 or 1 Response at Week 12 by Previous Exposure to Biologic Systemic Therapy or Anti-TNF-\u03b1 Therapy and Failed to Respond to a Previous Biologic or Anti-TNF-\u03b1 Therapy Psoriasis Therapy",
+          "verbatim": "Percentage of Participants Achieving PASI 75, PASI 90 and IGA Mod 2011 0 or 1 Response at Week 12 by Previous Exposure to Biologic Systemic Therapy or Anti-TNF-α Therapy and Failed to Respond to a Previous Biologic or Anti-TNF-α Therapy Psoriasis Therapy",
           "rank": "secondary",
           "position": 18,
           "measure_type": "responder_rate",

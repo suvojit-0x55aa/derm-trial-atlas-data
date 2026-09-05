@@ -305,11 +305,20 @@ def build_record(nct_id: str, drug: str, raw: dict, url: str) -> dict:
 
     primary_outcomes = outcomes.get("primaryOutcomes", [])
     secondary_outcomes = outcomes.get("secondaryOutcomes", [])
-    primary_measure = None
-    if primary_outcomes:
-        po = primary_outcomes[0]
+    # Bug fixed 2026-09 (results-layer phase 1): this used to take only
+    # primaryOutcomes[0], silently dropping every co-primary endpoint (66
+    # genuine efficacy primaries lost across 56 trials, including the
+    # headline PASI-75 results for UNCOVER-1/2/3, AMAGINE-2/3, ERASURE,
+    # FIXTURE, FEATURE, and ECZTRA 1's co-primary EASI-75). Take ALL
+    # primaryOutcomes, same list shape secondary_measures already used --
+    # atlas.migrate._endpoints already handles a list of titles.
+    primary_measures = []
+    for po in primary_outcomes:
+        measure = po.get("measure")
+        if not measure:
+            continue
         tf = po.get("timeFrame")
-        primary_measure = po.get("measure") + (f" (Time frame: {tf})" if tf else "")
+        primary_measures.append(measure + (f" (Time frame: {tf})" if tf else ""))
     secondary_measures = [o.get("measure") for o in secondary_outcomes if o.get("measure")]
 
     phases = dm.get("phases") or []
@@ -398,9 +407,9 @@ def build_record(nct_id: str, drug: str, raw: dict, url: str) -> dict:
         },
         "endpoints": {
             "primary_endpoint_measure": ctgov_field(
-                primary_measure,
+                primary_measures,
                 url,
-                "protocolSection.outcomesModule.primaryOutcomes[0].measure/timeFrame",
+                "protocolSection.outcomesModule.primaryOutcomes[].measure/timeFrame",
             ),
             "secondary_endpoint_measures": ctgov_field(
                 secondary_measures,

@@ -86,10 +86,17 @@ class EndpointTest(unittest.TestCase):
         self.assertEqual(e["subgroup_criteria"][0]["assessed_at"], ["baseline"])
 
     def test_rerandomized_maintenance(self):
+        # Bug fixed 2026-09 (results-layer phase 1, same ECZTRA 1 case the
+        # design report found): the endpoint's own measurement is a single
+        # timepoint (week 52); "at Week 16" only describes the re-randomized
+        # subgroup's qualifying event, already captured in subgroup_criteria's
+        # assessed_at. It must not also leak into the endpoint's own
+        # timepoints -- that produced the atlas's real, wrong "59.6% at week
+        # 16" ECZTRA 1 headline instead of the correct 25.0% initial-ITT read.
         e = parse_endpoint("Percentage of Participants From Those Re-randomized Having Achieved EASI-75 at Week 16 Who Continue to Exhibit EASI-75 at Week 52 (EASI-75 Calculated Relative to Baseline EASI Score)", "secondary", 20)
         self.assertEqual(e["analysis_population"], "re_randomized_responders")
         self.assertEqual(e["subgroup_criteria"][0]["assessed_at"], ["week_16"])
-        self.assertEqual({t["value"] for t in e["timepoints"]}, {16, 52})
+        self.assertEqual({t["value"] for t in e["timepoints"]}, {52})
 
     def test_measure_types(self):
         cases = {

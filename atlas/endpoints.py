@@ -329,7 +329,14 @@ def parse_endpoint(title: str, rank: str, position: int, time_frame=None) -> dic
     if scale is None:
         scale, component = detect_scale(t)
     variant = detect_variant(main if detect_scale(main)[0] else t) if scale == "Pruritus NRS" else None
-    tps, through = _timepoints(t)
+    # Bug fixed 2026-09 (results-layer phase 1): this used to scan `t` (the
+    # pre-subgroup-strip text), so a subgroup clause's own week mention (e.g.
+    # "...at Week 52 Among Subjects With EASI75 at Week 16") leaked a
+    # spurious extra timepoint onto the endpoint's own single real
+    # assessment week. `main` is the already subgroup-clause-stripped text
+    # every other extractor here (measure_type, scale, responder) already
+    # uses for exactly this reason.
+    tps, through = _timepoints(main)
     if not tps and through is None and time_frame:
         tps, through = _timepoints(normalize_symbols(time_frame))
     baseline_ref = "rescue_baseline" if "Rescue Baseline" in t else ("baseline" if "Baseline" in t else None)

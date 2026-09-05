@@ -200,7 +200,12 @@ class LosslessMigrationTest(unittest.TestCase):
 
     def test_endpoints_one_to_one(self):
         for nct, v1, v2 in self.pairs:
-            titles = [v1["endpoints"]["primary_endpoint_measure"]["value"]] + list(v1["endpoints"]["secondary_endpoint_measures"]["value"])
+            # primary_endpoint_measure is a single string for a trial with one
+            # primary outcome, or a list for co-primaries -- same isinstance
+            # convention atlas.migrate._endpoints() already uses.
+            primary_val = v1["endpoints"]["primary_endpoint_measure"]["value"]
+            primary_titles = [primary_val] if isinstance(primary_val, str) else list(primary_val)
+            titles = primary_titles + list(v1["endpoints"]["secondary_endpoint_measures"]["value"])
             eps = v2["endpoints"]["primary_endpoints"]["value"] + v2["endpoints"]["secondary_endpoints"]["value"]
             self.assertEqual([e["verbatim"] for e in eps], titles, nct)
             self.assertEqual([e["rank"] for e in eps][:1], ["primary"])
@@ -210,8 +215,16 @@ class LosslessMigrationTest(unittest.TestCase):
                     tps = {t["value"] for t in e["timepoints"]} | {t["end_value"] for t in e["timepoints"] if t["end_value"]}
                     if e["through"]:
                         tps.add(e["through"]["value"])
+                    # A week mentioned only inside a subgroup-qualifying clause
+                    # ("...at Week 52 Among Subjects With EASI75 at Week 16")
+                    # is correctly captured via subgroup_criteria's assessed_at,
+                    # not the endpoint's own timepoints -- conflating the two
+                    # was the real ECZTRA 1 bug the results-layer design report
+                    # found (fixed 2026-09). Allow either.
+                    subgroup_weeks = {int(w.split("_")[1]) for c in e["subgroup_criteria"]
+                                       for w in (c.get("assessed_at") or []) if w.startswith("week_")}
                     for n in re.findall(r"(?:Weeks?|Days?)\s+(\d+)", title) + re.findall(r"(?:Weeks?|Days?)\s+\d+(?:-\d+)?(?:,\s*(?:and\s+)?\d+)*?(?:,\s*(?:and\s+)?|\s+and\s+)(\d+)", title):
-                        self.assertIn(int(n), tps, f"timepoint {n} dropped")
+                        self.assertTrue(int(n) in tps or int(n) in subgroup_weeks, f"timepoint {n} dropped")
                     crit_values = {c["value"] if not isinstance(c["value"], list) else tuple(c["value"])
                                    for c in e["responder_criteria"] + e["subgroup_criteria"]}
                     for n in re.findall(r"(?:EASI|SCORAD)[- ](\d{2,3})\b", title):
