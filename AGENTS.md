@@ -399,6 +399,27 @@ This file is the project's committed home for project-intrinsic agent memory: bu
   functions, call `migrate_trial()` to get schema v2, THEN overlay `real_world_safety`/
   `exclusivity` (freshly fetched or copied from an existing same-drug trial per the note above).
   Validate with `atlas.schema.validate()` before writing.
+- **Ran the "re-check an already-present drug's other FDA-labeled indications" sweep (queued
+  above) across every biologic/JAK/oral small molecule already in the atlas** (Adalimumab,
+  Ixekizumab, Certolizumab, Ustekinumab, Apremilast, Upadacitinib, Baricitinib, Guselkumab,
+  Risankizumab, Deucravacitinib, Brodalumab, Dupilumab, Bimekizumab, Tildrakizumab) against
+  their full `indications_and_usage` label text. Confirmed no further gaps beyond Secukinumab:
+  Bimekizumab's HS indication is already in the atlas; Ixekizumab/Ustekinumab/Guselkumab/
+  Risankizumab/Deucravacitinib/Brodalumab/Tildrakizumab have no other dermatology-relevant
+  indication (their other approvals are PsA/axSpA/IBD, out of this atlas's scope); Upadacitinib's
+  AD is already covered and it is genuinely not FDA-approved for AA or Vitiligo (still
+  investigational, matches the standing Vitiligo-oral-JAK exclusion). One real, adjacent
+  finding closed out: Adalimumab (Humira, already in the atlas for HS) has its own older Plaque
+  Psoriasis approval (2008) — HUMIRA's label names "Study Ps-I" (n=1212), which matches
+  NCT00237887's exact enrollment, but that trial has `hasResults: false` and started ~2005 — the
+  same permanent pre-2007 dead end as Etanercept/Infliximab, not a gap to fill. One deferred,
+  real candidate needing a scope decision rather than a data check: Apremilast (already in the
+  atlas for Psoriasis) is also FDA-approved for oral ulcers associated with Behçet's Disease, with
+  a real randomized placebo-controlled completed trial with posted results (NCT00866359, n=111) —
+  but Behçet's is a systemic vasculitis with mucosal (oral/genital), not cutaneous, primary
+  lesions, stretching this atlas's "dermatology" scope past every indication added so far (all
+  literal skin conditions). Flagged rather than added unilaterally; worth a scope call before a
+  future cycle adds it.
 
 ## Maintaining this file
 

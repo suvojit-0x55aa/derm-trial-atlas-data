@@ -91,6 +91,16 @@ rule and were individually confirmed to have **no** `resultsSection` at
 all — a genuine dead end for this atlas's `adverse_events` field group,
 not an oversight.
 
+Adalimumab (Humira, already in this atlas for Hidradenitis Suppurativa)
+was checked for its own, older Plaque Psoriasis approval (2008) the same
+way Secukinumab was, cycle 15 — real but excluded: HUMIRA's label cites
+"Study Ps-I" (n=1212) as its pivotal Psoriasis trial, matching
+NCT00237887's exact enrollment count, so the trial is identified with
+confidence, but that trial has `hasResults: false` on CT.gov and was
+started c. 2005 — the same permanent pre-2007 dead end as Etanercept and
+Infliximab (Adalimumab's own HS trials, already in the atlas, are a
+decade newer and do have posted results).
+
 Secukinumab (Cosentyx), added cycle 15 (2026-09-05), was already in this
 atlas for Hidradenitis Suppurativa but was missing its own, much
 better-known Plaque Psoriasis approval (2015, one of dermatology's
