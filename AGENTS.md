@@ -279,6 +279,30 @@ This file is the project's committed home for project-intrinsic agent memory: bu
   same active-comparator exclusion as Pemphigus Vulgaris/Rituximab. Oncology dose-ranging pivotal
   designs without a placebo arm are a recurring shape to expect in any solid-tumour skin
   indication, not a data gap.
+- **A discontinued brand can be absent from openFDA's `drug/label.json` entirely — not even a
+  `substance_name` hit** (a step further than Kerydin's precedent, where `substance_name` still
+  worked when `brand_name` didn't). Added cycle 12: Impetigo (Ozenoxacin/Xepi, NDA208945, approved
+  2017) and Seborrheic Keratosis (Hydrogen Peroxide/Eskata, NDA209305, approved 2017) — both
+  small, old, market-discontinued topicals with zero label.json hits under brand, substance,
+  generic, or `application_number` search. `boxed_warning` was still resolved (both confirmed
+  `present: false`, not `needs_extraction`) by fetching the original approval-package label PDF
+  directly from the `application_docs[].url` in `drug/drugsfda.json`'s ORIG submission — the PDF
+  renders as scanned/compressed text WebFetch can't parse, but Read extracts it as page images
+  fine. Both labels' section 14 also directly name-matched their CT.gov trials by N and enrollment
+  count, the same label-is-authoritative-for-pivotal-trials pattern as Afamelanotide/EPP.
+- **A generic drug name can collide with FAERS reports for a completely unrelated drug on BOTH the
+  generic and the brand search term at once** — a new, worse variant of the Qbrexza/Glycopyrronium
+  finding (where only the generic term was contaminated). Ozenoxacin/Xepi: `OZENOXACIN` (17
+  reports) top terms include cerebral haemorrhage and ACTH deficiency; `XEPI` (4 reports) top terms
+  are narcolepsy/cataplexy/somnolence (i.e., Xyrem territory) — neither term's indication profile
+  resembles a topical impetigo antibiotic. For a low-volume, old, discontinued drug, expect this
+  kind of FAERS name-noise and record it as-is (generic term, atlas default) with an explicit
+  caveat rather than picking whichever term looks cleaner — there may not be a clean one. Contrast
+  with Eskata, where the generic term (`HYDROGEN PEROXIDE`, 521 reports) is the contaminated one
+  (dominated by OTC wound-care/mouthwash/whitening products) and the brand `ESKATA` (212 reports,
+  top indication SEBORRHOEIC KERATOSIS 159/212) is the clean one — used instead per the existing
+  run-the-drugindication-count-first rule. Two genuinely different resolutions for the same class
+  of problem; always check both terms rather than assuming the convention picks itself.
 
 ## Maintaining this file
 
