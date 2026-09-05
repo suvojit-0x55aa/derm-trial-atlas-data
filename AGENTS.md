@@ -32,7 +32,7 @@ This file is the project's committed home for project-intrinsic agent memory: bu
   couldn't reliably extract. Don't force-fill it by inference — a wrong schedule is worse than a
   null.
 - **This atlas is an ongoing, multi-cycle scale-out effort, not a one-shot.** It started at 1
-  indication (AD, 5 drugs, 17 trials) and is now at 13 indications, 27 unique drugs, 74 trials
+  indication (AD, 5 drugs, 17 trials) and is now at 13 indications, 28 unique drugs, 78 trials
   (see README's "What this covers" for the full per-indication breakdown and exactly which
   candidate trials were checked and excluded as non-pivotal for each). Every drug/indication
   pairing was verified against real, live ClinicalTrials.gov and openFDA data before being
@@ -154,7 +154,10 @@ This file is the project's committed home for project-intrinsic agent memory: bu
   scripts' pure per-trial functions (`fetch_study`, `build_record`, `build_sae_rate`, `fetch_drug`,
   etc.) into a one-off script scoped to only the new NCT IDs — verify this by diffing the
   regenerated CSVs against a pre-change backup with the new NCT IDs grep'd out, exactly as the
-  established `build_csv.py`-diff procedure already does for hand-built trial JSON.
+  established `build_csv.py`-diff procedure already does for hand-built trial JSON. Reused again in
+  the same cycle for Tapinarof (Vtama, NDA215272, a single-NDA drug expanding the same two
+  indications — PSOARING 1/2 for Psoriasis, ADORING 1/2 for AD), confirming the pattern
+  generalizes to a second drug in one sitting without re-deriving it from scratch.
 
 ## Maintaining this file
 
