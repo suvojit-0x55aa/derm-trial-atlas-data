@@ -32,7 +32,7 @@ This file is the project's committed home for project-intrinsic agent memory: bu
   couldn't reliably extract. Don't force-fill it by inference — a wrong schedule is worse than a
   null.
 - **This atlas is an ongoing, multi-cycle scale-out effort, not a one-shot.** It started at 1
-  indication (AD, 5 drugs, 17 trials) and is now at 21 indications, 45 unique drugs, 120 trials
+  indication (AD, 5 drugs, 17 trials) and is now at 21 indications, 45 unique drugs, 122 trials
   (see README's "What this covers" for the full per-indication breakdown and exactly which
   candidate trials were checked and excluded as non-pivotal for each). Every drug/indication
   pairing was verified against real, live ClinicalTrials.gov and openFDA data before being
@@ -435,6 +435,43 @@ This file is the project's committed home for project-intrinsic agent memory: bu
   has zero drugs meeting this atlas's own design bar — oncology approval patterns (single-arm or
   active-comparator-only) are proving to be a systematic, not incidental, exclusion category
   across every skin-cancer indication checked so far (BCC, CSCC, CTCL).
+- **Cycle 16's web search for "FDA dermatology approvals 2025/2026" surfaced a real gap in a drug
+  already in the atlas: Roflumilast Foam 0.3% (Zoryve Foam, NDA217242) has its own, separate Plaque
+  Psoriasis (scalp and body) indication (approved 2025-05-22, an efficacy supplement to the same
+  NDA already in this atlas for Seborrheic Dermatitis), never checked against the cream's existing
+  Psoriasis entry (DERMIS-1/2, a different NDA, 215985).** The 2 label-cited pivotal trials — Trial
+  204 (NCT04128007, Phase 2b, n=304) and ARRECTOR (NCT05028582, Phase 3, n=432) — are both real,
+  randomized, vehicle-controlled, `hasResults: true`, confirmed against the live label PDF
+  (`217242s005lbl.pdf`, section 6.1/14.2 naming both trials, n=734 combined). Same
+  same-substance-two-NDAs-two-indications shape as the original Roflumilast cream/foam split
+  (AGENTS.md cycle 6), but here it's the SAME foam NDA gaining a SECOND indication, not a new NDA —
+  confirm which shape applies before assuming a "new NDA" is required. FAERS +
+  `exclusivity.orange_book` + `exclusivity.regulatory_application` were all copied verbatim from
+  the existing Trial 203 (SebDerm) file for the same NDA (drug/application-level, not trial-level,
+  per the established reuse pattern) — this is the first cycle that needed to copy all 3 of those
+  fields together; earlier reuse passes (Secukinumab, cycle 15) only needed FAERS + Purple Book,
+  so **when reusing drug-level fields for a new trial, copy `exclusivity.regulatory_application`
+  too, not just `faers_summary`/`orange_book`/`purple_book`** — missing it fails no schema check
+  (the field independently defaults to `needs_extraction`) but silently drops a real, already-known
+  value; caught here only by recomputing the Fill status counts from `sources.csv` and noticing
+  `exclusivity.regulatory_application` read 120/122 instead of the expected 122/122.
+- **Firstmate/captain scope decision (cycle 16): Apremilast's real, FDA-approved,
+  placebo-controlled Behçet's-oral-ulcers trial (NCT00866359, flagged cycle 15) is excluded on
+  scope, not data quality.** This atlas's framing is cutaneous/dermatologic conditions; Behçet's
+  is a systemic vasculitis with mucosal (oral/genital), not cutaneous, primary lesions — oral
+  medicine/rheumatology territory. Do not re-flag this as a gap in a future sweep; the boundary is
+  deliberate.
+- Checked and excluded in cycle 16 (real negative finding, quick check from the same web sweep):
+  Tudriqev (vusolimogene oderparepvec-wtpg), a 2026-08-06 accelerated approval for advanced
+  cutaneous melanoma in combination with nivolumab. Its confirmatory Phase 3 trial IGNYTE-3
+  (NCT06264180) is randomized but ACTIVE_COMPARATOR-only (vs. physician's choice, not placebo) and
+  still RECRUITING (`hasResults: false`) — the same active-comparator-only + not-yet-complete
+  double exclusion already established for the BCC/CTCL oncology dead ends, now extending to a
+  brand-new 2026 accelerated-approval melanoma drug too. Also checked and confirmed already fully
+  covered (no action needed): Delgocitinib/Anzupgo (Chronic Hand Eczema), Dupilumab-for-Bullous-
+  Pemphigoid (LIBERTY-BP), Dupilumab-for-CSU and Remibrutinib/Rhapsido (both Chronic Spontaneous
+  Urticaria) — all 4 of these 2025 FDA approvals cited in the web sweep were already live-verified
+  and in the atlas from earlier cycles, not new gaps.
 
 ## Maintaining this file
 
