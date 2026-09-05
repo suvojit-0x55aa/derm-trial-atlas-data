@@ -32,7 +32,7 @@ This file is the project's committed home for project-intrinsic agent memory: bu
   couldn't reliably extract. Don't force-fill it by inference — a wrong schedule is worse than a
   null.
 - **This atlas is an ongoing, multi-cycle scale-out effort, not a one-shot.** It started at 1
-  indication (AD, 5 drugs, 17 trials) and is now at 21 indications, 45 unique drugs, 122 trials
+  indication (AD, 5 drugs, 17 trials) and is now at 22 indications, 46 unique drugs, 123 trials
   (see README's "What this covers" for the full per-indication breakdown and exactly which
   candidate trials were checked and excluded as non-pivotal for each). Every drug/indication
   pairing was verified against real, live ClinicalTrials.gov and openFDA data before being
@@ -586,6 +586,28 @@ This file is the project's committed home for project-intrinsic agent memory: bu
   extraction that closed severity/MoA/dosing to near-zero, and a natural place for the next
   deep-extraction cycle to pick up rather than re-discovering which 61 trials even have a document
   to read.
+- **Cycle 17 added a 22nd indication, Head Lice, via Abametapir (Xeglyze, NDA206966)** — found by
+  extending the broad-sweep method beyond dermatology-proper into other FDA-approved topical
+  prescription pediculicides/scabicides, a category adjacent to but distinct from every prior
+  sweep target. **A drug's two label-cited "identical" pivotal trials can have different
+  `hasResults` status on CT.gov despite both reporting real efficacy data in the label itself** —
+  a new variant of the Zelsuvmi/Zevaskyn precedent, but here it's not that the trial missed its
+  endpoint or hasn't completed; it's that one of two truly interchangeable twin trials (same
+  design, same N target, ran the same year) simply never got its results section posted. XEGLYZE's
+  label section 14 describes "Trials 1 and 2" together (704 subjects combined, both positive:
+  81.1%/50.9% and 81.8%/47.2% treatment success vs. vehicle) but only NCT02060903 (n=379) has
+  `hasResults: true` on CT.gov; NCT02062060 (n=325) is `hasResults: false` — excluded per the
+  atlas's standing resultsSection-present bar, a re-check candidate like Zevaskyn/VIITAL and
+  Cemiplimab/C-POST, not a data gap. Same market-discontinued-brand / absent-from-`label.json`
+  pattern as Xepi/Eskata (original label PDF read directly for `boxed_warning`, confirmed
+  `present: false`); FAERS is a genuine confirmed zero on both `ABAMETAPIR` and `XEGLYZE` (no
+  alternate term exists — recorded as a real `total_reports: 0`); Orange Book has exactly 1 clean
+  product row (no ingredient collision). Checked and excluded in the same sweep: Spinosad (Natroba,
+  NDA022408, approved 2011, also for head lice) — its 2 pivotal trials are randomized but
+  ACTIVE_COMPARATOR-only (spinosad vs. permethrin/NIX, no vehicle or placebo arm), the same
+  active-comparator-only exclusion as Pemphigus Vulgaris/Rituximab and the BCC hedgehog
+  inhibitors — a reminder to check the actual arm types (not just "vehicle" appearing in a trial's
+  brief title) before assuming a topical trial is placebo-controlled.
 
 ## Maintaining this file
 
