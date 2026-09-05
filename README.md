@@ -13,7 +13,7 @@ way around.
 Real, live-pulled pivotal Phase III trials (adult / adult+adolescent,
 systemic therapy), from the [ClinicalTrials.gov API
 v2](https://clinicaltrials.gov/data-api/api) (`/api/v2/studies`, no API
-key required), across **10 indications, 23 unique drugs, 64 trials**:
+key required), across **12 indications, 26 unique drugs, 68 trials**:
 
 ### Atopic Dermatitis (6 drugs, 19 trials)
 
@@ -163,6 +163,44 @@ for the indication (label section 1.5), but its pivotal trial (NCT02383589,
 head-to-head, not placebo/vehicle-controlled — so it fails this atlas's own
 inclusion bar and was excluded, not added.
 
+### Epidermolysis Bullosa (2 drugs, 2 trials)
+
+| Drug | Pivotal Phase III trials |
+|---|---|
+| Birch Triterpenes (Filsuvez, topical gel) | EASE (NCT03068780), n=223 — FDA-approved (NDA 215064, Chiesi) 2023-12-18, for wounds in dystrophic/junctional EB |
+| Beremagene Geperpavec (Vyjuvek, topical gel) | GEM-3 (NCT04491604), n=31 — FDA-approved (BLA 125774, Krystal Biotech) 2023-05-19, an HSV-1 vector-based gene therapy for wounds in dystrophic EB with COL7A1 mutations |
+
+12th indication, added 2026-09-05 (cycle 5). Both are genuinely distinct,
+FDA-approved, placebo/vehicle-controlled pivotal trials, not one drug
+counted twice — Filsuvez is a small-molecule-adjacent botanical extract
+(Orange Book, NDA), Vyjuvek is a CBER-licensed biologic gene therapy
+(Purple Book, BLA) despite both being topical gels. Checked and excluded
+as non-pivotal/non-approved: FCX-007 (dabocemagene autoficel) is
+ACTIVE_NOT_RECRUITING, not yet FDA-approved.
+
+### Erythropoietic Protoporphyria (1 drug, 2 trials)
+
+| Drug | Pivotal Phase III trials |
+|---|---|
+| Afamelanotide (Scenesse, subcutaneous implant) | CUV039 (NCT01605136, EU, n=93), CUV029 (NCT00979745, US, n=74) — FDA-approved (NDA 210797, Clinuvel) 2019-10-08 |
+
+12th indication, added 2026-09-05 (cycle 5). Thin (1 drug) but real: the
+FDA label's own Clinical Studies section (14) names exactly these two
+trials by CT.gov ID as the basis for approval. A third, earlier Clinuvel
+Phase III trial (NCT04053270, "CUV1647", n=100, 2007–2009) exists on
+CT.gov but is not cited in the label's clinical-studies section — excluded
+as non-pivotal (predates the trials FDA actually relied on).
+
+Checked and excluded this cycle (real negative findings, not omissions):
+Mastocytosis / Urticaria Pigmentosa (avapritinib's FDA approval is for
+advanced *systemic* mastocytosis via oncology/hematology trials —
+PIONEER/EXPLORER/PATHFINDER — with no dermatology-relevant cutaneous-only
+placebo-controlled pivotal trial found on CT.gov) and Cicatricial/Mucous
+Membrane Pemphigoid (no FDA-approved drug specific to this indication with
+a completed placebo-controlled pivotal trial — baricitinib's ocular MMP
+trial was Phase 2 and terminated; rituximab's Phase 3 MMP trial is an
+active-comparator, not yet complete).
+
 Every NCT ID above was pulled live from the API during curation — none
 were guessed or reused from memory (see `data/trials/*.json` →
 `source_url` on every field for the exact API call), and every drug/trial
@@ -236,7 +274,7 @@ directly — no re-parsing prose at read time. The full field-by-field
 reference is `docs/SCHEMA.md` (human-readable) / `schema/trial.schema.json`
 (JSON Schema draft-07) — both are static snapshots generated from
 `atlas/schema.py` in `kolai-website`, which owns the spec now. The schema
-is indication-agnostic: adding 8 more indications beyond the original AD
+is indication-agnostic: adding 11 more indications beyond the original AD
 set required zero schema changes — `severity_definition`/severity criteria
 and the endpoint-measure fields are free text sized for any indication's
 own severity/endpoint vocabulary (PASI/sPGA for psoriasis, HiSCR/IHS4 for
@@ -255,21 +293,25 @@ never the queryable value. `kolai-website`'s test suite proves the v1→v2
 migration is lossless (deterministic, byte-identical on re-run, every v1
 fact traceable in the v2 value, every gap preserved, nothing invented).
 
-Cross-source field groups, now populated for every one of the 23 drugs in
+Cross-source field groups, now populated for every one of the 26 drugs in
 the atlas:
 
 - `real_world_safety.faers_summary` — openFDA FAERS report counts,
   seriousness breakdown, top MedDRA reaction terms, reports by year.
   Report volume varies enormously with market exposure time (Adalimumab:
-  46,072 reports; Deuruxolitinib, approved 2025: 1 report) — a real
-  finding, not an error.
+  46,072 reports; Birch Triterpenes, approved 2023-12-18: 0 reports under
+  its generic name) — a real finding, not an error. Zero reports is
+  recorded as a genuine, confirmed `total_reports: 0` (openFDA's own
+  `NOT_FOUND` response for the query), never `null` — `null`/
+  `needs_extraction` means "not looked up," not "looked up and found
+  none."
 - `exclusivity.regulatory_application` — the NDA/BLA number, the join key
   the other two need.
 - `exclusivity.orange_book` — products, patents (number, expiry, use code,
-  claims), exclusivity codes with dates; NDAs only (9 small molecules).
+  claims), exclusivity codes with dates; NDAs only (11 small molecules).
 - `exclusivity.purple_book` — licensure, BPCIA reference-product /
   interchangeable / orphan exclusivity dates, biosimilars; BLAs only
-  (14 biologics; separate shape from Orange Book because BLA exclusivity
+  (15 biologics; separate shape from Orange Book because BLA exclusivity
   rules differ).
 
 **Every non-`ctgov_api` value here is machine/LLM-extracted, not
@@ -293,7 +335,7 @@ text for 4 of the 13 unique primary-publication PMIDs, via NCBI's
 `elink`/`efetch` — not Cloudflare-protected) and **FDA Drugs@FDA
 approval-package reviews** (accessdata.fda.gov, also not
 Cloudflare-protected, often more granular on protocol detail than the
-paper itself). The 8 indications added after that pass did not repeat this
+paper itself). The 11 indications added after that pass did not repeat this
 same paywalled-paper research effort — their `publication_extraction`
 fills remain confined to the original 17 AD trials; `needs_extraction`
 gaps elsewhere in `design.background_therapy`,
@@ -301,7 +343,7 @@ gaps elsewhere in `design.background_therapy`,
 `timing_ops.study_schedule` for the newer indications are a real,
 un-worked backlog, not a pipeline limitation.
 
-### Fill status (all 64 trials, 39 fields each — 2496 sourced values)
+### Fill status (all 68 trials, 39 fields each — 2652 sourced values)
 
 Fields fully or near-fully filled across every trial (`ctgov_api` for the
 identity/population/design/endpoints/timing_ops/adverse_events core,
@@ -312,27 +354,27 @@ drug-level cross-source groups): `nct_id`, `trial_name`, `official_title`,
 `study_type`, `allocation`, `intervention_model`, `masking`,
 `number_of_arms`, `primary_endpoints`, `secondary_endpoints`,
 `start_date`, `primary_completion_date`, `completion_date`,
-`serious_adverse_event_rate`, `real_world_safety.faers_summary` (64/64),
-`exclusivity.regulatory_application` (64/64).
+`serious_adverse_event_rate`, `real_world_safety.faers_summary` (68/68),
+`exclusivity.regulatory_application` (68/68).
 
-Fields with real, checkable gaps (numerator = filled, out of 64 trials):
+Fields with real, checkable gaps (numerator = filled, out of 68 trials):
 
 | Field | Filled | Gap reason |
 |---|---|---|
-| `molecule.mechanism_of_action` | 62/64 | openFDA label lookup miss for 2 trials |
-| `molecule.dosing_regimen` | 58/64 | no intervention-description text on file at CT.gov for those trials |
-| `population.severity_criteria` | 47/64 | extraction regex catches EASI/IGA/BSA (AD) and most PASI/sPGA (psoriasis) phrasing reliably; HiSCR/IHS4 (HS), SALT (AA), UAS7 (CSU), GPPGA/GPPASI (GPP), and some newer trials' eligibility-criteria phrasing not yet caught |
-| `design.background_therapy` | 17/64 | curated per-trial excerpts exist only for the original AD program |
-| `endpoints.multiplicity_control` | 16/64 | same — curated only for the original AD program |
-| `timing_ops.study_schedule` | 15/64 | full per-visit schedule lives only in multi-page PDF tables not reliably machine-extractable; curated cadence exists only for the original AD program |
-| `timing_ops.rescue_therapy` | 14/64 | curated only for the original AD program |
-| `adverse_events.death_rate` | 54/64 | some trials report zero deaths as a genuine null-count edge case in CT.gov's `resultsSection`, not a missing value |
-| `adverse_events.discontinuation_due_to_ae_rate` | 61/64 | CT.gov `resultsSection` gap for a few trials |
-| `adverse_events.most_common_adverse_events` | 63/64 | CT.gov `resultsSection` gap for 1 trial |
-| `exclusivity.orange_book` | 21/64 | only the 9 NDA small-molecule drugs' trials get this field (BLA biologics use `purple_book` instead) |
-| `exclusivity.purple_book` | 43/64 | only the 14 BLA biologic drugs' trials get this field (NDA small molecules use `orange_book` instead) |
+| `molecule.mechanism_of_action` | 62/68 | openFDA label lookup miss for 2 trials |
+| `molecule.dosing_regimen` | 58/68 | no intervention-description text on file at CT.gov for those trials |
+| `population.severity_criteria` | 47/68 | extraction regex catches EASI/IGA/BSA (AD) and most PASI/sPGA (psoriasis) phrasing reliably; HiSCR/IHS4 (HS), SALT (AA), UAS7 (CSU), GPPGA/GPPASI (GPP), and most newer-indication trials' eligibility-criteria phrasing (including EB, EPP) not yet caught |
+| `design.background_therapy` | 17/68 | curated per-trial excerpts exist only for the original AD program |
+| `endpoints.multiplicity_control` | 16/68 | same — curated only for the original AD program |
+| `timing_ops.study_schedule` | 15/68 | full per-visit schedule lives only in multi-page PDF tables not reliably machine-extractable; curated cadence exists only for the original AD program |
+| `timing_ops.rescue_therapy` | 14/68 | curated only for the original AD program |
+| `adverse_events.death_rate` | 56/68 | some trials report zero deaths as a genuine null-count edge case in CT.gov's `resultsSection`, not a missing value |
+| `adverse_events.discontinuation_due_to_ae_rate` | 61/68 | CT.gov `resultsSection` gap for a few trials |
+| `adverse_events.most_common_adverse_events` | 67/68 | CT.gov `resultsSection` gap for 1 trial |
+| `exclusivity.orange_book` | 24/68 | only the 11 NDA small-molecule drugs' trials get this field (BLA biologics use `purple_book` instead) |
+| `exclusivity.purple_book` | 44/68 | only the 15 BLA biologic drugs' trials get this field (NDA small molecules use `orange_book` instead) |
 
-**2199 of 2496 sourced values are filled with real data (88.1%); 297
+**2247 of 2652 sourced values are filled with real data (84.7%); 405
 remain `needs_extraction`** — see `sources.csv` for the per-trial,
 per-field breakdown. Every non-`ctgov_api` fill was produced by
 LLM-assisted reading of a real, cited source (CT.gov free text, a
@@ -347,13 +389,13 @@ before it's treated as authoritative for publication.
 
 This repo holds only the pipeline's output — no code, no tests:
 
-- `data/trials/<NCT_ID>.json` — one file per trial (64 files), the
+- `data/trials/<NCT_ID>.json` — one file per trial (68 files), the
   sourced-value format described above (schema v2).
 - `trials.csv` — one row per trial, one column per field (the field's
   `value`, JSON-encoded when structured; `needs_extraction` fields blank).
 - `sources.csv` — one row per sourced value: `nct_id`, `field`,
   `source_type`, `source_url`, `source_excerpt`, `extracted_by`,
-  `reviewed_by`, `confidence`. 64 trials × 39 fields = 2496 rows.
+  `reviewed_by`, `confidence`. 68 trials × 39 fields = 2652 rows.
 - `endpoints.csv` — one row per outcome measure × criterion: `measure_type`,
   `scale`, `timepoints`, `analysis_population`, and the `ScoreCriterion`
   columns, so "EASI-75 responders at week 16" is a column filter.
@@ -371,12 +413,12 @@ owns the pipeline this data is exported from.
 
 - The human QA pass on top of the LLM-assisted extraction (captain +
   Garvita review of every non-`ctgov_api` value).
-- The 291 fields that remain `needs_extraction` (see the fill-status table
+- The 405 fields that remain `needs_extraction` (see the fill-status table
   above) — a mix of genuinely unreachable sources (paywalled papers behind
   Cloudflare, PDF tables that don't extract reliably) and real, un-worked
   backlog (the curated per-trial prose tables — background therapy,
   multiplicity control, rescue therapy, visit schedule — built only for
-  the original AD program, not yet extended to the 8 indications added
+  the original AD program, not yet extended to the 11 indications added
   since).
 - Further indication candidates not yet live-verified (this is explicitly
   an ongoing effort, not a one-shot; each addition to date was checked

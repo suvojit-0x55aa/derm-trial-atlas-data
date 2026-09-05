@@ -32,7 +32,7 @@ This file is the project's committed home for project-intrinsic agent memory: bu
   couldn't reliably extract. Don't force-fill it by inference — a wrong schedule is worse than a
   null.
 - **This atlas is an ongoing, multi-cycle scale-out effort, not a one-shot.** It started at 1
-  indication (AD, 5 drugs, 17 trials) and is now at 10 indications, 23 unique drugs, 64 trials
+  indication (AD, 5 drugs, 17 trials) and is now at 12 indications, 26 unique drugs, 68 trials
   (see README's "What this covers" for the full per-indication breakdown and exactly which
   candidate trials were checked and excluded as non-pivotal for each). Every drug/indication
   pairing was verified against real, live ClinicalTrials.gov and openFDA data before being
@@ -99,6 +99,32 @@ This file is the project's committed home for project-intrinsic agent memory: bu
   qualify regardless of rarity or real FDA approval status — Pemphigus Vulgaris/Rituximab was
   checked and excluded on exactly this ground (its approval trial is rituximab-vs-mycophenolate,
   not placebo-controlled).
+- **Two FDA-approved drugs for the same indication can sit in different exclusivity registries
+  despite an identical dosage form.** Epidermolysis Bullosa's two drugs are both topical gels
+  applied the same way, but Filsuvez (birch triterpenes, a botanical-extract NDA) is Orange Book
+  while Vyjuvek (beremagene geperpavec, a CBER-licensed HSV-1-vector gene therapy BLA) is Purple
+  Book — the registry follows the FDA application type (NDA vs. BLA), never the route of
+  administration. Vyjuvek's Purple Book row also had no biosimilars and needed the
+  `accessdata.fda.gov` monthly-CSV fallback (see the note above) rather than the live search UI.
+- **`fetch_faers.py`'s "zero real-world reports" path had a real, previously-latent schema bug**,
+  found and fixed in cycle 5: openFDA's genuine `NOT_FOUND` for a drug's FAERS query (Birch
+  Triterpenes, approved 2023, apparently never reported under its generic name) was being written
+  with `total_reports: null` and friends, which fails `FAERS_SUMMARY`'s non-nullable `total_reports:
+  INT()` — every prior atlas drug happened to have >=1 real report, so this path was never
+  exercised before. Fixed by writing real `0`s (a confirmed negative count) instead of `null`s
+  (an unknown) for every count field, with empty lists for the reaction/year breakdowns.
+- **A drug's FDA label's own "Clinical Studies" section is the authoritative source for which
+  CT.gov trials are actually pivotal**, when a drug has more registered Phase 3 trials than the
+  ones FDA relied on for approval — used to pick Afamelanotide/Erythropoietic Protoporphyria's 2
+  pivotal trials (CUV039 NCT01605136, CUV029 NCT00979745, both named by CT.gov ID in SCENESSE's
+  label section 14) over a 3rd, earlier completed placebo-controlled Phase 3 trial (NCT04053270)
+  that exists on CT.gov but predates what FDA actually cited.
+- Checked and excluded in cycle 5 (real negative findings): Mastocytosis/Urticaria Pigmentosa (no
+  dermatology-relevant cutaneous-only placebo-controlled pivotal trial on CT.gov — avapritinib's
+  approval is for advanced *systemic* mastocytosis via oncology trials) and Cicatricial/Mucous
+  Membrane Pemphigoid (no FDA-approved drug specific to this indication has a completed
+  placebo-controlled pivotal trial: baricitinib's ocular-MMP trial was Phase 2 and terminated,
+  rituximab's Phase 3 MMP trial is an active-comparator design and not yet complete).
 
 ## Maintaining this file
 
