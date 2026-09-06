@@ -9172,7 +9172,7 @@
                     "properties": {
                       "arm_id": {
                         "type": "string",
-                        "description": "CT.gov results group id (OG000); unique within this trial"
+                        "description": "CT.gov results group id (OG000), disambiguated when CT.gov reuses it for a genuinely different arm in another outcome measure: '{raw_id}#{analysis_population}', or '{raw_id}#2', '{raw_id}#3', ... when the reused id's OMs share the same analysis_population too. Unique within this trial; an id with no collision is left exactly as CT.gov wrote it -- see atlas.results.build_arm_id_map"
                       },
                       "label": {
                         "type": "string",
@@ -9188,6 +9188,29 @@
                           "other"
                         ],
                         "description": "curated; CT.gov armGroups[].type is unreliable -- a trial can label its own placebo arm EXPERIMENTAL"
+                      },
+                      "analysis_population": {
+                        "anyOf": [
+                          {
+                            "type": "string",
+                            "enum": [
+                              "main_study",
+                              "adolescents",
+                              "adults",
+                              "pediatrics",
+                              "full_analysis_set",
+                              "per_protocol",
+                              "prior_cyclosporine_use",
+                              "comorbid_asthma",
+                              "re_randomized_responders",
+                              "initially_randomized_to_active"
+                            ]
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ],
+                        "description": "the outcome measure this arm entry was first seen in; the disambiguator baked into arm_id when it collided"
                       },
                       "intervention_names": {
                         "type": "array",
@@ -9248,6 +9271,7 @@
                       "arm_id",
                       "label",
                       "role",
+                      "analysis_population",
                       "intervention_names",
                       "dose_value",
                       "dose_unit",

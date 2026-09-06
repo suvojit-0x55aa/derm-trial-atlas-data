@@ -299,10 +299,17 @@ PVALUE = OBJ({
 }, d="P-value as bound + value; reuses the ScoreCriterion comparator idiom")
 
 ARM = OBJ({
-    "arm_id": STR(False, "CT.gov results group id (OG000); unique within this trial"),
+    "arm_id": STR(False, "CT.gov results group id (OG000), disambiguated when CT.gov reuses it for "
+                         "a genuinely different arm in another outcome measure: "
+                         "'{raw_id}#{analysis_population}', or '{raw_id}#2', '{raw_id}#3', ... when "
+                         "the reused id's OMs share the same analysis_population too. Unique "
+                         "within this trial; an id with no collision is left exactly as CT.gov "
+                         "wrote it -- see atlas.results.build_arm_id_map"),
     "label": STR(False, "CT.gov results group title, verbatim"),
     "role": ENUM(ARM_ROLES, d="curated; CT.gov armGroups[].type is unreliable -- a trial can "
                               "label its own placebo arm EXPERIMENTAL"),
+    "analysis_population": ENUM(POPULATIONS, True, "the outcome measure this arm entry was first "
+                                "seen in; the disambiguator baked into arm_id when it collided"),
     "intervention_names": LIST(STR(), d="join to molecule.dosing_regimen[].intervention_name"),
     "dose_value": NUM(True), "dose_unit": STR(True),
     "frequency": ENUM(FREQUENCIES, True),

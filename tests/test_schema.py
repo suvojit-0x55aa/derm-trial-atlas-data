@@ -142,12 +142,14 @@ class ResultsLayerSchemaTest(unittest.TestCase):
 
     def test_arm_valid(self):
         arm = {"arm_id": "OG000", "label": "Placebo QW + TCS", "role": "placebo",
+               "analysis_population": None,
                "intervention_names": ["Placebo"], "dose_value": None, "dose_unit": None,
                "frequency": None, "randomized_n": 108}
         self.assertEqual(validate(arm, spec=ARM), [])
 
     def test_arm_rejects_bad_role(self):
         arm = {"arm_id": "OG000", "label": "Placebo", "role": "control",
+               "analysis_population": None,
                "intervention_names": [], "dose_value": None, "dose_unit": None,
                "frequency": None, "randomized_n": None}
         errs = validate(arm, spec=ARM)

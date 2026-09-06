@@ -21,6 +21,7 @@ and tests can exercise them directly against cached CT.gov payloads.
 """
 import hashlib
 import re
+from collections import Counter
 
 VALUE_TYPE_MAP = {
     "NUMBER": "number",
@@ -198,33 +199,126 @@ POPULATION_PATTERNS = [
 ]
 
 
+AGE_GROUP_LIST_RE = re.compile(r"adults?\s+and\s+adolescents?|adolescents?\s+and\s+adults?", re.I)
+
+
 def analysis_population_of(description):
     if not description:
         return None
+    # A parenthetical like "(adults and adolescents)" describing the FULL
+    # population's age composition is not a sub-population scope -- but it
+    # contains the bare word "adolescent" (and "adult"), which the patterns
+    # above would otherwise match before ever reaching "full analysis set" /
+    # "intent-to-treat" later in the same description. Real, found bug: 4
+    # records' full-population primary rows (3 Upadacitinib trials +
+    # NCT01194219's re-randomization arm; see AGENTS.md) were mislabeled
+    # "adolescents" for exactly this reason. Strip the coordinated age-group
+    # phrase before matching so the real population type wins; a genuine
+    # adolescent-only sub-study description ("population for adolescents",
+    # "ITT_A", "adolescent sub-study") never contains this coordinated form
+    # and is unaffected.
+    text = AGE_GROUP_LIST_RE.sub("", description)
     for pattern, label in POPULATION_PATTERNS:
-        if pattern.search(description):
+        if pattern.search(text):
             return label
     return None
 
 
-def build_arm_registry(record, cache):
-    """One row per DISTINCT (CT.gov results group id, label) pair, unioned
-    across every outcome measure.
+def _om_groups(cache):
+    """Every outcome measure's own `groups` list, alongside that OM's
+    analysis_population -- the unit `_majority_populations` votes over."""
+    oms = cache.get("resultsSection", {}).get("outcomeMeasuresModule", {}).get("outcomeMeasures", [])
+    for om in oms:
+        pop = analysis_population_of(om.get("populationDescription"))
+        yield om, pop
+
+
+def _majority_populations(cache):
+    """(raw CT.gov results-group id, label) -> the population most of that
+    (id, label)'s OWN outcome measures agree on. A single OM's own free-text
+    populationDescription can read wrong in isolation -- real, found case:
+    NCT03568318's EASI-75 OM (whose arm IS the full-population one) happens
+    to mention "adolescent" in an aside about how adolescent efficacy is
+    reported separately, so analysis_population_of misreads that one OM as
+    "adolescents"; 11 of its 12 sibling OMs for the same (id, label) agree
+    it is full_analysis_set. Voting across every OM sharing an (id, label)
+    is robust to that kind of single-OM misread without having to hand-special-
+    case each real phrasing variant analysis_population_of can be fooled by."""
+    votes = {}
+    order = []
+    for om, pop in _om_groups(cache):
+        for g in om.get("groups", []):
+            key = (g["id"], g["title"])
+            if key not in votes:
+                votes[key] = []
+                order.append(key)
+            votes[key].append(pop)
+    majority = {}
+    for key, pops in votes.items():
+        counts = Counter(p for p in pops if p is not None)
+        majority[key] = counts.most_common(1)[0][0] if counts else None
+    return majority, order
+
+
+def build_arm_id_map(cache):
+    """(raw CT.gov results-group id, label) -> the id actually written to
+    results.arms / arm_results / effect_estimates.
 
     Real, load-bearing finding: OG### ids are NOT stable trial-wide -- they
     are only unique WITHIN one outcome measure. 51 of 125 trials in this
     corpus reuse an id (e.g. OG001) for a genuinely different arm in a
     different measure, almost always a re-randomization/maintenance-period
     design (ECZTRA 1's own OG001 is 'Placebo Q2W' in its initial-period
-    measures and 'Tralokinumab 300 mg Q4W' in its maintenance-period ones).
-    Deduping by id alone would silently merge two different arms under one
-    label. Deduping by the (id, label) pair instead means an ambiguous id
-    legitimately appears more than once here, with its real, distinct
-    labels -- lossless, if a consumer must know to disambiguate an
-    arm_result/effect_estimate row by which endpoint (which outcome
-    measure) it came from, not by arm_id alone. A future schema revision
-    should consider scoping arm_id to (rank, position) directly; this is a
-    real, checked ontology gap, not an oversight -- see AGENTS.md.
+    measures and 'Tralokinumab 300 mg Q4W' in its maintenance-period ones),
+    and sometimes a main-study-vs-sub-population design (NCT03568318's own
+    OG000 is 'Placebo + TCS' in its main-study measures and 'Adolescents:
+    Placebo + TCS' in its adolescent-substudy ones). Keying `results.arms`/
+    `arm_results`/`effect_estimates` by the raw id alone silently collapses
+    two different arms into one.
+
+    An id that labels more than one real arm gets a distinguishing suffix
+    per distinct label, first-seen order: `{raw_id}#{population}` using
+    that (id, label)'s majority-vote population (see `_majority_populations`)
+    when it disambiguates the label from every other label already seen
+    under this id (the common case -- a sub-population design); otherwise
+    `{raw_id}#2`, `{raw_id}#3`, ... (a same-population relabeling, e.g. a
+    crossover arm renamed after re-randomization, where no field in this
+    schema states the real distinguisher -- a numbered id still keeps both
+    labels distinct without inventing one). An id that labels only one arm
+    trial-wide is left exactly as CT.gov wrote it -- no needless churn on
+    the other 74 (of 125) trials with no collision."""
+    majority, order = _majority_populations(cache)
+    labels_by_id = {}
+    for raw_id, label in order:
+        labels_by_id.setdefault(raw_id, [])
+        if label not in labels_by_id[raw_id]:
+            labels_by_id[raw_id].append(label)
+
+    id_map = {}
+    for raw_id, labels in labels_by_id.items():
+        if len(labels) == 1:
+            id_map[(raw_id, labels[0])] = raw_id
+            continue
+        used = set()
+        for label in labels:
+            pop = majority[(raw_id, label)]
+            candidate = f"{raw_id}#{pop}" if pop else None
+            if candidate is None or candidate in used:
+                idx = 2
+                candidate = f"{raw_id}#{idx}"
+                while candidate in used:
+                    idx += 1
+                    candidate = f"{raw_id}#{idx}"
+            used.add(candidate)
+            id_map[(raw_id, label)] = candidate
+    return id_map
+
+
+def build_arm_registry(record, cache):
+    """One row per distinct (resolved arm id, label) pair, unioned across
+    every outcome measure -- see `build_arm_id_map` for how a raw CT.gov id
+    that labels more than one real arm gets a distinguishing id so both
+    labels survive instead of colliding under one id.
 
     randomized_n is joined from participantFlowModule by title-substring
     match (its groups use a separate FG### id namespace with a different,
@@ -232,15 +326,13 @@ def build_arm_registry(record, cache):
     Q2W' vs the OM's own 'Tralokinumab 300 mg Q2W') -- left null when no
     clean match exists rather than guessed."""
     drug = record["molecule"]["drug"]["value"]
-    oms = cache.get("resultsSection", {}).get("outcomeMeasuresModule", {}).get("outcomeMeasures", [])
-    id_label_pairs = []
-    seen = set()
-    for om in oms:
-        for g in om.get("groups", []):
-            key = (g["id"], g["title"])
-            if key not in seen:
-                seen.add(key)
-                id_label_pairs.append(key)
+    id_map = build_arm_id_map(cache)
+    majority, order = _majority_populations(cache)
+    id_to_label = {}
+    for raw_id, label in order:
+        id_to_label.setdefault(raw_id, [])
+        if label not in id_to_label[raw_id]:
+            id_to_label[raw_id].append(label)
 
     started = {}
     pf = cache.get("resultsSection", {}).get("participantFlowModule", {})
@@ -256,30 +348,34 @@ def build_arm_registry(record, cache):
         break  # only the first (overall) period carries the trial-wide randomized N
 
     arms = []
-    for arm_id, label in id_label_pairs:
-        randomized_n = None
-        for fg_title, n in started.items():
-            if label and (label in fg_title or fg_title in label):
-                try:
-                    candidate = int(n)
-                except (TypeError, ValueError):
-                    continue
-                # A period-scoped STARTED milestone reports 0 for any arm label
-                # that only exists in a LATER period (e.g. a maintenance-only
-                # re-randomization arm like ECZTRA 1's "Tralokinumab 300 mg
-                # Q4W") -- that 0 means "not part of period 1", not "randomized_n
-                # is really zero". Keep looking for a real, nonzero match instead
-                # of accepting a misleading false zero.
-                if candidate > 0:
-                    randomized_n = candidate
-                    break
-        arms.append({
-            "arm_id": arm_id, "label": label, "role": classify_arm_role(label, drug),
-            "intervention_names": [n for n in record["molecule"]["intervention_names"]["value"] or []
-                                    if n and label and n.lower() in label.lower()],
-            "dose_value": None, "dose_unit": None, "frequency": None,
-            "randomized_n": randomized_n,
-        })
+    for raw_id, labels in id_to_label.items():
+        for label in labels:
+            resolved_id = id_map[(raw_id, label)]
+            pop = majority[(raw_id, label)]
+            randomized_n = None
+            for fg_title, n in started.items():
+                if label and (label in fg_title or fg_title in label):
+                    try:
+                        candidate = int(n)
+                    except (TypeError, ValueError):
+                        continue
+                    # A period-scoped STARTED milestone reports 0 for any arm label
+                    # that only exists in a LATER period (e.g. a maintenance-only
+                    # re-randomization arm like ECZTRA 1's "Tralokinumab 300 mg
+                    # Q4W") -- that 0 means "not part of period 1", not "randomized_n
+                    # is really zero". Keep looking for a real, nonzero match instead
+                    # of accepting a misleading false zero.
+                    if candidate > 0:
+                        randomized_n = candidate
+                        break
+            arms.append({
+                "arm_id": resolved_id, "label": label, "role": classify_arm_role(label, drug),
+                "analysis_population": pop,
+                "intervention_names": [n for n in record["molecule"]["intervention_names"]["value"] or []
+                                        if n and label and n.lower() in label.lower()],
+                "dose_value": None, "dose_unit": None, "frequency": None,
+                "randomized_n": randomized_n,
+            })
     return arms
 
 
@@ -313,8 +409,10 @@ def build_arm_results_and_effects(record, cache):
     of schema-shaped dicts, ready to drop into results.{arm_results,
     effect_estimates}.value. Endpoints with no CT.gov results, or whose
     measure_type is in EXCLUDED_MEASURE_TYPES, contribute nothing."""
+    drug = record["molecule"]["drug"]["value"]
     ep_index = _index_endpoints(record)
     oms = cache.get("resultsSection", {}).get("outcomeMeasuresModule", {}).get("outcomeMeasures", [])
+    id_map = build_arm_id_map(cache)
     arm_results, effect_estimates = [], []
 
     for om in oms:
@@ -350,10 +448,10 @@ def build_arm_results_and_effects(record, cache):
             for c in denom.get("counts", []) or []:
                 denom_by_group[c["groupId"]] = _num(c.get("value"))
         unit = om.get("unitOfMeasure")
-        is_rate_measure = measure_type in ("responder_rate", "loss_of_response", "flare_incidence")
         dispersion_type = dispersion_type_of(om.get("dispersionType"))
         ci_pct = ci_pct_of(om.get("dispersionType"))
         analysis_population = analysis_population_of(om.get("populationDescription"))
+        om_labels = {g["id"]: g["title"] for g in om.get("groups", [])}
 
         for cls, cat in _class_rows(om):
             tp = class_timepoint(cls.get("title"), ep_timepoints)
@@ -367,10 +465,20 @@ def build_arm_results_and_effects(record, cache):
                 rate_is_derived = False
                 if value_type == "count_of_participants":
                     responders = int(value)
-                    if is_rate_measure and denominator:
+                    # Recognize a responder rate from the MEASUREMENT's own shape
+                    # (a count with a real denominator), not from the endpoint's
+                    # measure_type classification -- that classifier has a real,
+                    # documented coverage gap (AGENTS.md) and 37 trials whose
+                    # primary result is genuinely a rate had an empty
+                    # response_rate_pct purely because measure_type wasn't typed
+                    # responder_rate. Every count_of_participants row with a
+                    # denominator is a legitimate "N of M" rate regardless.
+                    if denominator:
                         response_rate_pct = round(responders / denominator * 100, 1)
                         rate_is_derived = True
-                elif value_type == "number" and is_rate_measure and unit and "percent" in unit.lower():
+                elif value_type == "number" and unit and "percent" in unit.lower():
+                    # Already posted as "percentage of participants" -- it IS a
+                    # rate whether or not measure_type says responder_rate.
                     response_rate_pct = value
                 # dispersion_value (a single spread number) only for SD/SE/geometric-CV;
                 # a CI's own bounds go to ci_lower/ci_upper instead. Inter-quartile-range
@@ -382,7 +490,8 @@ def build_arm_results_and_effects(record, cache):
                 ci_lower = _num(m.get("lowerLimit")) if dispersion_type == "confidence_interval" else None
                 ci_upper = _num(m.get("upperLimit")) if dispersion_type == "confidence_interval" else None
                 arm_results.append({
-                    "endpoint": ep_ref, "arm_id": group_id, "timepoint": tp,
+                    "endpoint": ep_ref, "arm_id": id_map.get((group_id, om_labels.get(group_id)), group_id),
+                    "timepoint": tp,
                     "analysis_population": analysis_population, "study_period": None,
                     "denominator": int(denominator) if denominator is not None else None,
                     "value_type": value_type, "reported_value": value, "reported_unit": unit,
@@ -410,9 +519,26 @@ def build_arm_results_and_effects(record, cache):
                     matched = classes[i // (len(analyses) // len(classes))]
                 tp = class_timepoint(matched.get("title") if matched else None, ep_timepoints)
             pv = parse_pvalue(a.get("pValue"))
+            # CT.gov lists the two compared groups without saying which is
+            # "test" -- assigning them in CT.gov's own order put the placebo
+            # arm on the "test" side 44/102 times in this corpus (e.g. CHRONOS:
+            # "Placebo qw vs Dupilumab 300 mg q2w"). Assign by role instead:
+            # the investigational arm is always "test", a placebo/vehicle/other
+            # (active-comparator) arm is always "reference". When neither or
+            # both group labels classify as investigational (rare -- an
+            # unresolvable label, or a comparison between two non-drug arms),
+            # fall back to CT.gov's own order rather than guess.
+            roles = [classify_arm_role(om_labels.get(gid), drug) for gid in group_ids]
+            if roles[0] == "investigational" and roles[1] != "investigational":
+                test_raw, reference_raw = group_ids[0], group_ids[1]
+            elif roles[1] == "investigational" and roles[0] != "investigational":
+                test_raw, reference_raw = group_ids[1], group_ids[0]
+            else:
+                test_raw, reference_raw = group_ids[0], group_ids[1]
             effect_estimates.append({
                 "endpoint": ep_ref, "timepoint": tp,
-                "test_arm_id": group_ids[0], "reference_arm_id": group_ids[1],
+                "test_arm_id": id_map.get((test_raw, om_labels.get(test_raw)), test_raw),
+                "reference_arm_id": id_map.get((reference_raw, om_labels.get(reference_raw)), reference_raw),
                 "comparison_kind": comparison_kind_of(a.get("nonInferiorityType")),
                 "effect_type": canonicalize_effect_type(a.get("paramType")),
                 "effect_type_verbatim": a.get("paramType"),

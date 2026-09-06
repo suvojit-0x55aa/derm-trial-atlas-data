@@ -1818,9 +1818,10 @@
     "arms": {
       "value": [
         {
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "label": "Placebo (RS)",
           "role": "placebo",
+          "analysis_population": "full_analysis_set",
           "intervention_names": [
             "Placebo"
           ],
@@ -1830,9 +1831,10 @@
           "randomized_n": 83
         },
         {
-          "arm_id": "OG001",
+          "arm_id": "OG000#2",
           "label": "Bimekizumab 320 mg Q4W (RS)",
           "role": "investigational",
+          "analysis_population": "full_analysis_set",
           "intervention_names": [
             "Bimekizumab"
           ],
@@ -1842,45 +1844,10 @@
           "randomized_n": null
         },
         {
-          "arm_id": "OG002",
-          "label": "Ustekinumab (RS)",
-          "role": "other",
-          "intervention_names": [
-            "Ustekinumab"
-          ],
-          "dose_value": null,
-          "dose_unit": null,
-          "frequency": null,
-          "randomized_n": null
-        },
-        {
-          "arm_id": "OG000",
-          "label": "Bimekizumab 320 mg Q4W (RS)",
-          "role": "investigational",
-          "intervention_names": [
-            "Bimekizumab"
-          ],
-          "dose_value": null,
-          "dose_unit": null,
-          "frequency": null,
-          "randomized_n": null
-        },
-        {
-          "arm_id": "OG001",
-          "label": "Ustekinumab (RS)",
-          "role": "other",
-          "intervention_names": [
-            "Ustekinumab"
-          ],
-          "dose_value": null,
-          "dose_unit": null,
-          "frequency": null,
-          "randomized_n": null
-        },
-        {
-          "arm_id": "OG000",
+          "arm_id": "OG000#3",
           "label": "Placebo (SS)",
           "role": "placebo",
+          "analysis_population": null,
           "intervention_names": [
             "Placebo"
           ],
@@ -1890,33 +1857,10 @@
           "randomized_n": 83
         },
         {
-          "arm_id": "OG001",
-          "label": "Bimekizumab 320 mg Q4W (SS)",
-          "role": "investigational",
-          "intervention_names": [
-            "Bimekizumab"
-          ],
-          "dose_value": null,
-          "dose_unit": null,
-          "frequency": null,
-          "randomized_n": null
-        },
-        {
-          "arm_id": "OG002",
-          "label": "Ustekinumab (SS)",
-          "role": "other",
-          "intervention_names": [
-            "Ustekinumab"
-          ],
-          "dose_value": null,
-          "dose_unit": null,
-          "frequency": null,
-          "randomized_n": null
-        },
-        {
-          "arm_id": "OG000",
+          "arm_id": "OG000#4",
           "label": "Placebo/Bimekizumab 320 mg Q4W (MS)",
           "role": "placebo",
+          "analysis_population": null,
           "intervention_names": [
             "Bimekizumab",
             "Placebo"
@@ -1927,9 +1871,10 @@
           "randomized_n": 83
         },
         {
-          "arm_id": "OG001",
-          "label": "Bimekizumab 320 mg Q4W/Bimekizumab 320 mg Q4W (MS)",
+          "arm_id": "OG001#full_analysis_set",
+          "label": "Bimekizumab 320 mg Q4W (RS)",
           "role": "investigational",
+          "analysis_population": "full_analysis_set",
           "intervention_names": [
             "Bimekizumab"
           ],
@@ -1939,9 +1884,75 @@
           "randomized_n": null
         },
         {
-          "arm_id": "OG002",
+          "arm_id": "OG001#2",
+          "label": "Ustekinumab (RS)",
+          "role": "other",
+          "analysis_population": "full_analysis_set",
+          "intervention_names": [
+            "Ustekinumab"
+          ],
+          "dose_value": null,
+          "dose_unit": null,
+          "frequency": null,
+          "randomized_n": null
+        },
+        {
+          "arm_id": "OG001#3",
+          "label": "Bimekizumab 320 mg Q4W (SS)",
+          "role": "investigational",
+          "analysis_population": null,
+          "intervention_names": [
+            "Bimekizumab"
+          ],
+          "dose_value": null,
+          "dose_unit": null,
+          "frequency": null,
+          "randomized_n": null
+        },
+        {
+          "arm_id": "OG001#4",
+          "label": "Bimekizumab 320 mg Q4W/Bimekizumab 320 mg Q4W (MS)",
+          "role": "investigational",
+          "analysis_population": null,
+          "intervention_names": [
+            "Bimekizumab"
+          ],
+          "dose_value": null,
+          "dose_unit": null,
+          "frequency": null,
+          "randomized_n": null
+        },
+        {
+          "arm_id": "OG002#full_analysis_set",
+          "label": "Ustekinumab (RS)",
+          "role": "other",
+          "analysis_population": "full_analysis_set",
+          "intervention_names": [
+            "Ustekinumab"
+          ],
+          "dose_value": null,
+          "dose_unit": null,
+          "frequency": null,
+          "randomized_n": null
+        },
+        {
+          "arm_id": "OG002#2",
+          "label": "Ustekinumab (SS)",
+          "role": "other",
+          "analysis_population": null,
+          "intervention_names": [
+            "Ustekinumab"
+          ],
+          "dose_value": null,
+          "dose_unit": null,
+          "frequency": null,
+          "randomized_n": null
+        },
+        {
+          "arm_id": "OG002#3",
           "label": "Ustekinumab/Ustekinumab (MS)",
           "role": "other",
+          "analysis_population": null,
           "intervention_names": [
             "Ustekinumab"
           ],
@@ -1954,7 +1965,7 @@
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03370133",
       "source_excerpt": "resultsSection.outcomeMeasuresModule.outcomeMeasures[].groups[]",
-      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3, 2026-09-06)",
+      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3 backfill re-run)",
       "reviewed_by": null,
       "confidence": 1.0
     },
@@ -1966,7 +1977,7 @@
             "position": 1,
             "verbatim_sha1": "4231ef0b074fd3467217f9f2bb8cc6fb7bdf79c9"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -1994,7 +2005,7 @@
             "position": 1,
             "verbatim_sha1": "4231ef0b074fd3467217f9f2bb8cc6fb7bdf79c9"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -2022,7 +2033,7 @@
             "position": 1,
             "verbatim_sha1": "4231ef0b074fd3467217f9f2bb8cc6fb7bdf79c9"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -2050,7 +2061,7 @@
             "position": 2,
             "verbatim_sha1": "b16bc031eff5e611e188753de0c376cd7a04b5da"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -2078,7 +2089,7 @@
             "position": 2,
             "verbatim_sha1": "b16bc031eff5e611e188753de0c376cd7a04b5da"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -2106,7 +2117,7 @@
             "position": 2,
             "verbatim_sha1": "b16bc031eff5e611e188753de0c376cd7a04b5da"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -2134,7 +2145,7 @@
             "position": 1,
             "verbatim_sha1": "3c721a3aeefb8cbef2458607ca6934ea5f365a73"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -2162,7 +2173,7 @@
             "position": 1,
             "verbatim_sha1": "3c721a3aeefb8cbef2458607ca6934ea5f365a73"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -2190,7 +2201,7 @@
             "position": 1,
             "verbatim_sha1": "3c721a3aeefb8cbef2458607ca6934ea5f365a73"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -2218,7 +2229,7 @@
             "position": 2,
             "verbatim_sha1": "1275d790e9e679ca353e0c30b204de6a3a541674"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -2246,7 +2257,7 @@
             "position": 2,
             "verbatim_sha1": "1275d790e9e679ca353e0c30b204de6a3a541674"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -2274,7 +2285,7 @@
             "position": 2,
             "verbatim_sha1": "1275d790e9e679ca353e0c30b204de6a3a541674"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -2302,7 +2313,7 @@
             "position": 3,
             "verbatim_sha1": "ae403f3310409103b4f44ee60205e5ad76708026"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 4,
             "unit": "week",
@@ -2330,7 +2341,7 @@
             "position": 3,
             "verbatim_sha1": "ae403f3310409103b4f44ee60205e5ad76708026"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 4,
             "unit": "week",
@@ -2358,7 +2369,7 @@
             "position": 3,
             "verbatim_sha1": "ae403f3310409103b4f44ee60205e5ad76708026"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 4,
             "unit": "week",
@@ -2386,7 +2397,7 @@
             "position": 4,
             "verbatim_sha1": "3277a697516243c669361172062dc05d17565c4b"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -2414,7 +2425,7 @@
             "position": 4,
             "verbatim_sha1": "3277a697516243c669361172062dc05d17565c4b"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -2442,7 +2453,7 @@
             "position": 4,
             "verbatim_sha1": "3277a697516243c669361172062dc05d17565c4b"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -2470,7 +2481,7 @@
             "position": 5,
             "verbatim_sha1": "a0a5f03a10efb6893eae594d73bca5dfdb7ae5a4"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -2498,7 +2509,7 @@
             "position": 5,
             "verbatim_sha1": "a0a5f03a10efb6893eae594d73bca5dfdb7ae5a4"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -2526,7 +2537,7 @@
             "position": 5,
             "verbatim_sha1": "a0a5f03a10efb6893eae594d73bca5dfdb7ae5a4"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -2554,7 +2565,7 @@
             "position": 6,
             "verbatim_sha1": "441d75091db7f60c034d6a75802cad223ed72c6c"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -2582,7 +2593,7 @@
             "position": 6,
             "verbatim_sha1": "441d75091db7f60c034d6a75802cad223ed72c6c"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -2610,7 +2621,7 @@
             "position": 6,
             "verbatim_sha1": "441d75091db7f60c034d6a75802cad223ed72c6c"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -2638,7 +2649,7 @@
             "position": 7,
             "verbatim_sha1": "5d8573f4d0859d7bdf06f47991dbd84dcddefa00"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -2666,7 +2677,7 @@
             "position": 7,
             "verbatim_sha1": "5d8573f4d0859d7bdf06f47991dbd84dcddefa00"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -2694,7 +2705,7 @@
             "position": 7,
             "verbatim_sha1": "5d8573f4d0859d7bdf06f47991dbd84dcddefa00"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -2722,7 +2733,7 @@
             "position": 8,
             "verbatim_sha1": "07f0451184dbdbe4bfeee7f3bfc3aceb4f5e6c88"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -2750,7 +2761,7 @@
             "position": 8,
             "verbatim_sha1": "07f0451184dbdbe4bfeee7f3bfc3aceb4f5e6c88"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -2778,7 +2789,7 @@
             "position": 8,
             "verbatim_sha1": "07f0451184dbdbe4bfeee7f3bfc3aceb4f5e6c88"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -2806,7 +2817,7 @@
             "position": 9,
             "verbatim_sha1": "a95636cf9f3e76795131532580e2605e28495bbd"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "timepoint": {
             "value": 52,
             "unit": "week",
@@ -2834,7 +2845,7 @@
             "position": 9,
             "verbatim_sha1": "a95636cf9f3e76795131532580e2605e28495bbd"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#2",
           "timepoint": {
             "value": 52,
             "unit": "week",
@@ -2862,7 +2873,7 @@
             "position": 10,
             "verbatim_sha1": "d5cb347133e1fdf171e94e7c0a46b98ceac9ac63"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -2890,7 +2901,7 @@
             "position": 10,
             "verbatim_sha1": "d5cb347133e1fdf171e94e7c0a46b98ceac9ac63"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -2918,7 +2929,7 @@
             "position": 10,
             "verbatim_sha1": "d5cb347133e1fdf171e94e7c0a46b98ceac9ac63"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -2946,7 +2957,7 @@
             "position": 11,
             "verbatim_sha1": "1783765a69e09e24e98f0d8c55b2a6e4064f4d3e"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "timepoint": {
             "value": 52,
             "unit": "week",
@@ -2974,7 +2985,7 @@
             "position": 11,
             "verbatim_sha1": "1783765a69e09e24e98f0d8c55b2a6e4064f4d3e"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#2",
           "timepoint": {
             "value": 52,
             "unit": "week",
@@ -3002,7 +3013,7 @@
             "position": 12,
             "verbatim_sha1": "ab2009d46bf4ea6b1facac3c6136769a453d598f"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#3",
           "timepoint": null,
           "analysis_population": null,
           "study_period": null,
@@ -3026,7 +3037,7 @@
             "position": 12,
             "verbatim_sha1": "ab2009d46bf4ea6b1facac3c6136769a453d598f"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#3",
           "timepoint": null,
           "analysis_population": null,
           "study_period": null,
@@ -3050,7 +3061,7 @@
             "position": 12,
             "verbatim_sha1": "ab2009d46bf4ea6b1facac3c6136769a453d598f"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#2",
           "timepoint": null,
           "analysis_population": null,
           "study_period": null,
@@ -3074,7 +3085,7 @@
             "position": 13,
             "verbatim_sha1": "cf550c84eaae81181273fae3340d9091d0bf04a2"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#3",
           "timepoint": null,
           "analysis_population": null,
           "study_period": null,
@@ -3098,7 +3109,7 @@
             "position": 13,
             "verbatim_sha1": "cf550c84eaae81181273fae3340d9091d0bf04a2"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#3",
           "timepoint": null,
           "analysis_population": null,
           "study_period": null,
@@ -3122,7 +3133,7 @@
             "position": 13,
             "verbatim_sha1": "cf550c84eaae81181273fae3340d9091d0bf04a2"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#2",
           "timepoint": null,
           "analysis_population": null,
           "study_period": null,
@@ -3146,7 +3157,7 @@
             "position": 14,
             "verbatim_sha1": "ea39c19ba78f972751a54d0fe8b3aa116f1739f1"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#3",
           "timepoint": null,
           "analysis_population": null,
           "study_period": null,
@@ -3170,7 +3181,7 @@
             "position": 14,
             "verbatim_sha1": "ea39c19ba78f972751a54d0fe8b3aa116f1739f1"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#3",
           "timepoint": null,
           "analysis_population": null,
           "study_period": null,
@@ -3194,7 +3205,7 @@
             "position": 14,
             "verbatim_sha1": "ea39c19ba78f972751a54d0fe8b3aa116f1739f1"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#2",
           "timepoint": null,
           "analysis_population": null,
           "study_period": null,
@@ -3218,7 +3229,7 @@
             "position": 15,
             "verbatim_sha1": "20fe1e82bec73cee22a523eac4c9c24317c87eea"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#4",
           "timepoint": null,
           "analysis_population": null,
           "study_period": null,
@@ -3242,7 +3253,7 @@
             "position": 15,
             "verbatim_sha1": "20fe1e82bec73cee22a523eac4c9c24317c87eea"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#4",
           "timepoint": null,
           "analysis_population": null,
           "study_period": null,
@@ -3266,7 +3277,7 @@
             "position": 15,
             "verbatim_sha1": "20fe1e82bec73cee22a523eac4c9c24317c87eea"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#3",
           "timepoint": null,
           "analysis_population": null,
           "study_period": null,
@@ -3290,7 +3301,7 @@
             "position": 16,
             "verbatim_sha1": "c8d68294adc71d208663da364a79de1eee5b6b80"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#4",
           "timepoint": null,
           "analysis_population": null,
           "study_period": null,
@@ -3314,7 +3325,7 @@
             "position": 16,
             "verbatim_sha1": "c8d68294adc71d208663da364a79de1eee5b6b80"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#4",
           "timepoint": null,
           "analysis_population": null,
           "study_period": null,
@@ -3338,7 +3349,7 @@
             "position": 16,
             "verbatim_sha1": "c8d68294adc71d208663da364a79de1eee5b6b80"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#3",
           "timepoint": null,
           "analysis_population": null,
           "study_period": null,
@@ -3362,7 +3373,7 @@
             "position": 17,
             "verbatim_sha1": "61097aed621c8eb8c15a4d54657f3449a6da5205"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#4",
           "timepoint": null,
           "analysis_population": null,
           "study_period": null,
@@ -3386,7 +3397,7 @@
             "position": 17,
             "verbatim_sha1": "61097aed621c8eb8c15a4d54657f3449a6da5205"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#4",
           "timepoint": null,
           "analysis_population": null,
           "study_period": null,
@@ -3410,7 +3421,7 @@
             "position": 17,
             "verbatim_sha1": "61097aed621c8eb8c15a4d54657f3449a6da5205"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#3",
           "timepoint": null,
           "analysis_population": null,
           "study_period": null,
@@ -3432,7 +3443,7 @@
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03370133",
       "source_excerpt": "resultsSection.outcomeMeasuresModule.outcomeMeasures[].{denoms,classes[].categories[].measurements[]}",
-      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3, 2026-09-06)",
+      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3 backfill re-run)",
       "reviewed_by": null,
       "confidence": 1.0
     },
@@ -3449,8 +3460,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#full_analysis_set",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "odds_ratio",
           "effect_type_verbatim": "Odds Ratio (OR)",
@@ -3478,8 +3489,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG001",
-          "reference_arm_id": "OG002",
+          "test_arm_id": "OG001#full_analysis_set",
+          "reference_arm_id": "OG002#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "odds_ratio",
           "effect_type_verbatim": "Odds Ratio (OR)",
@@ -3507,8 +3518,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#full_analysis_set",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "odds_ratio",
           "effect_type_verbatim": "Odds Ratio (OR)",
@@ -3536,8 +3547,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG001",
-          "reference_arm_id": "OG002",
+          "test_arm_id": "OG001#full_analysis_set",
+          "reference_arm_id": "OG002#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "odds_ratio",
           "effect_type_verbatim": "Odds Ratio (OR)",
@@ -3565,8 +3576,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#full_analysis_set",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "odds_ratio",
           "effect_type_verbatim": "Odds Ratio (OR)",
@@ -3594,8 +3605,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#full_analysis_set",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "odds_ratio",
           "effect_type_verbatim": "Odds Ratio (OR)",
@@ -3623,8 +3634,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#full_analysis_set",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "odds_ratio",
           "effect_type_verbatim": "Odds Ratio (OR)",
@@ -3652,8 +3663,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG001",
-          "reference_arm_id": "OG002",
+          "test_arm_id": "OG001#full_analysis_set",
+          "reference_arm_id": "OG002#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "odds_ratio",
           "effect_type_verbatim": "Odds Ratio (OR)",
@@ -3681,8 +3692,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#full_analysis_set",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "odds_ratio",
           "effect_type_verbatim": "Odds Ratio (OR)",
@@ -3710,8 +3721,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#full_analysis_set",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "odds_ratio",
           "effect_type_verbatim": "Odds Ratio (OR)",
@@ -3739,8 +3750,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#full_analysis_set",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "odds_ratio",
           "effect_type_verbatim": "Odds Ratio (OR)",
@@ -3768,8 +3779,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#full_analysis_set",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "odds_ratio",
           "effect_type_verbatim": "Odds Ratio (OR)",
@@ -3797,8 +3808,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG001",
-          "reference_arm_id": "OG002",
+          "test_arm_id": "OG001#full_analysis_set",
+          "reference_arm_id": "OG002#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "odds_ratio",
           "effect_type_verbatim": "Odds Ratio (OR)",
@@ -3826,8 +3837,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG000#2",
+          "reference_arm_id": "OG001#2",
           "comparison_kind": "superiority",
           "effect_type": "odds_ratio",
           "effect_type_verbatim": "Odds Ratio (OR)",
@@ -3855,8 +3866,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG001",
-          "reference_arm_id": "OG002",
+          "test_arm_id": "OG001#full_analysis_set",
+          "reference_arm_id": "OG002#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "odds_ratio",
           "effect_type_verbatim": "Odds Ratio (OR)",
@@ -3884,8 +3895,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG000#2",
+          "reference_arm_id": "OG001#2",
           "comparison_kind": "superiority",
           "effect_type": "odds_ratio",
           "effect_type_verbatim": "Odds Ratio (OR)",
@@ -3906,7 +3917,7 @@
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03370133",
       "source_excerpt": "resultsSection.outcomeMeasuresModule.outcomeMeasures[].analyses[]",
-      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3, 2026-09-06)",
+      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3 backfill re-run)",
       "reviewed_by": null,
       "confidence": 1.0
     },
