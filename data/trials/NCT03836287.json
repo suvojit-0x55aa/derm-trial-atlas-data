@@ -1,0 +1,1165 @@
+{
+  "schema_version": 2,
+  "nct_id": {
+    "value": "NCT03836287",
+    "source_type": "ctgov_api",
+    "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03836287",
+    "source_excerpt": "protocolSection.identificationModule.nctId",
+    "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+    "reviewed_by": null,
+    "confidence": 1.0
+  },
+  "identity": {
+    "trial_name": {
+      "value": "CARDIGAN 1",
+      "source_type": "openfda_label",
+      "source_url": "https://api.fda.gov/drug/label.json?search=openfda.brand_name:SOFDRA&limit=1",
+      "source_excerpt": "FDA label section 14: \"Two randomized, vehicle-controlled multicenter trials, CARDIGAN 1 (NCT03836287) and CARDIGAN 2 (NCT03948646)\"",
+      "extracted_by": "cycle22 one-off build (ctgov_api v2 + openfda_label/orangebook/faers pass); manual full deep extraction",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "official_title": {
+      "value": "A Multicenter, Randomized, Double-Blinded, Vehicle-Controlled Study to Evaluate the Safety and Efficacy of Topically Applied Sofpironium Bromide Gel, 15% in Subjects With Axillary Hyperhidrosis",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03836287",
+      "source_excerpt": "protocolSection.identificationModule.officialTitle",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "sponsor": {
+      "value": "Botanix Pharmaceuticals",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03836287",
+      "source_excerpt": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "phase": {
+      "value": [
+        "PHASE3"
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03836287",
+      "source_excerpt": "protocolSection.designModule.phases",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    }
+  },
+  "molecule": {
+    "drug": {
+      "value": "Sofpironium Bromide",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03836287",
+      "source_excerpt": "protocolSection.armsInterventionsModule.interventions[].name (curated)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "intervention_names": {
+      "value": [
+        "Sofpironium Bromide Gel, 15%",
+        "Vehicle"
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03836287",
+      "source_excerpt": "protocolSection.armsInterventionsModule.interventions[].name",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "intervention_type": {
+      "value": [
+        "DRUG"
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03836287",
+      "source_excerpt": "protocolSection.armsInterventionsModule.interventions[].type",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "mechanism_of_action": {
+      "value": {
+        "modality": "other",
+        "drug_class": "anticholinergic (competitive acetylcholine receptor antagonist)",
+        "antibody_isotype": null,
+        "binding_targets": [],
+        "pathway_cytokines": [],
+        "receptor_subunits": [],
+        "kinases_inhibited": [],
+        "lower_potency_kinases": [],
+        "selectivity": [],
+        "reversible": true,
+        "mechanism_established": true,
+        "label_section": "12.1"
+      },
+      "source_type": "openfda_label",
+      "source_url": "https://api.fda.gov/drug/label.json?search=openfda.brand_name:SOFDRA&limit=1",
+      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1) -- extracted text: \"Sofpironium bromide is a competitive inhibitor of acetylcholine receptors that are located on certain peripheral tissues, including sweat glands. Sofpironium bromide indirectly reduces the rate of sweating by preventing the stimulation of these receptors.\"",
+      "extracted_by": "cycle22 one-off build (ctgov_api v2 + openfda_label/orangebook/faers pass); manual full deep extraction",
+      "reviewed_by": null,
+      "confidence": 0.95
+    },
+    "dosing_regimen": {
+      "value": [
+        {
+          "intervention_name": "Sofpironium Bromide Gel, 15%",
+          "description": "Sofpironium bromide 15% gel (trial concentration; the FDA-approved marketed strength is 12.45%, per Orange Book), applied once daily at bedtime to each axilla",
+          "is_placebo": false,
+          "route": "topical",
+          "dose_form": null,
+          "dose_value": 15,
+          "dose_unit": "%",
+          "units_per_dose": null,
+          "frequency": "once_daily",
+          "duration_weeks": 6,
+          "dosing_periods": [],
+          "administration_sites": [
+            "axilla"
+          ],
+          "antibody_isotype": null,
+          "molecular_target": null,
+          "arm_names": [
+            "Active"
+          ],
+          "co_administered_with": []
+        }
+      ],
+      "source_type": "ctgov_text_extraction",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03836287",
+      "source_excerpt": "armsInterventionsModule.interventions[0]: 'Sofpironium Bromide Gel, 15%', description 'Active', otherNames ['BBI-4000 Gel, 15%']; once-daily bedtime application to each axilla per protocol detailedDescription and FDA label section 2. Note: the pivotal trials tested 15% gel, but the final FDA-approved marketed product (SOFDRA) is 12.45% strength per its Orange Book listing -- a real formulation change between trial and approval, not a data error.",
+      "extracted_by": "cycle22 one-off build (ctgov_api v2 + openfda_label/orangebook/faers pass); manual full deep extraction",
+      "reviewed_by": null,
+      "confidence": 0.85
+    }
+  },
+  "population": {
+    "condition": {
+      "value": [
+        "Axillary Hyperhidrosis"
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03836287",
+      "source_excerpt": "protocolSection.conditionsModule.conditions",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "min_age_years": {
+      "value": 9,
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03836287",
+      "source_excerpt": "protocolSection.eligibilityModule.minimumAge",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "max_age_years": {
+      "value": null,
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03836287",
+      "source_excerpt": "protocolSection.eligibilityModule.maximumAge",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 0.0
+    },
+    "sex": {
+      "value": "ALL",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03836287",
+      "source_excerpt": "protocolSection.eligibilityModule.sex",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "enrollment_count": {
+      "value": 350,
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03836287",
+      "source_excerpt": "protocolSection.designModule.enrollmentInfo.count",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "severity_criteria": {
+      "value": {
+        "severity_label": null,
+        "basis": "eligibility_text",
+        "cross_reference": null,
+        "source_criterion_numbers": [],
+        "baseline_visit_number": null,
+        "criteria": [
+          {
+            "scale": "HDSM-Ax-7",
+            "scale_component": null,
+            "scale_variant": null,
+            "metric": "absolute_score",
+            "comparator": ">=",
+            "value": 3,
+            "unit": "score",
+            "scale_min": 0,
+            "scale_max": 4,
+            "assessed_at": null,
+            "scale_anchors": null
+          }
+        ]
+      },
+      "source_type": "ctgov_text_extraction",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03836287",
+      "source_excerpt": "Eligibility criteria: \"Diagnosis of primary axillary hyperhidrosis that meets the following criteria: (a) symptoms of hyperhidrosis for at least 6 months' duration, (b) HDSM-Ax of 3 - 4 and (c) a minimum GSP of 50 mg in each axilla with a combined total of at least 150 mg.\" No `moderate_to_severe`-style categorical severity_label exists for this instrument (HDSM-Ax-7's own scale anchors are 0-4, not a named severity band), so severity_label left null rather than force-fit the AD/psoriasis-style label.",
+      "extracted_by": "cycle22 one-off build (ctgov_api v2 + openfda_label/orangebook/faers pass); manual full deep extraction",
+      "reviewed_by": null,
+      "confidence": 0.9
+    }
+  },
+  "design": {
+    "study_type": {
+      "value": "INTERVENTIONAL",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03836287",
+      "source_excerpt": "protocolSection.designModule.studyType",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "allocation": {
+      "value": "RANDOMIZED",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03836287",
+      "source_excerpt": "protocolSection.designModule.designInfo.allocation",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "intervention_model": {
+      "value": "PARALLEL",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03836287",
+      "source_excerpt": "protocolSection.designModule.designInfo.interventionModel",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "masking": {
+      "value": "DOUBLE",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03836287",
+      "source_excerpt": "protocolSection.designModule.designInfo.maskingInfo.masking",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "number_of_arms": {
+      "value": 2,
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03836287",
+      "source_excerpt": "len(protocolSection.armsInterventionsModule.armGroups)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "background_therapy": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    }
+  },
+  "endpoints": {
+    "primary_endpoints": {
+      "value": [
+        {
+          "verbatim": "Number of Participants (Vehicle Arm vs. Sofpironium Bromide Gel, 15%) With and Without an Observed >=2-point Improvement in Hyperhidrosis Disease Severity Measure-Axillary-7 Item Total Score From Baseline to End of Treatment",
+          "rank": "primary",
+          "position": 1,
+          "measure_type": "responder_rate",
+          "scale": "HDSM-Ax-7",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [
+            {
+              "scale": "HDSM-Ax-7",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "point_improvement_from_baseline",
+              "comparator": ">=",
+              "value": 2,
+              "unit": "points",
+              "scale_min": 0,
+              "scale_max": 4,
+              "assessed_at": [
+                "day_43"
+              ],
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 43,
+              "unit": "day",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": "double_blind",
+          "event_type": null,
+          "time_frame": "Baseline to Day 43 (end of treatment, ~6 weeks)"
+        },
+        {
+          "verbatim": "Observed Change in Participant (Vehicle Arm vs SB Gel 15% Arm) Ranked Gravimetric Sweat Production From Baseline to End of Treatment",
+          "rank": "primary",
+          "position": 2,
+          "measure_type": "change_from_baseline",
+          "scale": "Gravimetric Sweat Production",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 43,
+              "unit": "day",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": "double_blind",
+          "event_type": null,
+          "time_frame": "Baseline to Day 43 (end of treatment, ~6 weeks)"
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03836287",
+      "source_excerpt": "protocolSection.outcomesModule.primaryOutcomes[]; responder threshold cross-referenced with openFDA label section 14 Table 5",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass) + openfda_label cross-reference; structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 0.95
+    },
+    "secondary_endpoints": {
+      "value": [],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03836287",
+      "source_excerpt": "protocolSection.outcomesModule.secondaryOutcomes[] -- empty; no secondary endpoints registered for this trial",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "multiplicity_control": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    }
+  },
+  "timing_ops": {
+    "start_date": {
+      "value": {
+        "date": "2020-10-09",
+        "precision": "day"
+      },
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03836287",
+      "source_excerpt": "protocolSection.statusModule.startDateStruct.date",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "primary_completion_date": {
+      "value": {
+        "date": "2021-06-25",
+        "precision": "day"
+      },
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03836287",
+      "source_excerpt": "protocolSection.statusModule.primaryCompletionDateStruct.date",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "completion_date": {
+      "value": {
+        "date": "2021-06-25",
+        "precision": "day"
+      },
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03836287",
+      "source_excerpt": "protocolSection.statusModule.completionDateStruct.date",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "study_schedule": {
+      "value": {
+        "screening_days": null,
+        "screening_washout": null,
+        "periods": [
+          {
+            "name": "double_blind_treatment",
+            "start_week": 0,
+            "end_week": 6,
+            "duration_weeks": 6,
+            "blinding": "double_blind",
+            "background_tcs": false
+          }
+        ],
+        "dosing_interval": "once_daily",
+        "visit_cadence": null,
+        "visit_cadence_until_week": null,
+        "visit_weeks": null,
+        "visit_days": null,
+        "phone_contact_weeks": null,
+        "primary_endpoint_week": null,
+        "end_of_treatment_week": 6,
+        "end_of_study_week": null,
+        "total_duration_weeks": 6,
+        "follow_up_weeks": null,
+        "follow_up_days": null,
+        "follow_up_visit_week": null,
+        "long_term_extension": false,
+        "extension_end_week": null,
+        "extension_visit_interval_weeks": null,
+        "extension_study_id": null,
+        "rerandomization_week": null,
+        "maintenance_arms": null,
+        "maintenance_response_check_weeks": null,
+        "last_injection_week": null,
+        "key_secondary_weeks": [],
+        "follow_up_visit_interval_weeks": null,
+        "end_of_treatment_weeks_after_last_dose": null,
+        "background_tcs_from_day": null,
+        "primary_endpoint_refs": [],
+        "double_dummy_arms": [],
+        "active_comparator": null,
+        "boilerplate_reused_from": [],
+        "conflicts_with_trial": null,
+        "full_visit_table_available": false,
+        "source_inconsistency": "FDA label section 14 states the primary endpoint was assessed at Day 43 (~6 weeks), and CT.gov's outcome time_frame states 'Total Trial Participation was approximately 11-15 weeks' (implying real screening/follow-up periods beyond the 6-week double-blind treatment), but neither source names a specific visit-week schedule -- primary_endpoint_week left null rather than converting Day 43 to a week number that isn't itself stated in either source."
+      },
+      "source_type": "ctgov_text_extraction",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03836287",
+      "source_excerpt": "protocolSection.outcomesModule primary outcome timeFrame: \"Total Trial Participation was approximately 11-15 weeks; outcome measure time frame: Baseline (and treatment start) through to end of treatment, taking approximately 6 weeks.\" Gravimetric sweat production baseline used the median of Visits 2/3/4 and end-of-treatment the median of Visits 10/11/12 (detailedDescription), confirming a 12-visit schedule but not a stated visit-week list.",
+      "extracted_by": "cycle22 one-off build (ctgov_api v2 + openfda_label/orangebook/faers pass); manual full deep extraction",
+      "reviewed_by": null,
+      "confidence": 0.7
+    },
+    "rescue_therapy": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    }
+  },
+  "adverse_events": {
+    "serious_adverse_event_rate": {
+      "value": [
+        {
+          "arm": "Active",
+          "n_affected": 1,
+          "n_at_risk": 173,
+          "pct": 0.6
+        },
+        {
+          "arm": "Vehicle",
+          "n_affected": 0,
+          "n_at_risk": 176,
+          "pct": 0.0
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03836287",
+      "source_excerpt": "resultsSection.adverseEventsModule.eventGroups[].seriousNumAffected/seriousNumAtRisk",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, cycle-22 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "death_rate": {
+      "value": [
+        {
+          "arm": "Active",
+          "n_affected": 0,
+          "n_at_risk": 173,
+          "pct": 0.0
+        },
+        {
+          "arm": "Vehicle",
+          "n_affected": 0,
+          "n_at_risk": 176,
+          "pct": 0.0
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03836287",
+      "source_excerpt": "resultsSection.adverseEventsModule.eventGroups[].deathsNumAffected/deathsNumAtRisk",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, cycle-22 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "most_common_adverse_events": {
+      "value": [
+        {
+          "meddra_pt": "Application Site Pain",
+          "meddra_soc": "General disorders",
+          "per_arm": [
+            {
+              "arm": "Active",
+              "n_affected": 11,
+              "n_at_risk": 173,
+              "pct": 6.4
+            },
+            {
+              "arm": "Vehicle",
+              "n_affected": 3,
+              "n_at_risk": 176,
+              "pct": 1.7
+            }
+          ]
+        },
+        {
+          "meddra_pt": "Application Site Pruritus",
+          "meddra_soc": "General disorders",
+          "per_arm": [
+            {
+              "arm": "Active",
+              "n_affected": 11,
+              "n_at_risk": 173,
+              "pct": 6.4
+            },
+            {
+              "arm": "Vehicle",
+              "n_affected": 1,
+              "n_at_risk": 176,
+              "pct": 0.6
+            }
+          ]
+        },
+        {
+          "meddra_pt": "Application Site Dermatitis",
+          "meddra_soc": "General disorders",
+          "per_arm": [
+            {
+              "arm": "Active",
+              "n_affected": 10,
+              "n_at_risk": 173,
+              "pct": 5.8
+            },
+            {
+              "arm": "Vehicle",
+              "n_affected": 1,
+              "n_at_risk": 176,
+              "pct": 0.6
+            }
+          ]
+        },
+        {
+          "meddra_pt": "Application Site Erythema",
+          "meddra_soc": "General disorders",
+          "per_arm": [
+            {
+              "arm": "Active",
+              "n_affected": 9,
+              "n_at_risk": 173,
+              "pct": 5.2
+            },
+            {
+              "arm": "Vehicle",
+              "n_affected": 1,
+              "n_at_risk": 176,
+              "pct": 0.6
+            }
+          ]
+        },
+        {
+          "meddra_pt": "Dry Mouth",
+          "meddra_soc": "Gastrointestinal disorders",
+          "per_arm": [
+            {
+              "arm": "Active",
+              "n_affected": 20,
+              "n_at_risk": 173,
+              "pct": 11.6
+            },
+            {
+              "arm": "Vehicle",
+              "n_affected": 0,
+              "n_at_risk": 176,
+              "pct": 0.0
+            }
+          ]
+        },
+        {
+          "meddra_pt": "Mydriasis",
+          "meddra_soc": "Eye disorders",
+          "per_arm": [
+            {
+              "arm": "Active",
+              "n_affected": 13,
+              "n_at_risk": 173,
+              "pct": 7.5
+            },
+            {
+              "arm": "Vehicle",
+              "n_affected": 0,
+              "n_at_risk": 176,
+              "pct": 0.0
+            }
+          ]
+        },
+        {
+          "meddra_pt": "Vision Blurred",
+          "meddra_soc": "Eye disorders",
+          "per_arm": [
+            {
+              "arm": "Active",
+              "n_affected": 9,
+              "n_at_risk": 173,
+              "pct": 5.2
+            },
+            {
+              "arm": "Vehicle",
+              "n_affected": 0,
+              "n_at_risk": 176,
+              "pct": 0.0
+            }
+          ]
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03836287",
+      "source_excerpt": "resultsSection.adverseEventsModule.otherEvents[]",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, cycle-22 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "discontinuation_due_to_ae_rate": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    },
+    "boxed_warning": {
+      "value": {
+        "present": false,
+        "title": null,
+        "warning_categories": [],
+        "referenced_label_sections": [],
+        "product_names": []
+      },
+      "source_type": "openfda_label",
+      "source_url": "https://api.fda.gov/drug/label.json?search=openfda.brand_name:SOFDRA&limit=1",
+      "source_excerpt": "results[0] has no boxed_warning key (checked, none present)",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, cycle-22 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    }
+  },
+  "exclusivity": {
+    "regulatory_application": {
+      "value": {
+        "application_type": "NDA",
+        "application_number": "217347",
+        "registry": "orange_book",
+        "center": "CDER",
+        "proprietary_name": "SOFDRA",
+        "applicant": "BOTANIX SB INC",
+        "first_approval_date": "2024-06-18"
+      },
+      "source_type": "orange_book",
+      "source_url": "https://api.fda.gov/drug/orangebook.json",
+      "source_excerpt": "openfda orangebook.json: products.application_number=217347 (SOFDRA)",
+      "extracted_by": "atlas.regulatory_applications (registry file fetched 2026-09-07)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "orange_book": {
+      "value": {
+        "application_type": "N",
+        "application_number": "217347",
+        "ingredient": "SOFPIRONIUM BROMIDE",
+        "trade_name": "SOFDRA",
+        "applicant": "BOTANIX SB",
+        "applicant_full_name": "BOTANIX SB INC",
+        "products": [
+          {
+            "product_number": "001",
+            "strength": "EQ 12.45% BASE (EQ 72MG BASE/ACTUATION)",
+            "dosage_form": "GEL, METERED",
+            "route": "TOPICAL",
+            "approval_date": "2024-06-18",
+            "rld": true,
+            "rs": true,
+            "te_code": null,
+            "marketing_type": "HUMAN PRESCRIPTION DRUG"
+          }
+        ],
+        "patents": [
+          {
+            "patent_number": "10383846",
+            "expiration_date": "2034-03-14",
+            "drug_substance_claim": false,
+            "drug_product_claim": false,
+            "patent_use_code": "U-2398",
+            "delisted": false,
+            "submission_date": "2024-09-26",
+            "product_numbers": [
+              "001"
+            ]
+          },
+          {
+            "patent_number": "10947192",
+            "expiration_date": "2034-05-22",
+            "drug_substance_claim": false,
+            "drug_product_claim": false,
+            "patent_use_code": "U-2398",
+            "delisted": false,
+            "submission_date": "2024-09-26",
+            "product_numbers": [
+              "001"
+            ]
+          },
+          {
+            "patent_number": "10952990",
+            "expiration_date": "2034-05-22",
+            "drug_substance_claim": false,
+            "drug_product_claim": false,
+            "patent_use_code": "U-2398",
+            "delisted": false,
+            "submission_date": "2024-09-26",
+            "product_numbers": [
+              "001"
+            ]
+          },
+          {
+            "patent_number": "10959983",
+            "expiration_date": "2034-05-22",
+            "drug_substance_claim": false,
+            "drug_product_claim": false,
+            "patent_use_code": "U-2398",
+            "delisted": false,
+            "submission_date": "2024-09-26",
+            "product_numbers": [
+              "001"
+            ]
+          },
+          {
+            "patent_number": "10961191",
+            "expiration_date": "2034-05-22",
+            "drug_substance_claim": false,
+            "drug_product_claim": false,
+            "patent_use_code": "U-2398",
+            "delisted": false,
+            "submission_date": "2024-09-26",
+            "product_numbers": [
+              "001"
+            ]
+          },
+          {
+            "patent_number": "11026919",
+            "expiration_date": "2034-05-22",
+            "drug_substance_claim": false,
+            "drug_product_claim": true,
+            "patent_use_code": "U-2398",
+            "delisted": false,
+            "submission_date": "2024-09-26",
+            "product_numbers": [
+              "001"
+            ]
+          },
+          {
+            "patent_number": "11034652",
+            "expiration_date": "2034-05-22",
+            "drug_substance_claim": false,
+            "drug_product_claim": true,
+            "patent_use_code": "U-2398",
+            "delisted": false,
+            "submission_date": "2024-09-26",
+            "product_numbers": [
+              "001"
+            ]
+          },
+          {
+            "patent_number": "11052067",
+            "expiration_date": "2034-05-22",
+            "drug_substance_claim": false,
+            "drug_product_claim": true,
+            "patent_use_code": "U-2398",
+            "delisted": false,
+            "submission_date": "2024-09-26",
+            "product_numbers": [
+              "001"
+            ]
+          },
+          {
+            "patent_number": "11084788",
+            "expiration_date": "2034-05-22",
+            "drug_substance_claim": false,
+            "drug_product_claim": true,
+            "patent_use_code": "U-2398",
+            "delisted": false,
+            "submission_date": "2024-09-26",
+            "product_numbers": [
+              "001"
+            ]
+          },
+          {
+            "patent_number": "11123325",
+            "expiration_date": "2037-07-20",
+            "drug_substance_claim": false,
+            "drug_product_claim": true,
+            "patent_use_code": "U-2398",
+            "delisted": false,
+            "submission_date": "2024-09-26",
+            "product_numbers": [
+              "001"
+            ]
+          },
+          {
+            "patent_number": "11566000",
+            "expiration_date": "2040-05-22",
+            "drug_substance_claim": true,
+            "drug_product_claim": true,
+            "patent_use_code": null,
+            "delisted": false,
+            "submission_date": "2024-09-26",
+            "product_numbers": [
+              "001"
+            ]
+          },
+          {
+            "patent_number": "11584715",
+            "expiration_date": "2040-05-22",
+            "drug_substance_claim": true,
+            "drug_product_claim": true,
+            "patent_use_code": null,
+            "delisted": false,
+            "submission_date": "2024-09-26",
+            "product_numbers": [
+              "001"
+            ]
+          },
+          {
+            "patent_number": "12156865",
+            "expiration_date": "2034-05-22",
+            "drug_substance_claim": false,
+            "drug_product_claim": true,
+            "patent_use_code": "U-2398",
+            "delisted": false,
+            "submission_date": "2025-06-10",
+            "product_numbers": [
+              "001"
+            ]
+          },
+          {
+            "patent_number": "12357609",
+            "expiration_date": "2034-05-22",
+            "drug_substance_claim": false,
+            "drug_product_claim": true,
+            "patent_use_code": "U-2398",
+            "delisted": false,
+            "submission_date": "2025-08-14",
+            "product_numbers": [
+              "001"
+            ]
+          },
+          {
+            "patent_number": "12398102",
+            "expiration_date": "2034-05-22",
+            "drug_substance_claim": false,
+            "drug_product_claim": true,
+            "patent_use_code": "U-2398",
+            "delisted": false,
+            "submission_date": "2025-09-23",
+            "product_numbers": [
+              "001"
+            ]
+          },
+          {
+            "patent_number": "8147809",
+            "expiration_date": "2027-03-26",
+            "drug_substance_claim": true,
+            "drug_product_claim": true,
+            "patent_use_code": null,
+            "delisted": false,
+            "submission_date": "2024-09-26",
+            "product_numbers": [
+              "001"
+            ]
+          },
+          {
+            "patent_number": "8628759",
+            "expiration_date": "2026-11-13",
+            "drug_substance_claim": false,
+            "drug_product_claim": false,
+            "patent_use_code": "U-2398",
+            "delisted": false,
+            "submission_date": "2024-09-26",
+            "product_numbers": [
+              "001"
+            ]
+          },
+          {
+            "patent_number": "9220707",
+            "expiration_date": "2034-03-14",
+            "drug_substance_claim": false,
+            "drug_product_claim": false,
+            "patent_use_code": "U-2398",
+            "delisted": false,
+            "submission_date": "2024-09-26",
+            "product_numbers": [
+              "001"
+            ]
+          },
+          {
+            "patent_number": "9492429",
+            "expiration_date": "2034-03-14",
+            "drug_substance_claim": false,
+            "drug_product_claim": true,
+            "patent_use_code": "U-2398",
+            "delisted": false,
+            "submission_date": "2024-09-26",
+            "product_numbers": [
+              "001"
+            ]
+          },
+          {
+            "patent_number": "9895350",
+            "expiration_date": "2034-03-14",
+            "drug_substance_claim": false,
+            "drug_product_claim": false,
+            "patent_use_code": "U-2398",
+            "delisted": false,
+            "submission_date": "2024-09-26",
+            "product_numbers": [
+              "001"
+            ]
+          }
+        ],
+        "exclusivities": [
+          {
+            "code": "NCE",
+            "expiration_date": "2029-06-20",
+            "product_numbers": [
+              "001"
+            ]
+          }
+        ],
+        "latest_patent_expiration": "2040-05-22",
+        "latest_exclusivity_expiration": "2029-06-20",
+        "data_file_date": null
+      },
+      "source_type": "orange_book",
+      "source_url": "https://api.fda.gov/drug/orangebook.json?search=products.active_ingredients.name%3A%22SOFPIRONIUM%20BROMIDE%22&limit=10",
+      "source_excerpt": "openFDA drug/orangebook.json, 1 product row matched on products.active_ingredients.name='SOFPIRONIUM BROMIDE' (single-NDA drug, no ingredient collision). Carries a real, populated NCE (New Chemical Entity) exclusivity expiring 2029-06-20 -- the first cycle-22 build with a non-empty exclusivities array.",
+      "extracted_by": "fetch_orange_book.py (openfda drug/orangebook.json, cycle-22 pass, NDA-pinned)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "purple_book": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    }
+  },
+  "real_world_safety": {
+    "faers_summary": {
+      "value": {
+        "query": {
+          "search_field": "patient.drug.medicinalproduct",
+          "search_term": "SOFDRA",
+          "receivedate_from": "2004-02-11",
+          "receivedate_to": "2026-07-30",
+          "api_urls": [
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"SOFDRA\"&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"SOFDRA\"+AND+serious:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"SOFDRA\"+AND+seriousnessdeath:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"SOFDRA\"+AND+seriousnesshospitalization:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"SOFDRA\"+AND+seriousnesslifethreatening:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"SOFDRA\"+AND+seriousnessdisabling:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"SOFDRA\"&count=patient.reaction.reactionmeddrapt.exact&limit=15",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"SOFDRA\"+AND+serious:1&count=patient.reaction.reactionmeddrapt.exact&limit=15",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"SOFDRA\"&count=receivedate"
+          ],
+          "data_last_updated": "2026-09-07"
+        },
+        "total_reports": 225,
+        "serious_reports": 27,
+        "death_reports": 0,
+        "hospitalization_reports": 5,
+        "life_threatening_reports": 0,
+        "disability_reports": 1,
+        "top_reactions": [
+          {
+            "meddra_pt": "VISION BLURRED",
+            "report_count": 80,
+            "pct_of_reports": 35.56
+          },
+          {
+            "meddra_pt": "DRY MOUTH",
+            "report_count": 52,
+            "pct_of_reports": 23.11
+          },
+          {
+            "meddra_pt": "APPLICATION SITE PAIN",
+            "report_count": 32,
+            "pct_of_reports": 14.22
+          },
+          {
+            "meddra_pt": "MYDRIASIS",
+            "report_count": 27,
+            "pct_of_reports": 12.0
+          },
+          {
+            "meddra_pt": "APPLICATION SITE IRRITATION",
+            "report_count": 20,
+            "pct_of_reports": 8.89
+          },
+          {
+            "meddra_pt": "APPLICATION SITE RASH",
+            "report_count": 19,
+            "pct_of_reports": 8.44
+          },
+          {
+            "meddra_pt": "DRUG INEFFECTIVE",
+            "report_count": 18,
+            "pct_of_reports": 8.0
+          },
+          {
+            "meddra_pt": "RASH",
+            "report_count": 18,
+            "pct_of_reports": 8.0
+          },
+          {
+            "meddra_pt": "URINARY RETENTION",
+            "report_count": 18,
+            "pct_of_reports": 8.0
+          },
+          {
+            "meddra_pt": "DYSURIA",
+            "report_count": 11,
+            "pct_of_reports": 4.89
+          },
+          {
+            "meddra_pt": "APPLICATION SITE ERYTHEMA",
+            "report_count": 10,
+            "pct_of_reports": 4.44
+          },
+          {
+            "meddra_pt": "OFF LABEL USE",
+            "report_count": 10,
+            "pct_of_reports": 4.44
+          },
+          {
+            "meddra_pt": "APPLICATION SITE PRURITUS",
+            "report_count": 9,
+            "pct_of_reports": 4.0
+          },
+          {
+            "meddra_pt": "VISUAL IMPAIRMENT",
+            "report_count": 9,
+            "pct_of_reports": 4.0
+          },
+          {
+            "meddra_pt": "HYPERSENSITIVITY",
+            "report_count": 8,
+            "pct_of_reports": 3.56
+          }
+        ],
+        "top_serious_reactions": [
+          {
+            "meddra_pt": "URINARY RETENTION",
+            "report_count": 16,
+            "pct_of_reports": 59.26
+          },
+          {
+            "meddra_pt": "VISION BLURRED",
+            "report_count": 16,
+            "pct_of_reports": 59.26
+          },
+          {
+            "meddra_pt": "DRY MOUTH",
+            "report_count": 11,
+            "pct_of_reports": 40.74
+          },
+          {
+            "meddra_pt": "APPLICATION SITE IRRITATION",
+            "report_count": 4,
+            "pct_of_reports": 14.81
+          },
+          {
+            "meddra_pt": "HEADACHE",
+            "report_count": 4,
+            "pct_of_reports": 14.81
+          },
+          {
+            "meddra_pt": "MYDRIASIS",
+            "report_count": 4,
+            "pct_of_reports": 14.81
+          },
+          {
+            "meddra_pt": "APPLICATION SITE PAIN",
+            "report_count": 3,
+            "pct_of_reports": 11.11
+          },
+          {
+            "meddra_pt": "BLINDNESS TRANSIENT",
+            "report_count": 3,
+            "pct_of_reports": 11.11
+          },
+          {
+            "meddra_pt": "HYPERSENSITIVITY",
+            "report_count": 2,
+            "pct_of_reports": 7.41
+          },
+          {
+            "meddra_pt": "RASH",
+            "report_count": 2,
+            "pct_of_reports": 7.41
+          }
+        ],
+        "reports_by_year": [
+          {
+            "year": 2025,
+            "report_count": 130
+          },
+          {
+            "year": 2026,
+            "report_count": 95
+          }
+        ],
+        "meddra_version": null
+      },
+      "source_type": "openfda_faers",
+      "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"SOFDRA\"&limit=1",
+      "source_excerpt": "openFDA drug/event.json aggregate: total_reports=225, serious=27, deaths=0. Bare ingredient term SOFPIRONIUM BROMIDE returns a genuine NOT_FOUND (no reports filed under the generic name) -- a correct near-zero for a drug approved June 2024, not a search-term miss; brand term SOFDRA (225 reports) has Hyperhidrosis as its dominant real indication (73 of the top drugindication terms, next closest unrelated term only 2).",
+      "extracted_by": "fetch_faers.py (openfda drug/event.json, cycle-22 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    }
+  }
+}

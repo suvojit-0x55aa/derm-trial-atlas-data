@@ -13,7 +13,7 @@ way around.
 Real, live-pulled pivotal Phase III trials (adult / adult+adolescent,
 systemic therapy), from the [ClinicalTrials.gov API
 v2](https://clinicaltrials.gov/data-api/api) (`/api/v2/studies`, no API
-key required), across **23 indications, 50 unique drugs, 131 trials**
+key required), across **23 indications, 51 unique drugs, 133 trials**
 (all three counts recomputed from `data/trials/*.json` each cycle):
 
 ### Atopic Dermatitis (10 drugs, 28 trials)
@@ -462,11 +462,46 @@ hard `NOT_FOUND` while `"ZELSUVMI"` returns 71 real reports, so
 `real_world_safety.faers_summary` is recorded on the brand term with
 `query.search_term` saying so.
 
-### Hyperhidrosis (1 drug, 2 trials)
+### Hyperhidrosis (2 drugs, 4 trials)
 
 | Drug | Pivotal Phase III trials |
 |---|---|
 | Glycopyrronium (topical cloth, 2.4%) | NCT02530281 (Trial 1, n=344), NCT02530294 (Trial 2, n=353), both vehicle-controlled — FDA-approved (Qbrexza, NDA 210361) 2018-06-28 |
+| Sofpironium Bromide (topical gel, 15% in trials / 12.45% as marketed) | CARDIGAN 1 (NCT03836287, n=350), CARDIGAN 2 (NCT03948646, n=351), both vehicle-controlled — FDA-approved (Sofdra, NDA 217347) 2024-06-18 |
+
+Sofpironium Bromide, added cycle 22 (2026-09-07), expands this indication
+with a second real FDA-approved anticholinergic — an oral-hyperhidrosis-
+adjacent web sweep for "sofpironium bromide hyperhidrosis" surfaced it as
+a genuinely recent (2024) approval not yet checked against this atlas's
+drug list. Both CARDIGAN trials are label-cited by name (FDA label
+section 14: "CARDIGAN 1 (NCT03836287) and CARDIGAN 2 (NCT03948646)"),
+randomized, double-blind, vehicle-controlled, `hasResults: true`,
+enrollment matching the label's Table 5 exactly. A real, worth-noting
+formulation change between trial and approval: both pivotal trials tested
+a 15% gel, but the FDA-approved marketed product is 12.45% strength per
+its own Orange Book listing — not a data error, a genuine reformulation
+between the pivotal program and final approval. Orange Book carries a
+real, populated NCE (New Chemical Entity) exclusivity (expiring
+2029-06-20) — the first drug in this atlas's cycle-22 additions with a
+non-empty `exclusivities` array. FAERS on the bare ingredient term
+`SOFPIRONIUM BROMIDE` is a genuine `NOT_FOUND` (no reports at all under
+the generic name, correct for a drug ~2 years post-approval with limited
+uptake so far); brand term `SOFDRA` (225 reports) has Hyperhidrosis as
+its clear dominant real indication. Two more real schema-enum gaps
+surfaced here, both handled per this atlas's established
+drop-the-unrepresentable-criterion convention: `dose_form` has no `gel`
+slot (same gap already documented for `foam`), and the severity
+criterion's `unit` enum (`score`/`percent`/`points`/`years`) has no slot
+for `mg` — the trials' real Gravimetric Sweat Production entry threshold
+(≥50mg per axilla, ≥150mg combined) is fully quoted in the field's own
+`source_excerpt` but left out of the structured `criteria` list rather
+than mislabeled; only the HDSM-Ax-7 ≥3 criterion is structurally
+represented. `design.background_therapy` and `timing_ops.rescue_therapy`
+stay `needs_extraction` for both trials (no protocol/SAP document posted,
+no equivalent label statement, unlike Zilxi's rosacea trials this same
+cycle); `endpoints.secondary_endpoints` is a genuine real empty list — CT.gov
+registers zero secondary endpoints for either trial, only the 2 co-primary
+ones.
 
 19th indication, added 2026-09-05 (cycle 11). Both trials are named in
 QBREXZA's own FDA label section 14.1 as Trial 1 and Trial 2, and both were
@@ -796,7 +831,7 @@ half of the corpus), and a trial whose real posted text genuinely states no
 rescue-medication concept or no formal multiplicity procedure applies (a
 correct finding, not a miss) — both confirmed per-trial, not assumed.
 
-### Fill status (all 131 trials, 39 fields each — 5109 sourced values)
+### Fill status (all 133 trials, 39 fields each — 5187 sourced values)
 
 Fields fully or near-fully filled across every trial (`ctgov_api` for the
 identity/population/design/endpoints/timing_ops/adverse_events core,
@@ -807,30 +842,30 @@ drug-level cross-source groups): `nct_id`, `trial_name`, `official_title`,
 `study_type`, `allocation`, `intervention_model`, `masking`,
 `number_of_arms`, `primary_endpoints`, `secondary_endpoints`,
 `start_date`, `primary_completion_date`, `completion_date`,
-`real_world_safety.faers_summary` (131/131),
-`exclusivity.regulatory_application` (131/131).
+`real_world_safety.faers_summary` (133/133),
+`exclusivity.regulatory_application` (133/133).
 
-Fields with real, checkable gaps (numerator = filled, out of 131 trials;
+Fields with real, checkable gaps (numerator = filled, out of 133 trials;
 every count below recomputed from `sources.csv` this cycle):
 
 | Field | Filled | Gap reason |
 |---|---|---|
-| `molecule.mechanism_of_action` | 131/131 | fully filled — real openFDA structured label text for every drug (a few drugs needed the approval-package label PDF fallback since they have no `label.json` entry at all) |
-| `molecule.dosing_regimen` | 130/131 | real CT.gov intervention description text, matched to each trial's own drug by generic name or known development/compound code, for every trial except one whose intervention text doesn't state a regimen |
-| `population.severity_criteria` | 118/131 | real CT.gov eligibility-criteria text now covers PASI/sPGA/ISGA/S-IGA/B-IGA/PGA (psoriasis family), Hurley Stage + AN Count (HS), SIRS (impetigo), HDSS/ASDD (hyperhidrosis), SALT (AA), BPDAI (bullous pemphigoid), GPPGA (GPP), CDASI (dermatomyositis), and lesion-count ranges (acne/rosacea/molluscum/AK) in addition to the original EASI/IGA/BSA (AD); the remaining trials genuinely state no quantitative baseline threshold in their CT.gov text, or their real number uses a unit the current schema has no metric for (percent-of-nail-area, wound size in cm²) |
-| `design.background_therapy` | 80/131 | real protocol/SAP PDF text (CT.gov `documentSection`, including a scanned Protocol Summary OCR'd with tesseract) covers every indication with a posted Study Protocol/SAP, plus a real quoted FDA-label monotherapy statement for Zilxi's 2 rosacea trials (cycle 22); the remaining gap trials have no protocol/SAP document posted on CT.gov and no equivalent label statement |
-| `endpoints.multiplicity_control` | 75/131 | same PDF-extraction pass closed the real testing-hierarchy/alpha-control text it could, plus a cycle-3 re-read (wider keyword net, one scanned SAP OCR'd with tesseract) that found real serial-gatekeeping/fixed-sequence/gatekeeping-with-Holm procedures the first pass's narrower keyword search missed; remaining gaps are genuine — either no posted document, or the document states no formal multiplicity procedure was used |
-| `timing_ops.study_schedule` | 82/131 | same pass closed the real screening/treatment/follow-up period breakdown from every posted protocol, plus real (if partial) visit-week data from CT.gov's own detailed description for Zilxi's 2 rosacea trials (cycle 22); remaining gaps have no protocol/SAP document posted and no equivalent free-text visit schedule |
-| `timing_ops.rescue_therapy` | 64/131 | same pass closed the real rescue-medication rules it could (including trials whose real finding is "rescue explicitly prohibited"), plus one partial fill from CT.gov eligibility-criteria text alone (no posted protocol) confirming rescue therapy is permitted without stating its composition, plus a real quoted FDA-label no-rescue statement for Zilxi's 2 rosacea trials (cycle 22); remaining gaps are a mix of no-posted-document trials and trials whose protocol genuinely states no rescue-medication concept applies (e.g. simple 8-week monotherapy-vs-vehicle designs, or an "escape arm" that a later amendment removed) |
-| `adverse_events.serious_adverse_event_rate` | 129/131 | CT.gov posts `eventGroups[]` without per-arm serious counts for a few trials (a genuine gap in what was posted, not a computable zero) |
-| `adverse_events.death_rate` | 98/131 | some trials report zero deaths as a genuine null-count edge case in CT.gov's `resultsSection`, not a missing value |
-| `adverse_events.discontinuation_due_to_ae_rate` | 99/131 | CT.gov `resultsSection` gap for several trials whose `participantFlowModule` posts milestones only, no `dropWithdraws` section |
-| `adverse_events.most_common_adverse_events` | 116/131 | CT.gov `resultsSection` gap for a few trials |
-| `adverse_events.boxed_warning` | 129/131 | openFDA label lookup miss for a few trials |
-| `exclusivity.orange_book` | 77/131 | only the NDA small-molecule drugs' trials get this field (BLA biologics use `purple_book` instead) |
-| `exclusivity.purple_book` | 54/131 | only the BLA biologic drugs' trials get this field (NDA small molecules use `orange_book` instead) |
+| `molecule.mechanism_of_action` | 133/133 | fully filled — real openFDA structured label text for every drug (a few drugs needed the approval-package label PDF fallback since they have no `label.json` entry at all) |
+| `molecule.dosing_regimen` | 132/133 | real CT.gov intervention description text, matched to each trial's own drug by generic name or known development/compound code, for every trial except one whose intervention text doesn't state a regimen |
+| `population.severity_criteria` | 120/133 | real CT.gov eligibility-criteria text now covers PASI/sPGA/ISGA/S-IGA/B-IGA/PGA (psoriasis family), Hurley Stage + AN Count (HS), SIRS (impetigo), HDSS/ASDD + HDSM-Ax-7 (hyperhidrosis), SALT (AA), BPDAI (bullous pemphigoid), GPPGA (GPP), CDASI (dermatomyositis), and lesion-count ranges (acne/rosacea/molluscum/AK) in addition to the original EASI/IGA/BSA (AD); the remaining trials genuinely state no quantitative baseline threshold in their CT.gov text, or their real number uses a unit the current schema has no metric for (percent-of-nail-area, wound size in cm², gravimetric sweat production in mg) |
+| `design.background_therapy` | 80/133 | real protocol/SAP PDF text (CT.gov `documentSection`, including a scanned Protocol Summary OCR'd with tesseract) covers every indication with a posted Study Protocol/SAP, plus a real quoted FDA-label monotherapy statement for Zilxi's 2 rosacea trials (cycle 22); the remaining gap trials have no protocol/SAP document posted on CT.gov and no equivalent label statement |
+| `endpoints.multiplicity_control` | 75/133 | same PDF-extraction pass closed the real testing-hierarchy/alpha-control text it could, plus a cycle-3 re-read (wider keyword net, one scanned SAP OCR'd with tesseract) that found real serial-gatekeeping/fixed-sequence/gatekeeping-with-Holm procedures the first pass's narrower keyword search missed; remaining gaps are genuine — either no posted document, or the document states no formal multiplicity procedure was used |
+| `timing_ops.study_schedule` | 84/133 | same pass closed the real screening/treatment/follow-up period breakdown from every posted protocol, plus real (if partial) visit-week/period data from CT.gov's own detailed description for Zilxi's 2 rosacea trials and Sofdra's 2 hyperhidrosis trials (cycle 22); remaining gaps have no protocol/SAP document posted and no equivalent free-text visit schedule |
+| `timing_ops.rescue_therapy` | 64/133 | same pass closed the real rescue-medication rules it could (including trials whose real finding is "rescue explicitly prohibited"), plus one partial fill from CT.gov eligibility-criteria text alone (no posted protocol) confirming rescue therapy is permitted without stating its composition, plus a real quoted FDA-label no-rescue statement for Zilxi's 2 rosacea trials (cycle 22); remaining gaps are a mix of no-posted-document trials and trials whose protocol genuinely states no rescue-medication concept applies (e.g. simple 8-week monotherapy-vs-vehicle designs, or an "escape arm" that a later amendment removed) |
+| `adverse_events.serious_adverse_event_rate` | 131/133 | CT.gov posts `eventGroups[]` without per-arm serious counts for a few trials (a genuine gap in what was posted, not a computable zero) |
+| `adverse_events.death_rate` | 100/133 | some trials report zero deaths as a genuine null-count edge case in CT.gov's `resultsSection`, not a missing value |
+| `adverse_events.discontinuation_due_to_ae_rate` | 99/133 | CT.gov `resultsSection` gap for several trials whose `participantFlowModule` posts milestones only, no `dropWithdraws` section |
+| `adverse_events.most_common_adverse_events` | 118/133 | CT.gov `resultsSection` gap for a few trials |
+| `adverse_events.boxed_warning` | 131/133 | openFDA label lookup miss for a few trials |
+| `exclusivity.orange_book` | 79/133 | only the NDA small-molecule drugs' trials get this field (BLA biologics use `purple_book` instead) |
+| `exclusivity.purple_book` | 54/133 | only the BLA biologic drugs' trials get this field (NDA small molecules use `orange_book` instead) |
 
-**4657 of 5109 sourced values are filled with real data (91.2%); 452
+**4725 of 5187 sourced values are filled with real data (91.1%); 462
 remain `needs_extraction`** — see `sources.csv` for the per-trial,
 per-field breakdown. Every non-`ctgov_api` fill was produced by
 LLM-assisted reading of a real, cited source (CT.gov free text, a
@@ -845,13 +880,13 @@ before it's treated as authoritative for publication.
 
 This repo holds only the pipeline's output — no code, no tests:
 
-- `data/trials/<NCT_ID>.json` — one file per trial (131 files), the
+- `data/trials/<NCT_ID>.json` — one file per trial (133 files), the
   sourced-value format described above (schema v2).
 - `trials.csv` — one row per trial, one column per field (the field's
   `value`, JSON-encoded when structured; `needs_extraction` fields blank).
 - `sources.csv` — one row per sourced value: `nct_id`, `field`,
   `source_type`, `source_url`, `source_excerpt`, `extracted_by`,
-  `reviewed_by`, `confidence`. 131 trials × 39 fields = 5109 rows.
+  `reviewed_by`, `confidence`. 133 trials × 39 fields = 5187 rows.
 - `endpoints.csv` — one row per outcome measure × criterion: `measure_type`,
   `scale`, `timepoints`, `analysis_population`, and the `ScoreCriterion`
   columns, so "EASI-75 responders at week 16" is a column filter.

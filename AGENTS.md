@@ -32,7 +32,7 @@ This file is the project's committed home for project-intrinsic agent memory: bu
   couldn't reliably extract. Don't force-fill it by inference — a wrong schedule is worse than a
   null.
 - **This atlas is an ongoing, multi-cycle scale-out effort, not a one-shot.** It started at 1
-  indication (AD, 5 drugs, 17 trials) and is now at 23 indications, 50 unique drugs, 131 trials
+  indication (AD, 5 drugs, 17 trials) and is now at 23 indications, 51 unique drugs, 133 trials
   (see README's "What this covers" for the full per-indication breakdown and exactly which
   candidate trials were checked and excluded as non-pivotal for each). Every drug/indication
   pairing was verified against real, live ClinicalTrials.gov and openFDA data before being
@@ -816,6 +816,47 @@ This file is the project's committed home for project-intrinsic agent memory: bu
   Rosacea 15/31) and `EPSOLAY` (37 reports, Rosacea 14/37) are both clean and used instead, per the
   atlas's standing run-the-drugindication-count-first rule (Qbrexza/Glycopyrronium, Ozenoxacin/
   Xepi, Eskata/hydrogen-peroxide).
+- **Cycle 22 continued the trial-depth pivot into a second thin indication, Hyperhidrosis (1
+  drug -> 2), with Sofpironium Bromide (Sofdra, NDA217347, Botanix) via CARDIGAN 1 (NCT03836287,
+  n=350) and CARDIGAN 2 (NCT03948646, n=351) — both label-cited by name, randomized, vehicle-
+  controlled, `hasResults: true`, enrollment matching FDA label Table 5 exactly.** A real,
+  worth-noting formulation change between trial and approval: both trials tested a 15% gel, but
+  the FDA-approved marketed strength is 12.45% per Orange Book — recorded in the dosing_regimen
+  note, not treated as a discrepancy to resolve. Orange Book carries a real, populated NCE
+  exclusivity (2029-06-20) — this cycle's first non-empty `exclusivities` array, confirming the
+  Orange Book parser handles that sub-object correctly when the source actually has one. FAERS on
+  bare `SOFPIRONIUM BROMIDE` is a genuine `NOT_FOUND` (a correct near-zero for a ~2-year-old
+  approval, not a search miss); brand `SOFDRA` (225 reports) is clean, Hyperhidrosis-dominant.
+  Surfaced 2 more real schema-enum gaps, both handled per the established drop-the-criterion
+  convention: `dose_form` has no `gel` slot (same gap as `foam`), and severity criteria's `unit`
+  enum has no slot for `mg` (Gravimetric Sweat Production's real ≥50mg/≥150mg thresholds are fully
+  quoted in `source_excerpt` but not structurally represented; only the HDSM-Ax-7 ≥3 criterion is).
+  `design.background_therapy`/`timing_ops.rescue_therapy` stay `needs_extraction` for both trials
+  (no protocol/SAP posted, no equivalent label statement, unlike Zilxi this same cycle) —
+  confirming that even within one cycle, whether a field gets real content depends entirely on
+  what the specific drug's own label/protocol actually states, not on a blanket per-cycle policy.
+  Both trials also register a genuine real empty `secondary_endpoints` list (CT.gov shows zero
+  secondary outcomes, only the 2 co-primary ones) — an empty list is itself a real, checked fact
+  here, not a placeholder.
+- **Found via a web search for the specific drug name rather than a broad "FDA dermatology
+  approvals" sweep — a 3rd angle beyond named-candidate backlog and official-list checks, worth
+  keeping in the toolkit**: once Rosacea's 2 modern-drug additions (cycle 22, same session) showed
+  that checking an already-covered thin indication for missed post-2010 approvals was productive,
+  the same search style ("sofpironium bromide hyperhidrosis fda approval") found Sofdra directly.
+  Four more real candidates were found the identical way for Acne Vulgaris (Amzeeq/minocycline
+  foam 4% NDA212379, Arazlo/tazarotene lotion NDA211882, Twyneo/tretinoin+benzoyl-peroxide
+  NDA214902, Cabtreo/clindamycin+adapalene+benzoyl-peroxide NDA216632) but NOT YET built into the
+  atlas — queued for a future cycle with their pivotal trial NCT IDs already identified from live
+  label section-14 citations: Amzeeq (NCT02815267, NCT02815280, NCT03271021 — 3 trials, all
+  vehicle-controlled Phase 3, `hasResults: true`), Twyneo (NCT03761784, NCT03761810, clean label
+  citation), Cabtreo (NCT04214639, NCT04214652, clean label citation — note these did NOT appear in
+  a `query.intr`/`query.cond` CT.gov search for "clindamycin adapalene benzoyl peroxide"/"acne
+  vulgaris", so they must be fetched directly by NCT ID rather than re-searched). Arazlo's own
+  label citation needs a closer read next cycle — a naive CT.gov intervention-name search for
+  "tazarotene lotion" returns BOTH Arazlo's real DFD-03 trials (NCT03290027, NCT03292640) and an
+  unrelated drug's trials (IDP-123/Duobrii, a halobetasol+tazarotene combination approved for
+  PSORIASIS, not acne) mixed together under the same query — confirm DFD-03 vs IDP-123 by
+  development code before trusting any tazarotene-lotion search result.
 - **A prior cycle's flagged false lead confirmed harmless: Prurigo Nodularis (Dupixent PRIME/
   PRIME2 + Nemluvio OLYMPIA 1/2) looked like a genuine uncaught gap during cycle 22's initial
   check — it doesn't appear anywhere in this file's own narrative notes — but `README.md` showed
