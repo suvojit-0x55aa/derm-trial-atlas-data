@@ -227,7 +227,7 @@
       },
       "source_type": "ctgov_text_extraction",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT05355818",
-      "source_excerpt": "Disease severity graded as moderate to severe at screening and baseline according to IGA CHE (i.e. an IGA-CHE score of 3 or 4). | Inadequate response is defined as a history of failure to achieve and maintain a low disease activity state (comparable to an IGA-CHE score of ≤2) despite treatment with a daily regimen of TCS of class III-IV (potent to very potent) for Europe and Australia and class IV-I (medium potency to very/ultra-high potency) for Canada, applied for at least 28 days or for the maximum duration recommended by the product prescribing information, whichever is shorter.",
+      "source_excerpt": "Disease severity graded as moderate to severe at screening and baseline according to IGA CHE (i.e. an IGA-CHE score of 3 or 4). | Inadequate response is defined as a history of failure to achieve and maintain a low disease activity state (comparable to an IGA-CHE score of \u22642) despite treatment with a daily regimen of TCS of class III-IV (potent to very potent) for Europe and Australia and class IV-I (medium potency to very/ultra-high potency) for Canada, applied for at least 28 days or for the maximum duration recommended by the product prescribing information, whichever is shorter.",
       "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 0.75
@@ -382,7 +382,7 @@
           "time_frame": null
         },
         {
-          "verbatim": "Number of Participants With Reduction of HESD Itch Score (Weekly Average) of ≥4 Points From Baseline at Week 16",
+          "verbatim": "Number of Participants With Reduction of HESD Itch Score (Weekly Average) of \u22654 Points From Baseline at Week 16",
           "rank": "secondary",
           "position": 2,
           "measure_type": "count",
@@ -407,7 +407,7 @@
           "time_frame": null
         },
         {
-          "verbatim": "Number of Participants With Reduction of HESD Pain Score (Weekly Average) of ≥4 Points From Baseline at Week 16",
+          "verbatim": "Number of Participants With Reduction of HESD Pain Score (Weekly Average) of \u22654 Points From Baseline at Week 16",
           "rank": "secondary",
           "position": 3,
           "measure_type": "count",
@@ -432,7 +432,7 @@
           "time_frame": null
         },
         {
-          "verbatim": "Number of Participants With Reduction of HESD Score (Weekly Average) of ≥4 Points From Baseline at Week 16",
+          "verbatim": "Number of Participants With Reduction of HESD Score (Weekly Average) of \u22654 Points From Baseline at Week 16",
           "rank": "secondary",
           "position": 4,
           "measure_type": "count",
@@ -1186,6 +1186,34 @@
       "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"DELGOCITINIB\"&limit=1",
       "source_excerpt": "openFDA drug/event.json aggregate: total_reports=71, serious=64, deaths=2",
       "extracted_by": "fetch_faers.py (openfda drug/event.json, v2 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "drug_characterization": {
+      "value": [
+        {
+          "code": "1",
+          "label": "suspect",
+          "report_count": 8,
+          "pct_of_reports": 11.27
+        },
+        {
+          "code": "2",
+          "label": "concomitant",
+          "report_count": 63,
+          "pct_of_reports": 88.73
+        },
+        {
+          "code": "3",
+          "label": "interacting",
+          "report_count": 0,
+          "pct_of_reports": 0.0
+        }
+      ],
+      "source_type": "openfda_faers",
+      "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"DELGOCITINIB\"",
+      "source_excerpt": "Computed by pulling every individual FAERS report matching this drug's own search_term (DELGOCITINIB) and tallying each report's drugcharacterization code (1=suspect, 2=concomitant, 3=interacting) from ONLY the drug-array entries whose medicinalproduct matches this drug (not co-listed drugs in the same report) -- a plain count= aggregate query cannot do this correctly (openFDA's flattened array indexing mixes in co-listed drugs' own characterization values; confirmed via 2 independent test queries returning identical contaminated totals). 71/71 reports matched.",
+      "extracted_by": "fetch_faers_characterization.py (per-report drugcharacterization backfill, cycle-22 pass)",
       "reviewed_by": null,
       "confidence": 1.0
     }

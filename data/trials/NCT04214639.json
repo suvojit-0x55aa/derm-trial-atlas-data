@@ -1,9 +1,9 @@
 {
   "schema_version": 2,
   "nct_id": {
-    "value": "NCT04608500",
+    "value": "NCT04214639",
     "source_type": "ctgov_api",
-    "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04608500",
+    "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04214639",
     "source_excerpt": "protocolSection.identificationModule.nctId",
     "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
     "reviewed_by": null,
@@ -11,27 +11,27 @@
   },
   "identity": {
     "trial_name": {
-      "value": null,
-      "source_type": "ctgov_api",
-      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04608500",
-      "source_excerpt": "protocolSection.identificationModule.acronym",
-      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "value": "Trial 1",
+      "source_type": "openfda_label",
+      "source_url": "https://api.fda.gov/drug/label.json?search=openfda.brand_name:CABTREO&limit=1",
+      "source_excerpt": "FDA label section 14: \"two multicenter, randomized, double-blind clinical trials (Trial 1 and Trial 2, NCT04214639 and NCT04214652, respectively)\"",
+      "extracted_by": "cycle22 one-off build (ctgov_api v2 + openfda_label/orangebook/faers pass); manual full deep extraction",
       "reviewed_by": null,
-      "confidence": 0.0
+      "confidence": 1.0
     },
     "official_title": {
-      "value": "A Study (Study 2) to Evaluate the Safety and Efficacy of FMX103 1.5% Topical Minocycline Foam Compared to Vehicle Foam in the Treatment of Facial Papulopustular Rosacea",
+      "value": "A Phase 3, Multicenter, Randomized, Double-Blind, Vehicle Controlled, Parallel-Group, Clinical Study Comparing the Efficacy and Safety of IDP-126 Gel in the Treatment of Acne Vulgaris",
       "source_type": "ctgov_api",
-      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04608500",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04214639",
       "source_excerpt": "protocolSection.identificationModule.officialTitle",
       "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
       "reviewed_by": null,
       "confidence": 1.0
     },
     "sponsor": {
-      "value": "Vyne Therapeutics Inc.",
+      "value": "Bausch Health Americas, Inc.",
       "source_type": "ctgov_api",
-      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04608500",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04214639",
       "source_excerpt": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name",
       "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
       "reviewed_by": null,
@@ -42,7 +42,7 @@
         "PHASE3"
       ],
       "source_type": "ctgov_api",
-      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04608500",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04214639",
       "source_excerpt": "protocolSection.designModule.phases",
       "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
       "reviewed_by": null,
@@ -51,9 +51,9 @@
   },
   "molecule": {
     "drug": {
-      "value": "Minocycline",
+      "value": "Clindamycin Phosphate/Benzoyl Peroxide/Adapalene",
       "source_type": "ctgov_api",
-      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04608500",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04214639",
       "source_excerpt": "protocolSection.armsInterventionsModule.interventions[].name (curated)",
       "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
       "reviewed_by": null,
@@ -61,11 +61,11 @@
     },
     "intervention_names": {
       "value": [
-        "FMX103 minocycline foam 1.5%",
-        "Vehicle foam"
+        "IDP-126 Gel",
+        "IDP-126 Vehicle Gel"
       ],
       "source_type": "ctgov_api",
-      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04608500",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04214639",
       "source_excerpt": "protocolSection.armsInterventionsModule.interventions[].name",
       "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
       "reviewed_by": null,
@@ -76,7 +76,7 @@
         "DRUG"
       ],
       "source_type": "ctgov_api",
-      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04608500",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04214639",
       "source_excerpt": "protocolSection.armsInterventionsModule.interventions[].type",
       "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
       "reviewed_by": null,
@@ -85,7 +85,7 @@
     "mechanism_of_action": {
       "value": {
         "modality": "other",
-        "drug_class": "tetracycline antibiotic",
+        "drug_class": "lincosamide antibacterial + retinoid + keratolytic/antibacterial oxidizing agent (fixed-dose triple combination)",
         "antibody_isotype": null,
         "binding_targets": [],
         "pathway_cytokines": [],
@@ -98,8 +98,8 @@
         "label_section": "12.1"
       },
       "source_type": "openfda_label",
-      "source_url": "https://api.fda.gov/drug/label.json?search=openfda.brand_name:ZILXI&limit=1",
-      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1) -- extracted text: \"12.1 Mechanism of Action The mechanism of action of ZILXI for the treatment of inflammatory lesions of rosacea is unknown.\" Minocycline itself is a tetracycline-class antibiotic (drug_class filled from the substance's known pharmacologic class; the label states the rosacea-specific mechanism is unknown, matching Ivermectin/Soolantra's already-committed 'mechanism unknown' pattern for this indication).",
+      "source_url": "https://api.fda.gov/drug/label.json?search=openfda.brand_name:CABTREO&limit=1",
+      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1): \"Clindamycin: Clindamycin is a lincosamide antibacterial. Adapalene: Adapalene binds to specific retinoic acid nuclear receptors but does not bind to cytosolic receptor protein... the significance of these findings with regard to the mechanism of action of adapalene for the treatment of acne is unknown. Benzoyl Peroxide: ... the precise mechanism of action is unknown.\" A fixed-dose 3-ingredient combination; only clindamycin's antibacterial class is established, adapalene's and benzoyl peroxide's acne-specific mechanisms are both explicitly stated unknown.",
       "extracted_by": "cycle22 one-off build (ctgov_api v2 + openfda_label/orangebook/faers pass); manual full deep extraction",
       "reviewed_by": null,
       "confidence": 0.85
@@ -107,13 +107,13 @@
     "dosing_regimen": {
       "value": [
         {
-          "intervention_name": "FMX103 minocycline foam 1.5%",
-          "description": "FMX103 minocycline foam 1.5%, applied once daily as a thin layer over the entire face, approximately 1 hour before bedtime",
+          "intervention_name": "IDP-126 Gel",
+          "description": "IDP-126 Gel (Cabtreo: clindamycin phosphate 1.2% / benzoyl peroxide 3.1% / adapalene 0.15%), applied once daily to the face",
           "is_placebo": false,
           "route": "topical",
           "dose_form": null,
-          "dose_value": 1.5,
-          "dose_unit": "%",
+          "dose_value": null,
+          "dose_unit": null,
           "units_per_dose": null,
           "frequency": "once_daily",
           "duration_weeks": 12,
@@ -124,14 +124,14 @@
           "antibody_isotype": null,
           "molecular_target": null,
           "arm_names": [
-            "FMX103 1.5%"
+            "IDP-126 Gel"
           ],
           "co_administered_with": []
         }
       ],
       "source_type": "ctgov_text_extraction",
-      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04608500",
-      "source_excerpt": "armsInterventionsModule.interventions[0].description: \"Foam containing minocycline HCl 1.5%. Once daily application... Participants will apply a small amount of the drug as a thin layer over all areas of the face... at approximately the same time each day, about 1 hour before bedtime.\" -- dose_form left null (schema's DOSE_FORMS enum has no 'foam' slot, per this atlas's standing enum-gap convention; route is still confidently 'topical' from the literal text)",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04214639",
+      "source_excerpt": "armsInterventionsModule.interventions[0].description: 'IDP-126 Gel applied topically to the face once daily for 12 weeks'; 3 active-ingredient strengths from Orange Book. dose_form left null (schema's DOSE_FORMS enum has no 'gel' slot); dose_value/dose_unit left null (3 active ingredients at different strengths, no single dose_value fits this schema field).",
       "extracted_by": "cycle22 one-off build (ctgov_api v2 + openfda_label/orangebook/faers pass); manual full deep extraction",
       "reviewed_by": null,
       "confidence": 0.85
@@ -140,19 +140,19 @@
   "population": {
     "condition": {
       "value": [
-        "Facial Papulopustular Rosacea"
+        "Acne Vulgaris"
       ],
       "source_type": "ctgov_api",
-      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04608500",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04214639",
       "source_excerpt": "protocolSection.conditionsModule.conditions",
       "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
       "reviewed_by": null,
       "confidence": 1.0
     },
     "min_age_years": {
-      "value": 18,
+      "value": 9,
       "source_type": "ctgov_api",
-      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04608500",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04214639",
       "source_excerpt": "protocolSection.eligibilityModule.minimumAge",
       "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
@@ -161,7 +161,7 @@
     "max_age_years": {
       "value": null,
       "source_type": "ctgov_api",
-      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04608500",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04214639",
       "source_excerpt": "protocolSection.eligibilityModule.maximumAge",
       "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
@@ -170,16 +170,16 @@
     "sex": {
       "value": "ALL",
       "source_type": "ctgov_api",
-      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04608500",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04214639",
       "source_excerpt": "protocolSection.eligibilityModule.sex",
       "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
       "reviewed_by": null,
       "confidence": 1.0
     },
     "enrollment_count": {
-      "value": 771,
+      "value": 183,
       "source_type": "ctgov_api",
-      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04608500",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04214639",
       "source_excerpt": "protocolSection.designModule.enrollmentInfo.count",
       "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
       "reviewed_by": null,
@@ -194,7 +194,7 @@
         "baseline_visit_number": null,
         "criteria": [
           {
-            "scale": "IGA",
+            "scale": "EGSS",
             "scale_component": null,
             "scale_variant": null,
             "metric": "absolute_score",
@@ -204,10 +204,22 @@
               4
             ],
             "unit": "score",
-            "scale_min": null,
-            "scale_max": null,
+            "scale_min": 0,
+            "scale_max": 4,
             "assessed_at": null,
             "scale_anchors": [
+              {
+                "score": 0,
+                "label": "clear"
+              },
+              {
+                "score": 1,
+                "label": "almost clear"
+              },
+              {
+                "score": 2,
+                "label": "mild"
+              },
               {
                 "score": 3,
                 "label": "moderate"
@@ -224,7 +236,7 @@
             "scale_variant": null,
             "metric": "absolute_score",
             "comparator": ">=",
-            "value": 15,
+            "value": 30,
             "unit": "score",
             "scale_min": null,
             "scale_max": null,
@@ -237,7 +249,33 @@
             "scale_variant": null,
             "metric": "absolute_score",
             "comparator": "<=",
-            "value": 75,
+            "value": 100,
+            "unit": "score",
+            "scale_min": null,
+            "scale_max": null,
+            "assessed_at": null,
+            "scale_anchors": null
+          },
+          {
+            "scale": "Noninflammatory Lesion Count",
+            "scale_component": null,
+            "scale_variant": null,
+            "metric": "absolute_score",
+            "comparator": ">=",
+            "value": 35,
+            "unit": "score",
+            "scale_min": null,
+            "scale_max": null,
+            "assessed_at": null,
+            "scale_anchors": null
+          },
+          {
+            "scale": "Noninflammatory Lesion Count",
+            "scale_component": null,
+            "scale_variant": null,
+            "metric": "absolute_score",
+            "comparator": "<=",
+            "value": 150,
             "unit": "score",
             "scale_min": null,
             "scale_max": null,
@@ -260,18 +298,18 @@
         ]
       },
       "source_type": "ctgov_text_extraction",
-      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04608500",
-      "source_excerpt": "Eligibility criteria: \"At least 15 and not more than 75 facial papules and pustules... No more than 2 nodules on the face.\" IGA 3/4 baseline range confirmed via FDA label section 14: \"Subjects were required to have an inflammatory lesion count in the range 15-75 lesions and an Investigator Global Assessment (IGA) score of 3 (\u201cmoderate\u201d) or 4 (\u201csevere\u201d) at baseline.\"",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04214639",
+      "source_excerpt": "Eligibility criteria: \"Subject must have an Evaluator's Global Severity Score (EGSS) of 3 (moderate) or 4 (severe) at the baseline visit... facial acne inflammatory lesion... count no less than 30, but no more than 100... non-inflammatory lesion... count no less than 35, but no more than 150... Subjects with 2 or fewer facial nodules.\" A different named scale (EGSS, 0-4: Clear/Almost Clear/Mild/Moderate/Severe) than the acne-specific IGA scale (0-5) already used for Amzeeq -- both are real, distinct instruments used by different sponsors for the same disease.",
       "extracted_by": "cycle22 one-off build (ctgov_api v2 + openfda_label/orangebook/faers pass); manual full deep extraction",
       "reviewed_by": null,
-      "confidence": 0.85
+      "confidence": 0.9
     }
   },
   "design": {
     "study_type": {
       "value": "INTERVENTIONAL",
       "source_type": "ctgov_api",
-      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04608500",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04214639",
       "source_excerpt": "protocolSection.designModule.studyType",
       "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
       "reviewed_by": null,
@@ -280,7 +318,7 @@
     "allocation": {
       "value": "RANDOMIZED",
       "source_type": "ctgov_api",
-      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04608500",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04214639",
       "source_excerpt": "protocolSection.designModule.designInfo.allocation",
       "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
       "reviewed_by": null,
@@ -289,7 +327,7 @@
     "intervention_model": {
       "value": "PARALLEL",
       "source_type": "ctgov_api",
-      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04608500",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04214639",
       "source_excerpt": "protocolSection.designModule.designInfo.interventionModel",
       "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
       "reviewed_by": null,
@@ -298,7 +336,7 @@
     "masking": {
       "value": "DOUBLE",
       "source_type": "ctgov_api",
-      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04608500",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04214639",
       "source_excerpt": "protocolSection.designModule.designInfo.maskingInfo.masking",
       "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
       "reviewed_by": null,
@@ -307,7 +345,7 @@
     "number_of_arms": {
       "value": 2,
       "source_type": "ctgov_api",
-      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04608500",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04214639",
       "source_excerpt": "len(protocolSection.armsInterventionsModule.armGroups)",
       "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
       "reviewed_by": null,
@@ -323,29 +361,27 @@
         "emollient_required": null,
         "emollient_frequency": null,
         "prohibited_concomitant": [
-          "any other topical or systemic medication affecting the course of inflammatory lesions of rosacea"
+          "topical or systemic medications requiring concurrent use in/on the treatment area (subjects without an appropriate washout were excluded)"
         ],
         "permitted_concomitant": [],
         "applies_to_rerandomized_maintenance": null,
-        "sponsor_trial_ids": [
-          "FX2016-12"
-        ],
+        "sponsor_trial_ids": [],
         "study_drug_doses_mg": [],
-        "population_note": "A 12-week randomized, double-blind, vehicle-controlled trial of topical minocycline foam 1.5% in adults with moderate-to-severe facial papulopustular rosacea."
+        "population_note": "A 12-week randomized, double-blind, vehicle-controlled 2:1 trial of a fixed triple-combination topical gel in subjects 9 years and older with moderate-to-severe facial acne vulgaris."
       },
-      "source_type": "openfda_label",
-      "source_url": "https://api.fda.gov/drug/label.json",
-      "source_excerpt": "FDA label section 14 Clinical Studies: \"ZILXI or its vehicle were applied once daily for 12 weeks; no other topical or systemic medication affecting the course of inflammatory lesions of rosacea was permitted for use during these trials.\" A true monotherapy design, matching the AD biologics'-adjacent no-background-therapy pattern already used for Difamilast.",
+      "source_type": "ctgov_text_extraction",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04214639",
+      "source_excerpt": "protocolSection.eligibilityModule.eligibilityCriteria exclusion criteria: \"Subjects who have not undergone specified washout period(s) for topical preparations/physical treatments used on the face or subjects who require the concurrent use in the treatment area\" and \"...for systemic medications or subjects who require the concurrent use of systemic medications.\" This is a real, quoted washout/no-concurrent-use requirement, though weaker evidence than Amzeeq's explicit 'no other medication was permitted for use during these studies' label sentence -- no equivalent label statement exists for Cabtreo, so this field is built from CT.gov eligibility text alone.",
       "extracted_by": "cycle22 one-off build (ctgov_api v2 + openfda_label/orangebook/faers pass); manual full deep extraction",
       "reviewed_by": null,
-      "confidence": 0.85
+      "confidence": 0.75
     }
   },
   "endpoints": {
     "primary_endpoints": {
       "value": [
         {
-          "verbatim": "The Absolute Change From Day 0/Baseline in the Inflammatory Lesion Count at Week 12",
+          "verbatim": "Absolute Change From Baseline to Week 12 in Inflammatory Lesion Counts",
           "rank": "primary",
           "position": 1,
           "measure_type": "change_from_baseline",
@@ -367,19 +403,44 @@
           "subgroup_labels": [],
           "study_period": "double_blind",
           "event_type": null,
-          "time_frame": "Baseline and Week 12"
+          "time_frame": "12 weeks"
         },
         {
-          "verbatim": "Percentage of Participants Achieving Investigator Global Assessments (IGA) Treatment Success at Week 12",
+          "verbatim": "Absolute Change From Baseline to Week 12 in Noninflammatory Lesion Counts",
           "rank": "primary",
           "position": 2,
+          "measure_type": "change_from_baseline",
+          "scale": "Noninflammatory Lesion Count",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": "double_blind",
+          "event_type": null,
+          "time_frame": "12 weeks"
+        },
+        {
+          "verbatim": "Percentage of Participants With Success on the Evaluator's Global Severity Score",
+          "rank": "primary",
+          "position": 3,
           "measure_type": "responder_rate",
-          "scale": "IGA",
+          "scale": "EGSS",
           "scale_component": null,
           "scale_variant": null,
           "responder_criteria": [
             {
-              "scale": "IGA",
+              "scale": "EGSS",
               "scale_component": null,
               "scale_variant": null,
               "metric": "absolute_score",
@@ -403,7 +464,7 @@
               ]
             },
             {
-              "scale": "IGA",
+              "scale": "EGSS",
               "scale_component": null,
               "scale_variant": null,
               "metric": "point_improvement_from_baseline",
@@ -432,12 +493,12 @@
           "subgroup_labels": [],
           "study_period": "double_blind",
           "event_type": null,
-          "time_frame": "Week 12"
+          "time_frame": "12 weeks"
         }
       ],
       "source_type": "ctgov_api",
-      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04608500",
-      "source_excerpt": "protocolSection.outcomesModule.primaryOutcomes[]; responder threshold from openFDA label section 14 (Table)",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04214639",
+      "source_excerpt": "protocolSection.outcomesModule.primaryOutcomes[]; responder threshold cross-referenced with openFDA label section 14",
       "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass) + openfda_label cross-reference; structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 0.95
@@ -445,50 +506,9 @@
     "secondary_endpoints": {
       "value": [
         {
-          "verbatim": "Percentage of Participants Achieving IGA Treatment Success of at Least 2 Grades at Week 12",
+          "verbatim": "Inflammatory Lesion Count Percentage Changes at Week 4, 8, and 12",
           "rank": "secondary",
           "position": 1,
-          "measure_type": "responder_rate",
-          "scale": "IGA",
-          "scale_component": null,
-          "scale_variant": null,
-          "responder_criteria": [
-            {
-              "scale": "IGA",
-              "scale_component": null,
-              "scale_variant": null,
-              "metric": "point_improvement_from_baseline",
-              "comparator": ">=",
-              "value": 2,
-              "unit": "points",
-              "scale_min": 0,
-              "scale_max": 4,
-              "assessed_at": [
-                "week_12"
-              ],
-              "scale_anchors": null
-            }
-          ],
-          "baseline_reference": "baseline",
-          "timepoints": [
-            {
-              "value": 12,
-              "unit": "week",
-              "end_value": null
-            }
-          ],
-          "through": null,
-          "analysis_population": null,
-          "subgroup_criteria": [],
-          "subgroup_labels": [],
-          "study_period": "double_blind",
-          "event_type": null,
-          "time_frame": "Week 12"
-        },
-        {
-          "verbatim": "The Percent Change From Day 0/Baseline in Inflammatory Lesion Count at Week 12",
-          "rank": "secondary",
-          "position": 2,
           "measure_type": "percent_change_from_baseline",
           "scale": "Inflammatory Lesion Count",
           "scale_component": null,
@@ -497,6 +517,16 @@
           "baseline_reference": "baseline",
           "timepoints": [
             {
+              "value": 4,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 8,
+              "unit": "week",
+              "end_value": null
+            },
+            {
               "value": 12,
               "unit": "week",
               "end_value": null
@@ -508,14 +538,14 @@
           "subgroup_labels": [],
           "study_period": "double_blind",
           "event_type": null,
-          "time_frame": "Baseline and Week 12"
+          "time_frame": "Baseline to Week 4, 8, 12"
         },
         {
-          "verbatim": "The Absolute Change From Day 0/Baseline in the Inflammatory Lesion Counts at Week 4 and Week 8",
+          "verbatim": "Noninflammatory Lesion Count Percentage Changes at Week 4, 8, and 12",
           "rank": "secondary",
-          "position": 3,
-          "measure_type": "change_from_baseline",
-          "scale": "Inflammatory Lesion Count",
+          "position": 2,
+          "measure_type": "percent_change_from_baseline",
+          "scale": "Noninflammatory Lesion Count",
           "scale_component": null,
           "scale_variant": null,
           "responder_criteria": [],
@@ -530,6 +560,11 @@
               "value": 8,
               "unit": "week",
               "end_value": null
+            },
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
             }
           ],
           "through": null,
@@ -538,44 +573,19 @@
           "subgroup_labels": [],
           "study_period": "double_blind",
           "event_type": null,
-          "time_frame": "Baseline, Week 4 and Week 8"
+          "time_frame": "Baseline to Week 4, 8, 12"
         },
         {
-          "verbatim": "Percentage of Participants Achieving IGA Treatment Success at Week 4 and Week 8",
+          "verbatim": "Percentage of Participants With at Least a Two Grade Reduction on the Evaluator's Global Severity Score at Week 12",
           "rank": "secondary",
-          "position": 4,
+          "position": 3,
           "measure_type": "responder_rate",
-          "scale": "IGA",
+          "scale": "EGSS",
           "scale_component": null,
           "scale_variant": null,
           "responder_criteria": [
             {
-              "scale": "IGA",
-              "scale_component": null,
-              "scale_variant": null,
-              "metric": "absolute_score",
-              "comparator": "<=",
-              "value": 1,
-              "unit": "score",
-              "scale_min": 0,
-              "scale_max": 4,
-              "assessed_at": [
-                "week_4",
-                "week_8"
-              ],
-              "scale_anchors": [
-                {
-                  "score": 0,
-                  "label": "clear"
-                },
-                {
-                  "score": 1,
-                  "label": "almost clear"
-                }
-              ]
-            },
-            {
-              "scale": "IGA",
+              "scale": "EGSS",
               "scale_component": null,
               "scale_variant": null,
               "metric": "point_improvement_from_baseline",
@@ -585,8 +595,7 @@
               "scale_min": 0,
               "scale_max": 4,
               "assessed_at": [
-                "week_4",
-                "week_8"
+                "week_12"
               ],
               "scale_anchors": null
             }
@@ -594,12 +603,7 @@
           "baseline_reference": "baseline",
           "timepoints": [
             {
-              "value": 4,
-              "unit": "week",
-              "end_value": null
-            },
-            {
-              "value": 8,
+              "value": 12,
               "unit": "week",
               "end_value": null
             }
@@ -610,30 +614,11 @@
           "subgroup_labels": [],
           "study_period": "double_blind",
           "event_type": null,
-          "time_frame": "Week 4 and Week 8"
-        },
-        {
-          "verbatim": "Number of Participants With Adverse Events (AEs)",
-          "rank": "secondary",
-          "position": 5,
-          "measure_type": "other",
-          "scale": null,
-          "scale_component": null,
-          "scale_variant": null,
-          "responder_criteria": [],
-          "baseline_reference": null,
-          "timepoints": [],
-          "through": null,
-          "analysis_population": null,
-          "subgroup_criteria": [],
-          "subgroup_labels": [],
-          "study_period": "double_blind",
-          "event_type": "AE_or_SAE",
-          "time_frame": "From Day 0/Baseline until the Safety Follow-up (4 weeks after Week 12 [Final Visit])"
+          "time_frame": "12 weeks"
         }
       ],
       "source_type": "ctgov_api",
-      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04608500",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04214639",
       "source_excerpt": "protocolSection.outcomesModule.secondaryOutcomes[].measure/timeFrame",
       "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
@@ -652,11 +637,11 @@
   "timing_ops": {
     "start_date": {
       "value": {
-        "date": "2017-06-01",
+        "date": "2020-01-17",
         "precision": "day"
       },
       "source_type": "ctgov_api",
-      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04608500",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04214639",
       "source_excerpt": "protocolSection.statusModule.startDateStruct.date",
       "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
@@ -664,11 +649,11 @@
     },
     "primary_completion_date": {
       "value": {
-        "date": "2018-07-02",
+        "date": "2021-01-18",
         "precision": "day"
       },
       "source_type": "ctgov_api",
-      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04608500",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04214639",
       "source_excerpt": "protocolSection.statusModule.primaryCompletionDateStruct.date",
       "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
@@ -676,11 +661,11 @@
     },
     "completion_date": {
       "value": {
-        "date": "2018-07-31",
+        "date": "2021-01-18",
         "precision": "day"
       },
       "source_type": "ctgov_api",
-      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04608500",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04214639",
       "source_excerpt": "protocolSection.statusModule.completionDateStruct.date",
       "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
@@ -705,22 +690,19 @@
         "visit_cadence_until_week": null,
         "visit_weeks": [
           0,
-          1,
           4,
-          6,
           8,
-          10,
           12
         ],
         "visit_days": null,
         "phone_contact_weeks": null,
         "primary_endpoint_week": 12,
         "end_of_treatment_week": 12,
-        "end_of_study_week": 16,
+        "end_of_study_week": 12,
         "total_duration_weeks": 12,
-        "follow_up_weeks": 4,
+        "follow_up_weeks": null,
         "follow_up_days": null,
-        "follow_up_visit_week": 16,
+        "follow_up_visit_week": null,
         "long_term_extension": false,
         "extension_end_week": null,
         "extension_visit_interval_weeks": null,
@@ -745,11 +727,11 @@
         "source_inconsistency": null
       },
       "source_type": "ctgov_text_extraction",
-      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04608500",
-      "source_excerpt": "protocolSection.descriptionModule.detailedDescription: \"Participants will return for visits at Weeks 1, 4, 6, 8, 10, and 12. Efficacy evaluations (inflammatory lesion counts and Investigator's Global Assessment [IGA] score) will be performed at Weeks 4, 8, and 12.\" Outcome measure time_frame: \"From Day 0/Baseline until the Safety Follow-up (4 weeks after Week 12 [Final Visit])\" gives the 4-week post-treatment safety follow-up (end_of_study_week 16).",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04214639",
+      "source_excerpt": "protocolSection.outcomesModule secondary outcomes: \"Inflammatory/Noninflammatory Lesion Count Percentage Changes at Week 4, 8, and 12\" gives a real 0/4/8/12-week visit cadence.",
       "extracted_by": "cycle22 one-off build (ctgov_api v2 + openfda_label/orangebook/faers pass); manual full deep extraction",
       "reviewed_by": null,
-      "confidence": 0.75
+      "confidence": 0.8
     },
     "rescue_therapy": {
       "value": {
@@ -783,34 +765,34 @@
         "applies_to_period": "double_blind_treatment",
         "long_term_extension_eligible_after_rescue": null,
         "topical_agent_class": null,
-        "rationale": "FDA label section 14: \"no other topical or systemic medication affecting the course of inflammatory lesions of rosacea was permitted for use during these trials\" -- a no-rescue, prohibited-concomitant design for the full 12-week treatment period; no protocol/SAP document is posted on CT.gov to check for a more granular rescue-trigger rule."
+        "rationale": "Same exclusion-criteria washout/no-concurrent-use requirement used for design.background_therapy -- no separate rescue-medication provision is stated anywhere in CT.gov's registration for this trial and no protocol/SAP document is posted."
       },
-      "source_type": "openfda_label",
-      "source_url": "https://api.fda.gov/drug/label.json",
-      "source_excerpt": "FDA label section 14 Clinical Studies (same sentence used for design.background_therapy). CT.gov's own eligibilityCriteria has no separate rescue-medication clause; no documentSection PDF is posted for this trial to check further.",
+      "source_type": "ctgov_text_extraction",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04214639",
+      "source_excerpt": "protocolSection.eligibilityModule.eligibilityCriteria (same source as design.background_therapy)",
       "extracted_by": "cycle22 one-off build (ctgov_api v2 + openfda_label/orangebook/faers pass); manual full deep extraction",
       "reviewed_by": null,
-      "confidence": 0.8
+      "confidence": 0.75
     }
   },
   "adverse_events": {
     "serious_adverse_event_rate": {
       "value": [
         {
-          "arm": "FMX103 1.5%",
-          "n_affected": 1,
-          "n_at_risk": 514,
-          "pct": 0.2
+          "arm": "IDP-126 Gel",
+          "n_affected": 0,
+          "n_at_risk": 122,
+          "pct": 0.0
         },
         {
-          "arm": "Vehicle Foam",
-          "n_affected": 2,
-          "n_at_risk": 257,
-          "pct": 0.8
+          "arm": "IDP-126 Vehicle Gel",
+          "n_affected": 0,
+          "n_at_risk": 61,
+          "pct": 0.0
         }
       ],
       "source_type": "ctgov_api",
-      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04608500",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04214639",
       "source_excerpt": "resultsSection.adverseEventsModule.eventGroups[].seriousNumAffected/seriousNumAtRisk",
       "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, cycle-22 pass)",
       "reviewed_by": null,
@@ -819,20 +801,20 @@
     "death_rate": {
       "value": [
         {
-          "arm": "FMX103 1.5%",
+          "arm": "IDP-126 Gel",
           "n_affected": 0,
-          "n_at_risk": 514,
+          "n_at_risk": 122,
           "pct": 0.0
         },
         {
-          "arm": "Vehicle Foam",
+          "arm": "IDP-126 Vehicle Gel",
           "n_affected": 0,
-          "n_at_risk": 257,
+          "n_at_risk": 61,
           "pct": 0.0
         }
       ],
       "source_type": "ctgov_api",
-      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04608500",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04214639",
       "source_excerpt": "resultsSection.adverseEventsModule.eventGroups[].deathsNumAffected/deathsNumAtRisk",
       "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, cycle-22 pass)",
       "reviewed_by": null,
@@ -841,88 +823,57 @@
     "most_common_adverse_events": {
       "value": [
         {
-          "meddra_pt": "Upper respiratory tract infection",
-          "meddra_soc": "Infections and infestations",
+          "meddra_pt": "Application site pain",
+          "meddra_soc": "General disorders",
           "per_arm": [
             {
-              "arm": "FMX103 1.5%",
+              "arm": "IDP-126 Gel",
               "n_affected": 15,
-              "n_at_risk": 514,
-              "pct": 2.9
+              "n_at_risk": 122,
+              "pct": 12.3
             },
             {
-              "arm": "Vehicle Foam",
-              "n_affected": 8,
-              "n_at_risk": 257,
-              "pct": 3.1
+              "arm": "IDP-126 Vehicle Gel",
+              "n_affected": 0,
+              "n_at_risk": 61,
+              "pct": 0.0
             }
           ]
         },
         {
-          "meddra_pt": "Viral upper respiratory tract infection",
-          "meddra_soc": "Infections and infestations",
+          "meddra_pt": "Erythema",
+          "meddra_soc": "Skin and subcutaneous tissue disorders",
           "per_arm": [
             {
-              "arm": "FMX103 1.5%",
-              "n_affected": 14,
-              "n_at_risk": 514,
-              "pct": 2.7
-            },
-            {
-              "arm": "Vehicle Foam",
+              "arm": "IDP-126 Gel",
               "n_affected": 8,
-              "n_at_risk": 257,
-              "pct": 3.1
-            }
-          ]
-        },
-        {
-          "meddra_pt": "Headache",
-          "meddra_soc": "Nervous system disorders",
-          "per_arm": [
-            {
-              "arm": "FMX103 1.5%",
-              "n_affected": 11,
-              "n_at_risk": 514,
-              "pct": 2.1
+              "n_at_risk": 122,
+              "pct": 6.6
             },
             {
-              "arm": "Vehicle Foam",
-              "n_affected": 6,
-              "n_at_risk": 257,
-              "pct": 2.3
+              "arm": "IDP-126 Vehicle Gel",
+              "n_affected": 0,
+              "n_at_risk": 61,
+              "pct": 0.0
             }
           ]
         }
       ],
       "source_type": "ctgov_api",
-      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04608500",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04214639",
       "source_excerpt": "resultsSection.adverseEventsModule.otherEvents[]",
       "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, cycle-22 pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 1.0
     },
     "discontinuation_due_to_ae_rate": {
-      "value": [
-        {
-          "arm": "FMX103 1.5%",
-          "n_discontinued": 2,
-          "n_started": 514,
-          "pct": 0.4
-        },
-        {
-          "arm": "Vehicle Foam",
-          "n_discontinued": 0,
-          "n_started": 257,
-          "pct": 0.0
-        }
-      ],
-      "source_type": "ctgov_api",
-      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04608500",
-      "source_excerpt": "resultsSection.participantFlowModule.periods[0].dropWithdraws[type=\"Adverse Event\"].reasons[] vs periods[0].milestones[type=STARTED].achievements[]",
-      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, cycle-22 pass)",
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     },
     "boxed_warning": {
       "value": {
@@ -933,7 +884,7 @@
         "product_names": []
       },
       "source_type": "openfda_label",
-      "source_url": "https://api.fda.gov/drug/label.json?search=openfda.brand_name:ZILXI&limit=1",
+      "source_url": "https://api.fda.gov/drug/label.json?search=openfda.brand_name:CABTREO&limit=1",
       "source_excerpt": "results[0] has no boxed_warning key (checked, none present)",
       "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, cycle-22 pass); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
@@ -944,16 +895,16 @@
     "regulatory_application": {
       "value": {
         "application_type": "NDA",
-        "application_number": "213690",
+        "application_number": "216632",
         "registry": "orange_book",
         "center": "CDER",
-        "proprietary_name": "ZILXI",
-        "applicant": "JOURNEY MEDICAL CORP",
-        "first_approval_date": "2020-05-28"
+        "proprietary_name": "CABTREO",
+        "applicant": "BAUSCH HEALTH US LLC",
+        "first_approval_date": "2023-10-20"
       },
       "source_type": "orange_book",
       "source_url": "https://api.fda.gov/drug/orangebook.json",
-      "source_excerpt": "openfda orangebook.json: products.application_number=213690 (ZILXI)",
+      "source_excerpt": "openfda orangebook.json: products.application_number=216632 (CABTREO)",
       "extracted_by": "atlas.regulatory_applications (registry file fetched 2026-09-07)",
       "reviewed_by": null,
       "confidence": 1.0
@@ -961,18 +912,18 @@
     "orange_book": {
       "value": {
         "application_type": "N",
-        "application_number": "213690",
-        "ingredient": "MINOCYCLINE HYDROCHLORIDE",
-        "trade_name": "ZILXI",
-        "applicant": "JOURNEY",
-        "applicant_full_name": "JOURNEY MEDICAL CORP",
+        "application_number": "216632",
+        "ingredient": "CLINDAMYCIN PHOSPHATE/BENZOYL PEROXIDE/ADAPALENE",
+        "trade_name": "CABTREO",
+        "applicant": "BAUSCH",
+        "applicant_full_name": "BAUSCH HEALTH US LLC",
         "products": [
           {
             "product_number": "001",
-            "strength": "EQ 1.5% BASE",
-            "dosage_form": "AEROSOL, FOAM",
+            "strength": "ADAPALENE 0.15%; BENZOYL PEROXIDE 3.1%; CLINDAMYCIN PHOSPHATE 1.2%",
+            "dosage_form": "GEL",
             "route": "TOPICAL",
-            "approval_date": "2020-05-28",
+            "approval_date": "2023-10-20",
             "rld": true,
             "rs": true,
             "te_code": null,
@@ -981,134 +932,130 @@
         ],
         "patents": [
           {
-            "patent_number": "10213512",
-            "expiration_date": "2030-10-01",
+            "patent_number": "10220049",
+            "expiration_date": "2029-06-03",
             "drug_substance_claim": false,
             "drug_product_claim": true,
-            "patent_use_code": "U-1631",
+            "patent_use_code": "U-3713",
             "delisted": false,
-            "submission_date": "2020-06-22",
+            "submission_date": "2023-11-02",
             "product_numbers": [
               "001"
             ]
           },
           {
-            "patent_number": "10265404",
-            "expiration_date": "2030-10-01",
+            "patent_number": "10624918",
+            "expiration_date": "2029-06-03",
+            "drug_substance_claim": false,
+            "drug_product_claim": false,
+            "patent_use_code": "U-3713",
+            "delisted": false,
+            "submission_date": "2023-11-02",
+            "product_numbers": [
+              "001"
+            ]
+          },
+          {
+            "patent_number": "11389467",
+            "expiration_date": "2040-12-28",
+            "drug_substance_claim": false,
+            "drug_product_claim": true,
+            "patent_use_code": "U-3713",
+            "delisted": false,
+            "submission_date": "2023-11-02",
+            "product_numbers": [
+              "001"
+            ]
+          },
+          {
+            "patent_number": "12128059",
+            "expiration_date": "2040-07-31",
+            "drug_substance_claim": false,
+            "drug_product_claim": true,
+            "patent_use_code": "U-3713",
+            "delisted": false,
+            "submission_date": "2024-11-08",
+            "product_numbers": [
+              "001"
+            ]
+          },
+          {
+            "patent_number": "12133859",
+            "expiration_date": "2040-07-31",
             "drug_substance_claim": false,
             "drug_product_claim": true,
             "patent_use_code": null,
             "delisted": false,
-            "submission_date": "2020-06-22",
+            "submission_date": "2024-11-22",
             "product_numbers": [
               "001"
             ]
           },
           {
-            "patent_number": "10322186",
-            "expiration_date": "2030-10-01",
-            "drug_substance_claim": false,
-            "drug_product_claim": false,
-            "patent_use_code": "U-1631",
-            "delisted": false,
-            "submission_date": "2020-06-22",
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "patent_number": "10946101",
-            "expiration_date": "2030-10-01",
-            "drug_substance_claim": false,
-            "drug_product_claim": false,
-            "patent_use_code": "U-1631",
-            "delisted": false,
-            "submission_date": "2021-03-22",
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "patent_number": "12138311",
-            "expiration_date": "2030-10-01",
-            "drug_substance_claim": false,
-            "drug_product_claim": false,
-            "patent_use_code": "U-1631",
-            "delisted": false,
-            "submission_date": "2024-12-11",
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "patent_number": "12661407",
-            "expiration_date": "2030-10-01",
-            "drug_substance_claim": false,
-            "drug_product_claim": false,
-            "patent_use_code": "U-1631",
-            "delisted": false,
-            "submission_date": "2026-07-14",
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "patent_number": "8865139",
-            "expiration_date": "2030-10-01",
-            "drug_substance_claim": false,
-            "drug_product_claim": true,
-            "patent_use_code": "U-1631",
-            "delisted": false,
-            "submission_date": "2020-06-22",
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "patent_number": "8945516",
-            "expiration_date": "2030-10-01",
+            "patent_number": "12138278",
+            "expiration_date": "2040-07-31",
             "drug_substance_claim": false,
             "drug_product_claim": true,
             "patent_use_code": null,
             "delisted": false,
-            "submission_date": "2020-06-22",
+            "submission_date": "2024-12-06",
             "product_numbers": [
               "001"
             ]
           },
           {
-            "patent_number": "8992896",
-            "expiration_date": "2030-10-01",
+            "patent_number": "12616710",
+            "expiration_date": "2040-07-31",
             "drug_substance_claim": false,
             "drug_product_claim": true,
-            "patent_use_code": "U-1631",
+            "patent_use_code": null,
             "delisted": false,
-            "submission_date": "2020-06-22",
+            "submission_date": "2026-05-21",
             "product_numbers": [
               "001"
             ]
           },
           {
-            "patent_number": "9675700",
-            "expiration_date": "2030-10-01",
+            "patent_number": "8288434",
+            "expiration_date": "2029-08-05",
             "drug_substance_claim": false,
             "drug_product_claim": true,
-            "patent_use_code": "U-1631",
+            "patent_use_code": "U-3713",
             "delisted": false,
-            "submission_date": "2020-06-22",
+            "submission_date": "2023-11-02",
+            "product_numbers": [
+              "001"
+            ]
+          },
+          {
+            "patent_number": "9561208",
+            "expiration_date": "2029-06-03",
+            "drug_substance_claim": false,
+            "drug_product_claim": true,
+            "patent_use_code": "U-3713",
+            "delisted": false,
+            "submission_date": "2023-11-02",
             "product_numbers": [
               "001"
             ]
           }
         ],
-        "exclusivities": [],
-        "latest_patent_expiration": "2030-10-01",
-        "latest_exclusivity_expiration": null,
+        "exclusivities": [
+          {
+            "code": "NP",
+            "expiration_date": "2026-10-20",
+            "product_numbers": [
+              "001"
+            ]
+          }
+        ],
+        "latest_patent_expiration": "2040-12-28",
+        "latest_exclusivity_expiration": "2026-10-20",
         "data_file_date": null
       },
       "source_type": "orange_book",
-      "source_url": "https://api.fda.gov/drug/orangebook.json?search=products.active_ingredients.name%3A%22MINOCYCLINE%20HYDROCHLORIDE%22+AND+products.application_number%3A213690&limit=10",
-      "source_excerpt": "openFDA drug/orangebook.json, 1 product row matched on products.application_number='213690' (of 131 total rows for ingredient MINOCYCLINE/MINOCYCLINE HYDROCHLORIDE across all applicants, including many oral generic ANDAs for unrelated systemic uses -- pinned to Zilxi's own NDA)",
+      "source_url": "https://api.fda.gov/drug/orangebook.json?search=products.application_number%3A216632&limit=10",
+      "source_excerpt": "openFDA drug/orangebook.json, 1 product row matched on products.application_number='216632'. Carries a real, populated NP (New Product) exclusivity expiring 2026-10-20.",
       "extracted_by": "fetch_orange_book.py (openfda drug/orangebook.json, cycle-22 pass, NDA-pinned)",
       "reviewed_by": null,
       "confidence": 1.0
@@ -1128,187 +1075,151 @@
       "value": {
         "query": {
           "search_field": "patient.drug.medicinalproduct",
-          "search_term": "ZILXI",
+          "search_term": "CABTREO",
           "receivedate_from": "2004-02-11",
           "receivedate_to": "2026-07-30",
           "api_urls": [
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ZILXI\"&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ZILXI\"+AND+serious:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ZILXI\"+AND+seriousnessdeath:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ZILXI\"+AND+seriousnesshospitalization:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ZILXI\"+AND+seriousnesslifethreatening:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ZILXI\"+AND+seriousnessdisabling:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ZILXI\"&count=patient.reaction.reactionmeddrapt.exact&limit=15",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ZILXI\"+AND+serious:1&count=patient.reaction.reactionmeddrapt.exact&limit=15",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ZILXI\"&count=receivedate"
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"CABTREO\"&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"CABTREO\"+AND+serious:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"CABTREO\"+AND+seriousnessdeath:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"CABTREO\"+AND+seriousnesshospitalization:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"CABTREO\"+AND+seriousnesslifethreatening:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"CABTREO\"+AND+seriousnessdisabling:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"CABTREO\"&count=patient.reaction.reactionmeddrapt.exact&limit=15",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"CABTREO\"+AND+serious:1&count=patient.reaction.reactionmeddrapt.exact&limit=15",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"CABTREO\"&count=receivedate"
           ],
           "data_last_updated": "2026-09-07"
         },
-        "total_reports": 31,
-        "serious_reports": 4,
+        "total_reports": 52,
+        "serious_reports": 7,
         "death_reports": 0,
         "hospitalization_reports": 0,
         "life_threatening_reports": 0,
         "disability_reports": 0,
         "top_reactions": [
           {
-            "meddra_pt": "ACNE",
+            "meddra_pt": "APPLICATION SITE PAIN",
+            "report_count": 6,
+            "pct_of_reports": 11.54
+          },
+          {
+            "meddra_pt": "DRUG HYPERSENSITIVITY",
+            "report_count": 5,
+            "pct_of_reports": 9.62
+          },
+          {
+            "meddra_pt": "APPLICATION SITE DRYNESS",
             "report_count": 4,
-            "pct_of_reports": 12.9
+            "pct_of_reports": 7.69
           },
           {
-            "meddra_pt": "OFF LABEL USE",
-            "report_count": 4,
-            "pct_of_reports": 12.9
+            "meddra_pt": "APPLICATION SITE ERYTHEMA",
+            "report_count": 3,
+            "pct_of_reports": 5.77
           },
           {
-            "meddra_pt": "DEVICE DELIVERY SYSTEM ISSUE",
-            "report_count": 2,
-            "pct_of_reports": 6.45
+            "meddra_pt": "APPLICATION SITE PRURITUS",
+            "report_count": 3,
+            "pct_of_reports": 5.77
           },
           {
-            "meddra_pt": "DRY SKIN",
-            "report_count": 2,
-            "pct_of_reports": 6.45
+            "meddra_pt": "DRUG INEFFECTIVE",
+            "report_count": 3,
+            "pct_of_reports": 5.77
           },
           {
-            "meddra_pt": "EXPIRED PRODUCT ADMINISTERED",
-            "report_count": 2,
-            "pct_of_reports": 6.45
+            "meddra_pt": "ERYTHEMA",
+            "report_count": 3,
+            "pct_of_reports": 5.77
           },
           {
-            "meddra_pt": "FLUSHING",
-            "report_count": 2,
-            "pct_of_reports": 6.45
+            "meddra_pt": "PAIN",
+            "report_count": 3,
+            "pct_of_reports": 5.77
           },
           {
-            "meddra_pt": "HEADACHE",
-            "report_count": 2,
-            "pct_of_reports": 6.45
-          },
-          {
-            "meddra_pt": "HOT FLUSH",
-            "report_count": 2,
-            "pct_of_reports": 6.45
-          },
-          {
-            "meddra_pt": "NAUSEA",
-            "report_count": 2,
-            "pct_of_reports": 6.45
-          },
-          {
-            "meddra_pt": "PRODUCT DOSE OMISSION ISSUE",
-            "report_count": 2,
-            "pct_of_reports": 6.45
-          },
-          {
-            "meddra_pt": "PRODUCT PHYSICAL CONSISTENCY ISSUE",
-            "report_count": 2,
-            "pct_of_reports": 6.45
+            "meddra_pt": "PRODUCT USE ISSUE",
+            "report_count": 3,
+            "pct_of_reports": 5.77
           },
           {
             "meddra_pt": "PRURITUS",
-            "report_count": 2,
-            "pct_of_reports": 6.45
-          },
-          {
-            "meddra_pt": "ROSACEA",
-            "report_count": 2,
-            "pct_of_reports": 6.45
-          },
-          {
-            "meddra_pt": "SKIN EXFOLIATION",
-            "report_count": 2,
-            "pct_of_reports": 6.45
+            "report_count": 3,
+            "pct_of_reports": 5.77
           }
         ],
         "top_serious_reactions": [
           {
-            "meddra_pt": "ACNE CYSTIC",
-            "report_count": 1,
-            "pct_of_reports": 25.0
+            "meddra_pt": "PAIN",
+            "report_count": 2,
+            "pct_of_reports": 28.57
           },
           {
-            "meddra_pt": "BEDRIDDEN",
+            "meddra_pt": "ACNE",
             "report_count": 1,
-            "pct_of_reports": 25.0
+            "pct_of_reports": 14.29
           },
           {
-            "meddra_pt": "BRAIN FOG",
+            "meddra_pt": "ANXIETY",
             "report_count": 1,
-            "pct_of_reports": 25.0
+            "pct_of_reports": 14.29
           },
           {
-            "meddra_pt": "CATARACT",
+            "meddra_pt": "APPENDICECTOMY",
             "report_count": 1,
-            "pct_of_reports": 25.0
+            "pct_of_reports": 14.29
           },
           {
-            "meddra_pt": "CHILLS",
+            "meddra_pt": "ASTHENIA",
             "report_count": 1,
-            "pct_of_reports": 25.0
+            "pct_of_reports": 14.29
           },
           {
-            "meddra_pt": "CONTUSION",
+            "meddra_pt": "BLOOD PRESSURE DECREASED",
             "report_count": 1,
-            "pct_of_reports": 25.0
+            "pct_of_reports": 14.29
           },
           {
-            "meddra_pt": "FATIGUE",
+            "meddra_pt": "BRAIN NEOPLASM BENIGN",
             "report_count": 1,
-            "pct_of_reports": 25.0
+            "pct_of_reports": 14.29
           },
           {
-            "meddra_pt": "FLUSHING",
+            "meddra_pt": "BURNING SENSATION",
             "report_count": 1,
-            "pct_of_reports": 25.0
+            "pct_of_reports": 14.29
           },
           {
-            "meddra_pt": "HEADACHE",
+            "meddra_pt": "CONCUSSION",
             "report_count": 1,
-            "pct_of_reports": 25.0
+            "pct_of_reports": 14.29
           },
           {
-            "meddra_pt": "NASOPHARYNGITIS",
+            "meddra_pt": "DERMATITIS",
             "report_count": 1,
-            "pct_of_reports": 25.0
+            "pct_of_reports": 14.29
           }
         ],
         "reports_by_year": [
           {
-            "year": 2020,
-            "report_count": 1
-          },
-          {
-            "year": 2021,
-            "report_count": 11
-          },
-          {
-            "year": 2022,
-            "report_count": 7
-          },
-          {
-            "year": 2023,
-            "report_count": 5
-          },
-          {
             "year": 2024,
-            "report_count": 5
+            "report_count": 14
           },
           {
             "year": 2025,
-            "report_count": 1
+            "report_count": 31
           },
           {
             "year": 2026,
-            "report_count": 1
+            "report_count": 7
           }
         ],
         "meddra_version": null
       },
       "source_type": "openfda_faers",
-      "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ZILXI\"&limit=1",
-      "source_excerpt": "openFDA drug/event.json aggregate: total_reports=31, serious=4, deaths=0. Bare ingredient term MINOCYCLINE (18,334 reports) is dominated by oral uses (rheumatoid arthritis 2220, acne 1998, psoriatic arthropathy 1286, migraine prophylaxis 1215) with Rosacea only 280/18334 -- the same generic-term-contamination pattern as Qbrexza/Glycopyrronium and Ozenoxacin/Xepi. Brand term ZILXI (31 reports) has Rosacea as its clear top real indication (11+4=15/31) -- used instead per the atlas's standing run-the-drugindication-count-first rule.",
+      "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"CABTREO\"&limit=1",
+      "source_excerpt": "openFDA drug/event.json aggregate: total_reports=52, serious=7, deaths=0. Brand term CABTREO (the only real search term for this 3-ingredient fixed combination) has Acne as its clear top real named indication (20/52).",
       "extracted_by": "fetch_faers.py (openfda drug/event.json, cycle-22 pass)",
       "reviewed_by": null,
       "confidence": 1.0
@@ -1318,14 +1229,14 @@
         {
           "code": "1",
           "label": "suspect",
-          "report_count": 22,
-          "pct_of_reports": 70.97
+          "report_count": 40,
+          "pct_of_reports": 76.92
         },
         {
           "code": "2",
           "label": "concomitant",
-          "report_count": 9,
-          "pct_of_reports": 29.03
+          "report_count": 12,
+          "pct_of_reports": 23.08
         },
         {
           "code": "3",
@@ -1335,8 +1246,8 @@
         }
       ],
       "source_type": "openfda_faers",
-      "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ZILXI\"",
-      "source_excerpt": "Computed by pulling every individual FAERS report matching this drug's own search_term (ZILXI) and tallying each report's drugcharacterization code (1=suspect, 2=concomitant, 3=interacting) from ONLY the drug-array entries whose medicinalproduct matches this drug (not co-listed drugs in the same report) -- a plain count= aggregate query cannot do this correctly (openFDA's flattened array indexing mixes in co-listed drugs' own characterization values; confirmed via 2 independent test queries returning identical contaminated totals). 31/31 reports matched.",
+      "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"CABTREO\"",
+      "source_excerpt": "Computed by pulling every individual FAERS report matching CABTREO and tallying each report's drugcharacterization code (1=suspect, 2=concomitant, 3=interacting) from ONLY the drug-array entries whose medicinalproduct matches CABTREO (not co-listed drugs in the same report) -- a plain count= aggregate query cannot do this correctly (openFDA's flattened array indexing mixes in co-listed drugs' own characterization values). 52/52 reports matched.",
       "extracted_by": "fetch_faers_characterization.py (per-report drugcharacterization backfill, cycle-22 pass)",
       "reviewed_by": null,
       "confidence": 1.0

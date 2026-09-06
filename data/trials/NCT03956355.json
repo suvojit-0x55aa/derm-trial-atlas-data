@@ -381,7 +381,7 @@
     "secondary_endpoints": {
       "value": [
         {
-          "verbatim": "Percent of Subjects With ≥ 75% Improvement in Psoriasis Area and Severity Index (PASI) From Baseline at Week 12. Analyses Were Done Using Multiple Imputation.",
+          "verbatim": "Percent of Subjects With \u2265 75% Improvement in Psoriasis Area and Severity Index (PASI) From Baseline at Week 12. Analyses Were Done Using Multiple Imputation.",
           "rank": "secondary",
           "position": 1,
           "measure_type": "absolute_value",
@@ -456,7 +456,7 @@
           "time_frame": null
         },
         {
-          "verbatim": "Percent of Subjects With ≥90% Improvement in PASI Score From Baseline to Week 12. Analyses Were Done Using Multiple Imputation.",
+          "verbatim": "Percent of Subjects With \u226590% Improvement in PASI Score From Baseline to Week 12. Analyses Were Done Using Multiple Imputation.",
           "rank": "secondary",
           "position": 4,
           "measure_type": "other",
@@ -1145,6 +1145,34 @@
       "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"TAPINAROF\"&limit=1",
       "source_excerpt": "openFDA drug/event.json aggregate: total_reports=997, serious=26, deaths=2",
       "extracted_by": "fetch_faers.py (openfda drug/event.json, cycle-6b pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "drug_characterization": {
+      "value": [
+        {
+          "code": "1",
+          "label": "suspect",
+          "report_count": 981,
+          "pct_of_reports": 98.4
+        },
+        {
+          "code": "2",
+          "label": "concomitant",
+          "report_count": 16,
+          "pct_of_reports": 1.6
+        },
+        {
+          "code": "3",
+          "label": "interacting",
+          "report_count": 0,
+          "pct_of_reports": 0.0
+        }
+      ],
+      "source_type": "openfda_faers",
+      "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"TAPINAROF\"",
+      "source_excerpt": "Computed by pulling every individual FAERS report matching this drug's own search_term (TAPINAROF) and tallying each report's drugcharacterization code (1=suspect, 2=concomitant, 3=interacting) from ONLY the drug-array entries whose medicinalproduct matches this drug (not co-listed drugs in the same report) -- a plain count= aggregate query cannot do this correctly (openFDA's flattened array indexing mixes in co-listed drugs' own characterization values; confirmed via 2 independent test queries returning identical contaminated totals). 997/997 reports matched.",
+      "extracted_by": "fetch_faers_characterization.py (per-report drugcharacterization backfill, cycle-22 pass)",
       "reviewed_by": null,
       "confidence": 1.0
     }

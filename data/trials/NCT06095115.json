@@ -303,7 +303,7 @@
           "Topical corticosteroids, topical calcineurin inhibitors, vitamin D analogs, vitamin A analogs, retinoids, tar, anthralin, calcipotriene, tazarotene, methoxsalen, trimethylpsoralens, fumarate, PDE4 inhibitors, topical JAK inhibitors, aryl hydrocarbon receptor-modulating agents (Week 0 to Week 52)",
           "Shampoos containing corticosteroids, coal tar, or vitamin D3 analogs",
           "Phototherapy",
-          "TNFα antagonists (adalimumab, infliximab, etanercept)",
+          "TNF\u03b1 antagonists (adalimumab, infliximab, etanercept)",
           "IL-12/23, IL-17, or IL-23 inhibitors (ustekinumab, briakinumab, guselkumab, tildrakizumab, secukinumab, risankizumab, ixekizumab, brodalumab)",
           "Alpha-4 integrin antagonists (e.g. natalizumab)"
         ],
@@ -2545,6 +2545,34 @@
       "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ICOTROKINRA\"&limit=1",
       "source_excerpt": "openFDA drug/event.json aggregate (ICOTROKINRA): total_reports=2, serious=1, deaths=0",
       "extracted_by": "fetch_faers.py (openfda drug/event.json, cycle-13 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "drug_characterization": {
+      "value": [
+        {
+          "code": "1",
+          "label": "suspect",
+          "report_count": 1,
+          "pct_of_reports": 50.0
+        },
+        {
+          "code": "2",
+          "label": "concomitant",
+          "report_count": 1,
+          "pct_of_reports": 50.0
+        },
+        {
+          "code": "3",
+          "label": "interacting",
+          "report_count": 0,
+          "pct_of_reports": 0.0
+        }
+      ],
+      "source_type": "openfda_faers",
+      "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ICOTROKINRA\"",
+      "source_excerpt": "Computed by pulling every individual FAERS report matching this drug's own search_term (ICOTROKINRA) and tallying each report's drugcharacterization code (1=suspect, 2=concomitant, 3=interacting) from ONLY the drug-array entries whose medicinalproduct matches this drug (not co-listed drugs in the same report) -- a plain count= aggregate query cannot do this correctly (openFDA's flattened array indexing mixes in co-listed drugs' own characterization values; confirmed via 2 independent test queries returning identical contaminated totals). 2/2 reports matched.",
+      "extracted_by": "fetch_faers_characterization.py (per-report drugcharacterization backfill, cycle-22 pass)",
       "reviewed_by": null,
       "confidence": 1.0
     }

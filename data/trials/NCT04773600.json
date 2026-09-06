@@ -468,7 +468,7 @@
           "time_frame": null
         },
         {
-          "verbatim": "Achievement of a 4-point Reduction at Week 4 in the Average, Weekly Worst Itch Numeric Rating Scale (WI-NRS) in Participants With Baseline WI-NRS Score ≥4",
+          "verbatim": "Achievement of a 4-point Reduction at Week 4 in the Average, Weekly Worst Itch Numeric Rating Scale (WI-NRS) in Participants With Baseline WI-NRS Score \u22654",
           "rank": "secondary",
           "position": 4,
           "measure_type": "absolute_value",
@@ -493,7 +493,7 @@
           "time_frame": null
         },
         {
-          "verbatim": "Achievement of a 4-point Reduction at Week 2 in the WI-NRS in Participants With Baseline WI-NRS Score ≥4",
+          "verbatim": "Achievement of a 4-point Reduction at Week 2 in the WI-NRS in Participants With Baseline WI-NRS Score \u22654",
           "rank": "secondary",
           "position": 5,
           "measure_type": "absolute_value",
@@ -518,7 +518,7 @@
           "time_frame": null
         },
         {
-          "verbatim": "Achievement of a 4-point Reduction at Week 1 in the WI-NRS in Participants With Baseline WI-NRS Score ≥4",
+          "verbatim": "Achievement of a 4-point Reduction at Week 1 in the WI-NRS in Participants With Baseline WI-NRS Score \u22654",
           "rank": "secondary",
           "position": 6,
           "measure_type": "absolute_value",
@@ -543,7 +543,7 @@
           "time_frame": null
         },
         {
-          "verbatim": "Achievement of ≥75% Decrease From Baseline at Week 4 in the Eczema Area and Severity Index (EASI-75)",
+          "verbatim": "Achievement of \u226575% Decrease From Baseline at Week 4 in the Eczema Area and Severity Index (EASI-75)",
           "rank": "secondary",
           "position": 7,
           "measure_type": "absolute_value",
@@ -1238,6 +1238,34 @@
       "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ROFLUMILAST\"&limit=1",
       "source_excerpt": "openFDA drug/event.json aggregate: total_reports=2460, serious=1928, deaths=233",
       "extracted_by": "fetch_faers.py (openfda drug/event.json, cycle-6 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "drug_characterization": {
+      "value": [
+        {
+          "code": "1",
+          "label": "suspect",
+          "report_count": 1484,
+          "pct_of_reports": 60.33
+        },
+        {
+          "code": "2",
+          "label": "concomitant",
+          "report_count": 967,
+          "pct_of_reports": 39.31
+        },
+        {
+          "code": "3",
+          "label": "interacting",
+          "report_count": 9,
+          "pct_of_reports": 0.37
+        }
+      ],
+      "source_type": "openfda_faers",
+      "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ROFLUMILAST\"",
+      "source_excerpt": "Computed by pulling every individual FAERS report matching this drug's own search_term (ROFLUMILAST) and tallying each report's drugcharacterization code (1=suspect, 2=concomitant, 3=interacting) from ONLY the drug-array entries whose medicinalproduct matches this drug (not co-listed drugs in the same report) -- a plain count= aggregate query cannot do this correctly (openFDA's flattened array indexing mixes in co-listed drugs' own characterization values; confirmed via 2 independent test queries returning identical contaminated totals). 2460/2460 reports matched.",
+      "extracted_by": "fetch_faers_characterization.py (per-report drugcharacterization backfill, cycle-22 pass)",
       "reviewed_by": null,
       "confidence": 1.0
     }

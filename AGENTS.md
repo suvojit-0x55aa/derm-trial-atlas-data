@@ -32,7 +32,7 @@ This file is the project's committed home for project-intrinsic agent memory: bu
   couldn't reliably extract. Don't force-fill it by inference — a wrong schedule is worse than a
   null.
 - **This atlas is an ongoing, multi-cycle scale-out effort, not a one-shot.** It started at 1
-  indication (AD, 5 drugs, 17 trials) and is now at 23 indications, 51 unique drugs, 133 trials
+  indication (AD, 5 drugs, 17 trials) and is now at 23 indications, 53 unique drugs, 140 trials
   (see README's "What this covers" for the full per-indication breakdown and exactly which
   candidate trials were checked and excluded as non-pivotal for each). Every drug/indication
   pairing was verified against real, live ClinicalTrials.gov and openFDA data before being
@@ -864,6 +864,107 @@ This file is the project's committed home for project-intrinsic agent memory: bu
   Caught before any duplicate work landed. Always grep `README.md`'s indication list for a
   candidate before doing the live-verification work, not just this file's narrative — the two
   files can drift independently (the same lesson cycle 13 already drew for stale counts).
+- **Captain instruction (2026-09-06): add a real per-report FAERS `drugcharacterization` field
+  (1=suspect, 2=concomitant, 3=interacting) atlas-wide, on top of the existing AE-causality
+  investigation (death counts already covered by `death_rate`; per-AE relatedness/reason-narrative
+  genuinely doesn't exist in CT.gov's structured data, confirmed against CT.gov's own official
+  field dictionary and empty on every sampled `notes` field).** Real design lesson learned mid-build,
+  worth keeping for any future new field: **do not nest a new per-drug field inside the existing
+  `faers_summary` blob** — a first pass did exactly that, which meant a still-computing high-volume
+  drug would have blocked its ENTIRE faers_summary (already-complete data included) from validating.
+  Fixed by promoting `drug_characterization` to its own sibling sourced-value field under
+  `real_world_safety`, independent of `faers_summary` — matching this atlas's own foundational
+  principle (every field is independently sourced/gapped) that the first design violated. Any
+  future schema addition should default to a new sibling field, not a field nested inside an
+  existing populated blob, unless the new data is genuinely inseparable from the old.
+- **The naive `count=patient.drug.drugcharacterization` aggregate query is not just imprecise but
+  actively wrong, confirmed by 2 independent test queries returning bit-for-bit identical
+  "contaminated" totals**: openFDA's FAERS index flattens each report's multiple drug entries into
+  parallel arrays without preserving which `medicinalproduct` pairs with which
+  `drugcharacterization` code, so a report listing both IVERMECTIN and ALBENDAZOLE has BOTH drugs'
+  codes counted toward either drug's aggregate. The only correct method is pulling every individual
+  report (`patient.drug[]` array) and manually filtering to entries whose own `medicinalproduct`
+  (case-insensitive substring, to catch synonym listings like "MECTIZAN (IVERMECTIN)") matches the
+  drug's own FAERS search term, then tallying only those entries' own codes. This is real, valuable
+  precedent for any future field that lives inside FAERS's per-report drug array (e.g. a possible
+  future `drugadministrationroute` or `actiondrug` breakdown) — assume the same flattening
+  contamination applies until proven otherwise.
+- **Computed this correctly for all 53 drugs, but the real per-drug data VOLUME varies by orders of
+  magnitude and this genuinely changes feasibility, not just runtime.** openFDA's unauthenticated
+  API caps a single request at `limit=999` (not 1000 — confirmed by direct probe) and caps
+  `skip` well below what a >~25,000-report drug needs to fully paginate in one query window.
+  Fixed by splitting the 6 highest-volume drugs (all >10,000 reports: Adalimumab 46,072,
+  Certolizumab 35,107, Dupilumab 13,441, Omalizumab 11,310, Ruxolitinib 10,645, Ustekinumab 10,559)
+  into per-`receivedate`-year queries, each individually well under the skip ceiling — this is a
+  real, generalizable technique for any future FAERS full-pagination need on a high-volume drug, not
+  specific to this field. Separately and independently, 2 of those 6 (Certolizumab, Adalimumab)
+  turned out to have per-report payloads roughly 20-40x larger than typical (a single 200-record
+  page hit 108MB for Certolizumab's 2024 slice, vs. 2-5MB/200 for most drugs) — these two biologics'
+  reports carry unusually large nested concomitant-medication data (polypharmacy patients on
+  long-term systemic immunosuppressants). This makes their correct full backfill take hours of pure
+  download time, not a bug or a stuck process (confirmed alive and progressing via direct `ps`/CPU-
+  time checks and a standalone probe request throughout) — a real, reportable cost distinct from
+  the ~1-2 minutes every other drug's backfill needed. Captain approved registering a free openFDA
+  API key to raise the skip ceiling for future cycles; note for whoever does that registration: the
+  old `POST /api_key.json` endpoint documented in some older references is decommissioned (returns
+  a real HTTP 404 today) — the current process is a web form on `open.fda.gov` that appears to
+  email the key to a real address, not something completable headlessly with a placeholder email.
+  A key would NOT have sped up Certolizumab/Adalimumab specifically (their bottleneck is payload
+  download size, not the skip ceiling) — it only helps drugs whose report COUNT (not per-report
+  size) exceeds the unauthenticated ceiling.
+- **Cycle 22's Rosacea trial-depth pivot (Zilxi/Epsolay) generalized cleanly to a second thin
+  indication the same session: Acne Vulgaris gained 3 more real FDA-approved topicals** —
+  Minocycline Foam 4% (Amzeeq, NDA212379, a separate NDA/strength from Zilxi's 1.5% Rosacea foam
+  despite the identical active ingredient) via Study 1/2/3 (NCT02815267, NCT02815280, NCT03271021,
+  all vehicle-controlled, `hasResults: true`, label-cited by exact enrollment match); Tretinoin +
+  Benzoyl Peroxide (Twyneo, NDA214902) via Trial 1/2 (NCT03761784, NCT03761810); and Clindamycin
+  Phosphate/Benzoyl Peroxide/Adapalene (Cabtreo, NDA216632) via Trial 1/2 (NCT04214639,
+  NCT04214652) — all found the same way (checking modern post-2018 FDA acne approvals against the
+  atlas's own drug list, not another indication-breadth sweep). Two of the three are fixed-dose
+  combination products — real, new pattern for this atlas: `molecule.drug` records the full
+  combination name (no single-ingredient field fits), `dosing_regimen.dose_value`/`dose_unit` are
+  left null (no single number represents multiple ingredients at different strengths), and
+  `mechanism_of_action` records each ingredient's own mechanism separately, including honestly
+  keeping "unknown" where the label itself says so per-ingredient (Twyneo: tretinoin's RAR-receptor
+  mechanism is established, benzoyl peroxide's is not; Cabtreo: only clindamycin's antibacterial
+  class is established). Amzeeq's label carries the same real "no other topical or systemic
+  medication...was permitted" monotherapy sentence already used for Zilxi, filled into both
+  `design.background_therapy` and `timing_ops.rescue_therapy`; Twyneo has no equivalent statement
+  and no protocol/SAP posted (stays `needs_extraction`, matching Epsolay's precedent); Cabtreo has a
+  real but weaker CT.gov eligibility-criteria washout/no-concurrent-use exclusion (a real partial
+  fill, explicitly noted as weaker evidence than Amzeeq's explicit label sentence). A real,
+  worth-noting applicant-transfer finding on Twyneo: Orange Book's current applicant of record is
+  Mayne Pharma LLC, while the FDA label and CT.gov trial sponsor both name Sol-Gel Technologies
+  (the originator) / Galderma — the drug changed commercial hands twice post-approval, a genuine
+  transfer, not a data inconsistency (same category of finding as Spesolimab/LEO Pharma and
+  Difamilast/Acrotech in earlier cycles, now confirmed a recurring, expected pattern for licensed-
+  out dermatology drugs).
+- **Two more Orange Book exclusivity entries found populated this cycle (Sofdra's NCE, Cabtreo's
+  NP) — the first cycle-22 builds with non-empty `exclusivities` arrays**, confirming the Orange
+  Book parser handles that sub-object correctly when a drug's own record actually has one (every
+  prior cycle-22 build before these had a real, correctly-empty array). No action needed, just
+  worth noting as positive confirmation of a previously untested code path.
+- **Adding `real_world_safety.drug_characterization` legitimately expanded the recovered test
+  suite's failure count (22 failing subtests, up from the 3 already-documented stale ones), and
+  every one of them is a direct, mechanical, expected consequence of this real schema addition —
+  verified individually, not assumed.** `test_field_count` and `test_docs_cover_every_field` have
+  hardcoded field-count literals (39, `595 + 17*4`) written before this field existed — the same
+  category of staleness already documented for `test_every_trial_validates`'s `len(TRIALS) == 63`.
+  17 `test_determinism` subtests fail because that test copies only 3 named keys
+  (`faers_summary`/`orange_book`/`purple_book`) from the committed v2 file into a fresh
+  `migrate_trial()` output before comparing whole-object equality — `migrate_trial()` (unrelated to
+  this repo's own work) has no knowledge of the new field, so the comparison now correctly reports a
+  real difference on every one of the 17 original AD trials, which all have real FAERS data. None of
+  this indicates a data problem; `atlas.schema.validate()` — the check that actually matters for
+  data correctness — passes with 0 errors on all 140 trials. Since this repo doesn't own
+  `atlas/schema.py` or `tests/` (both live in `kolai-website`, only mirrored here via the recovered
+  branch for local validation), the real fix is a `kolai-website`-side test update once its own
+  schema.py adopts this field, not something to patch in this repo. Separately, and unrelated to
+  this cycle's own changes, `test_gaps_preserved_not_invented` also fails on NCT02755649 (CAFE) over
+  `molecule.dosing_regimen` — confirmed via `git log` that this file's `molecule` group was last
+  touched by PR #7 (the sibling deep-extraction task), not by this cycle; a real, pre-existing latent
+  issue surfaced only because this is the first time the recovered test suite has been run since PR
+  #7 merged, not something this cycle introduced or is scoped to fix.
 
 - **Deep-extraction cycle 2 (same 2026-09-05 captain instruction, continued): read the real Study
   Protocol/SAP PDF for every one of the 61 non-AD trials that had one posted on CT.gov's

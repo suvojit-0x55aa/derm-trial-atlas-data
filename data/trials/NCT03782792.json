@@ -20,7 +20,7 @@
       "confidence": 0.0
     },
     "official_title": {
-      "value": "Effisayil™ 1:Multi-center, Double-blind, Randomised, Placebo-controlled, Phase II Study to Evaluate Efficacy, Safety and Tolerability of a Single Intravenous Dose of Spesolimab (BI 655130) in Patients With Generalized Pustular Psoriasis (GPP) Presenting With an Acute Flare of Moderate to Severe Intensity",
+      "value": "Effisayil\u2122 1:Multi-center, Double-blind, Randomised, Placebo-controlled, Phase II Study to Evaluate Efficacy, Safety and Tolerability of a Single Intravenous Dose of Spesolimab (BI 655130) in Patients With Generalized Pustular Psoriasis (GPP) Presenting With an Acute Flare of Moderate to Severe Intensity",
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03782792",
       "source_excerpt": "protocolSection.identificationModule.officialTitle",
@@ -91,9 +91,9 @@
           "IL36R"
         ],
         "pathway_cytokines": [
-          "IL-36α",
-          "IL-36β",
-          "IL-36γ"
+          "IL-36\u03b1",
+          "IL-36\u03b2",
+          "IL-36\u03b3"
         ],
         "receptor_subunits": [
           "IL36R"
@@ -107,7 +107,7 @@
       },
       "source_type": "openfda_label",
       "source_url": "https://api.fda.gov/drug/label.json?search=openfda.brand_name:SPEVIGO&limit=1",
-      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1): 12.1 Mechanism of Action Spesolimab-sbzo is a humanized monoclonal immunoglobulin G1 antibody that inhibits interleukin-36 (IL-36) signaling by specifically binding to the IL36R. Binding of spesolimab-sbzo to IL36R prevents the subsequent activation of IL36R by its ligands (IL-36 α, β and γ) and downstream activation of pro-inflammatory and pro-fibrotic pathways. The precise mechanism linking reduced IL36R activity and the treatment of flares of GPP is unclear.",
+      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1): 12.1 Mechanism of Action Spesolimab-sbzo is a humanized monoclonal immunoglobulin G1 antibody that inhibits interleukin-36 (IL-36) signaling by specifically binding to the IL36R. Binding of spesolimab-sbzo to IL36R prevents the subsequent activation of IL36R by its ligands (IL-36 \u03b1, \u03b2 and \u03b3) and downstream activation of pro-inflammatory and pro-fibrotic pathways. The precise mechanism linking reduced IL36R activity and the treatment of flares of GPP is unclear.",
       "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v2 pass; pending human QA)",
       "reviewed_by": null,
       "confidence": 0.9
@@ -1598,6 +1598,34 @@
       "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"SPESOLIMAB\"&limit=1",
       "source_excerpt": "openFDA drug/event.json aggregate: total_reports=67, serious=59, deaths=6",
       "extracted_by": "fetch_faers.py (openfda drug/event.json, v2 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "drug_characterization": {
+      "value": [
+        {
+          "code": "1",
+          "label": "suspect",
+          "report_count": 51,
+          "pct_of_reports": 76.12
+        },
+        {
+          "code": "2",
+          "label": "concomitant",
+          "report_count": 16,
+          "pct_of_reports": 23.88
+        },
+        {
+          "code": "3",
+          "label": "interacting",
+          "report_count": 0,
+          "pct_of_reports": 0.0
+        }
+      ],
+      "source_type": "openfda_faers",
+      "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"SPESOLIMAB\"",
+      "source_excerpt": "Computed by pulling every individual FAERS report matching this drug's own search_term (SPESOLIMAB) and tallying each report's drugcharacterization code (1=suspect, 2=concomitant, 3=interacting) from ONLY the drug-array entries whose medicinalproduct matches this drug (not co-listed drugs in the same report) -- a plain count= aggregate query cannot do this correctly (openFDA's flattened array indexing mixes in co-listed drugs' own characterization values; confirmed via 2 independent test queries returning identical contaminated totals). 67/67 reports matched.",
+      "extracted_by": "fetch_faers_characterization.py (per-report drugcharacterization backfill, cycle-22 pass)",
       "reviewed_by": null,
       "confidence": 1.0
     }

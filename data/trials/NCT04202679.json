@@ -88,10 +88,10 @@
     "mechanism_of_action": {
       "value": {
         "modality": "monoclonal_antibody",
-        "drug_class": "IL-4Rα antagonist",
+        "drug_class": "IL-4R\u03b1 antagonist",
         "antibody_isotype": "IgG4",
         "binding_targets": [
-          "IL-4Rα"
+          "IL-4R\u03b1"
         ],
         "pathway_cytokines": [
           "IL-13",
@@ -99,7 +99,7 @@
           "IgE"
         ],
         "receptor_subunits": [
-          "IL-4Rα"
+          "IL-4R\u03b1"
         ],
         "kinases_inhibited": [],
         "lower_potency_kinases": [],
@@ -110,7 +110,7 @@
       },
       "source_type": "openfda_label",
       "source_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=06b9c64b-52b1-490b-b118-bd079e69264e",
-      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1) -- v1 extracted text: 12.1 Mechanism of Action Dupilumab is a human monoclonal IgG4 antibody that inhibits interleukin-4 (IL-4) and interleukin-13 (IL-13) signaling by specifically binding to the IL-4Rα subunit shared by the IL-4 and IL-13 receptor complexes. Dupilumab inhibits IL-4 signaling via the Type I receptor and both IL-4 and IL-13 signaling through the Type II receptor. Inflammation driven by IL-4 and IL-13 is an important component in the pathogenesis of asthma, AD, CRSwNP, EoE, PN, COPD, CSU, BP, and AFRS. Multiple cell types that express IL-4Rα (e.g., mast cells, basophils, eosinophils, macrophages, lymphocytes, epithelial cells, goblet cells) and inflammatory mediators (e.g., histamine, eicosanoids, leukotrienes, cytokines, chemokines) are involved in inflammation. Blocking IL-4Rα with dupilumab inhibits IL-4 and IL-13 cytokine-induced inflammatory responses, including the release of proinflammatory cytokines, chemokines, nitric oxide, and IgE. The mechanism of dupilumab action has not been definitively established.",
+      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1) -- v1 extracted text: 12.1 Mechanism of Action Dupilumab is a human monoclonal IgG4 antibody that inhibits interleukin-4 (IL-4) and interleukin-13 (IL-13) signaling by specifically binding to the IL-4R\u03b1 subunit shared by the IL-4 and IL-13 receptor complexes. Dupilumab inhibits IL-4 signaling via the Type I receptor and both IL-4 and IL-13 signaling through the Type II receptor. Inflammation driven by IL-4 and IL-13 is an important component in the pathogenesis of asthma, AD, CRSwNP, EoE, PN, COPD, CSU, BP, and AFRS. Multiple cell types that express IL-4R\u03b1 (e.g., mast cells, basophils, eosinophils, macrophages, lymphocytes, epithelial cells, goblet cells) and inflammatory mediators (e.g., histamine, eicosanoids, leukotrienes, cytokines, chemokines) are involved in inflammation. Blocking IL-4R\u03b1 with dupilumab inhibits IL-4 and IL-13 cytokine-induced inflammatory responses, including the release of proinflammatory cytokines, chemokines, nitric oxide, and IgE. The mechanism of dupilumab action has not been definitively established.",
       "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 0.9
@@ -1995,6 +1995,34 @@
       "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"DUPILUMAB\"&limit=1",
       "source_excerpt": "openFDA drug/event.json aggregate: total_reports=13441, serious=6179, deaths=324",
       "extracted_by": "fetch_faers.py (openfda drug/event.json, v2 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "drug_characterization": {
+      "value": [
+        {
+          "code": "1",
+          "label": "suspect",
+          "report_count": 12732,
+          "pct_of_reports": 94.73
+        },
+        {
+          "code": "2",
+          "label": "concomitant",
+          "report_count": 704,
+          "pct_of_reports": 5.24
+        },
+        {
+          "code": "3",
+          "label": "interacting",
+          "report_count": 5,
+          "pct_of_reports": 0.04
+        }
+      ],
+      "source_type": "openfda_faers",
+      "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"DUPILUMAB\"",
+      "source_excerpt": "Computed by pulling every individual FAERS report matching this drug's own search_term (DUPILUMAB) and tallying each report's drugcharacterization code (1=suspect, 2=concomitant, 3=interacting) from ONLY the drug-array entries whose medicinalproduct matches this drug (not co-listed drugs in the same report) -- a plain count= aggregate query cannot do this correctly (openFDA's flattened array indexing mixes in co-listed drugs' own characterization values; confirmed via 2 independent test queries returning identical contaminated totals). 13441/13441 reports matched.",
+      "extracted_by": "fetch_faers_characterization.py (per-report drugcharacterization backfill, cycle-22 pass)",
       "reviewed_by": null,
       "confidence": 1.0
     }

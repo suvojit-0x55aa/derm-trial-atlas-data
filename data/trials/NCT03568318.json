@@ -252,7 +252,7 @@
       },
       "source_type": "ctgov_text_extraction",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03568318",
-      "source_excerpt": "Active moderate to severe atopic dermatitis defined by Eczema Area and Severity Index (EASI) ≥ 16, validated Investigator's Global Assessment (vIGA) ≥ 3, ≥ 10% of body surface area (BSA) with AD involvement, and weekly average of daily Worst Pruritus numerical rating scale (NRS) ≥ 4.",
+      "source_excerpt": "Active moderate to severe atopic dermatitis defined by Eczema Area and Severity Index (EASI) \u2265 16, validated Investigator's Global Assessment (vIGA) \u2265 3, \u2265 10% of body surface area (BSA) with AD involvement, and weekly average of daily Worst Pruritus numerical rating scale (NRS) \u2265 4.",
       "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 0.75
@@ -409,7 +409,7 @@
     "secondary_endpoints": {
       "value": [
         {
-          "verbatim": "Main Study: Percentage of Participants Achieving a Reduction of ≥ 4 Points From Baseline in Worst Pruritus Numerical Rating Scale (NRS) at Week 16",
+          "verbatim": "Main Study: Percentage of Participants Achieving a Reduction of \u2265 4 Points From Baseline in Worst Pruritus Numerical Rating Scale (NRS) at Week 16",
           "rank": "secondary",
           "position": 1,
           "measure_type": "responder_rate",
@@ -487,7 +487,7 @@
           "time_frame": null
         },
         {
-          "verbatim": "Main Study: Percentage of Participants Achieving a Reduction of ≥ 4 Points From Baseline in Worst Pruritus NRS at Week 4",
+          "verbatim": "Main Study: Percentage of Participants Achieving a Reduction of \u2265 4 Points From Baseline in Worst Pruritus NRS at Week 4",
           "rank": "secondary",
           "position": 3,
           "measure_type": "responder_rate",
@@ -682,7 +682,7 @@
           "time_frame": null
         },
         {
-          "verbatim": "Main Study: Percentage of Participants Achieving a Reduction of ≥ 4 Points From Baseline in Worst Pruritus NRS at Week 1",
+          "verbatim": "Main Study: Percentage of Participants Achieving a Reduction of \u2265 4 Points From Baseline in Worst Pruritus NRS at Week 1",
           "rank": "secondary",
           "position": 8,
           "measure_type": "responder_rate",
@@ -810,7 +810,7 @@
           "time_frame": null
         },
         {
-          "verbatim": "Adolescents: Percentage of Participants Achieving a vIGA-AD of 0 or 1 With a Reduction From Baseline of ≥ 2 Points at Week 16",
+          "verbatim": "Adolescents: Percentage of Participants Achieving a vIGA-AD of 0 or 1 With a Reduction From Baseline of \u2265 2 Points at Week 16",
           "rank": "secondary",
           "position": 12,
           "measure_type": "responder_rate",
@@ -865,7 +865,7 @@
           "time_frame": null
         },
         {
-          "verbatim": "Adolescents: Percentage of Participants Achieving a Reduction of ≥ 4 Points From Baseline in Worst Pruritus NRS at Week 16",
+          "verbatim": "Adolescents: Percentage of Participants Achieving a Reduction of \u2265 4 Points From Baseline in Worst Pruritus NRS at Week 16",
           "rank": "secondary",
           "position": 13,
           "measure_type": "responder_rate",
@@ -943,7 +943,7 @@
           "time_frame": null
         },
         {
-          "verbatim": "Adolescents: Percentage of Participants Achieving a Reduction of ≥ 4 Points From Baseline in Worst Pruritus NRS at Week 4",
+          "verbatim": "Adolescents: Percentage of Participants Achieving a Reduction of \u2265 4 Points From Baseline in Worst Pruritus NRS at Week 4",
           "rank": "secondary",
           "position": 15,
           "measure_type": "responder_rate",
@@ -1138,7 +1138,7 @@
           "time_frame": null
         },
         {
-          "verbatim": "Adolescents: Percentage of Participants Achieving a Reduction of ≥ 4 Points From Baseline in Worst Pruritus NRS at Week 1",
+          "verbatim": "Adolescents: Percentage of Participants Achieving a Reduction of \u2265 4 Points From Baseline in Worst Pruritus NRS at Week 1",
           "rank": "secondary",
           "position": 20,
           "measure_type": "responder_rate",
@@ -2218,6 +2218,34 @@
       "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"UPADACITINIB\"&limit=1",
       "source_excerpt": "openFDA drug/event.json aggregate: total_reports=4699, serious=3336, deaths=155",
       "extracted_by": "fetch_faers.py (openfda drug/event.json, v2 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "drug_characterization": {
+      "value": [
+        {
+          "code": "1",
+          "label": "suspect",
+          "report_count": 4234,
+          "pct_of_reports": 90.1
+        },
+        {
+          "code": "2",
+          "label": "concomitant",
+          "report_count": 455,
+          "pct_of_reports": 9.68
+        },
+        {
+          "code": "3",
+          "label": "interacting",
+          "report_count": 10,
+          "pct_of_reports": 0.21
+        }
+      ],
+      "source_type": "openfda_faers",
+      "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"UPADACITINIB\"",
+      "source_excerpt": "Computed by pulling every individual FAERS report matching this drug's own search_term (UPADACITINIB) and tallying each report's drugcharacterization code (1=suspect, 2=concomitant, 3=interacting) from ONLY the drug-array entries whose medicinalproduct matches this drug (not co-listed drugs in the same report) -- a plain count= aggregate query cannot do this correctly (openFDA's flattened array indexing mixes in co-listed drugs' own characterization values; confirmed via 2 independent test queries returning identical contaminated totals). 4699/4699 reports matched.",
+      "extracted_by": "fetch_faers_characterization.py (per-report drugcharacterization backfill, cycle-22 pass)",
       "reviewed_by": null,
       "confidence": 1.0
     }

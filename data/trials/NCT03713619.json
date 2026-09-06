@@ -487,14 +487,14 @@
             "group": "H1 (secukinumab q2w primary)",
             "n_endpoints": 1,
             "alpha": 0.02,
-            "method": "graphical alpha allocation (4α/5)",
+            "method": "graphical alpha allocation (4\u03b1/5)",
             "timepoint_week": 16
           },
           {
             "group": "H2 (secukinumab q4w primary)",
             "n_endpoints": 1,
             "alpha": 0.005,
-            "method": "graphical alpha allocation (α/5)",
+            "method": "graphical alpha allocation (\u03b1/5)",
             "timepoint_week": 16
           }
         ],
@@ -504,8 +504,8 @@
           "secukinumab 300 mg every 4 weeks"
         ],
         "dose_comparison_order": [
-          "secukinumab 300 mg every 2 weeks (high dose, 4α/5)",
-          "secukinumab 300 mg every 4 weeks (low dose, α/5)"
+          "secukinumab 300 mg every 2 weeks (high dose, 4\u03b1/5)",
+          "secukinumab 300 mg every 4 weeks (low dose, \u03b1/5)"
         ],
         "branching_on": null,
         "regulatory_variants": [],
@@ -527,7 +527,7 @@
       },
       "source_type": "protocol_pdf_extraction",
       "source_url": "https://cdn.clinicaltrials.gov/large-docs/19/NCT03713619/Prot_000.pdf",
-      "source_excerpt": "Section 12.5.1 Testing strategy: 'Two studies of identical design (CAIN457M2301 and CAIN457M2302) are planned... The hypothesis H1 of the primary objective (HiSCR at Week 16) for the high dose secukinumab regimen (q2w) versus placebo will be tested at 4α/5 while the hypothesis H2... for the low dose secukinumab regimen (q4w) versus placebo will be tested at α/5 simultaneously. If at least one of H1 and/or H2 are/is rejected then H3 and/or H4 (percentage change from baseline in AN count at Week 16), is tested. If at least one of H3 and/or H4 are/is rejected, then the corresponding alpha will be passed to H5 and/or H6 (flare over 16 weeks)... Therefore, the type I error rate is controlled at level α for the submission on all hypothesis endpoints... the testing procedure outlined above controls the type I error rate (one-sided) at the study-level to <0.025, and at the submission level to <0.000625(=0.025^2)... (Bretz et al 2019).'",
+      "source_excerpt": "Section 12.5.1 Testing strategy: 'Two studies of identical design (CAIN457M2301 and CAIN457M2302) are planned... The hypothesis H1 of the primary objective (HiSCR at Week 16) for the high dose secukinumab regimen (q2w) versus placebo will be tested at 4\u03b1/5 while the hypothesis H2... for the low dose secukinumab regimen (q4w) versus placebo will be tested at \u03b1/5 simultaneously. If at least one of H1 and/or H2 are/is rejected then H3 and/or H4 (percentage change from baseline in AN count at Week 16), is tested. If at least one of H3 and/or H4 are/is rejected, then the corresponding alpha will be passed to H5 and/or H6 (flare over 16 weeks)... Therefore, the type I error rate is controlled at level \u03b1 for the submission on all hypothesis endpoints... the testing procedure outlined above controls the type I error rate (one-sided) at the study-level to <0.025, and at the submission level to <0.000625(=0.025^2)... (Bretz et al 2019).'",
       "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
       "confidence": 0.7
@@ -1437,6 +1437,34 @@
       "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"SECUKINUMAB\"&limit=1",
       "source_excerpt": "openFDA drug/event.json aggregate: total_reports=4923, serious=4731, deaths=690",
       "extracted_by": "fetch_faers.py (openfda drug/event.json, v2 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "drug_characterization": {
+      "value": [
+        {
+          "code": "1",
+          "label": "suspect",
+          "report_count": 4195,
+          "pct_of_reports": 85.21
+        },
+        {
+          "code": "2",
+          "label": "concomitant",
+          "report_count": 710,
+          "pct_of_reports": 14.42
+        },
+        {
+          "code": "3",
+          "label": "interacting",
+          "report_count": 18,
+          "pct_of_reports": 0.37
+        }
+      ],
+      "source_type": "openfda_faers",
+      "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"SECUKINUMAB\"",
+      "source_excerpt": "Computed by pulling every individual FAERS report matching this drug's own search_term (SECUKINUMAB) and tallying each report's drugcharacterization code (1=suspect, 2=concomitant, 3=interacting) from ONLY the drug-array entries whose medicinalproduct matches this drug (not co-listed drugs in the same report) -- a plain count= aggregate query cannot do this correctly (openFDA's flattened array indexing mixes in co-listed drugs' own characterization values; confirmed via 2 independent test queries returning identical contaminated totals). 4923/4923 reports matched.",
+      "extracted_by": "fetch_faers_characterization.py (per-report drugcharacterization backfill, cycle-22 pass)",
       "reviewed_by": null,
       "confidence": 1.0
     }

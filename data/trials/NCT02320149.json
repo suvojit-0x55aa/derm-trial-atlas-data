@@ -1027,7 +1027,7 @@
       },
       "source_type": "protocol_pdf_extraction",
       "source_url": "https://cdn.clinicaltrials.gov/large-docs/49/NCT02320149/Prot_000.pdf",
-      "source_excerpt": "Duration of Treatment: 12 weeks. Efficacy Assessments: IGA scores and lesion counts at baseline and following 3, 6, 9, and 12 weeks of treatment. ... 9.5.1 Screening Period [SV1, SV2/Baseline]; 9.5.2 Treatment Period: 9.5.2.1 Telephone Contact (Week 1±3 days); 9.5.2.2 Visit 1 (Week 3±3 days); 9.5.2.3 Visit 2 (Week 6±3 days); 9.5.2.4 Visit 3 (Week 9±3 days); 9.5.2.5 Visit 4 (Week 12±3 days); 9.5.2.6 Visit 5 (Week 13±3 days)(for subjects participating in PK Schedule 3); 9.5.2.7 Early Termination Visit.",
+      "source_excerpt": "Duration of Treatment: 12 weeks. Efficacy Assessments: IGA scores and lesion counts at baseline and following 3, 6, 9, and 12 weeks of treatment. ... 9.5.1 Screening Period [SV1, SV2/Baseline]; 9.5.2 Treatment Period: 9.5.2.1 Telephone Contact (Week 1\u00b13 days); 9.5.2.2 Visit 1 (Week 3\u00b13 days); 9.5.2.3 Visit 2 (Week 6\u00b13 days); 9.5.2.4 Visit 3 (Week 9\u00b13 days); 9.5.2.5 Visit 4 (Week 12\u00b13 days); 9.5.2.6 Visit 5 (Week 13\u00b13 days)(for subjects participating in PK Schedule 3); 9.5.2.7 Early Termination Visit.",
       "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
       "confidence": 0.7
@@ -1375,6 +1375,34 @@
       "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"SARECYCLINE\"&limit=1",
       "source_excerpt": "openFDA drug/event.json aggregate: total_reports=11, serious=2, deaths=0",
       "extracted_by": "fetch_faers.py (openfda drug/event.json, cycle-9 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "drug_characterization": {
+      "value": [
+        {
+          "code": "1",
+          "label": "suspect",
+          "report_count": 4,
+          "pct_of_reports": 36.36
+        },
+        {
+          "code": "2",
+          "label": "concomitant",
+          "report_count": 7,
+          "pct_of_reports": 63.64
+        },
+        {
+          "code": "3",
+          "label": "interacting",
+          "report_count": 0,
+          "pct_of_reports": 0.0
+        }
+      ],
+      "source_type": "openfda_faers",
+      "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"SARECYCLINE\"",
+      "source_excerpt": "Computed by pulling every individual FAERS report matching this drug's own search_term (SARECYCLINE) and tallying each report's drugcharacterization code (1=suspect, 2=concomitant, 3=interacting) from ONLY the drug-array entries whose medicinalproduct matches this drug (not co-listed drugs in the same report) -- a plain count= aggregate query cannot do this correctly (openFDA's flattened array indexing mixes in co-listed drugs' own characterization values; confirmed via 2 independent test queries returning identical contaminated totals). 11/11 reports matched.",
+      "extracted_by": "fetch_faers_characterization.py (per-report drugcharacterization backfill, cycle-22 pass)",
       "reviewed_by": null,
       "confidence": 1.0
     }

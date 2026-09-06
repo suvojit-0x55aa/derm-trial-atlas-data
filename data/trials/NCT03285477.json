@@ -796,7 +796,7 @@
       },
       "source_type": "protocol_pdf_extraction",
       "source_url": "https://cdn.clinicaltrials.gov/large-docs/77/NCT03285477/Prot_000.pdf",
-      "source_excerpt": "The study consists of Screening, Treatment, Response Assessment Period, and a Recurrence Follow-up Period. After a Screening Period of up to 28 days, subjects will return to the site for confirmation of eligibility. ... The Treatment Period will be Days 1 to 5. ... Table 1 Schedule of Procedures and Assessments in KX01-AK-003: Day -28 to -1 (Screening, Visit 1); Day 1 (Baseline, Visit 2); Days 2-5 (at-home once-daily self-administration); Visit 3 Day 5; Visit 4 Day 8 (±2); Visit 5 Day 15 (±2); Visit 6 Day 29 (±3); Visit 7/Early Term Day 57 (±5); Visits 8-11 at 3, 6, 9, 12 Months Post-Day 57 (±14). Primary Objective: to evaluate 100% clearance at Day 57.",
+      "source_excerpt": "The study consists of Screening, Treatment, Response Assessment Period, and a Recurrence Follow-up Period. After a Screening Period of up to 28 days, subjects will return to the site for confirmation of eligibility. ... The Treatment Period will be Days 1 to 5. ... Table 1 Schedule of Procedures and Assessments in KX01-AK-003: Day -28 to -1 (Screening, Visit 1); Day 1 (Baseline, Visit 2); Days 2-5 (at-home once-daily self-administration); Visit 3 Day 5; Visit 4 Day 8 (\u00b12); Visit 5 Day 15 (\u00b12); Visit 6 Day 29 (\u00b13); Visit 7/Early Term Day 57 (\u00b15); Visits 8-11 at 3, 6, 9, 12 Months Post-Day 57 (\u00b114). Primary Objective: to evaluate 100% clearance at Day 57.",
       "extracted_by": "deep-extraction cycle 2: manual protocol/SAP PDF review (LLM-assisted), structured against atlas/schema.py v2",
       "reviewed_by": null,
       "confidence": 0.6
@@ -1273,6 +1273,34 @@
       "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"TIRBANIBULIN\"&limit=1",
       "source_excerpt": "openFDA drug/event.json aggregate: total_reports=17, serious=8, deaths=0",
       "extracted_by": "fetch_faers.py (openfda drug/event.json, cycle-10 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "drug_characterization": {
+      "value": [
+        {
+          "code": "1",
+          "label": "suspect",
+          "report_count": 13,
+          "pct_of_reports": 76.47
+        },
+        {
+          "code": "2",
+          "label": "concomitant",
+          "report_count": 4,
+          "pct_of_reports": 23.53
+        },
+        {
+          "code": "3",
+          "label": "interacting",
+          "report_count": 0,
+          "pct_of_reports": 0.0
+        }
+      ],
+      "source_type": "openfda_faers",
+      "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"TIRBANIBULIN\"",
+      "source_excerpt": "Computed by pulling every individual FAERS report matching this drug's own search_term (TIRBANIBULIN) and tallying each report's drugcharacterization code (1=suspect, 2=concomitant, 3=interacting) from ONLY the drug-array entries whose medicinalproduct matches this drug (not co-listed drugs in the same report) -- a plain count= aggregate query cannot do this correctly (openFDA's flattened array indexing mixes in co-listed drugs' own characterization values; confirmed via 2 independent test queries returning identical contaminated totals). 17/17 reports matched.",
+      "extracted_by": "fetch_faers_characterization.py (per-report drugcharacterization backfill, cycle-22 pass)",
       "reviewed_by": null,
       "confidence": 1.0
     }

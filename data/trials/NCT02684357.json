@@ -1580,6 +1580,34 @@
       "extracted_by": "fetch_faers.py (openfda drug/event.json, v2 pass)",
       "reviewed_by": null,
       "confidence": 1.0
+    },
+    "drug_characterization": {
+      "value": [
+        {
+          "code": "1",
+          "label": "suspect",
+          "report_count": 3986,
+          "pct_of_reports": 95.24
+        },
+        {
+          "code": "2",
+          "label": "concomitant",
+          "report_count": 199,
+          "pct_of_reports": 4.76
+        },
+        {
+          "code": "3",
+          "label": "interacting",
+          "report_count": 0,
+          "pct_of_reports": 0.0
+        }
+      ],
+      "source_type": "openfda_faers",
+      "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"RISANKIZUMAB\"",
+      "source_excerpt": "Computed by pulling every individual FAERS report matching this drug's own search_term (RISANKIZUMAB) and tallying each report's drugcharacterization code (1=suspect, 2=concomitant, 3=interacting) from ONLY the drug-array entries whose medicinalproduct matches this drug (not co-listed drugs in the same report) -- a plain count= aggregate query cannot do this correctly (openFDA's flattened array indexing mixes in co-listed drugs' own characterization values; confirmed via 2 independent test queries returning identical contaminated totals). 4185/4185 reports matched.",
+      "extracted_by": "fetch_faers_characterization.py (per-report drugcharacterization backfill, cycle-22 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
     }
   },
   "exclusivity": {

@@ -8169,10 +8169,142 @@
             "confidence"
           ],
           "description": "openFDA FAERS post-marketing report summary (drug-level)"
+        },
+        "drug_characterization": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "value": {
+              "anyOf": [
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "code": {
+                        "type": "string",
+                        "enum": [
+                          "1",
+                          "2",
+                          "3"
+                        ]
+                      },
+                      "label": {
+                        "type": "string",
+                        "enum": [
+                          "suspect",
+                          "concomitant",
+                          "interacting"
+                        ]
+                      },
+                      "report_count": {
+                        "type": "integer"
+                      },
+                      "pct_of_reports": {
+                        "anyOf": [
+                          {
+                            "type": "number"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      }
+                    },
+                    "required": [
+                      "code",
+                      "label",
+                      "report_count",
+                      "pct_of_reports"
+                    ]
+                  }
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "source_type": {
+              "type": "string",
+              "enum": [
+                "ctgov_api",
+                "ctgov_text_extraction",
+                "protocol_pdf_extraction",
+                "publication_extraction",
+                "openfda_label",
+                "openfda_faers",
+                "orange_book",
+                "purple_book",
+                "needs_extraction"
+              ]
+            },
+            "source_url": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "source_excerpt": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "extracted_by": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "reviewed_by": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "confidence": {
+              "anyOf": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "value",
+            "source_type",
+            "source_url",
+            "source_excerpt",
+            "extracted_by",
+            "reviewed_by",
+            "confidence"
+          ],
+          "description": "FAERS per-report drugcharacterization breakdown (1=suspect, 2=concomitant, 3=interacting), computed by pulling every individual report and tallying the drug's own array-entry code -- a plain count= aggregate query cannot do this correctly since openFDA's flattened multi-drug array indexing mixes in co-listed drugs' own codes (drug-level, independent of faers_summary so a high-volume drug's still-computing/uncomputed breakdown doesn't block the rest of faers_summary from being fully populated)"
         }
       },
       "required": [
-        "faers_summary"
+        "faers_summary",
+        "drug_characterization"
       ]
     },
     "exclusivity": {

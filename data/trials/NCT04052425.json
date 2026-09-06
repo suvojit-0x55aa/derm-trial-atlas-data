@@ -195,7 +195,7 @@
       },
       "source_type": "ctgov_text_extraction",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04052425",
-      "source_excerpt": "Clinical diagnosis of non-segmental vitiligo with depigmented area including ≥ 0.5% BSA on the face, ≥ 0.5 F-VASI, ≥ 3% BSA on nonfacial areas, ≥ 3 T-VASI, and total body vitiligo area (facial and nonfacial) not exceeding 10% BSA.",
+      "source_excerpt": "Clinical diagnosis of non-segmental vitiligo with depigmented area including \u2265 0.5% BSA on the face, \u2265 0.5 F-VASI, \u2265 3% BSA on nonfacial areas, \u2265 3 T-VASI, and total body vitiligo area (facial and nonfacial) not exceeding 10% BSA.",
       "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 0.75
@@ -289,7 +289,7 @@
     "primary_endpoints": {
       "value": [
         {
-          "verbatim": "Percentage of Participants Achieving a ≥ 75% Improvement From Baseline in the Face Vitiligo Area Scoring Index (F-VASI75) Score at Week 24 (Time frame: Baseline; Week 24)",
+          "verbatim": "Percentage of Participants Achieving a \u2265 75% Improvement From Baseline in the Face Vitiligo Area Scoring Index (F-VASI75) Score at Week 24 (Time frame: Baseline; Week 24)",
           "rank": "primary",
           "position": 1,
           "measure_type": "responder_rate",
@@ -324,7 +324,7 @@
     "secondary_endpoints": {
       "value": [
         {
-          "verbatim": "Percentage of Participants Achieving a ≥ 50% Improvement From Baseline in the Face Vitiligo Area Scoring Index (F-VASI50) Score at Week 24",
+          "verbatim": "Percentage of Participants Achieving a \u2265 50% Improvement From Baseline in the Face Vitiligo Area Scoring Index (F-VASI50) Score at Week 24",
           "rank": "secondary",
           "position": 1,
           "measure_type": "responder_rate",
@@ -349,7 +349,7 @@
           "time_frame": null
         },
         {
-          "verbatim": "Percentage of Participants Achieving a ≥ 90% Improvement From Baseline in the Face Vitiligo Area Scoring Index (F-VASI90) Score at Week 24",
+          "verbatim": "Percentage of Participants Achieving a \u2265 90% Improvement From Baseline in the Face Vitiligo Area Scoring Index (F-VASI90) Score at Week 24",
           "rank": "secondary",
           "position": 2,
           "measure_type": "responder_rate",
@@ -374,7 +374,7 @@
           "time_frame": null
         },
         {
-          "verbatim": "Percentage of Participants Achieving a ≥ 50% Improvement From Baseline in the Total Body Vitiligo Area Scoring Index (T-VASI50) Score at Week 24",
+          "verbatim": "Percentage of Participants Achieving a \u2265 50% Improvement From Baseline in the Total Body Vitiligo Area Scoring Index (T-VASI50) Score at Week 24",
           "rank": "secondary",
           "position": 3,
           "measure_type": "responder_rate",
@@ -487,7 +487,7 @@
           "time_frame": null
         },
         {
-          "verbatim": "Percentage of Participants Achieving a ≥ 25% Improvement in the Face Vitiligo Area Scoring Index (F-VASI25) Score at Week 24",
+          "verbatim": "Percentage of Participants Achieving a \u2265 25% Improvement in the Face Vitiligo Area Scoring Index (F-VASI25) Score at Week 24",
           "rank": "secondary",
           "position": 8,
           "measure_type": "responder_rate",
@@ -512,7 +512,7 @@
           "time_frame": null
         },
         {
-          "verbatim": "Percentage of Participants Achieving a ≥ %25, ≥ %50, ≥ 75%, and ≥ 90% Improvement in the Face Vitiligo Area Scoring Index (F-VASI25/50/75/90) Score at Week 52",
+          "verbatim": "Percentage of Participants Achieving a \u2265 %25, \u2265 %50, \u2265 75%, and \u2265 90% Improvement in the Face Vitiligo Area Scoring Index (F-VASI25/50/75/90) Score at Week 52",
           "rank": "secondary",
           "position": 9,
           "measure_type": "responder_rate",
@@ -712,7 +712,7 @@
           "time_frame": null
         },
         {
-          "verbatim": "Percentage of Participants Achieving a ≥ 25%, ≥ 75%, and ≥ 90% Improvement in the Total Body Vitiligo Area Scoring Index (T-VASI25/75/90) Score at Week 24",
+          "verbatim": "Percentage of Participants Achieving a \u2265 25%, \u2265 75%, and \u2265 90% Improvement in the Total Body Vitiligo Area Scoring Index (T-VASI25/75/90) Score at Week 24",
           "rank": "secondary",
           "position": 17,
           "measure_type": "responder_rate",
@@ -737,7 +737,7 @@
           "time_frame": null
         },
         {
-          "verbatim": "Percentage of Participants Achieving a ≥ 25%, ≥ 50%, ≥ 75%, and ≥ 90% Improvement in the Total Body Vitiligo Area Scoring Index (T-VASI25/50/75/90) Score at Week 52",
+          "verbatim": "Percentage of Participants Achieving a \u2265 25%, \u2265 50%, \u2265 75%, and \u2265 90% Improvement in the Total Body Vitiligo Area Scoring Index (T-VASI25/50/75/90) Score at Week 52",
           "rank": "secondary",
           "position": 18,
           "measure_type": "responder_rate",
@@ -1522,6 +1522,34 @@
       "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"RUXOLITINIB\"&limit=1",
       "source_excerpt": "openFDA drug/event.json aggregate: total_reports=10645, serious=10317, deaths=2668",
       "extracted_by": "fetch_faers.py (openfda drug/event.json, v2 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "drug_characterization": {
+      "value": [
+        {
+          "code": "1",
+          "label": "suspect",
+          "report_count": 9005,
+          "pct_of_reports": 84.59
+        },
+        {
+          "code": "2",
+          "label": "concomitant",
+          "report_count": 1580,
+          "pct_of_reports": 14.84
+        },
+        {
+          "code": "3",
+          "label": "interacting",
+          "report_count": 60,
+          "pct_of_reports": 0.56
+        }
+      ],
+      "source_type": "openfda_faers",
+      "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"RUXOLITINIB\"",
+      "source_excerpt": "Computed by pulling every individual FAERS report matching this drug's own search_term (RUXOLITINIB) and tallying each report's drugcharacterization code (1=suspect, 2=concomitant, 3=interacting) from ONLY the drug-array entries whose medicinalproduct matches this drug (not co-listed drugs in the same report) -- a plain count= aggregate query cannot do this correctly (openFDA's flattened array indexing mixes in co-listed drugs' own characterization values; confirmed via 2 independent test queries returning identical contaminated totals). 10645/10645 reports matched.",
+      "extracted_by": "fetch_faers_characterization.py (per-report drugcharacterization backfill, cycle-22 pass)",
       "reviewed_by": null,
       "confidence": 1.0
     }

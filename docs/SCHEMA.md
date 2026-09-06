@@ -1,11 +1,7 @@
 # Open Derm Trial Atlas -- schema v2 (field reference)
 
-**Static snapshot.** This repo holds data only -- `atlas/schema.py` and the
-`scripts/export_schema.py` generator that used to produce this file both
-live in `kolai-website` now. This file won't auto-update here; when the
-schema changes, kolai-website regenerates it and this copy is refreshed
-from there. The machine-readable form is `schema/trial.schema.json`
-(same caveat).
+Generated from `atlas/schema.py` by `scripts/export_schema.py`; do not edit by hand.
+The machine-readable form is `schema/trial.schema.json`.
 
 Every field below is a **sourced value**:
 
@@ -60,6 +56,7 @@ prose, that prose is now in `source_excerpt` (or the endpoint's `verbatim` / int
 | `adverse_events.discontinuation_due_to_ae_rate` | list[ArmDiscontinuation] \| null | per-arm discontinuation-for-AE rate |  |
 | `adverse_events.boxed_warning` | BoxedWarning \| null | typed boxed warning; present=false is a confirmed absence |  |
 | `real_world_safety.faers_summary` | FaersSummary \| null | openFDA FAERS post-marketing report summary (drug-level) |  |
+| `real_world_safety.drug_characterization` | list[CharacterizationRow] \| null | FAERS per-report drugcharacterization breakdown (1=suspect, 2=concomitant, 3=interacting), computed by pulling every individual report and tallying the drug's own array-entry code -- a plain count= aggregate query cannot do this correctly since openFDA's flattened multi-drug array indexing mixes in co-listed drugs' own codes (drug-level, independent of faers_summary so a high-volume drug's still-computing/uncomputed breakdown doesn't block the rest of faers_summary from being fully populated) |  |
 | `exclusivity.regulatory_application` | RegulatoryApplication \| null | NDA/BLA join key for Orange/Purple Book (drug-level) |  |
 | `exclusivity.orange_book` | OrangeBookRecord \| null | Orange Book patents + exclusivities (small-molecule NDAs only) |  |
 | `exclusivity.purple_book` | PurpleBookRecord \| null | Purple Book licensure + BPCIA exclusivity (biologic BLAs only) |  |
@@ -375,6 +372,15 @@ ScoreCriterion: one threshold on one clinical scale
 | Key | Type | Notes |
 |---|---|---|
 | `meddra_pt` | string |  |
+| `report_count` | integer |  |
+| `pct_of_reports` | number \| null |  |
+
+## CharacterizationRow
+
+| Key | Type | Notes |
+|---|---|---|
+| `code` | enum(1 \| 2 \| 3) |  |
+| `label` | enum(suspect \| concomitant \| interacting) |  |
 | `report_count` | integer |  |
 | `pct_of_reports` | number \| null |  |
 

@@ -390,7 +390,7 @@
           "time_frame": null
         },
         {
-          "verbatim": "Number of Participants With Reduction of HESD Itch Score (Weekly Average) of ≥4 Points From Baseline at Week 16",
+          "verbatim": "Number of Participants With Reduction of HESD Itch Score (Weekly Average) of \u22654 Points From Baseline at Week 16",
           "rank": "secondary",
           "position": 3,
           "measure_type": "count",
@@ -415,7 +415,7 @@
           "time_frame": null
         },
         {
-          "verbatim": "Number of Participants With Reduction of HESD Score (Weekly Average) of ≥4 Points From Baseline at Week 16",
+          "verbatim": "Number of Participants With Reduction of HESD Score (Weekly Average) of \u22654 Points From Baseline at Week 16",
           "rank": "secondary",
           "position": 4,
           "measure_type": "count",
@@ -440,7 +440,7 @@
           "time_frame": null
         },
         {
-          "verbatim": "Number of Participants With Reduction of HESD Itch Score (Weekly Average) of ≥4 Points From Baseline at Week 8",
+          "verbatim": "Number of Participants With Reduction of HESD Itch Score (Weekly Average) of \u22654 Points From Baseline at Week 8",
           "rank": "secondary",
           "position": 5,
           "measure_type": "count",
@@ -465,7 +465,7 @@
           "time_frame": null
         },
         {
-          "verbatim": "Number of Participants With Reduction of HESD Itch Score (Weekly Average) of ≥4 Points From Baseline at Week 4",
+          "verbatim": "Number of Participants With Reduction of HESD Itch Score (Weekly Average) of \u22654 Points From Baseline at Week 4",
           "rank": "secondary",
           "position": 6,
           "measure_type": "count",
@@ -490,7 +490,7 @@
           "time_frame": null
         },
         {
-          "verbatim": "Number of Participants With Reduction of HESD Itch Score (Weekly Average) of ≥4 Points From Baseline at Week 2",
+          "verbatim": "Number of Participants With Reduction of HESD Itch Score (Weekly Average) of \u22654 Points From Baseline at Week 2",
           "rank": "secondary",
           "position": 7,
           "measure_type": "count",
@@ -515,7 +515,7 @@
           "time_frame": null
         },
         {
-          "verbatim": "Number of Participants With Reduction of HESD Score (Weekly Average) of ≥4 Points From Baseline at Week 8",
+          "verbatim": "Number of Participants With Reduction of HESD Score (Weekly Average) of \u22654 Points From Baseline at Week 8",
           "rank": "secondary",
           "position": 8,
           "measure_type": "count",
@@ -540,7 +540,7 @@
           "time_frame": null
         },
         {
-          "verbatim": "Number of Participants With Reduction of HESD Score (Weekly Average) of ≥4 Points From Baseline at Week 4",
+          "verbatim": "Number of Participants With Reduction of HESD Score (Weekly Average) of \u22654 Points From Baseline at Week 4",
           "rank": "secondary",
           "position": 9,
           "measure_type": "count",
@@ -565,7 +565,7 @@
           "time_frame": null
         },
         {
-          "verbatim": "Number of Participants With Reduction of HESD Pain Score (Weekly Average) of ≥4 Points From Baseline at Week 16",
+          "verbatim": "Number of Participants With Reduction of HESD Pain Score (Weekly Average) of \u22654 Points From Baseline at Week 16",
           "rank": "secondary",
           "position": 10,
           "measure_type": "count",
@@ -590,7 +590,7 @@
           "time_frame": null
         },
         {
-          "verbatim": "Number of Participants With Reduction of HESD Pain Score (Weekly Average) of ≥4 Points From Baseline at Week 8",
+          "verbatim": "Number of Participants With Reduction of HESD Pain Score (Weekly Average) of \u22654 Points From Baseline at Week 8",
           "rank": "secondary",
           "position": 11,
           "measure_type": "count",
@@ -615,7 +615,7 @@
           "time_frame": null
         },
         {
-          "verbatim": "Number of Participants With Reduction of HESD Pain Score (Weekly Average) of ≥4 Points From Baseline at Week 4",
+          "verbatim": "Number of Participants With Reduction of HESD Pain Score (Weekly Average) of \u22654 Points From Baseline at Week 4",
           "rank": "secondary",
           "position": 12,
           "measure_type": "count",
@@ -890,7 +890,7 @@
           "time_frame": null
         },
         {
-          "verbatim": "Number of Participants With Reduction of DLQI Score of ≥4 Points From Baseline at Week 16",
+          "verbatim": "Number of Participants With Reduction of DLQI Score of \u22654 Points From Baseline at Week 16",
           "rank": "secondary",
           "position": 23,
           "measure_type": "count",
@@ -1578,6 +1578,34 @@
       "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"DELGOCITINIB\"&limit=1",
       "source_excerpt": "openFDA drug/event.json aggregate: total_reports=71, serious=64, deaths=2",
       "extracted_by": "fetch_faers.py (openfda drug/event.json, v2 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "drug_characterization": {
+      "value": [
+        {
+          "code": "1",
+          "label": "suspect",
+          "report_count": 8,
+          "pct_of_reports": 11.27
+        },
+        {
+          "code": "2",
+          "label": "concomitant",
+          "report_count": 63,
+          "pct_of_reports": 88.73
+        },
+        {
+          "code": "3",
+          "label": "interacting",
+          "report_count": 0,
+          "pct_of_reports": 0.0
+        }
+      ],
+      "source_type": "openfda_faers",
+      "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"DELGOCITINIB\"",
+      "source_excerpt": "Computed by pulling every individual FAERS report matching this drug's own search_term (DELGOCITINIB) and tallying each report's drugcharacterization code (1=suspect, 2=concomitant, 3=interacting) from ONLY the drug-array entries whose medicinalproduct matches this drug (not co-listed drugs in the same report) -- a plain count= aggregate query cannot do this correctly (openFDA's flattened array indexing mixes in co-listed drugs' own characterization values; confirmed via 2 independent test queries returning identical contaminated totals). 71/71 reports matched.",
+      "extracted_by": "fetch_faers_characterization.py (per-report drugcharacterization backfill, cycle-22 pass)",
       "reviewed_by": null,
       "confidence": 1.0
     }

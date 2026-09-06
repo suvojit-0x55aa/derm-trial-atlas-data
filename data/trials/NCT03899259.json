@@ -192,7 +192,7 @@
       },
       "source_type": "ctgov_text_extraction",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03899259",
-      "source_excerpt": "Current AA episode of more than 6 months' duration and hair loss encompassing ≥50% of the scalp, as measured by SALT (AA-IGA of 3 or 4) at screening and baseline.",
+      "source_excerpt": "Current AA episode of more than 6 months' duration and hair loss encompassing \u226550% of the scalp, as measured by SALT (AA-IGA of 3 or 4) at screening and baseline.",
       "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 0.75
@@ -296,7 +296,7 @@
     "primary_endpoints": {
       "value": [
         {
-          "verbatim": "Percentage of Participants Achieving Severity of Alopecia Tool (SALT) ≤ 20 (Time frame: Week 36)",
+          "verbatim": "Percentage of Participants Achieving Severity of Alopecia Tool (SALT) \u2264 20 (Time frame: Week 36)",
           "rank": "primary",
           "position": 1,
           "measure_type": "responder_rate",
@@ -375,7 +375,7 @@
           "time_frame": null
         },
         {
-          "verbatim": "Percentage of Participants With Patient-Reported Outcome (PRO) for Scalp Hair Assessment Score of 0 or 1 With a ≥2-point Improvement From Baseline Among Participants With a Score of ≥3 at Baseline",
+          "verbatim": "Percentage of Participants With Patient-Reported Outcome (PRO) for Scalp Hair Assessment Score of 0 or 1 With a \u22652-point Improvement From Baseline Among Participants With a Score of \u22653 at Baseline",
           "rank": "secondary",
           "position": 3,
           "measure_type": "responder_rate",
@@ -410,7 +410,7 @@
           "time_frame": null
         },
         {
-          "verbatim": "Time for Participants to Achieve SALT ≤ 20 at Week 36.",
+          "verbatim": "Time for Participants to Achieve SALT \u2264 20 at Week 36.",
           "rank": "secondary",
           "position": 4,
           "measure_type": "absolute_value",
@@ -435,7 +435,7 @@
           "time_frame": null
         },
         {
-          "verbatim": "Percentage of Participants Achieving Clinician-Reported Outcome (ClinRO) Measure for Eyebrow (EB) Hair Loss 0 or 1 With ≥2-point Improvement From Baseline (Among Participants With ClinRO Measure for EB Hair Loss ≥2 at Baseline)",
+          "verbatim": "Percentage of Participants Achieving Clinician-Reported Outcome (ClinRO) Measure for Eyebrow (EB) Hair Loss 0 or 1 With \u22652-point Improvement From Baseline (Among Participants With ClinRO Measure for EB Hair Loss \u22652 at Baseline)",
           "rank": "secondary",
           "position": 5,
           "measure_type": "responder_rate",
@@ -454,7 +454,7 @@
           "time_frame": null
         },
         {
-          "verbatim": "Percentage of Participants Achieving ClinRO Measure for Eyelash (EL) Hair Loss 0 or 1 With ≥2-point Improvement From Baseline (Among Participants With ClinRO Measure for EL Hair Loss ≥2 at Baseline)",
+          "verbatim": "Percentage of Participants Achieving ClinRO Measure for Eyelash (EL) Hair Loss 0 or 1 With \u22652-point Improvement From Baseline (Among Participants With ClinRO Measure for EL Hair Loss \u22652 at Baseline)",
           "rank": "secondary",
           "position": 6,
           "measure_type": "responder_rate",
@@ -473,7 +473,7 @@
           "time_frame": null
         },
         {
-          "verbatim": "Percentage of Participants Achieving Patient-Reported Outcome (PRO) Measure for EB 0 or 1 With ≥2-point Improvement From Baseline (Among Participants With PRO Measure for EB ≥2 at Baseline)",
+          "verbatim": "Percentage of Participants Achieving Patient-Reported Outcome (PRO) Measure for EB 0 or 1 With \u22652-point Improvement From Baseline (Among Participants With PRO Measure for EB \u22652 at Baseline)",
           "rank": "secondary",
           "position": 7,
           "measure_type": "responder_rate",
@@ -492,7 +492,7 @@
           "time_frame": null
         },
         {
-          "verbatim": "Percentage of Participants Achieving PRO Measure for EL 0 or 1 With ≥2-point Improvement From Baseline (Among Participants With PRO Measure EL ≥2 at Baseline)",
+          "verbatim": "Percentage of Participants Achieving PRO Measure for EL 0 or 1 With \u22652-point Improvement From Baseline (Among Participants With PRO Measure EL \u22652 at Baseline)",
           "rank": "secondary",
           "position": 8,
           "measure_type": "responder_rate",
@@ -1597,6 +1597,34 @@
       "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"BARICITINIB\"&limit=1",
       "source_excerpt": "openFDA drug/event.json aggregate: total_reports=2981, serious=2763, deaths=473",
       "extracted_by": "fetch_faers.py (openfda drug/event.json, v2 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "drug_characterization": {
+      "value": [
+        {
+          "code": "1",
+          "label": "suspect",
+          "report_count": 2369,
+          "pct_of_reports": 79.47
+        },
+        {
+          "code": "2",
+          "label": "concomitant",
+          "report_count": 601,
+          "pct_of_reports": 20.16
+        },
+        {
+          "code": "3",
+          "label": "interacting",
+          "report_count": 11,
+          "pct_of_reports": 0.37
+        }
+      ],
+      "source_type": "openfda_faers",
+      "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"BARICITINIB\"",
+      "source_excerpt": "Computed by pulling every individual FAERS report matching this drug's own search_term (BARICITINIB) and tallying each report's drugcharacterization code (1=suspect, 2=concomitant, 3=interacting) from ONLY the drug-array entries whose medicinalproduct matches this drug (not co-listed drugs in the same report) -- a plain count= aggregate query cannot do this correctly (openFDA's flattened array indexing mixes in co-listed drugs' own characterization values; confirmed via 2 independent test queries returning identical contaminated totals). 2981/2981 reports matched.",
+      "extracted_by": "fetch_faers_characterization.py (per-report drugcharacterization backfill, cycle-22 pass)",
       "reviewed_by": null,
       "confidence": 1.0
     }
