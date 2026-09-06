@@ -746,6 +746,31 @@ This file is the project's committed home for project-intrinsic agent memory: bu
   (Veregen, genital warts, approved 2006) has no CT.gov-registered original pivotal placebo-controlled
   trial with results — the same pre-2007 mandatory-reporting dead end as Etanercept/Infliximab/
   Pimecrolimus/Tacrolimus.
+- **Cycle 22 tried the CBER/BLA angle cycle 21 flagged as untried (its own CDER novel-drugs sweep
+  excludes biologics) and it also came back empty, plus caught one false lead before it became a
+  duplicate.** Fetched FDA's own `2025-biological-license-application-approvals`,
+  `2026-biological-license-application-approvals`, and both years' `...-supplement-noteworthy-
+  approvals` pages directly (the same official-primary-source method that worked for CDER in cycle
+  21) — of ~40 combined BLA/supplement entries, the only dermatology-relevant hit was Vyjuvek's
+  2025-09-12 supplement (pediatric age expansion 0-16 + home-application), which needed no new
+  trial (it's a label update on already-existing GEM-3 data, already in the atlas). Also fetched
+  the CDER `novel-drug-approvals-2025` list (46 drugs, not previously checked — cycle 21 only did
+  2026) and confirmed both dermatology-relevant hits (Anzupgo/delgocitinib CHE, Rhapsido/remibrutinib
+  CSU) were already in the atlas, and Wayrilz/rilzabrutinib is confirmed ITP-only exactly as this
+  file's Bullous Pemphigoid section already documents excluding it. **False lead caught before
+  duplication**: Prurigo Nodularis (Dupixent PRIME/PRIME2 confirmed real via live CT.gov + openFDA
+  label section 1.5, and Nemluvio/nemolizumab confirmed via label section 1.1) looked like a
+  genuine uncaught gap — it doesn't appear in any prior cycle's narrative notes in this file — but
+  checking `README.md` first showed it was already fully in the atlas (2 drugs, 4 trials: PRIME/
+  PRIME2 + OLYMPIA 1/2) from an earlier, undocumented addition. **Always grep `README.md`'s
+  indication list for a candidate before doing the live-verification work, not just this file's
+  narrative** — the two files can drift independently (as cycle 13 already found for stale counts),
+  and here it meant README had real coverage this file's own notes never mentioned. With named
+  candidates, well-known-drug relabeling, 2 years of CDER novel-drug lists, and 2 years of CBER
+  BLA/supplement lists all exhausted with zero new finds, the broad-sweep well flagged as "running
+  dry" in cycle 20 is now confirmed dry across every angle tried so far — a future cycle's next real
+  angle is more likely a narrower, less-obvious condition (e.g. a rare dermatologic disease not yet
+  named as a candidate) than another repeat of these same sweep methods.
 
 - **Deep-extraction cycle 2 (same 2026-09-05 captain instruction, continued): read the real Study
   Protocol/SAP PDF for every one of the 61 non-AD trials that had one posted on CT.gov's
