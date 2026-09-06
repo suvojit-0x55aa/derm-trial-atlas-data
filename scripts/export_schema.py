@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
 """
-Render the v3 schema (atlas/schema.py, the single source of truth) into the
-two committed artefacts consumers read:
+Render the schema (atlas/schema.py, the single source of truth) into the
+three committed artefacts consumers read:
 
     schema/trial.schema.json   JSON Schema draft-07 of one trial record
-    docs/SCHEMA.md             field-by-field documentation, with types
+    schema/drug.schema.json    JSON Schema draft-07 of one drug record
+    docs/SCHEMA.md             field-by-field documentation, with types (both records)
 
-    python3 scripts/export_schema.py          # rewrite both
-    python3 scripts/export_schema.py --check  # exit 1 if either is stale
+    python3 scripts/export_schema.py          # rewrite all three
+    python3 scripts/export_schema.py --check  # exit 1 if any is stale
 
 tests/test_schema.py runs the --check so the committed files can't drift
 from the spec.
@@ -23,6 +24,7 @@ from atlas import schema as S  # noqa: E402
 from atlas.migrate import RENAMES  # noqa: E402
 
 JSON_PATH = ROOT / "schema" / "trial.schema.json"
+DRUG_JSON_PATH = ROOT / "schema" / "drug.schema.json"
 MD_PATH = ROOT / "docs" / "SCHEMA.md"
 
 NAMED_TYPES = [
@@ -36,6 +38,7 @@ NAMED_TYPES = [
     ("PurpleBookRecord", S.PURPLE_BOOK), ("RegulatoryApplication", S.REG_APP),
     ("EndpointKey", S.ENDPOINT_KEY), ("PValue", S.PVALUE), ("Arm", S.ARM),
     ("ArmResult", S.ARM_RESULT), ("EffectEstimate", S.EFFECT_ESTIMATE),
+    ("DrugRef", S.DRUG_REF), ("DrugApplication", S.DRUG_APPLICATION),
 ]
 NAME_OF = {id(spec["properties"]): name for name, spec in NAMED_TYPES}
 
@@ -59,7 +62,7 @@ def type_name(spec):
 
 def render_md():
     lines = [
-        "# Open Derm Trial Atlas -- schema v3 (field reference)",
+        f"# Open Derm Trial Atlas -- schema v{S.SCHEMA_VERSION} (field reference)",
         "",
         "Generated from `atlas/schema.py` by `scripts/export_schema.py`; do not edit by hand.",
         "The machine-readable form is `schema/trial.schema.json`.",
@@ -77,6 +80,12 @@ def render_md():
         "prose, that prose is now in `source_excerpt` (or the endpoint's `verbatim` / intervention's",
         "`description`) as provenance, and `value` holds the atomic decomposition.",
         "",
+        "6 fields (`molecule.mechanism_of_action`, `adverse_events.boxed_warning`,",
+        "`real_world_safety.faers_summary`, `exclusivity.{regulatory_application,orange_book,purple_book}`)",
+        "are `DrugRef` pointers, not the fact itself: the fact is extracted once and lives on",
+        "`data/drugs/<slug>.json` (see the 'Drug record fields' section below and `atlas/drugs.py`),",
+        "referenced by every trial of that drug instead of re-described per trial.",
+        "",
         "## Trial record fields",
         "",
         "| Field | Value type | Meaning | v1 name |",
@@ -86,7 +95,23 @@ def render_md():
     for path, spec, desc in S.FIELD_DOCS:
         v1 = inverse.get(path, "")
         lines.append(f"| `{path}` | {type_name(spec)} | {desc or ''} | {('`' + v1 + '`') if v1 else ''} |")
-    lines += ["", "Plus the top-level literal `schema_version: 3`.", ""]
+    lines += ["", f"Plus the top-level literal `schema_version: {S.SCHEMA_VERSION}`.", ""]
+
+    lines += ["## Drug record fields (data/drugs/<slug>.json)", "",
+              S.DRUG.get("description", ""), "",
+              "| Field | Value type | Meaning |", "|---|---|---|"]
+    for path, spec, desc in S.field_paths(S.DRUG):
+        lines.append(f"| `{path}` | {type_name(spec)} | {desc or ''} |")
+    # `applications`/`trial_ids` are bare (non-sourced) top-level lists, same
+    # shape as TRIAL's own `schema_version` -- field_paths only walks sourced
+    # values and objects, so these two are documented by hand, same convention
+    # as the "Plus the top-level literal schema_version" note below.
+    lines.append(f"| `applications` | {type_name(S.DRUG['properties']['applications'])} | "
+                 f"{S.DRUG['properties']['applications'].get('description', '')} |")
+    lines.append(f"| `trial_ids` | {type_name(S.DRUG['properties']['trial_ids'])} | "
+                 f"{S.DRUG['properties']['trial_ids'].get('description', '')} |")
+    lines += ["", f"Plus the top-level literals `schema_version: {S.DRUG_SCHEMA_VERSION}` and `drug` (string).", ""]
+
     for name, spec in NAMED_TYPES:
         lines += [f"## {name}", ""]
         if spec.get("description"):
@@ -100,11 +125,14 @@ def render_md():
 
 def main(argv):
     json_text = json.dumps(S.to_json_schema(), indent=2, ensure_ascii=False) + "\n"
+    drug_json_text = json.dumps(S.to_json_schema(S.DRUG), indent=2, ensure_ascii=False) + "\n"
     md_text = render_md()
     if "--check" in argv:
         stale = []
         if not JSON_PATH.exists() or JSON_PATH.read_text() != json_text:
             stale.append(str(JSON_PATH))
+        if not DRUG_JSON_PATH.exists() or DRUG_JSON_PATH.read_text() != drug_json_text:
+            stale.append(str(DRUG_JSON_PATH))
         if not MD_PATH.exists() or MD_PATH.read_text() != md_text:
             stale.append(str(MD_PATH))
         if stale:
@@ -115,8 +143,9 @@ def main(argv):
     JSON_PATH.parent.mkdir(exist_ok=True)
     MD_PATH.parent.mkdir(exist_ok=True)
     JSON_PATH.write_text(json_text)
+    DRUG_JSON_PATH.write_text(drug_json_text)
     MD_PATH.write_text(md_text)
-    print(f"wrote {JSON_PATH} and {MD_PATH}")
+    print(f"wrote {JSON_PATH}, {DRUG_JSON_PATH}, and {MD_PATH}")
     return 0
 
 

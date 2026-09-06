@@ -1,5 +1,5 @@
 {
-  "schema_version": 3,
+  "schema_version": 4,
   "nct_id": {
     "value": "NCT02608450",
     "source_type": "ctgov_api",
@@ -84,25 +84,15 @@
     },
     "mechanism_of_action": {
       "value": {
-        "modality": "small_molecule",
-        "drug_class": "androgen receptor inhibitor",
-        "antibody_isotype": null,
-        "binding_targets": [],
-        "pathway_cytokines": [],
-        "receptor_subunits": [],
-        "kinases_inhibited": [],
-        "lower_potency_kinases": [],
-        "selectivity": [],
-        "reversible": null,
-        "mechanism_established": false,
-        "label_section": "12.1"
+        "drug": "Clascoterone",
+        "application_number": null
       },
-      "source_type": "openfda_label",
-      "source_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=2abfc28a-6f85-d793-e063-6394a90a9490",
-      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1) -- extracted text: 12.1 Mechanism of Action Clascoterone is an androgen receptor inhibitor. The mechanism of action of WINLEVI cream for the topical treatment of acne vulgaris is unknown.",
-      "extracted_by": "deep-extraction pass (LLM-assisted extraction, scale-out backfill; pending human QA)",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 0.9
+      "confidence": null
     },
     "dosing_regimen": {
       "value": [
@@ -988,292 +978,62 @@
     },
     "boxed_warning": {
       "value": {
-        "present": false,
-        "title": null,
-        "warning_categories": [],
-        "referenced_label_sections": [],
-        "product_names": []
+        "drug": "Clascoterone",
+        "application_number": null
       },
-      "source_type": "openfda_label",
-      "source_url": "https://api.fda.gov/drug/label.json?search=openfda.substance_name:CLASCOTERONE&limit=1",
-      "source_excerpt": "results[0] has no boxed_warning key (checked, none present)",
-      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass); structured by atlas.migrate v1->v2",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     }
   },
   "real_world_safety": {
     "faers_summary": {
       "value": {
-        "query": {
-          "search_field": "patient.drug.medicinalproduct",
-          "search_term": "CLASCOTERONE",
-          "receivedate_from": "2022-08-01",
-          "receivedate_to": "2026-01-01",
-          "api_urls": [
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"CLASCOTERONE\"&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"CLASCOTERONE\"+AND+serious:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"CLASCOTERONE\"+AND+seriousnessdeath:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"CLASCOTERONE\"+AND+seriousnesshospitalization:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"CLASCOTERONE\"+AND+seriousnesslifethreatening:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"CLASCOTERONE\"+AND+seriousnessdisabling:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"CLASCOTERONE\"&count=patient.reaction.reactionmeddrapt.exact&limit=15",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"CLASCOTERONE\"+AND+serious:1&count=patient.reaction.reactionmeddrapt.exact&limit=15",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"CLASCOTERONE\"&count=receivedate"
-          ],
-          "data_last_updated": "2026-07-30"
-        },
-        "total_reports": 11,
-        "serious_reports": 10,
-        "death_reports": 0,
-        "hospitalization_reports": 0,
-        "life_threatening_reports": 0,
-        "disability_reports": 0,
-        "top_reactions": [
-          {
-            "meddra_pt": "SEIZURE",
-            "report_count": 5,
-            "pct_of_reports": 45.45
-          },
-          {
-            "meddra_pt": "SIMPLE PARTIAL SEIZURES",
-            "report_count": 5,
-            "pct_of_reports": 45.45
-          },
-          {
-            "meddra_pt": "DERMATITIS EXFOLIATIVE GENERALISED",
-            "report_count": 1,
-            "pct_of_reports": 9.09
-          },
-          {
-            "meddra_pt": "DRUG INTERACTION",
-            "report_count": 1,
-            "pct_of_reports": 9.09
-          },
-          {
-            "meddra_pt": "DYSGEUSIA",
-            "report_count": 1,
-            "pct_of_reports": 9.09
-          },
-          {
-            "meddra_pt": "PARTIAL SEIZURES",
-            "report_count": 1,
-            "pct_of_reports": 9.09
-          },
-          {
-            "meddra_pt": "PRODUCT PRESCRIBING ISSUE",
-            "report_count": 1,
-            "pct_of_reports": 9.09
-          }
-        ],
-        "top_serious_reactions": [
-          {
-            "meddra_pt": "SEIZURE",
-            "report_count": 5,
-            "pct_of_reports": 50.0
-          },
-          {
-            "meddra_pt": "SIMPLE PARTIAL SEIZURES",
-            "report_count": 5,
-            "pct_of_reports": 50.0
-          },
-          {
-            "meddra_pt": "DERMATITIS EXFOLIATIVE GENERALISED",
-            "report_count": 1,
-            "pct_of_reports": 10.0
-          },
-          {
-            "meddra_pt": "DRUG INTERACTION",
-            "report_count": 1,
-            "pct_of_reports": 10.0
-          },
-          {
-            "meddra_pt": "PARTIAL SEIZURES",
-            "report_count": 1,
-            "pct_of_reports": 10.0
-          },
-          {
-            "meddra_pt": "PRODUCT PRESCRIBING ISSUE",
-            "report_count": 1,
-            "pct_of_reports": 10.0
-          }
-        ],
-        "reports_by_year": [
-          {
-            "year": 2022,
-            "report_count": 1
-          },
-          {
-            "year": 2025,
-            "report_count": 9
-          },
-          {
-            "year": 2026,
-            "report_count": 1
-          }
-        ],
-        "meddra_version": null
+        "drug": "Clascoterone",
+        "application_number": null
       },
-      "source_type": "openfda_faers",
-      "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"CLASCOTERONE\"&limit=1",
-      "source_excerpt": "openFDA drug/event.json aggregate: total_reports=11, serious=10, deaths=0",
-      "extracted_by": "fetch_faers.py (openfda drug/event.json, cycle-9 pass)",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     }
   },
   "exclusivity": {
     "regulatory_application": {
       "value": {
-        "application_type": "NDA",
-        "application_number": "213433",
-        "registry": "orange_book",
-        "center": "CDER",
-        "proprietary_name": "WINLEVI",
-        "applicant": "SUN PHARMACEUTICAL INDUSTRIES LTD",
-        "first_approval_date": "2020-08-26"
+        "drug": "Clascoterone",
+        "application_number": "213433"
       },
-      "source_type": "orange_book",
-      "source_url": "https://api.fda.gov/drug/orangebook.json",
-      "source_excerpt": "openfda orangebook.json: products.active_ingredients.name=CLASCOTERONE, application_number N213433, brand_name WINLEVI, applicant_full_name SUN PHARMACEUTICAL INDUSTRIES LTD, approval_date 2020-08-26",
-      "extracted_by": "atlas.regulatory_applications (registry file fetched 2026-09-05)",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     },
     "orange_book": {
       "value": {
-        "application_type": "N",
-        "application_number": "213433",
-        "ingredient": "CLASCOTERONE",
-        "trade_name": "WINLEVI",
-        "applicant": "SUN PHARM",
-        "applicant_full_name": "SUN PHARMACEUTICAL INDUSTRIES LTD",
-        "products": [
-          {
-            "product_number": "001",
-            "strength": "1%",
-            "dosage_form": "CREAM",
-            "route": "TOPICAL",
-            "approval_date": "2020-08-26",
-            "rld": true,
-            "rs": true,
-            "te_code": null,
-            "marketing_type": "HUMAN PRESCRIPTION DRUG"
-          }
-        ],
-        "patents": [
-          {
-            "patent_number": "8143240",
-            "expiration_date": "2027-01-12",
-            "drug_substance_claim": false,
-            "drug_product_claim": false,
-            "patent_use_code": "U-2942",
-            "delisted": false,
-            "submission_date": "2020-09-04",
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "patent_number": "11938141",
-            "expiration_date": "2028-07-24",
-            "drug_substance_claim": false,
-            "drug_product_claim": true,
-            "patent_use_code": null,
-            "delisted": false,
-            "submission_date": "2024-05-30",
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "patent_number": "12337002",
-            "expiration_date": "2028-07-24",
-            "drug_substance_claim": false,
-            "drug_product_claim": true,
-            "patent_use_code": "U-3280",
-            "delisted": false,
-            "submission_date": "2025-07-22",
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "patent_number": "9486458",
-            "expiration_date": "2028-07-24",
-            "drug_substance_claim": false,
-            "drug_product_claim": false,
-            "patent_use_code": "U-2942",
-            "delisted": false,
-            "submission_date": "2020-09-04",
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "patent_number": "10159682",
-            "expiration_date": "2028-08-14",
-            "drug_substance_claim": false,
-            "drug_product_claim": false,
-            "patent_use_code": "U-2942",
-            "delisted": false,
-            "submission_date": "2020-09-04",
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "patent_number": "11207332",
-            "expiration_date": "2028-11-20",
-            "drug_substance_claim": false,
-            "drug_product_claim": true,
-            "patent_use_code": "U-3280",
-            "delisted": false,
-            "submission_date": "2022-01-24",
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "patent_number": "9433628",
-            "expiration_date": "2029-02-28",
-            "drug_substance_claim": false,
-            "drug_product_claim": true,
-            "patent_use_code": null,
-            "delisted": false,
-            "submission_date": "2020-09-04",
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "patent_number": "8785427",
-            "expiration_date": "2030-07-25",
-            "drug_substance_claim": false,
-            "drug_product_claim": true,
-            "patent_use_code": null,
-            "delisted": false,
-            "submission_date": "2020-09-04",
-            "product_numbers": [
-              "001"
-            ]
-          }
-        ],
-        "exclusivities": [],
-        "latest_patent_expiration": "2030-07-25",
-        "latest_exclusivity_expiration": null,
-        "data_file_date": null
+        "drug": "Clascoterone",
+        "application_number": "213433"
       },
-      "source_type": "orange_book",
-      "source_url": "https://api.fda.gov/drug/orangebook.json?search=products.active_ingredients.name%3A%22CLASCOTERONE%22&limit=100",
-      "source_excerpt": "openFDA drug/orangebook.json, 1 product row(s) matched on products.active_ingredients.name='CLASCOTERONE'",
-      "extracted_by": "fetch_orange_book.py (openfda drug/orangebook.json, cycle-9 pass)",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     },
     "purple_book": {
-      "value": null,
-      "source_type": "needs_extraction",
+      "value": {
+        "drug": "Clascoterone",
+        "application_number": null
+      },
+      "source_type": "drug_level_ref",
       "source_url": null,
       "source_excerpt": null,
       "extracted_by": null,

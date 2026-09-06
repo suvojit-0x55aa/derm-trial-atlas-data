@@ -1,5 +1,5 @@
 {
-  "schema_version": 3,
+  "schema_version": 4,
   "nct_id": {
     "value": "NCT03285490",
     "source_type": "ctgov_api",
@@ -84,25 +84,15 @@
     },
     "mechanism_of_action": {
       "value": {
-        "modality": "small_molecule",
-        "drug_class": "microtubule inhibitor",
-        "antibody_isotype": null,
-        "binding_targets": [],
-        "pathway_cytokines": [],
-        "receptor_subunits": [],
-        "kinases_inhibited": [],
-        "lower_potency_kinases": [],
-        "selectivity": [],
-        "reversible": null,
-        "mechanism_established": false,
-        "label_section": "12.1"
+        "drug": "Tirbanibulin",
+        "application_number": null
       },
-      "source_type": "openfda_label",
-      "source_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=89dd936d-4a69-4c60-b743-dfefb589ec1a",
-      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1) -- extracted text: 12.1 Mechanism of Action Tirbanibulin is a microtubule inhibitor. The mechanism of action of KLISYRI for the topical treatment of actinic keratosis is unknown.",
-      "extracted_by": "deep-extraction pass (LLM-assisted extraction, scale-out backfill; pending human QA)",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 0.9
+      "confidence": null
     },
     "dosing_regimen": {
       "value": [
@@ -1052,376 +1042,62 @@
     },
     "boxed_warning": {
       "value": {
-        "present": false,
-        "title": null,
-        "warning_categories": [],
-        "referenced_label_sections": [],
-        "product_names": []
+        "drug": "Tirbanibulin",
+        "application_number": null
       },
-      "source_type": "openfda_label",
-      "source_url": "https://api.fda.gov/drug/label.json?search=openfda.substance_name:TIRBANIBULIN&limit=1",
-      "source_excerpt": "results[0] has no boxed_warning key (checked, none present)",
-      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass); structured by atlas.migrate v1->v2",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     }
   },
   "real_world_safety": {
     "faers_summary": {
       "value": {
-        "query": {
-          "search_field": "patient.drug.medicinalproduct",
-          "search_term": "TIRBANIBULIN",
-          "receivedate_from": "2022-02-10",
-          "receivedate_to": "2026-04-27",
-          "api_urls": [
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"TIRBANIBULIN\"&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"TIRBANIBULIN\"+AND+serious:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"TIRBANIBULIN\"+AND+seriousnessdeath:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"TIRBANIBULIN\"+AND+seriousnesshospitalization:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"TIRBANIBULIN\"+AND+seriousnesslifethreatening:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"TIRBANIBULIN\"+AND+seriousnessdisabling:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"TIRBANIBULIN\"&count=patient.reaction.reactionmeddrapt.exact&limit=15",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"TIRBANIBULIN\"+AND+serious:1&count=patient.reaction.reactionmeddrapt.exact&limit=15",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"TIRBANIBULIN\"&count=receivedate"
-          ],
-          "data_last_updated": "2026-07-30"
-        },
-        "total_reports": 17,
-        "serious_reports": 8,
-        "death_reports": 0,
-        "hospitalization_reports": 1,
-        "life_threatening_reports": 0,
-        "disability_reports": 1,
-        "top_reactions": [
-          {
-            "meddra_pt": "APPLICATION SITE EXFOLIATION",
-            "report_count": 4,
-            "pct_of_reports": 23.53
-          },
-          {
-            "meddra_pt": "OFF LABEL USE",
-            "report_count": 4,
-            "pct_of_reports": 23.53
-          },
-          {
-            "meddra_pt": "APPLICATION SITE ERYTHEMA",
-            "report_count": 3,
-            "pct_of_reports": 17.65
-          },
-          {
-            "meddra_pt": "LIP SWELLING",
-            "report_count": 3,
-            "pct_of_reports": 17.65
-          },
-          {
-            "meddra_pt": "PARAESTHESIA",
-            "report_count": 3,
-            "pct_of_reports": 17.65
-          },
-          {
-            "meddra_pt": "POST INFLAMMATORY PIGMENTATION CHANGE",
-            "report_count": 3,
-            "pct_of_reports": 17.65
-          },
-          {
-            "meddra_pt": "RASH",
-            "report_count": 3,
-            "pct_of_reports": 17.65
-          },
-          {
-            "meddra_pt": "SWOLLEN TONGUE",
-            "report_count": 3,
-            "pct_of_reports": 17.65
-          },
-          {
-            "meddra_pt": "APPLICATION SITE DRYNESS",
-            "report_count": 2,
-            "pct_of_reports": 11.76
-          },
-          {
-            "meddra_pt": "DRUG INEFFECTIVE",
-            "report_count": 2,
-            "pct_of_reports": 11.76
-          },
-          {
-            "meddra_pt": "SKIN REACTION",
-            "report_count": 2,
-            "pct_of_reports": 11.76
-          },
-          {
-            "meddra_pt": "ACTINIC KERATOSIS",
-            "report_count": 1,
-            "pct_of_reports": 5.88
-          },
-          {
-            "meddra_pt": "APPLICATION SITE SCAB",
-            "report_count": 1,
-            "pct_of_reports": 5.88
-          },
-          {
-            "meddra_pt": "APPLICATION SITE VESICLES",
-            "report_count": 1,
-            "pct_of_reports": 5.88
-          },
-          {
-            "meddra_pt": "BRAIN FOG",
-            "report_count": 1,
-            "pct_of_reports": 5.88
-          }
-        ],
-        "top_serious_reactions": [
-          {
-            "meddra_pt": "LIP SWELLING",
-            "report_count": 3,
-            "pct_of_reports": 37.5
-          },
-          {
-            "meddra_pt": "PARAESTHESIA",
-            "report_count": 3,
-            "pct_of_reports": 37.5
-          },
-          {
-            "meddra_pt": "RASH",
-            "report_count": 3,
-            "pct_of_reports": 37.5
-          },
-          {
-            "meddra_pt": "SWOLLEN TONGUE",
-            "report_count": 3,
-            "pct_of_reports": 37.5
-          },
-          {
-            "meddra_pt": "ACTINIC KERATOSIS",
-            "report_count": 1,
-            "pct_of_reports": 12.5
-          },
-          {
-            "meddra_pt": "BRAIN FOG",
-            "report_count": 1,
-            "pct_of_reports": 12.5
-          },
-          {
-            "meddra_pt": "DIPLOPIA",
-            "report_count": 1,
-            "pct_of_reports": 12.5
-          },
-          {
-            "meddra_pt": "DISORIENTATION",
-            "report_count": 1,
-            "pct_of_reports": 12.5
-          },
-          {
-            "meddra_pt": "ERYTHEMA",
-            "report_count": 1,
-            "pct_of_reports": 12.5
-          },
-          {
-            "meddra_pt": "OEDEMA",
-            "report_count": 1,
-            "pct_of_reports": 12.5
-          },
-          {
-            "meddra_pt": "POST INFLAMMATORY PIGMENTATION CHANGE",
-            "report_count": 1,
-            "pct_of_reports": 12.5
-          },
-          {
-            "meddra_pt": "RASH PRURITIC",
-            "report_count": 1,
-            "pct_of_reports": 12.5
-          },
-          {
-            "meddra_pt": "SKIN EXFOLIATION",
-            "report_count": 1,
-            "pct_of_reports": 12.5
-          },
-          {
-            "meddra_pt": "SWELLING FACE",
-            "report_count": 1,
-            "pct_of_reports": 12.5
-          }
-        ],
-        "reports_by_year": [
-          {
-            "year": 2022,
-            "report_count": 6
-          },
-          {
-            "year": 2023,
-            "report_count": 2
-          },
-          {
-            "year": 2024,
-            "report_count": 2
-          },
-          {
-            "year": 2025,
-            "report_count": 3
-          },
-          {
-            "year": 2026,
-            "report_count": 4
-          }
-        ],
-        "meddra_version": null
+        "drug": "Tirbanibulin",
+        "application_number": null
       },
-      "source_type": "openfda_faers",
-      "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"TIRBANIBULIN\"&limit=1",
-      "source_excerpt": "openFDA drug/event.json aggregate: total_reports=17, serious=8, deaths=0",
-      "extracted_by": "fetch_faers.py (openfda drug/event.json, cycle-10 pass)",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     }
   },
   "exclusivity": {
     "regulatory_application": {
       "value": {
-        "application_type": "NDA",
-        "application_number": "213189",
-        "registry": "orange_book",
-        "center": "CDER",
-        "proprietary_name": "KLISYRI",
-        "applicant": "ALMIRALL LLC",
-        "first_approval_date": "2020-12-14"
+        "drug": "Tirbanibulin",
+        "application_number": "213189"
       },
-      "source_type": "orange_book",
-      "source_url": "https://api.fda.gov/drug/orangebook.json",
-      "source_excerpt": "openfda orangebook.json: products.active_ingredients.name=TIRBANIBULIN, application_number N213189, brand_name KLISYRI, applicant_full_name ALMIRALL LLC, approval_date 2020-12-14",
-      "extracted_by": "atlas.regulatory_applications (registry file fetched 2026-09-05)",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     },
     "orange_book": {
       "value": {
-        "application_type": "N",
-        "application_number": "213189",
-        "ingredient": "TIRBANIBULIN",
-        "trade_name": "KLISYRI",
-        "applicant": "ALMIRALL",
-        "applicant_full_name": "ALMIRALL LLC",
-        "products": [
-          {
-            "product_number": "001",
-            "strength": "1%",
-            "dosage_form": "OINTMENT",
-            "route": "TOPICAL",
-            "approval_date": "2020-12-14",
-            "rld": true,
-            "rs": true,
-            "te_code": null,
-            "marketing_type": "HUMAN PRESCRIPTION DRUG"
-          }
-        ],
-        "patents": [
-          {
-            "patent_number": "10323001",
-            "expiration_date": "2027-12-28",
-            "drug_substance_claim": false,
-            "drug_product_claim": true,
-            "patent_use_code": null,
-            "delisted": false,
-            "submission_date": "2021-01-12",
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "patent_number": "7851470",
-            "expiration_date": "2029-02-02",
-            "drug_substance_claim": true,
-            "drug_product_claim": true,
-            "patent_use_code": "U-3015",
-            "delisted": false,
-            "submission_date": "2021-01-12",
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "patent_number": "7300931",
-            "expiration_date": "2030-12-28",
-            "drug_substance_claim": true,
-            "drug_product_claim": true,
-            "patent_use_code": null,
-            "delisted": false,
-            "submission_date": "2021-01-12",
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "patent_number": "10617693",
-            "expiration_date": "2038-03-12",
-            "drug_substance_claim": false,
-            "drug_product_claim": false,
-            "patent_use_code": "U-3015",
-            "delisted": false,
-            "submission_date": "2021-01-12",
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "patent_number": "11497750",
-            "expiration_date": "2038-03-12",
-            "drug_substance_claim": false,
-            "drug_product_claim": false,
-            "patent_use_code": "U-3015",
-            "delisted": false,
-            "submission_date": "2022-12-14",
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "patent_number": "12667576",
-            "expiration_date": "2038-03-12",
-            "drug_substance_claim": false,
-            "drug_product_claim": false,
-            "patent_use_code": "U-4577",
-            "delisted": false,
-            "submission_date": "2026-07-22",
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "patent_number": "10669236",
-            "expiration_date": "2038-09-07",
-            "drug_substance_claim": true,
-            "drug_product_claim": true,
-            "patent_use_code": null,
-            "delisted": false,
-            "submission_date": "2021-01-12",
-            "product_numbers": [
-              "001"
-            ]
-          }
-        ],
-        "exclusivities": [
-          {
-            "code": "D-192",
-            "expiration_date": "2027-06-07",
-            "product_numbers": [
-              "001"
-            ]
-          }
-        ],
-        "latest_patent_expiration": "2038-09-07",
-        "latest_exclusivity_expiration": "2027-06-07",
-        "data_file_date": null
+        "drug": "Tirbanibulin",
+        "application_number": "213189"
       },
-      "source_type": "orange_book",
-      "source_url": "https://api.fda.gov/drug/orangebook.json?search=products.active_ingredients.name%3A%22TIRBANIBULIN%22&limit=100",
-      "source_excerpt": "openFDA drug/orangebook.json, 1 product row(s) matched on products.active_ingredients.name='TIRBANIBULIN'",
-      "extracted_by": "fetch_orange_book.py (openfda drug/orangebook.json, cycle-10 pass)",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     },
     "purple_book": {
-      "value": null,
-      "source_type": "needs_extraction",
+      "value": {
+        "drug": "Tirbanibulin",
+        "application_number": null
+      },
+      "source_type": "drug_level_ref",
       "source_url": null,
       "source_excerpt": null,
       "extracted_by": null,

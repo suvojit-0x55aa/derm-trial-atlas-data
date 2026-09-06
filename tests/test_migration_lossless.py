@@ -2,7 +2,13 @@
 Proof that the v1 -> v2 migration loses nothing.
 
 For every trial, the committed v1 record (tests/fixtures/v1_trials/) is
-compared against the committed v2 record (data/trials/):
+compared against "v2" -- the committed data/trials/ record RESOLVED back to
+its full v3-equivalent shape via atlas.drugs.resolve_trial_record (the
+committed record is actually schema v4 as of the drug-level restructuring:
+6 fields are drug_level_ref pointers, not the fact itself -- resolving
+undoes exactly that indirection so this file's proof still means what it
+always meant: every v1 fact is still findable in "the current data",
+wherever it is now actually stored):
 
   1. determinism      migrate_trial(v1) == committed v2, byte for byte
   2. untouched fields every v1 sourced value whose shape did not change is
@@ -29,6 +35,7 @@ import unittest
 from pathlib import Path
 
 from atlas.criteria import SCALE_PATTERNS
+from atlas.drugs import DRUGS_DIR, load_all_drug_records, resolve_trial_record
 from atlas.migrate import RENAMES, migrate_trial, migrate_v2_to_v3
 from atlas.scalars import parse_age_years, parse_ctgov_date
 
@@ -103,10 +110,18 @@ def sourced_fields(record):
 class LosslessMigrationTest(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
+        drug_records = load_all_drug_records(DRUGS_DIR)
         cls.pairs = []
         for f in sorted(V1_DIR.glob("*.json")):
             v1 = json.loads(f.read_text())
             v2 = json.loads((V2_DIR / f.name).read_text())
+            if v2.get("schema_version") == 4:
+                # Undo the drug-level split for this test's purposes -- see
+                # module docstring. schema_version is overridden back to 3
+                # (what migrate_trial actually produces) since this class
+                # compares against migrate_trial(v1)'s output byte-for-byte.
+                v2 = resolve_trial_record(v2, drug_records)
+                v2["schema_version"] = 3
             cls.pairs.append((f.stem, v1, v2))
         assert len(cls.pairs) == 17, "expected the 17 committed v1 trials"
 

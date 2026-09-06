@@ -1,0 +1,165 @@
+{
+  "schema_version": 1,
+  "drug": "Abametapir",
+  "applications": [
+    {
+      "application_number": "206966",
+      "regulatory_application": {
+        "value": {
+          "application_type": "NDA",
+          "application_number": "206966",
+          "registry": "orange_book",
+          "center": "CDER",
+          "proprietary_name": "XEGLYZE",
+          "applicant": "LNHC INC",
+          "first_approval_date": "2020-07-24"
+        },
+        "source_type": "orange_book",
+        "source_url": "https://api.fda.gov/drug/orangebook.json",
+        "source_excerpt": "openfda orangebook.json: application_number N206966, brand_name XEGLYZE, applicant_full_name LNHC INC, approval_date 2020-07-24",
+        "extracted_by": "atlas.regulatory_applications (registry file fetched 2026-09-05)",
+        "reviewed_by": null,
+        "confidence": 1.0
+      },
+      "orange_book": {
+        "value": {
+          "application_type": "N",
+          "application_number": "206966",
+          "ingredient": "ABAMETAPIR",
+          "trade_name": "XEGLYZE",
+          "applicant": "LNHC",
+          "applicant_full_name": "LNHC INC",
+          "products": [
+            {
+              "product_number": "001",
+              "strength": "0.74%",
+              "dosage_form": "LOTION",
+              "route": "TOPICAL",
+              "approval_date": "2020-07-24",
+              "rld": true,
+              "rs": false,
+              "te_code": null,
+              "marketing_type": "HUMAN PRESCRIPTION DRUG"
+            }
+          ],
+          "patents": [
+            {
+              "patent_number": "7812163",
+              "expiration_date": "2026-10-28",
+              "drug_substance_claim": true,
+              "drug_product_claim": true,
+              "patent_use_code": "U-2863",
+              "delisted": false,
+              "submission_date": "2020-07-31",
+              "product_numbers": [
+                "001"
+              ]
+            },
+            {
+              "patent_number": "10292389",
+              "expiration_date": "2034-12-17",
+              "drug_substance_claim": true,
+              "drug_product_claim": true,
+              "patent_use_code": "U-2863",
+              "delisted": false,
+              "submission_date": "2020-07-31",
+              "product_numbers": [
+                "001"
+              ]
+            }
+          ],
+          "exclusivities": [],
+          "latest_patent_expiration": "2034-12-17",
+          "latest_exclusivity_expiration": null,
+          "data_file_date": null
+        },
+        "source_type": "orange_book",
+        "source_url": "https://api.fda.gov/drug/orangebook.json?search=products.active_ingredients.name%3A%22ABAMETAPIR%22&limit=100",
+        "source_excerpt": "openFDA drug/orangebook.json, 1 product row matched on products.active_ingredients.name='ABAMETAPIR' -- no ingredient-name collision (unlike Ruxolitinib/Roflumilast/Ivermectin/Glycopyrronium).",
+        "extracted_by": "fetch_orange_book.py (openfda drug/orangebook.json, cycle-17 pass)",
+        "reviewed_by": null,
+        "confidence": 1.0
+      }
+    }
+  ],
+  "trial_ids": [
+    "NCT02060903"
+  ],
+  "mechanism_of_action": {
+    "value": {
+      "modality": "small_molecule",
+      "drug_class": "metalloproteinase inhibitor",
+      "antibody_isotype": null,
+      "binding_targets": [],
+      "pathway_cytokines": [],
+      "receptor_subunits": [],
+      "kinases_inhibited": [],
+      "lower_potency_kinases": [],
+      "selectivity": [],
+      "reversible": null,
+      "mechanism_established": true,
+      "label_section": "12.1"
+    },
+    "source_type": "openfda_label",
+    "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2020/206966lbl.pdf",
+    "source_excerpt": "Section 12.1 Mechanism of Action: 'Abametapir (5,5'-dimethyl 2,2'-bipyridinyl) is a metalloproteinase inhibitor. Metalloproteinases have a role in physiological processes critical to egg development and survival of lice.'",
+    "extracted_by": "manual label read (original approval-package label PDF, cycle-17 pass)",
+    "reviewed_by": null,
+    "confidence": 1.0
+  },
+  "boxed_warning": {
+    "value": {
+      "present": false,
+      "title": null,
+      "warning_categories": [],
+      "referenced_label_sections": [],
+      "product_names": []
+    },
+    "source_type": "openfda_label",
+    "source_url": "https://api.fda.gov/drug/label.json?search=openfda.brand_name:XEGLYZE&limit=1",
+    "source_excerpt": "openFDA drug/label.json has no indexed entry for XEGLYZE/ABAMETAPIR under brand_name, generic_name, or application_number (NDA206966) -- XEGLYZE is a market-discontinued brand, same as Kerydin/Xepi/Eskata's precedent. Confirmed no boxed warning instead by reading the original FDA-approved label PDF directly (accessdata.fda.gov/drugsatfda_docs/label/2020/206966lbl.pdf, Reference ID 4645747): Section 4 Contraindications = 'None', no boxed warning section present (Section 5 Warnings and Precautions covers benzyl-alcohol toxicity risk only, not a boxed warning).",
+    "extracted_by": "manual label read (original approval-package label PDF, cycle-17 pass)",
+    "reviewed_by": null,
+    "confidence": 1.0
+  },
+  "faers_summary": {
+    "value": {
+      "query": {
+        "search_field": "patient.drug.medicinalproduct",
+        "search_term": "ABAMETAPIR",
+        "receivedate_from": null,
+        "receivedate_to": null,
+        "api_urls": [
+          "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ABAMETAPIR\"&limit=1",
+          "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"XEGLYZE\"&limit=1"
+        ],
+        "data_last_updated": "2026-09-04"
+      },
+      "total_reports": 0,
+      "serious_reports": 0,
+      "death_reports": 0,
+      "hospitalization_reports": 0,
+      "life_threatening_reports": 0,
+      "disability_reports": 0,
+      "top_reactions": [],
+      "top_serious_reactions": [],
+      "reports_by_year": [],
+      "meddra_version": null
+    },
+    "source_type": "openfda_faers",
+    "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ABAMETAPIR\"&limit=1",
+    "source_excerpt": "openFDA drug/event.json returns a genuine NOT_FOUND for both the generic term ABAMETAPIR and the brand XEGLYZE -- confirmed real zero (not a search-term miss, per the established brand-name-retry rule) by trying both terms; no FAERS reports exist for this low-volume, market-discontinued single-application topical pediculicide.",
+    "extracted_by": "fetch_faers.py (openfda drug/event.json, cycle-17 pass)",
+    "reviewed_by": null,
+    "confidence": 1.0
+  },
+  "purple_book": {
+    "value": null,
+    "source_type": "needs_extraction",
+    "source_url": null,
+    "source_excerpt": null,
+    "extracted_by": null,
+    "reviewed_by": null,
+    "confidence": null
+  }
+}

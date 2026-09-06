@@ -1,4 +1,4 @@
-# Open Derm Trial Atlas -- schema v3 (field reference)
+# Open Derm Trial Atlas -- schema v4 (field reference)
 
 Generated from `atlas/schema.py` by `scripts/export_schema.py`; do not edit by hand.
 The machine-readable form is `schema/trial.schema.json`.
@@ -10,11 +10,17 @@ Every field below is a **sourced value**:
  "source_excerpt": str|null, "extracted_by": str|null, "reviewed_by": str|null, "confidence": number|null}
 ```
 
-`source_type` is one of: `ctgov_api`, `ctgov_text_extraction`, `protocol_pdf_extraction`, `publication_extraction`, `openfda_label`, `openfda_faers`, `orange_book`, `purple_book`, `needs_extraction`.
+`source_type` is one of: `ctgov_api`, `ctgov_text_extraction`, `protocol_pdf_extraction`, `publication_extraction`, `openfda_label`, `openfda_faers`, `orange_book`, `purple_book`, `needs_extraction`, `drug_level_ref`.
 A `needs_extraction` field always has `value: null`; every other source type carries a value of the
 type in the table (nullable where marked). Free prose never lives in `value` -- where a v1 field was
 prose, that prose is now in `source_excerpt` (or the endpoint's `verbatim` / intervention's
 `description`) as provenance, and `value` holds the atomic decomposition.
+
+6 fields (`molecule.mechanism_of_action`, `adverse_events.boxed_warning`,
+`real_world_safety.faers_summary`, `exclusivity.{regulatory_application,orange_book,purple_book}`)
+are `DrugRef` pointers, not the fact itself: the fact is extracted once and lives on
+`data/drugs/<slug>.json` (see the 'Drug record fields' section below and `atlas/drugs.py`),
+referenced by every trial of that drug instead of re-described per trial.
 
 ## Trial record fields
 
@@ -23,12 +29,12 @@ prose, that prose is now in `source_excerpt` (or the endpoint's `verbatim` / int
 | `nct_id` | string \| null | ClinicalTrials.gov identifier |  |
 | `identity.trial_name` | string \| null | CT.gov acronym (null when the registry has none) |  |
 | `identity.official_title` | string \| null | CT.gov official title |  |
-| `identity.sponsor` | string \| null | lead sponsor name |  |
+| `identity.sponsor` | string \| null | lead sponsor name (trial-level: can differ across a drug's own trials when development/commercial rights changed hands -- not moved to the drug record, see DRUG_REF's docstring) |  |
 | `identity.phase` | list[string] \| null | CT.gov phases, e.g. ['PHASE3'] |  |
-| `molecule.drug` | string \| null | canonical drug name (curated) |  |
+| `molecule.drug` | string \| null | canonical drug name (curated); also the join key into data/drugs/<slug>.json |  |
 | `molecule.intervention_names` | list[string] \| null | CT.gov intervention names |  |
 | `molecule.intervention_type` | list[string] \| null | CT.gov intervention types |  |
-| `molecule.mechanism_of_action` | Mechanism \| null | typed mechanism from the FDA label section 12.1; label text in source_excerpt |  |
+| `molecule.mechanism_of_action` | DrugRef \| null | drug-level fact -- see data/drugs/<slug>.json's own mechanism_of_action |  |
 | `molecule.dosing_regimen` | list[Intervention] \| null | one typed object per CT.gov intervention |  |
 | `population.condition` | list[string] \| null | CT.gov conditions |  |
 | `population.min_age_years` | number \| null | minimum age in years (CT.gov '18 Years' -> 18) | `population.min_age` |
@@ -54,17 +60,32 @@ prose, that prose is now in `source_excerpt` (or the endpoint's `verbatim` / int
 | `adverse_events.death_rate` | list[ArmRate] \| null | per-arm death rate from CT.gov results |  |
 | `adverse_events.most_common_adverse_events` | list[AdverseEventTerm] \| null | top non-serious AEs by MedDRA PT with per-arm rates |  |
 | `adverse_events.discontinuation_due_to_ae_rate` | list[ArmDiscontinuation] \| null | per-arm discontinuation-for-AE rate |  |
-| `adverse_events.boxed_warning` | BoxedWarning \| null | typed boxed warning; present=false is a confirmed absence |  |
-| `real_world_safety.faers_summary` | FaersSummary \| null | openFDA FAERS post-marketing report summary (drug-level) |  |
-| `exclusivity.regulatory_application` | RegulatoryApplication \| null | NDA/BLA join key for Orange/Purple Book (drug-level) |  |
-| `exclusivity.orange_book` | OrangeBookRecord \| null | Orange Book patents + exclusivities (small-molecule NDAs only) |  |
-| `exclusivity.purple_book` | PurpleBookRecord \| null | Purple Book licensure + BPCIA exclusivity (biologic BLAs only) |  |
+| `adverse_events.boxed_warning` | DrugRef \| null | drug-level fact -- see data/drugs/<slug>.json's own boxed_warning |  |
+| `real_world_safety.faers_summary` | DrugRef \| null | drug-level fact -- see data/drugs/<slug>.json's own faers_summary |  |
+| `exclusivity.regulatory_application` | DrugRef \| null | drug-level fact, keyed by application_number -- see data/drugs/<slug>.json's own applications[].regulatory_application |  |
+| `exclusivity.orange_book` | DrugRef \| null | drug-level fact, keyed by application_number -- see data/drugs/<slug>.json's own applications[].orange_book |  |
+| `exclusivity.purple_book` | DrugRef \| null | drug-level fact -- see data/drugs/<slug>.json's own purple_book |  |
 | `results.arms` | list[Arm] \| null | per-trial arm registry from CT.gov results groups, role-classified |  |
 | `results.arm_results` | list[ArmResult] \| null | one row per endpoint x timepoint x arm (CT.gov results) |  |
 | `results.effect_estimates` | list[EffectEstimate] \| null | one row per endpoint x timepoint x pairwise comparison |  |
 | `results.published_results` | list[ArmResult] \| null | same shape as arm_results, publication/label sourced; NEVER mixed with arm_results -- keeps registry-grade CT.gov numbers and literature-grade numbers separable at the field level |  |
 
-Plus the top-level literal `schema_version: 3`.
+Plus the top-level literal `schema_version: 4`.
+
+## Drug record fields (data/drugs/<slug>.json)
+
+One drug's cross-indication facts, extracted once and referenced (not copied) by every trial of this drug -- see atlas/drugs.py
+
+| Field | Value type | Meaning |
+|---|---|---|
+| `mechanism_of_action` | Mechanism \| null | typed mechanism from the FDA label section 12.1; label text in source_excerpt |
+| `boxed_warning` | BoxedWarning \| null | typed boxed warning; present=false is a confirmed absence |
+| `faers_summary` | FaersSummary \| null | openFDA FAERS post-marketing report summary |
+| `purple_book` | PurpleBookRecord \| null | Purple Book licensure + BPCIA exclusivity (biologic BLAs only) |
+| `applications` | list[DrugApplication] | one entry per distinct FDA application this drug holds -- almost always exactly 1; Roflumilast is the one drug in this corpus with 2 (cream NDA 215985, foam NDA 217242) |
+| `trial_ids` | list[string] | NCT ids of every trial of this drug in this atlas -- informational back-reference, not authoritative (data/trials/*.json's molecule.drug is) |
+
+Plus the top-level literals `schema_version: 1` and `drug` (string).
 
 ## ScoreCriterion
 
@@ -511,3 +532,22 @@ One row per endpoint x timepoint x pairwise arm comparison (a CT.gov analysis)
 | `p_value` | PValue \| null | P-value as bound + value; reuses the ScoreCriterion comparator idiom |
 | `statistical_method` | string \| null | CT.gov statisticalMethod, e.g. 'Cochran-Mantel-Haenszel' |
 | `adjusted_for` | list[string] | stratification factors parsed from groupDescription |
+
+## DrugRef
+
+Pointer to a drug-level fact on data/drugs/<slug>.json instead of re-describing it here
+
+| Key | Type | Notes |
+|---|---|---|
+| `drug` | string | drug record key; joins to data/drugs/<slug>.json's own `drug` field |
+| `application_number` | string \| null | disambiguates when the drug has more than one FDA application (e.g. Roflumilast's cream NDA 215985 vs. foam NDA 217242); null for a single-application drug, or for a field with no per-application variance (mechanism_of_action, boxed_warning, faers_summary, purple_book) |
+
+## DrugApplication
+
+One FDA application this drug holds
+
+| Key | Type | Notes |
+|---|---|---|
+| `application_number` | string \| null | null only when regulatory_application itself is needs_extraction |
+| `regulatory_application` | {value: RegulatoryApplication \| null, source_type: enum(ctgov_api \| ctgov_text_extraction \| protocol_pdf_extraction \| publication_extraction \| openfda_label \| openfda_faers \| orange_book \| purple_book \| needs_extraction \| drug_level_ref), source_url: string \| null, source_excerpt: string \| null, extracted_by: string \| null, reviewed_by: string \| null, confidence: number \| null} | NDA/BLA join key for Orange/Purple Book |
+| `orange_book` | {value: OrangeBookRecord \| null, source_type: enum(ctgov_api \| ctgov_text_extraction \| protocol_pdf_extraction \| publication_extraction \| openfda_label \| openfda_faers \| orange_book \| purple_book \| needs_extraction \| drug_level_ref), source_url: string \| null, source_excerpt: string \| null, extracted_by: string \| null, reviewed_by: string \| null, confidence: number \| null} | Orange Book patents + exclusivities (small-molecule NDAs only) |

@@ -1,0 +1,337 @@
+{
+  "schema_version": 1,
+  "drug": "Tavaborole",
+  "applications": [
+    {
+      "application_number": "204427",
+      "regulatory_application": {
+        "value": {
+          "application_type": "NDA",
+          "application_number": "204427",
+          "registry": "orange_book",
+          "center": "CDER",
+          "proprietary_name": "KERYDIN",
+          "applicant": "ANACOR PHARMACEUTICALS INC",
+          "first_approval_date": "2014-07-07"
+        },
+        "source_type": "orange_book",
+        "source_url": "https://api.fda.gov/drug/orangebook.json",
+        "source_excerpt": "openfda orangebook.json: products.active_ingredients.name=TAVABOROLE, application_number N204427, brand_name KERYDIN, applicant_full_name ANACOR PHARMACEUTICALS INC, marketing_status DISCONTINUED (brand discontinued post-genericization -- approval itself is real and unaffected)",
+        "extracted_by": "atlas.regulatory_applications (registry file fetched 2026-09-05)",
+        "reviewed_by": null,
+        "confidence": 1.0
+      },
+      "orange_book": {
+        "value": {
+          "application_type": "N",
+          "application_number": "204427",
+          "ingredient": "TAVABOROLE",
+          "trade_name": "KERYDIN",
+          "applicant": "ANACOR PHARMS INC",
+          "applicant_full_name": "ANACOR PHARMACEUTICALS INC",
+          "products": [
+            {
+              "product_number": "001",
+              "strength": "5% **Federal Register determination that product was not discontinued or withdrawn for safety or effectiveness reasons**",
+              "dosage_form": "SOLUTION",
+              "route": "TOPICAL",
+              "approval_date": "2014-07-07",
+              "rld": true,
+              "rs": false,
+              "te_code": null,
+              "marketing_type": "DISCONTINUED"
+            }
+          ],
+          "patents": [],
+          "exclusivities": [],
+          "latest_patent_expiration": null,
+          "latest_exclusivity_expiration": null,
+          "data_file_date": null
+        },
+        "source_type": "orange_book",
+        "source_url": "https://api.fda.gov/drug/orangebook.json?search=products.active_ingredients.name%3A%22TAVABOROLE%22&limit=100",
+        "source_excerpt": "openFDA drug/orangebook.json, 1 product row(s) matched on products.active_ingredients.name='TAVABOROLE' AND application_number='204427' (of 10 total rows for this ingredient across all applicants)",
+        "extracted_by": "fetch_orange_book.py (openfda drug/orangebook.json, cycle-9 pass, NDA-pinned)",
+        "reviewed_by": null,
+        "confidence": 1.0
+      }
+    }
+  ],
+  "trial_ids": [
+    "NCT01270971",
+    "NCT01302119"
+  ],
+  "mechanism_of_action": {
+    "value": {
+      "modality": "small_molecule",
+      "drug_class": "oxaborole antifungal",
+      "antibody_isotype": null,
+      "binding_targets": [],
+      "pathway_cytokines": [],
+      "receptor_subunits": [],
+      "kinases_inhibited": [],
+      "lower_potency_kinases": [],
+      "selectivity": [],
+      "reversible": null,
+      "mechanism_established": null,
+      "label_section": "12.1"
+    },
+    "source_type": "openfda_label",
+    "source_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=10a126f9-ec1b-44d2-8611-3d6660a53ae8",
+    "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1) -- extracted text: 12.1 Mechanism of Action Tavaborole topical solution is an oxaborole antifungal [see Clinical Pharmacology (12.4 ) ].",
+    "extracted_by": "deep-extraction pass (LLM-assisted extraction, scale-out backfill; pending human QA)",
+    "reviewed_by": null,
+    "confidence": 0.9
+  },
+  "boxed_warning": {
+    "value": {
+      "present": false,
+      "title": null,
+      "warning_categories": [],
+      "referenced_label_sections": [],
+      "product_names": []
+    },
+    "source_type": "openfda_label",
+    "source_url": "https://api.fda.gov/drug/label.json?search=openfda.substance_name:TAVABOROLE&limit=1",
+    "source_excerpt": "results[0] has no boxed_warning key (checked, none present)",
+    "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass); structured by atlas.migrate v1->v2",
+    "reviewed_by": null,
+    "confidence": 1.0
+  },
+  "faers_summary": {
+    "value": {
+      "query": {
+        "search_field": "patient.drug.medicinalproduct",
+        "search_term": "TAVABOROLE",
+        "receivedate_from": "2016-02-05",
+        "receivedate_to": "2026-06-30",
+        "api_urls": [
+          "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"TAVABOROLE\"&limit=1",
+          "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"TAVABOROLE\"+AND+serious:1&limit=1",
+          "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"TAVABOROLE\"+AND+seriousnessdeath:1&limit=1",
+          "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"TAVABOROLE\"+AND+seriousnesshospitalization:1&limit=1",
+          "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"TAVABOROLE\"+AND+seriousnesslifethreatening:1&limit=1",
+          "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"TAVABOROLE\"+AND+seriousnessdisabling:1&limit=1",
+          "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"TAVABOROLE\"&count=patient.reaction.reactionmeddrapt.exact&limit=15",
+          "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"TAVABOROLE\"+AND+serious:1&count=patient.reaction.reactionmeddrapt.exact&limit=15",
+          "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"TAVABOROLE\"&count=receivedate"
+        ],
+        "data_last_updated": "2026-07-30"
+      },
+      "total_reports": 65,
+      "serious_reports": 10,
+      "death_reports": 2,
+      "hospitalization_reports": 3,
+      "life_threatening_reports": 0,
+      "disability_reports": 1,
+      "top_reactions": [
+        {
+          "meddra_pt": "DRUG INEFFECTIVE",
+          "report_count": 11,
+          "pct_of_reports": 16.92
+        },
+        {
+          "meddra_pt": "INJECTION SITE PAIN",
+          "report_count": 4,
+          "pct_of_reports": 6.15
+        },
+        {
+          "meddra_pt": "OFF LABEL USE",
+          "report_count": 4,
+          "pct_of_reports": 6.15
+        },
+        {
+          "meddra_pt": "PRODUCT DOSE OMISSION IN ERROR",
+          "report_count": 4,
+          "pct_of_reports": 6.15
+        },
+        {
+          "meddra_pt": "COUGH",
+          "report_count": 3,
+          "pct_of_reports": 4.62
+        },
+        {
+          "meddra_pt": "PRODUCT PACKAGING QUANTITY ISSUE",
+          "report_count": 3,
+          "pct_of_reports": 4.62
+        },
+        {
+          "meddra_pt": "PRURITUS",
+          "report_count": 3,
+          "pct_of_reports": 4.62
+        },
+        {
+          "meddra_pt": "RASH",
+          "report_count": 3,
+          "pct_of_reports": 4.62
+        },
+        {
+          "meddra_pt": "SKIN IRRITATION",
+          "report_count": 3,
+          "pct_of_reports": 4.62
+        },
+        {
+          "meddra_pt": "ACCIDENTAL EXPOSURE TO PRODUCT",
+          "report_count": 2,
+          "pct_of_reports": 3.08
+        },
+        {
+          "meddra_pt": "ALOPECIA",
+          "report_count": 2,
+          "pct_of_reports": 3.08
+        },
+        {
+          "meddra_pt": "ASTHMA",
+          "report_count": 2,
+          "pct_of_reports": 3.08
+        },
+        {
+          "meddra_pt": "BACK INJURY",
+          "report_count": 2,
+          "pct_of_reports": 3.08
+        },
+        {
+          "meddra_pt": "DEATH",
+          "report_count": 2,
+          "pct_of_reports": 3.08
+        },
+        {
+          "meddra_pt": "DERMATITIS ATOPIC",
+          "report_count": 2,
+          "pct_of_reports": 3.08
+        }
+      ],
+      "top_serious_reactions": [
+        {
+          "meddra_pt": "DEATH",
+          "report_count": 2,
+          "pct_of_reports": 20.0
+        },
+        {
+          "meddra_pt": "FATIGUE",
+          "report_count": 2,
+          "pct_of_reports": 20.0
+        },
+        {
+          "meddra_pt": "HEADACHE",
+          "report_count": 2,
+          "pct_of_reports": 20.0
+        },
+        {
+          "meddra_pt": "ILLNESS",
+          "report_count": 2,
+          "pct_of_reports": 20.0
+        },
+        {
+          "meddra_pt": "INJECTION SITE PAIN",
+          "report_count": 2,
+          "pct_of_reports": 20.0
+        },
+        {
+          "meddra_pt": "ACCIDENTAL EXPOSURE TO PRODUCT",
+          "report_count": 1,
+          "pct_of_reports": 10.0
+        },
+        {
+          "meddra_pt": "ADVERSE EVENT",
+          "report_count": 1,
+          "pct_of_reports": 10.0
+        },
+        {
+          "meddra_pt": "ARTHRALGIA",
+          "report_count": 1,
+          "pct_of_reports": 10.0
+        },
+        {
+          "meddra_pt": "ASTHMA",
+          "report_count": 1,
+          "pct_of_reports": 10.0
+        },
+        {
+          "meddra_pt": "BACK INJURY",
+          "report_count": 1,
+          "pct_of_reports": 10.0
+        },
+        {
+          "meddra_pt": "BLOOD PRESSURE INCREASED",
+          "report_count": 1,
+          "pct_of_reports": 10.0
+        },
+        {
+          "meddra_pt": "CHILLS",
+          "report_count": 1,
+          "pct_of_reports": 10.0
+        },
+        {
+          "meddra_pt": "CHOLELITHIASIS",
+          "report_count": 1,
+          "pct_of_reports": 10.0
+        },
+        {
+          "meddra_pt": "COUGH",
+          "report_count": 1,
+          "pct_of_reports": 10.0
+        },
+        {
+          "meddra_pt": "COVID-19",
+          "report_count": 1,
+          "pct_of_reports": 10.0
+        }
+      ],
+      "reports_by_year": [
+        {
+          "year": 2016,
+          "report_count": 1
+        },
+        {
+          "year": 2018,
+          "report_count": 1
+        },
+        {
+          "year": 2020,
+          "report_count": 2
+        },
+        {
+          "year": 2021,
+          "report_count": 5
+        },
+        {
+          "year": 2022,
+          "report_count": 13
+        },
+        {
+          "year": 2023,
+          "report_count": 9
+        },
+        {
+          "year": 2024,
+          "report_count": 9
+        },
+        {
+          "year": 2025,
+          "report_count": 13
+        },
+        {
+          "year": 2026,
+          "report_count": 12
+        }
+      ],
+      "meddra_version": null
+    },
+    "source_type": "openfda_faers",
+    "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"TAVABOROLE\"&limit=1",
+    "source_excerpt": "openFDA drug/event.json aggregate: total_reports=65, serious=10, deaths=2",
+    "extracted_by": "fetch_faers.py (openfda drug/event.json, cycle-9 pass)",
+    "reviewed_by": null,
+    "confidence": 1.0
+  },
+  "purple_book": {
+    "value": null,
+    "source_type": "needs_extraction",
+    "source_url": null,
+    "source_excerpt": null,
+    "extracted_by": null,
+    "reviewed_by": null,
+    "confidence": null
+  }
+}

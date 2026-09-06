@@ -1,5 +1,5 @@
 {
-  "schema_version": 3,
+  "schema_version": 4,
   "nct_id": {
     "value": "NCT03983980",
     "source_type": "ctgov_api",
@@ -84,27 +84,15 @@
     },
     "mechanism_of_action": {
       "value": {
-        "modality": "small_molecule",
-        "drug_class": "aryl hydrocarbon receptor (AhR) agonist",
-        "antibody_isotype": null,
-        "binding_targets": [],
-        "pathway_cytokines": [],
-        "receptor_subunits": [
-          "AhR"
-        ],
-        "kinases_inhibited": [],
-        "lower_potency_kinases": [],
-        "selectivity": [],
-        "reversible": null,
-        "mechanism_established": false,
-        "label_section": "12.1"
+        "drug": "Tapinarof",
+        "application_number": null
       },
-      "source_type": "openfda_label",
-      "source_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=4615ce09-cf4d-4410-91ff-db3caea7a802",
-      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1) -- extracted text: 12.1 Mechanism of Action Tapinarof is an aryl hydrocarbon receptor (AhR) agonist. The specific mechanisms by which VTAMA cream exerts its therapeutic actions are unknown.",
-      "extracted_by": "deep-extraction pass (LLM-assisted extraction, scale-out backfill; pending human QA)",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 0.9
+      "confidence": null
     },
     "dosing_regimen": {
       "value": [
@@ -922,448 +910,62 @@
     },
     "boxed_warning": {
       "value": {
-        "present": false,
-        "title": null,
-        "warning_categories": [],
-        "referenced_label_sections": [],
-        "product_names": []
+        "drug": "Tapinarof",
+        "application_number": null
       },
-      "source_type": "openfda_label",
-      "source_url": "https://api.fda.gov/drug/label.json?search=openfda.substance_name:TAPINAROF&limit=1",
-      "source_excerpt": "results[0] has no boxed_warning key (checked, none present)",
-      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass); structured by atlas.migrate v1->v2",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     }
   },
   "real_world_safety": {
     "faers_summary": {
       "value": {
-        "query": {
-          "search_field": "patient.drug.medicinalproduct",
-          "search_term": "TAPINAROF",
-          "receivedate_from": "2022-08-24",
-          "receivedate_to": "2026-06-05",
-          "api_urls": [
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"TAPINAROF\"&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"TAPINAROF\"+AND+serious:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"TAPINAROF\"+AND+seriousnessdeath:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"TAPINAROF\"+AND+seriousnesshospitalization:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"TAPINAROF\"+AND+seriousnesslifethreatening:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"TAPINAROF\"+AND+seriousnessdisabling:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"TAPINAROF\"&count=patient.reaction.reactionmeddrapt.exact&limit=15",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"TAPINAROF\"+AND+serious:1&count=patient.reaction.reactionmeddrapt.exact&limit=15",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"TAPINAROF\"&count=receivedate"
-          ],
-          "data_last_updated": "2026-07-30"
-        },
-        "total_reports": 997,
-        "serious_reports": 26,
-        "death_reports": 2,
-        "hospitalization_reports": 6,
-        "life_threatening_reports": 0,
-        "disability_reports": 0,
-        "top_reactions": [
-          {
-            "meddra_pt": "FOLLICULITIS",
-            "report_count": 235,
-            "pct_of_reports": 23.57
-          },
-          {
-            "meddra_pt": "PRURITUS",
-            "report_count": 121,
-            "pct_of_reports": 12.14
-          },
-          {
-            "meddra_pt": "DERMATITIS CONTACT",
-            "report_count": 97,
-            "pct_of_reports": 9.73
-          },
-          {
-            "meddra_pt": "HEADACHE",
-            "report_count": 96,
-            "pct_of_reports": 9.63
-          },
-          {
-            "meddra_pt": "RASH",
-            "report_count": 81,
-            "pct_of_reports": 8.12
-          },
-          {
-            "meddra_pt": "SKIN BURNING SENSATION",
-            "report_count": 64,
-            "pct_of_reports": 6.42
-          },
-          {
-            "meddra_pt": "ERYTHEMA",
-            "report_count": 61,
-            "pct_of_reports": 6.12
-          },
-          {
-            "meddra_pt": "DRUG INEFFECTIVE",
-            "report_count": 47,
-            "pct_of_reports": 4.71
-          },
-          {
-            "meddra_pt": "APPLICATION SITE ERYTHEMA",
-            "report_count": 41,
-            "pct_of_reports": 4.11
-          },
-          {
-            "meddra_pt": "PAIN OF SKIN",
-            "report_count": 40,
-            "pct_of_reports": 4.01
-          },
-          {
-            "meddra_pt": "APPLICATION SITE PAIN",
-            "report_count": 39,
-            "pct_of_reports": 3.91
-          },
-          {
-            "meddra_pt": "OFF LABEL USE",
-            "report_count": 39,
-            "pct_of_reports": 3.91
-          },
-          {
-            "meddra_pt": "APPLICATION SITE FOLLICULITIS",
-            "report_count": 31,
-            "pct_of_reports": 3.11
-          },
-          {
-            "meddra_pt": "APPLICATION SITE PRURITUS",
-            "report_count": 30,
-            "pct_of_reports": 3.01
-          },
-          {
-            "meddra_pt": "PSORIASIS",
-            "report_count": 29,
-            "pct_of_reports": 2.91
-          }
-        ],
-        "top_serious_reactions": [
-          {
-            "meddra_pt": "DRUG INEFFECTIVE",
-            "report_count": 4,
-            "pct_of_reports": 15.38
-          },
-          {
-            "meddra_pt": "OFF LABEL USE",
-            "report_count": 4,
-            "pct_of_reports": 15.38
-          },
-          {
-            "meddra_pt": "REBOUND EFFECT",
-            "report_count": 4,
-            "pct_of_reports": 15.38
-          },
-          {
-            "meddra_pt": "TREATMENT FAILURE",
-            "report_count": 4,
-            "pct_of_reports": 15.38
-          },
-          {
-            "meddra_pt": "URTICARIA",
-            "report_count": 3,
-            "pct_of_reports": 11.54
-          },
-          {
-            "meddra_pt": "ACNE",
-            "report_count": 2,
-            "pct_of_reports": 7.69
-          },
-          {
-            "meddra_pt": "CONDITION AGGRAVATED",
-            "report_count": 2,
-            "pct_of_reports": 7.69
-          },
-          {
-            "meddra_pt": "DERMATOMYOSITIS",
-            "report_count": 2,
-            "pct_of_reports": 7.69
-          },
-          {
-            "meddra_pt": "DRUG ERUPTION",
-            "report_count": 2,
-            "pct_of_reports": 7.69
-          },
-          {
-            "meddra_pt": "HEADACHE",
-            "report_count": 2,
-            "pct_of_reports": 7.69
-          },
-          {
-            "meddra_pt": "MYOCARDIAL INFARCTION",
-            "report_count": 2,
-            "pct_of_reports": 7.69
-          },
-          {
-            "meddra_pt": "PAIN",
-            "report_count": 2,
-            "pct_of_reports": 7.69
-          },
-          {
-            "meddra_pt": "PRURITUS",
-            "report_count": 2,
-            "pct_of_reports": 7.69
-          },
-          {
-            "meddra_pt": "PSORIASIS",
-            "report_count": 2,
-            "pct_of_reports": 7.69
-          },
-          {
-            "meddra_pt": "ACCIDENTAL EXPOSURE TO PRODUCT",
-            "report_count": 1,
-            "pct_of_reports": 3.85
-          }
-        ],
-        "reports_by_year": [
-          {
-            "year": 2022,
-            "report_count": 175
-          },
-          {
-            "year": 2023,
-            "report_count": 567
-          },
-          {
-            "year": 2024,
-            "report_count": 231
-          },
-          {
-            "year": 2025,
-            "report_count": 16
-          },
-          {
-            "year": 2026,
-            "report_count": 8
-          }
-        ],
-        "meddra_version": null
+        "drug": "Tapinarof",
+        "application_number": null
       },
-      "source_type": "openfda_faers",
-      "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"TAPINAROF\"&limit=1",
-      "source_excerpt": "openFDA drug/event.json aggregate: total_reports=997, serious=26, deaths=2",
-      "extracted_by": "fetch_faers.py (openfda drug/event.json, cycle-6b pass)",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     }
   },
   "exclusivity": {
     "regulatory_application": {
       "value": {
-        "application_type": "NDA",
-        "application_number": "215272",
-        "registry": "orange_book",
-        "center": "CDER",
-        "proprietary_name": "VTAMA",
-        "applicant": "ORGANON LLC",
-        "first_approval_date": "2022-05-23"
+        "drug": "Tapinarof",
+        "application_number": "215272"
       },
-      "source_type": "orange_book",
-      "source_url": "https://api.fda.gov/drug/orangebook.json",
-      "source_excerpt": "openfda orangebook.json: products.active_ingredients.name=TAPINAROF, application_number N215272, brand_name VTAMA, applicant_full_name ORGANON LLC, approval_date 2022-05-23 (Plaque Psoriasis; Atopic Dermatitis added by supplement 2024)",
-      "extracted_by": "atlas.regulatory_applications (registry file fetched 2026-09-05)",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     },
     "orange_book": {
       "value": {
-        "application_type": "N",
-        "application_number": "215272",
-        "ingredient": "TAPINAROF",
-        "trade_name": "VTAMA",
-        "applicant": "ORGANON LLC",
-        "applicant_full_name": "ORGANON LLC",
-        "products": [
-          {
-            "product_number": "001",
-            "strength": "1%",
-            "dosage_form": "CREAM",
-            "route": "TOPICAL",
-            "approval_date": "2022-05-23",
-            "rld": true,
-            "rs": true,
-            "te_code": null,
-            "marketing_type": "HUMAN PRESCRIPTION DRUG"
-          }
-        ],
-        "patents": [
-          {
-            "patent_number": "10426743",
-            "expiration_date": "2036-05-19",
-            "drug_substance_claim": false,
-            "drug_product_claim": false,
-            "patent_use_code": "U-2625",
-            "delisted": false,
-            "submission_date": "2022-06-21",
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "patent_number": "11458108",
-            "expiration_date": "2036-05-19",
-            "drug_substance_claim": false,
-            "drug_product_claim": true,
-            "patent_use_code": null,
-            "delisted": false,
-            "submission_date": "2022-10-07",
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "patent_number": "11612573",
-            "expiration_date": "2036-05-19",
-            "drug_substance_claim": false,
-            "drug_product_claim": false,
-            "patent_use_code": "U-2625",
-            "delisted": false,
-            "submission_date": "2023-04-20",
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "patent_number": "11617724",
-            "expiration_date": "2036-05-19",
-            "drug_substance_claim": false,
-            "drug_product_claim": true,
-            "patent_use_code": null,
-            "delisted": false,
-            "submission_date": "2023-04-20",
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "patent_number": "11622945",
-            "expiration_date": "2036-05-19",
-            "drug_substance_claim": false,
-            "drug_product_claim": true,
-            "patent_use_code": null,
-            "delisted": false,
-            "submission_date": "2023-04-20",
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "patent_number": "10195160",
-            "expiration_date": "2036-05-23",
-            "drug_substance_claim": false,
-            "drug_product_claim": true,
-            "patent_use_code": null,
-            "delisted": false,
-            "submission_date": "2022-06-21",
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "patent_number": "10647649",
-            "expiration_date": "2038-11-13",
-            "drug_substance_claim": true,
-            "drug_product_claim": false,
-            "patent_use_code": null,
-            "delisted": false,
-            "submission_date": "2022-06-21",
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "patent_number": "11597692",
-            "expiration_date": "2038-11-13",
-            "drug_substance_claim": true,
-            "drug_product_claim": true,
-            "patent_use_code": null,
-            "delisted": false,
-            "submission_date": "2023-03-31",
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "patent_number": "11497718",
-            "expiration_date": "2039-11-13",
-            "drug_substance_claim": false,
-            "drug_product_claim": false,
-            "patent_use_code": "U-4048",
-            "delisted": false,
-            "submission_date": "2025-01-10",
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "patent_number": "11590088",
-            "expiration_date": "2039-11-13",
-            "drug_substance_claim": false,
-            "drug_product_claim": false,
-            "patent_use_code": "U-2625",
-            "delisted": false,
-            "submission_date": "2023-03-16",
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "patent_number": "11938099",
-            "expiration_date": "2039-11-13",
-            "drug_substance_claim": false,
-            "drug_product_claim": false,
-            "patent_use_code": "U-4048",
-            "delisted": false,
-            "submission_date": "2025-01-10",
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "patent_number": "12569453",
-            "expiration_date": "2039-12-18",
-            "drug_substance_claim": false,
-            "drug_product_claim": false,
-            "patent_use_code": "U-4048",
-            "delisted": false,
-            "submission_date": "2026-04-06",
-            "product_numbers": [
-              "001"
-            ]
-          }
-        ],
-        "exclusivities": [
-          {
-            "code": "NCE",
-            "expiration_date": "2027-05-23",
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "code": "I-956",
-            "expiration_date": "2027-12-12",
-            "product_numbers": [
-              "001"
-            ]
-          }
-        ],
-        "latest_patent_expiration": "2039-12-18",
-        "latest_exclusivity_expiration": "2027-12-12",
-        "data_file_date": null
+        "drug": "Tapinarof",
+        "application_number": "215272"
       },
-      "source_type": "orange_book",
-      "source_url": "https://api.fda.gov/drug/orangebook.json?search=products.active_ingredients.name%3A%22TAPINAROF%22&limit=100",
-      "source_excerpt": "openFDA drug/orangebook.json, 1 product row(s) matched on products.active_ingredients.name='TAPINAROF'",
-      "extracted_by": "fetch_orange_book.py (openfda drug/orangebook.json, cycle-6b pass)",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     },
     "purple_book": {
-      "value": null,
-      "source_type": "needs_extraction",
+      "value": {
+        "drug": "Tapinarof",
+        "application_number": null
+      },
+      "source_type": "drug_level_ref",
       "source_url": null,
       "source_excerpt": null,
       "extracted_by": null,

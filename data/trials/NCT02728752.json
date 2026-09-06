@@ -1,5 +1,5 @@
 {
-  "schema_version": 3,
+  "schema_version": 4,
   "nct_id": {
     "value": "NCT02728752",
     "source_type": "ctgov_api",
@@ -85,25 +85,15 @@
     },
     "mechanism_of_action": {
       "value": {
-        "modality": "other",
-        "drug_class": "polyvalent human immunoglobulin G (IVIG)",
-        "antibody_isotype": null,
-        "binding_targets": [],
-        "pathway_cytokines": [],
-        "receptor_subunits": [],
-        "kinases_inhibited": [],
-        "lower_potency_kinases": [],
-        "selectivity": [],
-        "reversible": null,
-        "mechanism_established": false,
-        "label_section": "12.1"
+        "drug": "Immune Globulin Intravenous (Human) (Octagam 10%)",
+        "application_number": null
       },
-      "source_type": "openfda_label",
-      "source_url": "https://octagamusa.com/dermatomyositis/wp-content/uploads/sites/4/2021/10/octagam10-full-prescribing-information.pdf",
-      "source_excerpt": "Section 12.1 Mechanism of Action -- full text: \"The mechanism of action of immunoglobulins in the treatment of chronic ITP or in Dermatomyositis has not been fully elucidated.\" Octagam 10% is a solvent/detergent-treated, chromatographically purified human immunoglobulin G (IgG) preparation manufactured from large pools of human plasma (Description, Section 11) -- a plasma-derived polyclonal antibody product, not a monoclonal antibody, fusion protein, or small molecule.",
-      "extracted_by": "manual openfda_label PDF extraction pass (Octagam 10% full prescribing information, June 2021 revision); cycle18",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 0.9
+      "confidence": null
     },
     "dosing_regimen": {
       "value": [
@@ -1219,84 +1209,50 @@
     },
     "boxed_warning": {
       "value": {
-        "present": true,
-        "title": "THROMBOSIS, RENAL DYSFUNCTION, AND ACUTE RENAL FAILURE",
-        "warning_categories": [
-          "thrombosis"
-        ],
-        "referenced_label_sections": [
-          "5.2",
-          "5.5"
-        ],
-        "product_names": [
-          "Octagam 10%"
-        ]
+        "drug": "Immune Globulin Intravenous (Human) (Octagam 10%)",
+        "application_number": null
       },
-      "source_type": "openfda_label",
-      "source_url": "https://octagamusa.com/dermatomyositis/wp-content/uploads/sites/4/2021/10/octagam10-full-prescribing-information.pdf",
-      "source_excerpt": "Boxed warning full text: \"Thrombosis may occur with immune globulin intravenous (IGIV) products, including Octagam 10%. Risk factors may include: advanced age, prolonged immobilization, hypercoagulable conditions, history of venous or arterial thrombosis, use of estrogens, indwelling vascular catheters, hyperviscosity, and cardiovascular risk factors. Thrombosis may occur in the absence of known risk factors. (See WARNING AND PRECAUTIONS [5.5], PATIENT COUNSELING INFORMATION [17]) / Renal dysfunction, acute renal failure, osmotic nephropathy, and death may occur in predisposed patients who receive IGIV products, including Octagam 10%... For patients at risk of thrombosis, renal dysfunction or acute renal failure, administer Octagam 10% at the minimum dose and infusion rate practicable.\" Patients with dermatomyositis specifically are called out (Section 5.5) as being \"at increased risk for thromboembolic events\" requiring an infusion rate cap of 0.04 mL/kg/min, lower than the ITP indication's cap. Renal dysfunction/acute renal failure has no matching entry in this schema's WARNING_CATEGORIES enum (serious_infections/mortality/malignancy/mace/thrombosis/suicidal_ideation/hepatotoxicity/embryo_fetal_toxicity) -- recorded in the title and referenced_label_sections but not double-counted as a category.",
-      "extracted_by": "manual openfda_label PDF extraction pass (Octagam 10% full prescribing information, June 2021 revision); cycle18",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     }
   },
   "real_world_safety": {
     "faers_summary": {
       "value": {
-        "query": {
-          "search_field": "patient.drug.medicinalproduct",
-          "search_term": "OCTAGAM",
-          "receivedate_from": null,
-          "receivedate_to": null,
-          "api_urls": [
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"OCTAGAM\"&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"OCTAGAM\"+AND+serious:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"OCTAGAM\"+AND+seriousnessdeath:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"OCTAGAM\"+AND+seriousnesshospitalization:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"OCTAGAM\"&count=patient.drug.drugindication.exact&limit=15"
-          ],
-          "data_last_updated": "2026-07-30"
-        },
-        "total_reports": 1969,
-        "serious_reports": 1554,
-        "death_reports": 124,
-        "hospitalization_reports": 678,
-        "life_threatening_reports": null,
-        "disability_reports": null,
-        "top_reactions": [],
-        "top_serious_reactions": [],
-        "reports_by_year": [],
-        "meddra_version": null
+        "drug": "Immune Globulin Intravenous (Human) (Octagam 10%)",
+        "application_number": null
       },
-      "source_type": "openfda_faers",
-      "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:%22OCTAGAM%22&limit=1",
-      "source_excerpt": "openFDA drug/event.json aggregate for \"OCTAGAM\": total_reports=1969, serious=1554, deaths=124, hospitalizations=678. Ran the atlas's standard drugindication count check before accepting the term (per AGENTS.md's Qbrexza/Glycopyrronium and Xepi/Ozenoxacin precedent): OCTAGAM's FAERS reports are dominated by its original, much broader ITP/general-immunodeficiency off-label uses -- top drugindication terms are \"PRODUCT USED FOR UNKNOWN INDICATION\" (344+319), HYPOGAMMAGLOBULINAEMIA (116/39), IMMUNODEFICIENCY COMMON VARIABLE (99/43), CHRONIC INFLAMMATORY DEMYELINATING POLYRADICULONEUROPATHY (82/41), HEREDITARY ANGIOEDEMA (77), PLASMA CELL MYELOMA (56/45), MYASTHENIA GRAVIS (48) -- dermatomyositis does not appear in the top 15 terms at all. Unlike Qbrexza/Ozenoxacin, there is no separate brand-vs-generic split to retry (Octagam is a single product traded under one name, not generic+brand) and no alternate clean search term exists -- this is a real, unavoidable mix across every indication the product is used for, the same \"no clean term available\" situation as Ruxolitinib, recorded as-is rather than picking a term that looks cleaner.",
-      "extracted_by": "cycle18 one-off build (openfda_faers pass)",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     }
   },
   "exclusivity": {
     "regulatory_application": {
       "value": {
-        "application_type": "BLA",
-        "application_number": "125062",
-        "registry": "purple_book",
-        "center": "CBER",
-        "proprietary_name": "Octagam 10%",
-        "applicant": "Octapharma Pharmazeutika Produktionsges.m.b.H.",
-        "first_approval_date": "2004-05-21"
+        "drug": "Immune Globulin Intravenous (Human) (Octagam 10%)",
+        "application_number": "125062"
       },
-      "source_type": "purple_book",
-      "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2026/purplebook-search-August-data-download.csv",
-      "source_excerpt": "row: Octapharma Pharmazeutika Produktionsges.m.b.H. | BLA 125062 | Octagam | Immune Globulin Intravenous (Human) | 351(a) | multiple strengths (5% and 10%) | Injection Intravenous Single-Use Bottle | Rx | Licensed | 21-May-04 (original 5% approval; 10% concentration added by supplement 11-Jul-14) | License 1646 | CBER. Dermatomyositis-specific supplement (STN BL 125062/674) approved 2021-07-15 per FDA approval letter (fda.gov/media/150814/download), citing NCT02728752 as the basis trial and granting orphan drug exclusivity for the DM indication.",
-      "extracted_by": "atlas.regulatory_applications (registry file fetched 2026-09-05); cycle18",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     },
     "orange_book": {
-      "value": null,
-      "source_type": "needs_extraction",
+      "value": {
+        "drug": "Immune Globulin Intravenous (Human) (Octagam 10%)",
+        "application_number": "125062"
+      },
+      "source_type": "drug_level_ref",
       "source_url": null,
       "source_excerpt": null,
       "extracted_by": null,
@@ -1305,139 +1261,15 @@
     },
     "purple_book": {
       "value": {
-        "bla_number": "125062",
-        "proprietary_name": "Octagam",
-        "proper_name": "Immune Globulin Intravenous (Human)",
-        "applicant": "Octapharma Pharmazeutika Produktionsges.m.b.H.",
-        "license_type": "351(a)",
-        "license_number": "1646",
-        "center": "CBER",
-        "products": [
-          {
-            "product_number": "001",
-            "strength": "5% 5.0G",
-            "dosage_form": "Injection",
-            "route": "Intravenous",
-            "presentation": "Single-Use Bottle",
-            "marketing_status": "Rx",
-            "licensure": "Licensed",
-            "approval_date": "2004-05-21",
-            "submission_type": "Original",
-            "supplement_number": "0"
-          },
-          {
-            "product_number": "002",
-            "strength": "5% 1.0G",
-            "dosage_form": "Injection",
-            "route": "Intravenous",
-            "presentation": "Single-Use Bottle",
-            "marketing_status": "Rx",
-            "licensure": "Licensed",
-            "approval_date": "2004-05-21",
-            "submission_type": "Original",
-            "supplement_number": "0"
-          },
-          {
-            "product_number": "003",
-            "strength": "5% 10G",
-            "dosage_form": "Injection",
-            "route": "Intravenous",
-            "presentation": "Single-Use Bottle",
-            "marketing_status": "Rx",
-            "licensure": "Licensed",
-            "approval_date": "2004-05-21",
-            "submission_type": "Original",
-            "supplement_number": "0"
-          },
-          {
-            "product_number": "004",
-            "strength": "5% 2.5G",
-            "dosage_form": "Injection",
-            "route": "Intravenous",
-            "presentation": "Single-Use Bottle",
-            "marketing_status": "Rx",
-            "licensure": "Licensed",
-            "approval_date": "2004-05-21",
-            "submission_type": "Original",
-            "supplement_number": "0"
-          },
-          {
-            "product_number": "005",
-            "strength": "5% 25G",
-            "dosage_form": "Injection",
-            "route": "Intravenous",
-            "presentation": "Single-Use Bottle",
-            "marketing_status": "Rx",
-            "licensure": "Licensed",
-            "approval_date": "2007-03-26",
-            "submission_type": "Supplement",
-            "supplement_number": "124"
-          },
-          {
-            "product_number": "006",
-            "strength": "10% 20G",
-            "dosage_form": "Injection",
-            "route": "Intravenous",
-            "presentation": "Single-Use Bottle",
-            "marketing_status": "Rx",
-            "licensure": "Licensed",
-            "approval_date": "2014-07-11",
-            "submission_type": "Supplement",
-            "supplement_number": "234"
-          },
-          {
-            "product_number": "007",
-            "strength": "10% 5G",
-            "dosage_form": "Injection",
-            "route": "Intravenous",
-            "presentation": "Single-Use Bottle",
-            "marketing_status": "Rx",
-            "licensure": "Licensed",
-            "approval_date": "2014-07-11",
-            "submission_type": "Supplement",
-            "supplement_number": "234"
-          },
-          {
-            "product_number": "008",
-            "strength": "10% 2G",
-            "dosage_form": "Injection",
-            "route": "Intravenous",
-            "presentation": "Single-Use Bottle",
-            "marketing_status": "Rx",
-            "licensure": "Licensed",
-            "approval_date": "2014-07-11",
-            "submission_type": "Supplement",
-            "supplement_number": "234"
-          },
-          {
-            "product_number": "009",
-            "strength": "10% 10G",
-            "dosage_form": "Injection",
-            "route": "Intravenous",
-            "presentation": "Single-Use Bottle",
-            "marketing_status": "Rx",
-            "licensure": "Licensed",
-            "approval_date": "2014-07-11",
-            "submission_type": "Supplement",
-            "supplement_number": "234"
-          }
-        ],
-        "first_approval_date": "2004-05-21",
-        "date_of_first_licensure": null,
-        "reference_product_exclusivity_expiration": null,
-        "exclusivity_expiration_date": null,
-        "first_interchangeable_exclusivity_expiration": null,
-        "orphan_exclusivity_expiration": "2028-07-15",
-        "patent_list_provided": null,
-        "biosimilars": [],
-        "data_file_month": "August 2026"
+        "drug": "Immune Globulin Intravenous (Human) (Octagam 10%)",
+        "application_number": null
       },
-      "source_type": "purple_book",
-      "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2026/purplebook-search-August-data-download.csv",
-      "source_excerpt": "Purple Book Monthly Historical Data Changes Report, August 2026 snapshot -- accessdata.fda.gov monthly-CSV fallback (same fetch pattern already used for Vyjuvek/Ustekinumab; live purplebooksearch.fda.gov UI still Akamai-blocked), filtered to BLA Number=125062: 9 product rows, all license type 351(a) (no 351(k) biosimilars on file), Center=CBER (this is a plasma-derived blood product reviewed by CBER's Office of Tissues and Advanced Therapies, not CDER like the atlas's other biologics). Orphan Exclusivity Exp. Date column reads 15-Jul-28 -- this is the 7-year orphan-drug exclusivity granted for the 2021 dermatomyositis indication specifically (the original 2004 ITP indication carries no orphan exclusivity), per The Rheumatologist's coverage confirming the 7-year grant.",
-      "extracted_by": "manual accessdata.fda.gov CSV fallback pass; cycle18",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     }
   },
   "results": {

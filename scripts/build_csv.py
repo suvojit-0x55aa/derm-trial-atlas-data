@@ -1,12 +1,26 @@
 #!/usr/bin/env python3
 """
-Flatten every data/trials/<NCT_ID>.json (schema v3) into repo-root CSVs:
+Flatten every data/trials/<NCT_ID>.json (schema v4) and data/drugs/<slug>.json
+(schema v4) into repo-root CSVs:
 
   trials.csv             one row per trial, one column per sourced field
-                         (structured values are JSON-encoded in the cell)
+                         (structured values are JSON-encoded in the cell).
+                         6 columns (molecule.mechanism_of_action,
+                         adverse_events.boxed_warning,
+                         real_world_safety.faers_summary,
+                         exclusivity.{regulatory_application,orange_book,
+                         purple_book}) hold a DRUG_REF pointer
+                         ({"drug", "application_number"}), not the fact
+                         itself -- join drugs.csv (and drug_applications.csv
+                         for the two application-keyed ones) on `drug` to
+                         resolve it, the same reference-not-copy idiom
+                         arm_results.csv/effect_estimates.csv already use
+                         for endpoints.
   sources.csv            one row per sourced value: nct_id, field, source_type,
                          source_url, source_excerpt, extracted_by, reviewed_by,
-                         confidence
+                         confidence (the 6 drug-level fields' rows here are
+                         "drug_level_ref" pointer citations, not the real
+                         fact's own citation -- that's in drug_sources.csv)
   endpoints.csv          one row per outcome measure (primary + secondary),
                          with its atomic fields and one row per responder /
                          subgroup criterion (criterion_index >= 1) so an
@@ -19,6 +33,15 @@ Flatten every data/trials/<NCT_ID>.json (schema v3) into repo-root CSVs:
   effect_estimates.csv   one row per endpoint x timepoint x pairwise arm
                          comparison; same nct_id/endpoint_rank/endpoint_position
                          join key as arm_results.csv
+  drugs.csv              one row per drug: mechanism_of_action, boxed_warning,
+                         faers_summary, purple_book, trial_ids
+  drug_applications.csv  one row per (drug, application_number): regulatory_application,
+                         orange_book -- almost every drug has exactly 1 row;
+                         Roflumilast (2 real FDA applications) has 2
+  drug_sources.csv       one row per drug-level sourced value: drug, field,
+                         source_type, source_url, source_excerpt, extracted_by,
+                         reviewed_by, confidence -- the single citation now
+                         backing every trial of that drug
 
 Run:
     python3 scripts/build_csv.py
@@ -29,6 +52,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 TRIALS_DIR = ROOT / "data" / "trials"
+DRUGS_DIR = ROOT / "data" / "drugs"
 
 CRITERION_COLS = ["scale", "scale_component", "scale_variant", "metric", "comparator", "value", "unit",
                   "scale_min", "scale_max", "assessed_at"]
@@ -106,6 +130,43 @@ def effect_estimate_rows(nct, drug, trial_name, results):
     return rows
 
 
+DRUG_SINGLE_VALUED = ("mechanism_of_action", "boxed_warning", "faers_summary", "purple_book")
+
+
+def drug_row_and_sources(record):
+    """(drugs.csv row, drug_sources.csv rows) for one data/drugs/<slug>.json
+    record -- the 4 single-valued sourced fields only; applications[] is
+    handled separately by drug_application_rows since it is a list, not a
+    single sourced value (flatten_fields does not walk into lists)."""
+    drug = record["drug"]
+    row = {"drug": drug, "schema_version": record["schema_version"], "trial_ids": record["trial_ids"]}
+    sources = []
+    for field in DRUG_SINGLE_VALUED:
+        obj = record[field]
+        row[field] = obj.get("value")
+        sources.append({"drug": drug, "field": field, **{k: obj.get(k) for k in
+                        ("source_type", "source_url", "source_excerpt", "extracted_by", "reviewed_by", "confidence")}})
+    return row, sources
+
+
+def drug_application_rows_and_sources(record):
+    """(drug_applications.csv rows, drug_sources.csv rows) for one drug's
+    applications[] list -- almost always 1 row; Roflumilast (2 real FDA
+    applications) has 2."""
+    drug = record["drug"]
+    rows, sources = [], []
+    for app in record["applications"]:
+        app_num = app["application_number"]
+        row = {"drug": drug, "application_number": app_num}
+        for field in ("regulatory_application", "orange_book"):
+            obj = app[field]
+            row[field] = obj.get("value")
+            sources.append({"drug": drug, "field": f"applications[{app_num}].{field}", **{k: obj.get(k) for k in
+                            ("source_type", "source_url", "source_excerpt", "extracted_by", "reviewed_by", "confidence")}})
+        rows.append(row)
+    return rows, sources
+
+
 def endpoint_rows(nct, drug, trial_name, endpoints):
     rows = []
     for ep in endpoints:
@@ -136,8 +197,8 @@ def main():
     ep_rows, sev_rows, ae_rows, arm_result_csv_rows, effect_estimate_csv_rows = [], [], [], [], []
     for f in trial_files:
         record = json.loads(f.read_text())
-        if record.get("schema_version") != 3:
-            raise SystemExit(f"{f.name} is not schema v3 -- run atlas.migrate.migrate_v2_to_v3 first")
+        if record.get("schema_version") != 4:
+            raise SystemExit(f"{f.name} is not schema v4 -- run scripts/split_drug_level_fields.py first")
         nct = record["nct_id"]["value"]
         drug = record["molecule"]["drug"]["value"]
         trial_name = record["identity"]["trial_name"]["value"]
@@ -197,6 +258,25 @@ def main():
                              "effect_type_verbatim", "effect_value", "ci_pct", "ci_lower", "ci_upper", "ci_sides",
                              "p_value_comparator", "p_value", "p_value_verbatim", "statistical_method", "adjusted_for"]
     write_csv(ROOT / "effect_estimates.csv", effect_estimate_cols, effect_estimate_csv_rows)
+
+    drug_files = sorted(DRUGS_DIR.glob("*.json"))
+    if not drug_files:
+        raise SystemExit(f"No drug files found in {DRUGS_DIR} -- run scripts/split_drug_level_fields.py first")
+    drug_rows, drug_source_rows, drug_app_rows = [], [], []
+    for f in drug_files:
+        record = json.loads(f.read_text())
+        if record.get("schema_version") != 1:
+            raise SystemExit(f"{f.name} is not drug schema v1")
+        row, sources = drug_row_and_sources(record)
+        drug_rows.append(row)
+        drug_source_rows.extend(sources)
+        app_rows, app_sources = drug_application_rows_and_sources(record)
+        drug_app_rows.extend(app_rows)
+        drug_source_rows.extend(app_sources)
+
+    write_csv(ROOT / "drugs.csv", ["drug", "schema_version"] + list(DRUG_SINGLE_VALUED) + ["trial_ids"], drug_rows)
+    write_csv(ROOT / "drug_applications.csv", ["drug", "application_number", "regulatory_application", "orange_book"], drug_app_rows)
+    write_csv(ROOT / "drug_sources.csv", ["drug", "field", "source_type", "source_url", "source_excerpt", "extracted_by", "reviewed_by", "confidence"], drug_source_rows)
 
 
 if __name__ == "__main__":

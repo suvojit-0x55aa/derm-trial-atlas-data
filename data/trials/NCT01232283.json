@@ -1,5 +1,5 @@
 {
-  "schema_version": 3,
+  "schema_version": 4,
   "nct_id": {
     "value": "NCT01232283",
     "source_type": "ctgov_api",
@@ -86,25 +86,15 @@
     },
     "mechanism_of_action": {
       "value": {
-        "modality": "small_molecule",
-        "drug_class": "PDE4 inhibitor",
-        "antibody_isotype": null,
-        "binding_targets": [],
-        "pathway_cytokines": [],
-        "receptor_subunits": [],
-        "kinases_inhibited": [],
-        "lower_potency_kinases": [],
-        "selectivity": [],
-        "reversible": null,
-        "mechanism_established": null,
-        "label_section": "12.1"
+        "drug": "Apremilast",
+        "application_number": null
       },
-      "source_type": "openfda_label",
-      "source_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=fa1e6b1d-2961-42d4-afee-7a9596bc2335",
-      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1) -- extracted text: 12.1 Mechanism of Action Apremilast is an oral small molecule inhibitor of phosphodiesterase 4 (PDE4) specific for cyclic adenosine monophosphate (cAMP). PDE4 inhibition results in increased intracellular cAMP levels. The specific mechanism(s) by which apremilast exerts its therapeutic action is not well defined.",
-      "extracted_by": "deep-extraction pass (LLM-assisted extraction, scale-out backfill; pending human QA)",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 0.9
+      "confidence": null
     },
     "dosing_regimen": {
       "value": [
@@ -1112,550 +1102,62 @@
     },
     "boxed_warning": {
       "value": {
-        "present": false,
-        "title": null,
-        "warning_categories": [],
-        "referenced_label_sections": [],
-        "product_names": []
+        "drug": "Apremilast",
+        "application_number": null
       },
-      "source_type": "openfda_label",
-      "source_url": "https://api.fda.gov/drug/label.json?search=openfda.substance_name:APREMILAST&limit=1",
-      "source_excerpt": "results[0] has no boxed_warning key (checked, none present)",
-      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass); structured by atlas.migrate v1->v2",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     }
   },
   "real_world_safety": {
     "faers_summary": {
       "value": {
-        "query": {
-          "search_field": "patient.drug.medicinalproduct",
-          "search_term": "APREMILAST",
-          "receivedate_from": "2012-07-17",
-          "receivedate_to": "2026-06-30",
-          "api_urls": [
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"APREMILAST\"&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"APREMILAST\"+AND+serious:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"APREMILAST\"+AND+seriousnessdeath:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"APREMILAST\"+AND+seriousnesshospitalization:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"APREMILAST\"+AND+seriousnesslifethreatening:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"APREMILAST\"+AND+seriousnessdisabling:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"APREMILAST\"&count=patient.reaction.reactionmeddrapt.exact&limit=15",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"APREMILAST\"+AND+serious:1&count=patient.reaction.reactionmeddrapt.exact&limit=15",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"APREMILAST\"&count=receivedate"
-          ],
-          "data_last_updated": "2026-07-30"
-        },
-        "total_reports": 6181,
-        "serious_reports": 4869,
-        "death_reports": 2505,
-        "hospitalization_reports": 2873,
-        "life_threatening_reports": 2397,
-        "disability_reports": 2595,
-        "top_reactions": [
-          {
-            "meddra_pt": "OFF LABEL USE",
-            "report_count": 2030,
-            "pct_of_reports": 32.84
-          },
-          {
-            "meddra_pt": "DRUG INEFFECTIVE",
-            "report_count": 1766,
-            "pct_of_reports": 28.57
-          },
-          {
-            "meddra_pt": "PSORIATIC ARTHROPATHY",
-            "report_count": 1519,
-            "pct_of_reports": 24.58
-          },
-          {
-            "meddra_pt": "SYNOVITIS",
-            "report_count": 1427,
-            "pct_of_reports": 23.09
-          },
-          {
-            "meddra_pt": "HEADACHE",
-            "report_count": 1404,
-            "pct_of_reports": 22.71
-          },
-          {
-            "meddra_pt": "NAUSEA",
-            "report_count": 1396,
-            "pct_of_reports": 22.59
-          },
-          {
-            "meddra_pt": "FATIGUE",
-            "report_count": 1388,
-            "pct_of_reports": 22.46
-          },
-          {
-            "meddra_pt": "RASH",
-            "report_count": 1388,
-            "pct_of_reports": 22.46
-          },
-          {
-            "meddra_pt": "RHEUMATOID ARTHRITIS",
-            "report_count": 1371,
-            "pct_of_reports": 22.18
-          },
-          {
-            "meddra_pt": "PAIN",
-            "report_count": 1336,
-            "pct_of_reports": 21.61
-          },
-          {
-            "meddra_pt": "HYPERTENSION",
-            "report_count": 1314,
-            "pct_of_reports": 21.26
-          },
-          {
-            "meddra_pt": "INFUSION RELATED REACTION",
-            "report_count": 1310,
-            "pct_of_reports": 21.19
-          },
-          {
-            "meddra_pt": "DRUG INTOLERANCE",
-            "report_count": 1303,
-            "pct_of_reports": 21.08
-          },
-          {
-            "meddra_pt": "JOINT SWELLING",
-            "report_count": 1266,
-            "pct_of_reports": 20.48
-          },
-          {
-            "meddra_pt": "GENERAL PHYSICAL HEALTH DETERIORATION",
-            "report_count": 1253,
-            "pct_of_reports": 20.27
-          }
-        ],
-        "top_serious_reactions": [
-          {
-            "meddra_pt": "OFF LABEL USE",
-            "report_count": 1933,
-            "pct_of_reports": 39.7
-          },
-          {
-            "meddra_pt": "DRUG INEFFECTIVE",
-            "report_count": 1646,
-            "pct_of_reports": 33.81
-          },
-          {
-            "meddra_pt": "PSORIATIC ARTHROPATHY",
-            "report_count": 1507,
-            "pct_of_reports": 30.95
-          },
-          {
-            "meddra_pt": "SYNOVITIS",
-            "report_count": 1427,
-            "pct_of_reports": 29.31
-          },
-          {
-            "meddra_pt": "RASH",
-            "report_count": 1371,
-            "pct_of_reports": 28.16
-          },
-          {
-            "meddra_pt": "RHEUMATOID ARTHRITIS",
-            "report_count": 1371,
-            "pct_of_reports": 28.16
-          },
-          {
-            "meddra_pt": "FATIGUE",
-            "report_count": 1360,
-            "pct_of_reports": 27.93
-          },
-          {
-            "meddra_pt": "PAIN",
-            "report_count": 1314,
-            "pct_of_reports": 26.99
-          },
-          {
-            "meddra_pt": "HYPERTENSION",
-            "report_count": 1311,
-            "pct_of_reports": 26.93
-          },
-          {
-            "meddra_pt": "INFUSION RELATED REACTION",
-            "report_count": 1310,
-            "pct_of_reports": 26.9
-          },
-          {
-            "meddra_pt": "DRUG INTOLERANCE",
-            "report_count": 1287,
-            "pct_of_reports": 26.43
-          },
-          {
-            "meddra_pt": "HEADACHE",
-            "report_count": 1275,
-            "pct_of_reports": 26.19
-          },
-          {
-            "meddra_pt": "JOINT SWELLING",
-            "report_count": 1259,
-            "pct_of_reports": 25.86
-          },
-          {
-            "meddra_pt": "GENERAL PHYSICAL HEALTH DETERIORATION",
-            "report_count": 1251,
-            "pct_of_reports": 25.69
-          },
-          {
-            "meddra_pt": "WOUND",
-            "report_count": 1235,
-            "pct_of_reports": 25.36
-          }
-        ],
-        "reports_by_year": [
-          {
-            "year": 2012,
-            "report_count": 1
-          },
-          {
-            "year": 2014,
-            "report_count": 4
-          },
-          {
-            "year": 2015,
-            "report_count": 44
-          },
-          {
-            "year": 2016,
-            "report_count": 53
-          },
-          {
-            "year": 2017,
-            "report_count": 164
-          },
-          {
-            "year": 2018,
-            "report_count": 424
-          },
-          {
-            "year": 2019,
-            "report_count": 434
-          },
-          {
-            "year": 2020,
-            "report_count": 372
-          },
-          {
-            "year": 2021,
-            "report_count": 384
-          },
-          {
-            "year": 2022,
-            "report_count": 536
-          },
-          {
-            "year": 2023,
-            "report_count": 655
-          },
-          {
-            "year": 2024,
-            "report_count": 1334
-          },
-          {
-            "year": 2025,
-            "report_count": 1442
-          },
-          {
-            "year": 2026,
-            "report_count": 334
-          }
-        ],
-        "meddra_version": null
+        "drug": "Apremilast",
+        "application_number": null
       },
-      "source_type": "openfda_faers",
-      "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"APREMILAST\"&limit=1",
-      "source_excerpt": "openFDA drug/event.json aggregate: total_reports=6181, serious=4869, deaths=2505",
-      "extracted_by": "fetch_faers.py (openfda drug/event.json, cycle-7 pass)",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     }
   },
   "exclusivity": {
     "regulatory_application": {
       "value": {
-        "application_type": "NDA",
-        "application_number": "205437",
-        "registry": "orange_book",
-        "center": "CDER",
-        "proprietary_name": "OTEZLA",
-        "applicant": "AMGEN INC",
-        "first_approval_date": "2014-03-21"
+        "drug": "Apremilast",
+        "application_number": "205437"
       },
-      "source_type": "orange_book",
-      "source_url": "https://api.fda.gov/drug/orangebook.json",
-      "source_excerpt": "openfda orangebook.json: products.active_ingredients.name=APREMILAST, application_number N205437, brand_name OTEZLA, applicant_full_name AMGEN INC (current holder -- Amgen acquired Otezla from Celgene/BMS in 2019), approval_date 2014-03-21",
-      "extracted_by": "atlas.regulatory_applications (registry file fetched 2026-09-05)",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     },
     "orange_book": {
       "value": {
-        "application_type": "A",
-        "application_number": "211897",
-        "ingredient": "APREMILAST",
-        "trade_name": "APREMILAST",
-        "applicant": "TEVA PHARMS USA INC",
-        "applicant_full_name": "TEVA PHARMACEUTICALS USA INC",
-        "products": [
-          {
-            "product_number": "001",
-            "strength": "10MG",
-            "dosage_form": "TABLET",
-            "route": "ORAL",
-            "approval_date": "2022-08-18",
-            "rld": false,
-            "rs": false,
-            "te_code": null,
-            "marketing_type": "DISCONTINUED"
-          },
-          {
-            "product_number": "002",
-            "strength": "20MG",
-            "dosage_form": "TABLET",
-            "route": "ORAL",
-            "approval_date": "2022-08-18",
-            "rld": false,
-            "rs": false,
-            "te_code": null,
-            "marketing_type": "DISCONTINUED"
-          },
-          {
-            "product_number": "003",
-            "strength": "30MG",
-            "dosage_form": "TABLET",
-            "route": "ORAL",
-            "approval_date": "2022-08-18",
-            "rld": false,
-            "rs": false,
-            "te_code": null,
-            "marketing_type": "DISCONTINUED"
-          }
-        ],
-        "patents": [
-          {
-            "patent_number": "7427638",
-            "expiration_date": "2028-02-16",
-            "drug_substance_claim": true,
-            "drug_product_claim": true,
-            "patent_use_code": null,
-            "delisted": false,
-            "submission_date": "2014-04-15",
-            "product_numbers": [
-              "002",
-              "001",
-              "003"
-            ]
-          },
-          {
-            "patent_number": "7427638*PED",
-            "expiration_date": "2028-08-16",
-            "drug_substance_claim": false,
-            "drug_product_claim": false,
-            "patent_use_code": null,
-            "delisted": false,
-            "submission_date": null,
-            "product_numbers": [
-              "002",
-              "001",
-              "003"
-            ]
-          },
-          {
-            "patent_number": "12576034",
-            "expiration_date": "2033-11-30",
-            "drug_substance_claim": false,
-            "drug_product_claim": true,
-            "patent_use_code": "U-4290",
-            "delisted": false,
-            "submission_date": "2026-04-16",
-            "product_numbers": [
-              "002",
-              "001",
-              "003"
-            ]
-          },
-          {
-            "patent_number": "10092541",
-            "expiration_date": "2034-05-29",
-            "drug_substance_claim": false,
-            "drug_product_claim": false,
-            "patent_use_code": "U-2403",
-            "delisted": false,
-            "submission_date": "2018-10-09",
-            "product_numbers": [
-              "002"
-            ]
-          },
-          {
-            "patent_number": "10092541",
-            "expiration_date": "2034-05-29",
-            "drug_substance_claim": false,
-            "drug_product_claim": false,
-            "patent_use_code": "U-2659",
-            "delisted": false,
-            "submission_date": "2018-10-09",
-            "product_numbers": [
-              "001",
-              "003"
-            ]
-          },
-          {
-            "patent_number": "9872854",
-            "expiration_date": "2034-05-29",
-            "drug_substance_claim": false,
-            "drug_product_claim": false,
-            "patent_use_code": "U-2233",
-            "delisted": false,
-            "submission_date": "2018-02-21",
-            "product_numbers": [
-              "002",
-              "001",
-              "003"
-            ]
-          },
-          {
-            "patent_number": "12576034*PED",
-            "expiration_date": "2034-05-30",
-            "drug_substance_claim": false,
-            "drug_product_claim": false,
-            "patent_use_code": null,
-            "delisted": false,
-            "submission_date": null,
-            "product_numbers": [
-              "002",
-              "001",
-              "003"
-            ]
-          },
-          {
-            "patent_number": "10092541*PED",
-            "expiration_date": "2034-11-29",
-            "drug_substance_claim": false,
-            "drug_product_claim": false,
-            "patent_use_code": null,
-            "delisted": false,
-            "submission_date": null,
-            "product_numbers": [
-              "002",
-              "001",
-              "003"
-            ]
-          },
-          {
-            "patent_number": "9872854*PED",
-            "expiration_date": "2034-11-29",
-            "drug_substance_claim": false,
-            "drug_product_claim": false,
-            "patent_use_code": null,
-            "delisted": false,
-            "submission_date": null,
-            "product_numbers": [
-              "002",
-              "001",
-              "003"
-            ]
-          },
-          {
-            "patent_number": "11752129",
-            "expiration_date": "2042-05-27",
-            "drug_substance_claim": false,
-            "drug_product_claim": true,
-            "patent_use_code": "U-4266",
-            "delisted": false,
-            "submission_date": "2025-09-24",
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "patent_number": "11969409",
-            "expiration_date": "2042-05-27",
-            "drug_substance_claim": false,
-            "drug_product_claim": true,
-            "patent_use_code": null,
-            "delisted": false,
-            "submission_date": "2025-09-24",
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "patent_number": "12427136",
-            "expiration_date": "2042-05-27",
-            "drug_substance_claim": false,
-            "drug_product_claim": false,
-            "patent_use_code": "U-4291",
-            "delisted": false,
-            "submission_date": "2025-10-28",
-            "product_numbers": [
-              "001"
-            ]
-          }
-        ],
-        "exclusivities": [
-          {
-            "code": "ODE*",
-            "expiration_date": "2026-07-19",
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "code": "ODE-248",
-            "expiration_date": "2026-07-19",
-            "product_numbers": [
-              "002",
-              "001",
-              "003"
-            ]
-          },
-          {
-            "code": "M-299",
-            "expiration_date": "2026-07-20",
-            "product_numbers": [
-              "002",
-              "001",
-              "003"
-            ]
-          },
-          {
-            "code": "PED",
-            "expiration_date": "2027-01-20",
-            "product_numbers": [
-              "002",
-              "001",
-              "003"
-            ]
-          },
-          {
-            "code": "NPP",
-            "expiration_date": "2027-04-25",
-            "product_numbers": [
-              "002",
-              "001",
-              "003"
-            ]
-          }
-        ],
-        "latest_patent_expiration": "2042-05-27",
-        "latest_exclusivity_expiration": "2027-04-25",
-        "data_file_date": null
+        "drug": "Apremilast",
+        "application_number": "205437"
       },
-      "source_type": "orange_book",
-      "source_url": "https://api.fda.gov/drug/orangebook.json?search=products.active_ingredients.name%3A%22APREMILAST%22&limit=100",
-      "source_excerpt": "openFDA drug/orangebook.json, 43 product row(s) matched on products.active_ingredients.name='APREMILAST'",
-      "extracted_by": "fetch_orange_book.py (openfda drug/orangebook.json, cycle-7 pass)",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     },
     "purple_book": {
-      "value": null,
-      "source_type": "needs_extraction",
+      "value": {
+        "drug": "Apremilast",
+        "application_number": null
+      },
+      "source_type": "drug_level_ref",
       "source_url": null,
       "source_excerpt": null,
       "extracted_by": null,

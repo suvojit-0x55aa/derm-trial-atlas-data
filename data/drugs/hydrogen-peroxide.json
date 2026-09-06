@@ -1,0 +1,324 @@
+{
+  "schema_version": 1,
+  "drug": "Hydrogen Peroxide",
+  "applications": [
+    {
+      "application_number": "209305",
+      "regulatory_application": {
+        "value": {
+          "application_type": "NDA",
+          "application_number": "209305",
+          "registry": "orange_book",
+          "center": "CDER",
+          "proprietary_name": "ESKATA",
+          "applicant": "ACLARIS THERAPEUTICS INC",
+          "first_approval_date": "2017-12-14"
+        },
+        "source_type": "orange_book",
+        "source_url": "https://api.fda.gov/drug/orangebook.json",
+        "source_excerpt": "openfda orangebook.json: application_number N209305, brand_name ESKATA, applicant_full_name ACLARIS THERAPEUTICS INC, approval_date 2017-12-14",
+        "extracted_by": "atlas.regulatory_applications (registry file fetched 2026-09-05)",
+        "reviewed_by": null,
+        "confidence": 1.0
+      },
+      "orange_book": {
+        "value": {
+          "application_type": "N",
+          "application_number": "209305",
+          "ingredient": "HYDROGEN PEROXIDE",
+          "trade_name": "ESKATA",
+          "applicant": "ACLARIS",
+          "applicant_full_name": "ACLARIS THERAPEUTICS INC",
+          "products": [
+            {
+              "product_number": "001",
+              "strength": "40%",
+              "dosage_form": "SOLUTION",
+              "route": "TOPICAL",
+              "approval_date": "2017-12-14",
+              "rld": true,
+              "rs": false,
+              "te_code": null,
+              "marketing_type": "HUMAN PRESCRIPTION DRUG"
+            }
+          ],
+          "patents": [
+            {
+              "patent_number": "10098910",
+              "expiration_date": "2035-04-21",
+              "drug_substance_claim": false,
+              "drug_product_claim": true,
+              "patent_use_code": "U-2205",
+              "delisted": false,
+              "submission_date": "2018-10-25",
+              "product_numbers": [
+                "001"
+              ]
+            },
+            {
+              "patent_number": "10493103",
+              "expiration_date": "2035-04-21",
+              "drug_substance_claim": false,
+              "drug_product_claim": true,
+              "patent_use_code": null,
+              "delisted": false,
+              "submission_date": "2020-01-21",
+              "product_numbers": [
+                "001"
+              ]
+            },
+            {
+              "patent_number": "10729720",
+              "expiration_date": "2035-04-21",
+              "drug_substance_claim": false,
+              "drug_product_claim": true,
+              "patent_use_code": null,
+              "delisted": false,
+              "submission_date": "2020-08-11",
+              "product_numbers": [
+                "001"
+              ]
+            },
+            {
+              "patent_number": "9675639",
+              "expiration_date": "2035-07-04",
+              "drug_substance_claim": false,
+              "drug_product_claim": true,
+              "patent_use_code": "U-2205",
+              "delisted": false,
+              "submission_date": "2018-01-03",
+              "product_numbers": [
+                "001"
+              ]
+            },
+            {
+              "patent_number": "9980983",
+              "expiration_date": "2035-04-21",
+              "drug_substance_claim": false,
+              "drug_product_claim": false,
+              "patent_use_code": "U-2205",
+              "delisted": false,
+              "submission_date": "2018-06-18",
+              "product_numbers": [
+                "001"
+              ]
+            }
+          ],
+          "exclusivities": [],
+          "latest_patent_expiration": "2035-07-04",
+          "latest_exclusivity_expiration": null,
+          "data_file_date": null
+        },
+        "source_type": "orange_book",
+        "source_url": "https://api.fda.gov/drug/orangebook.json?search=products.active_ingredients.name%3A%22HYDROGEN+PEROXIDE%22&limit=100",
+        "source_excerpt": "openFDA drug/orangebook.json, 1 product row(s) matched on products.active_ingredients.name='HYDROGEN PEROXIDE'",
+        "extracted_by": "fetch_orange_book.py (openfda drug/orangebook.json, cycle-12 pass)",
+        "reviewed_by": null,
+        "confidence": 1.0
+      }
+    }
+  ],
+  "trial_ids": [
+    "NCT02667236",
+    "NCT02667275"
+  ],
+  "mechanism_of_action": {
+    "value": {
+      "modality": "other",
+      "drug_class": null,
+      "antibody_isotype": null,
+      "binding_targets": [],
+      "pathway_cytokines": [],
+      "receptor_subunits": [],
+      "kinases_inhibited": [],
+      "lower_potency_kinases": [],
+      "selectivity": [],
+      "reversible": null,
+      "mechanism_established": false,
+      "label_section": "12.1"
+    },
+    "source_type": "openfda_label",
+    "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2017/209305s000lbl.pdf",
+    "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1) -- extracted text: 12.1 Mechanism of Action The mechanism of action for ESKATA for the treatment of seborrheic keratosis is unknown.",
+    "extracted_by": "deep-extraction pass (LLM-assisted extraction, scale-out backfill; pending human QA)",
+    "reviewed_by": null,
+    "confidence": 0.85
+  },
+  "boxed_warning": {
+    "value": {
+      "present": false,
+      "title": null,
+      "warning_categories": [],
+      "referenced_label_sections": [],
+      "product_names": []
+    },
+    "source_type": "openfda_label",
+    "source_url": "https://api.fda.gov/drug/label.json?search=openfda.brand_name:ESKATA&limit=1",
+    "source_excerpt": "openFDA drug/label.json has no indexed entry for ESKATA/HYDROGEN PEROXIDE under brand_name, substance_name, or application_number (NDA209305) -- ESKATA is a market-discontinued brand, dropped from openFDA's label index entirely. Confirmed no boxed warning by reading the original FDA-approved label PDF directly (accessdata.fda.gov/drugsatfda_docs/label/2017/209305s000lbl.pdf, Reference ID 4195528): Section 4 Contraindications = 'None', label goes straight from Highlights to Section 5 Warnings and Precautions with no boxed warning section.",
+    "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, cycle-12 pass)",
+    "reviewed_by": null,
+    "confidence": 1.0
+  },
+  "faers_summary": {
+    "value": {
+      "query": {
+        "search_field": "patient.drug.medicinalproduct",
+        "search_term": "ESKATA",
+        "receivedate_from": "2018-08-16",
+        "receivedate_to": "2020-07-08",
+        "api_urls": [
+          "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ESKATA\"&limit=1",
+          "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ESKATA\"+AND+serious:1&limit=1",
+          "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ESKATA\"+AND+seriousnessdeath:1&limit=1",
+          "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ESKATA\"+AND+seriousnesshospitalization:1&limit=1",
+          "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ESKATA\"+AND+seriousnesslifethreatening:1&limit=1",
+          "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ESKATA\"+AND+seriousnessdisabling:1&limit=1",
+          "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ESKATA\"&count=patient.reaction.reactionmeddrapt.exact&limit=15",
+          "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ESKATA\"+AND+serious:1&count=patient.reaction.reactionmeddrapt.exact&limit=15",
+          "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ESKATA\"&count=receivedate"
+        ],
+        "data_last_updated": "2026-07-30"
+      },
+      "total_reports": 212,
+      "serious_reports": 2,
+      "death_reports": 0,
+      "hospitalization_reports": 0,
+      "life_threatening_reports": 0,
+      "disability_reports": 0,
+      "top_reactions": [
+        {
+          "meddra_pt": "APPLICATION SITE DISCOLOURATION",
+          "report_count": 50,
+          "pct_of_reports": 23.58
+        },
+        {
+          "meddra_pt": "DRUG INEFFECTIVE",
+          "report_count": 49,
+          "pct_of_reports": 23.11
+        },
+        {
+          "meddra_pt": "APPLICATION SITE ERYTHEMA",
+          "report_count": 36,
+          "pct_of_reports": 16.98
+        },
+        {
+          "meddra_pt": "PRODUCT COMPLAINT",
+          "report_count": 36,
+          "pct_of_reports": 16.98
+        },
+        {
+          "meddra_pt": "APPLICATION SITE PAIN",
+          "report_count": 26,
+          "pct_of_reports": 12.26
+        },
+        {
+          "meddra_pt": "SCAB",
+          "report_count": 16,
+          "pct_of_reports": 7.55
+        },
+        {
+          "meddra_pt": "SWELLING OF EYELID",
+          "report_count": 16,
+          "pct_of_reports": 7.55
+        },
+        {
+          "meddra_pt": "APPLICATION SITE SCAR",
+          "report_count": 14,
+          "pct_of_reports": 6.6
+        },
+        {
+          "meddra_pt": "SCAR",
+          "report_count": 14,
+          "pct_of_reports": 6.6
+        },
+        {
+          "meddra_pt": "ERYTHEMA",
+          "report_count": 12,
+          "pct_of_reports": 5.66
+        },
+        {
+          "meddra_pt": "APPLICATION SITE SCAB",
+          "report_count": 11,
+          "pct_of_reports": 5.19
+        },
+        {
+          "meddra_pt": "PAIN",
+          "report_count": 10,
+          "pct_of_reports": 4.72
+        },
+        {
+          "meddra_pt": "EYE SWELLING",
+          "report_count": 9,
+          "pct_of_reports": 4.25
+        },
+        {
+          "meddra_pt": "POST INFLAMMATORY PIGMENTATION CHANGE",
+          "report_count": 9,
+          "pct_of_reports": 4.25
+        },
+        {
+          "meddra_pt": "APPLICATION SITE ULCER",
+          "report_count": 8,
+          "pct_of_reports": 3.77
+        }
+      ],
+      "top_serious_reactions": [
+        {
+          "meddra_pt": "APPLICATION SITE PAIN",
+          "report_count": 1,
+          "pct_of_reports": 50.0
+        },
+        {
+          "meddra_pt": "APPLICATION SITE ULCER",
+          "report_count": 1,
+          "pct_of_reports": 50.0
+        },
+        {
+          "meddra_pt": "INFECTED SKIN ULCER",
+          "report_count": 1,
+          "pct_of_reports": 50.0
+        },
+        {
+          "meddra_pt": "PAIN",
+          "report_count": 1,
+          "pct_of_reports": 50.0
+        },
+        {
+          "meddra_pt": "SCAR",
+          "report_count": 1,
+          "pct_of_reports": 50.0
+        }
+      ],
+      "reports_by_year": [
+        {
+          "year": 2018,
+          "report_count": 71
+        },
+        {
+          "year": 2019,
+          "report_count": 133
+        },
+        {
+          "year": 2020,
+          "report_count": 8
+        }
+      ],
+      "meddra_version": null
+    },
+    "source_type": "openfda_faers",
+    "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ESKATA\"&limit=1",
+    "source_excerpt": "openFDA drug/event.json aggregate: total_reports=212, serious=2, deaths=0. Brand name ESKATA used instead of the atlas-wide generic default: generic term HYDROGEN PEROXIDE returns 521 reports dominated by unrelated OTC products (wound-care wipes, mouthwash, teeth-whitening) per the established run-drugindication-count-first rule; ESKATA's top indication (SEBORRHOEIC KERATOSIS, 159/212) confirms a clean match.",
+    "extracted_by": "fetch_faers.py (openfda drug/event.json, cycle-12 pass)",
+    "reviewed_by": null,
+    "confidence": 1.0
+  },
+  "purple_book": {
+    "value": null,
+    "source_type": "needs_extraction",
+    "source_url": null,
+    "source_excerpt": null,
+    "extracted_by": null,
+    "reviewed_by": null,
+    "confidence": null
+  }
+}

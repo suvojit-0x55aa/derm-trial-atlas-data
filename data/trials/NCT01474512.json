@@ -1,5 +1,5 @@
 {
-  "schema_version": 3,
+  "schema_version": 4,
   "nct_id": {
     "value": "NCT01474512",
     "source_type": "ctgov_api",
@@ -84,25 +84,15 @@
     },
     "mechanism_of_action": {
       "value": {
-        "modality": "monoclonal_antibody",
-        "drug_class": "monoclonal antibody",
-        "antibody_isotype": "IgG4",
-        "binding_targets": [],
-        "pathway_cytokines": [],
-        "receptor_subunits": [],
-        "kinases_inhibited": [],
-        "lower_potency_kinases": [],
-        "selectivity": [],
-        "reversible": null,
-        "mechanism_established": null,
-        "label_section": "12.1"
+        "drug": "Ixekizumab",
+        "application_number": null
       },
-      "source_type": "openfda_label",
-      "source_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=1c6425de-1f8c-4385-bfb9-6e01db55275f",
-      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1) -- v1 extracted text: 12.1 Mechanism of Action Ixekizumab is a humanized IgG4 monoclonal antibody that selectively binds with the interleukin 17A (IL-17A) cytokine and inhibits its interaction with the IL-17 receptor. IL-17A is a naturally occurring cytokine that is involved in normal inflammatory and immune responses. Ixekizumab inhibits the release of proinflammatory cytokines and chemokines.",
-      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA); structured by atlas.migrate v1->v2",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 0.9
+      "confidence": null
     },
     "dosing_regimen": {
       "value": [
@@ -1936,278 +1926,50 @@
     },
     "boxed_warning": {
       "value": {
-        "present": false,
-        "title": null,
-        "warning_categories": [],
-        "referenced_label_sections": [],
-        "product_names": []
+        "drug": "Ixekizumab",
+        "application_number": null
       },
-      "source_type": "openfda_label",
-      "source_url": "https://api.fda.gov/drug/label.json?search=openfda.substance_name:IXEKIZUMAB&limit=1",
-      "source_excerpt": "results[0] has no boxed_warning key (checked, none present)",
-      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass); structured by atlas.migrate v1->v2",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     }
   },
   "real_world_safety": {
     "faers_summary": {
       "value": {
-        "query": {
-          "search_field": "patient.drug.medicinalproduct",
-          "search_term": "IXEKIZUMAB",
-          "receivedate_from": "2016-05-16",
-          "receivedate_to": "2026-06-30",
-          "api_urls": [
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"IXEKIZUMAB\"&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"IXEKIZUMAB\"+AND+serious:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"IXEKIZUMAB\"+AND+seriousnessdeath:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"IXEKIZUMAB\"+AND+seriousnesshospitalization:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"IXEKIZUMAB\"+AND+seriousnesslifethreatening:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"IXEKIZUMAB\"+AND+seriousnessdisabling:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"IXEKIZUMAB\"&count=patient.reaction.reactionmeddrapt.exact&limit=15",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"IXEKIZUMAB\"+AND+serious:1&count=patient.reaction.reactionmeddrapt.exact&limit=15",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"IXEKIZUMAB\"&count=receivedate"
-          ],
-          "data_last_updated": "2026-07-30"
-        },
-        "total_reports": 1372,
-        "serious_reports": 1168,
-        "death_reports": 44,
-        "hospitalization_reports": 447,
-        "life_threatening_reports": 55,
-        "disability_reports": 29,
-        "top_reactions": [
-          {
-            "meddra_pt": "DRUG INEFFECTIVE",
-            "report_count": 259,
-            "pct_of_reports": 18.88
-          },
-          {
-            "meddra_pt": "OFF LABEL USE",
-            "report_count": 172,
-            "pct_of_reports": 12.54
-          },
-          {
-            "meddra_pt": "PSORIASIS",
-            "report_count": 169,
-            "pct_of_reports": 12.32
-          },
-          {
-            "meddra_pt": "ARTHRALGIA",
-            "report_count": 104,
-            "pct_of_reports": 7.58
-          },
-          {
-            "meddra_pt": "TREATMENT FAILURE",
-            "report_count": 95,
-            "pct_of_reports": 6.92
-          },
-          {
-            "meddra_pt": "PSORIATIC ARTHROPATHY",
-            "report_count": 85,
-            "pct_of_reports": 6.2
-          },
-          {
-            "meddra_pt": "NAUSEA",
-            "report_count": 80,
-            "pct_of_reports": 5.83
-          },
-          {
-            "meddra_pt": "THERAPEUTIC PRODUCT EFFECT DECREASED",
-            "report_count": 78,
-            "pct_of_reports": 5.69
-          },
-          {
-            "meddra_pt": "PAIN",
-            "report_count": 72,
-            "pct_of_reports": 5.25
-          },
-          {
-            "meddra_pt": "CARDIAC FAILURE CONGESTIVE",
-            "report_count": 67,
-            "pct_of_reports": 4.88
-          },
-          {
-            "meddra_pt": "CONDITION AGGRAVATED",
-            "report_count": 61,
-            "pct_of_reports": 4.45
-          },
-          {
-            "meddra_pt": "EJECTION FRACTION DECREASED",
-            "report_count": 61,
-            "pct_of_reports": 4.45
-          },
-          {
-            "meddra_pt": "THERAPEUTIC PRODUCT EFFECT INCOMPLETE",
-            "report_count": 59,
-            "pct_of_reports": 4.3
-          },
-          {
-            "meddra_pt": "CELLULITIS",
-            "report_count": 56,
-            "pct_of_reports": 4.08
-          },
-          {
-            "meddra_pt": "HEADACHE",
-            "report_count": 56,
-            "pct_of_reports": 4.08
-          }
-        ],
-        "top_serious_reactions": [
-          {
-            "meddra_pt": "DRUG INEFFECTIVE",
-            "report_count": 227,
-            "pct_of_reports": 19.43
-          },
-          {
-            "meddra_pt": "OFF LABEL USE",
-            "report_count": 159,
-            "pct_of_reports": 13.61
-          },
-          {
-            "meddra_pt": "PSORIASIS",
-            "report_count": 146,
-            "pct_of_reports": 12.5
-          },
-          {
-            "meddra_pt": "ARTHRALGIA",
-            "report_count": 98,
-            "pct_of_reports": 8.39
-          },
-          {
-            "meddra_pt": "PSORIATIC ARTHROPATHY",
-            "report_count": 85,
-            "pct_of_reports": 7.28
-          },
-          {
-            "meddra_pt": "TREATMENT FAILURE",
-            "report_count": 82,
-            "pct_of_reports": 7.02
-          },
-          {
-            "meddra_pt": "THERAPEUTIC PRODUCT EFFECT DECREASED",
-            "report_count": 76,
-            "pct_of_reports": 6.51
-          },
-          {
-            "meddra_pt": "NAUSEA",
-            "report_count": 75,
-            "pct_of_reports": 6.42
-          },
-          {
-            "meddra_pt": "PAIN",
-            "report_count": 70,
-            "pct_of_reports": 5.99
-          },
-          {
-            "meddra_pt": "CARDIAC FAILURE CONGESTIVE",
-            "report_count": 67,
-            "pct_of_reports": 5.74
-          },
-          {
-            "meddra_pt": "EJECTION FRACTION DECREASED",
-            "report_count": 61,
-            "pct_of_reports": 5.22
-          },
-          {
-            "meddra_pt": "CONDITION AGGRAVATED",
-            "report_count": 59,
-            "pct_of_reports": 5.05
-          },
-          {
-            "meddra_pt": "THERAPEUTIC PRODUCT EFFECT INCOMPLETE",
-            "report_count": 58,
-            "pct_of_reports": 4.97
-          },
-          {
-            "meddra_pt": "PNEUMONIA",
-            "report_count": 56,
-            "pct_of_reports": 4.79
-          },
-          {
-            "meddra_pt": "CELLULITIS",
-            "report_count": 55,
-            "pct_of_reports": 4.71
-          }
-        ],
-        "reports_by_year": [
-          {
-            "year": 2016,
-            "report_count": 21
-          },
-          {
-            "year": 2017,
-            "report_count": 68
-          },
-          {
-            "year": 2018,
-            "report_count": 56
-          },
-          {
-            "year": 2019,
-            "report_count": 93
-          },
-          {
-            "year": 2020,
-            "report_count": 140
-          },
-          {
-            "year": 2021,
-            "report_count": 158
-          },
-          {
-            "year": 2022,
-            "report_count": 175
-          },
-          {
-            "year": 2023,
-            "report_count": 139
-          },
-          {
-            "year": 2024,
-            "report_count": 212
-          },
-          {
-            "year": 2025,
-            "report_count": 215
-          },
-          {
-            "year": 2026,
-            "report_count": 95
-          }
-        ],
-        "meddra_version": null
+        "drug": "Ixekizumab",
+        "application_number": null
       },
-      "source_type": "openfda_faers",
-      "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"IXEKIZUMAB\"&limit=1",
-      "source_excerpt": "openFDA drug/event.json aggregate: total_reports=1372, serious=1168, deaths=44",
-      "extracted_by": "fetch_faers.py (openfda drug/event.json, v2 pass)",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     }
   },
   "exclusivity": {
     "regulatory_application": {
       "value": {
-        "application_type": "BLA",
-        "application_number": "125521",
-        "registry": "purple_book",
-        "center": "CDER",
-        "proprietary_name": "Taltz",
-        "applicant": "Eli Lilly and Company",
-        "first_approval_date": "2016-03-22"
+        "drug": "Ixekizumab",
+        "application_number": "125521"
       },
-      "source_type": "purple_book",
-      "source_url": "https://purplebooksearch.fda.gov/index.cfm?event=advancedsearch",
-      "source_excerpt": "purplebooksearch.fda.gov live search table: BLA 125521 | Taltz | ixekizumab | 351(a) | Eli Lilly and Company | first approved 2016-03-22",
-      "extracted_by": "atlas.regulatory_applications (registry file fetched 2026-09-05)",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     },
     "orange_book": {
-      "value": null,
-      "source_type": "needs_extraction",
+      "value": {
+        "drug": "Ixekizumab",
+        "application_number": "125521"
+      },
+      "source_type": "drug_level_ref",
       "source_url": null,
       "source_excerpt": null,
       "extracted_by": null,
@@ -2216,79 +1978,15 @@
     },
     "purple_book": {
       "value": {
-        "bla_number": "125521",
-        "proprietary_name": "Taltz",
-        "proper_name": "ixekizumab",
-        "applicant": "Eli Lilly and Company",
-        "license_type": "351(a)",
-        "license_number": "1891",
-        "center": "CDER",
-        "products": [
-          {
-            "product_number": "001",
-            "strength": "80MG/ML",
-            "dosage_form": "Injection",
-            "route": "Subcutaneous",
-            "presentation": "Autoinjector",
-            "marketing_status": "Rx",
-            "licensure": "Licensed",
-            "approval_date": "2016-03-22",
-            "submission_type": "Original",
-            "supplement_number": null
-          },
-          {
-            "product_number": "002",
-            "strength": "80MG/ML",
-            "dosage_form": "Injection",
-            "route": "Subcutaneous",
-            "presentation": "Pre-Filled Syringe",
-            "marketing_status": "Rx",
-            "licensure": "Licensed",
-            "approval_date": "2016-03-22",
-            "submission_type": "Original",
-            "supplement_number": null
-          },
-          {
-            "product_number": "003",
-            "strength": "40MG/0.5ML",
-            "dosage_form": "Injection",
-            "route": "Subcutaneous",
-            "presentation": "Pre-Filled Syringe",
-            "marketing_status": "Rx",
-            "licensure": "Licensed",
-            "approval_date": "2024-08-20",
-            "submission_type": "Supplement",
-            "supplement_number": "32"
-          },
-          {
-            "product_number": "004",
-            "strength": "20MG/0.25ML",
-            "dosage_form": "Injection",
-            "route": "Subcutaneous",
-            "presentation": "Pre-Filled Syringe",
-            "marketing_status": "Rx",
-            "licensure": "Licensed",
-            "approval_date": "2024-08-20",
-            "submission_type": "Supplement",
-            "supplement_number": "32"
-          }
-        ],
-        "first_approval_date": "2016-03-22",
-        "date_of_first_licensure": null,
-        "reference_product_exclusivity_expiration": null,
-        "exclusivity_expiration_date": null,
-        "first_interchangeable_exclusivity_expiration": null,
-        "orphan_exclusivity_expiration": null,
-        "patent_list_provided": null,
-        "biosimilars": [],
-        "data_file_month": null
+        "drug": "Ixekizumab",
+        "application_number": null
       },
-      "source_type": "purple_book",
-      "source_url": "https://purplebooksearch.fda.gov/index.cfm?event=advancedsearch",
-      "source_excerpt": "purplebooksearch.fda.gov live search table, BLA 125521 (Taltz), 0 biosimilar(s) on file",
-      "extracted_by": "fetch_purple_book.py (purplebooksearch.fda.gov live search table, raw staging pass)",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     }
   },
   "results": {

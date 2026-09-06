@@ -1,5 +1,5 @@
 {
-  "schema_version": 3,
+  "schema_version": 4,
   "nct_id": {
     "value": "NCT06220604",
     "source_type": "ctgov_api",
@@ -86,31 +86,15 @@
     },
     "mechanism_of_action": {
       "value": {
-        "modality": "other",
-        "drug_class": "IL-23 receptor antagonist peptide",
-        "antibody_isotype": null,
-        "binding_targets": [
-          "IL-23R"
-        ],
-        "pathway_cytokines": [
-          "IL-23"
-        ],
-        "receptor_subunits": [
-          "IL-23R"
-        ],
-        "kinases_inhibited": [],
-        "lower_potency_kinases": [],
-        "selectivity": [],
-        "reversible": null,
-        "mechanism_established": null,
-        "label_section": "12.1"
+        "drug": "Icotrokinra",
+        "application_number": null
       },
-      "source_type": "openfda_label",
-      "source_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=4d42efb1-d399-2a77-e063-6294a90af3cc",
-      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1) -- extracted text: 12.1 Mechanism of Action Icotrokinra is a peptide that selectively binds to the IL-23 receptor (IL-23R) with a dissociation constant of 7 pM and antagonizes the binding of IL-23. IL-23 is a naturally occurring cytokine that is involved in inflammatory and immune responses. Icotrokinra inhibits the IL-23/IL-23R-dependent release of proinflammatory cytokines.",
-      "extracted_by": "deep-extraction pass (LLM-assisted extraction, scale-out backfill; pending human QA)",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 0.9
+      "confidence": null
     },
     "dosing_regimen": {
       "value": [
@@ -2311,182 +2295,62 @@
     },
     "boxed_warning": {
       "value": {
-        "present": false,
-        "title": null,
-        "warning_categories": [],
-        "referenced_label_sections": [],
-        "product_names": []
+        "drug": "Icotrokinra",
+        "application_number": null
       },
-      "source_type": "openfda_label",
-      "source_url": "https://api.fda.gov/drug/label.json?search=openfda.substance_name:ICOTROKINRA&limit=1",
-      "source_excerpt": "results[0] has no boxed_warning key (checked, none present)",
-      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass); structured by atlas.migrate v1->v2",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     }
   },
   "real_world_safety": {
     "faers_summary": {
       "value": {
-        "query": {
-          "search_field": "patient.drug.medicinalproduct",
-          "search_term": "ICOTROKINRA",
-          "receivedate_from": "2026-05-08",
-          "receivedate_to": "2026-06-15",
-          "api_urls": [
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ICOTROKINRA\"&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ICOTROKINRA\"+AND+serious:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ICOTROKINRA\"+AND+seriousnessdeath:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ICOTROKINRA\"+AND+seriousnesshospitalization:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ICOTROKINRA\"+AND+seriousnesslifethreatening:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ICOTROKINRA\"+AND+seriousnessdisabling:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ICOTROKINRA\"&count=patient.reaction.reactionmeddrapt.exact&limit=15",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ICOTROKINRA\"+AND+serious:1&count=patient.reaction.reactionmeddrapt.exact&limit=15",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ICOTROKINRA\"&count=receivedate"
-          ],
-          "data_last_updated": "2026-07-30"
-        },
-        "total_reports": 2,
-        "serious_reports": 1,
-        "death_reports": 0,
-        "hospitalization_reports": 0,
-        "life_threatening_reports": 0,
-        "disability_reports": 0,
-        "top_reactions": [
-          {
-            "meddra_pt": "COLITIS ULCERATIVE",
-            "report_count": 1,
-            "pct_of_reports": 50.0
-          },
-          {
-            "meddra_pt": "INJECTION SITE REACTION",
-            "report_count": 1,
-            "pct_of_reports": 50.0
-          }
-        ],
-        "top_serious_reactions": [
-          {
-            "meddra_pt": "COLITIS ULCERATIVE",
-            "report_count": 1,
-            "pct_of_reports": 100.0
-          }
-        ],
-        "reports_by_year": [
-          {
-            "year": 2026,
-            "report_count": 2
-          }
-        ],
-        "meddra_version": null
+        "drug": "Icotrokinra",
+        "application_number": null
       },
-      "source_type": "openfda_faers",
-      "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ICOTROKINRA\"&limit=1",
-      "source_excerpt": "openFDA drug/event.json aggregate (ICOTROKINRA): total_reports=2, serious=1, deaths=0",
-      "extracted_by": "fetch_faers.py (openfda drug/event.json, cycle-13 pass)",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     }
   },
   "exclusivity": {
     "regulatory_application": {
       "value": {
-        "application_type": "NDA",
-        "application_number": "220149",
-        "registry": "orange_book",
-        "center": "CDER",
-        "proprietary_name": "ICOTYDE",
-        "applicant": "JANSSEN BIOTECH",
-        "first_approval_date": "2026-03-17"
+        "drug": "Icotrokinra",
+        "application_number": "220149"
       },
-      "source_type": "orange_book",
-      "source_url": "https://api.fda.gov/drug/orangebook.json",
-      "source_excerpt": "openFDA drug/orangebook.json: products.active_ingredients.name=\"ICOTROKINRA HYDROCHLORIDE\" -> 1 product row, application_number 220149, brand ICOTYDE, applicant JANSSEN BIOTECH, approval_date 20260317",
-      "extracted_by": "atlas.regulatory_applications (registry file fetched 2026-09-05)",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     },
     "orange_book": {
       "value": {
-        "application_type": "N",
-        "application_number": "220149",
-        "ingredient": "ICOTROKINRA HYDROCHLORIDE",
-        "trade_name": "ICOTYDE",
-        "applicant": "JANSSEN BIOTECH",
-        "applicant_full_name": "JANSSEN BIOTECH INC",
-        "products": [
-          {
-            "product_number": "001",
-            "strength": "EQ 200MG BASE",
-            "dosage_form": "TABLET",
-            "route": "ORAL",
-            "approval_date": "2026-03-17",
-            "rld": true,
-            "rs": true,
-            "te_code": null,
-            "marketing_type": "HUMAN PRESCRIPTION DRUG"
-          }
-        ],
-        "patents": [
-          {
-            "patent_number": "12552836",
-            "expiration_date": "2039-07-12",
-            "drug_substance_claim": true,
-            "drug_product_claim": true,
-            "patent_use_code": null,
-            "delisted": false,
-            "submission_date": "2026-04-02",
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "patent_number": "11845808",
-            "expiration_date": "2041-01-14",
-            "drug_substance_claim": true,
-            "drug_product_claim": false,
-            "patent_use_code": "U-4447",
-            "delisted": false,
-            "submission_date": "2026-04-02",
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "patent_number": "11939361",
-            "expiration_date": "2041-11-19",
-            "drug_substance_claim": false,
-            "drug_product_claim": true,
-            "patent_use_code": "U-4447",
-            "delisted": false,
-            "submission_date": "2026-04-02",
-            "product_numbers": [
-              "001"
-            ]
-          }
-        ],
-        "exclusivities": [
-          {
-            "code": "NCE",
-            "expiration_date": "2031-03-17",
-            "product_numbers": [
-              "001"
-            ]
-          }
-        ],
-        "latest_patent_expiration": "2041-11-19",
-        "latest_exclusivity_expiration": "2031-03-17",
-        "data_file_date": null
+        "drug": "Icotrokinra",
+        "application_number": "220149"
       },
-      "source_type": "orange_book",
-      "source_url": "https://api.fda.gov/drug/orangebook.json?search=products.active_ingredients.name%3A%22ICOTROKINRA%20HYDROCHLORIDE%22&limit=100",
-      "source_excerpt": "openFDA drug/orangebook.json, 1 product row matched on products.active_ingredients.name='ICOTROKINRA HYDROCHLORIDE'",
-      "extracted_by": "fetch_orange_book.py (openFDA orangebook.json, cycle-13 pass)",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     },
     "purple_book": {
-      "value": null,
-      "source_type": "needs_extraction",
+      "value": {
+        "drug": "Icotrokinra",
+        "application_number": null
+      },
+      "source_type": "drug_level_ref",
       "source_url": null,
       "source_excerpt": null,
       "extracted_by": null,

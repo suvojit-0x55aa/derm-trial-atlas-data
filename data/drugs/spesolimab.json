@@ -1,0 +1,358 @@
+{
+  "schema_version": 1,
+  "drug": "Spesolimab",
+  "applications": [
+    {
+      "application_number": "761244",
+      "regulatory_application": {
+        "value": {
+          "application_type": "BLA",
+          "application_number": "761244",
+          "registry": "purple_book",
+          "center": "CDER",
+          "proprietary_name": "Spevigo",
+          "applicant": "LEO Pharma A/S",
+          "first_approval_date": "2022-09-01"
+        },
+        "source_type": "purple_book",
+        "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2026/purplebook-search-August-data-download.csv",
+        "source_excerpt": "row: LEO Pharma A/S | BLA 761244 | Spevigo | spesolimab-sbzo | 351(a) | 450MG/7.5ML (60MG/ML) Injection Intravenous Single-Dose Vial | Rx | Licensed | 1-Sep-22 | Original | License 2169 | Product 001 | CDER | Orphan Exclusivity Exp. Date 18-Mar-31",
+        "extracted_by": "atlas.regulatory_applications (registry file fetched 2026-09-05)",
+        "reviewed_by": null,
+        "confidence": 1.0
+      },
+      "orange_book": {
+        "value": null,
+        "source_type": "needs_extraction",
+        "source_url": null,
+        "source_excerpt": null,
+        "extracted_by": null,
+        "reviewed_by": null,
+        "confidence": null
+      }
+    }
+  ],
+  "trial_ids": [
+    "NCT03782792"
+  ],
+  "mechanism_of_action": {
+    "value": {
+      "modality": "monoclonal_antibody",
+      "drug_class": "IL-36 receptor antagonist",
+      "antibody_isotype": "IgG1",
+      "binding_targets": [
+        "IL36R"
+      ],
+      "pathway_cytokines": [
+        "IL-36α",
+        "IL-36β",
+        "IL-36γ"
+      ],
+      "receptor_subunits": [
+        "IL36R"
+      ],
+      "kinases_inhibited": [],
+      "lower_potency_kinases": [],
+      "selectivity": [],
+      "reversible": null,
+      "mechanism_established": false,
+      "label_section": "12.1"
+    },
+    "source_type": "openfda_label",
+    "source_url": "https://api.fda.gov/drug/label.json?search=openfda.brand_name:SPEVIGO&limit=1",
+    "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1): 12.1 Mechanism of Action Spesolimab-sbzo is a humanized monoclonal immunoglobulin G1 antibody that inhibits interleukin-36 (IL-36) signaling by specifically binding to the IL36R. Binding of spesolimab-sbzo to IL36R prevents the subsequent activation of IL36R by its ligands (IL-36 α, β and γ) and downstream activation of pro-inflammatory and pro-fibrotic pathways. The precise mechanism linking reduced IL36R activity and the treatment of flares of GPP is unclear.",
+    "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v2 pass; pending human QA)",
+    "reviewed_by": null,
+    "confidence": 0.9
+  },
+  "boxed_warning": {
+    "value": {
+      "present": false,
+      "title": null,
+      "warning_categories": [],
+      "referenced_label_sections": [],
+      "product_names": []
+    },
+    "source_type": "openfda_label",
+    "source_url": "https://api.fda.gov/drug/label.json?search=openfda.brand_name:SPEVIGO&limit=1",
+    "source_excerpt": "results[0] has no boxed_warning key (checked, none present)",
+    "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v2 AE pass)",
+    "reviewed_by": null,
+    "confidence": 1.0
+  },
+  "faers_summary": {
+    "value": {
+      "query": {
+        "search_field": "patient.drug.medicinalproduct",
+        "search_term": "SPESOLIMAB",
+        "receivedate_from": "2022-09-20",
+        "receivedate_to": "2026-05-12",
+        "api_urls": [
+          "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"SPESOLIMAB\"&limit=1",
+          "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"SPESOLIMAB\"+AND+serious:1&limit=1",
+          "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"SPESOLIMAB\"+AND+seriousnessdeath:1&limit=1",
+          "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"SPESOLIMAB\"+AND+seriousnesshospitalization:1&limit=1",
+          "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"SPESOLIMAB\"+AND+seriousnesslifethreatening:1&limit=1",
+          "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"SPESOLIMAB\"+AND+seriousnessdisabling:1&limit=1",
+          "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"SPESOLIMAB\"&count=patient.reaction.reactionmeddrapt.exact&limit=15",
+          "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"SPESOLIMAB\"+AND+serious:1&count=patient.reaction.reactionmeddrapt.exact&limit=15",
+          "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"SPESOLIMAB\"&count=receivedate"
+        ],
+        "data_last_updated": "2026-07-30"
+      },
+      "total_reports": 67,
+      "serious_reports": 59,
+      "death_reports": 6,
+      "hospitalization_reports": 28,
+      "life_threatening_reports": 2,
+      "disability_reports": 0,
+      "top_reactions": [
+        {
+          "meddra_pt": "OFF LABEL USE",
+          "report_count": 15,
+          "pct_of_reports": 22.39
+        },
+        {
+          "meddra_pt": "PUSTULAR PSORIASIS",
+          "report_count": 14,
+          "pct_of_reports": 20.9
+        },
+        {
+          "meddra_pt": "DRUG INEFFECTIVE",
+          "report_count": 13,
+          "pct_of_reports": 19.4
+        },
+        {
+          "meddra_pt": "GENERALISED PUSTULAR PSORIASIS",
+          "report_count": 11,
+          "pct_of_reports": 16.42
+        },
+        {
+          "meddra_pt": "ARTHRITIS",
+          "report_count": 7,
+          "pct_of_reports": 10.45
+        },
+        {
+          "meddra_pt": "BREAST SWELLING",
+          "report_count": 7,
+          "pct_of_reports": 10.45
+        },
+        {
+          "meddra_pt": "DERMATITIS EXFOLIATIVE GENERALISED",
+          "report_count": 7,
+          "pct_of_reports": 10.45
+        },
+        {
+          "meddra_pt": "INFLAMMATORY PAIN",
+          "report_count": 7,
+          "pct_of_reports": 10.45
+        },
+        {
+          "meddra_pt": "LIVER DISORDER",
+          "report_count": 7,
+          "pct_of_reports": 10.45
+        },
+        {
+          "meddra_pt": "PSORIASIS AREA SEVERITY INDEX INCREASED",
+          "report_count": 7,
+          "pct_of_reports": 10.45
+        },
+        {
+          "meddra_pt": "PSORIATIC ARTHROPATHY",
+          "report_count": 7,
+          "pct_of_reports": 10.45
+        },
+        {
+          "meddra_pt": "PYREXIA",
+          "report_count": 7,
+          "pct_of_reports": 10.45
+        },
+        {
+          "meddra_pt": "SACROILIITIS",
+          "report_count": 7,
+          "pct_of_reports": 10.45
+        },
+        {
+          "meddra_pt": "SKIN STRIAE",
+          "report_count": 7,
+          "pct_of_reports": 10.45
+        },
+        {
+          "meddra_pt": "SPONDYLITIS",
+          "report_count": 7,
+          "pct_of_reports": 10.45
+        }
+      ],
+      "top_serious_reactions": [
+        {
+          "meddra_pt": "OFF LABEL USE",
+          "report_count": 14,
+          "pct_of_reports": 23.73
+        },
+        {
+          "meddra_pt": "PUSTULAR PSORIASIS",
+          "report_count": 14,
+          "pct_of_reports": 23.73
+        },
+        {
+          "meddra_pt": "DRUG INEFFECTIVE",
+          "report_count": 13,
+          "pct_of_reports": 22.03
+        },
+        {
+          "meddra_pt": "GENERALISED PUSTULAR PSORIASIS",
+          "report_count": 11,
+          "pct_of_reports": 18.64
+        },
+        {
+          "meddra_pt": "ARTHRITIS",
+          "report_count": 7,
+          "pct_of_reports": 11.86
+        },
+        {
+          "meddra_pt": "BREAST SWELLING",
+          "report_count": 7,
+          "pct_of_reports": 11.86
+        },
+        {
+          "meddra_pt": "DERMATITIS EXFOLIATIVE GENERALISED",
+          "report_count": 7,
+          "pct_of_reports": 11.86
+        },
+        {
+          "meddra_pt": "INFLAMMATORY PAIN",
+          "report_count": 7,
+          "pct_of_reports": 11.86
+        },
+        {
+          "meddra_pt": "LIVER DISORDER",
+          "report_count": 7,
+          "pct_of_reports": 11.86
+        },
+        {
+          "meddra_pt": "PSORIASIS AREA SEVERITY INDEX INCREASED",
+          "report_count": 7,
+          "pct_of_reports": 11.86
+        },
+        {
+          "meddra_pt": "PSORIATIC ARTHROPATHY",
+          "report_count": 7,
+          "pct_of_reports": 11.86
+        },
+        {
+          "meddra_pt": "PYREXIA",
+          "report_count": 7,
+          "pct_of_reports": 11.86
+        },
+        {
+          "meddra_pt": "SACROILIITIS",
+          "report_count": 7,
+          "pct_of_reports": 11.86
+        },
+        {
+          "meddra_pt": "SKIN STRIAE",
+          "report_count": 7,
+          "pct_of_reports": 11.86
+        },
+        {
+          "meddra_pt": "SPONDYLITIS",
+          "report_count": 7,
+          "pct_of_reports": 11.86
+        }
+      ],
+      "reports_by_year": [
+        {
+          "year": 2022,
+          "report_count": 8
+        },
+        {
+          "year": 2023,
+          "report_count": 16
+        },
+        {
+          "year": 2024,
+          "report_count": 15
+        },
+        {
+          "year": 2025,
+          "report_count": 19
+        },
+        {
+          "year": 2026,
+          "report_count": 9
+        }
+      ],
+      "meddra_version": null
+    },
+    "source_type": "openfda_faers",
+    "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"SPESOLIMAB\"&limit=1",
+    "source_excerpt": "openFDA drug/event.json aggregate: total_reports=67, serious=59, deaths=6",
+    "extracted_by": "fetch_faers.py (openfda drug/event.json, v2 pass)",
+    "reviewed_by": null,
+    "confidence": 1.0
+  },
+  "purple_book": {
+    "value": {
+      "bla_number": "761244",
+      "proprietary_name": "Spevigo",
+      "proper_name": "spesolimab-sbzo",
+      "applicant": "LEO Pharma A/S",
+      "license_type": "351(a)",
+      "license_number": "2169",
+      "center": "CDER",
+      "products": [
+        {
+          "product_number": "001",
+          "strength": "450MG/7.5ML (60MG/ML)",
+          "dosage_form": "Injection",
+          "route": "Intravenous",
+          "presentation": "Single-Dose Vial",
+          "marketing_status": "Rx",
+          "licensure": "Licensed",
+          "approval_date": "2022-09-01",
+          "submission_type": "Original",
+          "supplement_number": null
+        },
+        {
+          "product_number": "002",
+          "strength": "150MG/ML",
+          "dosage_form": "Injection",
+          "route": "Subcutaneous",
+          "presentation": "Pre-Filled Syringe",
+          "marketing_status": "Rx",
+          "licensure": "Licensed",
+          "approval_date": "2024-03-18",
+          "submission_type": "Supplement",
+          "supplement_number": "3"
+        },
+        {
+          "product_number": "003",
+          "strength": "300MG/2ML (150MG/ML)",
+          "dosage_form": "Injection",
+          "route": "Subcutaneous",
+          "presentation": "Pre-Filled Syringe",
+          "marketing_status": "Rx",
+          "licensure": "Licensed",
+          "approval_date": "2025-05-28",
+          "submission_type": "Supplement",
+          "supplement_number": "4"
+        }
+      ],
+      "first_approval_date": "2022-09-01",
+      "date_of_first_licensure": null,
+      "reference_product_exclusivity_expiration": null,
+      "exclusivity_expiration_date": null,
+      "first_interchangeable_exclusivity_expiration": null,
+      "orphan_exclusivity_expiration": "2031-03-18",
+      "patent_list_provided": null,
+      "biosimilars": [],
+      "data_file_month": "August 2026"
+    },
+    "source_type": "purple_book",
+    "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2026/purplebook-search-August-data-download.csv",
+    "source_excerpt": "Purple Book Monthly Historical Data Changes Report, August 2026 release; BLA 761244 (Spevigo), 3 product rows (IV vial original 2022-09-01, SC PFS supplements 2024-03-18 and 2025-05-28), 0 biosimilars on file",
+    "extracted_by": "fetch_purple_book.py (accessdata.fda.gov CSV download, raw staging pass; purplebooksearch.fda.gov live search UI blocked by Akamai bot-detection same as Orange Book)",
+    "reviewed_by": null,
+    "confidence": 1.0
+  }
+}

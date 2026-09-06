@@ -1,13 +1,13 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "Open Derm Trial Atlas trial record (schema v2)",
+  "title": "Open Derm Trial Atlas trial record (schema v4)",
   "type": "object",
   "additionalProperties": false,
   "properties": {
     "schema_version": {
       "type": "integer",
-      "const": 3,
-      "description": "always 3"
+      "const": 4,
+      "description": "always 4"
     },
     "nct_id": {
       "type": "object",
@@ -34,7 +34,8 @@
             "openfda_faers",
             "orange_book",
             "purple_book",
-            "needs_extraction"
+            "needs_extraction",
+            "drug_level_ref"
           ]
         },
         "source_url": {
@@ -128,7 +129,8 @@
                 "openfda_faers",
                 "orange_book",
                 "purple_book",
-                "needs_extraction"
+                "needs_extraction",
+                "drug_level_ref"
               ]
             },
             "source_url": {
@@ -218,7 +220,8 @@
                 "openfda_faers",
                 "orange_book",
                 "purple_book",
-                "needs_extraction"
+                "needs_extraction",
+                "drug_level_ref"
               ]
             },
             "source_url": {
@@ -308,7 +311,8 @@
                 "openfda_faers",
                 "orange_book",
                 "purple_book",
-                "needs_extraction"
+                "needs_extraction",
+                "drug_level_ref"
               ]
             },
             "source_url": {
@@ -371,7 +375,7 @@
             "reviewed_by",
             "confidence"
           ],
-          "description": "lead sponsor name"
+          "description": "lead sponsor name (trial-level: can differ across a drug's own trials when development/commercial rights changed hands -- not moved to the drug record, see DRUG_REF's docstring)"
         },
         "phase": {
           "type": "object",
@@ -401,7 +405,8 @@
                 "openfda_faers",
                 "orange_book",
                 "purple_book",
-                "needs_extraction"
+                "needs_extraction",
+                "drug_level_ref"
               ]
             },
             "source_url": {
@@ -503,7 +508,8 @@
                 "openfda_faers",
                 "orange_book",
                 "purple_book",
-                "needs_extraction"
+                "needs_extraction",
+                "drug_level_ref"
               ]
             },
             "source_url": {
@@ -566,7 +572,7 @@
             "reviewed_by",
             "confidence"
           ],
-          "description": "canonical drug name (curated)"
+          "description": "canonical drug name (curated); also the join key into data/drugs/<slug>.json"
         },
         "intervention_names": {
           "type": "object",
@@ -596,7 +602,8 @@
                 "openfda_faers",
                 "orange_book",
                 "purple_book",
-                "needs_extraction"
+                "needs_extraction",
+                "drug_level_ref"
               ]
             },
             "source_url": {
@@ -689,7 +696,8 @@
                 "openfda_faers",
                 "orange_book",
                 "purple_book",
-                "needs_extraction"
+                "needs_extraction",
+                "drug_level_ref"
               ]
             },
             "source_url": {
@@ -764,16 +772,11 @@
                   "type": "object",
                   "additionalProperties": false,
                   "properties": {
-                    "modality": {
+                    "drug": {
                       "type": "string",
-                      "enum": [
-                        "monoclonal_antibody",
-                        "small_molecule",
-                        "fusion_protein",
-                        "other"
-                      ]
+                      "description": "drug record key; joins to data/drugs/<slug>.json's own `drug` field"
                     },
-                    "drug_class": {
+                    "application_number": {
                       "anyOf": [
                         {
                           "type": "string"
@@ -781,125 +784,20 @@
                         {
                           "type": "null"
                         }
-                      ]
-                    },
-                    "antibody_isotype": {
-                      "anyOf": [
-                        {
-                          "type": "string"
-                        },
-                        {
-                          "type": "null"
-                        }
-                      ]
-                    },
-                    "binding_targets": {
-                      "type": "array",
-                      "items": {
-                        "type": "string"
-                      }
-                    },
-                    "pathway_cytokines": {
-                      "type": "array",
-                      "items": {
-                        "type": "string"
-                      }
-                    },
-                    "receptor_subunits": {
-                      "type": "array",
-                      "items": {
-                        "type": "string"
-                      }
-                    },
-                    "kinases_inhibited": {
-                      "type": "array",
-                      "items": {
-                        "type": "string"
-                      }
-                    },
-                    "lower_potency_kinases": {
-                      "type": "array",
-                      "items": {
-                        "type": "string"
-                      }
-                    },
-                    "selectivity": {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": false,
-                        "properties": {
-                          "over": {
-                            "type": "string"
-                          },
-                          "fold": {
-                            "type": "integer"
-                          },
-                          "comparator": {
-                            "type": "string",
-                            "enum": [
-                              "==",
-                              ">"
-                            ]
-                          }
-                        },
-                        "required": [
-                          "over",
-                          "fold",
-                          "comparator"
-                        ]
-                      }
-                    },
-                    "reversible": {
-                      "anyOf": [
-                        {
-                          "type": "boolean"
-                        },
-                        {
-                          "type": "null"
-                        }
-                      ]
-                    },
-                    "mechanism_established": {
-                      "anyOf": [
-                        {
-                          "type": "boolean"
-                        },
-                        {
-                          "type": "null"
-                        }
-                      ]
-                    },
-                    "label_section": {
-                      "anyOf": [
-                        {
-                          "type": "string"
-                        },
-                        {
-                          "type": "null"
-                        }
-                      ]
+                      ],
+                      "description": "disambiguates when the drug has more than one FDA application (e.g. Roflumilast's cream NDA 215985 vs. foam NDA 217242); null for a single-application drug, or for a field with no per-application variance (mechanism_of_action, boxed_warning, faers_summary, purple_book)"
                     }
                   },
                   "required": [
-                    "modality",
-                    "drug_class",
-                    "antibody_isotype",
-                    "binding_targets",
-                    "pathway_cytokines",
-                    "receptor_subunits",
-                    "kinases_inhibited",
-                    "lower_potency_kinases",
-                    "selectivity",
-                    "reversible",
-                    "mechanism_established",
-                    "label_section"
+                    "drug",
+                    "application_number"
                   ]
                 },
                 {
                   "type": "null"
                 }
-              ]
+              ],
+              "description": "Pointer to a drug-level fact on data/drugs/<slug>.json instead of re-describing it here"
             },
             "source_type": {
               "type": "string",
@@ -912,7 +810,8 @@
                 "openfda_faers",
                 "orange_book",
                 "purple_book",
-                "needs_extraction"
+                "needs_extraction",
+                "drug_level_ref"
               ]
             },
             "source_url": {
@@ -975,7 +874,7 @@
             "reviewed_by",
             "confidence"
           ],
-          "description": "typed mechanism from the FDA label section 12.1; label text in source_excerpt"
+          "description": "drug-level fact -- see data/drugs/<slug>.json's own mechanism_of_action"
         },
         "dosing_regimen": {
           "type": "object",
@@ -1199,7 +1098,8 @@
                 "openfda_faers",
                 "orange_book",
                 "purple_book",
-                "needs_extraction"
+                "needs_extraction",
+                "drug_level_ref"
               ]
             },
             "source_url": {
@@ -1305,7 +1205,8 @@
                 "openfda_faers",
                 "orange_book",
                 "purple_book",
-                "needs_extraction"
+                "needs_extraction",
+                "drug_level_ref"
               ]
             },
             "source_url": {
@@ -1395,7 +1296,8 @@
                 "openfda_faers",
                 "orange_book",
                 "purple_book",
-                "needs_extraction"
+                "needs_extraction",
+                "drug_level_ref"
               ]
             },
             "source_url": {
@@ -1485,7 +1387,8 @@
                 "openfda_faers",
                 "orange_book",
                 "purple_book",
-                "needs_extraction"
+                "needs_extraction",
+                "drug_level_ref"
               ]
             },
             "source_url": {
@@ -1580,7 +1483,8 @@
                 "openfda_faers",
                 "orange_book",
                 "purple_book",
-                "needs_extraction"
+                "needs_extraction",
+                "drug_level_ref"
               ]
             },
             "source_url": {
@@ -1670,7 +1574,8 @@
                 "openfda_faers",
                 "orange_book",
                 "purple_book",
-                "needs_extraction"
+                "needs_extraction",
+                "drug_level_ref"
               ]
             },
             "source_url": {
@@ -1994,7 +1899,8 @@
                 "openfda_faers",
                 "orange_book",
                 "purple_book",
-                "needs_extraction"
+                "needs_extraction",
+                "drug_level_ref"
               ]
             },
             "source_url": {
@@ -2098,7 +2004,8 @@
                 "openfda_faers",
                 "orange_book",
                 "purple_book",
-                "needs_extraction"
+                "needs_extraction",
+                "drug_level_ref"
               ]
             },
             "source_url": {
@@ -2188,7 +2095,8 @@
                 "openfda_faers",
                 "orange_book",
                 "purple_book",
-                "needs_extraction"
+                "needs_extraction",
+                "drug_level_ref"
               ]
             },
             "source_url": {
@@ -2278,7 +2186,8 @@
                 "openfda_faers",
                 "orange_book",
                 "purple_book",
-                "needs_extraction"
+                "needs_extraction",
+                "drug_level_ref"
               ]
             },
             "source_url": {
@@ -2368,7 +2277,8 @@
                 "openfda_faers",
                 "orange_book",
                 "purple_book",
-                "needs_extraction"
+                "needs_extraction",
+                "drug_level_ref"
               ]
             },
             "source_url": {
@@ -2458,7 +2368,8 @@
                 "openfda_faers",
                 "orange_book",
                 "purple_book",
-                "needs_extraction"
+                "needs_extraction",
+                "drug_level_ref"
               ]
             },
             "source_url": {
@@ -2771,7 +2682,8 @@
                 "openfda_faers",
                 "orange_book",
                 "purple_book",
-                "needs_extraction"
+                "needs_extraction",
+                "drug_level_ref"
               ]
             },
             "source_url": {
@@ -3455,7 +3367,8 @@
                 "openfda_faers",
                 "orange_book",
                 "purple_book",
-                "needs_extraction"
+                "needs_extraction",
+                "drug_level_ref"
               ]
             },
             "source_url": {
@@ -4125,7 +4038,8 @@
                 "openfda_faers",
                 "orange_book",
                 "purple_book",
-                "needs_extraction"
+                "needs_extraction",
+                "drug_level_ref"
               ]
             },
             "source_url": {
@@ -5111,7 +5025,8 @@
                 "openfda_faers",
                 "orange_book",
                 "purple_book",
-                "needs_extraction"
+                "needs_extraction",
+                "drug_level_ref"
               ]
             },
             "source_url": {
@@ -5232,7 +5147,8 @@
                 "openfda_faers",
                 "orange_book",
                 "purple_book",
-                "needs_extraction"
+                "needs_extraction",
+                "drug_level_ref"
               ]
             },
             "source_url": {
@@ -5342,7 +5258,8 @@
                 "openfda_faers",
                 "orange_book",
                 "purple_book",
-                "needs_extraction"
+                "needs_extraction",
+                "drug_level_ref"
               ]
             },
             "source_url": {
@@ -5452,7 +5369,8 @@
                 "openfda_faers",
                 "orange_book",
                 "purple_book",
-                "needs_extraction"
+                "needs_extraction",
+                "drug_level_ref"
               ]
             },
             "source_url": {
@@ -6223,7 +6141,8 @@
                 "openfda_faers",
                 "orange_book",
                 "purple_book",
-                "needs_extraction"
+                "needs_extraction",
+                "drug_level_ref"
               ]
             },
             "source_url": {
@@ -7117,7 +7036,8 @@
                 "openfda_faers",
                 "orange_book",
                 "purple_book",
-                "needs_extraction"
+                "needs_extraction",
+                "drug_level_ref"
               ]
             },
             "source_url": {
@@ -7251,7 +7171,8 @@
                 "openfda_faers",
                 "orange_book",
                 "purple_book",
-                "needs_extraction"
+                "needs_extraction",
+                "drug_level_ref"
               ]
             },
             "source_url": {
@@ -7372,7 +7293,8 @@
                 "openfda_faers",
                 "orange_book",
                 "purple_book",
-                "needs_extraction"
+                "needs_extraction",
+                "drug_level_ref"
               ]
             },
             "source_url": {
@@ -7520,7 +7442,8 @@
                 "openfda_faers",
                 "orange_book",
                 "purple_book",
-                "needs_extraction"
+                "needs_extraction",
+                "drug_level_ref"
               ]
             },
             "source_url": {
@@ -7641,7 +7564,8 @@
                 "openfda_faers",
                 "orange_book",
                 "purple_book",
-                "needs_extraction"
+                "needs_extraction",
+                "drug_level_ref"
               ]
             },
             "source_url": {
@@ -7716,10 +7640,11 @@
                   "type": "object",
                   "additionalProperties": false,
                   "properties": {
-                    "present": {
-                      "type": "boolean"
+                    "drug": {
+                      "type": "string",
+                      "description": "drug record key; joins to data/drugs/<slug>.json's own `drug` field"
                     },
-                    "title": {
+                    "application_number": {
                       "anyOf": [
                         {
                           "type": "string"
@@ -7727,49 +7652,20 @@
                         {
                           "type": "null"
                         }
-                      ]
-                    },
-                    "warning_categories": {
-                      "type": "array",
-                      "items": {
-                        "type": "string",
-                        "enum": [
-                          "serious_infections",
-                          "mortality",
-                          "malignancy",
-                          "mace",
-                          "thrombosis",
-                          "suicidal_ideation",
-                          "hepatotoxicity",
-                          "embryo_fetal_toxicity"
-                        ]
-                      }
-                    },
-                    "referenced_label_sections": {
-                      "type": "array",
-                      "items": {
-                        "type": "string"
-                      }
-                    },
-                    "product_names": {
-                      "type": "array",
-                      "items": {
-                        "type": "string"
-                      }
+                      ],
+                      "description": "disambiguates when the drug has more than one FDA application (e.g. Roflumilast's cream NDA 215985 vs. foam NDA 217242); null for a single-application drug, or for a field with no per-application variance (mechanism_of_action, boxed_warning, faers_summary, purple_book)"
                     }
                   },
                   "required": [
-                    "present",
-                    "title",
-                    "warning_categories",
-                    "referenced_label_sections",
-                    "product_names"
+                    "drug",
+                    "application_number"
                   ]
                 },
                 {
                   "type": "null"
                 }
-              ]
+              ],
+              "description": "Pointer to a drug-level fact on data/drugs/<slug>.json instead of re-describing it here"
             },
             "source_type": {
               "type": "string",
@@ -7782,7 +7678,8 @@
                 "openfda_faers",
                 "orange_book",
                 "purple_book",
-                "needs_extraction"
+                "needs_extraction",
+                "drug_level_ref"
               ]
             },
             "source_url": {
@@ -7845,7 +7742,7 @@
             "reviewed_by",
             "confidence"
           ],
-          "description": "typed boxed warning; present=false is a confirmed absence"
+          "description": "drug-level fact -- see data/drugs/<slug>.json's own boxed_warning"
         }
       },
       "required": [
@@ -7870,201 +7767,11 @@
                   "type": "object",
                   "additionalProperties": false,
                   "properties": {
-                    "query": {
-                      "type": "object",
-                      "additionalProperties": false,
-                      "properties": {
-                        "search_field": {
-                          "type": "string"
-                        },
-                        "search_term": {
-                          "type": "string"
-                        },
-                        "receivedate_from": {
-                          "anyOf": [
-                            {
-                              "type": "string",
-                              "format": "date"
-                            },
-                            {
-                              "type": "null"
-                            }
-                          ],
-                          "description": "ISO date YYYY-MM-DD"
-                        },
-                        "receivedate_to": {
-                          "anyOf": [
-                            {
-                              "type": "string",
-                              "format": "date"
-                            },
-                            {
-                              "type": "null"
-                            }
-                          ],
-                          "description": "ISO date YYYY-MM-DD"
-                        },
-                        "api_urls": {
-                          "type": "array",
-                          "items": {
-                            "type": "string"
-                          }
-                        },
-                        "data_last_updated": {
-                          "anyOf": [
-                            {
-                              "type": "string",
-                              "format": "date"
-                            },
-                            {
-                              "type": "null"
-                            }
-                          ],
-                          "description": "ISO date YYYY-MM-DD"
-                        }
-                      },
-                      "required": [
-                        "search_field",
-                        "search_term",
-                        "receivedate_from",
-                        "receivedate_to",
-                        "api_urls",
-                        "data_last_updated"
-                      ]
+                    "drug": {
+                      "type": "string",
+                      "description": "drug record key; joins to data/drugs/<slug>.json's own `drug` field"
                     },
-                    "total_reports": {
-                      "type": "integer"
-                    },
-                    "serious_reports": {
-                      "anyOf": [
-                        {
-                          "type": "integer"
-                        },
-                        {
-                          "type": "null"
-                        }
-                      ]
-                    },
-                    "death_reports": {
-                      "anyOf": [
-                        {
-                          "type": "integer"
-                        },
-                        {
-                          "type": "null"
-                        }
-                      ]
-                    },
-                    "hospitalization_reports": {
-                      "anyOf": [
-                        {
-                          "type": "integer"
-                        },
-                        {
-                          "type": "null"
-                        }
-                      ]
-                    },
-                    "life_threatening_reports": {
-                      "anyOf": [
-                        {
-                          "type": "integer"
-                        },
-                        {
-                          "type": "null"
-                        }
-                      ]
-                    },
-                    "disability_reports": {
-                      "anyOf": [
-                        {
-                          "type": "integer"
-                        },
-                        {
-                          "type": "null"
-                        }
-                      ]
-                    },
-                    "top_reactions": {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": false,
-                        "properties": {
-                          "meddra_pt": {
-                            "type": "string"
-                          },
-                          "report_count": {
-                            "type": "integer"
-                          },
-                          "pct_of_reports": {
-                            "anyOf": [
-                              {
-                                "type": "number"
-                              },
-                              {
-                                "type": "null"
-                              }
-                            ]
-                          }
-                        },
-                        "required": [
-                          "meddra_pt",
-                          "report_count",
-                          "pct_of_reports"
-                        ]
-                      }
-                    },
-                    "top_serious_reactions": {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": false,
-                        "properties": {
-                          "meddra_pt": {
-                            "type": "string"
-                          },
-                          "report_count": {
-                            "type": "integer"
-                          },
-                          "pct_of_reports": {
-                            "anyOf": [
-                              {
-                                "type": "number"
-                              },
-                              {
-                                "type": "null"
-                              }
-                            ]
-                          }
-                        },
-                        "required": [
-                          "meddra_pt",
-                          "report_count",
-                          "pct_of_reports"
-                        ]
-                      }
-                    },
-                    "reports_by_year": {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": false,
-                        "properties": {
-                          "year": {
-                            "type": "integer"
-                          },
-                          "report_count": {
-                            "type": "integer"
-                          }
-                        },
-                        "required": [
-                          "year",
-                          "report_count"
-                        ]
-                      }
-                    },
-                    "meddra_version": {
+                    "application_number": {
                       "anyOf": [
                         {
                           "type": "string"
@@ -8072,27 +7779,20 @@
                         {
                           "type": "null"
                         }
-                      ]
+                      ],
+                      "description": "disambiguates when the drug has more than one FDA application (e.g. Roflumilast's cream NDA 215985 vs. foam NDA 217242); null for a single-application drug, or for a field with no per-application variance (mechanism_of_action, boxed_warning, faers_summary, purple_book)"
                     }
                   },
                   "required": [
-                    "query",
-                    "total_reports",
-                    "serious_reports",
-                    "death_reports",
-                    "hospitalization_reports",
-                    "life_threatening_reports",
-                    "disability_reports",
-                    "top_reactions",
-                    "top_serious_reactions",
-                    "reports_by_year",
-                    "meddra_version"
+                    "drug",
+                    "application_number"
                   ]
                 },
                 {
                   "type": "null"
                 }
-              ]
+              ],
+              "description": "Pointer to a drug-level fact on data/drugs/<slug>.json instead of re-describing it here"
             },
             "source_type": {
               "type": "string",
@@ -8105,7 +7805,8 @@
                 "openfda_faers",
                 "orange_book",
                 "purple_book",
-                "needs_extraction"
+                "needs_extraction",
+                "drug_level_ref"
               ]
             },
             "source_url": {
@@ -8168,7 +7869,7 @@
             "reviewed_by",
             "confidence"
           ],
-          "description": "openFDA FAERS post-marketing report summary (drug-level)"
+          "description": "drug-level fact -- see data/drugs/<slug>.json's own faers_summary"
         }
       },
       "required": [
@@ -8189,80 +7890,32 @@
                   "type": "object",
                   "additionalProperties": false,
                   "properties": {
-                    "application_type": {
+                    "drug": {
                       "type": "string",
-                      "enum": [
-                        "NDA",
-                        "BLA"
-                      ]
+                      "description": "drug record key; joins to data/drugs/<slug>.json's own `drug` field"
                     },
                     "application_number": {
-                      "type": "string"
-                    },
-                    "registry": {
-                      "type": "string",
-                      "enum": [
-                        "orange_book",
-                        "purple_book"
-                      ]
-                    },
-                    "center": {
                       "anyOf": [
                         {
                           "type": "string"
-                        },
-                        {
-                          "type": "null"
-                        }
-                      ]
-                    },
-                    "proprietary_name": {
-                      "anyOf": [
-                        {
-                          "type": "string"
-                        },
-                        {
-                          "type": "null"
-                        }
-                      ]
-                    },
-                    "applicant": {
-                      "anyOf": [
-                        {
-                          "type": "string"
-                        },
-                        {
-                          "type": "null"
-                        }
-                      ]
-                    },
-                    "first_approval_date": {
-                      "anyOf": [
-                        {
-                          "type": "string",
-                          "format": "date"
                         },
                         {
                           "type": "null"
                         }
                       ],
-                      "description": "ISO date YYYY-MM-DD"
+                      "description": "disambiguates when the drug has more than one FDA application (e.g. Roflumilast's cream NDA 215985 vs. foam NDA 217242); null for a single-application drug, or for a field with no per-application variance (mechanism_of_action, boxed_warning, faers_summary, purple_book)"
                     }
                   },
                   "required": [
-                    "application_type",
-                    "application_number",
-                    "registry",
-                    "center",
-                    "proprietary_name",
-                    "applicant",
-                    "first_approval_date"
+                    "drug",
+                    "application_number"
                   ]
                 },
                 {
                   "type": "null"
                 }
-              ]
+              ],
+              "description": "Pointer to a drug-level fact on data/drugs/<slug>.json instead of re-describing it here"
             },
             "source_type": {
               "type": "string",
@@ -8275,7 +7928,8 @@
                 "openfda_faers",
                 "orange_book",
                 "purple_book",
-                "needs_extraction"
+                "needs_extraction",
+                "drug_level_ref"
               ]
             },
             "source_url": {
@@ -8338,7 +7992,7 @@
             "reviewed_by",
             "confidence"
           ],
-          "description": "NDA/BLA join key for Orange/Purple Book (drug-level)"
+          "description": "drug-level fact, keyed by application_number -- see data/drugs/<slug>.json's own applications[].regulatory_application"
         },
         "orange_book": {
           "type": "object",
@@ -8350,26 +8004,11 @@
                   "type": "object",
                   "additionalProperties": false,
                   "properties": {
-                    "application_type": {
+                    "drug": {
                       "type": "string",
-                      "enum": [
-                        "N",
-                        "A"
-                      ]
+                      "description": "drug record key; joins to data/drugs/<slug>.json's own `drug` field"
                     },
                     "application_number": {
-                      "type": "string"
-                    },
-                    "ingredient": {
-                      "type": "string"
-                    },
-                    "trade_name": {
-                      "type": "string"
-                    },
-                    "applicant": {
-                      "type": "string"
-                    },
-                    "applicant_full_name": {
                       "anyOf": [
                         {
                           "type": "string"
@@ -8377,238 +8016,20 @@
                         {
                           "type": "null"
                         }
-                      ]
-                    },
-                    "products": {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": false,
-                        "properties": {
-                          "product_number": {
-                            "type": "string"
-                          },
-                          "strength": {
-                            "type": "string"
-                          },
-                          "dosage_form": {
-                            "type": "string"
-                          },
-                          "route": {
-                            "anyOf": [
-                              {
-                                "type": "string"
-                              },
-                              {
-                                "type": "null"
-                              }
-                            ]
-                          },
-                          "approval_date": {
-                            "anyOf": [
-                              {
-                                "type": "string",
-                                "format": "date"
-                              },
-                              {
-                                "type": "null"
-                              }
-                            ],
-                            "description": "ISO date YYYY-MM-DD"
-                          },
-                          "rld": {
-                            "type": "boolean"
-                          },
-                          "rs": {
-                            "type": "boolean"
-                          },
-                          "te_code": {
-                            "anyOf": [
-                              {
-                                "type": "string"
-                              },
-                              {
-                                "type": "null"
-                              }
-                            ]
-                          },
-                          "marketing_type": {
-                            "type": "string"
-                          }
-                        },
-                        "required": [
-                          "product_number",
-                          "strength",
-                          "dosage_form",
-                          "route",
-                          "approval_date",
-                          "rld",
-                          "rs",
-                          "te_code",
-                          "marketing_type"
-                        ]
-                      }
-                    },
-                    "patents": {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": false,
-                        "properties": {
-                          "patent_number": {
-                            "type": "string"
-                          },
-                          "expiration_date": {
-                            "anyOf": [
-                              {
-                                "type": "string",
-                                "format": "date"
-                              },
-                              {
-                                "type": "null"
-                              }
-                            ],
-                            "description": "ISO date YYYY-MM-DD"
-                          },
-                          "drug_substance_claim": {
-                            "type": "boolean"
-                          },
-                          "drug_product_claim": {
-                            "type": "boolean"
-                          },
-                          "patent_use_code": {
-                            "anyOf": [
-                              {
-                                "type": "string"
-                              },
-                              {
-                                "type": "null"
-                              }
-                            ]
-                          },
-                          "delisted": {
-                            "type": "boolean"
-                          },
-                          "submission_date": {
-                            "anyOf": [
-                              {
-                                "type": "string",
-                                "format": "date"
-                              },
-                              {
-                                "type": "null"
-                              }
-                            ],
-                            "description": "ISO date YYYY-MM-DD"
-                          },
-                          "product_numbers": {
-                            "type": "array",
-                            "items": {
-                              "type": "string"
-                            }
-                          }
-                        },
-                        "required": [
-                          "patent_number",
-                          "expiration_date",
-                          "drug_substance_claim",
-                          "drug_product_claim",
-                          "patent_use_code",
-                          "delisted",
-                          "submission_date",
-                          "product_numbers"
-                        ]
-                      }
-                    },
-                    "exclusivities": {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": false,
-                        "properties": {
-                          "code": {
-                            "type": "string"
-                          },
-                          "expiration_date": {
-                            "anyOf": [
-                              {
-                                "type": "string",
-                                "format": "date"
-                              },
-                              {
-                                "type": "null"
-                              }
-                            ],
-                            "description": "ISO date YYYY-MM-DD"
-                          },
-                          "product_numbers": {
-                            "type": "array",
-                            "items": {
-                              "type": "string"
-                            }
-                          }
-                        },
-                        "required": [
-                          "code",
-                          "expiration_date",
-                          "product_numbers"
-                        ]
-                      }
-                    },
-                    "latest_patent_expiration": {
-                      "anyOf": [
-                        {
-                          "type": "string",
-                          "format": "date"
-                        },
-                        {
-                          "type": "null"
-                        }
                       ],
-                      "description": "ISO date YYYY-MM-DD"
-                    },
-                    "latest_exclusivity_expiration": {
-                      "anyOf": [
-                        {
-                          "type": "string",
-                          "format": "date"
-                        },
-                        {
-                          "type": "null"
-                        }
-                      ],
-                      "description": "ISO date YYYY-MM-DD"
-                    },
-                    "data_file_date": {
-                      "anyOf": [
-                        {
-                          "type": "string"
-                        },
-                        {
-                          "type": "null"
-                        }
-                      ]
+                      "description": "disambiguates when the drug has more than one FDA application (e.g. Roflumilast's cream NDA 215985 vs. foam NDA 217242); null for a single-application drug, or for a field with no per-application variance (mechanism_of_action, boxed_warning, faers_summary, purple_book)"
                     }
                   },
                   "required": [
-                    "application_type",
-                    "application_number",
-                    "ingredient",
-                    "trade_name",
-                    "applicant",
-                    "applicant_full_name",
-                    "products",
-                    "patents",
-                    "exclusivities",
-                    "latest_patent_expiration",
-                    "latest_exclusivity_expiration",
-                    "data_file_date"
+                    "drug",
+                    "application_number"
                   ]
                 },
                 {
                   "type": "null"
                 }
-              ]
+              ],
+              "description": "Pointer to a drug-level fact on data/drugs/<slug>.json instead of re-describing it here"
             },
             "source_type": {
               "type": "string",
@@ -8621,7 +8042,8 @@
                 "openfda_faers",
                 "orange_book",
                 "purple_book",
-                "needs_extraction"
+                "needs_extraction",
+                "drug_level_ref"
               ]
             },
             "source_url": {
@@ -8684,7 +8106,7 @@
             "reviewed_by",
             "confidence"
           ],
-          "description": "Orange Book patents + exclusivities (small-molecule NDAs only)"
+          "description": "drug-level fact, keyed by application_number -- see data/drugs/<slug>.json's own applications[].orange_book"
         },
         "purple_book": {
           "type": "object",
@@ -8696,10 +8118,11 @@
                   "type": "object",
                   "additionalProperties": false,
                   "properties": {
-                    "bla_number": {
-                      "type": "string"
+                    "drug": {
+                      "type": "string",
+                      "description": "drug record key; joins to data/drugs/<slug>.json's own `drug` field"
                     },
-                    "proprietary_name": {
+                    "application_number": {
                       "anyOf": [
                         {
                           "type": "string"
@@ -8707,369 +8130,20 @@
                         {
                           "type": "null"
                         }
-                      ]
-                    },
-                    "proper_name": {
-                      "type": "string"
-                    },
-                    "applicant": {
-                      "anyOf": [
-                        {
-                          "type": "string"
-                        },
-                        {
-                          "type": "null"
-                        }
-                      ]
-                    },
-                    "license_type": {
-                      "anyOf": [
-                        {
-                          "type": "string",
-                          "enum": [
-                            "351(a)",
-                            "351(k)"
-                          ]
-                        },
-                        {
-                          "type": "null"
-                        }
-                      ]
-                    },
-                    "license_number": {
-                      "anyOf": [
-                        {
-                          "type": "string"
-                        },
-                        {
-                          "type": "null"
-                        }
-                      ]
-                    },
-                    "center": {
-                      "anyOf": [
-                        {
-                          "type": "string"
-                        },
-                        {
-                          "type": "null"
-                        }
-                      ]
-                    },
-                    "products": {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": false,
-                        "properties": {
-                          "product_number": {
-                            "anyOf": [
-                              {
-                                "type": "string"
-                              },
-                              {
-                                "type": "null"
-                              }
-                            ]
-                          },
-                          "strength": {
-                            "anyOf": [
-                              {
-                                "type": "string"
-                              },
-                              {
-                                "type": "null"
-                              }
-                            ]
-                          },
-                          "dosage_form": {
-                            "anyOf": [
-                              {
-                                "type": "string"
-                              },
-                              {
-                                "type": "null"
-                              }
-                            ]
-                          },
-                          "route": {
-                            "anyOf": [
-                              {
-                                "type": "string"
-                              },
-                              {
-                                "type": "null"
-                              }
-                            ]
-                          },
-                          "presentation": {
-                            "anyOf": [
-                              {
-                                "type": "string"
-                              },
-                              {
-                                "type": "null"
-                              }
-                            ]
-                          },
-                          "marketing_status": {
-                            "anyOf": [
-                              {
-                                "type": "string"
-                              },
-                              {
-                                "type": "null"
-                              }
-                            ]
-                          },
-                          "licensure": {
-                            "anyOf": [
-                              {
-                                "type": "string"
-                              },
-                              {
-                                "type": "null"
-                              }
-                            ]
-                          },
-                          "approval_date": {
-                            "anyOf": [
-                              {
-                                "type": "string",
-                                "format": "date"
-                              },
-                              {
-                                "type": "null"
-                              }
-                            ],
-                            "description": "ISO date YYYY-MM-DD"
-                          },
-                          "submission_type": {
-                            "anyOf": [
-                              {
-                                "type": "string"
-                              },
-                              {
-                                "type": "null"
-                              }
-                            ]
-                          },
-                          "supplement_number": {
-                            "anyOf": [
-                              {
-                                "type": "string"
-                              },
-                              {
-                                "type": "null"
-                              }
-                            ]
-                          }
-                        },
-                        "required": [
-                          "product_number",
-                          "strength",
-                          "dosage_form",
-                          "route",
-                          "presentation",
-                          "marketing_status",
-                          "licensure",
-                          "approval_date",
-                          "submission_type",
-                          "supplement_number"
-                        ]
-                      }
-                    },
-                    "first_approval_date": {
-                      "anyOf": [
-                        {
-                          "type": "string",
-                          "format": "date"
-                        },
-                        {
-                          "type": "null"
-                        }
                       ],
-                      "description": "ISO date YYYY-MM-DD"
-                    },
-                    "date_of_first_licensure": {
-                      "anyOf": [
-                        {
-                          "type": "string",
-                          "format": "date"
-                        },
-                        {
-                          "type": "null"
-                        }
-                      ],
-                      "description": "ISO date YYYY-MM-DD"
-                    },
-                    "reference_product_exclusivity_expiration": {
-                      "anyOf": [
-                        {
-                          "type": "string",
-                          "format": "date"
-                        },
-                        {
-                          "type": "null"
-                        }
-                      ],
-                      "description": "ISO date YYYY-MM-DD"
-                    },
-                    "exclusivity_expiration_date": {
-                      "anyOf": [
-                        {
-                          "type": "string",
-                          "format": "date"
-                        },
-                        {
-                          "type": "null"
-                        }
-                      ],
-                      "description": "ISO date YYYY-MM-DD"
-                    },
-                    "first_interchangeable_exclusivity_expiration": {
-                      "anyOf": [
-                        {
-                          "type": "string",
-                          "format": "date"
-                        },
-                        {
-                          "type": "null"
-                        }
-                      ],
-                      "description": "ISO date YYYY-MM-DD"
-                    },
-                    "orphan_exclusivity_expiration": {
-                      "anyOf": [
-                        {
-                          "type": "string",
-                          "format": "date"
-                        },
-                        {
-                          "type": "null"
-                        }
-                      ],
-                      "description": "ISO date YYYY-MM-DD"
-                    },
-                    "patent_list_provided": {
-                      "anyOf": [
-                        {
-                          "type": "boolean"
-                        },
-                        {
-                          "type": "null"
-                        }
-                      ]
-                    },
-                    "biosimilars": {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": false,
-                        "properties": {
-                          "proper_name": {
-                            "type": "string"
-                          },
-                          "proprietary_name": {
-                            "anyOf": [
-                              {
-                                "type": "string"
-                              },
-                              {
-                                "type": "null"
-                              }
-                            ]
-                          },
-                          "bla_number": {
-                            "type": "string"
-                          },
-                          "applicant": {
-                            "anyOf": [
-                              {
-                                "type": "string"
-                              },
-                              {
-                                "type": "null"
-                              }
-                            ]
-                          },
-                          "approval_date": {
-                            "anyOf": [
-                              {
-                                "type": "string",
-                                "format": "date"
-                              },
-                              {
-                                "type": "null"
-                              }
-                            ],
-                            "description": "ISO date YYYY-MM-DD"
-                          },
-                          "license_type": {
-                            "type": "string",
-                            "enum": [
-                              "351(k)"
-                            ]
-                          },
-                          "interchangeable_approval_date": {
-                            "anyOf": [
-                              {
-                                "type": "string",
-                                "format": "date"
-                              },
-                              {
-                                "type": "null"
-                              }
-                            ],
-                            "description": "ISO date YYYY-MM-DD"
-                          }
-                        },
-                        "required": [
-                          "proper_name",
-                          "proprietary_name",
-                          "bla_number",
-                          "applicant",
-                          "approval_date",
-                          "license_type",
-                          "interchangeable_approval_date"
-                        ]
-                      }
-                    },
-                    "data_file_month": {
-                      "anyOf": [
-                        {
-                          "type": "string"
-                        },
-                        {
-                          "type": "null"
-                        }
-                      ]
+                      "description": "disambiguates when the drug has more than one FDA application (e.g. Roflumilast's cream NDA 215985 vs. foam NDA 217242); null for a single-application drug, or for a field with no per-application variance (mechanism_of_action, boxed_warning, faers_summary, purple_book)"
                     }
                   },
                   "required": [
-                    "bla_number",
-                    "proprietary_name",
-                    "proper_name",
-                    "applicant",
-                    "license_type",
-                    "license_number",
-                    "center",
-                    "products",
-                    "first_approval_date",
-                    "date_of_first_licensure",
-                    "reference_product_exclusivity_expiration",
-                    "exclusivity_expiration_date",
-                    "first_interchangeable_exclusivity_expiration",
-                    "orphan_exclusivity_expiration",
-                    "patent_list_provided",
-                    "biosimilars",
-                    "data_file_month"
+                    "drug",
+                    "application_number"
                   ]
                 },
                 {
                   "type": "null"
                 }
-              ]
+              ],
+              "description": "Pointer to a drug-level fact on data/drugs/<slug>.json instead of re-describing it here"
             },
             "source_type": {
               "type": "string",
@@ -9082,7 +8156,8 @@
                 "openfda_faers",
                 "orange_book",
                 "purple_book",
-                "needs_extraction"
+                "needs_extraction",
+                "drug_level_ref"
               ]
             },
             "source_url": {
@@ -9145,7 +8220,7 @@
             "reviewed_by",
             "confidence"
           ],
-          "description": "Purple Book licensure + BPCIA exclusivity (biologic BLAs only)"
+          "description": "drug-level fact -- see data/drugs/<slug>.json's own purple_book"
         }
       },
       "required": [
@@ -9297,7 +8372,8 @@
                 "openfda_faers",
                 "orange_book",
                 "purple_book",
-                "needs_extraction"
+                "needs_extraction",
+                "drug_level_ref"
               ]
             },
             "source_url": {
@@ -9651,7 +8727,8 @@
                 "openfda_faers",
                 "orange_book",
                 "purple_book",
-                "needs_extraction"
+                "needs_extraction",
+                "drug_level_ref"
               ]
             },
             "source_url": {
@@ -9987,7 +9064,8 @@
                 "openfda_faers",
                 "orange_book",
                 "purple_book",
-                "needs_extraction"
+                "needs_extraction",
+                "drug_level_ref"
               ]
             },
             "source_url": {
@@ -10341,7 +9419,8 @@
                 "openfda_faers",
                 "orange_book",
                 "purple_book",
-                "needs_extraction"
+                "needs_extraction",
+                "drug_level_ref"
               ]
             },
             "source_url": {

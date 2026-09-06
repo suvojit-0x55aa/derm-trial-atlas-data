@@ -1,5 +1,5 @@
 {
-  "schema_version": 3,
+  "schema_version": 4,
   "nct_id": {
     "value": "NCT05032157",
     "source_type": "ctgov_api",
@@ -85,27 +85,15 @@
     },
     "mechanism_of_action": {
       "value": {
-        "modality": "other",
-        "drug_class": null,
-        "antibody_isotype": null,
-        "binding_targets": [],
-        "pathway_cytokines": [
-          "IgE"
-        ],
-        "receptor_subunits": [],
-        "kinases_inhibited": [],
-        "lower_potency_kinases": [],
-        "selectivity": [],
-        "reversible": null,
-        "mechanism_established": null,
-        "label_section": "12.1"
+        "drug": "Remibrutinib",
+        "application_number": null
       },
-      "source_type": "openfda_label",
-      "source_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=9e44a793-9940-4ae3-9fe6-0f901afa37e0",
-      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1) -- v1 extracted text: 12.1 Mechanism of Action Remibrutinib is an oral, small molecule kinase inhibitor that inhibits Bruton’s tyrosine kinase (BTK). BTK is an intracellular protein expressed in mast cells, basophils, B cells, macrophages, and thrombocytes. BTK is involved in intracellular signaling via Fc epsilon receptor-1 (FcεR1), Fc gamma receptors (FcγR), and the B cell antigen receptor (BCR). Remibrutinib also inhibits the BTK-related kinases tec protein tyrosine kinase (TEC) and BMX non-receptor tyrosine kinase (BMX). Remibrutinib inhibits mast cell and basophil degranulation, including release of histamine and other proinflammatory mediators, mediated by pathogenic IgE or IgG directed against the FcεR1 or IgE.",
-      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA); structured by atlas.migrate v1->v2",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 0.9
+      "confidence": null
     },
     "dosing_regimen": {
       "value": [
@@ -1156,325 +1144,62 @@
     },
     "boxed_warning": {
       "value": {
-        "present": false,
-        "title": null,
-        "warning_categories": [],
-        "referenced_label_sections": [],
-        "product_names": []
+        "drug": "Remibrutinib",
+        "application_number": null
       },
-      "source_type": "openfda_label",
-      "source_url": "https://api.fda.gov/drug/label.json?search=openfda.substance_name:REMIBRUTINIB&limit=1",
-      "source_excerpt": "results[0] has no boxed_warning key (checked, none present)",
-      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass); structured by atlas.migrate v1->v2",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     }
   },
   "real_world_safety": {
     "faers_summary": {
       "value": {
-        "query": {
-          "search_field": "patient.drug.medicinalproduct",
-          "search_term": "REMIBRUTINIB",
-          "receivedate_from": "2024-02-07",
-          "receivedate_to": "2026-06-30",
-          "api_urls": [
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"REMIBRUTINIB\"&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"REMIBRUTINIB\"+AND+serious:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"REMIBRUTINIB\"+AND+seriousnessdeath:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"REMIBRUTINIB\"+AND+seriousnesshospitalization:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"REMIBRUTINIB\"+AND+seriousnesslifethreatening:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"REMIBRUTINIB\"+AND+seriousnessdisabling:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"REMIBRUTINIB\"&count=patient.reaction.reactionmeddrapt.exact&limit=15",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"REMIBRUTINIB\"+AND+serious:1&count=patient.reaction.reactionmeddrapt.exact&limit=15",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"REMIBRUTINIB\"&count=receivedate"
-          ],
-          "data_last_updated": "2026-07-30"
-        },
-        "total_reports": 88,
-        "serious_reports": 29,
-        "death_reports": 0,
-        "hospitalization_reports": 4,
-        "life_threatening_reports": 0,
-        "disability_reports": 1,
-        "top_reactions": [
-          {
-            "meddra_pt": "ANGIOEDEMA",
-            "report_count": 18,
-            "pct_of_reports": 20.45
-          },
-          {
-            "meddra_pt": "CHRONIC SPONTANEOUS URTICARIA",
-            "report_count": 18,
-            "pct_of_reports": 20.45
-          },
-          {
-            "meddra_pt": "CONDITION AGGRAVATED",
-            "report_count": 17,
-            "pct_of_reports": 19.32
-          },
-          {
-            "meddra_pt": "TREATMENT FAILURE",
-            "report_count": 16,
-            "pct_of_reports": 18.18
-          },
-          {
-            "meddra_pt": "DRUG INEFFECTIVE",
-            "report_count": 15,
-            "pct_of_reports": 17.05
-          },
-          {
-            "meddra_pt": "DRUG INTOLERANCE",
-            "report_count": 15,
-            "pct_of_reports": 17.05
-          },
-          {
-            "meddra_pt": "MENTAL DISORDER DUE TO A GENERAL MEDICAL CONDITION",
-            "report_count": 15,
-            "pct_of_reports": 17.05
-          },
-          {
-            "meddra_pt": "PETECHIAE",
-            "report_count": 11,
-            "pct_of_reports": 12.5
-          },
-          {
-            "meddra_pt": "URTICARIA",
-            "report_count": 11,
-            "pct_of_reports": 12.5
-          },
-          {
-            "meddra_pt": "PRURITUS",
-            "report_count": 9,
-            "pct_of_reports": 10.23
-          },
-          {
-            "meddra_pt": "NO ADVERSE EVENT",
-            "report_count": 8,
-            "pct_of_reports": 9.09
-          },
-          {
-            "meddra_pt": "HEADACHE",
-            "report_count": 5,
-            "pct_of_reports": 5.68
-          },
-          {
-            "meddra_pt": "ABDOMINAL PAIN",
-            "report_count": 4,
-            "pct_of_reports": 4.55
-          },
-          {
-            "meddra_pt": "NAUSEA",
-            "report_count": 4,
-            "pct_of_reports": 4.55
-          },
-          {
-            "meddra_pt": "OFF LABEL USE",
-            "report_count": 4,
-            "pct_of_reports": 4.55
-          }
-        ],
-        "top_serious_reactions": [
-          {
-            "meddra_pt": "ANGIOEDEMA",
-            "report_count": 18,
-            "pct_of_reports": 62.07
-          },
-          {
-            "meddra_pt": "CHRONIC SPONTANEOUS URTICARIA",
-            "report_count": 17,
-            "pct_of_reports": 58.62
-          },
-          {
-            "meddra_pt": "CONDITION AGGRAVATED",
-            "report_count": 16,
-            "pct_of_reports": 55.17
-          },
-          {
-            "meddra_pt": "DRUG INTOLERANCE",
-            "report_count": 15,
-            "pct_of_reports": 51.72
-          },
-          {
-            "meddra_pt": "MENTAL DISORDER DUE TO A GENERAL MEDICAL CONDITION",
-            "report_count": 15,
-            "pct_of_reports": 51.72
-          },
-          {
-            "meddra_pt": "TREATMENT FAILURE",
-            "report_count": 14,
-            "pct_of_reports": 48.28
-          },
-          {
-            "meddra_pt": "PRURITUS",
-            "report_count": 4,
-            "pct_of_reports": 13.79
-          },
-          {
-            "meddra_pt": "DRUG INEFFECTIVE",
-            "report_count": 3,
-            "pct_of_reports": 10.34
-          },
-          {
-            "meddra_pt": "DYSPNOEA",
-            "report_count": 2,
-            "pct_of_reports": 6.9
-          },
-          {
-            "meddra_pt": "HEADACHE",
-            "report_count": 2,
-            "pct_of_reports": 6.9
-          },
-          {
-            "meddra_pt": "PETECHIAE",
-            "report_count": 2,
-            "pct_of_reports": 6.9
-          },
-          {
-            "meddra_pt": "THERAPY NON-RESPONDER",
-            "report_count": 2,
-            "pct_of_reports": 6.9
-          },
-          {
-            "meddra_pt": "URTICARIA",
-            "report_count": 2,
-            "pct_of_reports": 6.9
-          },
-          {
-            "meddra_pt": "ADVERSE DRUG REACTION",
-            "report_count": 1,
-            "pct_of_reports": 3.45
-          },
-          {
-            "meddra_pt": "AMNESIA",
-            "report_count": 1,
-            "pct_of_reports": 3.45
-          }
-        ],
-        "reports_by_year": [
-          {
-            "year": 2024,
-            "report_count": 9
-          },
-          {
-            "year": 2025,
-            "report_count": 32
-          },
-          {
-            "year": 2026,
-            "report_count": 47
-          }
-        ],
-        "meddra_version": null
+        "drug": "Remibrutinib",
+        "application_number": null
       },
-      "source_type": "openfda_faers",
-      "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"REMIBRUTINIB\"&limit=1",
-      "source_excerpt": "openFDA drug/event.json aggregate: total_reports=88, serious=29, deaths=0",
-      "extracted_by": "fetch_faers.py (openfda drug/event.json, v2 pass)",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     }
   },
   "exclusivity": {
     "regulatory_application": {
       "value": {
-        "application_type": "NDA",
-        "application_number": "218436",
-        "registry": "orange_book",
-        "center": "CDER",
-        "proprietary_name": "RHAPSIDO",
-        "applicant": "NOVARTIS",
-        "first_approval_date": "2025-09-30"
+        "drug": "Remibrutinib",
+        "application_number": "218436"
       },
-      "source_type": "orange_book",
-      "source_url": "https://api.fda.gov/drug/drugsfda.json",
-      "source_excerpt": "drugsfda.json: application_number NDA218436, sponsor_name NOVARTIS, product 001 RHAPSIDO (REMIBRUTINIB 25MG, TABLET, ORAL), submission ORIG-1 status AP submission_status_date 20250930",
-      "extracted_by": "atlas.regulatory_applications (registry file fetched 2026-09-05)",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     },
     "orange_book": {
       "value": {
-        "application_type": "N",
-        "application_number": "218436",
-        "ingredient": "REMIBRUTINIB",
-        "trade_name": "RHAPSIDO",
-        "applicant": "NOVARTIS",
-        "applicant_full_name": "NOVARTIS PHARMACEUTICALS CORP",
-        "products": [
-          {
-            "product_number": "001",
-            "strength": "25MG",
-            "dosage_form": "TABLET",
-            "route": "ORAL",
-            "approval_date": "2025-09-30",
-            "rld": true,
-            "rs": true,
-            "te_code": null,
-            "marketing_type": "HUMAN PRESCRIPTION DRUG"
-          }
-        ],
-        "patents": [
-          {
-            "patent_number": "10457647",
-            "expiration_date": "2034-11-13",
-            "drug_substance_claim": false,
-            "drug_product_claim": false,
-            "patent_use_code": "U-4280",
-            "delisted": false,
-            "submission_date": "2025-10-21",
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "patent_number": "9512084",
-            "expiration_date": "2034-11-13",
-            "drug_substance_claim": true,
-            "drug_product_claim": true,
-            "patent_use_code": null,
-            "delisted": false,
-            "submission_date": "2025-10-21",
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "patent_number": "12419889",
-            "expiration_date": "2043-01-19",
-            "drug_substance_claim": false,
-            "drug_product_claim": false,
-            "patent_use_code": "U-4281",
-            "delisted": false,
-            "submission_date": "2025-10-21",
-            "product_numbers": [
-              "001"
-            ]
-          }
-        ],
-        "exclusivities": [
-          {
-            "code": "NCE",
-            "expiration_date": "2030-09-30",
-            "product_numbers": [
-              "001"
-            ]
-          }
-        ],
-        "latest_patent_expiration": "2043-01-19",
-        "latest_exclusivity_expiration": "2030-09-30",
-        "data_file_date": null
+        "drug": "Remibrutinib",
+        "application_number": "218436"
       },
-      "source_type": "orange_book",
-      "source_url": "https://api.fda.gov/drug/orangebook.json?search=products.active_ingredients.name%3A%22REMIBRUTINIB%22&limit=100",
-      "source_excerpt": "openFDA drug/orangebook.json, 1 product row(s) matched on products.active_ingredients.name='REMIBRUTINIB'",
-      "extracted_by": "fetch_orange_book.py (openfda drug/orangebook.json, v2 pass)",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     },
     "purple_book": {
-      "value": null,
-      "source_type": "needs_extraction",
+      "value": {
+        "drug": "Remibrutinib",
+        "application_number": null
+      },
+      "source_type": "drug_level_ref",
       "source_url": null,
       "source_excerpt": null,
       "extracted_by": null,
