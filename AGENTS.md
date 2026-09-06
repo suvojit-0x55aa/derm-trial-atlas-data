@@ -955,6 +955,84 @@ This file is the project's committed home for project-intrinsic agent memory: bu
   be worth a dedicated pass; the endpoint's OWN `study_period` field (parsed in phase 1/earlier
   cycles from the verbatim title) is the more complete source when this matters.
 
+- **Schema v4 (captain instruction via UX review, 2026-09-06): extraction/storage moved from
+  trial-first to drug-first.** 6 fields (`molecule.mechanism_of_action`, `adverse_events.
+  boxed_warning`, `real_world_safety.faers_summary`, `exclusivity.{regulatory_application,
+  orange_book,purple_book}`) are facts about a DRUG, not any one trial, and were independently
+  re-extracted and re-stored identically on every trial of a drug used across indications
+  (Dupilumab x8, Roflumilast x8, Secukinumab x6, ...) — a dataset pass found 1,588
+  verbatim-duplicated `(source_excerpt, value)` pairs this way. These 6 now live once on a new
+  `data/drugs/<slug>.json` record (48 files), referenced by every trial via a `drug_level_ref`
+  pointer (`{"drug", "application_number"}`) instead of re-described — see `atlas/drugs.py`'s
+  module docstring for the full shape and `scripts/split_drug_level_fields.py` for the one-time
+  migration. **`identity.sponsor` was NOT moved despite looking drug-level**: it genuinely
+  differs across a drug's own trials when development/commercial rights changed hands mid-program
+  (Dupilumab's trials split Regeneron/Sanofi; Difamilast's split two distinct Otsuka legal
+  entities) — confirmed by running the duplicate-detection method itself before deciding the
+  field list, not assumed from the task brief's candidate list. `exclusivity.
+  {regulatory_application,orange_book}` are NOT always single-valued per drug either —
+  Roflumilast holds 2 real FDA applications (cream NDA 215985, foam NDA 217242) — so a drug
+  record's `applications[]` has one entry per distinct `application_number` (`purple_book` and
+  `faers_summary`/`mechanism_of_action`/`boxed_warning` stay single-valued; verified 0 drugs have
+  real variance there). Citation TEXT (not just value) can also differ trivially between two
+  trials' independent extractions of the identical real fact (e.g. "v1 extracted text:" wording
+  variance, or one trial's excerpt just cross-referencing a sibling trial's fuller one) —
+  `atlas.drugs.build_drug_records` takes the first trial's (by NCT id) copy as canonical in that
+  case, a real, intentional citation consolidation, not a data loss; the round-trip proof
+  (`tests/test_drugs.py`, and `atlas.drugs.resolve_trial_record`) checks VALUE equality, not
+  citation-string equality, for exactly this reason.
+- **The extraction *pipeline* changed the same way, not just storage**: `atlas.drugs.
+  ensure_drug_record(drug, fetch_fields, for_trial=...)` is the new "search by drug" entrypoint a
+  future one-off per-cycle add-a-trial script (the existing scratch-checkout convention above)
+  must call instead of calling `build_boxed_warning`/`fda_label`/etc. directly per trial — it
+  returns the already-committed drug record untouched (appending the new trial id) when the drug
+  is already known, and only calls the fetch functions the FIRST time a drug is seen.
+  `scripts/apply_source_data.py` (the FAERS/Orange/Purple Book integration step) was rewritten to
+  write into `data/drugs/<slug>.json` once per drug instead of copying into every trial file of
+  that drug — the concrete, already-committed instance of this pattern.
+- **`data/trials/*.json`'s own 6 moved fields keep their sourced-value envelope, but as a pointer,
+  not the fact**: `source_type: "drug_level_ref"`, `source_url`/`source_excerpt`/`extracted_by`/
+  `confidence` all `null` on the trial's own copy (the real citation is the drug record's).
+  `atlas.schema.validate()` validates a v4 trial and a `DRUG`-spec drug record separately;
+  `atlas.drugs.resolve_trial_record(trial, drug_records)` reconstructs a trial's full v3-shaped
+  facts for a consumer (like `scripts/build_csv.py`) that doesn't want to know about the split —
+  same "reference, don't copy" idiom the results layer already established for endpoints
+  (`atlas/results.py`'s `ENDPOINT_KEY`). `scripts/build_csv.py` itself does NOT resolve before
+  flattening — `trials.csv`/`sources.csv` keep the raw pointer for these 6 columns (matching how
+  `arm_results.csv` already keeps a bare endpoint reference rather than re-embedding the full
+  endpoint) — the new `drugs.csv`/`drug_applications.csv`/`drug_sources.csv` are where the actual
+  facts live at the CSV layer; join on `drug` (+ `application_number` for the 2 application-keyed
+  fields) to resolve.
+- **`atlas/migrate.py`'s `migrate_v2_to_v3` must pin its output `schema_version` to a literal
+  `3` (`V3_SCHEMA_VERSION`), never the shared `atlas.SCHEMA_VERSION` constant** — that constant
+  now means "4" (the current overall version) and migrate_v2_to_v3 genuinely only produces a v3
+  shape (v3->v4 needs corpus-wide drug grouping a single-trial pure migration function doesn't
+  have access to, so it can't chain through the same way v1->v2->v3 did). Bumping the shared
+  constant without this literal broke `migrate_v2_to_v3`'s own schema_version output silently —
+  caught by `tests/test_migration_lossless.py`'s `V2ToV3MigrationTest`, not by inspection; check
+  every `SCHEMA_VERSION`-referencing line in `atlas/migrate.py` again the next time the constant
+  bumps, not just the schema spec itself.
+- **`atlas.results.build_arm_id_map`'s `resolve_arm_id`-style disambiguation for a raw CT.gov
+  results-group id that labels 2+ genuinely different arms should vote across every outcome
+  measure sharing that (id, label), not trust the first one** — a single OM's own free-text
+  `populationDescription` can read wrong in isolation (NCT03568318's EASI-75 OM, whose arm IS the
+  full-population one, happens to mention "adolescent" in an aside about how adolescent efficacy
+  is reported separately elsewhere) while 11 of its 12 sibling OMs for the same (id, label) agree
+  it is `full_analysis_set` — majority-voting fixed this without a fragile phrase-specific regex
+  special-case. `analysis_population_of` also got a real, narrower fix: strip a coordinated
+  "adults and adolescents" age-group phrase before pattern-matching, since the bare word
+  "adolescent" inside that phrase would otherwise misclassify a full-population OM before ever
+  reaching the "full analysis set"/ITT pattern later in the same description.
+- **`scripts/backfill_results.py` (new, permanent) re-runs `atlas.results` against a locally
+  cached copy of each trial's raw CT.gov `resultsSection` payload** (`/tmp/ctgov_cache/<NCT>.json`
+  by default; fetches and caches any missing ones) rather than the flattened `results.*` output
+  already in `data/trials/*.json` — required because arm-id disambiguation, response-rate
+  derivation, and test/reference-role assignment all need the raw per-outcome-measure
+  `groups`/`analyses`/`populationDescription` data that the already-flattened output does not
+  retain. Only rewrites a trial's `results.{arms,arm_results,effect_estimates}` when the
+  freshly-derived VALUE actually differs, so re-running it after an unrelated `atlas/results.py`
+  fix touches only the trials that fix actually changes.
+
 ## Maintaining this file
 
 Keep this file for knowledge useful to almost every future agent session in this project.

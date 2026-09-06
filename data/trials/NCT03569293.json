@@ -1,5 +1,5 @@
 {
-  "schema_version": 3,
+  "schema_version": 4,
   "nct_id": {
     "value": "NCT03569293",
     "source_type": "ctgov_api",
@@ -84,31 +84,15 @@
     },
     "mechanism_of_action": {
       "value": {
-        "modality": "small_molecule",
-        "drug_class": "JAK inhibitor",
-        "antibody_isotype": null,
-        "binding_targets": [],
-        "pathway_cytokines": [],
-        "receptor_subunits": [],
-        "kinases_inhibited": [
-          "JAK1",
-          "JAK2"
-        ],
-        "lower_potency_kinases": [
-          "JAK3",
-          "TYK2"
-        ],
-        "selectivity": [],
-        "reversible": null,
-        "mechanism_established": false,
-        "label_section": "12.1"
+        "drug": "Upadacitinib",
+        "application_number": null
       },
-      "source_type": "openfda_label",
-      "source_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=e17266e5-c861-46bf-9756-6447566101be",
-      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1) -- v1 extracted text: 12.1 Mechanism of Action Upadacitinib is a Janus kinase (JAK) inhibitor. JAKs are intracellular enzymes which transmit signals arising from cytokine or growth factor-receptor interactions on the cellular membrane to influence cellular processes of hematopoiesis and immune cell function. Within the signaling pathway, JAKs phosphorylate and activate signal transducers and activators of transcription (STATs) which modulate intracellular activity including gene expression. Upadacitinib modulates the signaling pathway at the point of JAKs, preventing the phosphorylation and activation of STATs. JAK enzymes transmit cytokine signaling through their pairing (e.g., JAK1/JAK2, JAK1/JAK3, JAK1/TYK2, JAK2/JAK2, JAK2/TYK2). In a cell-free isolated enzyme assay, upadacitinib had greater inhibitory potency at JAK1 and JAK2 relative to JAK3 and TYK2. In human leukocyte cellular assays, upadacitinib inhibited cytokine-induced STAT phosphorylation mediated by JAK1 and JAK1/JAK3 more potently than JAK2/JAK2 mediated STAT phosphorylation. The relevance of inhibition of specific JAK enzymes to therapeutic effectiveness is not currently known.",
-      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA); structured by atlas.migrate v1->v2",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 0.9
+      "confidence": null
     },
     "dosing_regimen": {
       "value": [
@@ -3347,992 +3331,62 @@
     },
     "boxed_warning": {
       "value": {
-        "present": true,
-        "title": "SERIOUS INFECTIONS, MORTALITY, MALIGNANCY, MAJOR ADVERSE CARDIOVASCULAR EVENTS, and THROMBOSIS",
-        "warning_categories": [
-          "serious_infections",
-          "mortality",
-          "malignancy",
-          "mace",
-          "thrombosis"
-        ],
-        "referenced_label_sections": [
-          "5.1",
-          "5.2",
-          "5.3",
-          "5.4",
-          "5.5"
-        ],
-        "product_names": [
-          "RINVOQ",
-          "RINVOQ LQ"
-        ]
+        "drug": "Upadacitinib",
+        "application_number": null
       },
-      "source_type": "openfda_label",
-      "source_url": "https://api.fda.gov/drug/label.json?search=openfda.substance_name:UPADACITINIB&limit=1",
-      "source_excerpt": "results[0].boxed_warning -- v1 extracted text: WARNING: SERIOUS INFECTIONS, MORTALITY, MALIGNANCY, MAJOR ADVERSE CARDIOVASCULAR EVENTS, and THROMBOSIS SERIOUS INFECTIONS Patients treated with RINVOQ /RINVOQ LQ are at increased risk for developing serious infections that may lead to hospitalization or death [see Warnings and Precautions ( 5.1 ), Adverse Reactions ( 6.1 )]. Most patients who developed these infections were taking concomitant immunosuppressants such as methotrexate or corticosteroids. If a serious infection develops, interrupt RINVOQ /RINVOQ LQ until the infection is controlled. Reported infections include: Active tuberculosis, which may present with pulmonary or extrapulmonary disease. Patients should be tested for latent tuberculosis before RINVOQ /RINVOQ LQ use and during therapy. Treatment for latent infection should be considered prior to RINVOQ /RINVOQ LQ use. Invasive fungal infections, including cryptococcosis and pneumocystosis. Bacterial, viral, including herpes zoster, and other infections due to opportunistic pathogens. The risks and benefits of treatment with RINVOQ /RINVOQ LQ should be carefully considered prior to initiating therapy in patients with chronic or recurrent infection. Patients should be closely monitored for the development of signs and symptoms of infection during and after treatment with RINVOQ /RINVOQ LQ , including the possible development of tuberculosis in patients who tested negative for latent tuberculosis infection prior to initiating therapy [see Warnings and Precautions ( 5.1 )]. MORTALITY In a large, randomized, postmarketing safety study in rheumatoid arthritis (RA) patients 50 years of age and older with at least one cardiovascular risk factor comparing another Janus kinase (JAK) inhibitor to tumor necrosis factor (TNF) blockers, a higher rate of all-cause mortality, including sudden cardiovascular death, was observed with the JAK inhibitor [see Warnings and Precautions ( 5.2 )] . MALIGNANCIES Lymphoma and other malignancies have been observed in patients treated with RINVOQ . In RA patients treated with another JAK inhibitor, a higher rate of malignancies (excluding non-melanoma skin cancer (NMSC)) was observed when compared with TNF blockers. Patients who are current or past smokers are at additional increased risk [see Warnings and Precautions ( 5.3 )] . MAJOR ADVERSE CARDIOVASCULAR EVENTS In RA patients 50 years of age and older with at least one cardiovascular risk factor treated with another JAK inhibitor, a higher rate of major adverse cardiovascular events (MACE) (defined as cardiovascular death, myocardial infarction, and stroke), was observed when compared with TNF blockers. Patients who are current or past smokers are at additional increased risk. Discontinue RINVOQ /RINVOQ LQ in patients that have experienced a myocardial infarction or stroke [see Warnings and Precautions ( 5.4 )] . THROMBOSIS Thrombos e s, including deep venous thrombosis, pulmonary embolism, and arterial thrombosis , have occurred in patients treated for inflammatory conditions with J AK inhibitors , including RINVOQ . Many of these adverse events were serious and some resulted in death. In RA patients 50 years of age and older with at least one cardiovascular risk factor treated with another JAK inhibitor, a higher rate of thrombosis was observed when compared with TNF blockers. Avoid RINVOQ /RINVOQ LQ in patients at risk. Patients with symptoms of thrombosis should discontinue RINVOQ /RINVOQ LQ and be promptly evaluated [see Warnings and Precautions ( 5.5 )]. WARNING: SERIOUS INFECTIONS, MORTALITY, MALIGNANCY, MAJOR ADVERSE CARDIOVASCULAR EVENTS (MACE), and THROMBOSIS See full prescribing information for complete boxed warning. Increased risk of serious bacterial, fungal, viral, and opportunistic infections leading to hospitalization or death, including tuberculosis (TB). Interrupt treatment with RINVOQ / RINVOQ LQ if serious infection occurs until the infection is controlled. Test for latent TB before and during therapy; treat latent TB prior to use. Monitor all patients for active TB during treatment, even patients with initial negative , latent TB test. ( 5.1 ) Higher rate of all-cause mortality, including sudden cardiovascular death with another Janus kinase (JAK) inhibitor vs. tumor necrosis factor (TNF) blockers in rheumatoid arthritis (RA) patients. ( 5.2 ) Malignancies have occurred in patients treated with RINVOQ. Higher rate of lymphomas and lung cancers with another JAK inhibitor vs. TNF blockers in RA patients. ( 5.3 ) Higher rate of MACE (defined as cardiovascular death, myocardial infarction, and stroke) with another JAK inhibitor vs. TNF blockers in RA patients. ( 5.4 ) Thrombosis has occurred in patients treated with RINVOQ. Increased incidence of pulmonary embolism, venous and arterial thrombosis with another JAK inhibitor vs. TNF blockers. ( 5.5 )",
-      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass); structured by atlas.migrate v1->v2",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     }
   },
   "real_world_safety": {
     "faers_summary": {
       "value": {
-        "query": {
-          "search_field": "patient.drug.medicinalproduct",
-          "search_term": "UPADACITINIB",
-          "receivedate_from": "2018-09-18",
-          "receivedate_to": "2026-06-30",
-          "api_urls": [
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"UPADACITINIB\"&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"UPADACITINIB\"+AND+serious:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"UPADACITINIB\"+AND+seriousnessdeath:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"UPADACITINIB\"+AND+seriousnesshospitalization:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"UPADACITINIB\"+AND+seriousnesslifethreatening:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"UPADACITINIB\"+AND+seriousnessdisabling:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"UPADACITINIB\"&count=patient.reaction.reactionmeddrapt.exact&limit=15",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"UPADACITINIB\"+AND+serious:1&count=patient.reaction.reactionmeddrapt.exact&limit=15",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"UPADACITINIB\"&count=receivedate"
-          ],
-          "data_last_updated": "2026-07-30"
-        },
-        "total_reports": 4699,
-        "serious_reports": 3336,
-        "death_reports": 155,
-        "hospitalization_reports": 1515,
-        "life_threatening_reports": 170,
-        "disability_reports": 101,
-        "top_reactions": [
-          {
-            "meddra_pt": "DRUG INEFFECTIVE",
-            "report_count": 496,
-            "pct_of_reports": 10.56
-          },
-          {
-            "meddra_pt": "OFF LABEL USE",
-            "report_count": 435,
-            "pct_of_reports": 9.26
-          },
-          {
-            "meddra_pt": "CROHN^S DISEASE",
-            "report_count": 143,
-            "pct_of_reports": 3.04
-          },
-          {
-            "meddra_pt": "ARTHRALGIA",
-            "report_count": 136,
-            "pct_of_reports": 2.89
-          },
-          {
-            "meddra_pt": "PNEUMONIA",
-            "report_count": 121,
-            "pct_of_reports": 2.58
-          },
-          {
-            "meddra_pt": "DIARRHOEA",
-            "report_count": 115,
-            "pct_of_reports": 2.45
-          },
-          {
-            "meddra_pt": "PAIN",
-            "report_count": 114,
-            "pct_of_reports": 2.43
-          },
-          {
-            "meddra_pt": "COLITIS ULCERATIVE",
-            "report_count": 112,
-            "pct_of_reports": 2.38
-          },
-          {
-            "meddra_pt": "RASH",
-            "report_count": 112,
-            "pct_of_reports": 2.38
-          },
-          {
-            "meddra_pt": "THERAPEUTIC PRODUCT EFFECT DECREASED",
-            "report_count": 110,
-            "pct_of_reports": 2.34
-          },
-          {
-            "meddra_pt": "FATIGUE",
-            "report_count": 106,
-            "pct_of_reports": 2.26
-          },
-          {
-            "meddra_pt": "HERPES ZOSTER",
-            "report_count": 104,
-            "pct_of_reports": 2.21
-          },
-          {
-            "meddra_pt": "CONDITION AGGRAVATED",
-            "report_count": 103,
-            "pct_of_reports": 2.19
-          },
-          {
-            "meddra_pt": "ACNE",
-            "report_count": 100,
-            "pct_of_reports": 2.13
-          },
-          {
-            "meddra_pt": "COVID-19",
-            "report_count": 100,
-            "pct_of_reports": 2.13
-          }
-        ],
-        "top_serious_reactions": [
-          {
-            "meddra_pt": "DRUG INEFFECTIVE",
-            "report_count": 428,
-            "pct_of_reports": 12.83
-          },
-          {
-            "meddra_pt": "OFF LABEL USE",
-            "report_count": 275,
-            "pct_of_reports": 8.24
-          },
-          {
-            "meddra_pt": "ARTHRALGIA",
-            "report_count": 118,
-            "pct_of_reports": 3.54
-          },
-          {
-            "meddra_pt": "PNEUMONIA",
-            "report_count": 117,
-            "pct_of_reports": 3.51
-          },
-          {
-            "meddra_pt": "CROHN^S DISEASE",
-            "report_count": 112,
-            "pct_of_reports": 3.36
-          },
-          {
-            "meddra_pt": "CONDITION AGGRAVATED",
-            "report_count": 99,
-            "pct_of_reports": 2.97
-          },
-          {
-            "meddra_pt": "DIARRHOEA",
-            "report_count": 97,
-            "pct_of_reports": 2.91
-          },
-          {
-            "meddra_pt": "PAIN",
-            "report_count": 94,
-            "pct_of_reports": 2.82
-          },
-          {
-            "meddra_pt": "COVID-19",
-            "report_count": 86,
-            "pct_of_reports": 2.58
-          },
-          {
-            "meddra_pt": "ABDOMINAL PAIN",
-            "report_count": 83,
-            "pct_of_reports": 2.49
-          },
-          {
-            "meddra_pt": "RHEUMATOID ARTHRITIS",
-            "report_count": 83,
-            "pct_of_reports": 2.49
-          },
-          {
-            "meddra_pt": "FATIGUE",
-            "report_count": 82,
-            "pct_of_reports": 2.46
-          },
-          {
-            "meddra_pt": "COLITIS ULCERATIVE",
-            "report_count": 80,
-            "pct_of_reports": 2.4
-          },
-          {
-            "meddra_pt": "RASH",
-            "report_count": 78,
-            "pct_of_reports": 2.34
-          },
-          {
-            "meddra_pt": "THERAPEUTIC PRODUCT EFFECT DECREASED",
-            "report_count": 78,
-            "pct_of_reports": 2.34
-          }
-        ],
-        "reports_by_year": [
-          {
-            "year": 2018,
-            "report_count": 1
-          },
-          {
-            "year": 2019,
-            "report_count": 55
-          },
-          {
-            "year": 2020,
-            "report_count": 85
-          },
-          {
-            "year": 2021,
-            "report_count": 194
-          },
-          {
-            "year": 2022,
-            "report_count": 409
-          },
-          {
-            "year": 2023,
-            "report_count": 656
-          },
-          {
-            "year": 2024,
-            "report_count": 1134
-          },
-          {
-            "year": 2025,
-            "report_count": 1458
-          },
-          {
-            "year": 2026,
-            "report_count": 707
-          }
-        ],
-        "meddra_version": null
+        "drug": "Upadacitinib",
+        "application_number": null
       },
-      "source_type": "openfda_faers",
-      "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"UPADACITINIB\"&limit=1",
-      "source_excerpt": "openFDA drug/event.json aggregate: total_reports=4699, serious=3336, deaths=155",
-      "extracted_by": "fetch_faers.py (openfda drug/event.json, v2 pass)",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     }
   },
   "exclusivity": {
     "regulatory_application": {
       "value": {
-        "application_type": "NDA",
-        "application_number": "211675",
-        "registry": "orange_book",
-        "center": "CDER",
-        "proprietary_name": "RINVOQ",
-        "applicant": "ABBVIE INC",
-        "first_approval_date": "2019-08-16"
+        "drug": "Upadacitinib",
+        "application_number": "211675"
       },
-      "source_type": "orange_book",
-      "source_url": "https://www.fda.gov/media/76860/download",
-      "source_excerpt": "products.txt: UPADACITINIB~TABLET, EXTENDED RELEASE;ORAL~RINVOQ~ABBVIE~15MG~N~211675~001~~Aug 16, 2019~Yes~No~RX~ABBVIE INC",
-      "extracted_by": "atlas.regulatory_applications (registry file fetched 2026-09-05)",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     },
     "orange_book": {
       "value": {
-        "application_type": "N",
-        "application_number": "211675",
-        "ingredient": "UPADACITINIB",
-        "trade_name": "RINVOQ",
-        "applicant": "ABBVIE",
-        "applicant_full_name": "ABBVIE INC",
-        "products": [
-          {
-            "product_number": "001",
-            "strength": "15MG",
-            "dosage_form": "TABLET, EXTENDED RELEASE",
-            "route": "ORAL",
-            "approval_date": "2019-08-16",
-            "rld": true,
-            "rs": false,
-            "te_code": null,
-            "marketing_type": "HUMAN PRESCRIPTION DRUG"
-          },
-          {
-            "product_number": "002",
-            "strength": "30MG",
-            "dosage_form": "TABLET, EXTENDED RELEASE",
-            "route": "ORAL",
-            "approval_date": "2022-01-14",
-            "rld": true,
-            "rs": false,
-            "te_code": null,
-            "marketing_type": "HUMAN PRESCRIPTION DRUG"
-          },
-          {
-            "product_number": "003",
-            "strength": "45MG",
-            "dosage_form": "TABLET, EXTENDED RELEASE",
-            "route": "ORAL",
-            "approval_date": "2022-03-16",
-            "rld": true,
-            "rs": true,
-            "te_code": null,
-            "marketing_type": "HUMAN PRESCRIPTION DRUG"
-          }
-        ],
-        "patents": [
-          {
-            "patent_number": "8962629",
-            "expiration_date": "2031-01-15",
-            "drug_substance_claim": true,
-            "drug_product_claim": false,
-            "patent_use_code": "U-3624",
-            "delisted": false,
-            "submission_date": "2022-04-14",
-            "product_numbers": [
-              "003",
-              "002"
-            ]
-          },
-          {
-            "patent_number": "8962629",
-            "expiration_date": "2031-01-15",
-            "drug_substance_claim": true,
-            "drug_product_claim": false,
-            "patent_use_code": "U-3945",
-            "delisted": false,
-            "submission_date": "2019-09-13",
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "patent_number": "RE47221",
-            "expiration_date": "2033-08-16",
-            "drug_substance_claim": true,
-            "drug_product_claim": false,
-            "patent_use_code": null,
-            "delisted": false,
-            "submission_date": "2022-04-14",
-            "product_numbers": [
-              "003",
-              "001",
-              "002"
-            ]
-          },
-          {
-            "patent_number": "10202393",
-            "expiration_date": "2036-10-17",
-            "drug_substance_claim": false,
-            "drug_product_claim": true,
-            "patent_use_code": null,
-            "delisted": false,
-            "submission_date": "2022-04-14",
-            "product_numbers": [
-              "003"
-            ]
-          },
-          {
-            "patent_number": "10344036",
-            "expiration_date": "2036-10-17",
-            "drug_substance_claim": false,
-            "drug_product_claim": true,
-            "patent_use_code": null,
-            "delisted": false,
-            "submission_date": "2022-02-10",
-            "product_numbers": [
-              "002"
-            ]
-          },
-          {
-            "patent_number": "10519164",
-            "expiration_date": "2036-10-17",
-            "drug_substance_claim": false,
-            "drug_product_claim": true,
-            "patent_use_code": null,
-            "delisted": false,
-            "submission_date": "2020-01-29",
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "patent_number": "10550126",
-            "expiration_date": "2036-10-17",
-            "drug_substance_claim": false,
-            "drug_product_claim": false,
-            "patent_use_code": "U-3298",
-            "delisted": false,
-            "submission_date": "2022-02-10",
-            "product_numbers": [
-              "002"
-            ]
-          },
-          {
-            "patent_number": "10597400",
-            "expiration_date": "2036-10-17",
-            "drug_substance_claim": false,
-            "drug_product_claim": false,
-            "patent_use_code": "U-3255",
-            "delisted": false,
-            "submission_date": "2020-04-17",
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "patent_number": "10730883",
-            "expiration_date": "2036-10-17",
-            "drug_substance_claim": false,
-            "drug_product_claim": true,
-            "patent_use_code": null,
-            "delisted": false,
-            "submission_date": "2022-02-10",
-            "product_numbers": [
-              "002"
-            ]
-          },
-          {
-            "patent_number": "10981923",
-            "expiration_date": "2036-10-17",
-            "drug_substance_claim": true,
-            "drug_product_claim": false,
-            "patent_use_code": null,
-            "delisted": false,
-            "submission_date": "2022-04-14",
-            "product_numbers": [
-              "003",
-              "001",
-              "002"
-            ]
-          },
-          {
-            "patent_number": "10981924",
-            "expiration_date": "2036-10-17",
-            "drug_substance_claim": false,
-            "drug_product_claim": true,
-            "patent_use_code": null,
-            "delisted": false,
-            "submission_date": "2021-05-18",
-            "product_numbers": [
-              "001",
-              "002"
-            ]
-          },
-          {
-            "patent_number": "10995095",
-            "expiration_date": "2036-10-17",
-            "drug_substance_claim": false,
-            "drug_product_claim": false,
-            "patent_use_code": "U-3298",
-            "delisted": false,
-            "submission_date": "2022-02-10",
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "patent_number": "11186584",
-            "expiration_date": "2036-10-17",
-            "drug_substance_claim": true,
-            "drug_product_claim": false,
-            "patent_use_code": null,
-            "delisted": false,
-            "submission_date": "2022-04-14",
-            "product_numbers": [
-              "003",
-              "001",
-              "002"
-            ]
-          },
-          {
-            "patent_number": "11198697",
-            "expiration_date": "2036-10-17",
-            "drug_substance_claim": false,
-            "drug_product_claim": true,
-            "patent_use_code": null,
-            "delisted": false,
-            "submission_date": "2022-04-14",
-            "product_numbers": [
-              "003",
-              "001",
-              "002"
-            ]
-          },
-          {
-            "patent_number": "11365198",
-            "expiration_date": "2036-10-17",
-            "drug_substance_claim": false,
-            "drug_product_claim": false,
-            "patent_use_code": "U-3275",
-            "delisted": false,
-            "submission_date": "2022-07-20",
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "patent_number": "11512092",
-            "expiration_date": "2036-10-17",
-            "drug_substance_claim": false,
-            "drug_product_claim": false,
-            "patent_use_code": "U-3371",
-            "delisted": false,
-            "submission_date": "2022-12-16",
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "patent_number": "11524964",
-            "expiration_date": "2036-10-17",
-            "drug_substance_claim": false,
-            "drug_product_claim": false,
-            "patent_use_code": "U-3371",
-            "delisted": false,
-            "submission_date": "2023-01-12",
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "patent_number": "11535624",
-            "expiration_date": "2036-10-17",
-            "drug_substance_claim": false,
-            "drug_product_claim": false,
-            "patent_use_code": "U-3255",
-            "delisted": false,
-            "submission_date": "2023-01-26",
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "patent_number": "11535625",
-            "expiration_date": "2036-10-17",
-            "drug_substance_claim": false,
-            "drug_product_claim": false,
-            "patent_use_code": "U-3298",
-            "delisted": false,
-            "submission_date": "2023-01-26",
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "patent_number": "11535626",
-            "expiration_date": "2036-10-17",
-            "drug_substance_claim": false,
-            "drug_product_claim": false,
-            "patent_use_code": "U-3298",
-            "delisted": false,
-            "submission_date": "2023-01-26",
-            "product_numbers": [
-              "002"
-            ]
-          },
-          {
-            "patent_number": "11661425",
-            "expiration_date": "2036-10-17",
-            "drug_substance_claim": true,
-            "drug_product_claim": true,
-            "patent_use_code": null,
-            "delisted": false,
-            "submission_date": "2023-06-29",
-            "product_numbers": [
-              "003",
-              "001",
-              "002"
-            ]
-          },
-          {
-            "patent_number": "11680069",
-            "expiration_date": "2036-10-17",
-            "drug_substance_claim": true,
-            "drug_product_claim": true,
-            "patent_use_code": null,
-            "delisted": false,
-            "submission_date": "2023-07-20",
-            "product_numbers": [
-              "003",
-              "001",
-              "002"
-            ]
-          },
-          {
-            "patent_number": "11718627",
-            "expiration_date": "2036-10-17",
-            "drug_substance_claim": true,
-            "drug_product_claim": true,
-            "patent_use_code": null,
-            "delisted": false,
-            "submission_date": "2023-08-11",
-            "product_numbers": [
-              "003",
-              "001",
-              "002"
-            ]
-          },
-          {
-            "patent_number": "11767326",
-            "expiration_date": "2036-10-17",
-            "drug_substance_claim": false,
-            "drug_product_claim": false,
-            "patent_use_code": "U-3298",
-            "delisted": false,
-            "submission_date": "2023-10-23",
-            "product_numbers": [
-              "001",
-              "002"
-            ]
-          },
-          {
-            "patent_number": "11773105",
-            "expiration_date": "2036-10-17",
-            "drug_substance_claim": true,
-            "drug_product_claim": true,
-            "patent_use_code": null,
-            "delisted": false,
-            "submission_date": "2023-11-02",
-            "product_numbers": [
-              "003",
-              "001",
-              "002"
-            ]
-          },
-          {
-            "patent_number": "11773106",
-            "expiration_date": "2036-10-17",
-            "drug_substance_claim": false,
-            "drug_product_claim": false,
-            "patent_use_code": "U-3371",
-            "delisted": false,
-            "submission_date": "2023-11-02",
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "patent_number": "11780847",
-            "expiration_date": "2036-10-17",
-            "drug_substance_claim": false,
-            "drug_product_claim": true,
-            "patent_use_code": null,
-            "delisted": false,
-            "submission_date": "2023-11-08",
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "patent_number": "11780848",
-            "expiration_date": "2036-10-17",
-            "drug_substance_claim": false,
-            "drug_product_claim": false,
-            "patent_use_code": "U-3371",
-            "delisted": false,
-            "submission_date": "2023-11-08",
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "patent_number": "11787815",
-            "expiration_date": "2036-10-17",
-            "drug_substance_claim": false,
-            "drug_product_claim": true,
-            "patent_use_code": null,
-            "delisted": false,
-            "submission_date": "2023-11-08",
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "patent_number": "11795175",
-            "expiration_date": "2036-10-17",
-            "drug_substance_claim": false,
-            "drug_product_claim": false,
-            "patent_use_code": "U-3255",
-            "delisted": false,
-            "submission_date": "2023-11-22",
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "patent_number": "11976077",
-            "expiration_date": "2036-10-17",
-            "drug_substance_claim": false,
-            "drug_product_claim": false,
-            "patent_use_code": "U-3298",
-            "delisted": false,
-            "submission_date": "2024-06-05",
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "patent_number": "11993605",
-            "expiration_date": "2036-10-17",
-            "drug_substance_claim": false,
-            "drug_product_claim": false,
-            "patent_use_code": "U-3946",
-            "delisted": false,
-            "submission_date": "2024-06-26",
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "patent_number": "11993606",
-            "expiration_date": "2036-10-17",
-            "drug_substance_claim": false,
-            "drug_product_claim": false,
-            "patent_use_code": "U-3487",
-            "delisted": false,
-            "submission_date": "2024-06-26",
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "patent_number": "12077545",
-            "expiration_date": "2036-10-17",
-            "drug_substance_claim": false,
-            "drug_product_claim": true,
-            "patent_use_code": null,
-            "delisted": false,
-            "submission_date": "2024-09-27",
-            "product_numbers": [
-              "003",
-              "001",
-              "002"
-            ]
-          },
-          {
-            "patent_number": "12091415",
-            "expiration_date": "2036-10-17",
-            "drug_substance_claim": false,
-            "drug_product_claim": true,
-            "patent_use_code": null,
-            "delisted": false,
-            "submission_date": "2024-10-16",
-            "product_numbers": [
-              "002"
-            ]
-          },
-          {
-            "patent_number": "12103933",
-            "expiration_date": "2036-10-17",
-            "drug_substance_claim": false,
-            "drug_product_claim": true,
-            "patent_use_code": null,
-            "delisted": false,
-            "submission_date": "2024-10-31",
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "patent_number": "12110297",
-            "expiration_date": "2036-10-17",
-            "drug_substance_claim": false,
-            "drug_product_claim": true,
-            "patent_use_code": null,
-            "delisted": false,
-            "submission_date": "2024-11-05",
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "patent_number": "12110298",
-            "expiration_date": "2036-10-17",
-            "drug_substance_claim": true,
-            "drug_product_claim": true,
-            "patent_use_code": null,
-            "delisted": false,
-            "submission_date": "2024-11-05",
-            "product_numbers": [
-              "003",
-              "001",
-              "002"
-            ]
-          },
-          {
-            "patent_number": "12116373",
-            "expiration_date": "2036-10-17",
-            "drug_substance_claim": false,
-            "drug_product_claim": true,
-            "patent_use_code": null,
-            "delisted": false,
-            "submission_date": "2024-11-05",
-            "product_numbers": [
-              "002"
-            ]
-          },
-          {
-            "patent_number": "12134621",
-            "expiration_date": "2036-10-17",
-            "drug_substance_claim": false,
-            "drug_product_claim": true,
-            "patent_use_code": null,
-            "delisted": false,
-            "submission_date": "2024-12-04",
-            "product_numbers": [
-              "003"
-            ]
-          },
-          {
-            "patent_number": "12365689",
-            "expiration_date": "2036-10-17",
-            "drug_substance_claim": false,
-            "drug_product_claim": false,
-            "patent_use_code": "U-3945",
-            "delisted": false,
-            "submission_date": "2025-08-20",
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "patent_number": "12570664",
-            "expiration_date": "2036-10-17",
-            "drug_substance_claim": false,
-            "drug_product_claim": false,
-            "patent_use_code": "U-4454",
-            "delisted": false,
-            "submission_date": "2026-04-08",
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "patent_number": "9951080",
-            "expiration_date": "2036-10-17",
-            "drug_substance_claim": true,
-            "drug_product_claim": true,
-            "patent_use_code": null,
-            "delisted": false,
-            "submission_date": "2022-04-14",
-            "product_numbers": [
-              "003",
-              "001",
-              "002"
-            ]
-          },
-          {
-            "patent_number": "9963459",
-            "expiration_date": "2036-10-17",
-            "drug_substance_claim": false,
-            "drug_product_claim": true,
-            "patent_use_code": null,
-            "delisted": false,
-            "submission_date": "2019-09-13",
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "patent_number": "11564922",
-            "expiration_date": "2038-03-09",
-            "drug_substance_claim": false,
-            "drug_product_claim": false,
-            "patent_use_code": "U-4303",
-            "delisted": false,
-            "submission_date": "2023-06-15",
-            "product_numbers": [
-              "003",
-              "001"
-            ]
-          },
-          {
-            "patent_number": "11564922",
-            "expiration_date": "2038-03-09",
-            "drug_substance_claim": false,
-            "drug_product_claim": false,
-            "patent_use_code": "U-3624",
-            "delisted": false,
-            "submission_date": "2023-08-11",
-            "product_numbers": [
-              "002"
-            ]
-          },
-          {
-            "patent_number": "11607411",
-            "expiration_date": "2038-03-09",
-            "drug_substance_claim": false,
-            "drug_product_claim": false,
-            "patent_use_code": "U-3341",
-            "delisted": false,
-            "submission_date": "2023-04-18",
-            "product_numbers": [
-              "003",
-              "001",
-              "002"
-            ]
-          }
-        ],
-        "exclusivities": [
-          {
-            "code": "I-919",
-            "expiration_date": "2026-05-18",
-            "product_numbers": [
-              "003",
-              "001",
-              "002"
-            ]
-          },
-          {
-            "code": "I-946",
-            "expiration_date": "2027-04-26",
-            "product_numbers": [
-              "003",
-              "001",
-              "002"
-            ]
-          },
-          {
-            "code": "NP",
-            "expiration_date": "2027-04-26",
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "code": "NPP",
-            "expiration_date": "2027-04-26",
-            "product_numbers": [
-              "003",
-              "001",
-              "002"
-            ]
-          },
-          {
-            "code": "I-966",
-            "expiration_date": "2028-04-28",
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "code": "ODE-481",
-            "expiration_date": "2031-04-26",
-            "product_numbers": [
-              "003",
-              "001",
-              "002"
-            ]
-          },
-          {
-            "code": "ODE-538",
-            "expiration_date": "2032-04-28",
-            "product_numbers": [
-              "001"
-            ]
-          }
-        ],
-        "latest_patent_expiration": "2038-03-09",
-        "latest_exclusivity_expiration": "2032-04-28",
-        "data_file_date": null
+        "drug": "Upadacitinib",
+        "application_number": "211675"
       },
-      "source_type": "orange_book",
-      "source_url": "https://api.fda.gov/drug/orangebook.json?search=products.active_ingredients.name%3A%22UPADACITINIB%22&limit=100",
-      "source_excerpt": "openFDA drug/orangebook.json, 4 product row(s) matched on products.active_ingredients.name='UPADACITINIB'",
-      "extracted_by": "fetch_orange_book.py (openfda drug/orangebook.json, v2 pass)",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     },
     "purple_book": {
-      "value": null,
-      "source_type": "needs_extraction",
+      "value": {
+        "drug": "Upadacitinib",
+        "application_number": null
+      },
+      "source_type": "drug_level_ref",
       "source_url": null,
       "source_excerpt": null,
       "extracted_by": null,
@@ -4344,9 +3398,10 @@
     "arms": {
       "value": [
         {
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "label": "Placebo",
           "role": "placebo",
+          "analysis_population": "full_analysis_set",
           "intervention_names": [],
           "dose_value": null,
           "dose_unit": null,
@@ -4354,9 +3409,21 @@
           "randomized_n": 241
         },
         {
-          "arm_id": "OG001",
+          "arm_id": "OG000#adolescents",
+          "label": "Adolescents: Placebo",
+          "role": "placebo",
+          "analysis_population": "adolescents",
+          "intervention_names": [],
+          "dose_value": null,
+          "dose_unit": null,
+          "frequency": null,
+          "randomized_n": null
+        },
+        {
+          "arm_id": "OG001#full_analysis_set",
           "label": "Upadacitinib 15 mg QD",
           "role": "investigational",
+          "analysis_population": "full_analysis_set",
           "intervention_names": [
             "Upadacitinib"
           ],
@@ -4366,9 +3433,36 @@
           "randomized_n": 239
         },
         {
-          "arm_id": "OG002",
+          "arm_id": "OG001#adolescents",
+          "label": "Adolescents: Upadacitinib 15 mg QD",
+          "role": "investigational",
+          "analysis_population": "adolescents",
+          "intervention_names": [
+            "Upadacitinib"
+          ],
+          "dose_value": null,
+          "dose_unit": null,
+          "frequency": null,
+          "randomized_n": null
+        },
+        {
+          "arm_id": "OG001#2",
+          "label": "Adolescents: Upadacitinib 30 mg QD",
+          "role": "investigational",
+          "analysis_population": "adolescents",
+          "intervention_names": [
+            "Upadacitinib"
+          ],
+          "dose_value": null,
+          "dose_unit": null,
+          "frequency": null,
+          "randomized_n": null
+        },
+        {
+          "arm_id": "OG002#full_analysis_set",
           "label": "Upadacitinib 30 mg QD",
           "role": "investigational",
+          "analysis_population": "full_analysis_set",
           "intervention_names": [
             "Upadacitinib"
           ],
@@ -4378,43 +3472,10 @@
           "randomized_n": 243
         },
         {
-          "arm_id": "OG000",
-          "label": "Adolescents: Placebo",
-          "role": "placebo",
-          "intervention_names": [],
-          "dose_value": null,
-          "dose_unit": null,
-          "frequency": null,
-          "randomized_n": null
-        },
-        {
-          "arm_id": "OG001",
-          "label": "Adolescents: Upadacitinib 15 mg QD",
-          "role": "investigational",
-          "intervention_names": [
-            "Upadacitinib"
-          ],
-          "dose_value": null,
-          "dose_unit": null,
-          "frequency": null,
-          "randomized_n": null
-        },
-        {
-          "arm_id": "OG002",
+          "arm_id": "OG002#adolescents",
           "label": "Adolescents: Upadacitinib 30 mg QD",
           "role": "investigational",
-          "intervention_names": [
-            "Upadacitinib"
-          ],
-          "dose_value": null,
-          "dose_unit": null,
-          "frequency": null,
-          "randomized_n": null
-        },
-        {
-          "arm_id": "OG001",
-          "label": "Adolescents: Upadacitinib 30 mg QD",
-          "role": "investigational",
+          "analysis_population": "adolescents",
           "intervention_names": [
             "Upadacitinib"
           ],
@@ -4427,7 +3488,7 @@
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03569293",
       "source_excerpt": "resultsSection.outcomeMeasuresModule.outcomeMeasures[].groups[]",
-      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3, 2026-09-06)",
+      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3 backfill re-run)",
       "reviewed_by": null,
       "confidence": 1.0
     },
@@ -4439,7 +3500,7 @@
             "position": 1,
             "verbatim_sha1": "65e52af13df57c9b621f0ffabda489f05514044a"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -4467,7 +3528,7 @@
             "position": 1,
             "verbatim_sha1": "65e52af13df57c9b621f0ffabda489f05514044a"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -4495,7 +3556,7 @@
             "position": 1,
             "verbatim_sha1": "65e52af13df57c9b621f0ffabda489f05514044a"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -4523,7 +3584,7 @@
             "position": 2,
             "verbatim_sha1": "abe0fed6740c81fa5fcc3948722b2a301f451159"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -4551,7 +3612,7 @@
             "position": 2,
             "verbatim_sha1": "abe0fed6740c81fa5fcc3948722b2a301f451159"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -4579,7 +3640,7 @@
             "position": 2,
             "verbatim_sha1": "abe0fed6740c81fa5fcc3948722b2a301f451159"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -4607,7 +3668,7 @@
             "position": 1,
             "verbatim_sha1": "6916c10aac045c940515f920708ef0c9c000a9a2"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -4635,7 +3696,7 @@
             "position": 1,
             "verbatim_sha1": "6916c10aac045c940515f920708ef0c9c000a9a2"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -4663,7 +3724,7 @@
             "position": 1,
             "verbatim_sha1": "6916c10aac045c940515f920708ef0c9c000a9a2"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -4691,7 +3752,7 @@
             "position": 2,
             "verbatim_sha1": "5513c00e57ee8105e80aac191052216b8dde1708"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -4719,7 +3780,7 @@
             "position": 2,
             "verbatim_sha1": "5513c00e57ee8105e80aac191052216b8dde1708"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -4747,7 +3808,7 @@
             "position": 2,
             "verbatim_sha1": "5513c00e57ee8105e80aac191052216b8dde1708"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -4775,7 +3836,7 @@
             "position": 3,
             "verbatim_sha1": "3b1d8d8b00911650cf1b1d4ea7991b18ba0d2cdb"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 4,
             "unit": "week",
@@ -4803,7 +3864,7 @@
             "position": 3,
             "verbatim_sha1": "3b1d8d8b00911650cf1b1d4ea7991b18ba0d2cdb"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 4,
             "unit": "week",
@@ -4831,7 +3892,7 @@
             "position": 3,
             "verbatim_sha1": "3b1d8d8b00911650cf1b1d4ea7991b18ba0d2cdb"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 4,
             "unit": "week",
@@ -4859,7 +3920,7 @@
             "position": 4,
             "verbatim_sha1": "f0cb219301aafa5b133b604c327530c730cf119c"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 2,
             "unit": "week",
@@ -4887,7 +3948,7 @@
             "position": 4,
             "verbatim_sha1": "f0cb219301aafa5b133b604c327530c730cf119c"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 2,
             "unit": "week",
@@ -4915,7 +3976,7 @@
             "position": 4,
             "verbatim_sha1": "f0cb219301aafa5b133b604c327530c730cf119c"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 2,
             "unit": "week",
@@ -4943,7 +4004,7 @@
             "position": 5,
             "verbatim_sha1": "4dfb099482d68f779518f1024908bfb2278a636c"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 1,
             "unit": "week",
@@ -4971,7 +4032,7 @@
             "position": 5,
             "verbatim_sha1": "4dfb099482d68f779518f1024908bfb2278a636c"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 1,
             "unit": "week",
@@ -4999,7 +4060,7 @@
             "position": 5,
             "verbatim_sha1": "4dfb099482d68f779518f1024908bfb2278a636c"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 1,
             "unit": "week",
@@ -5027,7 +4088,7 @@
             "position": 6,
             "verbatim_sha1": "d5150fbfe99cf8e71f6e02150bc333fffaf308f8"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 2,
             "unit": "day",
@@ -5055,7 +4116,7 @@
             "position": 6,
             "verbatim_sha1": "d5150fbfe99cf8e71f6e02150bc333fffaf308f8"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 2,
             "unit": "day",
@@ -5083,7 +4144,7 @@
             "position": 6,
             "verbatim_sha1": "d5150fbfe99cf8e71f6e02150bc333fffaf308f8"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 2,
             "unit": "day",
@@ -5111,7 +4172,7 @@
             "position": 7,
             "verbatim_sha1": "115187936d0a4ee7b889b0ee4f0168dc05c722a0"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 3,
             "unit": "day",
@@ -5139,7 +4200,7 @@
             "position": 7,
             "verbatim_sha1": "115187936d0a4ee7b889b0ee4f0168dc05c722a0"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 3,
             "unit": "day",
@@ -5167,7 +4228,7 @@
             "position": 7,
             "verbatim_sha1": "115187936d0a4ee7b889b0ee4f0168dc05c722a0"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 3,
             "unit": "day",
@@ -5195,7 +4256,7 @@
             "position": 8,
             "verbatim_sha1": "dac16f42103493ab1baa9a4053d452d709a3e881"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": null,
           "analysis_population": "full_analysis_set",
           "study_period": null,
@@ -5219,7 +4280,7 @@
             "position": 8,
             "verbatim_sha1": "dac16f42103493ab1baa9a4053d452d709a3e881"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": null,
           "analysis_population": "full_analysis_set",
           "study_period": null,
@@ -5243,7 +4304,7 @@
             "position": 8,
             "verbatim_sha1": "dac16f42103493ab1baa9a4053d452d709a3e881"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": null,
           "analysis_population": "full_analysis_set",
           "study_period": null,
@@ -5267,7 +4328,7 @@
             "position": 9,
             "verbatim_sha1": "e5b26c30693c60c8fa124e4ec8166bba52fcdf5d"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -5295,7 +4356,7 @@
             "position": 9,
             "verbatim_sha1": "e5b26c30693c60c8fa124e4ec8166bba52fcdf5d"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -5323,7 +4384,7 @@
             "position": 9,
             "verbatim_sha1": "e5b26c30693c60c8fa124e4ec8166bba52fcdf5d"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -5351,7 +4412,7 @@
             "position": 10,
             "verbatim_sha1": "c6a31a168fd10cc67e2228ac2976d76baa5c56fa"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -5379,7 +4440,7 @@
             "position": 10,
             "verbatim_sha1": "c6a31a168fd10cc67e2228ac2976d76baa5c56fa"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -5407,7 +4468,7 @@
             "position": 10,
             "verbatim_sha1": "c6a31a168fd10cc67e2228ac2976d76baa5c56fa"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -5435,7 +4496,7 @@
             "position": 11,
             "verbatim_sha1": "5c273a27ebe12e937bc617637542fcf339e16476"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -5463,7 +4524,7 @@
             "position": 11,
             "verbatim_sha1": "5c273a27ebe12e937bc617637542fcf339e16476"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -5491,7 +4552,7 @@
             "position": 11,
             "verbatim_sha1": "5c273a27ebe12e937bc617637542fcf339e16476"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -5519,7 +4580,7 @@
             "position": 12,
             "verbatim_sha1": "5690ac95673c373879d7ceec8ecfa555695253dc"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -5547,7 +4608,7 @@
             "position": 12,
             "verbatim_sha1": "5690ac95673c373879d7ceec8ecfa555695253dc"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -5575,7 +4636,7 @@
             "position": 12,
             "verbatim_sha1": "5690ac95673c373879d7ceec8ecfa555695253dc"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -5603,7 +4664,7 @@
             "position": 13,
             "verbatim_sha1": "e84536363ee76366106443728062946b57e05ab2"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -5631,7 +4692,7 @@
             "position": 13,
             "verbatim_sha1": "e84536363ee76366106443728062946b57e05ab2"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -5659,7 +4720,7 @@
             "position": 13,
             "verbatim_sha1": "e84536363ee76366106443728062946b57e05ab2"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -5687,7 +4748,7 @@
             "position": 14,
             "verbatim_sha1": "c337a5b7a89880738d6a153a8a3805cd831cfd86"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -5715,7 +4776,7 @@
             "position": 14,
             "verbatim_sha1": "c337a5b7a89880738d6a153a8a3805cd831cfd86"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -5743,7 +4804,7 @@
             "position": 14,
             "verbatim_sha1": "c337a5b7a89880738d6a153a8a3805cd831cfd86"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -5771,7 +4832,7 @@
             "position": 15,
             "verbatim_sha1": "f9a58fd8075f17a4a4b6e181d7e733297df4fa30"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -5799,7 +4860,7 @@
             "position": 15,
             "verbatim_sha1": "f9a58fd8075f17a4a4b6e181d7e733297df4fa30"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -5827,7 +4888,7 @@
             "position": 15,
             "verbatim_sha1": "f9a58fd8075f17a4a4b6e181d7e733297df4fa30"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -5855,7 +4916,7 @@
             "position": 16,
             "verbatim_sha1": "8e91a5c68f921dea8bb0b91d22b68ada0f03ed75"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -5883,7 +4944,7 @@
             "position": 16,
             "verbatim_sha1": "8e91a5c68f921dea8bb0b91d22b68ada0f03ed75"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -5911,7 +4972,7 @@
             "position": 16,
             "verbatim_sha1": "8e91a5c68f921dea8bb0b91d22b68ada0f03ed75"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -5939,7 +5000,7 @@
             "position": 17,
             "verbatim_sha1": "40b6ba8264e1fd19e41183772bf4bad334783c61"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -5967,7 +5028,7 @@
             "position": 17,
             "verbatim_sha1": "40b6ba8264e1fd19e41183772bf4bad334783c61"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -5995,7 +5056,7 @@
             "position": 17,
             "verbatim_sha1": "40b6ba8264e1fd19e41183772bf4bad334783c61"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -6023,7 +5084,7 @@
             "position": 18,
             "verbatim_sha1": "788d82c5e0a2806578eff08f92e6bc2c03ee3e88"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -6051,7 +5112,7 @@
             "position": 18,
             "verbatim_sha1": "788d82c5e0a2806578eff08f92e6bc2c03ee3e88"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -6079,7 +5140,7 @@
             "position": 18,
             "verbatim_sha1": "788d82c5e0a2806578eff08f92e6bc2c03ee3e88"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -6107,7 +5168,7 @@
             "position": 19,
             "verbatim_sha1": "2b440b9ae530e29589ba897c2090b7edb183da20"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -6135,7 +5196,7 @@
             "position": 19,
             "verbatim_sha1": "2b440b9ae530e29589ba897c2090b7edb183da20"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -6163,7 +5224,7 @@
             "position": 19,
             "verbatim_sha1": "2b440b9ae530e29589ba897c2090b7edb183da20"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -6191,7 +5252,7 @@
             "position": 20,
             "verbatim_sha1": "6b74ec787d410712ec36d420b864b4e19eabfaed"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -6219,7 +5280,7 @@
             "position": 20,
             "verbatim_sha1": "6b74ec787d410712ec36d420b864b4e19eabfaed"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -6247,7 +5308,7 @@
             "position": 20,
             "verbatim_sha1": "6b74ec787d410712ec36d420b864b4e19eabfaed"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -6275,7 +5336,7 @@
             "position": 21,
             "verbatim_sha1": "365d137a0ec41c21a89c40d65a94aedc8e571178"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -6303,7 +5364,7 @@
             "position": 21,
             "verbatim_sha1": "365d137a0ec41c21a89c40d65a94aedc8e571178"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -6331,7 +5392,7 @@
             "position": 21,
             "verbatim_sha1": "365d137a0ec41c21a89c40d65a94aedc8e571178"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -6359,7 +5420,7 @@
             "position": 22,
             "verbatim_sha1": "85aadf8782c13edb3cde7558afd643beb5d375ea"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#adolescents",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -6387,7 +5448,7 @@
             "position": 22,
             "verbatim_sha1": "85aadf8782c13edb3cde7558afd643beb5d375ea"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#adolescents",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -6415,7 +5476,7 @@
             "position": 22,
             "verbatim_sha1": "85aadf8782c13edb3cde7558afd643beb5d375ea"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#adolescents",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -6443,7 +5504,7 @@
             "position": 23,
             "verbatim_sha1": "a711180f610eb53c5abf6648619e58654ea6a733"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#adolescents",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -6471,7 +5532,7 @@
             "position": 23,
             "verbatim_sha1": "a711180f610eb53c5abf6648619e58654ea6a733"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#adolescents",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -6499,7 +5560,7 @@
             "position": 23,
             "verbatim_sha1": "a711180f610eb53c5abf6648619e58654ea6a733"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#adolescents",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -6527,7 +5588,7 @@
             "position": 24,
             "verbatim_sha1": "4c2dabcf358b7db13f5d4a21328da0da0613d592"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#adolescents",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -6555,7 +5616,7 @@
             "position": 24,
             "verbatim_sha1": "4c2dabcf358b7db13f5d4a21328da0da0613d592"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#adolescents",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -6583,7 +5644,7 @@
             "position": 24,
             "verbatim_sha1": "4c2dabcf358b7db13f5d4a21328da0da0613d592"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#adolescents",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -6611,7 +5672,7 @@
             "position": 25,
             "verbatim_sha1": "b55a144375511fd70696a83375ba2c57372e43ab"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#adolescents",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -6639,7 +5700,7 @@
             "position": 25,
             "verbatim_sha1": "b55a144375511fd70696a83375ba2c57372e43ab"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#adolescents",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -6667,7 +5728,7 @@
             "position": 25,
             "verbatim_sha1": "b55a144375511fd70696a83375ba2c57372e43ab"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#adolescents",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -6695,7 +5756,7 @@
             "position": 26,
             "verbatim_sha1": "dbc5cc04c3f53c7ca2f70a43a33b9025ff8e68e0"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#adolescents",
           "timepoint": {
             "value": 4,
             "unit": "week",
@@ -6723,7 +5784,7 @@
             "position": 26,
             "verbatim_sha1": "dbc5cc04c3f53c7ca2f70a43a33b9025ff8e68e0"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#adolescents",
           "timepoint": {
             "value": 4,
             "unit": "week",
@@ -6751,7 +5812,7 @@
             "position": 26,
             "verbatim_sha1": "dbc5cc04c3f53c7ca2f70a43a33b9025ff8e68e0"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#adolescents",
           "timepoint": {
             "value": 4,
             "unit": "week",
@@ -6779,7 +5840,7 @@
             "position": 27,
             "verbatim_sha1": "9e8e4a15521140f4f71eb1699b372e35ef1d8fa1"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#adolescents",
           "timepoint": {
             "value": 2,
             "unit": "week",
@@ -6807,7 +5868,7 @@
             "position": 27,
             "verbatim_sha1": "9e8e4a15521140f4f71eb1699b372e35ef1d8fa1"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#adolescents",
           "timepoint": {
             "value": 2,
             "unit": "week",
@@ -6835,7 +5896,7 @@
             "position": 27,
             "verbatim_sha1": "9e8e4a15521140f4f71eb1699b372e35ef1d8fa1"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#adolescents",
           "timepoint": {
             "value": 2,
             "unit": "week",
@@ -6863,7 +5924,7 @@
             "position": 28,
             "verbatim_sha1": "7c4a6c85c5c2533b04a5a3791ea7db000a152d8c"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#adolescents",
           "timepoint": {
             "value": 1,
             "unit": "week",
@@ -6891,7 +5952,7 @@
             "position": 28,
             "verbatim_sha1": "7c4a6c85c5c2533b04a5a3791ea7db000a152d8c"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#adolescents",
           "timepoint": {
             "value": 1,
             "unit": "week",
@@ -6919,7 +5980,7 @@
             "position": 28,
             "verbatim_sha1": "7c4a6c85c5c2533b04a5a3791ea7db000a152d8c"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#adolescents",
           "timepoint": {
             "value": 1,
             "unit": "week",
@@ -6947,7 +6008,7 @@
             "position": 29,
             "verbatim_sha1": "dbd99ec694a8eb8353da75ea6f5c02d1c6ca4584"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#adolescents",
           "timepoint": {
             "value": 2,
             "unit": "day",
@@ -6975,7 +6036,7 @@
             "position": 29,
             "verbatim_sha1": "dbd99ec694a8eb8353da75ea6f5c02d1c6ca4584"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#2",
           "timepoint": {
             "value": 2,
             "unit": "day",
@@ -7003,7 +6064,7 @@
             "position": 30,
             "verbatim_sha1": "d148e58628cb73a0b15ea4c7ae41fdfae2dbc839"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#adolescents",
           "timepoint": {
             "value": 3,
             "unit": "day",
@@ -7031,7 +6092,7 @@
             "position": 30,
             "verbatim_sha1": "d148e58628cb73a0b15ea4c7ae41fdfae2dbc839"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#adolescents",
           "timepoint": {
             "value": 3,
             "unit": "day",
@@ -7059,7 +6120,7 @@
             "position": 31,
             "verbatim_sha1": "8601d206ae40a8df74c566c51fa52fa5bf55b05a"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#adolescents",
           "timepoint": null,
           "analysis_population": "adolescents",
           "study_period": null,
@@ -7083,7 +6144,7 @@
             "position": 31,
             "verbatim_sha1": "8601d206ae40a8df74c566c51fa52fa5bf55b05a"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#adolescents",
           "timepoint": null,
           "analysis_population": "adolescents",
           "study_period": null,
@@ -7107,7 +6168,7 @@
             "position": 31,
             "verbatim_sha1": "8601d206ae40a8df74c566c51fa52fa5bf55b05a"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#adolescents",
           "timepoint": null,
           "analysis_population": "adolescents",
           "study_period": null,
@@ -7131,7 +6192,7 @@
             "position": 32,
             "verbatim_sha1": "65de82626a5798a47a1eea99122823527320c75d"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#adolescents",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -7159,7 +6220,7 @@
             "position": 32,
             "verbatim_sha1": "65de82626a5798a47a1eea99122823527320c75d"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#adolescents",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -7187,7 +6248,7 @@
             "position": 32,
             "verbatim_sha1": "65de82626a5798a47a1eea99122823527320c75d"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#adolescents",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -7215,7 +6276,7 @@
             "position": 33,
             "verbatim_sha1": "f34214b4c0744264b15f8915b15bf86029f8733e"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#adolescents",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -7243,7 +6304,7 @@
             "position": 33,
             "verbatim_sha1": "f34214b4c0744264b15f8915b15bf86029f8733e"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#adolescents",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -7271,7 +6332,7 @@
             "position": 33,
             "verbatim_sha1": "f34214b4c0744264b15f8915b15bf86029f8733e"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#adolescents",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -7299,7 +6360,7 @@
             "position": 34,
             "verbatim_sha1": "64c675963a34aecec31da9ab352b5c6d6f8f45d4"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#adolescents",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -7327,7 +6388,7 @@
             "position": 34,
             "verbatim_sha1": "64c675963a34aecec31da9ab352b5c6d6f8f45d4"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#adolescents",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -7355,7 +6416,7 @@
             "position": 34,
             "verbatim_sha1": "64c675963a34aecec31da9ab352b5c6d6f8f45d4"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#adolescents",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -7383,7 +6444,7 @@
             "position": 35,
             "verbatim_sha1": "e973b68e35d5f13da5648ad5a81c8359607098d7"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#adolescents",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -7411,7 +6472,7 @@
             "position": 35,
             "verbatim_sha1": "e973b68e35d5f13da5648ad5a81c8359607098d7"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#adolescents",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -7439,7 +6500,7 @@
             "position": 35,
             "verbatim_sha1": "e973b68e35d5f13da5648ad5a81c8359607098d7"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#adolescents",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -7467,7 +6528,7 @@
             "position": 36,
             "verbatim_sha1": "2bf6bc834adaa9c5497f74b7ec5f1649a2b18c57"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#adolescents",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -7495,7 +6556,7 @@
             "position": 36,
             "verbatim_sha1": "2bf6bc834adaa9c5497f74b7ec5f1649a2b18c57"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#adolescents",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -7523,7 +6584,7 @@
             "position": 36,
             "verbatim_sha1": "2bf6bc834adaa9c5497f74b7ec5f1649a2b18c57"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#adolescents",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -7551,7 +6612,7 @@
             "position": 37,
             "verbatim_sha1": "08a4f29bf5ea01eb6b748e95aa45aa85586dec33"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#adolescents",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -7579,7 +6640,7 @@
             "position": 37,
             "verbatim_sha1": "08a4f29bf5ea01eb6b748e95aa45aa85586dec33"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#adolescents",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -7607,7 +6668,7 @@
             "position": 37,
             "verbatim_sha1": "08a4f29bf5ea01eb6b748e95aa45aa85586dec33"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#adolescents",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -7635,7 +6696,7 @@
             "position": 38,
             "verbatim_sha1": "46ce769f494e644f8477744fdbda0db12102281f"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#adolescents",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -7663,7 +6724,7 @@
             "position": 38,
             "verbatim_sha1": "46ce769f494e644f8477744fdbda0db12102281f"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#adolescents",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -7691,7 +6752,7 @@
             "position": 38,
             "verbatim_sha1": "46ce769f494e644f8477744fdbda0db12102281f"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#adolescents",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -7719,7 +6780,7 @@
             "position": 39,
             "verbatim_sha1": "afef3e721a44cab51893678c488775470e1963c3"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#adolescents",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -7747,7 +6808,7 @@
             "position": 39,
             "verbatim_sha1": "afef3e721a44cab51893678c488775470e1963c3"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#adolescents",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -7775,7 +6836,7 @@
             "position": 39,
             "verbatim_sha1": "afef3e721a44cab51893678c488775470e1963c3"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#adolescents",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -7803,7 +6864,7 @@
             "position": 40,
             "verbatim_sha1": "db8ef5b9c73920971286e82db9ad6ce7610efcd0"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#adolescents",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -7831,7 +6892,7 @@
             "position": 40,
             "verbatim_sha1": "db8ef5b9c73920971286e82db9ad6ce7610efcd0"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#adolescents",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -7859,7 +6920,7 @@
             "position": 40,
             "verbatim_sha1": "db8ef5b9c73920971286e82db9ad6ce7610efcd0"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#adolescents",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -7887,7 +6948,7 @@
             "position": 41,
             "verbatim_sha1": "8fe7e04036689cdae7a707249f2112191d143d3d"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#adolescents",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -7915,7 +6976,7 @@
             "position": 41,
             "verbatim_sha1": "8fe7e04036689cdae7a707249f2112191d143d3d"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#adolescents",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -7943,7 +7004,7 @@
             "position": 41,
             "verbatim_sha1": "8fe7e04036689cdae7a707249f2112191d143d3d"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#adolescents",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -7971,7 +7032,7 @@
             "position": 42,
             "verbatim_sha1": "20951b049a5bcee3580c312521ae9b23e6f1c131"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#adolescents",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -7999,7 +7060,7 @@
             "position": 42,
             "verbatim_sha1": "20951b049a5bcee3580c312521ae9b23e6f1c131"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#adolescents",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -8027,7 +7088,7 @@
             "position": 42,
             "verbatim_sha1": "20951b049a5bcee3580c312521ae9b23e6f1c131"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#adolescents",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -8055,7 +7116,7 @@
             "position": 43,
             "verbatim_sha1": "a460b20ee030145fca9ef9299c7109d3a9135560"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#adolescents",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -8083,7 +7144,7 @@
             "position": 43,
             "verbatim_sha1": "a460b20ee030145fca9ef9299c7109d3a9135560"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#adolescents",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -8111,7 +7172,7 @@
             "position": 43,
             "verbatim_sha1": "a460b20ee030145fca9ef9299c7109d3a9135560"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#adolescents",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -8139,7 +7200,7 @@
             "position": 44,
             "verbatim_sha1": "4b208af65407f21467d20ddeda371477994ec420"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#adolescents",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -8167,7 +7228,7 @@
             "position": 44,
             "verbatim_sha1": "4b208af65407f21467d20ddeda371477994ec420"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#adolescents",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -8195,7 +7256,7 @@
             "position": 44,
             "verbatim_sha1": "4b208af65407f21467d20ddeda371477994ec420"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#adolescents",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -8221,7 +7282,7 @@
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03569293",
       "source_excerpt": "resultsSection.outcomeMeasuresModule.outcomeMeasures[].{denoms,classes[].categories[].measurements[]}",
-      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3, 2026-09-06)",
+      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3 backfill re-run)",
       "reviewed_by": null,
       "confidence": 1.0
     },
@@ -8238,8 +7299,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG002",
+          "test_arm_id": "OG002#full_analysis_set",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "response_rate_difference",
           "effect_type_verbatim": "Adjusted Response Rate Difference",
@@ -8267,8 +7328,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#full_analysis_set",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "response_rate_difference",
           "effect_type_verbatim": "Adjusted Response Rate Difference",
@@ -8296,8 +7357,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG002",
+          "test_arm_id": "OG002#full_analysis_set",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "response_rate_difference",
           "effect_type_verbatim": "Adjusted Response Rate Difference",
@@ -8325,8 +7386,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#full_analysis_set",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "response_rate_difference",
           "effect_type_verbatim": "Adjusted Response Rate Difference",
@@ -8354,8 +7415,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG002",
+          "test_arm_id": "OG002#full_analysis_set",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "response_rate_difference",
           "effect_type_verbatim": "Adjusted Response Rate Difference",
@@ -8383,8 +7444,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#full_analysis_set",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "response_rate_difference",
           "effect_type_verbatim": "Adjusted Response Rate Difference",
@@ -8412,8 +7473,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG002",
+          "test_arm_id": "OG002#full_analysis_set",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "response_rate_difference",
           "effect_type_verbatim": "Adjusted Response Rate Difference",
@@ -8441,8 +7502,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#full_analysis_set",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "response_rate_difference",
           "effect_type_verbatim": "Adjusted Response Rate Difference",
@@ -8470,8 +7531,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG002",
+          "test_arm_id": "OG002#full_analysis_set",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "response_rate_difference",
           "effect_type_verbatim": "Adjusted Response Rate Difference",
@@ -8499,8 +7560,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#full_analysis_set",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "response_rate_difference",
           "effect_type_verbatim": "Adjusted Response Rate Difference",
@@ -8528,8 +7589,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG002",
+          "test_arm_id": "OG002#full_analysis_set",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "response_rate_difference",
           "effect_type_verbatim": "Adjusted Response Rate Difference",
@@ -8557,8 +7618,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#full_analysis_set",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "response_rate_difference",
           "effect_type_verbatim": "Adjusted Response Rate Difference",
@@ -8586,8 +7647,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG002",
+          "test_arm_id": "OG002#full_analysis_set",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "response_rate_difference",
           "effect_type_verbatim": "Adjusted Response Rate Difference",
@@ -8615,8 +7676,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#full_analysis_set",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "response_rate_difference",
           "effect_type_verbatim": "Adjusted Response Rate Difference",
@@ -8644,8 +7705,8 @@
             "unit": "day",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG002",
+          "test_arm_id": "OG002#full_analysis_set",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "response_rate_difference",
           "effect_type_verbatim": "Adjusted Response Rate Difference",
@@ -8673,8 +7734,8 @@
             "unit": "day",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#full_analysis_set",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "response_rate_difference",
           "effect_type_verbatim": "Adjusted Response Rate Difference",
@@ -8698,8 +7759,8 @@
             "verbatim_sha1": "dac16f42103493ab1baa9a4053d452d709a3e881"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG002",
+          "test_arm_id": "OG002#full_analysis_set",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "response_rate_difference",
           "effect_type_verbatim": "Adjusted Response Rate Difference",
@@ -8723,8 +7784,8 @@
             "verbatim_sha1": "dac16f42103493ab1baa9a4053d452d709a3e881"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#full_analysis_set",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "response_rate_difference",
           "effect_type_verbatim": "Adjusted Response Rate Difference",
@@ -8752,8 +7813,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG002",
+          "test_arm_id": "OG002#full_analysis_set",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "response_rate_difference",
           "effect_type_verbatim": "Adjusted Response Rate Difference",
@@ -8781,8 +7842,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#full_analysis_set",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "response_rate_difference",
           "effect_type_verbatim": "Adjusted Response Rate Difference",
@@ -8810,8 +7871,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG002",
+          "test_arm_id": "OG002#full_analysis_set",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "response_rate_difference",
           "effect_type_verbatim": "Adjusted Response Rate Difference",
@@ -8839,8 +7900,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG002",
+          "test_arm_id": "OG002#full_analysis_set",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "response_rate_difference",
           "effect_type_verbatim": "Adjusted Response Rate Difference",
@@ -8868,8 +7929,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#full_analysis_set",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "response_rate_difference",
           "effect_type_verbatim": "Adjusted Response Rate Difference",
@@ -8897,8 +7958,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG002",
+          "test_arm_id": "OG002#full_analysis_set",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "response_rate_difference",
           "effect_type_verbatim": "Adjusted Response Rate Difference",
@@ -8926,8 +7987,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#full_analysis_set",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "response_rate_difference",
           "effect_type_verbatim": "Adjusted Response Rate Difference",
@@ -8955,8 +8016,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG002",
+          "test_arm_id": "OG002#full_analysis_set",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "response_rate_difference",
           "effect_type_verbatim": "Adjusted Response Rate Difference",
@@ -8984,8 +8045,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#full_analysis_set",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "response_rate_difference",
           "effect_type_verbatim": "Adjusted Response Rate Difference",
@@ -9013,8 +8074,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG002",
+          "test_arm_id": "OG002#full_analysis_set",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "response_rate_difference",
           "effect_type_verbatim": "Adjusted Response Rate Difference",
@@ -9042,8 +8103,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#full_analysis_set",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "response_rate_difference",
           "effect_type_verbatim": "Adjusted Response Rate Difference",
@@ -9071,8 +8132,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG002",
+          "test_arm_id": "OG002#full_analysis_set",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
           "effect_type_verbatim": "Least Squares (LS) Mean Difference",
@@ -9100,8 +8161,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#full_analysis_set",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
           "effect_type_verbatim": "LS Mean Difference",
@@ -9129,8 +8190,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG002",
+          "test_arm_id": "OG002#full_analysis_set",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
           "effect_type_verbatim": "LS Mean Difference",
@@ -9158,8 +8219,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#full_analysis_set",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
           "effect_type_verbatim": "LS Mean Difference",
@@ -9187,8 +8248,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG002",
+          "test_arm_id": "OG002#full_analysis_set",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "response_rate_difference",
           "effect_type_verbatim": "Adjusted Response Rate Difference",
@@ -9216,8 +8277,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#full_analysis_set",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "response_rate_difference",
           "effect_type_verbatim": "Adjusted Response Rate Difference",
@@ -9245,8 +8306,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG002",
+          "test_arm_id": "OG002#full_analysis_set",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "response_rate_difference",
           "effect_type_verbatim": "Adjusted Response Rate Difference",
@@ -9274,8 +8335,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#full_analysis_set",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "response_rate_difference",
           "effect_type_verbatim": "Adjusted Response Rate Difference",
@@ -9303,8 +8364,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG002",
+          "test_arm_id": "OG002#full_analysis_set",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
           "effect_type_verbatim": "LS Mean Difference",
@@ -9332,8 +8393,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#full_analysis_set",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
           "effect_type_verbatim": "LS Mean Difference",
@@ -9361,8 +8422,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG002",
+          "test_arm_id": "OG002#full_analysis_set",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "response_rate_difference",
           "effect_type_verbatim": "Adjusted Response Rate Difference",
@@ -9390,8 +8451,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#full_analysis_set",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "response_rate_difference",
           "effect_type_verbatim": "Adjusted Response Rate Difference",
@@ -9419,8 +8480,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG002",
+          "test_arm_id": "OG002#full_analysis_set",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "response_rate_difference",
           "effect_type_verbatim": "Adjusted Response Rate Difference",
@@ -9448,8 +8509,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#full_analysis_set",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "response_rate_difference",
           "effect_type_verbatim": "Adjusted Response Rate Difference",
@@ -9477,8 +8538,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG002",
+          "test_arm_id": "OG002#adolescents",
+          "reference_arm_id": "OG000#adolescents",
           "comparison_kind": "superiority",
           "effect_type": "response_rate_difference",
           "effect_type_verbatim": "Adjusted Response Rate Difference",
@@ -9506,8 +8567,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#adolescents",
+          "reference_arm_id": "OG000#adolescents",
           "comparison_kind": "superiority",
           "effect_type": "response_rate_difference",
           "effect_type_verbatim": "Adjusted Response Rate Difference",
@@ -9535,8 +8596,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG002",
+          "test_arm_id": "OG002#adolescents",
+          "reference_arm_id": "OG000#adolescents",
           "comparison_kind": "superiority",
           "effect_type": "response_rate_difference",
           "effect_type_verbatim": "Adjusted Response Rate Difference",
@@ -9564,8 +8625,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#adolescents",
+          "reference_arm_id": "OG000#adolescents",
           "comparison_kind": "superiority",
           "effect_type": "response_rate_difference",
           "effect_type_verbatim": "Adjusted Response Rate Difference",
@@ -9593,8 +8654,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG002",
+          "test_arm_id": "OG002#adolescents",
+          "reference_arm_id": "OG000#adolescents",
           "comparison_kind": "superiority",
           "effect_type": "response_rate_difference",
           "effect_type_verbatim": "Adjusted Response Rate Difference",
@@ -9622,8 +8683,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#adolescents",
+          "reference_arm_id": "OG000#adolescents",
           "comparison_kind": "superiority",
           "effect_type": "response_rate_difference",
           "effect_type_verbatim": "Adjusted Response Rate Difference",
@@ -9651,8 +8712,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG002",
+          "test_arm_id": "OG002#adolescents",
+          "reference_arm_id": "OG000#adolescents",
           "comparison_kind": "superiority",
           "effect_type": "response_rate_difference",
           "effect_type_verbatim": "Adjusted Response Rate Difference",
@@ -9680,8 +8741,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#adolescents",
+          "reference_arm_id": "OG000#adolescents",
           "comparison_kind": "superiority",
           "effect_type": "response_rate_difference",
           "effect_type_verbatim": "Adjusted Response Rate Difference",
@@ -9709,8 +8770,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG002",
+          "test_arm_id": "OG002#adolescents",
+          "reference_arm_id": "OG000#adolescents",
           "comparison_kind": "superiority",
           "effect_type": "response_rate_difference",
           "effect_type_verbatim": "Adjusted Response Rate Difference",
@@ -9738,8 +8799,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#adolescents",
+          "reference_arm_id": "OG000#adolescents",
           "comparison_kind": "superiority",
           "effect_type": "response_rate_difference",
           "effect_type_verbatim": "Adjusted Response Rate Difference",
@@ -9767,8 +8828,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG002",
+          "test_arm_id": "OG002#adolescents",
+          "reference_arm_id": "OG000#adolescents",
           "comparison_kind": "superiority",
           "effect_type": "response_rate_difference",
           "effect_type_verbatim": "Adjusted Response Rate Difference",
@@ -9796,8 +8857,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#adolescents",
+          "reference_arm_id": "OG000#adolescents",
           "comparison_kind": "superiority",
           "effect_type": "response_rate_difference",
           "effect_type_verbatim": "Adjusted Response Rate Difference",
@@ -9825,8 +8886,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG002",
+          "test_arm_id": "OG002#adolescents",
+          "reference_arm_id": "OG000#adolescents",
           "comparison_kind": "superiority",
           "effect_type": "response_rate_difference",
           "effect_type_verbatim": "Adjusted Response Rate Difference",
@@ -9854,8 +8915,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#adolescents",
+          "reference_arm_id": "OG000#adolescents",
           "comparison_kind": "superiority",
           "effect_type": "response_rate_difference",
           "effect_type_verbatim": "Adjusted Response Rate Difference",
@@ -9883,8 +8944,8 @@
             "unit": "day",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#2",
+          "reference_arm_id": "OG000#adolescents",
           "comparison_kind": "superiority",
           "effect_type": "response_rate_difference",
           "effect_type_verbatim": "Adjusted Response Rate Difference",
@@ -9912,8 +8973,8 @@
             "unit": "day",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#adolescents",
+          "reference_arm_id": "OG000#adolescents",
           "comparison_kind": "superiority",
           "effect_type": "response_rate_difference",
           "effect_type_verbatim": "Adjusted Response Rate Difference",
@@ -9937,8 +8998,8 @@
             "verbatim_sha1": "8601d206ae40a8df74c566c51fa52fa5bf55b05a"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG002",
+          "test_arm_id": "OG002#adolescents",
+          "reference_arm_id": "OG000#adolescents",
           "comparison_kind": "superiority",
           "effect_type": "response_rate_difference",
           "effect_type_verbatim": "Adjusted Response Rate Difference",
@@ -9962,8 +9023,8 @@
             "verbatim_sha1": "8601d206ae40a8df74c566c51fa52fa5bf55b05a"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#adolescents",
+          "reference_arm_id": "OG000#adolescents",
           "comparison_kind": "superiority",
           "effect_type": "response_rate_difference",
           "effect_type_verbatim": "Adjusted Response Rate Difference",
@@ -9991,8 +9052,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG002",
+          "test_arm_id": "OG002#adolescents",
+          "reference_arm_id": "OG000#adolescents",
           "comparison_kind": "superiority",
           "effect_type": "response_rate_difference",
           "effect_type_verbatim": "Adjusted Response Rate Difference",
@@ -10020,8 +9081,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#adolescents",
+          "reference_arm_id": "OG000#adolescents",
           "comparison_kind": "superiority",
           "effect_type": "response_rate_difference",
           "effect_type_verbatim": "Adjusted Response Rate Difference",
@@ -10049,8 +9110,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG002",
+          "test_arm_id": "OG002#adolescents",
+          "reference_arm_id": "OG000#adolescents",
           "comparison_kind": "superiority",
           "effect_type": "response_rate_difference",
           "effect_type_verbatim": "Adjusted Response Rate Difference",
@@ -10078,8 +9139,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#adolescents",
+          "reference_arm_id": "OG000#adolescents",
           "comparison_kind": "superiority",
           "effect_type": "response_rate_difference",
           "effect_type_verbatim": "Adjusted Response Rate Difference",
@@ -10107,8 +9168,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG002",
+          "test_arm_id": "OG002#adolescents",
+          "reference_arm_id": "OG000#adolescents",
           "comparison_kind": "superiority",
           "effect_type": "response_rate_difference",
           "effect_type_verbatim": "Adjusted Response Rate Difference",
@@ -10136,8 +9197,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#adolescents",
+          "reference_arm_id": "OG000#adolescents",
           "comparison_kind": "superiority",
           "effect_type": "response_rate_difference",
           "effect_type_verbatim": "Adjusted Response Rate Difference",
@@ -10165,8 +9226,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG002",
+          "test_arm_id": "OG002#adolescents",
+          "reference_arm_id": "OG000#adolescents",
           "comparison_kind": "superiority",
           "effect_type": "response_rate_difference",
           "effect_type_verbatim": "Adjusted Response Rate Difference",
@@ -10194,8 +9255,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#adolescents",
+          "reference_arm_id": "OG000#adolescents",
           "comparison_kind": "superiority",
           "effect_type": "response_rate_difference",
           "effect_type_verbatim": "Adjusted Response Rate Difference",
@@ -10223,8 +9284,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG002",
+          "test_arm_id": "OG002#adolescents",
+          "reference_arm_id": "OG000#adolescents",
           "comparison_kind": "superiority",
           "effect_type": "response_rate_difference",
           "effect_type_verbatim": "Adjusted Response Rate Difference",
@@ -10252,8 +9313,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#adolescents",
+          "reference_arm_id": "OG000#adolescents",
           "comparison_kind": "superiority",
           "effect_type": "response_rate_difference",
           "effect_type_verbatim": "Adjusted Response Rate Difference",
@@ -10281,8 +9342,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG002",
+          "test_arm_id": "OG002#adolescents",
+          "reference_arm_id": "OG000#adolescents",
           "comparison_kind": "superiority",
           "effect_type": "response_rate_difference",
           "effect_type_verbatim": "Adjusted Response Rate Difference",
@@ -10310,8 +9371,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#adolescents",
+          "reference_arm_id": "OG000#adolescents",
           "comparison_kind": "superiority",
           "effect_type": "response_rate_difference",
           "effect_type_verbatim": "Adjusted Response Rate Difference",
@@ -10339,8 +9400,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG002",
+          "test_arm_id": "OG002#adolescents",
+          "reference_arm_id": "OG000#adolescents",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
           "effect_type_verbatim": "LS Mean Difference",
@@ -10368,8 +9429,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#adolescents",
+          "reference_arm_id": "OG000#adolescents",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
           "effect_type_verbatim": "LS Mean Difference",
@@ -10397,8 +9458,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG002",
+          "test_arm_id": "OG002#adolescents",
+          "reference_arm_id": "OG000#adolescents",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
           "effect_type_verbatim": "LS Mean Difference",
@@ -10426,8 +9487,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#adolescents",
+          "reference_arm_id": "OG000#adolescents",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
           "effect_type_verbatim": "LS Mean Difference",
@@ -10455,8 +9516,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG002",
+          "test_arm_id": "OG002#adolescents",
+          "reference_arm_id": "OG000#adolescents",
           "comparison_kind": "superiority",
           "effect_type": "response_rate_difference",
           "effect_type_verbatim": "Adjusted Response Rate Difference",
@@ -10484,8 +9545,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#adolescents",
+          "reference_arm_id": "OG000#adolescents",
           "comparison_kind": "superiority",
           "effect_type": "response_rate_difference",
           "effect_type_verbatim": "Adjusted Response Rate Difference",
@@ -10513,8 +9574,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG002",
+          "test_arm_id": "OG002#adolescents",
+          "reference_arm_id": "OG000#adolescents",
           "comparison_kind": "superiority",
           "effect_type": "response_rate_difference",
           "effect_type_verbatim": "Adjusted Response Rate Difference",
@@ -10542,8 +9603,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#adolescents",
+          "reference_arm_id": "OG000#adolescents",
           "comparison_kind": "superiority",
           "effect_type": "response_rate_difference",
           "effect_type_verbatim": "Adjusted Response Rate Difference",
@@ -10571,8 +9632,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG002",
+          "test_arm_id": "OG002#adolescents",
+          "reference_arm_id": "OG000#adolescents",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
           "effect_type_verbatim": "LS Mean Difference",
@@ -10600,8 +9661,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#adolescents",
+          "reference_arm_id": "OG000#adolescents",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
           "effect_type_verbatim": "LS Mean Difference",
@@ -10629,8 +9690,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG002",
+          "test_arm_id": "OG002#adolescents",
+          "reference_arm_id": "OG000#adolescents",
           "comparison_kind": "superiority",
           "effect_type": "response_rate_difference",
           "effect_type_verbatim": "Adjusted Response Rate Difference",
@@ -10658,8 +9719,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#adolescents",
+          "reference_arm_id": "OG000#adolescents",
           "comparison_kind": "superiority",
           "effect_type": "response_rate_difference",
           "effect_type_verbatim": "Adjusted Response Rate Difference",
@@ -10687,8 +9748,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG002",
+          "test_arm_id": "OG002#adolescents",
+          "reference_arm_id": "OG000#adolescents",
           "comparison_kind": "superiority",
           "effect_type": "response_rate_difference",
           "effect_type_verbatim": "Adjusted Response Rate Difference",
@@ -10716,8 +9777,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#adolescents",
+          "reference_arm_id": "OG000#adolescents",
           "comparison_kind": "superiority",
           "effect_type": "response_rate_difference",
           "effect_type_verbatim": "Adjusted Response Rate Difference",
@@ -10738,7 +9799,7 @@
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03569293",
       "source_excerpt": "resultsSection.outcomeMeasuresModule.outcomeMeasures[].analyses[]",
-      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3, 2026-09-06)",
+      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3 backfill re-run)",
       "reviewed_by": null,
       "confidence": 1.0
     },

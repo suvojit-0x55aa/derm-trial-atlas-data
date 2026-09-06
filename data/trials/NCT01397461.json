@@ -1,5 +1,5 @@
 {
-  "schema_version": 3,
+  "schema_version": 4,
   "nct_id": {
     "value": "NCT01397461",
     "source_type": "ctgov_api",
@@ -85,25 +85,15 @@
     },
     "mechanism_of_action": {
       "value": {
-        "modality": "small_molecule",
-        "drug_class": "quinolone antimicrobial (DNA gyrase A / topoisomerase IV inhibitor)",
-        "antibody_isotype": null,
-        "binding_targets": [],
-        "pathway_cytokines": [],
-        "receptor_subunits": [],
-        "kinases_inhibited": [],
-        "lower_potency_kinases": [],
-        "selectivity": [],
-        "reversible": null,
-        "mechanism_established": null,
-        "label_section": "12.1"
+        "drug": "Ozenoxacin",
+        "application_number": null
       },
-      "source_type": "openfda_label",
-      "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2017/208945lbl.pdf",
-      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1) -- extracted text: 12.1 Mechanism of Action XEPI is an antimicrobial drug [see Microbiology (12.4)]. 12.4 Microbiology Mechanism of Action Ozenoxacin is a quinolone antimicrobial drug. The mechanism of action involves the inhibition of bacterial DNA replication enzymes, DNA gyrase A and topoisomerase IV. Ozenoxacin has been shown to be bactericidal against S. aureus and S. pyogenes organisms.",
-      "extracted_by": "deep-extraction pass (LLM-assisted extraction, scale-out backfill; pending human QA)",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 0.85
+      "confidence": null
     },
     "dosing_regimen": {
       "value": [
@@ -469,316 +459,62 @@
     },
     "boxed_warning": {
       "value": {
-        "present": false,
-        "title": null,
-        "warning_categories": [],
-        "referenced_label_sections": [],
-        "product_names": []
+        "drug": "Ozenoxacin",
+        "application_number": null
       },
-      "source_type": "openfda_label",
-      "source_url": "https://api.fda.gov/drug/label.json?search=openfda.brand_name:XEPI&limit=1",
-      "source_excerpt": "openFDA drug/label.json has no indexed entry for XEPI/OZENOXACIN under brand_name, substance_name, generic_name, or application_number (NDA208945) -- XEPI is a market-discontinued brand, dropped from openFDA's label index entirely (a step further than Kerydin's precedent, which still had a substance_name hit). Confirmed no boxed warning instead by reading the original FDA-approved label PDF directly (accessdata.fda.gov/drugsatfda_docs/label/2017/208945lbl.pdf, Reference ID 4192458): Section 4 Contraindications = 'None', no boxed warning section present.",
-      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, cycle-12 pass)",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     }
   },
   "real_world_safety": {
     "faers_summary": {
       "value": {
-        "query": {
-          "search_field": "patient.drug.medicinalproduct",
-          "search_term": "OZENOXACIN",
-          "receivedate_from": "2018-09-10",
-          "receivedate_to": "2026-06-17",
-          "api_urls": [
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"OZENOXACIN\"&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"OZENOXACIN\"+AND+serious:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"OZENOXACIN\"+AND+seriousnessdeath:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"OZENOXACIN\"+AND+seriousnesshospitalization:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"OZENOXACIN\"+AND+seriousnesslifethreatening:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"OZENOXACIN\"+AND+seriousnessdisabling:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"OZENOXACIN\"&count=patient.reaction.reactionmeddrapt.exact&limit=15",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"OZENOXACIN\"+AND+serious:1&count=patient.reaction.reactionmeddrapt.exact&limit=15",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"OZENOXACIN\"&count=receivedate"
-          ],
-          "data_last_updated": "2026-07-30"
-        },
-        "total_reports": 17,
-        "serious_reports": 14,
-        "death_reports": 2,
-        "hospitalization_reports": 5,
-        "life_threatening_reports": 1,
-        "disability_reports": 1,
-        "top_reactions": [
-          {
-            "meddra_pt": "OFF LABEL USE",
-            "report_count": 4,
-            "pct_of_reports": 23.53
-          },
-          {
-            "meddra_pt": "DRUG INEFFECTIVE",
-            "report_count": 2,
-            "pct_of_reports": 11.76
-          },
-          {
-            "meddra_pt": "INSOMNIA",
-            "report_count": 2,
-            "pct_of_reports": 11.76
-          },
-          {
-            "meddra_pt": "STOMATITIS",
-            "report_count": 2,
-            "pct_of_reports": 11.76
-          },
-          {
-            "meddra_pt": "TREATMENT FAILURE",
-            "report_count": 2,
-            "pct_of_reports": 11.76
-          },
-          {
-            "meddra_pt": "ADRENOCORTICOTROPIC HORMONE DEFICIENCY",
-            "report_count": 1,
-            "pct_of_reports": 5.88
-          },
-          {
-            "meddra_pt": "ANAPHYLACTIC REACTION",
-            "report_count": 1,
-            "pct_of_reports": 5.88
-          },
-          {
-            "meddra_pt": "ARTHRALGIA",
-            "report_count": 1,
-            "pct_of_reports": 5.88
-          },
-          {
-            "meddra_pt": "BLOOD CREATININE INCREASED",
-            "report_count": 1,
-            "pct_of_reports": 5.88
-          },
-          {
-            "meddra_pt": "CEREBRAL HAEMORRHAGE",
-            "report_count": 1,
-            "pct_of_reports": 5.88
-          },
-          {
-            "meddra_pt": "CEREBRAL VENTRICULAR RUPTURE",
-            "report_count": 1,
-            "pct_of_reports": 5.88
-          },
-          {
-            "meddra_pt": "COLITIS",
-            "report_count": 1,
-            "pct_of_reports": 5.88
-          },
-          {
-            "meddra_pt": "COLITIS ISCHAEMIC",
-            "report_count": 1,
-            "pct_of_reports": 5.88
-          },
-          {
-            "meddra_pt": "CONJUNCTIVITIS",
-            "report_count": 1,
-            "pct_of_reports": 5.88
-          },
-          {
-            "meddra_pt": "DERMATITIS EXFOLIATIVE",
-            "report_count": 1,
-            "pct_of_reports": 5.88
-          }
-        ],
-        "top_serious_reactions": [
-          {
-            "meddra_pt": "OFF LABEL USE",
-            "report_count": 3,
-            "pct_of_reports": 21.43
-          },
-          {
-            "meddra_pt": "INSOMNIA",
-            "report_count": 2,
-            "pct_of_reports": 14.29
-          },
-          {
-            "meddra_pt": "STOMATITIS",
-            "report_count": 2,
-            "pct_of_reports": 14.29
-          },
-          {
-            "meddra_pt": "TREATMENT FAILURE",
-            "report_count": 2,
-            "pct_of_reports": 14.29
-          },
-          {
-            "meddra_pt": "ADRENOCORTICOTROPIC HORMONE DEFICIENCY",
-            "report_count": 1,
-            "pct_of_reports": 7.14
-          },
-          {
-            "meddra_pt": "ANAPHYLACTIC REACTION",
-            "report_count": 1,
-            "pct_of_reports": 7.14
-          },
-          {
-            "meddra_pt": "ARTHRALGIA",
-            "report_count": 1,
-            "pct_of_reports": 7.14
-          },
-          {
-            "meddra_pt": "BLOOD CREATININE INCREASED",
-            "report_count": 1,
-            "pct_of_reports": 7.14
-          },
-          {
-            "meddra_pt": "CEREBRAL HAEMORRHAGE",
-            "report_count": 1,
-            "pct_of_reports": 7.14
-          },
-          {
-            "meddra_pt": "CEREBRAL VENTRICULAR RUPTURE",
-            "report_count": 1,
-            "pct_of_reports": 7.14
-          },
-          {
-            "meddra_pt": "COLITIS",
-            "report_count": 1,
-            "pct_of_reports": 7.14
-          },
-          {
-            "meddra_pt": "COLITIS ISCHAEMIC",
-            "report_count": 1,
-            "pct_of_reports": 7.14
-          },
-          {
-            "meddra_pt": "CONJUNCTIVITIS",
-            "report_count": 1,
-            "pct_of_reports": 7.14
-          },
-          {
-            "meddra_pt": "DIARRHOEA",
-            "report_count": 1,
-            "pct_of_reports": 7.14
-          }
-        ],
-        "reports_by_year": [
-          {
-            "year": 2018,
-            "report_count": 2
-          },
-          {
-            "year": 2021,
-            "report_count": 3
-          },
-          {
-            "year": 2022,
-            "report_count": 1
-          },
-          {
-            "year": 2023,
-            "report_count": 5
-          },
-          {
-            "year": 2024,
-            "report_count": 2
-          },
-          {
-            "year": 2025,
-            "report_count": 2
-          },
-          {
-            "year": 2026,
-            "report_count": 2
-          }
-        ],
-        "meddra_version": null
+        "drug": "Ozenoxacin",
+        "application_number": null
       },
-      "source_type": "openfda_faers",
-      "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"OZENOXACIN\"&limit=1",
-      "source_excerpt": "openFDA drug/event.json aggregate: total_reports=17, serious=14, deaths=2. Generic term used per atlas default; NOTE: both OZENOXACIN (17 reports) and brand XEPI (4 reports) return reports whose top indications/reactions (e.g. narcolepsy/cataplexy/somnolence for XEPI; cerebral haemorrhage, ACTH deficiency for OZENOXACIN) are clinically unrelated to a 5-day topical impetigo antibiotic cream -- a real, checked FAERS name-collision artifact for this low-volume discontinued drug, not a data-entry fix. Neither term cleanly isolates genuine Xepi reports; recorded as-is per the generic-term-default convention rather than silently discarding a real, small, and messy dataset.",
-      "extracted_by": "fetch_faers.py (openfda drug/event.json, cycle-12 pass)",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     }
   },
   "exclusivity": {
     "regulatory_application": {
       "value": {
-        "application_type": "NDA",
-        "application_number": "208945",
-        "registry": "orange_book",
-        "center": "CDER",
-        "proprietary_name": "XEPI",
-        "applicant": "LNHC INC",
-        "first_approval_date": "2017-12-11"
+        "drug": "Ozenoxacin",
+        "application_number": "208945"
       },
-      "source_type": "orange_book",
-      "source_url": "https://api.fda.gov/drug/orangebook.json",
-      "source_excerpt": "openfda orangebook.json: application_number N208945, brand_name XEPI, applicant_full_name LNHC INC, approval_date 2017-12-11",
-      "extracted_by": "atlas.regulatory_applications (registry file fetched 2026-09-05)",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     },
     "orange_book": {
       "value": {
-        "application_type": "N",
-        "application_number": "208945",
-        "ingredient": "OZENOXACIN",
-        "trade_name": "XEPI",
-        "applicant": "LNHC",
-        "applicant_full_name": "LNHC INC",
-        "products": [
-          {
-            "product_number": "001",
-            "strength": "1%",
-            "dosage_form": "CREAM",
-            "route": "TOPICAL",
-            "approval_date": "2017-12-11",
-            "rld": true,
-            "rs": false,
-            "te_code": null,
-            "marketing_type": "HUMAN PRESCRIPTION DRUG"
-          }
-        ],
-        "patents": [
-          {
-            "patent_number": "9180200",
-            "expiration_date": "2032-01-29",
-            "drug_substance_claim": false,
-            "drug_product_claim": true,
-            "patent_use_code": "U-805",
-            "delisted": false,
-            "submission_date": "2018-01-19",
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "patent_number": "9399014",
-            "expiration_date": "2029-12-15",
-            "drug_substance_claim": false,
-            "drug_product_claim": false,
-            "patent_use_code": "U-805",
-            "delisted": false,
-            "submission_date": "2018-01-19",
-            "product_numbers": [
-              "001"
-            ]
-          }
-        ],
-        "exclusivities": [],
-        "latest_patent_expiration": "2032-01-29",
-        "latest_exclusivity_expiration": null,
-        "data_file_date": null
+        "drug": "Ozenoxacin",
+        "application_number": "208945"
       },
-      "source_type": "orange_book",
-      "source_url": "https://api.fda.gov/drug/orangebook.json?search=products.active_ingredients.name%3A%22OZENOXACIN%22&limit=100",
-      "source_excerpt": "openFDA drug/orangebook.json, 1 product row(s) matched on products.active_ingredients.name='OZENOXACIN'",
-      "extracted_by": "fetch_orange_book.py (openfda drug/orangebook.json, cycle-12 pass)",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     },
     "purple_book": {
-      "value": null,
-      "source_type": "needs_extraction",
+      "value": {
+        "drug": "Ozenoxacin",
+        "application_number": null
+      },
+      "source_type": "drug_level_ref",
       "source_url": null,
       "source_excerpt": null,
       "extracted_by": null,
@@ -793,6 +529,7 @@
           "arm_id": "OG000",
           "label": "Ozenoxacin 1% Cream",
           "role": "investigational",
+          "analysis_population": null,
           "intervention_names": [
             "ozenoxacin 1% cream"
           ],
@@ -805,6 +542,7 @@
           "arm_id": "OG001",
           "label": "Ozenoxacin Placebo",
           "role": "placebo",
+          "analysis_population": null,
           "intervention_names": [
             "ozenoxacin placebo"
           ],
@@ -817,6 +555,7 @@
           "arm_id": "OG002",
           "label": "Retapamulin 1% Ointment",
           "role": "other",
+          "analysis_population": null,
           "intervention_names": [
             "retapamulin 1% ointment"
           ],
@@ -829,7 +568,7 @@
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01397461",
       "source_excerpt": "resultsSection.outcomeMeasuresModule.outcomeMeasures[].groups[]",
-      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3, 2026-09-06)",
+      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3 backfill re-run)",
       "reviewed_by": null,
       "confidence": 1.0
     },

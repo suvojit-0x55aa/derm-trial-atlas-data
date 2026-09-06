@@ -1,5 +1,5 @@
 {
-  "schema_version": 3,
+  "schema_version": 4,
   "nct_id": {
     "value": "NCT02118766",
     "source_type": "ctgov_api",
@@ -84,25 +84,15 @@
     },
     "mechanism_of_action": {
       "value": {
-        "modality": "small_molecule",
-        "drug_class": "PDE4 inhibitor",
-        "antibody_isotype": null,
-        "binding_targets": [],
-        "pathway_cytokines": [],
-        "receptor_subunits": [],
-        "kinases_inhibited": [],
-        "lower_potency_kinases": [],
-        "selectivity": [],
-        "reversible": null,
-        "mechanism_established": null,
-        "label_section": "12.1"
+        "drug": "Crisaborole",
+        "application_number": null
       },
-      "source_type": "openfda_label",
-      "source_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=e5457495-d465-4c0a-a1ea-603c4c5823fb",
-      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1) -- extracted text: 12.1 Mechanism of Action Crisaborole is a phosphodiesterase 4 (PDE-4) inhibitor. PDE-4 inhibition results in increased intracellular cyclic adenosine monophosphate (cAMP) levels. The specific mechanism(s) by which crisaborole exerts its therapeutic action for the treatment of atopic dermatitis is not well defined.",
-      "extracted_by": "deep-extraction pass (LLM-assisted extraction, scale-out backfill; pending human QA)",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 0.9
+      "confidence": null
     },
     "dosing_regimen": {
       "value": [
@@ -789,413 +779,62 @@
     },
     "boxed_warning": {
       "value": {
-        "present": false,
-        "title": null,
-        "warning_categories": [],
-        "referenced_label_sections": [],
-        "product_names": []
+        "drug": "Crisaborole",
+        "application_number": null
       },
-      "source_type": "openfda_label",
-      "source_url": "https://api.fda.gov/drug/label.json?search=openfda.substance_name:CRISABOROLE&limit=1",
-      "source_excerpt": "results[0] has no boxed_warning key (checked, none present)",
-      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass); structured by atlas.migrate v1->v2",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     }
   },
   "real_world_safety": {
     "faers_summary": {
       "value": {
-        "query": {
-          "search_field": "patient.drug.medicinalproduct",
-          "search_term": "CRISABOROLE",
-          "receivedate_from": "2017-02-07",
-          "receivedate_to": "2026-06-16",
-          "api_urls": [
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"CRISABOROLE\"&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"CRISABOROLE\"+AND+serious:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"CRISABOROLE\"+AND+seriousnessdeath:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"CRISABOROLE\"+AND+seriousnesshospitalization:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"CRISABOROLE\"+AND+seriousnesslifethreatening:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"CRISABOROLE\"+AND+seriousnessdisabling:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"CRISABOROLE\"&count=patient.reaction.reactionmeddrapt.exact&limit=15",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"CRISABOROLE\"+AND+serious:1&count=patient.reaction.reactionmeddrapt.exact&limit=15",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"CRISABOROLE\"&count=receivedate"
-          ],
-          "data_last_updated": "2026-07-30"
-        },
-        "total_reports": 176,
-        "serious_reports": 105,
-        "death_reports": 2,
-        "hospitalization_reports": 23,
-        "life_threatening_reports": 0,
-        "disability_reports": 0,
-        "top_reactions": [
-          {
-            "meddra_pt": "OFF LABEL USE",
-            "report_count": 48,
-            "pct_of_reports": 27.27
-          },
-          {
-            "meddra_pt": "DRUG INEFFECTIVE",
-            "report_count": 46,
-            "pct_of_reports": 26.14
-          },
-          {
-            "meddra_pt": "DERMATITIS",
-            "report_count": 20,
-            "pct_of_reports": 11.36
-          },
-          {
-            "meddra_pt": "CONDITION AGGRAVATED",
-            "report_count": 19,
-            "pct_of_reports": 10.8
-          },
-          {
-            "meddra_pt": "PRURITUS",
-            "report_count": 18,
-            "pct_of_reports": 10.23
-          },
-          {
-            "meddra_pt": "CHEILITIS",
-            "report_count": 17,
-            "pct_of_reports": 9.66
-          },
-          {
-            "meddra_pt": "EYELID IRRITATION",
-            "report_count": 17,
-            "pct_of_reports": 9.66
-          },
-          {
-            "meddra_pt": "FALL",
-            "report_count": 12,
-            "pct_of_reports": 6.82
-          },
-          {
-            "meddra_pt": "THERAPEUTIC PRODUCT INEFFECTIVE",
-            "report_count": 12,
-            "pct_of_reports": 6.82
-          },
-          {
-            "meddra_pt": "ABDOMINAL DISCOMFORT",
-            "report_count": 11,
-            "pct_of_reports": 6.25
-          },
-          {
-            "meddra_pt": "ANKLE FRACTURE",
-            "report_count": 11,
-            "pct_of_reports": 6.25
-          },
-          {
-            "meddra_pt": "APPLICATION SITE PAIN",
-            "report_count": 11,
-            "pct_of_reports": 6.25
-          },
-          {
-            "meddra_pt": "CONCUSSION",
-            "report_count": 11,
-            "pct_of_reports": 6.25
-          },
-          {
-            "meddra_pt": "FOOT FRACTURE",
-            "report_count": 11,
-            "pct_of_reports": 6.25
-          },
-          {
-            "meddra_pt": "HERPES ZOSTER",
-            "report_count": 11,
-            "pct_of_reports": 6.25
-          }
-        ],
-        "top_serious_reactions": [
-          {
-            "meddra_pt": "OFF LABEL USE",
-            "report_count": 38,
-            "pct_of_reports": 36.19
-          },
-          {
-            "meddra_pt": "DRUG INEFFECTIVE",
-            "report_count": 36,
-            "pct_of_reports": 34.29
-          },
-          {
-            "meddra_pt": "DERMATITIS",
-            "report_count": 19,
-            "pct_of_reports": 18.1
-          },
-          {
-            "meddra_pt": "CHEILITIS",
-            "report_count": 17,
-            "pct_of_reports": 16.19
-          },
-          {
-            "meddra_pt": "EYELID IRRITATION",
-            "report_count": 16,
-            "pct_of_reports": 15.24
-          },
-          {
-            "meddra_pt": "CONDITION AGGRAVATED",
-            "report_count": 15,
-            "pct_of_reports": 14.29
-          },
-          {
-            "meddra_pt": "PRURITUS",
-            "report_count": 15,
-            "pct_of_reports": 14.29
-          },
-          {
-            "meddra_pt": "FALL",
-            "report_count": 12,
-            "pct_of_reports": 11.43
-          },
-          {
-            "meddra_pt": "THERAPEUTIC PRODUCT INEFFECTIVE",
-            "report_count": 12,
-            "pct_of_reports": 11.43
-          },
-          {
-            "meddra_pt": "ANKLE FRACTURE",
-            "report_count": 11,
-            "pct_of_reports": 10.48
-          },
-          {
-            "meddra_pt": "CONCUSSION",
-            "report_count": 11,
-            "pct_of_reports": 10.48
-          },
-          {
-            "meddra_pt": "FOOT FRACTURE",
-            "report_count": 11,
-            "pct_of_reports": 10.48
-          },
-          {
-            "meddra_pt": "HERPES ZOSTER",
-            "report_count": 11,
-            "pct_of_reports": 10.48
-          },
-          {
-            "meddra_pt": "LOWER LIMB FRACTURE",
-            "report_count": 11,
-            "pct_of_reports": 10.48
-          },
-          {
-            "meddra_pt": "TOOTH DISORDER",
-            "report_count": 11,
-            "pct_of_reports": 10.48
-          }
-        ],
-        "reports_by_year": [
-          {
-            "year": 2017,
-            "report_count": 19
-          },
-          {
-            "year": 2018,
-            "report_count": 18
-          },
-          {
-            "year": 2019,
-            "report_count": 9
-          },
-          {
-            "year": 2020,
-            "report_count": 16
-          },
-          {
-            "year": 2021,
-            "report_count": 17
-          },
-          {
-            "year": 2022,
-            "report_count": 7
-          },
-          {
-            "year": 2023,
-            "report_count": 21
-          },
-          {
-            "year": 2024,
-            "report_count": 38
-          },
-          {
-            "year": 2025,
-            "report_count": 16
-          },
-          {
-            "year": 2026,
-            "report_count": 15
-          }
-        ],
-        "meddra_version": null
+        "drug": "Crisaborole",
+        "application_number": null
       },
-      "source_type": "openfda_faers",
-      "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"CRISABOROLE\"&limit=1",
-      "source_excerpt": "openFDA drug/event.json aggregate: total_reports=176, serious=105, deaths=2",
-      "extracted_by": "fetch_faers.py (openfda drug/event.json, cycle-7 pass)",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     }
   },
   "exclusivity": {
     "regulatory_application": {
       "value": {
-        "application_type": "NDA",
-        "application_number": "207695",
-        "registry": "orange_book",
-        "center": "CDER",
-        "proprietary_name": "EUCRISA",
-        "applicant": "ANACOR PHARMACEUTICALS INC",
-        "first_approval_date": "2016-12-14"
+        "drug": "Crisaborole",
+        "application_number": "207695"
       },
-      "source_type": "orange_book",
-      "source_url": "https://api.fda.gov/drug/orangebook.json",
-      "source_excerpt": "openfda orangebook.json: products.active_ingredients.name=CRISABOROLE, application_number N207695, brand_name EUCRISA, applicant_full_name ANACOR PHARMACEUTICALS INC, approval_date 2016-12-14",
-      "extracted_by": "atlas.regulatory_applications (registry file fetched 2026-09-05)",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     },
     "orange_book": {
       "value": {
-        "application_type": "N",
-        "application_number": "207695",
-        "ingredient": "CRISABOROLE",
-        "trade_name": "EUCRISA",
-        "applicant": "ANACOR PHARMS INC",
-        "applicant_full_name": "ANACOR PHARMACEUTICALS INC",
-        "products": [
-          {
-            "product_number": "001",
-            "strength": "2%",
-            "dosage_form": "OINTMENT",
-            "route": "TOPICAL",
-            "approval_date": "2016-12-14",
-            "rld": true,
-            "rs": true,
-            "te_code": null,
-            "marketing_type": "HUMAN PRESCRIPTION DRUG"
-          }
-        ],
-        "patents": [
-          {
-            "patent_number": "8501712",
-            "expiration_date": "2027-02-16",
-            "drug_substance_claim": false,
-            "drug_product_claim": false,
-            "patent_use_code": "U-1932",
-            "delisted": false,
-            "submission_date": "2017-01-12",
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "patent_number": "9682092",
-            "expiration_date": "2027-02-16",
-            "drug_substance_claim": false,
-            "drug_product_claim": false,
-            "patent_use_code": "U-1932",
-            "delisted": false,
-            "submission_date": "2017-07-14",
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "patent_number": "8501712*PED",
-            "expiration_date": "2027-08-16",
-            "drug_substance_claim": false,
-            "drug_product_claim": false,
-            "patent_use_code": null,
-            "delisted": false,
-            "submission_date": null,
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "patent_number": "9682092*PED",
-            "expiration_date": "2027-08-16",
-            "drug_substance_claim": false,
-            "drug_product_claim": false,
-            "patent_use_code": null,
-            "delisted": false,
-            "submission_date": null,
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "patent_number": "8039451",
-            "expiration_date": "2029-06-29",
-            "drug_substance_claim": true,
-            "drug_product_claim": true,
-            "patent_use_code": null,
-            "delisted": false,
-            "submission_date": "2017-01-12",
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "patent_number": "8039451*PED",
-            "expiration_date": "2029-12-29",
-            "drug_substance_claim": false,
-            "drug_product_claim": false,
-            "patent_use_code": null,
-            "delisted": false,
-            "submission_date": null,
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "patent_number": "8168614",
-            "expiration_date": "2030-01-20",
-            "drug_substance_claim": false,
-            "drug_product_claim": false,
-            "patent_use_code": "U-1932",
-            "delisted": false,
-            "submission_date": "2017-01-12",
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "patent_number": "8168614*PED",
-            "expiration_date": "2030-07-20",
-            "drug_substance_claim": false,
-            "drug_product_claim": false,
-            "patent_use_code": null,
-            "delisted": false,
-            "submission_date": null,
-            "product_numbers": [
-              "001"
-            ]
-          }
-        ],
-        "exclusivities": [
-          {
-            "code": "D-191",
-            "expiration_date": "2026-04-03",
-            "product_numbers": [
-              "001"
-            ]
-          }
-        ],
-        "latest_patent_expiration": "2030-07-20",
-        "latest_exclusivity_expiration": "2026-04-03",
-        "data_file_date": null
+        "drug": "Crisaborole",
+        "application_number": "207695"
       },
-      "source_type": "orange_book",
-      "source_url": "https://api.fda.gov/drug/orangebook.json?search=products.active_ingredients.name%3A%22CRISABOROLE%22&limit=100",
-      "source_excerpt": "openFDA drug/orangebook.json, 1 product row(s) matched on products.active_ingredients.name='CRISABOROLE'",
-      "extracted_by": "fetch_orange_book.py (openfda drug/orangebook.json, cycle-7 pass)",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     },
     "purple_book": {
-      "value": null,
-      "source_type": "needs_extraction",
+      "value": {
+        "drug": "Crisaborole",
+        "application_number": null
+      },
+      "source_type": "drug_level_ref",
       "source_url": null,
       "source_excerpt": null,
       "extracted_by": null,
@@ -1210,6 +849,7 @@
           "arm_id": "OG000",
           "label": "AN2728 Topical Ointment, 2 Percent",
           "role": "other",
+          "analysis_population": "full_analysis_set",
           "intervention_names": [],
           "dose_value": null,
           "dose_unit": null,
@@ -1220,6 +860,7 @@
           "arm_id": "OG001",
           "label": "AN2728 Topical Ointment, Vehicle",
           "role": "vehicle",
+          "analysis_population": "full_analysis_set",
           "intervention_names": [],
           "dose_value": null,
           "dose_unit": null,
@@ -1230,7 +871,7 @@
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02118766",
       "source_excerpt": "resultsSection.outcomeMeasuresModule.outcomeMeasures[].groups[]",
-      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3, 2026-09-06)",
+      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3 backfill re-run)",
       "reviewed_by": null,
       "confidence": 1.0
     },
@@ -1307,8 +948,8 @@
           "reported_value": 147.0,
           "reported_unit": "participants",
           "responders": 147,
-          "response_rate_pct": null,
-          "rate_is_derived": false,
+          "response_rate_pct": 29.3,
+          "rate_is_derived": true,
           "dispersion_type": null,
           "dispersion_value": null,
           "ci_pct": null,
@@ -1331,8 +972,8 @@
           "reported_value": 50.0,
           "reported_unit": "participants",
           "responders": 50,
-          "response_rate_pct": null,
-          "rate_is_derived": false,
+          "response_rate_pct": 19.8,
+          "rate_is_derived": true,
           "dispersion_type": null,
           "dispersion_value": null,
           "ci_pct": null,
@@ -1355,8 +996,8 @@
           "reported_value": 5.0,
           "reported_unit": "participants",
           "responders": 5,
-          "response_rate_pct": null,
-          "rate_is_derived": false,
+          "response_rate_pct": 1.0,
+          "rate_is_derived": true,
           "dispersion_type": null,
           "dispersion_value": null,
           "ci_pct": null,
@@ -1379,8 +1020,8 @@
           "reported_value": 1.0,
           "reported_unit": "participants",
           "responders": 1,
-          "response_rate_pct": null,
-          "rate_is_derived": false,
+          "response_rate_pct": 0.4,
+          "rate_is_derived": true,
           "dispersion_type": null,
           "dispersion_value": null,
           "ci_pct": null,
@@ -1407,8 +1048,8 @@
           "reported_value": 0.0,
           "reported_unit": "participants",
           "responders": 0,
-          "response_rate_pct": null,
-          "rate_is_derived": false,
+          "response_rate_pct": 0.0,
+          "rate_is_derived": true,
           "dispersion_type": null,
           "dispersion_value": null,
           "ci_pct": null,
@@ -1435,8 +1076,8 @@
           "reported_value": 0.0,
           "reported_unit": "participants",
           "responders": 0,
-          "response_rate_pct": null,
-          "rate_is_derived": false,
+          "response_rate_pct": 0.0,
+          "rate_is_derived": true,
           "dispersion_type": null,
           "dispersion_value": null,
           "ci_pct": null,
@@ -1463,8 +1104,8 @@
           "reported_value": 0.0,
           "reported_unit": "participants",
           "responders": 0,
-          "response_rate_pct": null,
-          "rate_is_derived": false,
+          "response_rate_pct": 0.0,
+          "rate_is_derived": true,
           "dispersion_type": null,
           "dispersion_value": null,
           "ci_pct": null,
@@ -1491,8 +1132,8 @@
           "reported_value": 0.0,
           "reported_unit": "participants",
           "responders": 0,
-          "response_rate_pct": null,
-          "rate_is_derived": false,
+          "response_rate_pct": 0.0,
+          "rate_is_derived": true,
           "dispersion_type": null,
           "dispersion_value": null,
           "ci_pct": null,
@@ -2120,7 +1761,7 @@
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02118766",
       "source_excerpt": "resultsSection.outcomeMeasuresModule.outcomeMeasures[].{denoms,classes[].categories[].measurements[]}",
-      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3, 2026-09-06)",
+      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3 backfill re-run)",
       "reviewed_by": null,
       "confidence": 1.0
     },

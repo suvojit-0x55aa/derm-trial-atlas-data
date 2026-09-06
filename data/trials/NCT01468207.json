@@ -1,5 +1,5 @@
 {
-  "schema_version": 3,
+  "schema_version": 4,
   "nct_id": {
     "value": "NCT01468207",
     "source_type": "ctgov_api",
@@ -84,27 +84,15 @@
     },
     "mechanism_of_action": {
       "value": {
-        "modality": "other",
-        "drug_class": null,
-        "antibody_isotype": null,
-        "binding_targets": [],
-        "pathway_cytokines": [
-          "TNF"
-        ],
-        "receptor_subunits": [],
-        "kinases_inhibited": [],
-        "lower_potency_kinases": [],
-        "selectivity": [],
-        "reversible": null,
-        "mechanism_established": null,
-        "label_section": "12.1"
+        "drug": "Adalimumab",
+        "application_number": null
       },
-      "source_type": "openfda_label",
-      "source_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=48b7e44a-945f-487d-b2fd-3da13d6d6fdb",
-      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1) -- v1 extracted text: 12.1 Mechanism of Action Adalimumab products bind specifically to TNF-alpha and block its interaction with the p55 and p75 cell surface TNF receptors. Adalimumab products also lyse surface TNF expressing cells in vitro in the presence of complement. Adalimumab products do not bind or inactivate lymphotoxin (TNF-beta). TNF is a naturally occurring cytokine that is involved in normal inflammatory and immune responses. Elevated concentrations of TNF are found in the synovial fluid of patients with RA, JIA, PsA, and AS and play an important role in both the pathologic inflammation and the joint destruction that are hallmarks of these diseases. Increased concentrations of TNF are also found in psoriasis plaques. In Ps, treatment with HYRIMOZ may reduce the epidermal thickness and infiltration of inflammatory cells. The relationship between these pharmacodynamic activities and the mechanism(s) by which adalimumab products exert their clinical effects is unknown. Adalimumab products also modulate biological responses that are induced or regulated by TNF, including changes in the concentrations of adhesion molecules responsible for leukocyte migration (ELAM-1, VCAM-1, and ICAM-1 with an IC 50 of 1-2 X 10 -10 M).",
-      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA); structured by atlas.migrate v1->v2",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 0.9
+      "confidence": null
     },
     "dosing_regimen": {
       "value": [
@@ -948,335 +936,50 @@
     },
     "boxed_warning": {
       "value": {
-        "present": true,
-        "title": "SERIOUS INFECTIONS and MALIGNANCY",
-        "warning_categories": [
-          "serious_infections",
-          "malignancy"
-        ],
-        "referenced_label_sections": [
-          "5.1",
-          "5.2"
-        ],
-        "product_names": [
-          "HYRIMOZ",
-          "HSTCL"
-        ]
+        "drug": "Adalimumab",
+        "application_number": null
       },
-      "source_type": "openfda_label",
-      "source_url": "https://api.fda.gov/drug/label.json?search=openfda.substance_name:ADALIMUMAB&limit=1",
-      "source_excerpt": "results[0].boxed_warning -- v1 extracted text: WARNING: SERIOUS INFECTIONS and MALIGNANCY SERIOUS INFECTIONS Patients treated with adalimumab products, including HYRIMOZ, are at increased risk for developing serious infections that may lead to hospitalization or death [see Warnings and Precautions ( 5.1 )] . Most patients who developed these infections were taking concomitant immunosuppressants such as methotrexate or corticosteroids. Discontinue HYRIMOZ if a patient develops a serious infection or sepsis. Reported infections include: • Active tuberculosis (TB), including reactivation of latent TB. Patients with TB have frequently presented with disseminated or extrapulmonary disease. Test patients for latent TB before HYRIMOZ use and during therapy. Initiate treatment for latent TB prior to HYRIMOZ use. • Invasive fungal infections, including histoplasmosis, coccidioidomycosis, candidiasis, aspergillosis, blastomycosis, and pneumocystosis. Patients with histoplasmosis or other invasive fungal infections may present with disseminated, rather than localized, disease. Antigen and antibody testing for histoplasmosis may be negative in some patients with active infection. Consider empiric anti-fungal therapy in patients at risk for invasive fungal infections who develop severe systemic illness. • Bacterial, viral and other infections due to opportunistic pathogens, including Legionella and Listeria. Carefully consider the risks and benefits of treatment with HYRIMOZ prior to initiating therapy in patients with chronic or recurrent infection. Monitor patients closely for the development of signs and symptoms of infection during and after treatment with HYRIMOZ, including the possible development of TB in patients who tested negative for latent TB infection prior to initiating therapy [see Warnings and Precautions ( 5.1 ) and Adverse Reactions ( 6.1 )]. MALIGNANCY Lymphoma and other malignancies, some fatal, have been reported in children and adolescent patients treated with TNF blockers including adalimumab products [ see Warnings and Precautions ( 5.2 ) ]. Post-marketing cases of hepatosplenic T-cell lymphoma (HSTCL), a rare type of T-cell lymphoma, have been reported in patients treated with TNF blockers including adalimumab products. These cases have had a very aggressive disease course and have been fatal. The majority of reported TNF blocker cases have occurred in patients with Crohn's disease or ulcerative colitis and the majority were in adolescent and young adult males. Almost all these patients had received treatment with azathioprine or 6-mercaptopurine (6–MP) concomitantly with a TNF blocker at or prior to diagnosis. It is uncertain whether the occurrence of HSTCL is related to use of a TNF blocker or a TNF blocker in combination with these other immunosuppressants [see Warnings and Precautions ( 5.2 )]. WARNING: SERIOUS INFECTIONS and MALIGNANCY See full prescribing information for complete boxed warning. SERIOUS INFECTIONS ( 5.1 , 6.1 ): • Increased risk of serious infections leading to hospitalization or death, including tuberculosis (TB), bacterial sepsis, invasive fungal infections (such as histoplasmosis), and infections due to other opportunistic pathogens. • Discontinue HYRIMOZ if a patient develops a serious infection or sepsis during treatment. • Perform test for latent TB; if positive, start treatment for TB prior to starting HYRIMOZ. • Monitor all patients for active TB during treatment, even if initial latent TB test is negative. MALIGNANCY ( 5.2 ): • Lymphoma and other malignancies, some fatal, have been reported in children and adolescent patients treated with TNF blockers including adalimumab products. • Post-marketing cases of hepatosplenic T-cell lymphoma (HSTCL), a rare type of T-cell lymphoma, have occurred in adolescent and young adults with inflammatory bowel disease treated with TNF blockers including adalimumab products.",
-      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass); structured by atlas.migrate v1->v2",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     }
   },
   "real_world_safety": {
     "faers_summary": {
       "value": {
-        "query": {
-          "search_field": "patient.drug.medicinalproduct",
-          "search_term": "ADALIMUMAB",
-          "receivedate_from": "2004-03-24",
-          "receivedate_to": "2026-06-30",
-          "api_urls": [
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ADALIMUMAB\"&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ADALIMUMAB\"+AND+serious:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ADALIMUMAB\"+AND+seriousnessdeath:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ADALIMUMAB\"+AND+seriousnesshospitalization:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ADALIMUMAB\"+AND+seriousnesslifethreatening:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ADALIMUMAB\"+AND+seriousnessdisabling:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ADALIMUMAB\"&count=patient.reaction.reactionmeddrapt.exact&limit=15",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ADALIMUMAB\"+AND+serious:1&count=patient.reaction.reactionmeddrapt.exact&limit=15",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ADALIMUMAB\"&count=receivedate"
-          ],
-          "data_last_updated": "2026-07-30"
-        },
-        "total_reports": 46072,
-        "serious_reports": 43369,
-        "death_reports": 6821,
-        "hospitalization_reports": 16069,
-        "life_threatening_reports": 5941,
-        "disability_reports": 5904,
-        "top_reactions": [
-          {
-            "meddra_pt": "DRUG INEFFECTIVE",
-            "report_count": 10464,
-            "pct_of_reports": 22.71
-          },
-          {
-            "meddra_pt": "OFF LABEL USE",
-            "report_count": 8283,
-            "pct_of_reports": 17.98
-          },
-          {
-            "meddra_pt": "RHEUMATOID ARTHRITIS",
-            "report_count": 5673,
-            "pct_of_reports": 12.31
-          },
-          {
-            "meddra_pt": "FATIGUE",
-            "report_count": 5486,
-            "pct_of_reports": 11.91
-          },
-          {
-            "meddra_pt": "PAIN",
-            "report_count": 5437,
-            "pct_of_reports": 11.8
-          },
-          {
-            "meddra_pt": "ARTHRALGIA",
-            "report_count": 5184,
-            "pct_of_reports": 11.25
-          },
-          {
-            "meddra_pt": "RASH",
-            "report_count": 4648,
-            "pct_of_reports": 10.09
-          },
-          {
-            "meddra_pt": "CONDITION AGGRAVATED",
-            "report_count": 4492,
-            "pct_of_reports": 9.75
-          },
-          {
-            "meddra_pt": "DRUG INTOLERANCE",
-            "report_count": 4258,
-            "pct_of_reports": 9.24
-          },
-          {
-            "meddra_pt": "SYSTEMIC LUPUS ERYTHEMATOSUS",
-            "report_count": 4114,
-            "pct_of_reports": 8.93
-          },
-          {
-            "meddra_pt": "NAUSEA",
-            "report_count": 4070,
-            "pct_of_reports": 8.83
-          },
-          {
-            "meddra_pt": "HEADACHE",
-            "report_count": 4059,
-            "pct_of_reports": 8.81
-          },
-          {
-            "meddra_pt": "DIARRHOEA",
-            "report_count": 4055,
-            "pct_of_reports": 8.8
-          },
-          {
-            "meddra_pt": "JOINT SWELLING",
-            "report_count": 4051,
-            "pct_of_reports": 8.79
-          },
-          {
-            "meddra_pt": "ALOPECIA",
-            "report_count": 3893,
-            "pct_of_reports": 8.45
-          }
-        ],
-        "top_serious_reactions": [
-          {
-            "meddra_pt": "DRUG INEFFECTIVE",
-            "report_count": 10125,
-            "pct_of_reports": 23.35
-          },
-          {
-            "meddra_pt": "OFF LABEL USE",
-            "report_count": 8040,
-            "pct_of_reports": 18.54
-          },
-          {
-            "meddra_pt": "RHEUMATOID ARTHRITIS",
-            "report_count": 5645,
-            "pct_of_reports": 13.02
-          },
-          {
-            "meddra_pt": "FATIGUE",
-            "report_count": 5431,
-            "pct_of_reports": 12.52
-          },
-          {
-            "meddra_pt": "PAIN",
-            "report_count": 5342,
-            "pct_of_reports": 12.32
-          },
-          {
-            "meddra_pt": "ARTHRALGIA",
-            "report_count": 5105,
-            "pct_of_reports": 11.77
-          },
-          {
-            "meddra_pt": "RASH",
-            "report_count": 4578,
-            "pct_of_reports": 10.56
-          },
-          {
-            "meddra_pt": "CONDITION AGGRAVATED",
-            "report_count": 4440,
-            "pct_of_reports": 10.24
-          },
-          {
-            "meddra_pt": "DRUG INTOLERANCE",
-            "report_count": 4229,
-            "pct_of_reports": 9.75
-          },
-          {
-            "meddra_pt": "SYSTEMIC LUPUS ERYTHEMATOSUS",
-            "report_count": 4113,
-            "pct_of_reports": 9.48
-          },
-          {
-            "meddra_pt": "NAUSEA",
-            "report_count": 4022,
-            "pct_of_reports": 9.27
-          },
-          {
-            "meddra_pt": "DIARRHOEA",
-            "report_count": 4018,
-            "pct_of_reports": 9.26
-          },
-          {
-            "meddra_pt": "JOINT SWELLING",
-            "report_count": 4018,
-            "pct_of_reports": 9.26
-          },
-          {
-            "meddra_pt": "HEADACHE",
-            "report_count": 3992,
-            "pct_of_reports": 9.2
-          },
-          {
-            "meddra_pt": "ALOPECIA",
-            "report_count": 3874,
-            "pct_of_reports": 8.93
-          }
-        ],
-        "reports_by_year": [
-          {
-            "year": 2004,
-            "report_count": 39
-          },
-          {
-            "year": 2005,
-            "report_count": 65
-          },
-          {
-            "year": 2006,
-            "report_count": 20
-          },
-          {
-            "year": 2007,
-            "report_count": 51
-          },
-          {
-            "year": 2008,
-            "report_count": 142
-          },
-          {
-            "year": 2009,
-            "report_count": 156
-          },
-          {
-            "year": 2010,
-            "report_count": 281
-          },
-          {
-            "year": 2011,
-            "report_count": 224
-          },
-          {
-            "year": 2012,
-            "report_count": 272
-          },
-          {
-            "year": 2013,
-            "report_count": 316
-          },
-          {
-            "year": 2014,
-            "report_count": 305
-          },
-          {
-            "year": 2015,
-            "report_count": 326
-          },
-          {
-            "year": 2016,
-            "report_count": 507
-          },
-          {
-            "year": 2017,
-            "report_count": 733
-          },
-          {
-            "year": 2018,
-            "report_count": 1257
-          },
-          {
-            "year": 2019,
-            "report_count": 2039
-          },
-          {
-            "year": 2020,
-            "report_count": 2729
-          },
-          {
-            "year": 2021,
-            "report_count": 3251
-          },
-          {
-            "year": 2022,
-            "report_count": 4583
-          },
-          {
-            "year": 2023,
-            "report_count": 6776
-          },
-          {
-            "year": 2024,
-            "report_count": 8593
-          },
-          {
-            "year": 2025,
-            "report_count": 8819
-          },
-          {
-            "year": 2026,
-            "report_count": 4588
-          }
-        ],
-        "meddra_version": null
+        "drug": "Adalimumab",
+        "application_number": null
       },
-      "source_type": "openfda_faers",
-      "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ADALIMUMAB\"&limit=1",
-      "source_excerpt": "openFDA drug/event.json aggregate: total_reports=46072, serious=43369, deaths=6821",
-      "extracted_by": "fetch_faers.py (openfda drug/event.json, v2 pass)",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     }
   },
   "exclusivity": {
     "regulatory_application": {
       "value": {
-        "application_type": "BLA",
-        "application_number": "125057",
-        "registry": "purple_book",
-        "center": "CDER",
-        "proprietary_name": "Humira",
-        "applicant": "AbbVie Inc.",
-        "first_approval_date": "2002-12-31"
+        "drug": "Adalimumab",
+        "application_number": "125057"
       },
-      "source_type": "purple_book",
-      "source_url": "https://purplebooksearch.fda.gov/index.cfm?event=advancedsearch",
-      "source_excerpt": "purplebooksearch.fda.gov live search table: BLA 125057 | Humira | adalimumab | 351(a) | AbbVie Inc. | first approved 2002-12-31",
-      "extracted_by": "atlas.regulatory_applications (registry file fetched 2026-09-05)",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     },
     "orange_book": {
-      "value": null,
-      "source_type": "needs_extraction",
+      "value": {
+        "drug": "Adalimumab",
+        "application_number": "125057"
+      },
+      "source_type": "drug_level_ref",
       "source_url": null,
       "source_excerpt": null,
       "extracted_by": null,
@@ -1285,263 +988,25 @@
     },
     "purple_book": {
       "value": {
-        "bla_number": "125057",
-        "proprietary_name": "Humira",
-        "proper_name": "adalimumab",
-        "applicant": "AbbVie Inc.",
-        "license_type": "351(a)",
-        "license_number": "1889",
-        "center": "CDER",
-        "products": [
-          {
-            "product_number": "001",
-            "strength": "40MG/0.8ML",
-            "dosage_form": "Injection",
-            "route": "Subcutaneous",
-            "presentation": "Autoinjector",
-            "marketing_status": "Rx",
-            "licensure": "Licensed",
-            "approval_date": "2002-12-31",
-            "submission_type": "Original",
-            "supplement_number": null
-          },
-          {
-            "product_number": "002",
-            "strength": "40MG/0.8ML",
-            "dosage_form": "Injection",
-            "route": "Subcutaneous",
-            "presentation": "Pre-Filled Syringe",
-            "marketing_status": "Rx",
-            "licensure": "Licensed",
-            "approval_date": "2002-12-31",
-            "submission_type": "Original",
-            "supplement_number": null
-          },
-          {
-            "product_number": "003",
-            "strength": "20MG/0.4ML",
-            "dosage_form": "Injection",
-            "route": "Subcutaneous",
-            "presentation": "Pre-Filled Syringe",
-            "marketing_status": "Disc*",
-            "licensure": "Licensed",
-            "approval_date": "2008-02-21",
-            "submission_type": "Supplement",
-            "supplement_number": "114"
-          },
-          {
-            "product_number": "004",
-            "strength": "40MG/0.8ML",
-            "dosage_form": "Injection",
-            "route": "Subcutaneous",
-            "presentation": "Single-Dose Vial",
-            "marketing_status": "Disc*",
-            "licensure": "Licensed",
-            "approval_date": "2013-04-24",
-            "submission_type": "Supplement",
-            "supplement_number": "322"
-          },
-          {
-            "product_number": "005",
-            "strength": "10MG/0.2ML",
-            "dosage_form": "Injection",
-            "route": "Subcutaneous",
-            "presentation": "Pre-Filled Syringe",
-            "marketing_status": "Disc*",
-            "licensure": "Licensed",
-            "approval_date": "2014-09-23",
-            "submission_type": "Supplement",
-            "supplement_number": "356"
-          },
-          {
-            "product_number": "006",
-            "strength": "40MG/0.4ML",
-            "dosage_form": "Injection",
-            "route": "Subcutaneous",
-            "presentation": "Pre-Filled Syringe",
-            "marketing_status": "Rx",
-            "licensure": "Licensed",
-            "approval_date": "2015-11-23",
-            "submission_type": "Supplement",
-            "supplement_number": "394"
-          },
-          {
-            "product_number": "007",
-            "strength": "40MG/0.4ML",
-            "dosage_form": "Injection",
-            "route": "Subcutaneous",
-            "presentation": "Autoinjector",
-            "marketing_status": "Rx",
-            "licensure": "Licensed",
-            "approval_date": "2016-03-09",
-            "submission_type": "Supplement",
-            "supplement_number": "398"
-          },
-          {
-            "product_number": "008",
-            "strength": "80MG/0.8ML",
-            "dosage_form": "Injection",
-            "route": "Subcutaneous",
-            "presentation": "Pre-Filled Syringe",
-            "marketing_status": "Rx",
-            "licensure": "Licensed",
-            "approval_date": "2016-10-17",
-            "submission_type": "Supplement",
-            "supplement_number": "400"
-          },
-          {
-            "product_number": "009",
-            "strength": "80MG/0.8ML",
-            "dosage_form": "Injection",
-            "route": "Subcutaneous",
-            "presentation": "Autoinjector",
-            "marketing_status": "Rx",
-            "licensure": "Licensed",
-            "approval_date": "2017-04-21",
-            "submission_type": "Supplement",
-            "supplement_number": "401"
-          },
-          {
-            "product_number": "010",
-            "strength": "20MG/0.2ML",
-            "dosage_form": "Injection",
-            "route": "Subcutaneous",
-            "presentation": "Pre-Filled Syringe",
-            "marketing_status": "Rx",
-            "licensure": "Licensed",
-            "approval_date": "2017-04-28",
-            "submission_type": "Supplement",
-            "supplement_number": "402"
-          },
-          {
-            "product_number": "011",
-            "strength": "10MG/0.1ML",
-            "dosage_form": "Injection",
-            "route": "Subcutaneous",
-            "presentation": "Pre-Filled Syringe",
-            "marketing_status": "Rx",
-            "licensure": "Licensed",
-            "approval_date": "2017-04-28",
-            "submission_type": "Supplement",
-            "supplement_number": "402"
-          }
-        ],
-        "first_approval_date": "2002-12-31",
-        "date_of_first_licensure": null,
-        "reference_product_exclusivity_expiration": null,
-        "exclusivity_expiration_date": null,
-        "first_interchangeable_exclusivity_expiration": null,
-        "orphan_exclusivity_expiration": "2028-02-24",
-        "patent_list_provided": true,
-        "biosimilars": [
-          {
-            "proper_name": "adalimumab-atto",
-            "proprietary_name": "Amjevita",
-            "bla_number": "761024",
-            "applicant": "Amgen Inc.",
-            "approval_date": "2016-09-23",
-            "license_type": "351(k)",
-            "interchangeable_approval_date": "2024-08-20"
-          },
-          {
-            "proper_name": "adalimumab-adbm",
-            "proprietary_name": "Cyltezo",
-            "bla_number": "761058",
-            "applicant": "Boehringer Ingelheim Pharmaceuticals, Inc.",
-            "approval_date": "2024-04-30",
-            "license_type": "351(k)",
-            "interchangeable_approval_date": "2025-05-20"
-          },
-          {
-            "proper_name": "adalimumab-bwwd",
-            "proprietary_name": "Hadlima",
-            "bla_number": "761059",
-            "applicant": "Samsung Bioepis Co., Ltd.",
-            "approval_date": "2022-08-15",
-            "license_type": "351(k)",
-            "interchangeable_approval_date": "2025-05-20"
-          },
-          {
-            "proper_name": "adalimumab-adaz",
-            "proprietary_name": "Hyrimoz",
-            "bla_number": "761071",
-            "applicant": "Sandoz Inc.",
-            "approval_date": "2023-03-20",
-            "license_type": "351(k)",
-            "interchangeable_approval_date": "2024-04-05"
-          },
-          {
-            "proper_name": "adalimumab-afzb",
-            "proprietary_name": "Abrilada",
-            "bla_number": "761118",
-            "applicant": "Pfizer Inc.",
-            "approval_date": "2019-11-15",
-            "license_type": "351(k)",
-            "interchangeable_approval_date": "2023-10-04"
-          },
-          {
-            "proper_name": "adalimumab-fkjp",
-            "proprietary_name": "Hulio",
-            "bla_number": "761154",
-            "applicant": "Biocon Biologics Inc.",
-            "approval_date": "2020-07-06",
-            "license_type": "351(k)",
-            "interchangeable_approval_date": "2025-02-05"
-          },
-          {
-            "proper_name": "adalimumab-aqvh",
-            "proprietary_name": "Yusimry",
-            "bla_number": "761216",
-            "applicant": "Emerge Bioscience Pte. Ltd.",
-            "approval_date": "2023-02-27",
-            "license_type": "351(k)",
-            "interchangeable_approval_date": null
-          },
-          {
-            "proper_name": "adalimumab-aaty",
-            "proprietary_name": "Yuflyma",
-            "bla_number": "761219",
-            "applicant": "CELLTRION, Inc.",
-            "approval_date": "2023-05-23",
-            "license_type": "351(k)",
-            "interchangeable_approval_date": "2025-05-20"
-          },
-          {
-            "proper_name": "adalimumab-aacf",
-            "proprietary_name": "Idacio",
-            "bla_number": "761255",
-            "applicant": "Fresenius Kabi USA, LLC",
-            "approval_date": "2022-12-13",
-            "license_type": "351(k)",
-            "interchangeable_approval_date": null
-          },
-          {
-            "proper_name": "adalimumab-ryvk",
-            "proprietary_name": "Simlandi",
-            "bla_number": "761299",
-            "applicant": "Alvotech USA Inc.",
-            "approval_date": "2024-06-26",
-            "license_type": "351(k)",
-            "interchangeable_approval_date": "2024-06-26"
-          }
-        ],
-        "data_file_month": null
+        "drug": "Adalimumab",
+        "application_number": null
       },
-      "source_type": "purple_book",
-      "source_url": "https://purplebooksearch.fda.gov/index.cfm?event=advancedsearch",
-      "source_excerpt": "purplebooksearch.fda.gov live search table, BLA 125057 (Humira), 10 biosimilar(s) on file",
-      "extracted_by": "fetch_purple_book.py (purplebooksearch.fda.gov live search table, raw staging pass)",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     }
   },
   "results": {
     "arms": {
       "value": [
         {
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "label": "Placebo",
           "role": "placebo",
+          "analysis_population": "full_analysis_set",
           "intervention_names": [
             "placebo"
           ],
@@ -1551,9 +1016,62 @@
           "randomized_n": 154
         },
         {
-          "arm_id": "OG001",
+          "arm_id": "OG000#2",
+          "label": "Placebo - Baseline Hurley Stage II",
+          "role": "placebo",
+          "analysis_population": "full_analysis_set",
+          "intervention_names": [
+            "placebo"
+          ],
+          "dose_value": null,
+          "dose_unit": null,
+          "frequency": null,
+          "randomized_n": 154
+        },
+        {
+          "arm_id": "OG000#3",
+          "label": "Placebo - Baseline NRS at Worst ≥ 3",
+          "role": "placebo",
+          "analysis_population": "full_analysis_set",
+          "intervention_names": [
+            "placebo"
+          ],
+          "dose_value": null,
+          "dose_unit": null,
+          "frequency": null,
+          "randomized_n": 154
+        },
+        {
+          "arm_id": "OG001#full_analysis_set",
           "label": "Adalimumab Every Week (EW)",
           "role": "investigational",
+          "analysis_population": "full_analysis_set",
+          "intervention_names": [
+            "adalimumab"
+          ],
+          "dose_value": null,
+          "dose_unit": null,
+          "frequency": null,
+          "randomized_n": 153
+        },
+        {
+          "arm_id": "OG001#2",
+          "label": "Adalimumab Every Week (EW) - Baseline Hurley Stage II",
+          "role": "investigational",
+          "analysis_population": "full_analysis_set",
+          "intervention_names": [
+            "adalimumab"
+          ],
+          "dose_value": null,
+          "dose_unit": null,
+          "frequency": null,
+          "randomized_n": 153
+        },
+        {
+          "arm_id": "OG001#3",
+          "label": "Adalimumab Every Week (EW) - Baseline NRS at Worst ≥ 3",
+          "role": "investigational",
+          "analysis_population": "full_analysis_set",
           "intervention_names": [
             "adalimumab"
           ],
@@ -1566,6 +1084,7 @@
           "arm_id": "OG002",
           "label": "Placebo - Baseline Hurley Stage II",
           "role": "placebo",
+          "analysis_population": "full_analysis_set",
           "intervention_names": [
             "placebo"
           ],
@@ -1578,6 +1097,7 @@
           "arm_id": "OG003",
           "label": "Placebo - Baseline Hurley Stage III",
           "role": "placebo",
+          "analysis_population": "full_analysis_set",
           "intervention_names": [
             "placebo"
           ],
@@ -1590,6 +1110,7 @@
           "arm_id": "OG004",
           "label": "Adalimumab Every Week (EW) - Baseline Hurley Stage II",
           "role": "investigational",
+          "analysis_population": "full_analysis_set",
           "intervention_names": [
             "adalimumab"
           ],
@@ -1602,6 +1123,7 @@
           "arm_id": "OG005",
           "label": "Adalimumab Every Week (ew) - Baseline Hurley Stage III",
           "role": "investigational",
+          "analysis_population": "full_analysis_set",
           "intervention_names": [
             "adalimumab"
           ],
@@ -1609,60 +1131,12 @@
           "dose_unit": null,
           "frequency": null,
           "randomized_n": null
-        },
-        {
-          "arm_id": "OG000",
-          "label": "Placebo - Baseline Hurley Stage II",
-          "role": "placebo",
-          "intervention_names": [
-            "placebo"
-          ],
-          "dose_value": null,
-          "dose_unit": null,
-          "frequency": null,
-          "randomized_n": 154
-        },
-        {
-          "arm_id": "OG001",
-          "label": "Adalimumab Every Week (EW) - Baseline Hurley Stage II",
-          "role": "investigational",
-          "intervention_names": [
-            "adalimumab"
-          ],
-          "dose_value": null,
-          "dose_unit": null,
-          "frequency": null,
-          "randomized_n": 153
-        },
-        {
-          "arm_id": "OG000",
-          "label": "Placebo - Baseline NRS at Worst ≥ 3",
-          "role": "placebo",
-          "intervention_names": [
-            "placebo"
-          ],
-          "dose_value": null,
-          "dose_unit": null,
-          "frequency": null,
-          "randomized_n": 154
-        },
-        {
-          "arm_id": "OG001",
-          "label": "Adalimumab Every Week (EW) - Baseline NRS at Worst ≥ 3",
-          "role": "investigational",
-          "intervention_names": [
-            "adalimumab"
-          ],
-          "dose_value": null,
-          "dose_unit": null,
-          "frequency": null,
-          "randomized_n": 153
         }
       ],
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01468207",
       "source_excerpt": "resultsSection.outcomeMeasuresModule.outcomeMeasures[].groups[]",
-      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3, 2026-09-06)",
+      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3 backfill re-run)",
       "reviewed_by": null,
       "confidence": 1.0
     },
@@ -1674,7 +1148,7 @@
             "position": 1,
             "verbatim_sha1": "8fd6cdf3f518e4125548ee194f988724ee0b3679"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -1702,7 +1176,7 @@
             "position": 1,
             "verbatim_sha1": "8fd6cdf3f518e4125548ee194f988724ee0b3679"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -1842,7 +1316,7 @@
             "position": 1,
             "verbatim_sha1": "3a00c113d36406fbeda30c9d83f0611830c26589"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -1870,7 +1344,7 @@
             "position": 1,
             "verbatim_sha1": "3a00c113d36406fbeda30c9d83f0611830c26589"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#2",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -1898,7 +1372,7 @@
             "position": 2,
             "verbatim_sha1": "f4050cfe22c13ab0795373adb1582c59a0454082"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#3",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -1926,7 +1400,7 @@
             "position": 2,
             "verbatim_sha1": "f4050cfe22c13ab0795373adb1582c59a0454082"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#3",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -1954,7 +1428,7 @@
             "position": 3,
             "verbatim_sha1": "99bb95d3d72962392f906599a54c5e7630fb079b"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -1982,7 +1456,7 @@
             "position": 3,
             "verbatim_sha1": "99bb95d3d72962392f906599a54c5e7630fb079b"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -2008,7 +1482,7 @@
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01468207",
       "source_excerpt": "resultsSection.outcomeMeasuresModule.outcomeMeasures[].{denoms,classes[].categories[].measurements[]}",
-      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3, 2026-09-06)",
+      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3 backfill re-run)",
       "reviewed_by": null,
       "confidence": 1.0
     },
@@ -2025,8 +1499,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#full_analysis_set",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "mean_difference",
           "effect_type_verbatim": "Adjusted mean difference",
@@ -2054,8 +1528,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG002",
-          "reference_arm_id": "OG004",
+          "test_arm_id": "OG004",
+          "reference_arm_id": "OG002",
           "comparison_kind": "superiority",
           "effect_type": "mean_difference",
           "effect_type_verbatim": "Mean Difference (Final Values)",
@@ -2083,8 +1557,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG003",
-          "reference_arm_id": "OG005",
+          "test_arm_id": "OG005",
+          "reference_arm_id": "OG003",
           "comparison_kind": "superiority",
           "effect_type": "mean_difference",
           "effect_type_verbatim": "Mean Difference (Final Values)",
@@ -2112,8 +1586,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#2",
+          "reference_arm_id": "OG000#2",
           "comparison_kind": "superiority",
           "effect_type": "mean_difference",
           "effect_type_verbatim": "Mean Difference (Final Values)",
@@ -2141,8 +1615,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#3",
+          "reference_arm_id": "OG000#3",
           "comparison_kind": "superiority",
           "effect_type": "mean_difference",
           "effect_type_verbatim": "Adjusted mean difference",
@@ -2170,8 +1644,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#full_analysis_set",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
           "effect_type_verbatim": "LS mean difference",
@@ -2192,7 +1666,7 @@
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01468207",
       "source_excerpt": "resultsSection.outcomeMeasuresModule.outcomeMeasures[].analyses[]",
-      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3, 2026-09-06)",
+      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3 backfill re-run)",
       "reviewed_by": null,
       "confidence": 1.0
     },

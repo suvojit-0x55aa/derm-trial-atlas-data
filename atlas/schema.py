@@ -1,9 +1,10 @@
 """
-The v3 trial-record schema: one declarative spec, used three ways --
+The v4 trial-record schema (TRIAL) plus the v4 drug-record schema (DRUG):
+one declarative spec, used three ways --
 
-  * validate(record)      -> list of "path: problem" strings (empty = valid)
-  * to_json_schema()      -> JSON Schema (draft-07) for external consumers
-  * FIELD_DOCS            -> every sourced-value field path with its type, for docs/SCHEMA.md
+  * validate(record, spec=TRIAL|DRUG)  -> list of "path: problem" strings (empty = valid)
+  * to_json_schema()                   -> JSON Schema (draft-07) for external consumers
+  * FIELD_DOCS                         -> every sourced-value field path with its type, for docs/SCHEMA.md
 
 Spec nodes are plain dicts:
   {"type": "string"|"integer"|"number"|"boolean"|"date"|"array"|"object"|"any",
@@ -11,6 +12,12 @@ Spec nodes are plain dicts:
    "description": str}
 Objects are strict: keys not in "properties" are errors, and every declared
 key must be present (so a consumer can rely on the shape).
+
+DRUG is new in v4: a drug's cross-indication facts (mechanism_of_action,
+boxed_warning, faers_summary, regulatory_application/orange_book/purple_book)
+now live once on data/drugs/<slug>.json, referenced by every trial of that
+drug via a DRUG_REF pointer instead of re-described on each trial record --
+see atlas/drugs.py.
 """
 import re
 
@@ -31,6 +38,7 @@ from .sources.purple_book import LICENSE_TYPES
 SOURCE_TYPES = (
     "ctgov_api", "ctgov_text_extraction", "protocol_pdf_extraction", "publication_extraction",
     "openfda_label", "openfda_faers", "orange_book", "purple_book", "needs_extraction",
+    "drug_level_ref",
 )
 
 
@@ -259,6 +267,47 @@ REG_APP = OBJ({
     "center": STR(True), "proprietary_name": STR(True), "applicant": STR(True), "first_approval_date": DATE(True),
 })
 
+# ---- drug-level records (schema v4) ----------------------------------------------
+# mechanism_of_action, boxed_warning, faers_summary, and regulatory_application/
+# exclusivity are facts about the DRUG, not the trial: extracted once per drug and
+# referenced (not copied) by every trial of that drug -- see atlas/drugs.py. A
+# trial's own copy of one of these fields is a DRUG_REF pointer instead of the
+# full sourced value; `identity.sponsor` stays trial-level on purpose (AGENTS.md:
+# it genuinely differs across a drug's own trials when development/commercial
+# rights changed hands mid-program -- Dupilumab splits Regeneron/Sanofi,
+# Difamilast splits two Otsuka legal entities -- so collapsing it to one
+# drug-wide value would be a real loss, not a dedup).
+DRUG_REF = OBJ({
+    "drug": STR(False, "drug record key; joins to data/drugs/<slug>.json's own `drug` field"),
+    "application_number": STR(True, "disambiguates when the drug has more than one FDA application "
+                              "(e.g. Roflumilast's cream NDA 215985 vs. foam NDA 217242); null for a "
+                              "single-application drug, or for a field with no per-application variance "
+                              "(mechanism_of_action, boxed_warning, faers_summary, purple_book)"),
+}, d="Pointer to a drug-level fact on data/drugs/<slug>.json instead of re-describing it here")
+
+DRUG_SCHEMA_VERSION = 1
+
+DRUG_APPLICATION = OBJ({
+    "application_number": STR(True, "null only when regulatory_application itself is needs_extraction"),
+    "regulatory_application": SV(REG_APP, "NDA/BLA join key for Orange/Purple Book"),
+    "orange_book": SV(ORANGE_BOOK, "Orange Book patents + exclusivities (small-molecule NDAs only)"),
+}, d="One FDA application this drug holds")
+
+DRUG = OBJ({
+    "schema_version": S("integer", False, "always 1", const=DRUG_SCHEMA_VERSION),
+    "drug": S("string", False, "canonical drug name; joins molecule.drug on every trial of this drug"),
+    "mechanism_of_action": SV(MECHANISM, "typed mechanism from the FDA label section 12.1; label text in source_excerpt"),
+    "boxed_warning": SV(BOXED_WARNING, "typed boxed warning; present=false is a confirmed absence"),
+    "faers_summary": SV(FAERS_SUMMARY, "openFDA FAERS post-marketing report summary"),
+    "applications": LIST(DRUG_APPLICATION, d="one entry per distinct FDA application this drug holds "
+                          "-- almost always exactly 1; Roflumilast is the one drug in this corpus with "
+                          "2 (cream NDA 215985, foam NDA 217242)"),
+    "purple_book": SV(PURPLE_BOOK, "Purple Book licensure + BPCIA exclusivity (biologic BLAs only)"),
+    "trial_ids": LIST(STR(), d="NCT ids of every trial of this drug in this atlas -- informational "
+                       "back-reference, not authoritative (data/trials/*.json's molecule.drug is)"),
+}, d="One drug's cross-indication facts, extracted once and referenced (not copied) by every trial "
+     "of this drug -- see atlas/drugs.py")
+
 
 # ---- results layer (schema v3) --------------------------------------------------
 # CT.gov's outcome-measure paramType IS a controlled vocabulary -- reuse it verbatim.
@@ -299,10 +348,17 @@ PVALUE = OBJ({
 }, d="P-value as bound + value; reuses the ScoreCriterion comparator idiom")
 
 ARM = OBJ({
-    "arm_id": STR(False, "CT.gov results group id (OG000); unique within this trial"),
+    "arm_id": STR(False, "CT.gov results group id (OG000), disambiguated when CT.gov reuses it for "
+                         "a genuinely different arm in another outcome measure: "
+                         "'{raw_id}#{analysis_population}', or '{raw_id}#2', '{raw_id}#3', ... when "
+                         "the reused id's OMs share the same analysis_population too. Unique "
+                         "within this trial; an id with no collision is left exactly as CT.gov "
+                         "wrote it -- see atlas.results.build_arm_id_map"),
     "label": STR(False, "CT.gov results group title, verbatim"),
     "role": ENUM(ARM_ROLES, d="curated; CT.gov armGroups[].type is unreliable -- a trial can "
                               "label its own placebo arm EXPERIMENTAL"),
+    "analysis_population": ENUM(POPULATIONS, True, "the outcome measure this arm entry was first "
+                                "seen in; the disambiguator baked into arm_id when it collided"),
     "intervention_names": LIST(STR(), d="join to molecule.dosing_regimen[].intervention_name"),
     "dose_value": NUM(True), "dose_unit": STR(True),
     "frequency": ENUM(FREQUENCIES, True),
@@ -348,19 +404,21 @@ EFFECT_ESTIMATE = OBJ({
 
 # ---- the trial record ----------------------------------------------------------
 TRIAL = OBJ({
-    "schema_version": S("integer", False, "always 3", const=SCHEMA_VERSION),
+    "schema_version": S("integer", False, "always 4", const=SCHEMA_VERSION),
     "nct_id": SV(STR(), "ClinicalTrials.gov identifier"),
     "identity": OBJ({
         "trial_name": SV(STR(), "CT.gov acronym (null when the registry has none)"),
         "official_title": SV(STR(), "CT.gov official title"),
-        "sponsor": SV(STR(), "lead sponsor name"),
+        "sponsor": SV(STR(), "lead sponsor name (trial-level: can differ across a drug's own "
+                             "trials when development/commercial rights changed hands -- not "
+                             "moved to the drug record, see DRUG_REF's docstring)"),
         "phase": SV(LIST(STR()), "CT.gov phases, e.g. ['PHASE3']"),
     }),
     "molecule": OBJ({
-        "drug": SV(STR(), "canonical drug name (curated)"),
+        "drug": SV(STR(), "canonical drug name (curated); also the join key into data/drugs/<slug>.json"),
         "intervention_names": SV(LIST(STR()), "CT.gov intervention names"),
         "intervention_type": SV(LIST(STR()), "CT.gov intervention types"),
-        "mechanism_of_action": SV(MECHANISM, "typed mechanism from the FDA label section 12.1; label text in source_excerpt"),
+        "mechanism_of_action": SV(DRUG_REF, "drug-level fact -- see data/drugs/<slug>.json's own mechanism_of_action"),
         "dosing_regimen": SV(LIST(INTERVENTION), "one typed object per CT.gov intervention"),
     }),
     "population": OBJ({
@@ -396,15 +454,17 @@ TRIAL = OBJ({
         "death_rate": SV(LIST(ARM_RATE), "per-arm death rate from CT.gov results"),
         "most_common_adverse_events": SV(LIST(AE_TERM), "top non-serious AEs by MedDRA PT with per-arm rates"),
         "discontinuation_due_to_ae_rate": SV(LIST(ARM_DISC), "per-arm discontinuation-for-AE rate"),
-        "boxed_warning": SV(BOXED_WARNING, "typed boxed warning; present=false is a confirmed absence"),
+        "boxed_warning": SV(DRUG_REF, "drug-level fact -- see data/drugs/<slug>.json's own boxed_warning"),
     }),
     "real_world_safety": OBJ({
-        "faers_summary": SV(FAERS_SUMMARY, "openFDA FAERS post-marketing report summary (drug-level)"),
+        "faers_summary": SV(DRUG_REF, "drug-level fact -- see data/drugs/<slug>.json's own faers_summary"),
     }),
     "exclusivity": OBJ({
-        "regulatory_application": SV(REG_APP, "NDA/BLA join key for Orange/Purple Book (drug-level)"),
-        "orange_book": SV(ORANGE_BOOK, "Orange Book patents + exclusivities (small-molecule NDAs only)"),
-        "purple_book": SV(PURPLE_BOOK, "Purple Book licensure + BPCIA exclusivity (biologic BLAs only)"),
+        "regulatory_application": SV(DRUG_REF, "drug-level fact, keyed by application_number -- see "
+                                     "data/drugs/<slug>.json's own applications[].regulatory_application"),
+        "orange_book": SV(DRUG_REF, "drug-level fact, keyed by application_number -- see "
+                          "data/drugs/<slug>.json's own applications[].orange_book"),
+        "purple_book": SV(DRUG_REF, "drug-level fact -- see data/drugs/<slug>.json's own purple_book"),
     }),
     "results": OBJ({
         "arms": SV(LIST(ARM), "per-trial arm registry from CT.gov results groups, role-classified"),
@@ -500,7 +560,10 @@ def to_json_schema(spec=TRIAL):
         node["description"] = spec["description"]
     if spec is TRIAL:
         node = {"$schema": "http://json-schema.org/draft-07/schema#",
-                "title": "Open Derm Trial Atlas trial record (schema v2)", **node}
+                "title": f"Open Derm Trial Atlas trial record (schema v{SCHEMA_VERSION})", **node}
+    elif spec is DRUG:
+        node = {"$schema": "http://json-schema.org/draft-07/schema#",
+                "title": f"Open Derm Trial Atlas drug record (schema v{DRUG_SCHEMA_VERSION})", **node}
     return node
 
 

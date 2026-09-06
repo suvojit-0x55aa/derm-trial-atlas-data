@@ -1,5 +1,5 @@
 {
-  "schema_version": 3,
+  "schema_version": 4,
   "nct_id": {
     "value": "NCT03624127",
     "source_type": "ctgov_api",
@@ -86,25 +86,15 @@
     },
     "mechanism_of_action": {
       "value": {
-        "modality": "other",
-        "drug_class": null,
-        "antibody_isotype": null,
-        "binding_targets": [],
-        "pathway_cytokines": [],
-        "receptor_subunits": [],
-        "kinases_inhibited": [],
-        "lower_potency_kinases": [],
-        "selectivity": [],
-        "reversible": null,
-        "mechanism_established": false,
-        "label_section": "12.1"
+        "drug": "Deucravacitinib",
+        "application_number": null
       },
-      "source_type": "openfda_label",
-      "source_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=73204bef-9921-40ed-9230-ba35953c99c4",
-      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1) -- v1 extracted text: 12.1 Mechanism of Action Deucravacitinib is an inhibitor of tyrosine kinase 2 (TYK2). TYK2 is a member of the Janus kinase (JAK) family. Deucravacitinib binds to the regulatory domain of TYK2, stabilizing an inhibitory interaction between the regulatory and the catalytic domains of the enzyme. This results in allosteric inhibition of receptor-mediated activation of TYK2 and its downstream activation of Signal Transducers and Activators of Transcription (STATs) as shown in cell-based assays. JAK kinases, including TYK2, function as pairs of homo- or heterodimers in the JAK-STAT pathways. TYK2 pairs with JAK1 to mediate multiple cytokine pathways and also pairs with JAK2 to transmit signals as shown in cell-based assays. The precise mechanism linking inhibition of TYK2 enzyme to treatment of moderate-to-severe plaque psoriasis or active psoriatric arthritis is not currently known.",
-      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA); structured by atlas.migrate v1->v2",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 0.9
+      "confidence": null
     },
     "dosing_regimen": {
       "value": [
@@ -1437,364 +1427,62 @@
     },
     "boxed_warning": {
       "value": {
-        "present": false,
-        "title": null,
-        "warning_categories": [],
-        "referenced_label_sections": [],
-        "product_names": []
+        "drug": "Deucravacitinib",
+        "application_number": null
       },
-      "source_type": "openfda_label",
-      "source_url": "https://api.fda.gov/drug/label.json?search=openfda.substance_name:DEUCRAVACITINIB&limit=1",
-      "source_excerpt": "results[0] has no boxed_warning key (checked, none present)",
-      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass); structured by atlas.migrate v1->v2",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     }
   },
   "real_world_safety": {
     "faers_summary": {
       "value": {
-        "query": {
-          "search_field": "patient.drug.medicinalproduct",
-          "search_term": "DEUCRAVACITINIB",
-          "receivedate_from": "2019-08-19",
-          "receivedate_to": "2026-06-30",
-          "api_urls": [
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"DEUCRAVACITINIB\"&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"DEUCRAVACITINIB\"+AND+serious:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"DEUCRAVACITINIB\"+AND+seriousnessdeath:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"DEUCRAVACITINIB\"+AND+seriousnesshospitalization:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"DEUCRAVACITINIB\"+AND+seriousnesslifethreatening:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"DEUCRAVACITINIB\"+AND+seriousnessdisabling:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"DEUCRAVACITINIB\"&count=patient.reaction.reactionmeddrapt.exact&limit=15",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"DEUCRAVACITINIB\"+AND+serious:1&count=patient.reaction.reactionmeddrapt.exact&limit=15",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"DEUCRAVACITINIB\"&count=receivedate"
-          ],
-          "data_last_updated": "2026-07-30"
-        },
-        "total_reports": 98,
-        "serious_reports": 56,
-        "death_reports": 2,
-        "hospitalization_reports": 23,
-        "life_threatening_reports": 2,
-        "disability_reports": 0,
-        "top_reactions": [
-          {
-            "meddra_pt": "DRUG INEFFECTIVE",
-            "report_count": 17,
-            "pct_of_reports": 17.35
-          },
-          {
-            "meddra_pt": "OFF LABEL USE",
-            "report_count": 15,
-            "pct_of_reports": 15.31
-          },
-          {
-            "meddra_pt": "NAUSEA",
-            "report_count": 10,
-            "pct_of_reports": 10.2
-          },
-          {
-            "meddra_pt": "PSORIATIC ARTHROPATHY",
-            "report_count": 9,
-            "pct_of_reports": 9.18
-          },
-          {
-            "meddra_pt": "ACNE",
-            "report_count": 8,
-            "pct_of_reports": 8.16
-          },
-          {
-            "meddra_pt": "PUSTULAR PSORIASIS",
-            "report_count": 8,
-            "pct_of_reports": 8.16
-          },
-          {
-            "meddra_pt": "PYREXIA",
-            "report_count": 8,
-            "pct_of_reports": 8.16
-          },
-          {
-            "meddra_pt": "THERAPEUTIC PRODUCT EFFECT INCOMPLETE",
-            "report_count": 8,
-            "pct_of_reports": 8.16
-          },
-          {
-            "meddra_pt": "ARTHRITIS",
-            "report_count": 7,
-            "pct_of_reports": 7.14
-          },
-          {
-            "meddra_pt": "BREAST SWELLING",
-            "report_count": 7,
-            "pct_of_reports": 7.14
-          },
-          {
-            "meddra_pt": "DERMATITIS EXFOLIATIVE GENERALISED",
-            "report_count": 7,
-            "pct_of_reports": 7.14
-          },
-          {
-            "meddra_pt": "HEADACHE",
-            "report_count": 7,
-            "pct_of_reports": 7.14
-          },
-          {
-            "meddra_pt": "INFLAMMATORY PAIN",
-            "report_count": 7,
-            "pct_of_reports": 7.14
-          },
-          {
-            "meddra_pt": "LIVER DISORDER",
-            "report_count": 7,
-            "pct_of_reports": 7.14
-          },
-          {
-            "meddra_pt": "PSORIASIS AREA SEVERITY INDEX INCREASED",
-            "report_count": 7,
-            "pct_of_reports": 7.14
-          }
-        ],
-        "top_serious_reactions": [
-          {
-            "meddra_pt": "DRUG INEFFECTIVE",
-            "report_count": 9,
-            "pct_of_reports": 16.07
-          },
-          {
-            "meddra_pt": "NAUSEA",
-            "report_count": 9,
-            "pct_of_reports": 16.07
-          },
-          {
-            "meddra_pt": "PSORIATIC ARTHROPATHY",
-            "report_count": 9,
-            "pct_of_reports": 16.07
-          },
-          {
-            "meddra_pt": "PUSTULAR PSORIASIS",
-            "report_count": 8,
-            "pct_of_reports": 14.29
-          },
-          {
-            "meddra_pt": "PYREXIA",
-            "report_count": 8,
-            "pct_of_reports": 14.29
-          },
-          {
-            "meddra_pt": "THERAPEUTIC PRODUCT EFFECT INCOMPLETE",
-            "report_count": 8,
-            "pct_of_reports": 14.29
-          },
-          {
-            "meddra_pt": "ARTHRITIS",
-            "report_count": 7,
-            "pct_of_reports": 12.5
-          },
-          {
-            "meddra_pt": "BREAST SWELLING",
-            "report_count": 7,
-            "pct_of_reports": 12.5
-          },
-          {
-            "meddra_pt": "DERMATITIS EXFOLIATIVE GENERALISED",
-            "report_count": 7,
-            "pct_of_reports": 12.5
-          },
-          {
-            "meddra_pt": "HEADACHE",
-            "report_count": 7,
-            "pct_of_reports": 12.5
-          },
-          {
-            "meddra_pt": "INFLAMMATORY PAIN",
-            "report_count": 7,
-            "pct_of_reports": 12.5
-          },
-          {
-            "meddra_pt": "LIVER DISORDER",
-            "report_count": 7,
-            "pct_of_reports": 12.5
-          },
-          {
-            "meddra_pt": "PSORIASIS AREA SEVERITY INDEX INCREASED",
-            "report_count": 7,
-            "pct_of_reports": 12.5
-          },
-          {
-            "meddra_pt": "SACROILIITIS",
-            "report_count": 7,
-            "pct_of_reports": 12.5
-          },
-          {
-            "meddra_pt": "SKIN STRIAE",
-            "report_count": 7,
-            "pct_of_reports": 12.5
-          }
-        ],
-        "reports_by_year": [
-          {
-            "year": 2019,
-            "report_count": 3
-          },
-          {
-            "year": 2020,
-            "report_count": 1
-          },
-          {
-            "year": 2021,
-            "report_count": 1
-          },
-          {
-            "year": 2022,
-            "report_count": 4
-          },
-          {
-            "year": 2023,
-            "report_count": 22
-          },
-          {
-            "year": 2024,
-            "report_count": 22
-          },
-          {
-            "year": 2025,
-            "report_count": 29
-          },
-          {
-            "year": 2026,
-            "report_count": 16
-          }
-        ],
-        "meddra_version": null
+        "drug": "Deucravacitinib",
+        "application_number": null
       },
-      "source_type": "openfda_faers",
-      "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"DEUCRAVACITINIB\"&limit=1",
-      "source_excerpt": "openFDA drug/event.json aggregate: total_reports=98, serious=56, deaths=2",
-      "extracted_by": "fetch_faers.py (openfda drug/event.json, v2 pass)",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     }
   },
   "exclusivity": {
     "regulatory_application": {
       "value": {
-        "application_type": "NDA",
-        "application_number": "214958",
-        "registry": "orange_book",
-        "center": "CDER",
-        "proprietary_name": "SOTYKTU",
-        "applicant": "BRISTOL MYERS SQUIBB CO",
-        "first_approval_date": "2022-09-09"
+        "drug": "Deucravacitinib",
+        "application_number": "214958"
       },
-      "source_type": "orange_book",
-      "source_url": "https://api.fda.gov/drug/orangebook.json",
-      "source_excerpt": "openFDA drug/orangebook.json: DEUCRAVACITINIB application N214958, brand SOTYKTU, applicant BRISTOL, approved 2022-09-09",
-      "extracted_by": "atlas.regulatory_applications (registry file fetched 2026-09-05)",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     },
     "orange_book": {
       "value": {
-        "application_type": "N",
-        "application_number": "214958",
-        "ingredient": "DEUCRAVACITINIB",
-        "trade_name": "SOTYKTU",
-        "applicant": "BRISTOL",
-        "applicant_full_name": "BRISTOL MYERS SQUIBB CO",
-        "products": [
-          {
-            "product_number": "001",
-            "strength": "6MG",
-            "dosage_form": "TABLET",
-            "route": "ORAL",
-            "approval_date": "2022-09-09",
-            "rld": true,
-            "rs": true,
-            "te_code": null,
-            "marketing_type": "HUMAN PRESCRIPTION DRUG"
-          }
-        ],
-        "patents": [
-          {
-            "patent_number": "10000480",
-            "expiration_date": "2033-11-07",
-            "drug_substance_claim": true,
-            "drug_product_claim": true,
-            "patent_use_code": null,
-            "delisted": false,
-            "submission_date": "2022-10-04",
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "patent_number": "11021475",
-            "expiration_date": "2033-11-07",
-            "drug_substance_claim": false,
-            "drug_product_claim": false,
-            "patent_use_code": "U-3434",
-            "delisted": false,
-            "submission_date": "2022-10-04",
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "patent_number": "RE47929",
-            "expiration_date": "2033-11-07",
-            "drug_substance_claim": true,
-            "drug_product_claim": true,
-            "patent_use_code": "U-3434",
-            "delisted": false,
-            "submission_date": "2022-10-04",
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "patent_number": "12521390",
-            "expiration_date": "2043-02-11",
-            "drug_substance_claim": false,
-            "drug_product_claim": true,
-            "patent_use_code": "U-4451",
-            "delisted": false,
-            "submission_date": "2026-02-09",
-            "product_numbers": [
-              "001"
-            ]
-          }
-        ],
-        "exclusivities": [
-          {
-            "code": "NCE",
-            "expiration_date": "2027-09-09",
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "code": "I-986",
-            "expiration_date": "2029-03-06",
-            "product_numbers": [
-              "001"
-            ]
-          }
-        ],
-        "latest_patent_expiration": "2043-02-11",
-        "latest_exclusivity_expiration": "2029-03-06",
-        "data_file_date": null
+        "drug": "Deucravacitinib",
+        "application_number": "214958"
       },
-      "source_type": "orange_book",
-      "source_url": "https://api.fda.gov/drug/orangebook.json?search=products.active_ingredients.name%3A%22DEUCRAVACITINIB%22&limit=100",
-      "source_excerpt": "openFDA drug/orangebook.json, 1 product row(s) matched on products.active_ingredients.name='DEUCRAVACITINIB'",
-      "extracted_by": "fetch_orange_book.py (openfda drug/orangebook.json, v2 pass)",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     },
     "purple_book": {
-      "value": null,
-      "source_type": "needs_extraction",
+      "value": {
+        "drug": "Deucravacitinib",
+        "application_number": null
+      },
+      "source_type": "drug_level_ref",
       "source_url": null,
       "source_excerpt": null,
       "extracted_by": null,
@@ -1809,6 +1497,7 @@
           "arm_id": "OG000",
           "label": "BMS-986165",
           "role": "other",
+          "analysis_population": "full_analysis_set",
           "intervention_names": [
             "BMS-986165"
           ],
@@ -1818,9 +1507,10 @@
           "randomized_n": 332
         },
         {
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "label": "Placebo",
           "role": "placebo",
+          "analysis_population": "full_analysis_set",
           "intervention_names": [
             "Placebo"
           ],
@@ -1830,9 +1520,10 @@
           "randomized_n": 166
         },
         {
-          "arm_id": "OG002",
+          "arm_id": "OG001#2",
           "label": "Apremilast",
           "role": "other",
+          "analysis_population": "full_analysis_set",
           "intervention_names": [
             "Apremilast"
           ],
@@ -1842,9 +1533,10 @@
           "randomized_n": 168
         },
         {
-          "arm_id": "OG001",
+          "arm_id": "OG002",
           "label": "Apremilast",
           "role": "other",
+          "analysis_population": "full_analysis_set",
           "intervention_names": [
             "Apremilast"
           ],
@@ -1857,7 +1549,7 @@
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03624127",
       "source_excerpt": "resultsSection.outcomeMeasuresModule.outcomeMeasures[].groups[]",
-      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3, 2026-09-06)",
+      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3 backfill re-run)",
       "reviewed_by": null,
       "confidence": 1.0
     },
@@ -1882,8 +1574,8 @@
           "reported_value": 178.0,
           "reported_unit": "Participants",
           "responders": 178,
-          "response_rate_pct": null,
-          "rate_is_derived": false,
+          "response_rate_pct": 53.6,
+          "rate_is_derived": true,
           "dispersion_type": null,
           "dispersion_value": null,
           "ci_pct": null,
@@ -1897,7 +1589,7 @@
             "position": 1,
             "verbatim_sha1": "3ebec2cecec17184f8d838593037ce262aaed62e"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -1910,8 +1602,8 @@
           "reported_value": 12.0,
           "reported_unit": "Participants",
           "responders": 12,
-          "response_rate_pct": null,
-          "rate_is_derived": false,
+          "response_rate_pct": 7.2,
+          "rate_is_derived": true,
           "dispersion_type": null,
           "dispersion_value": null,
           "ci_pct": null,
@@ -1938,8 +1630,8 @@
           "reported_value": 194.0,
           "reported_unit": "Participants",
           "responders": 194,
-          "response_rate_pct": null,
-          "rate_is_derived": false,
+          "response_rate_pct": 58.4,
+          "rate_is_derived": true,
           "dispersion_type": null,
           "dispersion_value": null,
           "ci_pct": null,
@@ -1953,7 +1645,7 @@
             "position": 2,
             "verbatim_sha1": "3e76501c59feea8ac704a9c236bd656968079bd7"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -1966,8 +1658,8 @@
           "reported_value": 21.0,
           "reported_unit": "Participants",
           "responders": 21,
-          "response_rate_pct": null,
-          "rate_is_derived": false,
+          "response_rate_pct": 12.7,
+          "rate_is_derived": true,
           "dispersion_type": null,
           "dispersion_value": null,
           "ci_pct": null,
@@ -1994,8 +1686,8 @@
           "reported_value": 118.0,
           "reported_unit": "Participants",
           "responders": 118,
-          "response_rate_pct": null,
-          "rate_is_derived": false,
+          "response_rate_pct": 35.5,
+          "rate_is_derived": true,
           "dispersion_type": null,
           "dispersion_value": null,
           "ci_pct": null,
@@ -2009,7 +1701,7 @@
             "position": 1,
             "verbatim_sha1": "3cbaeaff80fde4f8255deecdedf635161db52bb7"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -2022,8 +1714,8 @@
           "reported_value": 7.0,
           "reported_unit": "Participants",
           "responders": 7,
-          "response_rate_pct": null,
-          "rate_is_derived": false,
+          "response_rate_pct": 4.2,
+          "rate_is_derived": true,
           "dispersion_type": null,
           "dispersion_value": null,
           "ci_pct": null,
@@ -2050,8 +1742,8 @@
           "reported_value": 33.0,
           "reported_unit": "Participants",
           "responders": 33,
-          "response_rate_pct": null,
-          "rate_is_derived": false,
+          "response_rate_pct": 19.6,
+          "rate_is_derived": true,
           "dispersion_type": null,
           "dispersion_value": null,
           "ci_pct": null,
@@ -2078,8 +1770,8 @@
           "reported_value": 47.0,
           "reported_unit": "Participants",
           "responders": 47,
-          "response_rate_pct": null,
-          "rate_is_derived": false,
+          "response_rate_pct": 14.2,
+          "rate_is_derived": true,
           "dispersion_type": null,
           "dispersion_value": null,
           "ci_pct": null,
@@ -2093,7 +1785,7 @@
             "position": 2,
             "verbatim_sha1": "2c56320e8e0c6b04f012f021b1e016a131d1201f"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -2106,8 +1798,8 @@
           "reported_value": 1.0,
           "reported_unit": "Participants",
           "responders": 1,
-          "response_rate_pct": null,
-          "rate_is_derived": false,
+          "response_rate_pct": 0.6,
+          "rate_is_derived": true,
           "dispersion_type": null,
           "dispersion_value": null,
           "ci_pct": null,
@@ -2134,8 +1826,8 @@
           "reported_value": 58.0,
           "reported_unit": "Participants",
           "responders": 58,
-          "response_rate_pct": null,
-          "rate_is_derived": false,
+          "response_rate_pct": 17.5,
+          "rate_is_derived": true,
           "dispersion_type": null,
           "dispersion_value": null,
           "ci_pct": null,
@@ -2149,7 +1841,7 @@
             "position": 3,
             "verbatim_sha1": "9ec7deb024c8448b2dd07dd9556e2396ad119675"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -2162,8 +1854,8 @@
           "reported_value": 1.0,
           "reported_unit": "Participants",
           "responders": 1,
-          "response_rate_pct": null,
-          "rate_is_derived": false,
+          "response_rate_pct": 0.6,
+          "rate_is_derived": true,
           "dispersion_type": null,
           "dispersion_value": null,
           "ci_pct": null,
@@ -2190,8 +1882,8 @@
           "reported_value": 8.0,
           "reported_unit": "Participants",
           "responders": 8,
-          "response_rate_pct": null,
-          "rate_is_derived": false,
+          "response_rate_pct": 4.8,
+          "rate_is_derived": true,
           "dispersion_type": null,
           "dispersion_value": null,
           "ci_pct": null,
@@ -2233,7 +1925,7 @@
             "position": 4,
             "verbatim_sha1": "455347430c682218ae23650661b99b4f769cd470"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#2",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -2274,8 +1966,8 @@
           "reported_value": 24.0,
           "reported_unit": "Participants",
           "responders": 24,
-          "response_rate_pct": null,
-          "rate_is_derived": false,
+          "response_rate_pct": 7.9,
+          "rate_is_derived": true,
           "dispersion_type": null,
           "dispersion_value": null,
           "ci_pct": null,
@@ -2289,7 +1981,7 @@
             "position": 5,
             "verbatim_sha1": "6432d46fe88c6f69a5cf47e98f14714dbd0bd6f3"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -2302,8 +1994,8 @@
           "reported_value": 1.0,
           "reported_unit": "Participants",
           "responders": 1,
-          "response_rate_pct": null,
-          "rate_is_derived": false,
+          "response_rate_pct": 0.7,
+          "rate_is_derived": true,
           "dispersion_type": null,
           "dispersion_value": null,
           "ci_pct": null,
@@ -2330,8 +2022,8 @@
           "reported_value": 7.0,
           "reported_unit": "Participants",
           "responders": 7,
-          "response_rate_pct": null,
-          "rate_is_derived": false,
+          "response_rate_pct": 4.4,
+          "rate_is_derived": true,
           "dispersion_type": null,
           "dispersion_value": null,
           "ci_pct": null,
@@ -2358,8 +2050,8 @@
           "reported_value": 132.0,
           "reported_unit": "Participants",
           "responders": 132,
-          "response_rate_pct": null,
-          "rate_is_derived": false,
+          "response_rate_pct": 41.0,
+          "rate_is_derived": true,
           "dispersion_type": null,
           "dispersion_value": null,
           "ci_pct": null,
@@ -2373,7 +2065,7 @@
             "position": 6,
             "verbatim_sha1": "1747d12a2956a43f6f62e5d3e264e4d032da6ff1"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -2386,8 +2078,8 @@
           "reported_value": 17.0,
           "reported_unit": "Participants",
           "responders": 17,
-          "response_rate_pct": null,
-          "rate_is_derived": false,
+          "response_rate_pct": 10.6,
+          "rate_is_derived": true,
           "dispersion_type": null,
           "dispersion_value": null,
           "ci_pct": null,
@@ -2414,8 +2106,8 @@
           "reported_value": 9.0,
           "reported_unit": "Participants",
           "responders": 9,
-          "response_rate_pct": null,
-          "rate_is_derived": false,
+          "response_rate_pct": 20.9,
+          "rate_is_derived": true,
           "dispersion_type": null,
           "dispersion_value": null,
           "ci_pct": null,
@@ -2429,7 +2121,7 @@
             "position": 7,
             "verbatim_sha1": "831010c25df80bef805e4ae89c82fd48eabfae19"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -2442,8 +2134,8 @@
           "reported_value": 3.0,
           "reported_unit": "Participants",
           "responders": 3,
-          "response_rate_pct": null,
-          "rate_is_derived": false,
+          "response_rate_pct": 8.8,
+          "rate_is_derived": true,
           "dispersion_type": null,
           "dispersion_value": null,
           "ci_pct": null,
@@ -2470,8 +2162,8 @@
           "reported_value": 194.0,
           "reported_unit": "Participants",
           "responders": 194,
-          "response_rate_pct": null,
-          "rate_is_derived": false,
+          "response_rate_pct": 58.4,
+          "rate_is_derived": true,
           "dispersion_type": null,
           "dispersion_value": null,
           "ci_pct": null,
@@ -2485,7 +2177,7 @@
             "position": 8,
             "verbatim_sha1": "354ec1cb2067630141f0e8595501891b6e25387d"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#2",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -2498,8 +2190,8 @@
           "reported_value": 59.0,
           "reported_unit": "Participants",
           "responders": 59,
-          "response_rate_pct": null,
-          "rate_is_derived": false,
+          "response_rate_pct": 35.1,
+          "rate_is_derived": true,
           "dispersion_type": null,
           "dispersion_value": null,
           "ci_pct": null,
@@ -2526,8 +2218,8 @@
           "reported_value": 178.0,
           "reported_unit": "Participants",
           "responders": 178,
-          "response_rate_pct": null,
-          "rate_is_derived": false,
+          "response_rate_pct": 53.6,
+          "rate_is_derived": true,
           "dispersion_type": null,
           "dispersion_value": null,
           "ci_pct": null,
@@ -2541,7 +2233,7 @@
             "position": 9,
             "verbatim_sha1": "1c22d09686ab7a1c3b954a3699970efa31302df6"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#2",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -2554,8 +2246,8 @@
           "reported_value": 54.0,
           "reported_unit": "Participants",
           "responders": 54,
-          "response_rate_pct": null,
-          "rate_is_derived": false,
+          "response_rate_pct": 32.1,
+          "rate_is_derived": true,
           "dispersion_type": null,
           "dispersion_value": null,
           "ci_pct": null,
@@ -2582,8 +2274,8 @@
           "reported_value": 147.0,
           "reported_unit": "Participants",
           "responders": 147,
-          "response_rate_pct": null,
-          "rate_is_derived": false,
+          "response_rate_pct": 70.3,
+          "rate_is_derived": true,
           "dispersion_type": null,
           "dispersion_value": null,
           "ci_pct": null,
@@ -2597,7 +2289,7 @@
             "position": 10,
             "verbatim_sha1": "8009bbbba988fc576d180da7f9ddd790681b4ada"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -2610,8 +2302,8 @@
           "reported_value": 21.0,
           "reported_unit": "Participants",
           "responders": 21,
-          "response_rate_pct": null,
-          "rate_is_derived": false,
+          "response_rate_pct": 17.4,
+          "rate_is_derived": true,
           "dispersion_type": null,
           "dispersion_value": null,
           "ci_pct": null,
@@ -2638,8 +2330,8 @@
           "reported_value": 43.0,
           "reported_unit": "Participants",
           "responders": 43,
-          "response_rate_pct": null,
-          "rate_is_derived": false,
+          "response_rate_pct": 39.1,
+          "rate_is_derived": true,
           "dispersion_type": null,
           "dispersion_value": null,
           "ci_pct": null,
@@ -2666,8 +2358,8 @@
           "reported_value": 195.0,
           "reported_unit": "Participants",
           "responders": 195,
-          "response_rate_pct": null,
-          "rate_is_derived": false,
+          "response_rate_pct": 58.7,
+          "rate_is_derived": true,
           "dispersion_type": null,
           "dispersion_value": null,
           "ci_pct": null,
@@ -2681,7 +2373,7 @@
             "position": 11,
             "verbatim_sha1": "38b507dd4a3a62b86dcbf0d41bea93d62362679c"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#2",
           "timepoint": {
             "value": 24,
             "unit": "week",
@@ -2694,8 +2386,8 @@
           "reported_value": 52.0,
           "reported_unit": "Participants",
           "responders": 52,
-          "response_rate_pct": null,
-          "rate_is_derived": false,
+          "response_rate_pct": 31.0,
+          "rate_is_derived": true,
           "dispersion_type": null,
           "dispersion_value": null,
           "ci_pct": null,
@@ -2722,8 +2414,8 @@
           "reported_value": 230.0,
           "reported_unit": "Participants",
           "responders": 230,
-          "response_rate_pct": null,
-          "rate_is_derived": false,
+          "response_rate_pct": 69.3,
+          "rate_is_derived": true,
           "dispersion_type": null,
           "dispersion_value": null,
           "ci_pct": null,
@@ -2737,7 +2429,7 @@
             "position": 12,
             "verbatim_sha1": "cbd7225242b3d6dde2bc036e38a9138424c87a8b"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#2",
           "timepoint": {
             "value": 24,
             "unit": "week",
@@ -2750,8 +2442,8 @@
           "reported_value": 64.0,
           "reported_unit": "Participants",
           "responders": 64,
-          "response_rate_pct": null,
-          "rate_is_derived": false,
+          "response_rate_pct": 38.1,
+          "rate_is_derived": true,
           "dispersion_type": null,
           "dispersion_value": null,
           "ci_pct": null,
@@ -2778,8 +2470,8 @@
           "reported_value": 140.0,
           "reported_unit": "Participants",
           "responders": 140,
-          "response_rate_pct": null,
-          "rate_is_derived": false,
+          "response_rate_pct": 42.2,
+          "rate_is_derived": true,
           "dispersion_type": null,
           "dispersion_value": null,
           "ci_pct": null,
@@ -2793,7 +2485,7 @@
             "position": 13,
             "verbatim_sha1": "c8694b632871eb9c8a2d9d9ca07678211c8c9ad1"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#2",
           "timepoint": {
             "value": 24,
             "unit": "week",
@@ -2806,8 +2498,8 @@
           "reported_value": 37.0,
           "reported_unit": "Participants",
           "responders": 37,
-          "response_rate_pct": null,
-          "rate_is_derived": false,
+          "response_rate_pct": 22.0,
+          "rate_is_derived": true,
           "dispersion_type": null,
           "dispersion_value": null,
           "ci_pct": null,
@@ -2830,8 +2522,8 @@
           "reported_value": 151.0,
           "reported_unit": "Participants",
           "responders": 151,
-          "response_rate_pct": null,
-          "rate_is_derived": false,
+          "response_rate_pct": 45.5,
+          "rate_is_derived": true,
           "dispersion_type": null,
           "dispersion_value": null,
           "ci_pct": null,
@@ -2845,7 +2537,7 @@
             "position": 14,
             "verbatim_sha1": "0e2ee9b64d83de51b8efec2e77f993644bdf3f79"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#2",
           "timepoint": null,
           "analysis_population": null,
           "study_period": null,
@@ -2854,8 +2546,8 @@
           "reported_value": 37.0,
           "reported_unit": "Participants",
           "responders": 37,
-          "response_rate_pct": null,
-          "rate_is_derived": false,
+          "response_rate_pct": 22.2,
+          "rate_is_derived": true,
           "dispersion_type": null,
           "dispersion_value": null,
           "ci_pct": null,
@@ -2878,8 +2570,8 @@
           "reported_value": 187.0,
           "reported_unit": "Participants",
           "responders": 187,
-          "response_rate_pct": null,
-          "rate_is_derived": false,
+          "response_rate_pct": 56.3,
+          "rate_is_derived": true,
           "dispersion_type": null,
           "dispersion_value": null,
           "ci_pct": null,
@@ -2893,7 +2585,7 @@
             "position": 15,
             "verbatim_sha1": "6bb7cc4c68ae8be5862c2b1fb536112581106e22"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#2",
           "timepoint": null,
           "analysis_population": null,
           "study_period": null,
@@ -2902,8 +2594,8 @@
           "reported_value": 51.0,
           "reported_unit": "Participants",
           "responders": 51,
-          "response_rate_pct": null,
-          "rate_is_derived": false,
+          "response_rate_pct": 30.5,
+          "rate_is_derived": true,
           "dispersion_type": null,
           "dispersion_value": null,
           "ci_pct": null,
@@ -2926,8 +2618,8 @@
           "reported_value": 103.0,
           "reported_unit": "Participants",
           "responders": 103,
-          "response_rate_pct": null,
-          "rate_is_derived": false,
+          "response_rate_pct": 31.0,
+          "rate_is_derived": true,
           "dispersion_type": null,
           "dispersion_value": null,
           "ci_pct": null,
@@ -2941,7 +2633,7 @@
             "position": 16,
             "verbatim_sha1": "899c8a3f1ec8914753aa25e837856dd6aca98904"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#2",
           "timepoint": null,
           "analysis_population": null,
           "study_period": null,
@@ -2950,8 +2642,8 @@
           "reported_value": 26.0,
           "reported_unit": "Participants",
           "responders": 26,
-          "response_rate_pct": null,
-          "rate_is_derived": false,
+          "response_rate_pct": 15.6,
+          "rate_is_derived": true,
           "dispersion_type": null,
           "dispersion_value": null,
           "ci_pct": null,
@@ -2963,7 +2655,7 @@
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03624127",
       "source_excerpt": "resultsSection.outcomeMeasuresModule.outcomeMeasures[].{denoms,classes[].categories[].measurements[]}",
-      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3, 2026-09-06)",
+      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3 backfill re-run)",
       "reviewed_by": null,
       "confidence": 1.0
     },
@@ -2981,7 +2673,7 @@
             "end_value": null
           },
           "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "reference_arm_id": "OG001#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "odds_ratio",
           "effect_type_verbatim": "Odds Ratio (OR)",
@@ -3010,7 +2702,7 @@
             "end_value": null
           },
           "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "reference_arm_id": "OG001#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "odds_ratio",
           "effect_type_verbatim": "Odds Ratio (OR)",
@@ -3039,7 +2731,7 @@
             "end_value": null
           },
           "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "reference_arm_id": "OG001#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "odds_ratio",
           "effect_type_verbatim": "Odds Ratio (OR)",
@@ -3097,7 +2789,7 @@
             "end_value": null
           },
           "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "reference_arm_id": "OG001#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "odds_ratio",
           "effect_type_verbatim": "Odds Ratio (OR)",
@@ -3155,7 +2847,7 @@
             "end_value": null
           },
           "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "reference_arm_id": "OG001#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "odds_ratio",
           "effect_type_verbatim": "Odds Ratio (OR)",
@@ -3184,7 +2876,7 @@
             "end_value": null
           },
           "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "reference_arm_id": "OG001#2",
           "comparison_kind": "superiority",
           "effect_type": "mean_difference",
           "effect_type_verbatim": "Adjusted Mean Difference",
@@ -3213,7 +2905,7 @@
             "end_value": null
           },
           "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "reference_arm_id": "OG001#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "odds_ratio",
           "effect_type_verbatim": "Odds Ratio (OR)",
@@ -3271,7 +2963,7 @@
             "end_value": null
           },
           "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "reference_arm_id": "OG001#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "odds_ratio",
           "effect_type_verbatim": "Odds Ratio (OR)",
@@ -3300,7 +2992,7 @@
             "end_value": null
           },
           "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "reference_arm_id": "OG001#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "odds_ratio",
           "effect_type_verbatim": "Odds Ratio (OR)",
@@ -3329,7 +3021,7 @@
             "end_value": null
           },
           "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "reference_arm_id": "OG001#2",
           "comparison_kind": "superiority",
           "effect_type": "odds_ratio",
           "effect_type_verbatim": "Odds Ratio (OR)",
@@ -3358,7 +3050,7 @@
             "end_value": null
           },
           "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "reference_arm_id": "OG001#2",
           "comparison_kind": "superiority",
           "effect_type": "odds_ratio",
           "effect_type_verbatim": "Odds Ratio (OR)",
@@ -3387,7 +3079,7 @@
             "end_value": null
           },
           "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "reference_arm_id": "OG001#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "odds_ratio",
           "effect_type_verbatim": "Odds Ratio (OR)",
@@ -3445,7 +3137,7 @@
             "end_value": null
           },
           "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "reference_arm_id": "OG001#2",
           "comparison_kind": "superiority",
           "effect_type": "odds_ratio",
           "effect_type_verbatim": "Odds Ratio (OR)",
@@ -3474,7 +3166,7 @@
             "end_value": null
           },
           "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "reference_arm_id": "OG001#2",
           "comparison_kind": "superiority",
           "effect_type": "odds_ratio",
           "effect_type_verbatim": "Odds Ratio (OR)",
@@ -3503,7 +3195,7 @@
             "end_value": null
           },
           "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "reference_arm_id": "OG001#2",
           "comparison_kind": "superiority",
           "effect_type": "odds_ratio",
           "effect_type_verbatim": "Odds Ratio (OR)",
@@ -3528,7 +3220,7 @@
           },
           "timepoint": null,
           "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "reference_arm_id": "OG001#2",
           "comparison_kind": "superiority",
           "effect_type": "odds_ratio",
           "effect_type_verbatim": "Odds Ratio (OR)",
@@ -3553,7 +3245,7 @@
           },
           "timepoint": null,
           "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "reference_arm_id": "OG001#2",
           "comparison_kind": "superiority",
           "effect_type": "odds_ratio",
           "effect_type_verbatim": "Odds Ratio (OR)",
@@ -3578,7 +3270,7 @@
           },
           "timepoint": null,
           "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "reference_arm_id": "OG001#2",
           "comparison_kind": "superiority",
           "effect_type": "odds_ratio",
           "effect_type_verbatim": "Odds Ratio (OR)",
@@ -3599,7 +3291,7 @@
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03624127",
       "source_excerpt": "resultsSection.outcomeMeasuresModule.outcomeMeasures[].analyses[]",
-      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3, 2026-09-06)",
+      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3 backfill re-run)",
       "reviewed_by": null,
       "confidence": 1.0
     },

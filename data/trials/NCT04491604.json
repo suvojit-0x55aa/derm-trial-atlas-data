@@ -1,5 +1,5 @@
 {
-  "schema_version": 3,
+  "schema_version": 4,
   "nct_id": {
     "value": "NCT04491604",
     "source_type": "ctgov_api",
@@ -85,25 +85,15 @@
     },
     "mechanism_of_action": {
       "value": {
-        "modality": "other",
-        "drug_class": "topical gene therapy (HSV-1 vector expressing COL7A1)",
-        "antibody_isotype": null,
-        "binding_targets": [],
-        "pathway_cytokines": [],
-        "receptor_subunits": [],
-        "kinases_inhibited": [],
-        "lower_potency_kinases": [],
-        "selectivity": [],
-        "reversible": null,
-        "mechanism_established": null,
-        "label_section": "12.1"
+        "drug": "Beremagene Geperpavec",
+        "application_number": null
       },
-      "source_type": "openfda_label",
-      "source_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=3ff07932-fac8-5b69-e063-6394a90a5cbe",
-      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1) -- extracted text: 12.1 Mechanism of Action Dystrophic epidermolysis bullosa (DEB) is caused by mutation(s) in the COL7A1 gene, which results in reduced or absent levels of biologically active COL7. Upon topical application to the wounds, VYJUVEK can transduce both keratinocytes and fibroblasts. Following entry of VYJUVEK into the cells, the vector genome is deposited in the nucleus. Once in the nucleus, transcription of the encoded human COL7A1 is initiated. The resulting transcripts allow for production and secretion of COL7 by the cell in its mature form. These COL7 molecules arrange themselves into long, thin bundles that form anchoring fibrils. The anchoring fibrils hold the epidermis and dermis together and are essential for maintaining the integrity of the skin. Patients with autosomal dominant DEB (DDEB) have lower than normal functional anchoring fibrils, and patients with RDEB have no functional anchoring fibrils.",
-      "extracted_by": "deep-extraction pass (LLM-assisted extraction, scale-out backfill; pending human QA)",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 0.9
+      "confidence": null
     },
     "dosing_regimen": {
       "value": [
@@ -725,8 +715,11 @@
       "confidence": null
     },
     "boxed_warning": {
-      "value": null,
-      "source_type": "needs_extraction",
+      "value": {
+        "drug": "Beremagene Geperpavec",
+        "application_number": null
+      },
+      "source_type": "drug_level_ref",
       "source_url": null,
       "source_excerpt": null,
       "extracted_by": null,
@@ -737,81 +730,36 @@
   "real_world_safety": {
     "faers_summary": {
       "value": {
-        "query": {
-          "search_field": "patient.drug.medicinalproduct",
-          "search_term": "BEREMAGENE GEPERPAVEC",
-          "receivedate_from": "2026-04-10",
-          "receivedate_to": "2026-04-10",
-          "api_urls": [
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"BEREMAGENE+GEPERPAVEC\"&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"BEREMAGENE+GEPERPAVEC\"+AND+serious:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"BEREMAGENE+GEPERPAVEC\"+AND+seriousnessdeath:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"BEREMAGENE+GEPERPAVEC\"+AND+seriousnesshospitalization:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"BEREMAGENE+GEPERPAVEC\"+AND+seriousnesslifethreatening:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"BEREMAGENE+GEPERPAVEC\"+AND+seriousnessdisabling:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"BEREMAGENE+GEPERPAVEC\"&count=patient.reaction.reactionmeddrapt.exact&limit=15",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"BEREMAGENE+GEPERPAVEC\"+AND+serious:1&count=patient.reaction.reactionmeddrapt.exact&limit=15",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"BEREMAGENE+GEPERPAVEC\"&count=receivedate"
-          ],
-          "data_last_updated": "2026-07-30"
-        },
-        "total_reports": 1,
-        "serious_reports": 1,
-        "death_reports": 0,
-        "hospitalization_reports": 0,
-        "life_threatening_reports": 0,
-        "disability_reports": 0,
-        "top_reactions": [
-          {
-            "meddra_pt": "PERICARDITIS",
-            "report_count": 1,
-            "pct_of_reports": 100.0
-          }
-        ],
-        "top_serious_reactions": [
-          {
-            "meddra_pt": "PERICARDITIS",
-            "report_count": 1,
-            "pct_of_reports": 100.0
-          }
-        ],
-        "reports_by_year": [
-          {
-            "year": 2026,
-            "report_count": 1
-          }
-        ],
-        "meddra_version": null
+        "drug": "Beremagene Geperpavec",
+        "application_number": null
       },
-      "source_type": "openfda_faers",
-      "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"BEREMAGENE+GEPERPAVEC\"&limit=1",
-      "source_excerpt": "openFDA drug/event.json aggregate: total_reports=1, serious=1, deaths=0",
-      "extracted_by": "fetch_faers.py (openfda drug/event.json, v2 pass)",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     }
   },
   "exclusivity": {
     "regulatory_application": {
       "value": {
-        "application_type": "BLA",
-        "application_number": "125774",
-        "registry": "purple_book",
-        "center": "CBER",
-        "proprietary_name": "VYJUVEK",
-        "applicant": "Krystal Biotech, Inc.",
-        "first_approval_date": "2023-05-19"
+        "drug": "Beremagene Geperpavec",
+        "application_number": "125774"
       },
-      "source_type": "purple_book",
-      "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2026/purplebook-search-August-data-download.csv",
-      "source_excerpt": "Purple Book Monthly Historical Data Changes Report (August 2026 snapshot) CSV row: Krystal Biotech, Inc. | BLA 125774 | VYJUVEK | beremagene geperpavec-svdt | 351(a) | Licensed | 19-May-23 | License 2301 | Product 001 | CBER | Orphan Exclusivity Exp. Date 12-Sep-32",
-      "extracted_by": "atlas.regulatory_applications (registry file fetched 2026-09-05)",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     },
     "orange_book": {
-      "value": null,
-      "source_type": "needs_extraction",
+      "value": {
+        "drug": "Beremagene Geperpavec",
+        "application_number": "125774"
+      },
+      "source_type": "drug_level_ref",
       "source_url": null,
       "source_excerpt": null,
       "extracted_by": null,
@@ -820,43 +768,15 @@
     },
     "purple_book": {
       "value": {
-        "bla_number": "125774",
-        "proprietary_name": "VYJUVEK",
-        "proper_name": "beremagene geperpavec-svdt",
-        "applicant": "Krystal Biotech, Inc.",
-        "license_type": "351(a)",
-        "license_number": "2301",
-        "center": "CBER",
-        "products": [
-          {
-            "product_number": "001",
-            "strength": "5.0x10^9 PFU/mL",
-            "dosage_form": "Gel",
-            "route": "Topical",
-            "presentation": "Single-Dose Vial",
-            "marketing_status": "Rx",
-            "licensure": "Licensed",
-            "approval_date": "2023-05-19",
-            "submission_type": "Original",
-            "supplement_number": "0"
-          }
-        ],
-        "first_approval_date": "2023-05-19",
-        "date_of_first_licensure": null,
-        "reference_product_exclusivity_expiration": null,
-        "exclusivity_expiration_date": null,
-        "first_interchangeable_exclusivity_expiration": null,
-        "orphan_exclusivity_expiration": "2032-09-12",
-        "patent_list_provided": null,
-        "biosimilars": [],
-        "data_file_month": "August 2026"
+        "drug": "Beremagene Geperpavec",
+        "application_number": null
       },
-      "source_type": "purple_book",
-      "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2026/purplebook-search-August-data-download.csv",
-      "source_excerpt": "Purple Book Monthly Historical Data Changes Report (August 2026 snapshot) CSV row: Krystal Biotech, Inc. | BLA 125774 | VYJUVEK | beremagene geperpavec-svdt | 351(a) | 5.0x10^9 PFU/mL | Gel | Topical | Single-Dose Vial | Rx | Licensed | 19-May-23 | Original | License 2301 | Product 001 | CBER | Orphan Exclusivity Exp. Date 12-Sep-32. Fetched via accessdata.fda.gov's monthly CSV with a browser User-Agent header (bypasses the Akamai block on purplebooksearch.fda.gov's live search UI, which this drug's parser normally uses -- see AGENTS.md); 0 biosimilar(s) on file (novel gene-therapy product).",
-      "extracted_by": "fetch_purple_book.py (accessdata.fda.gov monthly CSV, cycle-5 fallback pass -- live search UI genuinely blocked, see AGENTS.md)",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     }
   },
   "results": {
@@ -866,6 +786,7 @@
           "arm_id": "OG000",
           "label": "B-VEC",
           "role": "other",
+          "analysis_population": "full_analysis_set",
           "intervention_names": [],
           "dose_value": null,
           "dose_unit": null,
@@ -876,6 +797,7 @@
           "arm_id": "OG001",
           "label": "Placebo",
           "role": "placebo",
+          "analysis_population": "full_analysis_set",
           "intervention_names": [
             "Placebo"
           ],
@@ -888,7 +810,7 @@
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04491604",
       "source_excerpt": "resultsSection.outcomeMeasuresModule.outcomeMeasures[].groups[]",
-      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3, 2026-09-06)",
+      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3 backfill re-run)",
       "reviewed_by": null,
       "confidence": 1.0
     },

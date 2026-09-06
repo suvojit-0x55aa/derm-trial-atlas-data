@@ -1,5 +1,5 @@
 {
-  "schema_version": 3,
+  "schema_version": 4,
   "nct_id": {
     "value": "NCT04250337",
     "source_type": "ctgov_api",
@@ -86,34 +86,15 @@
     },
     "mechanism_of_action": {
       "value": {
-        "modality": "monoclonal_antibody",
-        "drug_class": "IL-13 antagonist",
-        "antibody_isotype": "IgG4",
-        "binding_targets": [
-          "IL-13"
-        ],
-        "pathway_cytokines": [
-          "IL-13",
-          "IgE"
-        ],
-        "receptor_subunits": [
-          "IL-4Rα",
-          "IL-13Rα1",
-          "IL-13Rα2"
-        ],
-        "kinases_inhibited": [],
-        "lower_potency_kinases": [],
-        "selectivity": [],
-        "reversible": null,
-        "mechanism_established": null,
-        "label_section": "12.1"
+        "drug": "Lebrikizumab",
+        "application_number": null
       },
-      "source_type": "openfda_label",
-      "source_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=361eb12f-8b25-4174-a653-5b857e6abd03",
-      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1) -- v1 extracted text: 12.1 Mechanism of Action Lebrikizumab-lbkz is an IgG4 monoclonal antibody that binds with high affinity and slow off-rate to interleukin (IL)-13 and allows IL-13 to bind to IL-13Rα1 but inhibits human IL-13 signaling through the IL-4Rα/IL-13Rα1 receptor complex. IL-13 is a naturally occurring cytokine that is involved in Type 2 inflammation, which is an important component in the pathogenesis of atopic dermatitis. Lebrikizumab-lbkz inhibits IL-13-induced responses including the release of proinflammatory cytokines, chemokines and IgE. Lebrikizumab-lbkz-bound IL-13 can still bind IL-13Rα2 allowing subsequent internalization and natural clearance of IL-13.",
-      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA); structured by atlas.migrate v1->v2",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 0.9
+      "confidence": null
     },
     "dosing_regimen": {
       "value": [
@@ -2052,274 +2033,50 @@
     },
     "boxed_warning": {
       "value": {
-        "present": false,
-        "title": null,
-        "warning_categories": [],
-        "referenced_label_sections": [],
-        "product_names": []
+        "drug": "Lebrikizumab",
+        "application_number": null
       },
-      "source_type": "openfda_label",
-      "source_url": "https://api.fda.gov/drug/label.json?search=openfda.substance_name:LEBRIKIZUMAB&limit=1",
-      "source_excerpt": "results[0] has no boxed_warning key (checked, none present)",
-      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass); structured by atlas.migrate v1->v2",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     }
   },
   "real_world_safety": {
     "faers_summary": {
       "value": {
-        "query": {
-          "search_field": "patient.drug.medicinalproduct",
-          "search_term": "LEBRIKIZUMAB",
-          "receivedate_from": "2015-05-21",
-          "receivedate_to": "2026-06-30",
-          "api_urls": [
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"LEBRIKIZUMAB\"&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"LEBRIKIZUMAB\"+AND+serious:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"LEBRIKIZUMAB\"+AND+seriousnessdeath:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"LEBRIKIZUMAB\"+AND+seriousnesshospitalization:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"LEBRIKIZUMAB\"+AND+seriousnesslifethreatening:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"LEBRIKIZUMAB\"+AND+seriousnessdisabling:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"LEBRIKIZUMAB\"&count=patient.reaction.reactionmeddrapt.exact&limit=15",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"LEBRIKIZUMAB\"+AND+serious:1&count=patient.reaction.reactionmeddrapt.exact&limit=15",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"LEBRIKIZUMAB\"&count=receivedate"
-          ],
-          "data_last_updated": "2026-07-30"
-        },
-        "total_reports": 217,
-        "serious_reports": 116,
-        "death_reports": 2,
-        "hospitalization_reports": 46,
-        "life_threatening_reports": 3,
-        "disability_reports": 4,
-        "top_reactions": [
-          {
-            "meddra_pt": "DERMATITIS ATOPIC",
-            "report_count": 23,
-            "pct_of_reports": 10.6
-          },
-          {
-            "meddra_pt": "PRURITUS",
-            "report_count": 19,
-            "pct_of_reports": 8.76
-          },
-          {
-            "meddra_pt": "CONJUNCTIVITIS",
-            "report_count": 16,
-            "pct_of_reports": 7.37
-          },
-          {
-            "meddra_pt": "DRUG INEFFECTIVE",
-            "report_count": 16,
-            "pct_of_reports": 7.37
-          },
-          {
-            "meddra_pt": "ERYTHEMA",
-            "report_count": 15,
-            "pct_of_reports": 6.91
-          },
-          {
-            "meddra_pt": "RASH",
-            "report_count": 13,
-            "pct_of_reports": 5.99
-          },
-          {
-            "meddra_pt": "DRY SKIN",
-            "report_count": 12,
-            "pct_of_reports": 5.53
-          },
-          {
-            "meddra_pt": "ECZEMA",
-            "report_count": 11,
-            "pct_of_reports": 5.07
-          },
-          {
-            "meddra_pt": "SKIN EXFOLIATION",
-            "report_count": 11,
-            "pct_of_reports": 5.07
-          },
-          {
-            "meddra_pt": "INJECTION SITE PAIN",
-            "report_count": 10,
-            "pct_of_reports": 4.61
-          },
-          {
-            "meddra_pt": "TREATMENT FAILURE",
-            "report_count": 10,
-            "pct_of_reports": 4.61
-          },
-          {
-            "meddra_pt": "ARTHRALGIA",
-            "report_count": 9,
-            "pct_of_reports": 4.15
-          },
-          {
-            "meddra_pt": "EYE PRURITUS",
-            "report_count": 9,
-            "pct_of_reports": 4.15
-          },
-          {
-            "meddra_pt": "ASTHMA",
-            "report_count": 8,
-            "pct_of_reports": 3.69
-          },
-          {
-            "meddra_pt": "OCULAR HYPERAEMIA",
-            "report_count": 8,
-            "pct_of_reports": 3.69
-          }
-        ],
-        "top_serious_reactions": [
-          {
-            "meddra_pt": "CONJUNCTIVITIS",
-            "report_count": 11,
-            "pct_of_reports": 9.48
-          },
-          {
-            "meddra_pt": "TREATMENT FAILURE",
-            "report_count": 9,
-            "pct_of_reports": 7.76
-          },
-          {
-            "meddra_pt": "ASTHMA",
-            "report_count": 7,
-            "pct_of_reports": 6.03
-          },
-          {
-            "meddra_pt": "EOSINOPHILIA",
-            "report_count": 7,
-            "pct_of_reports": 6.03
-          },
-          {
-            "meddra_pt": "ERYTHEMA",
-            "report_count": 7,
-            "pct_of_reports": 6.03
-          },
-          {
-            "meddra_pt": "DERMATITIS ATOPIC",
-            "report_count": 6,
-            "pct_of_reports": 5.17
-          },
-          {
-            "meddra_pt": "ARTHRALGIA",
-            "report_count": 5,
-            "pct_of_reports": 4.31
-          },
-          {
-            "meddra_pt": "DERMATITIS EXFOLIATIVE GENERALISED",
-            "report_count": 5,
-            "pct_of_reports": 4.31
-          },
-          {
-            "meddra_pt": "DRUG INEFFECTIVE",
-            "report_count": 5,
-            "pct_of_reports": 4.31
-          },
-          {
-            "meddra_pt": "OFF LABEL USE",
-            "report_count": 5,
-            "pct_of_reports": 4.31
-          },
-          {
-            "meddra_pt": "RASH",
-            "report_count": 5,
-            "pct_of_reports": 4.31
-          },
-          {
-            "meddra_pt": "ECZEMA",
-            "report_count": 4,
-            "pct_of_reports": 3.45
-          },
-          {
-            "meddra_pt": "OCULAR HYPERAEMIA",
-            "report_count": 4,
-            "pct_of_reports": 3.45
-          },
-          {
-            "meddra_pt": "PULMONARY EMBOLISM",
-            "report_count": 4,
-            "pct_of_reports": 3.45
-          },
-          {
-            "meddra_pt": "SKIN EXFOLIATION",
-            "report_count": 4,
-            "pct_of_reports": 3.45
-          }
-        ],
-        "reports_by_year": [
-          {
-            "year": 2015,
-            "report_count": 2
-          },
-          {
-            "year": 2016,
-            "report_count": 3
-          },
-          {
-            "year": 2018,
-            "report_count": 1
-          },
-          {
-            "year": 2019,
-            "report_count": 6
-          },
-          {
-            "year": 2021,
-            "report_count": 2
-          },
-          {
-            "year": 2022,
-            "report_count": 1
-          },
-          {
-            "year": 2023,
-            "report_count": 2
-          },
-          {
-            "year": 2024,
-            "report_count": 22
-          },
-          {
-            "year": 2025,
-            "report_count": 114
-          },
-          {
-            "year": 2026,
-            "report_count": 64
-          }
-        ],
-        "meddra_version": null
+        "drug": "Lebrikizumab",
+        "application_number": null
       },
-      "source_type": "openfda_faers",
-      "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"LEBRIKIZUMAB\"&limit=1",
-      "source_excerpt": "openFDA drug/event.json aggregate: total_reports=217, serious=116, deaths=2",
-      "extracted_by": "fetch_faers.py (openfda drug/event.json, v2 pass)",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     }
   },
   "exclusivity": {
     "regulatory_application": {
       "value": {
-        "application_type": "BLA",
-        "application_number": "761306",
-        "registry": "purple_book",
-        "center": "CDER",
-        "proprietary_name": "Ebglyss",
-        "applicant": "Eli Lilly and Company",
-        "first_approval_date": "2024-09-13"
+        "drug": "Lebrikizumab",
+        "application_number": "761306"
       },
-      "source_type": "purple_book",
-      "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2026/purplebook-search-August-data-download.csv",
-      "source_excerpt": "row: Eli Lilly and Company | BLA 761306 | Ebglyss | lebrikizumab-lbkz | 351(a) | 250MG/2ML Injection Subcutaneous Autoinjector | Rx | Licensed | 13-Sep-24 | Original | License 1891 | Product 001 | CDER",
-      "extracted_by": "atlas.regulatory_applications (registry file fetched 2026-09-05)",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     },
     "orange_book": {
-      "value": null,
-      "source_type": "needs_extraction",
+      "value": {
+        "drug": "Lebrikizumab",
+        "application_number": "761306"
+      },
+      "source_type": "drug_level_ref",
       "source_url": null,
       "source_excerpt": null,
       "extracted_by": null,
@@ -2328,55 +2085,15 @@
     },
     "purple_book": {
       "value": {
-        "bla_number": "761306",
-        "proprietary_name": "Ebglyss",
-        "proper_name": "lebrikizumab-lbkz",
-        "applicant": "Eli Lilly and Company",
-        "license_type": "351(a)",
-        "license_number": "1891",
-        "center": "CDER",
-        "products": [
-          {
-            "product_number": "001",
-            "strength": "250MG/2ML",
-            "dosage_form": "Injection",
-            "route": "Subcutaneous",
-            "presentation": "Autoinjector",
-            "marketing_status": "Rx",
-            "licensure": "Licensed",
-            "approval_date": "2024-09-13",
-            "submission_type": "Original",
-            "supplement_number": null
-          },
-          {
-            "product_number": "002",
-            "strength": "250MG/2ML",
-            "dosage_form": "Injection",
-            "route": "Subcutaneous",
-            "presentation": "Pre-Filled Syringe",
-            "marketing_status": "Rx",
-            "licensure": "Licensed",
-            "approval_date": "2024-09-13",
-            "submission_type": "Original",
-            "supplement_number": null
-          }
-        ],
-        "first_approval_date": "2024-09-13",
-        "date_of_first_licensure": null,
-        "reference_product_exclusivity_expiration": null,
-        "exclusivity_expiration_date": null,
-        "first_interchangeable_exclusivity_expiration": null,
-        "orphan_exclusivity_expiration": null,
-        "patent_list_provided": null,
-        "biosimilars": [],
-        "data_file_month": null
+        "drug": "Lebrikizumab",
+        "application_number": null
       },
-      "source_type": "purple_book",
-      "source_url": "https://purplebooksearch.fda.gov/index.cfm?event=advancedsearch",
-      "source_excerpt": "purplebooksearch.fda.gov live search table, BLA 761306 (Ebglyss), 0 biosimilar(s) on file",
-      "extracted_by": "fetch_purple_book.py (purplebooksearch.fda.gov live search table, raw staging pass)",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     }
   },
   "results": {
@@ -2386,6 +2103,7 @@
           "arm_id": "OG000",
           "label": "Placebo +Topical Corticosteroid",
           "role": "placebo",
+          "analysis_population": "full_analysis_set",
           "intervention_names": [
             "Placebo",
             "Topical Corticosteroid"
@@ -2399,6 +2117,7 @@
           "arm_id": "OG001",
           "label": "Lebrikizumab + Topical Corticosteroid",
           "role": "investigational",
+          "analysis_population": "full_analysis_set",
           "intervention_names": [
             "Lebrikizumab",
             "Topical Corticosteroid"
@@ -2412,7 +2131,7 @@
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04250337",
       "source_excerpt": "resultsSection.outcomeMeasuresModule.outcomeMeasures[].groups[]",
-      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3, 2026-09-06)",
+      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3 backfill re-run)",
       "reviewed_by": null,
       "confidence": 1.0
     },
@@ -4139,8 +3858,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001",
+          "reference_arm_id": "OG000",
           "comparison_kind": "superiority",
           "effect_type": "risk_difference",
           "effect_type_verbatim": "Risk Difference (RD)",
@@ -4168,8 +3887,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001",
+          "reference_arm_id": "OG000",
           "comparison_kind": "superiority",
           "effect_type": "risk_difference",
           "effect_type_verbatim": "Risk Difference (RD)",
@@ -4197,8 +3916,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001",
+          "reference_arm_id": "OG000",
           "comparison_kind": "superiority",
           "effect_type": "risk_difference",
           "effect_type_verbatim": "Risk Difference (RD)",
@@ -4226,8 +3945,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001",
+          "reference_arm_id": "OG000",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
           "effect_type_verbatim": "LS Mean Difference (Final Values)",
@@ -4255,8 +3974,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001",
+          "reference_arm_id": "OG000",
           "comparison_kind": "superiority",
           "effect_type": "risk_difference",
           "effect_type_verbatim": "Risk Difference (RD)",
@@ -4284,8 +4003,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001",
+          "reference_arm_id": "OG000",
           "comparison_kind": "superiority",
           "effect_type": "risk_difference",
           "effect_type_verbatim": "Risk Difference (RD)",
@@ -4313,8 +4032,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001",
+          "reference_arm_id": "OG000",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
           "effect_type_verbatim": "LS Mean Difference (Final Values)",
@@ -4342,8 +4061,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001",
+          "reference_arm_id": "OG000",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
           "effect_type_verbatim": "LS Mean Difference (Final Values)",
@@ -4371,8 +4090,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001",
+          "reference_arm_id": "OG000",
           "comparison_kind": "superiority",
           "effect_type": "risk_difference",
           "effect_type_verbatim": "Risk Difference (RD)",
@@ -4400,8 +4119,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001",
+          "reference_arm_id": "OG000",
           "comparison_kind": "superiority",
           "effect_type": null,
           "effect_type_verbatim": "Markov Chain Monte Carlo (MCMC)",
@@ -4429,8 +4148,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001",
+          "reference_arm_id": "OG000",
           "comparison_kind": "superiority",
           "effect_type": null,
           "effect_type_verbatim": "Markov Chain Monte Carlo (MCMC)",
@@ -4458,8 +4177,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001",
+          "reference_arm_id": "OG000",
           "comparison_kind": "superiority",
           "effect_type": "risk_difference",
           "effect_type_verbatim": "Risk Difference (RD)",
@@ -4487,8 +4206,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001",
+          "reference_arm_id": "OG000",
           "comparison_kind": "superiority",
           "effect_type": "risk_difference",
           "effect_type_verbatim": "Risk Difference (RD)",
@@ -4516,8 +4235,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001",
+          "reference_arm_id": "OG000",
           "comparison_kind": "superiority",
           "effect_type": "risk_difference",
           "effect_type_verbatim": "Risk Difference (RD)",
@@ -4545,8 +4264,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001",
+          "reference_arm_id": "OG000",
           "comparison_kind": "superiority",
           "effect_type": "risk_difference",
           "effect_type_verbatim": "Risk Difference (RD)",
@@ -4574,8 +4293,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001",
+          "reference_arm_id": "OG000",
           "comparison_kind": "superiority",
           "effect_type": "risk_difference",
           "effect_type_verbatim": "Risk Difference (RD)",
@@ -4603,8 +4322,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001",
+          "reference_arm_id": "OG000",
           "comparison_kind": "superiority",
           "effect_type": "risk_difference",
           "effect_type_verbatim": "Risk Difference (RD)",
@@ -4632,8 +4351,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001",
+          "reference_arm_id": "OG000",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
           "effect_type_verbatim": "LS Mean Difference (Final Values)",
@@ -4661,8 +4380,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001",
+          "reference_arm_id": "OG000",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
           "effect_type_verbatim": "LS Mean Difference (Final Values)",
@@ -4686,8 +4405,8 @@
             "verbatim_sha1": "b0b05bd747e34a2d75a22a30e0b9d0204f8515f4"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001",
+          "reference_arm_id": "OG000",
           "comparison_kind": "superiority",
           "effect_type": "risk_difference",
           "effect_type_verbatim": "Risk Difference (RD)",
@@ -4715,8 +4434,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001",
+          "reference_arm_id": "OG000",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
           "effect_type_verbatim": "LS Mean Difference (Final Values)",
@@ -4744,8 +4463,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001",
+          "reference_arm_id": "OG000",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
           "effect_type_verbatim": "LS Mean Difference (Final Values)",
@@ -4773,8 +4492,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001",
+          "reference_arm_id": "OG000",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
           "effect_type_verbatim": "LS Mean Difference (Final Values)",
@@ -4802,8 +4521,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001",
+          "reference_arm_id": "OG000",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
           "effect_type_verbatim": "LS Mean Difference (Final Values)",
@@ -4831,8 +4550,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001",
+          "reference_arm_id": "OG000",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
           "effect_type_verbatim": "LS Mean Difference (Final Values)",
@@ -4860,8 +4579,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001",
+          "reference_arm_id": "OG000",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
           "effect_type_verbatim": "LS Mean Difference (Final Values)",
@@ -4889,8 +4608,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001",
+          "reference_arm_id": "OG000",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
           "effect_type_verbatim": "LS Mean Difference (Final Values)",
@@ -4918,8 +4637,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001",
+          "reference_arm_id": "OG000",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
           "effect_type_verbatim": "LS Mean Difference (Final Values)",
@@ -4947,8 +4666,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001",
+          "reference_arm_id": "OG000",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
           "effect_type_verbatim": "LS Mean Difference (Final Values)",
@@ -4969,7 +4688,7 @@
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04250337",
       "source_excerpt": "resultsSection.outcomeMeasuresModule.outcomeMeasures[].analyses[]",
-      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3, 2026-09-06)",
+      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3 backfill re-run)",
       "reviewed_by": null,
       "confidence": 1.0
     },

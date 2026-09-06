@@ -1,5 +1,5 @@
 {
-  "schema_version": 3,
+  "schema_version": 4,
   "nct_id": {
     "value": "NCT02556788",
     "source_type": "ctgov_api",
@@ -84,27 +84,15 @@
     },
     "mechanism_of_action": {
       "value": {
-        "modality": "small_molecule",
-        "drug_class": "retinoic acid receptor (RAR) gamma agonist",
-        "antibody_isotype": null,
-        "binding_targets": [],
-        "pathway_cytokines": [],
-        "receptor_subunits": [
-          "RARγ"
-        ],
-        "kinases_inhibited": [],
-        "lower_potency_kinases": [],
-        "selectivity": [],
-        "reversible": null,
-        "mechanism_established": false,
-        "label_section": "12.1"
+        "drug": "Trifarotene",
+        "application_number": null
       },
-      "source_type": "openfda_label",
-      "source_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=21db90dd-c7e5-79d1-e063-6294a90ab57e",
-      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1) -- extracted text: 12.1 Mechanism of Action Trifarotene is an agonist of retinoic acid receptors (RAR), with particular activity at the gamma subtype of RAR. Stimulation of RAR results in modulation of target genes which are associated with various processes, including cell differentiation and mediation of inflammation. The exact process by which trifarotene ameliorates acne is unknown.",
-      "extracted_by": "deep-extraction pass (LLM-assisted extraction, scale-out backfill; pending human QA)",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 0.9
+      "confidence": null
     },
     "dosing_regimen": {
       "value": [
@@ -764,325 +752,62 @@
     },
     "boxed_warning": {
       "value": {
-        "present": false,
-        "title": null,
-        "warning_categories": [],
-        "referenced_label_sections": [],
-        "product_names": []
+        "drug": "Trifarotene",
+        "application_number": null
       },
-      "source_type": "openfda_label",
-      "source_url": "https://api.fda.gov/drug/label.json?search=openfda.substance_name:TRIFAROTENE&limit=1",
-      "source_excerpt": "results[0] has no boxed_warning key (checked, none present)",
-      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass); structured by atlas.migrate v1->v2",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     }
   },
   "real_world_safety": {
     "faers_summary": {
       "value": {
-        "query": {
-          "search_field": "patient.drug.medicinalproduct",
-          "search_term": "TRIFAROTENE",
-          "receivedate_from": "2021-08-17",
-          "receivedate_to": "2026-04-07",
-          "api_urls": [
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"TRIFAROTENE\"&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"TRIFAROTENE\"+AND+serious:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"TRIFAROTENE\"+AND+seriousnessdeath:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"TRIFAROTENE\"+AND+seriousnesshospitalization:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"TRIFAROTENE\"+AND+seriousnesslifethreatening:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"TRIFAROTENE\"+AND+seriousnessdisabling:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"TRIFAROTENE\"&count=patient.reaction.reactionmeddrapt.exact&limit=15",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"TRIFAROTENE\"+AND+serious:1&count=patient.reaction.reactionmeddrapt.exact&limit=15",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"TRIFAROTENE\"&count=receivedate"
-          ],
-          "data_last_updated": "2026-07-30"
-        },
-        "total_reports": 26,
-        "serious_reports": 24,
-        "death_reports": 0,
-        "hospitalization_reports": 8,
-        "life_threatening_reports": 0,
-        "disability_reports": 1,
-        "top_reactions": [
-          {
-            "meddra_pt": "URINARY RETENTION",
-            "report_count": 16,
-            "pct_of_reports": 61.54
-          },
-          {
-            "meddra_pt": "MYDRIASIS",
-            "report_count": 14,
-            "pct_of_reports": 53.85
-          },
-          {
-            "meddra_pt": "VISION BLURRED",
-            "report_count": 8,
-            "pct_of_reports": 30.77
-          },
-          {
-            "meddra_pt": "DRUG INTERACTION",
-            "report_count": 6,
-            "pct_of_reports": 23.08
-          },
-          {
-            "meddra_pt": "TOXICITY TO VARIOUS AGENTS",
-            "report_count": 5,
-            "pct_of_reports": 19.23
-          },
-          {
-            "meddra_pt": "ABDOMINAL DISTENSION",
-            "report_count": 2,
-            "pct_of_reports": 7.69
-          },
-          {
-            "meddra_pt": "ADNEXAL TORSION",
-            "report_count": 2,
-            "pct_of_reports": 7.69
-          },
-          {
-            "meddra_pt": "DYSURIA",
-            "report_count": 2,
-            "pct_of_reports": 7.69
-          },
-          {
-            "meddra_pt": "LIVER INJURY",
-            "report_count": 2,
-            "pct_of_reports": 7.69
-          },
-          {
-            "meddra_pt": "MICTURITION URGENCY",
-            "report_count": 2,
-            "pct_of_reports": 7.69
-          },
-          {
-            "meddra_pt": "ABDOMINAL PAIN UPPER",
-            "report_count": 1,
-            "pct_of_reports": 3.85
-          },
-          {
-            "meddra_pt": "ADNEXA UTERI CYST",
-            "report_count": 1,
-            "pct_of_reports": 3.85
-          },
-          {
-            "meddra_pt": "AFFECT LABILITY",
-            "report_count": 1,
-            "pct_of_reports": 3.85
-          },
-          {
-            "meddra_pt": "ANTICHOLINERGIC SYNDROME",
-            "report_count": 1,
-            "pct_of_reports": 3.85
-          },
-          {
-            "meddra_pt": "APPLICATION SITE BURN",
-            "report_count": 1,
-            "pct_of_reports": 3.85
-          }
-        ],
-        "top_serious_reactions": [
-          {
-            "meddra_pt": "URINARY RETENTION",
-            "report_count": 16,
-            "pct_of_reports": 66.67
-          },
-          {
-            "meddra_pt": "MYDRIASIS",
-            "report_count": 14,
-            "pct_of_reports": 58.33
-          },
-          {
-            "meddra_pt": "VISION BLURRED",
-            "report_count": 8,
-            "pct_of_reports": 33.33
-          },
-          {
-            "meddra_pt": "DRUG INTERACTION",
-            "report_count": 6,
-            "pct_of_reports": 25.0
-          },
-          {
-            "meddra_pt": "TOXICITY TO VARIOUS AGENTS",
-            "report_count": 5,
-            "pct_of_reports": 20.83
-          },
-          {
-            "meddra_pt": "ABDOMINAL DISTENSION",
-            "report_count": 2,
-            "pct_of_reports": 8.33
-          },
-          {
-            "meddra_pt": "ADNEXAL TORSION",
-            "report_count": 2,
-            "pct_of_reports": 8.33
-          },
-          {
-            "meddra_pt": "DYSURIA",
-            "report_count": 2,
-            "pct_of_reports": 8.33
-          },
-          {
-            "meddra_pt": "LIVER INJURY",
-            "report_count": 2,
-            "pct_of_reports": 8.33
-          },
-          {
-            "meddra_pt": "MICTURITION URGENCY",
-            "report_count": 2,
-            "pct_of_reports": 8.33
-          },
-          {
-            "meddra_pt": "ABDOMINAL PAIN UPPER",
-            "report_count": 1,
-            "pct_of_reports": 4.17
-          },
-          {
-            "meddra_pt": "ADNEXA UTERI CYST",
-            "report_count": 1,
-            "pct_of_reports": 4.17
-          },
-          {
-            "meddra_pt": "AFFECT LABILITY",
-            "report_count": 1,
-            "pct_of_reports": 4.17
-          },
-          {
-            "meddra_pt": "ANTICHOLINERGIC SYNDROME",
-            "report_count": 1,
-            "pct_of_reports": 4.17
-          },
-          {
-            "meddra_pt": "APPLICATION SITE BURN",
-            "report_count": 1,
-            "pct_of_reports": 4.17
-          }
-        ],
-        "reports_by_year": [
-          {
-            "year": 2021,
-            "report_count": 2
-          },
-          {
-            "year": 2023,
-            "report_count": 17
-          },
-          {
-            "year": 2024,
-            "report_count": 3
-          },
-          {
-            "year": 2025,
-            "report_count": 2
-          },
-          {
-            "year": 2026,
-            "report_count": 2
-          }
-        ],
-        "meddra_version": null
+        "drug": "Trifarotene",
+        "application_number": null
       },
-      "source_type": "openfda_faers",
-      "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"TRIFAROTENE\"&limit=1",
-      "source_excerpt": "openFDA drug/event.json aggregate: total_reports=26, serious=24, deaths=0",
-      "extracted_by": "fetch_faers.py (openfda drug/event.json, cycle-9 pass)",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     }
   },
   "exclusivity": {
     "regulatory_application": {
       "value": {
-        "application_type": "NDA",
-        "application_number": "211527",
-        "registry": "orange_book",
-        "center": "CDER",
-        "proprietary_name": "AKLIEF",
-        "applicant": "GALDERMA LABORATORIES LP",
-        "first_approval_date": "2019-10-04"
+        "drug": "Trifarotene",
+        "application_number": "211527"
       },
-      "source_type": "orange_book",
-      "source_url": "https://api.fda.gov/drug/orangebook.json",
-      "source_excerpt": "openfda orangebook.json: products.active_ingredients.name=TRIFAROTENE, application_number N211527, brand_name AKLIEF, applicant_full_name GALDERMA LABORATORIES LP, approval_date 2019-10-04",
-      "extracted_by": "atlas.regulatory_applications (registry file fetched 2026-09-05)",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     },
     "orange_book": {
       "value": {
-        "application_type": "N",
-        "application_number": "211527",
-        "ingredient": "TRIFAROTENE",
-        "trade_name": "AKLIEF",
-        "applicant": "GALDERMA LABS LP",
-        "applicant_full_name": "GALDERMA LABORATORIES LP",
-        "products": [
-          {
-            "product_number": "001",
-            "strength": "0.005%",
-            "dosage_form": "CREAM",
-            "route": "TOPICAL",
-            "approval_date": "2019-10-04",
-            "rld": true,
-            "rs": true,
-            "te_code": null,
-            "marketing_type": "HUMAN PRESCRIPTION DRUG"
-          }
-        ],
-        "patents": [
-          {
-            "patent_number": "7807708",
-            "expiration_date": "2031-07-19",
-            "drug_substance_claim": true,
-            "drug_product_claim": true,
-            "patent_use_code": null,
-            "delisted": false,
-            "submission_date": "2019-10-31",
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "patent_number": "9084778",
-            "expiration_date": "2033-05-30",
-            "drug_substance_claim": false,
-            "drug_product_claim": true,
-            "patent_use_code": "U-134",
-            "delisted": false,
-            "submission_date": "2019-10-31",
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "patent_number": "9498465",
-            "expiration_date": "2033-05-30",
-            "drug_substance_claim": false,
-            "drug_product_claim": true,
-            "patent_use_code": "U-1033",
-            "delisted": false,
-            "submission_date": "2021-06-17",
-            "product_numbers": [
-              "001"
-            ]
-          }
-        ],
-        "exclusivities": [],
-        "latest_patent_expiration": "2033-05-30",
-        "latest_exclusivity_expiration": null,
-        "data_file_date": null
+        "drug": "Trifarotene",
+        "application_number": "211527"
       },
-      "source_type": "orange_book",
-      "source_url": "https://api.fda.gov/drug/orangebook.json?search=products.active_ingredients.name%3A%22TRIFAROTENE%22&limit=100",
-      "source_excerpt": "openFDA drug/orangebook.json, 1 product row(s) matched on products.active_ingredients.name='TRIFAROTENE'",
-      "extracted_by": "fetch_orange_book.py (openfda drug/orangebook.json, cycle-9 pass)",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     },
     "purple_book": {
-      "value": null,
-      "source_type": "needs_extraction",
+      "value": {
+        "drug": "Trifarotene",
+        "application_number": null
+      },
+      "source_type": "drug_level_ref",
       "source_url": null,
       "source_excerpt": null,
       "extracted_by": null,
@@ -1097,6 +822,7 @@
           "arm_id": "OG000",
           "label": "CD5789 (Trifarotene) 50µg/g Cream",
           "role": "investigational",
+          "analysis_population": null,
           "intervention_names": [
             "CD5789 (trifarotene) 50µg/g Cream"
           ],
@@ -1109,6 +835,7 @@
           "arm_id": "OG001",
           "label": "Placebo Cream",
           "role": "placebo",
+          "analysis_population": null,
           "intervention_names": [
             "Placebo Cream"
           ],
@@ -1121,7 +848,7 @@
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02556788",
       "source_excerpt": "resultsSection.outcomeMeasuresModule.outcomeMeasures[].groups[]",
-      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3, 2026-09-06)",
+      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3 backfill re-run)",
       "reviewed_by": null,
       "confidence": 1.0
     },
@@ -1146,8 +873,8 @@
           "reported_value": 255.0,
           "reported_unit": "Participants",
           "responders": 255,
-          "response_rate_pct": null,
-          "rate_is_derived": false,
+          "response_rate_pct": 42.6,
+          "rate_is_derived": true,
           "dispersion_type": null,
           "dispersion_value": null,
           "ci_pct": null,
@@ -1174,8 +901,8 @@
           "reported_value": 157.0,
           "reported_unit": "Participants",
           "responders": 157,
-          "response_rate_pct": null,
-          "rate_is_derived": false,
+          "response_rate_pct": 25.8,
+          "rate_is_derived": true,
           "dispersion_type": null,
           "dispersion_value": null,
           "ci_pct": null,
@@ -1187,7 +914,7 @@
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02556788",
       "source_excerpt": "resultsSection.outcomeMeasuresModule.outcomeMeasures[].{denoms,classes[].categories[].measurements[]}",
-      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3, 2026-09-06)",
+      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3 backfill re-run)",
       "reviewed_by": null,
       "confidence": 1.0
     },

@@ -1,5 +1,5 @@
 {
-  "schema_version": 3,
+  "schema_version": 4,
   "nct_id": {
     "value": "NCT04797650",
     "source_type": "ctgov_api",
@@ -84,27 +84,15 @@
     },
     "mechanism_of_action": {
       "value": {
-        "modality": "small_molecule",
-        "drug_class": "JAK inhibitor",
-        "antibody_isotype": null,
-        "binding_targets": [],
-        "pathway_cytokines": [],
-        "receptor_subunits": [],
-        "kinases_inhibited": [],
-        "lower_potency_kinases": [
-          "JAK3"
-        ],
-        "selectivity": [],
-        "reversible": null,
-        "mechanism_established": false,
-        "label_section": "12.1"
+        "drug": "Deuruxolitinib",
+        "application_number": null
       },
-      "source_type": "openfda_label",
-      "source_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=606e15f1-063b-40c2-84a3-142272020d64",
-      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1) -- v1 extracted text: 12.1 Mechanism of Action Deuruxolitinib is a Janus kinase (JAK) inhibitor. JAKs mediate the signaling of a number of cytokines and growth factors that are important for hematopoiesis and immune function. JAK signaling involves recruitment of STATs (signal transducers and activators of transcription) to cytokine receptors, activation and subsequent localization of STATs to the nucleus leading to modulation of gene expression. In an in vitro kinase activity assay, deuruxolitinib had greater inhibitory potency for JAK1, JAK2 and TYK2 relative to JAK3. The relevance of inhibition of JAK enzymes to therapeutic effectiveness is not currently known.",
-      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA); structured by atlas.migrate v1->v2",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 0.9
+      "confidence": null
     },
     "dosing_regimen": {
       "value": [
@@ -1331,236 +1319,62 @@
     },
     "boxed_warning": {
       "value": {
-        "present": true,
-        "title": "SERIOUS INFECTIONS, MORTALITY, MALIGNANCY, MAJOR ADVERSE CARDIOVASCULAR EVENTS, AND THROMBOSIS",
-        "warning_categories": [
-          "serious_infections",
-          "mortality",
-          "malignancy",
-          "mace",
-          "thrombosis"
-        ],
-        "referenced_label_sections": [
-          "5.1",
-          "5.2",
-          "5.3",
-          "5.4",
-          "5.5"
-        ],
-        "product_names": [
-          "LEQSELVI"
-        ]
+        "drug": "Deuruxolitinib",
+        "application_number": null
       },
-      "source_type": "openfda_label",
-      "source_url": "https://api.fda.gov/drug/label.json?search=openfda.substance_name:DEURUXOLITINIB&limit=1",
-      "source_excerpt": "results[0].boxed_warning -- v1 extracted text: WARNING: SERIOUS INFECTIONS, MORTALITY, MALIGNANCY, MAJOR ADVERSE CARDIOVASCULAR EVENTS, AND THROMBOSIS Increased risk of serious bacterial, fungal, viral and opportunistic infections, including tuberculosis (TB), that may lead to hospitalization or death. Interrupt treatment with LEQSELVI if a serious infection occurs until the infection is controlled. LEQSELVI treatment is not recommended in patients with active tuberculosis. Test for latent TB before and during therapy; treat latent TB prior to use. Monitor all patients for active TB during treatment, even patients with initial negative, latent TB test. ( 5.1 ) Higher rate of all-cause mortality, including sudden cardiovascular death, was observed with another Janus kinase (JAK) inhibitor vs. TNF blockers in rheumatoid arthritis (RA) patients. LEQSELVI is not approved for use in RA patients. ( 5.2 ) Malignancies were reported in patients treated with LEQSELVI. Higher rate of lymphomas and lung cancers was observed with another JAK inhibitor vs. TNF blockers in RA patients. ( 5.3 ) Higher rate of major adverse cardiovascular events (MACE) (defined as cardiovascular death, myocardial infarction, and stroke) was observed with another JAK inhibitor vs. TNF blockers in RA patients. ( 5.4 ) Thrombosis, including cerebral venous sinus thrombosis (CVT), deep vein thrombosis (DVT) and pulmonary embolism (PE) have been reported in patients treated with LEQSELVI. Increased incidence of pulmonary embolism, venous and arterial thrombosis was observed with another JAK inhibitor vs. TNF blockers. ( 5.5 ) WARNING: SERIOUS INFECTIONS, MORTALITY, MALIGNANCY, MAJOR ADVERSE CARDIOVASCULAR EVENTS (MACE) and THROMBOSIS See full prescribing information for complete boxed warning. Increased risk of serious bacterial, fungal, viral and opportunistic infections including tuberculosis (TB), that may lead to hospitalization or death. Interrupt treatment with LEQSELVI if a serious infection occurs until the infection is controlled. Test for latent TB before and during therapy; treat latent TB prior to use. Monitor all patients for active TB during treatment, even patients with initial negative, latent TB test. ( 5.1 ) Higher rate of all-cause mortality, including sudden cardiovascular death with another Janus kinase inhibitor (JAK) vs. TNF blockers in rheumatoid arthritis (RA) patients. LEQSELVI is not approved for use in RA patients. ( 5.2 ) Malignancies have occurred in patients treated with LEQSELVI. Higher rate of lymphomas and lung cancers with another JAK inhibitor vs. TNF blockers in RA patients. ( 5.3 ) Higher rate of MACE (defined as cardiovascular death, myocardial infarction, and stroke) with another Janus kinase inhibitor (JAK) vs. TNF blockers in rheumatoid arthritis (RA) patients. ( 5.4 ) Thrombosis has occurred in patients treated with LEQSELVI. Increased incidence of pulmonary embolism, venous and arterial thrombosis with another JAK inhibitor vs. TNF blockers. ( 5.5 )",
-      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass); structured by atlas.migrate v1->v2",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     }
   },
   "real_world_safety": {
     "faers_summary": {
       "value": {
-        "query": {
-          "search_field": "patient.drug.medicinalproduct",
-          "search_term": "DEURUXOLITINIB",
-          "receivedate_from": "2024-11-20",
-          "receivedate_to": "2024-11-20",
-          "api_urls": [
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"DEURUXOLITINIB\"&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"DEURUXOLITINIB\"+AND+serious:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"DEURUXOLITINIB\"+AND+seriousnessdeath:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"DEURUXOLITINIB\"+AND+seriousnesshospitalization:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"DEURUXOLITINIB\"+AND+seriousnesslifethreatening:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"DEURUXOLITINIB\"+AND+seriousnessdisabling:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"DEURUXOLITINIB\"&count=patient.reaction.reactionmeddrapt.exact&limit=15",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"DEURUXOLITINIB\"+AND+serious:1&count=patient.reaction.reactionmeddrapt.exact&limit=15",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"DEURUXOLITINIB\"&count=receivedate"
-          ],
-          "data_last_updated": "2026-07-30"
-        },
-        "total_reports": 1,
-        "serious_reports": 0,
-        "death_reports": 0,
-        "hospitalization_reports": 0,
-        "life_threatening_reports": 0,
-        "disability_reports": 0,
-        "top_reactions": [
-          {
-            "meddra_pt": "ACNE",
-            "report_count": 1,
-            "pct_of_reports": 100.0
-          },
-          {
-            "meddra_pt": "ALOPECIA",
-            "report_count": 1,
-            "pct_of_reports": 100.0
-          },
-          {
-            "meddra_pt": "BLOOD CHOLESTEROL INCREASED",
-            "report_count": 1,
-            "pct_of_reports": 100.0
-          },
-          {
-            "meddra_pt": "WEIGHT INCREASED",
-            "report_count": 1,
-            "pct_of_reports": 100.0
-          }
-        ],
-        "top_serious_reactions": [],
-        "reports_by_year": [
-          {
-            "year": 2024,
-            "report_count": 1
-          }
-        ],
-        "meddra_version": null
+        "drug": "Deuruxolitinib",
+        "application_number": null
       },
-      "source_type": "openfda_faers",
-      "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"DEURUXOLITINIB\"&limit=1",
-      "source_excerpt": "openFDA drug/event.json aggregate: total_reports=1, serious=0, deaths=0",
-      "extracted_by": "fetch_faers.py (openfda drug/event.json, v2 pass)",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     }
   },
   "exclusivity": {
     "regulatory_application": {
       "value": {
-        "application_type": "NDA",
-        "application_number": "217900",
-        "registry": "orange_book",
-        "center": "CDER",
-        "proprietary_name": "LEQSELVI",
-        "applicant": "SUN PHARMACEUTICAL INDUSTRIES INC",
-        "first_approval_date": "2024-07-25"
+        "drug": "Deuruxolitinib",
+        "application_number": "217900"
       },
-      "source_type": "orange_book",
-      "source_url": "https://api.fda.gov/drug/orangebook.json",
-      "source_excerpt": "openFDA drug/orangebook.json: DEURUXOLITINIB application N217900, brand LEQSELVI, applicant SUN PHARM INDS INC, approved 2024-07-25",
-      "extracted_by": "atlas.regulatory_applications (registry file fetched 2026-09-05)",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     },
     "orange_book": {
       "value": {
-        "application_type": "N",
-        "application_number": "217900",
-        "ingredient": "DEURUXOLITINIB",
-        "trade_name": "LEQSELVI",
-        "applicant": "SUN PHARM INDS INC",
-        "applicant_full_name": "SUN PHARMACEUTICAL INDUSTRIES INC",
-        "products": [
-          {
-            "product_number": "001",
-            "strength": "EQ 8MG BASE",
-            "dosage_form": "TABLET",
-            "route": "ORAL",
-            "approval_date": "2024-07-25",
-            "rld": true,
-            "rs": true,
-            "te_code": null,
-            "marketing_type": "HUMAN PRESCRIPTION DRUG"
-          }
-        ],
-        "patents": [
-          {
-            "patent_number": "10561659",
-            "expiration_date": "2037-05-04",
-            "drug_substance_claim": false,
-            "drug_product_claim": false,
-            "patent_use_code": "U-3976",
-            "delisted": false,
-            "submission_date": "2024-08-23",
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "patent_number": "12076323",
-            "expiration_date": "2037-05-04",
-            "drug_substance_claim": false,
-            "drug_product_claim": false,
-            "patent_use_code": "U-3976",
-            "delisted": false,
-            "submission_date": "2024-10-01",
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "patent_number": "11919907",
-            "expiration_date": "2041-05-21",
-            "drug_substance_claim": false,
-            "drug_product_claim": true,
-            "patent_use_code": "U-3976",
-            "delisted": false,
-            "submission_date": "2024-08-23",
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "patent_number": "12285432",
-            "expiration_date": "2042-08-11",
-            "drug_substance_claim": false,
-            "drug_product_claim": false,
-            "patent_use_code": "U-3976",
-            "delisted": false,
-            "submission_date": "2025-05-29",
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "patent_number": "12247034",
-            "expiration_date": "2044-05-10",
-            "drug_substance_claim": true,
-            "drug_product_claim": true,
-            "patent_use_code": null,
-            "delisted": false,
-            "submission_date": "2025-04-08",
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "patent_number": "12364699",
-            "expiration_date": "2044-10-10",
-            "drug_substance_claim": false,
-            "drug_product_claim": false,
-            "patent_use_code": "U-3976",
-            "delisted": false,
-            "submission_date": "2025-08-21",
-            "product_numbers": [
-              "001"
-            ]
-          }
-        ],
-        "exclusivities": [
-          {
-            "code": "NCE",
-            "expiration_date": "2029-07-25",
-            "product_numbers": [
-              "001"
-            ]
-          }
-        ],
-        "latest_patent_expiration": "2044-10-10",
-        "latest_exclusivity_expiration": "2029-07-25",
-        "data_file_date": null
+        "drug": "Deuruxolitinib",
+        "application_number": "217900"
       },
-      "source_type": "orange_book",
-      "source_url": "https://api.fda.gov/drug/orangebook.json?search=products.active_ingredients.name%3A%22DEURUXOLITINIB%22&limit=100",
-      "source_excerpt": "openFDA drug/orangebook.json, 1 product row(s) matched on products.active_ingredients.name='DEURUXOLITINIB'",
-      "extracted_by": "fetch_orange_book.py (openfda drug/orangebook.json, v2 pass)",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     },
     "purple_book": {
-      "value": null,
-      "source_type": "needs_extraction",
+      "value": {
+        "drug": "Deuruxolitinib",
+        "application_number": null
+      },
+      "source_type": "drug_level_ref",
       "source_url": null,
       "source_excerpt": null,
       "extracted_by": null,
@@ -1572,9 +1386,21 @@
     "arms": {
       "value": [
         {
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "label": "Placebo",
           "role": "placebo",
+          "analysis_population": null,
+          "intervention_names": [],
+          "dose_value": null,
+          "dose_unit": null,
+          "frequency": null,
+          "randomized_n": 130
+        },
+        {
+          "arm_id": "OG000#3",
+          "label": "Placebo BID",
+          "role": "placebo",
+          "analysis_population": null,
           "intervention_names": [],
           "dose_value": null,
           "dose_unit": null,
@@ -1585,6 +1411,7 @@
           "arm_id": "OG001",
           "label": "CTP-543 8 mg BID",
           "role": "other",
+          "analysis_population": null,
           "intervention_names": [
             "CTP-543"
           ],
@@ -1597,6 +1424,7 @@
           "arm_id": "OG002",
           "label": "CTP-543 12 mg BID",
           "role": "other",
+          "analysis_population": null,
           "intervention_names": [
             "CTP-543"
           ],
@@ -1604,22 +1432,12 @@
           "dose_unit": null,
           "frequency": null,
           "randomized_n": 129
-        },
-        {
-          "arm_id": "OG000",
-          "label": "Placebo BID",
-          "role": "placebo",
-          "intervention_names": [],
-          "dose_value": null,
-          "dose_unit": null,
-          "frequency": null,
-          "randomized_n": 130
         }
       ],
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04797650",
       "source_excerpt": "resultsSection.outcomeMeasuresModule.outcomeMeasures[].groups[]",
-      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3, 2026-09-06)",
+      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3 backfill re-run)",
       "reviewed_by": null,
       "confidence": 1.0
     },
@@ -1631,7 +1449,7 @@
             "position": 1,
             "verbatim_sha1": "87ca9d8571f5bd27535572fa8fb8c2a9a11bffd3"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "timepoint": {
             "value": 24,
             "unit": "week",
@@ -1715,7 +1533,7 @@
             "position": 1,
             "verbatim_sha1": "6116561f64e0a65d26b4132bbcfb6bcfc9244e71"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -1728,7 +1546,7 @@
           "reported_value": 4.9,
           "reported_unit": "Percentage of responders",
           "responders": null,
-          "response_rate_pct": null,
+          "response_rate_pct": 4.9,
           "rate_is_derived": false,
           "dispersion_type": null,
           "dispersion_value": null,
@@ -1756,7 +1574,7 @@
           "reported_value": 43.2,
           "reported_unit": "Percentage of responders",
           "responders": null,
-          "response_rate_pct": null,
+          "response_rate_pct": 43.2,
           "rate_is_derived": false,
           "dispersion_type": null,
           "dispersion_value": null,
@@ -1784,7 +1602,7 @@
           "reported_value": 41.0,
           "reported_unit": "Percentage of responders",
           "responders": null,
-          "response_rate_pct": null,
+          "response_rate_pct": 41.0,
           "rate_is_derived": false,
           "dispersion_type": null,
           "dispersion_value": null,
@@ -1799,7 +1617,7 @@
             "position": 1,
             "verbatim_sha1": "6116561f64e0a65d26b4132bbcfb6bcfc9244e71"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -1812,7 +1630,7 @@
           "reported_value": 4.9,
           "reported_unit": "Percentage of responders",
           "responders": null,
-          "response_rate_pct": null,
+          "response_rate_pct": 4.9,
           "rate_is_derived": false,
           "dispersion_type": null,
           "dispersion_value": null,
@@ -1840,7 +1658,7 @@
           "reported_value": 41.0,
           "reported_unit": "Percentage of responders",
           "responders": null,
-          "response_rate_pct": null,
+          "response_rate_pct": 41.0,
           "rate_is_derived": false,
           "dispersion_type": null,
           "dispersion_value": null,
@@ -1868,7 +1686,7 @@
           "reported_value": 45.1,
           "reported_unit": "Percentage of responders",
           "responders": null,
-          "response_rate_pct": null,
+          "response_rate_pct": 45.1,
           "rate_is_derived": false,
           "dispersion_type": null,
           "dispersion_value": null,
@@ -1883,7 +1701,7 @@
             "position": 1,
             "verbatim_sha1": "6116561f64e0a65d26b4132bbcfb6bcfc9244e71"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "timepoint": {
             "value": 20,
             "unit": "week",
@@ -1896,7 +1714,7 @@
           "reported_value": 1.7,
           "reported_unit": "Percentage of responders",
           "responders": null,
-          "response_rate_pct": null,
+          "response_rate_pct": 1.7,
           "rate_is_derived": false,
           "dispersion_type": null,
           "dispersion_value": null,
@@ -1924,7 +1742,7 @@
           "reported_value": 40.1,
           "reported_unit": "Percentage of responders",
           "responders": null,
-          "response_rate_pct": null,
+          "response_rate_pct": 40.1,
           "rate_is_derived": false,
           "dispersion_type": null,
           "dispersion_value": null,
@@ -1952,7 +1770,7 @@
           "reported_value": 52.5,
           "reported_unit": "Percentage of responders",
           "responders": null,
-          "response_rate_pct": null,
+          "response_rate_pct": 52.5,
           "rate_is_derived": false,
           "dispersion_type": null,
           "dispersion_value": null,
@@ -1967,7 +1785,7 @@
             "position": 1,
             "verbatim_sha1": "6116561f64e0a65d26b4132bbcfb6bcfc9244e71"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "timepoint": {
             "value": 24,
             "unit": "week",
@@ -1980,7 +1798,7 @@
           "reported_value": 1.7,
           "reported_unit": "Percentage of responders",
           "responders": null,
-          "response_rate_pct": null,
+          "response_rate_pct": 1.7,
           "rate_is_derived": false,
           "dispersion_type": null,
           "dispersion_value": null,
@@ -2008,7 +1826,7 @@
           "reported_value": 46.5,
           "reported_unit": "Percentage of responders",
           "responders": null,
-          "response_rate_pct": null,
+          "response_rate_pct": 46.5,
           "rate_is_derived": false,
           "dispersion_type": null,
           "dispersion_value": null,
@@ -2036,7 +1854,7 @@
           "reported_value": 51.7,
           "reported_unit": "Percentage of responders",
           "responders": null,
-          "response_rate_pct": null,
+          "response_rate_pct": 51.7,
           "rate_is_derived": false,
           "dispersion_type": null,
           "dispersion_value": null,
@@ -2051,7 +1869,7 @@
             "position": 2,
             "verbatim_sha1": "6e544a8126c4cc8beb4874461115bd420f82d5ca"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "timepoint": {
             "value": 4,
             "unit": "week",
@@ -2135,7 +1953,7 @@
             "position": 2,
             "verbatim_sha1": "6e544a8126c4cc8beb4874461115bd420f82d5ca"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "timepoint": {
             "value": 8,
             "unit": "week",
@@ -2219,7 +2037,7 @@
             "position": 2,
             "verbatim_sha1": "6e544a8126c4cc8beb4874461115bd420f82d5ca"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -2303,7 +2121,7 @@
             "position": 2,
             "verbatim_sha1": "6e544a8126c4cc8beb4874461115bd420f82d5ca"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -2387,7 +2205,7 @@
             "position": 2,
             "verbatim_sha1": "6e544a8126c4cc8beb4874461115bd420f82d5ca"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "timepoint": {
             "value": 20,
             "unit": "week",
@@ -2471,7 +2289,7 @@
             "position": 3,
             "verbatim_sha1": "f70001593015f2f16fd4cb5237cd81a7e99f113c"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#3",
           "timepoint": {
             "value": 4,
             "unit": "week",
@@ -2555,7 +2373,7 @@
             "position": 3,
             "verbatim_sha1": "f70001593015f2f16fd4cb5237cd81a7e99f113c"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#3",
           "timepoint": {
             "value": 8,
             "unit": "week",
@@ -2639,7 +2457,7 @@
             "position": 3,
             "verbatim_sha1": "f70001593015f2f16fd4cb5237cd81a7e99f113c"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#3",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -2723,7 +2541,7 @@
             "position": 3,
             "verbatim_sha1": "f70001593015f2f16fd4cb5237cd81a7e99f113c"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#3",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -2807,7 +2625,7 @@
             "position": 3,
             "verbatim_sha1": "f70001593015f2f16fd4cb5237cd81a7e99f113c"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#3",
           "timepoint": {
             "value": 20,
             "unit": "week",
@@ -2891,7 +2709,7 @@
             "position": 3,
             "verbatim_sha1": "f70001593015f2f16fd4cb5237cd81a7e99f113c"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#3",
           "timepoint": {
             "value": 24,
             "unit": "week",
@@ -2975,7 +2793,7 @@
             "position": 4,
             "verbatim_sha1": "a3e204ef0b2a748236756fa54b71b520ed826f40"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -2988,7 +2806,7 @@
           "reported_value": 3.3,
           "reported_unit": "Percentage of responders",
           "responders": null,
-          "response_rate_pct": null,
+          "response_rate_pct": 3.3,
           "rate_is_derived": false,
           "dispersion_type": null,
           "dispersion_value": null,
@@ -3016,7 +2834,7 @@
           "reported_value": 38.0,
           "reported_unit": "Percentage of responders",
           "responders": null,
-          "response_rate_pct": null,
+          "response_rate_pct": 38.0,
           "rate_is_derived": false,
           "dispersion_type": null,
           "dispersion_value": null,
@@ -3044,7 +2862,7 @@
           "reported_value": 44.3,
           "reported_unit": "Percentage of responders",
           "responders": null,
-          "response_rate_pct": null,
+          "response_rate_pct": 44.3,
           "rate_is_derived": false,
           "dispersion_type": null,
           "dispersion_value": null,
@@ -3059,7 +2877,7 @@
             "position": 4,
             "verbatim_sha1": "a3e204ef0b2a748236756fa54b71b520ed826f40"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -3072,7 +2890,7 @@
           "reported_value": 3.2,
           "reported_unit": "Percentage of responders",
           "responders": null,
-          "response_rate_pct": null,
+          "response_rate_pct": 3.2,
           "rate_is_derived": false,
           "dispersion_type": null,
           "dispersion_value": null,
@@ -3100,7 +2918,7 @@
           "reported_value": 45.0,
           "reported_unit": "Percentage of responders",
           "responders": null,
-          "response_rate_pct": null,
+          "response_rate_pct": 45.0,
           "rate_is_derived": false,
           "dispersion_type": null,
           "dispersion_value": null,
@@ -3128,7 +2946,7 @@
           "reported_value": 52.0,
           "reported_unit": "Percentage of responders",
           "responders": null,
-          "response_rate_pct": null,
+          "response_rate_pct": 52.0,
           "rate_is_derived": false,
           "dispersion_type": null,
           "dispersion_value": null,
@@ -3143,7 +2961,7 @@
             "position": 4,
             "verbatim_sha1": "a3e204ef0b2a748236756fa54b71b520ed826f40"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "timepoint": {
             "value": 20,
             "unit": "week",
@@ -3156,7 +2974,7 @@
           "reported_value": 1.7,
           "reported_unit": "Percentage of responders",
           "responders": null,
-          "response_rate_pct": null,
+          "response_rate_pct": 1.7,
           "rate_is_derived": false,
           "dispersion_type": null,
           "dispersion_value": null,
@@ -3184,7 +3002,7 @@
           "reported_value": 50.0,
           "reported_unit": "Percentage of responders",
           "responders": null,
-          "response_rate_pct": null,
+          "response_rate_pct": 50.0,
           "rate_is_derived": false,
           "dispersion_type": null,
           "dispersion_value": null,
@@ -3212,7 +3030,7 @@
           "reported_value": 59.0,
           "reported_unit": "Percentage of responders",
           "responders": null,
-          "response_rate_pct": null,
+          "response_rate_pct": 59.0,
           "rate_is_derived": false,
           "dispersion_type": null,
           "dispersion_value": null,
@@ -3227,7 +3045,7 @@
             "position": 4,
             "verbatim_sha1": "a3e204ef0b2a748236756fa54b71b520ed826f40"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "timepoint": {
             "value": 24,
             "unit": "week",
@@ -3240,7 +3058,7 @@
           "reported_value": 2.5,
           "reported_unit": "Percentage of responders",
           "responders": null,
-          "response_rate_pct": null,
+          "response_rate_pct": 2.5,
           "rate_is_derived": false,
           "dispersion_type": null,
           "dispersion_value": null,
@@ -3268,7 +3086,7 @@
           "reported_value": 54.1,
           "reported_unit": "Percentage of responders",
           "responders": null,
-          "response_rate_pct": null,
+          "response_rate_pct": 54.1,
           "rate_is_derived": false,
           "dispersion_type": null,
           "dispersion_value": null,
@@ -3296,7 +3114,7 @@
           "reported_value": 61.7,
           "reported_unit": "Percentage of responders",
           "responders": null,
-          "response_rate_pct": null,
+          "response_rate_pct": 61.7,
           "rate_is_derived": false,
           "dispersion_type": null,
           "dispersion_value": null,
@@ -3311,7 +3129,7 @@
             "position": 5,
             "verbatim_sha1": "956a9ddee2a05ecedcf951c25fd5bd69adfd2c93"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -3324,7 +3142,7 @@
           "reported_value": 3.3,
           "reported_unit": "Percentage of responders",
           "responders": null,
-          "response_rate_pct": null,
+          "response_rate_pct": 3.3,
           "rate_is_derived": false,
           "dispersion_type": null,
           "dispersion_value": null,
@@ -3352,7 +3170,7 @@
           "reported_value": 43.3,
           "reported_unit": "Percentage of responders",
           "responders": null,
-          "response_rate_pct": null,
+          "response_rate_pct": 43.3,
           "rate_is_derived": false,
           "dispersion_type": null,
           "dispersion_value": null,
@@ -3380,7 +3198,7 @@
           "reported_value": 49.2,
           "reported_unit": "Percentage of responders",
           "responders": null,
-          "response_rate_pct": null,
+          "response_rate_pct": 49.2,
           "rate_is_derived": false,
           "dispersion_type": null,
           "dispersion_value": null,
@@ -3395,7 +3213,7 @@
             "position": 5,
             "verbatim_sha1": "956a9ddee2a05ecedcf951c25fd5bd69adfd2c93"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -3408,7 +3226,7 @@
           "reported_value": 4.0,
           "reported_unit": "Percentage of responders",
           "responders": null,
-          "response_rate_pct": null,
+          "response_rate_pct": 4.0,
           "rate_is_derived": false,
           "dispersion_type": null,
           "dispersion_value": null,
@@ -3436,7 +3254,7 @@
           "reported_value": 46.2,
           "reported_unit": "Percentage of responders",
           "responders": null,
-          "response_rate_pct": null,
+          "response_rate_pct": 46.2,
           "rate_is_derived": false,
           "dispersion_type": null,
           "dispersion_value": null,
@@ -3464,7 +3282,7 @@
           "reported_value": 59.8,
           "reported_unit": "Percentage of responders",
           "responders": null,
-          "response_rate_pct": null,
+          "response_rate_pct": 59.8,
           "rate_is_derived": false,
           "dispersion_type": null,
           "dispersion_value": null,
@@ -3479,7 +3297,7 @@
             "position": 5,
             "verbatim_sha1": "956a9ddee2a05ecedcf951c25fd5bd69adfd2c93"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "timepoint": {
             "value": 20,
             "unit": "week",
@@ -3492,7 +3310,7 @@
           "reported_value": 5.8,
           "reported_unit": "Percentage of responders",
           "responders": null,
-          "response_rate_pct": null,
+          "response_rate_pct": 5.8,
           "rate_is_derived": false,
           "dispersion_type": null,
           "dispersion_value": null,
@@ -3520,7 +3338,7 @@
           "reported_value": 48.7,
           "reported_unit": "Percentage of responders",
           "responders": null,
-          "response_rate_pct": null,
+          "response_rate_pct": 48.7,
           "rate_is_derived": false,
           "dispersion_type": null,
           "dispersion_value": null,
@@ -3548,7 +3366,7 @@
           "reported_value": 64.4,
           "reported_unit": "Percentage of responders",
           "responders": null,
-          "response_rate_pct": null,
+          "response_rate_pct": 64.4,
           "rate_is_derived": false,
           "dispersion_type": null,
           "dispersion_value": null,
@@ -3563,7 +3381,7 @@
             "position": 5,
             "verbatim_sha1": "956a9ddee2a05ecedcf951c25fd5bd69adfd2c93"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "timepoint": {
             "value": 24,
             "unit": "week",
@@ -3576,7 +3394,7 @@
           "reported_value": 1.7,
           "reported_unit": "Percentage of responders",
           "responders": null,
-          "response_rate_pct": null,
+          "response_rate_pct": 1.7,
           "rate_is_derived": false,
           "dispersion_type": null,
           "dispersion_value": null,
@@ -3604,7 +3422,7 @@
           "reported_value": 50.9,
           "reported_unit": "Percentage of responders",
           "responders": null,
-          "response_rate_pct": null,
+          "response_rate_pct": 50.9,
           "rate_is_derived": false,
           "dispersion_type": null,
           "dispersion_value": null,
@@ -3632,7 +3450,7 @@
           "reported_value": 68.3,
           "reported_unit": "Percentage of responders",
           "responders": null,
-          "response_rate_pct": null,
+          "response_rate_pct": 68.3,
           "rate_is_derived": false,
           "dispersion_type": null,
           "dispersion_value": null,
@@ -3647,7 +3465,7 @@
             "position": 6,
             "verbatim_sha1": "c181c5694a206fd1675c2348be36ea1b0a6cf7ba"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "timepoint": null,
           "analysis_population": null,
           "study_period": null,
@@ -3719,7 +3537,7 @@
             "position": 6,
             "verbatim_sha1": "c181c5694a206fd1675c2348be36ea1b0a6cf7ba"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -3803,7 +3621,7 @@
             "position": 6,
             "verbatim_sha1": "c181c5694a206fd1675c2348be36ea1b0a6cf7ba"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -3887,7 +3705,7 @@
             "position": 6,
             "verbatim_sha1": "c181c5694a206fd1675c2348be36ea1b0a6cf7ba"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "timepoint": {
             "value": 20,
             "unit": "week",
@@ -3971,7 +3789,7 @@
             "position": 6,
             "verbatim_sha1": "c181c5694a206fd1675c2348be36ea1b0a6cf7ba"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "timepoint": {
             "value": 24,
             "unit": "week",
@@ -4055,7 +3873,7 @@
             "position": 7,
             "verbatim_sha1": "9d9105d539952e9d308812e393f5cf00ab408f72"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "timepoint": null,
           "analysis_population": null,
           "study_period": null,
@@ -4127,7 +3945,7 @@
             "position": 7,
             "verbatim_sha1": "9d9105d539952e9d308812e393f5cf00ab408f72"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -4211,7 +4029,7 @@
             "position": 7,
             "verbatim_sha1": "9d9105d539952e9d308812e393f5cf00ab408f72"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -4295,7 +4113,7 @@
             "position": 7,
             "verbatim_sha1": "9d9105d539952e9d308812e393f5cf00ab408f72"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "timepoint": {
             "value": 20,
             "unit": "week",
@@ -4379,7 +4197,7 @@
             "position": 7,
             "verbatim_sha1": "9d9105d539952e9d308812e393f5cf00ab408f72"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "timepoint": {
             "value": 24,
             "unit": "week",
@@ -4463,7 +4281,7 @@
             "position": 8,
             "verbatim_sha1": "72329f7a175f17938c9c410a44812f67816d8b53"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -4547,7 +4365,7 @@
             "position": 8,
             "verbatim_sha1": "72329f7a175f17938c9c410a44812f67816d8b53"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "timepoint": {
             "value": 24,
             "unit": "week",
@@ -4631,7 +4449,7 @@
             "position": 8,
             "verbatim_sha1": "72329f7a175f17938c9c410a44812f67816d8b53"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -4715,7 +4533,7 @@
             "position": 8,
             "verbatim_sha1": "72329f7a175f17938c9c410a44812f67816d8b53"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "timepoint": {
             "value": 24,
             "unit": "week",
@@ -4799,7 +4617,7 @@
             "position": 9,
             "verbatim_sha1": "8b344b4dc45e0a7c30c3edde96fb8b9d0d62a0d9"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "timepoint": null,
           "analysis_population": null,
           "study_period": null,
@@ -4871,7 +4689,7 @@
             "position": 9,
             "verbatim_sha1": "8b344b4dc45e0a7c30c3edde96fb8b9d0d62a0d9"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -4955,7 +4773,7 @@
             "position": 9,
             "verbatim_sha1": "8b344b4dc45e0a7c30c3edde96fb8b9d0d62a0d9"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "timepoint": {
             "value": 24,
             "unit": "week",
@@ -5039,7 +4857,7 @@
             "position": 10,
             "verbatim_sha1": "e319218dfe941fbadb35e6b960568f4b01c7cfab"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "timepoint": null,
           "analysis_population": null,
           "study_period": null,
@@ -5111,7 +4929,7 @@
             "position": 10,
             "verbatim_sha1": "e319218dfe941fbadb35e6b960568f4b01c7cfab"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -5195,7 +5013,7 @@
             "position": 10,
             "verbatim_sha1": "e319218dfe941fbadb35e6b960568f4b01c7cfab"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "timepoint": {
             "value": 24,
             "unit": "week",
@@ -5279,7 +5097,7 @@
             "position": 11,
             "verbatim_sha1": "31e825bde921049eb68fd47deaa5b9951d077b91"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "timepoint": null,
           "analysis_population": null,
           "study_period": null,
@@ -5351,7 +5169,7 @@
             "position": 11,
             "verbatim_sha1": "31e825bde921049eb68fd47deaa5b9951d077b91"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -5435,7 +5253,7 @@
             "position": 11,
             "verbatim_sha1": "31e825bde921049eb68fd47deaa5b9951d077b91"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -5519,7 +5337,7 @@
             "position": 11,
             "verbatim_sha1": "31e825bde921049eb68fd47deaa5b9951d077b91"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "timepoint": {
             "value": 20,
             "unit": "week",
@@ -5603,7 +5421,7 @@
             "position": 11,
             "verbatim_sha1": "31e825bde921049eb68fd47deaa5b9951d077b91"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "timepoint": {
             "value": 24,
             "unit": "week",
@@ -5687,7 +5505,7 @@
             "position": 12,
             "verbatim_sha1": "a5f95d9b23a8d0fcebe8911a0d30909f2cbf8265"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -5771,7 +5589,7 @@
             "position": 12,
             "verbatim_sha1": "a5f95d9b23a8d0fcebe8911a0d30909f2cbf8265"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -5855,7 +5673,7 @@
             "position": 12,
             "verbatim_sha1": "a5f95d9b23a8d0fcebe8911a0d30909f2cbf8265"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "timepoint": {
             "value": 20,
             "unit": "week",
@@ -5939,7 +5757,7 @@
             "position": 12,
             "verbatim_sha1": "a5f95d9b23a8d0fcebe8911a0d30909f2cbf8265"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "timepoint": {
             "value": 24,
             "unit": "week",
@@ -6023,7 +5841,7 @@
             "position": 13,
             "verbatim_sha1": "3fd3dbcf04414a90da1ee14e8435d2463a185c70"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "timepoint": null,
           "analysis_population": null,
           "study_period": null,
@@ -6095,7 +5913,7 @@
             "position": 13,
             "verbatim_sha1": "3fd3dbcf04414a90da1ee14e8435d2463a185c70"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -6179,7 +5997,7 @@
             "position": 13,
             "verbatim_sha1": "3fd3dbcf04414a90da1ee14e8435d2463a185c70"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -6263,7 +6081,7 @@
             "position": 13,
             "verbatim_sha1": "3fd3dbcf04414a90da1ee14e8435d2463a185c70"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "timepoint": {
             "value": 20,
             "unit": "week",
@@ -6347,7 +6165,7 @@
             "position": 13,
             "verbatim_sha1": "3fd3dbcf04414a90da1ee14e8435d2463a185c70"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "timepoint": {
             "value": 24,
             "unit": "week",
@@ -6431,7 +6249,7 @@
             "position": 13,
             "verbatim_sha1": "3fd3dbcf04414a90da1ee14e8435d2463a185c70"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "timepoint": null,
           "analysis_population": null,
           "study_period": null,
@@ -6503,7 +6321,7 @@
             "position": 13,
             "verbatim_sha1": "3fd3dbcf04414a90da1ee14e8435d2463a185c70"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -6587,7 +6405,7 @@
             "position": 13,
             "verbatim_sha1": "3fd3dbcf04414a90da1ee14e8435d2463a185c70"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -6671,7 +6489,7 @@
             "position": 13,
             "verbatim_sha1": "3fd3dbcf04414a90da1ee14e8435d2463a185c70"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "timepoint": {
             "value": 20,
             "unit": "week",
@@ -6755,7 +6573,7 @@
             "position": 13,
             "verbatim_sha1": "3fd3dbcf04414a90da1ee14e8435d2463a185c70"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "timepoint": {
             "value": 24,
             "unit": "week",
@@ -6839,7 +6657,7 @@
             "position": 13,
             "verbatim_sha1": "3fd3dbcf04414a90da1ee14e8435d2463a185c70"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "timepoint": null,
           "analysis_population": null,
           "study_period": null,
@@ -6911,7 +6729,7 @@
             "position": 13,
             "verbatim_sha1": "3fd3dbcf04414a90da1ee14e8435d2463a185c70"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -6995,7 +6813,7 @@
             "position": 13,
             "verbatim_sha1": "3fd3dbcf04414a90da1ee14e8435d2463a185c70"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -7079,7 +6897,7 @@
             "position": 13,
             "verbatim_sha1": "3fd3dbcf04414a90da1ee14e8435d2463a185c70"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "timepoint": {
             "value": 20,
             "unit": "week",
@@ -7163,7 +6981,7 @@
             "position": 13,
             "verbatim_sha1": "3fd3dbcf04414a90da1ee14e8435d2463a185c70"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "timepoint": {
             "value": 24,
             "unit": "week",
@@ -7247,7 +7065,7 @@
             "position": 13,
             "verbatim_sha1": "3fd3dbcf04414a90da1ee14e8435d2463a185c70"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "timepoint": null,
           "analysis_population": null,
           "study_period": null,
@@ -7319,7 +7137,7 @@
             "position": 13,
             "verbatim_sha1": "3fd3dbcf04414a90da1ee14e8435d2463a185c70"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -7403,7 +7221,7 @@
             "position": 13,
             "verbatim_sha1": "3fd3dbcf04414a90da1ee14e8435d2463a185c70"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -7487,7 +7305,7 @@
             "position": 13,
             "verbatim_sha1": "3fd3dbcf04414a90da1ee14e8435d2463a185c70"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "timepoint": {
             "value": 20,
             "unit": "week",
@@ -7571,7 +7389,7 @@
             "position": 13,
             "verbatim_sha1": "3fd3dbcf04414a90da1ee14e8435d2463a185c70"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "timepoint": {
             "value": 24,
             "unit": "week",
@@ -7655,7 +7473,7 @@
             "position": 14,
             "verbatim_sha1": "777d66bb1c9c580784227e479605520cc24bff90"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "timepoint": {
             "value": 24,
             "unit": "week",
@@ -7739,7 +7557,7 @@
             "position": 14,
             "verbatim_sha1": "777d66bb1c9c580784227e479605520cc24bff90"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "timepoint": {
             "value": 24,
             "unit": "week",
@@ -7823,7 +7641,7 @@
             "position": 14,
             "verbatim_sha1": "777d66bb1c9c580784227e479605520cc24bff90"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "timepoint": {
             "value": 24,
             "unit": "week",
@@ -7907,7 +7725,7 @@
             "position": 14,
             "verbatim_sha1": "777d66bb1c9c580784227e479605520cc24bff90"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "timepoint": {
             "value": 24,
             "unit": "week",
@@ -7991,7 +7809,7 @@
             "position": 15,
             "verbatim_sha1": "8c99cf475ae5bcc1131d097f3fcc6630d0508353"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "timepoint": {
             "value": 24,
             "unit": "week",
@@ -8073,7 +7891,7 @@
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04797650",
       "source_excerpt": "resultsSection.outcomeMeasuresModule.outcomeMeasures[].{denoms,classes[].categories[].measurements[]}",
-      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3, 2026-09-06)",
+      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3 backfill re-run)",
       "reviewed_by": null,
       "confidence": 1.0
     },
@@ -8090,7 +7908,7 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG001",
           "comparison_kind": "superiority",
           "effect_type": "risk_difference",
@@ -8119,7 +7937,7 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG002",
           "comparison_kind": "superiority",
           "effect_type": "risk_difference",
@@ -8148,7 +7966,7 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG001",
           "comparison_kind": "superiority",
           "effect_type": "risk_difference",
@@ -8177,7 +7995,7 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG002",
           "comparison_kind": "superiority",
           "effect_type": "risk_difference",
@@ -8206,7 +8024,7 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG001",
           "comparison_kind": "superiority",
           "effect_type": "risk_difference",
@@ -8235,7 +8053,7 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG002",
           "comparison_kind": "superiority",
           "effect_type": "risk_difference",
@@ -8264,7 +8082,7 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG001",
           "comparison_kind": "superiority",
           "effect_type": "risk_difference",
@@ -8293,7 +8111,7 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG002",
           "comparison_kind": "superiority",
           "effect_type": "risk_difference",
@@ -8322,7 +8140,7 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG001",
           "comparison_kind": "superiority",
           "effect_type": "risk_difference",
@@ -8351,7 +8169,7 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG002",
           "comparison_kind": "superiority",
           "effect_type": "risk_difference",
@@ -8380,7 +8198,7 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG001",
           "comparison_kind": "superiority",
           "effect_type": "risk_difference",
@@ -8409,7 +8227,7 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG001",
           "comparison_kind": "superiority",
           "effect_type": "risk_difference",
@@ -8438,7 +8256,7 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG002",
           "comparison_kind": "superiority",
           "effect_type": "risk_difference",
@@ -8467,7 +8285,7 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG001",
           "comparison_kind": "superiority",
           "effect_type": "risk_difference",
@@ -8496,7 +8314,7 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG002",
           "comparison_kind": "superiority",
           "effect_type": "risk_difference",
@@ -8525,7 +8343,7 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG001",
           "comparison_kind": "superiority",
           "effect_type": "risk_difference",
@@ -8554,7 +8372,7 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG002",
           "comparison_kind": "superiority",
           "effect_type": "risk_difference",
@@ -8583,7 +8401,7 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG001",
           "comparison_kind": "superiority",
           "effect_type": "risk_difference",
@@ -8612,7 +8430,7 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG002",
           "comparison_kind": "superiority",
           "effect_type": "risk_difference",
@@ -8641,7 +8459,7 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#3",
           "reference_arm_id": "OG001",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
@@ -8670,7 +8488,7 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#3",
           "reference_arm_id": "OG002",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
@@ -8699,7 +8517,7 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#3",
           "reference_arm_id": "OG001",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
@@ -8728,7 +8546,7 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#3",
           "reference_arm_id": "OG002",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
@@ -8757,7 +8575,7 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#3",
           "reference_arm_id": "OG001",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
@@ -8786,7 +8604,7 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#3",
           "reference_arm_id": "OG002",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
@@ -8815,7 +8633,7 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#3",
           "reference_arm_id": "OG001",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
@@ -8844,7 +8662,7 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#3",
           "reference_arm_id": "OG002",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
@@ -8873,7 +8691,7 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#3",
           "reference_arm_id": "OG001",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
@@ -8902,7 +8720,7 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#3",
           "reference_arm_id": "OG002",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
@@ -8931,7 +8749,7 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#3",
           "reference_arm_id": "OG001",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
@@ -8960,7 +8778,7 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#3",
           "reference_arm_id": "OG002",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
@@ -8989,7 +8807,7 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG001",
           "comparison_kind": "superiority",
           "effect_type": null,
@@ -9018,7 +8836,7 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG002",
           "comparison_kind": "superiority",
           "effect_type": null,
@@ -9047,7 +8865,7 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG001",
           "comparison_kind": "superiority",
           "effect_type": null,
@@ -9076,7 +8894,7 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG002",
           "comparison_kind": "superiority",
           "effect_type": null,
@@ -9105,7 +8923,7 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG001",
           "comparison_kind": "superiority",
           "effect_type": null,
@@ -9134,7 +8952,7 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG002",
           "comparison_kind": "superiority",
           "effect_type": null,
@@ -9163,7 +8981,7 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG001",
           "comparison_kind": "superiority",
           "effect_type": null,
@@ -9192,7 +9010,7 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG002",
           "comparison_kind": "superiority",
           "effect_type": null,
@@ -9221,7 +9039,7 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG001",
           "comparison_kind": "superiority",
           "effect_type": null,
@@ -9250,7 +9068,7 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG002",
           "comparison_kind": "superiority",
           "effect_type": null,
@@ -9279,7 +9097,7 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG001",
           "comparison_kind": "superiority",
           "effect_type": null,
@@ -9308,7 +9126,7 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG002",
           "comparison_kind": "superiority",
           "effect_type": null,
@@ -9337,7 +9155,7 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG001",
           "comparison_kind": "superiority",
           "effect_type": null,
@@ -9366,7 +9184,7 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG002",
           "comparison_kind": "superiority",
           "effect_type": null,
@@ -9395,7 +9213,7 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG001",
           "comparison_kind": "superiority",
           "effect_type": null,
@@ -9424,7 +9242,7 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG002",
           "comparison_kind": "superiority",
           "effect_type": null,
@@ -9449,7 +9267,7 @@
             "verbatim_sha1": "c181c5694a206fd1675c2348be36ea1b0a6cf7ba"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG001",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
@@ -9474,7 +9292,7 @@
             "verbatim_sha1": "c181c5694a206fd1675c2348be36ea1b0a6cf7ba"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG002",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
@@ -9499,7 +9317,7 @@
             "verbatim_sha1": "c181c5694a206fd1675c2348be36ea1b0a6cf7ba"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG001",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
@@ -9524,7 +9342,7 @@
             "verbatim_sha1": "c181c5694a206fd1675c2348be36ea1b0a6cf7ba"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG002",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
@@ -9549,7 +9367,7 @@
             "verbatim_sha1": "c181c5694a206fd1675c2348be36ea1b0a6cf7ba"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG001",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
@@ -9574,7 +9392,7 @@
             "verbatim_sha1": "c181c5694a206fd1675c2348be36ea1b0a6cf7ba"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG002",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
@@ -9599,7 +9417,7 @@
             "verbatim_sha1": "c181c5694a206fd1675c2348be36ea1b0a6cf7ba"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG001",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
@@ -9624,7 +9442,7 @@
             "verbatim_sha1": "c181c5694a206fd1675c2348be36ea1b0a6cf7ba"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG002",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
@@ -9649,7 +9467,7 @@
             "verbatim_sha1": "9d9105d539952e9d308812e393f5cf00ab408f72"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG001",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
@@ -9674,7 +9492,7 @@
             "verbatim_sha1": "9d9105d539952e9d308812e393f5cf00ab408f72"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG002",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
@@ -9699,7 +9517,7 @@
             "verbatim_sha1": "9d9105d539952e9d308812e393f5cf00ab408f72"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG001",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
@@ -9724,7 +9542,7 @@
             "verbatim_sha1": "9d9105d539952e9d308812e393f5cf00ab408f72"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG002",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
@@ -9749,7 +9567,7 @@
             "verbatim_sha1": "9d9105d539952e9d308812e393f5cf00ab408f72"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG001",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
@@ -9774,7 +9592,7 @@
             "verbatim_sha1": "9d9105d539952e9d308812e393f5cf00ab408f72"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG002",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
@@ -9799,7 +9617,7 @@
             "verbatim_sha1": "9d9105d539952e9d308812e393f5cf00ab408f72"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG001",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
@@ -9824,7 +9642,7 @@
             "verbatim_sha1": "9d9105d539952e9d308812e393f5cf00ab408f72"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG002",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
@@ -9853,7 +9671,7 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG001",
           "comparison_kind": "superiority",
           "effect_type": "risk_difference",
@@ -9882,7 +9700,7 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG002",
           "comparison_kind": "superiority",
           "effect_type": "risk_difference",
@@ -9911,7 +9729,7 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG001",
           "comparison_kind": "superiority",
           "effect_type": "risk_difference",
@@ -9940,7 +9758,7 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG002",
           "comparison_kind": "superiority",
           "effect_type": "risk_difference",
@@ -9969,7 +9787,7 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG001",
           "comparison_kind": "superiority",
           "effect_type": "risk_difference",
@@ -9998,7 +9816,7 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG002",
           "comparison_kind": "superiority",
           "effect_type": "risk_difference",
@@ -10027,7 +9845,7 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG001",
           "comparison_kind": "superiority",
           "effect_type": "risk_difference",
@@ -10056,7 +9874,7 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG002",
           "comparison_kind": "superiority",
           "effect_type": "risk_difference",
@@ -10081,7 +9899,7 @@
             "verbatim_sha1": "8b344b4dc45e0a7c30c3edde96fb8b9d0d62a0d9"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG001",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
@@ -10106,7 +9924,7 @@
             "verbatim_sha1": "8b344b4dc45e0a7c30c3edde96fb8b9d0d62a0d9"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG002",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
@@ -10131,7 +9949,7 @@
             "verbatim_sha1": "8b344b4dc45e0a7c30c3edde96fb8b9d0d62a0d9"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG001",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
@@ -10156,7 +9974,7 @@
             "verbatim_sha1": "8b344b4dc45e0a7c30c3edde96fb8b9d0d62a0d9"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG002",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
@@ -10181,7 +9999,7 @@
             "verbatim_sha1": "e319218dfe941fbadb35e6b960568f4b01c7cfab"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG001",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
@@ -10206,7 +10024,7 @@
             "verbatim_sha1": "e319218dfe941fbadb35e6b960568f4b01c7cfab"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG002",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
@@ -10231,7 +10049,7 @@
             "verbatim_sha1": "e319218dfe941fbadb35e6b960568f4b01c7cfab"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG001",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
@@ -10256,7 +10074,7 @@
             "verbatim_sha1": "e319218dfe941fbadb35e6b960568f4b01c7cfab"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG002",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
@@ -10281,7 +10099,7 @@
             "verbatim_sha1": "31e825bde921049eb68fd47deaa5b9951d077b91"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG001",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
@@ -10306,7 +10124,7 @@
             "verbatim_sha1": "31e825bde921049eb68fd47deaa5b9951d077b91"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG002",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
@@ -10331,7 +10149,7 @@
             "verbatim_sha1": "31e825bde921049eb68fd47deaa5b9951d077b91"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG001",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
@@ -10356,7 +10174,7 @@
             "verbatim_sha1": "31e825bde921049eb68fd47deaa5b9951d077b91"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG002",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
@@ -10381,7 +10199,7 @@
             "verbatim_sha1": "31e825bde921049eb68fd47deaa5b9951d077b91"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG001",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
@@ -10406,7 +10224,7 @@
             "verbatim_sha1": "31e825bde921049eb68fd47deaa5b9951d077b91"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG002",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
@@ -10431,7 +10249,7 @@
             "verbatim_sha1": "31e825bde921049eb68fd47deaa5b9951d077b91"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG001",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
@@ -10456,7 +10274,7 @@
             "verbatim_sha1": "31e825bde921049eb68fd47deaa5b9951d077b91"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG002",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
@@ -10485,7 +10303,7 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG001",
           "comparison_kind": "superiority",
           "effect_type": "risk_difference",
@@ -10514,7 +10332,7 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG002",
           "comparison_kind": "superiority",
           "effect_type": "risk_difference",
@@ -10543,7 +10361,7 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG001",
           "comparison_kind": "superiority",
           "effect_type": "risk_difference",
@@ -10572,7 +10390,7 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG002",
           "comparison_kind": "superiority",
           "effect_type": "risk_difference",
@@ -10601,7 +10419,7 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG001",
           "comparison_kind": "superiority",
           "effect_type": "risk_difference",
@@ -10630,7 +10448,7 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG002",
           "comparison_kind": "superiority",
           "effect_type": "risk_difference",
@@ -10659,7 +10477,7 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG001",
           "comparison_kind": "superiority",
           "effect_type": "risk_difference",
@@ -10688,7 +10506,7 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG002",
           "comparison_kind": "superiority",
           "effect_type": "risk_difference",
@@ -10713,7 +10531,7 @@
             "verbatim_sha1": "3fd3dbcf04414a90da1ee14e8435d2463a185c70"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG001",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
@@ -10738,7 +10556,7 @@
             "verbatim_sha1": "3fd3dbcf04414a90da1ee14e8435d2463a185c70"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG002",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
@@ -10763,7 +10581,7 @@
             "verbatim_sha1": "3fd3dbcf04414a90da1ee14e8435d2463a185c70"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG001",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
@@ -10788,7 +10606,7 @@
             "verbatim_sha1": "3fd3dbcf04414a90da1ee14e8435d2463a185c70"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG002",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
@@ -10813,7 +10631,7 @@
             "verbatim_sha1": "3fd3dbcf04414a90da1ee14e8435d2463a185c70"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG001",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
@@ -10838,7 +10656,7 @@
             "verbatim_sha1": "3fd3dbcf04414a90da1ee14e8435d2463a185c70"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG002",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
@@ -10863,7 +10681,7 @@
             "verbatim_sha1": "3fd3dbcf04414a90da1ee14e8435d2463a185c70"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG001",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
@@ -10888,7 +10706,7 @@
             "verbatim_sha1": "3fd3dbcf04414a90da1ee14e8435d2463a185c70"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG002",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
@@ -10913,7 +10731,7 @@
             "verbatim_sha1": "3fd3dbcf04414a90da1ee14e8435d2463a185c70"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG001",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
@@ -10938,7 +10756,7 @@
             "verbatim_sha1": "3fd3dbcf04414a90da1ee14e8435d2463a185c70"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG002",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
@@ -10963,7 +10781,7 @@
             "verbatim_sha1": "3fd3dbcf04414a90da1ee14e8435d2463a185c70"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG001",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
@@ -10988,7 +10806,7 @@
             "verbatim_sha1": "3fd3dbcf04414a90da1ee14e8435d2463a185c70"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG002",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
@@ -11013,7 +10831,7 @@
             "verbatim_sha1": "3fd3dbcf04414a90da1ee14e8435d2463a185c70"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG001",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
@@ -11038,7 +10856,7 @@
             "verbatim_sha1": "3fd3dbcf04414a90da1ee14e8435d2463a185c70"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG002",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
@@ -11063,7 +10881,7 @@
             "verbatim_sha1": "3fd3dbcf04414a90da1ee14e8435d2463a185c70"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG001",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
@@ -11088,7 +10906,7 @@
             "verbatim_sha1": "3fd3dbcf04414a90da1ee14e8435d2463a185c70"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG002",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
@@ -11113,7 +10931,7 @@
             "verbatim_sha1": "3fd3dbcf04414a90da1ee14e8435d2463a185c70"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG001",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
@@ -11138,7 +10956,7 @@
             "verbatim_sha1": "3fd3dbcf04414a90da1ee14e8435d2463a185c70"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG002",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
@@ -11163,7 +10981,7 @@
             "verbatim_sha1": "3fd3dbcf04414a90da1ee14e8435d2463a185c70"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG001",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
@@ -11188,7 +11006,7 @@
             "verbatim_sha1": "3fd3dbcf04414a90da1ee14e8435d2463a185c70"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG002",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
@@ -11213,7 +11031,7 @@
             "verbatim_sha1": "3fd3dbcf04414a90da1ee14e8435d2463a185c70"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG001",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
@@ -11238,7 +11056,7 @@
             "verbatim_sha1": "3fd3dbcf04414a90da1ee14e8435d2463a185c70"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG002",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
@@ -11263,7 +11081,7 @@
             "verbatim_sha1": "3fd3dbcf04414a90da1ee14e8435d2463a185c70"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG001",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
@@ -11288,7 +11106,7 @@
             "verbatim_sha1": "3fd3dbcf04414a90da1ee14e8435d2463a185c70"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG002",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
@@ -11313,7 +11131,7 @@
             "verbatim_sha1": "3fd3dbcf04414a90da1ee14e8435d2463a185c70"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG001",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
@@ -11338,7 +11156,7 @@
             "verbatim_sha1": "3fd3dbcf04414a90da1ee14e8435d2463a185c70"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG002",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
@@ -11363,7 +11181,7 @@
             "verbatim_sha1": "3fd3dbcf04414a90da1ee14e8435d2463a185c70"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG001",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
@@ -11388,7 +11206,7 @@
             "verbatim_sha1": "3fd3dbcf04414a90da1ee14e8435d2463a185c70"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG002",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
@@ -11413,7 +11231,7 @@
             "verbatim_sha1": "3fd3dbcf04414a90da1ee14e8435d2463a185c70"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG001",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
@@ -11438,7 +11256,7 @@
             "verbatim_sha1": "3fd3dbcf04414a90da1ee14e8435d2463a185c70"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG002",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
@@ -11463,7 +11281,7 @@
             "verbatim_sha1": "3fd3dbcf04414a90da1ee14e8435d2463a185c70"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG001",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
@@ -11488,7 +11306,7 @@
             "verbatim_sha1": "3fd3dbcf04414a90da1ee14e8435d2463a185c70"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG002",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
@@ -11517,7 +11335,7 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG001",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
@@ -11546,7 +11364,7 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG002",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
@@ -11575,7 +11393,7 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG001",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
@@ -11604,7 +11422,7 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG002",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
@@ -11633,7 +11451,7 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG001",
           "comparison_kind": "superiority",
           "effect_type": "risk_difference",
@@ -11662,7 +11480,7 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#2",
           "reference_arm_id": "OG002",
           "comparison_kind": "superiority",
           "effect_type": "risk_difference",
@@ -11684,7 +11502,7 @@
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04797650",
       "source_excerpt": "resultsSection.outcomeMeasuresModule.outcomeMeasures[].analyses[]",
-      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3, 2026-09-06)",
+      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3 backfill re-run)",
       "reviewed_by": null,
       "confidence": 1.0
     },

@@ -1,0 +1,455 @@
+{
+  "schema_version": 1,
+  "drug": "Abrocitinib",
+  "applications": [
+    {
+      "application_number": "213871",
+      "regulatory_application": {
+        "value": {
+          "application_type": "NDA",
+          "application_number": "213871",
+          "registry": "orange_book",
+          "center": "CDER",
+          "proprietary_name": "CIBINQO",
+          "applicant": "PFIZER INC",
+          "first_approval_date": "2022-01-14"
+        },
+        "source_type": "orange_book",
+        "source_url": "https://www.fda.gov/media/76860/download",
+        "source_excerpt": "products.txt: ABROCITINIB~TABLET;ORAL~CIBINQO~PFIZER~50MG~N~213871~001~~Jan 14, 2022~Yes~No~RX~PFIZER INC",
+        "extracted_by": "atlas.regulatory_applications (registry file fetched 2026-09-05)",
+        "reviewed_by": null,
+        "confidence": 1.0
+      },
+      "orange_book": {
+        "value": {
+          "application_type": "N",
+          "application_number": "213871",
+          "ingredient": "ABROCITINIB",
+          "trade_name": "CIBINQO",
+          "applicant": "PFIZER",
+          "applicant_full_name": "PFIZER INC",
+          "products": [
+            {
+              "product_number": "001",
+              "strength": "50MG",
+              "dosage_form": "TABLET",
+              "route": "ORAL",
+              "approval_date": "2022-01-14",
+              "rld": true,
+              "rs": false,
+              "te_code": null,
+              "marketing_type": "HUMAN PRESCRIPTION DRUG"
+            },
+            {
+              "product_number": "002",
+              "strength": "100MG",
+              "dosage_form": "TABLET",
+              "route": "ORAL",
+              "approval_date": "2022-01-14",
+              "rld": true,
+              "rs": false,
+              "te_code": null,
+              "marketing_type": "HUMAN PRESCRIPTION DRUG"
+            },
+            {
+              "product_number": "003",
+              "strength": "200MG",
+              "dosage_form": "TABLET",
+              "route": "ORAL",
+              "approval_date": "2022-01-14",
+              "rld": true,
+              "rs": true,
+              "te_code": null,
+              "marketing_type": "HUMAN PRESCRIPTION DRUG"
+            }
+          ],
+          "patents": [
+            {
+              "patent_number": "9545405",
+              "expiration_date": "2034-02-19",
+              "drug_substance_claim": true,
+              "drug_product_claim": true,
+              "patent_use_code": null,
+              "delisted": false,
+              "submission_date": "2022-02-11",
+              "product_numbers": [
+                "001",
+                "002",
+                "003"
+              ]
+            },
+            {
+              "patent_number": "9549929",
+              "expiration_date": "2034-02-19",
+              "drug_substance_claim": false,
+              "drug_product_claim": false,
+              "patent_use_code": "U-3195",
+              "delisted": false,
+              "submission_date": "2022-02-11",
+              "product_numbers": [
+                "001",
+                "002",
+                "003"
+              ]
+            },
+            {
+              "patent_number": "9035074",
+              "expiration_date": "2036-01-14",
+              "drug_substance_claim": true,
+              "drug_product_claim": true,
+              "patent_use_code": null,
+              "delisted": false,
+              "submission_date": "2022-02-11",
+              "product_numbers": [
+                "001",
+                "002",
+                "003"
+              ]
+            }
+          ],
+          "exclusivities": [
+            {
+              "code": "NPP",
+              "expiration_date": "2026-02-09",
+              "product_numbers": [
+                "001",
+                "002",
+                "003"
+              ]
+            },
+            {
+              "code": "NCE",
+              "expiration_date": "2027-01-14",
+              "product_numbers": [
+                "001",
+                "002",
+                "003"
+              ]
+            }
+          ],
+          "latest_patent_expiration": "2036-01-14",
+          "latest_exclusivity_expiration": "2027-01-14",
+          "data_file_date": null
+        },
+        "source_type": "orange_book",
+        "source_url": "https://api.fda.gov/drug/orangebook.json?search=products.active_ingredients.name%3A%22ABROCITINIB%22&limit=100",
+        "source_excerpt": "openFDA drug/orangebook.json, 3 product row(s) matched on products.active_ingredients.name='ABROCITINIB'",
+        "extracted_by": "fetch_orange_book.py (openfda drug/orangebook.json, v2 pass)",
+        "reviewed_by": null,
+        "confidence": 1.0
+      }
+    }
+  ],
+  "trial_ids": [
+    "NCT03349060",
+    "NCT03575871",
+    "NCT03627767",
+    "NCT03720470"
+  ],
+  "mechanism_of_action": {
+    "value": {
+      "modality": "small_molecule",
+      "drug_class": "JAK inhibitor",
+      "antibody_isotype": null,
+      "binding_targets": [],
+      "pathway_cytokines": [],
+      "receptor_subunits": [],
+      "kinases_inhibited": [
+        "JAK1"
+      ],
+      "lower_potency_kinases": [
+        "JAK2",
+        "JAK3",
+        "TYK2"
+      ],
+      "selectivity": [
+        {
+          "over": "JAK2",
+          "fold": 28,
+          "comparator": "=="
+        },
+        {
+          "over": "JAK3",
+          "fold": 340,
+          "comparator": ">"
+        },
+        {
+          "over": "TYK2",
+          "fold": 43,
+          "comparator": "=="
+        }
+      ],
+      "reversible": true,
+      "mechanism_established": false,
+      "label_section": "12.1"
+    },
+    "source_type": "openfda_label",
+    "source_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=90d59085-1778-447d-b10a-cede44616558",
+    "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1) -- v1 extracted text: 12.1 Mechanism of Action CIBINQO is a Janus kinase (JAK) inhibitor. Abrocitinib reversibly inhibits JAK1 by blocking the adenosine triphosphate (ATP) binding site. In a cell-free isolated enzyme assay, abrocitinib was selective for JAK1 over JAK2 (28-fold), JAK3 (>340-fold), and tyrosine kinase (TYK) 2 (43-fold), as well as the broader kinome. The relevance of inhibition of specific JAK enzymes to therapeutic effectiveness is not currently known. Both the parent compound and the active metabolites inhibit JAK1 activity in vitro with similar levels of selectivity.",
+    "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA); structured by atlas.migrate v1->v2",
+    "reviewed_by": null,
+    "confidence": 0.9
+  },
+  "boxed_warning": {
+    "value": {
+      "present": true,
+      "title": "SERIOUS INFECTIONS, MORTALITY, MALIGNANCY, MAJOR ADVERSE CARDIOVASCULAR EVENTS, and THROMBOSIS",
+      "warning_categories": [
+        "serious_infections",
+        "mortality",
+        "malignancy",
+        "mace",
+        "thrombosis"
+      ],
+      "referenced_label_sections": [
+        "5.1",
+        "5.2",
+        "5.3",
+        "5.4",
+        "5.5"
+      ],
+      "product_names": [
+        "CIBINQO"
+      ]
+    },
+    "source_type": "openfda_label",
+    "source_url": "https://api.fda.gov/drug/label.json?search=openfda.substance_name:ABROCITINIB&limit=1",
+    "source_excerpt": "results[0].boxed_warning -- v1 extracted text: WARNING: SERIOUS INFECTIONS, MORTALITY, MALIGNANCY, MAJOR ADVERSE CARDIOVASCULAR EVENTS, and THROMBOSIS WARNING: SERIOUS INFECTIONS, MORTALITY, MALIGNANCY, MAJOR ADVERSE CARDIOVASCULAR EVENTS (MACE), and THROMBOSIS See full prescribing information for complete boxed warning. • Increased risk of serious bacterial, fungal, viral and opportunistic infections leading to hospitalization or death, including tuberculosis (TB). Discontinue treatment with CIBINQO if serious or opportunistic infection occurs. Test for latent TB before and during therapy; treat latent TB prior to use. Monitor all patients for active TB during treatment, even patients with initial negative latent TB test. ( 5.1 ) • Higher rate of all-cause mortality, including sudden cardiovascular death, with another JAK inhibitor vs. TNF blockers in rheumatoid arthritis (RA) patients. CIBINQO is not approved for use in RA patients. ( 5.2 ) • Malignancies have occurred with CIBINQO. Higher rate of lymphomas and lung cancers with another JAK inhibitor vs. TNF blockers in RA patients. ( 5.3 ) • MACE has occurred with CIBINQO. Higher rate of MACE (defined as cardiovascular death, myocardial infarction, and stroke) with another JAK inhibitor vs. TNF blockers in RA patients. ( 5.4 ) • Thrombosis has occurred with CIBINQO. Increased incidence of pulmonary embolism, venous and arterial thrombosis with another JAK inhibitor vs. TNF blockers. ( 5.5 ) Serious Infections Patients treated with CIBINQO may be at increased risk for developing serious infections that may lead to hospitalization or death. The most frequent serious infections reported with CIBINQO were herpes simplex, herpes zoster, and pneumonia [see Warnings and Precautions (5.1) and Adverse Reactions (6.1) ] . If a serious or opportunistic infection develops, discontinue CIBINQO and control the infection. Reported infections from Janus kinase (JAK) inhibitors used to treat inflammatory conditions: • Active tuberculosis, which may present with pulmonary or extrapulmonary disease. Test for latent TB before and during therapy; treat latent TB prior to use. Monitor all patients for active TB during treatment, even patients with initial negative latent TB test. • Invasive fungal infections, including cryptococcosis and pneumocystosis. Patients with invasive fungal infections may present with disseminated, rather than localized, disease. • Bacterial, viral, including herpes zoster, and other infections due to opportunistic pathogens. Avoid use of CIBINQO in patients with an active, serious infection including localized infections. The risks and benefits of treatment with CIBINQO should be carefully considered prior to initiating therapy in patients with chronic or recurrent infections. Patients should be closely monitored for the development of signs and symptoms of infection during and after treatment with CIBINQO, including the possible development of tuberculosis in patients who tested negative for latent tuberculosis infection prior to initiating therapy [see Warnings and Precautions (5.1) ] . Mortality In a large, randomized, postmarketing safety study in rheumatoid arthritis (RA) patients 50 years of age and older with at least one cardiovascular risk factor comparing another JAK inhibitor to TNF blocker treatment, a higher rate of all-cause mortality, including sudden cardiovascular death, was observed with the JAK inhibitor. CIBINQO is not approved for use in RA patients [see Warnings and Precautions (5.2) ] . Malignancies Malignancies were reported in patients treated with CIBINQO. Lymphoma and other malignancies have been observed in patients receiving JAK inhibitors used to treat inflammatory conditions. In RA patients treated with another JAK inhibitor, a higher rate of malignancies (excluding non-melanoma skin cancer (NMSC)) was observed when compared with TNF blockers. Patients who are current or past smokers are at additional increased risk [see Warnings and Precautions (5.3) ] . Major Adverse Cardiovascular Events Major adverse cardiovascular events were reported in patients treated with CIBINQO. In RA patients 50 years of age and older with at least one cardiovascular risk factor treated with another JAK inhibitor, a higher rate of major adverse cardiovascular events (MACE) (defined as cardiovascular death, myocardial infarction, and stroke), was observed when compared with TNF blockers. Patients who are current or past smokers are at additional increased risk. Discontinue CIBINQO in patients that have experienced a myocardial infarction or stroke [see Warnings and Precautions (5.4) ] . Thrombosis Deep venous thrombosis (DVT) and pulmonary embolism (PE) have been reported in patients treated with CIBINQO. Thrombosis, including PE, DVT, and arterial thrombosis have been reported in patients receiving JAK inhibitors used to treat inflammatory conditions. Many of these adverse reactions were serious and some resulted in death. In RA patients 50 years of age and older with at least one cardiovascular risk factor treated with another JAK inhibitor, a higher rate of thrombosis was observed when compared with TNF blockers. Avoid CIBINQO in patients at risk. If symptoms of thrombosis occur, discontinue CIBINQO and treat appropriately [see Warnings and Precautions (5.5) ] .",
+    "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass); structured by atlas.migrate v1->v2",
+    "reviewed_by": null,
+    "confidence": 1.0
+  },
+  "faers_summary": {
+    "value": {
+      "query": {
+        "search_field": "patient.drug.medicinalproduct",
+        "search_term": "ABROCITINIB",
+        "receivedate_from": "2019-09-12",
+        "receivedate_to": "2026-06-23",
+        "api_urls": [
+          "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ABROCITINIB\"&limit=1",
+          "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ABROCITINIB\"+AND+serious:1&limit=1",
+          "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ABROCITINIB\"+AND+seriousnessdeath:1&limit=1",
+          "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ABROCITINIB\"+AND+seriousnesshospitalization:1&limit=1",
+          "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ABROCITINIB\"+AND+seriousnesslifethreatening:1&limit=1",
+          "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ABROCITINIB\"+AND+seriousnessdisabling:1&limit=1",
+          "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ABROCITINIB\"&count=patient.reaction.reactionmeddrapt.exact&limit=15",
+          "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ABROCITINIB\"+AND+serious:1&count=patient.reaction.reactionmeddrapt.exact&limit=15",
+          "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ABROCITINIB\"&count=receivedate"
+        ],
+        "data_last_updated": "2026-07-30"
+      },
+      "total_reports": 422,
+      "serious_reports": 296,
+      "death_reports": 18,
+      "hospitalization_reports": 149,
+      "life_threatening_reports": 27,
+      "disability_reports": 6,
+      "top_reactions": [
+        {
+          "meddra_pt": "DRUG INEFFECTIVE",
+          "report_count": 31,
+          "pct_of_reports": 7.35
+        },
+        {
+          "meddra_pt": "OFF LABEL USE",
+          "report_count": 29,
+          "pct_of_reports": 6.87
+        },
+        {
+          "meddra_pt": "NAUSEA",
+          "report_count": 23,
+          "pct_of_reports": 5.45
+        },
+        {
+          "meddra_pt": "ECZEMA HERPETICUM",
+          "report_count": 14,
+          "pct_of_reports": 3.32
+        },
+        {
+          "meddra_pt": "CONDITION AGGRAVATED",
+          "report_count": 13,
+          "pct_of_reports": 3.08
+        },
+        {
+          "meddra_pt": "PRURITUS",
+          "report_count": 12,
+          "pct_of_reports": 2.84
+        },
+        {
+          "meddra_pt": "DERMATITIS ATOPIC",
+          "report_count": 11,
+          "pct_of_reports": 2.61
+        },
+        {
+          "meddra_pt": "HERPES ZOSTER",
+          "report_count": 10,
+          "pct_of_reports": 2.37
+        },
+        {
+          "meddra_pt": "ACNE",
+          "report_count": 9,
+          "pct_of_reports": 2.13
+        },
+        {
+          "meddra_pt": "HEADACHE",
+          "report_count": 9,
+          "pct_of_reports": 2.13
+        },
+        {
+          "meddra_pt": "PNEUMONIA",
+          "report_count": 8,
+          "pct_of_reports": 1.9
+        },
+        {
+          "meddra_pt": "RASH",
+          "report_count": 8,
+          "pct_of_reports": 1.9
+        },
+        {
+          "meddra_pt": "THERAPEUTIC PRODUCT EFFECT INCOMPLETE",
+          "report_count": 8,
+          "pct_of_reports": 1.9
+        },
+        {
+          "meddra_pt": "THERAPEUTIC RESPONSE UNEXPECTED",
+          "report_count": 8,
+          "pct_of_reports": 1.9
+        },
+        {
+          "meddra_pt": "VOMITING",
+          "report_count": 8,
+          "pct_of_reports": 1.9
+        }
+      ],
+      "top_serious_reactions": [
+        {
+          "meddra_pt": "OFF LABEL USE",
+          "report_count": 16,
+          "pct_of_reports": 5.41
+        },
+        {
+          "meddra_pt": "ECZEMA HERPETICUM",
+          "report_count": 14,
+          "pct_of_reports": 4.73
+        },
+        {
+          "meddra_pt": "NAUSEA",
+          "report_count": 12,
+          "pct_of_reports": 4.05
+        },
+        {
+          "meddra_pt": "DRUG INEFFECTIVE",
+          "report_count": 11,
+          "pct_of_reports": 3.72
+        },
+        {
+          "meddra_pt": "HERPES ZOSTER",
+          "report_count": 10,
+          "pct_of_reports": 3.38
+        },
+        {
+          "meddra_pt": "PRURITUS",
+          "report_count": 9,
+          "pct_of_reports": 3.04
+        },
+        {
+          "meddra_pt": "PNEUMONIA",
+          "report_count": 8,
+          "pct_of_reports": 2.7
+        },
+        {
+          "meddra_pt": "CONDITION AGGRAVATED",
+          "report_count": 7,
+          "pct_of_reports": 2.36
+        },
+        {
+          "meddra_pt": "PULMONARY EMBOLISM",
+          "report_count": 7,
+          "pct_of_reports": 2.36
+        },
+        {
+          "meddra_pt": "PYREXIA",
+          "report_count": 7,
+          "pct_of_reports": 2.36
+        },
+        {
+          "meddra_pt": "ANAEMIA",
+          "report_count": 6,
+          "pct_of_reports": 2.03
+        },
+        {
+          "meddra_pt": "DERMATITIS ATOPIC",
+          "report_count": 6,
+          "pct_of_reports": 2.03
+        },
+        {
+          "meddra_pt": "HEADACHE",
+          "report_count": 6,
+          "pct_of_reports": 2.03
+        },
+        {
+          "meddra_pt": "RASH",
+          "report_count": 6,
+          "pct_of_reports": 2.03
+        },
+        {
+          "meddra_pt": "THROMBOCYTOPENIA",
+          "report_count": 6,
+          "pct_of_reports": 2.03
+        }
+      ],
+      "reports_by_year": [
+        {
+          "year": 2019,
+          "report_count": 2
+        },
+        {
+          "year": 2020,
+          "report_count": 1
+        },
+        {
+          "year": 2021,
+          "report_count": 11
+        },
+        {
+          "year": 2022,
+          "report_count": 140
+        },
+        {
+          "year": 2023,
+          "report_count": 61
+        },
+        {
+          "year": 2024,
+          "report_count": 114
+        },
+        {
+          "year": 2025,
+          "report_count": 61
+        },
+        {
+          "year": 2026,
+          "report_count": 32
+        }
+      ],
+      "meddra_version": null
+    },
+    "source_type": "openfda_faers",
+    "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ABROCITINIB\"&limit=1",
+    "source_excerpt": "openFDA drug/event.json aggregate: total_reports=422, serious=296, deaths=18",
+    "extracted_by": "fetch_faers.py (openfda drug/event.json, v2 pass)",
+    "reviewed_by": null,
+    "confidence": 1.0
+  },
+  "purple_book": {
+    "value": null,
+    "source_type": "needs_extraction",
+    "source_url": null,
+    "source_excerpt": null,
+    "extracted_by": null,
+    "reviewed_by": null,
+    "confidence": null
+  }
+}

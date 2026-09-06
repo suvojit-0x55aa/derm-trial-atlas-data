@@ -1,5 +1,5 @@
 {
-  "schema_version": 3,
+  "schema_version": 4,
   "nct_id": {
     "value": "NCT04146363",
     "source_type": "ctgov_api",
@@ -85,34 +85,15 @@
     },
     "mechanism_of_action": {
       "value": {
-        "modality": "monoclonal_antibody",
-        "drug_class": "IL-13 antagonist",
-        "antibody_isotype": "IgG4",
-        "binding_targets": [
-          "IL-13"
-        ],
-        "pathway_cytokines": [
-          "IL-13",
-          "IgE"
-        ],
-        "receptor_subunits": [
-          "IL-4Rα",
-          "IL-13Rα1",
-          "IL-13Rα2"
-        ],
-        "kinases_inhibited": [],
-        "lower_potency_kinases": [],
-        "selectivity": [],
-        "reversible": null,
-        "mechanism_established": null,
-        "label_section": "12.1"
+        "drug": "Lebrikizumab",
+        "application_number": null
       },
-      "source_type": "openfda_label",
-      "source_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=361eb12f-8b25-4174-a653-5b857e6abd03",
-      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1) -- v1 extracted text: 12.1 Mechanism of Action Lebrikizumab-lbkz is an IgG4 monoclonal antibody that binds with high affinity and slow off-rate to interleukin (IL)-13 and allows IL-13 to bind to IL-13Rα1 but inhibits human IL-13 signaling through the IL-4Rα/IL-13Rα1 receptor complex. IL-13 is a naturally occurring cytokine that is involved in Type 2 inflammation, which is an important component in the pathogenesis of atopic dermatitis. Lebrikizumab-lbkz inhibits IL-13-induced responses including the release of proinflammatory cytokines, chemokines and IgE. Lebrikizumab-lbkz-bound IL-13 can still bind IL-13Rα2 allowing subsequent internalization and natural clearance of IL-13.",
-      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA); structured by atlas.migrate v1->v2",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 0.9
+      "confidence": null
     },
     "dosing_regimen": {
       "value": [
@@ -3178,274 +3159,50 @@
     },
     "boxed_warning": {
       "value": {
-        "present": false,
-        "title": null,
-        "warning_categories": [],
-        "referenced_label_sections": [],
-        "product_names": []
+        "drug": "Lebrikizumab",
+        "application_number": null
       },
-      "source_type": "openfda_label",
-      "source_url": "https://api.fda.gov/drug/label.json?search=openfda.substance_name:LEBRIKIZUMAB&limit=1",
-      "source_excerpt": "results[0] has no boxed_warning key (checked, none present)",
-      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass); structured by atlas.migrate v1->v2",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     }
   },
   "real_world_safety": {
     "faers_summary": {
       "value": {
-        "query": {
-          "search_field": "patient.drug.medicinalproduct",
-          "search_term": "LEBRIKIZUMAB",
-          "receivedate_from": "2015-05-21",
-          "receivedate_to": "2026-06-30",
-          "api_urls": [
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"LEBRIKIZUMAB\"&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"LEBRIKIZUMAB\"+AND+serious:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"LEBRIKIZUMAB\"+AND+seriousnessdeath:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"LEBRIKIZUMAB\"+AND+seriousnesshospitalization:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"LEBRIKIZUMAB\"+AND+seriousnesslifethreatening:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"LEBRIKIZUMAB\"+AND+seriousnessdisabling:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"LEBRIKIZUMAB\"&count=patient.reaction.reactionmeddrapt.exact&limit=15",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"LEBRIKIZUMAB\"+AND+serious:1&count=patient.reaction.reactionmeddrapt.exact&limit=15",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"LEBRIKIZUMAB\"&count=receivedate"
-          ],
-          "data_last_updated": "2026-07-30"
-        },
-        "total_reports": 217,
-        "serious_reports": 116,
-        "death_reports": 2,
-        "hospitalization_reports": 46,
-        "life_threatening_reports": 3,
-        "disability_reports": 4,
-        "top_reactions": [
-          {
-            "meddra_pt": "DERMATITIS ATOPIC",
-            "report_count": 23,
-            "pct_of_reports": 10.6
-          },
-          {
-            "meddra_pt": "PRURITUS",
-            "report_count": 19,
-            "pct_of_reports": 8.76
-          },
-          {
-            "meddra_pt": "CONJUNCTIVITIS",
-            "report_count": 16,
-            "pct_of_reports": 7.37
-          },
-          {
-            "meddra_pt": "DRUG INEFFECTIVE",
-            "report_count": 16,
-            "pct_of_reports": 7.37
-          },
-          {
-            "meddra_pt": "ERYTHEMA",
-            "report_count": 15,
-            "pct_of_reports": 6.91
-          },
-          {
-            "meddra_pt": "RASH",
-            "report_count": 13,
-            "pct_of_reports": 5.99
-          },
-          {
-            "meddra_pt": "DRY SKIN",
-            "report_count": 12,
-            "pct_of_reports": 5.53
-          },
-          {
-            "meddra_pt": "ECZEMA",
-            "report_count": 11,
-            "pct_of_reports": 5.07
-          },
-          {
-            "meddra_pt": "SKIN EXFOLIATION",
-            "report_count": 11,
-            "pct_of_reports": 5.07
-          },
-          {
-            "meddra_pt": "INJECTION SITE PAIN",
-            "report_count": 10,
-            "pct_of_reports": 4.61
-          },
-          {
-            "meddra_pt": "TREATMENT FAILURE",
-            "report_count": 10,
-            "pct_of_reports": 4.61
-          },
-          {
-            "meddra_pt": "ARTHRALGIA",
-            "report_count": 9,
-            "pct_of_reports": 4.15
-          },
-          {
-            "meddra_pt": "EYE PRURITUS",
-            "report_count": 9,
-            "pct_of_reports": 4.15
-          },
-          {
-            "meddra_pt": "ASTHMA",
-            "report_count": 8,
-            "pct_of_reports": 3.69
-          },
-          {
-            "meddra_pt": "OCULAR HYPERAEMIA",
-            "report_count": 8,
-            "pct_of_reports": 3.69
-          }
-        ],
-        "top_serious_reactions": [
-          {
-            "meddra_pt": "CONJUNCTIVITIS",
-            "report_count": 11,
-            "pct_of_reports": 9.48
-          },
-          {
-            "meddra_pt": "TREATMENT FAILURE",
-            "report_count": 9,
-            "pct_of_reports": 7.76
-          },
-          {
-            "meddra_pt": "ASTHMA",
-            "report_count": 7,
-            "pct_of_reports": 6.03
-          },
-          {
-            "meddra_pt": "EOSINOPHILIA",
-            "report_count": 7,
-            "pct_of_reports": 6.03
-          },
-          {
-            "meddra_pt": "ERYTHEMA",
-            "report_count": 7,
-            "pct_of_reports": 6.03
-          },
-          {
-            "meddra_pt": "DERMATITIS ATOPIC",
-            "report_count": 6,
-            "pct_of_reports": 5.17
-          },
-          {
-            "meddra_pt": "ARTHRALGIA",
-            "report_count": 5,
-            "pct_of_reports": 4.31
-          },
-          {
-            "meddra_pt": "DERMATITIS EXFOLIATIVE GENERALISED",
-            "report_count": 5,
-            "pct_of_reports": 4.31
-          },
-          {
-            "meddra_pt": "DRUG INEFFECTIVE",
-            "report_count": 5,
-            "pct_of_reports": 4.31
-          },
-          {
-            "meddra_pt": "OFF LABEL USE",
-            "report_count": 5,
-            "pct_of_reports": 4.31
-          },
-          {
-            "meddra_pt": "RASH",
-            "report_count": 5,
-            "pct_of_reports": 4.31
-          },
-          {
-            "meddra_pt": "ECZEMA",
-            "report_count": 4,
-            "pct_of_reports": 3.45
-          },
-          {
-            "meddra_pt": "OCULAR HYPERAEMIA",
-            "report_count": 4,
-            "pct_of_reports": 3.45
-          },
-          {
-            "meddra_pt": "PULMONARY EMBOLISM",
-            "report_count": 4,
-            "pct_of_reports": 3.45
-          },
-          {
-            "meddra_pt": "SKIN EXFOLIATION",
-            "report_count": 4,
-            "pct_of_reports": 3.45
-          }
-        ],
-        "reports_by_year": [
-          {
-            "year": 2015,
-            "report_count": 2
-          },
-          {
-            "year": 2016,
-            "report_count": 3
-          },
-          {
-            "year": 2018,
-            "report_count": 1
-          },
-          {
-            "year": 2019,
-            "report_count": 6
-          },
-          {
-            "year": 2021,
-            "report_count": 2
-          },
-          {
-            "year": 2022,
-            "report_count": 1
-          },
-          {
-            "year": 2023,
-            "report_count": 2
-          },
-          {
-            "year": 2024,
-            "report_count": 22
-          },
-          {
-            "year": 2025,
-            "report_count": 114
-          },
-          {
-            "year": 2026,
-            "report_count": 64
-          }
-        ],
-        "meddra_version": null
+        "drug": "Lebrikizumab",
+        "application_number": null
       },
-      "source_type": "openfda_faers",
-      "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"LEBRIKIZUMAB\"&limit=1",
-      "source_excerpt": "openFDA drug/event.json aggregate: total_reports=217, serious=116, deaths=2",
-      "extracted_by": "fetch_faers.py (openfda drug/event.json, v2 pass)",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     }
   },
   "exclusivity": {
     "regulatory_application": {
       "value": {
-        "application_type": "BLA",
-        "application_number": "761306",
-        "registry": "purple_book",
-        "center": "CDER",
-        "proprietary_name": "Ebglyss",
-        "applicant": "Eli Lilly and Company",
-        "first_approval_date": "2024-09-13"
+        "drug": "Lebrikizumab",
+        "application_number": "761306"
       },
-      "source_type": "purple_book",
-      "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2026/purplebook-search-August-data-download.csv",
-      "source_excerpt": "row: Eli Lilly and Company | BLA 761306 | Ebglyss | lebrikizumab-lbkz | 351(a) | 250MG/2ML Injection Subcutaneous Autoinjector | Rx | Licensed | 13-Sep-24 | Original | License 1891 | Product 001 | CDER",
-      "extracted_by": "atlas.regulatory_applications (registry file fetched 2026-09-05)",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     },
     "orange_book": {
-      "value": null,
-      "source_type": "needs_extraction",
+      "value": {
+        "drug": "Lebrikizumab",
+        "application_number": "761306"
+      },
+      "source_type": "drug_level_ref",
       "source_url": null,
       "source_excerpt": null,
       "extracted_by": null,
@@ -3454,64 +3211,25 @@
     },
     "purple_book": {
       "value": {
-        "bla_number": "761306",
-        "proprietary_name": "Ebglyss",
-        "proper_name": "lebrikizumab-lbkz",
-        "applicant": "Eli Lilly and Company",
-        "license_type": "351(a)",
-        "license_number": "1891",
-        "center": "CDER",
-        "products": [
-          {
-            "product_number": "001",
-            "strength": "250MG/2ML",
-            "dosage_form": "Injection",
-            "route": "Subcutaneous",
-            "presentation": "Autoinjector",
-            "marketing_status": "Rx",
-            "licensure": "Licensed",
-            "approval_date": "2024-09-13",
-            "submission_type": "Original",
-            "supplement_number": null
-          },
-          {
-            "product_number": "002",
-            "strength": "250MG/2ML",
-            "dosage_form": "Injection",
-            "route": "Subcutaneous",
-            "presentation": "Pre-Filled Syringe",
-            "marketing_status": "Rx",
-            "licensure": "Licensed",
-            "approval_date": "2024-09-13",
-            "submission_type": "Original",
-            "supplement_number": null
-          }
-        ],
-        "first_approval_date": "2024-09-13",
-        "date_of_first_licensure": null,
-        "reference_product_exclusivity_expiration": null,
-        "exclusivity_expiration_date": null,
-        "first_interchangeable_exclusivity_expiration": null,
-        "orphan_exclusivity_expiration": null,
-        "patent_list_provided": null,
-        "biosimilars": [],
-        "data_file_month": null
+        "drug": "Lebrikizumab",
+        "application_number": null
       },
-      "source_type": "purple_book",
-      "source_url": "https://purplebooksearch.fda.gov/index.cfm?event=advancedsearch",
-      "source_excerpt": "purplebooksearch.fda.gov live search table, BLA 761306 (Ebglyss), 0 biosimilar(s) on file",
-      "extracted_by": "fetch_purple_book.py (purplebooksearch.fda.gov live search table, raw staging pass)",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     }
   },
   "results": {
     "arms": {
       "value": [
         {
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "label": "Placebo",
           "role": "placebo",
+          "analysis_population": "full_analysis_set",
           "intervention_names": [
             "Placebo"
           ],
@@ -3521,21 +3239,10 @@
           "randomized_n": 141
         },
         {
-          "arm_id": "OG001",
-          "label": "Lebrikizumab Q2W",
-          "role": "investigational",
-          "intervention_names": [
-            "Lebrikizumab"
-          ],
-          "dose_value": null,
-          "dose_unit": null,
-          "frequency": null,
-          "randomized_n": 283
-        },
-        {
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "label": "Maintenance 250 mg Lebrikizumab Q4W",
           "role": "investigational",
+          "analysis_population": null,
           "intervention_names": [
             "Lebrikizumab"
           ],
@@ -3545,21 +3252,10 @@
           "randomized_n": null
         },
         {
-          "arm_id": "OG001",
-          "label": "Maintenance 250 mg Lebrikizumab Q2W and 250 mg Lebrikizumab Escape Q2W",
-          "role": "investigational",
-          "intervention_names": [
-            "Lebrikizumab"
-          ],
-          "dose_value": null,
-          "dose_unit": null,
-          "frequency": null,
-          "randomized_n": null
-        },
-        {
-          "arm_id": "OG000",
+          "arm_id": "OG000#3",
           "label": "Maintenance Blinded Treatment - Lebrikizumab Responder/Placebo",
           "role": "placebo",
+          "analysis_population": null,
           "intervention_names": [
             "Lebrikizumab",
             "Placebo"
@@ -3570,9 +3266,36 @@
           "randomized_n": null
         },
         {
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
+          "label": "Lebrikizumab Q2W",
+          "role": "investigational",
+          "analysis_population": "full_analysis_set",
+          "intervention_names": [
+            "Lebrikizumab"
+          ],
+          "dose_value": null,
+          "dose_unit": null,
+          "frequency": null,
+          "randomized_n": 283
+        },
+        {
+          "arm_id": "OG001#2",
+          "label": "Maintenance 250 mg Lebrikizumab Q2W and 250 mg Lebrikizumab Escape Q2W",
+          "role": "investigational",
+          "analysis_population": null,
+          "intervention_names": [
+            "Lebrikizumab"
+          ],
+          "dose_value": null,
+          "dose_unit": null,
+          "frequency": null,
+          "randomized_n": null
+        },
+        {
+          "arm_id": "OG001#3",
           "label": "Maintenance Blinded Treatment - Lebrikizumab Responder/Lebrikizumab 250 Q4W",
           "role": "investigational",
+          "analysis_population": null,
           "intervention_names": [
             "Lebrikizumab"
           ],
@@ -3585,6 +3308,7 @@
           "arm_id": "OG002",
           "label": "Maintenance Blinded Treatment - Lebrikizumab Responder/Lebrikizumab 250 Q2W",
           "role": "investigational",
+          "analysis_population": null,
           "intervention_names": [
             "Lebrikizumab"
           ],
@@ -3597,7 +3321,7 @@
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04146363",
       "source_excerpt": "resultsSection.outcomeMeasuresModule.outcomeMeasures[].groups[]",
-      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3, 2026-09-06)",
+      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3 backfill re-run)",
       "reviewed_by": null,
       "confidence": 1.0
     },
@@ -3609,7 +3333,7 @@
             "position": 1,
             "verbatim_sha1": "4af3c8f6018105c1403cec2be6a4f59e6908a9a5"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -3637,7 +3361,7 @@
             "position": 1,
             "verbatim_sha1": "4af3c8f6018105c1403cec2be6a4f59e6908a9a5"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -3665,7 +3389,7 @@
             "position": 2,
             "verbatim_sha1": "d7e7a4f0add90a0e61a0739e078cba9eb34882b5"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -3693,7 +3417,7 @@
             "position": 2,
             "verbatim_sha1": "d7e7a4f0add90a0e61a0739e078cba9eb34882b5"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -3721,7 +3445,7 @@
             "position": 1,
             "verbatim_sha1": "ae715bd490e7ca1f93a8f9d09be1f2f26373ed83"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 2,
             "unit": "week",
@@ -3749,7 +3473,7 @@
             "position": 1,
             "verbatim_sha1": "ae715bd490e7ca1f93a8f9d09be1f2f26373ed83"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 2,
             "unit": "week",
@@ -3777,7 +3501,7 @@
             "position": 2,
             "verbatim_sha1": "6ddcb0412a5bdb60fb6d16475ab1535c7d5f8bcf"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 4,
             "unit": "week",
@@ -3805,7 +3529,7 @@
             "position": 2,
             "verbatim_sha1": "6ddcb0412a5bdb60fb6d16475ab1535c7d5f8bcf"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 4,
             "unit": "week",
@@ -3833,7 +3557,7 @@
             "position": 3,
             "verbatim_sha1": "22b359c2e6e42169a073a894ff8fb87ced9de52e"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -3861,7 +3585,7 @@
             "position": 3,
             "verbatim_sha1": "22b359c2e6e42169a073a894ff8fb87ced9de52e"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -3889,7 +3613,7 @@
             "position": 4,
             "verbatim_sha1": "96905fd8f49c1d7d41a0fc3a971ac62a629afe2d"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -3917,7 +3641,7 @@
             "position": 4,
             "verbatim_sha1": "96905fd8f49c1d7d41a0fc3a971ac62a629afe2d"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -3945,7 +3669,7 @@
             "position": 5,
             "verbatim_sha1": "a72ad80c84b58f6f6dd1101d7eccc185a2afbaad"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -3973,7 +3697,7 @@
             "position": 5,
             "verbatim_sha1": "a72ad80c84b58f6f6dd1101d7eccc185a2afbaad"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -4001,7 +3725,7 @@
             "position": 6,
             "verbatim_sha1": "2d8e74d436eb1f3f55343f354b947452819e4dea"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -4029,7 +3753,7 @@
             "position": 6,
             "verbatim_sha1": "2d8e74d436eb1f3f55343f354b947452819e4dea"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -4057,7 +3781,7 @@
             "position": 7,
             "verbatim_sha1": "949bc48654517ab07e13c6bed16539c154018533"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -4085,7 +3809,7 @@
             "position": 7,
             "verbatim_sha1": "949bc48654517ab07e13c6bed16539c154018533"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -4113,7 +3837,7 @@
             "position": 8,
             "verbatim_sha1": "e5c8da02c3a31d6a2867a729fe1b86c409432e4b"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -4141,7 +3865,7 @@
             "position": 8,
             "verbatim_sha1": "e5c8da02c3a31d6a2867a729fe1b86c409432e4b"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -4169,7 +3893,7 @@
             "position": 9,
             "verbatim_sha1": "122bd8aeff16e8244a736feeb6a5c33596db5bf0"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -4197,7 +3921,7 @@
             "position": 9,
             "verbatim_sha1": "122bd8aeff16e8244a736feeb6a5c33596db5bf0"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -4225,7 +3949,7 @@
             "position": 10,
             "verbatim_sha1": "141eb0dd31acad9b567db43201cf0e5354915219"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 4,
             "unit": "week",
@@ -4253,7 +3977,7 @@
             "position": 10,
             "verbatim_sha1": "141eb0dd31acad9b567db43201cf0e5354915219"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 4,
             "unit": "week",
@@ -4281,7 +4005,7 @@
             "position": 11,
             "verbatim_sha1": "df165f6c08b01feef2b68d5948f563ecbe75aedd"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -4309,7 +4033,7 @@
             "position": 11,
             "verbatim_sha1": "df165f6c08b01feef2b68d5948f563ecbe75aedd"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -4337,7 +4061,7 @@
             "position": 12,
             "verbatim_sha1": "988ba2d1f597c7e2a40f3e2aaab1e9e2a7004983"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -4365,7 +4089,7 @@
             "position": 12,
             "verbatim_sha1": "988ba2d1f597c7e2a40f3e2aaab1e9e2a7004983"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -4393,7 +4117,7 @@
             "position": 13,
             "verbatim_sha1": "3e93a63c6c3215c288eafa1162a5bcf92386640a"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -4421,7 +4145,7 @@
             "position": 13,
             "verbatim_sha1": "3e93a63c6c3215c288eafa1162a5bcf92386640a"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -4449,7 +4173,7 @@
             "position": 14,
             "verbatim_sha1": "3a7641f4e4188a7f0f78191b6a97466e8fdd48bc"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -4477,7 +4201,7 @@
             "position": 14,
             "verbatim_sha1": "3a7641f4e4188a7f0f78191b6a97466e8fdd48bc"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -4505,7 +4229,7 @@
             "position": 15,
             "verbatim_sha1": "aea344fc5cfff468cb4c21cecab908ad2ce7e41a"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -4533,7 +4257,7 @@
             "position": 15,
             "verbatim_sha1": "aea344fc5cfff468cb4c21cecab908ad2ce7e41a"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -4561,7 +4285,7 @@
             "position": 16,
             "verbatim_sha1": "b6c36f5afbb9347495690b398c470ce0a7f7413f"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -4589,7 +4313,7 @@
             "position": 16,
             "verbatim_sha1": "b6c36f5afbb9347495690b398c470ce0a7f7413f"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -4617,7 +4341,7 @@
             "position": 17,
             "verbatim_sha1": "b7d2e476cb2f93fd059a48ca027f01ce1b31a4b2"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 1,
             "unit": "week",
@@ -4645,7 +4369,7 @@
             "position": 17,
             "verbatim_sha1": "b7d2e476cb2f93fd059a48ca027f01ce1b31a4b2"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 1,
             "unit": "week",
@@ -4673,7 +4397,7 @@
             "position": 18,
             "verbatim_sha1": "d11293e32df7ecc3aac2b1a64a7cbd0d214a62df"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 2,
             "unit": "week",
@@ -4701,7 +4425,7 @@
             "position": 18,
             "verbatim_sha1": "d11293e32df7ecc3aac2b1a64a7cbd0d214a62df"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 2,
             "unit": "week",
@@ -4729,7 +4453,7 @@
             "position": 19,
             "verbatim_sha1": "f6b5716b0692c667626c7537445ca35d903568b0"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 4,
             "unit": "week",
@@ -4757,7 +4481,7 @@
             "position": 19,
             "verbatim_sha1": "f6b5716b0692c667626c7537445ca35d903568b0"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 4,
             "unit": "week",
@@ -4785,7 +4509,7 @@
             "position": 20,
             "verbatim_sha1": "6a396fc8a402634e44b25951fe4d11fbb3c098dc"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 1,
             "unit": "week",
@@ -4813,7 +4537,7 @@
             "position": 20,
             "verbatim_sha1": "6a396fc8a402634e44b25951fe4d11fbb3c098dc"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 1,
             "unit": "week",
@@ -4841,7 +4565,7 @@
             "position": 21,
             "verbatim_sha1": "d2442dbe3ee165b3d7bf8793e23917f4568ef02c"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 2,
             "unit": "week",
@@ -4869,7 +4593,7 @@
             "position": 21,
             "verbatim_sha1": "d2442dbe3ee165b3d7bf8793e23917f4568ef02c"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 2,
             "unit": "week",
@@ -4897,7 +4621,7 @@
             "position": 22,
             "verbatim_sha1": "c4e757546aaa79538f591e21e38fa9c48ff555b6"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 4,
             "unit": "week",
@@ -4925,7 +4649,7 @@
             "position": 22,
             "verbatim_sha1": "c4e757546aaa79538f591e21e38fa9c48ff555b6"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 4,
             "unit": "week",
@@ -4953,7 +4677,7 @@
             "position": 23,
             "verbatim_sha1": "b7e18e011922bdc3108504f7f5fa168fd0bf0a09"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -4981,7 +4705,7 @@
             "position": 23,
             "verbatim_sha1": "b7e18e011922bdc3108504f7f5fa168fd0bf0a09"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -5009,7 +4733,7 @@
             "position": 25,
             "verbatim_sha1": "5a2bb702cf1659769fcacbaa3a2786b5868af6c6"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#3",
           "timepoint": {
             "value": 52,
             "unit": "week",
@@ -5037,7 +4761,7 @@
             "position": 25,
             "verbatim_sha1": "5a2bb702cf1659769fcacbaa3a2786b5868af6c6"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#3",
           "timepoint": {
             "value": 52,
             "unit": "week",
@@ -5093,7 +4817,7 @@
             "position": 26,
             "verbatim_sha1": "53309b6d203185a815f00332a4f45ca63c252b88"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#3",
           "timepoint": {
             "value": 52,
             "unit": "week",
@@ -5121,7 +4845,7 @@
             "position": 26,
             "verbatim_sha1": "53309b6d203185a815f00332a4f45ca63c252b88"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#3",
           "timepoint": {
             "value": 52,
             "unit": "week",
@@ -5177,7 +4901,7 @@
             "position": 27,
             "verbatim_sha1": "3ce37bef9c22a4a16a3e2e432227f7869f6434a9"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#3",
           "timepoint": {
             "value": 52,
             "unit": "week",
@@ -5205,7 +4929,7 @@
             "position": 27,
             "verbatim_sha1": "3ce37bef9c22a4a16a3e2e432227f7869f6434a9"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#3",
           "timepoint": {
             "value": 52,
             "unit": "week",
@@ -5261,7 +4985,7 @@
             "position": 28,
             "verbatim_sha1": "a69ffb8f4affe80b4f8b41cf134ee99ebc7c709d"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#3",
           "timepoint": {
             "value": 52,
             "unit": "week",
@@ -5289,7 +5013,7 @@
             "position": 28,
             "verbatim_sha1": "a69ffb8f4affe80b4f8b41cf134ee99ebc7c709d"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#3",
           "timepoint": {
             "value": 52,
             "unit": "week",
@@ -5345,7 +5069,7 @@
             "position": 29,
             "verbatim_sha1": "c03fa2f162a0466e284578b7acd31d11f9c9ce64"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#3",
           "timepoint": {
             "value": 52,
             "unit": "week",
@@ -5373,7 +5097,7 @@
             "position": 29,
             "verbatim_sha1": "c03fa2f162a0466e284578b7acd31d11f9c9ce64"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#3",
           "timepoint": {
             "value": 52,
             "unit": "week",
@@ -5429,7 +5153,7 @@
             "position": 30,
             "verbatim_sha1": "cbfe066dfe57f7f0b1c7671c837c7284d425193f"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -5457,7 +5181,7 @@
             "position": 30,
             "verbatim_sha1": "cbfe066dfe57f7f0b1c7671c837c7284d425193f"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -5485,7 +5209,7 @@
             "position": 30,
             "verbatim_sha1": "cbfe066dfe57f7f0b1c7671c837c7284d425193f"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -5513,7 +5237,7 @@
             "position": 30,
             "verbatim_sha1": "cbfe066dfe57f7f0b1c7671c837c7284d425193f"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -5541,7 +5265,7 @@
             "position": 31,
             "verbatim_sha1": "a08e7506c4d1e837d4df94d7bf3bb9c12aa7a9c1"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -5569,7 +5293,7 @@
             "position": 31,
             "verbatim_sha1": "a08e7506c4d1e837d4df94d7bf3bb9c12aa7a9c1"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -5597,7 +5321,7 @@
             "position": 32,
             "verbatim_sha1": "a09962c5eb384e5d8245c3876954ca8def0d5b58"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -5625,7 +5349,7 @@
             "position": 32,
             "verbatim_sha1": "a09962c5eb384e5d8245c3876954ca8def0d5b58"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -5653,7 +5377,7 @@
             "position": 33,
             "verbatim_sha1": "00a6ebf3cd0cd2cf30c4011290ffd0bccbf05ee4"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -5681,7 +5405,7 @@
             "position": 33,
             "verbatim_sha1": "00a6ebf3cd0cd2cf30c4011290ffd0bccbf05ee4"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -5709,7 +5433,7 @@
             "position": 34,
             "verbatim_sha1": "2583c8bd7127afb743675beacd8b14d7898560d3"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -5737,7 +5461,7 @@
             "position": 34,
             "verbatim_sha1": "2583c8bd7127afb743675beacd8b14d7898560d3"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -5765,7 +5489,7 @@
             "position": 35,
             "verbatim_sha1": "0f6487095cef2c9f965f14f368184389be8c5f27"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -5793,7 +5517,7 @@
             "position": 35,
             "verbatim_sha1": "0f6487095cef2c9f965f14f368184389be8c5f27"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -5821,7 +5545,7 @@
             "position": 36,
             "verbatim_sha1": "a2730d6cc88733317b9d6c8761ae3e94c8cf39ab"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -5849,7 +5573,7 @@
             "position": 36,
             "verbatim_sha1": "a2730d6cc88733317b9d6c8761ae3e94c8cf39ab"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -5877,7 +5601,7 @@
             "position": 37,
             "verbatim_sha1": "0d5a4cd38db3d57e8010a9783c2dafee552b2d1e"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -5905,7 +5629,7 @@
             "position": 37,
             "verbatim_sha1": "0d5a4cd38db3d57e8010a9783c2dafee552b2d1e"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -5933,7 +5657,7 @@
             "position": 38,
             "verbatim_sha1": "e8b25c5e70bc9d14e70a2cbd76b581109d52a276"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -5961,7 +5685,7 @@
             "position": 38,
             "verbatim_sha1": "e8b25c5e70bc9d14e70a2cbd76b581109d52a276"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -5987,7 +5711,7 @@
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04146363",
       "source_excerpt": "resultsSection.outcomeMeasuresModule.outcomeMeasures[].{denoms,classes[].categories[].measurements[]}",
-      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3, 2026-09-06)",
+      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3 backfill re-run)",
       "reviewed_by": null,
       "confidence": 1.0
     },
@@ -6004,8 +5728,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#full_analysis_set",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "risk_difference",
           "effect_type_verbatim": "Risk Difference (RD)",
@@ -6033,8 +5757,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#full_analysis_set",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "risk_difference",
           "effect_type_verbatim": "Risk Difference (RD)",
@@ -6062,8 +5786,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#full_analysis_set",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "risk_difference",
           "effect_type_verbatim": "Risk Difference (RD)",
@@ -6091,8 +5815,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#full_analysis_set",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "risk_difference",
           "effect_type_verbatim": "Risk Difference (RD)",
@@ -6120,8 +5844,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#full_analysis_set",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "risk_difference",
           "effect_type_verbatim": "Risk Difference (RD)",
@@ -6149,8 +5873,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#full_analysis_set",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "risk_difference",
           "effect_type_verbatim": "Risk Difference (RD)",
@@ -6178,8 +5902,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#full_analysis_set",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
           "effect_type_verbatim": "LS Mean Difference (Final Values)",
@@ -6207,8 +5931,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#full_analysis_set",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "risk_difference",
           "effect_type_verbatim": "Risk Difference (RD)",
@@ -6236,8 +5960,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#full_analysis_set",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "risk_difference",
           "effect_type_verbatim": "Risk Difference (RD)",
@@ -6265,8 +5989,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#full_analysis_set",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
           "effect_type_verbatim": "LS Mean Difference (Final Values)",
@@ -6294,8 +6018,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#full_analysis_set",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
           "effect_type_verbatim": "LS Mean Difference (Final Values)",
@@ -6323,8 +6047,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#full_analysis_set",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "risk_difference",
           "effect_type_verbatim": "Risk Difference (RD)",
@@ -6352,8 +6076,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#full_analysis_set",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
           "effect_type_verbatim": "LS Mean Difference (Final Values)",
@@ -6381,8 +6105,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#full_analysis_set",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "risk_difference",
           "effect_type_verbatim": "Risk Difference (RD)",
@@ -6410,8 +6134,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#full_analysis_set",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "risk_difference",
           "effect_type_verbatim": "Risk Difference (RD)",
@@ -6439,8 +6163,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#full_analysis_set",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
           "effect_type_verbatim": "LS Mean Difference (Final Values)",
@@ -6468,8 +6192,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#full_analysis_set",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
           "effect_type_verbatim": "LS Mean Difference (Final Values)",
@@ -6497,8 +6221,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#full_analysis_set",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "risk_difference",
           "effect_type_verbatim": "Risk Difference (RD)",
@@ -6526,8 +6250,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#full_analysis_set",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "risk_difference",
           "effect_type_verbatim": "Risk Difference (RD)",
@@ -6555,8 +6279,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#full_analysis_set",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "risk_difference",
           "effect_type_verbatim": "Risk Difference (RD)",
@@ -6584,8 +6308,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#full_analysis_set",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "risk_difference",
           "effect_type_verbatim": "Risk Difference (RD)",
@@ -6613,8 +6337,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#full_analysis_set",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "risk_difference",
           "effect_type_verbatim": "Risk Difference (RD)",
@@ -6642,8 +6366,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#full_analysis_set",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "risk_difference",
           "effect_type_verbatim": "Risk Difference (RD)",
@@ -6671,8 +6395,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#full_analysis_set",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "risk_difference",
           "effect_type_verbatim": "Risk Difference (RD)",
@@ -6700,8 +6424,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#full_analysis_set",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
           "effect_type_verbatim": "LS Mean Difference (Final Values)",
@@ -6729,8 +6453,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#3",
+          "reference_arm_id": "OG000#3",
           "comparison_kind": "superiority",
           "effect_type": "risk_difference",
           "effect_type_verbatim": "Risk Difference (RD)",
@@ -6758,8 +6482,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG002",
+          "test_arm_id": "OG002",
+          "reference_arm_id": "OG000#3",
           "comparison_kind": "superiority",
           "effect_type": "risk_difference",
           "effect_type_verbatim": "Risk Difference (RD)",
@@ -6787,8 +6511,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#3",
+          "reference_arm_id": "OG000#3",
           "comparison_kind": "superiority",
           "effect_type": "risk_difference",
           "effect_type_verbatim": "Risk Difference (RD)",
@@ -6816,8 +6540,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG002",
+          "test_arm_id": "OG002",
+          "reference_arm_id": "OG000#3",
           "comparison_kind": "superiority",
           "effect_type": "risk_difference",
           "effect_type_verbatim": "Risk Difference (RD)",
@@ -6845,8 +6569,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#3",
+          "reference_arm_id": "OG000#3",
           "comparison_kind": "superiority",
           "effect_type": "risk_difference",
           "effect_type_verbatim": "Risk Difference (RD)",
@@ -6874,8 +6598,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG002",
+          "test_arm_id": "OG002",
+          "reference_arm_id": "OG000#3",
           "comparison_kind": "superiority",
           "effect_type": "risk_difference",
           "effect_type_verbatim": "Risk Difference (RD)",
@@ -6903,8 +6627,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#3",
+          "reference_arm_id": "OG000#3",
           "comparison_kind": "superiority",
           "effect_type": "risk_difference",
           "effect_type_verbatim": "Risk Difference (RD)",
@@ -6932,8 +6656,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG002",
+          "test_arm_id": "OG002",
+          "reference_arm_id": "OG000#3",
           "comparison_kind": "superiority",
           "effect_type": "risk_difference",
           "effect_type_verbatim": "Risk Difference (RD)",
@@ -6961,8 +6685,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#3",
+          "reference_arm_id": "OG000#3",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
           "effect_type_verbatim": "LS Mean Difference (Final Values)",
@@ -6990,8 +6714,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG002",
+          "test_arm_id": "OG002",
+          "reference_arm_id": "OG000#3",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
           "effect_type_verbatim": "LS Mean Difference (Final Values)",
@@ -7019,8 +6743,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#full_analysis_set",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
           "effect_type_verbatim": "LS Mean Difference (Final Values)",
@@ -7048,8 +6772,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#full_analysis_set",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
           "effect_type_verbatim": "LS Mean Difference (Final Values)",
@@ -7077,8 +6801,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#full_analysis_set",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
           "effect_type_verbatim": "LS Mean Difference (Final Values)",
@@ -7106,8 +6830,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#full_analysis_set",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
           "effect_type_verbatim": "LS Mean Difference (Final Values)",
@@ -7135,8 +6859,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#full_analysis_set",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
           "effect_type_verbatim": "LS Mean Difference (Final Values)",
@@ -7164,8 +6888,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#full_analysis_set",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
           "effect_type_verbatim": "LS Mean Difference (Final Values)",
@@ -7193,8 +6917,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#full_analysis_set",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
           "effect_type_verbatim": "LS Mean Difference (Final Values)",
@@ -7222,8 +6946,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#full_analysis_set",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
           "effect_type_verbatim": "LS Mean Difference (Final Values)",
@@ -7251,8 +6975,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#full_analysis_set",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
           "effect_type_verbatim": "LS Mean Difference (Final Values)",
@@ -7280,8 +7004,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#full_analysis_set",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
           "effect_type_verbatim": "LS Mean Difference (Final Values)",
@@ -7302,7 +7026,7 @@
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04146363",
       "source_excerpt": "resultsSection.outcomeMeasuresModule.outcomeMeasures[].analyses[]",
-      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3, 2026-09-06)",
+      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3 backfill re-run)",
       "reviewed_by": null,
       "confidence": 1.0
     },

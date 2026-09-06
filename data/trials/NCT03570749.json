@@ -1,5 +1,5 @@
 {
-  "schema_version": 3,
+  "schema_version": 4,
   "nct_id": {
     "value": "NCT03570749",
     "source_type": "ctgov_api",
@@ -85,25 +85,15 @@
     },
     "mechanism_of_action": {
       "value": {
-        "modality": "small_molecule",
-        "drug_class": "JAK inhibitor",
-        "antibody_isotype": null,
-        "binding_targets": [],
-        "pathway_cytokines": [],
-        "receptor_subunits": [],
-        "kinases_inhibited": [],
-        "lower_potency_kinases": [],
-        "selectivity": [],
-        "reversible": null,
-        "mechanism_established": null,
-        "label_section": "12.1"
+        "drug": "Baricitinib",
+        "application_number": null
       },
-      "source_type": "openfda_label",
-      "source_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=bd867ca4-faaf-4920-af55-ee0db99ab1bf",
-      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1) -- extracted text: 12.1 Mechanism of Action Baricitinib is a Janus kinase (JAK) inhibitor. JAKs are intracellular enzymes which transmit signals arising from cytokine or growth factor-receptor interactions on the cellular membrane to influence cellular processes of hematopoiesis and immune cell function. Within the signaling pathway, JAKs phosphorylate and activate Signal Transducers and Activators of Transcription (STATs) which modulate intracellular activity including gene expression. Baricitinib modulates the signaling pathway at the point of JAKs, preventing the phosphorylation and activation of STATs. JAK enzymes transmit cytokine signaling through their pairing (e.g., JAK1/JAK2, JAK1/JAK3, JAK1/TYK2, JAK2/JAK2, JAK2/TYK2). In cell-free isolated enzyme assays, baricitinib had greater inhibitory potency at JAK1, JAK2 and TYK2 relative to JAK3. In human leukocytes, baricitinib inhibited cytokine induced STAT phosphorylation mediated by JAK1/JAK2, JAK1/JAK3, JAK1/TYK2, or JAK2/TYK2 with comparable potencies. However, the relevance of inhibition of specific JAK enzymes to therapeutic effectiveness is not currently known.",
-      "extracted_by": "deep-extraction pass (LLM-assisted extraction, scale-out backfill; pending human QA)",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 0.9
+      "confidence": null
     },
     "dosing_regimen": {
       "value": [
@@ -1695,422 +1685,62 @@
     },
     "boxed_warning": {
       "value": {
-        "present": false,
-        "title": null,
-        "warning_categories": [],
-        "referenced_label_sections": [],
-        "product_names": []
+        "drug": "Baricitinib",
+        "application_number": null
       },
-      "source_type": "openfda_label",
-      "source_url": "https://api.fda.gov/drug/label.json?search=openfda.substance_name:BARICITINIB&limit=1",
-      "source_excerpt": "results[0] has no boxed_warning key (checked, none present)",
-      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass); structured by atlas.migrate v1->v2",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     }
   },
   "real_world_safety": {
     "faers_summary": {
       "value": {
-        "query": {
-          "search_field": "patient.drug.medicinalproduct",
-          "search_term": "BARICITINIB",
-          "receivedate_from": "2014-08-08",
-          "receivedate_to": "2026-06-30",
-          "api_urls": [
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"BARICITINIB\"&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"BARICITINIB\"+AND+serious:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"BARICITINIB\"+AND+seriousnessdeath:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"BARICITINIB\"+AND+seriousnesshospitalization:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"BARICITINIB\"+AND+seriousnesslifethreatening:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"BARICITINIB\"+AND+seriousnessdisabling:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"BARICITINIB\"&count=patient.reaction.reactionmeddrapt.exact&limit=15",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"BARICITINIB\"+AND+serious:1&count=patient.reaction.reactionmeddrapt.exact&limit=15",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"BARICITINIB\"&count=receivedate"
-          ],
-          "data_last_updated": "2026-07-30"
-        },
-        "total_reports": 2981,
-        "serious_reports": 2763,
-        "death_reports": 473,
-        "hospitalization_reports": 1232,
-        "life_threatening_reports": 386,
-        "disability_reports": 89,
-        "top_reactions": [
-          {
-            "meddra_pt": "OFF LABEL USE",
-            "report_count": 401,
-            "pct_of_reports": 13.45
-          },
-          {
-            "meddra_pt": "DRUG INEFFECTIVE",
-            "report_count": 325,
-            "pct_of_reports": 10.9
-          },
-          {
-            "meddra_pt": "COVID-19",
-            "report_count": 174,
-            "pct_of_reports": 5.84
-          },
-          {
-            "meddra_pt": "PULMONARY EMBOLISM",
-            "report_count": 173,
-            "pct_of_reports": 5.8
-          },
-          {
-            "meddra_pt": "PNEUMONIA",
-            "report_count": 140,
-            "pct_of_reports": 4.7
-          },
-          {
-            "meddra_pt": "RHEUMATOID ARTHRITIS",
-            "report_count": 123,
-            "pct_of_reports": 4.13
-          },
-          {
-            "meddra_pt": "DEEP VEIN THROMBOSIS",
-            "report_count": 122,
-            "pct_of_reports": 4.09
-          },
-          {
-            "meddra_pt": "CONDITION AGGRAVATED",
-            "report_count": 108,
-            "pct_of_reports": 3.62
-          },
-          {
-            "meddra_pt": "DEATH",
-            "report_count": 105,
-            "pct_of_reports": 3.52
-          },
-          {
-            "meddra_pt": "DRUG INEFFECTIVE FOR UNAPPROVED INDICATION",
-            "report_count": 86,
-            "pct_of_reports": 2.88
-          },
-          {
-            "meddra_pt": "COVID-19 PNEUMONIA",
-            "report_count": 70,
-            "pct_of_reports": 2.35
-          },
-          {
-            "meddra_pt": "ACUTE KIDNEY INJURY",
-            "report_count": 69,
-            "pct_of_reports": 2.31
-          },
-          {
-            "meddra_pt": "HERPES ZOSTER",
-            "report_count": 69,
-            "pct_of_reports": 2.31
-          },
-          {
-            "meddra_pt": "NAUSEA",
-            "report_count": 69,
-            "pct_of_reports": 2.31
-          },
-          {
-            "meddra_pt": "HEADACHE",
-            "report_count": 68,
-            "pct_of_reports": 2.28
-          }
-        ],
-        "top_serious_reactions": [
-          {
-            "meddra_pt": "OFF LABEL USE",
-            "report_count": 375,
-            "pct_of_reports": 13.57
-          },
-          {
-            "meddra_pt": "DRUG INEFFECTIVE",
-            "report_count": 314,
-            "pct_of_reports": 11.36
-          },
-          {
-            "meddra_pt": "COVID-19",
-            "report_count": 172,
-            "pct_of_reports": 6.23
-          },
-          {
-            "meddra_pt": "PULMONARY EMBOLISM",
-            "report_count": 166,
-            "pct_of_reports": 6.01
-          },
-          {
-            "meddra_pt": "PNEUMONIA",
-            "report_count": 137,
-            "pct_of_reports": 4.96
-          },
-          {
-            "meddra_pt": "RHEUMATOID ARTHRITIS",
-            "report_count": 122,
-            "pct_of_reports": 4.42
-          },
-          {
-            "meddra_pt": "DEEP VEIN THROMBOSIS",
-            "report_count": 116,
-            "pct_of_reports": 4.2
-          },
-          {
-            "meddra_pt": "CONDITION AGGRAVATED",
-            "report_count": 107,
-            "pct_of_reports": 3.87
-          },
-          {
-            "meddra_pt": "DEATH",
-            "report_count": 105,
-            "pct_of_reports": 3.8
-          },
-          {
-            "meddra_pt": "DRUG INEFFECTIVE FOR UNAPPROVED INDICATION",
-            "report_count": 84,
-            "pct_of_reports": 3.04
-          },
-          {
-            "meddra_pt": "ACUTE KIDNEY INJURY",
-            "report_count": 69,
-            "pct_of_reports": 2.5
-          },
-          {
-            "meddra_pt": "COVID-19 PNEUMONIA",
-            "report_count": 68,
-            "pct_of_reports": 2.46
-          },
-          {
-            "meddra_pt": "HERPES ZOSTER",
-            "report_count": 67,
-            "pct_of_reports": 2.42
-          },
-          {
-            "meddra_pt": "RESPIRATORY FAILURE",
-            "report_count": 67,
-            "pct_of_reports": 2.42
-          },
-          {
-            "meddra_pt": "HEADACHE",
-            "report_count": 66,
-            "pct_of_reports": 2.39
-          }
-        ],
-        "reports_by_year": [
-          {
-            "year": 2014,
-            "report_count": 1
-          },
-          {
-            "year": 2015,
-            "report_count": 1
-          },
-          {
-            "year": 2017,
-            "report_count": 2
-          },
-          {
-            "year": 2018,
-            "report_count": 66
-          },
-          {
-            "year": 2019,
-            "report_count": 143
-          },
-          {
-            "year": 2020,
-            "report_count": 164
-          },
-          {
-            "year": 2021,
-            "report_count": 816
-          },
-          {
-            "year": 2022,
-            "report_count": 600
-          },
-          {
-            "year": 2023,
-            "report_count": 392
-          },
-          {
-            "year": 2024,
-            "report_count": 373
-          },
-          {
-            "year": 2025,
-            "report_count": 292
-          },
-          {
-            "year": 2026,
-            "report_count": 131
-          }
-        ],
-        "meddra_version": null
+        "drug": "Baricitinib",
+        "application_number": null
       },
-      "source_type": "openfda_faers",
-      "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"BARICITINIB\"&limit=1",
-      "source_excerpt": "openFDA drug/event.json aggregate: total_reports=2981, serious=2763, deaths=473",
-      "extracted_by": "fetch_faers.py (openfda drug/event.json, v2 pass)",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     }
   },
   "exclusivity": {
     "regulatory_application": {
       "value": {
-        "application_type": "NDA",
-        "application_number": "207924",
-        "registry": "orange_book",
-        "center": "CDER",
-        "proprietary_name": "OLUMIANT",
-        "applicant": "ELI LILLY AND CO",
-        "first_approval_date": "2018-05-31"
+        "drug": "Baricitinib",
+        "application_number": "207924"
       },
-      "source_type": "orange_book",
-      "source_url": "https://api.fda.gov/drug/orangebook.json",
-      "source_excerpt": "openFDA drug/orangebook.json: BARICITINIB application N207924, brand OLUMIANT, applicant ELI LILLY AND CO, approved 2018-05-31",
-      "extracted_by": "atlas.regulatory_applications (registry file fetched 2026-09-05)",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     },
     "orange_book": {
       "value": {
-        "application_type": "N",
-        "application_number": "207924",
-        "ingredient": "BARICITINIB",
-        "trade_name": "OLUMIANT",
-        "applicant": "ELI LILLY AND CO",
-        "applicant_full_name": "ELI LILLY AND CO",
-        "products": [
-          {
-            "product_number": "001",
-            "strength": "2MG",
-            "dosage_form": "TABLET",
-            "route": "ORAL",
-            "approval_date": "2018-05-31",
-            "rld": true,
-            "rs": false,
-            "te_code": null,
-            "marketing_type": "HUMAN PRESCRIPTION DRUG"
-          },
-          {
-            "product_number": "002",
-            "strength": "1MG",
-            "dosage_form": "TABLET",
-            "route": "ORAL",
-            "approval_date": "2019-10-08",
-            "rld": true,
-            "rs": false,
-            "te_code": null,
-            "marketing_type": "HUMAN PRESCRIPTION DRUG"
-          },
-          {
-            "product_number": "003",
-            "strength": "4MG",
-            "dosage_form": "TABLET",
-            "route": "ORAL",
-            "approval_date": "2022-05-10",
-            "rld": true,
-            "rs": true,
-            "te_code": null,
-            "marketing_type": "HUMAN PRESCRIPTION DRUG"
-          }
-        ],
-        "patents": [
-          {
-            "patent_number": "8420629",
-            "expiration_date": "2029-03-10",
-            "drug_substance_claim": false,
-            "drug_product_claim": false,
-            "patent_use_code": "U-247",
-            "delisted": false,
-            "submission_date": "2020-10-26",
-            "product_numbers": [
-              "002",
-              "001"
-            ]
-          },
-          {
-            "patent_number": "11806555",
-            "expiration_date": "2031-11-02",
-            "drug_substance_claim": false,
-            "drug_product_claim": false,
-            "patent_use_code": "U-3500",
-            "delisted": false,
-            "submission_date": "2023-11-21",
-            "product_numbers": [
-              "002",
-              "001",
-              "003"
-            ]
-          },
-          {
-            "patent_number": "9737469",
-            "expiration_date": "2031-11-02",
-            "drug_substance_claim": false,
-            "drug_product_claim": false,
-            "patent_use_code": "U-3500",
-            "delisted": false,
-            "submission_date": "2023-01-09",
-            "product_numbers": [
-              "002",
-              "001",
-              "003"
-            ]
-          },
-          {
-            "patent_number": "8158616",
-            "expiration_date": "2032-05-31",
-            "drug_substance_claim": true,
-            "drug_product_claim": true,
-            "patent_use_code": null,
-            "delisted": false,
-            "submission_date": "2020-10-26",
-            "product_numbers": [
-              "002",
-              "001",
-              "003"
-            ]
-          },
-          {
-            "patent_number": "11045474",
-            "expiration_date": "2032-11-30",
-            "drug_substance_claim": false,
-            "drug_product_claim": false,
-            "patent_use_code": "U-3372",
-            "delisted": false,
-            "submission_date": "2022-05-26",
-            "product_numbers": [
-              "002",
-              "001",
-              "003"
-            ]
-          },
-          {
-            "patent_number": "9089574",
-            "expiration_date": "2032-11-30",
-            "drug_substance_claim": false,
-            "drug_product_claim": false,
-            "patent_use_code": "U-3372",
-            "delisted": false,
-            "submission_date": "2022-05-26",
-            "product_numbers": [
-              "002",
-              "001",
-              "003"
-            ]
-          }
-        ],
-        "exclusivities": [],
-        "latest_patent_expiration": "2032-11-30",
-        "latest_exclusivity_expiration": null,
-        "data_file_date": null
+        "drug": "Baricitinib",
+        "application_number": "207924"
       },
-      "source_type": "orange_book",
-      "source_url": "https://api.fda.gov/drug/orangebook.json?search=products.active_ingredients.name%3A%22BARICITINIB%22&limit=100",
-      "source_excerpt": "openFDA drug/orangebook.json, 8 product row(s) matched on products.active_ingredients.name='BARICITINIB'",
-      "extracted_by": "fetch_orange_book.py (openfda drug/orangebook.json, v2 pass)",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     },
     "purple_book": {
-      "value": null,
-      "source_type": "needs_extraction",
+      "value": {
+        "drug": "Baricitinib",
+        "application_number": null
+      },
+      "source_type": "drug_level_ref",
       "source_url": null,
       "source_excerpt": null,
       "extracted_by": null,
@@ -2122,11 +1752,25 @@
     "arms": {
       "value": [
         {
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "label": "Placebo Phase 3",
           "role": "placebo",
+          "analysis_population": "full_analysis_set",
           "intervention_names": [
             "Placebo"
+          ],
+          "dose_value": null,
+          "dose_unit": null,
+          "frequency": null,
+          "randomized_n": null
+        },
+        {
+          "arm_id": "OG000#2",
+          "label": "4 mg Baricitinib Phase 3 Open-Label Addendum",
+          "role": "investigational",
+          "analysis_population": "full_analysis_set",
+          "intervention_names": [
+            "Baricitinib"
           ],
           "dose_value": null,
           "dose_unit": null,
@@ -2137,6 +1781,7 @@
           "arm_id": "OG001",
           "label": "2 mg Baricitinib Phase 3",
           "role": "investigational",
+          "analysis_population": "full_analysis_set",
           "intervention_names": [
             "Baricitinib"
           ],
@@ -2149,18 +1794,7 @@
           "arm_id": "OG002",
           "label": "4 mg Baricitinib Phase 3",
           "role": "investigational",
-          "intervention_names": [
-            "Baricitinib"
-          ],
-          "dose_value": null,
-          "dose_unit": null,
-          "frequency": null,
-          "randomized_n": null
-        },
-        {
-          "arm_id": "OG000",
-          "label": "4 mg Baricitinib Phase 3 Open-Label Addendum",
-          "role": "investigational",
+          "analysis_population": "full_analysis_set",
           "intervention_names": [
             "Baricitinib"
           ],
@@ -2173,7 +1807,7 @@
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03570749",
       "source_excerpt": "resultsSection.outcomeMeasuresModule.outcomeMeasures[].groups[]",
-      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3, 2026-09-06)",
+      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3 backfill re-run)",
       "reviewed_by": null,
       "confidence": 1.0
     },
@@ -2185,7 +1819,7 @@
             "position": 1,
             "verbatim_sha1": "4418c743003d922db55f3b1de51337588bb1bc5a"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 36,
             "unit": "week",
@@ -2269,7 +1903,7 @@
             "position": 2,
             "verbatim_sha1": "1e640230ce85ff08894a90d8b177ddaaf176e264"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "timepoint": {
             "value": 52,
             "unit": "week",
@@ -2297,7 +1931,7 @@
             "position": 1,
             "verbatim_sha1": "620ae5b8c3f060785451c75f672f6dc4c71838f7"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": null,
           "analysis_population": "full_analysis_set",
           "study_period": null,
@@ -2369,7 +2003,7 @@
             "position": 2,
             "verbatim_sha1": "500f1892b7995e63f094c287f5442141fec62dd0"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": null,
           "analysis_population": "full_analysis_set",
           "study_period": null,
@@ -2441,7 +2075,7 @@
             "position": 4,
             "verbatim_sha1": "4f9a39e3d1cf09cb771b2b19a7cb6ecfdacdda50"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": null,
           "analysis_population": "full_analysis_set",
           "study_period": null,
@@ -2513,7 +2147,7 @@
             "position": 5,
             "verbatim_sha1": "70ce23c55b1fb0750459b562aa5a46b0d3a692ed"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": null,
           "analysis_population": "full_analysis_set",
           "study_period": null,
@@ -2585,7 +2219,7 @@
             "position": 6,
             "verbatim_sha1": "ba158170536c9874aebf187c735fc6d9767e95ce"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": null,
           "analysis_population": "full_analysis_set",
           "study_period": null,
@@ -2657,7 +2291,7 @@
             "position": 7,
             "verbatim_sha1": "be206c2989b58078811095430774bb6baaf127a1"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": null,
           "analysis_population": "full_analysis_set",
           "study_period": null,
@@ -2729,7 +2363,7 @@
             "position": 8,
             "verbatim_sha1": "4af8b047c196576a63539c5ea937f38081a3fb67"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": null,
           "analysis_population": "full_analysis_set",
           "study_period": null,
@@ -2801,7 +2435,7 @@
             "position": 9,
             "verbatim_sha1": "6d6fb87272b9fcb93ca883bf7e18c46d850f7b6e"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": null,
           "analysis_population": "full_analysis_set",
           "study_period": null,
@@ -2873,7 +2507,7 @@
             "position": 10,
             "verbatim_sha1": "6e72f7a992c133e5069f1ced5a1c93c8e768f386"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": null,
           "analysis_population": "full_analysis_set",
           "study_period": null,
@@ -2945,7 +2579,7 @@
             "position": 11,
             "verbatim_sha1": "d8c059e3c5e5a61d9d71cae524f5928d52dd4a52"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "timepoint": null,
           "analysis_population": "full_analysis_set",
           "study_period": null,
@@ -2969,7 +2603,7 @@
             "position": 12,
             "verbatim_sha1": "8df56d89c00471a071c5bbf153e5b3746cb982f7"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "timepoint": null,
           "analysis_population": "full_analysis_set",
           "study_period": null,
@@ -2993,7 +2627,7 @@
             "position": 13,
             "verbatim_sha1": "b8e7b120763294923667c7bee8a5a0517c37c746"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "timepoint": null,
           "analysis_population": "full_analysis_set",
           "study_period": null,
@@ -3017,7 +2651,7 @@
             "position": 14,
             "verbatim_sha1": "449a90593546ef4e4f5ffe950eb4a83dc36d0ad6"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "timepoint": null,
           "analysis_population": "full_analysis_set",
           "study_period": null,
@@ -3041,7 +2675,7 @@
             "position": 15,
             "verbatim_sha1": "9943d28a08732b2f158347f7ebe82fc603754343"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "timepoint": null,
           "analysis_population": "full_analysis_set",
           "study_period": null,
@@ -3063,7 +2697,7 @@
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03570749",
       "source_excerpt": "resultsSection.outcomeMeasuresModule.outcomeMeasures[].{denoms,classes[].categories[].measurements[]}",
-      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3, 2026-09-06)",
+      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3 backfill re-run)",
       "reviewed_by": null,
       "confidence": 1.0
     },
@@ -3080,8 +2714,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "odds_ratio",
           "effect_type_verbatim": "Odds Ratio (OR)",
@@ -3109,8 +2743,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG002",
+          "test_arm_id": "OG002",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "odds_ratio",
           "effect_type_verbatim": "Odds Ratio (OR)",
@@ -3134,8 +2768,8 @@
             "verbatim_sha1": "620ae5b8c3f060785451c75f672f6dc4c71838f7"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "mean_difference",
           "effect_type_verbatim": "Mean Difference (Final Values)",
@@ -3159,8 +2793,8 @@
             "verbatim_sha1": "620ae5b8c3f060785451c75f672f6dc4c71838f7"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG002",
+          "test_arm_id": "OG002",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "mean_difference",
           "effect_type_verbatim": "Mean Difference (Final Values)",
@@ -3184,8 +2818,8 @@
             "verbatim_sha1": "500f1892b7995e63f094c287f5442141fec62dd0"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "odds_ratio",
           "effect_type_verbatim": "Odds Ratio (OR)",
@@ -3209,8 +2843,8 @@
             "verbatim_sha1": "500f1892b7995e63f094c287f5442141fec62dd0"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG002",
+          "test_arm_id": "OG002",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "odds_ratio",
           "effect_type_verbatim": "Odds Ratio (OR)",
@@ -3234,8 +2868,8 @@
             "verbatim_sha1": "4f9a39e3d1cf09cb771b2b19a7cb6ecfdacdda50"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "odds_ratio",
           "effect_type_verbatim": "Odds Ratio (OR)",
@@ -3259,8 +2893,8 @@
             "verbatim_sha1": "4f9a39e3d1cf09cb771b2b19a7cb6ecfdacdda50"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG002",
+          "test_arm_id": "OG002",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "odds_ratio",
           "effect_type_verbatim": "Odds Ratio (OR)",
@@ -3284,8 +2918,8 @@
             "verbatim_sha1": "70ce23c55b1fb0750459b562aa5a46b0d3a692ed"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "odds_ratio",
           "effect_type_verbatim": "Odds Ratio (OR)",
@@ -3309,8 +2943,8 @@
             "verbatim_sha1": "70ce23c55b1fb0750459b562aa5a46b0d3a692ed"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG002",
+          "test_arm_id": "OG002",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "odds_ratio",
           "effect_type_verbatim": "Odds Ratio (OR)",
@@ -3334,8 +2968,8 @@
             "verbatim_sha1": "ba158170536c9874aebf187c735fc6d9767e95ce"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "odds_ratio",
           "effect_type_verbatim": "Odds Ratio (OR)",
@@ -3359,8 +2993,8 @@
             "verbatim_sha1": "ba158170536c9874aebf187c735fc6d9767e95ce"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG002",
+          "test_arm_id": "OG002",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "odds_ratio",
           "effect_type_verbatim": "Odds Ratio (OR)",
@@ -3384,8 +3018,8 @@
             "verbatim_sha1": "be206c2989b58078811095430774bb6baaf127a1"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "odds_ratio",
           "effect_type_verbatim": "Odds Ratio (OR)",
@@ -3409,8 +3043,8 @@
             "verbatim_sha1": "be206c2989b58078811095430774bb6baaf127a1"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG002",
+          "test_arm_id": "OG002",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "odds_ratio",
           "effect_type_verbatim": "Odds Ratio (OR)",
@@ -3434,8 +3068,8 @@
             "verbatim_sha1": "4af8b047c196576a63539c5ea937f38081a3fb67"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "odds_ratio",
           "effect_type_verbatim": "Odds Ratio (OR)",
@@ -3459,8 +3093,8 @@
             "verbatim_sha1": "4af8b047c196576a63539c5ea937f38081a3fb67"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG002",
+          "test_arm_id": "OG002",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "odds_ratio",
           "effect_type_verbatim": "Odds Ratio (OR)",
@@ -3484,8 +3118,8 @@
             "verbatim_sha1": "6d6fb87272b9fcb93ca883bf7e18c46d850f7b6e"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "mean_difference",
           "effect_type_verbatim": "Mean Difference (Final Values)",
@@ -3509,8 +3143,8 @@
             "verbatim_sha1": "6d6fb87272b9fcb93ca883bf7e18c46d850f7b6e"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG002",
+          "test_arm_id": "OG002",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "mean_difference",
           "effect_type_verbatim": "Mean Difference (Final Values)",
@@ -3534,8 +3168,8 @@
             "verbatim_sha1": "6e72f7a992c133e5069f1ced5a1c93c8e768f386"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "mean_difference",
           "effect_type_verbatim": "Mean Difference (Final Values)",
@@ -3559,8 +3193,8 @@
             "verbatim_sha1": "6e72f7a992c133e5069f1ced5a1c93c8e768f386"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG002",
+          "test_arm_id": "OG002",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "mean_difference",
           "effect_type_verbatim": "Mean Difference (Final Values)",
@@ -3581,7 +3215,7 @@
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03570749",
       "source_excerpt": "resultsSection.outcomeMeasuresModule.outcomeMeasures[].analyses[]",
-      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3, 2026-09-06)",
+      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3 backfill re-run)",
       "reviewed_by": null,
       "confidence": 1.0
     },

@@ -1,5 +1,5 @@
 {
-  "schema_version": 3,
+  "schema_version": 4,
   "nct_id": {
     "value": "NCT01474512",
     "source_type": "ctgov_api",
@@ -84,25 +84,15 @@
     },
     "mechanism_of_action": {
       "value": {
-        "modality": "monoclonal_antibody",
-        "drug_class": "monoclonal antibody",
-        "antibody_isotype": "IgG4",
-        "binding_targets": [],
-        "pathway_cytokines": [],
-        "receptor_subunits": [],
-        "kinases_inhibited": [],
-        "lower_potency_kinases": [],
-        "selectivity": [],
-        "reversible": null,
-        "mechanism_established": null,
-        "label_section": "12.1"
+        "drug": "Ixekizumab",
+        "application_number": null
       },
-      "source_type": "openfda_label",
-      "source_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=1c6425de-1f8c-4385-bfb9-6e01db55275f",
-      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1) -- v1 extracted text: 12.1 Mechanism of Action Ixekizumab is a humanized IgG4 monoclonal antibody that selectively binds with the interleukin 17A (IL-17A) cytokine and inhibits its interaction with the IL-17 receptor. IL-17A is a naturally occurring cytokine that is involved in normal inflammatory and immune responses. Ixekizumab inhibits the release of proinflammatory cytokines and chemokines.",
-      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA); structured by atlas.migrate v1->v2",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 0.9
+      "confidence": null
     },
     "dosing_regimen": {
       "value": [
@@ -1936,278 +1926,50 @@
     },
     "boxed_warning": {
       "value": {
-        "present": false,
-        "title": null,
-        "warning_categories": [],
-        "referenced_label_sections": [],
-        "product_names": []
+        "drug": "Ixekizumab",
+        "application_number": null
       },
-      "source_type": "openfda_label",
-      "source_url": "https://api.fda.gov/drug/label.json?search=openfda.substance_name:IXEKIZUMAB&limit=1",
-      "source_excerpt": "results[0] has no boxed_warning key (checked, none present)",
-      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass); structured by atlas.migrate v1->v2",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     }
   },
   "real_world_safety": {
     "faers_summary": {
       "value": {
-        "query": {
-          "search_field": "patient.drug.medicinalproduct",
-          "search_term": "IXEKIZUMAB",
-          "receivedate_from": "2016-05-16",
-          "receivedate_to": "2026-06-30",
-          "api_urls": [
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"IXEKIZUMAB\"&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"IXEKIZUMAB\"+AND+serious:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"IXEKIZUMAB\"+AND+seriousnessdeath:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"IXEKIZUMAB\"+AND+seriousnesshospitalization:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"IXEKIZUMAB\"+AND+seriousnesslifethreatening:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"IXEKIZUMAB\"+AND+seriousnessdisabling:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"IXEKIZUMAB\"&count=patient.reaction.reactionmeddrapt.exact&limit=15",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"IXEKIZUMAB\"+AND+serious:1&count=patient.reaction.reactionmeddrapt.exact&limit=15",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"IXEKIZUMAB\"&count=receivedate"
-          ],
-          "data_last_updated": "2026-07-30"
-        },
-        "total_reports": 1372,
-        "serious_reports": 1168,
-        "death_reports": 44,
-        "hospitalization_reports": 447,
-        "life_threatening_reports": 55,
-        "disability_reports": 29,
-        "top_reactions": [
-          {
-            "meddra_pt": "DRUG INEFFECTIVE",
-            "report_count": 259,
-            "pct_of_reports": 18.88
-          },
-          {
-            "meddra_pt": "OFF LABEL USE",
-            "report_count": 172,
-            "pct_of_reports": 12.54
-          },
-          {
-            "meddra_pt": "PSORIASIS",
-            "report_count": 169,
-            "pct_of_reports": 12.32
-          },
-          {
-            "meddra_pt": "ARTHRALGIA",
-            "report_count": 104,
-            "pct_of_reports": 7.58
-          },
-          {
-            "meddra_pt": "TREATMENT FAILURE",
-            "report_count": 95,
-            "pct_of_reports": 6.92
-          },
-          {
-            "meddra_pt": "PSORIATIC ARTHROPATHY",
-            "report_count": 85,
-            "pct_of_reports": 6.2
-          },
-          {
-            "meddra_pt": "NAUSEA",
-            "report_count": 80,
-            "pct_of_reports": 5.83
-          },
-          {
-            "meddra_pt": "THERAPEUTIC PRODUCT EFFECT DECREASED",
-            "report_count": 78,
-            "pct_of_reports": 5.69
-          },
-          {
-            "meddra_pt": "PAIN",
-            "report_count": 72,
-            "pct_of_reports": 5.25
-          },
-          {
-            "meddra_pt": "CARDIAC FAILURE CONGESTIVE",
-            "report_count": 67,
-            "pct_of_reports": 4.88
-          },
-          {
-            "meddra_pt": "CONDITION AGGRAVATED",
-            "report_count": 61,
-            "pct_of_reports": 4.45
-          },
-          {
-            "meddra_pt": "EJECTION FRACTION DECREASED",
-            "report_count": 61,
-            "pct_of_reports": 4.45
-          },
-          {
-            "meddra_pt": "THERAPEUTIC PRODUCT EFFECT INCOMPLETE",
-            "report_count": 59,
-            "pct_of_reports": 4.3
-          },
-          {
-            "meddra_pt": "CELLULITIS",
-            "report_count": 56,
-            "pct_of_reports": 4.08
-          },
-          {
-            "meddra_pt": "HEADACHE",
-            "report_count": 56,
-            "pct_of_reports": 4.08
-          }
-        ],
-        "top_serious_reactions": [
-          {
-            "meddra_pt": "DRUG INEFFECTIVE",
-            "report_count": 227,
-            "pct_of_reports": 19.43
-          },
-          {
-            "meddra_pt": "OFF LABEL USE",
-            "report_count": 159,
-            "pct_of_reports": 13.61
-          },
-          {
-            "meddra_pt": "PSORIASIS",
-            "report_count": 146,
-            "pct_of_reports": 12.5
-          },
-          {
-            "meddra_pt": "ARTHRALGIA",
-            "report_count": 98,
-            "pct_of_reports": 8.39
-          },
-          {
-            "meddra_pt": "PSORIATIC ARTHROPATHY",
-            "report_count": 85,
-            "pct_of_reports": 7.28
-          },
-          {
-            "meddra_pt": "TREATMENT FAILURE",
-            "report_count": 82,
-            "pct_of_reports": 7.02
-          },
-          {
-            "meddra_pt": "THERAPEUTIC PRODUCT EFFECT DECREASED",
-            "report_count": 76,
-            "pct_of_reports": 6.51
-          },
-          {
-            "meddra_pt": "NAUSEA",
-            "report_count": 75,
-            "pct_of_reports": 6.42
-          },
-          {
-            "meddra_pt": "PAIN",
-            "report_count": 70,
-            "pct_of_reports": 5.99
-          },
-          {
-            "meddra_pt": "CARDIAC FAILURE CONGESTIVE",
-            "report_count": 67,
-            "pct_of_reports": 5.74
-          },
-          {
-            "meddra_pt": "EJECTION FRACTION DECREASED",
-            "report_count": 61,
-            "pct_of_reports": 5.22
-          },
-          {
-            "meddra_pt": "CONDITION AGGRAVATED",
-            "report_count": 59,
-            "pct_of_reports": 5.05
-          },
-          {
-            "meddra_pt": "THERAPEUTIC PRODUCT EFFECT INCOMPLETE",
-            "report_count": 58,
-            "pct_of_reports": 4.97
-          },
-          {
-            "meddra_pt": "PNEUMONIA",
-            "report_count": 56,
-            "pct_of_reports": 4.79
-          },
-          {
-            "meddra_pt": "CELLULITIS",
-            "report_count": 55,
-            "pct_of_reports": 4.71
-          }
-        ],
-        "reports_by_year": [
-          {
-            "year": 2016,
-            "report_count": 21
-          },
-          {
-            "year": 2017,
-            "report_count": 68
-          },
-          {
-            "year": 2018,
-            "report_count": 56
-          },
-          {
-            "year": 2019,
-            "report_count": 93
-          },
-          {
-            "year": 2020,
-            "report_count": 140
-          },
-          {
-            "year": 2021,
-            "report_count": 158
-          },
-          {
-            "year": 2022,
-            "report_count": 175
-          },
-          {
-            "year": 2023,
-            "report_count": 139
-          },
-          {
-            "year": 2024,
-            "report_count": 212
-          },
-          {
-            "year": 2025,
-            "report_count": 215
-          },
-          {
-            "year": 2026,
-            "report_count": 95
-          }
-        ],
-        "meddra_version": null
+        "drug": "Ixekizumab",
+        "application_number": null
       },
-      "source_type": "openfda_faers",
-      "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"IXEKIZUMAB\"&limit=1",
-      "source_excerpt": "openFDA drug/event.json aggregate: total_reports=1372, serious=1168, deaths=44",
-      "extracted_by": "fetch_faers.py (openfda drug/event.json, v2 pass)",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     }
   },
   "exclusivity": {
     "regulatory_application": {
       "value": {
-        "application_type": "BLA",
-        "application_number": "125521",
-        "registry": "purple_book",
-        "center": "CDER",
-        "proprietary_name": "Taltz",
-        "applicant": "Eli Lilly and Company",
-        "first_approval_date": "2016-03-22"
+        "drug": "Ixekizumab",
+        "application_number": "125521"
       },
-      "source_type": "purple_book",
-      "source_url": "https://purplebooksearch.fda.gov/index.cfm?event=advancedsearch",
-      "source_excerpt": "purplebooksearch.fda.gov live search table: BLA 125521 | Taltz | ixekizumab | 351(a) | Eli Lilly and Company | first approved 2016-03-22",
-      "extracted_by": "atlas.regulatory_applications (registry file fetched 2026-09-05)",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     },
     "orange_book": {
-      "value": null,
-      "source_type": "needs_extraction",
+      "value": {
+        "drug": "Ixekizumab",
+        "application_number": "125521"
+      },
+      "source_type": "drug_level_ref",
       "source_url": null,
       "source_excerpt": null,
       "extracted_by": null,
@@ -2216,88 +1978,25 @@
     },
     "purple_book": {
       "value": {
-        "bla_number": "125521",
-        "proprietary_name": "Taltz",
-        "proper_name": "ixekizumab",
-        "applicant": "Eli Lilly and Company",
-        "license_type": "351(a)",
-        "license_number": "1891",
-        "center": "CDER",
-        "products": [
-          {
-            "product_number": "001",
-            "strength": "80MG/ML",
-            "dosage_form": "Injection",
-            "route": "Subcutaneous",
-            "presentation": "Autoinjector",
-            "marketing_status": "Rx",
-            "licensure": "Licensed",
-            "approval_date": "2016-03-22",
-            "submission_type": "Original",
-            "supplement_number": null
-          },
-          {
-            "product_number": "002",
-            "strength": "80MG/ML",
-            "dosage_form": "Injection",
-            "route": "Subcutaneous",
-            "presentation": "Pre-Filled Syringe",
-            "marketing_status": "Rx",
-            "licensure": "Licensed",
-            "approval_date": "2016-03-22",
-            "submission_type": "Original",
-            "supplement_number": null
-          },
-          {
-            "product_number": "003",
-            "strength": "40MG/0.5ML",
-            "dosage_form": "Injection",
-            "route": "Subcutaneous",
-            "presentation": "Pre-Filled Syringe",
-            "marketing_status": "Rx",
-            "licensure": "Licensed",
-            "approval_date": "2024-08-20",
-            "submission_type": "Supplement",
-            "supplement_number": "32"
-          },
-          {
-            "product_number": "004",
-            "strength": "20MG/0.25ML",
-            "dosage_form": "Injection",
-            "route": "Subcutaneous",
-            "presentation": "Pre-Filled Syringe",
-            "marketing_status": "Rx",
-            "licensure": "Licensed",
-            "approval_date": "2024-08-20",
-            "submission_type": "Supplement",
-            "supplement_number": "32"
-          }
-        ],
-        "first_approval_date": "2016-03-22",
-        "date_of_first_licensure": null,
-        "reference_product_exclusivity_expiration": null,
-        "exclusivity_expiration_date": null,
-        "first_interchangeable_exclusivity_expiration": null,
-        "orphan_exclusivity_expiration": null,
-        "patent_list_provided": null,
-        "biosimilars": [],
-        "data_file_month": null
+        "drug": "Ixekizumab",
+        "application_number": null
       },
-      "source_type": "purple_book",
-      "source_url": "https://purplebooksearch.fda.gov/index.cfm?event=advancedsearch",
-      "source_excerpt": "purplebooksearch.fda.gov live search table, BLA 125521 (Taltz), 0 biosimilar(s) on file",
-      "extracted_by": "fetch_purple_book.py (purplebooksearch.fda.gov live search table, raw staging pass)",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     }
   },
   "results": {
     "arms": {
       "value": [
         {
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "label": "Placebo",
           "role": "placebo",
+          "analysis_population": "full_analysis_set",
           "intervention_names": [
             "Placebo"
           ],
@@ -2307,29 +2006,10 @@
           "randomized_n": 431
         },
         {
-          "arm_id": "OG001",
-          "label": "Ixe Q4W",
-          "role": "other",
-          "intervention_names": [],
-          "dose_value": null,
-          "dose_unit": null,
-          "frequency": null,
-          "randomized_n": 432
-        },
-        {
-          "arm_id": "OG002",
-          "label": "Ixe Q2W",
-          "role": "other",
-          "intervention_names": [],
-          "dose_value": null,
-          "dose_unit": null,
-          "frequency": null,
-          "randomized_n": 433
-        },
-        {
-          "arm_id": "OG000",
+          "arm_id": "OG000#re_randomized_responders",
           "label": "Ixe/Placebo",
           "role": "placebo",
+          "analysis_population": "re_randomized_responders",
           "intervention_names": [
             "Placebo"
           ],
@@ -2339,29 +2019,10 @@
           "randomized_n": null
         },
         {
-          "arm_id": "OG001",
-          "label": "Ixe/Q12W",
-          "role": "other",
-          "intervention_names": [],
-          "dose_value": null,
-          "dose_unit": null,
-          "frequency": null,
-          "randomized_n": null
-        },
-        {
-          "arm_id": "OG002",
-          "label": "Ixe/Q4W",
-          "role": "other",
-          "intervention_names": [],
-          "dose_value": null,
-          "dose_unit": null,
-          "frequency": null,
-          "randomized_n": null
-        },
-        {
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "label": "Ixe Q2W - Induction Period",
           "role": "other",
+          "analysis_population": "full_analysis_set",
           "intervention_names": [],
           "dose_value": null,
           "dose_unit": null,
@@ -2369,9 +2030,10 @@
           "randomized_n": 433
         },
         {
-          "arm_id": "OG001",
-          "label": "Ixe Q4W - Induction Period",
+          "arm_id": "OG001#full_analysis_set",
+          "label": "Ixe Q4W",
           "role": "other",
+          "analysis_population": "full_analysis_set",
           "intervention_names": [],
           "dose_value": null,
           "dose_unit": null,
@@ -2379,9 +2041,54 @@
           "randomized_n": 432
         },
         {
-          "arm_id": "OG002",
+          "arm_id": "OG001#re_randomized_responders",
+          "label": "Ixe/Q12W",
+          "role": "other",
+          "analysis_population": "re_randomized_responders",
+          "intervention_names": [],
+          "dose_value": null,
+          "dose_unit": null,
+          "frequency": null,
+          "randomized_n": null
+        },
+        {
+          "arm_id": "OG001#2",
+          "label": "Ixe Q4W - Induction Period",
+          "role": "other",
+          "analysis_population": "full_analysis_set",
+          "intervention_names": [],
+          "dose_value": null,
+          "dose_unit": null,
+          "frequency": null,
+          "randomized_n": 432
+        },
+        {
+          "arm_id": "OG002#full_analysis_set",
+          "label": "Ixe Q2W",
+          "role": "other",
+          "analysis_population": "full_analysis_set",
+          "intervention_names": [],
+          "dose_value": null,
+          "dose_unit": null,
+          "frequency": null,
+          "randomized_n": 433
+        },
+        {
+          "arm_id": "OG002#re_randomized_responders",
+          "label": "Ixe/Q4W",
+          "role": "other",
+          "analysis_population": "re_randomized_responders",
+          "intervention_names": [],
+          "dose_value": null,
+          "dose_unit": null,
+          "frequency": null,
+          "randomized_n": null
+        },
+        {
+          "arm_id": "OG002#2",
           "label": "Ixe Q4W - Maintenance Period",
           "role": "other",
+          "analysis_population": "full_analysis_set",
           "intervention_names": [],
           "dose_value": null,
           "dose_unit": null,
@@ -2392,6 +2099,7 @@
           "arm_id": "OG003",
           "label": "Ixe Q12W - Maintenance Period",
           "role": "other",
+          "analysis_population": "full_analysis_set",
           "intervention_names": [],
           "dose_value": null,
           "dose_unit": null,
@@ -2402,7 +2110,7 @@
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01474512",
       "source_excerpt": "resultsSection.outcomeMeasuresModule.outcomeMeasures[].groups[]",
-      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3, 2026-09-06)",
+      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3 backfill re-run)",
       "reviewed_by": null,
       "confidence": 1.0
     },
@@ -2414,7 +2122,7 @@
             "position": 1,
             "verbatim_sha1": "f528bb0a30ae39938638c93952e78af6decdb0a7"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -2442,7 +2150,7 @@
             "position": 1,
             "verbatim_sha1": "f528bb0a30ae39938638c93952e78af6decdb0a7"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -2470,7 +2178,7 @@
             "position": 1,
             "verbatim_sha1": "f528bb0a30ae39938638c93952e78af6decdb0a7"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -2498,7 +2206,7 @@
             "position": 2,
             "verbatim_sha1": "8b0925e03fb8ef7793a8557186cdbd6a01dfec5c"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -2526,7 +2234,7 @@
             "position": 2,
             "verbatim_sha1": "8b0925e03fb8ef7793a8557186cdbd6a01dfec5c"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -2554,7 +2262,7 @@
             "position": 2,
             "verbatim_sha1": "8b0925e03fb8ef7793a8557186cdbd6a01dfec5c"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -2582,7 +2290,7 @@
             "position": 1,
             "verbatim_sha1": "8b824902756ba01d6c6f535d7d960f8d37647397"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": null,
           "analysis_population": "full_analysis_set",
           "study_period": null,
@@ -2606,7 +2314,7 @@
             "position": 1,
             "verbatim_sha1": "8b824902756ba01d6c6f535d7d960f8d37647397"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": null,
           "analysis_population": "full_analysis_set",
           "study_period": null,
@@ -2630,7 +2338,7 @@
             "position": 1,
             "verbatim_sha1": "8b824902756ba01d6c6f535d7d960f8d37647397"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": null,
           "analysis_population": "full_analysis_set",
           "study_period": null,
@@ -2654,7 +2362,7 @@
             "position": 2,
             "verbatim_sha1": "2976bda6f91437b8a908ffcc6ff787bfa216ab48"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": null,
           "analysis_population": "full_analysis_set",
           "study_period": null,
@@ -2678,7 +2386,7 @@
             "position": 2,
             "verbatim_sha1": "2976bda6f91437b8a908ffcc6ff787bfa216ab48"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": null,
           "analysis_population": "full_analysis_set",
           "study_period": null,
@@ -2702,7 +2410,7 @@
             "position": 2,
             "verbatim_sha1": "2976bda6f91437b8a908ffcc6ff787bfa216ab48"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": null,
           "analysis_population": "full_analysis_set",
           "study_period": null,
@@ -2726,7 +2434,7 @@
             "position": 2,
             "verbatim_sha1": "2976bda6f91437b8a908ffcc6ff787bfa216ab48"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": null,
           "analysis_population": "full_analysis_set",
           "study_period": null,
@@ -2750,7 +2458,7 @@
             "position": 2,
             "verbatim_sha1": "2976bda6f91437b8a908ffcc6ff787bfa216ab48"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": null,
           "analysis_population": "full_analysis_set",
           "study_period": null,
@@ -2774,7 +2482,7 @@
             "position": 2,
             "verbatim_sha1": "2976bda6f91437b8a908ffcc6ff787bfa216ab48"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": null,
           "analysis_population": "full_analysis_set",
           "study_period": null,
@@ -2798,7 +2506,7 @@
             "position": 3,
             "verbatim_sha1": "2e99ba58bd15b4171a3863d84e140659c7c65974"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#re_randomized_responders",
           "timepoint": null,
           "analysis_population": "re_randomized_responders",
           "study_period": null,
@@ -2822,7 +2530,7 @@
             "position": 3,
             "verbatim_sha1": "2e99ba58bd15b4171a3863d84e140659c7c65974"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#re_randomized_responders",
           "timepoint": null,
           "analysis_population": "re_randomized_responders",
           "study_period": null,
@@ -2846,7 +2554,7 @@
             "position": 3,
             "verbatim_sha1": "2e99ba58bd15b4171a3863d84e140659c7c65974"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#re_randomized_responders",
           "timepoint": null,
           "analysis_population": "re_randomized_responders",
           "study_period": null,
@@ -2870,7 +2578,7 @@
             "position": 4,
             "verbatim_sha1": "3d0632310a58c712b56fa84a07d70ade197929ba"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": null,
           "analysis_population": "full_analysis_set",
           "study_period": null,
@@ -2894,7 +2602,7 @@
             "position": 4,
             "verbatim_sha1": "3d0632310a58c712b56fa84a07d70ade197929ba"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": null,
           "analysis_population": "full_analysis_set",
           "study_period": null,
@@ -2918,7 +2626,7 @@
             "position": 4,
             "verbatim_sha1": "3d0632310a58c712b56fa84a07d70ade197929ba"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": null,
           "analysis_population": "full_analysis_set",
           "study_period": null,
@@ -2942,7 +2650,7 @@
             "position": 5,
             "verbatim_sha1": "bb84c597787c35e2800e640f420a99305a1ae674"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": null,
           "analysis_population": "full_analysis_set",
           "study_period": null,
@@ -2966,7 +2674,7 @@
             "position": 5,
             "verbatim_sha1": "bb84c597787c35e2800e640f420a99305a1ae674"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": null,
           "analysis_population": "full_analysis_set",
           "study_period": null,
@@ -2990,7 +2698,7 @@
             "position": 5,
             "verbatim_sha1": "bb84c597787c35e2800e640f420a99305a1ae674"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": null,
           "analysis_population": "full_analysis_set",
           "study_period": null,
@@ -3014,7 +2722,7 @@
             "position": 6,
             "verbatim_sha1": "4b4606fb86e036c19ece9c0a14d45dcb3ee1ca2d"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": null,
           "analysis_population": "full_analysis_set",
           "study_period": null,
@@ -3038,7 +2746,7 @@
             "position": 6,
             "verbatim_sha1": "4b4606fb86e036c19ece9c0a14d45dcb3ee1ca2d"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": null,
           "analysis_population": "full_analysis_set",
           "study_period": null,
@@ -3062,7 +2770,7 @@
             "position": 6,
             "verbatim_sha1": "4b4606fb86e036c19ece9c0a14d45dcb3ee1ca2d"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": null,
           "analysis_population": "full_analysis_set",
           "study_period": null,
@@ -3086,7 +2794,7 @@
             "position": 7,
             "verbatim_sha1": "bbe4cba77104cc02726c1851c20b1a6b2eb3bb9e"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": null,
           "analysis_population": "full_analysis_set",
           "study_period": null,
@@ -3110,7 +2818,7 @@
             "position": 7,
             "verbatim_sha1": "bbe4cba77104cc02726c1851c20b1a6b2eb3bb9e"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": null,
           "analysis_population": "full_analysis_set",
           "study_period": null,
@@ -3134,7 +2842,7 @@
             "position": 7,
             "verbatim_sha1": "bbe4cba77104cc02726c1851c20b1a6b2eb3bb9e"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": null,
           "analysis_population": "full_analysis_set",
           "study_period": null,
@@ -3158,7 +2866,7 @@
             "position": 8,
             "verbatim_sha1": "5865cc2de74934d10820366ca3c4e91224f0b068"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": null,
           "analysis_population": "full_analysis_set",
           "study_period": null,
@@ -3182,7 +2890,7 @@
             "position": 8,
             "verbatim_sha1": "5865cc2de74934d10820366ca3c4e91224f0b068"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": null,
           "analysis_population": "full_analysis_set",
           "study_period": null,
@@ -3206,7 +2914,7 @@
             "position": 8,
             "verbatim_sha1": "5865cc2de74934d10820366ca3c4e91224f0b068"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": null,
           "analysis_population": "full_analysis_set",
           "study_period": null,
@@ -3230,7 +2938,7 @@
             "position": 9,
             "verbatim_sha1": "a444c1edfec29e84fc82e5304a54d6e75be0960e"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": null,
           "analysis_population": "full_analysis_set",
           "study_period": null,
@@ -3254,7 +2962,7 @@
             "position": 9,
             "verbatim_sha1": "a444c1edfec29e84fc82e5304a54d6e75be0960e"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": null,
           "analysis_population": "full_analysis_set",
           "study_period": null,
@@ -3278,7 +2986,7 @@
             "position": 9,
             "verbatim_sha1": "a444c1edfec29e84fc82e5304a54d6e75be0960e"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": null,
           "analysis_population": "full_analysis_set",
           "study_period": null,
@@ -3302,7 +3010,7 @@
             "position": 9,
             "verbatim_sha1": "a444c1edfec29e84fc82e5304a54d6e75be0960e"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": null,
           "analysis_population": "full_analysis_set",
           "study_period": null,
@@ -3326,7 +3034,7 @@
             "position": 9,
             "verbatim_sha1": "a444c1edfec29e84fc82e5304a54d6e75be0960e"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": null,
           "analysis_population": "full_analysis_set",
           "study_period": null,
@@ -3350,7 +3058,7 @@
             "position": 9,
             "verbatim_sha1": "a444c1edfec29e84fc82e5304a54d6e75be0960e"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": null,
           "analysis_population": "full_analysis_set",
           "study_period": null,
@@ -3374,7 +3082,7 @@
             "position": 9,
             "verbatim_sha1": "a444c1edfec29e84fc82e5304a54d6e75be0960e"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": null,
           "analysis_population": "full_analysis_set",
           "study_period": null,
@@ -3398,7 +3106,7 @@
             "position": 9,
             "verbatim_sha1": "a444c1edfec29e84fc82e5304a54d6e75be0960e"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": null,
           "analysis_population": "full_analysis_set",
           "study_period": null,
@@ -3422,7 +3130,7 @@
             "position": 9,
             "verbatim_sha1": "a444c1edfec29e84fc82e5304a54d6e75be0960e"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": null,
           "analysis_population": "full_analysis_set",
           "study_period": null,
@@ -3446,7 +3154,7 @@
             "position": 9,
             "verbatim_sha1": "a444c1edfec29e84fc82e5304a54d6e75be0960e"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": null,
           "analysis_population": "full_analysis_set",
           "study_period": null,
@@ -3470,7 +3178,7 @@
             "position": 9,
             "verbatim_sha1": "a444c1edfec29e84fc82e5304a54d6e75be0960e"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": null,
           "analysis_population": "full_analysis_set",
           "study_period": null,
@@ -3494,7 +3202,7 @@
             "position": 9,
             "verbatim_sha1": "a444c1edfec29e84fc82e5304a54d6e75be0960e"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": null,
           "analysis_population": "full_analysis_set",
           "study_period": null,
@@ -3518,7 +3226,7 @@
             "position": 10,
             "verbatim_sha1": "d2e2e32ccbfce08c998eddce79b793b0fbea9214"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": null,
           "analysis_population": "full_analysis_set",
           "study_period": null,
@@ -3542,7 +3250,7 @@
             "position": 10,
             "verbatim_sha1": "d2e2e32ccbfce08c998eddce79b793b0fbea9214"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": null,
           "analysis_population": "full_analysis_set",
           "study_period": null,
@@ -3566,7 +3274,7 @@
             "position": 10,
             "verbatim_sha1": "d2e2e32ccbfce08c998eddce79b793b0fbea9214"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": null,
           "analysis_population": "full_analysis_set",
           "study_period": null,
@@ -3590,7 +3298,7 @@
             "position": 11,
             "verbatim_sha1": "7569e0c6207707ebde53ffccc459adbb255b5208"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": null,
           "analysis_population": "full_analysis_set",
           "study_period": null,
@@ -3614,7 +3322,7 @@
             "position": 11,
             "verbatim_sha1": "7569e0c6207707ebde53ffccc459adbb255b5208"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": null,
           "analysis_population": "full_analysis_set",
           "study_period": null,
@@ -3638,7 +3346,7 @@
             "position": 11,
             "verbatim_sha1": "7569e0c6207707ebde53ffccc459adbb255b5208"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": null,
           "analysis_population": "full_analysis_set",
           "study_period": null,
@@ -3662,7 +3370,7 @@
             "position": 11,
             "verbatim_sha1": "7569e0c6207707ebde53ffccc459adbb255b5208"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": null,
           "analysis_population": "full_analysis_set",
           "study_period": null,
@@ -3686,7 +3394,7 @@
             "position": 11,
             "verbatim_sha1": "7569e0c6207707ebde53ffccc459adbb255b5208"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": null,
           "analysis_population": "full_analysis_set",
           "study_period": null,
@@ -3710,7 +3418,7 @@
             "position": 11,
             "verbatim_sha1": "7569e0c6207707ebde53ffccc459adbb255b5208"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": null,
           "analysis_population": "full_analysis_set",
           "study_period": null,
@@ -3734,7 +3442,7 @@
             "position": 12,
             "verbatim_sha1": "5db35dbcca3e8538a1a4a3698aeaf6549e93a96f"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": null,
           "analysis_population": "full_analysis_set",
           "study_period": null,
@@ -3758,7 +3466,7 @@
             "position": 12,
             "verbatim_sha1": "5db35dbcca3e8538a1a4a3698aeaf6549e93a96f"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": null,
           "analysis_population": "full_analysis_set",
           "study_period": null,
@@ -3782,7 +3490,7 @@
             "position": 12,
             "verbatim_sha1": "5db35dbcca3e8538a1a4a3698aeaf6549e93a96f"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": null,
           "analysis_population": "full_analysis_set",
           "study_period": null,
@@ -3806,7 +3514,7 @@
             "position": 13,
             "verbatim_sha1": "841bad632ed4fc07f88ce08d40003ec598ae140b"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": null,
           "analysis_population": "full_analysis_set",
           "study_period": null,
@@ -3830,7 +3538,7 @@
             "position": 13,
             "verbatim_sha1": "841bad632ed4fc07f88ce08d40003ec598ae140b"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": null,
           "analysis_population": "full_analysis_set",
           "study_period": null,
@@ -3854,7 +3562,7 @@
             "position": 13,
             "verbatim_sha1": "841bad632ed4fc07f88ce08d40003ec598ae140b"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": null,
           "analysis_population": "full_analysis_set",
           "study_period": null,
@@ -3878,7 +3586,7 @@
             "position": 13,
             "verbatim_sha1": "841bad632ed4fc07f88ce08d40003ec598ae140b"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": null,
           "analysis_population": "full_analysis_set",
           "study_period": null,
@@ -3902,7 +3610,7 @@
             "position": 13,
             "verbatim_sha1": "841bad632ed4fc07f88ce08d40003ec598ae140b"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": null,
           "analysis_population": "full_analysis_set",
           "study_period": null,
@@ -3926,7 +3634,7 @@
             "position": 13,
             "verbatim_sha1": "841bad632ed4fc07f88ce08d40003ec598ae140b"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": null,
           "analysis_population": "full_analysis_set",
           "study_period": null,
@@ -3950,7 +3658,7 @@
             "position": 13,
             "verbatim_sha1": "841bad632ed4fc07f88ce08d40003ec598ae140b"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": null,
           "analysis_population": "full_analysis_set",
           "study_period": null,
@@ -3974,7 +3682,7 @@
             "position": 13,
             "verbatim_sha1": "841bad632ed4fc07f88ce08d40003ec598ae140b"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": null,
           "analysis_population": "full_analysis_set",
           "study_period": null,
@@ -3998,7 +3706,7 @@
             "position": 13,
             "verbatim_sha1": "841bad632ed4fc07f88ce08d40003ec598ae140b"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": null,
           "analysis_population": "full_analysis_set",
           "study_period": null,
@@ -4022,7 +3730,7 @@
             "position": 15,
             "verbatim_sha1": "96dcc8d56712521f82bd15e808f84c25e115ce59"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": null,
           "analysis_population": "full_analysis_set",
           "study_period": null,
@@ -4046,7 +3754,7 @@
             "position": 15,
             "verbatim_sha1": "96dcc8d56712521f82bd15e808f84c25e115ce59"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": null,
           "analysis_population": "full_analysis_set",
           "study_period": null,
@@ -4070,7 +3778,7 @@
             "position": 15,
             "verbatim_sha1": "96dcc8d56712521f82bd15e808f84c25e115ce59"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": null,
           "analysis_population": "full_analysis_set",
           "study_period": null,
@@ -4092,7 +3800,7 @@
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01474512",
       "source_excerpt": "resultsSection.outcomeMeasuresModule.outcomeMeasures[].{denoms,classes[].categories[].measurements[]}",
-      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3, 2026-09-06)",
+      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3 backfill re-run)",
       "reviewed_by": null,
       "confidence": 1.0
     },
@@ -4109,8 +3817,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG000#full_analysis_set",
+          "reference_arm_id": "OG001#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": null,
           "effect_type_verbatim": null,
@@ -4138,8 +3846,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG002",
+          "test_arm_id": "OG000#full_analysis_set",
+          "reference_arm_id": "OG002#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": null,
           "effect_type_verbatim": null,
@@ -4167,8 +3875,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG000#full_analysis_set",
+          "reference_arm_id": "OG001#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": null,
           "effect_type_verbatim": null,
@@ -4196,8 +3904,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG002",
+          "test_arm_id": "OG000#full_analysis_set",
+          "reference_arm_id": "OG002#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": null,
           "effect_type_verbatim": null,
@@ -4221,8 +3929,8 @@
             "verbatim_sha1": "8b824902756ba01d6c6f535d7d960f8d37647397"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG000#full_analysis_set",
+          "reference_arm_id": "OG001#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": null,
           "effect_type_verbatim": null,
@@ -4246,8 +3954,8 @@
             "verbatim_sha1": "8b824902756ba01d6c6f535d7d960f8d37647397"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG002",
+          "test_arm_id": "OG000#full_analysis_set",
+          "reference_arm_id": "OG002#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": null,
           "effect_type_verbatim": null,
@@ -4271,8 +3979,8 @@
             "verbatim_sha1": "2976bda6f91437b8a908ffcc6ff787bfa216ab48"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG000#full_analysis_set",
+          "reference_arm_id": "OG001#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": null,
           "effect_type_verbatim": null,
@@ -4296,8 +4004,8 @@
             "verbatim_sha1": "2976bda6f91437b8a908ffcc6ff787bfa216ab48"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG002",
+          "test_arm_id": "OG000#full_analysis_set",
+          "reference_arm_id": "OG002#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": null,
           "effect_type_verbatim": null,
@@ -4321,8 +4029,8 @@
             "verbatim_sha1": "2976bda6f91437b8a908ffcc6ff787bfa216ab48"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG000#full_analysis_set",
+          "reference_arm_id": "OG001#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": null,
           "effect_type_verbatim": null,
@@ -4346,8 +4054,8 @@
             "verbatim_sha1": "2976bda6f91437b8a908ffcc6ff787bfa216ab48"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG002",
+          "test_arm_id": "OG000#full_analysis_set",
+          "reference_arm_id": "OG002#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": null,
           "effect_type_verbatim": null,
@@ -4371,8 +4079,8 @@
             "verbatim_sha1": "2e99ba58bd15b4171a3863d84e140659c7c65974"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG000#re_randomized_responders",
+          "reference_arm_id": "OG001#re_randomized_responders",
           "comparison_kind": "superiority",
           "effect_type": null,
           "effect_type_verbatim": null,
@@ -4396,8 +4104,8 @@
             "verbatim_sha1": "2e99ba58bd15b4171a3863d84e140659c7c65974"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG002",
+          "test_arm_id": "OG000#re_randomized_responders",
+          "reference_arm_id": "OG002#re_randomized_responders",
           "comparison_kind": "superiority",
           "effect_type": null,
           "effect_type_verbatim": null,
@@ -4421,8 +4129,8 @@
             "verbatim_sha1": "3d0632310a58c712b56fa84a07d70ade197929ba"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG000#full_analysis_set",
+          "reference_arm_id": "OG001#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": null,
           "effect_type_verbatim": null,
@@ -4446,8 +4154,8 @@
             "verbatim_sha1": "3d0632310a58c712b56fa84a07d70ade197929ba"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG002",
+          "test_arm_id": "OG000#full_analysis_set",
+          "reference_arm_id": "OG002#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": null,
           "effect_type_verbatim": null,
@@ -4471,8 +4179,8 @@
             "verbatim_sha1": "bb84c597787c35e2800e640f420a99305a1ae674"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG000#full_analysis_set",
+          "reference_arm_id": "OG001#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": null,
           "effect_type_verbatim": null,
@@ -4496,8 +4204,8 @@
             "verbatim_sha1": "bb84c597787c35e2800e640f420a99305a1ae674"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG002",
+          "test_arm_id": "OG000#full_analysis_set",
+          "reference_arm_id": "OG002#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": null,
           "effect_type_verbatim": null,
@@ -4521,8 +4229,8 @@
             "verbatim_sha1": "4b4606fb86e036c19ece9c0a14d45dcb3ee1ca2d"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG000#full_analysis_set",
+          "reference_arm_id": "OG001#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": null,
           "effect_type_verbatim": null,
@@ -4546,8 +4254,8 @@
             "verbatim_sha1": "4b4606fb86e036c19ece9c0a14d45dcb3ee1ca2d"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG002",
+          "test_arm_id": "OG000#full_analysis_set",
+          "reference_arm_id": "OG002#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": null,
           "effect_type_verbatim": null,
@@ -4571,8 +4279,8 @@
             "verbatim_sha1": "bbe4cba77104cc02726c1851c20b1a6b2eb3bb9e"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG000#full_analysis_set",
+          "reference_arm_id": "OG001#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": null,
           "effect_type_verbatim": null,
@@ -4596,8 +4304,8 @@
             "verbatim_sha1": "bbe4cba77104cc02726c1851c20b1a6b2eb3bb9e"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG002",
+          "test_arm_id": "OG000#full_analysis_set",
+          "reference_arm_id": "OG002#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": null,
           "effect_type_verbatim": null,
@@ -4621,8 +4329,8 @@
             "verbatim_sha1": "5865cc2de74934d10820366ca3c4e91224f0b068"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG000#full_analysis_set",
+          "reference_arm_id": "OG001#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": null,
           "effect_type_verbatim": null,
@@ -4646,8 +4354,8 @@
             "verbatim_sha1": "5865cc2de74934d10820366ca3c4e91224f0b068"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG002",
+          "test_arm_id": "OG000#full_analysis_set",
+          "reference_arm_id": "OG002#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": null,
           "effect_type_verbatim": null,
@@ -4671,8 +4379,8 @@
             "verbatim_sha1": "a444c1edfec29e84fc82e5304a54d6e75be0960e"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG000#full_analysis_set",
+          "reference_arm_id": "OG001#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": null,
           "effect_type_verbatim": null,
@@ -4696,8 +4404,8 @@
             "verbatim_sha1": "a444c1edfec29e84fc82e5304a54d6e75be0960e"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG002",
+          "test_arm_id": "OG000#full_analysis_set",
+          "reference_arm_id": "OG002#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": null,
           "effect_type_verbatim": null,
@@ -4721,8 +4429,8 @@
             "verbatim_sha1": "a444c1edfec29e84fc82e5304a54d6e75be0960e"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG000#full_analysis_set",
+          "reference_arm_id": "OG001#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": null,
           "effect_type_verbatim": null,
@@ -4746,8 +4454,8 @@
             "verbatim_sha1": "a444c1edfec29e84fc82e5304a54d6e75be0960e"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG002",
+          "test_arm_id": "OG000#full_analysis_set",
+          "reference_arm_id": "OG002#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": null,
           "effect_type_verbatim": null,
@@ -4771,8 +4479,8 @@
             "verbatim_sha1": "a444c1edfec29e84fc82e5304a54d6e75be0960e"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG000#full_analysis_set",
+          "reference_arm_id": "OG001#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": null,
           "effect_type_verbatim": null,
@@ -4796,8 +4504,8 @@
             "verbatim_sha1": "a444c1edfec29e84fc82e5304a54d6e75be0960e"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG002",
+          "test_arm_id": "OG000#full_analysis_set",
+          "reference_arm_id": "OG002#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": null,
           "effect_type_verbatim": null,
@@ -4821,8 +4529,8 @@
             "verbatim_sha1": "a444c1edfec29e84fc82e5304a54d6e75be0960e"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG000#full_analysis_set",
+          "reference_arm_id": "OG001#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": null,
           "effect_type_verbatim": null,
@@ -4846,8 +4554,8 @@
             "verbatim_sha1": "a444c1edfec29e84fc82e5304a54d6e75be0960e"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG002",
+          "test_arm_id": "OG000#full_analysis_set",
+          "reference_arm_id": "OG002#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": null,
           "effect_type_verbatim": null,
@@ -4871,8 +4579,8 @@
             "verbatim_sha1": "d2e2e32ccbfce08c998eddce79b793b0fbea9214"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG000#full_analysis_set",
+          "reference_arm_id": "OG001#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": null,
           "effect_type_verbatim": null,
@@ -4896,8 +4604,8 @@
             "verbatim_sha1": "d2e2e32ccbfce08c998eddce79b793b0fbea9214"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG002",
+          "test_arm_id": "OG000#full_analysis_set",
+          "reference_arm_id": "OG002#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": null,
           "effect_type_verbatim": null,
@@ -4921,8 +4629,8 @@
             "verbatim_sha1": "7569e0c6207707ebde53ffccc459adbb255b5208"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG000#full_analysis_set",
+          "reference_arm_id": "OG001#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": null,
           "effect_type_verbatim": null,
@@ -4946,8 +4654,8 @@
             "verbatim_sha1": "7569e0c6207707ebde53ffccc459adbb255b5208"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG002",
+          "test_arm_id": "OG000#full_analysis_set",
+          "reference_arm_id": "OG002#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": null,
           "effect_type_verbatim": null,
@@ -4971,8 +4679,8 @@
             "verbatim_sha1": "7569e0c6207707ebde53ffccc459adbb255b5208"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG000#full_analysis_set",
+          "reference_arm_id": "OG001#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": null,
           "effect_type_verbatim": null,
@@ -4996,8 +4704,8 @@
             "verbatim_sha1": "7569e0c6207707ebde53ffccc459adbb255b5208"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG002",
+          "test_arm_id": "OG000#full_analysis_set",
+          "reference_arm_id": "OG002#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": null,
           "effect_type_verbatim": null,
@@ -5021,8 +4729,8 @@
             "verbatim_sha1": "5db35dbcca3e8538a1a4a3698aeaf6549e93a96f"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG000#full_analysis_set",
+          "reference_arm_id": "OG001#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": null,
           "effect_type_verbatim": null,
@@ -5046,8 +4754,8 @@
             "verbatim_sha1": "5db35dbcca3e8538a1a4a3698aeaf6549e93a96f"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG002",
+          "test_arm_id": "OG000#full_analysis_set",
+          "reference_arm_id": "OG002#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": null,
           "effect_type_verbatim": null,
@@ -5071,8 +4779,8 @@
             "verbatim_sha1": "841bad632ed4fc07f88ce08d40003ec598ae140b"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG000#full_analysis_set",
+          "reference_arm_id": "OG001#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": null,
           "effect_type_verbatim": null,
@@ -5096,8 +4804,8 @@
             "verbatim_sha1": "841bad632ed4fc07f88ce08d40003ec598ae140b"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG002",
+          "test_arm_id": "OG000#full_analysis_set",
+          "reference_arm_id": "OG002#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": null,
           "effect_type_verbatim": null,
@@ -5121,8 +4829,8 @@
             "verbatim_sha1": "841bad632ed4fc07f88ce08d40003ec598ae140b"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG000#full_analysis_set",
+          "reference_arm_id": "OG001#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": null,
           "effect_type_verbatim": null,
@@ -5146,8 +4854,8 @@
             "verbatim_sha1": "841bad632ed4fc07f88ce08d40003ec598ae140b"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG002",
+          "test_arm_id": "OG000#full_analysis_set",
+          "reference_arm_id": "OG002#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": null,
           "effect_type_verbatim": null,
@@ -5171,8 +4879,8 @@
             "verbatim_sha1": "841bad632ed4fc07f88ce08d40003ec598ae140b"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG000#full_analysis_set",
+          "reference_arm_id": "OG001#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": null,
           "effect_type_verbatim": null,
@@ -5196,8 +4904,8 @@
             "verbatim_sha1": "841bad632ed4fc07f88ce08d40003ec598ae140b"
           },
           "timepoint": null,
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG002",
+          "test_arm_id": "OG000#full_analysis_set",
+          "reference_arm_id": "OG002#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": null,
           "effect_type_verbatim": null,
@@ -5218,7 +4926,7 @@
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01474512",
       "source_excerpt": "resultsSection.outcomeMeasuresModule.outcomeMeasures[].analyses[]",
-      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3, 2026-09-06)",
+      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3 backfill re-run)",
       "reviewed_by": null,
       "confidence": 1.0
     },

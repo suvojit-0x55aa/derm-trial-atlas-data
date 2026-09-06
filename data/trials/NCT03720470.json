@@ -1,5 +1,5 @@
 {
-  "schema_version": 3,
+  "schema_version": 4,
   "nct_id": {
     "value": "NCT03720470",
     "source_type": "ctgov_api",
@@ -87,47 +87,15 @@
     },
     "mechanism_of_action": {
       "value": {
-        "modality": "small_molecule",
-        "drug_class": "JAK inhibitor",
-        "antibody_isotype": null,
-        "binding_targets": [],
-        "pathway_cytokines": [],
-        "receptor_subunits": [],
-        "kinases_inhibited": [
-          "JAK1"
-        ],
-        "lower_potency_kinases": [
-          "JAK2",
-          "JAK3",
-          "TYK2"
-        ],
-        "selectivity": [
-          {
-            "over": "JAK2",
-            "fold": 28,
-            "comparator": "=="
-          },
-          {
-            "over": "JAK3",
-            "fold": 340,
-            "comparator": ">"
-          },
-          {
-            "over": "TYK2",
-            "fold": 43,
-            "comparator": "=="
-          }
-        ],
-        "reversible": true,
-        "mechanism_established": false,
-        "label_section": "12.1"
+        "drug": "Abrocitinib",
+        "application_number": null
       },
-      "source_type": "openfda_label",
-      "source_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=90d59085-1778-447d-b10a-cede44616558",
-      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1) -- v1 extracted text: 12.1 Mechanism of Action CIBINQO is a Janus kinase (JAK) inhibitor. Abrocitinib reversibly inhibits JAK1 by blocking the adenosine triphosphate (ATP) binding site. In a cell-free isolated enzyme assay, abrocitinib was selective for JAK1 over JAK2 (28-fold), JAK3 (>340-fold), and tyrosine kinase (TYK) 2 (43-fold), as well as the broader kinome. The relevance of inhibition of specific JAK enzymes to therapeutic effectiveness is not currently known. Both the parent compound and the active metabolites inhibit JAK1 activity in vitro with similar levels of selectivity.",
-      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA); structured by atlas.migrate v1->v2",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 0.9
+      "confidence": null
     },
     "dosing_regimen": {
       "value": [
@@ -2496,398 +2464,62 @@
     },
     "boxed_warning": {
       "value": {
-        "present": true,
-        "title": "SERIOUS INFECTIONS, MORTALITY, MALIGNANCY, MAJOR ADVERSE CARDIOVASCULAR EVENTS, and THROMBOSIS",
-        "warning_categories": [
-          "serious_infections",
-          "mortality",
-          "malignancy",
-          "mace",
-          "thrombosis"
-        ],
-        "referenced_label_sections": [
-          "5.1",
-          "5.2",
-          "5.3",
-          "5.4",
-          "5.5"
-        ],
-        "product_names": [
-          "CIBINQO"
-        ]
+        "drug": "Abrocitinib",
+        "application_number": null
       },
-      "source_type": "openfda_label",
-      "source_url": "https://api.fda.gov/drug/label.json?search=openfda.substance_name:ABROCITINIB&limit=1",
-      "source_excerpt": "results[0].boxed_warning -- v1 extracted text: WARNING: SERIOUS INFECTIONS, MORTALITY, MALIGNANCY, MAJOR ADVERSE CARDIOVASCULAR EVENTS, and THROMBOSIS WARNING: SERIOUS INFECTIONS, MORTALITY, MALIGNANCY, MAJOR ADVERSE CARDIOVASCULAR EVENTS (MACE), and THROMBOSIS See full prescribing information for complete boxed warning. • Increased risk of serious bacterial, fungal, viral and opportunistic infections leading to hospitalization or death, including tuberculosis (TB). Discontinue treatment with CIBINQO if serious or opportunistic infection occurs. Test for latent TB before and during therapy; treat latent TB prior to use. Monitor all patients for active TB during treatment, even patients with initial negative latent TB test. ( 5.1 ) • Higher rate of all-cause mortality, including sudden cardiovascular death, with another JAK inhibitor vs. TNF blockers in rheumatoid arthritis (RA) patients. CIBINQO is not approved for use in RA patients. ( 5.2 ) • Malignancies have occurred with CIBINQO. Higher rate of lymphomas and lung cancers with another JAK inhibitor vs. TNF blockers in RA patients. ( 5.3 ) • MACE has occurred with CIBINQO. Higher rate of MACE (defined as cardiovascular death, myocardial infarction, and stroke) with another JAK inhibitor vs. TNF blockers in RA patients. ( 5.4 ) • Thrombosis has occurred with CIBINQO. Increased incidence of pulmonary embolism, venous and arterial thrombosis with another JAK inhibitor vs. TNF blockers. ( 5.5 ) Serious Infections Patients treated with CIBINQO may be at increased risk for developing serious infections that may lead to hospitalization or death. The most frequent serious infections reported with CIBINQO were herpes simplex, herpes zoster, and pneumonia [see Warnings and Precautions (5.1) and Adverse Reactions (6.1) ] . If a serious or opportunistic infection develops, discontinue CIBINQO and control the infection. Reported infections from Janus kinase (JAK) inhibitors used to treat inflammatory conditions: • Active tuberculosis, which may present with pulmonary or extrapulmonary disease. Test for latent TB before and during therapy; treat latent TB prior to use. Monitor all patients for active TB during treatment, even patients with initial negative latent TB test. • Invasive fungal infections, including cryptococcosis and pneumocystosis. Patients with invasive fungal infections may present with disseminated, rather than localized, disease. • Bacterial, viral, including herpes zoster, and other infections due to opportunistic pathogens. Avoid use of CIBINQO in patients with an active, serious infection including localized infections. The risks and benefits of treatment with CIBINQO should be carefully considered prior to initiating therapy in patients with chronic or recurrent infections. Patients should be closely monitored for the development of signs and symptoms of infection during and after treatment with CIBINQO, including the possible development of tuberculosis in patients who tested negative for latent tuberculosis infection prior to initiating therapy [see Warnings and Precautions (5.1) ] . Mortality In a large, randomized, postmarketing safety study in rheumatoid arthritis (RA) patients 50 years of age and older with at least one cardiovascular risk factor comparing another JAK inhibitor to TNF blocker treatment, a higher rate of all-cause mortality, including sudden cardiovascular death, was observed with the JAK inhibitor. CIBINQO is not approved for use in RA patients [see Warnings and Precautions (5.2) ] . Malignancies Malignancies were reported in patients treated with CIBINQO. Lymphoma and other malignancies have been observed in patients receiving JAK inhibitors used to treat inflammatory conditions. In RA patients treated with another JAK inhibitor, a higher rate of malignancies (excluding non-melanoma skin cancer (NMSC)) was observed when compared with TNF blockers. Patients who are current or past smokers are at additional increased risk [see Warnings and Precautions (5.3) ] . Major Adverse Cardiovascular Events Major adverse cardiovascular events were reported in patients treated with CIBINQO. In RA patients 50 years of age and older with at least one cardiovascular risk factor treated with another JAK inhibitor, a higher rate of major adverse cardiovascular events (MACE) (defined as cardiovascular death, myocardial infarction, and stroke), was observed when compared with TNF blockers. Patients who are current or past smokers are at additional increased risk. Discontinue CIBINQO in patients that have experienced a myocardial infarction or stroke [see Warnings and Precautions (5.4) ] . Thrombosis Deep venous thrombosis (DVT) and pulmonary embolism (PE) have been reported in patients treated with CIBINQO. Thrombosis, including PE, DVT, and arterial thrombosis have been reported in patients receiving JAK inhibitors used to treat inflammatory conditions. Many of these adverse reactions were serious and some resulted in death. In RA patients 50 years of age and older with at least one cardiovascular risk factor treated with another JAK inhibitor, a higher rate of thrombosis was observed when compared with TNF blockers. Avoid CIBINQO in patients at risk. If symptoms of thrombosis occur, discontinue CIBINQO and treat appropriately [see Warnings and Precautions (5.5) ] .",
-      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass); structured by atlas.migrate v1->v2",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     }
   },
   "real_world_safety": {
     "faers_summary": {
       "value": {
-        "query": {
-          "search_field": "patient.drug.medicinalproduct",
-          "search_term": "ABROCITINIB",
-          "receivedate_from": "2019-09-12",
-          "receivedate_to": "2026-06-23",
-          "api_urls": [
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ABROCITINIB\"&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ABROCITINIB\"+AND+serious:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ABROCITINIB\"+AND+seriousnessdeath:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ABROCITINIB\"+AND+seriousnesshospitalization:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ABROCITINIB\"+AND+seriousnesslifethreatening:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ABROCITINIB\"+AND+seriousnessdisabling:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ABROCITINIB\"&count=patient.reaction.reactionmeddrapt.exact&limit=15",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ABROCITINIB\"+AND+serious:1&count=patient.reaction.reactionmeddrapt.exact&limit=15",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ABROCITINIB\"&count=receivedate"
-          ],
-          "data_last_updated": "2026-07-30"
-        },
-        "total_reports": 422,
-        "serious_reports": 296,
-        "death_reports": 18,
-        "hospitalization_reports": 149,
-        "life_threatening_reports": 27,
-        "disability_reports": 6,
-        "top_reactions": [
-          {
-            "meddra_pt": "DRUG INEFFECTIVE",
-            "report_count": 31,
-            "pct_of_reports": 7.35
-          },
-          {
-            "meddra_pt": "OFF LABEL USE",
-            "report_count": 29,
-            "pct_of_reports": 6.87
-          },
-          {
-            "meddra_pt": "NAUSEA",
-            "report_count": 23,
-            "pct_of_reports": 5.45
-          },
-          {
-            "meddra_pt": "ECZEMA HERPETICUM",
-            "report_count": 14,
-            "pct_of_reports": 3.32
-          },
-          {
-            "meddra_pt": "CONDITION AGGRAVATED",
-            "report_count": 13,
-            "pct_of_reports": 3.08
-          },
-          {
-            "meddra_pt": "PRURITUS",
-            "report_count": 12,
-            "pct_of_reports": 2.84
-          },
-          {
-            "meddra_pt": "DERMATITIS ATOPIC",
-            "report_count": 11,
-            "pct_of_reports": 2.61
-          },
-          {
-            "meddra_pt": "HERPES ZOSTER",
-            "report_count": 10,
-            "pct_of_reports": 2.37
-          },
-          {
-            "meddra_pt": "ACNE",
-            "report_count": 9,
-            "pct_of_reports": 2.13
-          },
-          {
-            "meddra_pt": "HEADACHE",
-            "report_count": 9,
-            "pct_of_reports": 2.13
-          },
-          {
-            "meddra_pt": "PNEUMONIA",
-            "report_count": 8,
-            "pct_of_reports": 1.9
-          },
-          {
-            "meddra_pt": "RASH",
-            "report_count": 8,
-            "pct_of_reports": 1.9
-          },
-          {
-            "meddra_pt": "THERAPEUTIC PRODUCT EFFECT INCOMPLETE",
-            "report_count": 8,
-            "pct_of_reports": 1.9
-          },
-          {
-            "meddra_pt": "THERAPEUTIC RESPONSE UNEXPECTED",
-            "report_count": 8,
-            "pct_of_reports": 1.9
-          },
-          {
-            "meddra_pt": "VOMITING",
-            "report_count": 8,
-            "pct_of_reports": 1.9
-          }
-        ],
-        "top_serious_reactions": [
-          {
-            "meddra_pt": "OFF LABEL USE",
-            "report_count": 16,
-            "pct_of_reports": 5.41
-          },
-          {
-            "meddra_pt": "ECZEMA HERPETICUM",
-            "report_count": 14,
-            "pct_of_reports": 4.73
-          },
-          {
-            "meddra_pt": "NAUSEA",
-            "report_count": 12,
-            "pct_of_reports": 4.05
-          },
-          {
-            "meddra_pt": "DRUG INEFFECTIVE",
-            "report_count": 11,
-            "pct_of_reports": 3.72
-          },
-          {
-            "meddra_pt": "HERPES ZOSTER",
-            "report_count": 10,
-            "pct_of_reports": 3.38
-          },
-          {
-            "meddra_pt": "PRURITUS",
-            "report_count": 9,
-            "pct_of_reports": 3.04
-          },
-          {
-            "meddra_pt": "PNEUMONIA",
-            "report_count": 8,
-            "pct_of_reports": 2.7
-          },
-          {
-            "meddra_pt": "CONDITION AGGRAVATED",
-            "report_count": 7,
-            "pct_of_reports": 2.36
-          },
-          {
-            "meddra_pt": "PULMONARY EMBOLISM",
-            "report_count": 7,
-            "pct_of_reports": 2.36
-          },
-          {
-            "meddra_pt": "PYREXIA",
-            "report_count": 7,
-            "pct_of_reports": 2.36
-          },
-          {
-            "meddra_pt": "ANAEMIA",
-            "report_count": 6,
-            "pct_of_reports": 2.03
-          },
-          {
-            "meddra_pt": "DERMATITIS ATOPIC",
-            "report_count": 6,
-            "pct_of_reports": 2.03
-          },
-          {
-            "meddra_pt": "HEADACHE",
-            "report_count": 6,
-            "pct_of_reports": 2.03
-          },
-          {
-            "meddra_pt": "RASH",
-            "report_count": 6,
-            "pct_of_reports": 2.03
-          },
-          {
-            "meddra_pt": "THROMBOCYTOPENIA",
-            "report_count": 6,
-            "pct_of_reports": 2.03
-          }
-        ],
-        "reports_by_year": [
-          {
-            "year": 2019,
-            "report_count": 2
-          },
-          {
-            "year": 2020,
-            "report_count": 1
-          },
-          {
-            "year": 2021,
-            "report_count": 11
-          },
-          {
-            "year": 2022,
-            "report_count": 140
-          },
-          {
-            "year": 2023,
-            "report_count": 61
-          },
-          {
-            "year": 2024,
-            "report_count": 114
-          },
-          {
-            "year": 2025,
-            "report_count": 61
-          },
-          {
-            "year": 2026,
-            "report_count": 32
-          }
-        ],
-        "meddra_version": null
+        "drug": "Abrocitinib",
+        "application_number": null
       },
-      "source_type": "openfda_faers",
-      "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ABROCITINIB\"&limit=1",
-      "source_excerpt": "openFDA drug/event.json aggregate: total_reports=422, serious=296, deaths=18",
-      "extracted_by": "fetch_faers.py (openfda drug/event.json, v2 pass)",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     }
   },
   "exclusivity": {
     "regulatory_application": {
       "value": {
-        "application_type": "NDA",
-        "application_number": "213871",
-        "registry": "orange_book",
-        "center": "CDER",
-        "proprietary_name": "CIBINQO",
-        "applicant": "PFIZER INC",
-        "first_approval_date": "2022-01-14"
+        "drug": "Abrocitinib",
+        "application_number": "213871"
       },
-      "source_type": "orange_book",
-      "source_url": "https://www.fda.gov/media/76860/download",
-      "source_excerpt": "products.txt: ABROCITINIB~TABLET;ORAL~CIBINQO~PFIZER~50MG~N~213871~001~~Jan 14, 2022~Yes~No~RX~PFIZER INC",
-      "extracted_by": "atlas.regulatory_applications (registry file fetched 2026-09-05)",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     },
     "orange_book": {
       "value": {
-        "application_type": "N",
-        "application_number": "213871",
-        "ingredient": "ABROCITINIB",
-        "trade_name": "CIBINQO",
-        "applicant": "PFIZER",
-        "applicant_full_name": "PFIZER INC",
-        "products": [
-          {
-            "product_number": "001",
-            "strength": "50MG",
-            "dosage_form": "TABLET",
-            "route": "ORAL",
-            "approval_date": "2022-01-14",
-            "rld": true,
-            "rs": false,
-            "te_code": null,
-            "marketing_type": "HUMAN PRESCRIPTION DRUG"
-          },
-          {
-            "product_number": "002",
-            "strength": "100MG",
-            "dosage_form": "TABLET",
-            "route": "ORAL",
-            "approval_date": "2022-01-14",
-            "rld": true,
-            "rs": false,
-            "te_code": null,
-            "marketing_type": "HUMAN PRESCRIPTION DRUG"
-          },
-          {
-            "product_number": "003",
-            "strength": "200MG",
-            "dosage_form": "TABLET",
-            "route": "ORAL",
-            "approval_date": "2022-01-14",
-            "rld": true,
-            "rs": true,
-            "te_code": null,
-            "marketing_type": "HUMAN PRESCRIPTION DRUG"
-          }
-        ],
-        "patents": [
-          {
-            "patent_number": "9545405",
-            "expiration_date": "2034-02-19",
-            "drug_substance_claim": true,
-            "drug_product_claim": true,
-            "patent_use_code": null,
-            "delisted": false,
-            "submission_date": "2022-02-11",
-            "product_numbers": [
-              "001",
-              "002",
-              "003"
-            ]
-          },
-          {
-            "patent_number": "9549929",
-            "expiration_date": "2034-02-19",
-            "drug_substance_claim": false,
-            "drug_product_claim": false,
-            "patent_use_code": "U-3195",
-            "delisted": false,
-            "submission_date": "2022-02-11",
-            "product_numbers": [
-              "001",
-              "002",
-              "003"
-            ]
-          },
-          {
-            "patent_number": "9035074",
-            "expiration_date": "2036-01-14",
-            "drug_substance_claim": true,
-            "drug_product_claim": true,
-            "patent_use_code": null,
-            "delisted": false,
-            "submission_date": "2022-02-11",
-            "product_numbers": [
-              "001",
-              "002",
-              "003"
-            ]
-          }
-        ],
-        "exclusivities": [
-          {
-            "code": "NPP",
-            "expiration_date": "2026-02-09",
-            "product_numbers": [
-              "001",
-              "002",
-              "003"
-            ]
-          },
-          {
-            "code": "NCE",
-            "expiration_date": "2027-01-14",
-            "product_numbers": [
-              "001",
-              "002",
-              "003"
-            ]
-          }
-        ],
-        "latest_patent_expiration": "2036-01-14",
-        "latest_exclusivity_expiration": "2027-01-14",
-        "data_file_date": null
+        "drug": "Abrocitinib",
+        "application_number": "213871"
       },
-      "source_type": "orange_book",
-      "source_url": "https://api.fda.gov/drug/orangebook.json?search=products.active_ingredients.name%3A%22ABROCITINIB%22&limit=100",
-      "source_excerpt": "openFDA drug/orangebook.json, 3 product row(s) matched on products.active_ingredients.name='ABROCITINIB'",
-      "extracted_by": "fetch_orange_book.py (openfda drug/orangebook.json, v2 pass)",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     },
     "purple_book": {
-      "value": null,
-      "source_type": "needs_extraction",
+      "value": {
+        "drug": "Abrocitinib",
+        "application_number": null
+      },
+      "source_type": "drug_level_ref",
       "source_url": null,
       "source_excerpt": null,
       "extracted_by": null,
@@ -2899,9 +2531,10 @@
     "arms": {
       "value": [
         {
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "label": "Placebo up to Week 16",
           "role": "placebo",
+          "analysis_population": "full_analysis_set",
           "intervention_names": [],
           "dose_value": null,
           "dose_unit": null,
@@ -2909,9 +2542,23 @@
           "randomized_n": 131
         },
         {
-          "arm_id": "OG001",
+          "arm_id": "OG000#2",
+          "label": "Placebo up to Week 16 Then PF-04965842 100 mg Week 16 to 20",
+          "role": "placebo",
+          "analysis_population": "full_analysis_set",
+          "intervention_names": [
+            "PF-04965842 100 mg"
+          ],
+          "dose_value": null,
+          "dose_unit": null,
+          "frequency": null,
+          "randomized_n": 131
+        },
+        {
+          "arm_id": "OG001#full_analysis_set",
           "label": "PF-04965842 100 mg + Placebo Injection up to Week 16",
           "role": "placebo",
+          "analysis_population": "full_analysis_set",
           "intervention_names": [
             "PF-04965842 100 mg"
           ],
@@ -2921,9 +2568,23 @@
           "randomized_n": 238
         },
         {
-          "arm_id": "OG002",
+          "arm_id": "OG001#2",
+          "label": "Placebo up to Week 16 Then PF-04965842 200 mg Week 16 to 20",
+          "role": "placebo",
+          "analysis_population": "full_analysis_set",
+          "intervention_names": [
+            "PF-04965842 200 mg"
+          ],
+          "dose_value": null,
+          "dose_unit": null,
+          "frequency": null,
+          "randomized_n": 131
+        },
+        {
+          "arm_id": "OG002#full_analysis_set",
           "label": "PF-04965842 200 mg + Placebo Injection up to Week 16",
           "role": "placebo",
+          "analysis_population": "full_analysis_set",
           "intervention_names": [
             "PF-04965842 200 mg"
           ],
@@ -2933,9 +2594,23 @@
           "randomized_n": 226
         },
         {
-          "arm_id": "OG003",
+          "arm_id": "OG002#2",
+          "label": "PF-04965842 100 mg + Placebo Injection up to Week 16 Then PF-04965842 100 mg Week 16 to 20",
+          "role": "placebo",
+          "analysis_population": "full_analysis_set",
+          "intervention_names": [
+            "PF-04965842 100 mg"
+          ],
+          "dose_value": null,
+          "dose_unit": null,
+          "frequency": null,
+          "randomized_n": 238
+        },
+        {
+          "arm_id": "OG003#full_analysis_set",
           "label": "Dupilumab 300 mg + Oral Placebo up to Week 16",
           "role": "placebo",
+          "analysis_population": "full_analysis_set",
           "intervention_names": [
             "Dupilumab",
             "Oral Placebo"
@@ -2946,45 +2621,10 @@
           "randomized_n": 131
         },
         {
-          "arm_id": "OG000",
-          "label": "Placebo up to Week 16 Then PF-04965842 100 mg Week 16 to 20",
-          "role": "placebo",
-          "intervention_names": [
-            "PF-04965842 100 mg"
-          ],
-          "dose_value": null,
-          "dose_unit": null,
-          "frequency": null,
-          "randomized_n": 131
-        },
-        {
-          "arm_id": "OG001",
-          "label": "Placebo up to Week 16 Then PF-04965842 200 mg Week 16 to 20",
-          "role": "placebo",
-          "intervention_names": [
-            "PF-04965842 200 mg"
-          ],
-          "dose_value": null,
-          "dose_unit": null,
-          "frequency": null,
-          "randomized_n": 131
-        },
-        {
-          "arm_id": "OG002",
-          "label": "PF-04965842 100 mg + Placebo Injection up to Week 16 Then PF-04965842 100 mg Week 16 to 20",
-          "role": "placebo",
-          "intervention_names": [
-            "PF-04965842 100 mg"
-          ],
-          "dose_value": null,
-          "dose_unit": null,
-          "frequency": null,
-          "randomized_n": 238
-        },
-        {
-          "arm_id": "OG003",
+          "arm_id": "OG003#2",
           "label": "PF-04965842 200 mg + Placebo Injection up to Week 16 Then PF-04965842 200 mg Week 16 to 20",
           "role": "placebo",
+          "analysis_population": "full_analysis_set",
           "intervention_names": [
             "PF-04965842 200 mg"
           ],
@@ -2997,6 +2637,7 @@
           "arm_id": "OG004",
           "label": "Dupilumab 300 mg + Oral Placebo up to Week 16 Then Oral Placebo Week 16 to 20",
           "role": "placebo",
+          "analysis_population": "full_analysis_set",
           "intervention_names": [
             "Dupilumab",
             "Oral Placebo"
@@ -3010,7 +2651,7 @@
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03720470",
       "source_excerpt": "resultsSection.outcomeMeasuresModule.outcomeMeasures[].groups[]",
-      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3, 2026-09-06)",
+      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3 backfill re-run)",
       "reviewed_by": null,
       "confidence": 1.0
     },
@@ -3022,7 +2663,7 @@
             "position": 1,
             "verbatim_sha1": "a3c8bda515fdc0e79152852c41ff873d46c9cd6d"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -3050,7 +2691,7 @@
             "position": 1,
             "verbatim_sha1": "a3c8bda515fdc0e79152852c41ff873d46c9cd6d"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -3078,7 +2719,7 @@
             "position": 1,
             "verbatim_sha1": "a3c8bda515fdc0e79152852c41ff873d46c9cd6d"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -3106,7 +2747,7 @@
             "position": 1,
             "verbatim_sha1": "a3c8bda515fdc0e79152852c41ff873d46c9cd6d"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -3134,7 +2775,7 @@
             "position": 2,
             "verbatim_sha1": "1d515b3c84336a4640be1ec2ffc56772497ba6f3"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -3162,7 +2803,7 @@
             "position": 2,
             "verbatim_sha1": "1d515b3c84336a4640be1ec2ffc56772497ba6f3"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -3190,7 +2831,7 @@
             "position": 2,
             "verbatim_sha1": "1d515b3c84336a4640be1ec2ffc56772497ba6f3"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -3218,7 +2859,7 @@
             "position": 2,
             "verbatim_sha1": "1d515b3c84336a4640be1ec2ffc56772497ba6f3"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -3246,7 +2887,7 @@
             "position": 1,
             "verbatim_sha1": "96e966ede5340abb4b8391cf6580e6b3569eb6c9"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 2,
             "unit": "day",
@@ -3274,7 +2915,7 @@
             "position": 1,
             "verbatim_sha1": "96e966ede5340abb4b8391cf6580e6b3569eb6c9"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 2,
             "unit": "day",
@@ -3302,7 +2943,7 @@
             "position": 1,
             "verbatim_sha1": "96e966ede5340abb4b8391cf6580e6b3569eb6c9"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 2,
             "unit": "day",
@@ -3330,7 +2971,7 @@
             "position": 1,
             "verbatim_sha1": "96e966ede5340abb4b8391cf6580e6b3569eb6c9"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 2,
             "unit": "day",
@@ -3358,7 +2999,7 @@
             "position": 1,
             "verbatim_sha1": "96e966ede5340abb4b8391cf6580e6b3569eb6c9"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 3,
             "unit": "day",
@@ -3386,7 +3027,7 @@
             "position": 1,
             "verbatim_sha1": "96e966ede5340abb4b8391cf6580e6b3569eb6c9"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 3,
             "unit": "day",
@@ -3414,7 +3055,7 @@
             "position": 1,
             "verbatim_sha1": "96e966ede5340abb4b8391cf6580e6b3569eb6c9"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 3,
             "unit": "day",
@@ -3442,7 +3083,7 @@
             "position": 1,
             "verbatim_sha1": "96e966ede5340abb4b8391cf6580e6b3569eb6c9"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 3,
             "unit": "day",
@@ -3470,7 +3111,7 @@
             "position": 1,
             "verbatim_sha1": "96e966ede5340abb4b8391cf6580e6b3569eb6c9"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 4,
             "unit": "day",
@@ -3498,7 +3139,7 @@
             "position": 1,
             "verbatim_sha1": "96e966ede5340abb4b8391cf6580e6b3569eb6c9"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 4,
             "unit": "day",
@@ -3526,7 +3167,7 @@
             "position": 1,
             "verbatim_sha1": "96e966ede5340abb4b8391cf6580e6b3569eb6c9"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 4,
             "unit": "day",
@@ -3554,7 +3195,7 @@
             "position": 1,
             "verbatim_sha1": "96e966ede5340abb4b8391cf6580e6b3569eb6c9"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 4,
             "unit": "day",
@@ -3582,7 +3223,7 @@
             "position": 1,
             "verbatim_sha1": "96e966ede5340abb4b8391cf6580e6b3569eb6c9"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 5,
             "unit": "day",
@@ -3610,7 +3251,7 @@
             "position": 1,
             "verbatim_sha1": "96e966ede5340abb4b8391cf6580e6b3569eb6c9"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 5,
             "unit": "day",
@@ -3638,7 +3279,7 @@
             "position": 1,
             "verbatim_sha1": "96e966ede5340abb4b8391cf6580e6b3569eb6c9"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 5,
             "unit": "day",
@@ -3666,7 +3307,7 @@
             "position": 1,
             "verbatim_sha1": "96e966ede5340abb4b8391cf6580e6b3569eb6c9"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 5,
             "unit": "day",
@@ -3694,7 +3335,7 @@
             "position": 1,
             "verbatim_sha1": "96e966ede5340abb4b8391cf6580e6b3569eb6c9"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 6,
             "unit": "day",
@@ -3722,7 +3363,7 @@
             "position": 1,
             "verbatim_sha1": "96e966ede5340abb4b8391cf6580e6b3569eb6c9"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 6,
             "unit": "day",
@@ -3750,7 +3391,7 @@
             "position": 1,
             "verbatim_sha1": "96e966ede5340abb4b8391cf6580e6b3569eb6c9"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 6,
             "unit": "day",
@@ -3778,7 +3419,7 @@
             "position": 1,
             "verbatim_sha1": "96e966ede5340abb4b8391cf6580e6b3569eb6c9"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 6,
             "unit": "day",
@@ -3806,7 +3447,7 @@
             "position": 1,
             "verbatim_sha1": "96e966ede5340abb4b8391cf6580e6b3569eb6c9"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 7,
             "unit": "day",
@@ -3834,7 +3475,7 @@
             "position": 1,
             "verbatim_sha1": "96e966ede5340abb4b8391cf6580e6b3569eb6c9"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 7,
             "unit": "day",
@@ -3862,7 +3503,7 @@
             "position": 1,
             "verbatim_sha1": "96e966ede5340abb4b8391cf6580e6b3569eb6c9"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 7,
             "unit": "day",
@@ -3890,7 +3531,7 @@
             "position": 1,
             "verbatim_sha1": "96e966ede5340abb4b8391cf6580e6b3569eb6c9"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 7,
             "unit": "day",
@@ -3918,7 +3559,7 @@
             "position": 1,
             "verbatim_sha1": "96e966ede5340abb4b8391cf6580e6b3569eb6c9"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 8,
             "unit": "day",
@@ -3946,7 +3587,7 @@
             "position": 1,
             "verbatim_sha1": "96e966ede5340abb4b8391cf6580e6b3569eb6c9"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 8,
             "unit": "day",
@@ -3974,7 +3615,7 @@
             "position": 1,
             "verbatim_sha1": "96e966ede5340abb4b8391cf6580e6b3569eb6c9"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 8,
             "unit": "day",
@@ -4002,7 +3643,7 @@
             "position": 1,
             "verbatim_sha1": "96e966ede5340abb4b8391cf6580e6b3569eb6c9"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 8,
             "unit": "day",
@@ -4030,7 +3671,7 @@
             "position": 1,
             "verbatim_sha1": "96e966ede5340abb4b8391cf6580e6b3569eb6c9"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 9,
             "unit": "day",
@@ -4058,7 +3699,7 @@
             "position": 1,
             "verbatim_sha1": "96e966ede5340abb4b8391cf6580e6b3569eb6c9"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 9,
             "unit": "day",
@@ -4086,7 +3727,7 @@
             "position": 1,
             "verbatim_sha1": "96e966ede5340abb4b8391cf6580e6b3569eb6c9"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 9,
             "unit": "day",
@@ -4114,7 +3755,7 @@
             "position": 1,
             "verbatim_sha1": "96e966ede5340abb4b8391cf6580e6b3569eb6c9"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 9,
             "unit": "day",
@@ -4142,7 +3783,7 @@
             "position": 1,
             "verbatim_sha1": "96e966ede5340abb4b8391cf6580e6b3569eb6c9"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 10,
             "unit": "day",
@@ -4170,7 +3811,7 @@
             "position": 1,
             "verbatim_sha1": "96e966ede5340abb4b8391cf6580e6b3569eb6c9"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 10,
             "unit": "day",
@@ -4198,7 +3839,7 @@
             "position": 1,
             "verbatim_sha1": "96e966ede5340abb4b8391cf6580e6b3569eb6c9"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 10,
             "unit": "day",
@@ -4226,7 +3867,7 @@
             "position": 1,
             "verbatim_sha1": "96e966ede5340abb4b8391cf6580e6b3569eb6c9"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 10,
             "unit": "day",
@@ -4254,7 +3895,7 @@
             "position": 1,
             "verbatim_sha1": "96e966ede5340abb4b8391cf6580e6b3569eb6c9"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 11,
             "unit": "day",
@@ -4282,7 +3923,7 @@
             "position": 1,
             "verbatim_sha1": "96e966ede5340abb4b8391cf6580e6b3569eb6c9"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 11,
             "unit": "day",
@@ -4310,7 +3951,7 @@
             "position": 1,
             "verbatim_sha1": "96e966ede5340abb4b8391cf6580e6b3569eb6c9"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 11,
             "unit": "day",
@@ -4338,7 +3979,7 @@
             "position": 1,
             "verbatim_sha1": "96e966ede5340abb4b8391cf6580e6b3569eb6c9"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 11,
             "unit": "day",
@@ -4366,7 +4007,7 @@
             "position": 1,
             "verbatim_sha1": "96e966ede5340abb4b8391cf6580e6b3569eb6c9"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "day",
@@ -4394,7 +4035,7 @@
             "position": 1,
             "verbatim_sha1": "96e966ede5340abb4b8391cf6580e6b3569eb6c9"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "day",
@@ -4422,7 +4063,7 @@
             "position": 1,
             "verbatim_sha1": "96e966ede5340abb4b8391cf6580e6b3569eb6c9"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "day",
@@ -4450,7 +4091,7 @@
             "position": 1,
             "verbatim_sha1": "96e966ede5340abb4b8391cf6580e6b3569eb6c9"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "day",
@@ -4478,7 +4119,7 @@
             "position": 1,
             "verbatim_sha1": "96e966ede5340abb4b8391cf6580e6b3569eb6c9"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 13,
             "unit": "day",
@@ -4506,7 +4147,7 @@
             "position": 1,
             "verbatim_sha1": "96e966ede5340abb4b8391cf6580e6b3569eb6c9"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 13,
             "unit": "day",
@@ -4534,7 +4175,7 @@
             "position": 1,
             "verbatim_sha1": "96e966ede5340abb4b8391cf6580e6b3569eb6c9"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 13,
             "unit": "day",
@@ -4562,7 +4203,7 @@
             "position": 1,
             "verbatim_sha1": "96e966ede5340abb4b8391cf6580e6b3569eb6c9"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 13,
             "unit": "day",
@@ -4590,7 +4231,7 @@
             "position": 1,
             "verbatim_sha1": "96e966ede5340abb4b8391cf6580e6b3569eb6c9"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 14,
             "unit": "day",
@@ -4618,7 +4259,7 @@
             "position": 1,
             "verbatim_sha1": "96e966ede5340abb4b8391cf6580e6b3569eb6c9"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 14,
             "unit": "day",
@@ -4646,7 +4287,7 @@
             "position": 1,
             "verbatim_sha1": "96e966ede5340abb4b8391cf6580e6b3569eb6c9"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 14,
             "unit": "day",
@@ -4674,7 +4315,7 @@
             "position": 1,
             "verbatim_sha1": "96e966ede5340abb4b8391cf6580e6b3569eb6c9"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 14,
             "unit": "day",
@@ -4702,7 +4343,7 @@
             "position": 1,
             "verbatim_sha1": "96e966ede5340abb4b8391cf6580e6b3569eb6c9"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 15,
             "unit": "day",
@@ -4730,7 +4371,7 @@
             "position": 1,
             "verbatim_sha1": "96e966ede5340abb4b8391cf6580e6b3569eb6c9"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 15,
             "unit": "day",
@@ -4758,7 +4399,7 @@
             "position": 1,
             "verbatim_sha1": "96e966ede5340abb4b8391cf6580e6b3569eb6c9"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 15,
             "unit": "day",
@@ -4786,7 +4427,7 @@
             "position": 1,
             "verbatim_sha1": "96e966ede5340abb4b8391cf6580e6b3569eb6c9"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 15,
             "unit": "day",
@@ -4814,7 +4455,7 @@
             "position": 1,
             "verbatim_sha1": "96e966ede5340abb4b8391cf6580e6b3569eb6c9"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 2,
             "unit": "week",
@@ -4842,7 +4483,7 @@
             "position": 1,
             "verbatim_sha1": "96e966ede5340abb4b8391cf6580e6b3569eb6c9"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 2,
             "unit": "week",
@@ -4870,7 +4511,7 @@
             "position": 1,
             "verbatim_sha1": "96e966ede5340abb4b8391cf6580e6b3569eb6c9"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 2,
             "unit": "week",
@@ -4898,7 +4539,7 @@
             "position": 1,
             "verbatim_sha1": "96e966ede5340abb4b8391cf6580e6b3569eb6c9"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 2,
             "unit": "week",
@@ -4926,7 +4567,7 @@
             "position": 1,
             "verbatim_sha1": "96e966ede5340abb4b8391cf6580e6b3569eb6c9"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 4,
             "unit": "week",
@@ -4954,7 +4595,7 @@
             "position": 1,
             "verbatim_sha1": "96e966ede5340abb4b8391cf6580e6b3569eb6c9"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 4,
             "unit": "week",
@@ -4982,7 +4623,7 @@
             "position": 1,
             "verbatim_sha1": "96e966ede5340abb4b8391cf6580e6b3569eb6c9"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 4,
             "unit": "week",
@@ -5010,7 +4651,7 @@
             "position": 1,
             "verbatim_sha1": "96e966ede5340abb4b8391cf6580e6b3569eb6c9"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 4,
             "unit": "week",
@@ -5038,7 +4679,7 @@
             "position": 1,
             "verbatim_sha1": "96e966ede5340abb4b8391cf6580e6b3569eb6c9"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 8,
             "unit": "week",
@@ -5066,7 +4707,7 @@
             "position": 1,
             "verbatim_sha1": "96e966ede5340abb4b8391cf6580e6b3569eb6c9"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 8,
             "unit": "week",
@@ -5094,7 +4735,7 @@
             "position": 1,
             "verbatim_sha1": "96e966ede5340abb4b8391cf6580e6b3569eb6c9"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 8,
             "unit": "week",
@@ -5122,7 +4763,7 @@
             "position": 1,
             "verbatim_sha1": "96e966ede5340abb4b8391cf6580e6b3569eb6c9"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 8,
             "unit": "week",
@@ -5150,7 +4791,7 @@
             "position": 1,
             "verbatim_sha1": "96e966ede5340abb4b8391cf6580e6b3569eb6c9"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -5178,7 +4819,7 @@
             "position": 1,
             "verbatim_sha1": "96e966ede5340abb4b8391cf6580e6b3569eb6c9"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -5206,7 +4847,7 @@
             "position": 1,
             "verbatim_sha1": "96e966ede5340abb4b8391cf6580e6b3569eb6c9"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -5234,7 +4875,7 @@
             "position": 1,
             "verbatim_sha1": "96e966ede5340abb4b8391cf6580e6b3569eb6c9"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -5262,7 +4903,7 @@
             "position": 1,
             "verbatim_sha1": "96e966ede5340abb4b8391cf6580e6b3569eb6c9"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -5290,7 +4931,7 @@
             "position": 1,
             "verbatim_sha1": "96e966ede5340abb4b8391cf6580e6b3569eb6c9"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -5318,7 +4959,7 @@
             "position": 1,
             "verbatim_sha1": "96e966ede5340abb4b8391cf6580e6b3569eb6c9"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -5346,7 +4987,7 @@
             "position": 1,
             "verbatim_sha1": "96e966ede5340abb4b8391cf6580e6b3569eb6c9"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -5374,7 +5015,7 @@
             "position": 2,
             "verbatim_sha1": "df9c0c9b3f552b09f068047f0f4a5015d11cb279"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 2,
             "unit": "week",
@@ -5402,7 +5043,7 @@
             "position": 2,
             "verbatim_sha1": "df9c0c9b3f552b09f068047f0f4a5015d11cb279"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 2,
             "unit": "week",
@@ -5430,7 +5071,7 @@
             "position": 2,
             "verbatim_sha1": "df9c0c9b3f552b09f068047f0f4a5015d11cb279"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 2,
             "unit": "week",
@@ -5458,7 +5099,7 @@
             "position": 2,
             "verbatim_sha1": "df9c0c9b3f552b09f068047f0f4a5015d11cb279"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 2,
             "unit": "week",
@@ -5486,7 +5127,7 @@
             "position": 2,
             "verbatim_sha1": "df9c0c9b3f552b09f068047f0f4a5015d11cb279"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 4,
             "unit": "week",
@@ -5514,7 +5155,7 @@
             "position": 2,
             "verbatim_sha1": "df9c0c9b3f552b09f068047f0f4a5015d11cb279"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 4,
             "unit": "week",
@@ -5542,7 +5183,7 @@
             "position": 2,
             "verbatim_sha1": "df9c0c9b3f552b09f068047f0f4a5015d11cb279"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 4,
             "unit": "week",
@@ -5570,7 +5211,7 @@
             "position": 2,
             "verbatim_sha1": "df9c0c9b3f552b09f068047f0f4a5015d11cb279"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 4,
             "unit": "week",
@@ -5598,7 +5239,7 @@
             "position": 2,
             "verbatim_sha1": "df9c0c9b3f552b09f068047f0f4a5015d11cb279"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 8,
             "unit": "week",
@@ -5626,7 +5267,7 @@
             "position": 2,
             "verbatim_sha1": "df9c0c9b3f552b09f068047f0f4a5015d11cb279"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 8,
             "unit": "week",
@@ -5654,7 +5295,7 @@
             "position": 2,
             "verbatim_sha1": "df9c0c9b3f552b09f068047f0f4a5015d11cb279"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 8,
             "unit": "week",
@@ -5682,7 +5323,7 @@
             "position": 2,
             "verbatim_sha1": "df9c0c9b3f552b09f068047f0f4a5015d11cb279"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 8,
             "unit": "week",
@@ -5710,7 +5351,7 @@
             "position": 2,
             "verbatim_sha1": "df9c0c9b3f552b09f068047f0f4a5015d11cb279"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -5738,7 +5379,7 @@
             "position": 2,
             "verbatim_sha1": "df9c0c9b3f552b09f068047f0f4a5015d11cb279"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -5766,7 +5407,7 @@
             "position": 2,
             "verbatim_sha1": "df9c0c9b3f552b09f068047f0f4a5015d11cb279"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -5794,7 +5435,7 @@
             "position": 2,
             "verbatim_sha1": "df9c0c9b3f552b09f068047f0f4a5015d11cb279"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -5822,7 +5463,7 @@
             "position": 3,
             "verbatim_sha1": "64891df2892e5d13779d621dcb3221fe8d74caaa"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 2,
             "unit": "week",
@@ -5850,7 +5491,7 @@
             "position": 3,
             "verbatim_sha1": "64891df2892e5d13779d621dcb3221fe8d74caaa"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 2,
             "unit": "week",
@@ -5878,7 +5519,7 @@
             "position": 3,
             "verbatim_sha1": "64891df2892e5d13779d621dcb3221fe8d74caaa"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 2,
             "unit": "week",
@@ -5906,7 +5547,7 @@
             "position": 3,
             "verbatim_sha1": "64891df2892e5d13779d621dcb3221fe8d74caaa"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 2,
             "unit": "week",
@@ -5934,7 +5575,7 @@
             "position": 3,
             "verbatim_sha1": "64891df2892e5d13779d621dcb3221fe8d74caaa"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 4,
             "unit": "week",
@@ -5962,7 +5603,7 @@
             "position": 3,
             "verbatim_sha1": "64891df2892e5d13779d621dcb3221fe8d74caaa"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 4,
             "unit": "week",
@@ -5990,7 +5631,7 @@
             "position": 3,
             "verbatim_sha1": "64891df2892e5d13779d621dcb3221fe8d74caaa"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 4,
             "unit": "week",
@@ -6018,7 +5659,7 @@
             "position": 3,
             "verbatim_sha1": "64891df2892e5d13779d621dcb3221fe8d74caaa"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 4,
             "unit": "week",
@@ -6046,7 +5687,7 @@
             "position": 3,
             "verbatim_sha1": "64891df2892e5d13779d621dcb3221fe8d74caaa"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 8,
             "unit": "week",
@@ -6074,7 +5715,7 @@
             "position": 3,
             "verbatim_sha1": "64891df2892e5d13779d621dcb3221fe8d74caaa"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 8,
             "unit": "week",
@@ -6102,7 +5743,7 @@
             "position": 3,
             "verbatim_sha1": "64891df2892e5d13779d621dcb3221fe8d74caaa"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 8,
             "unit": "week",
@@ -6130,7 +5771,7 @@
             "position": 3,
             "verbatim_sha1": "64891df2892e5d13779d621dcb3221fe8d74caaa"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 8,
             "unit": "week",
@@ -6158,7 +5799,7 @@
             "position": 3,
             "verbatim_sha1": "64891df2892e5d13779d621dcb3221fe8d74caaa"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -6186,7 +5827,7 @@
             "position": 3,
             "verbatim_sha1": "64891df2892e5d13779d621dcb3221fe8d74caaa"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -6214,7 +5855,7 @@
             "position": 3,
             "verbatim_sha1": "64891df2892e5d13779d621dcb3221fe8d74caaa"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -6242,7 +5883,7 @@
             "position": 3,
             "verbatim_sha1": "64891df2892e5d13779d621dcb3221fe8d74caaa"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -6270,7 +5911,7 @@
             "position": 4,
             "verbatim_sha1": "01e2b774e4f55dd70f60e63c5ddf8fdae7b5d9f7"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 2,
             "unit": "week",
@@ -6298,7 +5939,7 @@
             "position": 4,
             "verbatim_sha1": "01e2b774e4f55dd70f60e63c5ddf8fdae7b5d9f7"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 2,
             "unit": "week",
@@ -6326,7 +5967,7 @@
             "position": 4,
             "verbatim_sha1": "01e2b774e4f55dd70f60e63c5ddf8fdae7b5d9f7"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 2,
             "unit": "week",
@@ -6354,7 +5995,7 @@
             "position": 4,
             "verbatim_sha1": "01e2b774e4f55dd70f60e63c5ddf8fdae7b5d9f7"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 2,
             "unit": "week",
@@ -6382,7 +6023,7 @@
             "position": 4,
             "verbatim_sha1": "01e2b774e4f55dd70f60e63c5ddf8fdae7b5d9f7"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 4,
             "unit": "week",
@@ -6410,7 +6051,7 @@
             "position": 4,
             "verbatim_sha1": "01e2b774e4f55dd70f60e63c5ddf8fdae7b5d9f7"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 4,
             "unit": "week",
@@ -6438,7 +6079,7 @@
             "position": 4,
             "verbatim_sha1": "01e2b774e4f55dd70f60e63c5ddf8fdae7b5d9f7"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 4,
             "unit": "week",
@@ -6466,7 +6107,7 @@
             "position": 4,
             "verbatim_sha1": "01e2b774e4f55dd70f60e63c5ddf8fdae7b5d9f7"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 4,
             "unit": "week",
@@ -6494,7 +6135,7 @@
             "position": 4,
             "verbatim_sha1": "01e2b774e4f55dd70f60e63c5ddf8fdae7b5d9f7"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 8,
             "unit": "week",
@@ -6522,7 +6163,7 @@
             "position": 4,
             "verbatim_sha1": "01e2b774e4f55dd70f60e63c5ddf8fdae7b5d9f7"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 8,
             "unit": "week",
@@ -6550,7 +6191,7 @@
             "position": 4,
             "verbatim_sha1": "01e2b774e4f55dd70f60e63c5ddf8fdae7b5d9f7"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 8,
             "unit": "week",
@@ -6578,7 +6219,7 @@
             "position": 4,
             "verbatim_sha1": "01e2b774e4f55dd70f60e63c5ddf8fdae7b5d9f7"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 8,
             "unit": "week",
@@ -6606,7 +6247,7 @@
             "position": 4,
             "verbatim_sha1": "01e2b774e4f55dd70f60e63c5ddf8fdae7b5d9f7"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -6634,7 +6275,7 @@
             "position": 4,
             "verbatim_sha1": "01e2b774e4f55dd70f60e63c5ddf8fdae7b5d9f7"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -6662,7 +6303,7 @@
             "position": 4,
             "verbatim_sha1": "01e2b774e4f55dd70f60e63c5ddf8fdae7b5d9f7"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -6690,7 +6331,7 @@
             "position": 4,
             "verbatim_sha1": "01e2b774e4f55dd70f60e63c5ddf8fdae7b5d9f7"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -6718,7 +6359,7 @@
             "position": 4,
             "verbatim_sha1": "01e2b774e4f55dd70f60e63c5ddf8fdae7b5d9f7"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -6746,7 +6387,7 @@
             "position": 4,
             "verbatim_sha1": "01e2b774e4f55dd70f60e63c5ddf8fdae7b5d9f7"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -6774,7 +6415,7 @@
             "position": 4,
             "verbatim_sha1": "01e2b774e4f55dd70f60e63c5ddf8fdae7b5d9f7"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -6802,7 +6443,7 @@
             "position": 4,
             "verbatim_sha1": "01e2b774e4f55dd70f60e63c5ddf8fdae7b5d9f7"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -6830,7 +6471,7 @@
             "position": 5,
             "verbatim_sha1": "ccd021fbd10020acc32a2dc12e9783539eb88c57"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 2,
             "unit": "week",
@@ -6858,7 +6499,7 @@
             "position": 5,
             "verbatim_sha1": "ccd021fbd10020acc32a2dc12e9783539eb88c57"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 2,
             "unit": "week",
@@ -6886,7 +6527,7 @@
             "position": 5,
             "verbatim_sha1": "ccd021fbd10020acc32a2dc12e9783539eb88c57"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 2,
             "unit": "week",
@@ -6914,7 +6555,7 @@
             "position": 5,
             "verbatim_sha1": "ccd021fbd10020acc32a2dc12e9783539eb88c57"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 2,
             "unit": "week",
@@ -6942,7 +6583,7 @@
             "position": 5,
             "verbatim_sha1": "ccd021fbd10020acc32a2dc12e9783539eb88c57"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 4,
             "unit": "week",
@@ -6970,7 +6611,7 @@
             "position": 5,
             "verbatim_sha1": "ccd021fbd10020acc32a2dc12e9783539eb88c57"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 4,
             "unit": "week",
@@ -6998,7 +6639,7 @@
             "position": 5,
             "verbatim_sha1": "ccd021fbd10020acc32a2dc12e9783539eb88c57"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 4,
             "unit": "week",
@@ -7026,7 +6667,7 @@
             "position": 5,
             "verbatim_sha1": "ccd021fbd10020acc32a2dc12e9783539eb88c57"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 4,
             "unit": "week",
@@ -7054,7 +6695,7 @@
             "position": 5,
             "verbatim_sha1": "ccd021fbd10020acc32a2dc12e9783539eb88c57"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 8,
             "unit": "week",
@@ -7082,7 +6723,7 @@
             "position": 5,
             "verbatim_sha1": "ccd021fbd10020acc32a2dc12e9783539eb88c57"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 8,
             "unit": "week",
@@ -7110,7 +6751,7 @@
             "position": 5,
             "verbatim_sha1": "ccd021fbd10020acc32a2dc12e9783539eb88c57"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 8,
             "unit": "week",
@@ -7138,7 +6779,7 @@
             "position": 5,
             "verbatim_sha1": "ccd021fbd10020acc32a2dc12e9783539eb88c57"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 8,
             "unit": "week",
@@ -7166,7 +6807,7 @@
             "position": 5,
             "verbatim_sha1": "ccd021fbd10020acc32a2dc12e9783539eb88c57"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -7194,7 +6835,7 @@
             "position": 5,
             "verbatim_sha1": "ccd021fbd10020acc32a2dc12e9783539eb88c57"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -7222,7 +6863,7 @@
             "position": 5,
             "verbatim_sha1": "ccd021fbd10020acc32a2dc12e9783539eb88c57"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -7250,7 +6891,7 @@
             "position": 5,
             "verbatim_sha1": "ccd021fbd10020acc32a2dc12e9783539eb88c57"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -7278,7 +6919,7 @@
             "position": 5,
             "verbatim_sha1": "ccd021fbd10020acc32a2dc12e9783539eb88c57"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -7306,7 +6947,7 @@
             "position": 5,
             "verbatim_sha1": "ccd021fbd10020acc32a2dc12e9783539eb88c57"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -7334,7 +6975,7 @@
             "position": 5,
             "verbatim_sha1": "ccd021fbd10020acc32a2dc12e9783539eb88c57"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -7362,7 +7003,7 @@
             "position": 5,
             "verbatim_sha1": "ccd021fbd10020acc32a2dc12e9783539eb88c57"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -7390,7 +7031,7 @@
             "position": 6,
             "verbatim_sha1": "b6c0e75a893caf9df210527691a11efb156cf3ed"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 2,
             "unit": "week",
@@ -7418,7 +7059,7 @@
             "position": 6,
             "verbatim_sha1": "b6c0e75a893caf9df210527691a11efb156cf3ed"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 2,
             "unit": "week",
@@ -7446,7 +7087,7 @@
             "position": 6,
             "verbatim_sha1": "b6c0e75a893caf9df210527691a11efb156cf3ed"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 2,
             "unit": "week",
@@ -7474,7 +7115,7 @@
             "position": 6,
             "verbatim_sha1": "b6c0e75a893caf9df210527691a11efb156cf3ed"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 2,
             "unit": "week",
@@ -7502,7 +7143,7 @@
             "position": 6,
             "verbatim_sha1": "b6c0e75a893caf9df210527691a11efb156cf3ed"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 4,
             "unit": "week",
@@ -7530,7 +7171,7 @@
             "position": 6,
             "verbatim_sha1": "b6c0e75a893caf9df210527691a11efb156cf3ed"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 4,
             "unit": "week",
@@ -7558,7 +7199,7 @@
             "position": 6,
             "verbatim_sha1": "b6c0e75a893caf9df210527691a11efb156cf3ed"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 4,
             "unit": "week",
@@ -7586,7 +7227,7 @@
             "position": 6,
             "verbatim_sha1": "b6c0e75a893caf9df210527691a11efb156cf3ed"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 4,
             "unit": "week",
@@ -7614,7 +7255,7 @@
             "position": 6,
             "verbatim_sha1": "b6c0e75a893caf9df210527691a11efb156cf3ed"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 8,
             "unit": "week",
@@ -7642,7 +7283,7 @@
             "position": 6,
             "verbatim_sha1": "b6c0e75a893caf9df210527691a11efb156cf3ed"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 8,
             "unit": "week",
@@ -7670,7 +7311,7 @@
             "position": 6,
             "verbatim_sha1": "b6c0e75a893caf9df210527691a11efb156cf3ed"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 8,
             "unit": "week",
@@ -7698,7 +7339,7 @@
             "position": 6,
             "verbatim_sha1": "b6c0e75a893caf9df210527691a11efb156cf3ed"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 8,
             "unit": "week",
@@ -7726,7 +7367,7 @@
             "position": 6,
             "verbatim_sha1": "b6c0e75a893caf9df210527691a11efb156cf3ed"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -7754,7 +7395,7 @@
             "position": 6,
             "verbatim_sha1": "b6c0e75a893caf9df210527691a11efb156cf3ed"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -7782,7 +7423,7 @@
             "position": 6,
             "verbatim_sha1": "b6c0e75a893caf9df210527691a11efb156cf3ed"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -7810,7 +7451,7 @@
             "position": 6,
             "verbatim_sha1": "b6c0e75a893caf9df210527691a11efb156cf3ed"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -7838,7 +7479,7 @@
             "position": 6,
             "verbatim_sha1": "b6c0e75a893caf9df210527691a11efb156cf3ed"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -7866,7 +7507,7 @@
             "position": 6,
             "verbatim_sha1": "b6c0e75a893caf9df210527691a11efb156cf3ed"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -7894,7 +7535,7 @@
             "position": 6,
             "verbatim_sha1": "b6c0e75a893caf9df210527691a11efb156cf3ed"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -7922,7 +7563,7 @@
             "position": 6,
             "verbatim_sha1": "b6c0e75a893caf9df210527691a11efb156cf3ed"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -7950,7 +7591,7 @@
             "position": 7,
             "verbatim_sha1": "9a0a30b00672b3feab0a1fcb28beb716873a78b0"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": null,
           "analysis_population": "full_analysis_set",
           "study_period": null,
@@ -7974,7 +7615,7 @@
             "position": 7,
             "verbatim_sha1": "9a0a30b00672b3feab0a1fcb28beb716873a78b0"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": null,
           "analysis_population": "full_analysis_set",
           "study_period": null,
@@ -7998,7 +7639,7 @@
             "position": 7,
             "verbatim_sha1": "9a0a30b00672b3feab0a1fcb28beb716873a78b0"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": null,
           "analysis_population": "full_analysis_set",
           "study_period": null,
@@ -8022,7 +7663,7 @@
             "position": 8,
             "verbatim_sha1": "8656f527957e012eebab2c0ceb161f8749fdb063"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 2,
             "unit": "week",
@@ -8050,7 +7691,7 @@
             "position": 8,
             "verbatim_sha1": "8656f527957e012eebab2c0ceb161f8749fdb063"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 2,
             "unit": "week",
@@ -8078,7 +7719,7 @@
             "position": 8,
             "verbatim_sha1": "8656f527957e012eebab2c0ceb161f8749fdb063"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 2,
             "unit": "week",
@@ -8106,7 +7747,7 @@
             "position": 8,
             "verbatim_sha1": "8656f527957e012eebab2c0ceb161f8749fdb063"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 2,
             "unit": "week",
@@ -8134,7 +7775,7 @@
             "position": 8,
             "verbatim_sha1": "8656f527957e012eebab2c0ceb161f8749fdb063"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 4,
             "unit": "week",
@@ -8162,7 +7803,7 @@
             "position": 8,
             "verbatim_sha1": "8656f527957e012eebab2c0ceb161f8749fdb063"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 4,
             "unit": "week",
@@ -8190,7 +7831,7 @@
             "position": 8,
             "verbatim_sha1": "8656f527957e012eebab2c0ceb161f8749fdb063"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 4,
             "unit": "week",
@@ -8218,7 +7859,7 @@
             "position": 8,
             "verbatim_sha1": "8656f527957e012eebab2c0ceb161f8749fdb063"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 4,
             "unit": "week",
@@ -8246,7 +7887,7 @@
             "position": 8,
             "verbatim_sha1": "8656f527957e012eebab2c0ceb161f8749fdb063"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 8,
             "unit": "week",
@@ -8274,7 +7915,7 @@
             "position": 8,
             "verbatim_sha1": "8656f527957e012eebab2c0ceb161f8749fdb063"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 8,
             "unit": "week",
@@ -8302,7 +7943,7 @@
             "position": 8,
             "verbatim_sha1": "8656f527957e012eebab2c0ceb161f8749fdb063"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 8,
             "unit": "week",
@@ -8330,7 +7971,7 @@
             "position": 8,
             "verbatim_sha1": "8656f527957e012eebab2c0ceb161f8749fdb063"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 8,
             "unit": "week",
@@ -8358,7 +7999,7 @@
             "position": 8,
             "verbatim_sha1": "8656f527957e012eebab2c0ceb161f8749fdb063"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -8386,7 +8027,7 @@
             "position": 8,
             "verbatim_sha1": "8656f527957e012eebab2c0ceb161f8749fdb063"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -8414,7 +8055,7 @@
             "position": 8,
             "verbatim_sha1": "8656f527957e012eebab2c0ceb161f8749fdb063"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -8442,7 +8083,7 @@
             "position": 8,
             "verbatim_sha1": "8656f527957e012eebab2c0ceb161f8749fdb063"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -8470,7 +8111,7 @@
             "position": 8,
             "verbatim_sha1": "8656f527957e012eebab2c0ceb161f8749fdb063"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -8498,7 +8139,7 @@
             "position": 8,
             "verbatim_sha1": "8656f527957e012eebab2c0ceb161f8749fdb063"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -8526,7 +8167,7 @@
             "position": 8,
             "verbatim_sha1": "8656f527957e012eebab2c0ceb161f8749fdb063"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -8554,7 +8195,7 @@
             "position": 8,
             "verbatim_sha1": "8656f527957e012eebab2c0ceb161f8749fdb063"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -8582,7 +8223,7 @@
             "position": 9,
             "verbatim_sha1": "05a492b9d70fe174a8602a43a07a5ab4d6ee1ed7"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "timepoint": {
             "value": 18,
             "unit": "week",
@@ -8610,7 +8251,7 @@
             "position": 9,
             "verbatim_sha1": "05a492b9d70fe174a8602a43a07a5ab4d6ee1ed7"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#2",
           "timepoint": {
             "value": 18,
             "unit": "week",
@@ -8638,7 +8279,7 @@
             "position": 9,
             "verbatim_sha1": "05a492b9d70fe174a8602a43a07a5ab4d6ee1ed7"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#2",
           "timepoint": {
             "value": 18,
             "unit": "week",
@@ -8666,7 +8307,7 @@
             "position": 9,
             "verbatim_sha1": "05a492b9d70fe174a8602a43a07a5ab4d6ee1ed7"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#2",
           "timepoint": {
             "value": 18,
             "unit": "week",
@@ -8722,7 +8363,7 @@
             "position": 9,
             "verbatim_sha1": "05a492b9d70fe174a8602a43a07a5ab4d6ee1ed7"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "timepoint": {
             "value": 20,
             "unit": "week",
@@ -8750,7 +8391,7 @@
             "position": 9,
             "verbatim_sha1": "05a492b9d70fe174a8602a43a07a5ab4d6ee1ed7"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#2",
           "timepoint": {
             "value": 20,
             "unit": "week",
@@ -8778,7 +8419,7 @@
             "position": 9,
             "verbatim_sha1": "05a492b9d70fe174a8602a43a07a5ab4d6ee1ed7"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#2",
           "timepoint": {
             "value": 20,
             "unit": "week",
@@ -8806,7 +8447,7 @@
             "position": 9,
             "verbatim_sha1": "05a492b9d70fe174a8602a43a07a5ab4d6ee1ed7"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#2",
           "timepoint": {
             "value": 20,
             "unit": "week",
@@ -8862,7 +8503,7 @@
             "position": 10,
             "verbatim_sha1": "fe7f0f95a230f420529f1b87ef5c761c5c1bd7a2"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 2,
             "unit": "week",
@@ -8890,7 +8531,7 @@
             "position": 10,
             "verbatim_sha1": "fe7f0f95a230f420529f1b87ef5c761c5c1bd7a2"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 2,
             "unit": "week",
@@ -8918,7 +8559,7 @@
             "position": 10,
             "verbatim_sha1": "fe7f0f95a230f420529f1b87ef5c761c5c1bd7a2"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 2,
             "unit": "week",
@@ -8946,7 +8587,7 @@
             "position": 10,
             "verbatim_sha1": "fe7f0f95a230f420529f1b87ef5c761c5c1bd7a2"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 2,
             "unit": "week",
@@ -8974,7 +8615,7 @@
             "position": 10,
             "verbatim_sha1": "fe7f0f95a230f420529f1b87ef5c761c5c1bd7a2"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 4,
             "unit": "week",
@@ -9002,7 +8643,7 @@
             "position": 10,
             "verbatim_sha1": "fe7f0f95a230f420529f1b87ef5c761c5c1bd7a2"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 4,
             "unit": "week",
@@ -9030,7 +8671,7 @@
             "position": 10,
             "verbatim_sha1": "fe7f0f95a230f420529f1b87ef5c761c5c1bd7a2"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 4,
             "unit": "week",
@@ -9058,7 +8699,7 @@
             "position": 10,
             "verbatim_sha1": "fe7f0f95a230f420529f1b87ef5c761c5c1bd7a2"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 4,
             "unit": "week",
@@ -9086,7 +8727,7 @@
             "position": 10,
             "verbatim_sha1": "fe7f0f95a230f420529f1b87ef5c761c5c1bd7a2"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 8,
             "unit": "week",
@@ -9114,7 +8755,7 @@
             "position": 10,
             "verbatim_sha1": "fe7f0f95a230f420529f1b87ef5c761c5c1bd7a2"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 8,
             "unit": "week",
@@ -9142,7 +8783,7 @@
             "position": 10,
             "verbatim_sha1": "fe7f0f95a230f420529f1b87ef5c761c5c1bd7a2"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 8,
             "unit": "week",
@@ -9170,7 +8811,7 @@
             "position": 10,
             "verbatim_sha1": "fe7f0f95a230f420529f1b87ef5c761c5c1bd7a2"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 8,
             "unit": "week",
@@ -9198,7 +8839,7 @@
             "position": 10,
             "verbatim_sha1": "fe7f0f95a230f420529f1b87ef5c761c5c1bd7a2"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -9226,7 +8867,7 @@
             "position": 10,
             "verbatim_sha1": "fe7f0f95a230f420529f1b87ef5c761c5c1bd7a2"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -9254,7 +8895,7 @@
             "position": 10,
             "verbatim_sha1": "fe7f0f95a230f420529f1b87ef5c761c5c1bd7a2"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -9282,7 +8923,7 @@
             "position": 10,
             "verbatim_sha1": "fe7f0f95a230f420529f1b87ef5c761c5c1bd7a2"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -9310,7 +8951,7 @@
             "position": 10,
             "verbatim_sha1": "fe7f0f95a230f420529f1b87ef5c761c5c1bd7a2"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -9338,7 +8979,7 @@
             "position": 10,
             "verbatim_sha1": "fe7f0f95a230f420529f1b87ef5c761c5c1bd7a2"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -9366,7 +9007,7 @@
             "position": 10,
             "verbatim_sha1": "fe7f0f95a230f420529f1b87ef5c761c5c1bd7a2"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -9394,7 +9035,7 @@
             "position": 10,
             "verbatim_sha1": "fe7f0f95a230f420529f1b87ef5c761c5c1bd7a2"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -9422,7 +9063,7 @@
             "position": 11,
             "verbatim_sha1": "99df277711e169b33f02cccee8b98577668b3e51"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 2,
             "unit": "week",
@@ -9450,7 +9091,7 @@
             "position": 11,
             "verbatim_sha1": "99df277711e169b33f02cccee8b98577668b3e51"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 2,
             "unit": "week",
@@ -9478,7 +9119,7 @@
             "position": 11,
             "verbatim_sha1": "99df277711e169b33f02cccee8b98577668b3e51"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 2,
             "unit": "week",
@@ -9506,7 +9147,7 @@
             "position": 11,
             "verbatim_sha1": "99df277711e169b33f02cccee8b98577668b3e51"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 2,
             "unit": "week",
@@ -9534,7 +9175,7 @@
             "position": 11,
             "verbatim_sha1": "99df277711e169b33f02cccee8b98577668b3e51"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -9562,7 +9203,7 @@
             "position": 11,
             "verbatim_sha1": "99df277711e169b33f02cccee8b98577668b3e51"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -9590,7 +9231,7 @@
             "position": 11,
             "verbatim_sha1": "99df277711e169b33f02cccee8b98577668b3e51"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -9618,7 +9259,7 @@
             "position": 11,
             "verbatim_sha1": "99df277711e169b33f02cccee8b98577668b3e51"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -9646,7 +9287,7 @@
             "position": 11,
             "verbatim_sha1": "99df277711e169b33f02cccee8b98577668b3e51"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -9674,7 +9315,7 @@
             "position": 11,
             "verbatim_sha1": "99df277711e169b33f02cccee8b98577668b3e51"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -9702,7 +9343,7 @@
             "position": 11,
             "verbatim_sha1": "99df277711e169b33f02cccee8b98577668b3e51"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -9730,7 +9371,7 @@
             "position": 11,
             "verbatim_sha1": "99df277711e169b33f02cccee8b98577668b3e51"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -9758,7 +9399,7 @@
             "position": 12,
             "verbatim_sha1": "c7d8fc294d6abf6f8143d39d47473b62093cdd2d"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "timepoint": {
             "value": 20,
             "unit": "week",
@@ -9786,7 +9427,7 @@
             "position": 12,
             "verbatim_sha1": "c7d8fc294d6abf6f8143d39d47473b62093cdd2d"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#2",
           "timepoint": {
             "value": 20,
             "unit": "week",
@@ -9814,7 +9455,7 @@
             "position": 12,
             "verbatim_sha1": "c7d8fc294d6abf6f8143d39d47473b62093cdd2d"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#2",
           "timepoint": {
             "value": 20,
             "unit": "week",
@@ -9842,7 +9483,7 @@
             "position": 12,
             "verbatim_sha1": "c7d8fc294d6abf6f8143d39d47473b62093cdd2d"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#2",
           "timepoint": {
             "value": 20,
             "unit": "week",
@@ -9898,7 +9539,7 @@
             "position": 13,
             "verbatim_sha1": "5ed779bdce12c169e5416f4c20b5538e417d27bb"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -9926,7 +9567,7 @@
             "position": 13,
             "verbatim_sha1": "5ed779bdce12c169e5416f4c20b5538e417d27bb"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -9954,7 +9595,7 @@
             "position": 13,
             "verbatim_sha1": "5ed779bdce12c169e5416f4c20b5538e417d27bb"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -9982,7 +9623,7 @@
             "position": 13,
             "verbatim_sha1": "5ed779bdce12c169e5416f4c20b5538e417d27bb"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -10010,7 +9651,7 @@
             "position": 13,
             "verbatim_sha1": "5ed779bdce12c169e5416f4c20b5538e417d27bb"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -10038,7 +9679,7 @@
             "position": 13,
             "verbatim_sha1": "5ed779bdce12c169e5416f4c20b5538e417d27bb"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -10066,7 +9707,7 @@
             "position": 13,
             "verbatim_sha1": "5ed779bdce12c169e5416f4c20b5538e417d27bb"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -10094,7 +9735,7 @@
             "position": 13,
             "verbatim_sha1": "5ed779bdce12c169e5416f4c20b5538e417d27bb"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -10122,7 +9763,7 @@
             "position": 14,
             "verbatim_sha1": "c0ba79cf89c3848324b8f5265cf640a778649f88"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -10150,7 +9791,7 @@
             "position": 14,
             "verbatim_sha1": "c0ba79cf89c3848324b8f5265cf640a778649f88"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -10178,7 +9819,7 @@
             "position": 14,
             "verbatim_sha1": "c0ba79cf89c3848324b8f5265cf640a778649f88"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -10206,7 +9847,7 @@
             "position": 14,
             "verbatim_sha1": "c0ba79cf89c3848324b8f5265cf640a778649f88"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -10234,7 +9875,7 @@
             "position": 14,
             "verbatim_sha1": "c0ba79cf89c3848324b8f5265cf640a778649f88"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -10262,7 +9903,7 @@
             "position": 14,
             "verbatim_sha1": "c0ba79cf89c3848324b8f5265cf640a778649f88"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -10290,7 +9931,7 @@
             "position": 14,
             "verbatim_sha1": "c0ba79cf89c3848324b8f5265cf640a778649f88"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -10318,7 +9959,7 @@
             "position": 14,
             "verbatim_sha1": "c0ba79cf89c3848324b8f5265cf640a778649f88"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -10346,7 +9987,7 @@
             "position": 15,
             "verbatim_sha1": "e26d70efe3ba1056db807d3acc535b583ac715fc"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "timepoint": {
             "value": 20,
             "unit": "week",
@@ -10374,7 +10015,7 @@
             "position": 15,
             "verbatim_sha1": "e26d70efe3ba1056db807d3acc535b583ac715fc"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#2",
           "timepoint": {
             "value": 20,
             "unit": "week",
@@ -10402,7 +10043,7 @@
             "position": 15,
             "verbatim_sha1": "e26d70efe3ba1056db807d3acc535b583ac715fc"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#2",
           "timepoint": {
             "value": 20,
             "unit": "week",
@@ -10430,7 +10071,7 @@
             "position": 15,
             "verbatim_sha1": "e26d70efe3ba1056db807d3acc535b583ac715fc"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#2",
           "timepoint": {
             "value": 20,
             "unit": "week",
@@ -10486,7 +10127,7 @@
             "position": 16,
             "verbatim_sha1": "65df01b7768088bf55226caea3a390075f046bf2"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "timepoint": {
             "value": 20,
             "unit": "week",
@@ -10514,7 +10155,7 @@
             "position": 16,
             "verbatim_sha1": "65df01b7768088bf55226caea3a390075f046bf2"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#2",
           "timepoint": {
             "value": 20,
             "unit": "week",
@@ -10542,7 +10183,7 @@
             "position": 16,
             "verbatim_sha1": "65df01b7768088bf55226caea3a390075f046bf2"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#2",
           "timepoint": {
             "value": 20,
             "unit": "week",
@@ -10570,7 +10211,7 @@
             "position": 16,
             "verbatim_sha1": "65df01b7768088bf55226caea3a390075f046bf2"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#2",
           "timepoint": {
             "value": 20,
             "unit": "week",
@@ -10626,7 +10267,7 @@
             "position": 17,
             "verbatim_sha1": "fccac027bb27474f35df91801c5473fe09027383"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -10654,7 +10295,7 @@
             "position": 17,
             "verbatim_sha1": "fccac027bb27474f35df91801c5473fe09027383"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -10682,7 +10323,7 @@
             "position": 17,
             "verbatim_sha1": "fccac027bb27474f35df91801c5473fe09027383"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -10710,7 +10351,7 @@
             "position": 17,
             "verbatim_sha1": "fccac027bb27474f35df91801c5473fe09027383"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -10738,7 +10379,7 @@
             "position": 17,
             "verbatim_sha1": "fccac027bb27474f35df91801c5473fe09027383"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -10766,7 +10407,7 @@
             "position": 17,
             "verbatim_sha1": "fccac027bb27474f35df91801c5473fe09027383"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -10794,7 +10435,7 @@
             "position": 17,
             "verbatim_sha1": "fccac027bb27474f35df91801c5473fe09027383"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -10822,7 +10463,7 @@
             "position": 17,
             "verbatim_sha1": "fccac027bb27474f35df91801c5473fe09027383"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -10850,7 +10491,7 @@
             "position": 18,
             "verbatim_sha1": "1a3c838951fb4dc1ea1360ffae57ad9fe7da2546"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -10878,7 +10519,7 @@
             "position": 18,
             "verbatim_sha1": "1a3c838951fb4dc1ea1360ffae57ad9fe7da2546"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -10906,7 +10547,7 @@
             "position": 18,
             "verbatim_sha1": "1a3c838951fb4dc1ea1360ffae57ad9fe7da2546"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -10934,7 +10575,7 @@
             "position": 18,
             "verbatim_sha1": "1a3c838951fb4dc1ea1360ffae57ad9fe7da2546"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -10962,7 +10603,7 @@
             "position": 18,
             "verbatim_sha1": "1a3c838951fb4dc1ea1360ffae57ad9fe7da2546"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -10990,7 +10631,7 @@
             "position": 18,
             "verbatim_sha1": "1a3c838951fb4dc1ea1360ffae57ad9fe7da2546"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -11018,7 +10659,7 @@
             "position": 18,
             "verbatim_sha1": "1a3c838951fb4dc1ea1360ffae57ad9fe7da2546"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -11046,7 +10687,7 @@
             "position": 18,
             "verbatim_sha1": "1a3c838951fb4dc1ea1360ffae57ad9fe7da2546"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -11074,7 +10715,7 @@
             "position": 19,
             "verbatim_sha1": "48b706fed760851eca4ef01add2912680d2736b9"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "timepoint": {
             "value": 20,
             "unit": "week",
@@ -11102,7 +10743,7 @@
             "position": 19,
             "verbatim_sha1": "48b706fed760851eca4ef01add2912680d2736b9"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#2",
           "timepoint": {
             "value": 20,
             "unit": "week",
@@ -11130,7 +10771,7 @@
             "position": 19,
             "verbatim_sha1": "48b706fed760851eca4ef01add2912680d2736b9"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#2",
           "timepoint": {
             "value": 20,
             "unit": "week",
@@ -11158,7 +10799,7 @@
             "position": 19,
             "verbatim_sha1": "48b706fed760851eca4ef01add2912680d2736b9"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#2",
           "timepoint": {
             "value": 20,
             "unit": "week",
@@ -11214,7 +10855,7 @@
             "position": 20,
             "verbatim_sha1": "1dac6849db6ba1fc532e5eb3dc072ccbaa14ca0d"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "timepoint": {
             "value": 20,
             "unit": "week",
@@ -11242,7 +10883,7 @@
             "position": 20,
             "verbatim_sha1": "1dac6849db6ba1fc532e5eb3dc072ccbaa14ca0d"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#2",
           "timepoint": {
             "value": 20,
             "unit": "week",
@@ -11270,7 +10911,7 @@
             "position": 20,
             "verbatim_sha1": "1dac6849db6ba1fc532e5eb3dc072ccbaa14ca0d"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#2",
           "timepoint": {
             "value": 20,
             "unit": "week",
@@ -11298,7 +10939,7 @@
             "position": 20,
             "verbatim_sha1": "1dac6849db6ba1fc532e5eb3dc072ccbaa14ca0d"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#2",
           "timepoint": {
             "value": 20,
             "unit": "week",
@@ -11354,7 +10995,7 @@
             "position": 21,
             "verbatim_sha1": "fe9c3e91f9a8c9150aafb4dde1bf0c712c01eb74"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -11382,7 +11023,7 @@
             "position": 21,
             "verbatim_sha1": "fe9c3e91f9a8c9150aafb4dde1bf0c712c01eb74"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -11410,7 +11051,7 @@
             "position": 21,
             "verbatim_sha1": "fe9c3e91f9a8c9150aafb4dde1bf0c712c01eb74"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -11438,7 +11079,7 @@
             "position": 21,
             "verbatim_sha1": "fe9c3e91f9a8c9150aafb4dde1bf0c712c01eb74"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -11466,7 +11107,7 @@
             "position": 21,
             "verbatim_sha1": "fe9c3e91f9a8c9150aafb4dde1bf0c712c01eb74"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -11494,7 +11135,7 @@
             "position": 21,
             "verbatim_sha1": "fe9c3e91f9a8c9150aafb4dde1bf0c712c01eb74"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -11522,7 +11163,7 @@
             "position": 21,
             "verbatim_sha1": "fe9c3e91f9a8c9150aafb4dde1bf0c712c01eb74"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -11550,7 +11191,7 @@
             "position": 21,
             "verbatim_sha1": "fe9c3e91f9a8c9150aafb4dde1bf0c712c01eb74"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -11578,7 +11219,7 @@
             "position": 22,
             "verbatim_sha1": "2e6735841a903920777899ce8c84bc18be7bb493"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "timepoint": {
             "value": 20,
             "unit": "week",
@@ -11606,7 +11247,7 @@
             "position": 22,
             "verbatim_sha1": "2e6735841a903920777899ce8c84bc18be7bb493"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#2",
           "timepoint": {
             "value": 20,
             "unit": "week",
@@ -11634,7 +11275,7 @@
             "position": 22,
             "verbatim_sha1": "2e6735841a903920777899ce8c84bc18be7bb493"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#2",
           "timepoint": {
             "value": 20,
             "unit": "week",
@@ -11662,7 +11303,7 @@
             "position": 22,
             "verbatim_sha1": "2e6735841a903920777899ce8c84bc18be7bb493"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#2",
           "timepoint": {
             "value": 20,
             "unit": "week",
@@ -11718,7 +11359,7 @@
             "position": 23,
             "verbatim_sha1": "660ec2ecf8449046fa85cc2cd7c7802a490305f4"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 1,
             "unit": "week",
@@ -11746,7 +11387,7 @@
             "position": 23,
             "verbatim_sha1": "660ec2ecf8449046fa85cc2cd7c7802a490305f4"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 1,
             "unit": "week",
@@ -11774,7 +11415,7 @@
             "position": 23,
             "verbatim_sha1": "660ec2ecf8449046fa85cc2cd7c7802a490305f4"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 1,
             "unit": "week",
@@ -11802,7 +11443,7 @@
             "position": 23,
             "verbatim_sha1": "660ec2ecf8449046fa85cc2cd7c7802a490305f4"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 1,
             "unit": "week",
@@ -11830,7 +11471,7 @@
             "position": 23,
             "verbatim_sha1": "660ec2ecf8449046fa85cc2cd7c7802a490305f4"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 2,
             "unit": "week",
@@ -11858,7 +11499,7 @@
             "position": 23,
             "verbatim_sha1": "660ec2ecf8449046fa85cc2cd7c7802a490305f4"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 2,
             "unit": "week",
@@ -11886,7 +11527,7 @@
             "position": 23,
             "verbatim_sha1": "660ec2ecf8449046fa85cc2cd7c7802a490305f4"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 2,
             "unit": "week",
@@ -11914,7 +11555,7 @@
             "position": 23,
             "verbatim_sha1": "660ec2ecf8449046fa85cc2cd7c7802a490305f4"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 2,
             "unit": "week",
@@ -11942,7 +11583,7 @@
             "position": 23,
             "verbatim_sha1": "660ec2ecf8449046fa85cc2cd7c7802a490305f4"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 3,
             "unit": "week",
@@ -11970,7 +11611,7 @@
             "position": 23,
             "verbatim_sha1": "660ec2ecf8449046fa85cc2cd7c7802a490305f4"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 3,
             "unit": "week",
@@ -11998,7 +11639,7 @@
             "position": 23,
             "verbatim_sha1": "660ec2ecf8449046fa85cc2cd7c7802a490305f4"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 3,
             "unit": "week",
@@ -12026,7 +11667,7 @@
             "position": 23,
             "verbatim_sha1": "660ec2ecf8449046fa85cc2cd7c7802a490305f4"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 3,
             "unit": "week",
@@ -12054,7 +11695,7 @@
             "position": 23,
             "verbatim_sha1": "660ec2ecf8449046fa85cc2cd7c7802a490305f4"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 4,
             "unit": "week",
@@ -12082,7 +11723,7 @@
             "position": 23,
             "verbatim_sha1": "660ec2ecf8449046fa85cc2cd7c7802a490305f4"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 4,
             "unit": "week",
@@ -12110,7 +11751,7 @@
             "position": 23,
             "verbatim_sha1": "660ec2ecf8449046fa85cc2cd7c7802a490305f4"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 4,
             "unit": "week",
@@ -12138,7 +11779,7 @@
             "position": 23,
             "verbatim_sha1": "660ec2ecf8449046fa85cc2cd7c7802a490305f4"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 4,
             "unit": "week",
@@ -12166,7 +11807,7 @@
             "position": 23,
             "verbatim_sha1": "660ec2ecf8449046fa85cc2cd7c7802a490305f4"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 5,
             "unit": "week",
@@ -12194,7 +11835,7 @@
             "position": 23,
             "verbatim_sha1": "660ec2ecf8449046fa85cc2cd7c7802a490305f4"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 5,
             "unit": "week",
@@ -12222,7 +11863,7 @@
             "position": 23,
             "verbatim_sha1": "660ec2ecf8449046fa85cc2cd7c7802a490305f4"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 5,
             "unit": "week",
@@ -12250,7 +11891,7 @@
             "position": 23,
             "verbatim_sha1": "660ec2ecf8449046fa85cc2cd7c7802a490305f4"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 5,
             "unit": "week",
@@ -12278,7 +11919,7 @@
             "position": 23,
             "verbatim_sha1": "660ec2ecf8449046fa85cc2cd7c7802a490305f4"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 6,
             "unit": "week",
@@ -12306,7 +11947,7 @@
             "position": 23,
             "verbatim_sha1": "660ec2ecf8449046fa85cc2cd7c7802a490305f4"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 6,
             "unit": "week",
@@ -12334,7 +11975,7 @@
             "position": 23,
             "verbatim_sha1": "660ec2ecf8449046fa85cc2cd7c7802a490305f4"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 6,
             "unit": "week",
@@ -12362,7 +12003,7 @@
             "position": 23,
             "verbatim_sha1": "660ec2ecf8449046fa85cc2cd7c7802a490305f4"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 6,
             "unit": "week",
@@ -12390,7 +12031,7 @@
             "position": 23,
             "verbatim_sha1": "660ec2ecf8449046fa85cc2cd7c7802a490305f4"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 7,
             "unit": "week",
@@ -12418,7 +12059,7 @@
             "position": 23,
             "verbatim_sha1": "660ec2ecf8449046fa85cc2cd7c7802a490305f4"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 7,
             "unit": "week",
@@ -12446,7 +12087,7 @@
             "position": 23,
             "verbatim_sha1": "660ec2ecf8449046fa85cc2cd7c7802a490305f4"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 7,
             "unit": "week",
@@ -12474,7 +12115,7 @@
             "position": 23,
             "verbatim_sha1": "660ec2ecf8449046fa85cc2cd7c7802a490305f4"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 7,
             "unit": "week",
@@ -12502,7 +12143,7 @@
             "position": 23,
             "verbatim_sha1": "660ec2ecf8449046fa85cc2cd7c7802a490305f4"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 8,
             "unit": "week",
@@ -12530,7 +12171,7 @@
             "position": 23,
             "verbatim_sha1": "660ec2ecf8449046fa85cc2cd7c7802a490305f4"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 8,
             "unit": "week",
@@ -12558,7 +12199,7 @@
             "position": 23,
             "verbatim_sha1": "660ec2ecf8449046fa85cc2cd7c7802a490305f4"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 8,
             "unit": "week",
@@ -12586,7 +12227,7 @@
             "position": 23,
             "verbatim_sha1": "660ec2ecf8449046fa85cc2cd7c7802a490305f4"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 8,
             "unit": "week",
@@ -12614,7 +12255,7 @@
             "position": 23,
             "verbatim_sha1": "660ec2ecf8449046fa85cc2cd7c7802a490305f4"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 9,
             "unit": "week",
@@ -12642,7 +12283,7 @@
             "position": 23,
             "verbatim_sha1": "660ec2ecf8449046fa85cc2cd7c7802a490305f4"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 9,
             "unit": "week",
@@ -12670,7 +12311,7 @@
             "position": 23,
             "verbatim_sha1": "660ec2ecf8449046fa85cc2cd7c7802a490305f4"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 9,
             "unit": "week",
@@ -12698,7 +12339,7 @@
             "position": 23,
             "verbatim_sha1": "660ec2ecf8449046fa85cc2cd7c7802a490305f4"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 9,
             "unit": "week",
@@ -12726,7 +12367,7 @@
             "position": 23,
             "verbatim_sha1": "660ec2ecf8449046fa85cc2cd7c7802a490305f4"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 10,
             "unit": "week",
@@ -12754,7 +12395,7 @@
             "position": 23,
             "verbatim_sha1": "660ec2ecf8449046fa85cc2cd7c7802a490305f4"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 10,
             "unit": "week",
@@ -12782,7 +12423,7 @@
             "position": 23,
             "verbatim_sha1": "660ec2ecf8449046fa85cc2cd7c7802a490305f4"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 10,
             "unit": "week",
@@ -12810,7 +12451,7 @@
             "position": 23,
             "verbatim_sha1": "660ec2ecf8449046fa85cc2cd7c7802a490305f4"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 10,
             "unit": "week",
@@ -12838,7 +12479,7 @@
             "position": 23,
             "verbatim_sha1": "660ec2ecf8449046fa85cc2cd7c7802a490305f4"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 11,
             "unit": "week",
@@ -12866,7 +12507,7 @@
             "position": 23,
             "verbatim_sha1": "660ec2ecf8449046fa85cc2cd7c7802a490305f4"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 11,
             "unit": "week",
@@ -12894,7 +12535,7 @@
             "position": 23,
             "verbatim_sha1": "660ec2ecf8449046fa85cc2cd7c7802a490305f4"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 11,
             "unit": "week",
@@ -12922,7 +12563,7 @@
             "position": 23,
             "verbatim_sha1": "660ec2ecf8449046fa85cc2cd7c7802a490305f4"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 11,
             "unit": "week",
@@ -12950,7 +12591,7 @@
             "position": 23,
             "verbatim_sha1": "660ec2ecf8449046fa85cc2cd7c7802a490305f4"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -12978,7 +12619,7 @@
             "position": 23,
             "verbatim_sha1": "660ec2ecf8449046fa85cc2cd7c7802a490305f4"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -13006,7 +12647,7 @@
             "position": 23,
             "verbatim_sha1": "660ec2ecf8449046fa85cc2cd7c7802a490305f4"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -13034,7 +12675,7 @@
             "position": 23,
             "verbatim_sha1": "660ec2ecf8449046fa85cc2cd7c7802a490305f4"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -13062,7 +12703,7 @@
             "position": 23,
             "verbatim_sha1": "660ec2ecf8449046fa85cc2cd7c7802a490305f4"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 13,
             "unit": "week",
@@ -13090,7 +12731,7 @@
             "position": 23,
             "verbatim_sha1": "660ec2ecf8449046fa85cc2cd7c7802a490305f4"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 13,
             "unit": "week",
@@ -13118,7 +12759,7 @@
             "position": 23,
             "verbatim_sha1": "660ec2ecf8449046fa85cc2cd7c7802a490305f4"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 13,
             "unit": "week",
@@ -13146,7 +12787,7 @@
             "position": 23,
             "verbatim_sha1": "660ec2ecf8449046fa85cc2cd7c7802a490305f4"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 13,
             "unit": "week",
@@ -13174,7 +12815,7 @@
             "position": 23,
             "verbatim_sha1": "660ec2ecf8449046fa85cc2cd7c7802a490305f4"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 14,
             "unit": "week",
@@ -13202,7 +12843,7 @@
             "position": 23,
             "verbatim_sha1": "660ec2ecf8449046fa85cc2cd7c7802a490305f4"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 14,
             "unit": "week",
@@ -13230,7 +12871,7 @@
             "position": 23,
             "verbatim_sha1": "660ec2ecf8449046fa85cc2cd7c7802a490305f4"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 14,
             "unit": "week",
@@ -13258,7 +12899,7 @@
             "position": 23,
             "verbatim_sha1": "660ec2ecf8449046fa85cc2cd7c7802a490305f4"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 14,
             "unit": "week",
@@ -13286,7 +12927,7 @@
             "position": 23,
             "verbatim_sha1": "660ec2ecf8449046fa85cc2cd7c7802a490305f4"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 15,
             "unit": "week",
@@ -13314,7 +12955,7 @@
             "position": 23,
             "verbatim_sha1": "660ec2ecf8449046fa85cc2cd7c7802a490305f4"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 15,
             "unit": "week",
@@ -13342,7 +12983,7 @@
             "position": 23,
             "verbatim_sha1": "660ec2ecf8449046fa85cc2cd7c7802a490305f4"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 15,
             "unit": "week",
@@ -13370,7 +13011,7 @@
             "position": 23,
             "verbatim_sha1": "660ec2ecf8449046fa85cc2cd7c7802a490305f4"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 15,
             "unit": "week",
@@ -13398,7 +13039,7 @@
             "position": 23,
             "verbatim_sha1": "660ec2ecf8449046fa85cc2cd7c7802a490305f4"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -13426,7 +13067,7 @@
             "position": 23,
             "verbatim_sha1": "660ec2ecf8449046fa85cc2cd7c7802a490305f4"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -13454,7 +13095,7 @@
             "position": 23,
             "verbatim_sha1": "660ec2ecf8449046fa85cc2cd7c7802a490305f4"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -13482,7 +13123,7 @@
             "position": 23,
             "verbatim_sha1": "660ec2ecf8449046fa85cc2cd7c7802a490305f4"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -13510,7 +13151,7 @@
             "position": 24,
             "verbatim_sha1": "eff042bc2a1cf50ebb765afc02cc9749db1a4744"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "timepoint": {
             "value": 18,
             "unit": "week",
@@ -13538,7 +13179,7 @@
             "position": 24,
             "verbatim_sha1": "eff042bc2a1cf50ebb765afc02cc9749db1a4744"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#2",
           "timepoint": {
             "value": 18,
             "unit": "week",
@@ -13566,7 +13207,7 @@
             "position": 24,
             "verbatim_sha1": "eff042bc2a1cf50ebb765afc02cc9749db1a4744"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#2",
           "timepoint": {
             "value": 18,
             "unit": "week",
@@ -13594,7 +13235,7 @@
             "position": 24,
             "verbatim_sha1": "eff042bc2a1cf50ebb765afc02cc9749db1a4744"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#2",
           "timepoint": {
             "value": 18,
             "unit": "week",
@@ -13650,7 +13291,7 @@
             "position": 24,
             "verbatim_sha1": "eff042bc2a1cf50ebb765afc02cc9749db1a4744"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "timepoint": {
             "value": 20,
             "unit": "week",
@@ -13678,7 +13319,7 @@
             "position": 24,
             "verbatim_sha1": "eff042bc2a1cf50ebb765afc02cc9749db1a4744"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#2",
           "timepoint": {
             "value": 20,
             "unit": "week",
@@ -13706,7 +13347,7 @@
             "position": 24,
             "verbatim_sha1": "eff042bc2a1cf50ebb765afc02cc9749db1a4744"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#2",
           "timepoint": {
             "value": 20,
             "unit": "week",
@@ -13734,7 +13375,7 @@
             "position": 24,
             "verbatim_sha1": "eff042bc2a1cf50ebb765afc02cc9749db1a4744"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#2",
           "timepoint": {
             "value": 20,
             "unit": "week",
@@ -13790,7 +13431,7 @@
             "position": 25,
             "verbatim_sha1": "451d004fba37c4f936f7aa1f8c7ad93f90cd95da"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 2,
             "unit": "week",
@@ -13818,7 +13459,7 @@
             "position": 25,
             "verbatim_sha1": "451d004fba37c4f936f7aa1f8c7ad93f90cd95da"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 2,
             "unit": "week",
@@ -13846,7 +13487,7 @@
             "position": 25,
             "verbatim_sha1": "451d004fba37c4f936f7aa1f8c7ad93f90cd95da"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 2,
             "unit": "week",
@@ -13874,7 +13515,7 @@
             "position": 25,
             "verbatim_sha1": "451d004fba37c4f936f7aa1f8c7ad93f90cd95da"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 2,
             "unit": "week",
@@ -13902,7 +13543,7 @@
             "position": 25,
             "verbatim_sha1": "451d004fba37c4f936f7aa1f8c7ad93f90cd95da"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 4,
             "unit": "week",
@@ -13930,7 +13571,7 @@
             "position": 25,
             "verbatim_sha1": "451d004fba37c4f936f7aa1f8c7ad93f90cd95da"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 4,
             "unit": "week",
@@ -13958,7 +13599,7 @@
             "position": 25,
             "verbatim_sha1": "451d004fba37c4f936f7aa1f8c7ad93f90cd95da"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 4,
             "unit": "week",
@@ -13986,7 +13627,7 @@
             "position": 25,
             "verbatim_sha1": "451d004fba37c4f936f7aa1f8c7ad93f90cd95da"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 4,
             "unit": "week",
@@ -14014,7 +13655,7 @@
             "position": 25,
             "verbatim_sha1": "451d004fba37c4f936f7aa1f8c7ad93f90cd95da"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 8,
             "unit": "week",
@@ -14042,7 +13683,7 @@
             "position": 25,
             "verbatim_sha1": "451d004fba37c4f936f7aa1f8c7ad93f90cd95da"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 8,
             "unit": "week",
@@ -14070,7 +13711,7 @@
             "position": 25,
             "verbatim_sha1": "451d004fba37c4f936f7aa1f8c7ad93f90cd95da"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 8,
             "unit": "week",
@@ -14098,7 +13739,7 @@
             "position": 25,
             "verbatim_sha1": "451d004fba37c4f936f7aa1f8c7ad93f90cd95da"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 8,
             "unit": "week",
@@ -14126,7 +13767,7 @@
             "position": 25,
             "verbatim_sha1": "451d004fba37c4f936f7aa1f8c7ad93f90cd95da"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -14154,7 +13795,7 @@
             "position": 25,
             "verbatim_sha1": "451d004fba37c4f936f7aa1f8c7ad93f90cd95da"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -14182,7 +13823,7 @@
             "position": 25,
             "verbatim_sha1": "451d004fba37c4f936f7aa1f8c7ad93f90cd95da"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -14210,7 +13851,7 @@
             "position": 25,
             "verbatim_sha1": "451d004fba37c4f936f7aa1f8c7ad93f90cd95da"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -14238,7 +13879,7 @@
             "position": 25,
             "verbatim_sha1": "451d004fba37c4f936f7aa1f8c7ad93f90cd95da"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -14266,7 +13907,7 @@
             "position": 25,
             "verbatim_sha1": "451d004fba37c4f936f7aa1f8c7ad93f90cd95da"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -14294,7 +13935,7 @@
             "position": 25,
             "verbatim_sha1": "451d004fba37c4f936f7aa1f8c7ad93f90cd95da"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -14322,7 +13963,7 @@
             "position": 25,
             "verbatim_sha1": "451d004fba37c4f936f7aa1f8c7ad93f90cd95da"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -14350,7 +13991,7 @@
             "position": 26,
             "verbatim_sha1": "b33ffbea2a931bf36984efc9ee8a60a55ccd8414"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 2,
             "unit": "week",
@@ -14378,7 +14019,7 @@
             "position": 26,
             "verbatim_sha1": "b33ffbea2a931bf36984efc9ee8a60a55ccd8414"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 2,
             "unit": "week",
@@ -14406,7 +14047,7 @@
             "position": 26,
             "verbatim_sha1": "b33ffbea2a931bf36984efc9ee8a60a55ccd8414"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 2,
             "unit": "week",
@@ -14434,7 +14075,7 @@
             "position": 26,
             "verbatim_sha1": "b33ffbea2a931bf36984efc9ee8a60a55ccd8414"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 2,
             "unit": "week",
@@ -14462,7 +14103,7 @@
             "position": 26,
             "verbatim_sha1": "b33ffbea2a931bf36984efc9ee8a60a55ccd8414"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 4,
             "unit": "week",
@@ -14490,7 +14131,7 @@
             "position": 26,
             "verbatim_sha1": "b33ffbea2a931bf36984efc9ee8a60a55ccd8414"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 4,
             "unit": "week",
@@ -14518,7 +14159,7 @@
             "position": 26,
             "verbatim_sha1": "b33ffbea2a931bf36984efc9ee8a60a55ccd8414"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 4,
             "unit": "week",
@@ -14546,7 +14187,7 @@
             "position": 26,
             "verbatim_sha1": "b33ffbea2a931bf36984efc9ee8a60a55ccd8414"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 4,
             "unit": "week",
@@ -14574,7 +14215,7 @@
             "position": 26,
             "verbatim_sha1": "b33ffbea2a931bf36984efc9ee8a60a55ccd8414"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 8,
             "unit": "week",
@@ -14602,7 +14243,7 @@
             "position": 26,
             "verbatim_sha1": "b33ffbea2a931bf36984efc9ee8a60a55ccd8414"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 8,
             "unit": "week",
@@ -14630,7 +14271,7 @@
             "position": 26,
             "verbatim_sha1": "b33ffbea2a931bf36984efc9ee8a60a55ccd8414"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 8,
             "unit": "week",
@@ -14658,7 +14299,7 @@
             "position": 26,
             "verbatim_sha1": "b33ffbea2a931bf36984efc9ee8a60a55ccd8414"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 8,
             "unit": "week",
@@ -14686,7 +14327,7 @@
             "position": 26,
             "verbatim_sha1": "b33ffbea2a931bf36984efc9ee8a60a55ccd8414"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -14714,7 +14355,7 @@
             "position": 26,
             "verbatim_sha1": "b33ffbea2a931bf36984efc9ee8a60a55ccd8414"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -14742,7 +14383,7 @@
             "position": 26,
             "verbatim_sha1": "b33ffbea2a931bf36984efc9ee8a60a55ccd8414"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -14770,7 +14411,7 @@
             "position": 26,
             "verbatim_sha1": "b33ffbea2a931bf36984efc9ee8a60a55ccd8414"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -14798,7 +14439,7 @@
             "position": 26,
             "verbatim_sha1": "b33ffbea2a931bf36984efc9ee8a60a55ccd8414"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -14826,7 +14467,7 @@
             "position": 26,
             "verbatim_sha1": "b33ffbea2a931bf36984efc9ee8a60a55ccd8414"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -14854,7 +14495,7 @@
             "position": 26,
             "verbatim_sha1": "b33ffbea2a931bf36984efc9ee8a60a55ccd8414"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -14882,7 +14523,7 @@
             "position": 26,
             "verbatim_sha1": "b33ffbea2a931bf36984efc9ee8a60a55ccd8414"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -14910,7 +14551,7 @@
             "position": 27,
             "verbatim_sha1": "51b4dfd1dbc224d4631cddb233a475ec662a5c6b"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 2,
             "unit": "week",
@@ -14938,7 +14579,7 @@
             "position": 27,
             "verbatim_sha1": "51b4dfd1dbc224d4631cddb233a475ec662a5c6b"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 2,
             "unit": "week",
@@ -14966,7 +14607,7 @@
             "position": 27,
             "verbatim_sha1": "51b4dfd1dbc224d4631cddb233a475ec662a5c6b"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 2,
             "unit": "week",
@@ -14994,7 +14635,7 @@
             "position": 27,
             "verbatim_sha1": "51b4dfd1dbc224d4631cddb233a475ec662a5c6b"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 2,
             "unit": "week",
@@ -15022,7 +14663,7 @@
             "position": 27,
             "verbatim_sha1": "51b4dfd1dbc224d4631cddb233a475ec662a5c6b"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 4,
             "unit": "week",
@@ -15050,7 +14691,7 @@
             "position": 27,
             "verbatim_sha1": "51b4dfd1dbc224d4631cddb233a475ec662a5c6b"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 4,
             "unit": "week",
@@ -15078,7 +14719,7 @@
             "position": 27,
             "verbatim_sha1": "51b4dfd1dbc224d4631cddb233a475ec662a5c6b"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 4,
             "unit": "week",
@@ -15106,7 +14747,7 @@
             "position": 27,
             "verbatim_sha1": "51b4dfd1dbc224d4631cddb233a475ec662a5c6b"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 4,
             "unit": "week",
@@ -15134,7 +14775,7 @@
             "position": 27,
             "verbatim_sha1": "51b4dfd1dbc224d4631cddb233a475ec662a5c6b"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 8,
             "unit": "week",
@@ -15162,7 +14803,7 @@
             "position": 27,
             "verbatim_sha1": "51b4dfd1dbc224d4631cddb233a475ec662a5c6b"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 8,
             "unit": "week",
@@ -15190,7 +14831,7 @@
             "position": 27,
             "verbatim_sha1": "51b4dfd1dbc224d4631cddb233a475ec662a5c6b"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 8,
             "unit": "week",
@@ -15218,7 +14859,7 @@
             "position": 27,
             "verbatim_sha1": "51b4dfd1dbc224d4631cddb233a475ec662a5c6b"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 8,
             "unit": "week",
@@ -15246,7 +14887,7 @@
             "position": 27,
             "verbatim_sha1": "51b4dfd1dbc224d4631cddb233a475ec662a5c6b"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -15274,7 +14915,7 @@
             "position": 27,
             "verbatim_sha1": "51b4dfd1dbc224d4631cddb233a475ec662a5c6b"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -15302,7 +14943,7 @@
             "position": 27,
             "verbatim_sha1": "51b4dfd1dbc224d4631cddb233a475ec662a5c6b"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -15330,7 +14971,7 @@
             "position": 27,
             "verbatim_sha1": "51b4dfd1dbc224d4631cddb233a475ec662a5c6b"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -15358,7 +14999,7 @@
             "position": 27,
             "verbatim_sha1": "51b4dfd1dbc224d4631cddb233a475ec662a5c6b"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -15386,7 +15027,7 @@
             "position": 27,
             "verbatim_sha1": "51b4dfd1dbc224d4631cddb233a475ec662a5c6b"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -15414,7 +15055,7 @@
             "position": 27,
             "verbatim_sha1": "51b4dfd1dbc224d4631cddb233a475ec662a5c6b"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -15442,7 +15083,7 @@
             "position": 27,
             "verbatim_sha1": "51b4dfd1dbc224d4631cddb233a475ec662a5c6b"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -15470,7 +15111,7 @@
             "position": 27,
             "verbatim_sha1": "51b4dfd1dbc224d4631cddb233a475ec662a5c6b"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 2,
             "unit": "week",
@@ -15498,7 +15139,7 @@
             "position": 27,
             "verbatim_sha1": "51b4dfd1dbc224d4631cddb233a475ec662a5c6b"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 2,
             "unit": "week",
@@ -15526,7 +15167,7 @@
             "position": 27,
             "verbatim_sha1": "51b4dfd1dbc224d4631cddb233a475ec662a5c6b"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 2,
             "unit": "week",
@@ -15554,7 +15195,7 @@
             "position": 27,
             "verbatim_sha1": "51b4dfd1dbc224d4631cddb233a475ec662a5c6b"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 2,
             "unit": "week",
@@ -15582,7 +15223,7 @@
             "position": 27,
             "verbatim_sha1": "51b4dfd1dbc224d4631cddb233a475ec662a5c6b"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 4,
             "unit": "week",
@@ -15610,7 +15251,7 @@
             "position": 27,
             "verbatim_sha1": "51b4dfd1dbc224d4631cddb233a475ec662a5c6b"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 4,
             "unit": "week",
@@ -15638,7 +15279,7 @@
             "position": 27,
             "verbatim_sha1": "51b4dfd1dbc224d4631cddb233a475ec662a5c6b"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 4,
             "unit": "week",
@@ -15666,7 +15307,7 @@
             "position": 27,
             "verbatim_sha1": "51b4dfd1dbc224d4631cddb233a475ec662a5c6b"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 4,
             "unit": "week",
@@ -15694,7 +15335,7 @@
             "position": 27,
             "verbatim_sha1": "51b4dfd1dbc224d4631cddb233a475ec662a5c6b"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 8,
             "unit": "week",
@@ -15722,7 +15363,7 @@
             "position": 27,
             "verbatim_sha1": "51b4dfd1dbc224d4631cddb233a475ec662a5c6b"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 8,
             "unit": "week",
@@ -15750,7 +15391,7 @@
             "position": 27,
             "verbatim_sha1": "51b4dfd1dbc224d4631cddb233a475ec662a5c6b"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 8,
             "unit": "week",
@@ -15778,7 +15419,7 @@
             "position": 27,
             "verbatim_sha1": "51b4dfd1dbc224d4631cddb233a475ec662a5c6b"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 8,
             "unit": "week",
@@ -15806,7 +15447,7 @@
             "position": 27,
             "verbatim_sha1": "51b4dfd1dbc224d4631cddb233a475ec662a5c6b"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -15834,7 +15475,7 @@
             "position": 27,
             "verbatim_sha1": "51b4dfd1dbc224d4631cddb233a475ec662a5c6b"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -15862,7 +15503,7 @@
             "position": 27,
             "verbatim_sha1": "51b4dfd1dbc224d4631cddb233a475ec662a5c6b"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -15890,7 +15531,7 @@
             "position": 27,
             "verbatim_sha1": "51b4dfd1dbc224d4631cddb233a475ec662a5c6b"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -15918,7 +15559,7 @@
             "position": 27,
             "verbatim_sha1": "51b4dfd1dbc224d4631cddb233a475ec662a5c6b"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -15946,7 +15587,7 @@
             "position": 27,
             "verbatim_sha1": "51b4dfd1dbc224d4631cddb233a475ec662a5c6b"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -15974,7 +15615,7 @@
             "position": 27,
             "verbatim_sha1": "51b4dfd1dbc224d4631cddb233a475ec662a5c6b"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -16002,7 +15643,7 @@
             "position": 27,
             "verbatim_sha1": "51b4dfd1dbc224d4631cddb233a475ec662a5c6b"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -16030,7 +15671,7 @@
             "position": 28,
             "verbatim_sha1": "def68736db569c93c0e480115361e5742df71f4c"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "timepoint": {
             "value": 18,
             "unit": "week",
@@ -16058,7 +15699,7 @@
             "position": 28,
             "verbatim_sha1": "def68736db569c93c0e480115361e5742df71f4c"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#2",
           "timepoint": {
             "value": 18,
             "unit": "week",
@@ -16086,7 +15727,7 @@
             "position": 28,
             "verbatim_sha1": "def68736db569c93c0e480115361e5742df71f4c"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#2",
           "timepoint": {
             "value": 18,
             "unit": "week",
@@ -16114,7 +15755,7 @@
             "position": 28,
             "verbatim_sha1": "def68736db569c93c0e480115361e5742df71f4c"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#2",
           "timepoint": {
             "value": 18,
             "unit": "week",
@@ -16170,7 +15811,7 @@
             "position": 28,
             "verbatim_sha1": "def68736db569c93c0e480115361e5742df71f4c"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "timepoint": {
             "value": 20,
             "unit": "week",
@@ -16198,7 +15839,7 @@
             "position": 28,
             "verbatim_sha1": "def68736db569c93c0e480115361e5742df71f4c"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#2",
           "timepoint": {
             "value": 20,
             "unit": "week",
@@ -16226,7 +15867,7 @@
             "position": 28,
             "verbatim_sha1": "def68736db569c93c0e480115361e5742df71f4c"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#2",
           "timepoint": {
             "value": 20,
             "unit": "week",
@@ -16254,7 +15895,7 @@
             "position": 28,
             "verbatim_sha1": "def68736db569c93c0e480115361e5742df71f4c"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#2",
           "timepoint": {
             "value": 20,
             "unit": "week",
@@ -16310,7 +15951,7 @@
             "position": 28,
             "verbatim_sha1": "def68736db569c93c0e480115361e5742df71f4c"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "timepoint": {
             "value": 18,
             "unit": "week",
@@ -16338,7 +15979,7 @@
             "position": 28,
             "verbatim_sha1": "def68736db569c93c0e480115361e5742df71f4c"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#2",
           "timepoint": {
             "value": 18,
             "unit": "week",
@@ -16366,7 +16007,7 @@
             "position": 28,
             "verbatim_sha1": "def68736db569c93c0e480115361e5742df71f4c"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#2",
           "timepoint": {
             "value": 18,
             "unit": "week",
@@ -16394,7 +16035,7 @@
             "position": 28,
             "verbatim_sha1": "def68736db569c93c0e480115361e5742df71f4c"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#2",
           "timepoint": {
             "value": 18,
             "unit": "week",
@@ -16450,7 +16091,7 @@
             "position": 28,
             "verbatim_sha1": "def68736db569c93c0e480115361e5742df71f4c"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "timepoint": {
             "value": 20,
             "unit": "week",
@@ -16478,7 +16119,7 @@
             "position": 28,
             "verbatim_sha1": "def68736db569c93c0e480115361e5742df71f4c"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#2",
           "timepoint": {
             "value": 20,
             "unit": "week",
@@ -16506,7 +16147,7 @@
             "position": 28,
             "verbatim_sha1": "def68736db569c93c0e480115361e5742df71f4c"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#2",
           "timepoint": {
             "value": 20,
             "unit": "week",
@@ -16534,7 +16175,7 @@
             "position": 28,
             "verbatim_sha1": "def68736db569c93c0e480115361e5742df71f4c"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#2",
           "timepoint": {
             "value": 20,
             "unit": "week",
@@ -16590,7 +16231,7 @@
             "position": 29,
             "verbatim_sha1": "354bdad1597f93286948750f51f1f55bdbdc3281"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": null,
           "analysis_population": "full_analysis_set",
           "study_period": null,
@@ -16614,7 +16255,7 @@
             "position": 29,
             "verbatim_sha1": "354bdad1597f93286948750f51f1f55bdbdc3281"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": null,
           "analysis_population": "full_analysis_set",
           "study_period": null,
@@ -16638,7 +16279,7 @@
             "position": 29,
             "verbatim_sha1": "354bdad1597f93286948750f51f1f55bdbdc3281"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": null,
           "analysis_population": "full_analysis_set",
           "study_period": null,
@@ -16662,7 +16303,7 @@
             "position": 29,
             "verbatim_sha1": "354bdad1597f93286948750f51f1f55bdbdc3281"
           },
-          "arm_id": "OG003",
+          "arm_id": "OG003#full_analysis_set",
           "timepoint": null,
           "analysis_population": "full_analysis_set",
           "study_period": null,
@@ -16684,7 +16325,7 @@
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03720470",
       "source_excerpt": "resultsSection.outcomeMeasuresModule.outcomeMeasures[].{denoms,classes[].categories[].measurements[]}",
-      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3, 2026-09-06)",
+      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3 backfill re-run)",
       "reviewed_by": null,
       "confidence": 1.0
     },
@@ -16701,8 +16342,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG000#full_analysis_set",
+          "reference_arm_id": "OG001#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "response_rate_difference",
           "effect_type_verbatim": "Difference in percentage",
@@ -16730,8 +16371,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG002",
+          "test_arm_id": "OG000#full_analysis_set",
+          "reference_arm_id": "OG002#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "response_rate_difference",
           "effect_type_verbatim": "Difference in Percentage",
@@ -16759,8 +16400,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG000#full_analysis_set",
+          "reference_arm_id": "OG001#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "response_rate_difference",
           "effect_type_verbatim": "Difference in percentage",
@@ -16788,8 +16429,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG002",
+          "test_arm_id": "OG000#full_analysis_set",
+          "reference_arm_id": "OG002#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "response_rate_difference",
           "effect_type_verbatim": "Difference in Percentage",
@@ -16817,8 +16458,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG000#full_analysis_set",
+          "reference_arm_id": "OG001#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "response_rate_difference",
           "effect_type_verbatim": "Difference in percentage",
@@ -16846,8 +16487,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG002",
+          "test_arm_id": "OG000#full_analysis_set",
+          "reference_arm_id": "OG002#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "response_rate_difference",
           "effect_type_verbatim": "Difference in Percentage",
@@ -16875,8 +16516,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG001",
-          "reference_arm_id": "OG003",
+          "test_arm_id": "OG001#full_analysis_set",
+          "reference_arm_id": "OG003#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "response_rate_difference",
           "effect_type_verbatim": "Difference in Percentage",
@@ -16904,8 +16545,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG002",
-          "reference_arm_id": "OG003",
+          "test_arm_id": "OG002#full_analysis_set",
+          "reference_arm_id": "OG003#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "response_rate_difference",
           "effect_type_verbatim": "Difference in Percentage",
@@ -16933,8 +16574,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG000#full_analysis_set",
+          "reference_arm_id": "OG001#full_analysis_set",
           "comparison_kind": "other",
           "effect_type": "response_rate_difference",
           "effect_type_verbatim": "Difference in Percentage",
@@ -16962,8 +16603,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG002",
+          "test_arm_id": "OG000#full_analysis_set",
+          "reference_arm_id": "OG002#full_analysis_set",
           "comparison_kind": "other",
           "effect_type": "response_rate_difference",
           "effect_type_verbatim": "Difference in Percentage",
@@ -16991,8 +16632,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG001",
-          "reference_arm_id": "OG003",
+          "test_arm_id": "OG001#full_analysis_set",
+          "reference_arm_id": "OG003#full_analysis_set",
           "comparison_kind": "other",
           "effect_type": "response_rate_difference",
           "effect_type_verbatim": "Difference in Percentage",
@@ -17016,8 +16657,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG002",
-          "reference_arm_id": "OG003",
+          "test_arm_id": "OG002#full_analysis_set",
+          "reference_arm_id": "OG003#full_analysis_set",
           "comparison_kind": "other",
           "effect_type": "response_rate_difference",
           "effect_type_verbatim": "Difference in Percentage",
@@ -17041,8 +16682,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG000#full_analysis_set",
+          "reference_arm_id": "OG001#full_analysis_set",
           "comparison_kind": "other",
           "effect_type": "response_rate_difference",
           "effect_type_verbatim": "Difference in percentage",
@@ -17070,8 +16711,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG002",
+          "test_arm_id": "OG000#full_analysis_set",
+          "reference_arm_id": "OG002#full_analysis_set",
           "comparison_kind": "other",
           "effect_type": "response_rate_difference",
           "effect_type_verbatim": "Difference in Percentage",
@@ -17099,8 +16740,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG003",
+          "test_arm_id": "OG000#full_analysis_set",
+          "reference_arm_id": "OG003#full_analysis_set",
           "comparison_kind": "other",
           "effect_type": "response_rate_difference",
           "effect_type_verbatim": "Difference in Percentage",
@@ -17124,8 +16765,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG001",
-          "reference_arm_id": "OG003",
+          "test_arm_id": "OG001#full_analysis_set",
+          "reference_arm_id": "OG003#full_analysis_set",
           "comparison_kind": "other",
           "effect_type": "response_rate_difference",
           "effect_type_verbatim": "Difference in Percentage",
@@ -17142,7 +16783,7 @@
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03720470",
       "source_excerpt": "resultsSection.outcomeMeasuresModule.outcomeMeasures[].analyses[]",
-      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3, 2026-09-06)",
+      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3 backfill re-run)",
       "reviewed_by": null,
       "confidence": 1.0
     },

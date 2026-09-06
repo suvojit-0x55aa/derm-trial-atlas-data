@@ -1,4 +1,4 @@
-# Open Derm Trial Atlas — Data (schema v3)
+# Open Derm Trial Atlas — Data (schema v4)
 
 Structured, sourced trial-design, safety, and results data for dermatology
 drug trials. This repo holds **both** the data (`data/trials/*.json`, the
@@ -618,9 +618,11 @@ wrong-indication trial) before adding it.
 
 ## Data model
 
-One JSON file per trial at `data/trials/<NCT_ID>.json` (**schema v3**),
-organized into 10 field groups (43 fields). Every field value is an object,
-never a bare scalar:
+One JSON file per trial at `data/trials/<NCT_ID>.json` (**schema v4**),
+organized into 10 field groups (43 fields), plus one JSON file per drug at
+`data/drugs/<slug>.json` (48 files) for the 6 fields that are facts about
+the DRUG, not any one trial — see "Drug-level records" below. Every field
+value is an object, never a bare scalar:
 
 ```json
 {
@@ -655,37 +657,51 @@ never a bare scalar:
   `source_excerpt` names the section/table the excerpt came from, quoting
   the source text directly wherever practical.
 - `openfda_label` — pulled from the openFDA structured drug-label API
-  (`api.fda.gov/drug/label.json`). Drug-level, not trial-level: the same
-  value is reused across every trial of that drug. A `null` value with
-  this `source_type` means the label was checked and the field (e.g.
-  `boxed_warning`) genuinely isn't present — a confirmed absence, not a
-  gap.
+  (`api.fda.gov/drug/label.json`). Drug-level: this is `molecule.
+  mechanism_of_action`'s and `adverse_events.boxed_warning`'s own
+  `source_type` on `data/drugs/<slug>.json`, not on the trial (see
+  "Drug-level records" below). A `null` value with this `source_type`
+  means the label was checked and the field (e.g. `boxed_warning`)
+  genuinely isn't present — a confirmed absence, not a gap.
 - `needs_extraction` — not available in any of the sources above after
   real effort (still only in full protocol tables/appendices, a paywalled
   paper genuinely unreachable, or not published at all). `value` is
   `null` and stays `null` until human QA can fill it — this pipeline never
   guesses a plausible-sounding clinical number.
 - `openfda_faers` — openFDA adverse-event API, drug-level real-world
-  report summary (`real_world_safety.faers_summary`).
+  report summary; lives on `data/drugs/<slug>.json`'s own
+  `faers_summary`, not the trial's.
 - `orange_book` — FDA Orange Book data (via openFDA's mirror),
-  small-molecule NDAs only (`exclusivity.orange_book`, and the
-  `exclusivity.regulatory_application` join key).
-- `purple_book` — FDA Purple Book live search table, biologic BLAs only
-  (`exclusivity.purple_book`, and the join key for biologics).
+  small-molecule NDAs only; lives on `data/drugs/<slug>.json`'s own
+  `applications[].orange_book`, keyed by `application_number` (almost
+  every drug has exactly 1 application; Roflumilast has 2 — cream NDA
+  215985, foam NDA 217242).
+- `purple_book` — FDA Purple Book live search table, biologic BLAs only;
+  lives on `data/drugs/<slug>.json`'s own `purple_book`.
+- `drug_level_ref` — a trial's OWN copy of one of the 6 drug-level fields
+  above: not the fact, a pointer to it (`{"drug", "application_number"}`).
+  `source_url`/`source_excerpt`/`extracted_by`/`confidence` are all `null`
+  on the pointer itself — the real citation is the drug record's own field,
+  resolved by joining on `drug` (see "Drug-level records" below).
 
-### Schema v3: typed, atomic values
+### Schema v4: typed, atomic values, drug-level references
 
 Every `value` is a typed structure that can be filtered and compared
 directly — no re-parsing prose at read time. The full field-by-field
 reference is `docs/SCHEMA.md` (human-readable) / `schema/trial.schema.json`
 (JSON Schema draft-07), both generated from `atlas/schema.py` — this repo's
 own spec, run `python3 scripts/export_schema.py` after any change to keep
-them in sync (checked by `tests/test_schema.py`). v3 adds one field group,
+them in sync (checked by `tests/test_schema.py`). v3 added one field group,
 `results` (`arms`/`arm_results`/`effect_estimates`/`published_results`):
 normalized per-arm CT.gov results and pairwise effect estimates, each
 referencing the existing `endpoints.*` objects by `(rank, position,
-verbatim_sha1)` rather than re-describing the endpoint. The schema
-is indication-agnostic: adding 18 more indications beyond the original AD
+verbatim_sha1)` rather than re-describing the endpoint. v4 moves 6
+drug-level fields (`molecule.mechanism_of_action`, `adverse_events.
+boxed_warning`, `real_world_safety.faers_summary`, `exclusivity.
+{regulatory_application,orange_book,purple_book}`) off the trial record
+onto `data/drugs/<slug>.json`, referenced by a `drug_level_ref` pointer
+instead of re-described per trial — see "Drug-level records" below. The
+schema is indication-agnostic: adding 18 more indications beyond the original AD
 set required zero schema changes — `severity_definition`/severity criteria
 and the endpoint-measure fields are free text sized for any indication's
 own severity/endpoint vocabulary (PASI/sPGA for psoriasis, HiSCR/IHS4 for
@@ -699,15 +715,54 @@ responder definitions, endpoint subgroups, rescue triggers, and flare
 definitions. So "EASI-75 at week 16" is the same row shape wherever it
 occurs, and a `results.arm_results`/`effect_estimates` row can point at it
 by reference instead of re-describing it. What was free text in v1 is
-typed in v2/v3 (full list in `docs/SCHEMA.md`); the v1 prose survives as
+typed in v2/v3/v4 (full list in `docs/SCHEMA.md`); the v1 prose survives as
 provenance in `source_excerpt` (or an endpoint's `verbatim` / an
 intervention's `description`) — it is never the queryable value. This
 repo's own `tests/test_migration_lossless.py` proves the v1→v2 migration
 is lossless (deterministic, byte-identical on re-run, every v1 fact
 traceable in the v2 value, every gap preserved, nothing invented); v2→v3
 is a separate, pure no-op (new fields only, no existing value touched).
+v3→v4 (`scripts/split_drug_level_fields.py`) is lossless a different way:
+every trial's own value for the 6 moved fields still resolves to the exact
+same content via `atlas.drugs.resolve_trial_record` — checked directly by
+`tests/test_drugs.py`, not just asserted.
 
-Cross-source field groups, now populated for every one of the 26 drugs in
+### Drug-level records (data/drugs/<slug>.json)
+
+`molecule.mechanism_of_action`, `adverse_events.boxed_warning`,
+`real_world_safety.faers_summary`, and `exclusivity.{regulatory_application,
+orange_book,purple_book}` are facts about a DRUG, not about any one trial.
+Before v4, every trial of a drug carried an independently-extracted,
+byte-identical copy of each — a dataset pass across this 127-trial corpus
+found 1,588 verbatim-duplicated `(source_excerpt, value)` pairs this way (a
+drug used across N indications paid the cost N times: Dupilumab ×8,
+Roflumilast ×8, Secukinumab ×6, Bimekizumab ×5, Abrocitinib/Tapinarof/
+Nemolizumab/Icotrokinra ×4 each, ...). v4 extracts each of these 6 fields
+**once** per drug into `data/drugs/<slug>.json`, referenced (never copied)
+by every trial of that drug — a trial's own copy is a small pointer,
+`{"drug": "<name>", "application_number": "<NDA/BLA or null>"}`, with
+`source_type: "drug_level_ref"`. `application_number` disambiguates the two
+fields (`regulatory_application`, `orange_book`) that can genuinely differ
+within one drug — Roflumilast holds 2 real FDA applications (cream NDA
+215985, foam NDA 217242) — everything else is a single value per drug.
+`identity.sponsor` looks drug-level too but is deliberately **not** moved:
+it genuinely differs across a drug's own trials when development/commercial
+rights changed hands mid-program (Dupilumab's trials split Regeneron/
+Sanofi; Difamilast's split two distinct Otsuka legal entities) — collapsing
+it to one drug-wide value would be a real loss, not a dedup; see
+`atlas/drugs.py`'s module docstring and AGENTS.md for how this was checked
+before deciding the field list, not assumed.
+
+The extraction *pipeline* changed the same way, not just the storage: a
+future one-off per-cycle script (the existing scratch-checkout convention,
+see AGENTS.md) discovering a new trial calls `atlas.drugs.ensure_drug_record`
+once per drug — it returns the already-committed record with zero
+re-fetching/re-extraction if the drug is already known, and only calls the
+label/FAERS/Orange-Book/Purple-Book fetch functions the FIRST time a drug is
+seen. `scripts/apply_source_data.py` (the FAERS/Orange/Purple Book
+integration step) was updated the same way.
+
+Cross-source field groups, now populated for every one of the 48 drugs in
 the atlas:
 
 - `real_world_safety.faers_summary` — openFDA FAERS report counts,
@@ -774,23 +829,27 @@ correct finding, not a miss) — both confirmed per-trial, not assumed.
 ### Fill status (all 127 trials, 39 fields each — 4953 sourced values)
 
 Fields fully or near-fully filled across every trial (`ctgov_api` for the
-identity/population/design/endpoints/timing_ops/adverse_events core,
-`openfda_label`/`openfda_faers`/`orange_book`/`purple_book` for the
-drug-level cross-source groups): `nct_id`, `trial_name`, `official_title`,
-`sponsor`, `phase`, `drug`, `intervention_names`, `intervention_type`,
-`condition`, `min_age_years`, `max_age_years`, `sex`, `enrollment_count`,
-`study_type`, `allocation`, `intervention_model`, `masking`,
-`number_of_arms`, `primary_endpoints`, `secondary_endpoints`,
-`start_date`, `primary_completion_date`, `completion_date`,
-`real_world_safety.faers_summary` (127/127),
-`exclusivity.regulatory_application` (127/127).
+identity/population/design/endpoints/timing_ops/adverse_events core):
+`nct_id`, `trial_name`, `official_title`, `sponsor`, `phase`, `drug`,
+`intervention_names`, `intervention_type`, `condition`, `min_age_years`,
+`max_age_years`, `sex`, `enrollment_count`, `study_type`, `allocation`,
+`intervention_model`, `masking`, `number_of_arms`, `primary_endpoints`,
+`secondary_endpoints`, `start_date`, `primary_completion_date`,
+`completion_date`.
+
+6 fields (`molecule.mechanism_of_action`, `adverse_events.boxed_warning`,
+`real_world_safety.faers_summary`, `exclusivity.{regulatory_application,
+orange_book,purple_book}`) are **drug-level `drug_level_ref` pointers as of
+schema v4** — always "filled" from a trial's own point of view (a pointer
+always points somewhere), so their real fill status is now a property of
+the DRUG, not the trial; see "Drug-level fill status" below rather than
+reading these as 127/127 trial fills.
 
 Fields with real, checkable gaps (numerator = filled, out of 127 trials;
 every count below recomputed from `sources.csv` this cycle):
 
 | Field | Filled | Gap reason |
 |---|---|---|
-| `molecule.mechanism_of_action` | 127/127 | fully filled — real openFDA structured label text for every drug (a few drugs needed the approval-package label PDF fallback since they have no `label.json` entry at all) |
 | `molecule.dosing_regimen` | 126/127 | real CT.gov intervention description text, matched to each trial's own drug by generic name or known development/compound code, for every trial except one whose intervention text doesn't state a regimen |
 | `population.severity_criteria` | 114/127 | real CT.gov eligibility-criteria text now covers PASI/sPGA/ISGA/S-IGA/B-IGA/PGA (psoriasis family), Hurley Stage + AN Count (HS), SIRS (impetigo), HDSS/ASDD (hyperhidrosis), SALT (AA), BPDAI (bullous pemphigoid), GPPGA (GPP), CDASI (dermatomyositis), and lesion-count ranges (acne/rosacea/molluscum/AK) in addition to the original EASI/IGA/BSA (AD); the remaining trials genuinely state no quantitative baseline threshold in their CT.gov text, or their real number uses a unit the current schema has no metric for (percent-of-nail-area, wound size in cm²) |
 | `design.background_therapy` | 78/127 | real protocol/SAP PDF text (CT.gov `documentSection`, including a scanned Protocol Summary OCR'd with tesseract) covers every indication with a posted Study Protocol/SAP; the remaining gap trials have no protocol/SAP document posted on CT.gov at all, so real extraction isn't possible without a different source |
@@ -801,15 +860,27 @@ every count below recomputed from `sources.csv` this cycle):
 | `adverse_events.death_rate` | 94/127 | some trials report zero deaths as a genuine null-count edge case in CT.gov's `resultsSection`, not a missing value |
 | `adverse_events.discontinuation_due_to_ae_rate` | 95/127 | CT.gov `resultsSection` gap for several trials whose `participantFlowModule` posts milestones only, no `dropWithdraws` section |
 | `adverse_events.most_common_adverse_events` | 112/127 | CT.gov `resultsSection` gap for a few trials |
-| `adverse_events.boxed_warning` | 125/127 | openFDA label lookup miss for a few trials |
-| `exclusivity.orange_book` | 73/127 | only the NDA small-molecule drugs' trials get this field (BLA biologics use `purple_book` instead) |
-| `exclusivity.purple_book` | 54/127 | only the BLA biologic drugs' trials get this field (NDA small molecules use `orange_book` instead) |
 | `results.arms` / `results.arm_results` / `results.effect_estimates` | 125/127 each | schema v3, backfilled from live CT.gov `resultsSection` data for every `hasResults:true` trial; the other 2 (both Efinaconazole/Onychomycosis) genuinely have no posted results |
 | `results.published_results` | 0/127 | literature/label-sourced results are explicitly out of scope for this backfill (registry-grade CT.gov numbers and literature-grade numbers are kept separable at the field level, never mixed) |
 
-**4888 of 5461 sourced values are filled with real data (89.5%); 573
-remain `needs_extraction`** — see `sources.csv` for the per-trial,
-per-field breakdown. Every non-`ctgov_api` fill was produced by
+**4255 of 4699 genuinely trial-level sourced values are filled with real
+data (90.5%); 444 remain `needs_extraction`** (excludes the 6 now-drug-level
+fields' 762 pointer rows, which are always "filled" and would otherwise
+inflate this number without measuring anything real) — see `sources.csv`
+for the per-trial, per-field breakdown.
+
+#### Drug-level fill status (48 drugs, data/drugs/*.json — see drug_sources.csv)
+
+| Field | Filled | Gap reason |
+|---|---|---|
+| `mechanism_of_action` | 48/48 | fully filled — real openFDA structured label text for every drug (a few drugs needed the approval-package label PDF fallback since they have no `label.json` entry at all) |
+| `boxed_warning` | 46/48 | openFDA label lookup miss for 2 drugs |
+| `faers_summary` | 48/48 | fully filled — every drug has a real, checked FAERS query result, including a confirmed genuine `total_reports: 0` where that's what openFDA returns |
+| `regulatory_application` | 49/49 applications | fully filled — every drug's NDA/BLA join key is on file (Roflumilast's 2 real applications each have their own row) |
+| `orange_book` | 31/49 applications | only the NDA small-molecule applications get this field (BLA biologics use `purple_book` instead) |
+| `purple_book` | 18/48 | only the BLA biologic drugs get this field (NDA small molecules use `orange_book` instead) |
+
+Every non-`ctgov_api` fill (trial- or drug-level) was produced by
 LLM-assisted reading of a real, cited source (CT.gov free text, a
 downloaded protocol/SAP PDF, CT.gov's structured results tables, a PMC
 full-text paper, an FDA approval-package review, the openFDA label, or a
@@ -823,15 +894,23 @@ Garvita) before it's treated as authoritative for publication.
 Data and pipeline both live here now (post-consolidation):
 
 - `data/trials/<NCT_ID>.json` — one file per trial (127 files), the
-  sourced-value format described above (schema v3).
+  sourced-value format described above (schema v4). 6 fields hold a
+  `drug_level_ref` pointer instead of the fact — see `data/drugs/`.
+- `data/drugs/<slug>.json` — one file per drug (48 files): the 6 drug-level
+  facts, extracted once, referenced by every trial of that drug — see
+  "Drug-level records" above.
 - `trials.csv` — one row per trial, one column per field (the field's
-  `value`, JSON-encoded when structured; `needs_extraction` fields blank).
+  `value`, JSON-encoded when structured; `needs_extraction` fields blank;
+  the 6 drug-level fields hold their `drug_level_ref` pointer value — join
+  `drugs.csv`/`drug_applications.csv` on `drug` to resolve it).
   `results.arm_results`/`results.effect_estimates` are excluded from this
   file's per-trial blob (they have their own dedicated CSVs below — a
   trial's full list can run past Python's csv module field-size limit).
 - `sources.csv` — one row per sourced value: `nct_id`, `field`,
   `source_type`, `source_url`, `source_excerpt`, `extracted_by`,
-  `reviewed_by`, `confidence`. 127 trials × 43 fields = 5461 rows.
+  `reviewed_by`, `confidence`. 127 trials × 43 fields = 5461 rows (6 of
+  those 43 fields are now `drug_level_ref` pointer rows -- see
+  `drug_sources.csv` for the real citation).
 - `endpoints.csv` — one row per outcome measure × criterion: `measure_type`,
   `scale`, `timepoints`, `analysis_population`, and the `ScoreCriterion`
   columns, so "EASI-75 responders at week 16" is a column filter.
@@ -843,9 +922,18 @@ Data and pipeline both live here now (post-consolidation):
   `endpoint_position` to join `endpoints.csv`'s `rank`/`position` columns.
 - `effect_estimates.csv` — one row per endpoint × timepoint × pairwise arm
   comparison (2,765 rows); same join key as `arm_results.csv`.
-- `docs/SCHEMA.md` / `schema/trial.schema.json` — generated snapshots of
-  the schema v3 field reference (regenerate with
-  `python3 scripts/export_schema.py` after any `atlas/schema.py` change).
+- `drugs.csv` — one row per drug (48 rows): `mechanism_of_action`,
+  `boxed_warning`, `faers_summary`, `purple_book`, `trial_ids`.
+- `drug_applications.csv` — one row per (drug, application_number) (49
+  rows, since Roflumilast has 2): `regulatory_application`, `orange_book`.
+- `drug_sources.csv` — one row per drug-level sourced value: `drug`,
+  `field`, `source_type`, `source_url`, `source_excerpt`, `extracted_by`,
+  `reviewed_by`, `confidence` (290 rows) — the single citation now backing
+  every trial of that drug.
+- `docs/SCHEMA.md` / `schema/trial.schema.json` / `schema/drug.schema.json`
+  — generated snapshots of the schema v4 field reference (trial and drug
+  records; regenerate with `python3 scripts/export_schema.py` after any
+  `atlas/schema.py` change).
 - `scripts/` / `atlas/` / `tests/` — the fetch/extraction/migration/build
   pipeline, the schema spec, and its test suite (`python3 -m pytest
   tests/`, needs `pytest`).
@@ -854,12 +942,13 @@ Data and pipeline both live here now (post-consolidation):
 
 - The human QA pass on top of the LLM-assisted extraction (captain +
   Garvita review of every non-`ctgov_api` value).
-- The 573 fields that remain `needs_extraction` (see the fill-status table
-  above) — a mix of genuinely unreachable sources (paywalled papers behind
-  Cloudflare, PDF tables that don't extract reliably), real, un-worked
-  backlog (a subset of endpoints whose title states a responder threshold
-  but the parser hasn't classified as `responder_rate` yet — see
-  `AGENTS.md`), and `results.published_results` (deliberately, permanently
+- The 444 trial-level fields plus 50 drug-level fields that remain
+  `needs_extraction` (see the fill-status tables above) — a mix of
+  genuinely unreachable sources (paywalled papers behind Cloudflare, PDF
+  tables that don't extract reliably), real, un-worked backlog (a subset of
+  endpoints whose title states a responder threshold but the parser hasn't
+  classified as `responder_rate` yet — see `AGENTS.md`), and
+  `results.published_results` (deliberately, permanently
   out of scope for the CT.gov results backfill — see `AGENTS.md`).
 - Further indication candidates not yet live-verified (this is explicitly
   an ongoing effort, not a one-shot; each addition to date was checked

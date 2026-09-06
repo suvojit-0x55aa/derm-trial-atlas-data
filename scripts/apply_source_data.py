@@ -2,33 +2,40 @@
 """
 Cross-source integration pass: folds the staged FAERS/Orange Book/Purple
 Book data (data/_raw_staging/{faers,orange_book,purple_book}/<drug>.json,
-each already shaped as a schema v2 sourced value -- see scripts/fetch_faers.py,
-fetch_orange_book.py, fetch_purple_book.py) into every schema v2 trial
-record's `real_world_safety.faers_summary` and `exclusivity.{orange_book,
-purple_book}` fields. Drug-level data (like `openfda_label`): the same
-value is reused across every trial of that drug.
+each already shaped as a sourced value -- see scripts/fetch_faers.py,
+fetch_orange_book.py, fetch_purple_book.py) into each DRUG's own
+data/drugs/<slug>.json record -- schema v4's "search by drug" step: a
+drug's cross-source facts are written ONCE, referenced by every trial of
+that drug, never copied into each trial file individually (see
+atlas/drugs.py and README's "Drug-level records" section).
 
-`exclusivity.regulatory_application` was already populated by
+`exclusivity.regulatory_application` was already populated per drug by
 atlas.migrate.migrate_trial (atlas/regulatory_applications.py) during the
 v1->v2 migration -- this script fills in the two registry-specific fields
 that migration intentionally left needs_extraction (they didn't exist as a
-source yet at migration time). `application_type` on the record's own
-`regulatory_application` field says which registry (orange_book vs
-purple_book) applies; a drug never gets both.
+source yet at migration time). Each drug record's own
+`applications[].regulatory_application.value.registry` says which registry
+(orange_book vs purple_book) applies to that application; a single
+application never gets both.
 
-Only rewrites records that are already schema v2 (skips/errors otherwise,
-same convention as scripts/fetch_adverse_events.py's `_refuse_v2` guard,
-inverted).
+Only touches drugs that already have a data/drugs/<slug>.json record (run
+scripts/split_drug_level_fields.py first for the initial v3->v4 migration;
+a NEW drug discovered in a later cycle should go through
+atlas.drugs.ensure_drug_record instead of this script, which is for
+refreshing FAERS/Orange Book/Purple Book on ALREADY-KNOWN drugs).
 
-Run after scripts/fetch_faers.py, fetch_orange_book.py, fetch_purple_book.py,
-and scripts/migrate_v1_to_v2.py:
+Run after scripts/fetch_faers.py, fetch_orange_book.py, fetch_purple_book.py:
     python3 scripts/apply_source_data.py
 """
 import json
+import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-TRIALS_DIR = ROOT / "data" / "trials"
+sys.path.insert(0, str(ROOT))
+
+from atlas.drugs import DRUGS_DIR, load_all_drug_records, save_drug  # noqa: E402
+
 STAGING = ROOT / "data" / "_raw_staging"
 
 
@@ -56,41 +63,39 @@ def load_staged(source: str, drug: str) -> dict:
 
 
 def main():
-    trial_files = sorted(TRIALS_DIR.glob("*.json"))
+    drug_records = load_all_drug_records(DRUGS_DIR)
+    if not drug_records:
+        raise SystemExit(f"No drug records found in {DRUGS_DIR} -- run scripts/split_drug_level_fields.py first")
+
     updated = 0
-    for f in trial_files:
-        record = json.loads(f.read_text())
-        if record.get("schema_version") != 2:
-            raise SystemExit(f"{f.name} is not schema v2 -- run scripts/migrate_v1_to_v2.py first")
+    for drug, record in sorted(drug_records.items()):
+        record["faers_summary"] = load_staged("faers", drug)
 
-        drug = record["molecule"]["drug"]["value"]
-        reg_app = record["exclusivity"]["regulatory_application"]["value"]
+        for app in record["applications"]:
+            reg_app = app["regulatory_application"]["value"]
+            if reg_app is None:
+                # No NDA/BLA join key on file for this application (e.g. a
+                # drug not yet curated into atlas/regulatory_applications.py)
+                # -- both registry fields stay needs_extraction, honestly,
+                # rather than guessing which applies.
+                app["orange_book"] = needs_extraction()
+            elif reg_app["registry"] == "orange_book":
+                app["orange_book"] = load_staged("orange_book", drug)
+            elif reg_app["registry"] == "purple_book":
+                record["purple_book"] = load_staged("purple_book", drug)
+            else:
+                raise SystemExit(f"{drug} application {app['application_number']}: "
+                                  f"unrecognised registry {reg_app['registry']!r}")
 
-        record["real_world_safety"]["faers_summary"] = load_staged("faers", drug)
-
-        if reg_app is None:
-            # No NDA/BLA join key on file for this drug (e.g. omalizumab's
-            # sponsor changed hands / a drug not yet curated into
-            # atlas/regulatory_applications.py) -- both registry fields stay
-            # needs_extraction, honestly, rather than guessing which applies.
-            record["exclusivity"]["orange_book"] = needs_extraction()
-            record["exclusivity"]["purple_book"] = needs_extraction()
-        elif reg_app["registry"] == "orange_book":
-            record["exclusivity"]["orange_book"] = load_staged("orange_book", drug)
-            record["exclusivity"]["purple_book"] = needs_extraction()
-        elif reg_app["registry"] == "purple_book":
-            record["exclusivity"]["purple_book"] = load_staged("purple_book", drug)
-            record["exclusivity"]["orange_book"] = needs_extraction()
-        else:
-            raise SystemExit(f"{f.name}: unrecognised registry {reg_app['registry']!r} for drug {drug!r}")
-
-        f.write_text(json.dumps(record, indent=2, ensure_ascii=False) + "\n")
+        save_drug(record, DRUGS_DIR)
         updated += 1
-        print(f"{f.name} ({drug}): faers={record['real_world_safety']['faers_summary']['source_type']}, "
-              f"orange_book={record['exclusivity']['orange_book']['source_type']}, "
-              f"purple_book={record['exclusivity']['purple_book']['source_type']}")
+        print(f"{drug}: faers={record['faers_summary']['source_type']}, "
+              f"purple_book={record['purple_book']['source_type']}, "
+              f"orange_book={[a['orange_book']['source_type'] for a in record['applications']]}")
 
-    print(f"Updated {updated} trial files with real_world_safety + exclusivity data")
+    print(f"Updated {updated} drug records with real_world_safety + exclusivity data "
+          f"({sum(len(r['trial_ids']) for r in drug_records.values())} trials covered, "
+          "zero re-copies)")
 
 
 if __name__ == "__main__":

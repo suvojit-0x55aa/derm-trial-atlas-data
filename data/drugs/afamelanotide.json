@@ -1,0 +1,212 @@
+{
+  "schema_version": 1,
+  "drug": "Afamelanotide",
+  "applications": [
+    {
+      "application_number": "210797",
+      "regulatory_application": {
+        "value": {
+          "application_type": "NDA",
+          "application_number": "210797",
+          "registry": "orange_book",
+          "center": "CDER",
+          "proprietary_name": "SCENESSE",
+          "applicant": "CLINUVEL INC",
+          "first_approval_date": "2019-10-08"
+        },
+        "source_type": "orange_book",
+        "source_url": "https://api.fda.gov/drug/orangebook.json",
+        "source_excerpt": "openfda orangebook.json: products.active_ingredients.name=AFAMELANOTIDE, application_number N210797, brand_name SCENESSE, applicant_full_name CLINUVEL INC, approval_date 2019-10-08",
+        "extracted_by": "atlas.regulatory_applications (registry file fetched 2026-09-05)",
+        "reviewed_by": null,
+        "confidence": 1.0
+      },
+      "orange_book": {
+        "value": {
+          "application_type": "N",
+          "application_number": "210797",
+          "ingredient": "AFAMELANOTIDE",
+          "trade_name": "SCENESSE",
+          "applicant": "CLIVUNEL INC",
+          "applicant_full_name": "CLINUVEL INC",
+          "products": [
+            {
+              "product_number": "001",
+              "strength": "16MG",
+              "dosage_form": "IMPLANT",
+              "route": "SUBCUTANEOUS",
+              "approval_date": "2019-10-08",
+              "rld": true,
+              "rs": true,
+              "te_code": null,
+              "marketing_type": "HUMAN PRESCRIPTION DRUG"
+            }
+          ],
+          "patents": [
+            {
+              "patent_number": "8334265",
+              "expiration_date": "2033-01-20",
+              "drug_substance_claim": false,
+              "drug_product_claim": false,
+              "patent_use_code": "U-2638",
+              "delisted": false,
+              "submission_date": "2019-11-06",
+              "product_numbers": [
+                "001"
+              ]
+            }
+          ],
+          "exclusivities": [
+            {
+              "code": "ODE-270",
+              "expiration_date": "2026-10-08",
+              "product_numbers": [
+                "001"
+              ]
+            }
+          ],
+          "latest_patent_expiration": "2033-01-20",
+          "latest_exclusivity_expiration": "2026-10-08",
+          "data_file_date": null
+        },
+        "source_type": "orange_book",
+        "source_url": "https://api.fda.gov/drug/orangebook.json?search=products.active_ingredients.name%3A%22AFAMELANOTIDE%22&limit=100",
+        "source_excerpt": "openFDA drug/orangebook.json, 1 product row(s) matched on products.active_ingredients.name='AFAMELANOTIDE'",
+        "extracted_by": "fetch_orange_book.py (openfda drug/orangebook.json, v2 pass)",
+        "reviewed_by": null,
+        "confidence": 1.0
+      }
+    }
+  ],
+  "trial_ids": [
+    "NCT00979745",
+    "NCT01605136"
+  ],
+  "mechanism_of_action": {
+    "value": {
+      "modality": "other",
+      "drug_class": "melanocortin receptor agonist (synthetic alpha-MSH analog peptide)",
+      "antibody_isotype": null,
+      "binding_targets": [],
+      "pathway_cytokines": [],
+      "receptor_subunits": [
+        "MC1-R"
+      ],
+      "kinases_inhibited": [],
+      "lower_potency_kinases": [],
+      "selectivity": [],
+      "reversible": null,
+      "mechanism_established": null,
+      "label_section": "12.1"
+    },
+    "source_type": "openfda_label",
+    "source_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=5192f26d-d5e7-ce03-e063-6294a90a3ea2",
+    "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1) -- extracted text: 12.1 Mechanism of Action Afamelanotide is a synthetic tridecapeptide and a structural analog of α-melanocyte stimulating hormone (α-MSH). Afamelanotide is a melanocortin receptor agonist and binds predominantly to MC1-R.",
+    "extracted_by": "deep-extraction pass (LLM-assisted extraction, scale-out backfill; pending human QA)",
+    "reviewed_by": null,
+    "confidence": 0.85
+  },
+  "boxed_warning": {
+    "value": {
+      "present": false,
+      "title": null,
+      "warning_categories": [],
+      "referenced_label_sections": [],
+      "product_names": []
+    },
+    "source_type": "openfda_label",
+    "source_url": "https://api.fda.gov/drug/label.json?search=openfda.substance_name:AFAMELANOTIDE&limit=1",
+    "source_excerpt": "results[0] has no boxed_warning key (checked, none present)",
+    "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass); structured by atlas.migrate v1->v2",
+    "reviewed_by": null,
+    "confidence": 1.0
+  },
+  "faers_summary": {
+    "value": {
+      "query": {
+        "search_field": "patient.drug.medicinalproduct",
+        "search_term": "AFAMELANOTIDE",
+        "receivedate_from": "2025-01-27",
+        "receivedate_to": "2026-01-29",
+        "api_urls": [
+          "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"AFAMELANOTIDE\"&limit=1",
+          "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"AFAMELANOTIDE\"+AND+serious:1&limit=1",
+          "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"AFAMELANOTIDE\"+AND+seriousnessdeath:1&limit=1",
+          "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"AFAMELANOTIDE\"+AND+seriousnesshospitalization:1&limit=1",
+          "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"AFAMELANOTIDE\"+AND+seriousnesslifethreatening:1&limit=1",
+          "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"AFAMELANOTIDE\"+AND+seriousnessdisabling:1&limit=1",
+          "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"AFAMELANOTIDE\"&count=patient.reaction.reactionmeddrapt.exact&limit=15",
+          "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"AFAMELANOTIDE\"+AND+serious:1&count=patient.reaction.reactionmeddrapt.exact&limit=15",
+          "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"AFAMELANOTIDE\"&count=receivedate"
+        ],
+        "data_last_updated": "2026-07-30"
+      },
+      "total_reports": 2,
+      "serious_reports": 2,
+      "death_reports": 0,
+      "hospitalization_reports": 1,
+      "life_threatening_reports": 0,
+      "disability_reports": 0,
+      "top_reactions": [
+        {
+          "meddra_pt": "DISCOLOURED VOMIT",
+          "report_count": 1,
+          "pct_of_reports": 50.0
+        },
+        {
+          "meddra_pt": "VOMITING",
+          "report_count": 1,
+          "pct_of_reports": 50.0
+        },
+        {
+          "meddra_pt": "WEIGHT INCREASED",
+          "report_count": 1,
+          "pct_of_reports": 50.0
+        }
+      ],
+      "top_serious_reactions": [
+        {
+          "meddra_pt": "DISCOLOURED VOMIT",
+          "report_count": 1,
+          "pct_of_reports": 50.0
+        },
+        {
+          "meddra_pt": "VOMITING",
+          "report_count": 1,
+          "pct_of_reports": 50.0
+        },
+        {
+          "meddra_pt": "WEIGHT INCREASED",
+          "report_count": 1,
+          "pct_of_reports": 50.0
+        }
+      ],
+      "reports_by_year": [
+        {
+          "year": 2025,
+          "report_count": 1
+        },
+        {
+          "year": 2026,
+          "report_count": 1
+        }
+      ],
+      "meddra_version": null
+    },
+    "source_type": "openfda_faers",
+    "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"AFAMELANOTIDE\"&limit=1",
+    "source_excerpt": "openFDA drug/event.json aggregate: total_reports=2, serious=2, deaths=0",
+    "extracted_by": "fetch_faers.py (openfda drug/event.json, v2 pass)",
+    "reviewed_by": null,
+    "confidence": 1.0
+  },
+  "purple_book": {
+    "value": null,
+    "source_type": "needs_extraction",
+    "source_url": null,
+    "source_excerpt": null,
+    "extracted_by": null,
+    "reviewed_by": null,
+    "confidence": null
+  }
+}

@@ -1,5 +1,5 @@
 {
-  "schema_version": 3,
+  "schema_version": 4,
   "nct_id": {
     "value": "NCT01493687",
     "source_type": "ctgov_api",
@@ -84,25 +84,15 @@
     },
     "mechanism_of_action": {
       "value": {
-        "modality": "other",
-        "drug_class": null,
-        "antibody_isotype": null,
-        "binding_targets": [],
-        "pathway_cytokines": [],
-        "receptor_subunits": [],
-        "kinases_inhibited": [],
-        "lower_potency_kinases": [],
-        "selectivity": [],
-        "reversible": null,
-        "mechanism_established": false,
-        "label_section": "12.1"
+        "drug": "Ivermectin",
+        "application_number": null
       },
-      "source_type": "openfda_label",
-      "source_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=180415ea-bcf7-49ef-92f4-41d58324d752",
-      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1) -- extracted text: 12.1 Mechanism of Action The mechanism of action of Ivermectin cream in treating rosacea lesions is unknown.",
-      "extracted_by": "deep-extraction pass (LLM-assisted extraction, scale-out backfill; pending human QA)",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 0.9
+      "confidence": null
     },
     "dosing_regimen": {
       "value": [
@@ -732,421 +722,62 @@
     },
     "boxed_warning": {
       "value": {
-        "present": false,
-        "title": null,
-        "warning_categories": [],
-        "referenced_label_sections": [],
-        "product_names": []
+        "drug": "Ivermectin",
+        "application_number": null
       },
-      "source_type": "openfda_label",
-      "source_url": "https://api.fda.gov/drug/label.json?search=openfda.substance_name:IVERMECTIN&limit=1",
-      "source_excerpt": "results[0] has no boxed_warning key (checked, none present)",
-      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass); structured by atlas.migrate v1->v2",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     }
   },
   "real_world_safety": {
     "faers_summary": {
       "value": {
-        "query": {
-          "search_field": "patient.drug.medicinalproduct",
-          "search_term": "IVERMECTIN",
-          "receivedate_from": "2004-02-11",
-          "receivedate_to": "2026-06-30",
-          "api_urls": [
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"IVERMECTIN\"&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"IVERMECTIN\"+AND+serious:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"IVERMECTIN\"+AND+seriousnessdeath:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"IVERMECTIN\"+AND+seriousnesshospitalization:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"IVERMECTIN\"+AND+seriousnesslifethreatening:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"IVERMECTIN\"+AND+seriousnessdisabling:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"IVERMECTIN\"&count=patient.reaction.reactionmeddrapt.exact&limit=15",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"IVERMECTIN\"+AND+serious:1&count=patient.reaction.reactionmeddrapt.exact&limit=15",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"IVERMECTIN\"&count=receivedate"
-          ],
-          "data_last_updated": "2026-07-30"
-        },
-        "total_reports": 2945,
-        "serious_reports": 1923,
-        "death_reports": 335,
-        "hospitalization_reports": 977,
-        "life_threatening_reports": 181,
-        "disability_reports": 40,
-        "top_reactions": [
-          {
-            "meddra_pt": "OFF LABEL USE",
-            "report_count": 377,
-            "pct_of_reports": 12.8
-          },
-          {
-            "meddra_pt": "DRUG INEFFECTIVE",
-            "report_count": 366,
-            "pct_of_reports": 12.43
-          },
-          {
-            "meddra_pt": "PRODUCT USE IN UNAPPROVED INDICATION",
-            "report_count": 246,
-            "pct_of_reports": 8.35
-          },
-          {
-            "meddra_pt": "HEADACHE",
-            "report_count": 163,
-            "pct_of_reports": 5.53
-          },
-          {
-            "meddra_pt": "FATIGUE",
-            "report_count": 129,
-            "pct_of_reports": 4.38
-          },
-          {
-            "meddra_pt": "ASTHENIA",
-            "report_count": 125,
-            "pct_of_reports": 4.24
-          },
-          {
-            "meddra_pt": "PYREXIA",
-            "report_count": 118,
-            "pct_of_reports": 4.01
-          },
-          {
-            "meddra_pt": "NAUSEA",
-            "report_count": 117,
-            "pct_of_reports": 3.97
-          },
-          {
-            "meddra_pt": "DIARRHOEA",
-            "report_count": 104,
-            "pct_of_reports": 3.53
-          },
-          {
-            "meddra_pt": "STRONGYLOIDIASIS",
-            "report_count": 103,
-            "pct_of_reports": 3.5
-          },
-          {
-            "meddra_pt": "VOMITING",
-            "report_count": 102,
-            "pct_of_reports": 3.46
-          },
-          {
-            "meddra_pt": "PAIN",
-            "report_count": 90,
-            "pct_of_reports": 3.06
-          },
-          {
-            "meddra_pt": "DYSPNOEA",
-            "report_count": 89,
-            "pct_of_reports": 3.02
-          },
-          {
-            "meddra_pt": "RASH",
-            "report_count": 88,
-            "pct_of_reports": 2.99
-          },
-          {
-            "meddra_pt": "CONDITION AGGRAVATED",
-            "report_count": 85,
-            "pct_of_reports": 2.89
-          }
-        ],
-        "top_serious_reactions": [
-          {
-            "meddra_pt": "OFF LABEL USE",
-            "report_count": 253,
-            "pct_of_reports": 13.16
-          },
-          {
-            "meddra_pt": "DRUG INEFFECTIVE",
-            "report_count": 179,
-            "pct_of_reports": 9.31
-          },
-          {
-            "meddra_pt": "HEADACHE",
-            "report_count": 129,
-            "pct_of_reports": 6.71
-          },
-          {
-            "meddra_pt": "PYREXIA",
-            "report_count": 111,
-            "pct_of_reports": 5.77
-          },
-          {
-            "meddra_pt": "ASTHENIA",
-            "report_count": 104,
-            "pct_of_reports": 5.41
-          },
-          {
-            "meddra_pt": "STRONGYLOIDIASIS",
-            "report_count": 103,
-            "pct_of_reports": 5.36
-          },
-          {
-            "meddra_pt": "PRODUCT USE IN UNAPPROVED INDICATION",
-            "report_count": 93,
-            "pct_of_reports": 4.84
-          },
-          {
-            "meddra_pt": "VOMITING",
-            "report_count": 85,
-            "pct_of_reports": 4.42
-          },
-          {
-            "meddra_pt": "NAUSEA",
-            "report_count": 82,
-            "pct_of_reports": 4.26
-          },
-          {
-            "meddra_pt": "FATIGUE",
-            "report_count": 81,
-            "pct_of_reports": 4.21
-          },
-          {
-            "meddra_pt": "DIARRHOEA",
-            "report_count": 76,
-            "pct_of_reports": 3.95
-          },
-          {
-            "meddra_pt": "DRUG INTERACTION",
-            "report_count": 67,
-            "pct_of_reports": 3.48
-          },
-          {
-            "meddra_pt": "DYSPNOEA",
-            "report_count": 65,
-            "pct_of_reports": 3.38
-          },
-          {
-            "meddra_pt": "CONDITION AGGRAVATED",
-            "report_count": 63,
-            "pct_of_reports": 3.28
-          },
-          {
-            "meddra_pt": "PAIN",
-            "report_count": 60,
-            "pct_of_reports": 3.12
-          }
-        ],
-        "reports_by_year": [
-          {
-            "year": 2004,
-            "report_count": 2
-          },
-          {
-            "year": 2005,
-            "report_count": 6
-          },
-          {
-            "year": 2006,
-            "report_count": 5
-          },
-          {
-            "year": 2007,
-            "report_count": 3
-          },
-          {
-            "year": 2008,
-            "report_count": 6
-          },
-          {
-            "year": 2009,
-            "report_count": 13
-          },
-          {
-            "year": 2010,
-            "report_count": 4
-          },
-          {
-            "year": 2011,
-            "report_count": 15
-          },
-          {
-            "year": 2012,
-            "report_count": 8
-          },
-          {
-            "year": 2013,
-            "report_count": 38
-          },
-          {
-            "year": 2014,
-            "report_count": 49
-          },
-          {
-            "year": 2015,
-            "report_count": 59
-          },
-          {
-            "year": 2016,
-            "report_count": 47
-          },
-          {
-            "year": 2017,
-            "report_count": 52
-          },
-          {
-            "year": 2018,
-            "report_count": 120
-          },
-          {
-            "year": 2019,
-            "report_count": 118
-          },
-          {
-            "year": 2020,
-            "report_count": 185
-          },
-          {
-            "year": 2021,
-            "report_count": 390
-          },
-          {
-            "year": 2022,
-            "report_count": 353
-          },
-          {
-            "year": 2023,
-            "report_count": 297
-          },
-          {
-            "year": 2024,
-            "report_count": 322
-          },
-          {
-            "year": 2025,
-            "report_count": 522
-          },
-          {
-            "year": 2026,
-            "report_count": 331
-          }
-        ],
-        "meddra_version": null
+        "drug": "Ivermectin",
+        "application_number": null
       },
-      "source_type": "openfda_faers",
-      "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"IVERMECTIN\"&limit=1",
-      "source_excerpt": "openFDA drug/event.json aggregate: total_reports=2945, serious=1923, deaths=335",
-      "extracted_by": "fetch_faers.py (openfda drug/event.json, cycle-9 pass)",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     }
   },
   "exclusivity": {
     "regulatory_application": {
       "value": {
-        "application_type": "NDA",
-        "application_number": "206255",
-        "registry": "orange_book",
-        "center": "CDER",
-        "proprietary_name": "SOOLANTRA",
-        "applicant": "GALDERMA LABORATORIES LP",
-        "first_approval_date": "2014-12-19"
+        "drug": "Ivermectin",
+        "application_number": "206255"
       },
-      "source_type": "orange_book",
-      "source_url": "https://api.fda.gov/drug/orangebook.json",
-      "source_excerpt": "openfda orangebook.json: products.active_ingredients.name=IVERMECTIN, application_number N206255 (SOOLANTRA cream, topical rosacea) -- ingredient also covers Stromectol (N050742, oral, systemic parasitic infections) and Sklice (N202736, topical head-lice lotion), pinned to N206255 for this atlas's rosacea trials",
-      "extracted_by": "atlas.regulatory_applications (registry file fetched 2026-09-05)",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     },
     "orange_book": {
       "value": {
-        "application_type": "N",
-        "application_number": "206255",
-        "ingredient": "IVERMECTIN",
-        "trade_name": "SOOLANTRA",
-        "applicant": "GALDERMA LABS LP",
-        "applicant_full_name": "GALDERMA LABORATORIES LP",
-        "products": [
-          {
-            "product_number": "001",
-            "strength": "1%",
-            "dosage_form": "CREAM",
-            "route": "TOPICAL",
-            "approval_date": "2014-12-19",
-            "rld": true,
-            "rs": true,
-            "te_code": null,
-            "marketing_type": "HUMAN PRESCRIPTION DRUG"
-          }
-        ],
-        "patents": [
-          {
-            "patent_number": "10206939",
-            "expiration_date": "2034-03-13",
-            "drug_substance_claim": false,
-            "drug_product_claim": false,
-            "patent_use_code": "U-1631",
-            "delisted": false,
-            "submission_date": "2019-02-19",
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "patent_number": "9089587",
-            "expiration_date": "2034-03-13",
-            "drug_substance_claim": false,
-            "drug_product_claim": false,
-            "patent_use_code": "U-1631",
-            "delisted": false,
-            "submission_date": "2015-07-31",
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "patent_number": "9233117",
-            "expiration_date": "2034-03-13",
-            "drug_substance_claim": false,
-            "drug_product_claim": false,
-            "patent_use_code": "U-1631",
-            "delisted": false,
-            "submission_date": "2016-01-19",
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "patent_number": "9233118",
-            "expiration_date": "2034-03-13",
-            "drug_substance_claim": false,
-            "drug_product_claim": false,
-            "patent_use_code": "U-1631",
-            "delisted": false,
-            "submission_date": "2016-01-19",
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "patent_number": "9782425",
-            "expiration_date": "2034-03-13",
-            "drug_substance_claim": false,
-            "drug_product_claim": false,
-            "patent_use_code": "U-1631",
-            "delisted": false,
-            "submission_date": "2018-01-05",
-            "product_numbers": [
-              "001"
-            ]
-          }
-        ],
-        "exclusivities": [],
-        "latest_patent_expiration": "2034-03-13",
-        "latest_exclusivity_expiration": null,
-        "data_file_date": null
+        "drug": "Ivermectin",
+        "application_number": "206255"
       },
-      "source_type": "orange_book",
-      "source_url": "https://api.fda.gov/drug/orangebook.json?search=products.active_ingredients.name%3A%22IVERMECTIN%22&limit=100",
-      "source_excerpt": "openFDA drug/orangebook.json, 1 product row(s) matched on products.active_ingredients.name='IVERMECTIN' AND application_number='206255' (of 17 total rows for this ingredient across all applicants)",
-      "extracted_by": "fetch_orange_book.py (openfda drug/orangebook.json, cycle-9 pass, NDA-pinned)",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     },
     "purple_book": {
-      "value": null,
-      "source_type": "needs_extraction",
+      "value": {
+        "drug": "Ivermectin",
+        "application_number": null
+      },
+      "source_type": "drug_level_ref",
       "source_url": null,
       "source_excerpt": null,
       "extracted_by": null,
@@ -1161,6 +792,7 @@
           "arm_id": "OG000",
           "label": "CD5024 1% Cream",
           "role": "other",
+          "analysis_population": "full_analysis_set",
           "intervention_names": [
             "CD5024"
           ],
@@ -1173,6 +805,7 @@
           "arm_id": "OG001",
           "label": "CD5024 Vehicle Cream",
           "role": "vehicle",
+          "analysis_population": "full_analysis_set",
           "intervention_names": [
             "CD5024"
           ],
@@ -1185,7 +818,7 @@
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01493687",
       "source_excerpt": "resultsSection.outcomeMeasuresModule.outcomeMeasures[].groups[]",
-      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3, 2026-09-06)",
+      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3 backfill re-run)",
       "reviewed_by": null,
       "confidence": 1.0
     },
@@ -1210,7 +843,7 @@
           "reported_value": 38.4,
           "reported_unit": "Percentage of participants",
           "responders": null,
-          "response_rate_pct": null,
+          "response_rate_pct": 38.4,
           "rate_is_derived": false,
           "dispersion_type": null,
           "dispersion_value": null,
@@ -1238,7 +871,7 @@
           "reported_value": 11.6,
           "reported_unit": "Percentage of participants",
           "responders": null,
-          "response_rate_pct": null,
+          "response_rate_pct": 11.6,
           "rate_is_derived": false,
           "dispersion_type": null,
           "dispersion_value": null,
@@ -1363,7 +996,7 @@
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01493687",
       "source_excerpt": "resultsSection.outcomeMeasuresModule.outcomeMeasures[].{denoms,classes[].categories[].measurements[]}",
-      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3, 2026-09-06)",
+      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3 backfill re-run)",
       "reviewed_by": null,
       "confidence": 1.0
     },

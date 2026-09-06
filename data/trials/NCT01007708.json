@@ -1,5 +1,5 @@
 {
-  "schema_version": 3,
+  "schema_version": 4,
   "nct_id": {
     "value": "NCT01007708",
     "source_type": "ctgov_api",
@@ -84,25 +84,15 @@
     },
     "mechanism_of_action": {
       "value": {
-        "modality": "small_molecule",
-        "drug_class": "azole antifungal",
-        "antibody_isotype": null,
-        "binding_targets": [],
-        "pathway_cytokines": [],
-        "receptor_subunits": [],
-        "kinases_inhibited": [],
-        "lower_potency_kinases": [],
-        "selectivity": [],
-        "reversible": null,
-        "mechanism_established": null,
-        "label_section": "12.1"
+        "drug": "Efinaconazole",
+        "application_number": null
       },
-      "source_type": "openfda_label",
-      "source_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=aa387108-3f36-49af-bbcb-df681d4b9e51",
-      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1) -- extracted text: 12.1 Mechanism of Action JUBLIA topical solution is an azole antifungal [ see Clinical Pharmacology (12.4) ].",
-      "extracted_by": "deep-extraction pass (LLM-assisted extraction, scale-out backfill; pending human QA)",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 0.9
+      "confidence": null
     },
     "dosing_regimen": {
       "value": [
@@ -430,537 +420,62 @@
     },
     "boxed_warning": {
       "value": {
-        "present": false,
-        "title": null,
-        "warning_categories": [],
-        "referenced_label_sections": [],
-        "product_names": []
+        "drug": "Efinaconazole",
+        "application_number": null
       },
-      "source_type": "openfda_label",
-      "source_url": "https://api.fda.gov/drug/label.json?search=openfda.substance_name:EFINACONAZOLE&limit=1",
-      "source_excerpt": "results[0] has no boxed_warning key (checked, none present)",
-      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass); structured by atlas.migrate v1->v2",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     }
   },
   "real_world_safety": {
     "faers_summary": {
       "value": {
-        "query": {
-          "search_field": "patient.drug.medicinalproduct",
-          "search_term": "EFINACONAZOLE",
-          "receivedate_from": "2014-09-25",
-          "receivedate_to": "2026-05-06",
-          "api_urls": [
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"EFINACONAZOLE\"&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"EFINACONAZOLE\"+AND+serious:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"EFINACONAZOLE\"+AND+seriousnessdeath:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"EFINACONAZOLE\"+AND+seriousnesshospitalization:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"EFINACONAZOLE\"+AND+seriousnesslifethreatening:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"EFINACONAZOLE\"+AND+seriousnessdisabling:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"EFINACONAZOLE\"&count=patient.reaction.reactionmeddrapt.exact&limit=15",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"EFINACONAZOLE\"+AND+serious:1&count=patient.reaction.reactionmeddrapt.exact&limit=15",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"EFINACONAZOLE\"&count=receivedate"
-          ],
-          "data_last_updated": "2026-07-30"
-        },
-        "total_reports": 235,
-        "serious_reports": 225,
-        "death_reports": 44,
-        "hospitalization_reports": 158,
-        "life_threatening_reports": 35,
-        "disability_reports": 30,
-        "top_reactions": [
-          {
-            "meddra_pt": "ASTHENIA",
-            "report_count": 75,
-            "pct_of_reports": 31.91
-          },
-          {
-            "meddra_pt": "FATIGUE",
-            "report_count": 72,
-            "pct_of_reports": 30.64
-          },
-          {
-            "meddra_pt": "HEADACHE",
-            "report_count": 72,
-            "pct_of_reports": 30.64
-          },
-          {
-            "meddra_pt": "OEDEMA PERIPHERAL",
-            "report_count": 72,
-            "pct_of_reports": 30.64
-          },
-          {
-            "meddra_pt": "PAIN",
-            "report_count": 71,
-            "pct_of_reports": 30.21
-          },
-          {
-            "meddra_pt": "DRUG INEFFECTIVE",
-            "report_count": 70,
-            "pct_of_reports": 29.79
-          },
-          {
-            "meddra_pt": "ANAEMIA",
-            "report_count": 69,
-            "pct_of_reports": 29.36
-          },
-          {
-            "meddra_pt": "DRUG HYPERSENSITIVITY",
-            "report_count": 69,
-            "pct_of_reports": 29.36
-          },
-          {
-            "meddra_pt": "MUSCULOSKELETAL STIFFNESS",
-            "report_count": 67,
-            "pct_of_reports": 28.51
-          },
-          {
-            "meddra_pt": "ASTHMA",
-            "report_count": 66,
-            "pct_of_reports": 28.09
-          },
-          {
-            "meddra_pt": "PYREXIA",
-            "report_count": 66,
-            "pct_of_reports": 28.09
-          },
-          {
-            "meddra_pt": "TREMOR",
-            "report_count": 66,
-            "pct_of_reports": 28.09
-          },
-          {
-            "meddra_pt": "ABDOMINAL PAIN UPPER",
-            "report_count": 65,
-            "pct_of_reports": 27.66
-          },
-          {
-            "meddra_pt": "BRONCHOPULMONARY ASPERGILLOSIS ALLERGIC",
-            "report_count": 65,
-            "pct_of_reports": 27.66
-          },
-          {
-            "meddra_pt": "CONSTIPATION",
-            "report_count": 65,
-            "pct_of_reports": 27.66
-          }
-        ],
-        "top_serious_reactions": [
-          {
-            "meddra_pt": "ASTHENIA",
-            "report_count": 75,
-            "pct_of_reports": 33.33
-          },
-          {
-            "meddra_pt": "FATIGUE",
-            "report_count": 72,
-            "pct_of_reports": 32.0
-          },
-          {
-            "meddra_pt": "HEADACHE",
-            "report_count": 72,
-            "pct_of_reports": 32.0
-          },
-          {
-            "meddra_pt": "OEDEMA PERIPHERAL",
-            "report_count": 72,
-            "pct_of_reports": 32.0
-          },
-          {
-            "meddra_pt": "PAIN",
-            "report_count": 71,
-            "pct_of_reports": 31.56
-          },
-          {
-            "meddra_pt": "DRUG INEFFECTIVE",
-            "report_count": 70,
-            "pct_of_reports": 31.11
-          },
-          {
-            "meddra_pt": "ANAEMIA",
-            "report_count": 69,
-            "pct_of_reports": 30.67
-          },
-          {
-            "meddra_pt": "DRUG HYPERSENSITIVITY",
-            "report_count": 68,
-            "pct_of_reports": 30.22
-          },
-          {
-            "meddra_pt": "MUSCULOSKELETAL STIFFNESS",
-            "report_count": 67,
-            "pct_of_reports": 29.78
-          },
-          {
-            "meddra_pt": "ASTHMA",
-            "report_count": 66,
-            "pct_of_reports": 29.33
-          },
-          {
-            "meddra_pt": "PYREXIA",
-            "report_count": 66,
-            "pct_of_reports": 29.33
-          },
-          {
-            "meddra_pt": "TREMOR",
-            "report_count": 66,
-            "pct_of_reports": 29.33
-          },
-          {
-            "meddra_pt": "ABDOMINAL PAIN UPPER",
-            "report_count": 65,
-            "pct_of_reports": 28.89
-          },
-          {
-            "meddra_pt": "BRONCHOPULMONARY ASPERGILLOSIS ALLERGIC",
-            "report_count": 65,
-            "pct_of_reports": 28.89
-          },
-          {
-            "meddra_pt": "CONSTIPATION",
-            "report_count": 65,
-            "pct_of_reports": 28.89
-          }
-        ],
-        "reports_by_year": [
-          {
-            "year": 2014,
-            "report_count": 2
-          },
-          {
-            "year": 2015,
-            "report_count": 8
-          },
-          {
-            "year": 2016,
-            "report_count": 7
-          },
-          {
-            "year": 2017,
-            "report_count": 7
-          },
-          {
-            "year": 2018,
-            "report_count": 8
-          },
-          {
-            "year": 2019,
-            "report_count": 11
-          },
-          {
-            "year": 2020,
-            "report_count": 19
-          },
-          {
-            "year": 2021,
-            "report_count": 33
-          },
-          {
-            "year": 2022,
-            "report_count": 35
-          },
-          {
-            "year": 2023,
-            "report_count": 42
-          },
-          {
-            "year": 2024,
-            "report_count": 27
-          },
-          {
-            "year": 2025,
-            "report_count": 24
-          },
-          {
-            "year": 2026,
-            "report_count": 12
-          }
-        ],
-        "meddra_version": null
+        "drug": "Efinaconazole",
+        "application_number": null
       },
-      "source_type": "openfda_faers",
-      "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"EFINACONAZOLE\"&limit=1",
-      "source_excerpt": "openFDA drug/event.json aggregate: total_reports=235, serious=225, deaths=44",
-      "extracted_by": "fetch_faers.py (openfda drug/event.json, cycle-9 pass)",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     }
   },
   "exclusivity": {
     "regulatory_application": {
       "value": {
-        "application_type": "NDA",
-        "application_number": "203567",
-        "registry": "orange_book",
-        "center": "CDER",
-        "proprietary_name": "JUBLIA",
-        "applicant": "BAUSCH HEALTH AMERICAS INC",
-        "first_approval_date": "2014-06-06"
+        "drug": "Efinaconazole",
+        "application_number": "203567"
       },
-      "source_type": "orange_book",
-      "source_url": "https://api.fda.gov/drug/orangebook.json",
-      "source_excerpt": "openfda orangebook.json: products.active_ingredients.name=EFINACONAZOLE, application_number N203567, brand_name JUBLIA, applicant_full_name BAUSCH HEALTH AMERICAS INC (originally Valeant/Dow Pharmaceutical Sciences), approval_date 2014-06-06",
-      "extracted_by": "atlas.regulatory_applications (registry file fetched 2026-09-05)",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     },
     "orange_book": {
       "value": {
-        "application_type": "N",
-        "application_number": "203567",
-        "ingredient": "EFINACONAZOLE",
-        "trade_name": "JUBLIA",
-        "applicant": "BAUSCH",
-        "applicant_full_name": "BAUSCH HEALTH AMERICAS INC",
-        "products": [
-          {
-            "product_number": "001",
-            "strength": "10%",
-            "dosage_form": "SOLUTION",
-            "route": "TOPICAL",
-            "approval_date": "2014-06-06",
-            "rld": true,
-            "rs": true,
-            "te_code": null,
-            "marketing_type": "HUMAN PRESCRIPTION DRUG"
-          }
-        ],
-        "patents": [
-          {
-            "patent_number": "7214506",
-            "expiration_date": "2026-02-22",
-            "drug_substance_claim": false,
-            "drug_product_claim": false,
-            "patent_use_code": "U-281",
-            "delisted": false,
-            "submission_date": "2014-06-20",
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "patent_number": "10512640",
-            "expiration_date": "2028-01-03",
-            "drug_substance_claim": false,
-            "drug_product_claim": false,
-            "patent_use_code": "U-1969",
-            "delisted": false,
-            "submission_date": "2020-01-08",
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "patent_number": "10828369",
-            "expiration_date": "2028-01-03",
-            "drug_substance_claim": false,
-            "drug_product_claim": true,
-            "patent_use_code": null,
-            "delisted": false,
-            "submission_date": "2020-12-02",
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "patent_number": "11213519",
-            "expiration_date": "2028-01-03",
-            "drug_substance_claim": false,
-            "drug_product_claim": false,
-            "patent_use_code": "U-2720",
-            "delisted": false,
-            "submission_date": "2022-01-20",
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "patent_number": "11872218",
-            "expiration_date": "2028-01-03",
-            "drug_substance_claim": false,
-            "drug_product_claim": false,
-            "patent_use_code": "U-1969",
-            "delisted": false,
-            "submission_date": "2024-02-09",
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "patent_number": "9566272",
-            "expiration_date": "2028-01-03",
-            "drug_substance_claim": false,
-            "drug_product_claim": false,
-            "patent_use_code": "U-1969",
-            "delisted": false,
-            "submission_date": "2017-02-22",
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "patent_number": "9877955",
-            "expiration_date": "2028-01-03",
-            "drug_substance_claim": false,
-            "drug_product_claim": false,
-            "patent_use_code": "U-1969",
-            "delisted": false,
-            "submission_date": "2018-01-31",
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "patent_number": "10105444",
-            "expiration_date": "2030-07-08",
-            "drug_substance_claim": false,
-            "drug_product_claim": true,
-            "patent_use_code": null,
-            "delisted": false,
-            "submission_date": "2018-10-24",
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "patent_number": "8039494",
-            "expiration_date": "2030-07-08",
-            "drug_substance_claim": false,
-            "drug_product_claim": false,
-            "patent_use_code": "U-281",
-            "delisted": false,
-            "submission_date": "2014-06-20",
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "patent_number": "9861698",
-            "expiration_date": "2030-07-08",
-            "drug_substance_claim": false,
-            "drug_product_claim": true,
-            "patent_use_code": null,
-            "delisted": false,
-            "submission_date": "2018-01-10",
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "patent_number": "8486978",
-            "expiration_date": "2030-10-24",
-            "drug_substance_claim": false,
-            "drug_product_claim": true,
-            "patent_use_code": null,
-            "delisted": false,
-            "submission_date": "2014-06-20",
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "patent_number": "9302009",
-            "expiration_date": "2030-10-24",
-            "drug_substance_claim": false,
-            "drug_product_claim": true,
-            "patent_use_code": null,
-            "delisted": false,
-            "submission_date": "2016-04-25",
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "patent_number": "10342875",
-            "expiration_date": "2034-10-02",
-            "drug_substance_claim": false,
-            "drug_product_claim": true,
-            "patent_use_code": "U-2720",
-            "delisted": false,
-            "submission_date": "2019-07-12",
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "patent_number": "10828293",
-            "expiration_date": "2034-10-02",
-            "drug_substance_claim": false,
-            "drug_product_claim": false,
-            "patent_use_code": "U-2720",
-            "delisted": false,
-            "submission_date": "2020-12-02",
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "patent_number": "10864274",
-            "expiration_date": "2034-10-02",
-            "drug_substance_claim": false,
-            "drug_product_claim": false,
-            "patent_use_code": "U-2720",
-            "delisted": false,
-            "submission_date": "2021-01-07",
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "patent_number": "11654139",
-            "expiration_date": "2034-10-02",
-            "drug_substance_claim": false,
-            "drug_product_claim": false,
-            "patent_use_code": "U-1969",
-            "delisted": false,
-            "submission_date": "2023-06-14",
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "patent_number": "9662394",
-            "expiration_date": "2034-10-02",
-            "drug_substance_claim": false,
-            "drug_product_claim": true,
-            "patent_use_code": null,
-            "delisted": false,
-            "submission_date": "2017-05-30",
-            "product_numbers": [
-              "001"
-            ]
-          },
-          {
-            "patent_number": "10478601",
-            "expiration_date": "2035-04-25",
-            "drug_substance_claim": false,
-            "drug_product_claim": true,
-            "patent_use_code": "U-2721",
-            "delisted": false,
-            "submission_date": "2019-12-17",
-            "product_numbers": [
-              "001"
-            ]
-          }
-        ],
-        "exclusivities": [],
-        "latest_patent_expiration": "2035-04-25",
-        "latest_exclusivity_expiration": null,
-        "data_file_date": null
+        "drug": "Efinaconazole",
+        "application_number": "203567"
       },
-      "source_type": "orange_book",
-      "source_url": "https://api.fda.gov/drug/orangebook.json?search=products.active_ingredients.name%3A%22EFINACONAZOLE%22&limit=100",
-      "source_excerpt": "openFDA drug/orangebook.json, 1 product row(s) matched on products.active_ingredients.name='EFINACONAZOLE' AND application_number='203567' (of 8 total rows for this ingredient across all applicants)",
-      "extracted_by": "fetch_orange_book.py (openfda drug/orangebook.json, cycle-9 pass, NDA-pinned)",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     },
     "purple_book": {
-      "value": null,
-      "source_type": "needs_extraction",
+      "value": {
+        "drug": "Efinaconazole",
+        "application_number": null
+      },
+      "source_type": "drug_level_ref",
       "source_url": null,
       "source_excerpt": null,
       "extracted_by": null,

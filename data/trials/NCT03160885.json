@@ -1,5 +1,5 @@
 {
-  "schema_version": 3,
+  "schema_version": 4,
   "nct_id": {
     "value": "NCT03160885",
     "source_type": "ctgov_api",
@@ -84,34 +84,15 @@
     },
     "mechanism_of_action": {
       "value": {
-        "modality": "monoclonal_antibody",
-        "drug_class": "IL-13 antagonist",
-        "antibody_isotype": "IgG4",
-        "binding_targets": [
-          "IL-13"
-        ],
-        "pathway_cytokines": [
-          "IL-13",
-          "IgE"
-        ],
-        "receptor_subunits": [
-          "IL-4Rα",
-          "IL-13Rα1",
-          "IL-13Rα2"
-        ],
-        "kinases_inhibited": [],
-        "lower_potency_kinases": [],
-        "selectivity": [],
-        "reversible": null,
-        "mechanism_established": null,
-        "label_section": "12.1"
+        "drug": "Tralokinumab",
+        "application_number": null
       },
-      "source_type": "openfda_label",
-      "source_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=8abedac8-f75e-42a0-8591-10fabcf41fb5",
-      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1) -- v1 extracted text: 12.1 Mechanism of Action Tralokinumab-ldrm is a human IgG4 monoclonal antibody that specifically binds to human interleukin-13 (IL-13) and inhibits its interaction with the IL-13 receptor α1 and α2 subunits (IL-13Rα1 and IL-13Rα2). IL-13 is a naturally occurring cytokine of the Type 2 immune response. Tralokinumab-ldrm inhibits the bioactivity of IL-13 by blocking IL-13 interaction with IL-13Rα1/IL-4Rα receptor complex. Tralokinumab-ldrm inhibits IL-13-induced responses including the release of proinflammatory cytokines, chemokines and IgE.",
-      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA); structured by atlas.migrate v1->v2",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 0.9
+      "confidence": null
     },
     "dosing_regimen": {
       "value": [
@@ -1869,262 +1850,50 @@
     },
     "boxed_warning": {
       "value": {
-        "present": false,
-        "title": null,
-        "warning_categories": [],
-        "referenced_label_sections": [],
-        "product_names": []
+        "drug": "Tralokinumab",
+        "application_number": null
       },
-      "source_type": "openfda_label",
-      "source_url": "https://api.fda.gov/drug/label.json?search=openfda.substance_name:TRALOKINUMAB&limit=1",
-      "source_excerpt": "results[0] has no boxed_warning key (checked, none present)",
-      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass); structured by atlas.migrate v1->v2",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     }
   },
   "real_world_safety": {
     "faers_summary": {
       "value": {
-        "query": {
-          "search_field": "patient.drug.medicinalproduct",
-          "search_term": "TRALOKINUMAB",
-          "receivedate_from": "2018-02-13",
-          "receivedate_to": "2026-06-26",
-          "api_urls": [
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"TRALOKINUMAB\"&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"TRALOKINUMAB\"+AND+serious:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"TRALOKINUMAB\"+AND+seriousnessdeath:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"TRALOKINUMAB\"+AND+seriousnesshospitalization:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"TRALOKINUMAB\"+AND+seriousnesslifethreatening:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"TRALOKINUMAB\"+AND+seriousnessdisabling:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"TRALOKINUMAB\"&count=patient.reaction.reactionmeddrapt.exact&limit=15",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"TRALOKINUMAB\"+AND+serious:1&count=patient.reaction.reactionmeddrapt.exact&limit=15",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"TRALOKINUMAB\"&count=receivedate"
-          ],
-          "data_last_updated": "2026-07-30"
-        },
-        "total_reports": 150,
-        "serious_reports": 134,
-        "death_reports": 3,
-        "hospitalization_reports": 44,
-        "life_threatening_reports": 5,
-        "disability_reports": 2,
-        "top_reactions": [
-          {
-            "meddra_pt": "DRUG INEFFECTIVE",
-            "report_count": 13,
-            "pct_of_reports": 8.67
-          },
-          {
-            "meddra_pt": "PRURITUS",
-            "report_count": 12,
-            "pct_of_reports": 8.0
-          },
-          {
-            "meddra_pt": "OFF LABEL USE",
-            "report_count": 10,
-            "pct_of_reports": 6.67
-          },
-          {
-            "meddra_pt": "CONDITION AGGRAVATED",
-            "report_count": 9,
-            "pct_of_reports": 6.0
-          },
-          {
-            "meddra_pt": "CONJUNCTIVITIS",
-            "report_count": 7,
-            "pct_of_reports": 4.67
-          },
-          {
-            "meddra_pt": "ERYTHEMA",
-            "report_count": 7,
-            "pct_of_reports": 4.67
-          },
-          {
-            "meddra_pt": "ARTHRALGIA",
-            "report_count": 6,
-            "pct_of_reports": 4.0
-          },
-          {
-            "meddra_pt": "CUTANEOUS T-CELL LYMPHOMA",
-            "report_count": 6,
-            "pct_of_reports": 4.0
-          },
-          {
-            "meddra_pt": "DERMATITIS ATOPIC",
-            "report_count": 6,
-            "pct_of_reports": 4.0
-          },
-          {
-            "meddra_pt": "DIZZINESS",
-            "report_count": 6,
-            "pct_of_reports": 4.0
-          },
-          {
-            "meddra_pt": "ECZEMA",
-            "report_count": 6,
-            "pct_of_reports": 4.0
-          },
-          {
-            "meddra_pt": "ECZEMA HERPETICUM",
-            "report_count": 6,
-            "pct_of_reports": 4.0
-          },
-          {
-            "meddra_pt": "RASH",
-            "report_count": 6,
-            "pct_of_reports": 4.0
-          },
-          {
-            "meddra_pt": "WEIGHT INCREASED",
-            "report_count": 6,
-            "pct_of_reports": 4.0
-          },
-          {
-            "meddra_pt": "EYE PRURITUS",
-            "report_count": 5,
-            "pct_of_reports": 3.33
-          }
-        ],
-        "top_serious_reactions": [
-          {
-            "meddra_pt": "PRURITUS",
-            "report_count": 10,
-            "pct_of_reports": 7.46
-          },
-          {
-            "meddra_pt": "OFF LABEL USE",
-            "report_count": 9,
-            "pct_of_reports": 6.72
-          },
-          {
-            "meddra_pt": "CONDITION AGGRAVATED",
-            "report_count": 7,
-            "pct_of_reports": 5.22
-          },
-          {
-            "meddra_pt": "CONJUNCTIVITIS",
-            "report_count": 7,
-            "pct_of_reports": 5.22
-          },
-          {
-            "meddra_pt": "DRUG INEFFECTIVE",
-            "report_count": 7,
-            "pct_of_reports": 5.22
-          },
-          {
-            "meddra_pt": "CUTANEOUS T-CELL LYMPHOMA",
-            "report_count": 6,
-            "pct_of_reports": 4.48
-          },
-          {
-            "meddra_pt": "DIZZINESS",
-            "report_count": 6,
-            "pct_of_reports": 4.48
-          },
-          {
-            "meddra_pt": "ECZEMA HERPETICUM",
-            "report_count": 6,
-            "pct_of_reports": 4.48
-          },
-          {
-            "meddra_pt": "ARTHRALGIA",
-            "report_count": 5,
-            "pct_of_reports": 3.73
-          },
-          {
-            "meddra_pt": "DERMATITIS ATOPIC",
-            "report_count": 5,
-            "pct_of_reports": 3.73
-          },
-          {
-            "meddra_pt": "ECZEMA",
-            "report_count": 5,
-            "pct_of_reports": 3.73
-          },
-          {
-            "meddra_pt": "FATIGUE",
-            "report_count": 5,
-            "pct_of_reports": 3.73
-          },
-          {
-            "meddra_pt": "LOWER RESPIRATORY TRACT INFECTION",
-            "report_count": 5,
-            "pct_of_reports": 3.73
-          },
-          {
-            "meddra_pt": "RASH",
-            "report_count": 5,
-            "pct_of_reports": 3.73
-          },
-          {
-            "meddra_pt": "THERAPEUTIC PRODUCT EFFECT INCOMPLETE",
-            "report_count": 5,
-            "pct_of_reports": 3.73
-          }
-        ],
-        "reports_by_year": [
-          {
-            "year": 2018,
-            "report_count": 1
-          },
-          {
-            "year": 2019,
-            "report_count": 1
-          },
-          {
-            "year": 2022,
-            "report_count": 27
-          },
-          {
-            "year": 2023,
-            "report_count": 21
-          },
-          {
-            "year": 2024,
-            "report_count": 15
-          },
-          {
-            "year": 2025,
-            "report_count": 26
-          },
-          {
-            "year": 2026,
-            "report_count": 59
-          }
-        ],
-        "meddra_version": null
+        "drug": "Tralokinumab",
+        "application_number": null
       },
-      "source_type": "openfda_faers",
-      "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"TRALOKINUMAB\"&limit=1",
-      "source_excerpt": "openFDA drug/event.json aggregate: total_reports=150, serious=134, deaths=3",
-      "extracted_by": "fetch_faers.py (openfda drug/event.json, v2 pass)",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     }
   },
   "exclusivity": {
     "regulatory_application": {
       "value": {
-        "application_type": "BLA",
-        "application_number": "761180",
-        "registry": "purple_book",
-        "center": "CDER",
-        "proprietary_name": "Adbry",
-        "applicant": "LEO Pharma A/S",
-        "first_approval_date": "2021-12-27"
+        "drug": "Tralokinumab",
+        "application_number": "761180"
       },
-      "source_type": "purple_book",
-      "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2026/purplebook-search-August-data-download.csv",
-      "source_excerpt": "row: LEO Pharma A/S | BLA 761180 | Adbry | tralokinumab-ldrm | 351(a) | 150MG/ML Injection Subcutaneous Pre-Filled Syringe | Rx | Licensed | 27-Dec-21 | Original | License 2169 | Product 001 | CDER",
-      "extracted_by": "atlas.regulatory_applications (registry file fetched 2026-09-05)",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     },
     "orange_book": {
-      "value": null,
-      "source_type": "needs_extraction",
+      "value": {
+        "drug": "Tralokinumab",
+        "application_number": "761180"
+      },
+      "source_type": "drug_level_ref",
       "source_url": null,
       "source_excerpt": null,
       "extracted_by": null,
@@ -2133,64 +1902,25 @@
     },
     "purple_book": {
       "value": {
-        "bla_number": "761180",
-        "proprietary_name": "Adbry",
-        "proper_name": "tralokinumab-ldrm",
-        "applicant": "LEO Pharma A/S",
-        "license_type": "351(a)",
-        "license_number": "2169",
-        "center": "CDER",
-        "products": [
-          {
-            "product_number": "001",
-            "strength": "150MG/ML",
-            "dosage_form": "Injection",
-            "route": "Subcutaneous",
-            "presentation": "Pre-Filled Syringe",
-            "marketing_status": "Rx",
-            "licensure": "Licensed",
-            "approval_date": "2021-12-27",
-            "submission_type": "Original",
-            "supplement_number": null
-          },
-          {
-            "product_number": "002",
-            "strength": "300MG/2ML",
-            "dosage_form": "Injection",
-            "route": "Subcutaneous",
-            "presentation": "Autoinjector",
-            "marketing_status": "Rx",
-            "licensure": "Licensed",
-            "approval_date": "2024-06-12",
-            "submission_type": "Supplement",
-            "supplement_number": "5"
-          }
-        ],
-        "first_approval_date": "2021-12-27",
-        "date_of_first_licensure": null,
-        "reference_product_exclusivity_expiration": null,
-        "exclusivity_expiration_date": null,
-        "first_interchangeable_exclusivity_expiration": null,
-        "orphan_exclusivity_expiration": null,
-        "patent_list_provided": null,
-        "biosimilars": [],
-        "data_file_month": null
+        "drug": "Tralokinumab",
+        "application_number": null
       },
-      "source_type": "purple_book",
-      "source_url": "https://purplebooksearch.fda.gov/index.cfm?event=advancedsearch",
-      "source_excerpt": "purplebooksearch.fda.gov live search table, BLA 761180 (Adbry), 0 biosimilar(s) on file",
-      "extracted_by": "fetch_purple_book.py (purplebooksearch.fda.gov live search table, raw staging pass)",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     }
   },
   "results": {
     "arms": {
       "value": [
         {
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "label": "Tralokinumab 300 mg Q2W",
           "role": "investigational",
+          "analysis_population": "full_analysis_set",
           "intervention_names": [
             "Tralokinumab"
           ],
@@ -2200,9 +1930,23 @@
           "randomized_n": 593
         },
         {
-          "arm_id": "OG001",
+          "arm_id": "OG000#2",
+          "label": "Initial Treatment Period - Tralokinumab 300 mg Q2W",
+          "role": "investigational",
+          "analysis_population": null,
+          "intervention_names": [
+            "Tralokinumab"
+          ],
+          "dose_value": null,
+          "dose_unit": null,
+          "frequency": null,
+          "randomized_n": 593
+        },
+        {
+          "arm_id": "OG001#full_analysis_set",
           "label": "Placebo Q2W",
           "role": "placebo",
+          "analysis_population": "full_analysis_set",
           "intervention_names": [
             "Placebo"
           ],
@@ -2212,9 +1956,10 @@
           "randomized_n": 201
         },
         {
-          "arm_id": "OG001",
+          "arm_id": "OG001#2",
           "label": "Tralokinumab 300 mg Q4W",
           "role": "investigational",
+          "analysis_population": null,
           "intervention_names": [
             "Tralokinumab"
           ],
@@ -2224,9 +1969,10 @@
           "randomized_n": null
         },
         {
-          "arm_id": "OG002",
-          "label": "Placebo Q2W",
+          "arm_id": "OG001#3",
+          "label": "Initial Treatment Period - Placebo Q2W",
           "role": "placebo",
+          "analysis_population": null,
           "intervention_names": [
             "Placebo"
           ],
@@ -2236,21 +1982,10 @@
           "randomized_n": 201
         },
         {
-          "arm_id": "OG000",
-          "label": "Initial Treatment Period - Tralokinumab 300 mg Q2W",
-          "role": "investigational",
-          "intervention_names": [
-            "Tralokinumab"
-          ],
-          "dose_value": null,
-          "dose_unit": null,
-          "frequency": null,
-          "randomized_n": 593
-        },
-        {
-          "arm_id": "OG001",
-          "label": "Initial Treatment Period - Placebo Q2W",
+          "arm_id": "OG002",
+          "label": "Placebo Q2W",
           "role": "placebo",
+          "analysis_population": null,
           "intervention_names": [
             "Placebo"
           ],
@@ -2263,7 +1998,7 @@
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03160885",
       "source_excerpt": "resultsSection.outcomeMeasuresModule.outcomeMeasures[].groups[]",
-      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3, 2026-09-06)",
+      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3 backfill re-run)",
       "reviewed_by": null,
       "confidence": 1.0
     },
@@ -2275,7 +2010,7 @@
             "position": 1,
             "verbatim_sha1": "78c3d9b018225498546294de37ec6c6cfa005039"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -2303,7 +2038,7 @@
             "position": 1,
             "verbatim_sha1": "78c3d9b018225498546294de37ec6c6cfa005039"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -2331,7 +2066,7 @@
             "position": 2,
             "verbatim_sha1": "57039907c2fa1a01c1fcd8de5cbb3a70325013ff"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -2359,7 +2094,7 @@
             "position": 2,
             "verbatim_sha1": "57039907c2fa1a01c1fcd8de5cbb3a70325013ff"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -2387,7 +2122,7 @@
             "position": 1,
             "verbatim_sha1": "eb92b0d95bd4f8e5bc730bf1a969679f2e8e418f"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -2415,7 +2150,7 @@
             "position": 1,
             "verbatim_sha1": "eb92b0d95bd4f8e5bc730bf1a969679f2e8e418f"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -2443,7 +2178,7 @@
             "position": 2,
             "verbatim_sha1": "827ec8c5981aa8df7e5ba5b9e6a21e133585337f"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -2471,7 +2206,7 @@
             "position": 2,
             "verbatim_sha1": "827ec8c5981aa8df7e5ba5b9e6a21e133585337f"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -2499,7 +2234,7 @@
             "position": 3,
             "verbatim_sha1": "b22f9148bf0aa7e7c03e8de0170a9257f0ec682b"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -2527,7 +2262,7 @@
             "position": 3,
             "verbatim_sha1": "b22f9148bf0aa7e7c03e8de0170a9257f0ec682b"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -2555,7 +2290,7 @@
             "position": 4,
             "verbatim_sha1": "d4842a07576b89dd19e749c7863e23e379b924ae"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 52,
             "unit": "week",
@@ -2583,7 +2318,7 @@
             "position": 4,
             "verbatim_sha1": "d4842a07576b89dd19e749c7863e23e379b924ae"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#2",
           "timepoint": {
             "value": 52,
             "unit": "week",
@@ -2639,7 +2374,7 @@
             "position": 5,
             "verbatim_sha1": "0652334cc77b06d65c2ef4eb6649e342b535dee9"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 52,
             "unit": "week",
@@ -2667,7 +2402,7 @@
             "position": 5,
             "verbatim_sha1": "0652334cc77b06d65c2ef4eb6649e342b535dee9"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#2",
           "timepoint": {
             "value": 52,
             "unit": "week",
@@ -2723,7 +2458,7 @@
             "position": 8,
             "verbatim_sha1": "b0268f8eb621e5001840d3f773ccaaef9613067a"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -2751,7 +2486,7 @@
             "position": 8,
             "verbatim_sha1": "b0268f8eb621e5001840d3f773ccaaef9613067a"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -2779,7 +2514,7 @@
             "position": 9,
             "verbatim_sha1": "234eb1836608f4f76b60ed20ff5dc452f456fb83"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -2807,7 +2542,7 @@
             "position": 9,
             "verbatim_sha1": "234eb1836608f4f76b60ed20ff5dc452f456fb83"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -2835,7 +2570,7 @@
             "position": 10,
             "verbatim_sha1": "3f8c779b2a7fef3a54f6e49f0d404eefa1cba7fe"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -2863,7 +2598,7 @@
             "position": 10,
             "verbatim_sha1": "3f8c779b2a7fef3a54f6e49f0d404eefa1cba7fe"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -2891,7 +2626,7 @@
             "position": 11,
             "verbatim_sha1": "8a1e1802a817f1b7ba3cfd01bf43e96b0ea1cb08"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -2919,7 +2654,7 @@
             "position": 11,
             "verbatim_sha1": "8a1e1802a817f1b7ba3cfd01bf43e96b0ea1cb08"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -2947,7 +2682,7 @@
             "position": 12,
             "verbatim_sha1": "43b20e7e029cd39396b53573ea179b60df6cbf68"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -2975,7 +2710,7 @@
             "position": 12,
             "verbatim_sha1": "43b20e7e029cd39396b53573ea179b60df6cbf68"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -3003,7 +2738,7 @@
             "position": 13,
             "verbatim_sha1": "3cc8d51f27036ec70b3e3fbb8940872269213a57"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -3031,7 +2766,7 @@
             "position": 13,
             "verbatim_sha1": "3cc8d51f27036ec70b3e3fbb8940872269213a57"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -3059,7 +2794,7 @@
             "position": 14,
             "verbatim_sha1": "9ebf7973c73e776814f1bbcc79a7ca5311bb1549"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -3087,7 +2822,7 @@
             "position": 14,
             "verbatim_sha1": "9ebf7973c73e776814f1bbcc79a7ca5311bb1549"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -3115,7 +2850,7 @@
             "position": 15,
             "verbatim_sha1": "f224a29bfa0be122a6017227bf4d4e5ddac81a06"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -3143,7 +2878,7 @@
             "position": 15,
             "verbatim_sha1": "f224a29bfa0be122a6017227bf4d4e5ddac81a06"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 16,
             "unit": "week",
@@ -3169,7 +2904,7 @@
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03160885",
       "source_excerpt": "resultsSection.outcomeMeasuresModule.outcomeMeasures[].{denoms,classes[].categories[].measurements[]}",
-      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3, 2026-09-06)",
+      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3 backfill re-run)",
       "reviewed_by": null,
       "confidence": 1.0
     },
@@ -3186,8 +2921,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG000#full_analysis_set",
+          "reference_arm_id": "OG001#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "risk_difference",
           "effect_type_verbatim": "Risk Difference (RD)",
@@ -3215,8 +2950,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG000#full_analysis_set",
+          "reference_arm_id": "OG001#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "risk_difference",
           "effect_type_verbatim": "Risk Difference (RD)",
@@ -3244,8 +2979,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG000#full_analysis_set",
+          "reference_arm_id": "OG001#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "risk_difference",
           "effect_type_verbatim": "Risk Difference (RD)",
@@ -3273,8 +3008,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG000#full_analysis_set",
+          "reference_arm_id": "OG001#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
           "effect_type_verbatim": "Difference of least square means",
@@ -3302,8 +3037,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG000#full_analysis_set",
+          "reference_arm_id": "OG001#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
           "effect_type_verbatim": "Difference of least square means",
@@ -3331,7 +3066,7 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#full_analysis_set",
           "reference_arm_id": "OG002",
           "comparison_kind": "superiority",
           "effect_type": "risk_difference",
@@ -3360,7 +3095,7 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG001",
+          "test_arm_id": "OG001#2",
           "reference_arm_id": "OG002",
           "comparison_kind": "superiority",
           "effect_type": "risk_difference",
@@ -3389,7 +3124,7 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
+          "test_arm_id": "OG000#full_analysis_set",
           "reference_arm_id": "OG002",
           "comparison_kind": "superiority",
           "effect_type": "risk_difference",
@@ -3418,7 +3153,7 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG001",
+          "test_arm_id": "OG001#2",
           "reference_arm_id": "OG002",
           "comparison_kind": "superiority",
           "effect_type": "risk_difference",
@@ -3447,8 +3182,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG000#full_analysis_set",
+          "reference_arm_id": "OG001#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "risk_difference",
           "effect_type_verbatim": "Risk Difference (RD)",
@@ -3476,8 +3211,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG000#full_analysis_set",
+          "reference_arm_id": "OG001#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "risk_difference",
           "effect_type_verbatim": "Risk Difference (RD)",
@@ -3505,8 +3240,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG000#full_analysis_set",
+          "reference_arm_id": "OG001#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
           "effect_type_verbatim": "Difference of least square means",
@@ -3534,8 +3269,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG000#full_analysis_set",
+          "reference_arm_id": "OG001#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "risk_difference",
           "effect_type_verbatim": "Risk Difference (RD)",
@@ -3563,8 +3298,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG000#full_analysis_set",
+          "reference_arm_id": "OG001#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "risk_difference",
           "effect_type_verbatim": "Risk Difference (RD)",
@@ -3592,8 +3327,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG000#full_analysis_set",
+          "reference_arm_id": "OG001#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "ls_mean_difference",
           "effect_type_verbatim": "Difference of least square means",
@@ -3621,8 +3356,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG000#full_analysis_set",
+          "reference_arm_id": "OG001#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "risk_difference",
           "effect_type_verbatim": "Risk Difference (RD)",
@@ -3650,8 +3385,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG000#full_analysis_set",
+          "reference_arm_id": "OG001#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": "risk_difference",
           "effect_type_verbatim": "Risk Difference (RD)",
@@ -3672,7 +3407,7 @@
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03160885",
       "source_excerpt": "resultsSection.outcomeMeasuresModule.outcomeMeasures[].analyses[]",
-      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3, 2026-09-06)",
+      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3 backfill re-run)",
       "reviewed_by": null,
       "confidence": 1.0
     },

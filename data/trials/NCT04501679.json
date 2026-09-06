@@ -1,5 +1,5 @@
 {
-  "schema_version": 3,
+  "schema_version": 4,
   "nct_id": {
     "value": "NCT04501679",
     "source_type": "ctgov_api",
@@ -84,27 +84,15 @@
     },
     "mechanism_of_action": {
       "value": {
-        "modality": "monoclonal_antibody",
-        "drug_class": "monoclonal antibody",
-        "antibody_isotype": "IgG2",
-        "binding_targets": [],
-        "pathway_cytokines": [
-          "IL-31"
-        ],
-        "receptor_subunits": [],
-        "kinases_inhibited": [],
-        "lower_potency_kinases": [],
-        "selectivity": [],
-        "reversible": null,
-        "mechanism_established": null,
-        "label_section": "12.1"
+        "drug": "Nemolizumab",
+        "application_number": null
       },
-      "source_type": "openfda_label",
-      "source_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=df0e2be2-b6bd-40e5-9175-0c8e893433ea",
-      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1) -- v1 extracted text: 12.1 Mechanism of Action Nemolizumab-ilto is a humanized IgG2 monoclonal antibody that inhibits IL-31 signaling by binding selectively to IL-31 RA. IL-31 is a naturally occurring cytokine that is involved in pruritus, inflammation, epidermal dysregulation, and fibrosis. Nemolizumab-ilto inhibited IL-31-induced responses including the release of proinflammatory cytokines and chemokines.",
-      "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA); structured by atlas.migrate v1->v2",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 0.9
+      "confidence": null
     },
     "dosing_regimen": {
       "value": [
@@ -864,246 +852,50 @@
     },
     "boxed_warning": {
       "value": {
-        "present": false,
-        "title": null,
-        "warning_categories": [],
-        "referenced_label_sections": [],
-        "product_names": []
+        "drug": "Nemolizumab",
+        "application_number": null
       },
-      "source_type": "openfda_label",
-      "source_url": "https://api.fda.gov/drug/label.json?search=openfda.substance_name:NEMOLIZUMAB&limit=1",
-      "source_excerpt": "results[0] has no boxed_warning key (checked, none present)",
-      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass); structured by atlas.migrate v1->v2",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     }
   },
   "real_world_safety": {
     "faers_summary": {
       "value": {
-        "query": {
-          "search_field": "patient.drug.medicinalproduct",
-          "search_term": "NEMOLIZUMAB",
-          "receivedate_from": "2024-07-10",
-          "receivedate_to": "2026-06-30",
-          "api_urls": [
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"NEMOLIZUMAB\"&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"NEMOLIZUMAB\"+AND+serious:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"NEMOLIZUMAB\"+AND+seriousnessdeath:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"NEMOLIZUMAB\"+AND+seriousnesshospitalization:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"NEMOLIZUMAB\"+AND+seriousnesslifethreatening:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"NEMOLIZUMAB\"+AND+seriousnessdisabling:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"NEMOLIZUMAB\"&count=patient.reaction.reactionmeddrapt.exact&limit=15",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"NEMOLIZUMAB\"+AND+serious:1&count=patient.reaction.reactionmeddrapt.exact&limit=15",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"NEMOLIZUMAB\"&count=receivedate"
-          ],
-          "data_last_updated": "2026-07-30"
-        },
-        "total_reports": 996,
-        "serious_reports": 804,
-        "death_reports": 129,
-        "hospitalization_reports": 309,
-        "life_threatening_reports": 4,
-        "disability_reports": 8,
-        "top_reactions": [
-          {
-            "meddra_pt": "DEATH",
-            "report_count": 99,
-            "pct_of_reports": 9.94
-          },
-          {
-            "meddra_pt": "PEMPHIGOID",
-            "report_count": 96,
-            "pct_of_reports": 9.64
-          },
-          {
-            "meddra_pt": "ERYTHEMA",
-            "report_count": 60,
-            "pct_of_reports": 6.02
-          },
-          {
-            "meddra_pt": "DERMATITIS ATOPIC",
-            "report_count": 59,
-            "pct_of_reports": 5.92
-          },
-          {
-            "meddra_pt": "PRURITUS",
-            "report_count": 59,
-            "pct_of_reports": 5.92
-          },
-          {
-            "meddra_pt": "ERYTHEMA MULTIFORME",
-            "report_count": 54,
-            "pct_of_reports": 5.42
-          },
-          {
-            "meddra_pt": "PRODUCT DOSE OMISSION ISSUE",
-            "report_count": 50,
-            "pct_of_reports": 5.02
-          },
-          {
-            "meddra_pt": "RASH",
-            "report_count": 49,
-            "pct_of_reports": 4.92
-          },
-          {
-            "meddra_pt": "DERMATITIS EXFOLIATIVE GENERALISED",
-            "report_count": 41,
-            "pct_of_reports": 4.12
-          },
-          {
-            "meddra_pt": "PNEUMONIA",
-            "report_count": 41,
-            "pct_of_reports": 4.12
-          },
-          {
-            "meddra_pt": "DRUG INEFFECTIVE",
-            "report_count": 35,
-            "pct_of_reports": 3.51
-          },
-          {
-            "meddra_pt": "OFF LABEL USE",
-            "report_count": 30,
-            "pct_of_reports": 3.01
-          },
-          {
-            "meddra_pt": "ECZEMA",
-            "report_count": 27,
-            "pct_of_reports": 2.71
-          },
-          {
-            "meddra_pt": "HEADACHE",
-            "report_count": 27,
-            "pct_of_reports": 2.71
-          },
-          {
-            "meddra_pt": "BLISTER",
-            "report_count": 26,
-            "pct_of_reports": 2.61
-          }
-        ],
-        "top_serious_reactions": [
-          {
-            "meddra_pt": "DEATH",
-            "report_count": 99,
-            "pct_of_reports": 12.31
-          },
-          {
-            "meddra_pt": "PEMPHIGOID",
-            "report_count": 94,
-            "pct_of_reports": 11.69
-          },
-          {
-            "meddra_pt": "ERYTHEMA",
-            "report_count": 48,
-            "pct_of_reports": 5.97
-          },
-          {
-            "meddra_pt": "PRODUCT DOSE OMISSION ISSUE",
-            "report_count": 48,
-            "pct_of_reports": 5.97
-          },
-          {
-            "meddra_pt": "PNEUMONIA",
-            "report_count": 40,
-            "pct_of_reports": 4.98
-          },
-          {
-            "meddra_pt": "DERMATITIS EXFOLIATIVE GENERALISED",
-            "report_count": 37,
-            "pct_of_reports": 4.6
-          },
-          {
-            "meddra_pt": "RASH",
-            "report_count": 34,
-            "pct_of_reports": 4.23
-          },
-          {
-            "meddra_pt": "DERMATITIS ATOPIC",
-            "report_count": 33,
-            "pct_of_reports": 4.1
-          },
-          {
-            "meddra_pt": "ERYTHEMA MULTIFORME",
-            "report_count": 33,
-            "pct_of_reports": 4.1
-          },
-          {
-            "meddra_pt": "PRURITUS",
-            "report_count": 33,
-            "pct_of_reports": 4.1
-          },
-          {
-            "meddra_pt": "CELLULITIS",
-            "report_count": 25,
-            "pct_of_reports": 3.11
-          },
-          {
-            "meddra_pt": "OFF LABEL USE",
-            "report_count": 25,
-            "pct_of_reports": 3.11
-          },
-          {
-            "meddra_pt": "HEADACHE",
-            "report_count": 22,
-            "pct_of_reports": 2.74
-          },
-          {
-            "meddra_pt": "BLISTER",
-            "report_count": 18,
-            "pct_of_reports": 2.24
-          },
-          {
-            "meddra_pt": "ECZEMA HERPETICUM",
-            "report_count": 16,
-            "pct_of_reports": 1.99
-          }
-        ],
-        "reports_by_year": [
-          {
-            "year": 2024,
-            "report_count": 104
-          },
-          {
-            "year": 2025,
-            "report_count": 490
-          },
-          {
-            "year": 2026,
-            "report_count": 402
-          }
-        ],
-        "meddra_version": null
+        "drug": "Nemolizumab",
+        "application_number": null
       },
-      "source_type": "openfda_faers",
-      "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"NEMOLIZUMAB\"&limit=1",
-      "source_excerpt": "openFDA drug/event.json aggregate: total_reports=996, serious=804, deaths=129",
-      "extracted_by": "fetch_faers.py (openfda drug/event.json, v2 pass)",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     }
   },
   "exclusivity": {
     "regulatory_application": {
       "value": {
-        "application_type": "BLA",
-        "application_number": "761390",
-        "registry": "purple_book",
-        "center": "CDER",
-        "proprietary_name": "Nemluvio",
-        "applicant": "Galderma Laboratories, L.P.",
-        "first_approval_date": "2024-08-12"
+        "drug": "Nemolizumab",
+        "application_number": "761390"
       },
-      "source_type": "purple_book",
-      "source_url": "https://purplebooksearch.fda.gov/index.cfm?event=advancedsearch",
-      "source_excerpt": "purplebooksearch.fda.gov live search table: BLA 761390 | Nemluvio | nemolizumab-ilto | 351(a) | Galderma Laboratories, L.P. | first approved 2024-08-12",
-      "extracted_by": "atlas.regulatory_applications (registry file fetched 2026-09-05)",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     },
     "orange_book": {
-      "value": null,
-      "source_type": "needs_extraction",
+      "value": {
+        "drug": "Nemolizumab",
+        "application_number": "761390"
+      },
+      "source_type": "drug_level_ref",
       "source_url": null,
       "source_excerpt": null,
       "extracted_by": null,
@@ -1112,43 +904,15 @@
     },
     "purple_book": {
       "value": {
-        "bla_number": "761390",
-        "proprietary_name": "Nemluvio",
-        "proper_name": "nemolizumab-ilto",
-        "applicant": "Galderma Laboratories, L.P.",
-        "license_type": "351(a)",
-        "license_number": "2289",
-        "center": "CDER",
-        "products": [
-          {
-            "product_number": "001",
-            "strength": "30MG",
-            "dosage_form": "For Injection",
-            "route": "Subcutaneous",
-            "presentation": "Autoinjector",
-            "marketing_status": "Rx",
-            "licensure": "Licensed",
-            "approval_date": "2024-08-12",
-            "submission_type": "Original",
-            "supplement_number": null
-          }
-        ],
-        "first_approval_date": "2024-08-12",
-        "date_of_first_licensure": null,
-        "reference_product_exclusivity_expiration": null,
-        "exclusivity_expiration_date": null,
-        "first_interchangeable_exclusivity_expiration": null,
-        "orphan_exclusivity_expiration": null,
-        "patent_list_provided": null,
-        "biosimilars": [],
-        "data_file_month": null
+        "drug": "Nemolizumab",
+        "application_number": null
       },
-      "source_type": "purple_book",
-      "source_url": "https://purplebooksearch.fda.gov/index.cfm?event=advancedsearch",
-      "source_excerpt": "purplebooksearch.fda.gov live search table, BLA 761390 (Nemluvio), 0 biosimilar(s) on file",
-      "extracted_by": "fetch_purple_book.py (purplebooksearch.fda.gov live search table, raw staging pass)",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     }
   },
   "results": {
@@ -1158,6 +922,7 @@
           "arm_id": "OG000",
           "label": "Nemolizumab",
           "role": "investigational",
+          "analysis_population": "full_analysis_set",
           "intervention_names": [
             "Nemolizumab"
           ],
@@ -1170,6 +935,7 @@
           "arm_id": "OG001",
           "label": "Placebo",
           "role": "placebo",
+          "analysis_population": "full_analysis_set",
           "intervention_names": [
             "Placebo"
           ],
@@ -1182,7 +948,7 @@
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04501679",
       "source_excerpt": "resultsSection.outcomeMeasuresModule.outcomeMeasures[].groups[]",
-      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3, 2026-09-06)",
+      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3 backfill re-run)",
       "reviewed_by": null,
       "confidence": 1.0
     },
@@ -1207,8 +973,8 @@
           "reported_value": 103.0,
           "reported_unit": "Participants",
           "responders": 103,
-          "response_rate_pct": null,
-          "rate_is_derived": false,
+          "response_rate_pct": 56.3,
+          "rate_is_derived": true,
           "dispersion_type": null,
           "dispersion_value": null,
           "ci_pct": null,
@@ -1235,8 +1001,8 @@
           "reported_value": 19.0,
           "reported_unit": "Participants",
           "responders": 19,
-          "response_rate_pct": null,
-          "rate_is_derived": false,
+          "response_rate_pct": 20.9,
+          "rate_is_derived": true,
           "dispersion_type": null,
           "dispersion_value": null,
           "ci_pct": null,
@@ -1263,8 +1029,8 @@
           "reported_value": 69.0,
           "reported_unit": "Participants",
           "responders": 69,
-          "response_rate_pct": null,
-          "rate_is_derived": false,
+          "response_rate_pct": 37.7,
+          "rate_is_derived": true,
           "dispersion_type": null,
           "dispersion_value": null,
           "ci_pct": null,
@@ -1291,8 +1057,8 @@
           "reported_value": 10.0,
           "reported_unit": "Participants",
           "responders": 10,
-          "response_rate_pct": null,
-          "rate_is_derived": false,
+          "response_rate_pct": 11.0,
+          "rate_is_derived": true,
           "dispersion_type": null,
           "dispersion_value": null,
           "ci_pct": null,
@@ -1319,8 +1085,8 @@
           "reported_value": 75.0,
           "reported_unit": "Participants",
           "responders": 75,
-          "response_rate_pct": null,
-          "rate_is_derived": false,
+          "response_rate_pct": 41.0,
+          "rate_is_derived": true,
           "dispersion_type": null,
           "dispersion_value": null,
           "ci_pct": null,
@@ -1347,8 +1113,8 @@
           "reported_value": 7.0,
           "reported_unit": "Participants",
           "responders": 7,
-          "response_rate_pct": null,
-          "rate_is_derived": false,
+          "response_rate_pct": 7.7,
+          "rate_is_derived": true,
           "dispersion_type": null,
           "dispersion_value": null,
           "ci_pct": null,
@@ -1375,8 +1141,8 @@
           "reported_value": 64.0,
           "reported_unit": "Participants",
           "responders": 64,
-          "response_rate_pct": null,
-          "rate_is_derived": false,
+          "response_rate_pct": 35.0,
+          "rate_is_derived": true,
           "dispersion_type": null,
           "dispersion_value": null,
           "ci_pct": null,
@@ -1403,8 +1169,8 @@
           "reported_value": 7.0,
           "reported_unit": "Participants",
           "responders": 7,
-          "response_rate_pct": null,
-          "rate_is_derived": false,
+          "response_rate_pct": 7.7,
+          "rate_is_derived": true,
           "dispersion_type": null,
           "dispersion_value": null,
           "ci_pct": null,
@@ -1431,8 +1197,8 @@
           "reported_value": 95.0,
           "reported_unit": "Participants",
           "responders": 95,
-          "response_rate_pct": null,
-          "rate_is_derived": false,
+          "response_rate_pct": 51.9,
+          "rate_is_derived": true,
           "dispersion_type": null,
           "dispersion_value": null,
           "ci_pct": null,
@@ -1459,8 +1225,8 @@
           "reported_value": 19.0,
           "reported_unit": "Participants",
           "responders": 19,
-          "response_rate_pct": null,
-          "rate_is_derived": false,
+          "response_rate_pct": 20.9,
+          "rate_is_derived": true,
           "dispersion_type": null,
           "dispersion_value": null,
           "ci_pct": null,
@@ -1487,8 +1253,8 @@
           "reported_value": 68.0,
           "reported_unit": "Participants",
           "responders": 68,
-          "response_rate_pct": null,
-          "rate_is_derived": false,
+          "response_rate_pct": 37.2,
+          "rate_is_derived": true,
           "dispersion_type": null,
           "dispersion_value": null,
           "ci_pct": null,
@@ -1515,8 +1281,8 @@
           "reported_value": 9.0,
           "reported_unit": "Participants",
           "responders": 9,
-          "response_rate_pct": null,
-          "rate_is_derived": false,
+          "response_rate_pct": 9.9,
+          "rate_is_derived": true,
           "dispersion_type": null,
           "dispersion_value": null,
           "ci_pct": null,
@@ -1543,8 +1309,8 @@
           "reported_value": 36.0,
           "reported_unit": "Participants",
           "responders": 36,
-          "response_rate_pct": null,
-          "rate_is_derived": false,
+          "response_rate_pct": 19.7,
+          "rate_is_derived": true,
           "dispersion_type": null,
           "dispersion_value": null,
           "ci_pct": null,
@@ -1571,8 +1337,8 @@
           "reported_value": 2.0,
           "reported_unit": "Participants",
           "responders": 2,
-          "response_rate_pct": null,
-          "rate_is_derived": false,
+          "response_rate_pct": 2.2,
+          "rate_is_derived": true,
           "dispersion_type": null,
           "dispersion_value": null,
           "ci_pct": null,
@@ -1595,8 +1361,8 @@
           "reported_value": 112.0,
           "reported_unit": "Participants",
           "responders": 112,
-          "response_rate_pct": null,
-          "rate_is_derived": false,
+          "response_rate_pct": 61.2,
+          "rate_is_derived": true,
           "dispersion_type": null,
           "dispersion_value": null,
           "ci_pct": null,
@@ -1619,8 +1385,8 @@
           "reported_value": 48.0,
           "reported_unit": "Participants",
           "responders": 48,
-          "response_rate_pct": null,
-          "rate_is_derived": false,
+          "response_rate_pct": 52.7,
+          "rate_is_derived": true,
           "dispersion_type": null,
           "dispersion_value": null,
           "ci_pct": null,
@@ -1643,8 +1409,8 @@
           "reported_value": 21.0,
           "reported_unit": "Participants",
           "responders": 21,
-          "response_rate_pct": null,
-          "rate_is_derived": false,
+          "response_rate_pct": 11.5,
+          "rate_is_derived": true,
           "dispersion_type": null,
           "dispersion_value": null,
           "ci_pct": null,
@@ -1667,8 +1433,8 @@
           "reported_value": 9.0,
           "reported_unit": "Participants",
           "responders": 9,
-          "response_rate_pct": null,
-          "rate_is_derived": false,
+          "response_rate_pct": 9.9,
+          "rate_is_derived": true,
           "dispersion_type": null,
           "dispersion_value": null,
           "ci_pct": null,
@@ -1691,8 +1457,8 @@
           "reported_value": 4.0,
           "reported_unit": "Participants",
           "responders": 4,
-          "response_rate_pct": null,
-          "rate_is_derived": false,
+          "response_rate_pct": 2.2,
+          "rate_is_derived": true,
           "dispersion_type": null,
           "dispersion_value": null,
           "ci_pct": null,
@@ -1715,8 +1481,8 @@
           "reported_value": 5.0,
           "reported_unit": "Participants",
           "responders": 5,
-          "response_rate_pct": null,
-          "rate_is_derived": false,
+          "response_rate_pct": 5.5,
+          "rate_is_derived": true,
           "dispersion_type": null,
           "dispersion_value": null,
           "ci_pct": null,
@@ -1728,7 +1494,7 @@
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04501679",
       "source_excerpt": "resultsSection.outcomeMeasuresModule.outcomeMeasures[].{denoms,classes[].categories[].measurements[]}",
-      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3, 2026-09-06)",
+      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3 backfill re-run)",
       "reviewed_by": null,
       "confidence": 1.0
     },

@@ -18,17 +18,32 @@ v2 -> v3 rule: pure no-op. Adds the `results` field group (arms/arm_results/
 effect_estimates/published_results) as needs_extraction placeholders. No
 existing v2 value is touched -- see `migrate_v2_to_v3`.
 
-`migrate_trial` (v1 -> current) and `migrate_v2_to_v3` are both pure
-(dict in, dict out) so tests can run them on fixtures. `migrate_trial`
-chains straight through to the current schema version -- it does not stop
-at v2 -- so a fresh v1 fetch never needs a second migration pass.
+`migrate_trial` (v1 -> v3) and `migrate_v2_to_v3` are both pure (dict in,
+dict out) so tests can run them on fixtures. `migrate_trial` chains
+straight through to v3 -- it does not stop at v2 -- so a fresh v1 fetch
+never needs a second migration pass.
+
+v3 -> v4 (see atlas/drugs.py) is deliberately NOT part of this chain: it
+moves 6 fields (mechanism_of_action, boxed_warning, faers_summary,
+regulatory_application, orange_book, purple_book) off the trial record onto
+a shared data/drugs/<slug>.json record, which needs corpus-wide knowledge
+(every OTHER trial of the same drug) that a single, pure, per-trial
+migration function does not have. It is its own separate whole-corpus step,
+scripts/split_drug_level_fields.py, run once after every trial is already
+at v3.
 """
 import copy
 
 from . import SCHEMA_VERSION
 
 V2_SCHEMA_VERSION = 2  # what migrate_trial's own v1->v2 restructuring stage produces,
-                       # independent of the current overall SCHEMA_VERSION (3)
+                       # independent of the current overall SCHEMA_VERSION (4)
+V3_SCHEMA_VERSION = 3  # what migrate_v2_to_v3 produces -- a literal, not SCHEMA_VERSION,
+                       # since v3->v4 (atlas/drugs.py's split_trial_record) needs
+                       # corpus-wide knowledge (every trial of a drug) that a single,
+                       # pure per-trial migration function does not have -- it is its
+                       # own separate whole-corpus step (scripts/split_drug_level_fields.py),
+                       # not something migrate_trial can chain straight through to.
 from .curated_background import BACKGROUND_THERAPY
 from .curated_multiplicity import MULTIPLICITY_CONTROL
 from .curated_rescue import RESCUE_THERAPY
@@ -114,7 +129,7 @@ def migrate_v2_to_v3(v2: dict) -> dict:
     is trivially lossless (unlike v1->v2, nothing here needs restructuring --
     v3 only adds new fields, it renames or reshapes none of v2's)."""
     out = copy.deepcopy(v2)
-    out["schema_version"] = SCHEMA_VERSION
+    out["schema_version"] = V3_SCHEMA_VERSION
     out["results"] = {
         "arms": needs_extraction(),
         "arm_results": needs_extraction(),
@@ -125,7 +140,7 @@ def migrate_v2_to_v3(v2: dict) -> dict:
 
 
 def migrate_trial(v1: dict) -> dict:
-    if v1.get("schema_version") in (V2_SCHEMA_VERSION, SCHEMA_VERSION):
+    if v1.get("schema_version") in (V2_SCHEMA_VERSION, V3_SCHEMA_VERSION, SCHEMA_VERSION):
         raise AlreadyMigrated(v1["nct_id"]["value"])
     nct = v1["nct_id"]["value"]
     idn, mol, pop, des, end, tim, ae = (v1[g] for g in ("identity", "molecule", "population", "design", "endpoints", "timing_ops", "adverse_events"))

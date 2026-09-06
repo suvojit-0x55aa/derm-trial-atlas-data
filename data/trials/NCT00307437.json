@@ -1,5 +1,5 @@
 {
-  "schema_version": 3,
+  "schema_version": 4,
   "nct_id": {
     "value": "NCT00307437",
     "source_type": "ctgov_api",
@@ -85,31 +85,15 @@
     },
     "mechanism_of_action": {
       "value": {
-        "modality": "monoclonal_antibody",
-        "drug_class": "IL-12/IL-23 (p40) antagonist",
-        "antibody_isotype": "IgG1",
-        "binding_targets": [
-          "IL-12",
-          "IL-23"
-        ],
-        "pathway_cytokines": [
-          "IL-12",
-          "IL-23"
-        ],
-        "receptor_subunits": [],
-        "kinases_inhibited": [],
-        "lower_potency_kinases": [],
-        "selectivity": [],
-        "reversible": null,
-        "mechanism_established": null,
-        "label_section": "12.1"
+        "drug": "Ustekinumab",
+        "application_number": null
       },
-      "source_type": "openfda_label",
-      "source_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=da99991a-7663-44b5-80f2-e22ffe92c54b",
-      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1) -- extracted text: 12.1 Mechanism of Action Ustekinumab products are human IgG1κ monoclonal antibodies that bind with specificity to the p40 protein subunit used by both the IL-12 and IL-23 cytokines. IL-12 and IL-23 are naturally occurring cytokines that are involved in inflammatory and immune responses, such as natural killer cell activation and CD4+ T-cell differentiation and activation. In in vitro models, ustekinumab products were shown to disrupt IL-12 and IL-23 mediated signaling and cytokine cascades by disrupting the interaction of these cytokines with a shared cell- surface receptor chain, IL-12Rβ1. The cytokines IL-12 and IL-23 have been implicated as important contributors to the chronic inflammation that is a hallmark of Crohn’s disease and ulcerative colitis. In animal models of colitis, genetic absence or antibody blockade of the p40 subunit of IL-12 and IL-23, the target of ustekinumab products, was shown to be protective.",
-      "extracted_by": "deep-extraction pass (LLM-assisted extraction, scale-out backfill; pending human QA)",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 0.9
+      "confidence": null
     },
     "dosing_regimen": {
       "value": [
@@ -1027,306 +1011,50 @@
     },
     "boxed_warning": {
       "value": {
-        "present": false,
-        "title": null,
-        "warning_categories": [],
-        "referenced_label_sections": [],
-        "product_names": []
+        "drug": "Ustekinumab",
+        "application_number": null
       },
-      "source_type": "openfda_label",
-      "source_url": "https://api.fda.gov/drug/label.json?search=openfda.substance_name:USTEKINUMAB&limit=1",
-      "source_excerpt": "results[0] has no boxed_warning key (checked, none present)",
-      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass); structured by atlas.migrate v1->v2",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     }
   },
   "real_world_safety": {
     "faers_summary": {
       "value": {
-        "query": {
-          "search_field": "patient.drug.medicinalproduct",
-          "search_term": "USTEKINUMAB",
-          "receivedate_from": "2009-10-02",
-          "receivedate_to": "2026-06-30",
-          "api_urls": [
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"USTEKINUMAB\"&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"USTEKINUMAB\"+AND+serious:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"USTEKINUMAB\"+AND+seriousnessdeath:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"USTEKINUMAB\"+AND+seriousnesshospitalization:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"USTEKINUMAB\"+AND+seriousnesslifethreatening:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"USTEKINUMAB\"+AND+seriousnessdisabling:1&limit=1",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"USTEKINUMAB\"&count=patient.reaction.reactionmeddrapt.exact&limit=15",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"USTEKINUMAB\"+AND+serious:1&count=patient.reaction.reactionmeddrapt.exact&limit=15",
-            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"USTEKINUMAB\"&count=receivedate"
-          ],
-          "data_last_updated": "2026-07-30"
-        },
-        "total_reports": 10559,
-        "serious_reports": 10102,
-        "death_reports": 2034,
-        "hospitalization_reports": 4626,
-        "life_threatening_reports": 1702,
-        "disability_reports": 1812,
-        "top_reactions": [
-          {
-            "meddra_pt": "DRUG INEFFECTIVE",
-            "report_count": 2617,
-            "pct_of_reports": 24.78
-          },
-          {
-            "meddra_pt": "OFF LABEL USE",
-            "report_count": 2381,
-            "pct_of_reports": 22.55
-          },
-          {
-            "meddra_pt": "FATIGUE",
-            "report_count": 1438,
-            "pct_of_reports": 13.62
-          },
-          {
-            "meddra_pt": "DRUG INTOLERANCE",
-            "report_count": 1402,
-            "pct_of_reports": 13.28
-          },
-          {
-            "meddra_pt": "ARTHRALGIA",
-            "report_count": 1401,
-            "pct_of_reports": 13.27
-          },
-          {
-            "meddra_pt": "RHEUMATOID ARTHRITIS",
-            "report_count": 1365,
-            "pct_of_reports": 12.93
-          },
-          {
-            "meddra_pt": "PAIN",
-            "report_count": 1353,
-            "pct_of_reports": 12.81
-          },
-          {
-            "meddra_pt": "RASH",
-            "report_count": 1342,
-            "pct_of_reports": 12.71
-          },
-          {
-            "meddra_pt": "SYNOVITIS",
-            "report_count": 1338,
-            "pct_of_reports": 12.67
-          },
-          {
-            "meddra_pt": "TREATMENT FAILURE",
-            "report_count": 1335,
-            "pct_of_reports": 12.64
-          },
-          {
-            "meddra_pt": "GENERAL PHYSICAL HEALTH DETERIORATION",
-            "report_count": 1316,
-            "pct_of_reports": 12.46
-          },
-          {
-            "meddra_pt": "CONDITION AGGRAVATED",
-            "report_count": 1282,
-            "pct_of_reports": 12.14
-          },
-          {
-            "meddra_pt": "INFUSION RELATED REACTION",
-            "report_count": 1271,
-            "pct_of_reports": 12.04
-          },
-          {
-            "meddra_pt": "JOINT SWELLING",
-            "report_count": 1241,
-            "pct_of_reports": 11.75
-          },
-          {
-            "meddra_pt": "WOUND",
-            "report_count": 1229,
-            "pct_of_reports": 11.64
-          }
-        ],
-        "top_serious_reactions": [
-          {
-            "meddra_pt": "DRUG INEFFECTIVE",
-            "report_count": 2540,
-            "pct_of_reports": 25.14
-          },
-          {
-            "meddra_pt": "OFF LABEL USE",
-            "report_count": 2327,
-            "pct_of_reports": 23.04
-          },
-          {
-            "meddra_pt": "FATIGUE",
-            "report_count": 1435,
-            "pct_of_reports": 14.21
-          },
-          {
-            "meddra_pt": "DRUG INTOLERANCE",
-            "report_count": 1396,
-            "pct_of_reports": 13.82
-          },
-          {
-            "meddra_pt": "ARTHRALGIA",
-            "report_count": 1388,
-            "pct_of_reports": 13.74
-          },
-          {
-            "meddra_pt": "RHEUMATOID ARTHRITIS",
-            "report_count": 1365,
-            "pct_of_reports": 13.51
-          },
-          {
-            "meddra_pt": "PAIN",
-            "report_count": 1350,
-            "pct_of_reports": 13.36
-          },
-          {
-            "meddra_pt": "RASH",
-            "report_count": 1339,
-            "pct_of_reports": 13.25
-          },
-          {
-            "meddra_pt": "SYNOVITIS",
-            "report_count": 1338,
-            "pct_of_reports": 13.24
-          },
-          {
-            "meddra_pt": "GENERAL PHYSICAL HEALTH DETERIORATION",
-            "report_count": 1313,
-            "pct_of_reports": 13.0
-          },
-          {
-            "meddra_pt": "TREATMENT FAILURE",
-            "report_count": 1307,
-            "pct_of_reports": 12.94
-          },
-          {
-            "meddra_pt": "CONDITION AGGRAVATED",
-            "report_count": 1278,
-            "pct_of_reports": 12.65
-          },
-          {
-            "meddra_pt": "INFUSION RELATED REACTION",
-            "report_count": 1270,
-            "pct_of_reports": 12.57
-          },
-          {
-            "meddra_pt": "JOINT SWELLING",
-            "report_count": 1241,
-            "pct_of_reports": 12.28
-          },
-          {
-            "meddra_pt": "WOUND",
-            "report_count": 1229,
-            "pct_of_reports": 12.17
-          }
-        ],
-        "reports_by_year": [
-          {
-            "year": 2009,
-            "report_count": 18
-          },
-          {
-            "year": 2010,
-            "report_count": 82
-          },
-          {
-            "year": 2011,
-            "report_count": 126
-          },
-          {
-            "year": 2012,
-            "report_count": 193
-          },
-          {
-            "year": 2013,
-            "report_count": 256
-          },
-          {
-            "year": 2014,
-            "report_count": 190
-          },
-          {
-            "year": 2015,
-            "report_count": 366
-          },
-          {
-            "year": 2016,
-            "report_count": 270
-          },
-          {
-            "year": 2017,
-            "report_count": 319
-          },
-          {
-            "year": 2018,
-            "report_count": 452
-          },
-          {
-            "year": 2019,
-            "report_count": 502
-          },
-          {
-            "year": 2020,
-            "report_count": 607
-          },
-          {
-            "year": 2021,
-            "report_count": 559
-          },
-          {
-            "year": 2022,
-            "report_count": 664
-          },
-          {
-            "year": 2023,
-            "report_count": 978
-          },
-          {
-            "year": 2024,
-            "report_count": 1409
-          },
-          {
-            "year": 2025,
-            "report_count": 2223
-          },
-          {
-            "year": 2026,
-            "report_count": 1345
-          }
-        ],
-        "meddra_version": null
+        "drug": "Ustekinumab",
+        "application_number": null
       },
-      "source_type": "openfda_faers",
-      "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"USTEKINUMAB\"&limit=1",
-      "source_excerpt": "openFDA drug/event.json aggregate: total_reports=10559, serious=10102, deaths=2034",
-      "extracted_by": "fetch_faers.py (openfda drug/event.json, cycle-7 pass)",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     }
   },
   "exclusivity": {
     "regulatory_application": {
       "value": {
-        "application_type": "BLA",
-        "application_number": "125261",
-        "registry": "purple_book",
-        "center": "CDER",
-        "proprietary_name": "Stelara",
-        "applicant": "Janssen Biotech, Inc.",
-        "first_approval_date": "2009-09-25"
+        "drug": "Ustekinumab",
+        "application_number": "125261"
       },
-      "source_type": "purple_book",
-      "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2026/purplebook-search-August-data-download.csv",
-      "source_excerpt": "Purple Book Monthly Historical Data Changes Report (August 2026 snapshot) CSV row: Janssen Biotech, Inc. | BLA 125261 | Stelara | ustekinumab | 351(a) | 45MG/0.5ML Injection Subcutaneous Single-Dose Vial | Rx | Licensed | 25-Sep-09 | Original | License 1864 | Product 001 | CDER",
-      "extracted_by": "atlas.regulatory_applications (registry file fetched 2026-09-05)",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     },
     "orange_book": {
-      "value": null,
-      "source_type": "needs_extraction",
+      "value": {
+        "drug": "Ustekinumab",
+        "application_number": "125261"
+      },
+      "source_type": "drug_level_ref",
       "source_url": null,
       "source_excerpt": null,
       "extracted_by": null,
@@ -1335,179 +1063,25 @@
     },
     "purple_book": {
       "value": {
-        "bla_number": "125261",
-        "proprietary_name": "Stelara",
-        "proper_name": "ustekinumab",
-        "applicant": "Janssen Biotech, Inc.",
-        "license_type": "351(a)",
-        "license_number": "1864",
-        "center": "CDER",
-        "products": [
-          {
-            "product_number": "001",
-            "strength": "45MG/0.5ML",
-            "dosage_form": "Injection",
-            "route": "Subcutaneous",
-            "presentation": "Single-Dose Vial",
-            "marketing_status": "Rx",
-            "licensure": "Licensed",
-            "approval_date": "2009-09-25",
-            "submission_type": "Original",
-            "supplement_number": null
-          },
-          {
-            "product_number": "002",
-            "strength": "90MG/ML",
-            "dosage_form": "Injection",
-            "route": "Subcutaneous",
-            "presentation": "Single-Dose Vial",
-            "marketing_status": "Disc",
-            "licensure": "Licensed",
-            "approval_date": "2009-09-25",
-            "submission_type": "Original",
-            "supplement_number": null
-          },
-          {
-            "product_number": "003",
-            "strength": "45MG/0.5ML",
-            "dosage_form": "Injection",
-            "route": "Subcutaneous",
-            "presentation": "Pre-Filled Syringe",
-            "marketing_status": "Rx",
-            "licensure": "Licensed",
-            "approval_date": "2009-12-30",
-            "submission_type": "Supplement",
-            "supplement_number": "1"
-          },
-          {
-            "product_number": "004",
-            "strength": "90MG/ML",
-            "dosage_form": "Injection",
-            "route": "Subcutaneous",
-            "presentation": "Pre-Filled Syringe",
-            "marketing_status": "Rx",
-            "licensure": "Licensed",
-            "approval_date": "2009-12-30",
-            "submission_type": "Supplement",
-            "supplement_number": "1"
-          }
-        ],
-        "first_approval_date": "2009-09-25",
-        "date_of_first_licensure": null,
-        "reference_product_exclusivity_expiration": null,
-        "exclusivity_expiration_date": null,
-        "first_interchangeable_exclusivity_expiration": null,
-        "orphan_exclusivity_expiration": null,
-        "patent_list_provided": true,
-        "biosimilars": [
-          {
-            "proper_name": "ustekinumab-auub",
-            "proprietary_name": "Wezlana",
-            "bla_number": "761285",
-            "applicant": "Amgen Inc.",
-            "approval_date": "2023-10-31",
-            "license_type": "351(k)",
-            "interchangeable_approval_date": "2023-10-31"
-          },
-          {
-            "proper_name": "ustekinumab-auub",
-            "proprietary_name": "Wezlana",
-            "bla_number": "761331",
-            "applicant": "Amgen Inc.",
-            "approval_date": "2023-10-31",
-            "license_type": "351(k)",
-            "interchangeable_approval_date": "2023-10-31"
-          },
-          {
-            "proper_name": "ustekinumab-aekn",
-            "proprietary_name": "Selarsdi",
-            "bla_number": "761343",
-            "applicant": "Alvotech USA Inc.",
-            "approval_date": "2024-04-16",
-            "license_type": "351(k)",
-            "interchangeable_approval_date": "2025-04-30"
-          },
-          {
-            "proper_name": "ustekinumab-ttwe",
-            "proprietary_name": "Pyzchiva",
-            "bla_number": "761373",
-            "applicant": "Samsung Bioepis Co., Ltd.",
-            "approval_date": "2024-06-28",
-            "license_type": "351(k)",
-            "interchangeable_approval_date": "2025-04-30"
-          },
-          {
-            "proper_name": "ustekinumab-ttwe",
-            "proprietary_name": "Pyzchiva",
-            "bla_number": "761425",
-            "applicant": "Samsung Bioepis Co., Ltd.",
-            "approval_date": "2024-06-28",
-            "license_type": "351(k)",
-            "interchangeable_approval_date": "2025-04-30"
-          },
-          {
-            "proper_name": "ustekinumab-aauz",
-            "proprietary_name": "Otulfi",
-            "bla_number": "761379",
-            "applicant": "Fresenius Kabi USA, LLC",
-            "approval_date": "2024-09-27",
-            "license_type": "351(k)",
-            "interchangeable_approval_date": "2025-04-30"
-          },
-          {
-            "proper_name": "ustekinumab-srlf",
-            "proprietary_name": "Imuldosa",
-            "bla_number": "761364",
-            "applicant": "Accord BioPharma Inc.",
-            "approval_date": "2024-10-10",
-            "license_type": "351(k)",
-            "interchangeable_approval_date": "2026-06-05"
-          },
-          {
-            "proper_name": "ustekinumab-kfce",
-            "proprietary_name": "Yesintek",
-            "bla_number": "761406",
-            "applicant": "Biocon Biologics Inc.",
-            "approval_date": "2024-11-29",
-            "license_type": "351(k)",
-            "interchangeable_approval_date": "2025-04-30"
-          },
-          {
-            "proper_name": "ustekinumab-stba",
-            "proprietary_name": "Steqeyma",
-            "bla_number": "761338",
-            "applicant": "CELLTRION, Inc.",
-            "approval_date": "2024-12-17",
-            "license_type": "351(k)",
-            "interchangeable_approval_date": "2025-04-30"
-          },
-          {
-            "proper_name": "ustekinumab-hmny",
-            "proprietary_name": "Starjemza",
-            "bla_number": "761419",
-            "applicant": "Bio-Thera Solutions, Ltd.",
-            "approval_date": "2025-05-22",
-            "license_type": "351(k)",
-            "interchangeable_approval_date": "2025-05-22"
-          }
-        ],
-        "data_file_month": "August 2026"
+        "drug": "Ustekinumab",
+        "application_number": null
       },
-      "source_type": "purple_book",
-      "source_url": "/tmp/derm_verify/purplebook.csv",
-      "source_excerpt": "Purple Book Monthly Historical Data Changes Report (August 2026 snapshot) CSV: 44 row(s) matched on Proper Name containing 'ustekinumab', reference BLA125261 (Stelara) plus 10 distinct biosimilar BLAs",
-      "extracted_by": "purple_book_csv_helper.py (accessdata.fda.gov monthly CSV, cycle-7 pass)",
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
       "reviewed_by": null,
-      "confidence": 1.0
+      "confidence": null
     }
   },
   "results": {
     "arms": {
       "value": [
         {
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "label": "Group I: Placebo",
           "role": "placebo",
+          "analysis_population": "full_analysis_set",
           "intervention_names": [],
           "dose_value": null,
           "dose_unit": null,
@@ -1515,29 +1089,10 @@
           "randomized_n": null
         },
         {
-          "arm_id": "OG001",
-          "label": "Group II: Ustekinumab 45 mg",
-          "role": "investigational",
-          "intervention_names": [],
-          "dose_value": null,
-          "dose_unit": null,
-          "frequency": null,
-          "randomized_n": null
-        },
-        {
-          "arm_id": "OG002",
-          "label": "Group III: Ustekinumab 90 mg",
-          "role": "investigational",
-          "intervention_names": [],
-          "dose_value": null,
-          "dose_unit": null,
-          "frequency": null,
-          "randomized_n": null
-        },
-        {
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "label": "Group 1: Ustekinumab 45mg Every 8 Weeks",
           "role": "investigational",
+          "analysis_population": null,
           "intervention_names": [],
           "dose_value": null,
           "dose_unit": null,
@@ -1545,9 +1100,21 @@
           "randomized_n": null
         },
         {
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
+          "label": "Group II: Ustekinumab 45 mg",
+          "role": "investigational",
+          "analysis_population": "full_analysis_set",
+          "intervention_names": [],
+          "dose_value": null,
+          "dose_unit": null,
+          "frequency": null,
+          "randomized_n": null
+        },
+        {
+          "arm_id": "OG001#2",
           "label": "Group 2: Ustekinumab 45mg Every 12 Weeks",
           "role": "investigational",
+          "analysis_population": null,
           "intervention_names": [],
           "dose_value": null,
           "dose_unit": null,
@@ -1555,9 +1122,21 @@
           "randomized_n": null
         },
         {
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
+          "label": "Group III: Ustekinumab 90 mg",
+          "role": "investigational",
+          "analysis_population": "full_analysis_set",
+          "intervention_names": [],
+          "dose_value": null,
+          "dose_unit": null,
+          "frequency": null,
+          "randomized_n": null
+        },
+        {
+          "arm_id": "OG002#2",
           "label": "Group 3: Ustekinumab 90 mg Every 8 Weeks",
           "role": "investigational",
+          "analysis_population": null,
           "intervention_names": [],
           "dose_value": null,
           "dose_unit": null,
@@ -1568,6 +1147,7 @@
           "arm_id": "OG003",
           "label": "Group 4: Ustekinumab 90 mg Every 12 Weeks",
           "role": "investigational",
+          "analysis_population": null,
           "intervention_names": [],
           "dose_value": null,
           "dose_unit": null,
@@ -1578,6 +1158,7 @@
           "arm_id": "OG004",
           "label": "Group 5: Combined (8 Week Dosing)",
           "role": "other",
+          "analysis_population": null,
           "intervention_names": [],
           "dose_value": null,
           "dose_unit": null,
@@ -1588,6 +1169,7 @@
           "arm_id": "OG005",
           "label": "Group 6: Combined (12 Week Dosing)",
           "role": "other",
+          "analysis_population": null,
           "intervention_names": [],
           "dose_value": null,
           "dose_unit": null,
@@ -1598,7 +1180,7 @@
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT00307437",
       "source_excerpt": "resultsSection.outcomeMeasuresModule.outcomeMeasures[].groups[]",
-      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3, 2026-09-06)",
+      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3 backfill re-run)",
       "reviewed_by": null,
       "confidence": 1.0
     },
@@ -1610,7 +1192,7 @@
             "position": 1,
             "verbatim_sha1": "8f0d24f34589e257bb26a9906a3bc4d9d679c9b0"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -1623,8 +1205,8 @@
           "reported_value": 15.0,
           "reported_unit": "Participants",
           "responders": 15,
-          "response_rate_pct": null,
-          "rate_is_derived": false,
+          "response_rate_pct": 3.7,
+          "rate_is_derived": true,
           "dispersion_type": null,
           "dispersion_value": null,
           "ci_pct": null,
@@ -1638,7 +1220,7 @@
             "position": 1,
             "verbatim_sha1": "8f0d24f34589e257bb26a9906a3bc4d9d679c9b0"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -1651,8 +1233,8 @@
           "reported_value": 273.0,
           "reported_unit": "Participants",
           "responders": 273,
-          "response_rate_pct": null,
-          "rate_is_derived": false,
+          "response_rate_pct": 66.7,
+          "rate_is_derived": true,
           "dispersion_type": null,
           "dispersion_value": null,
           "ci_pct": null,
@@ -1666,7 +1248,7 @@
             "position": 1,
             "verbatim_sha1": "8f0d24f34589e257bb26a9906a3bc4d9d679c9b0"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -1679,8 +1261,8 @@
           "reported_value": 311.0,
           "reported_unit": "Participants",
           "responders": 311,
-          "response_rate_pct": null,
-          "rate_is_derived": false,
+          "response_rate_pct": 75.7,
+          "rate_is_derived": true,
           "dispersion_type": null,
           "dispersion_value": null,
           "ci_pct": null,
@@ -1694,7 +1276,7 @@
             "position": 1,
             "verbatim_sha1": "039c3b912af434418ba7c1bee8b8ec324219edf9"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -1707,8 +1289,8 @@
           "reported_value": 18.0,
           "reported_unit": "Participants",
           "responders": 18,
-          "response_rate_pct": null,
-          "rate_is_derived": false,
+          "response_rate_pct": 4.4,
+          "rate_is_derived": true,
           "dispersion_type": null,
           "dispersion_value": null,
           "ci_pct": null,
@@ -1722,7 +1304,7 @@
             "position": 1,
             "verbatim_sha1": "039c3b912af434418ba7c1bee8b8ec324219edf9"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -1735,8 +1317,8 @@
           "reported_value": 277.0,
           "reported_unit": "Participants",
           "responders": 277,
-          "response_rate_pct": null,
-          "rate_is_derived": false,
+          "response_rate_pct": 67.7,
+          "rate_is_derived": true,
           "dispersion_type": null,
           "dispersion_value": null,
           "ci_pct": null,
@@ -1750,7 +1332,7 @@
             "position": 1,
             "verbatim_sha1": "039c3b912af434418ba7c1bee8b8ec324219edf9"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -1763,8 +1345,8 @@
           "reported_value": 300.0,
           "reported_unit": "Participants",
           "responders": 300,
-          "response_rate_pct": null,
-          "rate_is_derived": false,
+          "response_rate_pct": 73.0,
+          "rate_is_derived": true,
           "dispersion_type": null,
           "dispersion_value": null,
           "ci_pct": null,
@@ -1778,7 +1360,7 @@
             "position": 2,
             "verbatim_sha1": "c12371955872caab66c6fedee2e102c1430b1c33"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -1806,7 +1388,7 @@
             "position": 2,
             "verbatim_sha1": "c12371955872caab66c6fedee2e102c1430b1c33"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -1834,7 +1416,7 @@
             "position": 2,
             "verbatim_sha1": "c12371955872caab66c6fedee2e102c1430b1c33"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#full_analysis_set",
           "timepoint": {
             "value": 12,
             "unit": "week",
@@ -1862,7 +1444,7 @@
             "position": 3,
             "verbatim_sha1": "81d87574213d86810e76eacf0a672dd71fc7bef0"
           },
-          "arm_id": "OG000",
+          "arm_id": "OG000#2",
           "timepoint": {
             "value": 40,
             "unit": "week",
@@ -1890,7 +1472,7 @@
             "position": 3,
             "verbatim_sha1": "81d87574213d86810e76eacf0a672dd71fc7bef0"
           },
-          "arm_id": "OG001",
+          "arm_id": "OG001#2",
           "timepoint": {
             "value": 40,
             "unit": "week",
@@ -1918,7 +1500,7 @@
             "position": 3,
             "verbatim_sha1": "81d87574213d86810e76eacf0a672dd71fc7bef0"
           },
-          "arm_id": "OG002",
+          "arm_id": "OG002#2",
           "timepoint": {
             "value": 40,
             "unit": "week",
@@ -2028,7 +1610,7 @@
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT00307437",
       "source_excerpt": "resultsSection.outcomeMeasuresModule.outcomeMeasures[].{denoms,classes[].categories[].measurements[]}",
-      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3, 2026-09-06)",
+      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3 backfill re-run)",
       "reviewed_by": null,
       "confidence": 1.0
     },
@@ -2045,8 +1627,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG002",
+          "test_arm_id": "OG002#full_analysis_set",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": null,
           "effect_type_verbatim": null,
@@ -2074,8 +1656,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#full_analysis_set",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": null,
           "effect_type_verbatim": null,
@@ -2103,8 +1685,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG002",
+          "test_arm_id": "OG002#full_analysis_set",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": null,
           "effect_type_verbatim": null,
@@ -2132,8 +1714,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#full_analysis_set",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": null,
           "effect_type_verbatim": null,
@@ -2161,8 +1743,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG002",
+          "test_arm_id": "OG002#full_analysis_set",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": null,
           "effect_type_verbatim": null,
@@ -2190,8 +1772,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG001#full_analysis_set",
+          "reference_arm_id": "OG000#full_analysis_set",
           "comparison_kind": "superiority",
           "effect_type": null,
           "effect_type_verbatim": null,
@@ -2248,8 +1830,8 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG000",
-          "reference_arm_id": "OG001",
+          "test_arm_id": "OG000#2",
+          "reference_arm_id": "OG001#2",
           "comparison_kind": "superiority",
           "effect_type": null,
           "effect_type_verbatim": null,
@@ -2277,7 +1859,7 @@
             "unit": "week",
             "end_value": null
           },
-          "test_arm_id": "OG002",
+          "test_arm_id": "OG002#2",
           "reference_arm_id": "OG003",
           "comparison_kind": "superiority",
           "effect_type": null,
@@ -2299,7 +1881,7 @@
       "source_type": "ctgov_api",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT00307437",
       "source_excerpt": "resultsSection.outcomeMeasuresModule.outcomeMeasures[].analyses[]",
-      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3, 2026-09-06)",
+      "extracted_by": "atlas.results (ctgov_api v2, results-layer phase 3 backfill re-run)",
       "reviewed_by": null,
       "confidence": 1.0
     },
