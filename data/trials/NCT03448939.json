@@ -1,0 +1,1214 @@
+{
+  "schema_version": 2,
+  "nct_id": {
+    "value": "NCT03448939",
+    "source_type": "ctgov_api",
+    "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03448939",
+    "source_excerpt": "protocolSection.identificationModule.nctId",
+    "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+    "reviewed_by": null,
+    "confidence": 1.0
+  },
+  "identity": {
+    "trial_name": {
+      "value": null,
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03448939",
+      "source_excerpt": "protocolSection.identificationModule.acronym",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 0.0
+    },
+    "official_title": {
+      "value": "A Phase 3 Multi-Center, Double-Blind, Randomized, Vehicle-Controlled Study of S5G4T-1 in the Treatment of Papulopustular Rosacea",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03448939",
+      "source_excerpt": "protocolSection.identificationModule.officialTitle",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "sponsor": {
+      "value": "Sol-Gel Technologies, Ltd.",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03448939",
+      "source_excerpt": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "phase": {
+      "value": [
+        "PHASE3"
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03448939",
+      "source_excerpt": "protocolSection.designModule.phases",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    }
+  },
+  "molecule": {
+    "drug": {
+      "value": "Benzoyl Peroxide",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03448939",
+      "source_excerpt": "protocolSection.armsInterventionsModule.interventions[].name (curated)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "intervention_names": {
+      "value": [
+        "S5G4T-1",
+        "S5G4T-2"
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03448939",
+      "source_excerpt": "protocolSection.armsInterventionsModule.interventions[].name",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "intervention_type": {
+      "value": [
+        "DRUG"
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03448939",
+      "source_excerpt": "protocolSection.armsInterventionsModule.interventions[].type",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "mechanism_of_action": {
+      "value": {
+        "modality": "other",
+        "drug_class": "keratolytic/antibacterial oxidizing agent",
+        "antibody_isotype": null,
+        "binding_targets": [],
+        "pathway_cytokines": [],
+        "receptor_subunits": [],
+        "kinases_inhibited": [],
+        "lower_potency_kinases": [],
+        "selectivity": [],
+        "reversible": null,
+        "mechanism_established": false,
+        "label_section": "12.1"
+      },
+      "source_type": "openfda_label",
+      "source_url": "https://api.fda.gov/drug/label.json?search=openfda.brand_name:EPSOLAY&limit=1",
+      "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1) -- extracted text: \"Benzoyl peroxide is an oxidizing agent with bactericidal and keratolytic effects but the precise mechanism of action in the treatment of rosacea is unknown.\"",
+      "extracted_by": "cycle22 one-off build (ctgov_api v2 + openfda_label/orangebook/faers pass); manual full deep extraction",
+      "reviewed_by": null,
+      "confidence": 0.85
+    },
+    "dosing_regimen": {
+      "value": [
+        {
+          "intervention_name": "S5G4T-1",
+          "description": "S5G4T-1 (encapsulated benzoyl peroxide 5%) cream, applied once daily in a thin layer to each area of the face",
+          "is_placebo": false,
+          "route": "topical",
+          "dose_form": "cream",
+          "dose_value": 5,
+          "dose_unit": "%",
+          "units_per_dose": null,
+          "frequency": "once_daily",
+          "duration_weeks": 12,
+          "dosing_periods": [],
+          "administration_sites": [
+            "face"
+          ],
+          "antibody_isotype": null,
+          "molecular_target": null,
+          "arm_names": [
+            "S5G4T-1"
+          ],
+          "co_administered_with": []
+        }
+      ],
+      "source_type": "ctgov_text_extraction",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03448939",
+      "source_excerpt": "armsInterventionsModule.interventions[0]: name S5G4T-1, otherNames ['Encapsulated benzoyl peroxide (E-BPO) cream'], description 'Once a day topical cream'; strength (5%) and application instructions (thin layer to forehead/chin/nose/each cheek) from the FDA label section 2 Dosage and Administration",
+      "extracted_by": "cycle22 one-off build (ctgov_api v2 + openfda_label/orangebook/faers pass); manual full deep extraction",
+      "reviewed_by": null,
+      "confidence": 0.85
+    }
+  },
+  "population": {
+    "condition": {
+      "value": [
+        "Papulopustular Rosacea"
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03448939",
+      "source_excerpt": "protocolSection.conditionsModule.conditions",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "min_age_years": {
+      "value": 18,
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03448939",
+      "source_excerpt": "protocolSection.eligibilityModule.minimumAge",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "max_age_years": {
+      "value": null,
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03448939",
+      "source_excerpt": "protocolSection.eligibilityModule.maximumAge",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 0.0
+    },
+    "sex": {
+      "value": "ALL",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03448939",
+      "source_excerpt": "protocolSection.eligibilityModule.sex",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "enrollment_count": {
+      "value": 361,
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03448939",
+      "source_excerpt": "protocolSection.designModule.enrollmentInfo.count",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "severity_criteria": {
+      "value": {
+        "severity_label": "moderate_to_severe",
+        "basis": "eligibility_text",
+        "cross_reference": null,
+        "source_criterion_numbers": [],
+        "baseline_visit_number": null,
+        "criteria": [
+          {
+            "scale": "IGA",
+            "scale_component": null,
+            "scale_variant": null,
+            "metric": "absolute_score",
+            "comparator": "in",
+            "value": [
+              3,
+              4
+            ],
+            "unit": "score",
+            "scale_min": null,
+            "scale_max": null,
+            "assessed_at": null,
+            "scale_anchors": [
+              {
+                "score": 3,
+                "label": "moderate"
+              },
+              {
+                "score": 4,
+                "label": "severe"
+              }
+            ]
+          },
+          {
+            "scale": "Inflammatory Lesion Count",
+            "scale_component": null,
+            "scale_variant": null,
+            "metric": "absolute_score",
+            "comparator": ">=",
+            "value": 15,
+            "unit": "score",
+            "scale_min": null,
+            "scale_max": null,
+            "assessed_at": null,
+            "scale_anchors": null
+          },
+          {
+            "scale": "Inflammatory Lesion Count",
+            "scale_component": null,
+            "scale_variant": null,
+            "metric": "absolute_score",
+            "comparator": "<=",
+            "value": 70,
+            "unit": "score",
+            "scale_min": null,
+            "scale_max": null,
+            "assessed_at": null,
+            "scale_anchors": null
+          },
+          {
+            "scale": "Nodule Count",
+            "scale_component": null,
+            "scale_variant": null,
+            "metric": "absolute_score",
+            "comparator": "<=",
+            "value": 2,
+            "unit": "score",
+            "scale_min": null,
+            "scale_max": null,
+            "assessed_at": null,
+            "scale_anchors": null
+          }
+        ]
+      },
+      "source_type": "ctgov_text_extraction",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03448939",
+      "source_excerpt": "Eligibility criteria: \"Have a minimum total of 15 and a maximum of 70 total inflammatory lesions (papules and/or pustules)... Have 2 nodules or less.\" IGA 3/4 baseline range confirmed via FDA label section 14: \"Subjects were required to have a minimum of 15 to 70 total inflammatory lesions... and an Investigator Global Assessment (IGA) score of 3 (\u201cmoderate\u201d) or 4 (\u201csevere\u201d) at baseline.\"",
+      "extracted_by": "cycle22 one-off build (ctgov_api v2 + openfda_label/orangebook/faers pass); manual full deep extraction",
+      "reviewed_by": null,
+      "confidence": 0.85
+    }
+  },
+  "design": {
+    "study_type": {
+      "value": "INTERVENTIONAL",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03448939",
+      "source_excerpt": "protocolSection.designModule.studyType",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "allocation": {
+      "value": "RANDOMIZED",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03448939",
+      "source_excerpt": "protocolSection.designModule.designInfo.allocation",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "intervention_model": {
+      "value": "PARALLEL",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03448939",
+      "source_excerpt": "protocolSection.designModule.designInfo.interventionModel",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "masking": {
+      "value": "DOUBLE",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03448939",
+      "source_excerpt": "protocolSection.designModule.designInfo.maskingInfo.masking",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "number_of_arms": {
+      "value": 2,
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03448939",
+      "source_excerpt": "len(protocolSection.armsInterventionsModule.armGroups)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "background_therapy": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    }
+  },
+  "endpoints": {
+    "primary_endpoints": {
+      "value": [
+        {
+          "verbatim": "Percentage of Participants Achieving an IGA Score of Clear or Almost Clear From Baseline at Week 12",
+          "rank": "primary",
+          "position": 1,
+          "measure_type": "responder_rate",
+          "scale": "IGA",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [
+            {
+              "scale": "IGA",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "absolute_score",
+              "comparator": "<=",
+              "value": 1,
+              "unit": "score",
+              "scale_min": 0,
+              "scale_max": 4,
+              "assessed_at": [
+                "week_12"
+              ],
+              "scale_anchors": [
+                {
+                  "score": 0,
+                  "label": "clear"
+                },
+                {
+                  "score": 1,
+                  "label": "almost clear"
+                }
+              ]
+            },
+            {
+              "scale": "IGA",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "point_improvement_from_baseline",
+              "comparator": ">=",
+              "value": 2,
+              "unit": "points",
+              "scale_min": 0,
+              "scale_max": 4,
+              "assessed_at": [
+                "week_12"
+              ],
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": "double_blind",
+          "event_type": null,
+          "time_frame": "Baseline through Week 12"
+        },
+        {
+          "verbatim": "Change From Baseline in Inflammatory Lesion Counts at Week 12",
+          "rank": "primary",
+          "position": 2,
+          "measure_type": "change_from_baseline",
+          "scale": "Inflammatory Lesion Count",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": "double_blind",
+          "event_type": null,
+          "time_frame": "Baseline, Week 12"
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03448939",
+      "source_excerpt": "protocolSection.outcomesModule.primaryOutcomes[]; responder threshold from openFDA label section 14 (Table)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass) + openfda_label cross-reference; structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 0.95
+    },
+    "secondary_endpoints": {
+      "value": [
+        {
+          "verbatim": "Percent Change From Baseline in Inflammatory Lesion Counts at Week 12",
+          "rank": "secondary",
+          "position": 1,
+          "measure_type": "percent_change_from_baseline",
+          "scale": "Inflammatory Lesion Count",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": "double_blind",
+          "event_type": null,
+          "time_frame": "Baseline, Week 12"
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03448939",
+      "source_excerpt": "protocolSection.outcomesModule.secondaryOutcomes[].measure/timeFrame",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "multiplicity_control": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    }
+  },
+  "timing_ops": {
+    "start_date": {
+      "value": {
+        "date": "2018-06-18",
+        "precision": "day"
+      },
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03448939",
+      "source_excerpt": "protocolSection.statusModule.startDateStruct.date",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "primary_completion_date": {
+      "value": {
+        "date": "2019-05-24",
+        "precision": "day"
+      },
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03448939",
+      "source_excerpt": "protocolSection.statusModule.primaryCompletionDateStruct.date",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "completion_date": {
+      "value": {
+        "date": "2019-05-24",
+        "precision": "day"
+      },
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03448939",
+      "source_excerpt": "protocolSection.statusModule.completionDateStruct.date",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "study_schedule": {
+      "value": {
+        "screening_days": null,
+        "screening_washout": null,
+        "periods": [
+          {
+            "name": "double_blind_treatment",
+            "start_week": 0,
+            "end_week": 12,
+            "duration_weeks": 12,
+            "blinding": "double_blind",
+            "background_tcs": false
+          }
+        ],
+        "dosing_interval": "once_daily",
+        "visit_cadence": null,
+        "visit_cadence_until_week": null,
+        "visit_weeks": [
+          0,
+          12
+        ],
+        "visit_days": null,
+        "phone_contact_weeks": null,
+        "primary_endpoint_week": 12,
+        "end_of_treatment_week": 12,
+        "end_of_study_week": 12,
+        "total_duration_weeks": 12,
+        "follow_up_weeks": null,
+        "follow_up_days": null,
+        "follow_up_visit_week": null,
+        "long_term_extension": false,
+        "extension_end_week": null,
+        "extension_visit_interval_weeks": null,
+        "extension_study_id": null,
+        "rerandomization_week": null,
+        "maintenance_arms": null,
+        "maintenance_response_check_weeks": null,
+        "last_injection_week": null,
+        "key_secondary_weeks": [],
+        "follow_up_visit_interval_weeks": null,
+        "end_of_treatment_weeks_after_last_dose": null,
+        "background_tcs_from_day": null,
+        "primary_endpoint_refs": [],
+        "double_dummy_arms": [],
+        "active_comparator": null,
+        "boilerplate_reused_from": [],
+        "conflicts_with_trial": null,
+        "full_visit_table_available": false,
+        "source_inconsistency": "FDA label section 14 states efficacy was demonstrated 'starting from 4 weeks of treatment,' implying at least one interim assessment before Week 12, but neither CT.gov's outcomesModule nor the label's own text names an explicit Week 4/8 visit list for this trial (unlike Zilxi's FX2016-11/12, which do) -- visit_weeks left at the 2 confirmed timepoints (0, 12) rather than guessing the interim schedule."
+      },
+      "source_type": "ctgov_text_extraction",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03448939",
+      "source_excerpt": "protocolSection.outcomesModule primary/secondary outcomes (Baseline, Week 12 only) plus FDA label section 14 efficacy-onset statement; no documentSection PDF or CT.gov detailedDescription visit list is available for this trial.",
+      "extracted_by": "cycle22 one-off build (ctgov_api v2 + openfda_label/orangebook/faers pass); manual full deep extraction",
+      "reviewed_by": null,
+      "confidence": 0.75
+    },
+    "rescue_therapy": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    }
+  },
+  "adverse_events": {
+    "serious_adverse_event_rate": {
+      "value": [
+        {
+          "arm": "S5G4T-1",
+          "n_affected": 0,
+          "n_at_risk": 239,
+          "pct": 0.0
+        },
+        {
+          "arm": "S5G4T-2 Vehicle Cream",
+          "n_affected": 1,
+          "n_at_risk": 113,
+          "pct": 0.9
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03448939",
+      "source_excerpt": "resultsSection.adverseEventsModule.eventGroups[].seriousNumAffected/seriousNumAtRisk",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, cycle-22 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "death_rate": {
+      "value": [
+        {
+          "arm": "S5G4T-1",
+          "n_affected": 0,
+          "n_at_risk": 239,
+          "pct": 0.0
+        },
+        {
+          "arm": "S5G4T-2 Vehicle Cream",
+          "n_affected": 0,
+          "n_at_risk": 113,
+          "pct": 0.0
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03448939",
+      "source_excerpt": "resultsSection.adverseEventsModule.eventGroups[].deathsNumAffected/deathsNumAtRisk",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, cycle-22 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "most_common_adverse_events": {
+      "value": [
+        {
+          "meddra_pt": "Nasopharyngitis",
+          "meddra_soc": "Infections and infestations",
+          "per_arm": [
+            {
+              "arm": "S5G4T-1",
+              "n_affected": 6,
+              "n_at_risk": 239,
+              "pct": 2.5
+            },
+            {
+              "arm": "S5G4T-2 Vehicle Cream",
+              "n_affected": 1,
+              "n_at_risk": 113,
+              "pct": 0.9
+            }
+          ]
+        },
+        {
+          "meddra_pt": "Upper respiratory tract infection",
+          "meddra_soc": "Infections and infestations",
+          "per_arm": [
+            {
+              "arm": "S5G4T-1",
+              "n_affected": 3,
+              "n_at_risk": 239,
+              "pct": 1.3
+            },
+            {
+              "arm": "S5G4T-2 Vehicle Cream",
+              "n_affected": 2,
+              "n_at_risk": 113,
+              "pct": 1.8
+            }
+          ]
+        },
+        {
+          "meddra_pt": "Application site erythema",
+          "meddra_soc": "General disorders",
+          "per_arm": [
+            {
+              "arm": "S5G4T-1",
+              "n_affected": 8,
+              "n_at_risk": 239,
+              "pct": 3.3
+            },
+            {
+              "arm": "S5G4T-2 Vehicle Cream",
+              "n_affected": 2,
+              "n_at_risk": 113,
+              "pct": 1.8
+            }
+          ]
+        },
+        {
+          "meddra_pt": "Application site pain",
+          "meddra_soc": "General disorders",
+          "per_arm": [
+            {
+              "arm": "S5G4T-1",
+              "n_affected": 5,
+              "n_at_risk": 239,
+              "pct": 2.1
+            },
+            {
+              "arm": "S5G4T-2 Vehicle Cream",
+              "n_affected": 2,
+              "n_at_risk": 113,
+              "pct": 1.8
+            }
+          ]
+        },
+        {
+          "meddra_pt": "Application site pruritus",
+          "meddra_soc": "General disorders",
+          "per_arm": [
+            {
+              "arm": "S5G4T-1",
+              "n_affected": 3,
+              "n_at_risk": 239,
+              "pct": 1.3
+            },
+            {
+              "arm": "S5G4T-2 Vehicle Cream",
+              "n_affected": 1,
+              "n_at_risk": 113,
+              "pct": 0.9
+            }
+          ]
+        },
+        {
+          "meddra_pt": "Application site papules",
+          "meddra_soc": "General disorders",
+          "per_arm": [
+            {
+              "arm": "S5G4T-1",
+              "n_affected": 0,
+              "n_at_risk": 239,
+              "pct": 0.0
+            },
+            {
+              "arm": "S5G4T-2 Vehicle Cream",
+              "n_affected": 2,
+              "n_at_risk": 113,
+              "pct": 1.8
+            }
+          ]
+        },
+        {
+          "meddra_pt": "Muscle strain",
+          "meddra_soc": "Injury, poisoning and procedural complications",
+          "per_arm": [
+            {
+              "arm": "S5G4T-1",
+              "n_affected": 3,
+              "n_at_risk": 239,
+              "pct": 1.3
+            },
+            {
+              "arm": "S5G4T-2 Vehicle Cream",
+              "n_affected": 0,
+              "n_at_risk": 113,
+              "pct": 0.0
+            }
+          ]
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03448939",
+      "source_excerpt": "resultsSection.adverseEventsModule.otherEvents[]",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, cycle-22 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "discontinuation_due_to_ae_rate": {
+      "value": [
+        {
+          "arm": "S5G4T-1",
+          "n_discontinued": 5,
+          "n_started": 243,
+          "pct": 2.1
+        },
+        {
+          "arm": "S5G4T-2 Vehicle Cream",
+          "n_discontinued": 1,
+          "n_started": 118,
+          "pct": 0.8
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03448939",
+      "source_excerpt": "resultsSection.participantFlowModule.periods[0].dropWithdraws[type=\"Adverse Event\"].reasons[] vs periods[0].milestones[type=STARTED].achievements[]",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, cycle-22 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "boxed_warning": {
+      "value": {
+        "present": false,
+        "title": null,
+        "warning_categories": [],
+        "referenced_label_sections": [],
+        "product_names": []
+      },
+      "source_type": "openfda_label",
+      "source_url": "https://api.fda.gov/drug/label.json?search=openfda.brand_name:EPSOLAY&limit=1",
+      "source_excerpt": "results[0] has no boxed_warning key (checked, none present)",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, cycle-22 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    }
+  },
+  "exclusivity": {
+    "regulatory_application": {
+      "value": {
+        "application_type": "NDA",
+        "application_number": "214510",
+        "registry": "orange_book",
+        "center": "CDER",
+        "proprietary_name": "EPSOLAY",
+        "applicant": "MAYNE PHARMA LLC",
+        "first_approval_date": "2022-04-22"
+      },
+      "source_type": "orange_book",
+      "source_url": "https://api.fda.gov/drug/orangebook.json",
+      "source_excerpt": "openfda orangebook.json: products.application_number=214510 (EPSOLAY)",
+      "extracted_by": "atlas.regulatory_applications (registry file fetched 2026-09-07)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "orange_book": {
+      "value": {
+        "application_type": "N",
+        "application_number": "214510",
+        "ingredient": "BENZOYL PEROXIDE",
+        "trade_name": "EPSOLAY",
+        "applicant": "MAYNE PHARMA",
+        "applicant_full_name": "MAYNE PHARMA LLC",
+        "products": [
+          {
+            "product_number": "001",
+            "strength": "5%",
+            "dosage_form": "CREAM",
+            "route": "TOPICAL",
+            "approval_date": "2022-04-22",
+            "rld": true,
+            "rs": true,
+            "te_code": null,
+            "marketing_type": "HUMAN PRESCRIPTION DRUG"
+          }
+        ],
+        "patents": [
+          {
+            "patent_number": "10933046",
+            "expiration_date": "2040-02-19",
+            "drug_substance_claim": false,
+            "drug_product_claim": true,
+            "patent_use_code": "U-3357",
+            "delisted": false,
+            "submission_date": "2022-04-29",
+            "product_numbers": [
+              "001"
+            ]
+          },
+          {
+            "patent_number": "10945987",
+            "expiration_date": "2040-02-19",
+            "drug_substance_claim": false,
+            "drug_product_claim": false,
+            "patent_use_code": "U-3356",
+            "delisted": false,
+            "submission_date": "2022-04-29",
+            "product_numbers": [
+              "001"
+            ]
+          },
+          {
+            "patent_number": "11426378",
+            "expiration_date": "2040-08-18",
+            "drug_substance_claim": false,
+            "drug_product_claim": false,
+            "patent_use_code": "U-3356",
+            "delisted": false,
+            "submission_date": "2022-10-07",
+            "product_numbers": [
+              "001"
+            ]
+          },
+          {
+            "patent_number": "11541026",
+            "expiration_date": "2040-02-19",
+            "drug_substance_claim": false,
+            "drug_product_claim": false,
+            "patent_use_code": "U-3356",
+            "delisted": false,
+            "submission_date": "2023-02-01",
+            "product_numbers": [
+              "001"
+            ]
+          },
+          {
+            "patent_number": "11628155",
+            "expiration_date": "2040-12-27",
+            "drug_substance_claim": false,
+            "drug_product_claim": false,
+            "patent_use_code": "U-3356",
+            "delisted": false,
+            "submission_date": "2023-05-17",
+            "product_numbers": [
+              "001"
+            ]
+          },
+          {
+            "patent_number": "11865100",
+            "expiration_date": "2040-02-19",
+            "drug_substance_claim": false,
+            "drug_product_claim": false,
+            "patent_use_code": "U-3357",
+            "delisted": false,
+            "submission_date": "2024-02-05",
+            "product_numbers": [
+              "001"
+            ]
+          },
+          {
+            "patent_number": "11877997",
+            "expiration_date": "2040-02-19",
+            "drug_substance_claim": false,
+            "drug_product_claim": false,
+            "patent_use_code": "U-3356",
+            "delisted": false,
+            "submission_date": "2024-02-16",
+            "product_numbers": [
+              "001"
+            ]
+          },
+          {
+            "patent_number": "11986456",
+            "expiration_date": "2040-02-19",
+            "drug_substance_claim": false,
+            "drug_product_claim": false,
+            "patent_use_code": "U-3947",
+            "delisted": false,
+            "submission_date": "2024-06-17",
+            "product_numbers": [
+              "001"
+            ]
+          },
+          {
+            "patent_number": "12156946",
+            "expiration_date": "2028-02-03",
+            "drug_substance_claim": false,
+            "drug_product_claim": true,
+            "patent_use_code": null,
+            "delisted": false,
+            "submission_date": "2024-12-18",
+            "product_numbers": [
+              "001"
+            ]
+          },
+          {
+            "patent_number": "12257348",
+            "expiration_date": "2041-05-23",
+            "drug_substance_claim": false,
+            "drug_product_claim": true,
+            "patent_use_code": "U-3947",
+            "delisted": false,
+            "submission_date": "2025-04-10",
+            "product_numbers": [
+              "001"
+            ]
+          },
+          {
+            "patent_number": "12295935",
+            "expiration_date": "2040-12-27",
+            "drug_substance_claim": false,
+            "drug_product_claim": false,
+            "patent_use_code": "U-3356",
+            "delisted": false,
+            "submission_date": "2025-05-23",
+            "product_numbers": [
+              "001"
+            ]
+          },
+          {
+            "patent_number": "12350382",
+            "expiration_date": "2028-02-03",
+            "drug_substance_claim": false,
+            "drug_product_claim": true,
+            "patent_use_code": null,
+            "delisted": false,
+            "submission_date": "2025-07-09",
+            "product_numbers": [
+              "001"
+            ]
+          },
+          {
+            "patent_number": "9687465",
+            "expiration_date": "2032-11-27",
+            "drug_substance_claim": false,
+            "drug_product_claim": true,
+            "patent_use_code": "U-3356",
+            "delisted": false,
+            "submission_date": "2022-04-29",
+            "product_numbers": [
+              "001"
+            ]
+          },
+          {
+            "patent_number": "9868103",
+            "expiration_date": "2028-08-08",
+            "drug_substance_claim": false,
+            "drug_product_claim": true,
+            "patent_use_code": "U-3356",
+            "delisted": false,
+            "submission_date": "2022-04-29",
+            "product_numbers": [
+              "001"
+            ]
+          }
+        ],
+        "exclusivities": [],
+        "latest_patent_expiration": "2041-05-23",
+        "latest_exclusivity_expiration": null,
+        "data_file_date": null
+      },
+      "source_type": "orange_book",
+      "source_url": "https://api.fda.gov/drug/orangebook.json?search=products.active_ingredients.name%3A%22BENZOYL%20PEROXIDE%22+AND+products.application_number%3A214510&limit=10",
+      "source_excerpt": "openFDA drug/orangebook.json, 1 product row matched on products.application_number='214510' (of 43 total rows for ingredient BENZOYL PEROXIDE across all applicants, mostly OTC/generic acne products -- pinned to Epsolay's own NDA)",
+      "extracted_by": "fetch_orange_book.py (openfda drug/orangebook.json, cycle-22 pass, NDA-pinned)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "purple_book": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    }
+  },
+  "real_world_safety": {
+    "faers_summary": {
+      "value": {
+        "query": {
+          "search_field": "patient.drug.medicinalproduct",
+          "search_term": "EPSOLAY",
+          "receivedate_from": "2004-02-11",
+          "receivedate_to": "2026-07-30",
+          "api_urls": [
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"EPSOLAY\"&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"EPSOLAY\"+AND+serious:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"EPSOLAY\"+AND+seriousnessdeath:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"EPSOLAY\"+AND+seriousnesshospitalization:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"EPSOLAY\"+AND+seriousnesslifethreatening:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"EPSOLAY\"+AND+seriousnessdisabling:1&limit=1",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"EPSOLAY\"&count=patient.reaction.reactionmeddrapt.exact&limit=15",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"EPSOLAY\"+AND+serious:1&count=patient.reaction.reactionmeddrapt.exact&limit=15",
+            "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"EPSOLAY\"&count=receivedate"
+          ],
+          "data_last_updated": "2026-09-07"
+        },
+        "total_reports": 37,
+        "serious_reports": 2,
+        "death_reports": 0,
+        "hospitalization_reports": 1,
+        "life_threatening_reports": 0,
+        "disability_reports": 0,
+        "top_reactions": [
+          {
+            "meddra_pt": "ERYTHEMA",
+            "report_count": 11,
+            "pct_of_reports": 29.73
+          },
+          {
+            "meddra_pt": "SKIN BURNING SENSATION",
+            "report_count": 7,
+            "pct_of_reports": 18.92
+          },
+          {
+            "meddra_pt": "DRY SKIN",
+            "report_count": 6,
+            "pct_of_reports": 16.22
+          },
+          {
+            "meddra_pt": "PRURITUS",
+            "report_count": 6,
+            "pct_of_reports": 16.22
+          },
+          {
+            "meddra_pt": "INTENTIONAL UNDERDOSE",
+            "report_count": 5,
+            "pct_of_reports": 13.51
+          },
+          {
+            "meddra_pt": "OFF LABEL USE",
+            "report_count": 5,
+            "pct_of_reports": 13.51
+          },
+          {
+            "meddra_pt": "APPLICATION SITE ERYTHEMA",
+            "report_count": 4,
+            "pct_of_reports": 10.81
+          },
+          {
+            "meddra_pt": "SKIN IRRITATION",
+            "report_count": 4,
+            "pct_of_reports": 10.81
+          },
+          {
+            "meddra_pt": "DRUG INEFFECTIVE",
+            "report_count": 3,
+            "pct_of_reports": 8.11
+          },
+          {
+            "meddra_pt": "INTENTIONAL PRODUCT MISUSE",
+            "report_count": 3,
+            "pct_of_reports": 8.11
+          },
+          {
+            "meddra_pt": "INTENTIONAL PRODUCT USE ISSUE",
+            "report_count": 3,
+            "pct_of_reports": 8.11
+          },
+          {
+            "meddra_pt": "SKIN EXFOLIATION",
+            "report_count": 3,
+            "pct_of_reports": 8.11
+          },
+          {
+            "meddra_pt": "ACNE",
+            "report_count": 2,
+            "pct_of_reports": 5.41
+          },
+          {
+            "meddra_pt": "APPLICATION SITE PAIN",
+            "report_count": 2,
+            "pct_of_reports": 5.41
+          },
+          {
+            "meddra_pt": "APPLICATION SITE PRURITUS",
+            "report_count": 2,
+            "pct_of_reports": 5.41
+          }
+        ],
+        "top_serious_reactions": [
+          {
+            "meddra_pt": "ABDOMINAL DISTENSION",
+            "report_count": 1,
+            "pct_of_reports": 50.0
+          },
+          {
+            "meddra_pt": "ABDOMINAL PAIN UPPER",
+            "report_count": 1,
+            "pct_of_reports": 50.0
+          },
+          {
+            "meddra_pt": "ANAL INCONTINENCE",
+            "report_count": 1,
+            "pct_of_reports": 50.0
+          },
+          {
+            "meddra_pt": "APPLICATION SITE RASH",
+            "report_count": 1,
+            "pct_of_reports": 50.0
+          },
+          {
+            "meddra_pt": "APPLICATION SITE VESICLES",
+            "report_count": 1,
+            "pct_of_reports": 50.0
+          },
+          {
+            "meddra_pt": "DIARRHOEA",
+            "report_count": 1,
+            "pct_of_reports": 50.0
+          },
+          {
+            "meddra_pt": "GASTROINTESTINAL MICROORGANISM OVERGROWTH",
+            "report_count": 1,
+            "pct_of_reports": 50.0
+          },
+          {
+            "meddra_pt": "GASTROOESOPHAGEAL REFLUX DISEASE",
+            "report_count": 1,
+            "pct_of_reports": 50.0
+          },
+          {
+            "meddra_pt": "INSURANCE ISSUE",
+            "report_count": 1,
+            "pct_of_reports": 50.0
+          },
+          {
+            "meddra_pt": "INTENTIONAL DOSE OMISSION",
+            "report_count": 1,
+            "pct_of_reports": 50.0
+          }
+        ],
+        "reports_by_year": [
+          {
+            "year": 2022,
+            "report_count": 9
+          },
+          {
+            "year": 2023,
+            "report_count": 13
+          },
+          {
+            "year": 2024,
+            "report_count": 9
+          },
+          {
+            "year": 2025,
+            "report_count": 3
+          },
+          {
+            "year": 2026,
+            "report_count": 3
+          }
+        ],
+        "meddra_version": null
+      },
+      "source_type": "openfda_faers",
+      "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"EPSOLAY\"&limit=1",
+      "source_excerpt": "openFDA drug/event.json aggregate: total_reports=37, serious=2, deaths=0. Bare ingredient term BENZOYL PEROXIDE (2,993 reports) is dominated by OTC acne products (ACNE 701+359=1060/2993, no Rosacea in top 15) -- the same generic-term-contamination pattern as Eskata/hydrogen-peroxide. Brand term EPSOLAY (37 reports) has Rosacea as its clear top real indication (14/37) -- used instead per the atlas's standing run-the-drugindication-count-first rule.",
+      "extracted_by": "fetch_faers.py (openfda drug/event.json, cycle-22 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    }
+  }
+}

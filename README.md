@@ -13,7 +13,7 @@ way around.
 Real, live-pulled pivotal Phase III trials (adult / adult+adolescent,
 systemic therapy), from the [ClinicalTrials.gov API
 v2](https://clinicaltrials.gov/data-api/api) (`/api/v2/studies`, no API
-key required), across **23 indications, 48 unique drugs, 127 trials**
+key required), across **23 indications, 50 unique drugs, 131 trials**
 (all three counts recomputed from `data/trials/*.json` each cycle):
 
 ### Atopic Dermatitis (10 drugs, 28 trials)
@@ -353,12 +353,44 @@ is GPP-only), and ligelizumab/barzolvolimab for CSU.
 | Efinaconazole (topical solution) | NCT01007708 (n=780), NCT01008033 (n=870), both vehicle-controlled (development code IDP-108) — FDA-approved (Jublia, NDA 203567) 2014-06-06 |
 | Tavaborole (topical solution) | NCT01270971 (n=594), NCT01302119 (n=604), both vehicle-controlled (development code AN2690) — FDA-approved (Kerydin, NDA 204427) 2014-07-07, brand since discontinued (many generic ANDAs remain on market) |
 
-### Rosacea (2 drugs, 4 trials)
+### Rosacea (4 drugs, 8 trials)
 
 | Drug | Pivotal Phase III trials |
 |---|---|
 | Ivermectin (topical cream) | NCT01493687 (n=683), NCT01494467 (n=688), both vehicle-controlled (development code CD5024) — FDA-approved (Soolantra, NDA 206255) 2014-12-19 |
 | Oxymetazoline HCl (topical cream) | NCT02131636 (n=440), NCT02132117 (n=445), both vehicle-controlled (development code AGN-199201) — FDA-approved (Rhofade, NDA 208552) 2017-01-18 |
+| Minocycline (topical foam, 1.5%) | Study 1 / FX2016-11 (NCT03142451, n=751), Study 2 / FX2016-12 (NCT04608500, n=771), both vehicle-controlled (development code FMX103) — FDA-approved (Zilxi, NDA 213690) 2020-05-28 |
+| Benzoyl Peroxide (encapsulated, topical cream 5%) | Trial 1 (NCT03448939, n=361), Trial 2 (NCT03564119, n=372), both vehicle-controlled (development code S5G4T-1) — FDA-approved (Epsolay, NDA 214510) 2022-04-22 |
+
+Minocycline and Benzoyl Peroxide, added cycle 22 (2026-09-07), expand this
+already-covered indication with 2 more real FDA-approved topicals — found
+by checking modern (post-2010) FDA-approved rosacea topicals beyond the
+2 already in the atlas, after the broad indication-breadth sweep was
+confirmed dry. Both drugs needed the brand-term FAERS fallback (the same
+generic-term-contamination pattern as Qbrexza/Glycopyrronium and
+Ozenoxacin/Xepi): bare `MINOCYCLINE` (18,334 reports, oral rheumatoid
+arthritis/acne/migraine-dominated, Rosacea only 280/18,334) and bare
+`BENZOYL PEROXIDE` (2,993 reports, OTC-acne-dominated, no Rosacea in the
+top 15) are both contaminated by the ingredients' much larger use outside
+this indication; brand terms `ZILXI` (31 reports, Rosacea top real
+indication) and `EPSOLAY` (37 reports, Rosacea top real indication) are
+clean and used instead. Zilxi's own FDA label has a genuine citation slip
+worth flagging for anyone re-deriving this data: its section 14 text
+brackets "Trial 1" as `[NCT02601963]`, but that NCT is a 233-subject Phase
+2 dose-finding study (`hasResults: false`) that cannot be the 751-subject
+efficacy trial the very next sentence describes — the real Trial 1/Trial
+2 pair, identified by matching the label's own enrollment table (751 and
+771) against CT.gov's actual enrollment counts, is NCT03142451 and
+NCT04608500 (titled "Study 1"/"Study 2" on CT.gov). Epsolay's own label
+citation, by contrast, is accurate (Trial 1/Trial 2 enrollment matches
+NCT03448939/NCT03564119 exactly). Zilxi's label also states a real,
+quotable monotherapy design ("no other topical or systemic medication...
+was permitted for use during these trials"), filled into both
+`design.background_therapy` and `timing_ops.rescue_therapy` per the
+Difamilast precedent; Epsolay's label and CT.gov eligibility/outcome text
+have no equivalent statement and no protocol/SAP document is posted for
+either drug, so both fields stay `needs_extraction` for Epsolay's 2
+trials — a real, checked gap, not an unattempted one.
 
 15th and 16th indications, added 2026-09-05 (cycle 9, same session as Acne
 Vulgaris). Both found the same way: checking well-known, decades-familiar
@@ -764,7 +796,7 @@ half of the corpus), and a trial whose real posted text genuinely states no
 rescue-medication concept or no formal multiplicity procedure applies (a
 correct finding, not a miss) — both confirmed per-trial, not assumed.
 
-### Fill status (all 127 trials, 39 fields each — 4953 sourced values)
+### Fill status (all 131 trials, 39 fields each — 5109 sourced values)
 
 Fields fully or near-fully filled across every trial (`ctgov_api` for the
 identity/population/design/endpoints/timing_ops/adverse_events core,
@@ -775,30 +807,30 @@ drug-level cross-source groups): `nct_id`, `trial_name`, `official_title`,
 `study_type`, `allocation`, `intervention_model`, `masking`,
 `number_of_arms`, `primary_endpoints`, `secondary_endpoints`,
 `start_date`, `primary_completion_date`, `completion_date`,
-`real_world_safety.faers_summary` (127/127),
-`exclusivity.regulatory_application` (127/127).
+`real_world_safety.faers_summary` (131/131),
+`exclusivity.regulatory_application` (131/131).
 
-Fields with real, checkable gaps (numerator = filled, out of 127 trials;
+Fields with real, checkable gaps (numerator = filled, out of 131 trials;
 every count below recomputed from `sources.csv` this cycle):
 
 | Field | Filled | Gap reason |
 |---|---|---|
-| `molecule.mechanism_of_action` | 127/127 | fully filled — real openFDA structured label text for every drug (a few drugs needed the approval-package label PDF fallback since they have no `label.json` entry at all) |
-| `molecule.dosing_regimen` | 126/127 | real CT.gov intervention description text, matched to each trial's own drug by generic name or known development/compound code, for every trial except one whose intervention text doesn't state a regimen |
-| `population.severity_criteria` | 114/127 | real CT.gov eligibility-criteria text now covers PASI/sPGA/ISGA/S-IGA/B-IGA/PGA (psoriasis family), Hurley Stage + AN Count (HS), SIRS (impetigo), HDSS/ASDD (hyperhidrosis), SALT (AA), BPDAI (bullous pemphigoid), GPPGA (GPP), CDASI (dermatomyositis), and lesion-count ranges (acne/rosacea/molluscum/AK) in addition to the original EASI/IGA/BSA (AD); the remaining trials genuinely state no quantitative baseline threshold in their CT.gov text, or their real number uses a unit the current schema has no metric for (percent-of-nail-area, wound size in cm²) |
-| `design.background_therapy` | 78/127 | real protocol/SAP PDF text (CT.gov `documentSection`, including a scanned Protocol Summary OCR'd with tesseract) covers every indication with a posted Study Protocol/SAP; the remaining gap trials have no protocol/SAP document posted on CT.gov at all, so real extraction isn't possible without a different source |
-| `endpoints.multiplicity_control` | 75/127 | same PDF-extraction pass closed the real testing-hierarchy/alpha-control text it could, plus a cycle-3 re-read (wider keyword net, one scanned SAP OCR'd with tesseract) that found real serial-gatekeeping/fixed-sequence/gatekeeping-with-Holm procedures the first pass's narrower keyword search missed; remaining gaps are genuine — either no posted document, or the document states no formal multiplicity procedure was used |
-| `timing_ops.study_schedule` | 78/127 | same pass closed the real screening/treatment/follow-up period breakdown from every posted protocol; remaining gaps have no protocol/SAP document posted |
-| `timing_ops.rescue_therapy` | 62/127 | same pass closed the real rescue-medication rules it could (including trials whose real finding is "rescue explicitly prohibited"), plus one partial fill from CT.gov eligibility-criteria text alone (no posted protocol) confirming rescue therapy is permitted without stating its composition; remaining gaps are a mix of no-posted-document trials and trials whose protocol genuinely states no rescue-medication concept applies (e.g. simple 8-week monotherapy-vs-vehicle designs, or an "escape arm" that a later amendment removed) |
-| `adverse_events.serious_adverse_event_rate` | 125/127 | CT.gov posts `eventGroups[]` without per-arm serious counts for a few trials (a genuine gap in what was posted, not a computable zero) |
-| `adverse_events.death_rate` | 94/127 | some trials report zero deaths as a genuine null-count edge case in CT.gov's `resultsSection`, not a missing value |
-| `adverse_events.discontinuation_due_to_ae_rate` | 95/127 | CT.gov `resultsSection` gap for several trials whose `participantFlowModule` posts milestones only, no `dropWithdraws` section |
-| `adverse_events.most_common_adverse_events` | 112/127 | CT.gov `resultsSection` gap for a few trials |
-| `adverse_events.boxed_warning` | 125/127 | openFDA label lookup miss for a few trials |
-| `exclusivity.orange_book` | 73/127 | only the NDA small-molecule drugs' trials get this field (BLA biologics use `purple_book` instead) |
-| `exclusivity.purple_book` | 54/127 | only the BLA biologic drugs' trials get this field (NDA small molecules use `orange_book` instead) |
+| `molecule.mechanism_of_action` | 131/131 | fully filled — real openFDA structured label text for every drug (a few drugs needed the approval-package label PDF fallback since they have no `label.json` entry at all) |
+| `molecule.dosing_regimen` | 130/131 | real CT.gov intervention description text, matched to each trial's own drug by generic name or known development/compound code, for every trial except one whose intervention text doesn't state a regimen |
+| `population.severity_criteria` | 118/131 | real CT.gov eligibility-criteria text now covers PASI/sPGA/ISGA/S-IGA/B-IGA/PGA (psoriasis family), Hurley Stage + AN Count (HS), SIRS (impetigo), HDSS/ASDD (hyperhidrosis), SALT (AA), BPDAI (bullous pemphigoid), GPPGA (GPP), CDASI (dermatomyositis), and lesion-count ranges (acne/rosacea/molluscum/AK) in addition to the original EASI/IGA/BSA (AD); the remaining trials genuinely state no quantitative baseline threshold in their CT.gov text, or their real number uses a unit the current schema has no metric for (percent-of-nail-area, wound size in cm²) |
+| `design.background_therapy` | 80/131 | real protocol/SAP PDF text (CT.gov `documentSection`, including a scanned Protocol Summary OCR'd with tesseract) covers every indication with a posted Study Protocol/SAP, plus a real quoted FDA-label monotherapy statement for Zilxi's 2 rosacea trials (cycle 22); the remaining gap trials have no protocol/SAP document posted on CT.gov and no equivalent label statement |
+| `endpoints.multiplicity_control` | 75/131 | same PDF-extraction pass closed the real testing-hierarchy/alpha-control text it could, plus a cycle-3 re-read (wider keyword net, one scanned SAP OCR'd with tesseract) that found real serial-gatekeeping/fixed-sequence/gatekeeping-with-Holm procedures the first pass's narrower keyword search missed; remaining gaps are genuine — either no posted document, or the document states no formal multiplicity procedure was used |
+| `timing_ops.study_schedule` | 82/131 | same pass closed the real screening/treatment/follow-up period breakdown from every posted protocol, plus real (if partial) visit-week data from CT.gov's own detailed description for Zilxi's 2 rosacea trials (cycle 22); remaining gaps have no protocol/SAP document posted and no equivalent free-text visit schedule |
+| `timing_ops.rescue_therapy` | 64/131 | same pass closed the real rescue-medication rules it could (including trials whose real finding is "rescue explicitly prohibited"), plus one partial fill from CT.gov eligibility-criteria text alone (no posted protocol) confirming rescue therapy is permitted without stating its composition, plus a real quoted FDA-label no-rescue statement for Zilxi's 2 rosacea trials (cycle 22); remaining gaps are a mix of no-posted-document trials and trials whose protocol genuinely states no rescue-medication concept applies (e.g. simple 8-week monotherapy-vs-vehicle designs, or an "escape arm" that a later amendment removed) |
+| `adverse_events.serious_adverse_event_rate` | 129/131 | CT.gov posts `eventGroups[]` without per-arm serious counts for a few trials (a genuine gap in what was posted, not a computable zero) |
+| `adverse_events.death_rate` | 98/131 | some trials report zero deaths as a genuine null-count edge case in CT.gov's `resultsSection`, not a missing value |
+| `adverse_events.discontinuation_due_to_ae_rate` | 99/131 | CT.gov `resultsSection` gap for several trials whose `participantFlowModule` posts milestones only, no `dropWithdraws` section |
+| `adverse_events.most_common_adverse_events` | 116/131 | CT.gov `resultsSection` gap for a few trials |
+| `adverse_events.boxed_warning` | 129/131 | openFDA label lookup miss for a few trials |
+| `exclusivity.orange_book` | 77/131 | only the NDA small-molecule drugs' trials get this field (BLA biologics use `purple_book` instead) |
+| `exclusivity.purple_book` | 54/131 | only the BLA biologic drugs' trials get this field (NDA small molecules use `orange_book` instead) |
 
-**4513 of 4953 sourced values are filled with real data (91.1%); 440
+**4657 of 5109 sourced values are filled with real data (91.2%); 452
 remain `needs_extraction`** — see `sources.csv` for the per-trial,
 per-field breakdown. Every non-`ctgov_api` fill was produced by
 LLM-assisted reading of a real, cited source (CT.gov free text, a
@@ -813,13 +845,13 @@ before it's treated as authoritative for publication.
 
 This repo holds only the pipeline's output — no code, no tests:
 
-- `data/trials/<NCT_ID>.json` — one file per trial (127 files), the
+- `data/trials/<NCT_ID>.json` — one file per trial (131 files), the
   sourced-value format described above (schema v2).
 - `trials.csv` — one row per trial, one column per field (the field's
   `value`, JSON-encoded when structured; `needs_extraction` fields blank).
 - `sources.csv` — one row per sourced value: `nct_id`, `field`,
   `source_type`, `source_url`, `source_excerpt`, `extracted_by`,
-  `reviewed_by`, `confidence`. 127 trials × 39 fields = 4953 rows.
+  `reviewed_by`, `confidence`. 131 trials × 39 fields = 5109 rows.
 - `endpoints.csv` — one row per outcome measure × criterion: `measure_type`,
   `scale`, `timepoints`, `analysis_population`, and the `ScoreCriterion`
   columns, so "EASI-75 responders at week 16" is a column filter.

@@ -32,7 +32,7 @@ This file is the project's committed home for project-intrinsic agent memory: bu
   couldn't reliably extract. Don't force-fill it by inference — a wrong schedule is worse than a
   null.
 - **This atlas is an ongoing, multi-cycle scale-out effort, not a one-shot.** It started at 1
-  indication (AD, 5 drugs, 17 trials) and is now at 23 indications, 48 unique drugs, 127 trials
+  indication (AD, 5 drugs, 17 trials) and is now at 23 indications, 50 unique drugs, 131 trials
   (see README's "What this covers" for the full per-indication breakdown and exactly which
   candidate trials were checked and excluded as non-pivotal for each). Every drug/indication
   pairing was verified against real, live ClinicalTrials.gov and openFDA data before being
@@ -782,6 +782,47 @@ This file is the project's committed home for project-intrinsic agent memory: bu
   (`TERMINATED` after reaching its enrollment target, `hasResults: true`) — the same single-arm
   oncology-era design pattern that excluded Cemiplimab's original mCSCC/laBCC approval. Neither
   needed a scope escalation since design alone disqualifies both.
+- **After the indication-breadth well was confirmed dry, cycle 22 pivoted to trial-depth work on an
+  already-covered indication (per firstmate/captain's own call between the two) and it paid off:
+  Rosacea gained 2 more real FDA-approved topicals, Minocycline Foam (Zilxi, NDA213690) and
+  Encapsulated Benzoyl Peroxide (Epsolay, NDA214510), found by checking modern (post-2010) FDA-
+  approved rosacea topicals beyond the 2 already in the atlas (Ivermectin/Soolantra,
+  Oxymetazoline/Rhofade) rather than another indication-breadth sweep.** Both drugs' pivotal
+  trials (Zilxi's FX2016-11/FX2016-12, Epsolay's Trial 1/Trial 2) are real, randomized, double-
+  blind, vehicle-controlled, `hasResults: true`, confirmed via live CT.gov + openFDA. Got the full
+  cycle-18 deep-extraction pass (severity/mechanism/dosing/endpoints real for all 4;
+  background_therapy/rescue_therapy real for Zilxi's 2, genuinely `needs_extraction` for Epsolay's
+  2 — no protocol/SAP document posted for either drug and no equivalent label statement for
+  Epsolay, vs. a real quotable one for Zilxi).
+- **A drug's own FDA label can misattribute which NCT ID is which pivotal trial — a citation
+  error in the primary source itself, not a data-entry mistake on this atlas's side.** Zilxi's
+  label section 14 brackets "Trial 1" as `[NCT02601963]`, but that NCT is a 233-subject Phase 2
+  dose-finding study (`hasResults: false`) — it cannot be the trial the very next sentence
+  describes (N=495+256=751 subjects, matching Table 2's exact numbers). The real Trial 1/Trial 2
+  pair was identified by matching the label's own enrollment table (751 and 771) against CT.gov's
+  actual `ACTUAL` enrollment counts across every Zilxi/FMX103 trial, landing on NCT03142451
+  ("Study 1", n=751) and NCT04608500 ("Study 2", n=771) — both titled accordingly on CT.gov,
+  neither bracketed correctly in the label text. Epsolay's own label citation, by contrast, is
+  accurate (its Trial 1/Trial 2 enrollment matches NCT03448939/NCT03564119 exactly) — always
+  cross-check a label's bracketed NCT citation against the actual trial's real enrollment/design
+  before trusting it at face value; this is a new failure mode distinct from the market-
+  discontinued-brand and ingredient-collision label problems already documented above.
+- **Both new rosacea drugs needed the brand-term FAERS fallback, extending the generic-term-
+  contamination pattern to 2 more drugs.** Bare `MINOCYCLINE` (18,334 reports) is dominated by its
+  much larger oral uses (rheumatoid arthritis 2220, oral acne 1998, psoriatic arthropathy 1286,
+  migraine prophylaxis 1215) with Rosacea only 280/18,334 — not even close to top of the
+  `drugindication` breakdown; bare `BENZOYL PEROXIDE` (2,993 reports) is dominated by OTC acne
+  products (ACNE 701+359=1060/2993) with no Rosacea in the top 15. Brand terms `ZILXI` (31 reports,
+  Rosacea 15/31) and `EPSOLAY` (37 reports, Rosacea 14/37) are both clean and used instead, per the
+  atlas's standing run-the-drugindication-count-first rule (Qbrexza/Glycopyrronium, Ozenoxacin/
+  Xepi, Eskata/hydrogen-peroxide).
+- **A prior cycle's flagged false lead confirmed harmless: Prurigo Nodularis (Dupixent PRIME/
+  PRIME2 + Nemluvio OLYMPIA 1/2) looked like a genuine uncaught gap during cycle 22's initial
+  check — it doesn't appear anywhere in this file's own narrative notes — but `README.md` showed
+  it was already fully in the atlas (2 drugs, 4 trials) from an earlier, undocumented addition.
+  Caught before any duplicate work landed. Always grep `README.md`'s indication list for a
+  candidate before doing the live-verification work, not just this file's narrative — the two
+  files can drift independently (the same lesson cycle 13 already drew for stale counts).
 
 - **Deep-extraction cycle 2 (same 2026-09-05 captain instruction, continued): read the real Study
   Protocol/SAP PDF for every one of the 61 non-AD trials that had one posted on CT.gov's
