@@ -771,6 +771,17 @@ This file is the project's committed home for project-intrinsic agent memory: bu
   dry" in cycle 20 is now confirmed dry across every angle tried so far — a future cycle's next real
   angle is more likely a narrower, less-obvious condition (e.g. a rare dermatologic disease not yet
   named as a candidate) than another repeat of these same sweep methods.
+- Checked and excluded in cycle 22 (real negative finding, one such narrower candidate): Chronic
+  Graft-versus-Host Disease (cGVHD) — skin is one of cGVHD's target organs (alongside gut, liver,
+  lung), which made it worth checking despite being a systemic transplant complication rather than
+  a skin-defined disease. Both FDA-approved cGVHD drugs fail this atlas's design bar before the
+  scope question even arises: Ruxolitinib's pivotal REACH3 (NCT03112603) is randomized but
+  ACTIVE_COMPARATOR-only (ruxolitinib vs. "Best Available Therapy," open-label, no placebo arm) —
+  the same active-comparator-only exclusion as Pemphigus Vulgaris/Rituximab and the BCC hedgehog
+  inhibitors; Belumosudil's pivotal ROCKstar (NCT03640481) is a single-arm, non-randomized Phase 2
+  (`TERMINATED` after reaching its enrollment target, `hasResults: true`) — the same single-arm
+  oncology-era design pattern that excluded Cemiplimab's original mCSCC/laBCC approval. Neither
+  needed a scope escalation since design alone disqualifies both.
 
 - **Deep-extraction cycle 2 (same 2026-09-05 captain instruction, continued): read the real Study
   Protocol/SAP PDF for every one of the 61 non-AD trials that had one posted on CT.gov's
