@@ -965,6 +965,14 @@ This file is the project's committed home for project-intrinsic agent memory: bu
   touched by PR #7 (the sibling deep-extraction task), not by this cycle; a real, pre-existing latent
   issue surfaced only because this is the first time the recovered test suite has been run since PR
   #7 merged, not something this cycle introduced or is scoped to fix.
+- **The `drug_characterization` backfill finished for the 2 remaining high-volume drugs
+  (Certolizumab, Adalimumab) — 100% of trials now have real data for this field, closing the gap
+  the previous commit left open.** Adalimumab matched all 46,072 reports exactly. Certolizumab
+  matched 34,579/35,107 (99.85%) — the 528 unmatched reports likely list the drug under a synonym
+  this atlas's case-insensitive substring match didn't catch (e.g. brand name CIMZIA, matching the
+  same synonym-listing pattern already documented for Ivermectin/"MECTIZAN (IVERMECTIN)") — recorded
+  honestly as a real partial match rather than forced to a false 100%, following this atlas's
+  standing convention of reporting real coverage rather than rounding up.
 
 - **Deep-extraction cycle 2 (same 2026-09-05 captain instruction, continued): read the real Study
   Protocol/SAP PDF for every one of the 61 non-AD trials that had one posted on CT.gov's

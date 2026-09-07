@@ -1070,13 +1070,32 @@
       "confidence": 1.0
     },
     "drug_characterization": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": [
+        {
+          "code": "1",
+          "label": "suspect",
+          "report_count": 33568,
+          "pct_of_reports": 95.62
+        },
+        {
+          "code": "2",
+          "label": "concomitant",
+          "report_count": 992,
+          "pct_of_reports": 2.83
+        },
+        {
+          "code": "3",
+          "label": "interacting",
+          "report_count": 19,
+          "pct_of_reports": 0.05
+        }
+      ],
+      "source_type": "openfda_faers",
+      "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"CERTOLIZUMAB\"",
+      "source_excerpt": "Computed by pulling every individual FAERS report matching this drug's own search_term (CERTOLIZUMAB) and tallying each report's drugcharacterization code (1=suspect, 2=concomitant, 3=interacting) from ONLY the drug-array entries whose medicinalproduct matches this drug (not co-listed drugs in the same report) -- a plain count= aggregate query cannot do this correctly (openFDA's flattened array indexing mixes in co-listed drugs' own characterization values; confirmed via 2 independent test queries returning identical contaminated totals). 34579/35107 reports matched.",
+      "extracted_by": "fetch_faers_characterization.py (per-report drugcharacterization backfill, cycle-22 pass)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 1.0
     }
   },
   "exclusivity": {
