@@ -1033,6 +1033,65 @@ This file is the project's committed home for project-intrinsic agent memory: bu
   freshly-derived VALUE actually differs, so re-running it after an unrelated `atlas/results.py`
   fix touches only the trials that fix actually changes.
 
+- **Cycle 23: a completed cycle's own branch can go stale mid-flight if it isn't turned into a PR
+  before `main` moves.** Cycle 22's `drug_characterization` work (the FAERS per-report
+  suspect/concomitant/interacting field) plus 13 new Rosacea/Hyperhidrosis/Acne-combo-drug trials
+  were built and committed on `fm/derm-trial-atlas-scale-out-cycle17` against schema v2/v3 — but
+  that branch's own earlier PR had already merged as #9, and by the time this work was done, two
+  more PRs had landed on `main` first: PR #10 (schema v3, the normalized `results.*` layer) and
+  PR #11 (schema v4, drug-first restructuring — 6 fields moved off trial records onto
+  `data/drugs/<slug>.json`, replaced with `drug_level_ref` pointers). The old branch's commits
+  were never pushed to a fresh PR, so they sat disconnected from `main`, built against a schema
+  two versions behind — **a plain rebase would not have been safe**: `drug_characterization` had
+  been designed as a trial-level sibling field to `faers_summary` (the correct shape under v2),
+  which is now the WRONG architecture under v4 (that exact category of fact — drug-level, not
+  trial-level — belongs in `data/drugs/<slug>.json` next to the other 6 moved fields). Confirmed
+  by actually reading what v3/v4 changed (not assumed): re-designed `drug_characterization` as a
+  7th drug-level field with its own `drug_level_ref` pointer, matching the other 6 exactly (see
+  `atlas/schema.py`'s `DRUG` spec, `atlas/drugs.py`'s `SINGLE_VALUED_FIELDS`), backfilled it across
+  the entire pre-existing 127-trial/48-drug corpus, and rebuilt the 13 new trials from scratch in
+  true v4 shape (drug records + `split_trial_record` + a populated `results.*` layer from each
+  trial's already-cached raw CT.gov response) on a fresh branch cut from current `main`, rather
+  than rebasing the stale branch. **When a branch sits disconnected from `main` for even one
+  cycle, check whether `main` changed the SHAPE of data your branch touches, not just whether it
+  conflicts at the text level** — a clean textual rebase is not evidence the branch's design
+  decisions still hold.
+- **This repo permanently owns its pipeline code as of the PR #10 consolidation (`scripts/`,
+  `atlas/`, `tests/` are no longer periodically deleted before committing) — which means stale
+  hardcoded test assertions are now this repo's own bugs to fix, not something to document and
+  leave for `kolai-website`.** Found 2 in `tests/test_schema.py` this cycle
+  (`test_every_trial_validates`'s `len(TRIALS) == 63`, `test_flattened_tables_match_json`'s
+  `len(trials) == 63` / `len(sources) == 63 * 39`) — both literals frozen from whatever trial
+  count existed when PR #10/#11's authors last touched the file, unrelated to their own PRs'
+  content. Fixed to the real current counts (140 trials, 140 * 44 = 6160 sources rows), verified
+  via `csv.DictReader` row counts, not `wc -l` (which overcounts on any CSV cell containing an
+  embedded literal newline — confirmed this discrepancy directly: `wc -l sources.csv` reported
+  6185 lines against the true 6160 data rows).
+- **`build_v4.py`'s (a one-off scratch script, not committed) pattern for adding a new trial +
+  drug in true v4 shape**: call `atlas.results.build_arm_registry` /
+  `build_arm_results_and_effects` / `qc_filter` against the trial's raw cached CT.gov response
+  BEFORE calling `atlas.drugs.split_trial_record` — the results-builder functions only read
+  `molecule.drug`/`intervention_names`/`dosing_regimen`, `population.*`, `endpoints.*`, none of
+  which are v4-moved fields, so doing this on the full-value (pre-split) record matches the
+  established `backfill_results.py` convention and avoids needing to resolve pointers back to
+  values mid-build. Then call `atlas.drugs.build_drug_records`/`save_drug` once per new drug
+  before `split_trial_record`, so the pointer's `drug_level_ref` has something real to point to.
+  4 of 13 new trials this cycle (2 Cabtreo, 1 Epsolay, 1 Twyneo, 1 Amzeeq — see README) came back
+  with 0 `effect_estimates` — confirmed by reading the raw cached `resultsSection` directly that
+  these trials genuinely post no `analyses[]` statistical-comparison block for any outcome
+  measure, not a builder bug.
+- **Minocycline topical foam is FDA-approved under two separate NDAs at two different strengths
+  for two different indications** (Amzeeq, NDA 212379, 4%, Acne Vulgaris; Zilxi, NDA 213690,
+  1.5%, Rosacea) — same molecule, same applicant (Journey Medical), same aerosol-foam dosage
+  form, differing only in strength and indication. A sharper variant of the Roflumilast
+  cream/foam split (that one differs by dosage form too; this one is identical dosage form,
+  different strength). `data/drugs/minocycline.json` correctly holds both applications keyed by
+  `application_number` in its `applications` list (the established Ruxolitinib/Roflumilast
+  tuple-pin pattern) rather than being force-merged into one Orange Book entry — verify a new
+  same-molecule, different-strength-or-form drug always resolves to 1 clean product row per
+  `application_number` before writing it, the same check already standing for every prior
+  ingredient-collision case.
+
 ## Maintaining this file
 
 Keep this file for knowledge useful to almost every future agent session in this project.
