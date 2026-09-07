@@ -224,6 +224,10 @@ BOXED_WARNING = OBJ({
 DATE_P = OBJ({"date": DATE(), "precision": ENUM(DATE_PRECISION)})
 
 REACTION_ROW = OBJ({"meddra_pt": STR(), "report_count": INT(), "pct_of_reports": NUM(True)})
+CHARACTERIZATION_CODES = ["1", "2", "3"]
+CHARACTERIZATION_LABELS = ["suspect", "concomitant", "interacting"]
+CHARACTERIZATION_ROW = OBJ({"code": ENUM(CHARACTERIZATION_CODES), "label": ENUM(CHARACTERIZATION_LABELS),
+                            "report_count": INT(), "pct_of_reports": NUM(True)})
 FAERS_SUMMARY = OBJ({
     "query": OBJ({"search_field": STR(), "search_term": STR(), "receivedate_from": DATE(True),
                   "receivedate_to": DATE(True), "api_urls": LIST(STR()), "data_last_updated": DATE(True)}),
@@ -299,6 +303,11 @@ DRUG = OBJ({
     "mechanism_of_action": SV(MECHANISM, "typed mechanism from the FDA label section 12.1; label text in source_excerpt"),
     "boxed_warning": SV(BOXED_WARNING, "typed boxed warning; present=false is a confirmed absence"),
     "faers_summary": SV(FAERS_SUMMARY, "openFDA FAERS post-marketing report summary"),
+    "drug_characterization": SV(LIST(CHARACTERIZATION_ROW),
+        "FAERS per-report drugcharacterization breakdown (1=suspect, 2=concomitant, 3=interacting), "
+        "computed by pulling every individual report and tallying the drug's own array-entry code -- "
+        "a plain count= aggregate query cannot do this correctly since openFDA's flattened multi-drug "
+        "array indexing mixes in co-listed drugs' own codes"),
     "applications": LIST(DRUG_APPLICATION, d="one entry per distinct FDA application this drug holds "
                           "-- almost always exactly 1; Roflumilast is the one drug in this corpus with "
                           "2 (cream NDA 215985, foam NDA 217242)"),
@@ -458,6 +467,7 @@ TRIAL = OBJ({
     }),
     "real_world_safety": OBJ({
         "faers_summary": SV(DRUG_REF, "drug-level fact -- see data/drugs/<slug>.json's own faers_summary"),
+        "drug_characterization": SV(DRUG_REF, "drug-level fact -- see data/drugs/<slug>.json's own drug_characterization"),
     }),
     "exclusivity": OBJ({
         "regulatory_application": SV(DRUG_REF, "drug-level fact, keyed by application_number -- see "

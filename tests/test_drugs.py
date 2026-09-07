@@ -53,13 +53,20 @@ def make_trial(nct, drug, application_number=None, registry="orange_book"):
             "present": False, "title": None, "warning_categories": [],
             "referenced_label_sections": [], "product_names": [],
         }, "openfda_label")},
-        "real_world_safety": {"faers_summary": sv({
-            "query": {"search_field": "medicinalproduct", "search_term": drug.upper(), "receivedate_from": None,
-                      "receivedate_to": None, "api_urls": [], "data_last_updated": None},
-            "total_reports": 0, "serious_reports": None, "death_reports": None, "hospitalization_reports": None,
-            "life_threatening_reports": None, "disability_reports": None, "top_reactions": [],
-            "top_serious_reactions": [], "reports_by_year": [], "meddra_version": None,
-        }, "openfda_faers")},
+        "real_world_safety": {
+            "faers_summary": sv({
+                "query": {"search_field": "medicinalproduct", "search_term": drug.upper(), "receivedate_from": None,
+                          "receivedate_to": None, "api_urls": [], "data_last_updated": None},
+                "total_reports": 0, "serious_reports": None, "death_reports": None, "hospitalization_reports": None,
+                "life_threatening_reports": None, "disability_reports": None, "top_reactions": [],
+                "top_serious_reactions": [], "reports_by_year": [], "meddra_version": None,
+            }, "openfda_faers"),
+            "drug_characterization": sv([
+                {"code": "1", "label": "suspect", "report_count": 0, "pct_of_reports": None},
+                {"code": "2", "label": "concomitant", "report_count": 0, "pct_of_reports": None},
+                {"code": "3", "label": "interacting", "report_count": 0, "pct_of_reports": None},
+            ], "openfda_faers"),
+        },
         "exclusivity": {
             "regulatory_application": sv({
                 "application_type": "NDA", "application_number": application_number, "registry": registry,
@@ -209,6 +216,11 @@ class EnsureDrugRecordTest(unittest.TestCase):
                                       "death_reports": None, "hospitalization_reports": None,
                                       "life_threatening_reports": None, "disability_reports": None, "top_reactions": [],
                                       "top_serious_reactions": [], "reports_by_year": [], "meddra_version": None}, "openfda_faers"),
+                "drug_characterization": sv([
+                    {"code": "1", "label": "suspect", "report_count": 0, "pct_of_reports": None},
+                    {"code": "2", "label": "concomitant", "report_count": 0, "pct_of_reports": None},
+                    {"code": "3", "label": "interacting", "report_count": 0, "pct_of_reports": None},
+                ], "openfda_faers"),
                 "applications": [],
                 "purple_book": sv(None, "needs_extraction"),
             }

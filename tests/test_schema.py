@@ -86,7 +86,7 @@ class ExportsInSyncTest(unittest.TestCase):
         md = (ROOT / "docs" / "SCHEMA.md").read_text()
         for path, _, _ in FIELD_DOCS:
             self.assertIn(f"`{path}`", md)
-        self.assertEqual(len(FIELD_DOCS), 43)  # 35 v1 fields + faers_summary + 3 exclusivity fields + 4 v3 results fields
+        self.assertEqual(len(FIELD_DOCS), 44)  # 35 v1 fields + faers_summary + 3 exclusivity fields + 4 v3 results fields + drug_characterization (cycle 23)
 
 
 class ResultsLayerSchemaTest(unittest.TestCase):

@@ -7870,10 +7870,125 @@
             "confidence"
           ],
           "description": "drug-level fact -- see data/drugs/<slug>.json's own faers_summary"
+        },
+        "drug_characterization": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "value": {
+              "anyOf": [
+                {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "drug": {
+                      "type": "string",
+                      "description": "drug record key; joins to data/drugs/<slug>.json's own `drug` field"
+                    },
+                    "application_number": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "description": "disambiguates when the drug has more than one FDA application (e.g. Roflumilast's cream NDA 215985 vs. foam NDA 217242); null for a single-application drug, or for a field with no per-application variance (mechanism_of_action, boxed_warning, faers_summary, purple_book)"
+                    }
+                  },
+                  "required": [
+                    "drug",
+                    "application_number"
+                  ]
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Pointer to a drug-level fact on data/drugs/<slug>.json instead of re-describing it here"
+            },
+            "source_type": {
+              "type": "string",
+              "enum": [
+                "ctgov_api",
+                "ctgov_text_extraction",
+                "protocol_pdf_extraction",
+                "publication_extraction",
+                "openfda_label",
+                "openfda_faers",
+                "orange_book",
+                "purple_book",
+                "needs_extraction",
+                "drug_level_ref"
+              ]
+            },
+            "source_url": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "source_excerpt": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "extracted_by": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "reviewed_by": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "confidence": {
+              "anyOf": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "value",
+            "source_type",
+            "source_url",
+            "source_excerpt",
+            "extracted_by",
+            "reviewed_by",
+            "confidence"
+          ],
+          "description": "drug-level fact -- see data/drugs/<slug>.json's own drug_characterization"
         }
       },
       "required": [
-        "faers_summary"
+        "faers_summary",
+        "drug_characterization"
       ]
     },
     "exclusivity": {

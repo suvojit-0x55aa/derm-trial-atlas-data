@@ -136,6 +136,7 @@ class LosslessMigrationTest(unittest.TestCase):
         # and exclusivity.regulatory_application (which it does set, via
         # atlas.regulatory_applications) separately from those.
         source_integrated = {("real_world_safety", "faers_summary"),
+                             ("real_world_safety", "drug_characterization"),
                              ("exclusivity", "orange_book"), ("exclusivity", "purple_book"),
                              ("results", "arms"), ("results", "arm_results"),
                              ("results", "effect_estimates"), ("results", "published_results")}
@@ -280,11 +281,12 @@ class LosslessMigrationTest(unittest.TestCase):
         # 17 trials x 35 v1 fields = 595 sourced values, all still present (renamed),
         # plus 4 new v2 fields (real_world_safety.faers_summary, exclusivity.*) and,
         # since migrate_trial chains straight through to the current schema version,
-        # 4 more new v3 fields (results.*) per trial.
+        # 4 more new v3 fields (results.*), plus 1 more field added post-v4
+        # (real_world_safety.drug_characterization, cycle 23) per trial.
         v1_total = sum(len(list(sourced_fields(v1))) for _, v1, _ in self.pairs)
         v2_total = sum(len(list(sourced_fields(v2))) for _, _, v2 in self.pairs)
         self.assertEqual(v1_total, 595)
-        self.assertEqual(v2_total, 595 + 17 * 4 + 17 * 4)
+        self.assertEqual(v2_total, 595 + 17 * 4 + 17 * 4 + 17 * 1)
 
 
 class V2ToV3MigrationTest(unittest.TestCase):

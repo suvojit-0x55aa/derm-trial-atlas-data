@@ -62,6 +62,7 @@ referenced by every trial of that drug instead of re-described per trial.
 | `adverse_events.discontinuation_due_to_ae_rate` | list[ArmDiscontinuation] \| null | per-arm discontinuation-for-AE rate |  |
 | `adverse_events.boxed_warning` | DrugRef \| null | drug-level fact -- see data/drugs/<slug>.json's own boxed_warning |  |
 | `real_world_safety.faers_summary` | DrugRef \| null | drug-level fact -- see data/drugs/<slug>.json's own faers_summary |  |
+| `real_world_safety.drug_characterization` | DrugRef \| null | drug-level fact -- see data/drugs/<slug>.json's own drug_characterization |  |
 | `exclusivity.regulatory_application` | DrugRef \| null | drug-level fact, keyed by application_number -- see data/drugs/<slug>.json's own applications[].regulatory_application |  |
 | `exclusivity.orange_book` | DrugRef \| null | drug-level fact, keyed by application_number -- see data/drugs/<slug>.json's own applications[].orange_book |  |
 | `exclusivity.purple_book` | DrugRef \| null | drug-level fact -- see data/drugs/<slug>.json's own purple_book |  |
@@ -81,6 +82,7 @@ One drug's cross-indication facts, extracted once and referenced (not copied) by
 | `mechanism_of_action` | Mechanism \| null | typed mechanism from the FDA label section 12.1; label text in source_excerpt |
 | `boxed_warning` | BoxedWarning \| null | typed boxed warning; present=false is a confirmed absence |
 | `faers_summary` | FaersSummary \| null | openFDA FAERS post-marketing report summary |
+| `drug_characterization` | list[CharacterizationRow] \| null | FAERS per-report drugcharacterization breakdown (1=suspect, 2=concomitant, 3=interacting), computed by pulling every individual report and tallying the drug's own array-entry code -- a plain count= aggregate query cannot do this correctly since openFDA's flattened multi-drug array indexing mixes in co-listed drugs' own codes |
 | `purple_book` | PurpleBookRecord \| null | Purple Book licensure + BPCIA exclusivity (biologic BLAs only) |
 | `applications` | list[DrugApplication] | one entry per distinct FDA application this drug holds -- almost always exactly 1; Roflumilast is the one drug in this corpus with 2 (cream NDA 215985, foam NDA 217242) |
 | `trial_ids` | list[string] | NCT ids of every trial of this drug in this atlas -- informational back-reference, not authoritative (data/trials/*.json's molecule.drug is) |
@@ -396,6 +398,15 @@ ScoreCriterion: one threshold on one clinical scale
 | Key | Type | Notes |
 |---|---|---|
 | `meddra_pt` | string |  |
+| `report_count` | integer |  |
+| `pct_of_reports` | number \| null |  |
+
+## CharacterizationRow
+
+| Key | Type | Notes |
+|---|---|---|
+| `code` | enum(1 \| 2 \| 3) |  |
+| `label` | enum(suspect \| concomitant \| interacting) |  |
 | `report_count` | integer |  |
 | `pct_of_reports` | number \| null |  |
 

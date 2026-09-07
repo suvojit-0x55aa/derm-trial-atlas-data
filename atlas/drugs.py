@@ -55,12 +55,14 @@ DRUGS_DIR = Path(__file__).resolve().parent.parent / "data" / "drugs"
 
 DRUG_SCHEMA_VERSION = 1
 
-# The 6 fields that moved off the trial record. Order matches atlas/schema.py's
-# DRUG spec / TRIAL's own field groups.
+# The 7 fields that moved off the trial record (6 original + drug_characterization,
+# added cycle 23 per captain instruction -- same drug-level rationale, same pattern).
+# Order matches atlas/schema.py's DRUG spec / TRIAL's own field groups.
 SINGLE_VALUED_FIELDS = {
     "mechanism_of_action": ("molecule", "mechanism_of_action"),
     "boxed_warning": ("adverse_events", "boxed_warning"),
     "faers_summary": ("real_world_safety", "faers_summary"),
+    "drug_characterization": ("real_world_safety", "drug_characterization"),
     "purple_book": ("exclusivity", "purple_book"),
 }
 APPLICATION_KEYED_FIELDS = {
@@ -253,6 +255,7 @@ def ensure_drug_record(drug_name: str, fetch_fields, for_trial: str | None = Non
         "mechanism_of_action": fresh["mechanism_of_action"],
         "boxed_warning": fresh["boxed_warning"],
         "faers_summary": fresh["faers_summary"],
+        "drug_characterization": fresh["drug_characterization"],
         "applications": fresh["applications"],
         "purple_book": fresh["purple_book"],
         "trial_ids": [for_trial] if for_trial else [],
