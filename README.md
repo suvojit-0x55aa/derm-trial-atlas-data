@@ -925,7 +925,7 @@ for the per-trial, per-field breakdown.
 | Field | Filled | Gap reason |
 |---|---|---|
 | `mechanism_of_action` | 53/53 | fully filled — real openFDA structured label text for every drug (a few drugs needed the approval-package label PDF fallback since they have no `label.json` entry at all) |
-| `boxed_warning` | 51/53 | openFDA label lookup miss for 2 drugs |
+| `boxed_warning` | 53/53 | fully filled — the last 2 gaps (Filsuvez, Vyjuvek) needed a fallback openFDA query term (substance_name/brand_name) since the default term either returned a differently-keyed result or failed outright |
 | `faers_summary` | 53/53 | fully filled — every drug has a real, checked FAERS query result, including a confirmed genuine `total_reports: 0` where that's what openFDA returns |
 | `drug_characterization` | 53/53 | fully filled (cycle 22-23) — real per-report FAERS `drugcharacterization` (suspect/concomitant/interacting) breakdown for every drug, computed by pulling every individual report and tallying the drug's own array-entry code (a plain aggregate `count=` query cannot do this correctly — see AGENTS.md) |
 | `regulatory_application` | 55/55 applications | fully filled — every drug's NDA/BLA join key is on file (Roflumilast's 2 real applications each have their own row) |
@@ -995,7 +995,7 @@ Data and pipeline both live here now (post-consolidation):
 
 - The human QA pass on top of the LLM-assisted extraction (captain +
   Garvita review of every non-`ctgov_api` value).
-- The 461 trial-level fields plus 55 drug-level fields that remain
+- The 461 trial-level fields plus 53 drug-level fields that remain
   `needs_extraction` (see the fill-status tables above) — a mix of
   genuinely unreachable sources (paywalled papers behind Cloudflare, PDF
   tables that don't extract reliably), real, un-worked backlog (a subset of
