@@ -58,13 +58,19 @@
     "confidence": 0.9
   },
   "boxed_warning": {
-    "value": null,
-    "source_type": "needs_extraction",
-    "source_url": null,
-    "source_excerpt": null,
-    "extracted_by": null,
+    "value": {
+      "present": false,
+      "title": null,
+      "warning_categories": [],
+      "referenced_label_sections": [],
+      "product_names": []
+    },
+    "source_type": "openfda_label",
+    "source_url": "https://api.fda.gov/drug/label.json?search=openfda.brand_name:VYJUVEK&limit=1",
+    "source_excerpt": "results[0] (VYJUVEK, BLA125774) has no boxed_warning key (checked, none present) -- openfda.substance_name is null for this drug (same pattern already documented for its mechanism_of_action lookup), so brand_name is the working query term",
+    "extracted_by": "cycle-24 openFDA label re-check (fallback query term)",
     "reviewed_by": null,
-    "confidence": null
+    "confidence": 1.0
   },
   "faers_summary": {
     "value": {
