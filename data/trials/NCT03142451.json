@@ -630,13 +630,106 @@
       "confidence": 1.0
     },
     "multiplicity_control": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "procedure": "serial_gatekeeping",
+        "familywise_error_controlled": true,
+        "alpha": 0.05,
+        "alpha_sided": 2,
+        "alpha_per_dose": null,
+        "co_primary_endpoints": [
+          {
+            "label": "Absolute change from Day 0/Baseline in inflammatory lesion count at Week 12",
+            "scale": "Inflammatory Lesion Count",
+            "responder_criteria": [],
+            "timepoint_week": 12,
+            "alpha": 0.05,
+            "step": 1
+          },
+          {
+            "label": "IGA Treatment Success (IGA 0/1 clear/almost-clear with >=2-grade improvement from baseline) at Week 12",
+            "scale": "IGA",
+            "responder_criteria": [],
+            "timepoint_week": 12,
+            "alpha": 0.05,
+            "step": 1
+          }
+        ],
+        "testing_sequence": [
+          {
+            "label": "Absolute change from Day 0/Baseline in inflammatory lesion count at Week 12",
+            "scale": "Inflammatory Lesion Count",
+            "responder_criteria": [],
+            "timepoint_week": 12,
+            "alpha": 0.05,
+            "step": 1
+          },
+          {
+            "label": "IGA Treatment Success (IGA 0/1 with >=2-grade improvement) at Week 12",
+            "scale": "IGA",
+            "responder_criteria": [],
+            "timepoint_week": 12,
+            "alpha": 0.05,
+            "step": 1
+          },
+          {
+            "label": "Dichotomized IGA score, success defined as a 2-step improvement in score at Week 12 compared to baseline",
+            "scale": "IGA",
+            "responder_criteria": [],
+            "timepoint_week": 12,
+            "alpha": 0.05,
+            "step": 2
+          },
+          {
+            "label": "Percent change from Day 0/Baseline in inflammatory lesion count at Week 12",
+            "scale": "Inflammatory Lesion Count",
+            "responder_criteria": [],
+            "timepoint_week": 12,
+            "alpha": 0.05,
+            "step": 3
+          },
+          {
+            "label": "Absolute change from Day 0/Baseline in inflammatory lesion count and IGA Treatment Success at the interim visit at Week 8",
+            "scale": null,
+            "responder_criteria": [],
+            "timepoint_week": 8,
+            "alpha": 0.05,
+            "step": 4
+          },
+          {
+            "label": "Absolute change from Day 0/Baseline in inflammatory lesion count and IGA Treatment Success at the interim visit at Week 4",
+            "scale": null,
+            "responder_criteria": [],
+            "timepoint_week": 4,
+            "alpha": 0.05,
+            "step": 5
+          }
+        ],
+        "alpha_split": [],
+        "alpha_recycling": null,
+        "doses_compared": [],
+        "dose_comparison_order": [],
+        "branching_on": null,
+        "regulatory_variants": [],
+        "rescue_counted_as_nonresponder": null,
+        "active_comparator_excluded_from_hierarchy": null,
+        "background_tcs": null,
+        "method_citations": [],
+        "finalized_in_sap": true,
+        "same_design_as": [
+          {
+            "nct_id": "NCT04608500",
+            "trial_name": "FX2016-12"
+          }
+        ],
+        "gatekeeping_structure": true,
+        "further_endpoints_through_week": 12
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03142451",
+      "source_excerpt": "Protocol FX2016-11 Synopsis (Statistical Methods): 'The co-primary efficacy endpoints will be the dichotomized IGA score... and the absolute change in inflammatory lesion count at Week 12... The key secondary endpoints will be analyzed hierarchically: Dichotomized IGA score where treatment success is defined as a 2-step improvement...; Percent change in inflammatory lesion count at Week 12...' Section 11.5.1 Primary Efficacy Endpoints: co-primary endpoints (absolute change in inflammatory lesion count; dichotomized IGA success), each tested at a two-sided 0.05 level. Section 11.5.2 Secondary Efficacy Endpoints lists 4 secondary endpoints in order (2-step IGA improvement; percent change in lesion count; Week 8 interim; Week 4 interim) and states: 'Secondary efficacy endpoints will be treated sequentially in the order listed above, at a 0.05 level of significance, only if the co-primary efficacy endpoints are significant.' SAP Section 8.1 restates the co-primary gate: 'both co-primary efficacy endpoints must be significant (ie, attaining significance at the 2-sided 0.05 level without adjustment for multiplicity)' -- i.e., the co-primary pair is tested as a conjunctive (AND) requirement at full unadjusted alpha, and the 4 secondary endpoints are then tested in the pre-specified fixed sequence, each at full 0.05, gated on both co-primaries reaching significance and (implicitly, by fixed-sequence convention) on the preceding endpoint in the sequence being significant. This is a fixed-sequence/serial gatekeeping design, not a Bonferroni/Hochberg-style alpha split.",
+      "extracted_by": "cycle-24 deep-extraction pass (protocol/SAP PDF read)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 1.0
     }
   },
   "timing_ops": {

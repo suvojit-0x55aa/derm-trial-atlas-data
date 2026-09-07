@@ -330,13 +330,60 @@
       "confidence": 1.0
     },
     "background_therapy": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "regimen_type": "monotherapy",
+        "background_agent_class": null,
+        "tcs_regimen": null,
+        "step_down_rule": null,
+        "recommended_agents": [],
+        "emollient_required": null,
+        "emollient_frequency": null,
+        "prohibited_concomitant": [
+          "Topical Hyaluronic Acid and Retinol within 1 day of Baseline.",
+          "Antimicrobial soaps within 1 week of Baseline.",
+          "Phototherapy devices for acne (e.g., ClearLight), adhesive cleansing strips (e.g., Ponds, Biore), use of Nair on the face, and use of tanning booths or tanning lamps within 1 week of Baseline.",
+          "OTC topical products containing salicylic acid and BPO (e.g., Clearasil, Clean & Clear) within 1 week of Baseline.",
+          "Astringents (e.g., witch hazel, Noxzema), abrasives (e.g., Clarisonic brushes, facial scrub products), and preparations containing spices, lime, or lemon within 1 week of Baseline.",
+          "Medicated cleansers on the face (e.g., sulfur or triclosan) within 1 week of Baseline.",
+          "Topical alpha-hydroxy acid and glycolic acid within 1 week of Baseline.",
+          "Topical essential oils used specifically for acne (e.g., tea tree oil, oregano, lavender) within 1 week of Baseline.",
+          "Topical azelaic acid within 2 weeks of Baseline.",
+          "Topical corticosteroids (inhaled and intranasal allowed), topical vasoconstrictors, topical NSAIDs, and topical antibiotics (including benzoyl-peroxide-containing products, zinc, and sulfur) within 2 weeks of Baseline.",
+          "Other topical acne procedures (photodynamic therapy, laser, microdermabrasion) and cosmetic procedures (facials, peels, comedo extraction, facial threading) within 2 weeks of Baseline.",
+          "Topical retinoids (e.g., Differin, Adapalene) within 4 weeks of Baseline.",
+          "Systemic corticosteroids (including intramuscular) within 4 weeks of Baseline.",
+          "Systemic antibiotics within 4 weeks of Baseline; one course of penicillin/derivatives or cephalosporins for up to 10 days is allowed after randomization but not within the 2 weeks before the Week 12 visit.",
+          "Systemic testosterone (all forms, including injections) within 4 weeks of Baseline.",
+          "Systemic Ostarine (all forms, including oral) within 4 weeks of Baseline.",
+          "Systemic Lithium (e.g., Lithium Orotate, Lithium Carbonate) within 4 weeks of Baseline.",
+          "Systemic hormonal contraceptives used for less than 3 consecutive months prior to Baseline, or used solely for acne control, within 3 months of Baseline.",
+          "Systemic Isotretinoin and anti-androgens within 6 months of Baseline.",
+          "Other than the study products, no other topical medications are permitted to be used on the face; other prohibited treatments include astringents, toners, clarifying lotions, medicated shaving products, cosmetic procedures, and chemical peeling products used on the face.",
+          "No medicated cleansers or moisturizers are allowed on the face; only sponsor-provided or study-approved cleanser and moisturizer/sunscreen may be used.",
+          "UVA/UVB treatments to the face are prohibited; patients should limit sun exposure, tanning beds/booths/parlors, and sauna use."
+        ],
+        "permitted_concomitant": [
+          "A stable regimen of inhaled corticosteroids for stable medical conditions (in the 2 months preceding Baseline) is allowed.",
+          "Vitamins and mineral supplements are permitted at dosages considered reasonable by the Investigator for maintaining good health.",
+          "Non-prohibited chronic therapies being used at Baseline may be continued.",
+          "Systemic anti-inflammatory agents (NSAIDs such as ibuprofen or aspirin) for pain relief as needed, with no more than 7 consecutive days of use.",
+          "Prophylactic use of low-dose aspirin 81 mg is allowed.",
+          "Acetaminophen for pain relief as needed.",
+          "Approved sponsor-provided or study-approved moisturizer/sunscreen may be applied at least 30 minutes after study product application; non-medicated make-up per the patient's normal routine (same brand/type for >=1 month prior to Baseline, not changed during the study), applied at least 30 minutes after study product."
+        ],
+        "applies_to_rerandomized_maintenance": null,
+        "sponsor_trial_ids": [
+          "SGT-65-05"
+        ],
+        "study_drug_doses_mg": [],
+        "population_note": "A 12-week randomized, double-blind, vehicle-controlled, parallel-group, multi-center Phase 3 monotherapy trial of once-daily topical Encapsulated Benzoyl Peroxide 3%/Encapsulated Tretinoin 0.1% Cream (S6G5T-3, Twyneo) vs. vehicle cream (S6G5T-8), 2:1 randomized, in patients >=9 years old with moderate-to-severe (IGA 3-4) facial acne vulgaris; no standardized background topical or TCS regimen is used alongside study drug."
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03761810",
+      "source_excerpt": "Section 11.4 Prohibited, Previous and Concomitant Medications/Therapies: 'Any previous acne therapies must be stopped for the appropriate washout period as specified below... Other than the study products, no other topical medications are permitted to be used on the face. All topical or systemic medications listed above and under exclusion criteria are prohibited... A stable regimen of inhaled corticosteroids for stable medical conditions (in the 2 months preceding Baseline) is allowed... Vitamins and mineral supplements are permitted... Patients may use systemic anti-inflammatory agents (i.e., NSAIDs [Ibuprofen or Aspirin]) for pain relief as needed (with no more than 7 days of consecutive use)... Prophylactic use of low dose Aspirin 81 mg is allowed. Patients may use Acetaminophen for pain relief, as needed throughout the study.' (Protocol SGT-65-05, Section 11.4)",
+      "extracted_by": "cycle-24 deep-extraction pass (protocol/SAP PDF read)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 1.0
     }
   },
   "endpoints": {
@@ -708,13 +755,124 @@
       "confidence": 1.0
     },
     "multiplicity_control": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "procedure": "serial_gatekeeping",
+        "familywise_error_controlled": true,
+        "alpha": 0.05,
+        "alpha_sided": 2,
+        "alpha_per_dose": null,
+        "co_primary_endpoints": [
+          {
+            "label": "Proportion of Patients with an assessment of clear or almost clear and with at least a 2-grade improvement in IGA from baseline at Week 12",
+            "scale": "IGA",
+            "responder_criteria": [],
+            "timepoint_week": 12,
+            "alpha": 0.05,
+            "step": null
+          },
+          {
+            "label": "Absolute change from Baseline in inflammatory lesion count on the face at Week 12",
+            "scale": "Inflammatory Lesion Count",
+            "responder_criteria": [],
+            "timepoint_week": 12,
+            "alpha": 0.05,
+            "step": null
+          },
+          {
+            "label": "Absolute change from Baseline in non-inflammatory lesion count on the face at Week 12",
+            "scale": "Noninflammatory Lesion Count",
+            "responder_criteria": [],
+            "timepoint_week": 12,
+            "alpha": 0.05,
+            "step": null
+          }
+        ],
+        "testing_sequence": [
+          {
+            "label": "Percent change from Baseline, in non-inflammatory lesion count at Week 12",
+            "scale": "Noninflammatory Lesion Count",
+            "responder_criteria": [],
+            "timepoint_week": 12,
+            "alpha": null,
+            "step": 1
+          },
+          {
+            "label": "Percent change from Baseline, in inflammatory lesion count at Week 12",
+            "scale": "Inflammatory Lesion Count",
+            "responder_criteria": [],
+            "timepoint_week": 12,
+            "alpha": null,
+            "step": 2
+          },
+          {
+            "label": "Proportion of Patients achieving at least a 4-point reduction on Item 1 (pimples) of the PRE-FACE from Baseline to Week 12",
+            "scale": "PRE-FACE",
+            "responder_criteria": [],
+            "timepoint_week": 12,
+            "alpha": null,
+            "step": 3
+          },
+          {
+            "label": "Proportion of Patients achieving at least a 4-point reduction on Item 5 (embarrassment) of the PRE-FACE from Baseline to Week 12",
+            "scale": "PRE-FACE",
+            "responder_criteria": [],
+            "timepoint_week": 12,
+            "alpha": null,
+            "step": 4
+          },
+          {
+            "label": "Absolute change from Baseline, in non-inflammatory lesion count at Week 8",
+            "scale": "Noninflammatory Lesion Count",
+            "responder_criteria": [],
+            "timepoint_week": 8,
+            "alpha": null,
+            "step": 5
+          },
+          {
+            "label": "Absolute change from Baseline, in inflammatory lesion count at Week 8",
+            "scale": "Inflammatory Lesion Count",
+            "responder_criteria": [],
+            "timepoint_week": 8,
+            "alpha": null,
+            "step": 6
+          },
+          {
+            "label": "Absolute change from Baseline, in non-inflammatory lesion count at Week 4",
+            "scale": "Noninflammatory Lesion Count",
+            "responder_criteria": [],
+            "timepoint_week": 4,
+            "alpha": null,
+            "step": 7
+          }
+        ],
+        "alpha_split": [],
+        "alpha_recycling": null,
+        "doses_compared": [
+          "E-BPO/E-ATRA 3%/0.1% Cream (S6G5T-3)"
+        ],
+        "dose_comparison_order": [],
+        "branching_on": null,
+        "regulatory_variants": [],
+        "rescue_counted_as_nonresponder": null,
+        "active_comparator_excluded_from_hierarchy": null,
+        "background_tcs": null,
+        "method_citations": [],
+        "finalized_in_sap": true,
+        "same_design_as": [
+          {
+            "nct_id": "NCT03761784",
+            "trial_name": "SGT-65-04"
+          }
+        ],
+        "gatekeeping_structure": true,
+        "further_endpoints_through_week": 12
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03761810",
+      "source_excerpt": "SAP Section 8.1.8 Multiple Comparisons/Multiplicity: 'The overall Type I error will be controlled by requiring the three co-primary efficacy endpoints to be statistically significant. Specifically, failure of either one of the primary efficacy endpoints will invalidate the statistical significance of the secondary efficacy endpoints. Evaluation of the secondary efficacy variables will use a gated sequential procedure starting with the comparisons of the first step and proceeding onto the next step and etc. A stepwise process will be conducted for testing the secondary efficacy endpoints in order to control for multiplicity. These tests will be performed for only the ITT population. The testing process will terminate whenever a statistical test for a step is not significant. All subsequent tests for the remaining steps will be considered not significant.' followed by a 7-step ordered table of secondary endpoints (percent change non-inflammatory/inflammatory lesions Wk12, PRE-FACE item1/item5 responder rates Wk12, absolute change non-inflammatory/inflammatory lesions Wk8, absolute change non-inflammatory lesions Wk4). Note: the SAP's own table stops at step 7 and does not include the 8th secondary endpoint listed in Section 6 (absolute change in inflammatory lesion count at Week 4) in the formal gated hierarchy.",
+      "extracted_by": "cycle-24 deep-extraction pass (protocol/SAP PDF read)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 1.0
     }
   },
   "timing_ops": {
@@ -817,13 +975,45 @@
       "confidence": 0.8
     },
     "rescue_therapy": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "permitted": false,
+        "trigger": null,
+        "earliest_week": null,
+        "prohibited_through_week": null,
+        "trigger_rules": [],
+        "flare_definition": [],
+        "first_step": null,
+        "topical_min_days_before_systemic": null,
+        "topical_rescue_requires_study_drug_discontinuation": null,
+        "systemic_rescue_requires_study_drug_discontinuation": null,
+        "resume_after_systemic_rescue_half_lives": null,
+        "resume_after_phototherapy_months": null,
+        "rescued_counted_as_nonresponder": null,
+        "rescued_counted_as_treatment_failure": null,
+        "continue_visits_after_discontinuation": null,
+        "continue_visits_through_week": null,
+        "topical_rescue_not_counted_after_week": null,
+        "topical_agents": [],
+        "topical_potency_classes": [],
+        "tci_reserved_areas": [],
+        "systemic_agents": [],
+        "oral_corticosteroid_limit": null,
+        "rescue_period": null,
+        "escape_arm_washout_half_lives": null,
+        "maintenance_period_rule": null,
+        "permitted_concomitant": [],
+        "recorded_in_ecrf": null,
+        "applies_to_period": null,
+        "long_term_extension_eligible_after_rescue": null,
+        "topical_agent_class": null,
+        "rationale": "No rescue-medication concept exists anywhere in this protocol or SAP -- a full-text search for 'rescue' returns zero hits in both documents. Section 11.4 states 'Other than the study products, no other topical medications are permitted to be used on the face,' and Section 11.5 (Precautions) permits only non-medicated moisturizer/sunscreen, vitamins, and short-course NSAIDs/acetaminophen for general pain relief, with no provision for a study-defined rescue therapy for worsening acne. Patients with severe acne appropriate for systemic treatment are simply counseled by the Investigator about treatment options outside the study (Section 10); a patient who discontinues due to documented lack of treatment effect is instead handled via the per-protocol/treatment-failure imputation rule in Section 17.1, not a defined rescue regimen."
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03761810",
+      "source_excerpt": "No 'rescue' hits found in Protocol SGT-65-05 or its SAP (full-text grep). Section 10 (Overall Study Design): 'Patients with severe acne vulgaris who are appropriate for systemic treatment need to be counseled regarding their treatment options by the Principal Investigator (PI).' Section 11.4: 'Other than the study products, no other topical medications are permitted to be used on the face.'",
+      "extracted_by": "cycle-24 deep-extraction pass (protocol/SAP PDF read)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 1.0
     }
   },
   "adverse_events": {

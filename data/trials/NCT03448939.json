@@ -304,13 +304,52 @@
       "confidence": 1.0
     },
     "background_therapy": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "regimen_type": "monotherapy",
+        "background_agent_class": null,
+        "tcs_regimen": null,
+        "step_down_rule": null,
+        "recommended_agents": [],
+        "emollient_required": null,
+        "emollient_frequency": null,
+        "prohibited_concomitant": [
+          "All topical anti-rosacea treatments (metronidazole 0.75-1%, azelaic acid, brimonidine, oxymetazoline, sodium sulfacetamide 10%, sulfur 5%, benzoyl peroxide, clindamycin, erythromycin, sulfur lotions, retinoids, ivermectin) prohibited on the face; 2-week washout required before Baseline",
+          "Topical antibiotics/antimicrobials on the face - 2 week washout before Baseline",
+          "Topical anti-inflammatories on the face (corticosteroids, vasoconstrictors, NSAIDs) - 2 week washout before Baseline",
+          "Topical retinoids on the face - 30 day washout before Baseline",
+          "Systemic rosacea treatments, systemic corticosteroids, systemic antibiotics known to impact rosacea (e.g. tetracyclines, erythromycin, doxycycline, minocycline, azithromycin, clarithromycin, metronidazole, sulfamethoxazole, trimethoprim) - 4 week washout before Baseline and throughout study",
+          "Systemic retinoids (e.g., isotretinoin) - 6 month washout before Baseline",
+          "'Other than the study products, no other topical medications are permitted to be used on the face' - only study product and sponsor-provided/study-approved cleanser and moisturizer/sunscreen allowed on the face",
+          "Astringents, toners, clarifying lotions, medicated shaving products, cosmetic procedures, and chemical peeling products used on the face",
+          "Medicated cleansers on the face (e.g. benzoyl peroxide, salicylic acid, sulfur, triclosan) within 7 days of Baseline",
+          "Topical astringents/abrasives or preparations containing spices or lime, medicated topical preparations on the face, within 7 days prior to Baseline",
+          "UVA/UVB treatments prohibited throughout the study",
+          "Abrasive cleansers or washes, alcoholic toners, astringents prohibited throughout the study",
+          "Change of make-up brand/type or frequency of use during the study (must have used same brand/type for >=30 days prior to entry)"
+        ],
+        "permitted_concomitant": [
+          "Vitamins and mineral supplements at dosages the investigator considers reasonable for maintaining good health",
+          "Non-prohibited chronic therapies being used at Baseline (Visit 2) may be continued",
+          "Systemic NSAIDs (ibuprofen or aspirin) for pain relief as needed, no more than 7 consecutive days",
+          "Prophylactic low-dose aspirin (81 mg)",
+          "Acetaminophen for pain relief as needed",
+          "Stable regimen of inhaled corticosteroids for a stable medical condition (in the 2 months preceding enrollment)",
+          "Antibiotic treatment of a non-rosacea infection of less than 14 days",
+          "Sponsor-provided or study-approved cleanser and moisturizer/sunscreen only (no cleanser within 2 hours, no moisturizer/sunscreen within 30 minutes, of study product application)"
+        ],
+        "applies_to_rerandomized_maintenance": false,
+        "sponsor_trial_ids": [
+          "SGT-54-01"
+        ],
+        "study_drug_doses_mg": [],
+        "population_note": "A 12-week, multi-center, double-blind, randomized, vehicle-controlled, parallel-group Phase 3 monotherapy trial of once-daily topical Encapsulated Benzoyl Peroxide (E-BPO) Cream 5% (S5G4T-1) vs. vehicle cream, 2:1 randomization, in adults with moderate-to-severe (IGA 3-4) papulopustular rosacea (15-70 inflammatory lesions, <=2 nodules). No standardized background therapy regimen: only study product plus a sponsor-provided/study-approved cleanser and moisturizer/sunscreen are permitted on the face; all other topical and most systemic rosacea-relevant medications are prohibited with drug-specific washout periods (2 weeks to 6 months)."
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03448939",
+      "source_excerpt": "12.4. Prohibited, Previous and Concomitant Therapies: 'Other than the study products, no other topical medications are permitted to be used on the face. All topical or systemic medications listed above and under exclusion criteria are prohibited... A stable regimen of inhaled corticosteroids for stable medical conditions (in the 2 months preceding enrollment) and antibiotic treatment of an infection of less than 14 days are allowed during the study... Therapies (medication and non-medication therapies) not restricted by the protocol may be used during the study... Vitamins and mineral supplements are permitted... Patients may use systemic anti-inflammatory agents [i.e., NSAIDs (ibuprofen or aspirin) for pain relief] as needed (with no more than 7 days of consecutive use)... Prophylactic use of low dose aspirin (81 mg) is allowed. Patients may use acetaminophen for pain relief, as needed.' Washout periods per section 12.4: topical anti-rosacea treatments/antibiotics/antimicrobials/anti-inflammatories - 2 weeks; topical retinoids - 30 days; systemic rosacea treatments/corticosteroids/antibiotics - 4 weeks; systemic retinoids - 6 months.",
+      "extracted_by": "cycle-24 deep-extraction pass (protocol/SAP PDF read)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 1.0
     }
   },
   "endpoints": {
@@ -450,13 +489,108 @@
       "confidence": 1.0
     },
     "multiplicity_control": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "procedure": "serial_gatekeeping",
+        "familywise_error_controlled": true,
+        "alpha": 0.05,
+        "alpha_sided": 2,
+        "alpha_per_dose": null,
+        "co_primary_endpoints": [
+          {
+            "label": "Proportion of patients with the primary measure of success \"Clear\" (0) or \"Almost clear\" (1) in the IGA relative to Baseline at Week 12",
+            "scale": "IGA",
+            "responder_criteria": [],
+            "timepoint_week": 12,
+            "alpha": 0.05,
+            "step": null
+          },
+          {
+            "label": "Absolute change in inflammatory lesion counts from baseline to Week 12",
+            "scale": "Inflammatory Lesion Count",
+            "responder_criteria": [],
+            "timepoint_week": 12,
+            "alpha": 0.05,
+            "step": null
+          }
+        ],
+        "testing_sequence": [
+          {
+            "label": "Percent change in inflammatory lesion count from baseline to Week 12",
+            "scale": "Inflammatory Lesion Count",
+            "responder_criteria": [],
+            "timepoint_week": 12,
+            "alpha": 0.05,
+            "step": 1
+          },
+          {
+            "label": "Absolute change in inflammatory lesion count from baseline to Week 8",
+            "scale": "Inflammatory Lesion Count",
+            "responder_criteria": [],
+            "timepoint_week": 8,
+            "alpha": 0.05,
+            "step": 2
+          },
+          {
+            "label": "Proportion of patients with the primary measure of success \"Clear\" (0) or \"Almost clear\" (1) in the IGA relative to Baseline at Week 8",
+            "scale": "IGA",
+            "responder_criteria": [],
+            "timepoint_week": 8,
+            "alpha": 0.05,
+            "step": 3
+          },
+          {
+            "label": "Absolute change in inflammatory lesion count from baseline to Week 4",
+            "scale": "Inflammatory Lesion Count",
+            "responder_criteria": [],
+            "timepoint_week": 4,
+            "alpha": 0.05,
+            "step": 4
+          },
+          {
+            "label": "Proportion of patients with the primary measure of success \"Clear\" (0) or \"Almost clear\" (1) in the IGA relative to Baseline at Week 4",
+            "scale": "IGA",
+            "responder_criteria": [],
+            "timepoint_week": 4,
+            "alpha": 0.05,
+            "step": 5
+          }
+        ],
+        "alpha_split": [
+          {
+            "group": "Supportive efficacy endpoints (PAPSS items 1-4: burning, itching, redness, bumps)",
+            "n_endpoints": 4,
+            "alpha": null,
+            "method": "Benjamini-Hochberg (Hochberg and Benjamini adaptive step-down Bonferroni method, PROC MULTTEST AHOLM option in SAS)",
+            "timepoint_week": null
+          }
+        ],
+        "alpha_recycling": null,
+        "doses_compared": [],
+        "dose_comparison_order": [],
+        "branching_on": null,
+        "regulatory_variants": [],
+        "rescue_counted_as_nonresponder": null,
+        "active_comparator_excluded_from_hierarchy": null,
+        "background_tcs": null,
+        "method_citations": [
+          "Benjamini-Hochberg"
+        ],
+        "finalized_in_sap": true,
+        "same_design_as": [
+          {
+            "nct_id": "NCT03564119",
+            "trial_name": "SGT-54-02"
+          }
+        ],
+        "gatekeeping_structure": true,
+        "further_endpoints_through_week": null
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03448939",
+      "source_excerpt": "Section 19.4.3 / SAP 8.1.8 'Test of Superiority for Secondary Efficacy and Control of Multiplicity': 'The overall Type I error will be controlled by requiring the two co-primary efficacy endpoints to be statistically significant. Specifically, failure of either one of the primary efficacy endpoints will invalidate the statistical significance of the secondary efficacy endpoints... A stepwise process will be conducted for testing the secondary efficacy endpoints in order to control for multiplicity... The testing process will terminate whenever a statistical test for a step is not significant. All subsequent tests for the remaining steps will be considered not significant.' Table 6 gives the 5-step order (percent change Wk12 lesion count; absolute change Wk8 lesion count; IGA success Wk8; absolute change Wk4 lesion count; IGA success Wk4). Separately for supportive endpoints: 'inferential testing for the following endpoints will use an ANOVA... The overall Type I error will be controlled by the Benjamini-Hochberg method.'",
+      "extracted_by": "cycle-24 deep-extraction pass (protocol/SAP PDF read)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 1.0
     }
   },
   "timing_ops": {
@@ -554,13 +688,45 @@
       "confidence": 0.75
     },
     "rescue_therapy": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "permitted": false,
+        "trigger": null,
+        "earliest_week": null,
+        "prohibited_through_week": null,
+        "trigger_rules": [],
+        "flare_definition": [],
+        "first_step": null,
+        "topical_min_days_before_systemic": null,
+        "topical_rescue_requires_study_drug_discontinuation": null,
+        "systemic_rescue_requires_study_drug_discontinuation": null,
+        "resume_after_systemic_rescue_half_lives": null,
+        "resume_after_phototherapy_months": null,
+        "rescued_counted_as_nonresponder": null,
+        "rescued_counted_as_treatment_failure": null,
+        "continue_visits_after_discontinuation": null,
+        "continue_visits_through_week": null,
+        "topical_rescue_not_counted_after_week": null,
+        "topical_agents": [],
+        "topical_potency_classes": [],
+        "tci_reserved_areas": [],
+        "systemic_agents": [],
+        "oral_corticosteroid_limit": null,
+        "rescue_period": null,
+        "escape_arm_washout_half_lives": null,
+        "maintenance_period_rule": null,
+        "permitted_concomitant": [],
+        "recorded_in_ecrf": null,
+        "applies_to_period": null,
+        "long_term_extension_eligible_after_rescue": null,
+        "topical_agent_class": null,
+        "rationale": "No rescue-medication concept anywhere in the protocol or SAP (a full-text search for 'rescue' returns zero hits in either document). Section 12.4 (Prohibited, Previous and Concomitant Therapies) covers only prohibited/permitted concomitant medications with fixed washout periods; there is no provision for adding a rescue treatment on worsening/flare, and no escape-arm or treatment-switch mechanism. This is a simple 12-week vehicle-controlled monotherapy design with no rescue therapy by design."
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03448939",
+      "source_excerpt": "Full-text search of NCT03448939_Prot_002.txt and NCT03448939_SAP_001.txt for 'rescue' returns no matches. Section 12.4: 'If a patient receives prohibited treatment during the study, the patient may be allowed to continue in the study at the discretion of the investigator and Sponsor / Medical Monitor.' No rescue medication, escape arm, or protocol-defined flare/response threshold triggering additional therapy is described anywhere in the document.",
+      "extracted_by": "cycle-24 deep-extraction pass (protocol/SAP PDF read)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 1.0
     }
   },
   "adverse_events": {

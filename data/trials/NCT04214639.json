@@ -615,13 +615,162 @@
       "confidence": 1.0
     },
     "multiplicity_control": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "procedure": "serial_gatekeeping",
+        "familywise_error_controlled": true,
+        "alpha": 0.05,
+        "alpha_sided": 2,
+        "alpha_per_dose": null,
+        "co_primary_endpoints": [
+          {
+            "label": "Absolute change from Baseline to Week 12 in inflammatory lesion counts",
+            "scale": "Inflammatory Lesion Count",
+            "responder_criteria": [],
+            "timepoint_week": 12,
+            "alpha": null,
+            "step": null
+          },
+          {
+            "label": "Absolute change from Baseline to Week 12 in non-inflammatory lesion counts",
+            "scale": "Noninflammatory Lesion Count",
+            "responder_criteria": [],
+            "timepoint_week": 12,
+            "alpha": null,
+            "step": null
+          },
+          {
+            "label": "Percentage of subjects who achieve at least a two-grade reduction from baseline and are Clear or Almost Clear at Week 12 in the EGSS",
+            "scale": "EGSS",
+            "responder_criteria": [],
+            "timepoint_week": 12,
+            "alpha": null,
+            "step": null
+          }
+        ],
+        "testing_sequence": [
+          {
+            "label": "Percent change in non-inflammatory lesion count from Baseline to Week 12",
+            "scale": "Noninflammatory Lesion Count",
+            "responder_criteria": [],
+            "timepoint_week": 12,
+            "alpha": null,
+            "step": 1
+          },
+          {
+            "label": "Percent change in inflammatory lesion count from Baseline to Week 12",
+            "scale": "Inflammatory Lesion Count",
+            "responder_criteria": [],
+            "timepoint_week": 12,
+            "alpha": null,
+            "step": 2
+          },
+          {
+            "label": "Percentage of subjects who have at least a 2 grade reduction at Week 12 from Baseline in the EGSS",
+            "scale": "EGSS",
+            "responder_criteria": [],
+            "timepoint_week": 12,
+            "alpha": null,
+            "step": 3
+          },
+          {
+            "label": "Percent change in non-inflammatory lesion count from Baseline to Week 8",
+            "scale": "Noninflammatory Lesion Count",
+            "responder_criteria": [],
+            "timepoint_week": 8,
+            "alpha": null,
+            "step": 4
+          },
+          {
+            "label": "Percent change in inflammatory lesion count from Baseline to Week 8",
+            "scale": "Inflammatory Lesion Count",
+            "responder_criteria": [],
+            "timepoint_week": 8,
+            "alpha": null,
+            "step": 5
+          },
+          {
+            "label": "Percent change in non-inflammatory lesion count from Baseline to Week 4",
+            "scale": "Noninflammatory Lesion Count",
+            "responder_criteria": [],
+            "timepoint_week": 4,
+            "alpha": null,
+            "step": 6
+          },
+          {
+            "label": "Percent change in inflammatory lesion count from Baseline to Week 4",
+            "scale": "Inflammatory Lesion Count",
+            "responder_criteria": [],
+            "timepoint_week": 4,
+            "alpha": null,
+            "step": 7
+          },
+          {
+            "label": "Percent change in non-inflammatory lesion count from Baseline to Week 2",
+            "scale": "Noninflammatory Lesion Count",
+            "responder_criteria": [],
+            "timepoint_week": 2,
+            "alpha": null,
+            "step": 8
+          },
+          {
+            "label": "Percent change in inflammatory lesion count from Baseline to Week 2",
+            "scale": "Inflammatory Lesion Count",
+            "responder_criteria": [],
+            "timepoint_week": 2,
+            "alpha": null,
+            "step": 9
+          },
+          {
+            "label": "Percentage of subjects who have at least a 2 grade reduction at Week 8 from Baseline in the Evaluator's Global Severity Score",
+            "scale": "EGSS",
+            "responder_criteria": [],
+            "timepoint_week": 8,
+            "alpha": null,
+            "step": 10
+          },
+          {
+            "label": "Percentage of subjects who have at least a 2 grade reduction at Week 4 from Baseline in the Evaluator's Global Severity Score",
+            "scale": "EGSS",
+            "responder_criteria": [],
+            "timepoint_week": 4,
+            "alpha": null,
+            "step": 11
+          },
+          {
+            "label": "Percentage of subjects who have at least a 2 grade reduction at Week 2 from Baseline in the Evaluator's Global Severity Score",
+            "scale": "EGSS",
+            "responder_criteria": [],
+            "timepoint_week": 2,
+            "alpha": null,
+            "step": 12
+          }
+        ],
+        "alpha_split": [],
+        "alpha_recycling": null,
+        "doses_compared": [],
+        "dose_comparison_order": [],
+        "branching_on": null,
+        "regulatory_variants": [],
+        "rescue_counted_as_nonresponder": null,
+        "active_comparator_excluded_from_hierarchy": null,
+        "background_tcs": null,
+        "method_citations": [],
+        "finalized_in_sap": true,
+        "same_design_as": [
+          {
+            "nct_id": "NCT04214652",
+            "trial_name": "Protocol V01-126A-302 (twin IDP-126 Gel Acne Vulgaris trial)"
+          }
+        ],
+        "gatekeeping_structure": true,
+        "further_endpoints_through_week": 12
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT04214639",
+      "source_excerpt": "Section 2 Synopsis, Criteria for evaluation: 'Co-primary endpoints are: (1) Absolute change from Baseline to Week 12 in - inflammatory lesion counts (2) Absolute change from Baseline to Week 12 in - non-inflammatory lesion counts, and, (3) Percentage of subjects who achieve at least a two-grade reduction from baseline and are Clear or Almost Clear at Week 12 in the EGSS.' Section 12.1.6 Statistical Hypothesis Testing and Control of Multiplicity: 'The overall Type I error will be controlled by requiring the three co-primary efficacy endpoints to be statistically significant. Specifically, failure of any one of the primary efficacy endpoints will invalidate the statistical significance of the secondary efficacy endpoints. The following stepwise process will be conducted for testing the secondary efficacy endpoints in order to control for multiplicity. These tests will be performed for only the ITT population. The testing process will terminate whenever a statistical test for a step is not significant. All subsequent tests for the remaining steps will be considered not significant.' [7-step secondary endpoint order table follows, Week 12/8/4]. 'The following stepwise process will be conducted for testing the supportive efficacy endpoints in order to control for multiplicity. ... In order to control for multiplicity, failure of any one of the secondary efficacy endpoints will invalidate the statistical significance of the supportive efficacy endpoints. The testing process will terminate whenever a statistical test for a step is not significant.' [5-step supportive endpoint order table follows, Week 8/4/2]. Section 12.8.5 Multiplicity Issues restates: 'The overall Type I error will be controlled by requiring the three co-primary efficacy endpoints to be statistically significant... see Section 12.1.6 for further detail about control of Type I error across primary and secondary endpoints.' Statistical Methods (Synopsis): 'Statistical significance will be based on two-tailed tests of the null hypothesis resulting in p-values of 0.05 or less.'",
+      "extracted_by": "cycle-24 deep-extraction pass (protocol/SAP PDF read)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 1.0
     }
   },
   "timing_ops": {

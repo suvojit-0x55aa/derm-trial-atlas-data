@@ -253,13 +253,45 @@
       "confidence": 1.0
     },
     "background_therapy": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "regimen_type": "monotherapy",
+        "background_agent_class": null,
+        "tcs_regimen": null,
+        "step_down_rule": null,
+        "recommended_agents": [],
+        "emollient_required": null,
+        "emollient_frequency": null,
+        "prohibited_concomitant": [
+          "Anticholinergic agents (any route - IV, oral, inhaled, topical, including topical glycopyrrolate or derivatives) used to treat hyperhidrosis, asthma, incontinence, gastrointestinal cramps, or muscular spasms are prohibited throughout the study.",
+          "Any oral or topical homeopathic or herbal treatment (e.g., sage tablets, chamomile, valerian root, St. John's wort) is prohibited.",
+          "Any prescription topical product, including prescription topical antiperspirants or similar agents (e.g., Drysol, Xerac AC, Certain DRI), and hand sanitizers applied to the axillae are prohibited for the duration of the study.",
+          "Any other treatment or procedure for axillary hyperhidrosis is prohibited, including botulinum toxin, thermolysis (e.g., MiraDry, laser, or other), sympathectomy, or iontophoresis.",
+          "Any surgical procedure involving the axillae (including laser hair removal), or any surgical procedure resulting in significant axillary scarring, is prohibited.",
+          "Oral cholinergic agents (e.g., bethanechol) are prohibited throughout the study.",
+          "Addition of, or dose change for, serotonergic agonists/SSRIs, beta-blockers, alpha-adrenergic agonists (clonidine), dopamine partial agonists, tricyclic antidepressants, anti-anxiety/antidepressant drugs, amphetamine products, or other drugs with known anticholinergic side effects is prohibited during the study.",
+          "Over-the-counter topical antiperspirant/deodorant applied directly to the axilla(e) is prohibited within 7 days of GSP1 (Visit 2) and for the duration of the study; Sponsor-supplied non-antiperspirant deodorant is provided instead."
+        ],
+        "permitted_concomitant": [
+          "Therapy considered necessary for the subject's welfare may be given at the Investigator's discretion (Section 6.1); if the permissibility of a specific medication/treatment is in question, the Medical Monitor is contacted.",
+          "A subject on a stable dose (per Investigator judgment) of a serotonergic agonist/SSRI, beta-blocker, alpha-adrenergic agonist, dopamine partial agonist, or tricyclic antidepressant for >=3 months with no recent change in hyperhidrosis frequency/severity may continue that medication at an unaltered dose during the study.",
+          "A subject on a stable dose of an anti-anxiety and/or anti-depressant drug for >=3 months with no recent change in hyperhidrosis frequency/severity may continue that medication; psychostimulants may likewise be allowed if the dose has been stable for >=3 months without a change in hyperhidrosis frequency/severity.",
+          "Drugs with known anticholinergic side effects (e.g., dry mouth, blurred vision) taken within the last 28 days may be allowed at the Investigator's discretion, provided the dose is not altered during the study.",
+          "Sponsor-supplied non-antiperspirant deodorant may be applied, but not within 8 hours following study product application.",
+          "Prior axillary laser hair removal is permitted if performed more than 28 days before GSP1 (Visit 2)."
+        ],
+        "applies_to_rerandomized_maintenance": null,
+        "sponsor_trial_ids": [
+          "BBI-4000-CL-301"
+        ],
+        "study_drug_doses_mg": [],
+        "population_note": "A multicenter, randomized, double-blind, vehicle-controlled Phase 3 trial (\"Cardigan I\") of sofpironium bromide gel, 15% applied topically once daily at bedtime to both axillae for 42 consecutive days in subjects >=9 years old with primary axillary hyperhidrosis. This is a simple monotherapy-vs-vehicle design with no standardized background regimen; the real content is a set of prohibited/permitted concomitant medication and treatment rules (Protocol Sections 6.1-6.2) rather than an AD/psoriasis-style background topical regimen."
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03836287",
+      "source_excerpt": "Section 6.2 Prohibited Medications/Treatments: 'Anticholinergic agents used to treat conditions such as, but not limited to, hyperhidrosis, asthma, incontinence, gastrointestinal cramps, and muscular spasms by any route of administration...Any prescription topical products, including topical prescription antiperspirants or similar agents (e.g., Drysol, Xerac AC, Certain DRI)...Any treatment or procedure for axillary hyperhidrosis including but not limited to: botulinum toxin, thermolysis treatments...sympathectomy, iontophoresis...' Section 6.1 Permissible Medications/Treatments: 'Therapy considered necessary for the subject's welfare may be given at the discretion of the Investigator.' Exclusion criteria 2d/6: subjects on a stable dose of certain agents for >=3 months with no recent change in hyperhidrosis severity may be included, doses not to be altered during the study.",
+      "extracted_by": "cycle-24 deep-extraction pass (protocol/SAP PDF read)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 1.0
     }
   },
   "endpoints": {
@@ -349,13 +381,98 @@
       "confidence": 1.0
     },
     "multiplicity_control": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "procedure": "serial_gatekeeping",
+        "familywise_error_controlled": true,
+        "alpha": 0.05,
+        "alpha_sided": 2,
+        "alpha_per_dose": null,
+        "co_primary_endpoints": [
+          {
+            "label": "Proportion of subjects achieving >=2-point improvement in HDSM-Ax-7 scale score from baseline to EOT (responder)",
+            "scale": "HDSM-Ax-7",
+            "responder_criteria": [],
+            "timepoint_week": 6,
+            "alpha": 0.05,
+            "step": 1
+          },
+          {
+            "label": "Change in gravimetric sweat production (GSP) from baseline to EOT",
+            "scale": "GSP",
+            "responder_criteria": [],
+            "timepoint_week": 6,
+            "alpha": 0.05,
+            "step": 1
+          }
+        ],
+        "testing_sequence": [
+          {
+            "label": "Proportion of subjects achieving >=2-point improvement in HDSM-Ax-7 scale score from baseline to EOT (responder)",
+            "scale": "HDSM-Ax-7",
+            "responder_criteria": [],
+            "timepoint_week": 6,
+            "alpha": 0.05,
+            "step": 1
+          },
+          {
+            "label": "Change in gravimetric sweat production (GSP) from baseline to EOT",
+            "scale": "GSP",
+            "responder_criteria": [],
+            "timepoint_week": 6,
+            "alpha": 0.05,
+            "step": 1
+          },
+          {
+            "label": "Proportion of subjects achieving >=1-point improvement in HDSM-Ax-7 scale score from baseline to EOT",
+            "scale": "HDSM-Ax-7",
+            "responder_criteria": [],
+            "timepoint_week": 6,
+            "alpha": 0.05,
+            "step": 2
+          },
+          {
+            "label": "Proportion of subjects achieving >=2-point improvement in HDSM-Ax-7 scale score AND >=70% reduction in GSP from baseline to EOT",
+            "scale": "HDSM-Ax-7 + GSP",
+            "responder_criteria": [],
+            "timepoint_week": 6,
+            "alpha": 0.05,
+            "step": 3
+          },
+          {
+            "label": "Proportion of subjects achieving >=1-point improvement in HDSM-Ax-7 scale score AND >=50% reduction in GSP from baseline to EOT",
+            "scale": "HDSM-Ax-7 + GSP",
+            "responder_criteria": [],
+            "timepoint_week": 6,
+            "alpha": 0.05,
+            "step": 4
+          }
+        ],
+        "alpha_split": [],
+        "alpha_recycling": null,
+        "doses_compared": [],
+        "dose_comparison_order": [],
+        "branching_on": null,
+        "regulatory_variants": [],
+        "rescue_counted_as_nonresponder": null,
+        "active_comparator_excluded_from_hierarchy": null,
+        "background_tcs": null,
+        "method_citations": [],
+        "finalized_in_sap": true,
+        "same_design_as": [
+          {
+            "nct_id": "NCT03948646",
+            "trial_name": "Cardigan II (BBI-4000-CL-302)"
+          }
+        ],
+        "gatekeeping_structure": true,
+        "further_endpoints_through_week": null
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03836287",
+      "source_excerpt": "SAP Section 8.2.4 Multiple Comparisons/Multiplicity: 'A gated, fixed-sequence testing procedure will be used in this protocol to control the overall familywise false positive error rate for the primary and secondary endpoints analyses. The primary analysis will be regarded as positive and the trial will be successful for the co-primary efficacy endpoints if both null hypotheses are rejected in favor of sofpironium bromide gel, 15% at the 2-sided alpha = 0.05 level of significance...If both co-primary analyses yield statistically significant results in favor of the sofpironium bromide gel, 15%, group, the three secondary efficacy endpoints will be tested in a fixed sequence in the order presented in Section 8.1.3. Testing will continue only if all previously tested null hypotheses have been rejected at the 2-sided alpha = 0.05 significance level in favor of sofpironium bromide gel, 15%.'",
+      "extracted_by": "cycle-24 deep-extraction pass (protocol/SAP PDF read)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 1.0
     }
   },
   "timing_ops": {
@@ -450,13 +567,45 @@
       "confidence": 0.7
     },
     "rescue_therapy": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "permitted": false,
+        "trigger": "prohibited",
+        "earliest_week": null,
+        "prohibited_through_week": null,
+        "trigger_rules": [],
+        "flare_definition": [],
+        "first_step": null,
+        "topical_min_days_before_systemic": null,
+        "topical_rescue_requires_study_drug_discontinuation": null,
+        "systemic_rescue_requires_study_drug_discontinuation": null,
+        "resume_after_systemic_rescue_half_lives": null,
+        "resume_after_phototherapy_months": null,
+        "rescued_counted_as_nonresponder": null,
+        "rescued_counted_as_treatment_failure": null,
+        "continue_visits_after_discontinuation": null,
+        "continue_visits_through_week": null,
+        "topical_rescue_not_counted_after_week": null,
+        "topical_agents": [],
+        "topical_potency_classes": [],
+        "tci_reserved_areas": [],
+        "systemic_agents": [],
+        "oral_corticosteroid_limit": null,
+        "rescue_period": null,
+        "escape_arm_washout_half_lives": null,
+        "maintenance_period_rule": null,
+        "permitted_concomitant": [],
+        "recorded_in_ecrf": null,
+        "applies_to_period": null,
+        "long_term_extension_eligible_after_rescue": null,
+        "topical_agent_class": null,
+        "rationale": "No rescue-medication/rescue-therapy concept exists in this monotherapy-vs-vehicle design. Protocol Section 6.2 (Prohibited Medications/Treatments) affirmatively prohibits any treatment or procedure for axillary hyperhidrosis throughout the study -- including botulinum toxin, thermolysis (e.g., MiraDry, laser), sympathectomy, iontophoresis -- as well as any prescription topical antiperspirant/similar agent (e.g., Drysol, Xerac AC, Certain DRI) and any over-the-counter topical antiperspirant/deodorant applied to the axillae (Sponsor-supplied non-antiperspirant deodorant is provided instead). A subject with inadequate response has no protocol-sanctioned escalation option within the study; the SAP and protocol contain no 'rescue' or 'escape' provision anywhere in the document (confirmed via full-text keyword search)."
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03836287",
+      "source_excerpt": "Protocol Section 6.2 Prohibited Medications/Treatments: 'Any treatment or procedure for axillary hyperhidrosis including but not limited to: botulinum toxin, thermolysis treatments including microwave (e.g., MiraDry), laser, or other(s), sympathectomy, iontophoresis' and 'Any prescription topical products, including topical prescription antiperspirants or similar agents (e.g., Drysol, Xerac AC, Certain DRI) and hand sanitizers applied to the axillae for the duration of the study' are prohibited. No occurrence of 'rescue' or 'escape' anywhere in the protocol or SAP text.",
+      "extracted_by": "cycle-24 deep-extraction pass (protocol/SAP PDF read)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 1.0
     }
   },
   "adverse_events": {

@@ -615,13 +615,156 @@
       "confidence": 1.0
     },
     "multiplicity_control": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "procedure": "serial_gatekeeping",
+        "familywise_error_controlled": true,
+        "alpha": 0.05,
+        "alpha_sided": 2,
+        "alpha_per_dose": null,
+        "co_primary_endpoints": [
+          {
+            "label": "Absolute change from Baseline in the inflammatory lesion count",
+            "scale": "Inflammatory Lesion Count",
+            "responder_criteria": [],
+            "timepoint_week": 12,
+            "alpha": 0.05,
+            "step": 1
+          },
+          {
+            "label": "Treatment Success (IGA score of 0 or 1, and at least a 2-grade improvement from Baseline)",
+            "scale": "IGA",
+            "responder_criteria": [
+              {
+                "scale": "IGA",
+                "scale_component": null,
+                "scale_variant": null,
+                "metric": "absolute_score",
+                "comparator": "<=",
+                "value": 1,
+                "unit": "score",
+                "scale_min": 0,
+                "scale_max": 5,
+                "assessed_at": [
+                  "week_12"
+                ],
+                "scale_anchors": [
+                  {
+                    "score": 0,
+                    "label": "clear"
+                  },
+                  {
+                    "score": 1,
+                    "label": "almost clear"
+                  }
+                ]
+              },
+              {
+                "scale": "IGA",
+                "scale_component": null,
+                "scale_variant": null,
+                "metric": "point_improvement_from_baseline",
+                "comparator": ">=",
+                "value": 2,
+                "unit": "points",
+                "scale_min": 0,
+                "scale_max": 5,
+                "assessed_at": [
+                  "week_12"
+                ],
+                "scale_anchors": null
+              }
+            ],
+            "timepoint_week": 12,
+            "alpha": 0.05,
+            "step": 1
+          }
+        ],
+        "testing_sequence": [
+          {
+            "label": "Absolute change from Baseline in the inflammatory lesion count",
+            "scale": "Inflammatory Lesion Count",
+            "responder_criteria": [],
+            "timepoint_week": 12,
+            "alpha": 0.05,
+            "step": 1
+          },
+          {
+            "label": "IGA Treatment Success",
+            "scale": "IGA",
+            "responder_criteria": [],
+            "timepoint_week": 12,
+            "alpha": 0.05,
+            "step": 1
+          },
+          {
+            "label": "Percent change from Baseline in the noninflammatory lesion count (non-inferiority [margin 15% of vehicle percent reduction] then superiority vs. vehicle)",
+            "scale": "Noninflammatory Lesion Count",
+            "responder_criteria": [],
+            "timepoint_week": 12,
+            "alpha": 0.05,
+            "step": 2
+          },
+          {
+            "label": "Absolute change from Baseline in the inflammatory lesion count",
+            "scale": "Inflammatory Lesion Count",
+            "responder_criteria": [],
+            "timepoint_week": 9,
+            "alpha": 0.05,
+            "step": 3
+          },
+          {
+            "label": "IGA Treatment Success",
+            "scale": "IGA",
+            "responder_criteria": [],
+            "timepoint_week": 9,
+            "alpha": 0.05,
+            "step": 3
+          },
+          {
+            "label": "Absolute change from Baseline in the inflammatory lesion count",
+            "scale": "Inflammatory Lesion Count",
+            "responder_criteria": [],
+            "timepoint_week": 6,
+            "alpha": 0.05,
+            "step": 4
+          },
+          {
+            "label": "IGA Treatment Success",
+            "scale": "IGA",
+            "responder_criteria": [],
+            "timepoint_week": 6,
+            "alpha": 0.05,
+            "step": 4
+          }
+        ],
+        "alpha_split": [],
+        "alpha_recycling": null,
+        "doses_compared": [
+          "FMX-101 4%"
+        ],
+        "dose_comparison_order": [],
+        "branching_on": null,
+        "regulatory_variants": [],
+        "rescue_counted_as_nonresponder": null,
+        "active_comparator_excluded_from_hierarchy": null,
+        "background_tcs": null,
+        "method_citations": [],
+        "finalized_in_sap": true,
+        "same_design_as": [
+          {
+            "nct_id": "NCT02815267",
+            "trial_name": "Study 1 (FX2014-04)"
+          }
+        ],
+        "gatekeeping_structure": true,
+        "further_endpoints_through_week": 12
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02815280",
+      "source_excerpt": "SAP Sec 10.9.1 (Protocol No. FX2014-05): 'In order to attain the primary efficacy goal of FMX-101 4% to be considered superior to vehicle, both co-primary efficacy endpoints must be significant (i.e., attaining significance at the two-sided 0.05 level without adjustment for multiplicity).' Sec 10.9.2: 'Secondary efficacy endpoints will be tested sequentially at 0.05 level of significance, only if both co-primary efficacy endpoints are significant in the primary analyses. The first secondary endpoint of noninflammatory lesions at Week 12 will be tested initially as a non-inferiority comparison of FMX-101, 4% to vehicle. The non-inferiority margin is defined as 15% of the noninflammatory lesion percent reduction in the vehicle group at Week 12... If non-inferiority is concluded, the superiority of FMX-101, 4% to vehicle for noninflammatory lesions at Week 12 will be tested. The sequential testing will proceed according to the order in Section 10.8.2. Testing of secondary efficacy endpoints at an earlier timepoint for each type of lesion and IGA Treatment Success will be performed only if superiority (one-sided p<=0.025) is seen at the later timepoint.' Identical design to sibling trial NCT02815267 (FX2014-04), confirmed by direct text comparison.",
+      "extracted_by": "cycle-24 deep-extraction pass (protocol/SAP PDF read)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 1.0
     }
   },
   "timing_ops": {
