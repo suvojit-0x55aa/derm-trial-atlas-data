@@ -1092,6 +1092,44 @@ This file is the project's committed home for project-intrinsic agent memory: bu
   `application_number` before writing it, the same check already standing for every prior
   ingredient-collision case.
 
+- **Cycle 24: closed the full-deep-extraction debt cycle 23's 13 new trials had accumulated** (they'd
+  inherited `design.background_therapy`/`endpoints.multiplicity_control`/`timing_ops.rescue_therapy` as
+  `needs_extraction` from the stale pre-v4 branch, which predates the cycle-18 standing rule requiring
+  full deep extraction for every new trial). Confirmed all 13 have a real posted Study Protocol/SAP on
+  CT.gov's `documentSection` (unlike most of the corpus's older no-document gaps), fanned out 6 parallel
+  subagents (one per drug/indication group) to read them with the established wide keyword net, and
+  closed all 25 gaps for real — 12 of the 13 trials have a genuine gated/fixed-sequence multiplicity
+  procedure (not a "no procedure" finding), a higher hit rate than most prior deep-extraction passes.
+- **A trial's real multiplicity procedure can be stated only in the PROTOCOL, not the SAP — reading the
+  SAP alone reads as "no formal procedure," a false negative.** Zilxi's SAP says only "secondaries are
+  tested at 0.05... only if both co-primary endpoints are significant" with no explicit sequence, which
+  in isolation would fill as `procedure: null`. Its own Protocol Section 11.5.2, though, explicitly
+  states endpoints are "analyzed hierarchically" and "treated sequentially in the order listed above" —
+  a real, structured `serial_gatekeeping` procedure the SAP-only read would have missed entirely. Always
+  read BOTH documents (when both are posted) before concluding a multiplicity field is a genuine
+  no-procedure gap, not just the SAP — the SAP is not always the more authoritative or more complete
+  document for this specific field, contrary to the AD-corpus-era assumption that it usually is.
+- **Two trials sharing one combined Protocol+SAP CT.gov document are not automatically identical in
+  content just because they share a file** — verify by diffing the relevant sections rather than
+  assuming. Cabtreo's NCT04214639/NCT04214652 turned out to have word-for-word identical statistical
+  text (confirmed by diff, not assumed), but this should be checked per-pair, not treated as a rule:
+  a shared combined document does not guarantee identical language for every section.
+- **A trial explicitly labeled "Study 3" alongside "Study 1"/"Study 2" in an FDA label's pivotal-trial
+  list is not necessarily an open-label long-term-safety extension of the other two** — Amzeeq's
+  NCT03271021 is CT.gov-registered and initially assumed (in this cycle's own task brief) to be a
+  safety-only study, but its own already-committed `design`/`population` fields (and AMZEEQ's FDA label
+  section 14) confirm it is a third full randomized, double-blind, vehicle-controlled pivotal trial with
+  the same co-primary design as Studies 1/2, just a genuinely simpler (single-tier, no per-timepoint
+  cascade) multiplicity procedure — verify a trial's actual design from its own committed fields or the
+  FDA label before assuming a "Study N" label implies a lesser trial type.
+- **A rescue-therapy field's genuine "no provision" finding can be an affirmative PROHIBITION, not mere
+  silence** — Sofdra's protocol doesn't just omit a rescue-therapy section, it explicitly bans any other
+  axillary-hyperhidrosis treatment/procedure and any antiperspirant throughout the study. Recorded as
+  `permitted: false, trigger: "prohibited"` (matching the schema's existing enum, already established by
+  earlier AD trials with an explicit "rescue prohibited" design) rather than as a bare absence — the
+  distinction between "not addressed" and "explicitly banned" is real and worth preserving in
+  `rationale` even when both produce the same `permitted: false` structural fill.
+
 ## Maintaining this file
 
 Keep this file for knowledge useful to almost every future agent session in this project.
