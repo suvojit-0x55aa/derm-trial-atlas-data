@@ -20,7 +20,7 @@ TRIALS = sorted((ROOT / "data" / "trials").glob("*.json"))
 
 class CommittedDataTest(unittest.TestCase):
     def test_every_trial_validates(self):
-        self.assertEqual(len(TRIALS), 63)
+        self.assertEqual(len(TRIALS), 140)
         for f in TRIALS:
             rec = json.loads(f.read_text())
             with self.subTest(trial=f.name):
@@ -86,7 +86,7 @@ class ExportsInSyncTest(unittest.TestCase):
         md = (ROOT / "docs" / "SCHEMA.md").read_text()
         for path, _, _ in FIELD_DOCS:
             self.assertIn(f"`{path}`", md)
-        self.assertEqual(len(FIELD_DOCS), 43)  # 35 v1 fields + faers_summary + 3 exclusivity fields + 4 v3 results fields
+        self.assertEqual(len(FIELD_DOCS), 44)  # 35 v1 fields + faers_summary + 3 exclusivity fields + 4 v3 results fields + drug_characterization (cycle 23)
 
 
 class ResultsLayerSchemaTest(unittest.TestCase):
@@ -218,8 +218,8 @@ class CsvTest(unittest.TestCase):
                 n_crit += len(sev_val["criteria"])
         self.assertEqual(len({(r["nct_id"], r["rank"], r["position"]) for r in eps}), n_endpoints)
         self.assertEqual(len(sev), n_crit)
-        self.assertEqual(len(trials), 63)
-        self.assertEqual(len(sources), 63 * 39)
+        self.assertEqual(len(trials), 140)
+        self.assertEqual(len(sources), 140 * 44)
         # the atlas's headline query -- "which trials measure EASI-75 at week 16" -- is a plain filter
         easi75_wk16 = [r for r in eps if r["criterion_scale"] == "EASI" and r["criterion_value"] == "75"
                        and r["criterion_role"] == "responder" and "16w" in r["timepoints"].split(";")]

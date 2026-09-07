@@ -171,13 +171,19 @@
     "confidence": 0.9
   },
   "boxed_warning": {
-    "value": null,
-    "source_type": "needs_extraction",
-    "source_url": null,
-    "source_excerpt": null,
-    "extracted_by": null,
+    "value": {
+      "present": false,
+      "title": null,
+      "warning_categories": [],
+      "referenced_label_sections": [],
+      "product_names": []
+    },
+    "source_type": "openfda_label",
+    "source_url": "https://api.fda.gov/drug/label.json?search=openfda.substance_name:%22BIRCH%20TRITERPENES%22&limit=1",
+    "source_excerpt": "results[0] (FILSUVEZ, NDA215064) has no boxed_warning key (checked, none present)",
+    "extracted_by": "cycle-24 openFDA label re-check (fallback query term)",
     "reviewed_by": null,
-    "confidence": null
+    "confidence": 1.0
   },
   "faers_summary": {
     "value": {
@@ -390,5 +396,33 @@
     "extracted_by": null,
     "reviewed_by": null,
     "confidence": null
+  },
+  "drug_characterization": {
+    "value": [
+      {
+        "code": "1",
+        "label": "suspect",
+        "report_count": 209,
+        "pct_of_reports": 100.0
+      },
+      {
+        "code": "2",
+        "label": "concomitant",
+        "report_count": 0,
+        "pct_of_reports": 0.0
+      },
+      {
+        "code": "3",
+        "label": "interacting",
+        "report_count": 0,
+        "pct_of_reports": 0.0
+      }
+    ],
+    "source_type": "openfda_faers",
+    "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"FILSUVEZ\"",
+    "source_excerpt": "Computed by pulling every individual FAERS report matching this drug's own search_term (FILSUVEZ) and tallying each report's drugcharacterization code (1=suspect, 2=concomitant, 3=interacting) from ONLY the drug-array entries whose medicinalproduct matches this drug (not co-listed drugs in the same report) -- a plain count= aggregate query cannot do this correctly (openFDA's flattened array indexing mixes in co-listed drugs' own characterization values). 209/209 reports matched.",
+    "extracted_by": "fetch_faers_characterization.py (per-report drugcharacterization backfill, cycle-22/23 pass)",
+    "reviewed_by": null,
+    "confidence": 1.0
   }
 }

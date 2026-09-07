@@ -190,7 +190,7 @@ def migrate_trial(v1: dict) -> dict:
             "discontinuation_due_to_ae_rate": copy.deepcopy(ae["discontinuation_due_to_ae_rate"]),
             "boxed_warning": restructure(ae["boxed_warning"], parse_boxed_warning(ae["boxed_warning"]["value"])),
         },
-        "real_world_safety": {"faers_summary": needs_extraction()},
+        "real_world_safety": {"faers_summary": needs_extraction(), "drug_characterization": needs_extraction()},
         "exclusivity": {
             "regulatory_application": regulatory_application_field(drug),
             "orange_book": needs_extraction(),

@@ -101,7 +101,7 @@
     },
     "source_type": "openfda_label",
     "source_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=5192f26d-d5e7-ce03-e063-6294a90a3ea2",
-    "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1) -- extracted text: 12.1 Mechanism of Action Afamelanotide is a synthetic tridecapeptide and a structural analog of α-melanocyte stimulating hormone (α-MSH). Afamelanotide is a melanocortin receptor agonist and binds predominantly to MC1-R.",
+    "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1) -- extracted text: 12.1 Mechanism of Action Afamelanotide is a synthetic tridecapeptide and a structural analog of \u03b1-melanocyte stimulating hormone (\u03b1-MSH). Afamelanotide is a melanocortin receptor agonist and binds predominantly to MC1-R.",
     "extracted_by": "deep-extraction pass (LLM-assisted extraction, scale-out backfill; pending human QA)",
     "reviewed_by": null,
     "confidence": 0.85
@@ -208,5 +208,33 @@
     "extracted_by": null,
     "reviewed_by": null,
     "confidence": null
+  },
+  "drug_characterization": {
+    "value": [
+      {
+        "code": "1",
+        "label": "suspect",
+        "report_count": 1,
+        "pct_of_reports": 50.0
+      },
+      {
+        "code": "2",
+        "label": "concomitant",
+        "report_count": 1,
+        "pct_of_reports": 50.0
+      },
+      {
+        "code": "3",
+        "label": "interacting",
+        "report_count": 0,
+        "pct_of_reports": 0.0
+      }
+    ],
+    "source_type": "openfda_faers",
+    "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"AFAMELANOTIDE\"",
+    "source_excerpt": "Computed by pulling every individual FAERS report matching this drug's own search_term (AFAMELANOTIDE) and tallying each report's drugcharacterization code (1=suspect, 2=concomitant, 3=interacting) from ONLY the drug-array entries whose medicinalproduct matches this drug (not co-listed drugs in the same report) -- a plain count= aggregate query cannot do this correctly (openFDA's flattened array indexing mixes in co-listed drugs' own characterization values). 2/2 reports matched.",
+    "extracted_by": "fetch_faers_characterization.py (per-report drugcharacterization backfill, cycle-22/23 pass)",
+    "reviewed_by": null,
+    "confidence": 1.0
   }
 }

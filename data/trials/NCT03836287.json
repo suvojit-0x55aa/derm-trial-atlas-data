@@ -1,0 +1,1169 @@
+{
+  "schema_version": 4,
+  "nct_id": {
+    "value": "NCT03836287",
+    "source_type": "ctgov_api",
+    "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03836287",
+    "source_excerpt": "protocolSection.identificationModule.nctId",
+    "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+    "reviewed_by": null,
+    "confidence": 1.0
+  },
+  "identity": {
+    "trial_name": {
+      "value": "CARDIGAN 1",
+      "source_type": "openfda_label",
+      "source_url": "https://api.fda.gov/drug/label.json?search=openfda.brand_name:SOFDRA&limit=1",
+      "source_excerpt": "FDA label section 14: \"Two randomized, vehicle-controlled multicenter trials, CARDIGAN 1 (NCT03836287) and CARDIGAN 2 (NCT03948646)\"",
+      "extracted_by": "cycle22 one-off build (ctgov_api v2 + openfda_label/orangebook/faers pass); manual full deep extraction",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "official_title": {
+      "value": "A Multicenter, Randomized, Double-Blinded, Vehicle-Controlled Study to Evaluate the Safety and Efficacy of Topically Applied Sofpironium Bromide Gel, 15% in Subjects With Axillary Hyperhidrosis",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03836287",
+      "source_excerpt": "protocolSection.identificationModule.officialTitle",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "sponsor": {
+      "value": "Botanix Pharmaceuticals",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03836287",
+      "source_excerpt": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "phase": {
+      "value": [
+        "PHASE3"
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03836287",
+      "source_excerpt": "protocolSection.designModule.phases",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    }
+  },
+  "molecule": {
+    "drug": {
+      "value": "Sofpironium Bromide",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03836287",
+      "source_excerpt": "protocolSection.armsInterventionsModule.interventions[].name (curated)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "intervention_names": {
+      "value": [
+        "Sofpironium Bromide Gel, 15%",
+        "Vehicle"
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03836287",
+      "source_excerpt": "protocolSection.armsInterventionsModule.interventions[].name",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "intervention_type": {
+      "value": [
+        "DRUG"
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03836287",
+      "source_excerpt": "protocolSection.armsInterventionsModule.interventions[].type",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "mechanism_of_action": {
+      "value": {
+        "drug": "Sofpironium Bromide",
+        "application_number": null
+      },
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    },
+    "dosing_regimen": {
+      "value": [
+        {
+          "intervention_name": "Sofpironium Bromide Gel, 15%",
+          "description": "Sofpironium bromide 15% gel (trial concentration; the FDA-approved marketed strength is 12.45%, per Orange Book), applied once daily at bedtime to each axilla",
+          "is_placebo": false,
+          "route": "topical",
+          "dose_form": null,
+          "dose_value": 15,
+          "dose_unit": "%",
+          "units_per_dose": null,
+          "frequency": "once_daily",
+          "duration_weeks": 6,
+          "dosing_periods": [],
+          "administration_sites": [
+            "axilla"
+          ],
+          "antibody_isotype": null,
+          "molecular_target": null,
+          "arm_names": [
+            "Active"
+          ],
+          "co_administered_with": []
+        }
+      ],
+      "source_type": "ctgov_text_extraction",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03836287",
+      "source_excerpt": "armsInterventionsModule.interventions[0]: 'Sofpironium Bromide Gel, 15%', description 'Active', otherNames ['BBI-4000 Gel, 15%']; once-daily bedtime application to each axilla per protocol detailedDescription and FDA label section 2. Note: the pivotal trials tested 15% gel, but the final FDA-approved marketed product (SOFDRA) is 12.45% strength per its Orange Book listing -- a real formulation change between trial and approval, not a data error.",
+      "extracted_by": "cycle22 one-off build (ctgov_api v2 + openfda_label/orangebook/faers pass); manual full deep extraction",
+      "reviewed_by": null,
+      "confidence": 0.85
+    }
+  },
+  "population": {
+    "condition": {
+      "value": [
+        "Axillary Hyperhidrosis"
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03836287",
+      "source_excerpt": "protocolSection.conditionsModule.conditions",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "min_age_years": {
+      "value": 9,
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03836287",
+      "source_excerpt": "protocolSection.eligibilityModule.minimumAge",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "max_age_years": {
+      "value": null,
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03836287",
+      "source_excerpt": "protocolSection.eligibilityModule.maximumAge",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 0.0
+    },
+    "sex": {
+      "value": "ALL",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03836287",
+      "source_excerpt": "protocolSection.eligibilityModule.sex",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "enrollment_count": {
+      "value": 350,
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03836287",
+      "source_excerpt": "protocolSection.designModule.enrollmentInfo.count",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "severity_criteria": {
+      "value": {
+        "severity_label": null,
+        "basis": "eligibility_text",
+        "cross_reference": null,
+        "source_criterion_numbers": [],
+        "baseline_visit_number": null,
+        "criteria": [
+          {
+            "scale": "HDSM-Ax-7",
+            "scale_component": null,
+            "scale_variant": null,
+            "metric": "absolute_score",
+            "comparator": ">=",
+            "value": 3,
+            "unit": "score",
+            "scale_min": 0,
+            "scale_max": 4,
+            "assessed_at": null,
+            "scale_anchors": null
+          }
+        ]
+      },
+      "source_type": "ctgov_text_extraction",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03836287",
+      "source_excerpt": "Eligibility criteria: \"Diagnosis of primary axillary hyperhidrosis that meets the following criteria: (a) symptoms of hyperhidrosis for at least 6 months' duration, (b) HDSM-Ax of 3 - 4 and (c) a minimum GSP of 50 mg in each axilla with a combined total of at least 150 mg.\" No `moderate_to_severe`-style categorical severity_label exists for this instrument (HDSM-Ax-7's own scale anchors are 0-4, not a named severity band), so severity_label left null rather than force-fit the AD/psoriasis-style label.",
+      "extracted_by": "cycle22 one-off build (ctgov_api v2 + openfda_label/orangebook/faers pass); manual full deep extraction",
+      "reviewed_by": null,
+      "confidence": 0.9
+    }
+  },
+  "design": {
+    "study_type": {
+      "value": "INTERVENTIONAL",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03836287",
+      "source_excerpt": "protocolSection.designModule.studyType",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "allocation": {
+      "value": "RANDOMIZED",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03836287",
+      "source_excerpt": "protocolSection.designModule.designInfo.allocation",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "intervention_model": {
+      "value": "PARALLEL",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03836287",
+      "source_excerpt": "protocolSection.designModule.designInfo.interventionModel",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "masking": {
+      "value": "DOUBLE",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03836287",
+      "source_excerpt": "protocolSection.designModule.designInfo.maskingInfo.masking",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "number_of_arms": {
+      "value": 2,
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03836287",
+      "source_excerpt": "len(protocolSection.armsInterventionsModule.armGroups)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "background_therapy": {
+      "value": {
+        "regimen_type": "monotherapy",
+        "background_agent_class": null,
+        "tcs_regimen": null,
+        "step_down_rule": null,
+        "recommended_agents": [],
+        "emollient_required": null,
+        "emollient_frequency": null,
+        "prohibited_concomitant": [
+          "Anticholinergic agents (any route - IV, oral, inhaled, topical, including topical glycopyrrolate or derivatives) used to treat hyperhidrosis, asthma, incontinence, gastrointestinal cramps, or muscular spasms are prohibited throughout the study.",
+          "Any oral or topical homeopathic or herbal treatment (e.g., sage tablets, chamomile, valerian root, St. John's wort) is prohibited.",
+          "Any prescription topical product, including prescription topical antiperspirants or similar agents (e.g., Drysol, Xerac AC, Certain DRI), and hand sanitizers applied to the axillae are prohibited for the duration of the study.",
+          "Any other treatment or procedure for axillary hyperhidrosis is prohibited, including botulinum toxin, thermolysis (e.g., MiraDry, laser, or other), sympathectomy, or iontophoresis.",
+          "Any surgical procedure involving the axillae (including laser hair removal), or any surgical procedure resulting in significant axillary scarring, is prohibited.",
+          "Oral cholinergic agents (e.g., bethanechol) are prohibited throughout the study.",
+          "Addition of, or dose change for, serotonergic agonists/SSRIs, beta-blockers, alpha-adrenergic agonists (clonidine), dopamine partial agonists, tricyclic antidepressants, anti-anxiety/antidepressant drugs, amphetamine products, or other drugs with known anticholinergic side effects is prohibited during the study.",
+          "Over-the-counter topical antiperspirant/deodorant applied directly to the axilla(e) is prohibited within 7 days of GSP1 (Visit 2) and for the duration of the study; Sponsor-supplied non-antiperspirant deodorant is provided instead."
+        ],
+        "permitted_concomitant": [
+          "Therapy considered necessary for the subject's welfare may be given at the Investigator's discretion (Section 6.1); if the permissibility of a specific medication/treatment is in question, the Medical Monitor is contacted.",
+          "A subject on a stable dose (per Investigator judgment) of a serotonergic agonist/SSRI, beta-blocker, alpha-adrenergic agonist, dopamine partial agonist, or tricyclic antidepressant for >=3 months with no recent change in hyperhidrosis frequency/severity may continue that medication at an unaltered dose during the study.",
+          "A subject on a stable dose of an anti-anxiety and/or anti-depressant drug for >=3 months with no recent change in hyperhidrosis frequency/severity may continue that medication; psychostimulants may likewise be allowed if the dose has been stable for >=3 months without a change in hyperhidrosis frequency/severity.",
+          "Drugs with known anticholinergic side effects (e.g., dry mouth, blurred vision) taken within the last 28 days may be allowed at the Investigator's discretion, provided the dose is not altered during the study.",
+          "Sponsor-supplied non-antiperspirant deodorant may be applied, but not within 8 hours following study product application.",
+          "Prior axillary laser hair removal is permitted if performed more than 28 days before GSP1 (Visit 2)."
+        ],
+        "applies_to_rerandomized_maintenance": null,
+        "sponsor_trial_ids": [
+          "BBI-4000-CL-301"
+        ],
+        "study_drug_doses_mg": [],
+        "population_note": "A multicenter, randomized, double-blind, vehicle-controlled Phase 3 trial (\"Cardigan I\") of sofpironium bromide gel, 15% applied topically once daily at bedtime to both axillae for 42 consecutive days in subjects >=9 years old with primary axillary hyperhidrosis. This is a simple monotherapy-vs-vehicle design with no standardized background regimen; the real content is a set of prohibited/permitted concomitant medication and treatment rules (Protocol Sections 6.1-6.2) rather than an AD/psoriasis-style background topical regimen."
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03836287",
+      "source_excerpt": "Section 6.2 Prohibited Medications/Treatments: 'Anticholinergic agents used to treat conditions such as, but not limited to, hyperhidrosis, asthma, incontinence, gastrointestinal cramps, and muscular spasms by any route of administration...Any prescription topical products, including topical prescription antiperspirants or similar agents (e.g., Drysol, Xerac AC, Certain DRI)...Any treatment or procedure for axillary hyperhidrosis including but not limited to: botulinum toxin, thermolysis treatments...sympathectomy, iontophoresis...' Section 6.1 Permissible Medications/Treatments: 'Therapy considered necessary for the subject's welfare may be given at the discretion of the Investigator.' Exclusion criteria 2d/6: subjects on a stable dose of certain agents for >=3 months with no recent change in hyperhidrosis severity may be included, doses not to be altered during the study.",
+      "extracted_by": "cycle-24 deep-extraction pass (protocol/SAP PDF read)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    }
+  },
+  "endpoints": {
+    "primary_endpoints": {
+      "value": [
+        {
+          "verbatim": "Number of Participants (Vehicle Arm vs. Sofpironium Bromide Gel, 15%) With and Without an Observed >=2-point Improvement in Hyperhidrosis Disease Severity Measure-Axillary-7 Item Total Score From Baseline to End of Treatment",
+          "rank": "primary",
+          "position": 1,
+          "measure_type": "responder_rate",
+          "scale": "HDSM-Ax-7",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [
+            {
+              "scale": "HDSM-Ax-7",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "point_improvement_from_baseline",
+              "comparator": ">=",
+              "value": 2,
+              "unit": "points",
+              "scale_min": 0,
+              "scale_max": 4,
+              "assessed_at": [
+                "day_43"
+              ],
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 43,
+              "unit": "day",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": "double_blind",
+          "event_type": null,
+          "time_frame": "Baseline to Day 43 (end of treatment, ~6 weeks)"
+        },
+        {
+          "verbatim": "Observed Change in Participant (Vehicle Arm vs SB Gel 15% Arm) Ranked Gravimetric Sweat Production From Baseline to End of Treatment",
+          "rank": "primary",
+          "position": 2,
+          "measure_type": "change_from_baseline",
+          "scale": "Gravimetric Sweat Production",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 43,
+              "unit": "day",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": "double_blind",
+          "event_type": null,
+          "time_frame": "Baseline to Day 43 (end of treatment, ~6 weeks)"
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03836287",
+      "source_excerpt": "protocolSection.outcomesModule.primaryOutcomes[]; responder threshold cross-referenced with openFDA label section 14 Table 5",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass) + openfda_label cross-reference; structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 0.95
+    },
+    "secondary_endpoints": {
+      "value": [],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03836287",
+      "source_excerpt": "protocolSection.outcomesModule.secondaryOutcomes[] -- empty; no secondary endpoints registered for this trial",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "multiplicity_control": {
+      "value": {
+        "procedure": "serial_gatekeeping",
+        "familywise_error_controlled": true,
+        "alpha": 0.05,
+        "alpha_sided": 2,
+        "alpha_per_dose": null,
+        "co_primary_endpoints": [
+          {
+            "label": "Proportion of subjects achieving >=2-point improvement in HDSM-Ax-7 scale score from baseline to EOT (responder)",
+            "scale": "HDSM-Ax-7",
+            "responder_criteria": [],
+            "timepoint_week": 6,
+            "alpha": 0.05,
+            "step": 1
+          },
+          {
+            "label": "Change in gravimetric sweat production (GSP) from baseline to EOT",
+            "scale": "GSP",
+            "responder_criteria": [],
+            "timepoint_week": 6,
+            "alpha": 0.05,
+            "step": 1
+          }
+        ],
+        "testing_sequence": [
+          {
+            "label": "Proportion of subjects achieving >=2-point improvement in HDSM-Ax-7 scale score from baseline to EOT (responder)",
+            "scale": "HDSM-Ax-7",
+            "responder_criteria": [],
+            "timepoint_week": 6,
+            "alpha": 0.05,
+            "step": 1
+          },
+          {
+            "label": "Change in gravimetric sweat production (GSP) from baseline to EOT",
+            "scale": "GSP",
+            "responder_criteria": [],
+            "timepoint_week": 6,
+            "alpha": 0.05,
+            "step": 1
+          },
+          {
+            "label": "Proportion of subjects achieving >=1-point improvement in HDSM-Ax-7 scale score from baseline to EOT",
+            "scale": "HDSM-Ax-7",
+            "responder_criteria": [],
+            "timepoint_week": 6,
+            "alpha": 0.05,
+            "step": 2
+          },
+          {
+            "label": "Proportion of subjects achieving >=2-point improvement in HDSM-Ax-7 scale score AND >=70% reduction in GSP from baseline to EOT",
+            "scale": "HDSM-Ax-7 + GSP",
+            "responder_criteria": [],
+            "timepoint_week": 6,
+            "alpha": 0.05,
+            "step": 3
+          },
+          {
+            "label": "Proportion of subjects achieving >=1-point improvement in HDSM-Ax-7 scale score AND >=50% reduction in GSP from baseline to EOT",
+            "scale": "HDSM-Ax-7 + GSP",
+            "responder_criteria": [],
+            "timepoint_week": 6,
+            "alpha": 0.05,
+            "step": 4
+          }
+        ],
+        "alpha_split": [],
+        "alpha_recycling": null,
+        "doses_compared": [],
+        "dose_comparison_order": [],
+        "branching_on": null,
+        "regulatory_variants": [],
+        "rescue_counted_as_nonresponder": null,
+        "active_comparator_excluded_from_hierarchy": null,
+        "background_tcs": null,
+        "method_citations": [],
+        "finalized_in_sap": true,
+        "same_design_as": [
+          {
+            "nct_id": "NCT03948646",
+            "trial_name": "Cardigan II (BBI-4000-CL-302)"
+          }
+        ],
+        "gatekeeping_structure": true,
+        "further_endpoints_through_week": null
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03836287",
+      "source_excerpt": "SAP Section 8.2.4 Multiple Comparisons/Multiplicity: 'A gated, fixed-sequence testing procedure will be used in this protocol to control the overall familywise false positive error rate for the primary and secondary endpoints analyses. The primary analysis will be regarded as positive and the trial will be successful for the co-primary efficacy endpoints if both null hypotheses are rejected in favor of sofpironium bromide gel, 15% at the 2-sided alpha = 0.05 level of significance...If both co-primary analyses yield statistically significant results in favor of the sofpironium bromide gel, 15%, group, the three secondary efficacy endpoints will be tested in a fixed sequence in the order presented in Section 8.1.3. Testing will continue only if all previously tested null hypotheses have been rejected at the 2-sided alpha = 0.05 significance level in favor of sofpironium bromide gel, 15%.'",
+      "extracted_by": "cycle-24 deep-extraction pass (protocol/SAP PDF read)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    }
+  },
+  "timing_ops": {
+    "start_date": {
+      "value": {
+        "date": "2020-10-09",
+        "precision": "day"
+      },
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03836287",
+      "source_excerpt": "protocolSection.statusModule.startDateStruct.date",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "primary_completion_date": {
+      "value": {
+        "date": "2021-06-25",
+        "precision": "day"
+      },
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03836287",
+      "source_excerpt": "protocolSection.statusModule.primaryCompletionDateStruct.date",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "completion_date": {
+      "value": {
+        "date": "2021-06-25",
+        "precision": "day"
+      },
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03836287",
+      "source_excerpt": "protocolSection.statusModule.completionDateStruct.date",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "study_schedule": {
+      "value": {
+        "screening_days": null,
+        "screening_washout": null,
+        "periods": [
+          {
+            "name": "double_blind_treatment",
+            "start_week": 0,
+            "end_week": 6,
+            "duration_weeks": 6,
+            "blinding": "double_blind",
+            "background_tcs": false
+          }
+        ],
+        "dosing_interval": "once_daily",
+        "visit_cadence": null,
+        "visit_cadence_until_week": null,
+        "visit_weeks": null,
+        "visit_days": null,
+        "phone_contact_weeks": null,
+        "primary_endpoint_week": null,
+        "end_of_treatment_week": 6,
+        "end_of_study_week": null,
+        "total_duration_weeks": 6,
+        "follow_up_weeks": null,
+        "follow_up_days": null,
+        "follow_up_visit_week": null,
+        "long_term_extension": false,
+        "extension_end_week": null,
+        "extension_visit_interval_weeks": null,
+        "extension_study_id": null,
+        "rerandomization_week": null,
+        "maintenance_arms": null,
+        "maintenance_response_check_weeks": null,
+        "last_injection_week": null,
+        "key_secondary_weeks": [],
+        "follow_up_visit_interval_weeks": null,
+        "end_of_treatment_weeks_after_last_dose": null,
+        "background_tcs_from_day": null,
+        "primary_endpoint_refs": [],
+        "double_dummy_arms": [],
+        "active_comparator": null,
+        "boilerplate_reused_from": [],
+        "conflicts_with_trial": null,
+        "full_visit_table_available": false,
+        "source_inconsistency": "FDA label section 14 states the primary endpoint was assessed at Day 43 (~6 weeks), and CT.gov's outcome time_frame states 'Total Trial Participation was approximately 11-15 weeks' (implying real screening/follow-up periods beyond the 6-week double-blind treatment), but neither source names a specific visit-week schedule -- primary_endpoint_week left null rather than converting Day 43 to a week number that isn't itself stated in either source."
+      },
+      "source_type": "ctgov_text_extraction",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03836287",
+      "source_excerpt": "protocolSection.outcomesModule primary outcome timeFrame: \"Total Trial Participation was approximately 11-15 weeks; outcome measure time frame: Baseline (and treatment start) through to end of treatment, taking approximately 6 weeks.\" Gravimetric sweat production baseline used the median of Visits 2/3/4 and end-of-treatment the median of Visits 10/11/12 (detailedDescription), confirming a 12-visit schedule but not a stated visit-week list.",
+      "extracted_by": "cycle22 one-off build (ctgov_api v2 + openfda_label/orangebook/faers pass); manual full deep extraction",
+      "reviewed_by": null,
+      "confidence": 0.7
+    },
+    "rescue_therapy": {
+      "value": {
+        "permitted": false,
+        "trigger": "prohibited",
+        "earliest_week": null,
+        "prohibited_through_week": null,
+        "trigger_rules": [],
+        "flare_definition": [],
+        "first_step": null,
+        "topical_min_days_before_systemic": null,
+        "topical_rescue_requires_study_drug_discontinuation": null,
+        "systemic_rescue_requires_study_drug_discontinuation": null,
+        "resume_after_systemic_rescue_half_lives": null,
+        "resume_after_phototherapy_months": null,
+        "rescued_counted_as_nonresponder": null,
+        "rescued_counted_as_treatment_failure": null,
+        "continue_visits_after_discontinuation": null,
+        "continue_visits_through_week": null,
+        "topical_rescue_not_counted_after_week": null,
+        "topical_agents": [],
+        "topical_potency_classes": [],
+        "tci_reserved_areas": [],
+        "systemic_agents": [],
+        "oral_corticosteroid_limit": null,
+        "rescue_period": null,
+        "escape_arm_washout_half_lives": null,
+        "maintenance_period_rule": null,
+        "permitted_concomitant": [],
+        "recorded_in_ecrf": null,
+        "applies_to_period": null,
+        "long_term_extension_eligible_after_rescue": null,
+        "topical_agent_class": null,
+        "rationale": "No rescue-medication/rescue-therapy concept exists in this monotherapy-vs-vehicle design. Protocol Section 6.2 (Prohibited Medications/Treatments) affirmatively prohibits any treatment or procedure for axillary hyperhidrosis throughout the study -- including botulinum toxin, thermolysis (e.g., MiraDry, laser), sympathectomy, iontophoresis -- as well as any prescription topical antiperspirant/similar agent (e.g., Drysol, Xerac AC, Certain DRI) and any over-the-counter topical antiperspirant/deodorant applied to the axillae (Sponsor-supplied non-antiperspirant deodorant is provided instead). A subject with inadequate response has no protocol-sanctioned escalation option within the study; the SAP and protocol contain no 'rescue' or 'escape' provision anywhere in the document (confirmed via full-text keyword search)."
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03836287",
+      "source_excerpt": "Protocol Section 6.2 Prohibited Medications/Treatments: 'Any treatment or procedure for axillary hyperhidrosis including but not limited to: botulinum toxin, thermolysis treatments including microwave (e.g., MiraDry), laser, or other(s), sympathectomy, iontophoresis' and 'Any prescription topical products, including topical prescription antiperspirants or similar agents (e.g., Drysol, Xerac AC, Certain DRI) and hand sanitizers applied to the axillae for the duration of the study' are prohibited. No occurrence of 'rescue' or 'escape' anywhere in the protocol or SAP text.",
+      "extracted_by": "cycle-24 deep-extraction pass (protocol/SAP PDF read)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    }
+  },
+  "adverse_events": {
+    "serious_adverse_event_rate": {
+      "value": [
+        {
+          "arm": "Active",
+          "n_affected": 1,
+          "n_at_risk": 173,
+          "pct": 0.6
+        },
+        {
+          "arm": "Vehicle",
+          "n_affected": 0,
+          "n_at_risk": 176,
+          "pct": 0.0
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03836287",
+      "source_excerpt": "resultsSection.adverseEventsModule.eventGroups[].seriousNumAffected/seriousNumAtRisk",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, cycle-22 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "death_rate": {
+      "value": [
+        {
+          "arm": "Active",
+          "n_affected": 0,
+          "n_at_risk": 173,
+          "pct": 0.0
+        },
+        {
+          "arm": "Vehicle",
+          "n_affected": 0,
+          "n_at_risk": 176,
+          "pct": 0.0
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03836287",
+      "source_excerpt": "resultsSection.adverseEventsModule.eventGroups[].deathsNumAffected/deathsNumAtRisk",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, cycle-22 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "most_common_adverse_events": {
+      "value": [
+        {
+          "meddra_pt": "Application Site Pain",
+          "meddra_soc": "General disorders",
+          "per_arm": [
+            {
+              "arm": "Active",
+              "n_affected": 11,
+              "n_at_risk": 173,
+              "pct": 6.4
+            },
+            {
+              "arm": "Vehicle",
+              "n_affected": 3,
+              "n_at_risk": 176,
+              "pct": 1.7
+            }
+          ]
+        },
+        {
+          "meddra_pt": "Application Site Pruritus",
+          "meddra_soc": "General disorders",
+          "per_arm": [
+            {
+              "arm": "Active",
+              "n_affected": 11,
+              "n_at_risk": 173,
+              "pct": 6.4
+            },
+            {
+              "arm": "Vehicle",
+              "n_affected": 1,
+              "n_at_risk": 176,
+              "pct": 0.6
+            }
+          ]
+        },
+        {
+          "meddra_pt": "Application Site Dermatitis",
+          "meddra_soc": "General disorders",
+          "per_arm": [
+            {
+              "arm": "Active",
+              "n_affected": 10,
+              "n_at_risk": 173,
+              "pct": 5.8
+            },
+            {
+              "arm": "Vehicle",
+              "n_affected": 1,
+              "n_at_risk": 176,
+              "pct": 0.6
+            }
+          ]
+        },
+        {
+          "meddra_pt": "Application Site Erythema",
+          "meddra_soc": "General disorders",
+          "per_arm": [
+            {
+              "arm": "Active",
+              "n_affected": 9,
+              "n_at_risk": 173,
+              "pct": 5.2
+            },
+            {
+              "arm": "Vehicle",
+              "n_affected": 1,
+              "n_at_risk": 176,
+              "pct": 0.6
+            }
+          ]
+        },
+        {
+          "meddra_pt": "Dry Mouth",
+          "meddra_soc": "Gastrointestinal disorders",
+          "per_arm": [
+            {
+              "arm": "Active",
+              "n_affected": 20,
+              "n_at_risk": 173,
+              "pct": 11.6
+            },
+            {
+              "arm": "Vehicle",
+              "n_affected": 0,
+              "n_at_risk": 176,
+              "pct": 0.0
+            }
+          ]
+        },
+        {
+          "meddra_pt": "Mydriasis",
+          "meddra_soc": "Eye disorders",
+          "per_arm": [
+            {
+              "arm": "Active",
+              "n_affected": 13,
+              "n_at_risk": 173,
+              "pct": 7.5
+            },
+            {
+              "arm": "Vehicle",
+              "n_affected": 0,
+              "n_at_risk": 176,
+              "pct": 0.0
+            }
+          ]
+        },
+        {
+          "meddra_pt": "Vision Blurred",
+          "meddra_soc": "Eye disorders",
+          "per_arm": [
+            {
+              "arm": "Active",
+              "n_affected": 9,
+              "n_at_risk": 173,
+              "pct": 5.2
+            },
+            {
+              "arm": "Vehicle",
+              "n_affected": 0,
+              "n_at_risk": 176,
+              "pct": 0.0
+            }
+          ]
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03836287",
+      "source_excerpt": "resultsSection.adverseEventsModule.otherEvents[]",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, cycle-22 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "discontinuation_due_to_ae_rate": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    },
+    "boxed_warning": {
+      "value": {
+        "drug": "Sofpironium Bromide",
+        "application_number": null
+      },
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    }
+  },
+  "exclusivity": {
+    "regulatory_application": {
+      "value": {
+        "drug": "Sofpironium Bromide",
+        "application_number": "217347"
+      },
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    },
+    "orange_book": {
+      "value": {
+        "drug": "Sofpironium Bromide",
+        "application_number": "217347"
+      },
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    },
+    "purple_book": {
+      "value": {
+        "drug": "Sofpironium Bromide",
+        "application_number": null
+      },
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    }
+  },
+  "real_world_safety": {
+    "faers_summary": {
+      "value": {
+        "drug": "Sofpironium Bromide",
+        "application_number": null
+      },
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    },
+    "drug_characterization": {
+      "value": {
+        "drug": "Sofpironium Bromide",
+        "application_number": null
+      },
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    }
+  },
+  "results": {
+    "arms": {
+      "value": [
+        {
+          "arm_id": "OG000",
+          "label": "Active",
+          "role": "other",
+          "analysis_population": "full_analysis_set",
+          "intervention_names": [],
+          "dose_value": null,
+          "dose_unit": null,
+          "frequency": null,
+          "randomized_n": 173
+        },
+        {
+          "arm_id": "OG001",
+          "label": "Vehicle",
+          "role": "vehicle",
+          "analysis_population": "full_analysis_set",
+          "intervention_names": [
+            "Vehicle"
+          ],
+          "dose_value": null,
+          "dose_unit": null,
+          "frequency": null,
+          "randomized_n": 177
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03836287",
+      "source_excerpt": "resultsSection.outcomeMeasuresModule.outcomeMeasures[].groups[]",
+      "extracted_by": "atlas.results (ctgov_api v2, cycle-23 results-layer build)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "arm_results": {
+      "value": [
+        {
+          "endpoint": {
+            "rank": "primary",
+            "position": 1,
+            "verbatim_sha1": "e68c8f872133e71a5d750669ab88c91f552e5daa"
+          },
+          "arm_id": "OG000",
+          "timepoint": {
+            "value": 43,
+            "unit": "day",
+            "end_value": null
+          },
+          "analysis_population": "full_analysis_set",
+          "study_period": null,
+          "denominator": 157,
+          "value_type": "count_of_participants",
+          "reported_value": 84.0,
+          "reported_unit": "Participants",
+          "responders": 84,
+          "response_rate_pct": 53.5,
+          "rate_is_derived": true,
+          "dispersion_type": null,
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": null
+        },
+        {
+          "endpoint": {
+            "rank": "primary",
+            "position": 1,
+            "verbatim_sha1": "e68c8f872133e71a5d750669ab88c91f552e5daa"
+          },
+          "arm_id": "OG001",
+          "timepoint": {
+            "value": 43,
+            "unit": "day",
+            "end_value": null
+          },
+          "analysis_population": "full_analysis_set",
+          "study_period": null,
+          "denominator": 166,
+          "value_type": "count_of_participants",
+          "reported_value": 54.0,
+          "reported_unit": "Participants",
+          "responders": 54,
+          "response_rate_pct": 32.5,
+          "rate_is_derived": true,
+          "dispersion_type": null,
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": null
+        },
+        {
+          "endpoint": {
+            "rank": "primary",
+            "position": 1,
+            "verbatim_sha1": "e68c8f872133e71a5d750669ab88c91f552e5daa"
+          },
+          "arm_id": "OG000",
+          "timepoint": {
+            "value": 43,
+            "unit": "day",
+            "end_value": null
+          },
+          "analysis_population": "full_analysis_set",
+          "study_period": null,
+          "denominator": 157,
+          "value_type": "count_of_participants",
+          "reported_value": 73.0,
+          "reported_unit": "Participants",
+          "responders": 73,
+          "response_rate_pct": 46.5,
+          "rate_is_derived": true,
+          "dispersion_type": null,
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": null
+        },
+        {
+          "endpoint": {
+            "rank": "primary",
+            "position": 1,
+            "verbatim_sha1": "e68c8f872133e71a5d750669ab88c91f552e5daa"
+          },
+          "arm_id": "OG001",
+          "timepoint": {
+            "value": 43,
+            "unit": "day",
+            "end_value": null
+          },
+          "analysis_population": "full_analysis_set",
+          "study_period": null,
+          "denominator": 166,
+          "value_type": "count_of_participants",
+          "reported_value": 112.0,
+          "reported_unit": "Participants",
+          "responders": 112,
+          "response_rate_pct": 67.5,
+          "rate_is_derived": true,
+          "dispersion_type": null,
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": null
+        },
+        {
+          "endpoint": {
+            "rank": "primary",
+            "position": 2,
+            "verbatim_sha1": "f6f060941734962b4308b2e5672e7c55ca3dee27"
+          },
+          "arm_id": "OG000",
+          "timepoint": {
+            "value": 43,
+            "unit": "day",
+            "end_value": null
+          },
+          "analysis_population": "full_analysis_set",
+          "study_period": null,
+          "denominator": 157,
+          "value_type": "mean",
+          "reported_value": -27.88,
+          "reported_unit": "milligrams",
+          "responders": null,
+          "response_rate_pct": null,
+          "rate_is_derived": false,
+          "dispersion_type": "standard_deviation",
+          "dispersion_value": 94.67,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": null
+        },
+        {
+          "endpoint": {
+            "rank": "primary",
+            "position": 2,
+            "verbatim_sha1": "f6f060941734962b4308b2e5672e7c55ca3dee27"
+          },
+          "arm_id": "OG001",
+          "timepoint": {
+            "value": 43,
+            "unit": "day",
+            "end_value": null
+          },
+          "analysis_population": "full_analysis_set",
+          "study_period": null,
+          "denominator": 165,
+          "value_type": "mean",
+          "reported_value": -7.24,
+          "reported_unit": "milligrams",
+          "responders": null,
+          "response_rate_pct": null,
+          "rate_is_derived": false,
+          "dispersion_type": "standard_deviation",
+          "dispersion_value": 99.695,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": null
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03836287",
+      "source_excerpt": "resultsSection.outcomeMeasuresModule.outcomeMeasures[].{denoms,classes[].categories[].measurements[]}",
+      "extracted_by": "atlas.results (ctgov_api v2, cycle-23 results-layer build)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "effect_estimates": {
+      "value": [
+        {
+          "endpoint": {
+            "rank": "primary",
+            "position": 1,
+            "verbatim_sha1": "e68c8f872133e71a5d750669ab88c91f552e5daa"
+          },
+          "timepoint": {
+            "value": 43,
+            "unit": "day",
+            "end_value": null
+          },
+          "test_arm_id": "OG000",
+          "reference_arm_id": "OG001",
+          "comparison_kind": "other",
+          "effect_type": "odds_ratio",
+          "effect_type_verbatim": "Odds Ratio (OR)",
+          "effect_value": 2.34,
+          "ci_pct": 95.0,
+          "ci_lower": 1.47,
+          "ci_upper": 3.72,
+          "ci_sides": 2,
+          "p_value": {
+            "comparator": "=",
+            "value": 0.0004,
+            "verbatim": "0.0004"
+          },
+          "statistical_method": "Regression, Logistic",
+          "adjusted_for": []
+        },
+        {
+          "endpoint": {
+            "rank": "primary",
+            "position": 2,
+            "verbatim_sha1": "f6f060941734962b4308b2e5672e7c55ca3dee27"
+          },
+          "timepoint": {
+            "value": 43,
+            "unit": "day",
+            "end_value": null
+          },
+          "test_arm_id": "OG000",
+          "reference_arm_id": "OG001",
+          "comparison_kind": "other",
+          "effect_type": "mean_difference",
+          "effect_type_verbatim": "Mean Difference (Net)",
+          "effect_value": -29.71,
+          "ci_pct": 95.0,
+          "ci_lower": -48.42,
+          "ci_upper": -11.0,
+          "ci_sides": 2,
+          "p_value": {
+            "comparator": "=",
+            "value": 0.0019,
+            "verbatim": "0.0019"
+          },
+          "statistical_method": "ANCOVA",
+          "adjusted_for": []
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT03836287",
+      "source_excerpt": "resultsSection.outcomeMeasuresModule.outcomeMeasures[].analyses[]",
+      "extracted_by": "atlas.results (ctgov_api v2, cycle-23 results-layer build)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "published_results": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    }
+  }
+}

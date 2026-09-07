@@ -59,7 +59,7 @@
     },
     "source_type": "openfda_label",
     "source_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=da99991a-7663-44b5-80f2-e22ffe92c54b",
-    "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1) -- extracted text: 12.1 Mechanism of Action Ustekinumab products are human IgG1κ monoclonal antibodies that bind with specificity to the p40 protein subunit used by both the IL-12 and IL-23 cytokines. IL-12 and IL-23 are naturally occurring cytokines that are involved in inflammatory and immune responses, such as natural killer cell activation and CD4+ T-cell differentiation and activation. In in vitro models, ustekinumab products were shown to disrupt IL-12 and IL-23 mediated signaling and cytokine cascades by disrupting the interaction of these cytokines with a shared cell- surface receptor chain, IL-12Rβ1. The cytokines IL-12 and IL-23 have been implicated as important contributors to the chronic inflammation that is a hallmark of Crohn’s disease and ulcerative colitis. In animal models of colitis, genetic absence or antibody blockade of the p40 subunit of IL-12 and IL-23, the target of ustekinumab products, was shown to be protective.",
+    "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1) -- extracted text: 12.1 Mechanism of Action Ustekinumab products are human IgG1\u03ba monoclonal antibodies that bind with specificity to the p40 protein subunit used by both the IL-12 and IL-23 cytokines. IL-12 and IL-23 are naturally occurring cytokines that are involved in inflammatory and immune responses, such as natural killer cell activation and CD4+ T-cell differentiation and activation. In in vitro models, ustekinumab products were shown to disrupt IL-12 and IL-23 mediated signaling and cytokine cascades by disrupting the interaction of these cytokines with a shared cell- surface receptor chain, IL-12R\u03b21. The cytokines IL-12 and IL-23 have been implicated as important contributors to the chronic inflammation that is a hallmark of Crohn\u2019s disease and ulcerative colitis. In animal models of colitis, genetic absence or antibody blockade of the p40 subunit of IL-12 and IL-23, the target of ustekinumab products, was shown to be protective.",
     "extracted_by": "deep-extraction pass (LLM-assisted extraction, scale-out backfill; pending human QA)",
     "reviewed_by": null,
     "confidence": 0.9
@@ -506,6 +506,34 @@
     "source_url": "/tmp/derm_verify/purplebook.csv",
     "source_excerpt": "Purple Book Monthly Historical Data Changes Report (August 2026 snapshot) CSV: 44 row(s) matched on Proper Name containing 'ustekinumab', reference BLA125261 (Stelara) plus 10 distinct biosimilar BLAs",
     "extracted_by": "purple_book_csv_helper.py (accessdata.fda.gov monthly CSV, cycle-7 pass)",
+    "reviewed_by": null,
+    "confidence": 1.0
+  },
+  "drug_characterization": {
+    "value": [
+      {
+        "code": "1",
+        "label": "suspect",
+        "report_count": 8720,
+        "pct_of_reports": 82.58
+      },
+      {
+        "code": "2",
+        "label": "concomitant",
+        "report_count": 1834,
+        "pct_of_reports": 17.37
+      },
+      {
+        "code": "3",
+        "label": "interacting",
+        "report_count": 5,
+        "pct_of_reports": 0.05
+      }
+    ],
+    "source_type": "openfda_faers",
+    "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"USTEKINUMAB\"",
+    "source_excerpt": "Computed by pulling every individual FAERS report matching this drug's own search_term (USTEKINUMAB) and tallying each report's drugcharacterization code (1=suspect, 2=concomitant, 3=interacting) from ONLY the drug-array entries whose medicinalproduct matches this drug (not co-listed drugs in the same report) -- a plain count= aggregate query cannot do this correctly (openFDA's flattened array indexing mixes in co-listed drugs' own characterization values). 10559/10559 reports matched.",
+    "extracted_by": "fetch_faers_characterization.py (per-report drugcharacterization backfill, cycle-22/23 pass)",
     "reviewed_by": null,
     "confidence": 1.0
   }

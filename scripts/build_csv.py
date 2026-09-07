@@ -34,7 +34,7 @@ Flatten every data/trials/<NCT_ID>.json (schema v4) and data/drugs/<slug>.json
                          comparison; same nct_id/endpoint_rank/endpoint_position
                          join key as arm_results.csv
   drugs.csv              one row per drug: mechanism_of_action, boxed_warning,
-                         faers_summary, purple_book, trial_ids
+                         faers_summary, drug_characterization, purple_book, trial_ids
   drug_applications.csv  one row per (drug, application_number): regulatory_application,
                          orange_book -- almost every drug has exactly 1 row;
                          Roflumilast (2 real FDA applications) has 2
@@ -130,12 +130,12 @@ def effect_estimate_rows(nct, drug, trial_name, results):
     return rows
 
 
-DRUG_SINGLE_VALUED = ("mechanism_of_action", "boxed_warning", "faers_summary", "purple_book")
+DRUG_SINGLE_VALUED = ("mechanism_of_action", "boxed_warning", "faers_summary", "drug_characterization", "purple_book")
 
 
 def drug_row_and_sources(record):
     """(drugs.csv row, drug_sources.csv rows) for one data/drugs/<slug>.json
-    record -- the 4 single-valued sourced fields only; applications[] is
+    record -- the 5 single-valued sourced fields only; applications[] is
     handled separately by drug_application_rows since it is a list, not a
     single sourced value (flatten_fields does not walk into lists)."""
     drug = record["drug"]

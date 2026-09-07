@@ -1033,6 +1033,115 @@ This file is the project's committed home for project-intrinsic agent memory: bu
   freshly-derived VALUE actually differs, so re-running it after an unrelated `atlas/results.py`
   fix touches only the trials that fix actually changes.
 
+- **Cycle 23: a completed cycle's own branch can go stale mid-flight if it isn't turned into a PR
+  before `main` moves.** Cycle 22's `drug_characterization` work (the FAERS per-report
+  suspect/concomitant/interacting field) plus 13 new Rosacea/Hyperhidrosis/Acne-combo-drug trials
+  were built and committed on `fm/derm-trial-atlas-scale-out-cycle17` against schema v2/v3 — but
+  that branch's own earlier PR had already merged as #9, and by the time this work was done, two
+  more PRs had landed on `main` first: PR #10 (schema v3, the normalized `results.*` layer) and
+  PR #11 (schema v4, drug-first restructuring — 6 fields moved off trial records onto
+  `data/drugs/<slug>.json`, replaced with `drug_level_ref` pointers). The old branch's commits
+  were never pushed to a fresh PR, so they sat disconnected from `main`, built against a schema
+  two versions behind — **a plain rebase would not have been safe**: `drug_characterization` had
+  been designed as a trial-level sibling field to `faers_summary` (the correct shape under v2),
+  which is now the WRONG architecture under v4 (that exact category of fact — drug-level, not
+  trial-level — belongs in `data/drugs/<slug>.json` next to the other 6 moved fields). Confirmed
+  by actually reading what v3/v4 changed (not assumed): re-designed `drug_characterization` as a
+  7th drug-level field with its own `drug_level_ref` pointer, matching the other 6 exactly (see
+  `atlas/schema.py`'s `DRUG` spec, `atlas/drugs.py`'s `SINGLE_VALUED_FIELDS`), backfilled it across
+  the entire pre-existing 127-trial/48-drug corpus, and rebuilt the 13 new trials from scratch in
+  true v4 shape (drug records + `split_trial_record` + a populated `results.*` layer from each
+  trial's already-cached raw CT.gov response) on a fresh branch cut from current `main`, rather
+  than rebasing the stale branch. **When a branch sits disconnected from `main` for even one
+  cycle, check whether `main` changed the SHAPE of data your branch touches, not just whether it
+  conflicts at the text level** — a clean textual rebase is not evidence the branch's design
+  decisions still hold.
+- **This repo permanently owns its pipeline code as of the PR #10 consolidation (`scripts/`,
+  `atlas/`, `tests/` are no longer periodically deleted before committing) — which means stale
+  hardcoded test assertions are now this repo's own bugs to fix, not something to document and
+  leave for `kolai-website`.** Found 2 in `tests/test_schema.py` this cycle
+  (`test_every_trial_validates`'s `len(TRIALS) == 63`, `test_flattened_tables_match_json`'s
+  `len(trials) == 63` / `len(sources) == 63 * 39`) — both literals frozen from whatever trial
+  count existed when PR #10/#11's authors last touched the file, unrelated to their own PRs'
+  content. Fixed to the real current counts (140 trials, 140 * 44 = 6160 sources rows), verified
+  via `csv.DictReader` row counts, not `wc -l` (which overcounts on any CSV cell containing an
+  embedded literal newline — confirmed this discrepancy directly: `wc -l sources.csv` reported
+  6185 lines against the true 6160 data rows).
+- **`build_v4.py`'s (a one-off scratch script, not committed) pattern for adding a new trial +
+  drug in true v4 shape**: call `atlas.results.build_arm_registry` /
+  `build_arm_results_and_effects` / `qc_filter` against the trial's raw cached CT.gov response
+  BEFORE calling `atlas.drugs.split_trial_record` — the results-builder functions only read
+  `molecule.drug`/`intervention_names`/`dosing_regimen`, `population.*`, `endpoints.*`, none of
+  which are v4-moved fields, so doing this on the full-value (pre-split) record matches the
+  established `backfill_results.py` convention and avoids needing to resolve pointers back to
+  values mid-build. Then call `atlas.drugs.build_drug_records`/`save_drug` once per new drug
+  before `split_trial_record`, so the pointer's `drug_level_ref` has something real to point to.
+  4 of 13 new trials this cycle (2 Cabtreo, 1 Epsolay, 1 Twyneo, 1 Amzeeq — see README) came back
+  with 0 `effect_estimates` — confirmed by reading the raw cached `resultsSection` directly that
+  these trials genuinely post no `analyses[]` statistical-comparison block for any outcome
+  measure, not a builder bug.
+- **Minocycline topical foam is FDA-approved under two separate NDAs at two different strengths
+  for two different indications** (Amzeeq, NDA 212379, 4%, Acne Vulgaris; Zilxi, NDA 213690,
+  1.5%, Rosacea) — same molecule, same applicant (Journey Medical), same aerosol-foam dosage
+  form, differing only in strength and indication. A sharper variant of the Roflumilast
+  cream/foam split (that one differs by dosage form too; this one is identical dosage form,
+  different strength). `data/drugs/minocycline.json` correctly holds both applications keyed by
+  `application_number` in its `applications` list (the established Ruxolitinib/Roflumilast
+  tuple-pin pattern) rather than being force-merged into one Orange Book entry — verify a new
+  same-molecule, different-strength-or-form drug always resolves to 1 clean product row per
+  `application_number` before writing it, the same check already standing for every prior
+  ingredient-collision case.
+
+- **Cycle 24: closed the full-deep-extraction debt cycle 23's 13 new trials had accumulated** (they'd
+  inherited `design.background_therapy`/`endpoints.multiplicity_control`/`timing_ops.rescue_therapy` as
+  `needs_extraction` from the stale pre-v4 branch, which predates the cycle-18 standing rule requiring
+  full deep extraction for every new trial). Confirmed all 13 have a real posted Study Protocol/SAP on
+  CT.gov's `documentSection` (unlike most of the corpus's older no-document gaps), fanned out 6 parallel
+  subagents (one per drug/indication group) to read them with the established wide keyword net, and
+  closed all 25 gaps for real — 12 of the 13 trials have a genuine gated/fixed-sequence multiplicity
+  procedure (not a "no procedure" finding), a higher hit rate than most prior deep-extraction passes.
+- **A trial's real multiplicity procedure can be stated only in the PROTOCOL, not the SAP — reading the
+  SAP alone reads as "no formal procedure," a false negative.** Zilxi's SAP says only "secondaries are
+  tested at 0.05... only if both co-primary endpoints are significant" with no explicit sequence, which
+  in isolation would fill as `procedure: null`. Its own Protocol Section 11.5.2, though, explicitly
+  states endpoints are "analyzed hierarchically" and "treated sequentially in the order listed above" —
+  a real, structured `serial_gatekeeping` procedure the SAP-only read would have missed entirely. Always
+  read BOTH documents (when both are posted) before concluding a multiplicity field is a genuine
+  no-procedure gap, not just the SAP — the SAP is not always the more authoritative or more complete
+  document for this specific field, contrary to the AD-corpus-era assumption that it usually is.
+- **Two trials sharing one combined Protocol+SAP CT.gov document are not automatically identical in
+  content just because they share a file** — verify by diffing the relevant sections rather than
+  assuming. Cabtreo's NCT04214639/NCT04214652 turned out to have word-for-word identical statistical
+  text (confirmed by diff, not assumed), but this should be checked per-pair, not treated as a rule:
+  a shared combined document does not guarantee identical language for every section.
+- **A trial explicitly labeled "Study 3" alongside "Study 1"/"Study 2" in an FDA label's pivotal-trial
+  list is not necessarily an open-label long-term-safety extension of the other two** — Amzeeq's
+  NCT03271021 is CT.gov-registered and initially assumed (in this cycle's own task brief) to be a
+  safety-only study, but its own already-committed `design`/`population` fields (and AMZEEQ's FDA label
+  section 14) confirm it is a third full randomized, double-blind, vehicle-controlled pivotal trial with
+  the same co-primary design as Studies 1/2, just a genuinely simpler (single-tier, no per-timepoint
+  cascade) multiplicity procedure — verify a trial's actual design from its own committed fields or the
+  FDA label before assuming a "Study N" label implies a lesser trial type.
+- **A rescue-therapy field's genuine "no provision" finding can be an affirmative PROHIBITION, not mere
+  silence** — Sofdra's protocol doesn't just omit a rescue-therapy section, it explicitly bans any other
+  axillary-hyperhidrosis treatment/procedure and any antiperspirant throughout the study. Recorded as
+  `permitted: false, trigger: "prohibited"` (matching the schema's existing enum, already established by
+  earlier AD trials with an explicit "rescue prohibited" design) rather than as a bare absence — the
+  distinction between "not addressed" and "explicitly banned" is real and worth preserving in
+  `rationale` even when both produce the same `permitted: false` structural fill.
+
+- **A prior "checked both rescue and background keywords" eligibility-text sweep can still miss a real
+  background_therapy fill on a trial it otherwise correctly filled the rescue_therapy field for** —
+  found re-checking Head Lice/Abametapir (NCT02060903, no posted protocol document) this cycle: the
+  earlier sweep found and filled its `rescue_therapy` from eligibility exclusion criteria 2-3 (other
+  lice treatment/comb use "unless provided as rescue therapy"), but never filled `background_therapy`
+  from the SAME eligibility text's criteria 1, 4, and 10 (prior-treatment washout, hairstyling
+  restriction, general concomitant-medication exclusion) — a real, fillable monotherapy design (no
+  background regimen, other lice treatments prohibited outside protocol rescue) that was sitting in
+  text already read for a different field. When re-checking a no-document trial's eligibility text for
+  one gap field, re-read it for the OTHER gap fields too rather than trusting a prior pass's field-by-
+  field completeness — a hit for one field doesn't mean every field was checked with equal care.
+
 ## Maintaining this file
 
 Keep this file for knowledge useful to almost every future agent session in this project.

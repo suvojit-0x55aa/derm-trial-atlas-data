@@ -58,13 +58,19 @@
     "confidence": 0.9
   },
   "boxed_warning": {
-    "value": null,
-    "source_type": "needs_extraction",
-    "source_url": null,
-    "source_excerpt": null,
-    "extracted_by": null,
+    "value": {
+      "present": false,
+      "title": null,
+      "warning_categories": [],
+      "referenced_label_sections": [],
+      "product_names": []
+    },
+    "source_type": "openfda_label",
+    "source_url": "https://api.fda.gov/drug/label.json?search=openfda.brand_name:VYJUVEK&limit=1",
+    "source_excerpt": "results[0] (VYJUVEK, BLA125774) has no boxed_warning key (checked, none present) -- openfda.substance_name is null for this drug (same pattern already documented for its mechanism_of_action lookup), so brand_name is the working query term",
+    "extracted_by": "cycle-24 openFDA label re-check (fallback query term)",
     "reviewed_by": null,
-    "confidence": null
+    "confidence": 1.0
   },
   "faers_summary": {
     "value": {
@@ -158,6 +164,34 @@
     "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2026/purplebook-search-August-data-download.csv",
     "source_excerpt": "Purple Book Monthly Historical Data Changes Report (August 2026 snapshot) CSV row: Krystal Biotech, Inc. | BLA 125774 | VYJUVEK | beremagene geperpavec-svdt | 351(a) | 5.0x10^9 PFU/mL | Gel | Topical | Single-Dose Vial | Rx | Licensed | 19-May-23 | Original | License 2301 | Product 001 | CBER | Orphan Exclusivity Exp. Date 12-Sep-32. Fetched via accessdata.fda.gov's monthly CSV with a browser User-Agent header (bypasses the Akamai block on purplebooksearch.fda.gov's live search UI, which this drug's parser normally uses -- see AGENTS.md); 0 biosimilar(s) on file (novel gene-therapy product).",
     "extracted_by": "fetch_purple_book.py (accessdata.fda.gov monthly CSV, cycle-5 fallback pass -- live search UI genuinely blocked, see AGENTS.md)",
+    "reviewed_by": null,
+    "confidence": 1.0
+  },
+  "drug_characterization": {
+    "value": [
+      {
+        "code": "1",
+        "label": "suspect",
+        "report_count": 1,
+        "pct_of_reports": 100.0
+      },
+      {
+        "code": "2",
+        "label": "concomitant",
+        "report_count": 0,
+        "pct_of_reports": 0.0
+      },
+      {
+        "code": "3",
+        "label": "interacting",
+        "report_count": 0,
+        "pct_of_reports": 0.0
+      }
+    ],
+    "source_type": "openfda_faers",
+    "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"BEREMAGENE GEPERPAVEC\"",
+    "source_excerpt": "Computed by pulling every individual FAERS report matching this drug's own search_term (BEREMAGENE GEPERPAVEC) and tallying each report's drugcharacterization code (1=suspect, 2=concomitant, 3=interacting) from ONLY the drug-array entries whose medicinalproduct matches this drug (not co-listed drugs in the same report) -- a plain count= aggregate query cannot do this correctly (openFDA's flattened array indexing mixes in co-listed drugs' own characterization values). 1/1 reports matched.",
+    "extracted_by": "fetch_faers_characterization.py (per-report drugcharacterization backfill, cycle-22/23 pass)",
     "reviewed_by": null,
     "confidence": 1.0
   }

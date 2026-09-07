@@ -201,7 +201,7 @@
       },
       "source_type": "ctgov_text_extraction",
       "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT05030311",
-      "source_excerpt": "UAS7 score (range 0-42) ≥16, ISS7 score (range 0-21) ≥ 6 and HSS7 score (range 0-21) ≥ 6 during the 7 days prior to randomization (Day 1)",
+      "source_excerpt": "UAS7 score (range 0-42) \u226516, ISS7 score (range 0-21) \u2265 6 and HSS7 score (range 0-21) \u2265 6 during the 7 days prior to randomization (Day 1)",
       "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA); structured by atlas.migrate v1->v2",
       "reviewed_by": null,
       "confidence": 0.75
@@ -388,7 +388,7 @@
     "secondary_endpoints": {
       "value": [
         {
-          "verbatim": "Number of Patients Who Achieved Disease Activity Control (UAS7 ≤6)",
+          "verbatim": "Number of Patients Who Achieved Disease Activity Control (UAS7 \u22646)",
           "rank": "secondary",
           "position": 1,
           "measure_type": "count",
@@ -426,7 +426,7 @@
           "time_frame": null
         },
         {
-          "verbatim": "Number of Patients With Early Onset of Disease Control (UAS7 ≤ 6 at Week 2)",
+          "verbatim": "Number of Patients With Early Onset of Disease Control (UAS7 \u2264 6 at Week 2)",
           "rank": "secondary",
           "position": 3,
           "measure_type": "count",
@@ -1136,6 +1136,18 @@
   },
   "real_world_safety": {
     "faers_summary": {
+      "value": {
+        "drug": "Remibrutinib",
+        "application_number": null
+      },
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    },
+    "drug_characterization": {
       "value": {
         "drug": "Remibrutinib",
         "application_number": null

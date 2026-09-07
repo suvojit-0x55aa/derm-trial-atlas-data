@@ -55,7 +55,7 @@
     },
     "source_type": "openfda_label",
     "source_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=01b4ab20-c027-482f-b358-b9beae545cb3",
-    "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1) -- v1 extracted text: 12.1 Mechanism of Action Guselkumab is a human monoclonal IgG1λ antibody that selectively binds to the p19 subunit of interleukin 23 (IL-23) and inhibits its interaction with the IL-23 receptor. IL-23 is a naturally occurring cytokine that is involved in normal inflammatory and immune responses. Guselkumab inhibits the release of proinflammatory cytokines and chemokines.",
+    "source_excerpt": "openFDA drug/label mechanism_of_action (FDA-approved label, section 12.1) -- v1 extracted text: 12.1 Mechanism of Action Guselkumab is a human monoclonal IgG1\u03bb antibody that selectively binds to the p19 subunit of interleukin 23 (IL-23) and inhibits its interaction with the IL-23 receptor. IL-23 is a naturally occurring cytokine that is involved in normal inflammatory and immune responses. Guselkumab inhibits the release of proinflammatory cytokines and chemokines.",
     "extracted_by": "enrich_needs_extraction.py (LLM-assisted extraction, v1 pass; pending human QA); structured by atlas.migrate v1->v2",
     "reviewed_by": null,
     "confidence": 0.9
@@ -407,6 +407,34 @@
     "source_url": "https://purplebooksearch.fda.gov/index.cfm?event=advancedsearch",
     "source_excerpt": "purplebooksearch.fda.gov live search table, BLA 761061 (Tremfya), 0 biosimilar(s) on file",
     "extracted_by": "fetch_purple_book.py (purplebooksearch.fda.gov live search table, raw staging pass)",
+    "reviewed_by": null,
+    "confidence": 1.0
+  },
+  "drug_characterization": {
+    "value": [
+      {
+        "code": "1",
+        "label": "suspect",
+        "report_count": 2093,
+        "pct_of_reports": 90.22
+      },
+      {
+        "code": "2",
+        "label": "concomitant",
+        "report_count": 226,
+        "pct_of_reports": 9.74
+      },
+      {
+        "code": "3",
+        "label": "interacting",
+        "report_count": 1,
+        "pct_of_reports": 0.04
+      }
+    ],
+    "source_type": "openfda_faers",
+    "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"GUSELKUMAB\"",
+    "source_excerpt": "Computed by pulling every individual FAERS report matching this drug's own search_term (GUSELKUMAB) and tallying each report's drugcharacterization code (1=suspect, 2=concomitant, 3=interacting) from ONLY the drug-array entries whose medicinalproduct matches this drug (not co-listed drugs in the same report) -- a plain count= aggregate query cannot do this correctly (openFDA's flattened array indexing mixes in co-listed drugs' own characterization values). 2320/2320 reports matched.",
+    "extracted_by": "fetch_faers_characterization.py (per-report drugcharacterization backfill, cycle-22/23 pass)",
     "reviewed_by": null,
     "confidence": 1.0
   }

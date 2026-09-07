@@ -1,0 +1,1812 @@
+{
+  "schema_version": 4,
+  "nct_id": {
+    "value": "NCT02815267",
+    "source_type": "ctgov_api",
+    "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02815267",
+    "source_excerpt": "protocolSection.identificationModule.nctId",
+    "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+    "reviewed_by": null,
+    "confidence": 1.0
+  },
+  "identity": {
+    "trial_name": {
+      "value": "Study 1",
+      "source_type": "openfda_label",
+      "source_url": "https://api.fda.gov/drug/label.json?search=openfda.brand_name:AMZEEQ&limit=1",
+      "source_excerpt": "FDA label section 14: \"three 12-week, multicenter, randomized, double-blind, vehicle-controlled studies (Study 1 [NCT02815267], Study 2 [NCT02815280], and Study 3 [NCT03271021])\"",
+      "extracted_by": "cycle22 one-off build (ctgov_api v2 + openfda_label/orangebook/faers pass); manual full deep extraction",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "official_title": {
+      "value": "A Randomized, Double-Blind Study to Compare the Efficacy, Safety and Long-Term Safety of Topical Administration of FMX-101 for 1 Year in the Treatment of Moderate-to-Severe Acne Vulgaris, Study FX2014-04",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02815267",
+      "source_excerpt": "protocolSection.identificationModule.officialTitle",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "sponsor": {
+      "value": "Vyne Therapeutics Inc.",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02815267",
+      "source_excerpt": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "phase": {
+      "value": [
+        "PHASE3"
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02815267",
+      "source_excerpt": "protocolSection.designModule.phases",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    }
+  },
+  "molecule": {
+    "drug": {
+      "value": "Minocycline",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02815267",
+      "source_excerpt": "protocolSection.armsInterventionsModule.interventions[].name (curated)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "intervention_names": {
+      "value": [
+        "FMX-101, 4% minocycline foam",
+        "Vehicle Foam"
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02815267",
+      "source_excerpt": "protocolSection.armsInterventionsModule.interventions[].name",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "intervention_type": {
+      "value": [
+        "DRUG"
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02815267",
+      "source_excerpt": "protocolSection.armsInterventionsModule.interventions[].type",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "mechanism_of_action": {
+      "value": {
+        "drug": "Minocycline",
+        "application_number": null
+      },
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    },
+    "dosing_regimen": {
+      "value": [
+        {
+          "intervention_name": "FMX-101, 4% minocycline foam",
+          "description": "FMX-101 minocycline foam 4%, applied once daily to acne-affected areas of the face (and body areas if affected), approximately 1 hour before bedtime",
+          "is_placebo": false,
+          "route": "topical",
+          "dose_form": null,
+          "dose_value": 4,
+          "dose_unit": "%",
+          "units_per_dose": null,
+          "frequency": "once_daily",
+          "duration_weeks": 12,
+          "dosing_periods": [],
+          "administration_sites": [
+            "face"
+          ],
+          "antibody_isotype": null,
+          "molecular_target": null,
+          "arm_names": [
+            "FMX-101, 4% minocycline foam"
+          ],
+          "co_administered_with": []
+        }
+      ],
+      "source_type": "ctgov_text_extraction",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02815267",
+      "source_excerpt": "armsInterventionsModule.interventions[0].description: 'FMX-101, 4% minocycline foam applied topically once daily for 12 weeks'; FDA label section 2 confirms once-daily application to acne-affected areas of face (and neck/shoulders/arms/back/chest if affected), ~1 hour before bedtime. dose_form left null (schema's DOSE_FORMS enum has no 'foam' slot, per this atlas's standing enum-gap convention).",
+      "extracted_by": "cycle22 one-off build (ctgov_api v2 + openfda_label/orangebook/faers pass); manual full deep extraction",
+      "reviewed_by": null,
+      "confidence": 0.85
+    }
+  },
+  "population": {
+    "condition": {
+      "value": [
+        "Acne Vulgaris"
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02815267",
+      "source_excerpt": "protocolSection.conditionsModule.conditions",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "min_age_years": {
+      "value": 9,
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02815267",
+      "source_excerpt": "protocolSection.eligibilityModule.minimumAge",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "max_age_years": {
+      "value": null,
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02815267",
+      "source_excerpt": "protocolSection.eligibilityModule.maximumAge",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 0.0
+    },
+    "sex": {
+      "value": "ALL",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02815267",
+      "source_excerpt": "protocolSection.eligibilityModule.sex",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "enrollment_count": {
+      "value": 466,
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02815267",
+      "source_excerpt": "protocolSection.designModule.enrollmentInfo.count",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "severity_criteria": {
+      "value": {
+        "severity_label": "moderate_to_severe",
+        "basis": "eligibility_text",
+        "cross_reference": null,
+        "source_criterion_numbers": [],
+        "baseline_visit_number": null,
+        "criteria": [
+          {
+            "scale": "IGA",
+            "scale_component": null,
+            "scale_variant": null,
+            "metric": "absolute_score",
+            "comparator": "in",
+            "value": [
+              3,
+              4
+            ],
+            "unit": "score",
+            "scale_min": null,
+            "scale_max": null,
+            "assessed_at": null,
+            "scale_anchors": [
+              {
+                "score": 3,
+                "label": "moderate"
+              },
+              {
+                "score": 4,
+                "label": "severe"
+              }
+            ]
+          },
+          {
+            "scale": "Inflammatory Lesion Count",
+            "scale_component": null,
+            "scale_variant": null,
+            "metric": "absolute_score",
+            "comparator": ">=",
+            "value": 20,
+            "unit": "score",
+            "scale_min": null,
+            "scale_max": null,
+            "assessed_at": null,
+            "scale_anchors": null
+          },
+          {
+            "scale": "Inflammatory Lesion Count",
+            "scale_component": null,
+            "scale_variant": null,
+            "metric": "absolute_score",
+            "comparator": "<=",
+            "value": 50,
+            "unit": "score",
+            "scale_min": null,
+            "scale_max": null,
+            "assessed_at": null,
+            "scale_anchors": null
+          },
+          {
+            "scale": "Noninflammatory Lesion Count",
+            "scale_component": null,
+            "scale_variant": null,
+            "metric": "absolute_score",
+            "comparator": ">=",
+            "value": 25,
+            "unit": "score",
+            "scale_min": null,
+            "scale_max": null,
+            "assessed_at": null,
+            "scale_anchors": null
+          },
+          {
+            "scale": "Noninflammatory Lesion Count",
+            "scale_component": null,
+            "scale_variant": null,
+            "metric": "absolute_score",
+            "comparator": "<=",
+            "value": 100,
+            "unit": "score",
+            "scale_min": null,
+            "scale_max": null,
+            "assessed_at": null,
+            "scale_anchors": null
+          },
+          {
+            "scale": "Nodule Count",
+            "scale_component": null,
+            "scale_variant": null,
+            "metric": "absolute_score",
+            "comparator": "<=",
+            "value": 2,
+            "unit": "score",
+            "scale_min": null,
+            "scale_max": null,
+            "assessed_at": null,
+            "scale_anchors": null
+          }
+        ]
+      },
+      "source_type": "ctgov_text_extraction",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02815267",
+      "source_excerpt": "Eligibility criteria: \"20 to 50 inflammatory lesions (papules, pustules, and nodules); 25 to 100 noninflammatory lesions (open and closed comedones); no more than 2 nodules on the face; and IGA score of moderate (3) to severe (4)\". This trial uses acne's own 0-5 IGA scale (0 Clear to 5 Very Severe), a different scale_variant than the 0-4 rosacea IGA scale already committed for Zilxi/Epsolay -- recorded as scale_variant 'acne_iga_0_5' to keep the two distinct.",
+      "extracted_by": "cycle22 one-off build (ctgov_api v2 + openfda_label/orangebook/faers pass); manual full deep extraction",
+      "reviewed_by": null,
+      "confidence": 0.9
+    }
+  },
+  "design": {
+    "study_type": {
+      "value": "INTERVENTIONAL",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02815267",
+      "source_excerpt": "protocolSection.designModule.studyType",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "allocation": {
+      "value": "RANDOMIZED",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02815267",
+      "source_excerpt": "protocolSection.designModule.designInfo.allocation",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "intervention_model": {
+      "value": "PARALLEL",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02815267",
+      "source_excerpt": "protocolSection.designModule.designInfo.interventionModel",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "masking": {
+      "value": "DOUBLE",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02815267",
+      "source_excerpt": "protocolSection.designModule.designInfo.maskingInfo.masking",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "number_of_arms": {
+      "value": 2,
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02815267",
+      "source_excerpt": "len(protocolSection.armsInterventionsModule.armGroups)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "background_therapy": {
+      "value": {
+        "regimen_type": "monotherapy",
+        "background_agent_class": null,
+        "tcs_regimen": null,
+        "step_down_rule": null,
+        "recommended_agents": [],
+        "emollient_required": null,
+        "emollient_frequency": null,
+        "prohibited_concomitant": [
+          "any other acne medication, medicated cleanser"
+        ],
+        "permitted_concomitant": [
+          "supplied non-medicated cleanser (Cetaphil Gentle Skin Cleanser)"
+        ],
+        "applies_to_rerandomized_maintenance": null,
+        "sponsor_trial_ids": [],
+        "study_drug_doses_mg": [],
+        "population_note": "A 12-week randomized, double-blind, vehicle-controlled trial of topical minocycline foam 4% in subjects 9 years and older with moderate-to-severe acne vulgaris."
+      },
+      "source_type": "ctgov_text_extraction",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02815267",
+      "source_excerpt": "protocolSection.eligibilityModule.eligibilityCriteria: \"Willing to use only the supplied non-medicated cleanser (Cetaphil Gentle Skin Cleanser) and to refrain from use of any other acne medication, medicated cleanser, excessive sun exposure, and tanning booths for the duration of the study.\" Confirmed by FDA label section 14: \"no other topical or systemic medication affecting the course of acne vulgaris was permitted for use during these studies.\"",
+      "extracted_by": "cycle22 one-off build (ctgov_api v2 + openfda_label/orangebook/faers pass); manual full deep extraction",
+      "reviewed_by": null,
+      "confidence": 0.9
+    }
+  },
+  "endpoints": {
+    "primary_endpoints": {
+      "value": [
+        {
+          "verbatim": "Absolute Change From Baseline in the Inflammatory Lesion Count at Week 12",
+          "rank": "primary",
+          "position": 1,
+          "measure_type": "change_from_baseline",
+          "scale": "Inflammatory Lesion Count",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": "double_blind",
+          "event_type": null,
+          "time_frame": "Baseline and Week 12"
+        },
+        {
+          "verbatim": "Percentage of Participants Achieving Investigator's Global Assessments (IGA) Treatment Success at Week 12",
+          "rank": "primary",
+          "position": 2,
+          "measure_type": "responder_rate",
+          "scale": "IGA",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [
+            {
+              "scale": "IGA",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "absolute_score",
+              "comparator": "<=",
+              "value": 1,
+              "unit": "score",
+              "scale_min": 0,
+              "scale_max": 5,
+              "assessed_at": [
+                "week_12"
+              ],
+              "scale_anchors": [
+                {
+                  "score": 0,
+                  "label": "clear"
+                },
+                {
+                  "score": 1,
+                  "label": "almost clear"
+                }
+              ]
+            },
+            {
+              "scale": "IGA",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "point_improvement_from_baseline",
+              "comparator": ">=",
+              "value": 2,
+              "unit": "points",
+              "scale_min": 0,
+              "scale_max": 5,
+              "assessed_at": [
+                "week_12"
+              ],
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": "double_blind",
+          "event_type": null,
+          "time_frame": "Baseline and Week 12"
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02815267",
+      "source_excerpt": "protocolSection.outcomesModule.primaryOutcomes[]; responder threshold cross-referenced with openFDA label section 14 Table 3",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass) + openfda_label cross-reference; structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 0.95
+    },
+    "secondary_endpoints": {
+      "value": [
+        {
+          "verbatim": "Percent Change From Baseline in the Non-inflammatory Lesion Count at Week 12",
+          "rank": "secondary",
+          "position": 1,
+          "measure_type": "percent_change_from_baseline",
+          "scale": "Noninflammatory Lesion Count",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": "double_blind",
+          "event_type": null,
+          "time_frame": "Baseline and Week 12"
+        },
+        {
+          "verbatim": "Absolute Change From Baseline in the Inflammatory Lesion Count at Week 6 and Week 9",
+          "rank": "secondary",
+          "position": 2,
+          "measure_type": "change_from_baseline",
+          "scale": "Inflammatory Lesion Count",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 6,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 9,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": "double_blind",
+          "event_type": null,
+          "time_frame": "Baseline, at Week 6 and at Week 9"
+        },
+        {
+          "verbatim": "Percentage of Participants Achieving IGA Treatment Success at Week 6 and Week 9",
+          "rank": "secondary",
+          "position": 3,
+          "measure_type": "responder_rate",
+          "scale": "IGA",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [
+            {
+              "scale": "IGA",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "absolute_score",
+              "comparator": "<=",
+              "value": 1,
+              "unit": "score",
+              "scale_min": 0,
+              "scale_max": 5,
+              "assessed_at": [
+                "week_6",
+                "week_9"
+              ],
+              "scale_anchors": [
+                {
+                  "score": 0,
+                  "label": "clear"
+                },
+                {
+                  "score": 1,
+                  "label": "almost clear"
+                }
+              ]
+            },
+            {
+              "scale": "IGA",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "point_improvement_from_baseline",
+              "comparator": ">=",
+              "value": 2,
+              "unit": "points",
+              "scale_min": 0,
+              "scale_max": 5,
+              "assessed_at": [
+                "week_6",
+                "week_9"
+              ],
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 6,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 9,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": "double_blind",
+          "event_type": null,
+          "time_frame": "Baseline, at Week 6 and at Week 9"
+        },
+        {
+          "verbatim": "Number of Participants With Treatment-emergent Adverse Events (TEAEs) and Treatment-emergent Serious Adverse Events (TESAEs)",
+          "rank": "secondary",
+          "position": 4,
+          "measure_type": "safety_incidence",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": "AE_or_SAE",
+          "time_frame": "Double blind: Screening Day until Week 12; Open-label: Week 16 until Week 52"
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02815267",
+      "source_excerpt": "protocolSection.outcomesModule.secondaryOutcomes[].measure/timeFrame",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "multiplicity_control": {
+      "value": {
+        "procedure": "serial_gatekeeping",
+        "familywise_error_controlled": true,
+        "alpha": 0.05,
+        "alpha_sided": 2,
+        "alpha_per_dose": null,
+        "co_primary_endpoints": [
+          {
+            "label": "Absolute change from Baseline in the inflammatory lesion count",
+            "scale": "Inflammatory Lesion Count",
+            "responder_criteria": [],
+            "timepoint_week": 12,
+            "alpha": 0.05,
+            "step": 1
+          },
+          {
+            "label": "Treatment Success (IGA score of 0 or 1, and at least a 2-grade improvement from Baseline)",
+            "scale": "IGA",
+            "responder_criteria": [
+              {
+                "scale": "IGA",
+                "scale_component": null,
+                "scale_variant": null,
+                "metric": "absolute_score",
+                "comparator": "<=",
+                "value": 1,
+                "unit": "score",
+                "scale_min": 0,
+                "scale_max": 5,
+                "assessed_at": [
+                  "week_12"
+                ],
+                "scale_anchors": [
+                  {
+                    "score": 0,
+                    "label": "clear"
+                  },
+                  {
+                    "score": 1,
+                    "label": "almost clear"
+                  }
+                ]
+              },
+              {
+                "scale": "IGA",
+                "scale_component": null,
+                "scale_variant": null,
+                "metric": "point_improvement_from_baseline",
+                "comparator": ">=",
+                "value": 2,
+                "unit": "points",
+                "scale_min": 0,
+                "scale_max": 5,
+                "assessed_at": [
+                  "week_12"
+                ],
+                "scale_anchors": null
+              }
+            ],
+            "timepoint_week": 12,
+            "alpha": 0.05,
+            "step": 1
+          }
+        ],
+        "testing_sequence": [
+          {
+            "label": "Absolute change from Baseline in the inflammatory lesion count",
+            "scale": "Inflammatory Lesion Count",
+            "responder_criteria": [],
+            "timepoint_week": 12,
+            "alpha": 0.05,
+            "step": 1
+          },
+          {
+            "label": "IGA Treatment Success",
+            "scale": "IGA",
+            "responder_criteria": [],
+            "timepoint_week": 12,
+            "alpha": 0.05,
+            "step": 1
+          },
+          {
+            "label": "Percent change from Baseline in the noninflammatory lesion count (non-inferiority then superiority vs. vehicle)",
+            "scale": "Noninflammatory Lesion Count",
+            "responder_criteria": [],
+            "timepoint_week": 12,
+            "alpha": 0.05,
+            "step": 2
+          },
+          {
+            "label": "Absolute change from Baseline in the inflammatory lesion count",
+            "scale": "Inflammatory Lesion Count",
+            "responder_criteria": [],
+            "timepoint_week": 9,
+            "alpha": 0.05,
+            "step": 3
+          },
+          {
+            "label": "IGA Treatment Success",
+            "scale": "IGA",
+            "responder_criteria": [],
+            "timepoint_week": 9,
+            "alpha": 0.05,
+            "step": 3
+          },
+          {
+            "label": "Absolute change from Baseline in the inflammatory lesion count",
+            "scale": "Inflammatory Lesion Count",
+            "responder_criteria": [],
+            "timepoint_week": 6,
+            "alpha": 0.05,
+            "step": 4
+          },
+          {
+            "label": "IGA Treatment Success",
+            "scale": "IGA",
+            "responder_criteria": [],
+            "timepoint_week": 6,
+            "alpha": 0.05,
+            "step": 4
+          }
+        ],
+        "alpha_split": [],
+        "alpha_recycling": null,
+        "doses_compared": [
+          "FMX-101 4%"
+        ],
+        "dose_comparison_order": [],
+        "branching_on": null,
+        "regulatory_variants": [],
+        "rescue_counted_as_nonresponder": null,
+        "active_comparator_excluded_from_hierarchy": null,
+        "background_tcs": null,
+        "method_citations": [],
+        "finalized_in_sap": true,
+        "same_design_as": [
+          {
+            "nct_id": "NCT02815280",
+            "trial_name": "Study 2 (FX2014-05)"
+          }
+        ],
+        "gatekeeping_structure": true,
+        "further_endpoints_through_week": 12
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02815267",
+      "source_excerpt": "SAP Sec 10.9.1: 'In order to attain the primary efficacy goal of FMX-101 4% to be considered superior to vehicle, both co-primary efficacy endpoints must be significant (i.e., attaining significance at the two-sided 0.05 level without adjustment for multiplicity).' Sec 10.9.2: 'Secondary efficacy endpoints will be tested sequentially at 0.05 level of significance, only if both co-primary efficacy endpoints are significant in the primary analyses. The first secondary endpoint of noninflammatory lesions at Week 12 will be tested initially as a non-inferiority comparison of FMX-101, 4% to vehicle... If non-inferiority is concluded, the superiority of FMX-101, 4% to vehicle for noninflammatory lesions at Week 12 will be tested. The sequential testing will proceed according to the order in Section 10.8.2. Testing of secondary efficacy endpoints at an earlier timepoint for each type of lesion and IGA Treatment Success will be performed only if superiority (one-sided p<=0.025) is seen at the later timepoint.'",
+      "extracted_by": "cycle-24 deep-extraction pass (protocol/SAP PDF read)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    }
+  },
+  "timing_ops": {
+    "start_date": {
+      "value": {
+        "date": "2016-05-01",
+        "precision": "month"
+      },
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02815267",
+      "source_excerpt": "protocolSection.statusModule.startDateStruct.date",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "primary_completion_date": {
+      "value": {
+        "date": "2017-10-13",
+        "precision": "day"
+      },
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02815267",
+      "source_excerpt": "protocolSection.statusModule.primaryCompletionDateStruct.date",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "completion_date": {
+      "value": {
+        "date": "2017-10-13",
+        "precision": "day"
+      },
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02815267",
+      "source_excerpt": "protocolSection.statusModule.completionDateStruct.date",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "study_schedule": {
+      "value": {
+        "screening_days": null,
+        "screening_washout": null,
+        "periods": [
+          {
+            "name": "double_blind_treatment",
+            "start_week": 0,
+            "end_week": 12,
+            "duration_weeks": 12,
+            "blinding": "double_blind",
+            "background_tcs": false
+          },
+          {
+            "name": "long_term_extension",
+            "start_week": 12,
+            "end_week": 52,
+            "duration_weeks": 40,
+            "blinding": "open_label",
+            "background_tcs": false
+          }
+        ],
+        "dosing_interval": "once_daily",
+        "visit_cadence": null,
+        "visit_cadence_until_week": null,
+        "visit_weeks": [
+          0,
+          6,
+          9,
+          12
+        ],
+        "visit_days": null,
+        "phone_contact_weeks": null,
+        "primary_endpoint_week": 12,
+        "end_of_treatment_week": 12,
+        "end_of_study_week": 52,
+        "total_duration_weeks": 12,
+        "follow_up_weeks": null,
+        "follow_up_days": null,
+        "follow_up_visit_week": null,
+        "long_term_extension": true,
+        "extension_end_week": 52,
+        "extension_visit_interval_weeks": null,
+        "extension_study_id": null,
+        "rerandomization_week": null,
+        "maintenance_arms": null,
+        "maintenance_response_check_weeks": null,
+        "last_injection_week": null,
+        "key_secondary_weeks": [
+          6,
+          9
+        ],
+        "follow_up_visit_interval_weeks": null,
+        "end_of_treatment_weeks_after_last_dose": null,
+        "background_tcs_from_day": null,
+        "primary_endpoint_refs": [],
+        "double_dummy_arms": [],
+        "active_comparator": null,
+        "boilerplate_reused_from": [],
+        "conflicts_with_trial": null,
+        "full_visit_table_available": false,
+        "source_inconsistency": null
+      },
+      "source_type": "ctgov_text_extraction",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02815267",
+      "source_excerpt": "protocolSection.outcomesModule secondary outcome time_frame: \"Double blind: Screening Day until Week 12; Open-label: Week 16 until Week 52\" gives the 52-week total (12-week double-blind + 40-week open-label extension); IGA/lesion-count assessments at Week 6 and Week 9 per the secondary endpoint measures.",
+      "extracted_by": "cycle22 one-off build (ctgov_api v2 + openfda_label/orangebook/faers pass); manual full deep extraction",
+      "reviewed_by": null,
+      "confidence": 0.8
+    },
+    "rescue_therapy": {
+      "value": {
+        "permitted": false,
+        "trigger": "prohibited",
+        "earliest_week": null,
+        "prohibited_through_week": 12,
+        "trigger_rules": [],
+        "flare_definition": [],
+        "first_step": null,
+        "topical_min_days_before_systemic": null,
+        "topical_rescue_requires_study_drug_discontinuation": null,
+        "systemic_rescue_requires_study_drug_discontinuation": null,
+        "resume_after_systemic_rescue_half_lives": null,
+        "resume_after_phototherapy_months": null,
+        "rescued_counted_as_nonresponder": null,
+        "rescued_counted_as_treatment_failure": null,
+        "continue_visits_after_discontinuation": null,
+        "continue_visits_through_week": null,
+        "topical_rescue_not_counted_after_week": null,
+        "topical_agents": [],
+        "topical_potency_classes": [],
+        "tci_reserved_areas": [],
+        "systemic_agents": [],
+        "oral_corticosteroid_limit": null,
+        "rescue_period": null,
+        "escape_arm_washout_half_lives": null,
+        "maintenance_period_rule": null,
+        "permitted_concomitant": [
+          "supplied non-medicated cleanser (Cetaphil Gentle Skin Cleanser)"
+        ],
+        "recorded_in_ecrf": null,
+        "applies_to_period": "double_blind_treatment",
+        "long_term_extension_eligible_after_rescue": null,
+        "topical_agent_class": null,
+        "rationale": "protocolSection.eligibilityModule.eligibilityCriteria + FDA label section 14: subjects must refrain from any other acne medication for the full 12-week double-blind period -- a no-rescue, prohibited-concomitant design, same as Zilxi's rosacea trials."
+      },
+      "source_type": "ctgov_text_extraction",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02815267",
+      "source_excerpt": "protocolSection.eligibilityModule.eligibilityCriteria (same source as design.background_therapy)",
+      "extracted_by": "cycle22 one-off build (ctgov_api v2 + openfda_label/orangebook/faers pass); manual full deep extraction",
+      "reviewed_by": null,
+      "confidence": 0.85
+    }
+  },
+  "adverse_events": {
+    "serious_adverse_event_rate": {
+      "value": [
+        {
+          "arm": "FMX-101, 4% minocycline foam",
+          "n_affected": 1,
+          "n_at_risk": 307,
+          "pct": 0.3
+        },
+        {
+          "arm": "Vehicle Foam",
+          "n_affected": 0,
+          "n_at_risk": 159,
+          "pct": 0.0
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02815267",
+      "source_excerpt": "resultsSection.adverseEventsModule.eventGroups[].seriousNumAffected/seriousNumAtRisk",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, cycle-22 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "death_rate": {
+      "value": [
+        {
+          "arm": "FMX-101, 4% minocycline foam",
+          "n_affected": 0,
+          "n_at_risk": 307,
+          "pct": 0.0
+        },
+        {
+          "arm": "Vehicle Foam",
+          "n_affected": 0,
+          "n_at_risk": 159,
+          "pct": 0.0
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02815267",
+      "source_excerpt": "resultsSection.adverseEventsModule.eventGroups[].deathsNumAffected/deathsNumAtRisk",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, cycle-22 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "most_common_adverse_events": {
+      "value": [
+        {
+          "meddra_pt": "Nasopharyngitis",
+          "meddra_soc": "Infections and infestations",
+          "per_arm": [
+            {
+              "arm": "FMX-101, 4% minocycline foam",
+              "n_affected": 6,
+              "n_at_risk": 307,
+              "pct": 2.0
+            },
+            {
+              "arm": "Vehicle Foam",
+              "n_affected": 6,
+              "n_at_risk": 159,
+              "pct": 3.8
+            }
+          ]
+        },
+        {
+          "meddra_pt": "Headache",
+          "meddra_soc": "Nervous system disorders",
+          "per_arm": [
+            {
+              "arm": "FMX-101, 4% minocycline foam",
+              "n_affected": 7,
+              "n_at_risk": 307,
+              "pct": 2.3
+            },
+            {
+              "arm": "Vehicle Foam",
+              "n_affected": 5,
+              "n_at_risk": 159,
+              "pct": 3.1
+            }
+          ]
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02815267",
+      "source_excerpt": "resultsSection.adverseEventsModule.otherEvents[]",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, cycle-22 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "discontinuation_due_to_ae_rate": {
+      "value": [
+        {
+          "arm": "FMX-101, 4% minocycline foam",
+          "n_discontinued": 0,
+          "n_started": 307,
+          "pct": 0.0
+        },
+        {
+          "arm": "Vehicle Foam",
+          "n_discontinued": 3,
+          "n_started": 159,
+          "pct": 1.9
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02815267",
+      "source_excerpt": "resultsSection.participantFlowModule.periods[0].dropWithdraws[type=\"Adverse Event\"].reasons[] vs periods[0].milestones[type=STARTED].achievements[]",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, cycle-22 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "boxed_warning": {
+      "value": {
+        "drug": "Minocycline",
+        "application_number": null
+      },
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    }
+  },
+  "exclusivity": {
+    "regulatory_application": {
+      "value": {
+        "drug": "Minocycline",
+        "application_number": "212379"
+      },
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    },
+    "orange_book": {
+      "value": {
+        "drug": "Minocycline",
+        "application_number": "212379"
+      },
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    },
+    "purple_book": {
+      "value": {
+        "drug": "Minocycline",
+        "application_number": null
+      },
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    }
+  },
+  "real_world_safety": {
+    "faers_summary": {
+      "value": {
+        "drug": "Minocycline",
+        "application_number": null
+      },
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    },
+    "drug_characterization": {
+      "value": {
+        "drug": "Minocycline",
+        "application_number": null
+      },
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    }
+  },
+  "results": {
+    "arms": {
+      "value": [
+        {
+          "arm_id": "OG000#full_analysis_set",
+          "label": "FMX-101, 4% Minocycline Foam",
+          "role": "investigational",
+          "analysis_population": "full_analysis_set",
+          "intervention_names": [
+            "FMX-101, 4% minocycline foam"
+          ],
+          "dose_value": null,
+          "dose_unit": null,
+          "frequency": null,
+          "randomized_n": 307
+        },
+        {
+          "arm_id": "OG000#2",
+          "label": "Double-blind-FMX-101, 4% Minocycline Foam",
+          "role": "investigational",
+          "analysis_population": "full_analysis_set",
+          "intervention_names": [
+            "FMX-101, 4% minocycline foam"
+          ],
+          "dose_value": null,
+          "dose_unit": null,
+          "frequency": null,
+          "randomized_n": 307
+        },
+        {
+          "arm_id": "OG001#full_analysis_set",
+          "label": "Vehicle Foam",
+          "role": "vehicle",
+          "analysis_population": "full_analysis_set",
+          "intervention_names": [
+            "Vehicle Foam"
+          ],
+          "dose_value": null,
+          "dose_unit": null,
+          "frequency": null,
+          "randomized_n": 159
+        },
+        {
+          "arm_id": "OG001#2",
+          "label": "Double-blind-Vehicle Foam",
+          "role": "vehicle",
+          "analysis_population": "full_analysis_set",
+          "intervention_names": [
+            "Vehicle Foam"
+          ],
+          "dose_value": null,
+          "dose_unit": null,
+          "frequency": null,
+          "randomized_n": 159
+        },
+        {
+          "arm_id": "OG002",
+          "label": "Open-label-FMX-101, 4% Minocycline Foam",
+          "role": "investigational",
+          "analysis_population": "full_analysis_set",
+          "intervention_names": [
+            "FMX-101, 4% minocycline foam"
+          ],
+          "dose_value": null,
+          "dose_unit": null,
+          "frequency": null,
+          "randomized_n": 307
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02815267",
+      "source_excerpt": "resultsSection.outcomeMeasuresModule.outcomeMeasures[].groups[]",
+      "extracted_by": "atlas.results (ctgov_api v2, cycle-23 results-layer build)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "arm_results": {
+      "value": [
+        {
+          "endpoint": {
+            "rank": "primary",
+            "position": 1,
+            "verbatim_sha1": "9a6d35b692d8ade7ef9c2c8fed20d30989d359da"
+          },
+          "arm_id": "OG000#full_analysis_set",
+          "timepoint": {
+            "value": 12,
+            "unit": "week",
+            "end_value": null
+          },
+          "analysis_population": "full_analysis_set",
+          "study_period": null,
+          "denominator": 307,
+          "value_type": "least_squares_mean",
+          "reported_value": 13.95,
+          "reported_unit": "Lesion counts",
+          "responders": null,
+          "response_rate_pct": null,
+          "rate_is_derived": false,
+          "dispersion_type": "standard_error",
+          "dispersion_value": 0.65,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": null
+        },
+        {
+          "endpoint": {
+            "rank": "primary",
+            "position": 1,
+            "verbatim_sha1": "9a6d35b692d8ade7ef9c2c8fed20d30989d359da"
+          },
+          "arm_id": "OG001#full_analysis_set",
+          "timepoint": {
+            "value": 12,
+            "unit": "week",
+            "end_value": null
+          },
+          "analysis_population": "full_analysis_set",
+          "study_period": null,
+          "denominator": 159,
+          "value_type": "least_squares_mean",
+          "reported_value": 11.15,
+          "reported_unit": "Lesion counts",
+          "responders": null,
+          "response_rate_pct": null,
+          "rate_is_derived": false,
+          "dispersion_type": "standard_error",
+          "dispersion_value": 0.9,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": null
+        },
+        {
+          "endpoint": {
+            "rank": "primary",
+            "position": 2,
+            "verbatim_sha1": "664b82017de166bae0ca81baf1b4b52b71652920"
+          },
+          "arm_id": "OG000#full_analysis_set",
+          "timepoint": {
+            "value": 12,
+            "unit": "week",
+            "end_value": null
+          },
+          "analysis_population": "full_analysis_set",
+          "study_period": null,
+          "denominator": 307,
+          "value_type": "number",
+          "reported_value": 8.09,
+          "reported_unit": "Percentage of participants",
+          "responders": null,
+          "response_rate_pct": 8.09,
+          "rate_is_derived": false,
+          "dispersion_type": null,
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": null
+        },
+        {
+          "endpoint": {
+            "rank": "primary",
+            "position": 2,
+            "verbatim_sha1": "664b82017de166bae0ca81baf1b4b52b71652920"
+          },
+          "arm_id": "OG001#full_analysis_set",
+          "timepoint": {
+            "value": 12,
+            "unit": "week",
+            "end_value": null
+          },
+          "analysis_population": "full_analysis_set",
+          "study_period": null,
+          "denominator": 159,
+          "value_type": "number",
+          "reported_value": 4.77,
+          "reported_unit": "Percentage of participants",
+          "responders": null,
+          "response_rate_pct": 4.77,
+          "rate_is_derived": false,
+          "dispersion_type": null,
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": null
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 1,
+            "verbatim_sha1": "981c7dd991da794fd9eeaaa33cdccfcbc5aa9a1a"
+          },
+          "arm_id": "OG000#full_analysis_set",
+          "timepoint": {
+            "value": 12,
+            "unit": "week",
+            "end_value": null
+          },
+          "analysis_population": "full_analysis_set",
+          "study_period": null,
+          "denominator": 307,
+          "value_type": "least_squares_mean",
+          "reported_value": 32.34,
+          "reported_unit": "Lesion counts",
+          "responders": null,
+          "response_rate_pct": null,
+          "rate_is_derived": false,
+          "dispersion_type": "standard_error",
+          "dispersion_value": 2.64,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": null
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 1,
+            "verbatim_sha1": "981c7dd991da794fd9eeaaa33cdccfcbc5aa9a1a"
+          },
+          "arm_id": "OG001#full_analysis_set",
+          "timepoint": {
+            "value": 12,
+            "unit": "week",
+            "end_value": null
+          },
+          "analysis_population": "full_analysis_set",
+          "study_period": null,
+          "denominator": 159,
+          "value_type": "least_squares_mean",
+          "reported_value": 19.6,
+          "reported_unit": "Lesion counts",
+          "responders": null,
+          "response_rate_pct": null,
+          "rate_is_derived": false,
+          "dispersion_type": "standard_error",
+          "dispersion_value": 3.81,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": null
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 2,
+            "verbatim_sha1": "b7614e3a220b5f854bbdfbdc12edb3bfc895fe4c"
+          },
+          "arm_id": "OG000#full_analysis_set",
+          "timepoint": {
+            "value": 6,
+            "unit": "week",
+            "end_value": null
+          },
+          "analysis_population": "full_analysis_set",
+          "study_period": null,
+          "denominator": 307,
+          "value_type": "least_squares_mean",
+          "reported_value": 11.65,
+          "reported_unit": "Lesion counts",
+          "responders": null,
+          "response_rate_pct": null,
+          "rate_is_derived": false,
+          "dispersion_type": "standard_error",
+          "dispersion_value": 0.63,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": "Week 6"
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 2,
+            "verbatim_sha1": "b7614e3a220b5f854bbdfbdc12edb3bfc895fe4c"
+          },
+          "arm_id": "OG001#full_analysis_set",
+          "timepoint": {
+            "value": 6,
+            "unit": "week",
+            "end_value": null
+          },
+          "analysis_population": "full_analysis_set",
+          "study_period": null,
+          "denominator": 159,
+          "value_type": "least_squares_mean",
+          "reported_value": 7.79,
+          "reported_unit": "Lesion counts",
+          "responders": null,
+          "response_rate_pct": null,
+          "rate_is_derived": false,
+          "dispersion_type": "standard_error",
+          "dispersion_value": 0.87,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": "Week 6"
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 2,
+            "verbatim_sha1": "b7614e3a220b5f854bbdfbdc12edb3bfc895fe4c"
+          },
+          "arm_id": "OG000#full_analysis_set",
+          "timepoint": {
+            "value": 9,
+            "unit": "week",
+            "end_value": null
+          },
+          "analysis_population": "full_analysis_set",
+          "study_period": null,
+          "denominator": 307,
+          "value_type": "least_squares_mean",
+          "reported_value": 13.24,
+          "reported_unit": "Lesion counts",
+          "responders": null,
+          "response_rate_pct": null,
+          "rate_is_derived": false,
+          "dispersion_type": "standard_error",
+          "dispersion_value": 0.63,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": "Week 9"
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 2,
+            "verbatim_sha1": "b7614e3a220b5f854bbdfbdc12edb3bfc895fe4c"
+          },
+          "arm_id": "OG001#full_analysis_set",
+          "timepoint": {
+            "value": 9,
+            "unit": "week",
+            "end_value": null
+          },
+          "analysis_population": "full_analysis_set",
+          "study_period": null,
+          "denominator": 159,
+          "value_type": "least_squares_mean",
+          "reported_value": 8.85,
+          "reported_unit": "Lesion counts",
+          "responders": null,
+          "response_rate_pct": null,
+          "rate_is_derived": false,
+          "dispersion_type": "standard_error",
+          "dispersion_value": 0.87,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": "Week 9"
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 3,
+            "verbatim_sha1": "820b147e649ffb1270be040938ae6c4a934261a6"
+          },
+          "arm_id": "OG000#full_analysis_set",
+          "timepoint": {
+            "value": 6,
+            "unit": "week",
+            "end_value": null
+          },
+          "analysis_population": "full_analysis_set",
+          "study_period": null,
+          "denominator": 307,
+          "value_type": "number",
+          "reported_value": 3.47,
+          "reported_unit": "Percentage of participants",
+          "responders": null,
+          "response_rate_pct": 3.47,
+          "rate_is_derived": false,
+          "dispersion_type": null,
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": "Week 6"
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 3,
+            "verbatim_sha1": "820b147e649ffb1270be040938ae6c4a934261a6"
+          },
+          "arm_id": "OG001#full_analysis_set",
+          "timepoint": {
+            "value": 6,
+            "unit": "week",
+            "end_value": null
+          },
+          "analysis_population": "full_analysis_set",
+          "study_period": null,
+          "denominator": 159,
+          "value_type": "number",
+          "reported_value": 0.75,
+          "reported_unit": "Percentage of participants",
+          "responders": null,
+          "response_rate_pct": 0.75,
+          "rate_is_derived": false,
+          "dispersion_type": null,
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": "Week 6"
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 3,
+            "verbatim_sha1": "820b147e649ffb1270be040938ae6c4a934261a6"
+          },
+          "arm_id": "OG000#full_analysis_set",
+          "timepoint": {
+            "value": 9,
+            "unit": "week",
+            "end_value": null
+          },
+          "analysis_population": "full_analysis_set",
+          "study_period": null,
+          "denominator": 307,
+          "value_type": "number",
+          "reported_value": 4.19,
+          "reported_unit": "Percentage of participants",
+          "responders": null,
+          "response_rate_pct": 4.19,
+          "rate_is_derived": false,
+          "dispersion_type": null,
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": "Week 9"
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 3,
+            "verbatim_sha1": "820b147e649ffb1270be040938ae6c4a934261a6"
+          },
+          "arm_id": "OG001#full_analysis_set",
+          "timepoint": {
+            "value": 9,
+            "unit": "week",
+            "end_value": null
+          },
+          "analysis_population": "full_analysis_set",
+          "study_period": null,
+          "denominator": 159,
+          "value_type": "number",
+          "reported_value": 1.43,
+          "reported_unit": "Percentage of participants",
+          "responders": null,
+          "response_rate_pct": 1.43,
+          "rate_is_derived": false,
+          "dispersion_type": null,
+          "dispersion_value": null,
+          "ci_pct": null,
+          "ci_lower": null,
+          "ci_upper": null,
+          "ctgov_class_title": "Week 9"
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02815267",
+      "source_excerpt": "resultsSection.outcomeMeasuresModule.outcomeMeasures[].{denoms,classes[].categories[].measurements[]}",
+      "extracted_by": "atlas.results (ctgov_api v2, cycle-23 results-layer build)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "effect_estimates": {
+      "value": [
+        {
+          "endpoint": {
+            "rank": "primary",
+            "position": 1,
+            "verbatim_sha1": "9a6d35b692d8ade7ef9c2c8fed20d30989d359da"
+          },
+          "timepoint": {
+            "value": 12,
+            "unit": "week",
+            "end_value": null
+          },
+          "test_arm_id": "OG000#full_analysis_set",
+          "reference_arm_id": "OG001#full_analysis_set",
+          "comparison_kind": "superiority",
+          "effect_type": "mean_difference",
+          "effect_type_verbatim": "Mean Difference (Final Values)",
+          "effect_value": 2.8,
+          "ci_pct": 95.0,
+          "ci_lower": 0.72,
+          "ci_upper": 4.88,
+          "ci_sides": 2,
+          "p_value": {
+            "comparator": "=",
+            "value": 0.0083,
+            "verbatim": "0.0083"
+          },
+          "statistical_method": "ANCOVA",
+          "adjusted_for": []
+        },
+        {
+          "endpoint": {
+            "rank": "primary",
+            "position": 2,
+            "verbatim_sha1": "664b82017de166bae0ca81baf1b4b52b71652920"
+          },
+          "timepoint": {
+            "value": 12,
+            "unit": "week",
+            "end_value": null
+          },
+          "test_arm_id": "OG000#full_analysis_set",
+          "reference_arm_id": "OG001#full_analysis_set",
+          "comparison_kind": "superiority",
+          "effect_type": "risk_difference",
+          "effect_type_verbatim": "Risk Difference (RD)",
+          "effect_value": 3.33,
+          "ci_pct": 95.0,
+          "ci_lower": -1.54,
+          "ci_upper": 8.19,
+          "ci_sides": 2,
+          "p_value": {
+            "comparator": "=",
+            "value": 0.1805,
+            "verbatim": "0.1805"
+          },
+          "statistical_method": "Cochran-Mantel-Haenszel",
+          "adjusted_for": []
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 1,
+            "verbatim_sha1": "981c7dd991da794fd9eeaaa33cdccfcbc5aa9a1a"
+          },
+          "timepoint": {
+            "value": 12,
+            "unit": "week",
+            "end_value": null
+          },
+          "test_arm_id": "OG000#full_analysis_set",
+          "reference_arm_id": "OG001#full_analysis_set",
+          "comparison_kind": "superiority",
+          "effect_type": "mean_difference",
+          "effect_type_verbatim": "Mean Difference (Final Values)",
+          "effect_value": 12.73,
+          "ci_pct": 95.0,
+          "ci_lower": 4.07,
+          "ci_upper": 21.39,
+          "ci_sides": 2,
+          "p_value": {
+            "comparator": "=",
+            "value": 0.004,
+            "verbatim": "0.0040"
+          },
+          "statistical_method": "ANCOVA",
+          "adjusted_for": []
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 2,
+            "verbatim_sha1": "b7614e3a220b5f854bbdfbdc12edb3bfc895fe4c"
+          },
+          "timepoint": {
+            "value": 6,
+            "unit": "week",
+            "end_value": null
+          },
+          "test_arm_id": "OG000#full_analysis_set",
+          "reference_arm_id": "OG001#full_analysis_set",
+          "comparison_kind": "superiority",
+          "effect_type": "mean_difference",
+          "effect_type_verbatim": "Mean Difference (Final Values)",
+          "effect_value": 3.86,
+          "ci_pct": 95.0,
+          "ci_lower": 1.85,
+          "ci_upper": 5.87,
+          "ci_sides": 2,
+          "p_value": {
+            "comparator": "=",
+            "value": 0.0002,
+            "verbatim": "0.0002"
+          },
+          "statistical_method": "ANCOVA",
+          "adjusted_for": []
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 2,
+            "verbatim_sha1": "b7614e3a220b5f854bbdfbdc12edb3bfc895fe4c"
+          },
+          "timepoint": {
+            "value": 9,
+            "unit": "week",
+            "end_value": null
+          },
+          "test_arm_id": "OG000#full_analysis_set",
+          "reference_arm_id": "OG001#full_analysis_set",
+          "comparison_kind": "superiority",
+          "effect_type": "mean_difference",
+          "effect_type_verbatim": "Mean Difference (Final Values)",
+          "effect_value": 4.39,
+          "ci_pct": 95.0,
+          "ci_lower": 2.38,
+          "ci_upper": 6.4,
+          "ci_sides": 2,
+          "p_value": {
+            "comparator": "<",
+            "value": 0.0001,
+            "verbatim": "<.0001"
+          },
+          "statistical_method": "ANCOVA",
+          "adjusted_for": []
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 3,
+            "verbatim_sha1": "820b147e649ffb1270be040938ae6c4a934261a6"
+          },
+          "timepoint": {
+            "value": 6,
+            "unit": "week",
+            "end_value": null
+          },
+          "test_arm_id": "OG000#full_analysis_set",
+          "reference_arm_id": "OG001#full_analysis_set",
+          "comparison_kind": "superiority",
+          "effect_type": "risk_difference",
+          "effect_type_verbatim": "Risk Difference (RD)",
+          "effect_value": 2.71,
+          "ci_pct": 95.0,
+          "ci_lower": 0.13,
+          "ci_upper": 5.3,
+          "ci_sides": 2,
+          "p_value": {
+            "comparator": "=",
+            "value": 0.0395,
+            "verbatim": "0.0395"
+          },
+          "statistical_method": "Cochran-Mantel-Haenszel",
+          "adjusted_for": []
+        },
+        {
+          "endpoint": {
+            "rank": "secondary",
+            "position": 3,
+            "verbatim_sha1": "820b147e649ffb1270be040938ae6c4a934261a6"
+          },
+          "timepoint": {
+            "value": 9,
+            "unit": "week",
+            "end_value": null
+          },
+          "test_arm_id": "OG000#full_analysis_set",
+          "reference_arm_id": "OG001#full_analysis_set",
+          "comparison_kind": "superiority",
+          "effect_type": "risk_difference",
+          "effect_type_verbatim": "Risk Difference (RD)",
+          "effect_value": 2.76,
+          "ci_pct": 95.0,
+          "ci_lower": -0.28,
+          "ci_upper": 5.8,
+          "ci_sides": 2,
+          "p_value": {
+            "comparator": "=",
+            "value": 0.0748,
+            "verbatim": "0.0748"
+          },
+          "statistical_method": "Cochran-Mantel-Haenszel",
+          "adjusted_for": []
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02815267",
+      "source_excerpt": "resultsSection.outcomeMeasuresModule.outcomeMeasures[].analyses[]",
+      "extracted_by": "atlas.results (ctgov_api v2, cycle-23 results-layer build)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "published_results": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    }
+  }
+}
