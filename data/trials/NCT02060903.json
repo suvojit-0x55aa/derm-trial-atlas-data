@@ -209,13 +209,33 @@
       "confidence": 1.0
     },
     "background_therapy": {
-      "value": null,
-      "source_type": "needs_extraction",
-      "source_url": null,
-      "source_excerpt": null,
-      "extracted_by": null,
+      "value": {
+        "regimen_type": "monotherapy",
+        "background_agent_class": null,
+        "tcs_regimen": null,
+        "step_down_rule": null,
+        "recommended_agents": [],
+        "emollient_required": null,
+        "emollient_frequency": null,
+        "prohibited_concomitant": [
+          "any other form of lice treatment (over-the-counter, home remedy, or prescription medication) from Day 0 through the Day 14 visit, unless provided as rescue therapy",
+          "treatment for head lice within 14 days prior to Day 0",
+          "use of a lice comb from Day 0 through the Day 14 visit, unless provided as rescue therapy",
+          "systemic or topical medication that, in the Investigator's opinion, may compromise the integrity of the safety and/or efficacy assessments",
+          "cutting hair, hair dye/bleach, or permanent wave hairstyling from Day 0 through the Day 14 visit"
+        ],
+        "permitted_concomitant": [],
+        "applies_to_rerandomized_maintenance": null,
+        "sponsor_trial_ids": [],
+        "study_drug_doses_mg": [],
+        "population_note": "A single-application, randomized, double-blind, vehicle-controlled trial of abametapir lotion 0.74% w/w applied to the scalp and hair for 10 minutes at home, in subjects (and their household members) with active head lice infestation -- no background/concomitant lice treatment permitted outside protocol-provided rescue therapy."
+      },
+      "source_type": "ctgov_text_extraction",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT02060903",
+      "source_excerpt": "eligibilityModule.eligibilityCriteria exclusion criteria 1-4, 10: \"Had treatment ... for head lice within 14 days prior to Day 0\"; \"Intends to use any other form of lice treatment from Day 0 through the Day 14 visit, unless provided as rescue therapy to this Protocol\"; \"Intends to use a lice comb from the Day 0 through the Day 14 visit unless provided as rescue therapy to this Protocol\"; \"Intends to cut their hair, use hair dye/bleach or have permanent wave hairstyling from Day 0 through the Day 14 visit\"; \"Receiving systemic or topical medication, which in the opinion of the Investigator, may compromise the integrity of the safety and/or efficacy assessments.\" No Study Protocol/SAP document is posted on CT.gov's documentSection for this trial -- this fill is from eligibility-criteria free text alone, the same document-free fallback already used for this trial's own rescue_therapy field.",
+      "extracted_by": "cycle-24 CT.gov eligibility-text fallback (no posted protocol document)",
       "reviewed_by": null,
-      "confidence": null
+      "confidence": 1.0
     }
   },
   "endpoints": {
