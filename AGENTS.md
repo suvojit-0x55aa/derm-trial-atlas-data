@@ -1130,6 +1130,18 @@ This file is the project's committed home for project-intrinsic agent memory: bu
   distinction between "not addressed" and "explicitly banned" is real and worth preserving in
   `rationale` even when both produce the same `permitted: false` structural fill.
 
+- **A prior "checked both rescue and background keywords" eligibility-text sweep can still miss a real
+  background_therapy fill on a trial it otherwise correctly filled the rescue_therapy field for** —
+  found re-checking Head Lice/Abametapir (NCT02060903, no posted protocol document) this cycle: the
+  earlier sweep found and filled its `rescue_therapy` from eligibility exclusion criteria 2-3 (other
+  lice treatment/comb use "unless provided as rescue therapy"), but never filled `background_therapy`
+  from the SAME eligibility text's criteria 1, 4, and 10 (prior-treatment washout, hairstyling
+  restriction, general concomitant-medication exclusion) — a real, fillable monotherapy design (no
+  background regimen, other lice treatments prohibited outside protocol rescue) that was sitting in
+  text already read for a different field. When re-checking a no-document trial's eligibility text for
+  one gap field, re-read it for the OTHER gap fields too rather than trusting a prior pass's field-by-
+  field completeness — a hit for one field doesn't mean every field was checked with equal care.
+
 ## Maintaining this file
 
 Keep this file for knowledge useful to almost every future agent session in this project.
