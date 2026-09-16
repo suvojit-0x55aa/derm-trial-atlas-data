@@ -1142,6 +1142,29 @@ This file is the project's committed home for project-intrinsic agent memory: bu
   one gap field, re-read it for the OTHER gap fields too rather than trusting a prior pass's field-by-
   field completeness — a hit for one field doesn't mean every field was checked with equal care.
 
+- **`scripts/fetch_condition_landscape.py` (2026-09-16, captain request) is a deliberately separate,
+  general-purpose tool from everything else documented above — it does NOT touch `data/trials/`,
+  `data/drugs/`, or any generated CSV, and nothing above (the pivotal-trial-only curation bar,
+  drug-level dedup, sourced-value envelope, FDA-approval filter) applies to it.** Given any
+  condition, it pulls the FULL ClinicalTrials.gov landscape — every trial, every `overallStatus`,
+  no drug-approval filter — into its own tree at `data/condition_landscape/<slug>/` (gitignored;
+  regenerate locally, don't commit). See `docs/condition-landscape-quickstart.md` for full usage —
+  written to be followed by a stranger's own coding agent with zero other context on this repo, per
+  the captain's explicit ask. Two CT.gov API v2 shapes worth knowing if extending this tool: (1) the
+  bulk list endpoint (`GET /studies?query.cond=...`, paginated via `nextPageToken`, `pageSize` up to
+  at least 1000) returns full `protocolSection` per study EXCEPT `referencesModule` and
+  `documentSection` — those two need one extra per-trial request each (combinable into one call via
+  `fields=ReferencesModule,DocumentSection`, confirmed empirically against the live API since the API
+  docs don't spell out that combinability); (2) `armGroups` lives under `armsInterventionsModule`,
+  not `designModule` — the same place `scripts/fetch_trials.py`'s `build_record()` already reads it
+  from, a real mistake in this feature's own first test fixture (fixed) worth remembering rather than
+  re-discovering. Protocol/SAP PDF download (`--fetch-protocol-pdfs`) is opt-in and budget-capped
+  (`--max-protocol-pdfs`, default 25) because a common condition (Psoriasis alone was ~2,551 trials on
+  CT.gov as of this writing) makes an unbounded PDF pull impractical for a friend running this on a
+  laptop — this was a live, empirically-checked scaling decision (verified actual CT.gov trial counts
+  and per-request payload sizes before deciding), not a guess, so it didn't need a captain
+  `needs-decision` round-trip.
+
 ## Maintaining this file
 
 Keep this file for knowledge useful to almost every future agent session in this project.

@@ -991,6 +991,19 @@ Data and pipeline both live here now (post-consolidation):
   pipeline, the schema spec, and its test suite (`python3 -m pytest
   tests/`, needs `pytest`).
 
+## Condition landscape tool (separate from the curated atlas above)
+
+`scripts/fetch_condition_landscape.py` is a standalone, general-purpose
+tool: given any dermatology condition, it pulls the **full** trial
+landscape from ClinicalTrials.gov — every trial, every status
+(recruiting, terminated, withdrawn, completed, ...) — with no FDA-approval
+filter and no pivotal-trial curation. It writes to its own tree at
+`data/condition_landscape/` and never touches `data/trials/`, `data/drugs/`,
+or any of the CSVs described above; the two are intentionally unrelated
+datasets built by unrelated scripts. See
+`docs/condition-landscape-quickstart.md` for full usage — that page is
+written to be followed standalone, with no other context from this repo.
+
 ## Out of scope for this pass
 
 - The human QA pass on top of the LLM-assisted extraction (captain +
