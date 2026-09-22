@@ -411,6 +411,12 @@ EFFECT_ESTIMATE = OBJ({
 }, d="One row per endpoint x timepoint x pairwise arm comparison (a CT.gov analysis)")
 
 
+# CT.gov API v2 statusModule.overallStatus vocabulary (identity.overall_status)
+OVERALL_STATUSES = ["ACTIVE_NOT_RECRUITING", "COMPLETED", "ENROLLING_BY_INVITATION", "NOT_YET_RECRUITING",
+                    "RECRUITING", "SUSPENDED", "TERMINATED", "WITHDRAWN", "AVAILABLE", "NO_LONGER_AVAILABLE",
+                    "TEMPORARILY_NOT_AVAILABLE", "APPROVED_FOR_MARKETING", "WITHHELD", "UNKNOWN"]
+
+
 # ---- the trial record ----------------------------------------------------------
 TRIAL = OBJ({
     "schema_version": S("integer", False, "always 4", const=SCHEMA_VERSION),
@@ -422,6 +428,10 @@ TRIAL = OBJ({
                              "trials when development/commercial rights changed hands -- not "
                              "moved to the drug record, see DRUG_REF's docstring)"),
         "phase": SV(LIST(STR()), "CT.gov phases, e.g. ['PHASE3']"),
+        "overall_status": SV(ENUM(OVERALL_STATUSES), "CT.gov statusModule.overallStatus at fetch time "
+                             "(source_excerpt records the fetch date) -- lets active (RECRUITING, "
+                             "ACTIVE_NOT_RECRUITING, ...) and non-active (COMPLETED, TERMINATED, ...) "
+                             "trials be compared per indication; a registry status changes over time"),
     }),
     "molecule": OBJ({
         "drug": SV(STR(), "canonical drug name (curated); also the join key into data/drugs/<slug>.json"),
