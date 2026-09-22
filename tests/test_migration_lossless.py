@@ -157,10 +157,11 @@ class LosslessMigrationTest(unittest.TestCase):
                 v2_before_integration = json.loads(json.dumps(v2))
                 for group, key in source_integrated:
                     v2_before_integration[group][key] = migrated[group][key]
-                # identity.overall_status (cycle 25) is a later CT.gov backfill stage
+                # identity.{overall_status,results_status,why_stopped} (cycle 25) are a later CT.gov backfill stage
                 # (a registry status that changes over time), not something the
                 # v1->v3 migration derives -- same "later stage" category as above.
-                v2_before_integration["identity"].pop("overall_status", None)
+                for status_key in ("overall_status", "results_status", "why_stopped"):
+                    v2_before_integration["identity"].pop(status_key, None)
                 # A later deep-extraction cycle may legitimately close a gap the v1
                 # record left open (e.g. NCT03627767's background_therapy/study_schedule
                 # from its protocol PDF) -- allowed only when the migrated value is
@@ -312,11 +313,11 @@ class LosslessMigrationTest(unittest.TestCase):
         # since migrate_trial chains straight through to the current schema version,
         # 4 more new v3 fields (results.*), plus 1 more field added post-v4
         # (real_world_safety.drug_characterization, cycle 23) per trial, plus
-        # identity.overall_status (cycle 25) per trial.
+        # identity.{overall_status,results_status,why_stopped} (cycle 25) per trial.
         v1_total = sum(len(list(sourced_fields(v1))) for _, v1, _ in self.pairs)
         v2_total = sum(len(list(sourced_fields(v2))) for _, _, v2 in self.pairs)
         self.assertEqual(v1_total, 595)
-        self.assertEqual(v2_total, 595 + 17 * 4 + 17 * 4 + 17 * 1 + 17 * 1)
+        self.assertEqual(v2_total, 595 + 17 * 4 + 17 * 4 + 17 * 1 + 17 * 3)
 
 
 class V2ToV3MigrationTest(unittest.TestCase):

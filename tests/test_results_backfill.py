@@ -206,14 +206,18 @@ class CommittedDataQcTest(unittest.TestCase):
                 self.assertEqual(issues, [], f"{f.name}: {issues}")
         self.assertGreater(checked, 1000)
 
-    def test_published_results_never_populated(self):
-        # out of scope for this task (design report S5.4) -- literature/label
-        # results are a distinct, deliberately-untouched field.
+    def test_published_results_never_registry_sourced(self):
+        # The CT.gov backfill never touches published_results (design report
+        # S5.4). Since cycle 25, new trials may fill it from the FDA label or
+        # an FDA review -- but never from CT.gov registry data, which belongs in
+        # arm_results; that keeps registry-grade and literature-grade numbers
+        # separable at the field level.
         for f in TRIALS:
             record = json.loads(f.read_text())
             pr = record["results"]["published_results"]
-            self.assertEqual(pr["source_type"], "needs_extraction", f.name)
-            self.assertIsNone(pr["value"], f.name)
+            self.assertIn(pr["source_type"], ("needs_extraction", "openfda_label", "publication_extraction"), f.name)
+            if pr["source_type"] == "needs_extraction":
+                self.assertIsNone(pr["value"], f.name)
 
 
 if __name__ == "__main__":

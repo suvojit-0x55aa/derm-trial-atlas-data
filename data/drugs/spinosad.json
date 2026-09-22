@@ -1,0 +1,378 @@
+{
+  "schema_version": 1,
+  "drug": "Spinosad",
+  "applications": [
+    {
+      "application_number": "022408",
+      "regulatory_application": {
+        "value": {
+          "application_type": "NDA",
+          "application_number": "022408",
+          "registry": "orange_book",
+          "center": "CDER",
+          "proprietary_name": "NATROBA",
+          "applicant": "CIPHER PHARMACEUTICALS INC",
+          "first_approval_date": "2011-01-18"
+        },
+        "source_type": "orange_book",
+        "source_url": "https://api.fda.gov/drug/orangebook.json",
+        "source_excerpt": "openfda orangebook.json: products.active_ingredients.name=SPINOSAD, application_number N022408, brand_name NATROBA, applicant_full_name CIPHER PHARMACEUTICALS INC, earliest product approval_date 2011-01-18 (1 product row(s) under this application)",
+        "extracted_by": "cycle-25 drug-level pass (openfda drug/orangebook.json, fetched 2026-09-23)",
+        "reviewed_by": null,
+        "confidence": 1.0
+      },
+      "orange_book": {
+        "value": {
+          "application_type": "N",
+          "application_number": "022408",
+          "ingredient": "SPINOSAD",
+          "trade_name": "NATROBA",
+          "applicant": "CIPHER",
+          "applicant_full_name": "CIPHER PHARMACEUTICALS INC",
+          "products": [
+            {
+              "product_number": "001",
+              "strength": "0.9%",
+              "dosage_form": "SUSPENSION",
+              "route": "TOPICAL",
+              "approval_date": "2011-01-18",
+              "rld": true,
+              "rs": true,
+              "te_code": null,
+              "marketing_type": "HUMAN PRESCRIPTION DRUG"
+            }
+          ],
+          "patents": [
+            {
+              "patent_number": "9895388",
+              "expiration_date": "2033-11-25",
+              "drug_substance_claim": false,
+              "drug_product_claim": false,
+              "patent_use_code": "U-3365",
+              "delisted": false,
+              "submission_date": "2022-05-19",
+              "product_numbers": [
+                "001"
+              ]
+            }
+          ],
+          "exclusivities": [],
+          "latest_patent_expiration": "2033-11-25",
+          "latest_exclusivity_expiration": null,
+          "data_file_date": null
+        },
+        "source_type": "orange_book",
+        "source_url": "https://api.fda.gov/drug/orangebook.json?search=products.active_ingredients.name%3A%22SPINOSAD%22&limit=100",
+        "source_excerpt": "openFDA drug/orangebook.json, 1 product row(s) matched on products.active_ingredients.name='SPINOSAD' AND application_number='022408' (unpinned ingredient query also returns other NDAs and generic ANDAs for this ingredient -- pinned by application_number)",
+        "extracted_by": "fetch_orange_book.py build_record (openfda drug/orangebook.json, cycle-25 pass, NDA-pinned)",
+        "reviewed_by": null,
+        "confidence": 1.0
+      }
+    }
+  ],
+  "trial_ids": [
+    "NCT02485704",
+    "NCT02485717"
+  ],
+  "mechanism_of_action": {
+    "value": {
+      "modality": "small_molecule",
+      "drug_class": "pediculicide and scabicide",
+      "antibody_isotype": null,
+      "binding_targets": [],
+      "pathway_cytokines": [],
+      "receptor_subunits": [],
+      "kinases_inhibited": [],
+      "lower_potency_kinases": [],
+      "selectivity": [],
+      "reversible": null,
+      "mechanism_established": true,
+      "label_section": "12.1"
+    },
+    "source_type": "openfda_label",
+    "source_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=72cf38f4-9ef4-4b0e-b085-b02f399e2592",
+    "source_excerpt": "sections 11 Description and 12.1 Mechanism of Action: \"11 DESCRIPTION NATROBA (spinosad) is a slightly opaque, light orange-colored, viscous topical suspension.\" \"NATROBA is a pediculicide and scabicide.\" \"Spinosad, the active ingredient, is derived from the fermentation of a soil actinomycete bacterium, Saccharopolyspora spinosa .\" \"Spinosyn A: The chemical name is: 1 H -as-Indaceno[3,2-d]oxacyclododecin-7,a5-dione, 2-[(6-deoxy-2,3,4-tri-O-methyl-alpha-L-mannopyranosyl)oxy]-13-[[2R,5S,6R)-5-(dimethylamino) tetrahydro-6-methyl-2 H -pyran-2-yl]oxy]-9-ethyl-2,3,3a,5a,5b,6,9,10,11,12,13,14,16a,16b-tetradecahydro-14-methyl-, (2R,3aS,5aR,5bS,9S,13S,14R,16aS,16bR)- Spinosyn D: The chemical name is: 1 H -as-Indaceno[3,2-d]oxacyclododecin-7,15-dione, 2-[(6-deoxy-2,3,4-tri-O-methyl-alpha-L-mannopyranosyl)oxy]-13-[[2R,5S,6R)-5-(dimethylamino) tetrahydro-6-methyl-2 H -pyran-2-yl]oxy]-9-ethyl-2,3,3a,5a,5b,6,9,10,11,12,13,14,16a,16b-tetradecahydro-4,14-dimethyl-, (2S,3aSR,5aS,5bS,9S,13S,14R,16aS,16bS)- Spinosyn A (C 41 H 65 NO 10 ) MW 731.461 Spinosyn D (C 42 H 67 NO 10 ) MW 745.477 NATROBA contains 9 mg spinosad per gram in a vehicle consisting of Benzyl Alcohol, Butylated Hydroxytoluene, Ceteareth-20, Cetearyl Alcohol, FD&C Yellow #6, Hexylene Glycol, Hydroxyethyl Cellulose, Isopropyl Alcohol, Propylene Glycol, Stearalkonium Chloride, Water, Hydrochloric acid (HCl) as pH adjuster.\" \"12.1 Mechanism of Action Spinosad causes neuronal excitation in insects.\" \"After periods of hyperexcitation, lice and mites become paralyzed and die.\" -- The label identifies the active ingredient as spinosad and supplies chemical names for spinosyn A and D; the label states the drug class in section 11. It describes neuronal excitation followed by paralysis and death. No binding target, cytokine/receptor/kinase pathway, selectivity, or reversibility statement is selected; reversible is therefore null.",
+    "extracted_by": "luna (gpt-6-luna) cycle-25 extraction pass",
+    "reviewed_by": null,
+    "confidence": 0.92
+  },
+  "boxed_warning": {
+    "value": {
+      "present": false,
+      "title": null,
+      "warning_categories": [],
+      "referenced_label_sections": [],
+      "product_names": []
+    },
+    "source_type": "openfda_label",
+    "source_url": "https://api.fda.gov/drug/label.json?search=set_id%3A%2272cf38f4-9ef4-4b0e-b085-b02f399e2592%22&limit=1",
+    "source_excerpt": "results[0] (NATROBA label, set_id 72cf38f4-9ef4-4b0e-b085-b02f399e2592) has no boxed_warning key (checked, none present)",
+    "extracted_by": "cycle-25 drug-level pass (openfda drug/label.json)",
+    "reviewed_by": null,
+    "confidence": 1.0
+  },
+  "faers_summary": {
+    "value": {
+      "query": {
+        "search_field": "patient.drug.medicinalproduct",
+        "search_term": "SPINOSAD",
+        "receivedate_from": "2014-11-12",
+        "receivedate_to": "2026-03-12",
+        "api_urls": [
+          "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"SPINOSAD\"&limit=1",
+          "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"SPINOSAD\"+AND+serious:1&limit=1",
+          "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"SPINOSAD\"+AND+seriousnessdeath:1&limit=1",
+          "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"SPINOSAD\"+AND+seriousnesshospitalization:1&limit=1",
+          "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"SPINOSAD\"+AND+seriousnesslifethreatening:1&limit=1",
+          "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"SPINOSAD\"+AND+seriousnessdisabling:1&limit=1",
+          "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"SPINOSAD\"&count=patient.reaction.reactionmeddrapt.exact&limit=15",
+          "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"SPINOSAD\"+AND+serious:1&count=patient.reaction.reactionmeddrapt.exact&limit=15",
+          "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"SPINOSAD\"&count=receivedate"
+        ],
+        "data_last_updated": "2026-07-30"
+      },
+      "total_reports": 11,
+      "serious_reports": 4,
+      "death_reports": 1,
+      "hospitalization_reports": 2,
+      "life_threatening_reports": 1,
+      "disability_reports": 1,
+      "top_reactions": [
+        {
+          "meddra_pt": "DRUG INEFFECTIVE",
+          "report_count": 5,
+          "pct_of_reports": 45.45
+        },
+        {
+          "meddra_pt": "ANXIETY",
+          "report_count": 1,
+          "pct_of_reports": 9.09
+        },
+        {
+          "meddra_pt": "BACK PAIN",
+          "report_count": 1,
+          "pct_of_reports": 9.09
+        },
+        {
+          "meddra_pt": "BURNING SENSATION",
+          "report_count": 1,
+          "pct_of_reports": 9.09
+        },
+        {
+          "meddra_pt": "CONDITION AGGRAVATED",
+          "report_count": 1,
+          "pct_of_reports": 9.09
+        },
+        {
+          "meddra_pt": "DEATH",
+          "report_count": 1,
+          "pct_of_reports": 9.09
+        },
+        {
+          "meddra_pt": "ESCHERICHIA SEPSIS",
+          "report_count": 1,
+          "pct_of_reports": 9.09
+        },
+        {
+          "meddra_pt": "FEEDING DISORDER",
+          "report_count": 1,
+          "pct_of_reports": 9.09
+        },
+        {
+          "meddra_pt": "FORMICATION",
+          "report_count": 1,
+          "pct_of_reports": 9.09
+        },
+        {
+          "meddra_pt": "INFLUENZA LIKE ILLNESS",
+          "report_count": 1,
+          "pct_of_reports": 9.09
+        },
+        {
+          "meddra_pt": "LICE INFESTATION",
+          "report_count": 1,
+          "pct_of_reports": 9.09
+        },
+        {
+          "meddra_pt": "MUSCLE ATROPHY",
+          "report_count": 1,
+          "pct_of_reports": 9.09
+        },
+        {
+          "meddra_pt": "NO ADVERSE EVENT",
+          "report_count": 1,
+          "pct_of_reports": 9.09
+        },
+        {
+          "meddra_pt": "PARAESTHESIA",
+          "report_count": 1,
+          "pct_of_reports": 9.09
+        },
+        {
+          "meddra_pt": "PRODUCT COMPLAINT",
+          "report_count": 1,
+          "pct_of_reports": 9.09
+        }
+      ],
+      "top_serious_reactions": [
+        {
+          "meddra_pt": "ANXIETY",
+          "report_count": 1,
+          "pct_of_reports": 25.0
+        },
+        {
+          "meddra_pt": "BURNING SENSATION",
+          "report_count": 1,
+          "pct_of_reports": 25.0
+        },
+        {
+          "meddra_pt": "CONDITION AGGRAVATED",
+          "report_count": 1,
+          "pct_of_reports": 25.0
+        },
+        {
+          "meddra_pt": "DEATH",
+          "report_count": 1,
+          "pct_of_reports": 25.0
+        },
+        {
+          "meddra_pt": "DRUG INEFFECTIVE",
+          "report_count": 1,
+          "pct_of_reports": 25.0
+        },
+        {
+          "meddra_pt": "ESCHERICHIA SEPSIS",
+          "report_count": 1,
+          "pct_of_reports": 25.0
+        },
+        {
+          "meddra_pt": "FEEDING DISORDER",
+          "report_count": 1,
+          "pct_of_reports": 25.0
+        },
+        {
+          "meddra_pt": "LICE INFESTATION",
+          "report_count": 1,
+          "pct_of_reports": 25.0
+        },
+        {
+          "meddra_pt": "MUSCLE ATROPHY",
+          "report_count": 1,
+          "pct_of_reports": 25.0
+        },
+        {
+          "meddra_pt": "PARAESTHESIA",
+          "report_count": 1,
+          "pct_of_reports": 25.0
+        },
+        {
+          "meddra_pt": "RENAL ABSCESS",
+          "report_count": 1,
+          "pct_of_reports": 25.0
+        },
+        {
+          "meddra_pt": "SLEEP DISORDER",
+          "report_count": 1,
+          "pct_of_reports": 25.0
+        },
+        {
+          "meddra_pt": "STRESS",
+          "report_count": 1,
+          "pct_of_reports": 25.0
+        },
+        {
+          "meddra_pt": "URINARY TRACT INFECTION",
+          "report_count": 1,
+          "pct_of_reports": 25.0
+        },
+        {
+          "meddra_pt": "WEIGHT DECREASED",
+          "report_count": 1,
+          "pct_of_reports": 25.0
+        }
+      ],
+      "reports_by_year": [
+        {
+          "year": 2014,
+          "report_count": 1
+        },
+        {
+          "year": 2017,
+          "report_count": 1
+        },
+        {
+          "year": 2019,
+          "report_count": 2
+        },
+        {
+          "year": 2020,
+          "report_count": 1
+        },
+        {
+          "year": 2022,
+          "report_count": 1
+        },
+        {
+          "year": 2023,
+          "report_count": 1
+        },
+        {
+          "year": 2024,
+          "report_count": 1
+        },
+        {
+          "year": 2025,
+          "report_count": 2
+        },
+        {
+          "year": 2026,
+          "report_count": 1
+        }
+      ],
+      "meddra_version": null
+    },
+    "source_type": "openfda_faers",
+    "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"SPINOSAD\"&limit=1",
+    "source_excerpt": "openFDA drug/event.json aggregate: total_reports=11, serious=4, deaths=1. Search term: Generic term SPINOSAD returns real reports (11; top indications Acarodermatitis/lice infestation), so it stays the atlas-default term; brand NATROBA returns 36 (top indication LICE INFESTATION 16) -- recorded here, not used, per the generic-first convention.",
+    "extracted_by": "fetch_faers.py fetch_drug (openfda drug/event.json, cycle-25 pass)",
+    "reviewed_by": null,
+    "confidence": 1.0
+  },
+  "drug_characterization": {
+    "value": [
+      {
+        "code": "1",
+        "label": "suspect",
+        "report_count": 8,
+        "pct_of_reports": 72.73
+      },
+      {
+        "code": "2",
+        "label": "concomitant",
+        "report_count": 3,
+        "pct_of_reports": 27.27
+      },
+      {
+        "code": "3",
+        "label": "interacting",
+        "report_count": 0,
+        "pct_of_reports": 0.0
+      }
+    ],
+    "source_type": "openfda_faers",
+    "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"SPINOSAD\"",
+    "source_excerpt": "Computed by pulling every individual FAERS report matching this drug's own search_term (SPINOSAD) and tallying each report's drugcharacterization code (1=suspect, 2=concomitant, 3=interacting) from ONLY the drug-array entries whose medicinalproduct contains this term (not co-listed drugs in the same report); a report with several matching entries counts once, by precedence suspect > interacting > concomitant. 11/11 reports matched (11 pulled).",
+    "extracted_by": "cycle-25 per-report drugcharacterization pull (openfda drug/event.json)",
+    "reviewed_by": null,
+    "confidence": 1.0
+  },
+  "purple_book": {
+    "value": null,
+    "source_type": "needs_extraction",
+    "source_url": null,
+    "source_excerpt": null,
+    "extracted_by": null,
+    "reviewed_by": null,
+    "confidence": null
+  }
+}

@@ -415,6 +415,7 @@ EFFECT_ESTIMATE = OBJ({
 OVERALL_STATUSES = ["ACTIVE_NOT_RECRUITING", "COMPLETED", "ENROLLING_BY_INVITATION", "NOT_YET_RECRUITING",
                     "RECRUITING", "SUSPENDED", "TERMINATED", "WITHDRAWN", "AVAILABLE", "NO_LONGER_AVAILABLE",
                     "TEMPORARILY_NOT_AVAILABLE", "APPROVED_FOR_MARKETING", "WITHHELD", "UNKNOWN"]
+RESULTS_STATUSES = ["reported", "not_yet_reported"]
 
 
 # ---- the trial record ----------------------------------------------------------
@@ -432,6 +433,13 @@ TRIAL = OBJ({
                              "(source_excerpt records the fetch date) -- lets active (RECRUITING, "
                              "ACTIVE_NOT_RECRUITING, ...) and non-active (COMPLETED, TERMINATED, ...) "
                              "trials be compared per indication; a registry status changes over time"),
+        "results_status": SV(ENUM(RESULTS_STATUSES), "CT.gov hasResults at fetch time: 'reported' when a "
+                             "resultsSection is posted, 'not_yet_reported' otherwise (e.g. a RECRUITING or "
+                             "ACTIVE_NOT_RECRUITING trial) -- an explicit marker, so an empty results.* group is "
+                             "never mistaken for missing extraction"),
+        "why_stopped": SV(STR(), "CT.gov statusModule.whyStopped verbatim -- the registry's own stated reason "
+                          "a TERMINATED/WITHDRAWN/SUSPENDED trial stopped (null when the trial was not "
+                          "stopped early, or the registry states no reason)"),
     }),
     "molecule": OBJ({
         "drug": SV(STR(), "canonical drug name (curated); also the join key into data/drugs/<slug>.json"),

@@ -1,0 +1,406 @@
+{
+  "schema_version": 1,
+  "drug": "Propranolol",
+  "applications": [
+    {
+      "application_number": "205410",
+      "regulatory_application": {
+        "value": {
+          "application_type": "NDA",
+          "application_number": "205410",
+          "registry": "orange_book",
+          "center": "CDER",
+          "proprietary_name": "HEMANGEOL",
+          "applicant": "ETON PHARMACEUTICALS INC",
+          "first_approval_date": "2014-03-14"
+        },
+        "source_type": "orange_book",
+        "source_url": "https://api.fda.gov/drug/orangebook.json",
+        "source_excerpt": "openfda orangebook.json: products.active_ingredients.name=PROPRANOLOL HYDROCHLORIDE, application_number N205410, brand_name HEMANGEOL, applicant_full_name ETON PHARMACEUTICALS INC, earliest product approval_date 2014-03-14 (1 product row(s) under this application)",
+        "extracted_by": "cycle-25 drug-level pass (openfda drug/orangebook.json, fetched 2026-09-23)",
+        "reviewed_by": null,
+        "confidence": 1.0
+      },
+      "orange_book": {
+        "value": {
+          "application_type": "N",
+          "application_number": "205410",
+          "ingredient": "PROPRANOLOL HYDROCHLORIDE",
+          "trade_name": "HEMANGEOL",
+          "applicant": "ETON",
+          "applicant_full_name": "ETON PHARMACEUTICALS INC",
+          "products": [
+            {
+              "product_number": "001",
+              "strength": "4.28MG/ML",
+              "dosage_form": "SOLUTION",
+              "route": "ORAL",
+              "approval_date": "2014-03-14",
+              "rld": true,
+              "rs": true,
+              "te_code": null,
+              "marketing_type": "HUMAN PRESCRIPTION DRUG"
+            }
+          ],
+          "patents": [
+            {
+              "patent_number": "8338489",
+              "expiration_date": "2028-10-16",
+              "drug_substance_claim": false,
+              "drug_product_claim": false,
+              "patent_use_code": "U-1496",
+              "delisted": false,
+              "submission_date": "2014-03-28",
+              "product_numbers": [
+                "001"
+              ]
+            },
+            {
+              "patent_number": "8987262",
+              "expiration_date": "2028-10-16",
+              "drug_substance_claim": false,
+              "drug_product_claim": false,
+              "patent_use_code": "U-1988",
+              "delisted": false,
+              "submission_date": "2017-04-14",
+              "product_numbers": [
+                "001"
+              ]
+            }
+          ],
+          "exclusivities": [],
+          "latest_patent_expiration": "2028-10-16",
+          "latest_exclusivity_expiration": null,
+          "data_file_date": null
+        },
+        "source_type": "orange_book",
+        "source_url": "https://api.fda.gov/drug/orangebook.json?search=products.active_ingredients.name%3A%22PROPRANOLOL%20HYDROCHLORIDE%22&limit=100",
+        "source_excerpt": "openFDA drug/orangebook.json, 1 product row(s) matched on products.active_ingredients.name='PROPRANOLOL HYDROCHLORIDE' AND application_number='205410' (unpinned ingredient query also returns other NDAs and generic ANDAs for this ingredient -- pinned by application_number)",
+        "extracted_by": "fetch_orange_book.py build_record (openfda drug/orangebook.json, cycle-25 pass, NDA-pinned)",
+        "reviewed_by": null,
+        "confidence": 1.0
+      }
+    }
+  ],
+  "trial_ids": [
+    "NCT00744185",
+    "NCT01056341"
+  ],
+  "mechanism_of_action": {
+    "value": {
+      "modality": "small_molecule",
+      "drug_class": "nonselective beta-adrenergic receptor blocking agent",
+      "antibody_isotype": null,
+      "binding_targets": [],
+      "pathway_cytokines": [],
+      "receptor_subunits": [],
+      "kinases_inhibited": [],
+      "lower_potency_kinases": [],
+      "selectivity": [],
+      "reversible": null,
+      "mechanism_established": false,
+      "label_section": "12.1 Mechanism of Action; 11 Description; 12.2 Pharmacodynamics"
+    },
+    "source_type": "openfda_label",
+    "source_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=b6f9dd2a-632b-87eb-70f0-b2064d7ed48a",
+    "source_excerpt": "11 Description; 12.1 Mechanism of Action; 12.2 Pharmacodynamics: \"Propranolol hydrochloride is a synthetic beta-adrenergic receptor blocking agent chemically described as (2RS)1-[(1-methylethyl)amino]-3-(naphthalene-1-yloxy)-propan-2-ol hydrochloride.\" \"12 CLINICAL PHARMACOLOGY 12.1 Mechanism of Action The mechanism of HEMANGEOL’s effects on infantile hemangiomas is not well understood.\" \"12.2 Pharmacodynamics Propranolol is a nonselective beta-adrenergic receptor blocking agent possessing no other autonomic nervous system activity.\" -- The label describes propranolol as a synthetic compound and nonselective beta-adrenergic receptor blocker, but says HEMANGEOL's effects on infantile hemangiomas are not well understood.",
+    "extracted_by": "luna (gpt-6-luna) cycle-25 extraction pass",
+    "reviewed_by": null,
+    "confidence": 0.91
+  },
+  "boxed_warning": {
+    "value": {
+      "present": false,
+      "title": null,
+      "warning_categories": [],
+      "referenced_label_sections": [],
+      "product_names": []
+    },
+    "source_type": "openfda_label",
+    "source_url": "https://api.fda.gov/drug/label.json?search=set_id%3A%22b6f9dd2a-632b-87eb-70f0-b2064d7ed48a%22&limit=1",
+    "source_excerpt": "results[0] (HEMANGEOL label, set_id b6f9dd2a-632b-87eb-70f0-b2064d7ed48a) has no boxed_warning key (checked, none present)",
+    "extracted_by": "cycle-25 drug-level pass (openfda drug/label.json)",
+    "reviewed_by": null,
+    "confidence": 1.0
+  },
+  "faers_summary": {
+    "value": {
+      "query": {
+        "search_field": "patient.drug.medicinalproduct",
+        "search_term": "HEMANGEOL",
+        "receivedate_from": "2014-06-17",
+        "receivedate_to": "2026-06-30",
+        "api_urls": [
+          "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"HEMANGEOL\"&limit=1",
+          "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"HEMANGEOL\"+AND+serious:1&limit=1",
+          "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"HEMANGEOL\"+AND+seriousnessdeath:1&limit=1",
+          "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"HEMANGEOL\"+AND+seriousnesshospitalization:1&limit=1",
+          "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"HEMANGEOL\"+AND+seriousnesslifethreatening:1&limit=1",
+          "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"HEMANGEOL\"+AND+seriousnessdisabling:1&limit=1",
+          "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"HEMANGEOL\"&count=patient.reaction.reactionmeddrapt.exact&limit=15",
+          "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"HEMANGEOL\"+AND+serious:1&count=patient.reaction.reactionmeddrapt.exact&limit=15",
+          "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"HEMANGEOL\"&count=receivedate"
+        ],
+        "data_last_updated": "2026-07-30"
+      },
+      "total_reports": 4389,
+      "serious_reports": 237,
+      "death_reports": 6,
+      "hospitalization_reports": 113,
+      "life_threatening_reports": 5,
+      "disability_reports": 4,
+      "top_reactions": [
+        {
+          "meddra_pt": "OFF LABEL USE",
+          "report_count": 1712,
+          "pct_of_reports": 39.01
+        },
+        {
+          "meddra_pt": "INAPPROPRIATE SCHEDULE OF PRODUCT ADMINISTRATION",
+          "report_count": 680,
+          "pct_of_reports": 15.49
+        },
+        {
+          "meddra_pt": "PRODUCT ADMINISTERED TO PATIENT OF INAPPROPRIATE AGE",
+          "report_count": 659,
+          "pct_of_reports": 15.01
+        },
+        {
+          "meddra_pt": "SLEEP DISORDER",
+          "report_count": 392,
+          "pct_of_reports": 8.93
+        },
+        {
+          "meddra_pt": "ILLNESS",
+          "report_count": 364,
+          "pct_of_reports": 8.29
+        },
+        {
+          "meddra_pt": "HAEMANGIOMA",
+          "report_count": 319,
+          "pct_of_reports": 7.27
+        },
+        {
+          "meddra_pt": "CONDITION AGGRAVATED",
+          "report_count": 313,
+          "pct_of_reports": 7.13
+        },
+        {
+          "meddra_pt": "PRODUCT USE ISSUE",
+          "report_count": 306,
+          "pct_of_reports": 6.97
+        },
+        {
+          "meddra_pt": "DIARRHOEA",
+          "report_count": 222,
+          "pct_of_reports": 5.06
+        },
+        {
+          "meddra_pt": "INFANTILE SPITTING UP",
+          "report_count": 192,
+          "pct_of_reports": 4.37
+        },
+        {
+          "meddra_pt": "PERIPHERAL COLDNESS",
+          "report_count": 180,
+          "pct_of_reports": 4.1
+        },
+        {
+          "meddra_pt": "VOMITING",
+          "report_count": 170,
+          "pct_of_reports": 3.87
+        },
+        {
+          "meddra_pt": "DECREASED APPETITE",
+          "report_count": 149,
+          "pct_of_reports": 3.39
+        },
+        {
+          "meddra_pt": "NASOPHARYNGITIS",
+          "report_count": 149,
+          "pct_of_reports": 3.39
+        },
+        {
+          "meddra_pt": "PYREXIA",
+          "report_count": 144,
+          "pct_of_reports": 3.28
+        }
+      ],
+      "top_serious_reactions": [
+        {
+          "meddra_pt": "OFF LABEL USE",
+          "report_count": 67,
+          "pct_of_reports": 28.27
+        },
+        {
+          "meddra_pt": "RESPIRATORY SYNCYTIAL VIRUS INFECTION",
+          "report_count": 29,
+          "pct_of_reports": 12.24
+        },
+        {
+          "meddra_pt": "PRODUCT USE ISSUE",
+          "report_count": 21,
+          "pct_of_reports": 8.86
+        },
+        {
+          "meddra_pt": "PYREXIA",
+          "report_count": 15,
+          "pct_of_reports": 6.33
+        },
+        {
+          "meddra_pt": "PRODUCT ADMINISTERED TO PATIENT OF INAPPROPRIATE AGE",
+          "report_count": 14,
+          "pct_of_reports": 5.91
+        },
+        {
+          "meddra_pt": "VOMITING",
+          "report_count": 14,
+          "pct_of_reports": 5.91
+        },
+        {
+          "meddra_pt": "INAPPROPRIATE SCHEDULE OF PRODUCT ADMINISTRATION",
+          "report_count": 13,
+          "pct_of_reports": 5.49
+        },
+        {
+          "meddra_pt": "HYPOGLYCAEMIA",
+          "report_count": 12,
+          "pct_of_reports": 5.06
+        },
+        {
+          "meddra_pt": "SEIZURE",
+          "report_count": 12,
+          "pct_of_reports": 5.06
+        },
+        {
+          "meddra_pt": "ULCERATED HAEMANGIOMA",
+          "report_count": 12,
+          "pct_of_reports": 5.06
+        },
+        {
+          "meddra_pt": "ILLNESS",
+          "report_count": 11,
+          "pct_of_reports": 4.64
+        },
+        {
+          "meddra_pt": "DIARRHOEA",
+          "report_count": 10,
+          "pct_of_reports": 4.22
+        },
+        {
+          "meddra_pt": "COUGH",
+          "report_count": 9,
+          "pct_of_reports": 3.8
+        },
+        {
+          "meddra_pt": "DEHYDRATION",
+          "report_count": 9,
+          "pct_of_reports": 3.8
+        },
+        {
+          "meddra_pt": "GASTROOESOPHAGEAL REFLUX DISEASE",
+          "report_count": 9,
+          "pct_of_reports": 3.8
+        }
+      ],
+      "reports_by_year": [
+        {
+          "year": 2014,
+          "report_count": 2
+        },
+        {
+          "year": 2015,
+          "report_count": 15
+        },
+        {
+          "year": 2016,
+          "report_count": 70
+        },
+        {
+          "year": 2017,
+          "report_count": 57
+        },
+        {
+          "year": 2018,
+          "report_count": 153
+        },
+        {
+          "year": 2019,
+          "report_count": 253
+        },
+        {
+          "year": 2020,
+          "report_count": 509
+        },
+        {
+          "year": 2021,
+          "report_count": 24
+        },
+        {
+          "year": 2022,
+          "report_count": 691
+        },
+        {
+          "year": 2023,
+          "report_count": 612
+        },
+        {
+          "year": 2024,
+          "report_count": 820
+        },
+        {
+          "year": 2025,
+          "report_count": 754
+        },
+        {
+          "year": 2026,
+          "report_count": 429
+        }
+      ],
+      "meddra_version": null
+    },
+    "source_type": "openfda_faers",
+    "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"HEMANGEOL\"&limit=1",
+    "source_excerpt": "openFDA drug/event.json aggregate: total_reports=4389, serious=237, deaths=6. Search term: Generic term PROPRANOLOL (62,621 reports) is dominated by the oral cardiovascular/migraine products (top drugindication: HYPERTENSION 3471, Migraine 2893), a different product family from this drug's infantile-hemangioma oral solution; brand HEMANGEOL (4389 reports, top indication Haemangioma 2889 + Infantile haemangioma 756 + INFANTILE HAEMANGIOMA 317) is used instead per the run-the-drugindication-count-first rule (Qbrexza/Glycopyrronium precedent).",
+    "extracted_by": "fetch_faers.py fetch_drug (openfda drug/event.json, cycle-25 pass)",
+    "reviewed_by": null,
+    "confidence": 1.0
+  },
+  "drug_characterization": {
+    "value": [
+      {
+        "code": "1",
+        "label": "suspect",
+        "report_count": 4383,
+        "pct_of_reports": 99.86
+      },
+      {
+        "code": "2",
+        "label": "concomitant",
+        "report_count": 6,
+        "pct_of_reports": 0.14
+      },
+      {
+        "code": "3",
+        "label": "interacting",
+        "report_count": 0,
+        "pct_of_reports": 0.0
+      }
+    ],
+    "source_type": "openfda_faers",
+    "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"HEMANGEOL\"",
+    "source_excerpt": "Computed by pulling every individual FAERS report matching this drug's own search_term (HEMANGEOL) and tallying each report's drugcharacterization code (1=suspect, 2=concomitant, 3=interacting) from ONLY the drug-array entries whose medicinalproduct contains this term (not co-listed drugs in the same report); a report with several matching entries counts once, by precedence suspect > interacting > concomitant. 4389/4389 reports matched (4389 pulled).",
+    "extracted_by": "cycle-25 per-report drugcharacterization pull (openfda drug/event.json)",
+    "reviewed_by": null,
+    "confidence": 1.0
+  },
+  "purple_book": {
+    "value": null,
+    "source_type": "needs_extraction",
+    "source_url": null,
+    "source_excerpt": null,
+    "extracted_by": null,
+    "reviewed_by": null,
+    "confidence": null
+  }
+}

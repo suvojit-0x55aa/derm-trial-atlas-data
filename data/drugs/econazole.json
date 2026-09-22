@@ -1,0 +1,433 @@
+{
+  "schema_version": 1,
+  "drug": "Econazole",
+  "applications": [
+    {
+      "application_number": "205175",
+      "regulatory_application": {
+        "value": {
+          "application_type": "NDA",
+          "application_number": "205175",
+          "registry": "orange_book",
+          "center": "CDER",
+          "proprietary_name": "ECOZA",
+          "applicant": "RESILIA PHARMACEUTICALS INC",
+          "first_approval_date": "2013-10-24"
+        },
+        "source_type": "orange_book",
+        "source_url": "https://api.fda.gov/drug/orangebook.json",
+        "source_excerpt": "openfda orangebook.json: products.active_ingredients.name=ECONAZOLE NITRATE, application_number N205175, brand_name ECOZA, applicant_full_name RESILIA PHARMACEUTICALS INC, earliest product approval_date 2013-10-24 (1 product row(s) under this application)",
+        "extracted_by": "cycle-25 drug-level pass (openfda drug/orangebook.json, fetched 2026-09-23)",
+        "reviewed_by": null,
+        "confidence": 1.0
+      },
+      "orange_book": {
+        "value": {
+          "application_type": "N",
+          "application_number": "205175",
+          "ingredient": "ECONAZOLE NITRATE",
+          "trade_name": "ECOZA",
+          "applicant": "RESILIA PHARMS",
+          "applicant_full_name": "RESILIA PHARMACEUTICALS INC",
+          "products": [
+            {
+              "product_number": "001",
+              "strength": "1%",
+              "dosage_form": "AEROSOL, FOAM",
+              "route": "TOPICAL",
+              "approval_date": "2013-10-24",
+              "rld": true,
+              "rs": true,
+              "te_code": null,
+              "marketing_type": "HUMAN PRESCRIPTION DRUG"
+            }
+          ],
+          "patents": [
+            {
+              "patent_number": "10071054",
+              "expiration_date": "2031-08-08",
+              "drug_substance_claim": false,
+              "drug_product_claim": true,
+              "patent_use_code": null,
+              "delisted": false,
+              "submission_date": "2018-09-27",
+              "product_numbers": [
+                "001"
+              ]
+            }
+          ],
+          "exclusivities": [],
+          "latest_patent_expiration": "2031-08-08",
+          "latest_exclusivity_expiration": null,
+          "data_file_date": null
+        },
+        "source_type": "orange_book",
+        "source_url": "https://api.fda.gov/drug/orangebook.json?search=products.active_ingredients.name%3A%22ECONAZOLE%20NITRATE%22&limit=100",
+        "source_excerpt": "openFDA drug/orangebook.json, 1 product row(s) matched on products.active_ingredients.name='ECONAZOLE NITRATE' AND application_number='205175' (unpinned ingredient query also returns other NDAs and generic ANDAs for this ingredient -- pinned by application_number)",
+        "extracted_by": "fetch_orange_book.py build_record (openfda drug/orangebook.json, cycle-25 pass, NDA-pinned)",
+        "reviewed_by": null,
+        "confidence": 1.0
+      }
+    }
+  ],
+  "trial_ids": [
+    "NCT01353976"
+  ],
+  "mechanism_of_action": {
+    "value": {
+      "modality": "small_molecule",
+      "drug_class": "azole antifungal",
+      "antibody_isotype": null,
+      "binding_targets": [],
+      "pathway_cytokines": [],
+      "receptor_subunits": [],
+      "kinases_inhibited": [],
+      "lower_potency_kinases": [],
+      "selectivity": [],
+      "reversible": null,
+      "mechanism_established": true,
+      "label_section": "12.4 Microbiology"
+    },
+    "source_type": "openfda_label",
+    "source_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0bb5fa27-32ed-ed13-e063-6394a90a1577",
+    "source_excerpt": "12.4 Microbiology / Mechanism of Action and section 11 DESCRIPTION: \"12.4 Microbiology Mechanism of Action Econazole nitrate, an azole antifungal agent, inhibits fungal cytochrome P-450-mediated 14 alpha-lanosterol demethylase enzyme.\" \"11 DESCRIPTION Ecoza (econazole nitrate) topical foam, 1% contains the azole antifungal agent, econazole nitrate in an oil-in-water emulsion base consisting of the following inactive ingredients: dimethicone, glycerin, polysorbate 20, povidone, propylene glycol, stearic acid, trolamine, purified water and butane as a propellant.\" \"Chemically, econazole nitrate is 1-[2-{(4-chloro-phenyl)methoxy}-2-(2,4-dichlorophenyl) ethyl]-1H-imidazole mononitrate.\" -- The label explicitly identifies econazole nitrate as an azole antifungal and says it inhibits fungal 14 alpha-lanosterol demethylase; it does not state that the enzyme is bound, so binding_targets is empty. Section 11 provides the chemical name supporting small_molecule modality. The label establishes the mechanism, but does not state reversibility or a represented kinase, receptor, cytokine, or quantitative selectivity value.",
+    "extracted_by": "luna (gpt-6-luna) cycle-25 extraction pass",
+    "reviewed_by": null,
+    "confidence": 0.92
+  },
+  "boxed_warning": {
+    "value": {
+      "present": false,
+      "title": null,
+      "warning_categories": [],
+      "referenced_label_sections": [],
+      "product_names": []
+    },
+    "source_type": "openfda_label",
+    "source_url": "https://api.fda.gov/drug/label.json?search=set_id%3A%220bb5fa27-32ed-ed13-e063-6394a90a1577%22&limit=1",
+    "source_excerpt": "results[0] (ECOZA label, set_id 0bb5fa27-32ed-ed13-e063-6394a90a1577) has no boxed_warning key (checked, none present)",
+    "extracted_by": "cycle-25 drug-level pass (openfda drug/label.json)",
+    "reviewed_by": null,
+    "confidence": 1.0
+  },
+  "faers_summary": {
+    "value": {
+      "query": {
+        "search_field": "patient.drug.medicinalproduct",
+        "search_term": "ECONAZOLE",
+        "receivedate_from": "2004-01-26",
+        "receivedate_to": "2026-06-23",
+        "api_urls": [
+          "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ECONAZOLE\"&limit=1",
+          "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ECONAZOLE\"+AND+serious:1&limit=1",
+          "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ECONAZOLE\"+AND+seriousnessdeath:1&limit=1",
+          "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ECONAZOLE\"+AND+seriousnesshospitalization:1&limit=1",
+          "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ECONAZOLE\"+AND+seriousnesslifethreatening:1&limit=1",
+          "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ECONAZOLE\"+AND+seriousnessdisabling:1&limit=1",
+          "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ECONAZOLE\"&count=patient.reaction.reactionmeddrapt.exact&limit=15",
+          "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ECONAZOLE\"+AND+serious:1&count=patient.reaction.reactionmeddrapt.exact&limit=15",
+          "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ECONAZOLE\"&count=receivedate"
+        ],
+        "data_last_updated": "2026-07-30"
+      },
+      "total_reports": 2444,
+      "serious_reports": 1895,
+      "death_reports": 175,
+      "hospitalization_reports": 1147,
+      "life_threatening_reports": 129,
+      "disability_reports": 55,
+      "top_reactions": [
+        {
+          "meddra_pt": "DRUG INEFFECTIVE",
+          "report_count": 120,
+          "pct_of_reports": 4.91
+        },
+        {
+          "meddra_pt": "RASH",
+          "report_count": 106,
+          "pct_of_reports": 4.34
+        },
+        {
+          "meddra_pt": "FATIGUE",
+          "report_count": 100,
+          "pct_of_reports": 4.09
+        },
+        {
+          "meddra_pt": "PRURITUS",
+          "report_count": 98,
+          "pct_of_reports": 4.01
+        },
+        {
+          "meddra_pt": "ACUTE KIDNEY INJURY",
+          "report_count": 97,
+          "pct_of_reports": 3.97
+        },
+        {
+          "meddra_pt": "NAUSEA",
+          "report_count": 96,
+          "pct_of_reports": 3.93
+        },
+        {
+          "meddra_pt": "DIARRHOEA",
+          "report_count": 95,
+          "pct_of_reports": 3.89
+        },
+        {
+          "meddra_pt": "FALL",
+          "report_count": 95,
+          "pct_of_reports": 3.89
+        },
+        {
+          "meddra_pt": "RENAL FAILURE",
+          "report_count": 88,
+          "pct_of_reports": 3.6
+        },
+        {
+          "meddra_pt": "DRUG INTERACTION",
+          "report_count": 85,
+          "pct_of_reports": 3.48
+        },
+        {
+          "meddra_pt": "DYSPNOEA",
+          "report_count": 85,
+          "pct_of_reports": 3.48
+        },
+        {
+          "meddra_pt": "OFF LABEL USE",
+          "report_count": 84,
+          "pct_of_reports": 3.44
+        },
+        {
+          "meddra_pt": "ANAEMIA",
+          "report_count": 79,
+          "pct_of_reports": 3.23
+        },
+        {
+          "meddra_pt": "PAIN",
+          "report_count": 78,
+          "pct_of_reports": 3.19
+        },
+        {
+          "meddra_pt": "CHRONIC KIDNEY DISEASE",
+          "report_count": 76,
+          "pct_of_reports": 3.11
+        }
+      ],
+      "top_serious_reactions": [
+        {
+          "meddra_pt": "ACUTE KIDNEY INJURY",
+          "report_count": 97,
+          "pct_of_reports": 5.12
+        },
+        {
+          "meddra_pt": "FALL",
+          "report_count": 91,
+          "pct_of_reports": 4.8
+        },
+        {
+          "meddra_pt": "RENAL FAILURE",
+          "report_count": 88,
+          "pct_of_reports": 4.64
+        },
+        {
+          "meddra_pt": "DRUG INTERACTION",
+          "report_count": 84,
+          "pct_of_reports": 4.43
+        },
+        {
+          "meddra_pt": "ANAEMIA",
+          "report_count": 79,
+          "pct_of_reports": 4.17
+        },
+        {
+          "meddra_pt": "CHRONIC KIDNEY DISEASE",
+          "report_count": 76,
+          "pct_of_reports": 4.01
+        },
+        {
+          "meddra_pt": "DYSPNOEA",
+          "report_count": 72,
+          "pct_of_reports": 3.8
+        },
+        {
+          "meddra_pt": "PYREXIA",
+          "report_count": 72,
+          "pct_of_reports": 3.8
+        },
+        {
+          "meddra_pt": "RASH MACULO-PAPULAR",
+          "report_count": 69,
+          "pct_of_reports": 3.64
+        },
+        {
+          "meddra_pt": "PRURITUS",
+          "report_count": 66,
+          "pct_of_reports": 3.48
+        },
+        {
+          "meddra_pt": "RASH",
+          "report_count": 66,
+          "pct_of_reports": 3.48
+        },
+        {
+          "meddra_pt": "NAUSEA",
+          "report_count": 63,
+          "pct_of_reports": 3.32
+        },
+        {
+          "meddra_pt": "ASTHENIA",
+          "report_count": 62,
+          "pct_of_reports": 3.27
+        },
+        {
+          "meddra_pt": "CONFUSIONAL STATE",
+          "report_count": 62,
+          "pct_of_reports": 3.27
+        },
+        {
+          "meddra_pt": "PAIN",
+          "report_count": 61,
+          "pct_of_reports": 3.22
+        }
+      ],
+      "reports_by_year": [
+        {
+          "year": 2004,
+          "report_count": 20
+        },
+        {
+          "year": 2005,
+          "report_count": 15
+        },
+        {
+          "year": 2006,
+          "report_count": 23
+        },
+        {
+          "year": 2007,
+          "report_count": 26
+        },
+        {
+          "year": 2008,
+          "report_count": 23
+        },
+        {
+          "year": 2009,
+          "report_count": 31
+        },
+        {
+          "year": 2010,
+          "report_count": 21
+        },
+        {
+          "year": 2011,
+          "report_count": 53
+        },
+        {
+          "year": 2012,
+          "report_count": 67
+        },
+        {
+          "year": 2013,
+          "report_count": 85
+        },
+        {
+          "year": 2014,
+          "report_count": 75
+        },
+        {
+          "year": 2015,
+          "report_count": 134
+        },
+        {
+          "year": 2016,
+          "report_count": 137
+        },
+        {
+          "year": 2017,
+          "report_count": 153
+        },
+        {
+          "year": 2018,
+          "report_count": 283
+        },
+        {
+          "year": 2019,
+          "report_count": 210
+        },
+        {
+          "year": 2020,
+          "report_count": 238
+        },
+        {
+          "year": 2021,
+          "report_count": 149
+        },
+        {
+          "year": 2022,
+          "report_count": 134
+        },
+        {
+          "year": 2023,
+          "report_count": 159
+        },
+        {
+          "year": 2024,
+          "report_count": 135
+        },
+        {
+          "year": 2025,
+          "report_count": 161
+        },
+        {
+          "year": 2026,
+          "report_count": 112
+        }
+      ],
+      "meddra_version": null
+    },
+    "source_type": "openfda_faers",
+    "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ECONAZOLE\"&limit=1",
+    "source_excerpt": "openFDA drug/event.json aggregate: total_reports=2444, serious=1895, deaths=175. Search term: Generic term ECONAZOLE (2444 reports) is dominated by reports where econazole is a CONCOMITANT drug (1895/2444 per drug_characterization) and covers the cream (Spectazole/generics) as well as Ecoza foam; top drugindication terms are PRODUCT USED FOR UNKNOWN INDICATION/PAIN/HYPERTENSION. Brand ECOZA returns only 17 (top indication TINEA PEDIS). Same molecule/route, so the generic term is kept (atlas convention) with this caveat rather than switched.",
+    "extracted_by": "fetch_faers.py fetch_drug (openfda drug/event.json, cycle-25 pass)",
+    "reviewed_by": null,
+    "confidence": 1.0
+  },
+  "drug_characterization": {
+    "value": [
+      {
+        "code": "1",
+        "label": "suspect",
+        "report_count": 526,
+        "pct_of_reports": 21.52
+      },
+      {
+        "code": "2",
+        "label": "concomitant",
+        "report_count": 1895,
+        "pct_of_reports": 77.54
+      },
+      {
+        "code": "3",
+        "label": "interacting",
+        "report_count": 23,
+        "pct_of_reports": 0.94
+      }
+    ],
+    "source_type": "openfda_faers",
+    "source_url": "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"ECONAZOLE\"",
+    "source_excerpt": "Computed by pulling every individual FAERS report matching this drug's own search_term (ECONAZOLE) and tallying each report's drugcharacterization code (1=suspect, 2=concomitant, 3=interacting) from ONLY the drug-array entries whose medicinalproduct contains this term (not co-listed drugs in the same report); a report with several matching entries counts once, by precedence suspect > interacting > concomitant. 2444/2444 reports matched (2444 pulled).",
+    "extracted_by": "cycle-25 per-report drugcharacterization pull (openfda drug/event.json)",
+    "reviewed_by": null,
+    "confidence": 1.0
+  },
+  "purple_book": {
+    "value": null,
+    "source_type": "needs_extraction",
+    "source_url": null,
+    "source_excerpt": null,
+    "extracted_by": null,
+    "reviewed_by": null,
+    "confidence": null
+  }
+}
