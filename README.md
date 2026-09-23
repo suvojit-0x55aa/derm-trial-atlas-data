@@ -12,10 +12,10 @@ longer part of this project. There are exactly two repos now:
 Real, live-pulled pivotal Phase III trials (adult / adult+adolescent,
 systemic therapy), from the [ClinicalTrials.gov API
 v2](https://clinicaltrials.gov/data-api/api) (`/api/v2/studies`, no API
-key required), across **27 indications, 59 unique drugs, 151 trials**
+key required), across **27 indications, 59 unique drugs, 218 trials**
 (all three counts recomputed from `data/trials/*.json` each cycle):
 
-### Atopic Dermatitis (10 drugs, 28 trials)
+### Atopic Dermatitis (11 drugs, 52 trials)
 
 | Drug | Pivotal Phase III trials |
 |---|---|
@@ -30,7 +30,36 @@ key required), across **27 indications, 59 unique drugs, 151 trials**
 | Crisaborole (topical ointment) | AD-301 (NCT02118792), AD-302 (NCT02118766) — FDA-approved (Eucrisa, NDA 207695) 2016-12-14, for ages 3 months and older |
 | Difamilast (topical ointment) | Trial 1 (NCT02068352, Phase 2, n=121), Trial 2 (NCT03908970, Phase 3, n=364), Trial 3 (NCT03911401, Phase 3, n=251) — FDA-approved (ADQUEY, NDA 219474, Acrotech Biopharma) 2026-02-12, for ages 2 and older |
 
-### Plaque Psoriasis (14 drugs, 38 trials)
+Added in cycle 26 (all-status re-sweep; 228 new registrations screened, 24 qualify):
+
+| Drug | Trial | CT.gov status | Results | Why it qualifies |
+|---|---|---|---|---|
+| Abrocitinib | JADE TEEN (NCT03796676, n=287) | COMPLETED | reported | JADE TEEN, label-cited |
+| Abrocitinib | children 6-<12 (NCT06807268, n=150) | RECRUITING | not_yet_reported | children 6-<12, recruiting |
+| Abrocitinib | children 2-<6 (NCT07823595, n=90) | NOT_YET_RECRUITING | not_yet_reported | children 2-<6, not yet recruiting |
+| Crisaborole | CrisADe CONTROL (NCT04040192, n=620) | COMPLETED | reported | CrisADe CONTROL maintenance (own run-in, randomized withdrawal vs vehicle) |
+| Dupilumab | SOLO-CONTINUE (NCT02395133, n=422) | COMPLETED | reported | LIBERTY AD SOLO-CONTINUE randomized withdrawal, label-cited |
+| Dupilumab | LIBERTY AD ADOL (NCT03054428, n=251) | COMPLETED | reported | LIBERTY AD ADOL, adolescents, label-cited |
+| Dupilumab | LIBERTY AD PEDS (NCT03345914, n=367) | COMPLETED | reported | LIBERTY AD PEDS 6-11y + TCS, label-cited |
+| Dupilumab | LIBERTY AD PRESCHOOL (AD-1539) (NCT03346434, n=202) | COMPLETED | reported | LIBERTY AD PRESCHOOL (AD-1539) Part B randomized placebo-controlled, label-cited; CT.gov allocation field says NON_RANDOMIZED because Part A is open-label |
+| Dupilumab | LIBERTY-AD-HAFT (NCT04417894, n=133) | COMPLETED | reported | LIBERTY-AD-HAFT hand/foot AD |
+| Lebrikizumab | ADvantage (NCT05149313, n=331) | COMPLETED | reported | ADvantage + TCS |
+| Lebrikizumab | ADorable-1 (NCT05559359, n=377) | ACTIVE_NOT_RECRUITING | not_yet_reported | ADorable-1 pediatric 6m-<18y |
+| Lebrikizumab | ADhope 2 (NCT06526182, n=520) | ACTIVE_NOT_RECRUITING | not_yet_reported | Part 2 randomized withdrawal vs placebo |
+| Nemolizumab | Phase 3 (NCT05056779, n=0) | WITHDRAWN | not_yet_reported | WITHDRAWN Phase 3 |
+| Roflumilast | INTEGUMENT-PED (NCT04845620, n=652) | COMPLETED | reported | INTEGUMENT-PED 0.05% cream 2-5y |
+| Ruxolitinib | TRuE-AD1 (NCT03745638, n=631) | COMPLETED | reported | TRuE-AD1, label-cited |
+| Ruxolitinib | TRuE-AD2 (NCT03745651, n=618) | COMPLETED | reported | TRuE-AD2, label-cited |
+| Ruxolitinib | TRuE-AD3 (NCT04921969, n=330) | COMPLETED | reported | TRuE-AD3 pediatric 2-11y |
+| Ruxolitinib | TRuE-AD4 (NCT06238817, n=241) | COMPLETED | reported | adults moderate AD, Phase 3 |
+| Ruxolitinib | TRuE-AD5 (NCT06832618, n=159) | ACTIVE_NOT_RECRUITING | not_yet_reported | 6-<18y moderate-severe |
+| Tapinarof | Adoring (NCT07265479, n=187) | ACTIVE_NOT_RECRUITING | not_yet_reported | infants 3-<24 months |
+| Tralokinumab | ECZTRA 6 (NCT03526861, n=301) | COMPLETED | reported | ECZTRA 6 adolescents, label-cited |
+| Tralokinumab | ECZTRA 7 (NCT03761537, n=277) | COMPLETED | reported | ECZTRA 7 + TCS |
+| Tralokinumab | ADHAND (NCT05958407, n=235) | COMPLETED | reported | ADHAND Phase 3b atopic hand eczema |
+| Tralokinumab | TRAPEDS 2 (NCT06311682, n=195) | RECRUITING | not_yet_reported | children 2-<12 + TCS, recruiting |
+
+### Plaque Psoriasis (14 drugs, 69 trials)
 
 | Drug | Pivotal Phase III trials |
 |---|---|
@@ -49,6 +78,42 @@ key required), across **27 indications, 59 unique drugs, 151 trials**
 | Brodalumab | AMAGINE-1 (NCT01708590, n=661), AMAGINE-2 (NCT01708603, n=1831), AMAGINE-3 (NCT01708629, n=1881) — FDA-approved (Siliq, BLA 761032) 2017-02-15 |
 | Icotrokinra (oral, once daily) | Trial PSO-1 (NCT06143878, n=774), Trial PSO-2 (NCT06220604, n=731), Trial PSO-3 (NCT06095115, n=684), Trial PSO-4 (NCT06095102, n=311, scalp/genital/hands-feet subpopulation) — FDA-approved (Icotyde, NDA 220149, Janssen) 2026-03-17 |
 | Secukinumab | ERASURE / Trial PsO1 (NCT01365455, n=738), FIXTURE / Trial PsO2 (NCT01358578, n=1306, active-comparator arm vs. etanercept alongside placebo), FEATURE / Trial PsO3 (NCT01555125, n=177), JUNCTURE / Trial PsO4 (NCT01636687, n=182) — FDA-approved (Cosentyx, BLA 125504) 2015-01-21 |
+
+Added in cycle 26 (all-status re-sweep; 471 new registrations screened, 31 qualify):
+
+| Drug | Trial | CT.gov status | Results | Why it qualifies |
+|---|---|---|---|---|
+| Apremilast | LIBERTY (Phase 3b) (NCT01690299, n=250) | COMPLETED | reported | LIBERTY Phase 3b apremilast vs etanercept vs placebo |
+| Apremilast | STYLE (NCT03123471, n=303) | COMPLETED | reported | STYLE scalp, label-cited |
+| Apremilast | SPROUT (NCT03701763, n=245) | COMPLETED | reported | SPROUT pediatric, label-cited |
+| Apremilast | ADVANCE (NCT03721172, n=595) | COMPLETED | reported | ADVANCE mild-to-moderate, label-cited |
+| Apremilast | DISCREET (NCT03777436, n=289) | COMPLETED | reported | DISCREET genital, label-cited |
+| Bimekizumab | BE READY (NCT03410992, n=435) | COMPLETED | reported | BE READY initial + randomized-withdrawal vs placebo, label-cited |
+| Brodalumab | EMBRACE 1 (NCT04305327, n=12) | TERMINATED | reported | TERMINATED adolescents |
+| Deucravacitinib | pediatric (NCT04772079, n=153) | RECRUITING | not_yet_reported | pediatric, recruiting |
+| Guselkumab | ORION (NCT02905331, n=78) | COMPLETED | reported | ORION One-Press vs placebo, label-cited |
+| Guselkumab | PROTOSTAR (NCT03451851, n=120) | ACTIVE_NOT_RECRUITING | reported | PROTOSTAR pediatric |
+| Guselkumab | SPECTREM (NCT06039189, n=338) | COMPLETED | reported | low-BSA moderate |
+| Icotrokinra | ICONIC-ASCEND (NCT06934226, n=752) | ACTIVE_NOT_RECRUITING | not_yet_reported | vs placebo and ustekinumab |
+| Ixekizumab | IXORA-Q (NCT02718898, n=149) | COMPLETED | reported | IXORA-Q genital |
+| Ixekizumab | Ixora-peds (NCT03073200, n=201) | COMPLETED | reported | IXORA-PEDS, label-cited |
+| Risankizumab | IMMhance (NCT02672852, n=507) | COMPLETED | reported | IMMhance, label-cited |
+| Risankizumab | IMMprint (NCT04713592, n=174) | COMPLETED | reported | IMMprint palmoplantar |
+| Risankizumab | UnlIMMited (NCT05969223, n=214) | COMPLETED | reported | Phase 4 genital/scalp vs placebo, label-cited |
+| Secukinumab | GESTURE (NCT01806597, n=205) | COMPLETED | reported | GESTURE palmoplantar |
+| Secukinumab | TRANSFIGURE (NCT01807520, n=198) | COMPLETED | reported | TRANSFIGURE nail |
+| Secukinumab | SCALP (NCT02267135, n=102) | COMPLETED | reported | scalp |
+| Secukinumab | pediatric PsO study (label Trial PsO8) (NCT02471144, n=162) | COMPLETED | reported | pediatric severe, label-cited |
+| Secukinumab | ALLURE (NCT02748863, n=214) | COMPLETED | reported | 2 mL pre-filled syringe vs placebo (+1 mL form), label-cited |
+| Secukinumab | Asia/Europe Phase 3 (NCT03066609, n=543) | COMPLETED | reported | multinational Asia/Europe Phase 3 |
+| Secukinumab | MATURE (NCT03589885, n=122) | COMPLETED | reported | MATURE 2 mL auto-injector vs placebo (+1 mL form), label-cited |
+| Secukinumab | pINPOINt (NCT04237116, n=10) | TERMINATED | reported | TERMINATED, psoriasis + NAFLD |
+| Tildrakizumab | MK-3222 Phase 3 (NCT01936688, n=0) | WITHDRAWN | not_yet_reported | WITHDRAWN Phase 3 |
+| Tildrakizumab | nail psoriasis (NCT03897075, n=99) | COMPLETED | reported | nail |
+| Tildrakizumab | scalp psoriasis (NCT03897088, n=231) | COMPLETED | reported | scalp |
+| Tildrakizumab | pediatric (NCT03997786, n=135) | ACTIVE_NOT_RECRUITING | not_yet_reported | pediatric, placebo + active comparator |
+| Tildrakizumab | genital psoriasis (NCT06611163, n=206) | ACTIVE_NOT_RECRUITING | not_yet_reported | genital |
+| Ustekinumab | CADMUS (NCT01090427, n=110) | COMPLETED | reported | CADMUS adolescents, label-cited |
 
 Excluded during curation (not pivotal registrational trials): NCT02203032
 "NAVIGATE" (guselkumab ustekinumab-inadequate-responder switch study),
@@ -133,7 +198,9 @@ verbatim for these 4 new trials rather than re-fetched.
 | Secukinumab | SUNSHINE (NCT03713619), SUNRISE (NCT03713632) |
 | Bimekizumab | BE HEARD I (NCT04242446), BE HEARD II (NCT04242498) |
 
-### Alopecia Areata (3 drugs, 5 trials)
+Cycle 26 all-status re-sweep: 26 not-yet-in-atlas interventional CT.gov registrations screened for this indication's drugs; none meets the bar (see the cycle-26 section below for the rule list). This indication is at its current CT.gov ceiling.
+
+### Alopecia Areata (3 drugs, 9 trials)
 
 | Drug | Pivotal Phase III trials |
 |---|---|
@@ -141,13 +208,30 @@ verbatim for these 4 new trials rather than re-fetched.
 | Ritlecitinib | ALLEGRO-2b/3 (NCT03732807) |
 | Deuruxolitinib | THRIVE-AA1 (NCT04518995), THRIVE-AA2 (NCT04797650) — registered on CT.gov under the pre-approval compound code CTP-543 |
 
-### Chronic Spontaneous Urticaria (3 drugs, 6 trials)
+Added in cycle 26 (all-status re-sweep; 24 new registrations screened, 4 qualify):
+
+| Drug | Trial | CT.gov status | Results | Why it qualifies |
+|---|---|---|---|---|
+| Baricitinib | BRAVE-AA-PEDS (NCT05723198, n=595) | RECRUITING | not_yet_reported | BRAVE-AA-PEDS 6-<18y |
+| Deuruxolitinib | adolescents (NCT07133308, n=355) | RECRUITING | not_yet_reported | adolescents |
+| Ritlecitinib | B7981027 (NCT07029711, n=208) | ACTIVE_NOT_RECRUITING | not_yet_reported | children 6-<12 |
+| Ritlecitinib | patchy AA (NCT07733765, n=336) | RECRUITING | not_yet_reported | patchy AA 12+ |
+
+### Chronic Spontaneous Urticaria (3 drugs, 9 trials)
 
 | Drug | Pivotal Phase III trials |
 |---|---|
 | Omalizumab | ASTERIA I (NCT01287117), ASTERIA II (NCT01292473), GLACIAL (NCT01264939) — acronyms per literature, CT.gov's own `acronym` field is empty for these 3 |
 | Dupilumab | LIBERTY-CSU CUPID (NCT04180488) — master protocol, 3 sub-studies; CSU is a real, separate FDA-approved indication for dupilumab (confirmed via the live openFDA label, section 1.7), distinct from the AD trials above |
 | Remibrutinib | REMIX-1 (NCT05030311), REMIX-2 (NCT05032157) — FDA-approved (Rhapsido, NDA 218436) 2025-09-30. Excluded as non-pivotal: NCT05048342 "BISCUIT" (Japan-only open-label regional bridging study, n=71), NCT06868212 "RECLAIM" (active-comparator vs. dupilumab, not yet complete) |
+
+Added in cycle 26 (all-status re-sweep; 57 new registrations screened, 3 qualify):
+
+| Drug | Trial | CT.gov status | Results | Why it qualifies |
+|---|---|---|---|---|
+| Omalizumab | X-ACT (NCT01723072, n=91) | COMPLETED | reported | X-ACT angioedema/QoL |
+| Remibrutinib | adolescents (NCT05677451, n=100) | ACTIVE_NOT_RECRUITING | not_yet_reported | adolescents |
+| Remibrutinib | Phase 3b (NCT06042478, n=470) | ACTIVE_NOT_RECRUITING | not_yet_reported | Phase 3b vs placebo, omalizumab reference arm |
 
 ### Prurigo Nodularis (2 drugs, 4 trials)
 
@@ -156,16 +240,25 @@ verbatim for these 4 new trials rather than re-fetched.
 | Dupilumab | PRIME (NCT04183335), PRIME2 (NCT04202679) — FDA-approved for PN Sept 2022 |
 | Nemolizumab | OLYMPIA 1 (NCT04501679), OLYMPIA 2 (NCT04501666) — FDA-approved for PN Aug 2024 |
 
+Cycle 26 all-status re-sweep: 5 not-yet-in-atlas interventional CT.gov registrations screened for this indication's drugs; none meets the bar (see the cycle-26 section below for the rule list). This indication is at its current CT.gov ceiling.
+
 CT.gov maps these trials' condition to "Neurodermatitis" (a MeSH-adjacent
 synonym), not the literal string "Prurigo Nodularis" — confirmed as the
 correct indication via each trial's title and the sponsor's own registry
 page, not assumed from the condition field alone.
 
-### Vitiligo (1 drug, 2 trials)
+### Vitiligo (1 drug, 4 trials)
 
 | Drug | Pivotal Phase III trials |
 |---|---|
 | Ruxolitinib (topical cream) | TRuE-V1 (NCT04052425), TRuE-V2 (NCT04057573) — FDA-approved (Opzelura) July 2022 |
+
+Added in cycle 26 (all-status re-sweep; 13 new registrations screened, 2 qualify):
+
+| Drug | Trial | CT.gov status | Results | Why it qualifies |
+|---|---|---|---|---|
+| Ruxolitinib | TRuE-VIP1 (NCT06548360, n=180) | RECRUITING | not_yet_reported | pediatric 2-<12? / adolescents |
+| Ruxolitinib | children 6-<12 (NCT06804811, n=250) | RECRUITING | not_yet_reported | children 6-<12 |
 
 Thin (1 drug) but real: Opzelura cream is the only FDA-approved
 repigmentation therapy for vitiligo as of this pass. A separate,
@@ -190,6 +283,8 @@ data, not a pipeline bug.
 |---|---|
 | Delgocitinib (topical cream) | DELTA 1 (NCT04871711), DELTA 2 (NCT04872101), DELTA TEEN (NCT05355818) — FDA-approved (Anzupgo, NDA 219155) 2025-07-23 |
 
+Cycle 26 all-status re-sweep: 6 not-yet-in-atlas interventional CT.gov registrations screened for this indication's drugs; none meets the bar (see the cycle-26 section below for the rule list). This indication is at its current CT.gov ceiling.
+
 DELTA 1/2 are the twin global vehicle-controlled adult pivotal trials;
 DELTA TEEN extends the same registrational program to adolescents 12-17
 (vehicle-controlled, not an open-label extension). Excluded as non-pivotal:
@@ -203,6 +298,8 @@ placebo/vehicle-controlled), NCT04949841 (open-label extension of DELTA
 |---|---|
 | Dupilumab | LIBERTY-BP (NCT04206553) — Phase 2/3 combined trial, n=106; BP is a real, separate FDA-approved indication for dupilumab (confirmed via the live openFDA label, section 1.8) |
 
+Cycle 26 all-status re-sweep: the live CT.gov query for this indication's drugs returned no interventional registration beyond the trials already listed. This indication is at its current CT.gov ceiling.
+
 Thinnest indication in the atlas (1 drug, 1 trial), but real and verified —
 same precedent as Vitiligo's inclusion. A drug initially proposed as a
 candidate for this indication, rilzabrutinib (Wayrilz), does **not** hold
@@ -212,11 +309,17 @@ drug. Also checked and excluded: efgartigimod (Vyvgart) has a completed BP
 Phase 2/3 trial (NCT05267600) but its FDA label indications are gMG and
 CIDP only, not BP.
 
-### Generalized Pustular Psoriasis (1 drug, 1 trial)
+### Generalized Pustular Psoriasis (1 drug, 2 trials)
 
 | Drug | Pivotal Phase III trials |
 |---|---|
 | Spesolimab | Effisayil™ 1 (NCT03782792) — Phase 2 pivotal trial, n=53; FDA-approved (Spevigo, BLA761244) Sept 2022 |
+
+Added in cycle 26 (all-status re-sweep; 6 new registrations screened, 1 qualify):
+
+| Drug | Trial | CT.gov status | Results | Why it qualifies |
+|---|---|---|---|---|
+| Spesolimab | Effisayil-2 (NCT04399837, n=123) | COMPLETED | reported | Effisayil-2, Phase 2b, label-cited |
 
 Officially a Phase II trial (GPP is an ultra-rare orphan indication —
 randomized placebo-controlled trials of this size are the norm for its
@@ -251,6 +354,8 @@ inclusion bar and was excluded, not added.
 | Birch Triterpenes (Filsuvez, topical gel) | EASE (NCT03068780), n=223 — FDA-approved (NDA 215064, Chiesi) 2023-12-18, for wounds in dystrophic/junctional EB |
 | Beremagene Geperpavec (Vyjuvek, topical gel) | GEM-3 (NCT04491604), n=31 — FDA-approved (BLA 125774, Krystal Biotech) 2023-05-19, an HSV-1 vector-based gene therapy for wounds in dystrophic EB with COL7A1 mutations |
 
+Cycle 26 all-status re-sweep: 7 not-yet-in-atlas interventional CT.gov registrations screened for this indication's drugs; none meets the bar (see the cycle-26 section below for the rule list). This indication is at its current CT.gov ceiling.
+
 12th indication, added 2026-09-05 (cycle 5). Both are genuinely distinct,
 FDA-approved, placebo/vehicle-controlled pivotal trials, not one drug
 counted twice — Filsuvez is a small-molecule-adjacent botanical extract
@@ -259,11 +364,17 @@ counted twice — Filsuvez is a small-molecule-adjacent botanical extract
 as non-pivotal/non-approved: FCX-007 (dabocemagene autoficel) is
 ACTIVE_NOT_RECRUITING, not yet FDA-approved.
 
-### Erythropoietic Protoporphyria (1 drug, 2 trials)
+### Erythropoietic Protoporphyria (1 drug, 3 trials)
 
 | Drug | Pivotal Phase III trials |
 |---|---|
 | Afamelanotide (Scenesse, subcutaneous implant) | CUV039 (NCT01605136, EU, n=93), CUV029 (NCT00979745, US, n=74) — FDA-approved (NDA 210797, Clinuvel) 2019-10-08 |
+
+Added in cycle 26 (all-status re-sweep; 4 new registrations screened, 1 qualify):
+
+| Drug | Trial | CT.gov status | Results | Why it qualifies |
+|---|---|---|---|---|
+| Afamelanotide | CUV030 (NCT04053270, n=100) | COMPLETED | reported | CUV030 2007 crossover, placebo-controlled, NOT label-cited |
 
 12th indication, added 2026-09-05 (cycle 5). Thin (1 drug) but real: the
 FDA label's own Clinical Studies section (14) names exactly these two
@@ -287,6 +398,8 @@ active-comparator, not yet complete).
 | Drug | Pivotal Phase III trials |
 |---|---|
 | Roflumilast (topical foam) | Trial 203 (NCT04091646, n=226), STRATUM (NCT04973228, n=457) — FDA-approved (Zoryve foam 0.3%, NDA 217242) 2023-12-15 |
+
+Cycle 26 all-status re-sweep: 2 not-yet-in-atlas interventional CT.gov registrations screened for this indication's drugs; none meets the bar (see the cycle-26 section below for the rule list). This indication is at its current CT.gov ceiling.
 
 13th indication, added 2026-09-05 (cycle 6). Roflumilast (Zoryve) is a
 genuine two-NDA drug — Arcutis holds a *separate* NDA per dosage form, not
@@ -322,6 +435,8 @@ both indications share one Orange Book application, no split needed.
 | Minocycline (topical foam 4%) | NCT02815267 (n=466), NCT02815280 (n=495), NCT03271021 "Study 3" (n=1488, long-term safety), all vehicle-controlled — FDA-approved (Amzeeq, NDA 212379) 2019-10-18 |
 | Tretinoin and Benzoyl Peroxide (topical cream) | NCT03761784 (n=424), NCT03761810 (n=434), both vehicle-controlled — FDA-approved (Twyneo, NDA 214902) 2021-07-26 |
 | Clindamycin Phosphate/Benzoyl Peroxide/Adapalene (topical gel) | NCT04214639 (n=183), NCT04214652 (n=180), both vehicle-controlled — FDA-approved (Cabtreo, NDA 216632) 2023-10-20 |
+
+Cycle 26 all-status re-sweep: 81 not-yet-in-atlas interventional CT.gov registrations screened for this indication's drugs; none meets the bar (see the cycle-26 section below for the rule list). This indication is at its current CT.gov ceiling.
 
 Minocycline, Tretinoin+Benzoyl Peroxide, and Clindamycin+Benzoyl
 Peroxide+Adapalene added cycle 23 (2026-09), found via the same
@@ -377,6 +492,8 @@ is GPP-only), and ligelizumab/barzolvolimab for CSU.
 | Efinaconazole (topical solution) | NCT01007708 (n=780), NCT01008033 (n=870), both vehicle-controlled (development code IDP-108) — FDA-approved (Jublia, NDA 203567) 2014-06-06 |
 | Tavaborole (topical solution) | NCT01270971 (n=594), NCT01302119 (n=604), both vehicle-controlled (development code AN2690) — FDA-approved (Kerydin, NDA 204427) 2014-07-07, brand since discontinued (many generic ANDAs remain on market) |
 
+Cycle 26 all-status re-sweep: 16 not-yet-in-atlas interventional CT.gov registrations screened for this indication's drugs; none meets the bar (see the cycle-26 section below for the rule list). This indication is at its current CT.gov ceiling.
+
 ### Rosacea (4 drugs, 8 trials)
 
 | Drug | Pivotal Phase III trials |
@@ -385,6 +502,8 @@ is GPP-only), and ligelizumab/barzolvolimab for CSU.
 | Oxymetazoline HCl (topical cream) | NCT02131636 (n=440), NCT02132117 (n=445), both vehicle-controlled (development code AGN-199201) — FDA-approved (Rhofade, NDA 208552) 2017-01-18 |
 | Benzoyl Peroxide (topical cream 5%) | NCT03448939 (n=361), NCT03564119 (n=372), both vehicle-controlled — FDA-approved (Epsolay, NDA 214510) 2022-04-22 |
 | Minocycline (topical foam 1.5%) | NCT03142451 (n=751), NCT04608500 (n=771), both vehicle-controlled — FDA-approved (Zilxi, NDA 213690) 2020-05-28 |
+
+Cycle 26 all-status re-sweep: 25 not-yet-in-atlas interventional CT.gov registrations screened for this indication's drugs; none meets the bar (see the cycle-26 section below for the rule list). This indication is at its current CT.gov ceiling.
 
 Benzoyl Peroxide and Minocycline added cycle 23 (2026-09) — see the
 Acne Vulgaris section above for the Zilxi/Amzeeq shared-molecule,
@@ -419,17 +538,25 @@ documented edge case: `openfda.brand_name` label search only returns
 `drug/orangebook.json` (which keeps every historical row regardless of
 current marketing status) as the authoritative check instead.
 
-### Actinic Keratosis (1 drug, 2 trials)
+### Actinic Keratosis (1 drug, 3 trials)
 
 | Drug | Pivotal Phase III trials |
 |---|---|
 | Tirbanibulin (topical ointment 1%) | NCT03285477 "AK003" (n=351), NCT03285490 (n=351), both vehicle-controlled (development code KX2-391) — FDA-approved (Klisyri, NDA 213189) 2020-12-14 |
+
+Added in cycle 26 (all-status re-sweep; 11 new registrations screened, 1 qualify):
+
+| Drug | Trial | CT.gov status | Results | Why it qualifies |
+|---|---|---|---|---|
+| Tirbanibulin | TirbAKare (NCT06135415, n=280) | COMPLETED | reported | 100 cm2 field, vehicle-controlled |
 
 ### Molluscum Contagiosum (1 drug, 3 trials)
 
 | Drug | Pivotal Phase III trials |
 |---|---|
 | Berdazimer (topical gel 10.3%) | NCT04535531 "B-SIMPLE4" (n=891), NCT03927703 "B-SIMPLE2" (n=355), NCT03927716 (n=352), all vehicle-controlled (development code SB206) — FDA-approved (Zelsuvmi, NDA 217424) 2024-01-05 |
+
+Cycle 26 all-status re-sweep: 1 not-yet-in-atlas interventional CT.gov registrations screened for this indication's drugs; none meets the bar (see the cycle-26 section below for the rule list). This indication is at its current CT.gov ceiling.
 
 17th and 18th indications, added 2026-09-05 (cycle 10). Both drugs' pivotal
 sets were taken straight from the FDA label's own section 14, which names
@@ -469,6 +596,8 @@ hard `NOT_FOUND` while `"ZELSUVMI"` returns 71 real reports, so
 |---|---|
 | Glycopyrronium (topical cloth, 2.4%) | NCT02530281 (Trial 1, n=344), NCT02530294 (Trial 2, n=353), both vehicle-controlled — FDA-approved (Qbrexza, NDA 210361) 2018-06-28 |
 | Sofpironium Bromide (topical gel 12.45%) | NCT03836287 (n=350), NCT03948646 (n=351), both vehicle-controlled — FDA-approved (Sofdra, NDA 217347) 2024-06-18 |
+
+Cycle 26 all-status re-sweep: 15 not-yet-in-atlas interventional CT.gov registrations screened for this indication's drugs; none meets the bar (see the cycle-26 section below for the rule list). This indication is at its current CT.gov ceiling.
 
 Sofpironium Bromide added cycle 23 (2026-09), both trials for axillary
 hyperhidrosis, vehicle-controlled, `hasResults: true`. Its Orange Book
@@ -530,6 +659,8 @@ confirmed dead end for this atlas, not an oversight.
 |---|---|
 | Ozenoxacin (topical cream, 1%) | NCT01397461 (n=465), NCT02090764 (n=412), both vehicle-controlled — FDA-approved (Xepi, NDA 208945) 2017-12-11 |
 
+Cycle 26 all-status re-sweep: the live CT.gov query for this indication's drugs returned no interventional registration beyond the trials already listed. This indication is at its current CT.gov ceiling.
+
 20th indication, added cycle 12 (2026-09-05). Both trials are named in
 XEPI's own FDA label section 14. Xepi's brand is market-discontinued and
 absent from openFDA `label.json` under brand, substance, generic, or
@@ -553,6 +684,8 @@ low-volume, old, discontinued drug.
 |---|---|
 | Hydrogen Peroxide (topical solution, 40%) | THERAPEUTIC-1 (NCT02667236, n=450), THERAPEUTIC-2 (NCT02667275, n=487), both vehicle-controlled — FDA-approved (Eskata, NDA 209305) 2017-12-14 |
 
+Cycle 26 all-status re-sweep: 6 not-yet-in-atlas interventional CT.gov registrations screened for this indication's drugs; none meets the bar (see the cycle-26 section below for the rule list). This indication is at its current CT.gov ceiling.
+
 21st indication, added cycle 12 (2026-09-05). Both trials are named in
 ESKATA's own FDA label section 14. Same market-discontinued-brand /
 absent-from-`label.json` situation as Ozenoxacin above; `boxed_warning`
@@ -570,6 +703,8 @@ recording the override.
 | Drug | Pivotal Phase III trials |
 |---|---|
 | Abametapir (topical lotion, 0.74%) | NCT02060903 (n=379), vehicle-controlled — FDA-approved (Xeglyze, NDA 206966) 2020-07-24 |
+
+Cycle 26 all-status re-sweep: 8 not-yet-in-atlas interventional CT.gov registrations screened for this indication's drugs; none meets the bar (see the cycle-26 section below for the rule list). This indication is at its current CT.gov ceiling.
 
 22nd indication, added cycle 17. FDA's label names "Trials 1 and 2" as
 the two identical randomized, double-blind, vehicle-controlled pivotal
@@ -596,6 +731,8 @@ pattern as Pemphigus Vulgaris/Rituximab and the BCC hedgehog inhibitors.
 | Drug | Pivotal Phase III trials |
 |---|---|
 | Immune Globulin Intravenous (Human) (Octagam 10%) | ProDERM (NCT02728752, n=95), placebo-controlled — FDA-approved (Octagam 10%, BLA 125062, efficacy supplement) 2021-07-15 |
+
+Cycle 26 all-status re-sweep: 27 not-yet-in-atlas interventional CT.gov registrations screened for this indication's drugs; none meets the bar (see the cycle-26 section below for the rule list). This indication is at its current CT.gov ceiling.
 
 23rd indication, added cycle 18. Found via a fresh "FDA dermatology
 approvals 2026" web sweep that surfaced Brepocitinib (Lisraya), a newly
@@ -991,10 +1128,12 @@ CT.gov, so active and non-active trials can be compared per indication:
   TERMINATED/WITHDRAWN/SUSPENDED trial; a real `null` when the trial did
   not stop early.
 
-Current spread across the 151 trials: 141 COMPLETED, 5 TERMINATED (the 3
-Brodalumab AMAGINE trials, "Sponsor decision"; Ketoconazole NCT01110330;
-Propranolol NCT00744185), and 5 ACTIVE_NOT_RECRUITING (long-term follow-up
-still running after a posted primary readout).
+Current spread across the 218 trials (fetched 2026-09-23): 184 COMPLETED,
+16 ACTIVE_NOT_RECRUITING, 8 RECRUITING, 1 NOT_YET_RECRUITING, 7 TERMINATED
+and 2 WITHDRAWN; 194 have posted results (`reported`) and 24 do not
+(`not_yet_reported`). Cycle 26 added 24 of the non-COMPLETED trials (see
+"Cycle 26" below): before it, the atlas held no RECRUITING, NOT_YET_RECRUITING
+or WITHDRAWN trial at all.
 
 The cycle-25 sweep of RECRUITING / NOT_YET_RECRUITING /
 ENROLLING_BY_INVITATION / ACTIVE_NOT_RECRUITING / SUSPENDED / WITHDRAWN
@@ -1041,7 +1180,145 @@ Results:
 An Asta PASS is automated QA only. `reviewed_by` stays `null` on every
 field until the human clinical review (captain + Garvita).
 
-### Fill status (all 151 trials, 47 fields each — 7097 sourced values)
+### Cycle 26: deepening the existing indications (all CT.gov statuses)
+
+Captain's instruction: "fill up the indication we already have much more."
+Cycle 26 re-swept the 23 indications that existed before cycle 25, for every
+drug already in the atlas for that indication, across **every** CT.gov
+`overallStatus` (not only completed, results-bearing trials).
+
+**Method.**
+1. Live CT.gov v2 query per (indication, drug), `query.cond` x `query.intr`
+   with the drug's generic name plus its development codes (e.g. `REGN668`,
+   `PF-04965842`, `AIN457`, `CTP-543`), interventional studies only, all
+   statuses: 1,035 unique registrations not already in the atlas.
+2. Rule screen, then a manual read of every near-miss. A trial qualifies when
+   it is randomized; its atlas drug is an EXPERIMENTAL arm, not someone else's
+   comparator; a concurrently randomized placebo/vehicle arm exists (an active
+   comparator *alongside* placebo is fine); it is Phase 3 (or a label-cited
+   Phase 2/4); it studies the approved indication; and it is sponsored by the
+   drug's developer or licensee.
+3. Excluded on sight, as in every prior cycle:
+   - extension, continuation or roll-over studies;
+   - active-comparator-only head-to-heads;
+   - single-country East-Asian (or country-named) regional bridging studies;
+   - generic-manufacturer ANDA clinical-endpoint studies;
+   - device, formulation or vaccine-response/mechanistic studies;
+   - other indications (PsA, palmoplantar pustulosis, nummular or chronic hand
+     eczema for a drug not approved for it, cold urticaria, symptomatic
+     dermographism).
+   COMPLETED trials still need a posted `resultsSection`.
+4. **Label override, both ways.** A trial the drug's own current FDA label
+   cites by NCT id in section 14 is pivotal by definition (AGENTS.md
+   precedent), even when a rule above would drop it. Cross-checking every atlas
+   drug's label NCT ids caught 8 trials the rule screen missed:
+   - LIBERTY AD PRESCHOOL: CT.gov lists its allocation as NON_RANDOMIZED
+     because its Part A is open-label.
+   - BE READY: its CT.gov condition list includes psoriatic arthritis.
+   - SOLO-CONTINUE.
+   - ORION, and the secukinumab 2 mL syringe and auto-injector trials.
+   - Risankizumab's Phase 4 UnlIMMited.
+   - Apremilast LIBERTY.
+
+   Label-cited trials that fail the design bar stay out: NAVIGATE, IMMvent
+   and the risankizumab pediatric study are all active-comparator only.
+5. **One real cross-indication gap closed.** Ruxolitinib cream was in the
+   atlas only for vitiligo, but OPZELURA is FDA-approved for atopic
+   dermatitis. Five AD trials were added: TRuE-AD1/2/3, which the label
+   cites, plus TRuE-AD4/5.
+
+**Result: 67 trials added across 8 of the 23 indications.** Atopic
+Dermatitis +24, Plaque Psoriasis +31, Alopecia Areata +4, Chronic Spontaneous
+Urticaria +3, Vitiligo +2, and Generalized Pustular Psoriasis, Erythropoietic
+Protoporphyria and Actinic Keratosis +1 each. 24 of the 67 are not
+COMPLETED: 11 ACTIVE_NOT_RECRUITING, 8 RECRUITING, 1 NOT_YET_RECRUITING,
+2 TERMINATED (with posted partial results) and 2 WITHDRAWN (n=0).
+
+The other 15 indications are at their current CT.gov ceiling: the sweep
+found nothing that meets the bar (per-indication notes above). For
+Hidradenitis Suppurativa, Acne, Rosacea, Onychomycosis, Hyperhidrosis and
+the rest, every remaining registration is Phase 1/2, open-label,
+investigator-sponsored, a generic ANDA study or an extension.
+
+Two cycle-26 inclusions break earlier curation calls, deliberately:
+- CUV030 (NCT04053270, afamelanotide, 2007) is placebo-controlled with posted
+  results but not cited in the SCENESSE label.
+- The Phase 3b trials are pivotal-design trials run by the developer, not
+  registration trials.
+Both are flagged in the per-indication tables above.
+
+**Results by status.** COMPLETED trials got the full `results.*` build from
+CT.gov. For RECRUITING/NOT_YET/ACTIVE_NOT_RECRUITING-without-results and
+WITHDRAWN trials:
+- the `results.*` and `adverse_events.*` trial fields stay
+  `needs_extraction`, with `identity.results_status: not_yet_reported` as the
+  explicit marker;
+- design fields describe the planned trial from the registry or the protocol.
+TERMINATED trials keep their `whyStopped` text verbatim plus whatever partial
+results they posted.
+
+**Extraction gate (Luna -> Asta, same `scripts/extraction/` pipeline).**
+- **Phase 2.** Luna extracted every requested deep field for all 67 trials
+  straight through: 454 fields requested, 314 filled, 140 honest
+  `not_found`, 314/314 mechanically clean.
+- **Phase 3, first pass.** Asta kept **203 of 314 (64.6%)**. That is well
+  below the >95% first-pass target and in line with cycle 25's 66%. Asta also
+  flagged 46 `not_found` entries as wrongly absent.
+- **Why the first pass missed.** Almost every rejection was one over-asserted
+  sub-field inside an otherwise correct rich object:
+  - `study_schedule` totals and period boundaries: 35;
+  - dosing co-administration and merged arm schedules: 22;
+  - severity ranges encoded as `in [a,b]`, and scalp-% or SALT-% mislabeled
+    as `percent_bsa`: 19;
+  - background-therapy prohibitions without their stated exceptions: 14;
+  - all 8 `published_results` failures used label column names instead of
+    registered `arm_id`s.
+- **Pipeline refinement (committed).**
+  - `assemble.py` now rejects a `published_results` row whose `arm_id` is not
+    in `base.json` `results.arms`, with a new regression test.
+  - `LUNA_INSTRUCTIONS.md` adds "assert less, but assert it exactly" rules for
+    each failure family, and states that `full_visit_table_available`
+    describes the cited file. 9 schedules had been left `not_found` over it.
+  - `ASTA_INSTRUCTIONS.md` now judges assertions, not completeness. An omitted
+    nullable detail is logged as incomplete, and it is still a FAIL when it
+    makes an asserted element misleading. Asta also now knows the atlas
+    convention of excluding a different drug's active comparator from
+    `dosing_regimen`: 3 first-pass FAILs were that reviewer error.
+- **One re-extraction cycle, then one Asta pass** over the 158 rejected or
+  wrongly absent fields: 155 were re-filled and 116 passed (74.8%).
+- **Final: 319 LLM fields kept, 39 reverted to `needs_extraction`**, all real
+  value errors (reasons are in the PR). 96 fields stay honest
+  `not_found`.
+- Deterministic `ctgov_api` fills: 4 trials' AE-discontinuation is a
+  computed zero. This applies only when the first period's posted
+  `dropWithdraws` reasons account for every non-completer and none is an
+  adverse event, "Other" or "Physician Decision".
+
+**Field completion, the 67 new trials.**
+- **All 47 fields: 2832/3149 (89.9%).** Per trial: min 74.5%, median 93.6%,
+  max 100%.
+- **Genuinely trial-level fields** (the 7 drug-level pointers excluded):
+  2363/2680 (88.2%).
+- **Excluding the 168 results/AE fields that cannot exist yet** for the 21
+  trials without posted results: 2363/2512 (94.1%).
+- Per indication, on that last measure:
+  - Atopic Dermatitis 95.2%
+  - Generalized Pustular Psoriasis 95.0%
+  - Plaque Psoriasis 94.2%
+  - Vitiligo 93.8%
+  - Chronic Spontaneous Urticaria 93.3%
+  - Actinic Keratosis 92.5%
+  - Alopecia Areata 89.8%
+  - Erythropoietic Protoporphyria 82.5%
+
+This is short of the 97% per-trial target. 23 of the 67 trials reach
+97% or more on the applicable measure. The remaining gaps are real:
+- no posted protocol/SAP for most RECRUITING and older trials, so
+  `multiplicity_control` and `rescue_therapy` are unstated in registry text;
+- `published_results` exists only for label-cited trials;
+- the 39 reverted values.
+
+### Fill status (all 218 trials, 47 fields each — 10246 sourced values)
 
 Fields fully or near-fully filled across every trial (`ctgov_api` for the
 identity/population/design/endpoints/timing_ops/adverse_events core):
@@ -1060,32 +1337,33 @@ identity/population/design/endpoints/timing_ops/adverse_events core):
 PR #11) — always "filled" from a trial's own point of view (a pointer
 always points somewhere), so their real fill status is now a property of
 the DRUG, not the trial; see "Drug-level fill status" below rather than
-reading these as 151/151 trial fills.
+reading these as 218/218 trial fills.
 
-Fields with real, checkable gaps (numerator = filled, out of 151 trials;
+Fields with real, checkable gaps (numerator = filled, out of 218 trials;
 every count below recomputed from `sources.csv` this cycle):
 
 | Field | Filled | Gap reason |
 |---|---|---|
-| `molecule.dosing_regimen` | 150/151 | real CT.gov intervention description text, matched to each trial's own drug by generic name or known development/compound code, for every trial except one whose intervention text doesn't state a regimen |
-| `population.severity_criteria` | 131/151 | real CT.gov eligibility-criteria text now covers PASI/sPGA/ISGA/S-IGA/B-IGA/PGA (psoriasis family), Hurley Stage + AN Count (HS), SIRS (impetigo), HDSS/ASDD (hyperhidrosis), SALT (AA), BPDAI (bullous pemphigoid), GPPGA (GPP), CDASI (dermatomyositis), and lesion-count ranges (acne/rosacea/molluscum/AK) in addition to the original EASI/IGA/BSA (AD); the remaining trials genuinely state no quantitative baseline threshold in their CT.gov text, or their real number uses a unit the current schema has no metric for (percent-of-nail-area, wound size in cm²) |
-| `design.background_therapy` | 98/151 | real protocol/SAP PDF text (CT.gov `documentSection`, including a scanned Protocol Summary and one scanned protocol OCR'd with tesseract) covers every indication with a posted Study Protocol/SAP, plus one document-free fallback fill from CT.gov eligibility-criteria text alone (Head Lice/Abametapir); the remaining gap trials have no protocol/SAP document posted on CT.gov at all and no fillable eligibility-text content, so real extraction isn't possible without a different source |
-| `endpoints.multiplicity_control` | 91/151 | same PDF-extraction pass closed the real testing-hierarchy/alpha-control text it could, plus a cycle-3 re-read (wider keyword net, one scanned SAP OCR'd with tesseract) and cycle-24's pass over the 13 new Rosacea/Hyperhidrosis/Acne-combo trials (found real serial-gatekeeping/fixed-sequence procedures the first pass's narrower keyword search missed, including one — Zilxi — stated only in the Protocol, not the SAP); remaining gaps are genuine — either no posted document, or the document states no formal multiplicity procedure was used |
-| `timing_ops.study_schedule` | 101/151 | same pass closed the real screening/treatment/follow-up period breakdown from every posted protocol; remaining gaps have no protocol/SAP document posted |
-| `timing_ops.rescue_therapy` | 78/151 | same pass closed the real rescue-medication rules it could (including trials whose real finding is "rescue explicitly prohibited"), plus one partial fill from CT.gov eligibility-criteria text alone (no posted protocol) confirming rescue therapy is permitted without stating its composition; remaining gaps are a mix of no-posted-document trials and trials whose protocol genuinely states no rescue-medication concept applies (e.g. simple 8-week monotherapy-vs-vehicle designs, or an "escape arm" that a later amendment removed) |
-| `adverse_events.serious_adverse_event_rate` | 148/151 | CT.gov posts `eventGroups[]` without per-arm serious counts for a few trials (a genuine gap in what was posted, not a computable zero) |
-| `adverse_events.death_rate` | 116/151 | some trials report zero deaths as a genuine null-count edge case in CT.gov's `resultsSection`, not a missing value |
-| `adverse_events.discontinuation_due_to_ae_rate` | 112/151 | CT.gov `resultsSection` gap for several trials whose `participantFlowModule` posts milestones only, no `dropWithdraws` section |
-| `adverse_events.most_common_adverse_events` | 135/151 | CT.gov `resultsSection` gap for a few trials |
-| `results.arms` / `results.arm_results` / `results.effect_estimates` | 148/151 each | schema v3, backfilled from live CT.gov `resultsSection` data for every `hasResults:true` trial; the other 3 (both Efinaconazole/Onychomycosis trials, and the terminated Propranolol pilot NCT00744185) genuinely have no posted results (`identity.results_status: not_yet_reported`). 4 of the 138 filled trials (cycle 23's Cabtreo x2, Epsolay's NCT03564119, Amzeeq's NCT03271021, Twyneo's NCT03761810) have 0 `effect_estimates` — their `resultsSection` genuinely posts no `analyses[]` block for any outcome measure, confirmed against the raw cache, not a build gap |
-| `results.published_results` | 8/151 | still out of scope for the CT.gov backfill; cycle 25 filled it for 8 new trials from the FDA label section 14 or FDA review efficacy tables only (never CT.gov registry numbers, which stay in `arm_results` -- enforced by `tests/test_results_backfill.py`), each row joined to its endpoint by `EndpointKey` |
-| `identity.overall_status` / `results_status` / `why_stopped` | 151/151 each | cycle 25: CT.gov `statusModule.overallStatus` verbatim, `hasResults` as `reported`/`not_yet_reported`, and `whyStopped` verbatim (a real `null` when the trial did not stop early) -- see "Trial status" below |
+| `molecule.dosing_regimen` | 209/218 | real CT.gov intervention description text, matched to each trial's own drug by generic name or known development/compound code, for every trial except one whose intervention text doesn't state a regimen |
+| `population.severity_criteria` | 190/218 | real CT.gov eligibility-criteria text now covers PASI/sPGA/ISGA/S-IGA/B-IGA/PGA (psoriasis family), Hurley Stage + AN Count (HS), SIRS (impetigo), HDSS/ASDD (hyperhidrosis), SALT (AA), BPDAI (bullous pemphigoid), GPPGA (GPP), CDASI (dermatomyositis), and lesion-count ranges (acne/rosacea/molluscum/AK) in addition to the original EASI/IGA/BSA (AD); the remaining trials genuinely state no quantitative baseline threshold in their CT.gov text, or their real number uses a unit the current schema has no metric for (percent-of-nail-area, wound size in cm²) |
+| `design.background_therapy` | 143/218 | real protocol/SAP PDF text (CT.gov `documentSection`, including a scanned Protocol Summary and one scanned protocol OCR'd with tesseract) covers every indication with a posted Study Protocol/SAP, plus one document-free fallback fill from CT.gov eligibility-criteria text alone (Head Lice/Abametapir); the remaining gap trials have no protocol/SAP document posted on CT.gov at all and no fillable eligibility-text content, so real extraction isn't possible without a different source |
+| `endpoints.multiplicity_control` | 124/218 | same PDF-extraction pass closed the real testing-hierarchy/alpha-control text it could, plus a cycle-3 re-read (wider keyword net, one scanned SAP OCR'd with tesseract) and cycle-24's pass over the 13 new Rosacea/Hyperhidrosis/Acne-combo trials (found real serial-gatekeeping/fixed-sequence procedures the first pass's narrower keyword search missed, including one — Zilxi — stated only in the Protocol, not the SAP); remaining gaps are genuine — either no posted document, or the document states no formal multiplicity procedure was used |
+| `timing_ops.study_schedule` | 155/218 | same pass closed the real screening/treatment/follow-up period breakdown from every posted protocol; remaining gaps have no protocol/SAP document posted |
+| `timing_ops.rescue_therapy` | 112/218 | same pass closed the real rescue-medication rules it could (including trials whose real finding is "rescue explicitly prohibited"), plus one partial fill from CT.gov eligibility-criteria text alone (no posted protocol) confirming rescue therapy is permitted without stating its composition; remaining gaps are a mix of no-posted-document trials and trials whose protocol genuinely states no rescue-medication concept applies (e.g. simple 8-week monotherapy-vs-vehicle designs, or an "escape arm" that a later amendment removed) |
+| `adverse_events.serious_adverse_event_rate` | 194/218 | CT.gov posts `eventGroups[]` without per-arm serious counts for a few trials (a genuine gap in what was posted, not a computable zero) |
+| `adverse_events.death_rate` | 158/218 | some trials report zero deaths as a genuine null-count edge case in CT.gov's `resultsSection`, not a missing value |
+| `adverse_events.discontinuation_due_to_ae_rate` | 150/218 | CT.gov `resultsSection` gap for several trials whose `participantFlowModule` posts milestones only, no `dropWithdraws` section |
+| `adverse_events.most_common_adverse_events` | 180/218 | CT.gov `resultsSection` gap for a few trials |
+| `results.arms` / `results.arm_results` / `results.effect_estimates` | 194/218 each | schema v3, backfilled from live CT.gov `resultsSection` data for every `hasResults:true` trial; the other 24 (both Efinaconazole/Onychomycosis trials, the terminated Propranolol pilot NCT00744185, and cycle 26's 21 RECRUITING/NOT_YET/ACTIVE_NOT_RECRUITING/WITHDRAWN trials) genuinely have no posted results (`identity.results_status: not_yet_reported`). 4 of the 138 filled trials (cycle 23's Cabtreo x2, Epsolay's NCT03564119, Amzeeq's NCT03271021, Twyneo's NCT03761810) have 0 `effect_estimates` — their `resultsSection` genuinely posts no `analyses[]` block for any outcome measure, confirmed against the raw cache, not a build gap |
+| `results.published_results` | 36/218 | still out of scope for the CT.gov backfill; cycle 25 filled it for 8 new trials and cycle 26 for 28 label-cited trials, from the FDA label section 14 or FDA review efficacy tables only (never CT.gov registry numbers, which stay in `arm_results` -- enforced by `tests/test_results_backfill.py`), each row joined to its endpoint by `EndpointKey` |
+| `identity.overall_status` / `results_status` / `why_stopped` | 218/218 each | cycle 25: CT.gov `statusModule.overallStatus` verbatim, `hasResults` as `reported`/`not_yet_reported`, and `whyStopped` verbatim (a real `null` when the trial did not stop early) -- see "Trial status" below |
 
-**5538 of 6040 genuinely trial-level sourced values are filled with real
-data (91.7%); 502 remain `needs_extraction`** (excludes the 7 now-drug-level
-fields' 1057 pointer rows, which are always "filled" and would otherwise
+**7901 of 8720 genuinely trial-level sourced values are filled with real
+data (90.6%); 819 remain `needs_extraction`** (excludes the 7 now-drug-level
+fields' 1526 pointer rows, which are always "filled" and would otherwise
 inflate this number without measuring anything real; excluding the 3
-always-filled cycle-25 status fields too, it is 5085 of 5587, 91.0%) — see `sources.csv`
+always-filled status fields too, it is 7247 of 8066, 89.8%; 168 of the 819
+are results/AE fields of the 24 trials with no posted results yet) — see `sources.csv`
 for the per-trial, per-field breakdown.
 
 #### Drug-level fill status (59 drugs, data/drugs/*.json — see drug_sources.csv)
@@ -1113,7 +1391,7 @@ Garvita) before it's treated as authoritative for publication.
 
 Data and pipeline both live here now (post-consolidation):
 
-- `data/trials/<NCT_ID>.json` — one file per trial (151 files), the
+- `data/trials/<NCT_ID>.json` — one file per trial (218 files), the
   sourced-value format described above (schema v4). 7 fields hold a
   `drug_level_ref` pointer instead of the fact — see `data/drugs/`.
 - `data/drugs/<slug>.json` — one file per drug (59 files): the 7 drug-level
@@ -1128,7 +1406,7 @@ Data and pipeline both live here now (post-consolidation):
   trial's full list can run past Python's csv module field-size limit).
 - `sources.csv` — one row per sourced value: `nct_id`, `field`,
   `source_type`, `source_url`, `source_excerpt`, `extracted_by`,
-  `reviewed_by`, `confidence`. 151 trials × 47 fields = 7097 rows (7 of
+  `reviewed_by`, `confidence`. 218 trials × 47 fields = 10246 rows (7 of
   those 47 fields are now `drug_level_ref` pointer rows -- see
   `drug_sources.csv` for the real citation).
 - `endpoints.csv` — one row per outcome measure × criterion: `measure_type`,

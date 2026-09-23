@@ -161,6 +161,10 @@ improve a pass-rate statistic.
    unrepresented collection. Required non-null sub-fields such as integer
    `alpha_sided` are NEVER null. If unknown, mark the whole field `not_found`;
    never guess a required integer or boolean to satisfy validation.
+   One exception: `StudySchedule.full_visit_table_available` is a statement
+   about the cited FILE (does it contain a per-visit schedule table?), which
+   you can always determine by reading that file. See the cycle-26 note below;
+   it never justifies `not_found` for a schedule whose periods are stated.
 6. `ScoreCriterion.metric` and `unit` are also closed enums. Drop a criterion
    that cannot be truthfully represented and explain why; never mislabel it.
    If nothing meaningful remains to support the requested field, use `not_found`.
@@ -390,3 +394,111 @@ Final output is the assembled `patch.json` with `fields`, `not_found`, and
 `trial_mapping`. Every sourced envelope has exactly `value`, `source_type`,
 `source_url`, `source_excerpt`, `extracted_by`, `reviewed_by`, `confidence`.
 Preserve the draft and generated spans as the audit trail.
+
+## Cycle-26 additions (deepening existing indications, all CT.gov statuses)
+
+- **Several posted protocol versions.** When `sources/` holds more than one protocol
+  file, the latest-dated version (see `sources.json` `what`) describes the final
+  design. Amendment histories and tracked-change blocks ("the following text has
+  been deleted", "to remove the escape arm") describe designs the sponsor later
+  removed: never extract a removed rule as the trial's design. Cite the version
+  you used and say why in `note`.
+- **Trials without posted results** (RECRUITING, NOT_YET_RECRUITING,
+  ACTIVE_NOT_RECRUITING without resultsSection, WITHDRAWN): extract the PLANNED
+  design from the protocol or registry text. Registry arm/intervention
+  descriptions, eligibility criteria and outcome time frames are real evidence
+  for dosing, severity thresholds, periods and visit timing; a registry that is
+  silent on rescue, background therapy or multiplicity is `not_found` (silence),
+  never a negative.
+- **Multi-period designs** (vehicle-controlled period then long-term safety,
+  open-label run-in then randomized withdrawal, placebo crossover at week 12/16):
+  represent every stated period with the closed period-name enum and its stated
+  weeks; a crossover of placebo subjects to active drug is a period transition,
+  not rescue therapy, unless the source calls it rescue/escape triggered by a
+  response criterion.
+- **Weight- or age-banded pediatric dosing**: one Intervention per CT.gov
+  intervention name as always; bands belong in typed fields only when the enum
+  and schema represent them, otherwise in `note`. Never pick one band as the dose.
+- **Label trial naming**: labels call trials "Trial 1", "Ps STUDY 3", "AD-1",
+  etc. Map to this NCT id in `trial_mapping` (NCT id printed in the label, or
+  enrollment/age/design match) before using any label number.
+- **`full_visit_table_available` describes the EVIDENCE, not the trial.** It is
+  true only when the selected source file contains a full per-visit schedule
+  table (schedule of assessments/activities); it is false when the schedule
+  comes from narrative text such as CT.gov descriptions, outcome time frames or
+  a protocol synopsis without a visit table. This is established by the file
+  you cite, so it never on its own forces `timing_ops.study_schedule` to
+  `not_found`; the corpus already uses false for 37 registry/narrative-sourced
+  schedules. Say which it is in `note`.
+
+## Cycle-26 refinement: rules from the first Phase 3 gate (64.6% first pass)
+
+Asta rejected 111 of 314 first-pass fields. Almost every rejection was one
+over-asserted sub-field inside an otherwise correct object. The rule that fixes
+this: **assert less, but assert it exactly.** A nullable sub-field you leave
+null is honest ("not extracted"). A sub-field you fill must be stated by the
+source in those terms, for THIS arm, period and timepoint.
+
+- **Derived schedule numbers stay null unless the source defines them.**
+  `total_duration_weeks` is the whole participation (screening + treatment +
+  follow-up) only when the source states that total. `end_of_treatment_week` is
+  the end of the treatment PERIOD, not the last injection (`last_injection_week`).
+  `end_of_study_week` is measured from first dose. `key_secondary_weeks` only
+  when the SAP/protocol calls the endpoints "key secondary".
+  `follow_up_visit_interval_weeks` is the gap BETWEEN follow-up visits, not the
+  time from last dose to a final visit. A response-based reassignment is not
+  `rerandomization_week`. A vehicle/placebo is never `active_comparator`.
+  `double_dummy_arms` only when the source says double-dummy for that arm.
+  Screening that lasts "up to N weeks" is not a fixed `duration_weeks`. Period
+  boundaries (and a scheduled week-12/16 placebo-to-active crossover) come from
+  the protocol's own period definitions; Day 1 is the first dosing day, not
+  Week 1, unless the source says so. Outcome time frames are assessment times,
+  not proof of clinic visits.
+- **Severity criteria.** A continuous range ("BSA 3% to 20%", "PASI 2-15") is
+  TWO criteria (`>=` low and `<=` high). `in` is only for a discrete category
+  set (IGA in [3, 4]). `percent_bsa` means body surface area only; percent of
+  scalp, nail or a SALT percentage is not BSA (use the scale's own metric or
+  drop the criterion with a note). List EVERY stated eligibility threshold; do
+  not keep BSA/PGA and drop the PASI threshold stated next to them.
+  `baseline_visit_number` only from a numbered "Visit N"; "Day 1" is not a visit
+  number. `assessed_at` only when the criterion itself names the visit(s). A
+  threshold that applies only to one age group or is one of two alternative
+  scales cannot be written as a universal criterion: drop it and say why.
+- **Dosing regimen.** `co_administered_with` only when the source says this
+  arm's product is given together with the other at the same administration (a
+  double-dummy placebo stated for THAT arm counts; shared arm membership or a
+  crossover does not). Do not merge different arms' schedules into one
+  `dosing_periods` list; if arm schedules differ (crossover, escape), give only
+  what is common or leave `dosing_periods` empty and describe the arm schedules
+  in `note`. State an explicit frequency (Q4W -> `every_4_weeks`); a regimen
+  whose frequency changes (weekly loading then Q4W) gets `frequency` null unless
+  `dosing_periods` carries each phase. Count units (two 100 mg tablets ->
+  `units_per_dose` 2) only when stated for that arm. Route/form only from the
+  cited file. Active comparators of a DIFFERENT drug stay excluded (atlas
+  convention), but the matching placebo for THIS drug is included.
+- **Background therapy.** Every `prohibited_concomitant` entry carries its
+  stated scope: the period it covers and any stated exception (permitted as
+  rescue, permitted after Week 12/52, permitted on face/scalp). Include stated
+  permissions in `permitted_concomitant`, and set `emollient_required` from an
+  explicit "must/may apply moisturizer" statement. A registry exclusion for
+  prior/ongoing use is pre-randomization unless it says "during the study".
+- **Rescue therapy.** A sequence the protocol only recommends ("if possible",
+  "encouraged") is not a rule: leave `first_step` and minimum-day fields null
+  and quote the recommendation in `rationale`. Record a stated requirement to
+  discontinue study drug for systemic rescue. A response-triggered escape to
+  open-label drug is rescue (trigger by response); a scheduled crossover is not.
+  Where a later final SAP changes the analysis handling of rescued subjects,
+  the final SAP wins.
+- **Multiplicity.** Use the final SAP's procedure (graphical, fixed-sequence,
+  Hochberg...) and its exact order; a later SAP that cancels formal testing
+  (e.g. after early termination) overrides the protocol's planned procedure.
+  Registry `analyses[].groupDescription` text is real evidence when no SAP is
+  posted.
+- **Search the results section before `not_found`.** Participant flow is
+  per period (`periods[].dropWithdraws` has "Adverse Event" and "Death" rows
+  with `numSubjects` strings), `analyses[].groupDescription` often states the
+  testing hierarchy, and arm/intervention descriptions state crossover,
+  escape and rescue rules. Silence in one module is not silence in the record.
+- **`published_results.arm_id`** must be an `arm_id` from `base.json`
+  `results.arms` (assemble.py now enforces this). Map the label's column
+  ("DUPIXENT + TCS", "Placebo") to the registered arm by its label and dose.
