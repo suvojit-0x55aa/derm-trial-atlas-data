@@ -64,10 +64,17 @@ def check_published_results(value, source_type, job):
                                             for e in entries),
             "endpoint_keys.json must list entries with endpoint key objects")
     keys = [entry["key"] for entry in entries]
+    base = spans.read_json(job / "base.json")
+    arms = ((base.get("results") or {}).get("arms") or {}).get("value") or []
+    arm_ids = {a.get("arm_id") for a in arms if isinstance(a, dict)}
+    require(bool(arm_ids), "published_results needs base.json results.arms (the trial's registered arm ids) to join rows")
     groups = {}
     for i, row in enumerate(value):
         require(row["endpoint"] in keys,
                 f"value[{i}].endpoint must exactly match a key listed in endpoint_keys.json")
+        require(row["arm_id"] in arm_ids,
+                f"value[{i}].arm_id {row['arm_id']!r} must be an arm_id from base.json results.arms "
+                f"({', '.join(sorted(arm_ids))}); map label column names to the registered arm")
         key = json.dumps(row["endpoint"], sort_keys=True)
         groups.setdefault((key, row["arm_id"]), []).append((i, row))
     for rows in groups.values():

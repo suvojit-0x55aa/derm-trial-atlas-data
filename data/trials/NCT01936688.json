@@ -1,0 +1,927 @@
+{
+  "schema_version": 4,
+  "nct_id": {
+    "value": "NCT01936688",
+    "source_type": "ctgov_api",
+    "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01936688",
+    "source_excerpt": "protocolSection.identificationModule.nctId",
+    "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+    "reviewed_by": null,
+    "confidence": 1.0
+  },
+  "identity": {
+    "trial_name": {
+      "value": null,
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01936688",
+      "source_excerpt": "protocolSection.identificationModule.acronym",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 0.0
+    },
+    "official_title": {
+      "value": "A 28-Week, Phase 3, Randomized, Active Comparator and Placebo-Controlled, Parallel Design Study to Evaluate the Efficacy and Safety/Tolerability of Subcutaneous SCH 900222 / MK-3222, Followed by an Optional Long-Term Safety Extension Study, in Subjects With Moderate-to-Severe Chronic Plaque Psoriasis (Protocol No. MK-3222-012)",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01936688",
+      "source_excerpt": "protocolSection.identificationModule.officialTitle",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "sponsor": {
+      "value": "Sun Pharmaceutical Industries Limited",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01936688",
+      "source_excerpt": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "phase": {
+      "value": [
+        "PHASE3"
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01936688",
+      "source_excerpt": "protocolSection.designModule.phases",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "overall_status": {
+      "value": "WITHDRAWN",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01936688",
+      "source_excerpt": "protocolSection.statusModule.overallStatus (fetched 2026-09-23; statusVerifiedDate 2022-02)",
+      "extracted_by": "cycle-26 status backfill (ctgov_api v2)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "results_status": {
+      "value": "not_yet_reported",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01936688",
+      "source_excerpt": "hasResults=false (fetched 2026-09-23)",
+      "extracted_by": "cycle-26 status backfill (ctgov_api v2)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "why_stopped": {
+      "value": null,
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01936688",
+      "source_excerpt": "protocolSection.statusModule.whyStopped absent (fetched 2026-09-23; overallStatus WITHDRAWN -- no early-stop reason posted)",
+      "extracted_by": "cycle-26 status backfill (ctgov_api v2)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    }
+  },
+  "molecule": {
+    "drug": {
+      "value": "Tildrakizumab",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01936688",
+      "source_excerpt": "protocolSection.armsInterventionsModule.interventions[].name (curated)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "intervention_names": {
+      "value": [
+        "MK-3222 200 mg",
+        "MK-3222 100 mg",
+        "Placebo to MK-3222",
+        "Placebo to Etanercept",
+        "Etanercept 50 mg"
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01936688",
+      "source_excerpt": "protocolSection.armsInterventionsModule.interventions[].name",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "intervention_type": {
+      "value": [
+        "DRUG"
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01936688",
+      "source_excerpt": "protocolSection.armsInterventionsModule.interventions[].type",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "mechanism_of_action": {
+      "value": {
+        "drug": "Tildrakizumab",
+        "application_number": null
+      },
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    },
+    "dosing_regimen": {
+      "value": [
+        {
+          "intervention_name": "MK-3222 200 mg",
+          "description": "MK-3222 200 mg administered SC.",
+          "is_placebo": false,
+          "route": "subcutaneous",
+          "dose_form": "injection",
+          "dose_value": 200,
+          "dose_unit": "mg",
+          "units_per_dose": null,
+          "frequency": null,
+          "duration_weeks": null,
+          "dosing_periods": [],
+          "administration_sites": [],
+          "antibody_isotype": null,
+          "molecular_target": null,
+          "arm_names": [
+            "MK-3222 200 mg + Placebo to Etanercept"
+          ],
+          "co_administered_with": []
+        },
+        {
+          "intervention_name": "MK-3222 100 mg",
+          "description": "MK-3222 100 mg administered SC.",
+          "is_placebo": false,
+          "route": "subcutaneous",
+          "dose_form": "injection",
+          "dose_value": 100,
+          "dose_unit": "mg",
+          "units_per_dose": null,
+          "frequency": null,
+          "duration_weeks": null,
+          "dosing_periods": [],
+          "administration_sites": [],
+          "antibody_isotype": null,
+          "molecular_target": null,
+          "arm_names": [
+            "MK-3222 100 mg + Placebo to Etanercept"
+          ],
+          "co_administered_with": []
+        },
+        {
+          "intervention_name": "Placebo to MK-3222",
+          "description": "Matching placebo to MK-3222 administered SC.",
+          "is_placebo": true,
+          "route": "subcutaneous",
+          "dose_form": "injection",
+          "dose_value": null,
+          "dose_unit": null,
+          "units_per_dose": null,
+          "frequency": null,
+          "duration_weeks": null,
+          "dosing_periods": [],
+          "administration_sites": [],
+          "antibody_isotype": null,
+          "molecular_target": null,
+          "arm_names": [
+            "Placebo to MK-3222 + Placebo to Etanercept",
+            "Placebo to MK-3222 + Etanercept 50 mg"
+          ],
+          "co_administered_with": []
+        }
+      ],
+      "source_type": "ctgov_text_extraction",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01936688",
+      "source_excerpt": "protocolSection.armsInterventionsModule.interventions and armGroups: \"MK-3222 200 mg + Placebo to Etanercept\" \"MK-3222 200 mg subcutaneously (SC) on Weeks 0, 4, 16, and 28 and, optionally, every 12 weeks thereafter until Week 220, plus etanercept placebo twice weekly up to Week 12, and then once weekly through Week 28.\" \"Drug: MK-3222 200 mg\" \"MK-3222 100 mg + Placebo to Etanercept\" \"MK-3222 100 mg SC on Weeks 0, 4, 16, and 28 and, optionally, every 12 weeks thereafter until Week 220, plus etanercept placebo twice weekly up to Week 12, and then once weekly through Week 28.\" \"Drug: MK-3222 100 mg\" \"Placebo to MK-3222 + Placebo to Etanercept\" \"Drug: Placebo to MK-3222\" \"Placebo to MK-3222 + Etanercept 50 mg\" \"Drug: Placebo to MK-3222\" \"MK-3222 200 mg\" \"MK-3222 200 mg administered SC.\" \"MK-3222 200 mg + Placebo to Etanercept\" \"MK-3222 100 mg\" \"MK-3222 100 mg administered SC.\" \"MK-3222 100 mg + Placebo to Etanercept\" \"Placebo to MK-3222\" \"Matching placebo to MK-3222 administered SC.\" \"Placebo to MK-3222 + Etanercept 50 mg\" \"Placebo to MK-3222 + Placebo to Etanercept\" -- The two active MK-3222 interventions are SC and are dosed at Weeks 0, 4, 16, and 28, with optional dosing every 12 weeks through Week 220 in the extension. Their schedule cannot be represented by a single frequency enum or the schema's continuous dosing-period shape, so those fields remain empty/null. The matching placebo for MK-3222 is included. Etanercept 50 mg and its placebo are separate comparator interventions, not tildrakizumab interventions.",
+      "extracted_by": "luna (gpt-6-luna) cycle-26 extraction pass",
+      "reviewed_by": null,
+      "confidence": 0.92
+    }
+  },
+  "population": {
+    "condition": {
+      "value": [
+        "Plaque-type Psoriasis"
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01936688",
+      "source_excerpt": "protocolSection.conditionsModule.conditions",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "min_age_years": {
+      "value": 18,
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01936688",
+      "source_excerpt": "protocolSection.eligibilityModule.minimumAge",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "max_age_years": {
+      "value": null,
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01936688",
+      "source_excerpt": "protocolSection.eligibilityModule.maximumAge",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 0.0
+    },
+    "sex": {
+      "value": "ALL",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01936688",
+      "source_excerpt": "protocolSection.eligibilityModule.sex",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "enrollment_count": {
+      "value": 0,
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01936688",
+      "source_excerpt": "protocolSection.designModule.enrollmentInfo.count",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "severity_criteria": {
+      "value": {
+        "severity_label": "moderate_to_severe",
+        "basis": "eligibility_text",
+        "cross_reference": null,
+        "source_criterion_numbers": [],
+        "baseline_visit_number": null,
+        "criteria": []
+      },
+      "source_type": "ctgov_text_extraction",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01936688",
+      "source_excerpt": "protocolSection.eligibilityModule.eligibilityCriteria / Inclusion Criteria: \"* Clinical diagnosis of moderate-to-severe plaque psoriasis for at least 6 months prior to enrollment;\" -- Eligibility states a clinical diagnosis of moderate-to-severe plaque psoriasis. No numeric scale threshold or baseline visit number is given in this criterion.",
+      "extracted_by": "luna (gpt-6-luna) cycle-26 extraction pass",
+      "reviewed_by": null,
+      "confidence": 0.9
+    }
+  },
+  "design": {
+    "study_type": {
+      "value": "INTERVENTIONAL",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01936688",
+      "source_excerpt": "protocolSection.designModule.studyType",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "allocation": {
+      "value": "RANDOMIZED",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01936688",
+      "source_excerpt": "protocolSection.designModule.designInfo.allocation",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "intervention_model": {
+      "value": "PARALLEL",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01936688",
+      "source_excerpt": "protocolSection.designModule.designInfo.interventionModel",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "masking": {
+      "value": "QUADRUPLE",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01936688",
+      "source_excerpt": "protocolSection.designModule.designInfo.maskingInfo.masking",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "number_of_arms": {
+      "value": 4,
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01936688",
+      "source_excerpt": "len(protocolSection.armsInterventionsModule.armGroups)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "background_therapy": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    }
+  },
+  "endpoints": {
+    "primary_endpoints": {
+      "value": [
+        {
+          "verbatim": "Proportion of Participants Achieving a Psoriasis Area Severity Index 75% (PASI-75) at Week 12 (Time frame: Week 12)",
+          "rank": "primary",
+          "position": 1,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": "Week 12"
+        },
+        {
+          "verbatim": "Proportion of Participants With a Physician's Global Assessment (PGA) Score of Clear or Minimal With at Least a 2 Grade Reduction From Baseline at Week 12 (Time frame: Baseline, Week 12)",
+          "rank": "primary",
+          "position": 2,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": "Baseline, Week 12"
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01936688",
+      "source_excerpt": "protocolSection.outcomesModule.primaryOutcomes[].measure/timeFrame",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "secondary_endpoints": {
+      "value": [
+        {
+          "verbatim": "Proportion of Participants Achieving PASI-90 Response at Week 12 and 28",
+          "rank": "secondary",
+          "position": 1,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 28,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Mean Change From Baseline in the Dermatology Life Quality Index (DLQI) at Week 12 and Week 28",
+          "rank": "secondary",
+          "position": 2,
+          "measure_type": "absolute_value",
+          "scale": "DLQI",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 28,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Proportion of Participants With a DLQI Score of 0 or 1 at Week 12 and Week 28",
+          "rank": "secondary",
+          "position": 3,
+          "measure_type": "responder_rate",
+          "scale": "DLQI",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [
+            {
+              "scale": "DLQI",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "absolute_score",
+              "comparator": "in",
+              "value": [
+                0,
+                1
+              ],
+              "unit": "score",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 28,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Mean Change and Mean Percent Change from Baseline in PASI Score Over Time",
+          "rank": "secondary",
+          "position": 4,
+          "measure_type": "other",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Mean Change From Baseline in the Nail Area Psoriasis Severity Index (NAPSI) at Week 12 and Week 28",
+          "rank": "secondary",
+          "position": 5,
+          "measure_type": "absolute_value",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 28,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Number of Participants Experiencing an Adverse Event (AE)",
+          "rank": "secondary",
+          "position": 6,
+          "measure_type": "count",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Number of Participants Discontinuing Study Treatment Due to an AE",
+          "rank": "secondary",
+          "position": 7,
+          "measure_type": "count",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Proportion of Participants Achieving PASI-100 Response at Week 12 and 28",
+          "rank": "secondary",
+          "position": 8,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 28,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01936688",
+      "source_excerpt": "protocolSection.outcomesModule.secondaryOutcomes[].measure",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "multiplicity_control": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    }
+  },
+  "timing_ops": {
+    "start_date": {
+      "value": {
+        "date": "2013-09-01",
+        "precision": "month"
+      },
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01936688",
+      "source_excerpt": "protocolSection.statusModule.startDateStruct.date",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "primary_completion_date": {
+      "value": {
+        "date": "2018-08-01",
+        "precision": "month"
+      },
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01936688",
+      "source_excerpt": "protocolSection.statusModule.primaryCompletionDateStruct.date",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "completion_date": {
+      "value": {
+        "date": "2018-08-01",
+        "precision": "month"
+      },
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01936688",
+      "source_excerpt": "protocolSection.statusModule.completionDateStruct.date",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "study_schedule": {
+      "value": {
+        "screening_days": null,
+        "screening_washout": null,
+        "periods": [
+          {
+            "name": "screening",
+            "start_week": null,
+            "end_week": null,
+            "duration_weeks": null,
+            "blinding": null,
+            "background_tcs": null
+          },
+          {
+            "name": "randomized_treatment",
+            "start_week": 0,
+            "end_week": 28,
+            "duration_weeks": 28,
+            "blinding": "The registry describes matching placebo dosing to maintain blinding.",
+            "background_tcs": null
+          },
+          {
+            "name": "off_treatment_follow_up",
+            "start_week": 28,
+            "end_week": null,
+            "duration_weeks": 20,
+            "blinding": null,
+            "background_tcs": null
+          },
+          {
+            "name": "long_term_extension",
+            "start_week": 28,
+            "end_week": 220,
+            "duration_weeks": 192,
+            "blinding": null,
+            "background_tcs": null
+          },
+          {
+            "name": "follow_up",
+            "start_week": null,
+            "end_week": null,
+            "duration_weeks": 20,
+            "blinding": null,
+            "background_tcs": null
+          }
+        ],
+        "dosing_interval": null,
+        "visit_cadence": null,
+        "visit_cadence_until_week": null,
+        "visit_weeks": null,
+        "visit_days": null,
+        "phone_contact_weeks": null,
+        "primary_endpoint_week": 12,
+        "end_of_treatment_week": 28,
+        "end_of_study_week": null,
+        "total_duration_weeks": null,
+        "follow_up_weeks": 20,
+        "follow_up_days": null,
+        "follow_up_visit_week": null,
+        "long_term_extension": true,
+        "extension_end_week": 220,
+        "extension_visit_interval_weeks": null,
+        "extension_study_id": null,
+        "rerandomization_week": 12,
+        "maintenance_arms": null,
+        "maintenance_response_check_weeks": null,
+        "last_injection_week": null,
+        "key_secondary_weeks": null,
+        "follow_up_visit_interval_weeks": null,
+        "end_of_treatment_weeks_after_last_dose": null,
+        "background_tcs_from_day": null,
+        "primary_endpoint_refs": [
+          {
+            "label": "Proportion of Participants Achieving a Psoriasis Area Severity Index 75% (PASI-75) at Week 12",
+            "scale": "PASI",
+            "responder_criteria": [],
+            "timepoint_week": 12,
+            "alpha": null,
+            "step": null
+          },
+          {
+            "label": "Proportion of Participants With a Physician's Global Assessment (PGA) Score of Clear or Minimal With at Least a 2 Grade Reduction From Baseline at Week 12",
+            "scale": "PGA",
+            "responder_criteria": [],
+            "timepoint_week": 12,
+            "alpha": null,
+            "step": null
+          }
+        ],
+        "double_dummy_arms": [],
+        "active_comparator": null,
+        "boilerplate_reused_from": [],
+        "conflicts_with_trial": null,
+        "full_visit_table_available": false,
+        "source_inconsistency": null
+      },
+      "source_type": "ctgov_text_extraction",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT01936688",
+      "source_excerpt": "protocolSection.descriptionModule.detailedDescription and outcomesModule.primaryOutcomes: \"NCT01936688\" \"MK-3222-012\" \"The base study consists of a screening phase of up to 4 weeks followed by a treatment period of 28 weeks, and a 20-week safety follow-up period off drug.\" \"The base study is divided into 2 sequential parts.\" \"In Part 1 of the base study (Week 0 to Week 12), participants will be randomized to one of 4 study arms (Arm A: MK-3222 200 mg at Week 0 and Week 4 + matching placebo to etanercept twice weekly; Arm B: MK-3222 100 mg at Week 0 and Week 4 + matching placebo to etanercept twice weekly; Arm C: Matching placebo to MK-3222 at Week 0 and Week 4 + matching placebo to etanercept twice weekly; Arm D: Matching placebo to MK-3222 at Week 0 and Week 4 + etanercept 50 mg twice weekly).\" \"In Part 2 of the base study (Week 12 to Week 28), participants in Arm A, Arm B, and Arm D will receive matching placebo to MK-3222 to maintain blinding at Week 12.\" \"Participants in Arm A and Arm B will continue to receive either MK-3222 200 mg (Arm A) or MK-3222 100 mg (Arm B) at Week 16 and Week 28 and will also receive matching placebo to etanercept once weekly through study Week 28.\" \"At study Week 12, Arm C participants will be re-randomized to receive their first dose of MK-3222 200 mg or MK-3222 100 mg, and will receive additional doses of study medication according to their re-randomized treatment assignment at Week 16 and Week 28.\" \"Participants in Arm C will also receive matching placebo to etanercept once weekly through treatment Week 28.\" \"Participants in Arm D will continue with once weekly doses of etanercept through study Week 28 in combination with matching placebo to MK-3222.\" \"For all participants, completion of Week 28 marks completion of Part 2 and of the overall base study.\" \"Participants originally assigned to Arm D and participants who discontinue treatment prior to completing Part 2 will not be eligible to enroll in the extension.\" \"Participants that are ineligible or opt not to enter the extension study will be encouraged to complete the 20-week follow-up period.\" \"Eligible participants that choose to enroll in the extension study will have an additional treatment period of up to 192 weeks and will be followed for an additional 20 weeks in the follow-up period.\" \"Each participant will receive MK-3222 200 mg or MK-3222 100 mg every 12 weeks up to study Week 220 according to their treatment assignment at the conclusion of Part 2 of the base study.\" \"Proportion of Participants Achieving a Psoriasis Area Severity Index 75% (PASI-75) at Week 12\" \"Week 12\" \"Proportion of Participants With a Physician's Global Assessment (PGA) Score of Clear or Minimal With at Least a 2 Grade Reduction From Baseline at Week 12\" \"Baseline, Week 12\" -- The registry describes screening as up to four weeks, not a fixed duration, so screening duration fields are null. The base treatment is Weeks 0–28; the description divides it into Weeks 0–12 and 12–28, with Arm C rerandomized at Week 12. The base safety follow-up is 20 weeks off drug. Eligible participants may enter an optional 192-week extension through Week 220, followed by an additional 20-week follow-up after extension completion; its absolute start week varies with extension participation and is left null. The registry does not establish fixed clinic visit days or a full per-visit schedule table; full_visit_table_available is false because this evidence is narrative registry text. Whole-trial duration and absolute end-of-study week remain null because the screening period is only bounded above and extension participation is optional.",
+      "extracted_by": "luna (gpt-6-luna) cycle-26 extraction pass",
+      "reviewed_by": null,
+      "confidence": 0.86
+    },
+    "rescue_therapy": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    }
+  },
+  "adverse_events": {
+    "serious_adverse_event_rate": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    },
+    "death_rate": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    },
+    "most_common_adverse_events": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    },
+    "discontinuation_due_to_ae_rate": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    },
+    "boxed_warning": {
+      "value": {
+        "drug": "Tildrakizumab",
+        "application_number": null
+      },
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    }
+  },
+  "real_world_safety": {
+    "faers_summary": {
+      "value": {
+        "drug": "Tildrakizumab",
+        "application_number": null
+      },
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    },
+    "drug_characterization": {
+      "value": {
+        "drug": "Tildrakizumab",
+        "application_number": null
+      },
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    }
+  },
+  "exclusivity": {
+    "regulatory_application": {
+      "value": {
+        "drug": "Tildrakizumab",
+        "application_number": "761067"
+      },
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    },
+    "orange_book": {
+      "value": {
+        "drug": "Tildrakizumab",
+        "application_number": "761067"
+      },
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    },
+    "purple_book": {
+      "value": {
+        "drug": "Tildrakizumab",
+        "application_number": null
+      },
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    }
+  },
+  "results": {
+    "arms": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    },
+    "arm_results": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    },
+    "effect_estimates": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    },
+    "published_results": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    }
+  }
+}

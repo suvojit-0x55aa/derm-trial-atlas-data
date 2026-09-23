@@ -1,0 +1,2938 @@
+{
+  "schema_version": 4,
+  "nct_id": {
+    "value": "NCT06238817",
+    "source_type": "ctgov_api",
+    "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT06238817",
+    "source_excerpt": "protocolSection.identificationModule.nctId",
+    "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+    "reviewed_by": null,
+    "confidence": 1.0
+  },
+  "identity": {
+    "trial_name": {
+      "value": "TRuE-AD4",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT06238817",
+      "source_excerpt": "protocolSection.identificationModule.acronym",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "official_title": {
+      "value": "A Phase 3b, Double-Blind, Multicenter, Randomized, Vehicle-Controlled, Efficacy, and Safety Study of Ruxolitinib Cream in Adults With Moderate Atopic Dermatitis",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT06238817",
+      "source_excerpt": "protocolSection.identificationModule.officialTitle",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "sponsor": {
+      "value": "Incyte Corporation",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT06238817",
+      "source_excerpt": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "phase": {
+      "value": [
+        "PHASE3"
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT06238817",
+      "source_excerpt": "protocolSection.designModule.phases",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "overall_status": {
+      "value": "COMPLETED",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT06238817",
+      "source_excerpt": "protocolSection.statusModule.overallStatus (fetched 2026-09-23; statusVerifiedDate 2026-05)",
+      "extracted_by": "cycle-26 status backfill (ctgov_api v2)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "results_status": {
+      "value": "reported",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT06238817",
+      "source_excerpt": "hasResults=true (fetched 2026-09-23)",
+      "extracted_by": "cycle-26 status backfill (ctgov_api v2)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "why_stopped": {
+      "value": null,
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT06238817",
+      "source_excerpt": "protocolSection.statusModule.whyStopped absent (fetched 2026-09-23; overallStatus COMPLETED -- no early-stop reason posted)",
+      "extracted_by": "cycle-26 status backfill (ctgov_api v2)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    }
+  },
+  "molecule": {
+    "drug": {
+      "value": "Ruxolitinib",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT06238817",
+      "source_excerpt": "protocolSection.armsInterventionsModule.interventions[].name (curated)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "intervention_names": {
+      "value": [
+        "Ruxolitinib Cream",
+        "Vehicle Cream"
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT06238817",
+      "source_excerpt": "protocolSection.armsInterventionsModule.interventions[].name",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "intervention_type": {
+      "value": [
+        "DRUG"
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT06238817",
+      "source_excerpt": "protocolSection.armsInterventionsModule.interventions[].type",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "mechanism_of_action": {
+      "value": {
+        "drug": "Ruxolitinib",
+        "application_number": null
+      },
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    },
+    "dosing_regimen": {
+      "value": [
+        {
+          "intervention_name": "Ruxolitinib Cream",
+          "description": "Ruxolitinib cream applied topically to the affected area as a thin film twice daily.",
+          "is_placebo": false,
+          "route": "topical",
+          "dose_form": "cream",
+          "dose_value": 1.5,
+          "dose_unit": "%",
+          "units_per_dose": null,
+          "frequency": "twice_daily",
+          "duration_weeks": null,
+          "dosing_periods": [
+            {
+              "start_value": 1,
+              "start_unit": "day",
+              "end_value": 8,
+              "end_unit": "week"
+            },
+            {
+              "start_value": 8,
+              "start_unit": "week",
+              "end_value": 24,
+              "end_unit": "week"
+            }
+          ],
+          "administration_sites": [
+            "affected area"
+          ],
+          "antibody_isotype": null,
+          "molecular_target": null,
+          "arm_names": [
+            "VC Period: Ruxolitinib 1.5% Cream BID",
+            "VC Extension Period/Escape Arm: Ruxolitinib 1.5% Cream BID",
+            "VC Extension Period: Ruxolitinib 1.5% cream open-label escape arm"
+          ],
+          "co_administered_with": []
+        },
+        {
+          "intervention_name": "Vehicle Cream",
+          "description": "Matching vehicle cream applied topically to the affected area as a thin film twice daily.",
+          "is_placebo": true,
+          "route": "topical",
+          "dose_form": "cream",
+          "dose_value": null,
+          "dose_unit": null,
+          "units_per_dose": null,
+          "frequency": "twice_daily",
+          "duration_weeks": null,
+          "dosing_periods": [
+            {
+              "start_value": 1,
+              "start_unit": "day",
+              "end_value": 8,
+              "end_unit": "week"
+            },
+            {
+              "start_value": 8,
+              "start_unit": "week",
+              "end_value": 24,
+              "end_unit": "week"
+            }
+          ],
+          "administration_sites": [
+            "affected area"
+          ],
+          "antibody_isotype": null,
+          "molecular_target": null,
+          "arm_names": [
+            "VC Period: Vehicle Cream BID",
+            "VC Extension Period/Escape Arm: Vehicle Cream BID"
+          ],
+          "co_administered_with": []
+        }
+      ],
+      "source_type": "ctgov_text_extraction",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT06238817",
+      "source_excerpt": "protocolSection.armsInterventionsModule.interventions: \"Ruxolitinib Cream\" \"Ruxolitinib cream applied topically to the affected area as a thin film twice daily.\" \"VC Extension Period/Escape Arm: Ruxolitinib 1.5% Cream BID\" \"VC Extension Period: Ruxolitinib 1.5% cream open-label escape arm\" \"VC Period: Ruxolitinib 1.5% Cream BID\" \"VC Extension Period/Escape Arm: Ruxolitinib 1.5% Cream BID\" \"VC Extension Period: Ruxolitinib 1.5% cream open-label escape arm\" \"Vehicle Cream\" \"Matching vehicle cream applied topically to the affected area as a thin film twice daily.\" \"VC Extension Period/Escape Arm: Vehicle Cream BID\" \"VC Period: Vehicle Cream BID\" \"VC Period: Vehicle Cream BID\" \"VC Extension Period/Escape Arm: Vehicle Cream BID\" \"Participants received ruxolitinib 1.5% cream, applied topically to the affected areas as a thin film twice daily (BID) from Day 1 to Week 8 during the Vehicle Control (VC) Period.\" \"Participants received vehicle cream, applied topically to the affected areas as a thin film twice daily (BID) from Day 1 to Week 8 during the VC Period.\" \"Participants who applied ruxolitinib 1.5% cream during VC Period, continued applying ruxolitinib 1.5% cream topically to the affected areas as a thin film BID from Week 8 to 24 during the Vehicle Control Extension (VCE) Period.\" \"Participants who applied vehicle cream during the VC Period, continued applying vehicle cream as a thin film twice daily (BID) from Weeks 8 to 24 during the VCE Period.\" -- Dose strength, route, dosage form, and twice-daily frequency are stated in the trial protocol; CT.gov intervention descriptions are copied verbatim. No single duration applies because treatment allocation, extension, and escape exposure vary by response.",
+      "extracted_by": "luna (gpt-6-luna) cycle-26 extraction pass",
+      "reviewed_by": null,
+      "confidence": 0.91
+    }
+  },
+  "population": {
+    "condition": {
+      "value": [
+        "Atopic Dermatitis"
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT06238817",
+      "source_excerpt": "protocolSection.conditionsModule.conditions",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "min_age_years": {
+      "value": 18,
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT06238817",
+      "source_excerpt": "protocolSection.eligibilityModule.minimumAge",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "max_age_years": {
+      "value": null,
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT06238817",
+      "source_excerpt": "protocolSection.eligibilityModule.maximumAge",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 0.0
+    },
+    "sex": {
+      "value": "ALL",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT06238817",
+      "source_excerpt": "protocolSection.eligibilityModule.sex",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "enrollment_count": {
+      "value": 241,
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT06238817",
+      "source_excerpt": "protocolSection.designModule.enrollmentInfo.count",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "severity_criteria": {
+      "value": {
+        "severity_label": null,
+        "basis": "eligibility_text",
+        "cross_reference": null,
+        "source_criterion_numbers": [
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "baseline_visit_number": null,
+        "criteria": [
+          {
+            "scale": "IGA",
+            "scale_component": null,
+            "scale_variant": null,
+            "metric": "absolute_score",
+            "comparator": "==",
+            "value": 3,
+            "unit": "score",
+            "scale_min": null,
+            "scale_max": null,
+            "assessed_at": [
+              "screening",
+              "Day 1"
+            ],
+            "scale_anchors": null
+          },
+          {
+            "scale": "EASI",
+            "scale_component": null,
+            "scale_variant": null,
+            "metric": "absolute_score",
+            "comparator": ">",
+            "value": 7,
+            "unit": "score",
+            "scale_min": null,
+            "scale_max": null,
+            "assessed_at": [
+              "screening",
+              "Day 1"
+            ],
+            "scale_anchors": null
+          },
+          {
+            "scale": "Itch NRS",
+            "scale_component": null,
+            "scale_variant": null,
+            "metric": "absolute_score",
+            "comparator": ">=",
+            "value": 4,
+            "unit": "score",
+            "scale_min": null,
+            "scale_max": null,
+            "assessed_at": [
+              "Day 1"
+            ],
+            "scale_anchors": null
+          },
+          {
+            "scale": "BSA",
+            "scale_component": null,
+            "scale_variant": null,
+            "metric": "percent_bsa",
+            "comparator": ">=",
+            "value": 10,
+            "unit": "percent",
+            "scale_min": null,
+            "scale_max": null,
+            "assessed_at": [
+              "screening",
+              "Day 1"
+            ],
+            "scale_anchors": null
+          },
+          {
+            "scale": "BSA",
+            "scale_component": null,
+            "scale_variant": null,
+            "metric": "percent_bsa",
+            "comparator": "<=",
+            "value": 20,
+            "unit": "percent",
+            "scale_min": null,
+            "scale_max": null,
+            "assessed_at": [
+              "screening",
+              "Day 1"
+            ],
+            "scale_anchors": null
+          },
+          {
+            "scale": "DLQI",
+            "scale_component": null,
+            "scale_variant": null,
+            "metric": "absolute_score",
+            "comparator": ">",
+            "value": 10,
+            "unit": "score",
+            "scale_min": null,
+            "scale_max": null,
+            "assessed_at": [
+              "screening",
+              "Day 1"
+            ],
+            "scale_anchors": null
+          }
+        ]
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/17/NCT06238817/Prot_000.pdf",
+      "source_excerpt": "Section 5.1 Inclusion Criteria, criteria 4-8: \"Participants are eligible to be included in the study only if all of the following criteria apply:\" \"4.\" \"IGA score of 3 at screening and Day 1.\" \"5.\" \"EASI score > 7 at screening and Day 1.\" \"6.\" \"Itch NRS score ≥ 4 at Day 1, defined as the average of the 7 days directly before Day 1,\" \"7.\" \"%BSA (excluding the scalp) with AD involvement of at least 10% and up to 20% at\" \"screening and Day 1.\" \"8.\" \"DLQI score > 10 at screening and Day 1.\" -- The continuous BSA range is represented as separate lower and upper thresholds. Day 1 is the named assessment time, not a numbered visit, so baseline_visit_number remains null. The protocol describes moderate AD in its title, but does not literally state the schema label moderate_to_severe.",
+      "extracted_by": "luna (gpt-6-luna) cycle-26 extraction pass",
+      "reviewed_by": null,
+      "confidence": 0.94
+    }
+  },
+  "design": {
+    "study_type": {
+      "value": "INTERVENTIONAL",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT06238817",
+      "source_excerpt": "protocolSection.designModule.studyType",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "allocation": {
+      "value": "RANDOMIZED",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT06238817",
+      "source_excerpt": "protocolSection.designModule.designInfo.allocation",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "intervention_model": {
+      "value": "PARALLEL",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT06238817",
+      "source_excerpt": "protocolSection.designModule.designInfo.interventionModel",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "masking": {
+      "value": "QUADRUPLE",
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT06238817",
+      "source_excerpt": "protocolSection.designModule.designInfo.maskingInfo.masking",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "number_of_arms": {
+      "value": 5,
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT06238817",
+      "source_excerpt": "len(protocolSection.armsInterventionsModule.armGroups)",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "background_therapy": {
+      "value": {
+        "regimen_type": null,
+        "background_agent_class": null,
+        "tcs_regimen": null,
+        "step_down_rule": null,
+        "recommended_agents": [],
+        "emollient_required": null,
+        "emollient_frequency": null,
+        "prohibited_concomitant": [
+          "Any investigational medication other than the study cream (not permitted during screening or the VC/VCE periods)",
+          "Topical corticosteroids, calcineurin inhibitors, PDE4 inhibitors, or aryl hydrocarbon receptor-modulating agents (not permitted during screening or the VC/VCE periods)",
+          "Other topical agents for treatment of AD, except bland emollients (not permitted during screening or the VC/VCE periods)",
+          "Treatment known to affect the course of AD (not permitted during screening or the VC/VCE periods)",
+          "Systemic corticosteroids, methotrexate, cyclosporin A, azathioprine, biologic therapies, or other immunosuppressant agents (not permitted during screening or the VC/VCE periods); short-term systemic corticosteroids may be permitted for acute AEs during VCE following medical monitor and sponsor consultation",
+          "Phototherapy or tanning beds (not permitted during screening or the VC/VCE periods)",
+          "Strong systemic CYP3A4 inhibitors (not permitted during screening or the VC/VCE periods)"
+        ],
+        "permitted_concomitant": [
+          "Bland emollients except those containing urea, salicylic acid, or lactic acid; continued in the participant's pre-study manner throughout the study, but not within 4 hours before or 2 hours after study cream application",
+          "Nonsedating antihistamines; sedating antihistamines on a pre-existing, well-established, stable regimen 2 weeks before Day 1 and throughout the first 8 weeks",
+          "Short-term systemic corticosteroids for acute AEs during VCE, with continuation in study or permanent discontinuation of study cream decided in consultation with the medical monitor and sponsor",
+          "Over-the-counter nonprescription preparations deemed acceptable by the investigator on an established, stable regimen 2 weeks before Day 1 and throughout the first 8 weeks",
+          "Prescription medications, including phytotherapeutic, herbal, or plant-derived preparations, if deemed acceptable by the investigator from 2 weeks before Day 1 through the safety follow-up visit",
+          "Ongoing allergen immunotherapy at a stable dose at entry, continued at the same dose throughout the first 8 weeks",
+          "Live-attenuated immunizations are not recommended during VC/VCE unless deemed necessary by the investigator",
+          "Topical anti-infectives or other topical treatments on active AD lesions are not used within 4 hours before or 2 hours after study cream application"
+        ],
+        "applies_to_rerandomized_maintenance": null,
+        "sponsor_trial_ids": [],
+        "study_drug_doses_mg": [],
+        "population_note": "This protocol studies ruxolitinib cream, with separate VC and VCE periods. It requires discontinuation of AD treatments except as outlined in Sections 6.6.2 and 6.6.3. The source does not establish a schema-supported monotherapy or combination-TCS regimen type; restrictions and permissions are stated with their timing and exception above."
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/17/NCT06238817/Prot_000.pdf",
+      "source_excerpt": "Sections 5.1, 6.6.2, 6.6.3, and 6.6.4, prior/concomitant medications and procedures: \"4.\" \"• Participants may use bland emollients (except those containing urea, salicylic acid, or\" \"lactic acid) such as Eucerin cream.\" \"Participants should continue to use the bland\" \"emollient/moisturizer in the same manner they did before entering the study and\" \"throughout the course of the study.\" \"Note: Emollients should not be used within 4 hours before and 2 hours after\" \"• Short-term use of systemic corticosteroids may be permitted to treat acute AEs\" \"(eg, asthma) during the VCE period, and the decision to keep the participant in the\" \"study (or to permanently discontinue study cream) will be made in consultation with\" \"the medical monitor and sponsor.\" \"• Participants may continue using sedating antihistaminic drugs, as long as their use is\" \"part of a pre-existing, well-established, and stable treatment regimen, 2 weeks prior to\" \"Day 1 and throughout the first 8 weeks of study.\" \"There are no restrictions for use of\" \"nonsedating antihistamines.\" \"• Use of any over-the-counter, nonprescription preparations deemed acceptable by the\" \"investigator is permitted under an established and stable treatment regimen 2 weeks\" \"prior to Day 1 and throughout the first 8 weeks of the study.\" \"• Use of any prescription medication (including phytotherapeutic, herbal, or\" \"plant-derived preparations) within 2 weeks before Day 1 through the safety follow-up\" \"visit is allowed if deemed acceptable by the investigator.\" \"• Immunizations with a live-attenuated vaccine are not recommended during the\" \"VC and VCE periods unless deemed necessary by the investigator.\" \"• Allergen immunotherapy (desensitization) that is ongoing at a stable dose at the time\" \"of study entry may be continued while on study but only at the same dose throughout\" \"the first 8 weeks of the study.\" \"• Bleach baths are allowed as long as they do not exceed 2 baths per week and their\" \"frequency remains the same throughout the first 8 weeks of the study.\" \"• Topical anti-infectives or other topical treatments applied to active AD lesions should\" \"not be used for at least 4 hours before and 2 hours after application of study cream.\" \"The following are not permitted during screening or the VC/VCE periods:\" \"• Any investigational medication other than the study cream\" \"• Any of the following topical treatments: corticosteroids, calcineurin inhibitors,\" \"PDE4 inhibitors, or aryl hydrocarbon receptor–modulating agents\" \"• Other topical agents for treatment of AD (except bland emollients as noted in\" \"Section 6.6.2)\" \"• Treatment known to affect the course of AD\" \"• Systemic corticosteroids, methotrexate, cyclosporin A, azathioprine, biologic\" \"therapies, or other immunosuppressant agents\" \"• Phototherapy or tanning beds\" \"• Strong systemic CYP3A4 inhibitors\" -- A permitted exception modifies the general systemic-corticosteroid restriction: short-term use for acute AEs during VCE may be allowed with medical-monitor and sponsor consultation. The prior-treatment washout is not represented as a treatment-period prohibition. This is the posted Protocol Amendment 2, Version 3, dated 08 Aug 2024.",
+      "extracted_by": "luna (gpt-6-luna) cycle-26 extraction pass",
+      "reviewed_by": null,
+      "confidence": 0.91
+    }
+  },
+  "endpoints": {
+    "primary_endpoints": {
+      "value": [
+        {
+          "verbatim": "Percentage of Participants Achieving a ≥75% Improvement in the Eczema Area and Severity Index Score (EASI75) at Week 8 (Time frame: Baseline; Week 8)",
+          "rank": "primary",
+          "position": 1,
+          "measure_type": "responder_rate",
+          "scale": "EASI",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [
+            {
+              "scale": "EASI",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "percent_improvement_from_baseline",
+              "comparator": ">=",
+              "value": 75,
+              "unit": "percent",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 8,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": "Baseline; Week 8"
+        },
+        {
+          "verbatim": "Percentage of Participants With Investigator's Global Assessment Treatment Success (IGA-TS) at Week 8 (Time frame: Baseline; Week 8)",
+          "rank": "primary",
+          "position": 2,
+          "measure_type": "responder_rate",
+          "scale": "IGA",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 8,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": "Baseline; Week 8"
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT06238817",
+      "source_excerpt": "protocolSection.outcomesModule.primaryOutcomes[].measure/timeFrame",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "secondary_endpoints": {
+      "value": [
+        {
+          "verbatim": "Percentage of Participants Achieving a ≥4-point Improvement in Itch Numeric Rating Scale (NRS) Score (ITCH4) From Baseline to Week 8",
+          "rank": "secondary",
+          "position": 1,
+          "measure_type": "responder_rate",
+          "scale": "Pruritus NRS",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [
+            {
+              "scale": "Pruritus NRS",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "point_reduction_from_baseline",
+              "comparator": ">=",
+              "value": 4,
+              "unit": "points",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            }
+          ],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 8,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants Achieving ITCH4 From Baseline to Days 2, 3, and 7",
+          "rank": "secondary",
+          "position": 2,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 2,
+              "unit": "day",
+              "end_value": null
+            },
+            {
+              "value": 3,
+              "unit": "day",
+              "end_value": null
+            },
+            {
+              "value": 7,
+              "unit": "day",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Vehicle-controlled (VC) Period: Number of Participants With Any Treatment-emergent Adverse Event (TEAE )",
+          "rank": "secondary",
+          "position": 3,
+          "measure_type": "safety_incidence",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Vehicle-controlled Extension Double-blind (VCE DB) Period: Number of Participants With Any TEAE",
+          "rank": "secondary",
+          "position": 4,
+          "measure_type": "safety_incidence",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "VCE Escape Arm: Number of Participants With Any TEAE",
+          "rank": "secondary",
+          "position": 5,
+          "measure_type": "safety_incidence",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "VC Period: Number of Participants With Any ≥Grade 3 TEAE",
+          "rank": "secondary",
+          "position": 6,
+          "measure_type": "safety_incidence",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "VCE DB Period: Number of Participants With Any ≥Grade 3 TEAE",
+          "rank": "secondary",
+          "position": 7,
+          "measure_type": "safety_incidence",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "VCE Escape Arm: Number of Participants With Any ≥Grade 3 TEAE",
+          "rank": "secondary",
+          "position": 8,
+          "measure_type": "safety_incidence",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Double-blind Treatment Period: Percentage of Participants Achieving EASI75 From Baseline at Weeks 2, 4, 12, 16, 20, and 24",
+          "rank": "secondary",
+          "position": 9,
+          "measure_type": "absolute_value",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 2,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 4,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 20,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "VCE Escape Arm: Percentage of Participants Achieving EASI75 From Baseline at Weeks 12, 16, 20, and 24",
+          "rank": "secondary",
+          "position": 10,
+          "measure_type": "absolute_value",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 20,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Double-blind Treatment Period: Percentage of Participants With IGA-TS From Baseline at Each Postbaseline Visit Except Week 8",
+          "rank": "secondary",
+          "position": 11,
+          "measure_type": "other",
+          "scale": "IGA",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 8,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "VCE Escape Arm: Percentage of Participants With IGA-TS From Baseline at Weeks 12, 16, 20, and 24",
+          "rank": "secondary",
+          "position": 12,
+          "measure_type": "absolute_value",
+          "scale": "IGA",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 20,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants Achieving ITCH4 From Baseline to Weeks 2 and 4",
+          "rank": "secondary",
+          "position": 13,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 2,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 4,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Time to Achieve ITCH4 During the VC Period",
+          "rank": "secondary",
+          "position": 14,
+          "measure_type": "time_to_event",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Time to Achieve ITCH2 During the VC Period",
+          "rank": "secondary",
+          "position": 15,
+          "measure_type": "time_to_event",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Change From Baseline in Current Itch NRS Score at 5, 15, 30, 45, and 60 Minutes and 2, 4, and 6 Hours Post-initial Dose on Day 1",
+          "rank": "secondary",
+          "position": 16,
+          "measure_type": "change_from_baseline",
+          "scale": "Pruritus NRS",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 1,
+              "unit": "day",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants Achieving at Least a 2-point Decrease From Baseline in Current Itch NRS Score at 5, 15, 30, 45, and 60 Minutes and 2, 4, and 6 Hours Post-Initial Dose on Day 1",
+          "rank": "secondary",
+          "position": 17,
+          "measure_type": "responder_rate",
+          "scale": "Pruritus NRS",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 1,
+              "unit": "day",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants Achieving at Least a 4-point Decrease From Baseline in Current Itch NRS Score at 5, 15, 30, 45, and 60 Minutes and 2, 4, and 6 Hours Post-Initial Dose on Day 1",
+          "rank": "secondary",
+          "position": 18,
+          "measure_type": "responder_rate",
+          "scale": "Pruritus NRS",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 1,
+              "unit": "day",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Double-blind Treatment Period: Percentage of Participants Achieving EASI50 From Baseline at Weeks 2, 4, 8, 12, 16, 20, and 24",
+          "rank": "secondary",
+          "position": 19,
+          "measure_type": "absolute_value",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 2,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 4,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 8,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 20,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Double-blind Treatment Period: Percentage of Participants With EASI90 From Baseline at Weeks 2, 4, 8, 12, 16, 20, and 24",
+          "rank": "secondary",
+          "position": 20,
+          "measure_type": "absolute_value",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 2,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 4,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 8,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 20,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Double-blind Treatment Period: Percentage of Participants Achieving Both EASI75 and IGA-TS at Weeks 2, 4, 8, 12, 16, 20, and 24",
+          "rank": "secondary",
+          "position": 21,
+          "measure_type": "absolute_value",
+          "scale": "IGA",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [
+            {
+              "value": 2,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 4,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 8,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 20,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Change From Baseline for Atopic Dermatitis-affected %Body Surface Area (BSA) at Weeks 2, 4, and 8 of the Double-blind Treatment Period",
+          "rank": "secondary",
+          "position": 22,
+          "measure_type": "change_from_baseline",
+          "scale": "BSA",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 2,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 4,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 8,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Change From Baseline for Atopic Dermatitis-affected %BSA at Weeks 12, 16, 20, and 24 of the Double-blind Treatment Period",
+          "rank": "secondary",
+          "position": 23,
+          "measure_type": "change_from_baseline",
+          "scale": "BSA",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 20,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Change From Baseline for the EASI Score at Weeks 2, 4, and 8 of the Double-blind Treatment Period",
+          "rank": "secondary",
+          "position": 24,
+          "measure_type": "change_from_baseline",
+          "scale": "EASI",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 2,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 4,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 8,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Change From Baseline for the EASI Score at Weeks 12, 16, 20, and 24 of the Double-blind Treatment Period",
+          "rank": "secondary",
+          "position": 25,
+          "measure_type": "change_from_baseline",
+          "scale": "EASI",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 20,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Change From Baseline for the SCORing Atopic Dermatitis (SCORAD) Score at Weeks 2, 4, and 8 of the Double-blind Treatment Period",
+          "rank": "secondary",
+          "position": 26,
+          "measure_type": "change_from_baseline",
+          "scale": "SCORAD",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 2,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 4,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 8,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Change From Baseline for the SCORAD Score at Weeks 12, 16, 20, and 24 of the Double-blind Treatment Period",
+          "rank": "secondary",
+          "position": 27,
+          "measure_type": "change_from_baseline",
+          "scale": "SCORAD",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 20,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Change From Baseline for Itch NRS Score at Days 1 Through 56 (8 Weeks)",
+          "rank": "secondary",
+          "position": 28,
+          "measure_type": "change_from_baseline",
+          "scale": "Pruritus NRS",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 1,
+              "unit": "day",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Change From Baseline for Skin Pain NRS Score at Weeks 2, 4, and 8 of the Double-blind Treatment Period",
+          "rank": "secondary",
+          "position": 29,
+          "measure_type": "change_from_baseline",
+          "scale": "Pruritus NRS",
+          "scale_component": "Skin Pain",
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 2,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 4,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 8,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Change From Baseline for Skin Pain NRS Score at Weeks 12, 16, 20, and 24 of the Double-blind Treatment Period",
+          "rank": "secondary",
+          "position": 30,
+          "measure_type": "change_from_baseline",
+          "scale": "Pruritus NRS",
+          "scale_component": "Skin Pain",
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 20,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Time to Open-label Escape Arm",
+          "rank": "secondary",
+          "position": 31,
+          "measure_type": "time_to_event",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants in the VCE DB Period Concurrently Meeting All of the Following Criteria: IGA Score ≥3, EASI Score ≥16, Itch NRS Score, ≥4, BSA ≥10%, and Dermatology Life Quality Index (DLQI) Score >10",
+          "rank": "secondary",
+          "position": 32,
+          "measure_type": "responder_rate",
+          "scale": "IGA",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Time to Participants in the VCE DB Period Concurrently Meeting All of the Following Criteria: IGA Score ≥3, EASI Score ≥16, Itch NRS Score ≥4, BSA ≥10%, and DLQI Score >10",
+          "rank": "secondary",
+          "position": 33,
+          "measure_type": "time_to_event",
+          "scale": "IGA",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Participants Who Experienced a Relapse After Study Treatment Discontinuation",
+          "rank": "secondary",
+          "position": 34,
+          "measure_type": "responder_rate",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Time to First Retreatment During the VCE DB Period",
+          "rank": "secondary",
+          "position": 35,
+          "measure_type": "time_to_event",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Time Off Study Treatment Due to Lesion Clearance During the VCE DB Period",
+          "rank": "secondary",
+          "position": 36,
+          "measure_type": "other",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Percentage of Time on Study Treatment During the VCE DB Period",
+          "rank": "secondary",
+          "position": 37,
+          "measure_type": "other",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": null,
+          "timepoints": [],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Double-blind Treatment Period: Percentage of Participants Who Achieved a ≥4-point Improvement in Dermatology Life Quality Index (DLQI) From Baseline at Weeks 2, 4, 8, 12, 16, 20, and 24",
+          "rank": "secondary",
+          "position": 38,
+          "measure_type": "absolute_value",
+          "scale": "DLQI",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 2,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 4,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 8,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 20,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Change From Baseline in the DLQI Score at Weeks 2, 4, and 8 of the Double-blind Treatment Period",
+          "rank": "secondary",
+          "position": 39,
+          "measure_type": "change_from_baseline",
+          "scale": "DLQI",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 2,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 4,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 8,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Change From Baseline in the DLQI Score at Weeks 12, 16, 20, and 24 of the Double-blind Treatment Period",
+          "rank": "secondary",
+          "position": 40,
+          "measure_type": "change_from_baseline",
+          "scale": "DLQI",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 20,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Change From Baseline in the Patient-oriented Eczema Measure (POEM) Score at Weeks 2, 4, and 8 of the Double-blind Treatment Period",
+          "rank": "secondary",
+          "position": 41,
+          "measure_type": "change_from_baseline",
+          "scale": "POEM",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 2,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 4,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 8,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Change From Baseline in the POEM Score at Weeks 12, 16, 20, and 24 of the Double-blind Treatment Period",
+          "rank": "secondary",
+          "position": 42,
+          "measure_type": "change_from_baseline",
+          "scale": "POEM",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 20,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Change From Baseline in the EQ-5D-5L Visual Analog Scale Score at Weeks 2, 4, and 8 of the Double-blind Treatment Period",
+          "rank": "secondary",
+          "position": 43,
+          "measure_type": "change_from_baseline",
+          "scale": "EQ-5D-5L",
+          "scale_component": "VAS",
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 2,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 4,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 8,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Change From Baseline in the EQ-5D-5L Visual Analog Scale Score at Weeks 12, 16, 20, and 24 of the Double-blind Treatment Period",
+          "rank": "secondary",
+          "position": 44,
+          "measure_type": "change_from_baseline",
+          "scale": "EQ-5D-5L",
+          "scale_component": "VAS",
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 20,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Change From Baseline in the Hospital Anxiety and Depression Scale (HADS) Score at Weeks 2, 4, and 8 of the Double-blind Treatment Period",
+          "rank": "secondary",
+          "position": 45,
+          "measure_type": "change_from_baseline",
+          "scale": "HADS",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 2,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 4,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 8,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Change From Baseline in the HADS Score at Weeks 12, 16, 20, and 24 of the Double-blind Treatment Period",
+          "rank": "secondary",
+          "position": 46,
+          "measure_type": "change_from_baseline",
+          "scale": "HADS",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 20,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Change From Baseline in the Patient-Reported Outcomes Measurement Information System (PROMIS) Short Form - Sleep-Related Impairment (8a: 7-day Recall) Score at Weeks 2, 4, and 8",
+          "rank": "secondary",
+          "position": 47,
+          "measure_type": "change_from_baseline",
+          "scale": "PROMIS",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 2,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 4,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 8,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Change From Baseline in the PROMIS Short Form - Sleep-Related Impairment (8a: 7-day Recall) Score at Weeks 12, 16, 20, and 24",
+          "rank": "secondary",
+          "position": 48,
+          "measure_type": "change_from_baseline",
+          "scale": "PROMIS",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 20,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Change From Baseline in the PROMIS Short Form - Sleep Disturbance (8b: 7-day Recall) Score at Weeks 2, 4, and 8",
+          "rank": "secondary",
+          "position": 49,
+          "measure_type": "change_from_baseline",
+          "scale": "PROMIS",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 2,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 4,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 8,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Change From Baseline in the PROMIS Short Form - Sleep Disturbance (8b: 7-day Recall) Score at Weeks 12, 16, 20, and 24",
+          "rank": "secondary",
+          "position": 50,
+          "measure_type": "change_from_baseline",
+          "scale": "PROMIS",
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 12,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 16,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 20,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        },
+        {
+          "verbatim": "Change From Baseline in the Work Productivity and Activity Impairment Questionairre-Atopic Dermatitis (WPAI-AD) Score at Weeks 8 and 24",
+          "rank": "secondary",
+          "position": 51,
+          "measure_type": "change_from_baseline",
+          "scale": null,
+          "scale_component": null,
+          "scale_variant": null,
+          "responder_criteria": [],
+          "baseline_reference": "baseline",
+          "timepoints": [
+            {
+              "value": 8,
+              "unit": "week",
+              "end_value": null
+            },
+            {
+              "value": 24,
+              "unit": "week",
+              "end_value": null
+            }
+          ],
+          "through": null,
+          "analysis_population": null,
+          "subgroup_criteria": [],
+          "subgroup_labels": [],
+          "study_period": null,
+          "event_type": null,
+          "time_frame": null
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT06238817",
+      "source_excerpt": "protocolSection.outcomesModule.secondaryOutcomes[].measure",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "multiplicity_control": {
+      "value": {
+        "procedure": "serial_gatekeeping",
+        "familywise_error_controlled": true,
+        "alpha": 0.05,
+        "alpha_sided": 2,
+        "alpha_per_dose": null,
+        "co_primary_endpoints": [
+          {
+            "label": "Proportion of participants with EASI75 from baseline at Week 8",
+            "scale": "EASI",
+            "responder_criteria": [],
+            "timepoint_week": 8,
+            "alpha": null,
+            "step": null
+          },
+          {
+            "label": "Proportion of participants with IGA-TS at Week 8",
+            "scale": "IGA",
+            "responder_criteria": [],
+            "timepoint_week": 8,
+            "alpha": null,
+            "step": null
+          }
+        ],
+        "testing_sequence": [
+          {
+            "label": "Proportion of participants with ITCH4 from baseline at Week 8",
+            "scale": "Itch NRS",
+            "responder_criteria": [],
+            "timepoint_week": 8,
+            "alpha": null,
+            "step": null
+          },
+          {
+            "label": "Proportion of participants with ITCH4 from baseline on Day 7",
+            "scale": "Itch NRS",
+            "responder_criteria": [],
+            "timepoint_week": null,
+            "alpha": null,
+            "step": null
+          },
+          {
+            "label": "Proportion of participants with ITCH4 from baseline on Day 3",
+            "scale": "Itch NRS",
+            "responder_criteria": [],
+            "timepoint_week": null,
+            "alpha": null,
+            "step": null
+          },
+          {
+            "label": "Proportion of participants with ITCH4 from baseline on Day 2",
+            "scale": "Itch NRS",
+            "responder_criteria": [],
+            "timepoint_week": null,
+            "alpha": null,
+            "step": null
+          }
+        ],
+        "alpha_split": [],
+        "alpha_recycling": null,
+        "doses_compared": [],
+        "dose_comparison_order": [],
+        "branching_on": null,
+        "regulatory_variants": [],
+        "rescue_counted_as_nonresponder": null,
+        "active_comparator_excluded_from_hierarchy": null,
+        "background_tcs": null,
+        "method_citations": [],
+        "finalized_in_sap": null,
+        "same_design_as": [],
+        "gatekeeping_structure": true,
+        "further_endpoints_through_week": null
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/17/NCT06238817/SAP_001.pdf",
+      "source_excerpt": "3.2 Control of Type I Error: \"For the coprimary and key secondary analyses, an overall 2-sided Type I error of 0.05 will be\" \"The following coprimary null hypotheses H1 and H2 will be tested:\" \"Where 𝑝1 and 𝑝2 are the proportion of participants achieving EASI75 at Week 8 in the\" \"ruxolitinib 1.5% cream and vehicle cream group, respectively.\" \"The key secondary endpoints will be tested in a fixed sequence as follows if the null hypotheses\" \"H1 and H2 for both coprimary endpoints (EASI75 and IGA-TS) are rejected:\" \"• Proportion of participants with ITCH4 from baseline at Week 8\" \"• Proportion of participants with ITCH4 from baseline on Day 7\" \"• Proportion of participants with ITCH4 from baseline on Day 3\" \"• Proportion of participants with ITCH4 from baseline on Day 2\" \"• Proportion of participants with EASI75 from baseline at Week 8.\" \"• Proportion of participants with IGA-TS at Week 8.\" -- The SAP states an overall two-sided Type I error of 0.05 for coprimary and key secondary analyses; the four key secondary endpoints follow a fixed sequence only after both coprimary null hypotheses are rejected. The procedure enum serial_gatekeeping represents this stated hierarchy. The SAP does not explicitly state that it was finalized, so finalized_in_sap is null.",
+      "extracted_by": "luna (gpt-6-luna) cycle-26 extraction pass",
+      "reviewed_by": null,
+      "confidence": 0.84
+    }
+  },
+  "timing_ops": {
+    "start_date": {
+      "value": {
+        "date": "2024-04-26",
+        "precision": "day"
+      },
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT06238817",
+      "source_excerpt": "protocolSection.statusModule.startDateStruct.date",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "primary_completion_date": {
+      "value": {
+        "date": "2025-05-21",
+        "precision": "day"
+      },
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT06238817",
+      "source_excerpt": "protocolSection.statusModule.primaryCompletionDateStruct.date",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "completion_date": {
+      "value": {
+        "date": "2025-10-17",
+        "precision": "day"
+      },
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT06238817",
+      "source_excerpt": "protocolSection.statusModule.completionDateStruct.date",
+      "extracted_by": "fetch_trials.py (ctgov_api v2, v1 pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "study_schedule": {
+      "value": {
+        "screening_days": 28,
+        "screening_washout": null,
+        "periods": [
+          {
+            "name": "screening",
+            "start_week": null,
+            "end_week": null,
+            "duration_weeks": 4,
+            "blinding": null,
+            "background_tcs": null
+          },
+          {
+            "name": "randomized_treatment",
+            "start_week": null,
+            "end_week": 8,
+            "duration_weeks": 8,
+            "blinding": "double-blind vehicle-controlled",
+            "background_tcs": null
+          },
+          {
+            "name": "continuation_treatment",
+            "start_week": 8,
+            "end_week": 24,
+            "duration_weeks": 16,
+            "blinding": "double-blind extension with response-triggered open-label escape arm",
+            "background_tcs": null
+          },
+          {
+            "name": "follow_up",
+            "start_week": 24,
+            "end_week": null,
+            "duration_weeks": null,
+            "blinding": null,
+            "background_tcs": null
+          }
+        ],
+        "dosing_interval": "twice daily",
+        "visit_cadence": "every_4_weeks",
+        "visit_cadence_until_week": 24,
+        "visit_weeks": [
+          2,
+          4,
+          8,
+          12,
+          16,
+          20,
+          24
+        ],
+        "visit_days": [
+          1
+        ],
+        "phone_contact_weeks": [
+          10,
+          14,
+          18,
+          22
+        ],
+        "primary_endpoint_week": 8,
+        "end_of_treatment_week": 24,
+        "end_of_study_week": null,
+        "total_duration_weeks": 34,
+        "follow_up_weeks": null,
+        "follow_up_days": 30,
+        "follow_up_visit_week": null,
+        "long_term_extension": null,
+        "extension_end_week": null,
+        "extension_visit_interval_weeks": null,
+        "extension_study_id": null,
+        "rerandomization_week": null,
+        "maintenance_arms": null,
+        "maintenance_response_check_weeks": null,
+        "last_injection_week": null,
+        "key_secondary_weeks": [
+          8
+        ],
+        "follow_up_visit_interval_weeks": null,
+        "end_of_treatment_weeks_after_last_dose": null,
+        "background_tcs_from_day": null,
+        "primary_endpoint_refs": [
+          {
+            "label": "EASI75 from baseline at Week 8",
+            "scale": "EASI",
+            "responder_criteria": [],
+            "timepoint_week": 8,
+            "alpha": null,
+            "step": null
+          },
+          {
+            "label": "IGA-TS at Week 8",
+            "scale": "IGA",
+            "responder_criteria": [],
+            "timepoint_week": 8,
+            "alpha": null,
+            "step": null
+          }
+        ],
+        "double_dummy_arms": [],
+        "active_comparator": null,
+        "boilerplate_reused_from": [],
+        "conflicts_with_trial": null,
+        "full_visit_table_available": true,
+        "source_inconsistency": null
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/17/NCT06238817/Prot_000.pdf",
+      "source_excerpt": "4.1–4.2 Study Design and Overall Study Duration; Tables 3–4 Schedule of Activities: \"Estimated Duration of Approximately 34 weeks: 28 (+ 7) days in the screening period, 8 weeks in the\" \"Participants will be randomized 2:1 to blinded treatment with ruxolitinib cream 1.5% BID or\" \"vehicle cream BID for an 8-week VC period.\" \"Following the EOT (Week 24 or ET), all participants will have a safety follow-up visit 30 days\" \"later (or 30 days after the last application of study treatment if the Week 24 or ET visit was not\" \"Table 3: Schedule of Activities: Vehicle-Controlled Period\" \"Days −28 to −1 Day 1c Week 2 Week 4 or ET1\" \"Table 4: Schedule of Activities: Vehicle-Controlled Extension Period/Escape Arm\" \"Weeks 12, 16, and 20 Week 24/EOT or ET2 30 Days (+ 7 d) After\" \"During the VCE period, participants (including those in the escape arm) will have study visits\" \"every 4 weeks for up to 24 weeks total.\" \"designee will contact the participant in between regularly scheduled clinic visits (eg, Weeks 10,\" \"All participants will have a safety follow-up visit 30 days after their Week 24 or ET visit.\" \"Estimated total duration of participation for an individual is up to approximately 34 weeks:\" \"28 (+ 7) days in the screening period, 8 weeks in the VC period, 16 weeks in the VCE period,\" \"and 30 (+ 7) days in the safety follow-up period.\" \"14, 18, and 22) to discuss eDiary compliance and to confirm the start and end date of treatment\" -- The protocol's full schedule-of-activities tables are present in the cited file. Visit weeks after Week 8 are every four weeks; Weeks 10, 14, 18, and 22 are telephone contacts between clinic visits. Total participation is stated as up to approximately 34 weeks; screening and safety follow-up retain their stated day-based timing. The screening duration of 4 weeks is nominal (28 days) and the protocol allows an additional 7 days.",
+      "extracted_by": "luna (gpt-6-luna) cycle-26 extraction pass",
+      "reviewed_by": null,
+      "confidence": 0.87
+    },
+    "rescue_therapy": {
+      "value": {
+        "permitted": true,
+        "trigger": "protocol_response_threshold",
+        "earliest_week": 8,
+        "prohibited_through_week": null,
+        "trigger_rules": [
+          {
+            "from_week": 8,
+            "to_week": 24,
+            "criterion": {
+              "scale": "EASI",
+              "scale_component": null,
+              "scale_variant": null,
+              "metric": "percent_improvement_from_baseline",
+              "comparator": "<",
+              "value": 50,
+              "unit": "percent",
+              "scale_min": null,
+              "scale_max": null,
+              "assessed_at": null,
+              "scale_anchors": null
+            },
+            "consecutive_visits": 2
+          }
+        ],
+        "flare_definition": [],
+        "first_step": null,
+        "topical_min_days_before_systemic": null,
+        "topical_rescue_requires_study_drug_discontinuation": null,
+        "systemic_rescue_requires_study_drug_discontinuation": null,
+        "resume_after_systemic_rescue_half_lives": null,
+        "resume_after_phototherapy_months": null,
+        "rescued_counted_as_nonresponder": null,
+        "rescued_counted_as_treatment_failure": null,
+        "continue_visits_after_discontinuation": null,
+        "continue_visits_through_week": null,
+        "topical_rescue_not_counted_after_week": null,
+        "topical_agents": [],
+        "topical_potency_classes": [],
+        "tci_reserved_areas": [],
+        "systemic_agents": [],
+        "oral_corticosteroid_limit": null,
+        "rescue_period": null,
+        "escape_arm_washout_half_lives": null,
+        "maintenance_period_rule": null,
+        "permitted_concomitant": [],
+        "recorded_in_ecrf": null,
+        "applies_to_period": "Vehicle-controlled extension period",
+        "long_term_extension_eligible_after_rescue": null,
+        "topical_agent_class": null,
+        "rationale": "The protocol calls this response-triggered open-label escape treatment, not rescue therapy. It permits escape to ruxolitinib when EASI50 is not reached at Week 8 or when the response is lost during the extension, with loss confirmed at two consecutive visits at least one week apart."
+      },
+      "source_type": "protocol_pdf_extraction",
+      "source_url": "https://cdn.clinicaltrials.gov/large-docs/17/NCT06238817/Prot_000.pdf",
+      "source_excerpt": "4.1 Study Design: \"the ruxolitinib 1.5% cream open-label escape arm if EASI50 is not achieved at Week 8 or if an\" \"Participants will be eligible to enter the ruxolitinib 1.5% cream open-label escape arm\" \"if EASI50 is not achieved at Week 8 or if an EASI50 response from baseline is lost during the\" \"VCE period (Note: < EASI50 must be observed at 2 consecutive visits, one of which can be an\" \"During the VCE period, participants (including those in the escape arm) will have study visits\" \"every 4 weeks for up to 24 weeks total.\" \"(EASI50 is defined as achieving ≥ 50%\" -- The response-triggered open-label escape arm is the protocol-supported treatment escalation represented here. It is not conflated with general concomitant medication rescue; alternative systemic treatment was considered separately by investigators.",
+      "extracted_by": "luna (gpt-6-luna) cycle-26 extraction pass",
+      "reviewed_by": null,
+      "confidence": 0.82
+    }
+  },
+  "adverse_events": {
+    "serious_adverse_event_rate": {
+      "value": [
+        {
+          "arm": "Vehicle Cream",
+          "n_affected": 1,
+          "n_at_risk": 81,
+          "pct": 1.2
+        },
+        {
+          "arm": "Ruxolitinib 1.5% Cream",
+          "n_affected": 4,
+          "n_at_risk": 204,
+          "pct": 2.0
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT06238817",
+      "source_excerpt": "resultsSection.adverseEventsModule.eventGroups[].seriousNumAffected/seriousNumAtRisk",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "death_rate": {
+      "value": [
+        {
+          "arm": "Vehicle Cream",
+          "n_affected": 1,
+          "n_at_risk": 81,
+          "pct": 1.2
+        },
+        {
+          "arm": "Ruxolitinib 1.5% Cream",
+          "n_affected": 0,
+          "n_at_risk": 204,
+          "pct": 0.0
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT06238817",
+      "source_excerpt": "resultsSection.adverseEventsModule.eventGroups[].deathsNumAffected/deathsNumAtRisk",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "most_common_adverse_events": {
+      "value": [
+        {
+          "meddra_pt": "Upper respiratory tract infection",
+          "meddra_soc": "Infections and infestations",
+          "per_arm": [
+            {
+              "arm": "Vehicle Cream",
+              "n_affected": 4,
+              "n_at_risk": 81,
+              "pct": 4.9
+            },
+            {
+              "arm": "Ruxolitinib 1.5% Cream",
+              "n_affected": 21,
+              "n_at_risk": 204,
+              "pct": 10.3
+            }
+          ]
+        },
+        {
+          "meddra_pt": "Application site pain",
+          "meddra_soc": "General disorders",
+          "per_arm": [
+            {
+              "arm": "Vehicle Cream",
+              "n_affected": 5,
+              "n_at_risk": 81,
+              "pct": 6.2
+            },
+            {
+              "arm": "Ruxolitinib 1.5% Cream",
+              "n_affected": 2,
+              "n_at_risk": 204,
+              "pct": 1.0
+            }
+          ]
+        },
+        {
+          "meddra_pt": "Nasopharyngitis",
+          "meddra_soc": "Infections and infestations",
+          "per_arm": [
+            {
+              "arm": "Vehicle Cream",
+              "n_affected": 4,
+              "n_at_risk": 81,
+              "pct": 4.9
+            },
+            {
+              "arm": "Ruxolitinib 1.5% Cream",
+              "n_affected": 12,
+              "n_at_risk": 204,
+              "pct": 5.9
+            }
+          ]
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT06238817",
+      "source_excerpt": "resultsSection.adverseEventsModule.otherEvents[] (top 8 of 3 by highest single-arm incidence; CT.gov's own >=5% frequency-threshold table)",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass); structured by atlas.migrate v1->v2",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "discontinuation_due_to_ae_rate": {
+      "value": [
+        {
+          "arm": "Vehicle Cream",
+          "n_discontinued": 7,
+          "n_started": 81,
+          "pct": 8.6
+        },
+        {
+          "arm": "Ruxolitinib 1.5% Cream",
+          "n_discontinued": 0,
+          "n_started": 160,
+          "pct": 0.0
+        },
+        {
+          "arm": "Vehicle Cream to Ruxolitinib 1.5% Cream",
+          "n_discontinued": 0,
+          "n_started": 0,
+          "pct": null
+        },
+        {
+          "arm": "Ruxolitinib 1.5% Cream to Ruxolitinib 1.5% Cream",
+          "n_discontinued": 0,
+          "n_started": 0,
+          "pct": null
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT06238817",
+      "source_excerpt": "resultsSection.participantFlowModule.periods[0].dropWithdraws[type=\"Adverse Event\"].reasons[] vs periods[0].milestones[type=STARTED].achievements[]",
+      "extracted_by": "fetch_adverse_events.py (ctgov_api results + openfda_label, v1 AE pass)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "boxed_warning": {
+      "value": {
+        "drug": "Ruxolitinib",
+        "application_number": null
+      },
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    }
+  },
+  "real_world_safety": {
+    "faers_summary": {
+      "value": {
+        "drug": "Ruxolitinib",
+        "application_number": null
+      },
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    },
+    "drug_characterization": {
+      "value": {
+        "drug": "Ruxolitinib",
+        "application_number": null
+      },
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    }
+  },
+  "exclusivity": {
+    "regulatory_application": {
+      "value": {
+        "drug": "Ruxolitinib",
+        "application_number": "215309"
+      },
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    },
+    "orange_book": {
+      "value": {
+        "drug": "Ruxolitinib",
+        "application_number": "215309"
+      },
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    },
+    "purple_book": {
+      "value": {
+        "drug": "Ruxolitinib",
+        "application_number": null
+      },
+      "source_type": "drug_level_ref",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    }
+  },
+  "results": {
+    "arms": {
+      "value": [
+        {
+          "arm_id": "OG000",
+          "label": "Vehicle Cream",
+          "role": "vehicle",
+          "analysis_population": "full_analysis_set",
+          "intervention_names": [
+            "Vehicle Cream"
+          ],
+          "dose_value": null,
+          "dose_unit": null,
+          "frequency": null,
+          "randomized_n": 81
+        },
+        {
+          "arm_id": "OG001",
+          "label": "Ruxolitinib 1.5% Cream",
+          "role": "investigational",
+          "analysis_population": "full_analysis_set",
+          "intervention_names": [],
+          "dose_value": null,
+          "dose_unit": null,
+          "frequency": null,
+          "randomized_n": 160
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT06238817",
+      "source_excerpt": "resultsSection.outcomeMeasuresModule.outcomeMeasures[].groups[]",
+      "extracted_by": "atlas.results (ctgov_api v2, cycle-26 build)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "arm_results": {
+      "value": [
+        {
+          "endpoint": {
+            "rank": "primary",
+            "position": 1,
+            "verbatim_sha1": "a1fdda19c4ff0997d223dac6311294465434339a"
+          },
+          "arm_id": "OG000",
+          "timepoint": {
+            "value": 8,
+            "unit": "week",
+            "end_value": null
+          },
+          "analysis_population": "full_analysis_set",
+          "study_period": null,
+          "denominator": 81,
+          "value_type": "number",
+          "reported_value": 18.5,
+          "reported_unit": "percentage of participants",
+          "responders": null,
+          "response_rate_pct": 18.5,
+          "rate_is_derived": false,
+          "dispersion_type": "confidence_interval",
+          "dispersion_value": null,
+          "ci_pct": 95.0,
+          "ci_lower": 10.8,
+          "ci_upper": 28.7,
+          "ctgov_class_title": null
+        },
+        {
+          "endpoint": {
+            "rank": "primary",
+            "position": 1,
+            "verbatim_sha1": "a1fdda19c4ff0997d223dac6311294465434339a"
+          },
+          "arm_id": "OG001",
+          "timepoint": {
+            "value": 8,
+            "unit": "week",
+            "end_value": null
+          },
+          "analysis_population": "full_analysis_set",
+          "study_period": null,
+          "denominator": 160,
+          "value_type": "number",
+          "reported_value": 70.0,
+          "reported_unit": "percentage of participants",
+          "responders": null,
+          "response_rate_pct": 70.0,
+          "rate_is_derived": false,
+          "dispersion_type": "confidence_interval",
+          "dispersion_value": null,
+          "ci_pct": 95.0,
+          "ci_lower": 62.3,
+          "ci_upper": 77.0,
+          "ctgov_class_title": null
+        },
+        {
+          "endpoint": {
+            "rank": "primary",
+            "position": 2,
+            "verbatim_sha1": "1d6c406a878708dfc1f3883b4783b198e85ccfe4"
+          },
+          "arm_id": "OG000",
+          "timepoint": {
+            "value": 8,
+            "unit": "week",
+            "end_value": null
+          },
+          "analysis_population": "full_analysis_set",
+          "study_period": null,
+          "denominator": 81,
+          "value_type": "number",
+          "reported_value": 13.6,
+          "reported_unit": "percentage of participants",
+          "responders": null,
+          "response_rate_pct": 13.6,
+          "rate_is_derived": false,
+          "dispersion_type": "confidence_interval",
+          "dispersion_value": null,
+          "ci_pct": 95.0,
+          "ci_lower": 7.0,
+          "ci_upper": 23.0,
+          "ctgov_class_title": null
+        },
+        {
+          "endpoint": {
+            "rank": "primary",
+            "position": 2,
+            "verbatim_sha1": "1d6c406a878708dfc1f3883b4783b198e85ccfe4"
+          },
+          "arm_id": "OG001",
+          "timepoint": {
+            "value": 8,
+            "unit": "week",
+            "end_value": null
+          },
+          "analysis_population": "full_analysis_set",
+          "study_period": null,
+          "denominator": 160,
+          "value_type": "number",
+          "reported_value": 61.3,
+          "reported_unit": "percentage of participants",
+          "responders": null,
+          "response_rate_pct": 61.3,
+          "rate_is_derived": false,
+          "dispersion_type": "confidence_interval",
+          "dispersion_value": null,
+          "ci_pct": 95.0,
+          "ci_lower": 53.2,
+          "ci_upper": 68.8,
+          "ctgov_class_title": null
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT06238817",
+      "source_excerpt": "resultsSection.outcomeMeasuresModule.outcomeMeasures[].{denoms,classes[].categories[].measurements[]}",
+      "extracted_by": "atlas.results (ctgov_api v2, cycle-26 build)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "effect_estimates": {
+      "value": [
+        {
+          "endpoint": {
+            "rank": "primary",
+            "position": 1,
+            "verbatim_sha1": "a1fdda19c4ff0997d223dac6311294465434339a"
+          },
+          "timepoint": {
+            "value": 8,
+            "unit": "week",
+            "end_value": null
+          },
+          "test_arm_id": "OG001",
+          "reference_arm_id": "OG000",
+          "comparison_kind": "superiority",
+          "effect_type": "odds_ratio",
+          "effect_type_verbatim": "Odds Ratio (OR)",
+          "effect_value": 11.26,
+          "ci_pct": 95.0,
+          "ci_lower": 5.692,
+          "ci_upper": 22.26,
+          "ci_sides": null,
+          "p_value": {
+            "comparator": "<",
+            "value": 0.0001,
+            "verbatim": "<0.0001"
+          },
+          "statistical_method": "Cochran-Mantel-Haenszel",
+          "adjusted_for": []
+        },
+        {
+          "endpoint": {
+            "rank": "primary",
+            "position": 2,
+            "verbatim_sha1": "1d6c406a878708dfc1f3883b4783b198e85ccfe4"
+          },
+          "timepoint": {
+            "value": 8,
+            "unit": "week",
+            "end_value": null
+          },
+          "test_arm_id": "OG001",
+          "reference_arm_id": "OG000",
+          "comparison_kind": "superiority",
+          "effect_type": "odds_ratio",
+          "effect_type_verbatim": "Odds Ratio (OR)",
+          "effect_value": 10.14,
+          "ci_pct": 95.0,
+          "ci_lower": 4.904,
+          "ci_upper": 20.975,
+          "ci_sides": 2,
+          "p_value": {
+            "comparator": "<",
+            "value": 0.0001,
+            "verbatim": "<0.0001"
+          },
+          "statistical_method": "Cochran-Mantel-Haenszel",
+          "adjusted_for": []
+        }
+      ],
+      "source_type": "ctgov_api",
+      "source_url": "https://clinicaltrials.gov/api/v2/studies/NCT06238817",
+      "source_excerpt": "resultsSection.outcomeMeasuresModule.outcomeMeasures[].analyses[]",
+      "extracted_by": "atlas.results (ctgov_api v2, cycle-26 build)",
+      "reviewed_by": null,
+      "confidence": 1.0
+    },
+    "published_results": {
+      "value": null,
+      "source_type": "needs_extraction",
+      "source_url": null,
+      "source_excerpt": null,
+      "extracted_by": null,
+      "reviewed_by": null,
+      "confidence": null
+    }
+  }
+}
