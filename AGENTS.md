@@ -1171,6 +1171,34 @@ This file is the project's committed home for project-intrinsic agent memory: bu
   pages fail mid-pull. Ketoconazole (all routes/products under one term, brand NIZORAL = shampoo) and
   Propranolol (generic = oral cardiovascular use; brand HEMANGEOL is clean) are new FAERS-term cases.
 
+- **Cycle 26 (captain: "fill up the indication we already have much more") re-swept the 23 pre-cycle-25
+  indications across ALL CT.gov statuses and added 67 trials (AD +24, Psoriasis +31, AA +4, CSU +3, Vitiligo
+  +2, GPP/EPP/AK +1; 24 of the 67 not COMPLETED); the other 15 indications are at their CT.gov ceiling.** Rules
+  and per-indication ledger: README "Cycle 26". Three lessons worth reusing:
+  (1) **Always cross-check every atlas drug's current label for NCT ids in section 14** (`openfda.application_number`
+  pin): it caught 8 pivotal trials a rule screen dropped -- CT.gov's own `allocation` can be wrong (Dupixent
+  PRESCHOOL says NON_RANDOMIZED because its Part A is open-label) and `conditions` can list a comorbidity (BE READY
+  lists psoriatic arthritis). (2) **The cycle-15 "other indications of a present drug" sweep only covered
+  biologics/JAKs**: Ruxolitinib cream sat in the atlas for vitiligo while its label-cited AD trials (TRuE-AD1/2/3)
+  were missing; re-run that check for topicals too. (3) For RECRUITING/ACTIVE_NOT_RECRUITING/WITHDRAWN trials the
+  `results.*`/`adverse_events.*` trial fields stay `needs_extraction` with `results_status: not_yet_reported` as
+  the marker; report fill both raw and "applicable" (excluding those) so the gap isn't misread as missed work.
+- **Luna/Asta first pass was 64.6% (cycle 25: 66%) for the same structural reason: rich objects (study_schedule,
+  dosing_regimen, severity_criteria, background_therapy) fail as a whole on one over-asserted sub-field.** The
+  committed refinements target that (see the cycle-26 sections of `scripts/extraction/LUNA_INSTRUCTIONS.md` and
+  `ASTA_INSTRUCTIONS.md`): assemble.py rejects a `published_results` `arm_id` not in `base.json` `results.arms`
+  (every first-pass published_results failure was a label column name used as arm_id); Luna "asserts less, but
+  exactly" (derived schedule totals, ranges as two criteria, `percent_bsa` only for body surface area,
+  co-administration only when stated per arm); Asta judges assertions, not completeness, and knows the
+  exclude-other-drug's-comparator dosing convention. After one re-extraction cycle 74.8% of re-filled fields
+  passed. The next real lever is probably splitting rich objects into per-sub-field verdicts, not more rules.
+  `StudySchedule.full_visit_table_available` describes the CITED FILE, not the trial -- Luna repeatedly refused
+  whole schedules over it until told so explicitly (rule 5 exception).
+- **An AE-discontinuation zero can be computed deterministically (`ctgov_api`) only when period 1's posted
+  `dropWithdraws` reasons sum to every group's NOT COMPLETED and none is "Adverse Event", "Other" or
+  "Physician Decision"** (a generic bucket can hide an AE stop); `build_discontinuation_rate` alone returns
+  `needs_extraction` whenever no AE row exists.
+
 ## Maintaining this file
 
 Keep this file for knowledge useful to almost every future agent session in this project.

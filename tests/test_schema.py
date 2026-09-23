@@ -20,7 +20,7 @@ TRIALS = sorted((ROOT / "data" / "trials").glob("*.json"))
 
 class CommittedDataTest(unittest.TestCase):
     def test_every_trial_validates(self):
-        self.assertEqual(len(TRIALS), 151)
+        self.assertEqual(len(TRIALS), 218)
         for f in TRIALS:
             rec = json.loads(f.read_text())
             with self.subTest(trial=f.name):
@@ -218,8 +218,8 @@ class CsvTest(unittest.TestCase):
                 n_crit += len(sev_val["criteria"])
         self.assertEqual(len({(r["nct_id"], r["rank"], r["position"]) for r in eps}), n_endpoints)
         self.assertEqual(len(sev), n_crit)
-        self.assertEqual(len(trials), 151)
-        self.assertEqual(len(sources), 151 * 47)
+        self.assertEqual(len(trials), 218)
+        self.assertEqual(len(sources), 218 * 47)
         # the atlas's headline query -- "which trials measure EASI-75 at week 16" -- is a plain filter
         easi75_wk16 = [r for r in eps if r["criterion_scale"] == "EASI" and r["criterion_value"] == "75"
                        and r["criterion_role"] == "responder" and "16w" in r["timepoints"].split(";")]

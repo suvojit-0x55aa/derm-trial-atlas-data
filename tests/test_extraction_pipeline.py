@@ -61,6 +61,7 @@ class PipelineTests(unittest.TestCase):
     def published_fixture(self):
         key = {'rank': 'primary', 'position': 1, 'verbatim_sha1': 'a' * 40}
         self.write('endpoint_keys.json', [{'key': key, 'verbatim': 'Complete cure at Week 6'}])
+        self.write('base.json', {'results': {'arms': {'value': [{'arm_id': 'OG000'}, {'arm_id': 'OG001'}]}}})
         props = verify.SPEC['results.published_results']['items']['properties']
         row = {k: None for k in props}
         row.update(endpoint=key, arm_id='OG000', value_type='count_of_participants',
@@ -106,6 +107,15 @@ class PipelineTests(unittest.TestCase):
                 row['endpoint'] = {**original, part: wrong}
                 self.assertIn('endpoint_keys.json', str(self.run_assembly()[1]))
         row['endpoint'] = original
+        self.assertFalse(any(self.run_assembly()[1].values()))
+
+    def test_published_arm_id_must_be_a_registered_arm(self):
+        row = self.published_fixture()
+        for wrong in ['Placebo', 'OG002', 'OG000#full_analysis_set']:
+            with self.subTest(arm_id=wrong):
+                row['arm_id'] = wrong
+                self.assertIn('base.json results.arms', str(self.run_assembly()[1]))
+        row['arm_id'] = 'OG001'
         self.assertFalse(any(self.run_assembly()[1].values()))
 
     def test_repeated_endpoint_arm_requires_distinct_nonblank_titles(self):
