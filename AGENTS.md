@@ -1142,6 +1142,35 @@ This file is the project's committed home for project-intrinsic agent memory: bu
   one gap field, re-read it for the OTHER gap fields too rather than trusting a prior pass's field-by-
   field completeness — a hit for one field doesn't mean every field was checked with equal care.
 
+- **Cycle 25 (captain brief: status spectrum + Luna/Asta extraction) added 4 indications (Scabies, Interdigital
+  Tinea Pedis, Infantile Hemangioma, External Genital Warts), 6 drugs, 11 trials**, plus 3 trial-level status
+  fields (`identity.overall_status`/`results_status`/`why_stopped`, CT.gov verbatim, backfilled for every trial --
+  re-run `add_status`-style live fetches when statuses may have moved). Stopped (TERMINATED/WITHDRAWN/SUSPENDED)
+  trials are now in scope under the same design bar (randomized, placebo/vehicle-controlled Phase 2/3+, drug
+  FDA-approved for the indication), capturing whatever they posted; COMPLETED trials keep the results-present
+  bar. For all 4 new indications the live all-status sweep found NO qualifying active/recruiting trial -- the
+  only placebo arms are HPV-vaccine prevention, device, Phase 1/2 or unapproved-drug studies. Before adding an
+  indication, run that all-status sweep too, not just a completed-trials search.
+- **FDA Drugs@FDA review packages are the workhorse source for pre-2017 trials with no posted protocol**
+  (`drugsfda.json` -> `application_docs` TOC -> `<NDA>Orig1s000MedR.pdf`/`StatR.pdf`; a supplement's review can be
+  a single combined PDF such as `019599Orig1s011.pdf`, or a pediatric "unireview"). Reviews call trials by
+  sponsor protocol numbers, never NCT ids -- map by enrollment/arms/dates and record the mapping.
+- **LLM extraction runs through `scripts/extraction/`** (Codex CLI: `codex exec -m gpt-6-luna|gpt-6-astra -s
+  workspace-write -C <job> "..." </dev/null` -- without `</dev/null` a backgrounded run hangs on "Reading
+  additional input from stdin"; a run whose log stops moving for ~20 min is hung, kill and relaunch). Luna
+  SELECTS span ids, never types quotes (the v1 free-typed-quote design passed only 46/60 mechanically); the
+  mechanical gate then passes by construction, so Asta's review must be semantic. Its real catches, now rules in
+  `LUNA_INSTRUCTIONS.md`: pre-randomization washouts are not during-study prohibitions; a phone call is not a
+  visit; Hochberg is not a fixed testing sequence; label "inhibits" is not "binds"; published_results must come
+  from the label/review, never CT.gov. Schema gaps hit repeatedly (leave not_found, don't force): required
+  `alpha_sided` when a review never states sidedness, no Hochberg procedure enum, no metric for wart
+  count/area or lesion diameter.
+- **openFDA key**: firstmate supplies `OPENFDA_API_KEY` in the gitignored `.env` -- env var only, never in a
+  tracked file, URL recorded in data, log or PR. With it, a full per-report FAERS `drugcharacterization` pull
+  works even for 15,791 reports (Ketoconazole) but needs `limit=250` pages with retry on HTTP 500; 1000-report
+  pages fail mid-pull. Ketoconazole (all routes/products under one term, brand NIZORAL = shampoo) and
+  Propranolol (generic = oral cardiovascular use; brand HEMANGEOL is clean) are new FAERS-term cases.
+
 ## Maintaining this file
 
 Keep this file for knowledge useful to almost every future agent session in this project.

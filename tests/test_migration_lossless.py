@@ -107,6 +107,17 @@ def sourced_fields(record):
                 yield (group, key), sv
 
 
+LATER_EXTRACTION_SOURCES = {"ctgov_text_extraction", "protocol_pdf_extraction", "publication_extraction"}
+
+
+def later_sourced_fill(migrated_sv, committed_sv):
+    """True when a v1 gap (needs_extraction after migration) was filled by a later
+    deep-extraction cycle from a real, cited source -- a closed gap, not an invention."""
+    return (migrated_sv["source_type"] == "needs_extraction"
+            and committed_sv["source_type"] in LATER_EXTRACTION_SOURCES
+            and bool(committed_sv.get("source_excerpt")) and bool(committed_sv.get("source_url")))
+
+
 class LosslessMigrationTest(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
@@ -146,6 +157,20 @@ class LosslessMigrationTest(unittest.TestCase):
                 v2_before_integration = json.loads(json.dumps(v2))
                 for group, key in source_integrated:
                     v2_before_integration[group][key] = migrated[group][key]
+                # identity.{overall_status,results_status,why_stopped} (cycle 25) are a later CT.gov backfill stage
+                # (a registry status that changes over time), not something the
+                # v1->v3 migration derives -- same "later stage" category as above.
+                for status_key in ("overall_status", "results_status", "why_stopped"):
+                    v2_before_integration["identity"].pop(status_key, None)
+                # A later deep-extraction cycle may legitimately close a gap the v1
+                # record left open (e.g. NCT03627767's background_therapy/study_schedule
+                # from its protocol PDF) -- allowed only when the migrated value is
+                # needs_extraction and the later fill carries a real extraction source.
+                for (group, key), sv in sourced_fields(migrated):
+                    if key is None:
+                        continue
+                    if later_sourced_fill(sv, v2_before_integration[group][key]):
+                        v2_before_integration[group][key] = sv
                 self.assertEqual(migrated, v2_before_integration)
 
     def test_untouched_fields_identical(self):
@@ -269,6 +294,11 @@ class LosslessMigrationTest(unittest.TestCase):
         for nct, v1, v2 in self.pairs:
             old_gaps = {v2_path(g, k) for (g, k), sv in sourced_fields(v1) if sv["source_type"] == "needs_extraction"}
             new_gaps = {(g, k) for (g, k), sv in sourced_fields(v2) if sv["source_type"] == "needs_extraction"}
+            # gaps closed by a later deep-extraction cycle with a real cited source
+            closed_later = {(g, k) for (g, k), sv in sourced_fields(v2)
+                            if (g, k) in old_gaps and sv["source_type"] in LATER_EXTRACTION_SOURCES
+                            and sv.get("source_excerpt")}
+            old_gaps = old_gaps - closed_later
             registry = v2["exclusivity"]["regulatory_application"]["value"]["registry"]
             not_applicable_registry = "purple_book" if registry == "orange_book" else "orange_book"
             placeholders = {("exclusivity", not_applicable_registry), ("results", "published_results")}
@@ -282,11 +312,12 @@ class LosslessMigrationTest(unittest.TestCase):
         # plus 4 new v2 fields (real_world_safety.faers_summary, exclusivity.*) and,
         # since migrate_trial chains straight through to the current schema version,
         # 4 more new v3 fields (results.*), plus 1 more field added post-v4
-        # (real_world_safety.drug_characterization, cycle 23) per trial.
+        # (real_world_safety.drug_characterization, cycle 23) per trial, plus
+        # identity.{overall_status,results_status,why_stopped} (cycle 25) per trial.
         v1_total = sum(len(list(sourced_fields(v1))) for _, v1, _ in self.pairs)
         v2_total = sum(len(list(sourced_fields(v2))) for _, _, v2 in self.pairs)
         self.assertEqual(v1_total, 595)
-        self.assertEqual(v2_total, 595 + 17 * 4 + 17 * 4 + 17 * 1)
+        self.assertEqual(v2_total, 595 + 17 * 4 + 17 * 4 + 17 * 1 + 17 * 3)
 
 
 class V2ToV3MigrationTest(unittest.TestCase):

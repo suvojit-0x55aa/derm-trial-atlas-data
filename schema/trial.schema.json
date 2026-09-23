@@ -470,13 +470,309 @@
             "confidence"
           ],
           "description": "CT.gov phases, e.g. ['PHASE3']"
+        },
+        "overall_status": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "value": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "enum": [
+                    "ACTIVE_NOT_RECRUITING",
+                    "COMPLETED",
+                    "ENROLLING_BY_INVITATION",
+                    "NOT_YET_RECRUITING",
+                    "RECRUITING",
+                    "SUSPENDED",
+                    "TERMINATED",
+                    "WITHDRAWN",
+                    "AVAILABLE",
+                    "NO_LONGER_AVAILABLE",
+                    "TEMPORARILY_NOT_AVAILABLE",
+                    "APPROVED_FOR_MARKETING",
+                    "WITHHELD",
+                    "UNKNOWN"
+                  ]
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "source_type": {
+              "type": "string",
+              "enum": [
+                "ctgov_api",
+                "ctgov_text_extraction",
+                "protocol_pdf_extraction",
+                "publication_extraction",
+                "openfda_label",
+                "openfda_faers",
+                "orange_book",
+                "purple_book",
+                "needs_extraction",
+                "drug_level_ref"
+              ]
+            },
+            "source_url": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "source_excerpt": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "extracted_by": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "reviewed_by": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "confidence": {
+              "anyOf": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "value",
+            "source_type",
+            "source_url",
+            "source_excerpt",
+            "extracted_by",
+            "reviewed_by",
+            "confidence"
+          ],
+          "description": "CT.gov statusModule.overallStatus at fetch time (source_excerpt records the fetch date) -- lets active (RECRUITING, ACTIVE_NOT_RECRUITING, ...) and non-active (COMPLETED, TERMINATED, ...) trials be compared per indication; a registry status changes over time"
+        },
+        "results_status": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "value": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "enum": [
+                    "reported",
+                    "not_yet_reported"
+                  ]
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "source_type": {
+              "type": "string",
+              "enum": [
+                "ctgov_api",
+                "ctgov_text_extraction",
+                "protocol_pdf_extraction",
+                "publication_extraction",
+                "openfda_label",
+                "openfda_faers",
+                "orange_book",
+                "purple_book",
+                "needs_extraction",
+                "drug_level_ref"
+              ]
+            },
+            "source_url": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "source_excerpt": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "extracted_by": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "reviewed_by": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "confidence": {
+              "anyOf": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "value",
+            "source_type",
+            "source_url",
+            "source_excerpt",
+            "extracted_by",
+            "reviewed_by",
+            "confidence"
+          ],
+          "description": "CT.gov hasResults at fetch time: 'reported' when a resultsSection is posted, 'not_yet_reported' otherwise (e.g. a RECRUITING or ACTIVE_NOT_RECRUITING trial) -- an explicit marker, so an empty results.* group is never mistaken for missing extraction"
+        },
+        "why_stopped": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "value": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "source_type": {
+              "type": "string",
+              "enum": [
+                "ctgov_api",
+                "ctgov_text_extraction",
+                "protocol_pdf_extraction",
+                "publication_extraction",
+                "openfda_label",
+                "openfda_faers",
+                "orange_book",
+                "purple_book",
+                "needs_extraction",
+                "drug_level_ref"
+              ]
+            },
+            "source_url": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "source_excerpt": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "extracted_by": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "reviewed_by": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "confidence": {
+              "anyOf": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "value",
+            "source_type",
+            "source_url",
+            "source_excerpt",
+            "extracted_by",
+            "reviewed_by",
+            "confidence"
+          ],
+          "description": "CT.gov statusModule.whyStopped verbatim -- the registry's own stated reason a TERMINATED/WITHDRAWN/SUSPENDED trial stopped (null when the trial was not stopped early, or the registry states no reason)"
         }
       },
       "required": [
         "trial_name",
         "official_title",
         "sponsor",
-        "phase"
+        "phase",
+        "overall_status",
+        "results_status",
+        "why_stopped"
       ]
     },
     "molecule": {

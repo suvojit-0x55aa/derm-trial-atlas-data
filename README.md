@@ -12,7 +12,7 @@ longer part of this project. There are exactly two repos now:
 Real, live-pulled pivotal Phase III trials (adult / adult+adolescent,
 systemic therapy), from the [ClinicalTrials.gov API
 v2](https://clinicaltrials.gov/data-api/api) (`/api/v2/studies`, no API
-key required), across **23 indications, 53 unique drugs, 140 trials**
+key required), across **27 indications, 59 unique drugs, 151 trials**
 (all three counts recomputed from `data/trials/*.json` each cycle):
 
 ### Atopic Dermatitis (10 drugs, 28 trials)
@@ -648,6 +648,105 @@ not a clean per-arm split) because of the crossover/escape design —
 documented in `source_excerpt` rather than presented as a like-for-like
 comparison.
 
+### Scabies (1 drug, 2 trials)
+
+| Drug | Pivotal Phase III trials |
+|---|---|
+| Spinosad (topical suspension, 0.9%) | Trial 1 (NCT02485717, n=291) and Trial 2 (NCT02485704, n=280), vehicle-controlled, both COMPLETED — FDA-approved for scabies (Natroba, NDA 022408, efficacy supplement S-010) 2021-04-28 |
+
+24th indication, added cycle 25. Natroba's own label section 14.2 names
+both trials by NCT id ("Trial 1 [NCT02485717] and Trial 2 [NCT02485704]").
+Both posted a Study Protocol and SAP on CT.gov, read for the deep fields;
+FDA's unireview of the scabies supplement covers both. The same drug was
+excluded for Head Lice in cycle 17, because its head-lice trials are
+active-comparator-only (vs. permethrin). The scabies trials are
+vehicle-controlled, so the drug qualifies here. AE discontinuation is a
+computed 0 per arm: every non-completer is accounted for by a posted
+`dropWithdraws` reason and none is an adverse event (arithmetic in
+`source_excerpt`). NCT02485717 posts `frequencyThreshold` 0 with no
+non-serious events, so `most_common_adverse_events` is a real empty list.
+Status spread on CT.gov (cycle-25 sweep, all statuses): no
+active/recruiting or stopped placebo-controlled trial of an FDA-approved
+scabies drug exists. Ivermectin/permethrin/moxidectin studies there are
+active-comparator, Phase 1/2, or mass-drug-administration designs.
+
+### Interdigital Tinea Pedis (3 drugs, 5 trials)
+
+| Drug | Pivotal Phase III trials |
+|---|---|
+| Naftifine (gel, 2%) | NCT01290341 (n=860) and NCT01289015 (n=855), NAFT-600, vehicle-controlled, COMPLETED — FDA-approved (Naftin Gel 2%, NDA 204286) 2013-06-27 |
+| Naftifine (cream, 2%) | NCT00750139 (n=707), NAFT-500, 4 arms: NAFT-500 2 weeks and Naftin 1% 4 weeks, each with its own placebo, COMPLETED — FDA-approved (Naftin Cream 2%, NDA 019599 S-011) 2012-01-13 |
+| Econazole (topical foam, 1%) | NCT01353976 (n=264), vehicle-controlled, COMPLETED — FDA-approved (Ecoza, NDA 205175) 2013-10-24 |
+| Ketoconazole (cream, 2%) | NCT01110330 (n=583), placebo-controlled, **TERMINATED** (whyStopped: "Unexpected discordant results between the KOH microscopy and mycological culture tests at three study sites in the UK."), has posted results |
+
+25th indication, added cycle 25. Naftifine's two trial-backed applications here are separate NDAs (cream
+019599, gel 204286), the same shape as Roflumilast. NAFT-500's Naftin 1%
+arm is a positive control alongside real placebo arms (FIXTURE
+precedent); it is role-curated `active_comparator`. Econazole foam's
+second label-cited trial, NCT01358240, has no posted results. It is
+excluded as a re-check candidate (Xeglyze precedent).
+
+The Ketoconazole trial is the first **stopped** trial added under the
+cycle-25 status-spectrum rule. It is a randomized, placebo-controlled
+Phase 3 of a drug FDA-approved for this indication (ketoconazole 2%
+cream: tinea pedis per its label), stopped early, with whatever it posted
+captured. It compared the marketed Nizoral cream (F012) with a new
+formulation (F126); both arms are role-curated investigational (CT.gov
+marks both EXPERIMENTAL). The reference NDA 019084 (Nizoral cream) is
+discontinued, so the label cited is Teva's generic ketoconazole 2% cream
+label (ANDA 075581); generic labeling must match the reference product's.
+
+Ketoconazole's FAERS search term (`KETOCONAZOLE`, 15,791 reports) cannot
+be made cream-specific. It mixes every ketoconazole product and route,
+and the brand `NIZORAL` is dominated by shampoo reports, so it is recorded
+as an unavoidable mix (Ruxolitinib precedent). Checked and excluded:
+Luliconazole (Luzu) has no pivotal tinea pedis trial with posted results
+on CT.gov. No active/recruiting pivotal trial exists for any approved
+tinea pedis drug; the other stopped trials are unapproved drugs
+(Sol-Gel, DermBiont), Phase 1 bioequivalence, or active-comparator-only
+designs.
+
+### Infantile Hemangioma (1 drug, 2 trials)
+
+| Drug | Pivotal / placebo-controlled trials |
+|---|---|
+| Propranolol (oral solution) | NCT01056341 (n=512 enrolled, adaptive Phase II/III, 4 regimens vs placebo), COMPLETED — FDA-approved (Hemangeol, NDA 205410) 2014-03-14 |
+| Propranolol (oral) | NCT00744185 (n=14, Phase 2/3, 30 days propranolol vs placebo, CHU Bordeaux), **TERMINATED** (whyStopped: "Study halted prematurely due to some difficulties in recruitment of patients"), no posted results |
+
+26th indication, added cycle 25. Hemangeol's label section 14 describes
+exactly NCT01056341's design (4 regimens of 1.2 or 3.4 mg/kg/day for 3
+or 6 months vs placebo, blinded central photo assessment at Week 24).
+FAERS uses the brand term `HEMANGEOL` (4,389 reports, top indications
+haemangioma / infantile haemangioma). The generic `PROPRANOLOL` (62,621
+reports) is dominated by the oral cardiovascular and migraine products;
+this is the Qbrexza/Glycopyrronium precedent. NCT00744185 is included
+under the cycle-25 stopped-trial rule. It has no `resultsSection`
+(`results_status: not_yet_reported`), and its results letter (Br J
+Dermatol 2013, PMID 23301692) is paywalled, so its results/AE fields stay
+`needs_extraction` with that reason. Excluded from the same sweep: every
+other stopped or recruiting hemangioma trial. They are
+active-comparator-only (propranolol vs atenolol / acebutolol /
+prednisolone / nadolol), device/laser, Phase 1, or unapproved drugs
+(timolol, sirolimus, imiquimod, vincristine).
+
+### External Genital Warts (1 drug, 2 trials)
+
+| Drug | Pivotal Phase III trials |
+|---|---|
+| Imiquimod (cream, 3.75%; each trial also had a 2.5% arm) | NCT00674739 (n=470) and NCT00735462 (n=511), placebo-controlled, COMPLETED — FDA-approved for external genital and perianal warts (Zyclara 3.75%, NDA 022483 S-001 / NDA 201153) 2011-03-24 |
+
+27th indication, added cycle 25. Zyclara's label section 14.2 describes
+the 3.75%-vs-vehicle comparison across both trials (601 subjects). The
+2.5% arms are real, randomized, and posted, and are kept in `results.*`.
+Imiquimod's generic FAERS term (`IMIQUIMOD`, 2,167 reports) covers Aldara
+5% and generics as well as Zyclara. It is one topical molecule whose top
+indications (BCC/AK/anogenital warts) are all imiquimod-cream uses, so it
+is kept as an inherent mix. Sinecatechins (Veregen) remains a pre-2007
+dead end (cycle 21). The CT.gov status sweep found no active/recruiting
+or stopped placebo-controlled treatment trial of an FDA-approved
+genital-wart drug. The placebo-controlled trials there are HPV-vaccine
+*prevention* trials, out of scope.
+
 Every NCT ID above was pulled live from the API during curation — none
 were guessed or reused from memory (see `data/trials/*.json` →
 `source_url` on every field for the exact API call), and every drug/trial
@@ -660,8 +759,8 @@ wrong-indication trial) before adding it.
 ## Data model
 
 One JSON file per trial at `data/trials/<NCT_ID>.json` (**schema v4**),
-organized into 10 field groups (43 fields), plus one JSON file per drug at
-`data/drugs/<slug>.json` (53 files) for the 7 fields that are facts about
+organized into 10 field groups (46 fields), plus one JSON file per drug at
+`data/drugs/<slug>.json` (59 files) for the 7 fields that are facts about
 the DRUG, not any one trial — see "Drug-level records" below. Every field
 value is an object, never a bare scalar:
 
@@ -803,7 +902,7 @@ label/FAERS/Orange-Book/Purple-Book fetch functions the FIRST time a drug is
 seen. `scripts/apply_source_data.py` (the FAERS/Orange/Purple Book
 integration step) was updated the same way.
 
-Cross-source field groups, now populated for every one of the 53 drugs in
+Cross-source field groups, now populated for every one of the 59 drugs in
 the atlas:
 
 - `real_world_safety.faers_summary` — openFDA FAERS report counts,
@@ -822,11 +921,11 @@ the atlas:
   aggregate `count=` query is wrong here, since openFDA's flattened
   multi-drug-array indexing mixes in co-listed drugs' own codes for any
   report listing more than one drug (see AGENTS.md). Fully filled,
-  53/53.
+  59/59.
 - `exclusivity.regulatory_application` — the NDA/BLA number, the join key
   the other two need.
 - `exclusivity.orange_book` — products, patents (number, expiry, use code,
-  claims), exclusivity codes with dates; NDAs only (35 small molecules).
+  claims), exclusivity codes with dates; NDAs only (41 small molecules).
 - `exclusivity.purple_book` — licensure, BPCIA reference-product /
   interchangeable / orphan exclusivity dates, biosimilars; BLAs only
   (18 biologics; separate shape from Orange Book because BLA exclusivity
@@ -875,7 +974,74 @@ half of the corpus), and a trial whose real posted text genuinely states no
 rescue-medication concept or no formal multiplicity procedure applies (a
 correct finding, not a miss) — both confirmed per-trial, not assumed.
 
-### Fill status (all 140 trials, 44 fields each — 6160 sourced values)
+### Trial status (cycle 25)
+
+Three trial-level `ctgov_api` fields record where each trial stands on
+CT.gov, so active and non-active trials can be compared per indication:
+
+- `identity.overall_status`: CT.gov `statusModule.overallStatus`,
+  verbatim, using CT.gov's own enum (COMPLETED, TERMINATED,
+  ACTIVE_NOT_RECRUITING, RECRUITING, ...). No bucketing is applied.
+  `source_excerpt` records the fetch date, because a registry status
+  changes over time.
+- `identity.results_status`: `reported` when CT.gov `hasResults` is true,
+  `not_yet_reported` otherwise. An empty `results.*` group is therefore
+  never mistaken for a missing extraction.
+- `identity.why_stopped`: `statusModule.whyStopped` verbatim for a
+  TERMINATED/WITHDRAWN/SUSPENDED trial; a real `null` when the trial did
+  not stop early.
+
+Current spread across the 151 trials: 141 COMPLETED, 5 TERMINATED (the 3
+Brodalumab AMAGINE trials, "Sponsor decision"; Ketoconazole NCT01110330;
+Propranolol NCT00744185), and 5 ACTIVE_NOT_RECRUITING (long-term follow-up
+still running after a posted primary readout).
+
+The cycle-25 sweep of RECRUITING / NOT_YET_RECRUITING /
+ENROLLING_BY_INVITATION / ACTIVE_NOT_RECRUITING / SUSPENDED / WITHDRAWN
+trials for the 4 new indications found none that meets the atlas bar. The
+bar is a randomized, placebo/vehicle-controlled Phase 2/3+ trial of a
+drug FDA-approved for that indication. That is a real negative finding,
+recorded per indication above.
+
+Stopped trials are now in scope under that same design bar, with whatever
+they actually posted captured. The pivotal-with-results bar is unchanged
+for COMPLETED trials.
+
+### LLM extraction pipeline (cycle 25, `scripts/extraction/`)
+
+Cycle 25's deep fields were extracted by "Luna" (`gpt-6-luna`, via the
+Codex CLI) and checked by "Asta" (`gpt-6-astra`). The work ran in three
+sequential phases.
+
+1. **Design (Asta).** `spans.py` cuts every source (FDA review/label text,
+   protocol/SAP text, CT.gov string leaves) into exact-substring candidate
+   spans, with no span crossing a heading, table-row or line boundary.
+   `assemble.py` builds each field's sourced value from the span ids Luna
+   *selects*. The model never types a quote, a URL or a `source_type`. It
+   then runs the mechanical gate (`verify.py`: every quote is verbatim in
+   the cited source; the value is schema-valid) before writing
+   `patch.json`. Guards added after the first gate pass:
+   - `published_results` must be label- or review-sourced;
+   - intervention descriptions must equal CT.gov's own;
+   - endpoint keys must exist.
+2. **Extraction (Luna).** Every target trial, in parallel, following
+   `LUNA_INSTRUCTIONS.md`.
+3. **Verification (Asta).** One consolidated semantic pass per
+   `ASTA_INSTRUCTIONS.md`: arm/dose/timepoint attribution, trial mapping,
+   enum choice, and truthful absence. A FAIL or UNCERTAIN verdict reverts
+   the field to `needs_extraction`.
+
+Results:
+- First pass: 62 fields filled, 41 passed, 21 reverted. All 58 trial and
+  drug fields in that run were mechanically clean.
+- One redesign-then-re-extract cycle on the 28 rejected or wrongly-absent
+  fields: 19 of 22 re-filled fields passed.
+- Final: 60 LLM-extracted fields kept, 9 reverted.
+
+An Asta PASS is automated QA only. `reviewed_by` stays `null` on every
+field until the human clinical review (captain + Garvita).
+
+### Fill status (all 151 trials, 47 fields each — 7097 sourced values)
 
 Fields fully or near-fully filled across every trial (`ctgov_api` for the
 identity/population/design/endpoints/timing_ops/adverse_events core):
@@ -894,43 +1060,45 @@ identity/population/design/endpoints/timing_ops/adverse_events core):
 PR #11) — always "filled" from a trial's own point of view (a pointer
 always points somewhere), so their real fill status is now a property of
 the DRUG, not the trial; see "Drug-level fill status" below rather than
-reading these as 140/140 trial fills.
+reading these as 151/151 trial fills.
 
-Fields with real, checkable gaps (numerator = filled, out of 140 trials;
+Fields with real, checkable gaps (numerator = filled, out of 151 trials;
 every count below recomputed from `sources.csv` this cycle):
 
 | Field | Filled | Gap reason |
 |---|---|---|
-| `molecule.dosing_regimen` | 139/140 | real CT.gov intervention description text, matched to each trial's own drug by generic name or known development/compound code, for every trial except one whose intervention text doesn't state a regimen |
-| `population.severity_criteria` | 127/140 | real CT.gov eligibility-criteria text now covers PASI/sPGA/ISGA/S-IGA/B-IGA/PGA (psoriasis family), Hurley Stage + AN Count (HS), SIRS (impetigo), HDSS/ASDD (hyperhidrosis), SALT (AA), BPDAI (bullous pemphigoid), GPPGA (GPP), CDASI (dermatomyositis), and lesion-count ranges (acne/rosacea/molluscum/AK) in addition to the original EASI/IGA/BSA (AD); the remaining trials genuinely state no quantitative baseline threshold in their CT.gov text, or their real number uses a unit the current schema has no metric for (percent-of-nail-area, wound size in cm²) |
-| `design.background_therapy` | 92/140 | real protocol/SAP PDF text (CT.gov `documentSection`, including a scanned Protocol Summary and one scanned protocol OCR'd with tesseract) covers every indication with a posted Study Protocol/SAP, plus one document-free fallback fill from CT.gov eligibility-criteria text alone (Head Lice/Abametapir); the remaining gap trials have no protocol/SAP document posted on CT.gov at all and no fillable eligibility-text content, so real extraction isn't possible without a different source |
-| `endpoints.multiplicity_control` | 88/140 | same PDF-extraction pass closed the real testing-hierarchy/alpha-control text it could, plus a cycle-3 re-read (wider keyword net, one scanned SAP OCR'd with tesseract) and cycle-24's pass over the 13 new Rosacea/Hyperhidrosis/Acne-combo trials (found real serial-gatekeeping/fixed-sequence procedures the first pass's narrower keyword search missed, including one — Zilxi — stated only in the Protocol, not the SAP); remaining gaps are genuine — either no posted document, or the document states no formal multiplicity procedure was used |
-| `timing_ops.study_schedule` | 91/140 | same pass closed the real screening/treatment/follow-up period breakdown from every posted protocol; remaining gaps have no protocol/SAP document posted |
-| `timing_ops.rescue_therapy` | 75/140 | same pass closed the real rescue-medication rules it could (including trials whose real finding is "rescue explicitly prohibited"), plus one partial fill from CT.gov eligibility-criteria text alone (no posted protocol) confirming rescue therapy is permitted without stating its composition; remaining gaps are a mix of no-posted-document trials and trials whose protocol genuinely states no rescue-medication concept applies (e.g. simple 8-week monotherapy-vs-vehicle designs, or an "escape arm" that a later amendment removed) |
-| `adverse_events.serious_adverse_event_rate` | 138/140 | CT.gov posts `eventGroups[]` without per-arm serious counts for a few trials (a genuine gap in what was posted, not a computable zero) |
-| `adverse_events.death_rate` | 107/140 | some trials report zero deaths as a genuine null-count edge case in CT.gov's `resultsSection`, not a missing value |
-| `adverse_events.discontinuation_due_to_ae_rate` | 104/140 | CT.gov `resultsSection` gap for several trials whose `participantFlowModule` posts milestones only, no `dropWithdraws` section |
-| `adverse_events.most_common_adverse_events` | 125/140 | CT.gov `resultsSection` gap for a few trials |
-| `results.arms` / `results.arm_results` / `results.effect_estimates` | 138/140 each | schema v3, backfilled from live CT.gov `resultsSection` data for every `hasResults:true` trial; the other 2 (both Efinaconazole/Onychomycosis) genuinely have no posted results. 4 of the 138 filled trials (cycle 23's Cabtreo x2, Epsolay's NCT03564119, Amzeeq's NCT03271021, Twyneo's NCT03761810) have 0 `effect_estimates` — their `resultsSection` genuinely posts no `analyses[]` block for any outcome measure, confirmed against the raw cache, not a build gap |
-| `results.published_results` | 0/140 | literature/label-sourced results are explicitly out of scope for this backfill (registry-grade CT.gov numbers and literature-grade numbers are kept separable at the field level, never mixed) |
+| `molecule.dosing_regimen` | 150/151 | real CT.gov intervention description text, matched to each trial's own drug by generic name or known development/compound code, for every trial except one whose intervention text doesn't state a regimen |
+| `population.severity_criteria` | 131/151 | real CT.gov eligibility-criteria text now covers PASI/sPGA/ISGA/S-IGA/B-IGA/PGA (psoriasis family), Hurley Stage + AN Count (HS), SIRS (impetigo), HDSS/ASDD (hyperhidrosis), SALT (AA), BPDAI (bullous pemphigoid), GPPGA (GPP), CDASI (dermatomyositis), and lesion-count ranges (acne/rosacea/molluscum/AK) in addition to the original EASI/IGA/BSA (AD); the remaining trials genuinely state no quantitative baseline threshold in their CT.gov text, or their real number uses a unit the current schema has no metric for (percent-of-nail-area, wound size in cm²) |
+| `design.background_therapy` | 98/151 | real protocol/SAP PDF text (CT.gov `documentSection`, including a scanned Protocol Summary and one scanned protocol OCR'd with tesseract) covers every indication with a posted Study Protocol/SAP, plus one document-free fallback fill from CT.gov eligibility-criteria text alone (Head Lice/Abametapir); the remaining gap trials have no protocol/SAP document posted on CT.gov at all and no fillable eligibility-text content, so real extraction isn't possible without a different source |
+| `endpoints.multiplicity_control` | 91/151 | same PDF-extraction pass closed the real testing-hierarchy/alpha-control text it could, plus a cycle-3 re-read (wider keyword net, one scanned SAP OCR'd with tesseract) and cycle-24's pass over the 13 new Rosacea/Hyperhidrosis/Acne-combo trials (found real serial-gatekeeping/fixed-sequence procedures the first pass's narrower keyword search missed, including one — Zilxi — stated only in the Protocol, not the SAP); remaining gaps are genuine — either no posted document, or the document states no formal multiplicity procedure was used |
+| `timing_ops.study_schedule` | 101/151 | same pass closed the real screening/treatment/follow-up period breakdown from every posted protocol; remaining gaps have no protocol/SAP document posted |
+| `timing_ops.rescue_therapy` | 78/151 | same pass closed the real rescue-medication rules it could (including trials whose real finding is "rescue explicitly prohibited"), plus one partial fill from CT.gov eligibility-criteria text alone (no posted protocol) confirming rescue therapy is permitted without stating its composition; remaining gaps are a mix of no-posted-document trials and trials whose protocol genuinely states no rescue-medication concept applies (e.g. simple 8-week monotherapy-vs-vehicle designs, or an "escape arm" that a later amendment removed) |
+| `adverse_events.serious_adverse_event_rate` | 148/151 | CT.gov posts `eventGroups[]` without per-arm serious counts for a few trials (a genuine gap in what was posted, not a computable zero) |
+| `adverse_events.death_rate` | 116/151 | some trials report zero deaths as a genuine null-count edge case in CT.gov's `resultsSection`, not a missing value |
+| `adverse_events.discontinuation_due_to_ae_rate` | 112/151 | CT.gov `resultsSection` gap for several trials whose `participantFlowModule` posts milestones only, no `dropWithdraws` section |
+| `adverse_events.most_common_adverse_events` | 135/151 | CT.gov `resultsSection` gap for a few trials |
+| `results.arms` / `results.arm_results` / `results.effect_estimates` | 148/151 each | schema v3, backfilled from live CT.gov `resultsSection` data for every `hasResults:true` trial; the other 3 (both Efinaconazole/Onychomycosis trials, and the terminated Propranolol pilot NCT00744185) genuinely have no posted results (`identity.results_status: not_yet_reported`). 4 of the 138 filled trials (cycle 23's Cabtreo x2, Epsolay's NCT03564119, Amzeeq's NCT03271021, Twyneo's NCT03761810) have 0 `effect_estimates` — their `resultsSection` genuinely posts no `analyses[]` block for any outcome measure, confirmed against the raw cache, not a build gap |
+| `results.published_results` | 8/151 | still out of scope for the CT.gov backfill; cycle 25 filled it for 8 new trials from the FDA label section 14 or FDA review efficacy tables only (never CT.gov registry numbers, which stay in `arm_results` -- enforced by `tests/test_results_backfill.py`), each row joined to its endpoint by `EndpointKey` |
+| `identity.overall_status` / `results_status` / `why_stopped` | 151/151 each | cycle 25: CT.gov `statusModule.overallStatus` verbatim, `hasResults` as `reported`/`not_yet_reported`, and `whyStopped` verbatim (a real `null` when the trial did not stop early) -- see "Trial status" below |
 
-**4580 of 5040 genuinely trial-level sourced values are filled with real
-data (90.9%); 460 remain `needs_extraction`** (excludes the 7 now-drug-level
-fields' 980 pointer rows, which are always "filled" and would otherwise
-inflate this number without measuring anything real) — see `sources.csv`
+**5538 of 6040 genuinely trial-level sourced values are filled with real
+data (91.7%); 502 remain `needs_extraction`** (excludes the 7 now-drug-level
+fields' 1057 pointer rows, which are always "filled" and would otherwise
+inflate this number without measuring anything real; excluding the 3
+always-filled cycle-25 status fields too, it is 5085 of 5587, 91.0%) — see `sources.csv`
 for the per-trial, per-field breakdown.
 
-#### Drug-level fill status (53 drugs, data/drugs/*.json — see drug_sources.csv)
+#### Drug-level fill status (59 drugs, data/drugs/*.json — see drug_sources.csv)
 
 | Field | Filled | Gap reason |
 |---|---|---|
-| `mechanism_of_action` | 53/53 | fully filled — real openFDA structured label text for every drug (a few drugs needed the approval-package label PDF fallback since they have no `label.json` entry at all) |
-| `boxed_warning` | 53/53 | fully filled — the last 2 gaps (Filsuvez, Vyjuvek) needed a fallback openFDA query term (substance_name/brand_name) since the default term either returned a differently-keyed result or failed outright |
-| `faers_summary` | 53/53 | fully filled — every drug has a real, checked FAERS query result, including a confirmed genuine `total_reports: 0` where that's what openFDA returns |
-| `drug_characterization` | 53/53 | fully filled (cycle 22-23) — real per-report FAERS `drugcharacterization` (suspect/concomitant/interacting) breakdown for every drug, computed by pulling every individual report and tallying the drug's own array-entry code (a plain aggregate `count=` query cannot do this correctly — see AGENTS.md) |
-| `regulatory_application` | 55/55 applications | fully filled — every drug's NDA/BLA join key is on file (Roflumilast's 2 real applications each have their own row) |
-| `orange_book` | 37/55 applications | only the NDA small-molecule applications get this field (BLA biologics use `purple_book` instead) |
-| `purple_book` | 18/53 | only the BLA biologic drugs get this field (NDA small molecules use `orange_book` instead) |
+| `mechanism_of_action` | 59/59 | fully filled — real openFDA structured label text for every drug (a few drugs needed the approval-package label PDF fallback since they have no `label.json` entry at all) |
+| `boxed_warning` | 59/59 | fully filled — the last 2 gaps (Filsuvez, Vyjuvek) needed a fallback openFDA query term (substance_name/brand_name) since the default term either returned a differently-keyed result or failed outright |
+| `faers_summary` | 59/59 | fully filled — every drug has a real, checked FAERS query result, including a confirmed genuine `total_reports: 0` where that's what openFDA returns |
+| `drug_characterization` | 59/59 | fully filled (cycle 22-23) — real per-report FAERS `drugcharacterization` (suspect/concomitant/interacting) breakdown for every drug, computed by pulling every individual report and tallying the drug's own array-entry code (a plain aggregate `count=` query cannot do this correctly — see AGENTS.md) |
+| `regulatory_application` | 62/62 applications | fully filled — every drug's NDA/BLA join key is on file (Roflumilast's 2 real applications each have their own row) |
+| `orange_book` | 44/62 applications | only the NDA small-molecule applications get this field (BLA biologics use `purple_book` instead) |
+| `purple_book` | 18/59 | only the BLA biologic drugs get this field (NDA small molecules use `orange_book` instead) |
 
 Every non-`ctgov_api` fill (trial- or drug-level) was produced by
 LLM-assisted reading of a real, cited source (CT.gov free text, a
@@ -945,10 +1113,10 @@ Garvita) before it's treated as authoritative for publication.
 
 Data and pipeline both live here now (post-consolidation):
 
-- `data/trials/<NCT_ID>.json` — one file per trial (140 files), the
+- `data/trials/<NCT_ID>.json` — one file per trial (151 files), the
   sourced-value format described above (schema v4). 7 fields hold a
   `drug_level_ref` pointer instead of the fact — see `data/drugs/`.
-- `data/drugs/<slug>.json` — one file per drug (53 files): the 7 drug-level
+- `data/drugs/<slug>.json` — one file per drug (59 files): the 7 drug-level
   facts, extracted once, referenced by every trial of that drug — see
   "Drug-level records" above.
 - `trials.csv` — one row per trial, one column per field (the field's
@@ -960,8 +1128,8 @@ Data and pipeline both live here now (post-consolidation):
   trial's full list can run past Python's csv module field-size limit).
 - `sources.csv` — one row per sourced value: `nct_id`, `field`,
   `source_type`, `source_url`, `source_excerpt`, `extracted_by`,
-  `reviewed_by`, `confidence`. 140 trials × 44 fields = 6160 rows (7 of
-  those 44 fields are now `drug_level_ref` pointer rows -- see
+  `reviewed_by`, `confidence`. 151 trials × 47 fields = 7097 rows (7 of
+  those 47 fields are now `drug_level_ref` pointer rows -- see
   `drug_sources.csv` for the real citation).
 - `endpoints.csv` — one row per outcome measure × criterion: `measure_type`,
   `scale`, `timepoints`, `analysis_population`, and the `ScoreCriterion`
@@ -970,23 +1138,26 @@ Data and pipeline both live here now (post-consolidation):
 - `adverse_event_rates.csv` — one row per (trial, arm, measure[, MedDRA
   term]).
 - `arm_results.csv` — one row per endpoint × timepoint × arm CT.gov results
-  measurement (9,407 rows); keyed on `nct_id` + `endpoint_rank` +
+  measurement (9,490 rows); keyed on `nct_id` + `endpoint_rank` +
   `endpoint_position` to join `endpoints.csv`'s `rank`/`position` columns.
 - `effect_estimates.csv` — one row per endpoint × timepoint × pairwise arm
-  comparison (2,799 rows); same join key as `arm_results.csv`.
-- `drugs.csv` — one row per drug (53 rows): `mechanism_of_action`,
+  comparison (2,804 rows); same join key as `arm_results.csv`.
+- `drugs.csv` — one row per drug (59 rows): `mechanism_of_action`,
   `boxed_warning`, `faers_summary`, `drug_characterization`,
   `purple_book`, `trial_ids`.
-- `drug_applications.csv` — one row per (drug, application_number) (55
-  rows, since Roflumilast and Minocycline each have 2): `regulatory_application`, `orange_book`.
+- `drug_applications.csv` — one row per (drug, application_number) (62
+  rows, since Roflumilast, Minocycline and Naftifine each have 2): `regulatory_application`, `orange_book`.
 - `drug_sources.csv` — one row per drug-level sourced value: `drug`,
   `field`, `source_type`, `source_url`, `source_excerpt`, `extracted_by`,
-  `reviewed_by`, `confidence` (375 rows) — the single citation now backing
+  `reviewed_by`, `confidence` (419 rows) — the single citation now backing
   every trial of that drug.
 - `docs/SCHEMA.md` / `schema/trial.schema.json` / `schema/drug.schema.json`
   — generated snapshots of the schema v4 field reference (trial and drug
   records; regenerate with `python3 scripts/export_schema.py` after any
   `atlas/schema.py` change).
+- `scripts/extraction/` — the cycle-25 span-selection LLM extraction
+  pipeline (`spans.py`, `assemble.py`, `verify.py`) and the Luna/Asta
+  instructions it runs with (see "LLM extraction pipeline" above).
 - `scripts/` / `atlas/` / `tests/` — the fetch/extraction/migration/build
   pipeline, the schema spec, and its test suite (`python3 -m pytest
   tests/`, needs `pytest`).
@@ -995,7 +1166,7 @@ Data and pipeline both live here now (post-consolidation):
 
 - The human QA pass on top of the LLM-assisted extraction (captain +
   Garvita review of every non-`ctgov_api` value).
-- The 460 trial-level fields plus 53 drug-level fields that remain
+- The 502 trial-level fields plus 59 drug-level fields that remain
   `needs_extraction` (see the fill-status tables above) — a mix of
   genuinely unreachable sources (paywalled papers behind Cloudflare, PDF
   tables that don't extract reliably), real, un-worked backlog (a subset of
